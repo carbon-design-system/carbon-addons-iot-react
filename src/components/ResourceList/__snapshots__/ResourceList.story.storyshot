@@ -242,6 +242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               <svg
                 aria-hidden={true}
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -289,6 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               <svg
                 aria-hidden={true}
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -336,6 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               <svg
                 aria-hidden={true}
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -412,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               </h5>
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={32}
                 preserveAspectRatio="xMidYMid meet"
@@ -482,6 +486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               </h5>
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={32}
                 preserveAspectRatio="xMidYMid meet"
@@ -552,6 +557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Resou
               </h5>
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={32}
                 preserveAspectRatio="xMidYMid meet"

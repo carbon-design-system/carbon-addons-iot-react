@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
@@ -542,17 +542,26 @@ describe('Table', () => {
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
-    const { unmount, rerender } = render(
+    const { unmount, rerender, baseElement } = render(
       <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
     );
     await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
-    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
-
+    await waitFor(() => {
+      // the menu is rendered via a portal outside of the container/screen
+      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
+        'bx--overflow-menu--flip'
+      );
+    });
     document.documentElement.setAttribute('dir', 'rtl');
 
     rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
     await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
-    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
+    await waitFor(() => {
+      // the menu is rendered via a portal outside of the container/screen
+      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
+        'bx--overflow-menu--flip'
+      );
+    });
 
     // unmounting to be sure to clean up the documentElement
     unmount();

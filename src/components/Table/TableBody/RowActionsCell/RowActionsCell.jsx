@@ -181,12 +181,14 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
+                    selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
                   >
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem
-                        // We need to focus a MenuItem for the keyboard navigation to work
-                        primaryFocus={actionIndex === firstSelectableItemIndex}
-                        className={`${iotPrefix}--action-overflow-item`}
+                        className={classnames(`${iotPrefix}--action-overflow-item`, {
+                          [`${iotPrefix}--action-overflow-item--initialFocus`]:
+                            actionIndex === firstSelectableItemIndex,
+                        })}
                         key={`${id}-row-actions-button-${action.id}`}
                         onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                         requireTitle={!action.renderIcon}

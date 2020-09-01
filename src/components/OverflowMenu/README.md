@@ -1,4 +1,4 @@
-> Copied from https://github.com/carbon-design-system/carbon/blob/v10.7.3/packages/react/src/components/OverflowMenu/README.md
+> Copied from https://github.com/carbon-design-system/carbon/blob/v10.17.0/packages/react/src/components/OverflowMenu/README.md
 
 # `OverflowMenu` component
 
@@ -26,9 +26,9 @@ package on NPM. You can install this package by running the following in your
 terminal:
 
 ```bash
-npm i carbon-components carbon-components-react --save
-# Or, with Yarn Classic
-yarn add carbon-components carbon-components-react
+npm i carbon-components carbon-components-react carbon-icons --save
+# Or, with yarn
+yarn add carbon-components carbon-components-react carbon-icons
 ```
 
 ## Usage
@@ -44,20 +44,11 @@ You can then create the menu by the following:
 
 ```js
 <OverflowMenu>
-  <OverflowMenuItem itemText="Option 1" primaryFocus />
+  <OverflowMenuItem itemText="Option 1" />
   <OverflowMenuItem itemText="Option 2" />
   ...
 </OverflowMenu>
 ```
-
-There are two important React props:
-
-- `primaryFocus` in `OverflowMenuItem`: This is required for the menu item you
-  put keyboard focus on when `OverflowMenu` gets open
-
-Please refer to
-[our Storybook](http://react.carbondesignsystem.com/?selectedKind=OverflowMenu&selectedStory=basic)
-for more details.
 
 ## Note about `<OverflowMenu>` children
 

@@ -131,13 +131,27 @@ describe('RowActionsCell', () => {
     overflowMenu.simulate('click');
     overflowMenu.props().onOpen();
     wrapper.update();
+    expect(overflowMenu.props().selectorPrimaryFocus).toEqual(
+      `.${iotPrefix}--action-overflow-item--initialFocus`
+    );
+
     const menuItems = wrapper.find(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--action-overflow-item`
     );
-    const firstMenuOption = menuItems.first();
-    const firstEnabledMenuOption = menuItems.at(2);
-
-    expect(firstMenuOption.props().primaryFocus).toEqual(false);
-    expect(firstEnabledMenuOption.props().primaryFocus).toEqual(true);
+    expect(
+      menuItems
+        .first()
+        .find('button')
+        .getDOMNode().disabled
+    ).toBeTruthy();
+    expect(
+      menuItems
+        .at(2)
+        .find('button')
+        .getDOMNode().disabled
+    ).toBeFalsy();
+    expect(
+      menuItems.at(2).hasClass(`${iotPrefix}--action-overflow-item--initialFocus`)
+    ).toBeTruthy();
   });
 });

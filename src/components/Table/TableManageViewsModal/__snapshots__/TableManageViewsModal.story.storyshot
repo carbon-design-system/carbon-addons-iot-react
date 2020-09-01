@@ -32,7 +32,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -52,6 +52,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -79,6 +80,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <svg
                 aria-hidden={true}
                 className="bx--search-magnifier"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -116,6 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -218,6 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -248,6 +252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -301,6 +306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--blue"
+                            title="default"
                           >
                             default
                           </span>
@@ -325,6 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -355,6 +362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -425,6 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -455,6 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -525,6 +535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -555,6 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -625,6 +637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -655,6 +668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -725,6 +739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -755,6 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -825,6 +841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -855,6 +872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -925,6 +943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -955,6 +974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1025,6 +1045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1055,6 +1076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1125,6 +1147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1155,6 +1178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1206,6 +1230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="iot-simple-pagination-caret-disabled"
                     description="Prev page"
                     dir="ltr"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1230,6 +1255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="iot-simple-pagination-caret"
                     description="Next page"
                     dir="ltr"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1314,7 +1340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -1334,6 +1360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -1361,6 +1388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <svg
                 aria-hidden={true}
                 className="bx--search-magnifier"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1398,6 +1426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -1489,6 +1518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -1513,6 +1543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1543,6 +1574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1576,6 +1608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1629,11 +1662,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--blue"
+                            title="default"
                           >
                             default
                           </span>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -1658,6 +1693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1688,6 +1724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1721,6 +1758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1774,6 +1812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -1798,6 +1837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1828,6 +1868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1861,6 +1902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1914,6 +1956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -1938,6 +1981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -1968,6 +2012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2001,6 +2046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2054,6 +2100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -2078,6 +2125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2108,6 +2156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2141,6 +2190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2194,6 +2244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -2218,6 +2269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2248,6 +2300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2281,6 +2334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2334,6 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -2358,6 +2413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2388,6 +2444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2421,6 +2478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2474,6 +2532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -2498,6 +2557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2528,6 +2588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2561,6 +2622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2614,6 +2676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -2638,6 +2701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2668,6 +2732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2701,6 +2766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2754,6 +2820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -2778,6 +2845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2808,6 +2876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2841,6 +2910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2894,6 +2964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -2918,6 +2989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2948,6 +3020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2981,6 +3054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3034,6 +3108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -3058,6 +3133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3088,6 +3164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3121,6 +3198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3174,6 +3252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -3198,6 +3277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3228,6 +3308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3261,6 +3342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3314,6 +3396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -3338,6 +3421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3368,6 +3452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3401,6 +3486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3454,6 +3540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -3478,6 +3565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3508,6 +3596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3541,6 +3630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3594,6 +3684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -3618,6 +3709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3648,6 +3740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3681,6 +3774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3734,6 +3828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -3758,6 +3853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3788,6 +3884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3821,6 +3918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3874,6 +3972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -3898,6 +3997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3928,6 +4028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -3961,6 +4062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4014,6 +4116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -4038,6 +4141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4068,6 +4172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4101,6 +4206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4154,6 +4260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -4178,6 +4285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4208,6 +4316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4241,6 +4350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4294,6 +4404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -4318,6 +4429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4348,6 +4460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4381,6 +4494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4434,6 +4548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -4458,6 +4573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4488,6 +4604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4521,6 +4638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4574,6 +4692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -4598,6 +4717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4628,6 +4748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4661,6 +4782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4714,6 +4836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -4738,6 +4861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4768,6 +4892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4801,6 +4926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4854,6 +4980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -4878,6 +5005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4908,6 +5036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4941,6 +5070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -4994,6 +5124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -5018,6 +5149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5048,6 +5180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5081,6 +5214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5134,6 +5268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -5158,6 +5293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5188,6 +5324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5221,6 +5358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5274,6 +5412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -5298,6 +5437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5328,6 +5468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5361,6 +5502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5414,6 +5556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -5438,6 +5581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5468,6 +5612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5501,6 +5646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5554,6 +5700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -5578,6 +5725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5608,6 +5756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5641,6 +5790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5694,6 +5844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -5718,6 +5869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5748,6 +5900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5781,6 +5934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5834,6 +5988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -5858,6 +6013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5888,6 +6044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5921,6 +6078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -5974,6 +6132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -5998,6 +6157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6028,6 +6188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6061,6 +6222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6114,6 +6276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -6138,6 +6301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6168,6 +6332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6201,6 +6366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6254,6 +6420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -6278,6 +6445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6308,6 +6476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6341,6 +6510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6394,6 +6564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -6418,6 +6589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6448,6 +6620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6481,6 +6654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6534,6 +6708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -6558,6 +6733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6588,6 +6764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6621,6 +6798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6674,6 +6852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -6698,6 +6877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6728,6 +6908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6761,6 +6942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6814,6 +6996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -6838,6 +7021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6868,6 +7052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6901,6 +7086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -6954,6 +7140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -6978,6 +7165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7008,6 +7196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7041,6 +7230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7094,6 +7284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -7118,6 +7309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7148,6 +7340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7181,6 +7374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7234,6 +7428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -7258,6 +7453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7288,6 +7484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7321,6 +7518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7374,6 +7572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -7398,6 +7597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7428,6 +7628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7461,6 +7662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7514,6 +7716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -7538,6 +7741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7568,6 +7772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7601,6 +7806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7654,6 +7860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -7678,6 +7885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7708,6 +7916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7741,6 +7950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7794,6 +8004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -7818,6 +8029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7848,6 +8060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7881,6 +8094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7934,6 +8148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -7958,6 +8173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -7988,6 +8204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8021,6 +8238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8074,6 +8292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -8098,6 +8317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8128,6 +8348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8161,6 +8382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8214,6 +8436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -8238,6 +8461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8268,6 +8492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8301,6 +8526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8354,6 +8580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -8378,6 +8605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8408,6 +8636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8441,6 +8670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8494,6 +8724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -8518,6 +8749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8548,6 +8780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8581,6 +8814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8634,6 +8868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -8658,6 +8893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8688,6 +8924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8721,6 +8958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8774,6 +9012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -8798,6 +9037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8828,6 +9068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8861,6 +9102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8914,6 +9156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -8938,6 +9181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -8968,6 +9212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9001,6 +9246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9054,6 +9300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -9078,6 +9325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9108,6 +9356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9141,6 +9390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9194,6 +9444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -9218,6 +9469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9248,6 +9500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9281,6 +9534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9334,6 +9588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -9358,6 +9613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9388,6 +9644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9421,6 +9678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9474,6 +9732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -9498,6 +9757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9528,6 +9788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9561,6 +9822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9614,6 +9876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -9638,6 +9901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9668,6 +9932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9701,6 +9966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9754,6 +10020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -9778,6 +10045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9808,6 +10076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9841,6 +10110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9894,6 +10164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -9918,6 +10189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9948,6 +10220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -9981,6 +10254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10034,6 +10308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -10058,6 +10333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10088,6 +10364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10121,6 +10398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10174,6 +10452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -10198,6 +10477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10228,6 +10508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10261,6 +10542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10314,6 +10596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -10338,6 +10621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10368,6 +10652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10401,6 +10686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10454,6 +10740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -10478,6 +10765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10508,6 +10796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10541,6 +10830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10594,6 +10884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -10618,6 +10909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10648,6 +10940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10681,6 +10974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10734,6 +11028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -10758,6 +11053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10788,6 +11084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10821,6 +11118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10874,6 +11172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -10898,6 +11197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10928,6 +11228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -10961,6 +11262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11014,6 +11316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -11038,6 +11341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11068,6 +11372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11101,6 +11406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11154,6 +11460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -11178,6 +11485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11208,6 +11516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11241,6 +11550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11294,6 +11604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -11318,6 +11629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11348,6 +11660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11381,6 +11694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11434,6 +11748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -11458,6 +11773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11488,6 +11804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11521,6 +11838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11574,6 +11892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -11598,6 +11917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11628,6 +11948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11661,6 +11982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11714,6 +12036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -11738,6 +12061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11768,6 +12092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11801,6 +12126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11854,6 +12180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -11878,6 +12205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11908,6 +12236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11941,6 +12270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -11994,6 +12324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -12018,6 +12349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12048,6 +12380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12081,6 +12414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12134,6 +12468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -12158,6 +12493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12188,6 +12524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12221,6 +12558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12274,6 +12612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -12298,6 +12637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12328,6 +12668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12361,6 +12702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12414,6 +12756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -12438,6 +12781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12468,6 +12812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12501,6 +12846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12554,6 +12900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -12578,6 +12925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12608,6 +12956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12641,6 +12990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12694,6 +13044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -12718,6 +13069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12748,6 +13100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12781,6 +13134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12834,6 +13188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -12858,6 +13213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12888,6 +13244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12921,6 +13278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -12974,6 +13332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -12998,6 +13357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13028,6 +13388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13061,6 +13422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13114,6 +13476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -13138,6 +13501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13168,6 +13532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13201,6 +13566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13254,6 +13620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -13278,6 +13645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13308,6 +13676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13341,6 +13710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13394,6 +13764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -13418,6 +13789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13448,6 +13820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13481,6 +13854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13534,6 +13908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -13558,6 +13933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13588,6 +13964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13621,6 +13998,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13674,6 +14052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -13698,6 +14077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13728,6 +14108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13761,6 +14142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13814,6 +14196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -13838,6 +14221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13868,6 +14252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13901,6 +14286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -13954,6 +14340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -13978,6 +14365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14008,6 +14396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14041,6 +14430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14094,6 +14484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -14118,6 +14509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14148,6 +14540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14181,6 +14574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14234,6 +14628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -14258,6 +14653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14288,6 +14684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14321,6 +14718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14374,6 +14772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -14398,6 +14797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14428,6 +14828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14461,6 +14862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14514,6 +14916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -14538,6 +14941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14568,6 +14972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14601,6 +15006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14654,6 +15060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -14678,6 +15085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14708,6 +15116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14741,6 +15150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14794,6 +15204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -14818,6 +15229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14848,6 +15260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14881,6 +15294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14934,6 +15348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -14958,6 +15373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -14988,6 +15404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15021,6 +15438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15074,6 +15492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -15098,6 +15517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15128,6 +15548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15161,6 +15582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15214,6 +15636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--green"
+                            title="private"
                           >
                             private
                           </span>
@@ -15238,6 +15661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15268,6 +15692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15301,6 +15726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15354,6 +15780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         <div>
                           <span
                             className="bx--tag bx--tag--red"
+                            title="public"
                           >
                             public
                           </span>
@@ -15378,6 +15805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Edit"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15408,6 +15836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Delete"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -15441,6 +15870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               aria-hidden="true"
                               aria-label="Copy"
                               className="bx--btn__icon"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"

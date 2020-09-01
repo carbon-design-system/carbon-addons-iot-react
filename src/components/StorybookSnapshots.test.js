@@ -71,8 +71,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           'Warning: Failed prop type: The prop `labelText` is marked as required in `DatePickerInput`, but its value is `undefined`'
         ) &&
         !e.includes(
-          // TODO: remove when ComboBox is no longer experimental
-          'The prop `hasMultiValue` for Combobox is experimental. The functionality that is enabled by this prop is subject to change until Combobbox moves out of experimental.'
+          // TODO: remove when ComboBox hasMultiValue prop is no longer experimental
+          'The prop `hasMultiValue` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
+        ) &&
+        !e.includes(
+          // TODO: remove when ComboBox addToList prop is no longer experimental
+          'The prop `addToList` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
         )
       ) {
         done.fail(e);

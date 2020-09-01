@@ -133,6 +133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 aria-hidden="true"
                 aria-label="Edit"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -159,6 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 aria-hidden="true"
                 aria-label="Delete"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -351,6 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   <svg
                     aria-label="Icon description"
                     className="bx--date-picker__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     onClick={[Function]}
@@ -478,6 +481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   <svg
                     aria-label="Icon description"
                     className="bx--date-picker__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     onClick={[Function]}
@@ -514,6 +518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 aria-hidden="true"
                 aria-label="Edit"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -540,6 +545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 aria-hidden="true"
                 aria-label="Delete"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
@@ -569,6 +575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 aria-hidden="true"
                 aria-label="Pin"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"

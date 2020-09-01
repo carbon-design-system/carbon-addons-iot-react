@@ -33,12 +33,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="A section without deferred content rendering"
             type="button"
           >
             <svg
               aria-hidden={true}
               className="bx--accordion__arrow"
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -77,12 +77,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="A section with deferred content rendering"
             type="button"
           >
             <svg
               aria-hidden={true}
               className="bx--accordion__arrow"
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
