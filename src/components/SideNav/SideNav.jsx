@@ -98,6 +98,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   useEffect(() => {
     buttonBindings.forEach(binding => {
+      debugger;
       binding.buttonref.current.addEventListener('click', e => {
         binding.callback();
       });
@@ -143,9 +144,9 @@ function getChildren(links, link) {
       );
     });
 
-    if (link.metaData && link.metaData.onclick) {
+    if (link.metaData && link.metaData.onClick) {
       const buttonref = useRef(null);
-      buttonBindings.push({ buttonref: buttonref, callback: link.metaData.onclick });
+      buttonBindings.push({ buttonref: buttonref, callback: link.metaData.onClick });
 
       return (
         <SideNavMenu
