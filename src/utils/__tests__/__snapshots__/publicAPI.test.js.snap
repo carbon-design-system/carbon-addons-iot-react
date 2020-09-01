@@ -307,6 +307,7 @@ Map {
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
+          "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
@@ -450,6 +451,9 @@ Map {
                   "onEmptyStateAction": Object {
                     "type": "func",
                   },
+                  "onOverflowItemClicked": Object {
+                    "type": "func",
+                  },
                   "onRowClicked": Object {
                     "type": "func",
                   },
@@ -579,6 +583,39 @@ Map {
                 "name": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
                 },
                 "renderDataFunction": Object {
                   "type": "func",
@@ -1336,6 +1373,9 @@ Map {
             "onColumnSelectionConfig": Object {
               "type": "func",
             },
+            "onOverflowItemClicked": Object {
+              "type": "func",
+            },
             "onSelectAll": Object {
               "type": "func",
             },
@@ -1427,6 +1467,39 @@ Map {
                 "name": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
                 },
                 "renderDataFunction": Object {
                   "type": "func",
@@ -1866,6 +1939,39 @@ Map {
                 "name": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
                 },
                 "renderDataFunction": Object {
                   "type": "func",

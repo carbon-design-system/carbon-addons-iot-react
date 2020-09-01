@@ -203,6 +203,57 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
       : undefined,
 }));
 
+export const tableColumnsWithOverflowMenu = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+    options: selectData,
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'enter a date' },
+    options: selectData,
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+    options: selectData,
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    options: selectData,
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
+    options: selectData,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+    options: selectData,
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+    options: selectData,
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+    options: selectData,
+  },
+];
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -340,6 +391,7 @@ const actions = {
     onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
     onColumnResize: action('onColumnResize'),
+    onOverflowItemClicked: action('onOverflowItemClicked'),
   },
 };
 
@@ -2368,6 +2420,34 @@ storiesOf('Watson IoT/Table', module)
       centered: { disable: true },
       info: {
         text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
+      },
+    }
+  )
+  .add(
+    'Simple Stateful Example with column overflow menu',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          id="table"
+          {...initialState}
+          columns={tableColumnsWithOverflowMenu}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          }}
+          view={{ table: { selectedIds: array('selectedIds', []) } }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
       },
     }
   );

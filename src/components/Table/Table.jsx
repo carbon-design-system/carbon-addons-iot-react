@@ -176,6 +176,7 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
+      onOverflowItemClicked: PropTypes.func,
     }).isRequired,
   }),
   /** what locale should we use to format table values if left empty no locale formatting happens */
@@ -252,6 +253,7 @@ export const defaultProps = baseProps => ({
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
+      onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
     },
   },
   locale: null,
@@ -431,7 +433,6 @@ const Table = props => {
             ...pick(
               options,
               'hasColumnSelection',
-
               'hasSearch',
               'hasRowSelection',
               'hasRowCountInHeader',
@@ -493,7 +494,8 @@ const Table = props => {
                 'onSelectAll',
                 'onChangeSort',
                 'onChangeOrdering',
-                'onColumnSelectionConfig'
+                'onColumnSelectionConfig',
+                'onOverflowItemClicked'
               ),
               onColumnResize: handleOnColumnResize,
             }}

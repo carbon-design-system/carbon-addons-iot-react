@@ -805,4 +805,40 @@ describe('Table', () => {
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
+
+  it('renders header with overflow menu', () => {
+    const overflowData = [
+      {
+        id: 'option-A',
+        text: 'option-A',
+      },
+    ];
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+        }))}
+        data={tableData}
+        options={{ hasResize: false }}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(0);
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+          options: overflowData,
+        }))}
+        data={tableData}
+        options={{ hasResize: false }}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+  });
 });

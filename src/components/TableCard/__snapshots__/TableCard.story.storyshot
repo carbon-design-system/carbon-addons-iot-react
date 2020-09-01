@@ -321,6 +321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -387,6 +388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -453,6 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -519,6 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -585,6 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -651,6 +656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="deviceId"
+                        data-floating-menu-container={true}
                         id="column-deviceId"
                         onClick={[Function]}
                         style={
@@ -2756,6 +2762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -2822,6 +2829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="deviceId"
+                        data-floating-menu-container={true}
                         id="column-deviceId"
                         onClick={[Function]}
                         style={
@@ -3932,6 +3940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -3998,6 +4007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -4064,6 +4074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -4130,6 +4141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -4196,6 +4208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -4262,6 +4275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="deviceId"
+                        data-floating-menu-container={true}
                         id="column-deviceId"
                         onClick={[Function]}
                         style={
@@ -4328,6 +4342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="Link"
+                        data-floating-menu-container={true}
                         id="column-Link"
                         onClick={[Function]}
                         style={
@@ -6636,6 +6651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -6702,6 +6718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -6768,6 +6785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -8027,6 +8045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -8093,6 +8112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -8159,6 +8179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -9749,6 +9770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -9815,6 +9837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -9881,6 +9904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -10320,6 +10344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -10386,6 +10411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-count"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
                         style={
@@ -10452,6 +10478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -10518,6 +10545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -10584,6 +10612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -10650,6 +10679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -12983,6 +13013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -13049,6 +13080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -13115,6 +13147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -14375,6 +14408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -14441,6 +14475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -14507,6 +14542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -14573,6 +14609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -16061,6 +16098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -16127,6 +16165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -16193,6 +16232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -17481,6 +17521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -17547,6 +17588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -17613,6 +17655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -17668,6 +17711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       align="start"
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="actionColumn"
+                      data-floating-menu-container={true}
                       id="column-actionColumn"
                       scope="col"
                       style={
@@ -19489,6 +19533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -19555,6 +19600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -19621,6 +19667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -21223,6 +21270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -21289,6 +21337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -21355,6 +21404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -22957,6 +23007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -23023,6 +23074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -23089,6 +23141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -24687,6 +24740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -24753,6 +24807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -24819,6 +24874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -24874,6 +24930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       align="start"
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="actionColumn"
+                      data-floating-menu-container={true}
                       id="column-actionColumn"
                       scope="col"
                       style={
@@ -26443,6 +26500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -26509,6 +26567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-count"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
                         style={
@@ -26575,6 +26634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -26641,6 +26701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -26707,6 +26768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -26773,6 +26835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -29078,6 +29141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -29144,6 +29208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -29210,6 +29275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-count"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
                         style={
@@ -29276,6 +29342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -31185,6 +31252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -31251,6 +31319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-count"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
                         style={
@@ -31317,6 +31386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="count"
+                        data-floating-menu-container={true}
                         id="column-count"
                         onClick={[Function]}
                         style={
@@ -31383,6 +31453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -31449,6 +31520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-pressure"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
                         style={
@@ -31515,6 +31587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={
@@ -33882,6 +33955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="alert"
+                        data-floating-menu-container={true}
                         id="column-alert"
                         onClick={[Function]}
                         style={
@@ -33948,6 +34022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="iconColumn-count"
+                        data-floating-menu-container={true}
                         id="column-iconColumn-count"
                         onClick={[Function]}
                         style={
@@ -34014,6 +34089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="hour"
+                        data-floating-menu-container={true}
                         id="column-hour"
                         onClick={[Function]}
                         style={
@@ -34080,6 +34156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         align="start"
                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                         data-column="pressure"
+                        data-floating-menu-container={true}
                         id="column-pressure"
                         onClick={[Function]}
                         style={

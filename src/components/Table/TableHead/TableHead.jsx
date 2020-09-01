@@ -18,6 +18,7 @@ import {
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import { OverflowMenu, OverflowMenuItem } from '../../../index';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -103,6 +104,7 @@ const propTypes = {
     onColumnSelectionConfig: PropTypes.func,
     onApplyFilter: PropTypes.func,
     onColumnResize: PropTypes.func,
+    onOverflowItemClicked: PropTypes.func,
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
@@ -156,6 +158,7 @@ const TableHead = ({
     onChangeOrdering,
     onColumnSelectionConfig,
     onColumnResize,
+    onOverflowItemClicked,
   },
   selectAllText,
   clearFilterText,
@@ -314,11 +317,12 @@ const TableHead = ({
             />
           </TableHeader>
         ) : null}
-        {ordering.map(item => {
+        {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               width={initialColumnWidths[matchingColumnMeta.id]}
@@ -350,14 +354,39 @@ const TableHead = ({
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
               })}
+              // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
+              data-floating-menu-container
             >
               <TableCellRenderer
+                className={`${iotPrefix}--table-head--text`}
                 wrapText={wrapCellText}
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
+
+              {matchingColumnMeta.options !== undefined && matchingColumnMeta.options !== null ? (
+                <OverflowMenu
+                  direction="bottom"
+                  data-testid="table-head--overflow"
+                  flipped={columnIndex !== 0}
+                  className={`${iotPrefix}--table-head--overflow`}
+                >
+                  {matchingColumnMeta.options.map((option, index) => (
+                    <OverflowMenuItem
+                      itemText={option.text}
+                      primaryFocus={index === 0}
+                      key={`${columnIndex}--overflow-item-${index}`}
+                      onClick={() => {
+                        if (onOverflowItemClicked) {
+                          onOverflowItemClicked(option.id);
+                        }
+                      }}
+                    />
+                  ))}
+                </OverflowMenu>
+              ) : null}
               {hasResize && item !== lastVisibleColumn ? (
                 <ColumnResize
                   onResize={onManualColumnResize}
