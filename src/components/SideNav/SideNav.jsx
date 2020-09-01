@@ -98,7 +98,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   useEffect(() => {
     buttonBindings.forEach(binding => {
-      debugger;
       binding.buttonref.current.addEventListener('click', e => {
         binding.callback();
       });
