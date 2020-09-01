@@ -89,6 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   <svg
                     aria-hidden={true}
                     className="iot--data-state-default-error-icon"
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -269,6 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   <svg
                     aria-hidden={true}
                     className="iot--data-state-default-error-icon"
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -409,6 +411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   <svg
                     aria-hidden={true}
                     className="iot--data-state-default-error-icon"
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -548,6 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -724,6 +728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   <svg
                     aria-hidden={true}
                     className="iot--data-state-default-warning-icon"
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -3708,12 +3713,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       title="> 80"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
+                        d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                      />
+                      <path
+                        d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                        data-icon-path="inner-path"
+                        fill="none"
                       />
                     </svg>
                   </div>
@@ -3782,12 +3792,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       title="> 80"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
+                        d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                      />
+                      <path
+                        d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                        data-icon-path="inner-path"
+                        fill="none"
                       />
                     </svg>
                   </div>
@@ -3856,12 +3871,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       title="> 80"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
+                        d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                      />
+                      <path
+                        d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                        data-icon-path="inner-path"
+                        fill="none"
                       />
                     </svg>
                   </div>
