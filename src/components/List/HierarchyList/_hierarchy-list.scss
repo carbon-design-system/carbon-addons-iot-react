@@ -89,9 +89,13 @@
       }
     }
 
-    &--radio {
+    & .#{$iot-prefix}--hierarchy-list-bulk-modal--radio {
       padding: $spacing-05;
-      margin-right: 0 !important;
+      margin-right: 0.5rem;
+    }
+
+    &--radio .#{$prefix}--radio-button__appearance {
+      margin-right: 0;
     }
   }
 }
