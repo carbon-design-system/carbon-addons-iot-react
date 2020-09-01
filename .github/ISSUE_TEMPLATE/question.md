@@ -23,6 +23,12 @@ If these resources don't work out, help us out by filling in the details below.
 
 -->
 
+### What package is this for?
+
+- [ ] React
+- [ ] Angular
+- [ ] Both
+
 ### Summary
 
 Please describe your question in one or two sentences.
