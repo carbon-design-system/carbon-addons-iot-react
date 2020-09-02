@@ -7,7 +7,7 @@ import {
   // SideNavSwitcher,
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -80,29 +80,31 @@ const defaultProps = {
  * Side Navigation. part of UI shell
  */
 
-const buttonBindings = [];
-
 const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
+  const [ buttonBindings, updateBindings ] = useState([]);
   const nav = links
     .map(link => {
       const enabled = link.isEnabled ? link.isEnabled : false;
       if (!enabled) {
         return null;
       }
-      return getChildren(links, link);
+      return getChildren(links, link, buttonBindings);
     })
     .filter(i => i);
 
   const translateById = id =>
     id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
 
-  useEffect(() => {
+  useEffect(() => {   
     buttonBindings.forEach(binding => {
-      binding.buttonref.current.addEventListener('click', e => {
-        binding.callback();
+      binding.buttonref.current.addEventListener('click', binding.callback);
       });
-    });
-  });
+    return function cleanup(){
+      buttonBindings.forEach(binding => {
+        binding.buttonref.current.removeEventListener('click', binding.callback);
+      });   
+    }
+  }, [buttonBindings]);
 
   return (
     <CarbonSideNav
@@ -121,7 +123,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
   );
 };
 
-function getChildren(links, link) {
+function getChildren(links, link, buttonBindings) {
   if (link.hasOwnProperty('childContent')) {
     let parentActive = false;
     const children = link.childContent.map(childlink => {
@@ -130,7 +132,7 @@ function getChildren(links, link) {
       }
 
       if (childlink.hasOwnProperty('childContent')) {
-        return getChildren(links, childlink);
+        return getChildren(links, childlink, buttonBindings);
       }
       return (
         <SideNavMenuItem
