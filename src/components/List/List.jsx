@@ -16,12 +16,16 @@ export const itemPropTypes = {
   content: PropTypes.shape({
     value: PropTypes.string,
     icon: PropTypes.node,
+    /** The nodes should be Carbon Tags components */
+    tags: PropTypes.arrayOf(PropTypes.node),
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
 };
 
 const propTypes = {
+  /** Specify an optional className to be applied to the container */
+  className: PropTypes.string,
   /** list title */
   title: PropTypes.string,
   /** search bar call back function and search value */
@@ -62,6 +66,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: null,
   title: null,
   search: null,
   buttons: [],
@@ -85,6 +90,7 @@ const defaultProps = {
 const List = forwardRef((props, ref) => {
   // Destructuring this way is needed to retain the propTypes and defaultProps
   const {
+    className,
     title,
     search,
     buttons,
@@ -108,32 +114,41 @@ const List = forwardRef((props, ref) => {
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
-      content: { value, secondaryValue, icon, rowActions },
+      content: { value, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
     } = item;
 
     return [
-      <ListItem
-        id={item.id}
-        key={`${item.id}-list-item-${level}-${value}`}
-        nestingLevel={level}
-        value={value}
-        icon={icon}
-        iconPosition={iconPosition}
-        secondaryValue={secondaryValue}
-        rowActions={rowActions}
-        onSelect={handleSelect}
-        onExpand={toggleExpansion}
-        selected={isSelected}
-        expanded={isExpanded}
-        isExpandable={hasChildren}
-        isLargeRow={isLargeRow}
-        isCategory={isCategory}
-        isSelectable={isSelectable}
-        i18n={i18n}
-        selectedItemRef={isSelected ? selectedItemRef : null}
-      />,
+      // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
+      <div
+        key={`${item.id}-list-item-parent-${level}-${value}`}
+        data-floating-menu-container
+        className={`${iotPrefix}--list-item-parent`}
+      >
+        <ListItem
+          id={item.id}
+          key={`${item.id}-list-item-${level}-${value}`}
+          nestingLevel={level}
+          value={value}
+          icon={icon}
+          iconPosition={iconPosition}
+          secondaryValue={secondaryValue}
+          rowActions={rowActions}
+          onSelect={handleSelect}
+          onExpand={toggleExpansion}
+          selected={isSelected}
+          expanded={isExpanded}
+          isExpandable={hasChildren}
+          isLargeRow={isLargeRow}
+          isCategory={isCategory}
+          isSelectable={isSelectable}
+          i18n={i18n}
+          selectedItemRef={isSelected ? selectedItemRef : null}
+          tags={tags}
+        />
+      </div>,
+
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))
         : []),
@@ -144,7 +159,7 @@ const List = forwardRef((props, ref) => {
 
   return (
     <div
-      className={classnames(`${iotPrefix}--list`, {
+      className={classnames(`${iotPrefix}--list`, className, {
         [`${iotPrefix}--list__full-height`]: isFullHeight,
       })}
     >

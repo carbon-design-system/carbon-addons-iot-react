@@ -40,6 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-hidden="true"
             aria-label="Helpful description"
             className="bx--btn__icon"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -72,103 +73,108 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             role="button"
             tabIndex={0}
           />
-          <span
-            className="bx--visually-hidden"
-            role="link"
-            tabIndex="0"
-          >
-            Focus sentinel
-          </span>
           <div
-            className="bx--tooltip bx--tooltip--shown iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
-            data-floating-menu-direction="bottom"
-            data-testid="flyout-menu"
-            disabled={false}
-            id="flyout-tooltip"
             onBlur={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            open={true}
-            role="tooltip"
-            style={
-              Object {
-                "margin": 0,
-                "opacity": 1,
-                "position": "absolute",
-                "top": "0px",
-                "visibility": "hidden",
-              }
-            }
           >
             <span
-              className="bx--tooltip__caret"
-            />
-            <div
-              aria-labelledby="test-trigger-id-2"
-              className="bx--tooltip__content"
-              role="dialog"
-              tabIndex="-1"
+              className="bx--visually-hidden"
+              role="link"
+              tabIndex="0"
             >
-              <div>
-                <div
-                  style={
-                    Object {
-                      "overflow": "scroll",
-                    }
-                  }
-                  tabIndex={-1}
-                />
+              Focus sentinel
+            </span>
+            <div
+              className="bx--tooltip bx--tooltip--shown iot--flyout-menu--body iot--flyout-menu--body__bottom-start iot--flyout-menu--body__light iot--flyout-menu--body__open"
+              data-floating-menu-direction="bottom"
+              data-testid="flyout-menu"
+              disabled={false}
+              id="flyout-tooltip"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              open={true}
+              role="tooltip"
+              style={
+                Object {
+                  "margin": 0,
+                  "opacity": 1,
+                  "position": "absolute",
+                  "top": "0px",
+                  "visibility": "hidden",
+                }
+              }
+              tooltipId="flyout-tooltip"
+            >
+              <span
+                className="bx--tooltip__caret"
+              />
+              <div
+                aria-labelledby="test-trigger-id-2"
+                className="bx--tooltip__content"
+                role="dialog"
+                tabIndex="-1"
+              >
                 <div>
-                  <h2>
-                    This is a header
-                  </h2>
-                  <p
-                    style={
-                      Object {
-                        "width": 300,
-                      }
-                    }
-                  >
-                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-                  </p>
-                </div>
-                <div
-                  className="iot--flyout-menu__bottom-container"
-                >
                   <div
                     style={
                       Object {
-                        "alignItems": "center",
-                        "display": "flex",
-                        "height": 64,
-                        "justify-content": "space-between",
+                        "overflow": "scroll",
                       }
                     }
-                  >
-                    I'm a custom footer!  
-                    <button
-                      className="iot--btn bx--btn bx--btn--primary"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    tabIndex={-1}
+                  />
+                  <div>
+                    <h2>
+                      This is a header
+                    </h2>
+                    <p
+                      style={
+                        Object {
+                          "width": 300,
+                        }
+                      }
                     >
-                      Confirm
-                    </button>
+                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+                    </p>
+                  </div>
+                  <div
+                    className="iot--flyout-menu__bottom-container"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "display": "flex",
+                          "height": 64,
+                          "justify-content": "space-between",
+                        }
+                      }
+                    >
+                      I'm a custom footer!  
+                      <button
+                        className="iot--btn bx--btn bx--btn--primary"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        Confirm
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <span
+              className="bx--visually-hidden"
+              role="link"
+              tabIndex="0"
+            >
+              Focus sentinel
+            </span>
           </div>
-          <span
-            className="bx--visually-hidden"
-            role="link"
-            tabIndex="0"
-          >
-            Focus sentinel
-          </span>
         </div>
       </div>
     </div>
@@ -241,6 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-hidden="true"
             aria-label="Helpful description"
             className="bx--btn__icon"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -342,6 +349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-hidden="true"
             aria-label="Helpful description"
             className="bx--btn__icon"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"

@@ -7,6 +7,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
+import { Tag } from '../Tag';
 
 import List from './List';
 
@@ -460,4 +461,25 @@ storiesOf('Watson IoT Experimental/List', module)
       );
     };
     return <MultiSelectList />;
-  });
+  })
+  .add('with tags', () => (
+    <div style={{ width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: {
+              value: key,
+              tags: [
+                <Tag type="blue" title="descriptor" key="tag1">
+                  default
+                </Tag>,
+              ],
+            },
+          })
+        )}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ));

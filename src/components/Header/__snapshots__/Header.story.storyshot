@@ -40,6 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
@@ -405,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
       >
         <svg
           aria-hidden={true}
+          fill="currentColor"
           focusable="false"
           height={20}
           preserveAspectRatio="xMidYMid meet"
@@ -526,6 +528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
@@ -721,6 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"

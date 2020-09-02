@@ -44,6 +44,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
@@ -114,7 +115,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           >
             <button
               aria-expanded={false}
-              aria-haspopup="true"
               className="bx--side-nav__submenu"
               onClick={[Function]}
               type="button"
@@ -124,6 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -146,6 +147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
@@ -164,13 +166,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             >
               <li
                 className="bx--side-nav__menu-item"
-                role="none"
               >
                 <button
                   className="bx--side-nav__link"
                   label="Yet another link"
                   onClick={[Function]}
-                  role="menuitem"
                   title="Yet another link"
                 >
                   <span
@@ -197,6 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -225,7 +226,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           >
             <button
               aria-expanded={false}
-              aria-haspopup="true"
               className="bx--side-nav__submenu"
               onClick={[Function]}
               type="button"
@@ -235,6 +235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -260,6 +261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
@@ -278,13 +280,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             >
               <li
                 className="bx--side-nav__menu-item"
-                role="none"
               >
                 <button
                   className="bx--side-nav__link"
                   label="Link 1"
                   onClick={[Function]}
-                  role="menuitem"
                   title="Link 1"
                 >
                   <span
@@ -296,13 +296,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               </li>
               <li
                 className="bx--side-nav__menu-item"
-                role="none"
               >
                 <a
                   className="bx--side-nav__link"
                   label="Link 2"
                   onClick={[Function]}
-                  role="menuitem"
                   title="Link 2"
                 >
                   <span
@@ -320,7 +318,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           >
             <button
               aria-expanded={false}
-              aria-haspopup="true"
               className="bx--side-nav__submenu"
               onClick={[Function]}
               type="button"
@@ -330,6 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -352,6 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
@@ -370,13 +369,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             >
               <li
                 className="bx--side-nav__menu-item"
-                role="none"
               >
                 <button
                   className="bx--side-nav__link bx--side-nav__link--current"
                   label="Yet another link"
                   onClick={[Function]}
-                  role="menuitem"
                   title="Yet another link"
                 >
                   <span

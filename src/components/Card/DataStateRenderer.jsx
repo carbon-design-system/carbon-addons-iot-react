@@ -36,6 +36,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
         triggerText={element}
         triggerId={triggerId}
         tooltipId={`${triggerId}-tooltip`}
+        id={`${triggerId}-tooltip`} // https://github.com/carbon-design-system/carbon/pull/6744
         direction={tooltipDirection || 'bottom'}
       >
         <TooltipContent tooltipContent={dataState} />

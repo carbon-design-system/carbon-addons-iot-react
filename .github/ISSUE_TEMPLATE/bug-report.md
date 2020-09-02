@@ -6,6 +6,11 @@ labels: 'type: bug :bug:, status: needs triage :mag:'
 assignees: ''
 ---
 
+### What package is this for?
+
+- [ ] React
+- [ ] Angular
+
 ### Describe the bug
 
 A clear and concise description of what the bug is.

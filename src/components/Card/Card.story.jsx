@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -69,7 +69,6 @@ storiesOf('Watson IoT/Card', module)
       </div>
     );
   })
-
   .add('basic with render prop', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
@@ -130,6 +129,37 @@ storiesOf('Watson IoT/Card', module)
           availableActions={{
             range: true,
           }}
+        />
+      </div>
+    );
+  })
+  .add('with custom range selector', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-with-loading"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          onCardAction={action('onCardAction')}
+          availableActions={{
+            range: true,
+          }}
+          timeRangeOptions={object('timeRangeOptions', {
+            last8Hours: 'Last 8 Hours',
+            last4Hours: 'Last 4 Hours',
+            last2Hours: 'Last 2 Hours',
+            lastHour: 'Last Hour',
+            this8Hours: 'This 8 Hours',
+            this4Hours: 'This 4 Hours',
+            this2Hours: 'This 2 Hours',
+            thisHour: 'This Hour',
+          })}
         />
       </div>
     );

@@ -61,10 +61,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -102,6 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -218,10 +221,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -259,6 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -548,6 +554,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               className="bx--batch-actions iot--table-batch-actions"
             >
               <div
+                className="bx--batch-summary"
+              >
+                <p
+                  className="bx--batch-summary__para"
+                >
+                  <span>
+                    0 item selected
+                  </span>
+                </p>
+              </div>
+              <div
                 className="bx--action-list"
               >
                 <button
@@ -559,17 +576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 >
                   Cancel
                 </button>
-              </div>
-              <div
-                className="bx--batch-summary"
-              >
-                <p
-                  className="bx--batch-summary__para"
-                >
-                  <span>
-                    0 item selected
-                  </span>
-                </p>
               </div>
             </div>
             <label
@@ -597,10 +603,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     open={false}
                     tabIndex={0}
                     title="Select time range"
+                    type="button"
                   >
                     <svg
                       aria-label="Select time range"
                       className="bx--overflow-menu__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       onClick={[Function]}
@@ -638,6 +646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     aria-hidden="true"
                     aria-label="Expand to fullscreen"
                     className="bx--btn__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -660,111 +669,115 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           <div
             className="addons-iot-table-container"
           >
-            <table
-              className="bx--data-table bx--data-table--no-border"
-              title={null}
+            <div
+              className="bx--data-table-content"
             >
-              <thead
-                onMouseMove={null}
-                onMouseUp={null}
+              <table
+                className="bx--data-table bx--data-table--no-border"
+                title={null}
               >
-                <tr>
-                  <th
-                    align="start"
-                    className="table-header-label-start iot--table-head--table-header"
-                    data-column="value1"
-                    id="column-value1"
-                    scope="col"
-                    style={
-                      Object {
-                        "width": undefined,
-                      }
-                    }
-                  >
-                    <span
-                      className="bx--table-header-label"
-                    >
-                      <span
-                        className=""
-                        title="String"
-                      >
-                        String
-                      </span>
-                    </span>
-                  </th>
-                  <th
-                    align="start"
-                    className="table-header-label-start iot--table-head--table-header"
-                    data-column="timestamp"
-                    id="column-timestamp"
-                    scope="col"
-                    style={
-                      Object {
-                        "width": undefined,
-                      }
-                    }
-                  >
-                    <span
-                      className="bx--table-header-label"
-                    >
-                      <span
-                        className=""
-                        title="Date"
-                      >
-                        Date
-                      </span>
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                aria-live="polite"
-              >
-                <tr
-                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                  onClick={[Function]}
+                <thead
+                  onMouseMove={null}
+                  onMouseUp={null}
                 >
-                  <td
-                    align="start"
-                    className="data-table-start"
-                    data-column="value1"
-                    data-offset={0}
-                    id="cell-my table-rowid-0-value1"
-                    offset={0}
-                  >
-                    <span
-                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                  <tr>
+                    <th
+                      align="start"
+                      className="table-header-label-start iot--table-head--table-header"
+                      data-column="value1"
+                      id="column-value1"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
-                        className=""
-                        title="my value"
+                        className="bx--table-header-label"
                       >
-                        my value
+                        <span
+                          className=""
+                          title="String"
+                        >
+                          String
+                        </span>
                       </span>
-                    </span>
-                  </td>
-                  <td
-                    align="start"
-                    className="data-table-start"
-                    data-column="timestamp"
-                    data-offset={0}
-                    id="cell-my table-rowid-0-timestamp"
-                    offset={0}
-                  >
-                    <span
-                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                    </th>
+                    <th
+                      align="start"
+                      className="table-header-label-start iot--table-head--table-header"
+                      data-column="timestamp"
+                      id="column-timestamp"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
                     >
                       <span
-                        className=""
-                        title={12341231231}
+                        className="bx--table-header-label"
                       >
-                        12341231231
+                        <span
+                          className=""
+                          title="Date"
+                        >
+                          Date
+                        </span>
                       </span>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  aria-live="polite"
+                >
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start"
+                      data-column="value1"
+                      data-offset={0}
+                      id="cell-my table-rowid-0-value1"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                      >
+                        <span
+                          className=""
+                          title="my value"
+                        >
+                          my value
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start"
+                      data-column="timestamp"
+                      data-offset={0}
+                      id="cell-my table-rowid-0-timestamp"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                      >
+                        <span
+                          className=""
+                          title={12341231231}
+                        >
+                          12341231231
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -854,10 +867,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               open={false}
               tabIndex={0}
               title="Open and close list of options"
+              type="button"
             >
               <svg
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 onClick={[Function]}
@@ -986,6 +1001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1162,10 +1178,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1266,10 +1284,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1370,10 +1390,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1474,10 +1496,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1578,10 +1602,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1682,10 +1708,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1786,10 +1814,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1836,6 +1866,137 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             No data is available for this time range.
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with custom range selector 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard-with-loading"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Card Title"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar"
+          >
+            <div
+              className="iot--card--toolbar-date-range-wrapper"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Select time range"
+                type="button"
+              >
+                <svg
+                  aria-label="Select time range"
+                  className="bx--overflow-menu__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                  />
+                  <path
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                  />
+                  <title>
+                    Select time range
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
+        />
       </div>
     </div>
   </div>
@@ -1928,6 +2089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-hidden={true}
                   description={null}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -1963,10 +2125,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -2004,6 +2168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -2120,10 +2285,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -2378,10 +2545,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
