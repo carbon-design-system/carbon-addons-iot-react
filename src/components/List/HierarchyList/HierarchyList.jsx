@@ -252,11 +252,7 @@ const HierarchyList = ({
     if (editingStyle) {
       setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
     } else if (selectedIds.includes(id)) {
-      if (hasMultiSelect) {
-        setSelectedIds(selectedIds.filter(item => item !== id));
-      } else {
-        setSelectedIds([]);
-      }
+      setSelectedIds(selectedIds.filter(item => item !== id));
     } else {
       if (hasMultiSelect) {
         setSelectedIds([...selectedIds, id]);

@@ -137,9 +137,7 @@ export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
         newSelection.push(id);
 
         newSelection = [...newSelection, ...getAllChildIds(editItem)];
-      }
-
-      if (editItem.children) {
+      } else if (editItem.children) {
         newSelection = [
           ...newSelection,
           ...handleEditModeSelect(editItem.children, currentSelection, id, parentId),
