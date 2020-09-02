@@ -59,6 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -181,6 +182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -305,10 +307,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -346,6 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -471,6 +476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -595,10 +601,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -636,6 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -758,6 +767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -880,6 +890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1004,10 +1015,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1045,6 +1058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1169,10 +1183,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1210,6 +1226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1332,6 +1349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1551,10 +1569,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   open={false}
                   tabIndex={0}
                   title="Select time range"
+                  type="button"
                 >
                   <svg
                     aria-label="Select time range"
                     className="bx--overflow-menu__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     onClick={[Function]}
@@ -1592,6 +1612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   aria-hidden="true"
                   aria-label="Close"
                   className="bx--btn__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -1632,6 +1653,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                     className="bx--batch-actions iot--table-batch-actions"
                   >
                     <div
+                      className="bx--batch-summary"
+                    >
+                      <p
+                        className="bx--batch-summary__para"
+                      >
+                        <span>
+                          0 item selected
+                        </span>
+                      </p>
+                    </div>
+                    <div
                       className="bx--action-list"
                     >
                       <button
@@ -1644,17 +1676,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         Cancel
                       </button>
                     </div>
-                    <div
-                      className="bx--batch-summary"
-                    >
-                      <p
-                        className="bx--batch-summary__para"
-                      >
-                        <span>
-                          0 item selected
-                        </span>
-                      </p>
-                    </div>
                   </div>
                   <div
                     className="bx--toolbar-content iot--table-toolbar-content"
@@ -1664,6 +1685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
+                      onKeyDown={[Function]}
                       tabIndex="0"
                     >
                       <div
@@ -1674,6 +1696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <svg
                           aria-hidden={true}
                           className="bx--search-magnifier"
+                          fill="currentColor"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -1712,6 +1735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <svg
                             aria-hidden={true}
+                            fill="currentColor"
                             focusable="false"
                             height={16}
                             preserveAspectRatio="xMidYMid meet"
@@ -1739,6 +1763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         aria-hidden="true"
                         aria-label="Download table content"
                         className="bx--btn__icon"
+                        fill="currentColor"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -1768,6 +1793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         aria-hidden="true"
                         aria-label="Filters"
                         className="bx--btn__icon"
+                        fill="currentColor"
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
@@ -1786,634 +1812,647 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 <div
                   className="addons-iot-table-container"
                 >
-                  <table
-                    className="bx--data-table bx--data-table--no-border"
-                    title={null}
+                  <div
+                    className="bx--data-table-content"
                   >
-                    <thead
-                      onMouseMove={null}
-                      onMouseUp={null}
+                    <table
+                      className="bx--data-table bx--data-table--no-border"
+                      title={null}
                     >
-                      <tr>
-                        <th
-                          aria-sort="descending"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                          scope="col"
-                          style={
-                            Object {
-                              "width": undefined,
+                      <thead
+                        onMouseMove={null}
+                        onMouseUp={null}
+                      >
+                        <tr>
+                          <th
+                            aria-sort="descending"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
                             }
-                          }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                              data-column="timestamp"
+                              id="column-timestamp"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "--table-header-width": "",
+                                }
+                              }
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="Timestamp"
+                                >
+                                  Timestamp
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Unsort rows by this header"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Unsort rows by this header"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="Amsterdam"
+                              id="column-Amsterdam"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "--table-header-width": "",
+                                }
+                              }
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="Amsterdam"
+                                >
+                                  Amsterdam
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="New York"
+                              id="column-New York"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "--table-header-width": "",
+                                }
+                              }
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="New york"
+                                >
+                                  New york
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="Bangkok"
+                              id="column-Bangkok"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "--table-header-width": "",
+                                }
+                              }
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="Bangkok"
+                                >
+                                  Bangkok
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="San Francisco"
+                              id="column-San Francisco"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "--table-header-width": "",
+                                }
+                              }
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="San francisco"
+                                >
+                                  San francisco
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={20}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={20}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        aria-live="polite"
+                      >
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
                         >
-                          <button
+                          <td
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                            className="data-table-start"
                             data-column="timestamp"
-                            id="column-timestamp"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-timestamp"
+                            offset={0}
                           >
                             <span
-                              className="bx--table-header-label"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                             >
                               <span
                                 className=""
-                                title="Timestamp"
+                                title="10/28/2018 07:34"
                               >
-                                Timestamp
+                                10/28/2018 07:34
                               </span>
                             </span>
-                            <svg
-                              aria-label="Unsort rows by this header"
-                              className="bx--table-sort__icon"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                              />
-                            </svg>
-                            <svg
-                              aria-label="Unsort rows by this header"
-                              className="bx--table-sort__icon-unsorted"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                              />
-                            </svg>
-                          </button>
-                        </th>
-                        <th
-                          aria-sort="none"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                          scope="col"
-                          style={
-                            Object {
-                              "width": undefined,
-                            }
-                          }
-                        >
-                          <button
+                          </td>
+                          <td
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            className="data-table-start"
                             data-column="Amsterdam"
-                            id="column-Amsterdam"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Amsterdam"
+                            offset={0}
                           >
                             <span
-                              className="bx--table-header-label"
-                            >
-                              <span
-                                className=""
-                                title="Amsterdam"
-                              >
-                                Amsterdam
-                              </span>
-                            </span>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                              />
-                            </svg>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon-unsorted"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                              />
-                            </svg>
-                          </button>
-                        </th>
-                        <th
-                          aria-sort="none"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                          scope="col"
-                          style={
-                            Object {
-                              "width": undefined,
-                            }
-                          }
-                        >
-                          <button
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            className="data-table-start"
                             data-column="New York"
-                            id="column-New York"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-New York"
+                            offset={0}
                           >
                             <span
-                              className="bx--table-header-label"
-                            >
-                              <span
-                                className=""
-                                title="New york"
-                              >
-                                New york
-                              </span>
-                            </span>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                              />
-                            </svg>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon-unsorted"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                              />
-                            </svg>
-                          </button>
-                        </th>
-                        <th
-                          aria-sort="none"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                          scope="col"
-                          style={
-                            Object {
-                              "width": undefined,
-                            }
-                          }
-                        >
-                          <button
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            className="data-table-start"
                             data-column="Bangkok"
-                            id="column-Bangkok"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-Bangkok"
+                            offset={0}
                           >
                             <span
-                              className="bx--table-header-label"
-                            >
-                              <span
-                                className=""
-                                title="Bangkok"
-                              >
-                                Bangkok
-                              </span>
-                            </span>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                              />
-                            </svg>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon-unsorted"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                              />
-                            </svg>
-                          </button>
-                        </th>
-                        <th
-                          aria-sort="none"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                          scope="col"
-                          style={
-                            Object {
-                              "width": undefined,
-                            }
-                          }
-                        >
-                          <button
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            className="data-table-start"
                             data-column="San Francisco"
-                            id="column-San Francisco"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "--table-header-width": "",
-                              }
-                            }
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-0-San Francisco"
+                            offset={0}
                           >
                             <span
-                              className="bx--table-header-label"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                             >
                               <span
                                 className=""
-                                title="San francisco"
+                                title="10/28/2018 07:34"
                               >
-                                San francisco
+                                10/28/2018 07:34
                               </span>
                             </span>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                              />
-                            </svg>
-                            <svg
-                              aria-label="Sort rows by this header in ascending order"
-                              className="bx--table-sort__icon-unsorted"
-                              focusable="false"
-                              height={20}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={20}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                              />
-                            </svg>
-                          </button>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      aria-live="polite"
-                    >
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-0-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-Amsterdam"
+                            offset={0}
                           >
                             <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Amsterdam"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-0-Amsterdam"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="New York"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-0-New York"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Bangkok"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-0-Bangkok"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="San Francisco"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-0-San Francisco"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-1-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-New York"
+                            offset={0}
                           >
                             <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Amsterdam"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-1-Amsterdam"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="New York"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-1-New York"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Bangkok"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-1-Bangkok"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="San Francisco"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-1-San Francisco"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-2-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-Bangkok"
+                            offset={0}
                           >
                             <span
-                              className=""
-                              title="10/28/2018 07:34"
-                            >
-                              10/28/2018 07:34
-                            </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Amsterdam"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-2-Amsterdam"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="New York"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-2-New York"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Bangkok"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-2-Bangkok"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="San Francisco"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-2-San Francisco"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                      </tr>
-                      <tr
-                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                        onClick={[Function]}
-                      >
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="timestamp"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-3-timestamp"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-1-San Francisco"
+                            offset={0}
                           >
                             <span
-                              className=""
-                              title="10/28/2018 07:34"
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
+                        >
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                             >
-                              10/28/2018 07:34
+                              <span
+                                className=""
+                                title="10/28/2018 07:34"
+                              >
+                                10/28/2018 07:34
+                              </span>
                             </span>
-                          </span>
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Amsterdam"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-3-Amsterdam"
-                          offset={0}
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-2-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                        </tr>
+                        <tr
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                          onClick={[Function]}
                         >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="New York"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-3-New York"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="Bangkok"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-3-Bangkok"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                        <td
-                          align="start"
-                          className="data-table-start"
-                          data-column="San Francisco"
-                          data-offset={0}
-                          id="cell-BarChartCard-table-dataindex-3-San Francisco"
-                          offset={0}
-                        >
-                          <span
-                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="timestamp"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-3-timestamp"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            >
+                              <span
+                                className=""
+                                title="10/28/2018 07:34"
+                              >
+                                10/28/2018 07:34
+                              </span>
+                            </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Amsterdam"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-3-Amsterdam"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="New York"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-3-New York"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="Bangkok"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-3-Bangkok"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="San Francisco"
+                            data-offset={0}
+                            id="cell-BarChartCard-table-dataindex-3-San Francisco"
+                            offset={0}
+                          >
+                            <span
+                              className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <div
                   className="bx--pagination iot--pagination"
-                  disabled={false}
                   style={
                     Object {
                       "--pagination-text-display": "flex",
@@ -2477,6 +2516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             <svg
                               aria-hidden={true}
                               className="bx--select__arrow"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2493,7 +2533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       </div>
                     </div>
                     <span
-                      className="bx--pagination__text"
+                      className="bx--pagination__text bx--pagination__items-count"
                     >
                       1–4 of 4 items
                     </span>
@@ -2538,6 +2578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             <svg
                               aria-hidden={true}
                               className="bx--select__arrow"
+                              fill="currentColor"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
@@ -2558,48 +2599,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                     >
                       1 of 1 pages
                     </span>
-                    <button
-                      aria-label="Previous page"
-                      className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
-                      disabled={true}
-                      onClick={[Function]}
-                      type="button"
+                    <div
+                      className="bx--pagination__control-buttons"
                     >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <button
+                        className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                        disabled={true}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <path
-                          d="M20 24L10 16 20 8z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      aria-label="Next page"
-                      className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index"
-                      disabled={true}
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Previous page
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Previous page"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 24L10 16 20 8z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                        disabled={true}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <path
-                          d="M12 8L22 16 12 24z"
-                        />
-                      </svg>
-                    </button>
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Next page
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Next page"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 8L22 16 12 24z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2696,10 +2759,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 open={false}
                 tabIndex={0}
                 title="Select time range"
+                type="button"
               >
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -2737,6 +2802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"

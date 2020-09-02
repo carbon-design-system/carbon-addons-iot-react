@@ -73,7 +73,6 @@ const CardRangePicker = ({
               [`${iotPrefix}--card--overflow-menuitem-active`]:
                 timeRange === '' || isNil(timeRange),
             })}
-            primaryFocus
           />
           {Object.keys(timeRangeOptions)
             .filter(i => i.includes('last'))

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { mount } from 'enzyme';
 import { Dropdown } from 'carbon-components-react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { settings } from '../../../constants/Settings';
@@ -39,24 +39,32 @@ describe('TableViewDropdown', () => {
     const wrapper = mount(
       <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[2].id} />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const viewAllItem = wrapper.find(itemSelector).first();
     expect(viewAllItem.text()).toEqual('View All');
   });
 
   it('adds a "manage views" item at the end', () => {
     const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const manageViewsItem = wrapper.find(itemSelector).last();
     expect(manageViewsItem.text()).toEqual('Manage views');
   });
 
   it('adds a "save new view" item before the "manage views" item', () => {
     const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const saveViewItem = wrapper.find(itemSelector).at(4);
     expect(saveViewItem.text()).toEqual('Save as new view');
   });
 
   it('adds a "save view" item before the "manage views" item', () => {
     const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const saveViewItem = wrapper.find(itemSelector).at(5);
     expect(saveViewItem.text()).toEqual('Save view');
   });
@@ -65,12 +73,16 @@ describe('TableViewDropdown', () => {
     const wrapperWithoutInitialDefault = mount(
       <TableViewDropdown views={myViews} actions={actions} />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapperWithoutInitialDefault.find('button').simulate('click');
     const viewAllItem = wrapperWithoutInitialDefault.find(iotItemSelector);
     expect(viewAllItem.props().title).toEqual('View All');
 
     const wrapperWithInitiallySelected = mount(
       <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapperWithInitiallySelected.find('button').simulate('click');
     const view1Item = wrapperWithInitiallySelected.find(iotItemSelector);
     expect(view1Item.props().title).toEqual('View 1');
   });
@@ -79,6 +91,8 @@ describe('TableViewDropdown', () => {
     const wrapper = mount(
       <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const view1Item = wrapper.find(iotItemSelector);
     expect(view1Item.props().title).toEqual('View 1');
 
@@ -91,6 +105,8 @@ describe('TableViewDropdown', () => {
 
   it('adds a "edited" postfix to selected item & title when activeViewEdited is true', () => {
     const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const selectedItem = wrapper.find(iotItemSelector);
     expect(selectedItem.props().title).toEqual('View All - Edited');
 
@@ -127,20 +143,44 @@ describe('TableViewDropdown', () => {
     expect(actions.onManageViews).not.toBeCalled();
     expect(onChangeView).not.toBeCalled();
 
-    const manageViewsItem = wrapper.find(itemSelector).last();
-    manageViewsItem.simulate('click');
+    const dropdown = wrapper.find('button');
 
-    const view1 = wrapper.find(itemSelector).at(1);
-    view1.simulate('click');
-    const view2 = wrapper.find(itemSelector).at(2);
-    view2.simulate('click');
-    const view3 = wrapper.find(itemSelector).at(3);
-    view3.simulate('click');
-    const defaultViewsItem = wrapper.find(itemSelector).first();
-    defaultViewsItem.simulate('click');
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .last()
+      .simulate('click');
 
-    const SaveNewViewsItem = wrapper.find(itemSelector).at(4);
-    SaveNewViewsItem.simulate('click');
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .at(1)
+      .simulate('click');
+
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .at(2)
+      .simulate('click');
+
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .at(3)
+      .simulate('click');
+
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .first()
+      .simulate('click');
+
+    dropdown.simulate('click');
+    wrapper
+      .find(itemSelector)
+      .at(4)
+      .simulate('click');
 
     expect(actions.onSaveAsNewView).toBeCalledTimes(1);
     expect(actions.onManageViews).toBeCalledTimes(1);
@@ -149,6 +189,8 @@ describe('TableViewDropdown', () => {
 
   it('renders an icon for the manage views item', () => {
     const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const manageViewsItem = wrapper.find(itemSelector).last();
     expect(manageViewsItem.exists('svg')).toBeTruthy();
   });
@@ -190,6 +232,8 @@ describe('TableViewDropdown', () => {
         }}
       />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const allItems = wrapper.find(itemSelector);
     expect(allItems.length).toEqual(1);
   });
@@ -206,6 +250,8 @@ describe('TableViewDropdown', () => {
         }}
       />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const firstItem = wrapper.find(itemSelector).first();
     expect(firstItem.text()).toEqual('myItem');
   });
@@ -222,6 +268,8 @@ describe('TableViewDropdown', () => {
         }}
       />
     );
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    wrapper.find('button').simulate('click');
     const firstTableViewDropdownItem = wrapper
       .find(itemSelector)
       .first()
@@ -244,6 +292,9 @@ describe('TableViewDropdown', () => {
     const i18nDefault = TableViewDropdown.defaultProps.i18n;
 
     render(<TableViewDropdown views={myViews} actions={actions} i18n={i18nTest} />);
+
+    // The list of options is not rendered to the DOM until the dropdown button has been clicked
+    fireEvent.click(screen.getByRole('button'));
 
     expect(screen.getAllByText(i18nTest.view, { exact: false })[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.viewAll)[0]).toBeInTheDocument();
