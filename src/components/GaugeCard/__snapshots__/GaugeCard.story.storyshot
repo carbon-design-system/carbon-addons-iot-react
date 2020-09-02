@@ -63,6 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <svg
                   aria-hidden={true}
                   description={null}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -252,6 +253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <svg
                   aria-hidden={true}
                   description={null}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -316,6 +318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <svg
                     aria-hidden={true}
                     className="iot--data-state-default-warning-icon"
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"

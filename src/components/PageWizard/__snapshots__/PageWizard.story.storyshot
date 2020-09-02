@@ -45,6 +45,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -109,6 +110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -163,6 +165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -209,6 +212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -260,6 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -309,6 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -358,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -417,6 +424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -463,6 +471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -689,6 +698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -745,6 +755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -806,6 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -885,19 +897,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             First name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="first-name"
-                              disabled={false}
-                              id="first-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="first-name"
+                                disabled={false}
+                                id="first-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -914,19 +931,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             Last name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="last-name"
-                              disabled={false}
-                              id="last-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="last-name"
+                                disabled={false}
+                                id="last-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1081,6 +1103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -1137,6 +1160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -1198,6 +1222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -1277,19 +1302,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             First name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="first-name"
-                              disabled={false}
-                              id="first-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="first-name"
+                                disabled={false}
+                                id="first-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1306,19 +1336,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             Last name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="last-name"
-                              disabled={false}
-                              id="last-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="last-name"
+                                disabled={false}
+                                id="last-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1481,6 +1516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -1655,6 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -1719,6 +1756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -1773,6 +1811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1819,6 +1858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1870,6 +1910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1919,6 +1960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1968,6 +2010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -2027,6 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -2073,6 +2117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -2299,6 +2344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -2355,6 +2401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -2416,6 +2463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -2495,19 +2543,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             First name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="first-name"
-                              disabled={false}
-                              id="first-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="first-name"
+                                disabled={false}
+                                id="first-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2524,19 +2577,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                             Last name
                           </label>
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--text-input__field-outer-wrapper"
                           >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="last-name"
-                              disabled={false}
-                              id="last-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
+                            <div
+                              className="bx--text-input__field-wrapper"
+                              data-invalid={null}
+                              data-warn={null}
+                            >
+                              <input
+                                className="bx--text-input bx--text__input"
+                                data-testid="last-name"
+                                disabled={false}
+                                id="last-name"
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                type="text"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2644,6 +2702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -2708,6 +2767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -2762,6 +2822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -2808,6 +2869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -2859,6 +2921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -2908,6 +2971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -2957,6 +3021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -3016,6 +3081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -3062,6 +3128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                 >
                   <svg
                     aria-hidden={true}
+                    fill="currentColor"
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
@@ -3288,6 +3355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -3344,6 +3412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -3408,6 +3477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -3462,6 +3532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3508,6 +3579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3559,6 +3631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3608,6 +3681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -3657,6 +3731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -3716,6 +3791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"
@@ -3762,6 +3838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={24}
                         preserveAspectRatio="xMidYMid meet"

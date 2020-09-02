@@ -45,6 +45,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <span
             className="bx--tag__label"
+            title="Hello World"
           >
             Hello World
           </span>
@@ -52,9 +53,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-labelledby="tag-1"
             className="bx--tag__close-icon"
             onClick={[Function]}
+            title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -80,6 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <span
             className="bx--tag__label"
+            title="Hello Space"
           >
             Hello Space
           </span>
@@ -87,9 +92,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-labelledby="tag-2"
             className="bx--tag__close-icon"
             onClick={[Function]}
+            title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -115,6 +123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <span
             className="bx--tag__label"
+            title="Hello Sun"
           >
             Hello Sun
           </span>
@@ -122,9 +131,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-labelledby="tag-3"
             className="bx--tag__close-icon"
             onClick={[Function]}
+            title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -150,6 +162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <span
             className="bx--tag__label"
+            title="Hello Daughter"
           >
             Hello Daughter
           </span>
@@ -157,9 +170,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             aria-labelledby="tag-4"
             className="bx--tag__close-icon"
             onClick={[Function]}
+            title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -231,6 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello World"
         >
           Hello World
         </span>
@@ -238,9 +255,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-5"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -266,6 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Space"
         >
           Hello Space
         </span>
@@ -273,9 +294,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-6"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -301,6 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Sun"
         >
           Hello Sun
         </span>
@@ -308,9 +333,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-7"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -336,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Daughter"
         >
           Hello Daughter
         </span>
@@ -343,9 +372,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-8"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -421,6 +453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello World"
         >
           Hello World
         </span>
@@ -428,9 +461,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-9"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -456,6 +492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Space"
         >
           Hello Space
         </span>
@@ -463,9 +500,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-10"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -491,6 +531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Sun"
         >
           Hello Sun
         </span>
@@ -498,9 +539,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-11"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -526,6 +570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <span
           className="bx--tag__label"
+          title="Hello Daughter"
         >
           Hello Daughter
         </span>
@@ -533,9 +578,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           aria-labelledby="tag-12"
           className="bx--tag__close-icon"
           onClick={[Function]}
+          title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"

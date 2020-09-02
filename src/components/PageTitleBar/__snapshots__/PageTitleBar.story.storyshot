@@ -333,6 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -380,6 +381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               </a>
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -639,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     aria-hidden="true"
                     aria-label="Edit page title"
                     className="bx--btn__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
@@ -787,6 +790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -820,6 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     aria-hidden="true"
                     aria-label="Edit page title"
                     className="bx--btn__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
@@ -875,6 +880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 <svg
                   aria-hidden={true}
                   className="bx--btn__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -916,6 +922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               </a>
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1107,6 +1114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -1166,6 +1174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 <svg
                   aria-hidden={true}
                   className="bx--btn__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
@@ -1307,6 +1316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     <svg
                       aria-hidden={true}
                       description={null}
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"

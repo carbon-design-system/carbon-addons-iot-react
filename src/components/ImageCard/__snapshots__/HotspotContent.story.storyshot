@@ -33,6 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         <svg
           aria-hidden={true}
           description={null}
+          fill="currentColor"
           focusable="false"
           height={16}
           preserveAspectRatio="xMidYMid meet"
@@ -50,125 +51,130 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         </svg>
       </div>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
-      className="bx--tooltip bx--tooltip--shown"
-      data-floating-menu-direction="right"
-      id="tooltip"
       onBlur={[Function]}
-      onContextMenu={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      open={true}
-      role="tooltip"
-      style={
-        Object {
-          "left": "0px",
-          "margin": 0,
-          "opacity": 1,
-          "position": "absolute",
-          "right": "auto",
-          "top": "3px",
-        }
-      }
     >
       <span
-        className="bx--tooltip__caret"
-      />
-      <div
-        aria-labelledby="tooltipTrigger"
-        className="bx--tooltip__content"
-        role="dialog"
-        tabIndex="-1"
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
       >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--tooltip bx--tooltip--shown"
+        data-floating-menu-direction="right"
+        id="tooltip"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        open={true}
+        role="tooltip"
+        style={
+          Object {
+            "left": "0px",
+            "margin": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": "auto",
+            "top": "3px",
+          }
+        }
+        tooltipId="tooltip"
+      >
+        <span
+          className="bx--tooltip__caret"
+        />
         <div
-          className="iot--hotspot-content"
+          aria-labelledby="tooltipTrigger"
+          className="bx--tooltip__content"
+          role="dialog"
+          tabIndex="-1"
         >
-          <h4
-            title="Hotspot title"
-          >
-            Hotspot title
-          </h4>
-          <p
-            className="iot--hotspot-content-description"
-          >
-            description
-          </p>
           <div
-            className="iot--hotspot-content-attribute"
+            className="iot--hotspot-content"
           >
-            <div
-              className="iot--hotspot-content-label-section"
+            <h4
+              title="Hotspot title"
             >
-              <span
-                className="iot--hotspot-content-label"
+              Hotspot title
+            </h4>
+            <p
+              className="iot--hotspot-content-description"
+            >
+              description
+            </p>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
               >
-                Temperature
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
-            >
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0rem",
+                <span
+                  className="iot--hotspot-content-label"
+                >
+                  Temperature
+                  :
+                </span>
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
+              >
+                <span
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0rem",
+                    }
                   }
-                }
-              >
-                35.4
-              </span>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-content-attribute"
-          >
-            <div
-              className="iot--hotspot-content-label-section"
-            >
-              <span
-                className="iot--hotspot-content-label"
-              >
-                Humidity
-                :
-              </span>
+                >
+                  35.4
+                </span>
+              </div>
             </div>
             <div
-              className="iot--hotspot-content-threshold-section"
+              className="iot--hotspot-content-attribute"
             >
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0rem",
+              <div
+                className="iot--hotspot-content-label-section"
+              >
+                <span
+                  className="iot--hotspot-content-label"
+                >
+                  Humidity
+                  :
+                </span>
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
+              >
+                <span
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0rem",
+                    }
                   }
-                }
-              >
-                99.0
-              </span>
+                >
+                  99.0
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
   <button
     className="info__show-button"
@@ -229,6 +235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         <svg
           aria-hidden={true}
           description={null}
+          fill="currentColor"
           focusable="false"
           height={16}
           preserveAspectRatio="xMidYMid meet"
@@ -246,135 +253,140 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         </svg>
       </div>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
-      className="bx--tooltip bx--tooltip--shown"
-      data-floating-menu-direction="right"
-      id="tooltip"
       onBlur={[Function]}
-      onContextMenu={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      open={true}
-      role="tooltip"
-      style={
-        Object {
-          "left": "0px",
-          "margin": 0,
-          "opacity": 1,
-          "position": "absolute",
-          "right": "auto",
-          "top": "3px",
-        }
-      }
     >
       <span
-        className="bx--tooltip__caret"
-      />
-      <div
-        aria-labelledby="tooltipTrigger"
-        className="bx--tooltip__content"
-        role="dialog"
-        tabIndex="-1"
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
       >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--tooltip bx--tooltip--shown"
+        data-floating-menu-direction="right"
+        id="tooltip"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        open={true}
+        role="tooltip"
+        style={
+          Object {
+            "left": "0px",
+            "margin": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": "auto",
+            "top": "3px",
+          }
+        }
+        tooltipId="tooltip"
+      >
+        <span
+          className="bx--tooltip__caret"
+        />
         <div
-          className="iot--hotspot-content"
+          aria-labelledby="tooltipTrigger"
+          className="bx--tooltip__content"
+          role="dialog"
+          tabIndex="-1"
         >
-          <h4
-            title="Hotspot title"
-          >
-            Hotspot title
-          </h4>
-          <p
-            className="iot--hotspot-content-description"
-          >
-            description
-          </p>
           <div
-            className="iot--hotspot-content-attribute"
+            className="iot--hotspot-content"
           >
-            <div
-              className="iot--hotspot-content-label-section"
+            <h4
+              title="Hotspot title"
             >
-              <span
-                className="iot--hotspot-content-label"
-              >
-                Temperature
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
+              Hotspot title
+            </h4>
+            <p
+              className="iot--hotspot-content-description"
             >
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0rem",
-                  }
-                }
+              description
+            </p>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
               >
-                35.350
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-label"
                 >
-                  C
+                  Temperature
+                  :
                 </span>
-              </span>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-content-attribute"
-          >
-            <div
-              className="iot--hotspot-content-label-section"
-            >
-              <span
-                className="iot--hotspot-content-label"
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
               >
-                Humidity
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
-            >
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0rem",
-                  }
-                }
-              >
-                99
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0rem",
+                    }
+                  }
                 >
-                  %
+                  35.350
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    C
+                  </span>
                 </span>
-              </span>
+              </div>
+            </div>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
+              >
+                <span
+                  className="iot--hotspot-content-label"
+                >
+                  Humidity
+                  :
+                </span>
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
+              >
+                <span
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0rem",
+                    }
+                  }
+                >
+                  99
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    %
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
   <button
     className="info__show-button"
@@ -435,6 +447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         <svg
           aria-hidden={true}
           description={null}
+          fill="currentColor"
           focusable="false"
           height={16}
           preserveAspectRatio="xMidYMid meet"
@@ -452,179 +465,184 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         </svg>
       </div>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
-      className="bx--tooltip bx--tooltip--shown"
-      data-floating-menu-direction="right"
-      id="tooltip"
       onBlur={[Function]}
-      onContextMenu={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      open={true}
-      role="tooltip"
-      style={
-        Object {
-          "left": "0px",
-          "margin": 0,
-          "opacity": 1,
-          "position": "absolute",
-          "right": "auto",
-          "top": "3px",
-        }
-      }
     >
       <span
-        className="bx--tooltip__caret"
-      />
-      <div
-        aria-labelledby="tooltipTrigger"
-        className="bx--tooltip__content"
-        role="dialog"
-        tabIndex="-1"
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
       >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--tooltip bx--tooltip--shown"
+        data-floating-menu-direction="right"
+        id="tooltip"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        open={true}
+        role="tooltip"
+        style={
+          Object {
+            "left": "0px",
+            "margin": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": "auto",
+            "top": "3px",
+          }
+        }
+        tooltipId="tooltip"
+      >
+        <span
+          className="bx--tooltip__caret"
+        />
         <div
-          className="iot--hotspot-content"
+          aria-labelledby="tooltipTrigger"
+          className="bx--tooltip__content"
+          role="dialog"
+          tabIndex="-1"
         >
-          <h4
-            title="Hotspot title"
-          >
-            Hotspot title
-          </h4>
-          <p
-            className="iot--hotspot-content-description"
-          >
-            description
-          </p>
           <div
-            className="iot--hotspot-content-attribute"
+            className="iot--hotspot-content"
           >
-            <div
-              className="iot--hotspot-content-label-section"
+            <h4
+              title="Hotspot title"
             >
-              <span
-                className="iot--hotspot-content-label"
-              >
-                Temperature
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
+              Hotspot title
+            </h4>
+            <p
+              className="iot--hotspot-content-description"
             >
-              <svg
-                fill="#da1e28"
-                focusable="true"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                tabIndex="0"
-                title="temperature > 30,5"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
+              description
+            </p>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
               >
-                <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                />
-                <path
-                  d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                />
-                <title>
-                  temperature &gt; 30,5
-                </title>
-              </svg>
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0.25rem",
-                  }
-                }
-              >
-                35,350
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-label"
                 >
-                  C
+                  Temperature
+                  :
                 </span>
-              </span>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-content-attribute"
-          >
-            <div
-              className="iot--hotspot-content-label-section"
-            >
-              <span
-                className="iot--hotspot-content-label"
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
               >
-                Humidity
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
-            >
-              <svg
-                fill="#da1e28"
-                focusable="true"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                tabIndex="0"
-                title="humidity < 100"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                />
-                <path
-                  d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                />
-                <title>
-                  humidity &lt; 100
-                </title>
-              </svg>
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0.25rem",
-                  }
-                }
-              >
-                99
+                <svg
+                  fill="#da1e28"
+                  focusable="true"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  tabIndex="0"
+                  title="temperature > 30,5"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                  <title>
+                    temperature &gt; 30,5
+                  </title>
+                </svg>
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0.25rem",
+                    }
+                  }
                 >
-                  %
+                  35,350
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    C
+                  </span>
                 </span>
-              </span>
+              </div>
+            </div>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
+              >
+                <span
+                  className="iot--hotspot-content-label"
+                >
+                  Humidity
+                  :
+                </span>
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
+              >
+                <svg
+                  fill="#da1e28"
+                  focusable="true"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  tabIndex="0"
+                  title="humidity < 100"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                  <title>
+                    humidity &lt; 100
+                  </title>
+                </svg>
+                <span
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0.25rem",
+                    }
+                  }
+                >
+                  99
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    %
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
   <button
     className="info__show-button"
@@ -685,6 +703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         <svg
           aria-hidden={true}
           description={null}
+          fill="currentColor"
           focusable="false"
           height={16}
           preserveAspectRatio="xMidYMid meet"
@@ -702,179 +721,184 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
         </svg>
       </div>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
     <div
-      className="bx--tooltip bx--tooltip--shown"
-      data-floating-menu-direction="right"
-      id="tooltip"
       onBlur={[Function]}
-      onContextMenu={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      open={true}
-      role="tooltip"
-      style={
-        Object {
-          "left": "0px",
-          "margin": 0,
-          "opacity": 1,
-          "position": "absolute",
-          "right": "auto",
-          "top": "3px",
-        }
-      }
     >
       <span
-        className="bx--tooltip__caret"
-      />
-      <div
-        aria-labelledby="tooltipTrigger"
-        className="bx--tooltip__content"
-        role="dialog"
-        tabIndex="-1"
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
       >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--tooltip bx--tooltip--shown"
+        data-floating-menu-direction="right"
+        id="tooltip"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        open={true}
+        role="tooltip"
+        style={
+          Object {
+            "left": "0px",
+            "margin": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": "auto",
+            "top": "3px",
+          }
+        }
+        tooltipId="tooltip"
+      >
+        <span
+          className="bx--tooltip__caret"
+        />
         <div
-          className="iot--hotspot-content"
+          aria-labelledby="tooltipTrigger"
+          className="bx--tooltip__content"
+          role="dialog"
+          tabIndex="-1"
         >
-          <h4
-            title="Hotspot title"
-          >
-            Hotspot title
-          </h4>
-          <p
-            className="iot--hotspot-content-description"
-          >
-            description
-          </p>
           <div
-            className="iot--hotspot-content-attribute"
+            className="iot--hotspot-content"
           >
-            <div
-              className="iot--hotspot-content-label-section"
+            <h4
+              title="Hotspot title"
             >
-              <span
-                className="iot--hotspot-content-label"
-              >
-                Temperature
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
+              Hotspot title
+            </h4>
+            <p
+              className="iot--hotspot-content-description"
             >
-              <svg
-                fill="#da1e28"
-                focusable="true"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                tabIndex="0"
-                title="temperature > 30"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
+              description
+            </p>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
               >
-                <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                />
-                <path
-                  d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                />
-                <title>
-                  temperature &gt; 30
-                </title>
-              </svg>
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0.25rem",
-                  }
-                }
-              >
-                35.350
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-label"
                 >
-                  C
+                  Temperature
+                  :
                 </span>
-              </span>
-            </div>
-          </div>
-          <div
-            className="iot--hotspot-content-attribute"
-          >
-            <div
-              className="iot--hotspot-content-label-section"
-            >
-              <span
-                className="iot--hotspot-content-label"
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
               >
-                Humidity
-                :
-              </span>
-            </div>
-            <div
-              className="iot--hotspot-content-threshold-section"
-            >
-              <svg
-                fill="#da1e28"
-                focusable="true"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                tabIndex="0"
-                title="humidity < 100"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                />
-                <path
-                  d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                />
-                <title>
-                  humidity &lt; 100
-                </title>
-              </svg>
-              <span
-                className="iot--hotspot-content-threshold"
-                style={
-                  Object {
-                    "--threshold-color": "inherit ",
-                    "--threshold-padding": "0.25rem",
-                  }
-                }
-              >
-                99
+                <svg
+                  fill="#da1e28"
+                  focusable="true"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  tabIndex="0"
+                  title="temperature > 30"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                  <title>
+                    temperature &gt; 30
+                  </title>
+                </svg>
                 <span
-                  className="iot--hotspot-content-unit"
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0.25rem",
+                    }
+                  }
                 >
-                  %
+                  35.350
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    C
+                  </span>
                 </span>
-              </span>
+              </div>
+            </div>
+            <div
+              className="iot--hotspot-content-attribute"
+            >
+              <div
+                className="iot--hotspot-content-label-section"
+              >
+                <span
+                  className="iot--hotspot-content-label"
+                >
+                  Humidity
+                  :
+                </span>
+              </div>
+              <div
+                className="iot--hotspot-content-threshold-section"
+              >
+                <svg
+                  fill="#da1e28"
+                  focusable="true"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  tabIndex="0"
+                  title="humidity < 100"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  />
+                  <path
+                    d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                  />
+                  <title>
+                    humidity &lt; 100
+                  </title>
+                </svg>
+                <span
+                  className="iot--hotspot-content-threshold"
+                  style={
+                    Object {
+                      "--threshold-color": "inherit ",
+                      "--threshold-padding": "0.25rem",
+                    }
+                  }
+                >
+                  99
+                  <span
+                    className="iot--hotspot-content-unit"
+                  >
+                    %
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
     </div>
-    <span
-      className="bx--visually-hidden"
-      role="link"
-      tabIndex="0"
-    >
-      Focus sentinel
-    </span>
   </div>
   <button
     className="info__show-button"
