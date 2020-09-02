@@ -54,8 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -145,8 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -285,8 +283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -469,8 +466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -560,8 +556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
           >
             <div
               className="chart-holder"
@@ -651,8 +646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jbTSBO"
-            size="LARGE"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
           >
             <div
               className="chart-holder"
@@ -747,8 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             }
           >
             <div
-              className="TimeSeriesCard__LineChartWrapper-q25vbg-0 cUshBn"
-              size="MEDIUM"
+              className="iot--time-series-card--wrapper iot--time-series-card--wrapper__expanded"
             >
               <div
                 className="chart-holder"
@@ -2715,8 +2708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2806,8 +2798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2897,8 +2888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2988,8 +2978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3079,8 +3068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3170,8 +3158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3261,8 +3248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3352,8 +3338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3443,8 +3428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
           >
             <div
               className="chart-holder"
@@ -3534,8 +3518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3625,8 +3608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3716,8 +3698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3807,8 +3788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3898,8 +3878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3989,8 +3968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4080,8 +4058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4171,8 +4148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4262,8 +4238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"

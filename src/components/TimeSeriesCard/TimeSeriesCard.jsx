@@ -1,11 +1,10 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import classNames from 'classnames';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
-import { spacing02, spacing05 } from '@carbon/layout';
-import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -104,40 +103,6 @@ const TimeSeriesCardPropTypes = {
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
 };
-
-const LineChartWrapper = styled.div`
-  padding-left: ${spacing05};
-  padding-right: ${spacing05};
-  padding-top: 0px;
-  padding-bottom: ${spacing05};
-  position: absolute;
-  width: 100%;
-  height: ${props => (props.isExpanded ? '55%' : '100%')};
-
-  &&& {
-    .chart-wrapper g.x.axis g.tick text {
-      transform: rotateY(0);
-      text-anchor: initial !important;
-    }
-    .chart-holder {
-      width: 100%;
-      padding-top: ${spacing02};
-    }
-    .axis-title {
-      font-weight: 500;
-    }
-    .bx--cc--chart-svg {
-      width: 100%;
-      height: 100%;
-      circle.dot.unfilled {
-        opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
-      }
-    }
-    .bx--cc--tooltip {
-      display: ${props => (props.isEditable ? 'none' : '')};
-    }
-  }
-`;
 
 /**
  * Translates our raw data into a language the carbon-charts understand
@@ -486,11 +451,13 @@ const TimeSeriesCard = ({
     >
       {!isChartDataEmpty ? (
         <>
-          <LineChartWrapper
-            size={newSize}
-            isEditable={isEditable}
-            isExpanded={isExpanded}
-            numberOfPoints={valueSort && valueSort.length}
+          <div
+            className={classNames(`${iotPrefix}--time-series-card--wrapper`, {
+              [`${iotPrefix}--time-series-card--wrapper__expanded`]: isExpanded,
+              [`${iotPrefix}--time-series-card--wrapper__lots-of-points`]:
+                valueSort && valueSort.length > 50,
+              [`${iotPrefix}--time-series-card--wrapper__editable`]: isEditable,
+            })}
           >
             <ChartComponent
               ref={el => {
@@ -563,7 +530,7 @@ const TimeSeriesCard = ({
               width="100%"
               height="100%"
             />
-          </LineChartWrapper>
+          </div>
           {isExpanded ? (
             <StatefulTable
               id="TimeSeries-table"

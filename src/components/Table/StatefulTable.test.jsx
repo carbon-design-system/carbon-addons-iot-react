@@ -268,4 +268,28 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
   });
+
+  it('re-renders custom toolbar elements', () => {
+    const tableId = 'tableId';
+    const TestComp = ({ myMessage }) => {
+      return <div>{myMessage}</div>;
+    };
+    const AppWrapper = ({ message }) => {
+      return (
+        <StatefulTable
+          id={tableId}
+          {...merge({}, initialState, {
+            view: { toolbar: { customToolbarContent: <TestComp myMessage={message} /> } },
+          })}
+          actions={mockActions}
+        />
+      );
+    };
+
+    const { rerender } = render(<AppWrapper message="message1" />);
+    expect(screen.queryByText('message1')).toBeVisible();
+
+    rerender(<AppWrapper message="message2" />);
+    expect(screen.queryByText('message2')).toBeVisible();
+  });
 });
