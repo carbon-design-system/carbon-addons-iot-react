@@ -19,7 +19,7 @@ const ListTargetPropTypes = {
   targetPosition: PropTypes.string.isRequired,
   targetSize: PropTypes.oneOf([TargetSize.Third, TargetSize.Half, TargetSize.Full]),
   // eslint-disable-next-line react/no-unused-prop-types
-  targetOverride: PropTypes.string,
+  targetOverride: PropTypes.string, // eslint flags this as unused though it is used in react-dnd's drop effect
 };
 
 const ListTargetDefaultProps = {
