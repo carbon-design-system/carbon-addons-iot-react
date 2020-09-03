@@ -46,9 +46,9 @@ const useSuiteHeaderData = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   const [data, setData] = useState({
-    user: {},
-    workspaces: {},
-    eamConfig: {},
+    username: null,
+    userDisplayName: null,
+    email: null,
     routes: {
       profile: null,
       navigator: null,
@@ -66,7 +66,6 @@ const useSuiteHeaderData = ({
 
   const refreshData = useCallback(
     async () => {
-      console.log(testApiData);
       const fetchData = async path =>
         isTest ? testApiData[path] : fetch(`${baseApiUrl}${path}`).then(res => res.json());
 
@@ -95,7 +94,6 @@ const useSuiteHeaderData = ({
         });
         setIsLoading(false);
       } catch (err) {
-        console.log(err);
         setError(err);
         setIsLoading(false);
       }

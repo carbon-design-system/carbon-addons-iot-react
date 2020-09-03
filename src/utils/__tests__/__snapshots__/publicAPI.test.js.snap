@@ -5931,6 +5931,9 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "className": Object {
+                  "type": "string",
+                },
                 "hasHeaderPanel": Object {
                   "type": "bool",
                 },
@@ -6071,6 +6074,447 @@ Map {
       },
     },
   },
+  "SuiteHeader" => Object {
+    "defaultProps": Object {
+      "appName": null,
+      "className": null,
+      "i18n": Object {
+        "about": "About",
+        "administrationIcon": "Administration",
+        "documentation": "Documentation",
+        "gettingStarted": "Getting started",
+        "help": "Help",
+        "logout": "Logout",
+        "profileLogoutButton": "Log out",
+        "profileLogoutModalBody": [Function],
+        "profileLogoutModalHeading": "Do you wish to log out?",
+        "profileLogoutModalPrimaryButton": "Log out",
+        "profileLogoutModalSecondaryButton": "Cancel",
+        "profileManageButton": "Manage profile",
+        "profileTitle": "Profile",
+        "requestEnhancement": "Request enhancement",
+        "settingsIcon": "Settings",
+        "support": "Support",
+        "switcherLearnMoreLink": "Learn more",
+        "switcherNavigatorLink": "All applications",
+        "switcherRequestAccess": "Contact your administrator to request application access",
+        "userIcon": "User",
+        "whatsNew": "What's new",
+      },
+      "isAdminView": false,
+      "sideNavProps": null,
+    },
+    "propTypes": Object {
+      "appName": Object {
+        "type": "string",
+      },
+      "applications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "about": Object {
+              "type": "string",
+            },
+            "administrationIcon": Object {
+              "type": "string",
+            },
+            "documentation": Object {
+              "type": "string",
+            },
+            "gettingStarted": Object {
+              "type": "string",
+            },
+            "help": Object {
+              "type": "string",
+            },
+            "logout": Object {
+              "type": "string",
+            },
+            "profileLogoutButton": Object {
+              "type": "string",
+            },
+            "profileLogoutModalBody": Object {
+              "type": "func",
+            },
+            "profileLogoutModalHeading": Object {
+              "type": "string",
+            },
+            "profileLogoutModalPrimaryButton": Object {
+              "type": "string",
+            },
+            "profileLogoutModalSecondaryButton": Object {
+              "type": "string",
+            },
+            "profileManageButton": Object {
+              "type": "string",
+            },
+            "profileTitle": Object {
+              "type": "string",
+            },
+            "requestEnhancement": Object {
+              "type": "string",
+            },
+            "settingsIcon": Object {
+              "type": "string",
+            },
+            "support": Object {
+              "type": "string",
+            },
+            "switcherNavigatorLink": Object {
+              "type": "string",
+            },
+            "userIcon": Object {
+              "type": "string",
+            },
+            "whatsNew": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isAdminView": Object {
+        "type": "bool",
+      },
+      "routes": Object {
+        "args": Array [
+          Object {
+            "about": Object {
+              "type": "string",
+            },
+            "admin": Object {
+              "type": "string",
+            },
+            "documentation": Object {
+              "type": "string",
+            },
+            "gettingStarted": Object {
+              "type": "string",
+            },
+            "logout": Object {
+              "type": "string",
+            },
+            "navigator": Object {
+              "type": "string",
+            },
+            "profile": Object {
+              "type": "string",
+            },
+            "requestEnhancement": Object {
+              "type": "string",
+            },
+            "support": Object {
+              "type": "string",
+            },
+            "whatsNew": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "sideNavProps": Object {
+        "args": Array [
+          Object {
+            "defaultExpanded": Object {
+              "type": "bool",
+            },
+            "i18n": Object {
+              "args": Array [
+                Object {
+                  "closeText": Object {
+                    "type": "string",
+                  },
+                  "openText": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "isSideNavExpanded": Object {
+              "type": "bool",
+            },
+            "links": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "childContent": Object {
+                        "args": Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "content": Object {
+                                  "isRequired": true,
+                                  "type": "any",
+                                },
+                                "metaData": Object {
+                                  "type": "object",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "current": Object {
+                        "type": "bool",
+                      },
+                      "icon": Object {
+                        "isRequired": true,
+                        "type": "any",
+                      },
+                      "isEnabled": Object {
+                        "type": "bool",
+                      },
+                      "linkContent": Object {
+                        "type": "string",
+                      },
+                      "metaData": Object {
+                        "type": "object",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "suiteName": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "userDisplayName": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "username": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
+  "SuiteHeaderProfile" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "logoutButton": "Log out",
+        "profileButton": "Manage profile",
+        "profileTitle": "Profile",
+      },
+    },
+    "propTypes": Object {
+      "displayName": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "logoutButton": Object {
+              "type": "string",
+            },
+            "profileButton": Object {
+              "type": "string",
+            },
+            "profileTitle": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onRequestLogout": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "profileLink": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "username": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
+  "SuiteHeaderAppSwitcher" => Object {
+    "defaultProps": Object {
+      "applications": Array [],
+      "i18n": Object {
+        "allApplicationsLink": "All applications",
+        "learnMoreLink": "Learn more",
+        "requestAccess": "Contact your administrator to request application access.",
+      },
+    },
+    "propTypes": Object {
+      "allApplicationsLink": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "applications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "allApplicationsLink": Object {
+              "type": "string",
+            },
+            "learnMoreLink": Object {
+              "type": "string",
+            },
+            "requestAccess": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "noAccessLink": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
+  "SuiteHeaderLogoutModal" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "body": [Function],
+        "heading": "Do you wish to log out?",
+        "primaryButton": "Log out",
+        "secondaryButton": "Cancel",
+      },
+      "isOpen": false,
+    },
+    "propTypes": Object {
+      "displayName": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "body": Object {
+              "type": "func",
+            },
+            "heading": Object {
+              "type": "string",
+            },
+            "primaryButton": Object {
+              "type": "string",
+            },
+            "secondaryButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onLogout": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "suiteName": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
+  "SuiteHeaderI18N" => Object {
+    "en": Object {
+      "about": "About",
+      "administrationIcon": "Administration",
+      "documentation": "Documentation",
+      "gettingStarted": "Getting started",
+      "help": "Help",
+      "logout": "Logout",
+      "profileLogoutButton": "Log out",
+      "profileLogoutModalBody": [Function],
+      "profileLogoutModalHeading": "Do you wish to log out?",
+      "profileLogoutModalPrimaryButton": "Log out",
+      "profileLogoutModalSecondaryButton": "Cancel",
+      "profileManageButton": "Manage profile",
+      "profileTitle": "Profile",
+      "requestEnhancement": "Request enhancement",
+      "settingsIcon": "Settings",
+      "support": "Support",
+      "switcherLearnMoreLink": "Learn more",
+      "switcherNavigatorLink": "All applications",
+      "switcherRequestAccess": "Contact your administrator to request application access",
+      "userIcon": "User",
+      "whatsNew": "What's new",
+    },
+  },
+  "useSuiteHeaderData" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],

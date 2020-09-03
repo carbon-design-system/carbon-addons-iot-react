@@ -6,9 +6,6 @@ import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
 
-import { Button, CodeSnippet } from '../../index';
-
-import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 import SuiteHeader from './SuiteHeader';
 
 const sideNavLinks = [
@@ -94,35 +91,6 @@ const sideNavLinks = [
   },
 ];
 
-const HeaderWithDataHookComponent = () => {
-  const [data, isLoading, error, refreshData] = useSuiteHeaderData({
-    // baseApiUrl: 'http://localhost:3001/internal',
-    domain: 'testdomain',
-    isTest: true,
-  });
-  return (
-    <div>
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName={data.userDisplayName}
-        username={data.username}
-        routes={data.routes}
-        applications={data.applications}
-        sideNavProps={{
-          links: sideNavLinks,
-        }}
-      />
-      <br />
-      <Button loading={isLoading} onClick={refreshData}>
-        Refresh
-      </Button>
-      <CodeSnippet type="multi">{JSON.stringify(data, null, 2)}</CodeSnippet>
-      <CodeSnippet type="multi">{JSON.stringify(error, null, 2)}</CodeSnippet>
-    </div>
-  );
-};
-
 storiesOf('Watson IoT/SuiteHeader', module)
   .add('default', () => (
     <SuiteHeader
@@ -145,12 +113,12 @@ storiesOf('Watson IoT/SuiteHeader', module)
       })}
       applications={object('applications', [
         {
-          appId: 'monitor',
+          id: 'monitor',
           name: 'Monitor',
           href: 'https://www.ibm.com',
         },
         {
-          appId: 'health',
+          id: 'health',
           name: 'Health',
           href: 'https://www.ibm.com',
           isExternal: true,
@@ -178,12 +146,12 @@ storiesOf('Watson IoT/SuiteHeader', module)
       }}
       applications={[
         {
-          appId: 'monitor',
+          id: 'monitor',
           name: 'Monitor',
           href: 'https://www.ibm.com',
         },
         {
-          appId: 'health',
+          id: 'health',
           name: 'Health',
           href: 'https://www.ibm.com',
           isExternal: true,
@@ -193,5 +161,4 @@ storiesOf('Watson IoT/SuiteHeader', module)
         links: sideNavLinks,
       }}
     />
-  ))
-  .add('Header with data hook', () => <HeaderWithDataHookComponent />);
+  ));

@@ -34,12 +34,10 @@ const propTypes = {
 const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogout, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-profile`;
-  const chipText = displayName
-    ? displayName
-        .split(' ')
-        .map(i => i.charAt(0))
-        .join('')
-    : null;
+  const chipText = (displayName || '')
+    .split(' ')
+    .map(i => i.charAt(0))
+    .join('');
   return (
     <div className={baseClassName}>
       <h5>{mergedI18N.profileTitle}</h5>
@@ -56,6 +54,7 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
         <Button
           kind="secondary"
           size="small"
+          data-testid="suite-header-profile--profile"
           onClick={() => {
             window.location.href = profileLink;
           }}
@@ -64,7 +63,11 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
         </Button>
       </div>
       <div className={`${baseClassName}--logout`}>
-        <Button kind="secondary" onClick={() => onRequestLogout()}>
+        <Button
+          kind="secondary"
+          data-testid="suite-header-profile--logout"
+          onClick={() => onRequestLogout()}
+        >
           {mergedI18N.logoutButton}
         </Button>
       </div>

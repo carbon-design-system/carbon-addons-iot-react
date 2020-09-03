@@ -79,7 +79,7 @@ const propTypes = {
   /** Applications to render in AppSwitcher */
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
-  sideNavProps: SideNavPropTypes,
+  sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -103,10 +103,13 @@ const SuiteHeader = ({
   return (
     <>
       <SuiteHeaderLogoutModal
+        suiteName={suiteName}
         displayName={userDisplayName}
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        logoutUrl={routes.logout}
+        onLogout={() => {
+          window.location.href = routes.logout;
+        }}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
@@ -129,7 +132,7 @@ const SuiteHeader = ({
                   <SuiteHeaderAppSwitcher
                     applications={applications}
                     allApplicationsLink={routes.navigator}
-                    learnMoreLink={routes.gettingStarted}
+                    noAccessLink={routes.gettingStarted}
                     i18n={{
                       allApplicationsLink: mergedI18N.switcherNavigatorLink,
                       requestAccess: mergedI18N.switcherRequestAccess,
@@ -235,7 +238,7 @@ const SuiteHeader = ({
                   btnContent: (
                     <Fragment>
                       <UserAvatar20
-                        data-cy="userIcon"
+                        data-testid="user-icon"
                         fill="white"
                         description={mergedI18N.userIcon}
                       />
