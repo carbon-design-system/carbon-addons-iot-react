@@ -325,12 +325,19 @@ describe('table reducer', () => {
 describe('filter, search and sort', () => {
   it('filterData', () => {
     const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const mockDataWithMultiselect = [
+      { values: { number: 10, select: 'option-B', string: 'string', null: null } },
+      { values: { number: 8, select: 'option-A', string: 'string', null: null } },
+      { values: { number: 8, select: 'option-C', string: 'string', null: null } },
+    ];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
+    const multiselectFilter = { columnId: 'select', value: ['option-A', 'option-B'] };
     expect(filterData(mockData, [stringFilter])).toHaveLength(1);
     // case insensitive
     expect(filterData(mockData, [stringFilter])).toHaveLength(1);
     expect(filterData(mockData, [numberFilter])).toHaveLength(1);
+    expect(filterData(mockDataWithMultiselect, [multiselectFilter])).toHaveLength(2);
   });
 
   it('filterData with custom comparison', () => {

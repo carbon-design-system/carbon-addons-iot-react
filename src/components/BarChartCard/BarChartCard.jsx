@@ -62,6 +62,8 @@ const BarChartCard = ({
       unit,
       type = BAR_CHART_TYPES.SIMPLE,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -180,15 +182,20 @@ const BarChartCard = ({
               tooltip: {
                 valueFormatter: tooltipValue =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
-                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
+                customHTML: (...args) =>
+                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
               },
-              ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+              // zoomBar should only be enabled for time-based charts
+              ...(zoomBar?.enabled &&
+              timeDataSourceId &&
+              (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                 ? {
                     zoomBar: {
                       // [zoomBar.axes]: {    TODO: the top axes is the only one support at the moment so default to top
                       top: {
                         enabled: zoomBar.enabled,
                         initialZoomDomain: zoomBar.initialZoomDomain,
+                        type: zoomBar.view || 'slider_view', // default to slider view
                       },
                     },
                   }
@@ -199,6 +206,7 @@ const BarChartCard = ({
           />
           {isExpanded ? (
             <StatefulTable
+              id="BarChartCard-table"
               className={`${iotPrefix}--bar-chart-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
@@ -253,6 +261,8 @@ BarChartCard.defaultProps = {
     layout: BAR_CHART_LAYOUTS.VERTICAL,
   },
   locale: 'en',
+  showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
 export default BarChartCard;

@@ -704,44 +704,102 @@ describe('barChartUtils', () => {
     ]);
   });
 
-  it('handleTooltip returns dataset name, color and value', () => {
+  it('handleTooltip returns correct format if data is not time-based', () => {
     const simpleFormattedData = {
-      group: 'Amsterdam',
-      value: 512,
-    };
-
-    const defaultTooltip = `<p class="value">512</p>`;
-
-    const colors = {
-      scale: {
-        Amsterdam: 'blue',
-      },
-    };
-
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, null, colors)).toEqual(
-      '<div class="datapoint-tooltip"><a style="background-color:blue" class="tooltip-color"></a><p class="value">512</p></div>'
-    );
-  });
-
-  it('handleTooltip returns dataset name, value, color, and date', () => {
-    const simpleFormattedData = {
-      group: 'Amsterdam',
+      group: 'San Francisco',
       value: 512,
       date: new Date(1581438225000),
     };
 
-    const defaultTooltip = `<p class="value">512</p>`;
+    const defaultTooltip = `<ul class='multi-tooltip'><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Cities </p>
+      <p class="value">San Francisco</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Particles </p>
+      <p class="value">512</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      <a style="background-color: #4589ff" class="tooltip-color"></a>
+      <p class="label">Group</p>
+      <p class="value">Particles</p>
+    </div>
+  </li></ul>`;
 
-    const colors = {
-      scale: {
-        Amsterdam: 'blue',
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, undefined)).toEqual(
+      `<ul class='multi-tooltip'><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Cities </p>
+      <p class="value">San Francisco</p>
+    
+  </li><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Particles </p>
+      <p class="value">512</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      <a style="background-color: #4589ff" class="tooltip-color"></a>
+      <p class="label">Group</p>
+      <p class="value">Particles</p>
+    </div>
+  </li></ul>`
+    );
+  });
+
+  it('handleTooltip returns correct format if data is array', () => {
+    const simpleFormattedData = [
+      {
+        group: 'Particles',
+        value: 565,
+        date: new Date(1581438225000),
       },
-    };
+    ];
 
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp', colors)).toEqual(
+    const defaultTooltip = `<ul class='multi-tooltip'><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Dates </p>
+      <p class="value">Feb 12, 2020</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Total </p>
+      <p class="value">565</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      <a style="background-color: #4589ff" class="tooltip-color"></a>
+      <p class="label">Group</p>
+      <p class="value">Particles</p>
+    </div>
+  </li></ul>`;
+
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp')).toEqual(
       `<ul class='multi-tooltip'><li class='datapoint-tooltip'>
-                        <p class='label'>02/11/2020 10:23:45</p>
-                      </li><li><div class="datapoint-tooltip"><a style="background-color:blue" class="tooltip-color"></a><p class="value">512</p></div></li></ul>`
+            <p class='label'>
+              02/11/2020 10:23:45</p>
+          </li><li><ul class='multi-tooltip'><li>
+    <div class="datapoint-tooltip ">
+      
+      <p class="label">Total </p>
+      <p class="value">565</p>
+    </div>
+  </li><li>
+    <div class="datapoint-tooltip ">
+      <a style="background-color: #4589ff" class="tooltip-color"></a>
+      <p class="label">Group</p>
+      <p class="value">Particles</p>
+    </div>
+  </li></ul></li></ul>`
     );
   });
 });

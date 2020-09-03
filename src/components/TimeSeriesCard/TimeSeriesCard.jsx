@@ -1,11 +1,10 @@
 import React, { useRef, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import classNames from 'classnames';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
-import { spacing02, spacing05 } from '@carbon/layout';
-import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -15,7 +14,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -62,10 +61,6 @@ const TimeSeriesCardPropTypes = {
     includeZeroOnYaxis: PropTypes.bool,
     /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
-    /** Show timestamp in browser local time or GMT */
-    showTimeInGMT: PropTypes.bool,
-    /** tooltip format pattern that follows the moment formatting patterns */
-    tooltipDateFormatPattern: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: deprecate(
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -74,17 +69,9 @@ const TimeSeriesCardPropTypes = {
     /** optional units to put in the legend */
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
-    zoomBar: PropTypes.shape({
-      /** Determines which axis to put the zoomBar */
-      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
-      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
-      /** Determines whether the zoomBar is enabled */
-      enabled: PropTypes.bool,
-      /** Optional domain to zoom to by default. Can be a timestamp or date string */
-      initialZoomDomain: PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      ),
-    }),
+    zoomBar: ZoomBarPropTypes,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -109,41 +96,13 @@ const TimeSeriesCardPropTypes = {
    * can be date instance or timestamp
    */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  /** Region for value and text formatting */
+  locale: PropTypes.string,
+  /** Show timestamp in browser local time or GMT */
+  showTimeInGMT: PropTypes.bool,
+  /** tooltip format pattern that follows the moment formatting patterns */
+  tooltipDateFormatPattern: PropTypes.string,
 };
-
-const LineChartWrapper = styled.div`
-  padding-left: ${spacing05};
-  padding-right: ${spacing05};
-  padding-top: 0px;
-  padding-bottom: ${spacing05};
-  position: absolute;
-  width: 100%;
-  height: ${props => (props.isExpanded ? '55%' : '100%')};
-
-  &&& {
-    .chart-wrapper g.x.axis g.tick text {
-      transform: rotateY(0);
-      text-anchor: initial !important;
-    }
-    .chart-holder {
-      width: 100%;
-      padding-top: ${spacing02};
-    }
-    .axis-title {
-      font-weight: 500;
-    }
-    .bx--cc--chart-svg {
-      width: 100%;
-      height: 100%;
-      circle.dot.unfilled {
-        opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
-      }
-    }
-    .bx--cc--tooltip {
-      display: ${props => (props.isEditable ? 'none' : '')};
-    }
-  }
-`;
 
 /**
  * Translates our raw data into a language the carbon-charts understand
@@ -169,7 +128,8 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
-            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
           .forEach(dataItem =>
             data.push({
@@ -197,6 +157,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
+ * @param {string} tooltipDataFormatPattern
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -275,8 +236,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showTimeInGMT,
-  tooltipDateFormatPattern,
   ...others
 }) => {
   const {
@@ -292,6 +251,9 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
+      addSpaceOnEdges,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -489,11 +451,13 @@ const TimeSeriesCard = ({
     >
       {!isChartDataEmpty ? (
         <>
-          <LineChartWrapper
-            size={newSize}
-            isEditable={isEditable}
-            isExpanded={isExpanded}
-            numberOfPoints={valueSort && valueSort.length}
+          <div
+            className={classNames(`${iotPrefix}--time-series-card--wrapper`, {
+              [`${iotPrefix}--time-series-card--wrapper__expanded`]: isExpanded,
+              [`${iotPrefix}--time-series-card--wrapper__lots-of-points`]:
+                valueSort && valueSort.length > 50,
+              [`${iotPrefix}--time-series-card--wrapper__editable`]: isEditable,
+            })}
           >
             <ChartComponent
               ref={el => {
@@ -529,7 +493,7 @@ const TimeSeriesCard = ({
                     scaleType: 'linear',
                   },
                 },
-                legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
+                legend: { position: 'bottom', clickable: !isEditable, enabled: lines.length > 1 },
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: tooltipValue =>
@@ -547,24 +511,29 @@ const TimeSeriesCard = ({
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
-                ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+                ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                   ? {
                       zoomBar: {
                         // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
                         top: {
                           enabled: zoomBar.enabled,
                           initialZoomDomain: zoomBar.initialZoomDomain,
+                          type: zoomBar.view || 'slider_view', // default to slider view
                         },
                       },
                     }
                   : {}),
+                timeScale: {
+                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                },
               }}
               width="100%"
               height="100%"
             />
-          </LineChartWrapper>
+          </div>
           {isExpanded ? (
             <StatefulTable
+              id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}

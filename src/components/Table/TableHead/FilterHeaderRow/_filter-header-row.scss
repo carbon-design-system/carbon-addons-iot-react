@@ -47,6 +47,18 @@
     padding-right: $spacing-03;
   }
 
+  /* Need to force the colors of the selected-items counter in
+     the multiselect box back to their original colors as they 
+     were being overridden by other styles */
+  .#{$iot-prefix}--filterheader-multiselect {
+    .bx--list-box__selection--multi {
+      background-color: $interactive-02;
+    }
+    .bx--list-box__selection--multi > svg {
+      fill: $ui-background;
+    }
+  }
+
   .#{$prefix}--tag--filter {
     background-color: transparent;
 

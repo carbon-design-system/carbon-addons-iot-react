@@ -6,6 +6,11 @@ labels: 'type: enhancement :bulb:, type: discussion :speech_balloon:, type: cont
 assignees: ''
 ---
 
+### What package is this for?
+
+- [ ] React
+- [ ] Angular
+
 ### Summary
 
 Describe in detail the component you would like developed.

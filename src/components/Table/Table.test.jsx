@@ -1,11 +1,12 @@
 import { mount } from 'enzyme';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
 import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
+import { Modal } from '../Modal';
 
 import { mockActions } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
@@ -539,18 +540,28 @@ describe('Table', () => {
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
+    const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
-    const { unmount, rerender } = render(
-      <Table columns={tableColumns} data={[tableData[0]]} options={options} />
+    const { unmount, rerender, baseElement } = render(
+      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
     );
-    await fireEvent.click(screen.getByTestId('Table-row-0-row-actions-cell-overflow'));
-    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
-
+    await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
+    await waitFor(() => {
+      // the menu is rendered via a portal outside of the container/screen
+      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
+        'bx--overflow-menu--flip'
+      );
+    });
     document.documentElement.setAttribute('dir', 'rtl');
 
-    rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
-    await fireEvent.click(screen.getByTestId('Table-row-1-row-actions-cell-overflow'));
-    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
+    rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
+    await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
+    await waitFor(() => {
+      // the menu is rendered via a portal outside of the container/screen
+      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
+        'bx--overflow-menu--flip'
+      );
+    });
 
     // unmounting to be sure to clean up the documentElement
     unmount();
@@ -731,5 +742,76 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+  });
+
+  it('Table in modal select all', () => {
+    const inModal = jest.fn();
+    const notInModal = jest.fn();
+    const table1Text = 'select1';
+    const table2Text = 'select2;';
+    render(
+      <div>
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={[tableData[0]]}
+          options={{ hasRowSelection: 'multi' }}
+          actions={{ table: { onSelectAll: notInModal } }}
+          i18n={{ selectAllAria: table1Text }}
+        />
+        <Modal open>
+          <Table
+            id="tableid2"
+            columns={tableColumns}
+            data={[tableData[0]]}
+            options={{ hasRowSelection: 'multi' }}
+            actions={{ table: { onSelectAll: inModal } }}
+            i18n={{ selectAllAria: table2Text }}
+          />
+        </Modal>
+      </div>
+    );
+
+    expect(inModal.mock.calls.length).toBe(0);
+    expect(notInModal.mock.calls.length).toBe(0);
+    fireEvent.click(screen.getByText(table2Text).parentElement);
+    expect(inModal.mock.calls.length).toBe(1);
+    expect(notInModal.mock.calls.length).toBe(0);
+  });
+
+  it('will fire row actions when Table is in modal', () => {
+    const inModal = jest.fn();
+    const { container } = render(
+      <Modal open>
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={[
+            {
+              ...tableData[0],
+              rowActions: [
+                ...tableData[0].rowActions,
+                {
+                  id: 'drilldown',
+                  renderIcon: ArrowRight16,
+                  iconDescription: 'Drill in 2',
+                  labelText: 'Drill in 2',
+                  isOverflow: false,
+                },
+              ],
+            },
+          ]}
+          options={{ hasRowActions: true }}
+          actions={{ table: { onApplyRowAction: inModal } }}
+        />
+      </Modal>
+    );
+
+    expect(inModal.mock.calls.length).toBe(0);
+    fireEvent.click(screen.getByText('Drill in 2').closest('button'));
+    expect(inModal.mock.calls.length).toBe(1);
+    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(screen.queryByText('Drill in').closest('button'));
+    expect(inModal.mock.calls.length).toBe(2);
   });
 });

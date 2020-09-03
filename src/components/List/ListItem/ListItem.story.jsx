@@ -5,6 +5,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
 
 import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
+import { Tag } from '../../Tag';
 
 import ListItem from './ListItem';
 
@@ -16,6 +17,8 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     const iconComponent =
       iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
     const rowActionSet = select('row action example', ['none', 'single', 'multi'], 'none');
+    const tagsConfig = select('tags example', ['none', 'single', 'multi'], 'none');
+
     const rowActionComponent =
       rowActionSet === 'single'
         ? [
@@ -33,12 +36,29 @@ storiesOf('Watson IoT Experimental/ListItem', module)
         : rowActionSet === 'multi'
         ? [
             <OverflowMenu flipped>
-              <OverflowMenuItem itemText="Edit" primaryFocus />
+              <OverflowMenuItem itemText="Edit" />
               <OverflowMenuItem itemText="Add" />
               <OverflowMenuItem itemText="Delete" hasDivider isDelete />
             </OverflowMenu>,
           ]
         : [];
+    const tagsData =
+      tagsConfig === 'single'
+        ? [
+            <Tag type="blue" title="descriptor" key="tag1">
+              default
+            </Tag>,
+          ]
+        : tagsConfig === 'multi'
+        ? [
+            <Tag type="blue" title="descriptor" key="tag1">
+              default
+            </Tag>,
+            <Tag type="red" disabled key="tag2">
+              disabled tag
+            </Tag>,
+          ]
+        : undefined;
     return (
       <div style={{ width: 400 }}>
         <ListItem
@@ -57,6 +77,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
           isLargeRow={boolean('isLargeRow', false)}
           nestingLevel={select('nestingLevel', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 0)}
           rowActions={rowActionComponent}
+          tags={tagsData}
         />
       </div>
     );
@@ -177,11 +198,27 @@ storiesOf('Watson IoT Experimental/ListItem', module)
         onExpand={action('onExpand')}
         rowActions={[
           <OverflowMenu flipped>
-            <OverflowMenuItem itemText="Edit" primaryFocus />
+            <OverflowMenuItem itemText="Edit" />
             <OverflowMenuItem itemText="Add" />
             <OverflowMenuItem itemText="Delete" />
             <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
           </OverflowMenu>,
+        ]}
+      />
+    </div>
+  ))
+  .add('with Tags', () => (
+    <div style={{ width: 400 }}>
+      <ListItem
+        id="list-item"
+        value={text('value', 'List Item')}
+        tags={[
+          <Tag type="blue" title="descriptor" key="tag1">
+            default
+          </Tag>,
+          <Tag type="red" disabled key="tag2">
+            disabled tag
+          </Tag>,
         ]}
       />
     </div>

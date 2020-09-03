@@ -54,8 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -145,8 +144,146 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
+          >
+            <div
+              className="chart-holder"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard domainRange 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Temperature"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Temperature
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar"
+          >
+            <div
+              className="iot--card--toolbar-date-range-wrapper"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Select time range"
+                type="button"
+              >
+                <svg
+                  aria-label="Select time range"
+                  className="bx--overflow-menu__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                  />
+                  <path
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                  />
+                  <title>
+                    Select time range
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
+        >
+          <div
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -329,8 +466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -420,8 +556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
           >
             <div
               className="chart-holder"
@@ -511,8 +646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jbTSBO"
-            size="LARGE"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
           >
             <div
               className="chart-holder"
@@ -607,8 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             }
           >
             <div
-              className="TimeSeriesCard__LineChartWrapper-q25vbg-0 cUshBn"
-              size="MEDIUM"
+              className="iot--time-series-card--wrapper iot--time-series-card--wrapper__expanded"
             >
               <div
                 className="chart-holder"
@@ -625,6 +758,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                   className="bx--batch-actions iot--table-batch-actions"
                 >
                   <div
+                    className="bx--batch-summary"
+                  >
+                    <p
+                      className="bx--batch-summary__para"
+                    >
+                      <span>
+                        0 item selected
+                      </span>
+                    </p>
+                  </div>
+                  <div
                     className="bx--action-list"
                   >
                     <button
@@ -637,17 +781,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       Cancel
                     </button>
                   </div>
-                  <div
-                    className="bx--batch-summary"
-                  >
-                    <p
-                      className="bx--batch-summary__para"
-                    >
-                      <span>
-                        0 item selected
-                      </span>
-                    </p>
-                  </div>
                 </div>
                 <div
                   className="bx--toolbar-content iot--table-toolbar-content"
@@ -657,16 +790,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex="0"
                   >
                     <div
-                      aria-labelledby="Table-toolbar-search-search"
+                      aria-labelledby="TimeSeries-table-toolbar-search-search"
                       className="bx--search bx--search--sm table-toolbar-search"
                       role="search"
                     >
                       <svg
                         aria-hidden={true}
                         className="bx--search-magnifier"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -680,8 +815,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       </svg>
                       <label
                         className="bx--label"
-                        htmlFor="Table-toolbar-search"
-                        id="Table-toolbar-search-search"
+                        htmlFor="TimeSeries-table-toolbar-search"
+                        id="TimeSeries-table-toolbar-search-search"
                       >
                         Search
                       </label>
@@ -689,7 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         aria-hidden={true}
                         autoComplete="off"
                         className="bx--search-input"
-                        id="Table-toolbar-search"
+                        id="TimeSeries-table-toolbar-search"
                         onChange={[Function]}
                         placeholder="Search"
                         role="searchbox"
@@ -705,6 +840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <svg
                           aria-hidden={true}
+                          fill="currentColor"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -732,6 +868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       aria-hidden="true"
                       aria-label="Download table content"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -761,6 +898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       aria-hidden="true"
                       aria-label="Filters"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -779,1480 +917,1499 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               <div
                 className="addons-iot-table-container"
               >
-                <table
-                  className="bx--data-table bx--data-table--no-border"
-                  title={null}
+                <div
+                  className="bx--data-table-content"
                 >
-                  <thead
-                    onMouseMove={null}
-                    onMouseUp={null}
+                  <table
+                    className="bx--data-table bx--data-table--no-border"
+                    title={null}
                   >
-                    <tr>
-                      <th
-                        aria-sort="descending"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
+                    <thead
+                      onMouseMove={null}
+                      onMouseUp={null}
+                    >
+                      <tr>
+                        <th
+                          aria-sort="descending"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
                           }
-                        }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                            data-column="timestamp"
+                            id="column-timestamp"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Timestamp"
+                              >
+                                Timestamp
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Unsort rows by this header"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Unsort rows by this header"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="ENTITY_ID"
+                            id="column-ENTITY_ID"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="ENTITY_ID"
+                              >
+                                ENTITY_ID
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="temperature"
+                            id="column-temperature"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Temp"
+                              >
+                                Temp
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="humidity"
+                            id="column-humidity"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Humidity"
+                              >
+                                Humidity
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="ecount"
+                            id="column-ecount"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Electricity"
+                              >
+                                Electricity
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="devname"
+                            id="column-devname"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="devname"
+                              >
+                                devname
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="pressure"
+                            id="column-pressure"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Pressure"
+                              >
+                                Pressure
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="status"
+                            id="column-status"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="status"
+                              >
+                                status
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Sort rows by this header in ascending order"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      aria-live="polite"
+                    >
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <button
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                          className="data-table-start"
                           data-column="timestamp"
-                          id="column-timestamp"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-timestamp"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="Timestamp"
+                              title="10/28/2018 07:34"
                             >
-                              Timestamp
+                              10/28/2018 07:34
                             </span>
                           </span>
-                          <svg
-                            aria-label="Unsort rows by this header"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Unsort rows by this header"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="ENTITY_ID"
-                          id="column-ENTITY_ID"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="ENTITY_ID"
+                              title="Sensor2-1"
                             >
-                              ENTITY_ID
+                              Sensor2-1
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="temperature"
-                          id="column-temperature"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-temperature"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="Temp"
+                              title={20}
                             >
-                              Temp
+                              20
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="humidity"
-                          id="column-humidity"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-humidity"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="Humidity"
+                              title={5.51}
                             >
-                              Humidity
+                              5.51
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="ecount"
-                          id="column-ecount"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-ecount"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="Electricity"
+                              title={6}
                             >
-                              Electricity
+                              6
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="devname"
-                          id="column-devname"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-devname"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="devname"
+                              title="6ctgim0Qcq"
                             >
-                              devname
+                              6ctgim0Qcq
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="pressure"
-                          id="column-pressure"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-pressure"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="Pressure"
+                              title={7.4}
                             >
-                              Pressure
+                              7.4
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                      <th
-                        aria-sort="none"
-                        className="table-header-label-start iot--table-head--table-header table-header-sortable"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <button
+                        </td>
+                        <td
                           align="start"
-                          className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                          className="data-table-start"
                           data-column="status"
-                          id="column-status"
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "--table-header-width": "",
-                            }
-                          }
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-0-status"
+                          offset={0}
                         >
                           <span
-                            className="bx--table-header-label"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
                             <span
                               className=""
-                              title="status"
+                              title="true"
                             >
-                              status
+                              true
                             </span>
                           </span>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
-                            />
-                          </svg>
-                          <svg
-                            aria-label="Sort rows by this header in ascending order"
-                            className="bx--table-sort__icon-unsorted"
-                            focusable="false"
-                            height={20}
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 32 32"
-                            width={20}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
-                            />
-                          </svg>
-                        </button>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    aria-live="polite"
-                  >
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-timestamp"
-                        offset={0}
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-timestamp"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="10/28/2018 07:34"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            10/28/2018 07:34
+                            <span
+                              className=""
+                              title="10/28/2018 07:34"
+                            >
+                              10/28/2018 07:34
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="Sensor2-1"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            Sensor2-1
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-temperature"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={20}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            20
+                            <span
+                              className=""
+                              title={19}
+                            >
+                              19
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-humidity"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={5.51}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            5.51
+                            <span
+                              className=""
+                              title={7.36}
+                            >
+                              7.36
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-ecount"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={6}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6
+                            <span
+                              className=""
+                              title={58}
+                            >
+                              58
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-devname"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="6ctgim0Qcq"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6ctgim0Qcq
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-pressure"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={7.4}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            7.4
+                            <span
+                              className=""
+                              title={9.21}
+                            >
+                              9.21
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-0-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-1-status"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="true"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            true
+                            <span
+                              className=""
+                              title="true"
+                            >
+                              true
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-timestamp"
-                        offset={0}
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-timestamp"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="10/28/2018 07:34"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            10/28/2018 07:34
+                            <span
+                              className=""
+                              title="10/28/2018 07:34"
+                            >
+                              10/28/2018 07:34
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="Sensor2-1"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            Sensor2-1
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-temperature"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={19}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            19
+                            <span
+                              className=""
+                              title={29}
+                            >
+                              29
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-humidity"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={7.36}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            7.36
+                            <span
+                              className=""
+                              title={3.32}
+                            >
+                              3.32
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-ecount"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={58}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            58
+                            <span
+                              className=""
+                              title={32}
+                            >
+                              32
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-devname"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="6ctgim0Qcq"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6ctgim0Qcq
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-pressure"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={9.21}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            9.21
+                            <span
+                              className=""
+                              title={9.58}
+                            >
+                              9.58
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-1-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-2-status"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="true"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            true
+                            <span
+                              className=""
+                              title="true"
+                            >
+                              true
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-timestamp"
-                        offset={0}
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-timestamp"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="10/28/2018 07:34"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            10/28/2018 07:34
+                            <span
+                              className=""
+                              title="10/28/2018 07:34"
+                            >
+                              10/28/2018 07:34
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="Sensor2-1"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            Sensor2-1
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-temperature"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={29}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            29
+                            <span
+                              className=""
+                              title={86}
+                            >
+                              86
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-humidity"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={3.32}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            3.32
+                            <span
+                              className=""
+                              title={2.98}
+                            >
+                              2.98
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-ecount"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={32}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            32
+                            <span
+                              className=""
+                              title={45}
+                            >
+                              45
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-devname"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="6ctgim0Qcq"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6ctgim0Qcq
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-pressure"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={9.58}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            9.58
+                            <span
+                              className=""
+                              title={8.72}
+                            >
+                              8.72
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-2-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-3-status"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="true"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            true
+                            <span
+                              className=""
+                              title="true"
+                            >
+                              true
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-timestamp"
-                        offset={0}
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-timestamp"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="10/28/2018 07:34"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            10/28/2018 07:34
+                            <span
+                              className=""
+                              title="10/28/2018 07:34"
+                            >
+                              10/28/2018 07:34
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="Sensor2-1"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            Sensor2-1
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-temperature"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={86}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            86
+                            <span
+                              className=""
+                              title={11}
+                            >
+                              11
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-humidity"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={2.98}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            2.98
+                            <span
+                              className=""
+                              title={9.25}
+                            >
+                              9.25
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-ecount"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={45}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            45
+                            <span
+                              className=""
+                              title={38}
+                            >
+                              38
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-devname"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="6ctgim0Qcq"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6ctgim0Qcq
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-pressure"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={8.72}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            8.72
+                            <span
+                              className=""
+                              title={9.57}
+                            >
+                              9.57
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-3-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-4-status"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="true"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            true
+                            <span
+                              className=""
+                              title="true"
+                            >
+                              true
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-timestamp"
-                        offset={0}
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
+                        onClick={[Function]}
                       >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="timestamp"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-timestamp"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="10/28/2018 07:34"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            10/28/2018 07:34
+                            <span
+                              className=""
+                              title="10/28/2018 07:34"
+                            >
+                              10/28/2018 07:34
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ENTITY_ID"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-ENTITY_ID"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="Sensor2-1"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            Sensor2-1
+                            <span
+                              className=""
+                              title="Sensor2-1"
+                            >
+                              Sensor2-1
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="temperature"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-temperature"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={11}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            11
+                            <span
+                              className=""
+                              title={35}
+                            >
+                              35
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="humidity"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-humidity"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={9.25}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            9.25
+                            <span
+                              className=""
+                              title={8.15}
+                            >
+                              8.15
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="ecount"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-ecount"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={38}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            38
+                            <span
+                              className=""
+                              title={18}
+                            >
+                              18
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="devname"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-devname"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="6ctgim0Qcq"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            6ctgim0Qcq
+                            <span
+                              className=""
+                              title="6ctgim0Qcq"
+                            >
+                              6ctgim0Qcq
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-pressure"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title={9.57}
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            9.57
+                            <span
+                              className=""
+                              title={8.3}
+                            >
+                              8.3
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-4-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="status"
+                          data-offset={0}
+                          id="cell-TimeSeries-table-dataindex-5-status"
+                          offset={0}
                         >
                           <span
-                            className=""
-                            title="true"
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                           >
-                            true
+                            <span
+                              className=""
+                              title="true"
+                            >
+                              true
+                            </span>
                           </span>
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-timestamp"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title="10/28/2018 07:34"
-                          >
-                            10/28/2018 07:34
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ENTITY_ID"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-ENTITY_ID"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title="Sensor2-1"
-                          >
-                            Sensor2-1
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="temperature"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-temperature"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title={35}
-                          >
-                            35
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="humidity"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-humidity"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title={8.15}
-                          >
-                            8.15
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="ecount"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-ecount"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title={18}
-                          >
-                            18
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="devname"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-devname"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title="6ctgim0Qcq"
-                          >
-                            6ctgim0Qcq
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="pressure"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-pressure"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title={8.3}
-                          >
-                            8.3
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start"
-                        data-column="status"
-                        data-offset={0}
-                        id="cell-Table-dataindex-5-status"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                        >
-                          <span
-                            className=""
-                            title="true"
-                          >
-                            true
-                          </span>
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div
                 className="bx--pagination iot--pagination"
-                disabled={false}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -2264,8 +2421,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-39"
-                    id="bx-pagination-select-39-count-label"
+                    htmlFor="bx-pagination-select-41"
+                    id="bx-pagination-select-41-count-label"
                   >
                     Items per page:
                   </label>
@@ -2284,7 +2441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-39"
+                            id="bx-pagination-select-41"
                             onChange={[Function]}
                             value={10}
                           >
@@ -2316,6 +2473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-hidden={true}
                             className="bx--select__arrow"
+                            fill="currentColor"
                             focusable="false"
                             height={16}
                             preserveAspectRatio="xMidYMid meet"
@@ -2332,7 +2490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     </div>
                   </div>
                   <span
-                    className="bx--pagination__text"
+                    className="bx--pagination__text bx--pagination__items-count"
                   >
                     1–6 of 6 items
                   </span>
@@ -2348,7 +2506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-39-right"
+                        htmlFor="bx-pagination-select-41-right"
                       >
                         Page number, of 1 pages
                       </label>
@@ -2361,7 +2519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-39-right"
+                            id="bx-pagination-select-41-right"
                             onChange={[Function]}
                             value={1}
                           >
@@ -2377,6 +2535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-hidden={true}
                             className="bx--select__arrow"
+                            fill="currentColor"
                             focusable="false"
                             height={16}
                             preserveAspectRatio="xMidYMid meet"
@@ -2397,48 +2556,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                   >
                     1 of 1 pages
                   </span>
-                  <button
-                    aria-label="Previous page"
-                    className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
-                    disabled={true}
-                    onClick={[Function]}
-                    type="button"
+                  <div
+                    className="bx--pagination__control-buttons"
                   >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={24}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={24}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                      disabled={true}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
                     >
-                      <path
-                        d="M20 24L10 16 20 8z"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    aria-label="Next page"
-                    className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index"
-                    disabled={true}
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={24}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={24}
-                      xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Previous page
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Previous page"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 24L10 16 20 8z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                      disabled={true}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
                     >
-                      <path
-                        d="M12 8L22 16 12 24z"
-                      />
-                    </svg>
-                  </button>
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Next page
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Next page"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 8L22 16 12 24z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2527,8 +2708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2618,8 +2798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2709,8 +2888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2800,8 +2978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2891,8 +3068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -2982,8 +3158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3073,8 +3248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3164,8 +3338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3255,8 +3428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
           >
             <div
               className="chart-holder"
@@ -3346,8 +3518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3437,146 +3608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
-          >
-            <div
-              className="chart-holder"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - custom domainRange 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "252px",
-        }
-      }
-    >
-      <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="facility-temperature"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "304px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Temperature"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Temperature
-            </div>
-          </span>
-          <div
-            className="iot--card--toolbar"
-          >
-            <div
-              className="iot--card--toolbar-date-range-wrapper"
-            >
-              <button
-                aria-expanded={false}
-                aria-haspopup={true}
-                aria-label="Menu"
-                className="iot--card--toolbar-date-range-action bx--overflow-menu"
-                onClick={[Function]}
-                onClose={[Function]}
-                onKeyDown={[Function]}
-                open={false}
-                tabIndex={0}
-                title="Select time range"
-              >
-                <svg
-                  aria-label="Select time range"
-                  className="bx--overflow-menu__icon"
-                  focusable="false"
-                  height={16}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
-                  />
-                  <path
-                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
-                  />
-                  <path
-                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
-                  />
-                  <title>
-                    Select time range
-                  </title>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "256px",
-            }
-          }
-        >
-          <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3666,8 +3698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3757,8 +3788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3848,8 +3878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -3939,8 +3968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4030,8 +4058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4121,8 +4148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="MEDIUM"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"
@@ -4212,8 +4238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-            size="LARGE"
+            className="iot--time-series-card--wrapper"
           >
             <div
               className="chart-holder"

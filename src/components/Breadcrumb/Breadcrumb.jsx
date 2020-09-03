@@ -115,7 +115,6 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
                     {...child.props}
                     title={child.props.children}
                     key={`${child.props.children}-${i}`}
-                    primaryFocus={i === 0}
                     itemText={child.props.children}
                   />
                 ))}
