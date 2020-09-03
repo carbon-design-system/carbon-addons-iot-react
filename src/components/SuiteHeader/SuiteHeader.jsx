@@ -2,12 +2,13 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 
-import { HeaderContainer, Header } from '../../index';
+import { HeaderContainer, SideNav, Header } from '../../index';
+import { SideNavPropTypes } from '../SideNav/SideNav';
 import { settings } from '../../constants/Settings';
 
-import SuiteHeaderProfile from './SuiteHeaderProfile';
-import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
-import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal';
+import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
+import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import SuiteHeaderI18N from './i18n';
 
 export const SuiteHeaderRoutePropTypes = PropTypes.shape({
@@ -56,6 +57,7 @@ const defaultProps = {
   className: null,
   appName: null,
   isAdminView: false,
+  sideNavProps: null,
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -76,6 +78,8 @@ const propTypes = {
   routes: SuiteHeaderRoutePropTypes.isRequired,
   /** Applications to render in AppSwitcher */
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
+  /** side navigation component */
+  sideNavProps: SideNavPropTypes,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -89,6 +93,7 @@ const SuiteHeader = ({
   isAdminView,
   routes,
   applications,
+  sideNavProps,
   i18n,
   ...otherHeaderProps
 }) => {
@@ -111,13 +116,14 @@ const SuiteHeader = ({
       />
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-          <div>
+          <>
             <Header
               className={[`${settings.iotPrefix}--suite-header`, className]
                 .filter(i => i)
                 .join(' ')}
               url={routes.navigator}
-              hasSideNav={false}
+              hasSideNav={sideNavProps !== null}
+              onClickSideNavExpand={onClickSideNavExpand}
               headerPanel={{
                 content: React.forwardRef(() => (
                   <SuiteHeaderAppSwitcher
@@ -257,11 +263,12 @@ const SuiteHeader = ({
                   ],
                 },
               ].filter(i => i)}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
               {...otherHeaderProps}
             />
-          </div>
+            {sideNavProps ? (
+              <SideNav {...sideNavProps} isSideNavExpanded={isSideNavExpanded} />
+            ) : null}
+          </>
         )}
       />
     </>

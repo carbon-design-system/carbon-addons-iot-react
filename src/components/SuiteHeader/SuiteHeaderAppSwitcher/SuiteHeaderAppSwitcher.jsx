@@ -10,9 +10,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowLeft16, Bee32 } from '@carbon/icons-react';
 
-import { settings } from '../../constants/Settings';
+import { settings } from '../../../constants/Settings';
+import { SuiteHeaderApplicationPropTypes } from '../SuiteHeader';
 
-import { SuiteHeaderApplicationPropTypes } from './SuiteHeader';
+console.log('PropTypes: ', SuiteHeaderApplicationPropTypes, typeof SuiteHeaderApplicationPropTypes);
 
 const defaultProps = {
   applications: [],
@@ -37,6 +38,7 @@ const propTypes = {
 const SuiteHeaderAppSwitcher = ({ applications, allApplicationsLink, noAccessLink, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
+  console.log(applications);
   return (
     <ul className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>

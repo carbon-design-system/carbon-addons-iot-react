@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import testApiData from './suiteHeaderData.fixture';
+// eslint-disable-next-line import/extensions
+import testApiData from './suiteHeaderData.fixture.js';
 
 // default route calculation logic
 const calcRoutes = (domain, user, workspaces, applications) => {
@@ -21,15 +22,18 @@ const calcRoutes = (domain, user, workspaces, applications) => {
     support: 'https://www.ibm.com/mysupport',
     about: `https://home.${domain}/about`,
   };
+  const appOrdering = ['monitor', 'health', 'predict'];
   const appData = Object.keys(user.workspaces[workspaceId].applications)
     .filter(appId => user.workspaces[workspaceId].applications[appId].role !== 'NO_ACCESS')
     .filter(appId => (applications.find(i => i.id === appId) || {}).category === 'application')
+    .sort((a, b) => appOrdering.findIndex(i => i === a) - appOrdering.findIndex(i => i === b))
     .map(appId => ({
       id: appId,
       name: appId.charAt(0).toUpperCase() + appId.slice(1),
       href: getApplicationUrl(appId),
       isExternal: getApplicationUrl(appId).indexOf(domain) >= 0,
-    }));
+    }))
+    .sort();
   return [routeData, appData];
 };
 
@@ -40,29 +44,29 @@ const useSuiteHeaderData = ({
   calculateRoutes = calcRoutes,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
   const [data, setData] = useState({
     user: {},
     workspaces: {},
-    eamConfig: {}, // temporary, while Manage is a manually-configured route
+    eamConfig: {},
     routes: {
       profile: null,
       navigator: null,
       admin: null,
       logout: null,
-      help: {
-        about: null,
-        documentation: null,
-        whatsNew: null,
-        requestEnhancement: null,
-        support: null,
-        gettingStarted: null,
-      },
-      applications: {},
+      about: null,
+      documentation: null,
+      whatsNew: null,
+      requestEnhancement: null,
+      support: null,
+      gettingStarted: null,
     },
+    applications: [],
   });
 
   const refreshData = useCallback(
     async () => {
+      console.log(testApiData);
       const fetchData = async path =>
         isTest ? testApiData[path] : fetch(`${baseApiUrl}${path}`).then(res => res.json());
 
@@ -83,16 +87,17 @@ const useSuiteHeaderData = ({
           email: profileData.user.email,
           routes,
           applications: [
-            ...applications,
             ...(eamData.url
               ? [{ id: 'eam', name: 'Manage', href: eamData.url, isExternal: true }]
               : []),
+            ...applications,
           ],
         });
         setIsLoading(false);
       } catch (err) {
-        console.error(err);
-        throw new Error('Failed to load header data', err);
+        console.log(err);
+        setError(err);
+        setIsLoading(false);
       }
     },
     [baseApiUrl, domain, isTest, setIsLoading, calculateRoutes]
@@ -106,7 +111,7 @@ const useSuiteHeaderData = ({
     [refreshData]
   );
 
-  return [data, isLoading, refreshData];
+  return [data, isLoading, error, refreshData];
 };
 
 export default useSuiteHeaderData;

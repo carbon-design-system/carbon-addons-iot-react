@@ -8,8 +8,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from '../../index';
-import { settings } from '../../constants/Settings';
+import { Button } from '../../../index';
+import { settings } from '../../../constants/Settings';
 
 const defaultProps = {
   i18n: {
