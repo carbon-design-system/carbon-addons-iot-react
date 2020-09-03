@@ -280,6 +280,37 @@ describe('HierarchyList', () => {
     );
   });
 
+  it('defaultExpandedIds should be expanded', () => {
+    const { rerender } = render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        defaultExpandedIds={['New York Mets', 'New York Yankees']}
+        hasPagination={false}
+      />
+    );
+    // Yankees and Mets expanded by default. Players should be in document.
+    const expandedMetsPlayer = screen.getByTitle('JD Davis');
+    expect(expandedMetsPlayer).toBeInTheDocument();
+    const expandedYankeesPlayer = screen.getByTitle('Gary Sanchez');
+    expect(expandedYankeesPlayer).toBeInTheDocument();
+
+    //White Sox, Astros, Braves, and Nationals not expanded.
+    expect(screen.queryByTitle('Tim Anderson')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Jose Altuve')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Freddie Freeman')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Adam Eaton')).not.toBeInTheDocument();
+
+    // All other categories should be visible still
+    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+  });
+
   it('clicking item should fire onSelect', () => {
     const onSelect = jest.fn();
     render(

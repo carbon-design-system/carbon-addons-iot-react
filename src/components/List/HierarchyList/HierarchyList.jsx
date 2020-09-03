@@ -37,7 +37,7 @@ const propTypes = {
   /** Item id to be pre-selected */
   defaultSelectedId: PropTypes.string,
   /** Item ids to be pre-expanded */
-  defaultExpandedIds: PropTypes.array,
+  defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
 };
@@ -144,12 +144,9 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
-  useDeepCompareEffect(
-    () => {
-      setFilteredItems(items);
-    },
-    [items]
-  );
+  useDeepCompareEffect(() => {
+    setFilteredItems(items);
+  }, [items]);
 
   const selectedItemRef = useCallback(
     node => {
@@ -218,12 +215,9 @@ const HierarchyList = ({
   const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowsPerPage));
 
   // Needed for updates to the filteredItems state on pageSize change
-  useEffect(
-    () => {
-      setItemsToShow(filteredItems.slice(0, rowsPerPage));
-    },
-    [filteredItems, rowsPerPage]
-  );
+  useEffect(() => {
+    setItemsToShow(filteredItems.slice(0, rowsPerPage));
+  }, [filteredItems, rowsPerPage]);
 
   const onPage = page => {
     const rowUpperLimit = page * rowsPerPage;
@@ -265,7 +259,10 @@ const HierarchyList = ({
    * search by 150ms which is a reasonable amount of time for a single word to
    * be typed.
    */
-  const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
+  const delayedSearch = useCallback(
+    debounce(textInput => handleSearch(textInput), 150),
+    [items]
+  );
 
   return (
     <List

@@ -4144,7 +4144,12 @@ Map {
         "type": "arrayOf",
       },
       "defaultExpandedIds": Object {
-        "type": "array",
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "defaultSelectedId": Object {
         "type": "string",
