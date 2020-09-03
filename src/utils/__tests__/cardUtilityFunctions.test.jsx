@@ -983,6 +983,50 @@ describe('cardUtilityFunctions', () => {
       'unit',
     ]);
   });
+  it('getCardVariables does not blow up on null or react symbols', () => {
+    const timeSeriesCardWithVariables = {
+      id: 'air_flow_mean',
+      size: 'LARGE',
+      title: 'Air flow {deviceId} mean vs max',
+      type: 'TIMESERIES',
+      content: {
+        series: [
+          {
+            dataSourceId: 'airflow_max',
+            label: '{airflow_max}',
+          },
+        ],
+        xLabel: '{x_axis}',
+        yLabel: '{y_axis}',
+        unit: '{unit}',
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {
+        attributes: [
+          {
+            aggregator: 'max',
+            attribute: 'air_flow_rate',
+            id: 'airflow_max',
+          },
+        ],
+        range: {
+          type: 'periodToDate',
+          count: -7,
+          interval: 'day',
+        },
+        timeGrain: 'day',
+      },
+      someNullProperty: null,
+      someReactSymbolProperty: <p>Hi I am a React symbol</p>,
+    };
+    expect(getCardVariables(timeSeriesCardWithVariables)).toEqual([
+      'deviceId',
+      'airflow_max',
+      'x_axis',
+      'y_axis',
+      'unit',
+    ]);
+  });
   it('getCardVariables returns empty array when no variables are given', () => {
     const imageCard = {
       content: {
