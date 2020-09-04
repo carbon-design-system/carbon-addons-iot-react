@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, object, boolean } from '@storybook/addon-knobs';
+import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
+import SuiteHeaderI18N from './i18n';
 
 const sideNavLinks = [
   {
@@ -92,40 +93,44 @@ const sideNavLinks = [
 ];
 
 storiesOf('Watson IoT/SuiteHeader', module)
-  .add('default', () => (
-    <SuiteHeader
-      suiteName={text('suiteName', 'Application Suite')}
-      appName={text('appName', 'Application Name')}
-      userDisplayName={text('userDisplayName', 'Admin User')}
-      username={text('username', 'adminuser')}
-      isAdminView={boolean('isAdminView', false)}
-      routes={object('routes', {
-        profile: 'https://www.ibm.com',
-        navigator: 'https://www.ibm.com',
-        admin: 'https://www.ibm.com',
-        logout: 'https://www.ibm.com',
-        whatsNew: 'https://www.ibm.com',
-        gettingStarted: 'https://www.ibm.com',
-        documentation: 'https://www.ibm.com',
-        requestEnhancement: 'https://www.ibm.com',
-        support: 'https://www.ibm.com',
-        about: 'https://www.ibm.com',
-      })}
-      applications={object('applications', [
-        {
-          id: 'monitor',
-          name: 'Monitor',
-          href: 'https://www.ibm.com',
-        },
-        {
-          id: 'health',
-          name: 'Health',
-          href: 'https://www.ibm.com',
-          isExternal: true,
-        },
-      ])}
-    />
-  ))
+  .add('default', () => {
+    const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+    return (
+      <SuiteHeader
+        suiteName={text('suiteName', 'Application Suite')}
+        appName={text('appName', 'Application Name')}
+        userDisplayName={text('userDisplayName', 'Admin User')}
+        username={text('username', 'adminuser')}
+        isAdminView={boolean('isAdminView', false)}
+        routes={object('routes', {
+          profile: 'https://www.ibm.com',
+          navigator: 'https://www.ibm.com',
+          admin: 'https://www.ibm.com',
+          logout: 'https://www.ibm.com',
+          whatsNew: 'https://www.ibm.com',
+          gettingStarted: 'https://www.ibm.com',
+          documentation: 'https://www.ibm.com',
+          requestEnhancement: 'https://www.ibm.com',
+          support: 'https://www.ibm.com',
+          about: 'https://www.ibm.com',
+        })}
+        i18n={SuiteHeaderI18N[language]}
+        applications={object('applications', [
+          {
+            id: 'monitor',
+            name: 'Monitor',
+            href: 'https://www.ibm.com',
+          },
+          {
+            id: 'health',
+            name: 'Health',
+            href: 'https://www.ibm.com',
+            isExternal: true,
+          },
+        ])}
+      />
+    );
+  })
   .add('Header with side nav', () => (
     <SuiteHeader
       suiteName="Application Suite"
