@@ -43,7 +43,7 @@
   }
 
   &--logout {
-    margin: -1rem;
+    margin: -$spacing-05;
 
     .#{$prefix}--btn {
       width: 100%;
