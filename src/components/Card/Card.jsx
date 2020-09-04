@@ -391,7 +391,16 @@ const Card = props => {
     </VisibilitySensor>
   );
 
-  return isExpanded ? <div className={`${prefix}--modal is-visible`}>{card}</div> : card;
+  return isExpanded ? (
+    <div
+      data-floating-menu-container // needed to place overflow floating menus within the modal so we can control them through css
+      className={`${prefix}--modal is-visible`}
+    >
+      {card}
+    </div>
+  ) : (
+    card
+  );
 };
 
 Card.propTypes = CardPropTypes;
