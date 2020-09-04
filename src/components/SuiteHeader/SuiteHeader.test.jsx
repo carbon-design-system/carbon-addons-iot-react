@@ -5,6 +5,7 @@ import Chip from '@carbon/icons-react/lib/chip/24';
 import { SideNav } from '../../index';
 
 import SuiteHeader from './SuiteHeader';
+import SuiteHeaderI18N from './i18n';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 
 const commonProps = {
@@ -102,5 +103,13 @@ describe('SuiteHeader', () => {
     const adminButton = wrapper.find('[data-testid="admin-icon"]').first();
     adminButton.simulate('click');
     expect(window.location.href).toBe(commonProps.routes.admin);
+  });
+  it('renders all i18n', () => {
+    Object.keys(SuiteHeaderI18N).forEach(language => {
+      const wrapper = mount(
+        <SuiteHeader {...commonProps} i18n={SuiteHeaderI18N[language]} isAdminView />
+      );
+      expect(wrapper.find('button.admin-icon__selected')).toHaveLength(1);
+    });
   });
 });
