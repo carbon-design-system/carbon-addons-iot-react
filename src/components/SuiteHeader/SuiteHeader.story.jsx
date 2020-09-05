@@ -8,7 +8,6 @@ import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
-import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -93,26 +92,6 @@ const sideNavLinks = [
   },
 ];
 
-const HeaderWithHook = () => {
-  const [data, isLoading, error, refreshData] = useSuiteHeaderData({
-    baseApiUrl: 'http://localhost:3001/internal',
-    domain: 'mydomain.com',
-  });
-  return (
-    <SuiteHeader
-      suiteName="Application Suite"
-      appName="Application Name"
-      userDisplayName={data.userDisplayName}
-      username={data.username}
-      routes={data.routes}
-      applications={data.applications}
-      sideNavProps={{
-        links: sideNavLinks,
-      }}
-    />
-  );
-};
-
 storiesOf('Watson IoT/SuiteHeader', module)
   .add('default', () => {
     const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -187,5 +166,4 @@ storiesOf('Watson IoT/SuiteHeader', module)
         links: sideNavLinks,
       }}
     />
-  ))
-  .add('Header with data hook', () => <HeaderWithHook />);
+  ));

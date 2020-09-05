@@ -281,14 +281,6 @@ const fixture = {
     url: 'https://myeam.mydomain.com',
     creationTimestamp: '2020-08-24T11:56:12-05:00',
   },
-  '/users/mas-admin/surveys/mas': {
-    id: 'mas',
-    initialInteractionTimestamp: '2020-09-03T15:54:10.867Z',
-    delayIntervalDays: 30,
-    lastPromptTimestamp: '2020-09-03T19:54:10.867Z',
-    frequencyDays: 90,
-    enabled: true,
-  },
 };
 
 export default fixture;
