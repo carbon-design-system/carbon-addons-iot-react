@@ -1,0 +1,20 @@
+.#{$iot-prefix}--card-edit-form {
+  height: 100%;
+  width: 15rem;
+  padding: $spacing-05;
+  background: $ui-01;
+  display: flex;
+  flex-direction: column;
+  &--content {
+    flex: 1;
+    overflow-y: auto;
+  }
+  &--input {
+    padding-bottom: $spacing-05;
+  }
+  &--footer {
+    & > button {
+      width: 100%;
+    }
+  }
+}
