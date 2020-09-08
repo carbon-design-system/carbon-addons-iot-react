@@ -12008,8 +12008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
-                  size="LARGE"
+                  className="iot--time-series-card--wrapper"
                 >
                   <div
                     className="chart-holder"
