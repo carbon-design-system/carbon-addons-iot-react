@@ -14191,6 +14191,7 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "className": undefined,
+      "light": false,
       "name": "",
       "selected": false,
       "size": "default",
@@ -14202,6 +14203,9 @@ Map {
       "index": Object {
         "isRequired": true,
         "type": "number",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "name": Object {
         "args": Array [
