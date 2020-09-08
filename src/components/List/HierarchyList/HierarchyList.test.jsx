@@ -281,7 +281,7 @@ describe('HierarchyList', () => {
   });
 
   it('defaultExpandedIds should be expanded', () => {
-    const { rerender } = render(
+    render(
       <HierarchyList
         items={items}
         title="Hierarchy List"
@@ -296,7 +296,7 @@ describe('HierarchyList', () => {
     const expandedYankeesPlayer = screen.getByTitle('Gary Sanchez');
     expect(expandedYankeesPlayer).toBeInTheDocument();
 
-    //White Sox, Astros, Braves, and Nationals not expanded.
+    // White Sox, Astros, Braves, and Nationals not expanded.
     expect(screen.queryByTitle('Tim Anderson')).not.toBeInTheDocument();
     expect(screen.queryByTitle('Jose Altuve')).not.toBeInTheDocument();
     expect(screen.queryByTitle('Freddie Freeman')).not.toBeInTheDocument();
