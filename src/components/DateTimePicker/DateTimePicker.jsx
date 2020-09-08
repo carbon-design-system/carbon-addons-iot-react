@@ -156,6 +156,8 @@ const propTypes = {
     cancelBtnLabel: PropTypes.string,
     backBtnLabel: PropTypes.string,
   }),
+  /** Light version  */
+  light: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -231,6 +233,7 @@ const defaultProps = {
     cancelBtnLabel: 'Cancel',
     backBtnLabel: 'Back',
   },
+  light: false,
 };
 
 const DateTimePicker = ({
@@ -247,6 +250,7 @@ const DateTimePicker = ({
   onCancel,
   onApply,
   i18n,
+  light,
   ...others
 }) => {
   const strings = {
@@ -655,7 +659,11 @@ const DateTimePicker = ({
       id={`${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
     >
-      <div className={`${iotPrefix}--date-time-picker__box`}>
+      <div
+        className={`${iotPrefix}--date-time-picker__box ${
+          light ? `${iotPrefix}--date-time-picker__box__light` : ''
+        }`}
+      >
         <div
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"

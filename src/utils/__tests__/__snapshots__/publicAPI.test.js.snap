@@ -5177,6 +5177,7 @@ Map {
           "value": "YEARS",
         },
       ],
+      "light": false,
       "onApply": null,
       "onCancel": null,
       "presets": Array [
@@ -5442,6 +5443,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "onApply": Object {
         "type": "func",
