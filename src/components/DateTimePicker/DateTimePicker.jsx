@@ -32,22 +32,27 @@ export const PICKER_KINDS = {
 
 export const PRESET_VALUES = [
   {
+    id: 'item-01',
     label: 'Last 30 minutes',
     offset: 30,
   },
   {
+    id: 'item-02',
     label: 'Last 1 hour',
     offset: 60,
   },
   {
+    id: 'item-03',
     label: 'Last 6 hours',
     offset: 360,
   },
   {
+    id: 'item-04',
     label: 'Last 12 hours',
     offset: 720,
   },
   {
+    id: 'item-05',
     label: 'Last 24 hours',
     offset: 1440,
   },
@@ -72,6 +77,7 @@ const propTypes = {
     PropTypes.exact({
       timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
       timeRangeValue: PropTypes.exact({
+        id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         offset: PropTypes.number.isRequired,
       }).isRequired,
@@ -279,6 +285,7 @@ const DateTimePicker = ({
   const dateTimePickerBaseValue = {
     kind: '',
     preset: {
+      id: presets[0].id,
       label: presets[0].label,
       offset: presets[0].offset,
     },
@@ -402,7 +409,7 @@ const DateTimePicker = ({
       value.kind = customRangeKind;
     } else {
       const preset = presets
-        .filter(p => p.offset === (clickedPreset ? clickedPreset.offset : selectedPreset))
+        .filter(p => p.id === (clickedPreset ? clickedPreset.id : selectedPreset))
         .pop();
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
@@ -470,7 +477,7 @@ const DateTimePicker = ({
   };
 
   const onPresetClick = preset => {
-    setSelectedPreset(preset.offset);
+    setSelectedPreset(preset.id);
     renderValue(preset);
   };
 
@@ -719,7 +726,7 @@ const DateTimePicker = ({
                         `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
                         {
                           [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                            selectedPreset === preset.offset,
+                            selectedPreset === preset.id,
                         }
                       )}
                     >
