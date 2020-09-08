@@ -10,6 +10,11 @@ import { getIntervalChartData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
 
+const commonProps = {
+  id: 'facility-temperature',
+  availableActions: { range: true, expand: true },
+};
+
 // need a timeOffset to make the data always show up
 // const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('Watson IoT/TimeSeriesCard', module)
@@ -23,8 +28,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -64,8 +69,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       return (
         <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TimeSeriesCard
+            {...commonProps}
             title={text('title', 'Temperature {not-working}')}
-            id="facility-temperature"
             isLoading={boolean('isLoading', false)}
             isExpanded={boolean('isExpandable', false)}
             cardVariables={object('Variables', {
@@ -112,8 +117,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -144,8 +149,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -177,8 +182,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -209,8 +214,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -252,8 +257,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -297,8 +302,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         }}
       >
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -342,8 +347,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -379,8 +384,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             series: [
@@ -410,8 +415,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -442,8 +447,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -479,8 +484,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -515,8 +520,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -566,8 +571,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         }}
       >
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -605,8 +610,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -640,8 +645,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -683,8 +688,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -717,8 +722,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -746,8 +751,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -793,8 +798,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -826,8 +831,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
@@ -859,8 +864,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isEditable={boolean('isEditable', true)}
           isExpanded={boolean('isExpandable', false)}
@@ -966,8 +971,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
-          id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', true)}
           content={object('content', {
@@ -1013,9 +1018,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Temperature')}
           key="dataFilter"
-          id="facility-temperature"
           isEditable={boolean('isEditable', false)}
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
@@ -1073,8 +1078,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
+          {...commonProps}
           title={text('title', 'Pressure')}
-          id="facility-pressure"
           isLoading={boolean('isLoading', false)}
           isExpanded={boolean('isExpandable', false)}
           content={object('content', {
