@@ -1525,6 +1525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
     >
       <div
         className="bx--modal is-visible"
+        data-floating-menu-container={true}
       >
         <div
           className="iot--card iot--bar-chart-card iot--card--wrapper"
