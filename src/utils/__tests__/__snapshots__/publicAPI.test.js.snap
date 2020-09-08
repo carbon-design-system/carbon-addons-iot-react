@@ -5182,22 +5182,27 @@ Map {
       "onCancel": null,
       "presets": Array [
         Object {
+          "id": "item-01",
           "label": "Last 30 minutes",
           "offset": 30,
         },
         Object {
+          "id": "item-02",
           "label": "Last 1 hour",
           "offset": 60,
         },
         Object {
+          "id": "item-03",
           "label": "Last 6 hours",
           "offset": 360,
         },
         Object {
+          "id": "item-04",
           "label": "Last 12 hours",
           "offset": 720,
         },
         Object {
+          "id": "item-05",
           "label": "Last 24 hours",
           "offset": 1440,
         },
@@ -5237,6 +5242,10 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "id": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
                         "label": Object {
                           "isRequired": true,
                           "type": "string",

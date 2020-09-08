@@ -549,7 +549,7 @@ const DateTimePicker = ({
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
       if (selectedPreset) {
-        onPresetClick(presets.filter(x => x.offset === selectedPreset)[0]);
+        onPresetClick(presets.filter(x => x.id === selectedPreset)[0]);
         resetAbsoluteValue();
         resetRelativeValue();
       } else {

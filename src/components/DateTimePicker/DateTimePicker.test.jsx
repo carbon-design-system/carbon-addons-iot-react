@@ -427,22 +427,27 @@ describe('DateTimePicker', () => {
 
     const presets = [
       {
+        id: 'item-01',
         label: 'last-30-min',
         offset: 30,
       },
       {
+        id: 'item-02',
         label: 'last-1-hour',
         offset: 60,
       },
       {
+        id: 'item-03',
         label: 'last-6-hour',
         offset: 360,
       },
       {
+        id: 'item-04',
         label: 'last-12-hour',
         offset: 720,
       },
       {
+        id: 'item-05',
         label: 'last-24-hour',
         offset: 1440,
       },
