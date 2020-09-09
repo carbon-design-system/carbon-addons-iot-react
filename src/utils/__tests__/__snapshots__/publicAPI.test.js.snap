@@ -4118,6 +4118,7 @@ Map {
   "HierarchyList" => Object {
     "defaultProps": Object {
       "buttons": null,
+      "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "hasMultiSelect": false,
       "hasPagination": true,
@@ -4138,6 +4139,14 @@ Map {
         "args": Array [
           Object {
             "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "defaultExpandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
           },
         ],
         "type": "arrayOf",
