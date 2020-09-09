@@ -10,9 +10,13 @@
     &--title {
       padding-left: $spacing-05;
       margin: auto;
-
       flex-grow: 1;
       color: $ui-background;
+
+      html[dir='rtl'] & {
+        padding-left: 0;
+        padding-right: $spacing-05;
+      }
     }
 
     &--button-container {
@@ -27,12 +31,13 @@
       border-left: 1px solid $ui-background;
     }
 
-    &--button {
+    &--button,
+    html[dir='rtl'] &--button {
       padding: 0 $spacing-08 0 $spacing-05;
-
-      &-no-icon {
-        padding: 0 $spacing-05;
-      }
+    }
+    &--button-no-icon,
+    html[dir='rtl'] &--button-no-icon.#{$iot-prefix}--btn {
+      padding: 0 $spacing-05;
     }
   }
 
