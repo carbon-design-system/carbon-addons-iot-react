@@ -10,6 +10,14 @@
     overflow: hidden;
     align-items: stretch;
     justify-content: space-between;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
   }
 
   &--drop-targets {
@@ -67,6 +75,7 @@
 
   &-dragging {
     background: $hover-ui;
+    cursor: grabbing;
   }
 
   &:hover {

@@ -1,5 +1,3 @@
-import cloneDeep from 'lodash/cloneDeep';
-
 export const DropLocation = {
   Above: 'above',
   Below: 'below',
@@ -29,7 +27,7 @@ export const editingStyleIsMultiple = editingStyle => {
 const searchDraggedItem = (items, ids) => {
   let draggedItems = [];
 
-  cloneDeep(items).forEach(item => {
+  items.forEach(item => {
     if (ids.some(id => item.id === id)) {
       draggedItems.push(item);
     } else if (item.children) {
@@ -52,8 +50,8 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
   let finalList = [];
   let itemDropped = dropped; // Protects against dupe ids and multiple drops
 
-  if (items) {
-    cloneDeep(items).forEach(item => {
+  if (items && !draggedItems[0]?.children?.some(x => x.id === dropId)) {
+    items.forEach(item => {
       // Insert dragged items in before location
       if (!itemDropped && item.id === dropId && location === DropLocation.Above) {
         finalList = [...finalList, ...draggedItems];
@@ -83,9 +81,10 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
         finalList = [...finalList, ...draggedItems];
       }
     });
+    return finalList;
   }
 
-  return finalList;
+  return items;
 };
 
 /**

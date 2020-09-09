@@ -1,10 +1,9 @@
 import { DropLocation, moveItemsInList } from '../DragAndDropUtils';
 import { getListItems } from '../../components/List/SimpleList/SimpleList.story';
 
-const simpleListItems = getListItems(10);
-
 describe('componentUtilityFunctions', () => {
   it('move first item under the second item', () => {
+    const simpleListItems = getListItems(10);
     const itemToMove = simpleListItems[0];
 
     const newList = moveItemsInList(
@@ -18,6 +17,7 @@ describe('componentUtilityFunctions', () => {
   });
 
   it('move first item above the second item', () => {
+    const simpleListItems = getListItems(10);
     const itemToMove = simpleListItems[0];
 
     const newList = moveItemsInList(
@@ -31,6 +31,7 @@ describe('componentUtilityFunctions', () => {
   });
 
   it('move first item nested in second item', () => {
+    const simpleListItems = getListItems(10);
     const itemToMove = simpleListItems[0];
 
     const newList = moveItemsInList(
@@ -44,6 +45,7 @@ describe('componentUtilityFunctions', () => {
   });
 
   it('multiple nesting', () => {
+    const simpleListItems = getListItems(10);
     const itemToMove = simpleListItems[0];
 
     let newList = moveItemsInList(
@@ -60,6 +62,7 @@ describe('componentUtilityFunctions', () => {
   });
 
   it('move multiple items to top of the list', () => {
+    const simpleListItems = getListItems(10);
     const itemsToMove = [
       simpleListItems[1].id,
       simpleListItems[3].id,
@@ -73,6 +76,7 @@ describe('componentUtilityFunctions', () => {
       simpleListItems[0].id,
       DropLocation.Above
     );
+    console.log({ newList, itemsToMove });
 
     expect(newList[0].id).toEqual(itemsToMove[0]);
     expect(newList[1].id).toEqual(itemsToMove[1]);
