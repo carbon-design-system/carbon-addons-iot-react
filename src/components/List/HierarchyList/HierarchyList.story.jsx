@@ -174,4 +174,45 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         isLoading={boolean('isLoading', false)}
       />
     </div>
+  ))
+  .add('With defaultExpandedIds', () => (
+    <div style={{ width: 400, height: 400 }}>
+      <HierarchyList
+        title={text('Title', 'MLB Expanded List')}
+        items={[
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+            id: team,
+            isCategory: true,
+            content: {
+              value: team,
+            },
+            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
+              id: `${team}_${player}`,
+              content: {
+                value: player,
+              },
+              isSelectable: true,
+            })),
+          })),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
+            id: team,
+            isCategory: true,
+            content: {
+              value: team,
+            },
+            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
+              id: `${team}_${player}`,
+              content: {
+                value: player,
+              },
+              isSelectable: true,
+            })),
+          })),
+        ]}
+        hasSearch
+        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+        isLoading={boolean('isLoading', false)}
+        defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
+      />
+    </div>
   ));
