@@ -14,30 +14,32 @@
     margin-bottom: $spacing-05;
 
     &--chip {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 1rem;
+      width: $spacing-07;
+      height: $spacing-07;
+      border-radius: $spacing-05;
       background-color: $ui-03;
       color: $text-01;
       text-align: center;
-      line-height: 2rem;
+      line-height: $spacing-07;
     }
 
     &--detail {
       flex: 1;
-      padding-left: 1rem;
+      padding-left: $spacing-05;
     }
   }
 
   &--manage-button {
-    padding-bottom: 2.5rem;
+    padding-bottom: $spacing-08;
 
+    /* mimic tertiary button from grey-100 theme */
     .#{$prefix}--btn {
-      border: solid 1px $inverse-01;
+      border: solid 1px $ui-02;
       background-color: $ui-05;
 
       &:hover {
-        background-color: $ui-03;
+        background-color: $ui-02;
+        color: $ui-05;
       }
     }
   }
@@ -172,7 +174,8 @@
     }
   }
 
-  .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+  .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
+    + .#{$prefix}--header__menu {
     width: 16rem;
   }
 }

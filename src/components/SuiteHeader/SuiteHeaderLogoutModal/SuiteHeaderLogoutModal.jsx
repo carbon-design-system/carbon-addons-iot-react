@@ -43,9 +43,9 @@ const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLog
       modalHeading={mergedI18N.heading}
       primaryButtonText={mergedI18N.primaryButton}
       secondaryButtonText={mergedI18N.secondaryButton}
-      onSecondarySubmit={() => onClose()}
-      onRequestSubmit={() => onLogout()}
-      onRequestClose={() => onClose()}
+      onSecondarySubmit={onClose}
+      onRequestSubmit={onLogout}
+      onRequestClose={onClose}
     >
       {mergedI18N.body(suiteName, displayName)}
     </Modal>

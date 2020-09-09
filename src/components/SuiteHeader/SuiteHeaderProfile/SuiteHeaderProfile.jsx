@@ -66,7 +66,7 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
         <Button
           kind="secondary"
           data-testid="suite-header-profile--logout"
-          onClick={() => onRequestLogout()}
+          onClick={onRequestLogout}
         >
           {mergedI18N.logoutButton}
         </Button>
