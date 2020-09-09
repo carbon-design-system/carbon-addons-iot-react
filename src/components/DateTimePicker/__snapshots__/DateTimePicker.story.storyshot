@@ -203,7 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         id="iot--date-time-picker__wrapper"
       >
         <div
-          className="iot--date-time-picker__box iot--date-time-picker__box__light"
+          className="iot--date-time-picker__box iot--date-time-picker__box--light"
         >
           <div
             className="iot--date-time-picker__field"
