@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 import { layout05 } from '@carbon/layout';
@@ -10,48 +10,48 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import GaugeCard from './GaugeCard';
 
-storiesOf('Watson IoT Experimental/GaugeCard', module)
-  .add('basic', () => {
-    const content = {
-      gauges: [
+const content = {
+  gauges: [
+    {
+      dataSourceId: 'usage',
+      units: '%',
+      minimumValue: 0,
+      maximumValue: 100,
+      color: 'orange',
+      backgroundColor: gray20,
+      shape: 'circle',
+      trend: {
+        /** the key to load the trend value from the values object. */
+        dataSourceId: 'usageTrend',
+        color: text('Trend color', ''),
+        trend: select('Trend', ['up', 'down'], 'up'),
+      },
+      thresholds: [
         {
-          dataSourceId: 'usage',
-          units: '%',
-          minimumValue: 0,
-          maximumValue: 100,
-          color: 'orange',
-          backgroundColor: gray20,
-          shape: 'circle',
-          trend: {
-            /** the key to load the trend value from the values object. */
-            dataSourceId: 'usageTrend',
-            color: text('Trend color', ''),
-            trend: select('Trend', ['up', 'down'], 'up'),
-          },
-          thresholds: [
-            {
-              comparison: '>',
-              value: 0,
-              color: 'red', // red
-              label: 'Poor',
-            },
-            {
-              comparison: '>',
-              value: 60,
-              color: yellow, // yellow
-              label: 'Fair',
-            },
-            {
-              comparison: '>',
-              value: 80,
-              color: 'green', // green
-              label: select('Threshold label (> 80%)', ['Good', null], 'Good'),
-            },
-          ],
+          comparison: '>',
+          value: 0,
+          color: 'red', // red
+          label: 'Poor',
+        },
+        {
+          comparison: '>',
+          value: 60,
+          color: yellow, // yellow
+          label: 'Fair',
+        },
+        {
+          comparison: '>',
+          value: 80,
+          color: 'green', // green
+          label: select('Threshold label (> 80%)', ['Good', null], 'Good'),
         },
       ],
-    };
+    },
+  ],
+};
 
+storiesOf('Watson IoT Experimental/GaugeCard', module)
+  .add('basic', () => {
     return (
       <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
         <GaugeCard
@@ -68,6 +68,35 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
         />
       </div>
     );
+  })
+  .add('basic with expand', () => {
+    const BasicWithExpand = () => {
+      const [expanded, setExpanded] = useState(false);
+
+      return (
+        <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
+          <GaugeCard
+            isLoading={boolean('Is loading', false)}
+            tooltip={<p>Health - of floor 8</p>}
+            id="GaugeCard"
+            title={text('Text', 'Health')}
+            size={CARD_SIZES.SMALL}
+            values={{
+              usage: number('Gauge value', 81),
+              usageTrend: '12%',
+            }}
+            isExpanded={expanded}
+            availableActions={{
+              expand: true,
+            }}
+            content={content}
+            onCardAction={() => setExpanded(!expanded)}
+          />
+        </div>
+      );
+    };
+
+    return <BasicWithExpand />;
   })
   .add('with data state no-data', () => {
     const myDataState = {

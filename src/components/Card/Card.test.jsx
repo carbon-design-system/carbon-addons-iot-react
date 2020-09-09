@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { Popup16 } from '@carbon/icons-react';
+import { Popup16, Tree16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -81,6 +81,21 @@ describe('Card', () => {
     );
     // CardRangePicker icon should not render if isEditable prop is true
     expect(wrapper.find(CardRangePicker)).toHaveLength(0);
+  });
+
+  it('render custom icons', () => {
+    const wrapper = mount(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.SMALL}
+        availableActions={{ range: true, expand: true }}
+        renderExpandIcon={Tree16}
+      />
+    );
+
+    // should render CardRangePicker and Expand
+    expect(wrapper.find(CardRangePicker)).toHaveLength(1);
+    expect(wrapper.find(Tree16)).toHaveLength(1);
   });
 
   it('additional prop based elements', () => {
