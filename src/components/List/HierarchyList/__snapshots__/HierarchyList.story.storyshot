@@ -46,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <p
               className="bx--modal-header__heading bx--type-beta"
             >
-              Move 0 item underneath
+              Move 1 item underneath
             </p>
             <button
               aria-label="Close"
@@ -2869,7 +2869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <p
               className="bx--modal-header__heading bx--type-beta"
             >
-              Move 0 item underneath
+              Move 1 item underneath
             </p>
             <button
               aria-label="Close"
@@ -3713,7 +3713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <p
               className="bx--modal-header__heading bx--type-beta"
             >
-              Move 0 item underneath
+              Move 1 item underneath
             </p>
             <button
               aria-label="Close"
