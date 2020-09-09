@@ -136,7 +136,7 @@ const List = forwardRef((props, ref) => {
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {
-    const hasChildren = item.children && item.children.length > 0;
+    const hasChildren = item?.children && item.children.length > 0;
     const isSelected = selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 

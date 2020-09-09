@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16, Close16, Checkmark16 } from '@carbon/icons-react';
+import { boolean, text } from '@storybook/addon-knobs';
+import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
@@ -10,11 +10,6 @@ import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
 import List from './List';
-
-const EditMode = {
-  Single: 'single',
-  Multiple: 'multiple',
-};
 
 export const sampleHierarchy = {
   MLB: {
@@ -487,142 +482,4 @@ storiesOf('Watson IoT Experimental/List', module)
         isLoading={boolean('isLoading', false)}
       />
     </div>
-  ))
-  .add('basic (single column) with reorder', () => {
-    const SingleColumnReorder = () => {
-      const startData = Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key]) => ({
-        id: key,
-        content: { value: key },
-      }));
-
-      const [listItems, setListItems] = useState(startData);
-      const editing = boolean('isEditing,', true);
-
-      const onItemMoved = (dragProps, hoverProps) => {
-        const dragCard = listItems[dragProps.index];
-        listItems.splice(dragProps.index, 1);
-        listItems.splice(hoverProps.index, 0, dragCard);
-
-        setListItems([...listItems]);
-      };
-
-      const saveButton = (
-        <Button
-          renderIcon={Checkmark16}
-          hasIconOnly
-          size="small"
-          iconDescription="Save"
-          key="expandable-list-button-check"
-          onClick={() => action('Reordered list saved')}
-        />
-      );
-
-      const cancelButton = (
-        <Button
-          renderIcon={Close16}
-          hasIconOnly
-          kind="secondary"
-          size="small"
-          iconDescription="Cancel"
-          key="expandable-list-button-cancel"
-          onClick={() => setListItems(startData)}
-        />
-      );
-
-      return (
-        <div style={{ width: 400 }}>
-          <List
-            buttons={editing ? [cancelButton, saveButton] : []}
-            title={text('title', 'NY Yankees')}
-            items={listItems}
-            editMode={select('Edit Mode', EditMode, EditMode.Single)}
-            isLoading={boolean('isLoading', false)}
-            onItemMoved={onItemMoved}
-          />
-        </div>
-      );
-    };
-
-    return <SingleColumnReorder />;
-  })
-  .add('reorder hierarchy', () => {
-    const HierarchyReorder = () => {
-      const [expandedIds, setExpandedIds] = useState([
-        'MLB',
-        'MLB_American League',
-        'MLB_National League',
-        'MLB_American League_New York Yankees',
-      ]);
-
-      const startData = [
-        ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-          id: team,
-          isCategory: true,
-          isSelectable: true,
-          content: {
-            value: team,
-          },
-          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-            id: `${team}-${player}`,
-            isSelectable: true,
-            content: {
-              value: player,
-              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
-            },
-          })),
-        })),
-      ];
-
-      const [listItems, setListItems] = useState(startData);
-      const editing = boolean('isEditing,', true);
-
-      const saveButton = (
-        <Button
-          renderIcon={Checkmark16}
-          hasIconOnly
-          size="small"
-          iconDescription="Save"
-          key="expandable-list-button-check"
-          onClick={() => action('Reordered list saved')}
-        />
-      );
-
-      const cancelButton = (
-        <Button
-          renderIcon={Close16}
-          hasIconOnly
-          kind="secondary"
-          size="small"
-          iconDescription="Cancel"
-          key="expandable-list-button-cancel"
-          onClick={() => setListItems(startData)}
-        />
-      );
-
-      return (
-        <div style={{ width: 400 }}>
-          <List
-            buttons={editing ? [cancelButton, saveButton] : []}
-            title={text('title', 'NY Yankees')}
-            items={listItems}
-            editingStyle="multiple"
-            // editMode={editing ? 'multiple' : null}
-            isLoading={boolean('isLoading', false)}
-            expandedIds={expandedIds}
-            toggleExpansion={id => {
-              if (expandedIds.filter(rowId => rowId === id).length > 0) {
-                // remove id from array
-                setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-              } else {
-                setExpandedIds(expandedIds.concat([id]));
-              }
-            }}
-          />
-        </div>
-      );
-    };
-
-    return <HierarchyReorder />;
-  });
+  ));

@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
-import { Move16 } from '@carbon/icons-react';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
-import { Button } from '../../..';
 import {
   EditingStyle,
   handleEditModeSelect,
@@ -18,6 +16,7 @@ import {
 import { settings } from '../../../constants/Settings';
 
 import HierarchyListReorderModal from './HierarchyListReorderModal';
+import BulkActionHeader from './BulkActionHeader';
 
 const { iotPrefix } = settings;
 
@@ -85,12 +84,12 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    itemSelected: '%d item selected',
+    itemSelected: '1 item selected',
     itemsSelected: '%d items selected',
     move: 'Move',
     cancel: 'Cancel',
     allRows: 'All rows',
-    itemTitle: 'Move %d item underneath',
+    itemTitle: 'Move 1 item underneath',
     itemsTitle: 'Move %d items underneath',
     modalDescription: 'Select a destination',
   },
@@ -167,43 +166,6 @@ export const searchForNestedItemIds = (items, value) => {
   });
   return filteredItems;
 };
-
-/* this component is only used internally where props are defined and set. */
-const BulkActionHeader = ({
-  className,
-  i18n /* eslint-disable-line react/prop-types */,
-  editModeSelectedIds /* eslint-disable-line react/prop-types */,
-  cancelMoveClicked /* eslint-disable-line react/prop-types */,
-  setShowModal /* eslint-disable-line react/prop-types */,
-}) => (
-  <div className={className}>
-    <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
-      {editModeSelectedIds.length > 1
-        ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
-        : i18n.itemSelected.replace('%d', editModeSelectedIds.length)}
-    </div>
-    <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
-      <Button
-        className={`${iotPrefix}--hierarchy-list-bulk-header--button`}
-        renderIcon={Move16}
-        onClick={() => {
-          setShowModal(true);
-        }}
-      >
-        {i18n.move}
-      </Button>
-
-      <div className={`${iotPrefix}--hierarchy-list-bulk-header--divider`} />
-
-      <Button
-        className={`${iotPrefix}--hierarchy-list-bulk-header--button-no-icon`}
-        onClick={cancelMoveClicked}
-      >
-        {i18n.cancel}
-      </Button>
-    </div>
-  </div>
-);
 
 const HierarchyList = ({
   editingStyle,
@@ -406,7 +368,7 @@ const HierarchyList = ({
               }
             : null
         }
-        items={pageSize != null ? itemsToShow : filteredItems}
+        items={pageSize !== null ? itemsToShow : filteredItems}
         expandedIds={expandedIds}
         toggleExpansion={id => {
           if (expandedIds.filter(rowId => rowId === id).length > 0) {

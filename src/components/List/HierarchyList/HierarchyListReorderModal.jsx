@@ -32,8 +32,8 @@ const propTypes = {
 const defaultProps = {
   i18n: {
     itemsSelected: '%d items selected',
-    itemSelected: '%d item selected',
-    itemTitle: 'Move %d item underneath',
+    itemSelected: '1 item selected',
+    itemTitle: 'Move 1 item underneath',
     itemsTitle: 'Move %d items underneath',
     cancel: 'Cancel',
     allRows: 'All rows',
@@ -121,7 +121,7 @@ const HierarchyListReorderModal = ({
         isCurrentPage={isCurrent}
       >
         <Button
-          className={`${iotPrefix}--hierarchy-list-bulk-modal-- breadcrumb-button`}
+          className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb-button`}
           kind="ghost"
           onClick={() => {
             if (isCurrent) {
@@ -187,7 +187,7 @@ const HierarchyListReorderModal = ({
         title:
           selectedIds.length > 1
             ? `${i18n.itemsTitle.replace('%d', selectedIds?.length ?? '')}`
-            : `${i18n.itemTitle.replace('%d', selectedIds?.length ?? '')}`,
+            : `${i18n.itemTitle}`,
       }}
       onClose={() => {
         setSelectedParentPath([]);
