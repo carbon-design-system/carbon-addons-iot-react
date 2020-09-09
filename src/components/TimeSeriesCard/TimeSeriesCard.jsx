@@ -12,6 +12,7 @@ import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import cheerio from 'cheerio';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
@@ -68,7 +69,7 @@ const TimeSeriesCardPropTypes = {
     ),
     /** optional units to put in the legend */
     unit: PropTypes.string,
-    /** Optionally addes a zoom bar to the chart */
+    /** Optionally adds a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
     /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
     addSpaceOnEdges: PropTypes.number,
@@ -167,7 +168,6 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
@@ -191,18 +191,13 @@ export const handleTooltip = (
         )
         .join('')
     : '';
-  let updatedTooltip = defaultTooltip;
-  if (Array.isArray(data)) {
-    // prepend the date inside the existing multi tooltip
-    updatedTooltip = defaultTooltip
-      .replace('<li', `${dateLabel}<li`)
-      .replace('</ul', `${matchingAlertLabels}</ul`);
-  } else {
-    // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
-  }
+  const parsedTooltip = cheerio.load(defaultTooltip);
+  // the first <li> will always be carbon chart's Dates row in this case, replace with our date format
+  parsedTooltip('li:first-child').replaceWith(dateLabel);
 
-  return updatedTooltip;
+  // append the matching alert labels
+  parsedTooltip('ul').append(matchingAlertLabels);
+  return parsedTooltip.html('ul');
 };
 
 /**
