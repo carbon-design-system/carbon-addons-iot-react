@@ -31,10 +31,6 @@
       border-left: 1px solid $ui-background;
     }
 
-    &--button,
-    html[dir='rtl'] &--button {
-      padding: 0 $spacing-08 0 $spacing-05;
-    }
     &--button-no-icon,
     html[dir='rtl'] &--button-no-icon.#{$iot-prefix}--btn {
       padding: 0 $spacing-05;
