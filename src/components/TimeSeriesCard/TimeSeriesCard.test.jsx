@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
+import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
@@ -268,6 +269,27 @@ describe('TimeSeriesCard', () => {
         value: 453,
       },
     ]);
+  });
+  it('formatChartData can handle sparse values from the backend', () => {
+    const series = [
+      {
+        label: 'particles',
+        dataSourceId: 'particles',
+      },
+      {
+        label: 'emissions',
+        dataSourceId: 'emissions',
+      },
+    ];
+    const formattedChartData = formatChartData(
+      'timestamp',
+      series,
+      barChartData.timestamps.slice(0, 2).map(
+        (dataPoint, index) => (index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint) // make the data sparse (this skips the emissions datapoint in a few points)
+      )
+    );
+    expect(formattedChartData).toHaveLength(3);
+    expect(formattedChartData.every(dataPoint => dataPoint.value)).toEqual(true); // every value should be valid
   });
   it('formatChartData returns empty array if no data matches dataFilter', () => {
     const series = [
