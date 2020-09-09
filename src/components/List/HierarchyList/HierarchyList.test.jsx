@@ -365,6 +365,12 @@ describe('HierarchyList', () => {
 
     fireEvent.click(saveButton);
 
+    fireEvent.click(moveText);
+
+    const cancelText = screen.queryAllByText('Cancel');
+
+    fireEvent.click(cancelText[0]);
+
     fireEvent.click(expandIcons[0]);
 
     const listItems = screen.queryAllByRole('listitem');
