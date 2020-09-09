@@ -4119,6 +4119,7 @@ Map {
     "defaultProps": Object {
       "buttons": null,
       "cancelMoveClicked": [Function],
+      "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
       "hasMultiSelect": false,
@@ -4157,6 +4158,14 @@ Map {
       },
       "cancelMoveClicked": Object {
         "type": "func",
+      },
+      "defaultExpandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
       },
       "defaultSelectedId": Object {
         "type": "string",

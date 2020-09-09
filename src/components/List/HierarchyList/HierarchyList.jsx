@@ -61,6 +61,8 @@ const propTypes = {
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
   defaultSelectedId: PropTypes.string,
+  /** Item ids to be pre-expanded */
+  defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -97,6 +99,7 @@ const defaultProps = {
   isLoading: false,
   pageSize: null,
   defaultSelectedId: null,
+  defaultExpandedIds: [],
   onSelect: null,
   sendingData: null,
   onListUpdated: () => {},
@@ -180,13 +183,14 @@ const HierarchyList = ({
   isLoading,
   pageSize,
   defaultSelectedId,
+  defaultExpandedIds,
   onSelect,
   onListUpdated,
   itemWillMove,
   cancelMoveClicked,
   sendingData,
 }) => {
-  const [expandedIds, setExpandedIds] = useState([]);
+  const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);

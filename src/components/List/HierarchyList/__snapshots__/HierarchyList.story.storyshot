@@ -3667,6 +3667,1610 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With defaultExpandedIds 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": 400,
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onClose={[Function]}
+        onKeyDown={[Function]}
+        open={false}
+        role="presentation"
+      >
+        <span
+          className="bx--visually-hidden"
+          role="link"
+          tabIndex="0"
+        >
+          Focus sentinel
+        </span>
+        <div
+          className="bx--modal-container"
+          role="dialog"
+        >
+          <div
+            className="bx--modal-header"
+          >
+            <p
+              className="bx--modal-header__heading bx--type-beta"
+            >
+              Move 1 item underneath
+            </p>
+            <button
+              aria-label="Close"
+              className="bx--modal-close"
+              onClick={[Function]}
+              title="Close"
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--modal-close__icon"
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="bx--modal-content"
+          >
+            <div
+              className="iot--hierarchy-list-bulk-modal--title"
+            >
+              Select a destination
+            </div>
+            <div
+              className="breadcrumb--container"
+              data-testid="overflow"
+            >
+              <nav
+                aria-label="Breadcrumb"
+                className={null}
+                data-testid="modal-breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
+                    title="All rows"
+                  >
+                    <button
+                      className="bx--link iot--btn bx--btn bx--btn--ghost"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      All rows
+                    </button>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="iot--hierarchy-list-bulk-modal--list"
+            >
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id27"
+                    name="Chicago White Sox"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="Chicago White Sox"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id27"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      Chicago White Sox
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    Chicago White Sox
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id28"
+                    name="New York Yankees"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="New York Yankees"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id28"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      New York Yankees
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    New York Yankees
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id29"
+                    name="Houston Astros"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="Houston Astros"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id29"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      Houston Astros
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    Houston Astros
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id30"
+                    name="Atlanta Braves"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="Atlanta Braves"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id30"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      Atlanta Braves
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    Atlanta Braves
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id31"
+                    name="New York Mets"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="New York Mets"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id31"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      New York Mets
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    New York Mets
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--hierarchy-list-bulk-modal--list-item"
+              >
+                <div
+                  className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--radio-button"
+                    id="id32"
+                    name="Washington Nationals"
+                    onChange={[Function]}
+                    tabIndex={0}
+                    type="radio"
+                    value="Washington Nationals"
+                  />
+                  <label
+                    className="bx--radio-button__label"
+                    htmlFor="id32"
+                  >
+                    <span
+                      className="bx--radio-button__appearance"
+                    />
+                    <span
+                      className="bx--visually-hidden"
+                    >
+                      Washington Nationals
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="iot--hierarchy-list-bulk-modal--list-item-button"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--hierarchy-list-bulk-modal--list-item-value"
+                  >
+                    Washington Nationals
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="bx--modal-footer iot--composed-modal-footer"
+          >
+            <button
+              className="iot--btn bx--btn bx--btn--secondary"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="iot--btn bx--btn bx--btn--primary"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+        <span
+          className="bx--visually-hidden"
+          role="link"
+          tabIndex="0"
+        >
+          Focus sentinel
+        </span>
+      </div>
+      <div
+        className="iot--list"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              MLB Expanded List
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            />
+          </div>
+          <div
+            className="iot--list-header--search"
+          >
+            <div
+              aria-labelledby="iot--list-header--search-search"
+              className="bx--search bx--search--sm"
+              role="search"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+              <label
+                className="bx--label"
+                htmlFor="iot--list-header--search"
+                id="iot--list-header--search-search"
+              >
+                Enter a value
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                id="iot--list-header--search"
+                onChange={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Expand"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Chicago White Sox"
+                    >
+                      Chicago White Sox
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Leury Garcia"
+                    >
+                      Leury Garcia
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Yoan Moncada"
+                    >
+                      Yoan Moncada
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Jose Abreu"
+                    >
+                      Jose Abreu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Welington Castillo"
+                    >
+                      Welington Castillo
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Eloy Jimenez"
+                    >
+                      Eloy Jimenez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Charlie Tilson"
+                    >
+                      Charlie Tilson
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Tim Anderson"
+                    >
+                      Tim Anderson
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Yolmer Sanchez"
+                    >
+                      Yolmer Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Dylan Covey"
+                    >
+                      Dylan Covey
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Expand"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="New York Yankees"
+                    >
+                      New York Yankees
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
+                    >
+                      Kendrys Morales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
+                    >
+                      Gleyber Torres
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
+                    >
+                      Clint Frazier
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
+                    >
+                      Brett Gardner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
+                    >
+                      Gio Urshela
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
+                    >
+                      Cameron Maybin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item--nesting-offset"
+                style={
+                  Object {
+                    "width": "30px",
+                  }
+                }
+              />
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
+                    >
+                      Robinson Cano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Houston Astros"
+                    >
+                      Houston Astros
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Atlanta Braves"
+                    >
+                      Atlanta Braves
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="New York Mets"
+                    >
+                      New York Mets
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
+          >
+            <div
+              className="iot--list-item"
+            >
+              <div
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Washington Nationals"
+                    >
+                      Washington Nationals
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--page"
+        >
+          <div
+            className="iot-simple-pagination-container"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
+            >
+              Page 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/HierarchyList With defaultSelectedId 1`] = `
 <div
   className="storybook-container"

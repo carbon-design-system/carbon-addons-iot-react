@@ -84,3 +84,8 @@ html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
 .#{$iot-prefix}--card .#{$prefix}--chart-holder {
   background-color: $ui-01;
 }
+
+// Needed to allow the overflow menu to overlay the expanded card correctly
+.#{$prefix}--modal .#{$iot-prefix}--card--overflow {
+  z-index: 10000;
+}
