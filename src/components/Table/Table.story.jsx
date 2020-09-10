@@ -2247,7 +2247,7 @@ storiesOf('Watson IoT/Table', module)
   .add(
     'with row expansion and actions',
     () => (
-      <Table
+      <StatefulTable
         id="table"
         columns={tableColumns}
         data={tableData.map((i, idx) => ({
