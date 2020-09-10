@@ -119,7 +119,7 @@ const TableSaveViewModal = ({
     cancelButtonLabelText,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const onSave = () => onSaveCallback(formValues);
+  const onSave = () => onSaveCallback({ ...formValues, description: viewDescription });
 
   const onChange = modifiedFormValue => {
     setFormValues(currentValues => ({ ...currentValues, ...modifiedFormValue }));

@@ -714,7 +714,7 @@ storiesOf('Watson IoT/Table', module)
         // The props can be any subset of the view and columns prop that
         // you need in order to successfully save and load your views.
         const viewExample = {
-          description: 'Filters: 0',
+          description: 'Columns: 7, Filters: 0, Search: pinoc',
           id: 'view1',
           isPublic: true,
           isDeleteable: true,
@@ -736,7 +736,7 @@ storiesOf('Watson IoT/Table', module)
           },
         };
         const viewExample2 = {
-          description: 'Filters: 1',
+          description: 'Columns: 7, Filters: 1, Search:',
           id: 'view2',
           isPublic: false,
           isDeleteable: true,
