@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
 import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
+import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
 import ComposedModal from './ComposedModal';
 
@@ -132,4 +133,20 @@ REDUXFORM or REDUXDIALOG`,
       onClose={action('close')}
       onSubmit={action('submit')}
     />
+  ))
+  .add('composed modal with overflow', () => (
+    <ComposedModal
+      header={{
+        label: 'Translated bottom buttons',
+        title: 'Dialog with bottom buttons and close button flyover translated',
+      }}
+      iconDescription="My Close Button"
+      footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
+      onClose={action('close')}
+      onSubmit={action('submit')}
+    >
+      <OverflowMenu title="Test Overflow" iconDescription="Expand">
+        <OverflowMenuItem key="default" onClick={action('onClick')} itemText="Click me" />
+      </OverflowMenu>
+    </ComposedModal>
   ));

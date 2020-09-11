@@ -166,6 +166,7 @@ class ComposedModal extends React.Component {
         {...props}
         open={open}
         onClose={this.doNotClose}
+        data-floating-menu-container
         className={classnames(
           className,
           {
