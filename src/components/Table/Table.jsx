@@ -331,19 +331,25 @@ const Table = props => {
   // so we need to track that for the save view fuctionality.
   const searchValue = useRef(view?.toolbar?.search?.defaultValue);
 
+  const initialRendering = useRef(true);
+
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed. This effect satifies
   // both those needs.
   useDeepCompareEffect(
     () => {
       if (hasUserViewManagement) {
-        onUserViewModified({
-          view,
-          columns,
-          state: {
-            currentSearchValue: searchValue.current === undefined ? '' : searchValue.current,
-          },
-        });
+        if (!initialRendering.current) {
+          onUserViewModified({
+            view,
+            columns,
+            state: {
+              currentSearchValue: searchValue.current === undefined ? '' : searchValue.current,
+            },
+          });
+        } else {
+          initialRendering.current = false;
+        }
       }
     },
     [view, columns]

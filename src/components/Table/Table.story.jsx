@@ -829,9 +829,6 @@ storiesOf('Watson IoT/Table', module)
           if (!selectedView) {
             setSelectedViewEdited(false);
           } else {
-            // console.info('newState', newState);
-            // console.info('currentUserView sort', currentUserView.props.view.table?.sort);
-            // console.info('selectedView sort', selectedView.props.view.table?.sort);
             setSelectedViewEdited(!isEqual(currentUserView.props, selectedView.props));
           }
         };
