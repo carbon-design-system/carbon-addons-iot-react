@@ -13,6 +13,10 @@
     z-index: 10000;
   }
 
+  .#{$prefix}--tooltip {
+    z-index: 10000;
+  }
+
   /* support large modals for ll the sizes */
   &.#{$iot-prefix}--composed-modal--large {
     .#{$prefix}--modal-header {
