@@ -109,15 +109,18 @@ const CardRenderer = React.memo(({ /* eslint-disable react/prop-types */
   // Speed up performance by caching the available actions
   const cachedActions = useMemo(
     () =>
-      merge(availableActions, {
-        range: !isEmpty(dataSource), // all cards should have the range picker
-        expand:
-          type === CARD_TYPES.IMAGE ||
-          type === CARD_TYPES.TIMESERIES ||
-          type === CARD_TYPES.TABLE ||
-          type === CARD_TYPES.BAR ||
-          availableActions?.expand, // image and line chart cards should have expand
-      }),
+      merge(
+        {
+          range: !isEmpty(dataSource), // all cards should have the range picker
+          expand:
+            type === CARD_TYPES.IMAGE ||
+            type === CARD_TYPES.TIMESERIES ||
+            type === CARD_TYPES.TABLE ||
+            type === CARD_TYPES.BAR ||
+            availableActions?.expand, // image and line chart cards should have expand
+        },
+        availableActions || {}
+      ),
     [availableActions, dataSource, type]
   );
 

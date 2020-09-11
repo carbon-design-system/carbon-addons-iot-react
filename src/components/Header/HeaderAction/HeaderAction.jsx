@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { settings } from 'carbon-components';
 import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import { keyCodes } from '../../../constants/KeyCodeConstants';
@@ -112,7 +113,7 @@ const HeaderAction = ({ item, index }) => {
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
-      className={`${carbonPrefix}--header-action-btn`}
+      className={classnames(`${carbonPrefix}--header-action-btn`, item.className)}
       key={`menu-item-${item.label}-global-${index}`}
       aria-label={item.label}
       onClick={item.onClick || (() => {})}
