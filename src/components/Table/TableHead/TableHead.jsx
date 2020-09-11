@@ -368,10 +368,13 @@ const TableHead = ({
 
               {matchingColumnMeta.options !== undefined && matchingColumnMeta.options !== null ? (
                 <OverflowMenu
+                  className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
                   data-testid="table-head--overflow"
                   flipped={columnIndex !== 0}
-                  className={`${iotPrefix}--table-head--overflow`}
+                  onClick={e => {
+                    e.stopPropagation();
+                  }}
                 >
                   {matchingColumnMeta.options.map((option, index) => (
                     <OverflowMenuItem

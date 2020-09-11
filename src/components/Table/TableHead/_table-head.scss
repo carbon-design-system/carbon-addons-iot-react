@@ -24,6 +24,8 @@
     & > span {
       margin: auto 0;
       flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
@@ -105,7 +107,7 @@
 
 .#{$iot-prefix}--table-head {
   &--overflow {
-    margin-left: $spacing-05;
+    flex-shrink: 0;
   }
 
   &--table-header {

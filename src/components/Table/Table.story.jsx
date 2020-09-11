@@ -207,6 +207,7 @@ export const tableColumnsWithOverflowMenu = [
   {
     id: 'string',
     name: 'String',
+    isSortable: true,
     filter: { placeholderText: 'enter a string' },
     options: selectData,
   },
@@ -2436,6 +2437,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
             hasRowExpansion: false,
+            hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
