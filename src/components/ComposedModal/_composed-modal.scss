@@ -8,12 +8,13 @@
     }
   }
 
-  // Needed to workaround this carbon issue: https://github.com/carbon-design-system/carbon/issues/6662
   .#{$prefix}--overflow-menu-options {
+    // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
     z-index: 10000;
   }
 
   .#{$prefix}--tooltip {
+    // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
     z-index: 10000;
   }
 
