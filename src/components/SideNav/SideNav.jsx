@@ -14,7 +14,7 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
 
-const propTypes = {
+export const SideNavPropTypes = {
   /** Specify whether the side navigation is expanded or collapsed */
   defaultExpanded: PropTypes.bool,
   /** array of link item objects */
@@ -152,7 +152,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
   );
 };
 
-SideNav.propTypes = propTypes;
+SideNav.propTypes = SideNavPropTypes;
 SideNav.defaultProps = defaultProps;
 
 export default SideNav;
