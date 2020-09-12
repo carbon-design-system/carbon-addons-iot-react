@@ -7933,6 +7933,43 @@ Map {
       },
     },
   },
+  "CardEditor" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "closeGalleryButton": "Back",
+        "galleryHeader": "Gallery",
+        "openGalleryButton": "Open gallery",
+        "openJSONButton": "Open JSON editor",
+      },
+      "value": null,
+    },
+    "propTypes": Object {
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "galleryHeader": Object {
+              "type": "string",
+            },
+            "openGalleryButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onAddCard": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "value": Object {
+        "type": "object",
+      },
+    },
+  },
   "Card" => Object {
     "defaultProps": Object {
       "availableActions": Object {
