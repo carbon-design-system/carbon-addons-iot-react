@@ -49,6 +49,12 @@ export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
+export SuiteHeader from './components/SuiteHeader/SuiteHeader';
+export SuiteHeaderProfile from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
+export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
+export SuiteHeaderI18N from './components/SuiteHeader/i18n';
+export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
