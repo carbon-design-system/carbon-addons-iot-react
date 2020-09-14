@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef, useMemo } from 'react';
+import React, { useState, useLayoutEffect, useRef, useMemo, useEffect, useCallback } from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -1116,6 +1116,471 @@ storiesOf('Watson IoT/Table', module)
       info: {
         text: `
         This story shows a complete implementation of user configurable View Management.
+        The story's source code is too complex to successfully be shown here, please view
+        the actual source code.
+        `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Table Example with Create & Save Views',
+    () => {
+      return React.createElement(() => {
+        // The initial default state for this story is one with no active filters
+        // and no default search value etc, i.e. a view all scenario.
+        const baseState = {
+          ...initialState,
+          columns: initialState.columns.map(col => ({ ...col, width: '150px' })),
+          view: {
+            ...initialState.view,
+            filters: [],
+            toolbar: {
+              activeBar: 'filter',
+              search: { defaultValue: '' },
+            },
+          },
+        };
+
+        // Create some mockdata to represent previously saved views.
+        // The props can be any subset of the view and columns prop that
+        // you need in order to successfully save and load your views.
+        const viewExample = {
+          description: 'Columns: 7, Filters: 0, Search: pinoc',
+          id: 'view1',
+          isPublic: true,
+          isDeleteable: true,
+          isEditable: true,
+          title: 'My view 1',
+          props: {
+            view: {
+              filters: [],
+              table: {
+                ordering: baseState.view.table.ordering,
+                sort: {},
+              },
+              toolbar: {
+                activeBar: 'column',
+                search: { defaultValue: 'pinoc' },
+              },
+            },
+            columns: baseState.columns,
+          },
+        };
+        const viewExample2 = {
+          description: 'Columns: 7, Filters: 1, Search:',
+          id: 'view2',
+          isPublic: false,
+          isDeleteable: true,
+          isEditable: true,
+          title: 'My view 2',
+          props: {
+            view: {
+              filters: [{ columnId: 'string', value: 'helping' }],
+              table: {
+                ordering: baseState.view.table.ordering,
+                sort: {
+                  columnId: 'select',
+                  direction: 'DESC',
+                },
+              },
+              toolbar: {
+                activeBar: 'filter',
+                search: { defaultValue: '' },
+              },
+            },
+            columns: baseState.columns,
+          },
+        };
+
+        /** The "store" that holds all the existing views */
+        const [viewsStorage, setViewsStorage] = useState([viewExample, viewExample2]);
+        /** Tracks if the user has modified the view since it was selected */
+        const [selectedViewEdited, setSelectedViewEdited] = useState(false);
+        /** The props & metadata of the view currently selected */
+        const [selectedView, setSelectedView] = useState(viewExample2);
+        /** The props & metadata representing the current state needed by SaveViewModal  */
+        const [viewToSave, setViewToSave] = useState(undefined);
+        /** The id of the view that is currently the default */
+        const [defaultViewId, setDefaultViewId] = useState('view2');
+        /** Number of views per page in the TableManageViewModal */
+        const manageViewsRowsPerPage = 10;
+        /** Current page number in the TableManageViewModal */
+        const [manageViewsCurrentPageNumber, setManageViewsCurrentPageNumber] = useState(1);
+        /** Current filters in the TableManageViewModal. Can hold 'searchTerm' and 'showPublic' */
+        const [manageViewsCurrentFilters, setManageViewsCurrentFilters] = useState({
+          searchTerm: '',
+          showPublic: true,
+        });
+        /** Flag needed to open and close the TableManageViewModal */
+        const [manageViewsModalOpen, setManageViewsModalOpen] = useState(false);
+        /** Collection of filtered views needed for the pagination in the TableManageViewModal */
+        const [manageViewsFilteredViews, setManageViewsFilteredViews] = useState(viewsStorage);
+        /** Collection of views on the current page in the TableManageViewModal */
+        const [manageViewsCurrentPageItems, setManageViewsCurrentPageItems] = useState(
+          viewsStorage.slice(0, manageViewsRowsPerPage)
+        );
+
+        // This is the state of the current table.
+        const [currentTableState, setCurrentTableState] = useState(
+          assign({}, baseState, viewsStorage.find(view => view.id === defaultViewId)?.props)
+        );
+
+        // The seletable items to be presented by the ViewDropDown.
+        const selectableViews = useMemo(
+          () => viewsStorage.map(({ id, title }) => ({ id, text: title })),
+          [viewsStorage]
+        );
+
+        // A helper method used to extract the relevat properties from the view and column
+        // props. For our example story this is what we store in a saved view.
+        const extractCurrentUserView = useCallback(
+          ({ view, columns }) => ({
+            props: {
+              columns,
+              view: {
+                filters: view.filters,
+                table: { ordering: view.table.ordering, sort: view.table.sort || {} },
+                toolbar: {
+                  activeBar: view.toolbar.activeBar,
+                  search: {
+                    ...view.toolbar.search,
+                    defaultValue: currentTableState.view.toolbar?.search?.defaultValue || '',
+                  },
+                },
+              },
+            },
+          }),
+          [currentTableState]
+        );
+
+        // This effect is needed to determine if the current view has been changed
+        // so that this can be reflected in the TableViewDropdown.
+        useEffect(
+          () => {
+            const currentUserView = extractCurrentUserView(currentTableState);
+            const compareView = selectedView || extractCurrentUserView(baseState);
+            setSelectedViewEdited(!isEqual(currentUserView.props, compareView.props));
+
+            // if (!selectedView) {
+            //   setSelectedViewEdited(!isEqual(currentUserView, extractCurrentUserView(baseState)));
+            // } else {
+            //   setSelectedViewEdited(!isEqual(currentUserView.props, selectedView.props));
+            // }
+          },
+          [baseState, currentTableState, extractCurrentUserView, selectedView]
+        );
+
+        /**
+         * The TableManageViewsModal is an external component that can be placed outside
+         * the table. It is highly customizable and is used to list existing views and
+         * provide the used the option to delete and edit the view's metadata. See the
+         * TableManageViewsModal story for a more detailed documentation.
+         */
+        const renderManageViewsModal = () => {
+          const showPage = (pageNumber, views) => {
+            const rowUpperLimit = pageNumber * manageViewsRowsPerPage;
+            const currentItemsOnPage = views.slice(
+              rowUpperLimit - manageViewsRowsPerPage,
+              rowUpperLimit
+            );
+            setManageViewsCurrentPageNumber(pageNumber);
+            setManageViewsCurrentPageItems(currentItemsOnPage);
+          };
+
+          const applyFiltering = ({ searchTerm, showPublic }) => {
+            const views = viewsStorage
+              .filter(
+                view =>
+                  searchTerm === '' ||
+                  view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+              )
+              .filter(view => (showPublic ? view : !view.isPublic));
+
+            setManageViewsFilteredViews(views);
+            showPage(1, views);
+          };
+
+          const onDelete = viewId => {
+            if (viewId === selectedView?.id) {
+              setSelectedViewEdited(false);
+              setSelectedView(undefined);
+              setCurrentTableState(baseState);
+            }
+
+            const deleteIndex = viewsStorage.findIndex(view => view.id === viewId);
+            setViewsStorage(existingViews => {
+              const modifiedViews = [...existingViews];
+              modifiedViews.splice(deleteIndex, 1);
+              setManageViewsFilteredViews(modifiedViews);
+              showPage(1, modifiedViews);
+              return modifiedViews;
+            });
+          };
+
+          return (
+            <TableManageViewsModal
+              actions={{
+                onDisplayPublicChange: showPublic => {
+                  const newFilters = { ...manageViewsCurrentFilters, showPublic };
+                  setManageViewsCurrentFilters(newFilters);
+                  applyFiltering(newFilters);
+                },
+                onSearchChange: (searchTerm = '') => {
+                  const newFilters = { ...manageViewsCurrentFilters, searchTerm };
+                  setManageViewsCurrentFilters(newFilters);
+                  applyFiltering(newFilters);
+                },
+                onEdit: viewId => {
+                  setManageViewsModalOpen(false);
+                  const viewToEdit = viewsStorage.find(view => view.id === viewId);
+                  setSelectedView(viewToEdit);
+                  setViewToSave(viewToEdit);
+                },
+                onDelete,
+                onClearError: action('onClearManageViewsModalError'),
+                onClose: () => setManageViewsModalOpen(false),
+              }}
+              defaultViewId={defaultViewId}
+              error={select('error', [undefined, 'My error msg'], undefined)}
+              isLoading={boolean('isLoading', false)}
+              open={manageViewsModalOpen}
+              views={manageViewsCurrentPageItems}
+              pagination={{
+                page: manageViewsCurrentPageNumber,
+                onPage: pageNumber => showPage(pageNumber, manageViewsFilteredViews),
+                maxPage: Math.ceil(manageViewsFilteredViews.length / manageViewsRowsPerPage),
+                pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+              }}
+            />
+          );
+        };
+
+        /**
+         * The TableViewDropdown is an external component that needs to be passed in
+         * via the customToolbarContent and positioned according to the applications needs.
+         * Most of the functionality in the TableViewDropdown can be overwritten. See the
+         * TableViewDropdown story for a more detailed documentation.
+         */
+        const renderViewDropdown = () => {
+          return (
+            <TableViewDropdown
+              style={{ order: '-1', width: '300px' }}
+              selectedViewId={selectedView?.id}
+              selectedViewEdited={selectedViewEdited}
+              views={selectableViews}
+              actions={{
+                onSaveAsNewView: () => {
+                  setViewToSave({
+                    id: undefined,
+                    ...extractCurrentUserView(currentTableState),
+                  });
+                },
+                onManageViews: () => {
+                  setManageViewsModalOpen(true);
+                  setManageViewsCurrentPageItems(viewsStorage.slice(0, manageViewsRowsPerPage));
+                },
+                onChangeView: ({ id }) => {
+                  const selectedView = viewsStorage.find(view => view.id === id);
+                  setCurrentTableState(assign({}, baseState, selectedView?.props));
+                  setSelectedView(selectedView);
+                  setSelectedViewEdited(false);
+                },
+                onSaveChanges: () => {
+                  setViewToSave({
+                    ...selectedView,
+                    ...extractCurrentUserView(currentTableState),
+                  });
+                },
+              }}
+            />
+          );
+        };
+
+        /**
+         * The TableSaveViewModal is a an external component that can be placed
+         * outside the table. Is is used both for saving new views and for
+         * updating existing ones. See the TableSaveViewModal story for a more
+         * detailed documentation.
+         */
+        const renderSaveViewModal = () => {
+          const saveView = viewMetaData => {
+            setViewsStorage(existingViews => {
+              const modifiedStorage = [];
+              const saveNew = viewToSave.id === undefined;
+              const { isDefault, ...metaDataToSave } = viewMetaData;
+              const generatedId = new Date().getTime().toString();
+
+              if (saveNew) {
+                const newViewToStore = {
+                  ...viewToSave,
+                  ...metaDataToSave,
+                  id: generatedId,
+                  isDeleteable: true,
+                  isEditable: true,
+                };
+                modifiedStorage.push(...existingViews, newViewToStore);
+                setSelectedView(newViewToStore);
+              } else {
+                const indexToUpdate = existingViews.findIndex(view => view.id === viewToSave.id);
+                const viewsCopy = [...existingViews];
+                const modifiedViewToStore = { ...viewToSave, ...metaDataToSave };
+                viewsCopy[indexToUpdate] = modifiedViewToStore;
+                setSelectedView(modifiedViewToStore);
+                modifiedStorage.push(...viewsCopy);
+              }
+
+              if (isDefault) {
+                setDefaultViewId(saveNew ? generatedId : viewToSave.id);
+              }
+
+              setSelectedViewEdited(false);
+              return modifiedStorage;
+            });
+            setViewToSave(undefined);
+          };
+
+          // Simple description example that can be replaced by any string or node.
+          // See the TableSaveViewModal story for more examples.
+          const getDescription = ({ table, filters, toolbar }) =>
+            `Columns: ${table.ordering.filter(col => !col.isHidden).length}, 
+            Filters: ${filters?.length || 0}, 
+            Search: ${toolbar?.search?.defaultValue}`;
+
+          return (
+            viewToSave && (
+              <TableSaveViewModal
+                actions={{
+                  onSave: saveView,
+                  onClose: () => {
+                    setViewToSave(undefined);
+                  },
+                  onClearError: action('onClearError'),
+                  onChange: action('onChange'),
+                }}
+                sendingData={boolean('sendingData', false)}
+                error={select('error', [undefined, 'My error msg'], undefined)}
+                open
+                titleInputInvalid={boolean('titleInputInvalid', false)}
+                titleInputInvalidText={text('titleInputInvalidText', undefined)}
+                viewDescription={getDescription(viewToSave.props.view)}
+                initialFormValues={{
+                  title: viewToSave.title,
+                  isPublic: viewToSave.isPublic,
+                  isDefault: viewToSave.id === defaultViewId,
+                }}
+                i18n={{ modalTitle: viewToSave.id ? 'Update view' : 'Save new view' }}
+              />
+            )
+          );
+        };
+
+        return (
+          <FullWidthWrapper>
+            {renderManageViewsModal()}
+            {renderSaveViewModal()}
+            <Table
+              key={`table-story-${selectedView?.id}`}
+              id="table"
+              {...baseState}
+              columns={currentTableState.columns}
+              view={{
+                ...currentTableState.view,
+                // The TableViewDropdown should be inserted as customToolbarContent
+                toolbar: {
+                  ...currentTableState.view.toolbar,
+                  customToolbarContent: renderViewDropdown(),
+                },
+              }}
+              secondaryTitle="Table with user view management"
+              actions={{
+                ...actions,
+                table: {
+                  ...action.table,
+                  onColumnResize: columns => {
+                    setCurrentTableState(state => ({
+                      ...state,
+                      columns,
+                    }));
+                  },
+                  // Simplified sorting for this story. It does not update the data of the table
+                  // and it ignores direction.
+                  onChangeSort: sortOnColumnId => {
+                    setCurrentTableState(state => ({
+                      ...state,
+                      view: {
+                        ...state.view,
+                        table: {
+                          ...state.view.table,
+                          sort: {
+                            columnId: sortOnColumnId,
+                            direction: 'DESC',
+                          },
+                        },
+                      },
+                    }));
+                  },
+                },
+                toolbar: {
+                  ...actions.toolbar,
+                  onApplySearch: currentSearchValue => {
+                    // Here you can use debounce and call the backend to properly filter
+                    // your data. For this story we simply update the search defaultValue.
+                    setCurrentTableState(state => ({
+                      ...state,
+                      view: {
+                        ...state.view,
+                        toolbar: {
+                          ...state.view.toolbar,
+                          search: { defaultValue: currentSearchValue },
+                        },
+                      },
+                    }));
+                  },
+                  onApplyFilter: filters => {
+                    // Simplified filtering for this story. It does not update the data of
+                    // the table only the actual filters.
+                    setCurrentTableState(state => ({
+                      ...state,
+                      view: {
+                        ...state.view,
+                        filters: Object.entries(filters)
+                          .filter(([, value]) => value !== '')
+                          .map(([key, value]) => ({
+                            columnId: key,
+                            value,
+                          })),
+                      },
+                    }));
+                  },
+                },
+              }}
+              isSortable
+              lightweight={boolean('lightweight', false)}
+              options={{
+                ...baseState.options,
+                hasResize: true,
+                hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+                // Enables the behaviour in Table required
+                // to fully implement Create and Save Views
+                hasUserViewManagement: true,
+              }}
+            />
+          </FullWidthWrapper>
+        );
+      });
+    },
+    {
+      info: {
+        text: `
+        This story shows a partial implementation of how to use configurable View Management, 
+        but the implemented examples should be enough to give you an idea on how to use it
+        together with your own state manager. We examplify by providing shallow implementations 
+        for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
+        object currentTableState and the data objects in the callbacks are just appended to that 
+        state using the same ref, but in a real situation the state management would be more complex.
         The story's source code is too complex to successfully be shown here, please view
         the actual source code.
         `,

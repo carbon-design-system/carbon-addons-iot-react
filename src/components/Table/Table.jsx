@@ -258,7 +258,7 @@ export const defaultProps = baseProps => ({
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
     },
-    onUserViewModified: defaultFunction('actions.table.onUserViewModified'),
+    onUserViewModified: null,
   },
   locale: null,
   i18n: {
@@ -315,7 +315,6 @@ const Table = props => {
     view,
     actions: { onUserViewModified },
     actions,
-    options: { hasUserViewManagement },
     options,
     lightweight,
     className,
@@ -334,11 +333,11 @@ const Table = props => {
   const initialRendering = useRef(true);
 
   // The save/load view functionality needs access to the latest view configuration
-  // and also needs to know when the configuration has changed. This effect satifies
-  // both those needs.
+  // and also needs to know when the configuration has changed for the StatefulTable.
+  // This effect satifies both those needs.
   useDeepCompareEffect(
     () => {
-      if (hasUserViewManagement) {
+      if (options.hasUserViewManagement && onUserViewModified) {
         if (!initialRendering.current) {
           onUserViewModified({
             view,
@@ -475,11 +474,11 @@ const Table = props => {
             ...pick(
               options,
               'hasColumnSelection',
-
               'hasSearch',
               'hasRowSelection',
               'hasRowCountInHeader',
-              'hasRowEdit'
+              'hasRowEdit',
+              'hasUserViewManagement'
             ),
             hasFilter: Boolean(options?.hasFilter),
           }}

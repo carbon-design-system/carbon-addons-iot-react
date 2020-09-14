@@ -310,7 +310,7 @@ Map {
   "Table" => Object {
     "defaultProps": Object {
       "actions": Object {
-        "onUserViewModified": [Function],
+        "onUserViewModified": null,
         "pagination": Object {
           "onChangePage": [Function],
         },
@@ -2932,6 +2932,9 @@ Map {
               "type": "bool",
             },
             "hasSearch": Object {
+              "type": "bool",
+            },
+            "hasUserViewManagement": Object {
               "type": "bool",
             },
           },
