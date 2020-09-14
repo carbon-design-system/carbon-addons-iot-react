@@ -1,10 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
+import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  COLORS,
+  TIME_SERIES_TYPES,
+  DISABLED_COLORS,
+} from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
@@ -269,6 +275,27 @@ describe('TimeSeriesCard', () => {
       },
     ]);
   });
+  it('formatChartData can handle sparse values from the backend', () => {
+    const series = [
+      {
+        label: 'particles',
+        dataSourceId: 'particles',
+      },
+      {
+        label: 'emissions',
+        dataSourceId: 'emissions',
+      },
+    ];
+    const formattedChartData = formatChartData(
+      'timestamp',
+      series,
+      barChartData.timestamps.slice(0, 2).map(
+        (dataPoint, index) => (index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint) // make the data sparse (this skips the emissions datapoint in a few points)
+      )
+    );
+    expect(formattedChartData).toHaveLength(3);
+    expect(formattedChartData.every(dataPoint => dataPoint.value)).toEqual(true); // every value should be valid
+  });
   it('formatChartData returns empty array if no data matches dataFilter', () => {
     const series = [
       {
@@ -306,6 +333,22 @@ describe('TimeSeriesCard', () => {
       identifier: 'group',
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
+  });
+  it('formatColors returns valid colors if the time series card isEditable is true', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        color: 'blue',
+      },
+      {
+        label: 'New York',
+        dataSourceId: 'particles',
+        color: 'yellow',
+      },
+    ];
+    const selectedColors = Object.values(formatColors(series, true).scale);
+    expect(DISABLED_COLORS).toEqual(expect.arrayContaining(selectedColors)); // all of the selectedColors should come from the DISABLED_COLORS map
   });
   it('formatColors returns correct format if series is object', () => {
     const series = {
