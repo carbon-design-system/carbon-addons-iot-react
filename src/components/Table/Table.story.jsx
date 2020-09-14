@@ -876,9 +876,12 @@ storiesOf('Watson IoT/Table', module)
           };
 
           const onDelete = viewId => {
-            currentUserViewRef.current = { props: { ...extractViewRefData(defaultState) } };
-            setSelectedViewEdited(false);
-            setSelectedView(undefined);
+            if (selectedView?.id === viewId) {
+              currentUserViewRef.current = { props: { ...extractViewRefData(defaultState) } };
+              setSelectedViewEdited(false);
+              setSelectedView(undefined);
+            }
+
             const deleteIndex = viewsStorage.findIndex(view => view.id === viewId);
             setViewsStorage(existingViews => {
               const modifiedViews = [...existingViews];
