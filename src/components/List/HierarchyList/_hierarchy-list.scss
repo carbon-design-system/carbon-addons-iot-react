@@ -38,12 +38,20 @@
   }
 
   &-modal {
-    &--breadcrumb {
-      overflow-y: scroll;
+    .breadcrumb--container {
+      padding: 1rem 0;
+    }
 
-      > button {
-        padding: 0;
-      }
+    &--breadcrumb > button {
+      appearance: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    &--breadcrumb:last-child > button {
+      cursor: default;
     }
 
     &--list {

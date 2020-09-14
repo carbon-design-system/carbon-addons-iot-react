@@ -15,7 +15,7 @@ import {
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 
-import HierarchyListReorderModal from './HierarchyListReorderModal';
+import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
 import BulkActionHeader from './BulkActionHeader';
 
 const { iotPrefix } = settings;
