@@ -176,6 +176,48 @@ button.#{$prefix}--side-nav__link {
   height: 3rem;
 }
 
+//Handling for menus more than two levels deep.
+.#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active):hover
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+  > .#{$prefix}--side-nav__submenu:hover {
+  background-color: $inverse-02;
+  color: $ui-02;
+}
+
+//3-levels deep text
+.#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__submenu-title {
+  padding-left: 55px;
+}
+
+.#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__link-text {
+  padding-left: 15px;
+}
+
+//4-levels deep text
+.#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__submenu-title {
+  padding-left: 70px;
+}
+
+.#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__menu
+  .#{$prefix}--side-nav__item
+  .#{$prefix}--side-nav__link-text {
+  padding-left: 30px;
+}
+
 // RTL style fixes
 html[dir='rtl'] {
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {

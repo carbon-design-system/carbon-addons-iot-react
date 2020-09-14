@@ -223,3 +223,91 @@ storiesOf('Watson IoT/SideNav', module).add(
     },
   }
 );
+
+const links2 = [
+  {
+    isEnabled: true,
+    icon: Dashboard,
+    metaData: {
+      label: 'Dashboards',
+      href: 'https://google.com',
+      element: 'a',
+      target: '_blank',
+    },
+    linkContent: 'Dashboards',
+    childContent: [
+      {
+        icon: '',
+        metaData: {
+          label: 'Link 1',
+          title: 'Link 1',
+          onClick: () => {
+            console.log('Link 1 click');
+          },
+          element: 'button',
+        },
+        content: 'Link 1',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 2',
+              title: 'Link 2',
+              onClick: () => {
+                window.open('https://www.npmjs.com/package/carbon-addons-iot-react');
+              },
+              element: 'button',
+            },
+            content: 'Link 2',
+            childContent: [
+              {
+                metaData: {
+                  label: 'Link 3',
+                  title: 'Link 3',
+                  onClick: () => {
+                    console.log('Link 3 click');
+                  },
+                  element: 'button',
+                },
+                content: 'Link 3',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
+
+storiesOf('Watson IoT/SideNav', module).add(
+  'SideNav with multi-level menu hierarchy',
+  () => (
+    <FullWidthWrapper withPadding={false}>
+      <HeaderContainer
+        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          <>
+            <Header
+              {...HeaderProps}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+            />
+            <SideNav
+              links={links2}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+              switcherProps={switcherProps}
+            />
+            <div className={`${iotPrefix}--main-content`}>
+              <PageTitleBar title="Title" description="Description" />
+            </div>
+          </>
+        )}
+      />
+    </FullWidthWrapper>
+  ),
+  {
+    info: {
+      text: `
+      `,
+    },
+  }
+);

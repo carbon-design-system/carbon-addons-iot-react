@@ -2,13 +2,14 @@ import {
   SideNav as CarbonSideNav,
   SideNavItems,
   SideNavLink,
-  SideNavMenu,
+  SideNavMenu as CarbonSideNavMenu,
   SideNavMenuItem,
   // SideNavSwitcher,
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import SideNavMenu from './SideNavMenu';
 
 import { settings } from '../../constants/Settings';
 
@@ -76,9 +77,77 @@ const defaultProps = {
   },
 };
 
+function getChildren(links, link, componentKey) {
+  if (link.hasOwnProperty('childContent')) {
+    let parentActive = false;
+    const children = link.childContent.map(childlink => {
+      if (childlink.isActive) {
+        parentActive = true;
+      }
+
+      if (childlink.hasOwnProperty('childContent')) {
+        return getChildren(links, childlink, componentKey + link.childContent.indexOf(childlink));
+      }
+      return (
+        <SideNavMenuItem
+          key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+          isActive={childlink.isActive}
+          {...childlink.metaData}
+        >
+          {childlink.content}
+        </SideNavMenuItem>
+      );
+    });
+
+    if (link.metaData && link.metaData.onClick) {
+      return (
+        <SideNavMenu
+          isActive={parentActive}
+          renderIcon={link.icon}
+          aria-label="dropdown"
+          index={componentKey}
+          key={`menu-link-${componentKey}-dropdown`}
+          title={link.linkContent ? link.linkContent : link.content}
+          large
+          callback={link.metaData.onClick}
+        >
+          {children}
+        </SideNavMenu>
+      );
+    }
+    return (
+      <CarbonSideNavMenu
+        isActive={parentActive}
+        renderIcon={link.icon}
+        aria-label="dropdown"
+        key={`menu-link-${componentKey}-dropdown`}
+        title={link.linkContent ? link.linkContent : link.content}
+        large
+      >
+        {children}
+      </CarbonSideNavMenu>
+    );
+  }
+  return (
+    <SideNavLink
+      key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
+      aria-label={link.metaData.label}
+      onClick={link.metaData.onClick}
+      href={link.metaData.href}
+      renderIcon={link.icon}
+      isActive={link.isActive}
+      {...link.metaData}
+      large
+    >
+      {link.linkContent}
+    </SideNavLink>
+  );
+}
+
 /**
  * Side Navigation. part of UI shell
  */
+
 const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
   const nav = links
     .map(link => {
@@ -86,49 +155,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
       if (!enabled) {
         return null;
       }
-      if (link.hasOwnProperty('childContent')) {
-        let parentActive = false;
-        const children = link.childContent.map(childlink => {
-          if (childlink.isActive) {
-            parentActive = true;
-          }
-          return (
-            <SideNavMenuItem
-              key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-              isActive={childlink.isActive}
-              {...childlink.metaData}
-            >
-              {childlink.content}
-            </SideNavMenuItem>
-          );
-        });
-        return (
-          <SideNavMenu
-            isActive={parentActive}
-            renderIcon={link.icon}
-            aria-label="dropdown"
-            key={`menu-link-${links.indexOf(link)}-dropdown`}
-            title={link.linkContent}
-            large
-          >
-            {children}
-          </SideNavMenu>
-        );
-      }
-      return (
-        <SideNavLink
-          key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
-          aria-label={link.metaData.label}
-          onClick={link.metaData.onClick}
-          href={link.metaData.href}
-          renderIcon={link.icon}
-          isActive={link.isActive}
-          {...link.metaData}
-          large
-        >
-          {link.linkContent}
-        </SideNavLink>
-      );
+      return getChildren(links, link, links.indexOf(link));
     })
     .filter(i => i);
 
