@@ -7965,6 +7965,10 @@ Map {
         "isRequired": true,
         "type": "func",
       },
+      "onShowGallery": Object {
+        "isRequired": true,
+        "type": "func",
+      },
       "value": Object {
         "type": "object",
       },

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Apps16 } from '@carbon/icons-react';
 
@@ -27,6 +27,8 @@ const propTypes = {
   value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** validation errors on the value object */
   // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Callback function when user clicks Show Gallery */
+  onShowGallery: PropTypes.func.isRequired,
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
@@ -37,12 +39,13 @@ const propTypes = {
   }),
 };
 
-const CardEditor = ({ value, onChange, onAddCard, i18n }) => {
+const CardEditor = ({ value, onShowGallery, onChange, onAddCard, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-editor`;
 
-  const [showGallery, setShowGallery] = useState(!value);
+  // show the gallery if no card is being edited
+  const showGallery = value === null || value === undefined;
 
   return (
     <div className={baseClassName}>
@@ -53,7 +56,7 @@ const CardEditor = ({ value, onChange, onAddCard, i18n }) => {
             kind="ghost"
             size="small"
             renderIcon={Apps16}
-            onClick={() => setShowGallery(true)}
+            onClick={onShowGallery}
           >
             {mergedI18N.openGalleryButton}
           </Button>

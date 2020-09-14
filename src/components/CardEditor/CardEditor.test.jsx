@@ -8,6 +8,7 @@ import CardEditor from './CardEditor';
 describe('CardEditor', () => {
   const actions = {
     onAddCard: jest.fn(),
+    onShowGallery: jest.fn(),
     onChange: jest.fn(),
   };
   const defaultCard = {
@@ -21,6 +22,7 @@ describe('CardEditor', () => {
     render(
       <CardEditor
         supportedTypes={['VALUE', 'LINECHART', 'TABLE']}
+        onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
       />
@@ -32,7 +34,12 @@ describe('CardEditor', () => {
 
   it('fires onChange when user edits title in form', () => {
     render(
-      <CardEditor value={defaultCard} onChange={actions.onChange} onAddCard={actions.onAddCard} />
+      <CardEditor
+        value={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
     );
     userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'z');
     userEvent.tab();
@@ -51,9 +58,31 @@ describe('CardEditor', () => {
     });
   });
 
+  it('fires onShowGallery when user clicks button', () => {
+    render(
+      <CardEditor
+        value={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
+    );
+    userEvent.click(
+      screen.getByRole('button', {
+        name: CardEditor.defaultProps.i18n.openGalleryButton,
+      })
+    );
+    expect(actions.onShowGallery).toHaveBeenCalledTimes(1);
+  });
+
   it('opens and closes JSON code modal through button clicks', () => {
     render(
-      <CardEditor value={defaultCard} onChange={actions.onChange} onAddCard={actions.onAddCard} />
+      <CardEditor
+        value={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
     );
     const openEditorBtn = screen.getByRole('button', {
       name: CardEditor.defaultProps.i18n.openJSONButton,
@@ -66,17 +95,5 @@ describe('CardEditor', () => {
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
     userEvent.click(openEditorBtn);
     userEvent.click(screen.getByRole('button', { name: 'Save' }));
-  });
-
-  it('opens gallery from edit form via button click', () => {
-    render(
-      <CardEditor value={defaultCard} onChange={actions.onChange} onAddCard={actions.onAddCard} />
-    );
-    userEvent.click(
-      screen.getByRole('button', {
-        name: CardEditor.defaultProps.i18n.openGalleryButton,
-      })
-    );
-    expect(screen.getByText(CardEditor.defaultProps.i18n.galleryHeader)).toBeTruthy();
   });
 });

@@ -25,6 +25,7 @@ const CardEditorInteractive = () => {
       <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
         <CardEditor
           value={data}
+          onShowGallery={() => setData(null)}
           onAddCard={type => {
             setData({ ...defaultCard, id: `card-${counter + 1}`, type });
             setCounter(counter + 1);
@@ -76,6 +77,7 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
           type: 'VALUE',
         })}
         errors={{}}
+        onShowGallery={action('onShowGallery')}
         onChange={action('onChange')}
         onAddCard={action('onAddCard')}
       />
@@ -83,7 +85,11 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
   ))
   .add('with no card defined (gallery view)', () => (
     <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
-      <CardEditor onChange={action('onChange')} onAddCard={action('onAddCard')} />
+      <CardEditor
+        onShowGallery={action('onShowGallery')}
+        onChange={action('onChange')}
+        onAddCard={action('onAddCard')}
+      />
     </div>
   ))
   .add('interactive', () => <CardEditorInteractive />);
