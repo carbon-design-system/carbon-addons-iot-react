@@ -795,41 +795,53 @@ storiesOf('Watson IoT/Table', module)
           [viewsStorage]
         );
 
-        // The table's current user view configuration (inlcuding unsaved changes to the selected view).
-        // useRef is preferred over useState so that the value can be updated without causing a
-        // rerender of the table.
-        const currentUserViewRef = useRef();
-
-        // A setter method for currentUserViewRef that sets a relevant subset of the
-        // properties avilable in the "view" prop. It also sets the columns since they
-        // potentially hold the column widths. The default search value is not updated
-        // just because the user modifies the actual search input so in order to set the
-        // defaultValue we can access the internal "currentSearchValue" via a special state prop.
-        const setCurrentUserViewRef = ({ view, columns, state: { currentSearchValue } }) => {
-          currentUserViewRef.current = {
-            props: {
-              columns,
-              view: {
-                filters: view.filters,
-                table: { ordering: view.table.ordering, sort: view.table.sort },
-                toolbar: {
-                  activeBar: view.toolbar.activeBar,
-                  search: { ...view.toolbar.search, defaultValue: currentSearchValue },
-                },
+        // A helper method for currentUserViewRef that extracts a relevant subset of the
+        // properties avilable in the "view" prop. It also extracts the columns since they
+        // potentially hold the column widths.
+        const extractViewRefData = ({ view, columns }) => {
+          return {
+            columns,
+            view: {
+              filters: view.filters,
+              table: { ordering: view.table.ordering, sort: view.table.sort || {} },
+              toolbar: {
+                activeBar: view.toolbar.activeBar,
+                search: { ...view.toolbar.search },
               },
             },
           };
-          return currentUserViewRef.current;
         };
+
+        // The table's current user view configuration (inlcuding unsaved changes to the selected view).
+        // useRef is preferred over useState so that the value can be updated without causing a
+        // rerender of the table.
+        const currentUserViewRef = useRef({
+          props: { ...(selectedView ? selectedView.props : extractViewRefData(defaultState)) },
+        });
 
         // Callback from the StatefulTable when view, columns or search value have
         // been modified and we need to update our ref that holds the latest view config.
         const onUserViewModified = newState => {
-          const currentUserView = setCurrentUserViewRef(newState);
+          const {
+            view,
+            columns,
+            // The default search value is not updated just because the user modifies
+            // the actual search input so in order to set the defaultValue we can access
+            // the internal "currentSearchValue" via a special state prop
+            state: { currentSearchValue },
+          } = newState;
+
+          const props = extractViewRefData({ view, columns });
+          props.view.toolbar.search = {
+            ...props.view.toolbar.search,
+            defaultValue: currentSearchValue,
+          };
+          currentUserViewRef.current = { props };
+
           if (!selectedView) {
-            setSelectedViewEdited(false);
+            setSelectedViewEdited(!isEqual(props, extractViewRefData(defaultState)));
           } else {
-            setSelectedViewEdited(!isEqual(currentUserView.props, selectedView.props));
+            setSelectedViewEdited(!isEqual(props, selectedView.props));
           }
         };
 
@@ -864,6 +876,9 @@ storiesOf('Watson IoT/Table', module)
           };
 
           const onDelete = viewId => {
+            currentUserViewRef.current = { props: { ...extractViewRefData(defaultState) } };
+            setSelectedViewEdited(false);
+            setSelectedView(undefined);
             const deleteIndex = viewsStorage.findIndex(view => view.id === viewId);
             setViewsStorage(existingViews => {
               const modifiedViews = [...existingViews];
@@ -938,8 +953,12 @@ storiesOf('Watson IoT/Table', module)
                   setManageViewsCurrentPageItems(viewsStorage.slice(0, manageViewsRowsPerPage));
                 },
                 onChangeView: ({ id }) => {
-                  setSelectedView(viewsStorage.find(view => view.id === id));
+                  const selected = viewsStorage.find(view => view.id === id);
+                  setSelectedView(selected);
                   setSelectedViewEdited(false);
+                  currentUserViewRef.current = selected?.props || {
+                    props: extractViewRefData(defaultState),
+                  };
                 },
                 onSaveChanges: () => {
                   setViewToSave({
