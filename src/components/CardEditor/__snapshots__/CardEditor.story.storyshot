@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onChange={[Function]}
                         onClick={[Function]}
                         placeholder=""
-                        rows={4}
+                        rows={8}
                       />
                     </div>
                   </div>
@@ -508,7 +508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onChange={[Function]}
                           onClick={[Function]}
                           placeholder=""
-                          rows={4}
+                          rows={8}
                         />
                       </div>
                     </div>
