@@ -195,14 +195,15 @@ storiesOf('Watson IoT Experimental/ListItem', module)
         id="list-item"
         value={text('value', 'List Item')}
         secondaryValue={text('secondaryValue', 'Secondary Value')}
-        disabled
+        disabled={boolean('disabled', true)}
+        isSelectable={boolean('isSelectable', true)}
         rowActions={[
           <Button
             key="list-item-edit"
             style={{ color: 'black' }}
             renderIcon={Edit16}
             hasIconOnly
-            disabled
+            disabled={boolean('action disabled', true)}
             kind="ghost"
             size="small"
             onClick={() => action('row action clicked')}
