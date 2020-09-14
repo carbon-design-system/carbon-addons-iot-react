@@ -896,7 +896,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
-          values={[]}
           size={size}
           onCardAction={action('onCardAction')}
         />
