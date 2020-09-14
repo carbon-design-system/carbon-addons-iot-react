@@ -5,14 +5,7 @@ import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-
-import {
-  CARD_SIZES,
-  COLORS,
-  TIME_SERIES_TYPES,
-  DISABLED_COLORS,
-} from '../../constants/LayoutConstants';
-
+import { CARD_SIZES, COLORS, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
