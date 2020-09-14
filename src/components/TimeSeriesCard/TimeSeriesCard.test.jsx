@@ -5,12 +5,7 @@ import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import {
-  CARD_SIZES,
-  COLORS,
-  TIME_SERIES_TYPES,
-  DISABLED_COLORS,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
@@ -68,14 +63,9 @@ describe('TimeSeriesCard', () => {
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
   });
-  it('shows bar chart when chartLayout is set to bar', () => {
-    timeSeriesCardProps.content.chartType = TIME_SERIES_TYPES.BAR;
-    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
-    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
-  });
 
   it('handleTooltip should add date', () => {
-    const defaultTooltip = '<li>existing tooltip</li>';
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(
       { date: new Date(1500000000000) },
@@ -86,6 +76,42 @@ describe('TimeSeriesCard', () => {
     expect(updatedTooltip).not.toEqual(defaultTooltip);
     expect(updatedTooltip).toContain('<ul');
     expect(updatedTooltip).toContain('2017');
+  });
+  it('handleTooltip with __data__ and GMT', () => {
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+    // the date is from 2017
+    const updatedTooltip = handleTooltip(
+      { __data__: { date: new Date(1500000000000) } },
+      defaultTooltip,
+      [],
+      'Detected alert:',
+      true,
+      'dddd' // custom format
+    );
+    expect(updatedTooltip).not.toEqual(defaultTooltip);
+    expect(updatedTooltip).toContain('<ul');
+    expect(updatedTooltip).toContain('Friday');
+  });
+  it('handleTooltip should add alert ranges if they exist', () => {
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+    // the date is from 2017
+    const updatedTooltip = handleTooltip(
+      [{ date: new Date(1573073950) }],
+      defaultTooltip,
+      [
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details',
+        },
+      ],
+      'Detected alert:'
+    );
+    expect(updatedTooltip).not.toEqual(defaultTooltip);
+    expect(updatedTooltip).toContain('<ul');
+    expect(updatedTooltip).toContain('Detected alert:');
+    expect(updatedTooltip).toContain('Alert details');
   });
   it('show line chart when only 1 color is set', () => {
     const timeSeriesCardWithOneColorProps = {
