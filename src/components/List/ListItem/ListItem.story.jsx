@@ -189,6 +189,29 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       />
     </div>
   ))
+  .add('with disabled', () => (
+    <div style={{ width: 400 }}>
+      <ListItem
+        id="list-item"
+        value={text('value', 'List Item')}
+        secondaryValue={text('secondaryValue', 'Secondary Value')}
+        disabled
+        rowActions={[
+          <Button
+            key="list-item-edit"
+            style={{ color: 'black' }}
+            renderIcon={Edit16}
+            hasIconOnly
+            disabled
+            kind="ghost"
+            size="small"
+            onClick={() => action('row action clicked')}
+            iconDescription="Edit"
+          />,
+        ]}
+      />
+    </div>
+  ))
   .add('with OverflowMenu row actions', () => (
     <div style={{ width: 400 }}>
       <ListItem
