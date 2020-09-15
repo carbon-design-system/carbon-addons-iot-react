@@ -14,8 +14,11 @@
   }
 
   &--editable {
-    .bx--cc--tooltip {
-      display: 'none';
+    .#{$prefix}--cc--tooltip {
+      display: none;
+    }
+    .#{$prefix}--cc--ruler line.ruler-line {
+      display: none;
     }
   }
 
