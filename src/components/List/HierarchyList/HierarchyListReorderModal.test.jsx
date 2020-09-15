@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, fireEvent, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
 import { DropLocation, EditingStyle, moveItemsInList } from '../../../utils/DragAndDropUtils';
 
-import HierarchyListReorderModal from './HierarchyListReorderModal';
+import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
 
 describe('HierarchyListReorderModal', () => {
   const items = [
@@ -215,7 +216,7 @@ describe('HierarchyListReorderModal', () => {
     expect(dropId).toEqual(items[1].id);
   });
 
-  it('clicking row without child selects row instead', () => {
+  it('clicking row without child selects row instead', async () => {
     const selectedIds = [items[0].id];
     let dropId = null;
 
@@ -240,7 +241,8 @@ describe('HierarchyListReorderModal', () => {
 
     // Clicks the top item in the radio button group again
     const secondItemToSelect = screen.queryAllByRole('button')[3];
-    fireEvent.click(secondItemToSelect);
+    userEvent.tab({ focusTrap: secondItemToSelect });
+    await userEvent.type(secondItemToSelect, '{enter}');
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 

@@ -90,17 +90,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-testid="modal-breadcrumb"
               >
                 <ol
-                  className="bx--breadcrumb"
+                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
                 >
                   <li
                     className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
                     title="All rows"
                   >
                     <button
-                      className="bx--link iot--btn bx--btn bx--btn--ghost"
-                      disabled={false}
+                      className="bx--link"
+                      kind="ghost"
                       onClick={[Function]}
-                      tabIndex={0}
                       type="button"
                     >
                       All rows
@@ -962,17 +961,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-testid="modal-breadcrumb"
               >
                 <ol
-                  className="bx--breadcrumb"
+                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
                 >
                   <li
                     className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
                     title="All rows"
                   >
                     <button
-                      className="bx--link iot--btn bx--btn bx--btn--ghost"
-                      disabled={false}
+                      className="bx--link"
+                      kind="ghost"
                       onClick={[Function]}
-                      tabIndex={0}
                       type="button"
                     >
                       All rows
@@ -2913,17 +2911,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-testid="modal-breadcrumb"
               >
                 <ol
-                  className="bx--breadcrumb"
+                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
                 >
                   <li
                     className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
                     title="All rows"
                   >
                     <button
-                      className="bx--link iot--btn bx--btn bx--btn--ghost"
-                      disabled={false}
+                      className="bx--link"
+                      kind="ghost"
                       onClick={[Function]}
-                      tabIndex={0}
                       type="button"
                     >
                       All rows
@@ -3757,17 +3754,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-testid="modal-breadcrumb"
               >
                 <ol
-                  className="bx--breadcrumb"
+                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
                 >
                   <li
                     className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
                     title="All rows"
                   >
                     <button
-                      className="bx--link iot--btn bx--btn bx--btn--ghost"
-                      disabled={false}
+                      className="bx--link"
+                      kind="ghost"
                       onClick={[Function]}
-                      tabIndex={0}
                       type="button"
                     >
                       All rows
@@ -5361,17 +5357,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-testid="modal-breadcrumb"
               >
                 <ol
-                  className="bx--breadcrumb"
+                  className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
                 >
                   <li
                     className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
                     title="All rows"
                   >
                     <button
-                      className="bx--link iot--btn bx--btn bx--btn--ghost"
-                      disabled={false}
+                      className="bx--link"
+                      kind="ghost"
                       onClick={[Function]}
-                      tabIndex={0}
                       type="button"
                     >
                       All rows

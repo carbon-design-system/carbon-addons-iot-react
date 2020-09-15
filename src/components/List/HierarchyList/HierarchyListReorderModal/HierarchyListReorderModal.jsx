@@ -30,6 +30,9 @@ const propTypes = {
   open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
 };
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const defaultProps = {
   i18n: {
     itemsSelected: '%d items selected',
@@ -40,7 +43,7 @@ const defaultProps = {
     allRows: 'All rows',
   },
   sendingData: null,
-  onSubmit: () => {},
+  onSubmit: noop,
   open: false,
 };
 
@@ -140,15 +143,14 @@ const HierarchyListReorderModal = ({
       </button>
     </BreadcrumbItem>,
   ];
-  console.log({ breadCrumbData });
 
   const renderedCrumbs = [
     ...fisrstCrumb,
     ...breadCrumbData.map((crumb, index) => (
       <BreadcrumbItem
         className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb`}
-        title={crumb?.content?.value || i18n.allRows}
-        key={`breadcrumb-${crumb?.id || 'all'}-${crumb?.content?.value || i18n.allRows}`}
+        title={crumb?.content?.value}
+        key={`breadcrumb-${crumb?.id}-${crumb?.content?.value}`}
         isCurrentPage={index === breadCrumbData.length - 1}
       >
         <button
@@ -157,7 +159,7 @@ const HierarchyListReorderModal = ({
           kind="ghost"
           onClick={() => handleBreadcrumbClick(crumb, index === breadCrumbData.length - 1)}
         >
-          {crumb?.content?.value || i18n.allRows}
+          {crumb?.content?.value}
         </button>
       </BreadcrumbItem>
     )),
@@ -170,7 +172,7 @@ const HierarchyListReorderModal = ({
       header={{
         title:
           selectedIds.length > 1
-            ? `${i18n.itemsTitle.replace('%d', selectedIds?.length ?? '')}`
+            ? `${i18n.itemsTitle.replace('%d', selectedIds?.length)}`
             : `${i18n.itemTitle}`,
       }}
       onClose={() => handleClose(resetSelection, onClose)}

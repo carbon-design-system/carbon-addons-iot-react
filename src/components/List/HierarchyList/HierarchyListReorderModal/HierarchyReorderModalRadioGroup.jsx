@@ -29,19 +29,22 @@ const propTypes = {
   handleLineItemClicked: PropTypes.func,
 };
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const defaultProps = {
   selectedItems: [],
-  setSelectedItem: () => {},
+  setSelectedItem: noop,
   selectedItem: null,
   selectedIds: [],
-  handleLineItemClicked: () => {},
+  handleLineItemClicked: noop,
 };
 
 const HierarchyReorderModalRadioGroup = ({
-  selectedItems = [],
+  selectedItems,
   setSelectedItem,
   selectedItem,
-  selectedIds = [],
+  selectedIds,
   handleLineItemClicked,
 }) => (
   <div className={`${iotPrefix}--hierarchy-list-bulk-modal--list`}>
