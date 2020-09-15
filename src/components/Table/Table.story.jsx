@@ -421,6 +421,7 @@ export const initialState = {
         iconDescription: 'Edit',
         isDelete: false,
         isEdit: true,
+        disabled: true,
       },
       {
         id: 'Add',
@@ -440,7 +441,7 @@ export const initialState = {
       },
       {
         id: 'textOnly',
-        labelText: 'Text only dummy action',
+        labelText: 'Text only sample action',
         isOverflow: true,
       },
     ].filter(i => i),
@@ -2373,6 +2374,7 @@ storiesOf('Watson IoT/Table', module)
             direction="right"
             tabIndex={0}
             tooltipId="table-tooltip"
+            id="table-tooltip"
             triggerId="table-tooltip-trigger"
             triggerText=""
             menuOffset={menuBody => {

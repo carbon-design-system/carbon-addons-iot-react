@@ -64,12 +64,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="Exports table"
             type="button"
           >
             <svg
               aria-hidden={true}
               className="bx--accordion__arrow"
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -1097,6 +1097,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   >
                     Pagination
                   </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PaginationNav
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2138,6 +2150,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    PageSelector
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    Unstable_Pagination
+                  </div>
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     Content
                   </div>
                   <div
@@ -2882,6 +2918,78 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     NavigationBar
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SuiteHeader
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SuiteHeaderProfile
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SuiteHeaderAppSwitcher
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SuiteHeaderLogoutModal
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SuiteHeaderI18N
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    useSuiteHeaderData
                   </div>
                 </div>
                 <div

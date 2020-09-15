@@ -25,6 +25,8 @@ export const ChildContentPropTypes = {
 
 /** common proptypes associated with a header action */
 export const HeaderActionItemPropTypes = {
+  /** Optionally provide a custom class to apply to the button */
+  className: PropTypes.string,
   /** label for the menu button */
   label: PropTypes.string.isRequired,
   /** should the action render a panel or a submenu */

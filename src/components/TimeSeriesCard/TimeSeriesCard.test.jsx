@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
+import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
@@ -62,14 +63,9 @@ describe('TimeSeriesCard', () => {
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
   });
-  it('shows bar chart when chartLayout is set to bar', () => {
-    timeSeriesCardProps.content.chartType = TIME_SERIES_TYPES.BAR;
-    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
-    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
-  });
 
   it('handleTooltip should add date', () => {
-    const defaultTooltip = '<li>existing tooltip</li>';
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(
       { date: new Date(1500000000000) },
@@ -80,6 +76,42 @@ describe('TimeSeriesCard', () => {
     expect(updatedTooltip).not.toEqual(defaultTooltip);
     expect(updatedTooltip).toContain('<ul');
     expect(updatedTooltip).toContain('2017');
+  });
+  it('handleTooltip with __data__ and GMT', () => {
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+    // the date is from 2017
+    const updatedTooltip = handleTooltip(
+      { __data__: { date: new Date(1500000000000) } },
+      defaultTooltip,
+      [],
+      'Detected alert:',
+      true,
+      'dddd' // custom format
+    );
+    expect(updatedTooltip).not.toEqual(defaultTooltip);
+    expect(updatedTooltip).toContain('<ul');
+    expect(updatedTooltip).toContain('Friday');
+  });
+  it('handleTooltip should add alert ranges if they exist', () => {
+    const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+    // the date is from 2017
+    const updatedTooltip = handleTooltip(
+      [{ date: new Date(1573073950) }],
+      defaultTooltip,
+      [
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details',
+        },
+      ],
+      'Detected alert:'
+    );
+    expect(updatedTooltip).not.toEqual(defaultTooltip);
+    expect(updatedTooltip).toContain('<ul');
+    expect(updatedTooltip).toContain('Detected alert:');
+    expect(updatedTooltip).toContain('Alert details');
   });
   it('show line chart when only 1 color is set', () => {
     const timeSeriesCardWithOneColorProps = {
@@ -269,6 +301,27 @@ describe('TimeSeriesCard', () => {
       },
     ]);
   });
+  it('formatChartData can handle sparse values from the backend', () => {
+    const series = [
+      {
+        label: 'particles',
+        dataSourceId: 'particles',
+      },
+      {
+        label: 'emissions',
+        dataSourceId: 'emissions',
+      },
+    ];
+    const formattedChartData = formatChartData(
+      'timestamp',
+      series,
+      barChartData.timestamps.slice(0, 2).map(
+        (dataPoint, index) => (index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint) // make the data sparse (this skips the emissions datapoint in a few points)
+      )
+    );
+    expect(formattedChartData).toHaveLength(3);
+    expect(formattedChartData.every(dataPoint => dataPoint.value)).toEqual(true); // every value should be valid
+  });
   it('formatChartData returns empty array if no data matches dataFilter', () => {
     const series = [
       {
@@ -306,6 +359,22 @@ describe('TimeSeriesCard', () => {
       identifier: 'group',
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
+  });
+  it('formatColors returns valid colors if the time series card isEditable is true', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        color: 'blue',
+      },
+      {
+        label: 'New York',
+        dataSourceId: 'particles',
+        color: 'yellow',
+      },
+    ];
+    const selectedColors = Object.values(formatColors(series, true).scale);
+    expect(DISABLED_COLORS).toEqual(expect.arrayContaining(selectedColors)); // all of the selectedColors should come from the DISABLED_COLORS map
   });
   it('formatColors returns correct format if series is object', () => {
     const series = {

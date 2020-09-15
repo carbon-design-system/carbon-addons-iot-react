@@ -336,6 +336,7 @@ const Card = props => {
                         <Tooltip
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
+                          id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
                           triggerText=""
                         >
                           {tooltip}
@@ -390,7 +391,16 @@ const Card = props => {
     </VisibilitySensor>
   );
 
-  return isExpanded ? <div className={`${prefix}--modal is-visible`}>{card}</div> : card;
+  return isExpanded ? (
+    <div
+      data-floating-menu-container // needed to place overflow floating menus within the modal so we can control them through css
+      className={`${prefix}--modal is-visible`}
+    >
+      {card}
+    </div>
+  ) : (
+    card
+  );
 };
 
 Card.propTypes = CardPropTypes;

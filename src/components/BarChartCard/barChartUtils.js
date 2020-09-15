@@ -1,6 +1,7 @@
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import capitalize from 'lodash/capitalize';
+import cheerio from 'cheerio';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
 import {
@@ -312,28 +313,14 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
   const typedData = Array.isArray(data) ? data[0] : data;
 
-  // First add the dataset name as the current implementation only shows the value
-  let updatedTooltip = defaultTooltip.replace(
-    `<div class="datapoint-tooltip"><p class="value">`,
-    `<p class="label">${typedData.group}</p><p class="value">`
-  );
-  updatedTooltip = updatedTooltip.replace('</div>', '');
+  const parsedTooltip = cheerio.load(defaultTooltip);
 
   // If theres a time attribute, add an extra list item with the formatted date
   if (timeDataSourceId) {
-    // First remove carbon charts tooltips
-    // the first <li> will always be carbon chart's Dates row
-    const carbonChartsDateIndex = updatedTooltip.indexOf(`<li>`);
-    const endOfDateIndex = updatedTooltip.indexOf(`</li>`);
-    updatedTooltip = updatedTooltip.replace(
-      updatedTooltip.substring(carbonChartsDateIndex, endOfDateIndex + 5),
-      ''
-    );
-
+    // generate the formatted label
     const timestamp = typedData?.date?.getTime();
     const dateLabel = timestamp
       ? `<li class='datapoint-tooltip'>
@@ -345,11 +332,12 @@ export const handleTooltip = (
           </li>`
       : '';
 
-    // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedTooltip}</li></ul>`;
+    // First remove carbon charts default Date tooltip
+    // the first <li> will always be carbon chart's Dates row in this case
+    parsedTooltip('li:first-child').replaceWith(dateLabel);
   }
 
-  return updatedTooltip;
+  return parsedTooltip.html('ul');
 };
 
 /**

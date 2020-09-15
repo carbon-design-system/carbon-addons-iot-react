@@ -14,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
   >
     <div
       className="bx--modal is-visible iot--composed-modal"
+      data-floating-menu-container={true}
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -32,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -52,6 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -86,20 +88,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 View title
               </label>
               <div
-                className="bx--text-input__field-wrapper"
-                data-invalid={null}
+                className="bx--text-input__field-outer-wrapper"
               >
-                <input
-                  className="bx--text-input bx--text__input"
-                  data-testid="TableSaveViewModal-form-title-input"
-                  disabled={false}
-                  id="save-view-modal-view-title"
-                  name="title"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  type="text"
-                  value=""
-                />
+                <div
+                  className="bx--text-input__field-wrapper"
+                  data-invalid={null}
+                  data-warn={null}
+                >
+                  <input
+                    className="bx--text-input bx--text__input"
+                    data-testid="TableSaveViewModal-form-title-input"
+                    disabled={false}
+                    id="save-view-modal-view-title"
+                    name="title"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
             <ul
@@ -115,12 +122,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="bx--accordion__heading"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  title="4 active filters"
                   type="button"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--accordion__arrow"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -157,12 +164,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="bx--accordion__heading"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  title="1 hidden column"
                   type="button"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--accordion__arrow"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -248,11 +255,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -323,6 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
   >
     <div
       className="bx--modal is-visible iot--composed-modal"
+      data-floating-menu-container={true}
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -341,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -361,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -414,11 +418,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -489,6 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
   >
     <div
       className="bx--modal is-visible iot--composed-modal"
+      data-floating-menu-container={true}
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -507,7 +507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -527,6 +527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -561,20 +562,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 View title
               </label>
               <div
-                className="bx--text-input__field-wrapper"
-                data-invalid={null}
+                className="bx--text-input__field-outer-wrapper"
               >
-                <input
-                  className="bx--text-input bx--text__input"
-                  data-testid="TableSaveViewModal-form-title-input"
-                  disabled={false}
-                  id="save-view-modal-view-title"
-                  name="title"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  type="text"
-                  value=""
-                />
+                <div
+                  className="bx--text-input__field-wrapper"
+                  data-invalid={null}
+                  data-warn={null}
+                >
+                  <input
+                    className="bx--text-input bx--text__input"
+                    data-testid="TableSaveViewModal-form-title-input"
+                    disabled={false}
+                    id="save-view-modal-view-title"
+                    name="title"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="text"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
             <p
@@ -640,11 +646,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -715,6 +716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
   >
     <div
       className="bx--modal is-visible iot--composed-modal"
+      data-floating-menu-container={true}
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -733,7 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -753,6 +755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -787,20 +790,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 View title
               </label>
               <div
-                className="bx--text-input__field-wrapper"
-                data-invalid={null}
+                className="bx--text-input__field-outer-wrapper"
               >
-                <input
-                  className="bx--text-input bx--text__input"
-                  data-testid="TableSaveViewModal-form-title-input"
-                  disabled={false}
-                  id="save-view-modal-view-title"
-                  name="title"
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  type="text"
-                  value="My view 1"
-                />
+                <div
+                  className="bx--text-input__field-wrapper"
+                  data-invalid={null}
+                  data-warn={null}
+                >
+                  <input
+                    className="bx--text-input bx--text__input"
+                    data-testid="TableSaveViewModal-form-title-input"
+                    disabled={false}
+                    id="save-view-modal-view-title"
+                    name="title"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    type="text"
+                    value="My view 1"
+                  />
+                </div>
               </div>
             </div>
             <p
@@ -864,11 +872,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

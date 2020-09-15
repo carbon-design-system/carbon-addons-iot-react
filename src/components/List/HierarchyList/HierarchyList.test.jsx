@@ -189,7 +189,7 @@ describe('HierarchyList', () => {
 
   it('found search result categories should be expanded', () => {
     render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: 'jd' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: 'jd' } });
 
     // Category containing value should appear
     expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
@@ -205,7 +205,7 @@ describe('HierarchyList', () => {
 
   it('all items should return if search value is empty string', () => {
     render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], {
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'jd davis' },
     });
 
@@ -221,7 +221,7 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
 
     // Change search to empty string
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '' } });
 
     // All categories should appear
     expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
@@ -278,6 +278,37 @@ describe('HierarchyList', () => {
     expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
       '__selected'
     );
+  });
+
+  it('defaultExpandedIds should be expanded', () => {
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        defaultExpandedIds={['New York Mets', 'New York Yankees']}
+        hasPagination={false}
+      />
+    );
+    // Yankees and Mets expanded by default. Players should be in document.
+    const expandedMetsPlayer = screen.getByTitle('JD Davis');
+    expect(expandedMetsPlayer).toBeInTheDocument();
+    const expandedYankeesPlayer = screen.getByTitle('Gary Sanchez');
+    expect(expandedYankeesPlayer).toBeInTheDocument();
+
+    // White Sox, Astros, Braves, and Nationals not expanded.
+    expect(screen.queryByTitle('Tim Anderson')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Jose Altuve')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Freddie Freeman')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Adam Eaton')).not.toBeInTheDocument();
+
+    // All other categories should be visible still
+    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
   });
 
   it('clicking item should fire onSelect', () => {

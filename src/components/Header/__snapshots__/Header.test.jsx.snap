@@ -21,6 +21,7 @@ exports[`Header should render 1`] = `
     >
       <svg
         aria-hidden="true"
+        fill="currentColor"
         focusable="false"
         height="20"
         preserveAspectRatio="xMidYMid meet"

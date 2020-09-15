@@ -776,6 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
@@ -934,6 +935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
               >
                 <svg
                   aria-hidden={true}
+                  fill="currentColor"
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
@@ -1028,6 +1030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
         <svg
           aria-hidden={true}
           className="bx--toast-notification__icon"
+          fill="currentColor"
           focusable="false"
           height={20}
           preserveAspectRatio="xMidYMid meet"

@@ -254,13 +254,12 @@ export const replaceVariables = (variables, cardVariables, target) => {
 };
 
 /**
- * @param {Object} card
+ * @param {Object} cardProperty
  * @returns {Array<String>} an array of unique variable values
  */
-export const getCardVariables = card => {
-  // for each
-  const propertyVariables = Object.values(card).reduce((acc, property) => {
-    if (typeof property === 'object' && !React.isValidElement(property)) {
+export const getCardVariables = cardProperty => {
+  const propertyVariables = Object.values(cardProperty).reduce((acc, property) => {
+    if (typeof property === 'object' && !React.isValidElement(property) && !isNil(property)) {
       // recursively search any objects for additional string properties
       acc.push(...getCardVariables(property));
     } else if (typeof property === 'string') {

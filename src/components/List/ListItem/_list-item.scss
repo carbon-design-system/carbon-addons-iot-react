@@ -97,6 +97,9 @@
           overflow: hidden;
         }
       }
+      &__disabled {
+        opacity: 0.4;
+      }
     }
     &--row-actions {
       flex: 0;

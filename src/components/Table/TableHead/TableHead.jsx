@@ -233,6 +233,14 @@ const TableHead = ({
     onChangeOrdering(newOrdering);
   };
 
+  const handleOverflowItemClick = (e, option) => {
+    e.stopPropagation();
+
+    if (onOverflowItemClicked) {
+      onOverflowItemClicked(option.id);
+    }
+  };
+
   useLayoutEffect(
     () => {
       // An initial measuring is needed since there might not be an initial value from the columns prop
@@ -372,20 +380,14 @@ const TableHead = ({
                   direction="bottom"
                   data-testid="table-head--overflow"
                   flipped={columnIndex !== 0}
-                  onClick={e => {
-                    e.stopPropagation();
-                  }}
+                  onClick={e => e.stopPropagation()}
                 >
                   {matchingColumnMeta.options.map((option, index) => (
                     <OverflowMenuItem
                       itemText={option.text}
-                      primaryFocus={index === 0}
+                      selectorPrimaryFocus={index === 0}
                       key={`${columnIndex}--overflow-item-${index}`}
-                      onClick={() => {
-                        if (onOverflowItemClicked) {
-                          onOverflowItemClicked(option.id);
-                        }
-                      }}
+                      onClick={e => handleOverflowItemClick(e, option)}
                     />
                   ))}
                 </OverflowMenu>
