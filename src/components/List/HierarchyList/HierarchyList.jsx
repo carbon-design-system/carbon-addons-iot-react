@@ -232,6 +232,11 @@ const HierarchyList = ({
     }
   };
 
+  const handleBulkModalCancel = () => {
+    setEditModeSelectedIds([]);
+    cancelMoveClicked();
+  };
+
   useEffect(
     () => {
       // Expand the parent elements of the defaultSelectedId
@@ -391,7 +396,7 @@ const HierarchyList = ({
             props: {
               i18n,
               editModeSelectedIds,
-              cancelMoveClicked,
+              cancelMoveClicked: handleBulkModalCancel,
               setShowModal,
               className: `${iotPrefix}--hierarchy-list-bulk-header`,
             },

@@ -79,7 +79,7 @@ const propTypes = {
   toggleExpansion: PropTypes.func,
   /** callback function for reorder */
   onItemMoved: PropTypes.func,
-  /** callback function when reorder will occur */
+  /** callback function when reorder will occur - can cancel the move by returning false */
   itemWillMove: PropTypes.func,
 };
 

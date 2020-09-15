@@ -126,7 +126,7 @@ const HierarchyListReorderModal = ({
   const group =
     breadCrumbData.length > 0 ? breadCrumbData[breadCrumbData.length - 1].children : items;
 
-  const fisrstCrumb = [
+  const firstCrumb = [
     <BreadcrumbItem
       className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb`}
       title={i18n.allRows}
@@ -145,7 +145,7 @@ const HierarchyListReorderModal = ({
   ];
 
   const renderedCrumbs = [
-    ...fisrstCrumb,
+    ...firstCrumb,
     ...breadCrumbData.map((crumb, index) => (
       <BreadcrumbItem
         className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb`}

@@ -102,7 +102,7 @@ const SimpleList = ({
       break;
   }
 
-  const handleSelect = (id, parentId = null) => {
+  const handleSelect = (id, parentId) => {
     if (editingStyle) {
       setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
     } else {

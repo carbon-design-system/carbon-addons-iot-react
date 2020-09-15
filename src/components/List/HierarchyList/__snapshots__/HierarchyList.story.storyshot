@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        data-floating-menu-container={true}
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -893,6 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        data-floating-menu-container={true}
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -2843,6 +2845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        data-floating-menu-container={true}
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -3686,6 +3689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        data-floating-menu-container={true}
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}
@@ -5289,6 +5293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
+        data-floating-menu-container={true}
         onBlur={[Function]}
         onClick={[Function]}
         onClose={[Function]}

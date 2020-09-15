@@ -200,7 +200,7 @@ const ListItem = ({
       <div
         className={classnames(
           `${iotPrefix}--list-item--content`,
-          { [`${iotPrefix}--list-item--content__selected`]: editingStyle ? null : selected },
+          { [`${iotPrefix}--list-item--content__selected`]: !editingStyle && selected },
           { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
         ref={selectedItemRef}

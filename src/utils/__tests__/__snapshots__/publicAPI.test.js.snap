@@ -15069,7 +15069,7 @@ Map {
   return true;
 }",
             },
-            "description": "callback function when reorder will occur",
+            "description": "callback function when reorder will occur - can cancel the move by returning false",
             "required": false,
             "type": Object {
               "name": "func",
