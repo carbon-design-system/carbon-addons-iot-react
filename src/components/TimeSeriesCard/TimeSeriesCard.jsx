@@ -12,6 +12,7 @@ import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import cheerio from 'cheerio';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
@@ -68,7 +69,7 @@ const TimeSeriesCardPropTypes = {
     ),
     /** optional units to put in the legend */
     unit: PropTypes.string,
-    /** Optionally addes a zoom bar to the chart */
+    /** Optionally adds a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
     /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
     addSpaceOnEdges: PropTypes.number,
@@ -116,6 +117,7 @@ const TimeSeriesCardPropTypes = {
  * @returns {object} with a labels array and a datasets array
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+  // Generate a set of unique timestamps for the values
   const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
   const data = [];
 
@@ -131,16 +133,19 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
             // only allow valid timestamp matches
             return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
-          .forEach(dataItem =>
-            data.push({
-              date:
-                dataItem[timeDataSourceId] instanceof Date
-                  ? dataItem[timeDataSourceId]
-                  : new Date(dataItem[timeDataSourceId]),
-              value: dataItem[dataSourceId],
-              group: label,
-            })
-          );
+          .forEach(dataItem => {
+            // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
+            if (dataItem[dataSourceId]) {
+              data.push({
+                date:
+                  dataItem[timeDataSourceId] instanceof Date
+                    ? dataItem[timeDataSourceId]
+                    : new Date(dataItem[timeDataSourceId]),
+                value: dataItem[dataSourceId],
+                group: label,
+              });
+            }
+          });
       }
     });
   });
@@ -167,7 +172,6 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
@@ -191,30 +195,28 @@ export const handleTooltip = (
         )
         .join('')
     : '';
-  let updatedTooltip = defaultTooltip;
-  if (Array.isArray(data)) {
-    // prepend the date inside the existing multi tooltip
-    updatedTooltip = defaultTooltip
-      .replace('<li', `${dateLabel}<li`)
-      .replace('</ul', `${matchingAlertLabels}</ul`);
-  } else {
-    // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
-  }
+  const parsedTooltip = cheerio.load(defaultTooltip);
+  // the first <li> will always be carbon chart's Dates row in this case, replace with our date format
+  parsedTooltip('li:first-child').replaceWith(dateLabel);
 
-  return updatedTooltip;
+  // append the matching alert labels
+  parsedTooltip('ul').append(matchingAlertLabels);
+  return parsedTooltip.html('ul');
 };
 
 /**
  * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
  * @param {Array} series an array of dataset group classifications
+ * @param {Boolean} isEditable is the graph currently editable
  * @returns {Object} colors - formatted
  */
-export const formatColors = series => {
+export const formatColors = (series, isEditable) => {
   const colors = { identifier: 'group', scale: {} };
   if (Array.isArray(series)) {
-    series.forEach(dataset => {
-      colors.scale[dataset.label] = dataset.color;
+    series.forEach((dataset, index) => {
+      colors.scale[dataset.label] = !isEditable
+        ? dataset.color
+        : DISABLED_COLORS[index % DISABLED_COLORS.length];
     });
   } else {
     colors.scale[series.label] = series.color;
@@ -321,17 +323,8 @@ const TimeSeriesCard = ({
     [interval, locale, showTimeInGMT]
   );
 
-  const lines = useMemo(
-    () =>
-      series.map((line, index) => ({
-        ...line,
-        color: !isEditable ? line.color : DISABLED_COLORS[index % DISABLED_COLORS.length],
-      })),
-    [isEditable, series]
-  );
-
   // Set the colors for each dataset
-  const colors = formatColors(series);
+  const colors = formatColors(series, isEditable);
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
@@ -365,17 +358,17 @@ const TimeSeriesCard = ({
   useDeepCompareEffect(
     () => {
       if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(timeDataSourceId, lines, valueSort);
+        const chartData = formatChartData(timeDataSourceId, series, valueSort);
         chartRef.chart.model.setData(chartData);
       }
     },
-    [valueSort, lines, timeDataSourceId]
+    [valueSort, series, timeDataSourceId]
   );
 
   /** This caches the chart value */
-  const chartData = useMemo(() => formatChartData(timeDataSourceId, lines, valueSort), [
+  const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
     timeDataSourceId,
-    lines,
+    series,
     valueSort,
   ]);
 
@@ -488,12 +481,12 @@ const TimeSeriesCard = ({
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
                       : {}),
-                    stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
+                    stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
                     includeZero: includeZeroOnYaxis,
                     scaleType: 'linear',
                   },
                 },
-                legend: { position: 'bottom', clickable: !isEditable, enabled: lines.length > 1 },
+                legend: { position: 'bottom', clickable: !isEditable, enabled: series.length > 1 },
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: tooltipValue =>
