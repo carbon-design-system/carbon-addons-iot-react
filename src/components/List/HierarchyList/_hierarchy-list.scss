@@ -39,7 +39,7 @@
 
   &-modal {
     .breadcrumb--container {
-      padding: 1rem 0;
+      padding: $spacing-05 0;
     }
 
     &--breadcrumb > button {
@@ -85,11 +85,14 @@
         }
 
         &-button {
-          display: flex;
           align-content: flex-start;
-          padding: auto 0;
-          padding-right: $spacing-04;
+          display: flex;
           flex-grow: 1;
+          padding: 0 $spacing-03;
+
+          &:focus {
+            z-index: 1;
+          }
         }
 
         &-value {
@@ -100,7 +103,7 @@
 
     & .#{$iot-prefix}--hierarchy-list-bulk-modal--radio {
       padding: $spacing-05;
-      margin-right: 0.5rem;
+      margin-right: 0;
     }
 
     &--radio .#{$prefix}--radio-button__appearance {
