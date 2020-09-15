@@ -84,7 +84,7 @@ describe('Card', () => {
   });
 
   it('render custom icons', () => {
-    const wrapper = mount(
+    render(
       <Card
         {...cardProps}
         size={CARD_SIZES.SMALL}
@@ -93,9 +93,11 @@ describe('Card', () => {
       />
     );
 
-    // should render CardRangePicker and Expand
-    expect(wrapper.find(CardRangePicker)).toHaveLength(1);
-    expect(wrapper.find(Tree16)).toHaveLength(1);
+    const button = screen.queryByLabelText('Expand to fullscreen');
+
+    const { container } = render(<Tree16 aria-hidden aria-label="Expand to fullscreen" />);
+
+    expect(button.firstChild).toEqual(container.firstChild.firstChild);
   });
 
   it('additional prop based elements', () => {

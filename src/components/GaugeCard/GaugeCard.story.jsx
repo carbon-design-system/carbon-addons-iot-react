@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 import { layout05 } from '@carbon/layout';
 import { gray20, yellow } from '@carbon/colors';
@@ -70,33 +71,27 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     );
   })
   .add('basic with expand', () => {
-    const BasicWithExpand = () => {
-      const [expanded, setExpanded] = useState(false);
-
-      return (
-        <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
-          <GaugeCard
-            isLoading={boolean('Is loading', false)}
-            tooltip={<p>Health - of floor 8</p>}
-            id="GaugeCard"
-            title={text('Text', 'Health')}
-            size={CARD_SIZES.SMALL}
-            values={{
-              usage: number('Gauge value', 81),
-              usageTrend: '12%',
-            }}
-            isExpanded={expanded}
-            availableActions={{
-              expand: true,
-            }}
-            content={content}
-            onCardAction={() => setExpanded(!expanded)}
-          />
-        </div>
-      );
-    };
-
-    return <BasicWithExpand />;
+    return (
+      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
+        <GaugeCard
+          isLoading={boolean('Is loading', false)}
+          tooltip={<p>Health - of floor 8</p>}
+          id="GaugeCard"
+          title={text('Text', 'Health')}
+          size={CARD_SIZES.SMALL}
+          values={{
+            usage: number('Gauge value', 81),
+            usageTrend: '12%',
+          }}
+          isExpanded={false}
+          availableActions={{
+            expand: true,
+          }}
+          content={content}
+          onCardAction={action('Expand button clicked')}
+        />
+      </div>
+    );
   })
   .add('with data state no-data', () => {
     const myDataState = {

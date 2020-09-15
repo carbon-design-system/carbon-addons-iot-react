@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object, boolean, number, action } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
@@ -64,7 +65,7 @@ storiesOf('Watson IoT/ValueCard', module)
           breakpoint="lg"
           size={size}
           values={{ occupancy: number('occupancy', 88) }}
-          onCardAction={() => action('Value Card Expand Action')}
+          onCardAction={action('Value Card Expand Action')}
         />
       </div>
     );
