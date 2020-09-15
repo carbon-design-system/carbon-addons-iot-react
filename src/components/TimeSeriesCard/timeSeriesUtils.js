@@ -134,7 +134,8 @@ export const formatGraphTick = (
 
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDatapointTimestamp = data && data.date && data.date.valueOf();
+  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data.date;
+  const currentDatapointTimestamp = currentDataPoint.valueOf();
   return (
     Array.isArray(alertRanges) &&
     alertRanges.filter(
