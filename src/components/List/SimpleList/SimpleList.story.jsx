@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
 
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
+
 import SimpleList from './SimpleList';
 import SimpleListREADME from './README.md';
 
-const getListItems = num =>
+export const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
@@ -338,4 +340,36 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
       </div>
     )),
     { info: { text: `` } }
-  );
+  )
+  .add('list with reorder', () => {
+    const SimpleListWithReorder = () => {
+      const [items, setItems] = useState(getListItems(15));
+
+      return (
+        <div style={{ width: 500 }}>
+          <SimpleList
+            title={text('Text', 'Simple List')}
+            hasSearch
+            i18n={{
+              searchPlaceHolderText: 'Enter a search',
+              pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+              items: '%d items',
+            }}
+            buttons={buttonsToRender}
+            items={items}
+            isLoading={boolean('isLoading', false)}
+            editingStyle={select(
+              'Editing Style',
+              [EditingStyle.Single, EditingStyle.Multiple],
+              EditingStyle.Single
+            )}
+            onListUpdated={updatedItems => {
+              setItems(updatedItems);
+            }}
+          />
+        </div>
+      );
+    };
+
+    return <SimpleListWithReorder />;
+  });

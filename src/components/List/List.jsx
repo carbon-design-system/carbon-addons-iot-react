@@ -1,13 +1,18 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
+import { EditingStyle, editingStyleIsMultiple } from '../../utils/DragAndDropUtils';
+import { Checkbox } from '../..';
+import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
-import ListHeader from './ListHeader/ListHeader';
+import DefaultListHeader from './ListHeader/ListHeader';
 
 const { iotPrefix } = settings;
 
@@ -35,8 +40,19 @@ const propTypes = {
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
+  /** Node to override the default header */
+  overrides: PropTypes.shape({
+    header: OverridePropTypes,
+  }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
+  /** list editing style */
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -51,8 +67,6 @@ const propTypes = {
     expand: PropTypes.string,
     close: PropTypes.string,
   }),
-  /** Currently selected item */
-  selectedId: PropTypes.string,
   /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
@@ -63,6 +77,10 @@ const propTypes = {
   handleSelect: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
+  /** callback function for reorder */
+  onItemMoved: PropTypes.func,
+  /** callback function when reorder will occur - can cancel the move by returning false */
+  itemWillMove: PropTypes.func,
 };
 
 const defaultProps = {
@@ -70,6 +88,8 @@ const defaultProps = {
   title: null,
   search: null,
   buttons: [],
+  editingStyle: null,
+  overrides: null,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -80,11 +100,14 @@ const defaultProps = {
   },
   iconPosition: 'left',
   pagination: null,
-  selectedId: null,
   selectedIds: [],
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
+  onItemMoved: () => {},
+  itemWillMove: () => {
+    return true;
+  },
 };
 
 const List = forwardRef((props, ref) => {
@@ -98,19 +121,23 @@ const List = forwardRef((props, ref) => {
     isFullHeight,
     i18n,
     pagination,
-    selectedId,
     selectedIds,
     expandedIds,
     handleSelect,
+    overrides,
     toggleExpansion,
     iconPosition,
+    editingStyle,
     isLargeRow,
     isLoading,
+    onItemMoved,
+    itemWillMove,
   } = props;
   const selectedItemRef = ref;
-  const renderItemAndChildren = (item, level) => {
-    const hasChildren = item.children && item.children.length > 0;
-    const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
+  const ListHeader = overrides?.header?.component || DefaultListHeader;
+  const renderItemAndChildren = (item, index, parentId, level) => {
+    const hasChildren = item?.children && item.children.length > 0;
+    const isSelected = selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
@@ -129,35 +156,53 @@ const List = forwardRef((props, ref) => {
       >
         <ListItem
           id={item.id}
+          index={index}
           key={`${item.id}-list-item-${level}-${value}`}
           nestingLevel={level}
           value={value}
-          icon={icon}
+          icon={
+            editingStyleIsMultiple(editingStyle) ? (
+              <Checkbox
+                id={`${item.id}-checkbox`}
+                name={item.value}
+                data-testid={`${item.id}-checkbox`}
+                labelText=""
+                onClick={() => handleSelect(item.id, parentId)}
+                checked={isSelected}
+              />
+            ) : (
+              icon
+            )
+          }
           disabled={disabled}
           iconPosition={iconPosition}
+          editingStyle={editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
-          onSelect={handleSelect}
+          onSelect={editingStyle ? () => {} : () => handleSelect(item.id)}
           onExpand={toggleExpansion}
+          onItemMoved={onItemMoved}
+          itemWillMove={itemWillMove}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
           isCategory={isCategory}
-          isSelectable={isSelectable}
+          isSelectable={editingStyle === null && isSelectable}
           i18n={i18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
         />
       </div>,
-
       ...(hasChildren && isExpanded
-        ? item.children.map(child => renderItemAndChildren(child, level + 1))
+        ? item.children.map((child, nestedIndex) => {
+            return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
+          })
         : []),
     ];
   };
 
-  const listItems = items.map(item => renderItemAndChildren(item, 0));
+  const listItems = items.map((item, index) => renderItemAndChildren(item, index, null, 0));
 
   return (
     <div
@@ -166,13 +211,15 @@ const List = forwardRef((props, ref) => {
       })}
     >
       <ListHeader
-        className={`${iotPrefix}--list--header`}
+        className={classnames(`${iotPrefix}--list--header`, overrides?.header?.props?.className)}
         title={title}
         buttons={buttons}
         search={search}
         i18n={i18n}
         isLoading={isLoading}
+        {...overrides?.header?.props}
       />
+
       <div
         className={classnames(
           {
@@ -200,4 +247,5 @@ const List = forwardRef((props, ref) => {
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 
-export default List;
+export { List as UnconnectedList };
+export default DragDropContext(HTML5Backend)(List);
