@@ -22,36 +22,38 @@ const ListItemWrapper = ({
   isLargeRow,
   children,
   connectDragSource,
+  disabled,
 }) => {
-  const body = isSelectable ? (
-    <div
-      role="button"
-      tabIndex={0}
-      className={classnames(
-        `${iotPrefix}--list-item`,
-        `${iotPrefix}--list-item__selectable`,
-        { [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected },
-        { [`${iotPrefix}--list-item__large`]: isLargeRow },
-        { [`${iotPrefix}--list-item-editable`]: editingStyle }
-      )}
-      data_testid={selected ? 'list-item__selected' : null}
-      onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-      onClick={() => {
-        onSelect(id);
-      }}
-    >
-      {children}
-    </div>
-  ) : (
-    <div
-      className={classnames(`${iotPrefix}--list-item`, {
-        [`${iotPrefix}--list-item__large`]: isLargeRow,
-        [`${iotPrefix}--list-item-editable`]: editingStyle,
-      })}
-    >
-      {children}
-    </div>
-  );
+  const body =
+    isSelectable && !disabled ? (
+      <div
+        role="button"
+        tabIndex={0}
+        className={classnames(
+          `${iotPrefix}--list-item`,
+          `${iotPrefix}--list-item__selectable`,
+          { [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected },
+          { [`${iotPrefix}--list-item__large`]: isLargeRow },
+          { [`${iotPrefix}--list-item-editable`]: editingStyle }
+        )}
+        data_testid={selected ? 'list-item__selected' : null}
+        onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
+        onClick={() => {
+          onSelect(id);
+        }}
+      >
+        {children}
+      </div>
+    ) : (
+      <div
+        className={classnames(`${iotPrefix}--list-item`, {
+          [`${iotPrefix}--list-item__large`]: isLargeRow,
+          [`${iotPrefix}--list-item-editable`]: editingStyle,
+        })}
+      >
+        {children}
+      </div>
+    );
 
   if (editingStyle) {
     const canNest =

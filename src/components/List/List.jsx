@@ -144,6 +144,7 @@ const List = forwardRef((props, ref) => {
       content: { value, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
+      disabled,
     } = item;
 
     return [
@@ -173,6 +174,7 @@ const List = forwardRef((props, ref) => {
               icon
             )
           }
+          disabled={disabled}
           iconPosition={iconPosition}
           editingStyle={editingStyle}
           secondaryValue={secondaryValue}

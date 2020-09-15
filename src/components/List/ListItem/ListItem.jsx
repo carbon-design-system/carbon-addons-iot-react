@@ -26,6 +26,7 @@ const ListItemPropTypes = {
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
+  disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
@@ -67,6 +68,7 @@ const ListItemDefaultProps = {
   dragPreviewText: null,
   onExpand: () => {},
   isSelectable: false,
+  disabled: false,
   onSelect: () => {},
   selected: false,
   expanded: false,
@@ -94,6 +96,7 @@ const ListItem = ({
   isSelectable,
   onSelect,
   selected,
+  disabled,
   value,
   secondaryValue,
   rowActions,
@@ -191,6 +194,7 @@ const ListItem = ({
         connectDragSource,
         onItemMoved,
         itemWillMove,
+        disabled,
       }}
     >
       {renderDragPreview()}
@@ -219,6 +223,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -240,6 +245,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}
                 >
@@ -253,6 +259,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -268,6 +275,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >
                     {secondaryValue}
