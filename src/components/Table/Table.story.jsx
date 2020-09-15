@@ -1262,12 +1262,6 @@ storiesOf('Watson IoT/Table', module)
             const currentUserView = extractCurrentUserView(currentTableState);
             const compareView = selectedView || extractCurrentUserView(baseState);
             setSelectedViewEdited(!isEqual(currentUserView.props, compareView.props));
-
-            // if (!selectedView) {
-            //   setSelectedViewEdited(!isEqual(currentUserView, extractCurrentUserView(baseState)));
-            // } else {
-            //   setSelectedViewEdited(!isEqual(currentUserView.props, selectedView.props));
-            // }
           },
           [baseState, currentTableState, extractCurrentUserView, selectedView]
         );
@@ -1575,7 +1569,7 @@ storiesOf('Watson IoT/Table', module)
     {
       info: {
         text: `
-        This story shows a partial implementation of how to use configurable View Management, 
+        This story shows a partial implementation of how to add user View Management, 
         but the implemented examples should be enough to give you an idea on how to use it
         together with your own state manager. We examplify by providing shallow implementations 
         for onChangeSort, onApplySearch and onApplyFilter. The story is using a simple state
