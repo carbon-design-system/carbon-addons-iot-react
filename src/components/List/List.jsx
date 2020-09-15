@@ -117,6 +117,7 @@ const List = forwardRef((props, ref) => {
       content: { value, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
+      disabled,
     } = item;
 
     return [
@@ -132,6 +133,7 @@ const List = forwardRef((props, ref) => {
           nestingLevel={level}
           value={value}
           icon={icon}
+          disabled={disabled}
           iconPosition={iconPosition}
           secondaryValue={secondaryValue}
           rowActions={rowActions}

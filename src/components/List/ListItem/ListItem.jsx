@@ -9,8 +9,16 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 // internal component
-const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
-  isSelectable ? (
+const ListItemWrapper = ({
+  id,
+  isSelectable,
+  onSelect,
+  selected,
+  isLargeRow,
+  children,
+  disabled,
+}) =>
+  isSelectable && !disabled ? (
     <div
       role="button"
       tabIndex={0}
@@ -44,6 +52,7 @@ const ListItemWrapperProps = {
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  disabled: PropTypes.node.isRequired,
 };
 
 const ListItemPropTypes = {
@@ -52,6 +61,7 @@ const ListItemPropTypes = {
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
+  disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
@@ -83,6 +93,7 @@ const ListItemDefaultProps = {
   isExpandable: false,
   onExpand: () => {},
   isSelectable: false,
+  disabled: false,
   onSelect: () => {},
   selected: false,
   expanded: false,
@@ -109,6 +120,7 @@ const ListItem = ({
   isSelectable,
   onSelect,
   selected,
+  disabled,
   value,
   secondaryValue,
   rowActions,
@@ -166,7 +178,7 @@ const ListItem = ({
   const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
 
   return (
-    <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect }}>
+    <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect, disabled }}>
       {renderNestingOffset()}
       {renderExpander()}
       <div
@@ -191,6 +203,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -212,6 +225,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}
                 >
@@ -225,6 +239,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -240,6 +255,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >
                     {secondaryValue}
