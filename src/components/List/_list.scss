@@ -9,8 +9,8 @@
     flex: 0;
   }
   &--content {
-    flex: 1 1 0 0;
     background: $ui-01;
+    flex: 1 1 0 0;
     overflow-y: auto;
 
     &__full-height {
