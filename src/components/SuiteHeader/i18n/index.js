@@ -22,6 +22,8 @@ const SuiteHeaderI18N = {
     about: 'About',
     support: 'Support',
     gettingStarted: 'Getting started',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   cs: {
     help: 'Nápověda',
@@ -46,6 +48,8 @@ const SuiteHeaderI18N = {
     about: 'O produktu',
     support: 'Podpora',
     gettingStarted: 'Začínáme',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   da: {
     help: 'Hjælp',
@@ -70,6 +74,8 @@ const SuiteHeaderI18N = {
     about: 'Om',
     support: 'Support',
     gettingStarted: 'Kom godt i gang',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   de: {
     help: 'Hilfe',
@@ -94,6 +100,8 @@ const SuiteHeaderI18N = {
     about: 'Produktinfo',
     support: 'Support',
     gettingStarted: 'Erste Schritte',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   es: {
     help: 'Ayuda',
@@ -118,6 +126,8 @@ const SuiteHeaderI18N = {
     about: 'Acerca de',
     support: 'Soporte',
     gettingStarted: 'Guía de inicio',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   fr: {
     help: 'Aide',
@@ -142,6 +152,8 @@ const SuiteHeaderI18N = {
     about: 'A propos de',
     support: 'Support',
     gettingStarted: 'Démarrage',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   hr: {
     help: 'Pomoć',
@@ -166,6 +178,8 @@ const SuiteHeaderI18N = {
     about: 'O proizvodu',
     support: 'Podrška',
     gettingStarted: 'Kako započeti',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   hu: {
     help: 'Súgó',
@@ -190,6 +204,8 @@ const SuiteHeaderI18N = {
     about: 'Névjegy',
     support: 'Terméktámogatás',
     gettingStarted: 'Kezdeti lépések',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   it: {
     help: 'Guida',
@@ -214,6 +230,8 @@ const SuiteHeaderI18N = {
     about: 'Informazioni su',
     support: 'Supporto',
     gettingStarted: 'Introduzione',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   ja: {
     help: 'ヘルプ',
@@ -238,6 +256,8 @@ const SuiteHeaderI18N = {
     about: '概要',
     support: 'サポート',
     gettingStarted: 'クイック・スタート',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   ko: {
     help: '도움말',
@@ -262,6 +282,8 @@ const SuiteHeaderI18N = {
     about: '정보',
     support: '지원',
     gettingStarted: '시작하기',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   nl: {
     help: 'Help',
@@ -286,6 +308,8 @@ const SuiteHeaderI18N = {
     about: 'Info',
     support: 'Ondersteuning',
     gettingStarted: 'Aan de slag',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   no: {
     help: 'Hjelp',
@@ -310,6 +334,8 @@ const SuiteHeaderI18N = {
     about: 'Om',
     support: 'Støtte',
     gettingStarted: 'Komme i gang',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   pl: {
     help: 'Pomoc',
@@ -334,6 +360,8 @@ const SuiteHeaderI18N = {
     about: 'Informacje',
     support: 'Obsługa',
     gettingStarted: 'Pierwsze kroki',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   'pt-BR': {
     help: 'Ajuda',
@@ -358,6 +386,8 @@ const SuiteHeaderI18N = {
     about: 'Sobre',
     support: 'Suporte',
     gettingStarted: 'Introdução',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   ru: {
     help: 'Справка',
@@ -382,6 +412,8 @@ const SuiteHeaderI18N = {
     about: 'Информация',
     support: 'Поддержка',
     gettingStarted: 'Начинаем работу',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   sk: {
     help: 'Pomocník',
@@ -406,6 +438,8 @@ const SuiteHeaderI18N = {
     about: 'O aplikácii',
     support: 'Podpora',
     gettingStarted: 'Úvod',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   sl: {
     help: 'Pomoč',
@@ -430,6 +464,8 @@ const SuiteHeaderI18N = {
     about: 'O programu',
     support: 'Podpora',
     gettingStarted: 'Prvi koraki',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   sv: {
     help: 'Hjälp',
@@ -454,6 +490,8 @@ const SuiteHeaderI18N = {
     about: 'Om',
     support: 'Support',
     gettingStarted: 'Komma igång',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   tr: {
     help: 'Yardım',
@@ -478,6 +516,8 @@ const SuiteHeaderI18N = {
     about: 'Hakkında',
     support: 'Destek',
     gettingStarted: 'Başlarken',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   zh: {
     help: '帮助',
@@ -502,6 +542,8 @@ const SuiteHeaderI18N = {
     about: '关于',
     support: '支持',
     gettingStarted: '入门',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
   'zh-TW': {
     help: '說明',
@@ -526,6 +568,8 @@ const SuiteHeaderI18N = {
     about: '關於',
     support: '支援',
     gettingStarted: '開始使用',
+    surveyTitle: solutionName => `Enjoying ${solutionName}?`,
+    surveyText: 'Click here to help us improve the product',
   },
 };
 

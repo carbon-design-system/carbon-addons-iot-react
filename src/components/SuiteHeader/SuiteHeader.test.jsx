@@ -3,6 +3,7 @@ import React from 'react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 
 import { SideNav } from '../../index';
+import { ToastNotification } from '../Notification';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
@@ -111,5 +112,18 @@ describe('SuiteHeader', () => {
       );
       expect(wrapper.find('button.admin-icon__selected')).toHaveLength(1);
     });
+  });
+  it('shows survey notification', () => {
+    delete window.location;
+    window.location = { href: '' };
+    jest.useFakeTimers();
+    const wrapper = mount(
+      <SuiteHeader
+        {...commonProps}
+        survey={{ link: 'www.ibm.com', title: 'Title', text: 'Text' }}
+      />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find(ToastNotification).prop('title')).toBe('Title');
   });
 });

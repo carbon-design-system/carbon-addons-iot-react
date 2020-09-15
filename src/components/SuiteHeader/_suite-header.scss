@@ -1,3 +1,19 @@
+.survey-toast {
+  position: fixed;
+  top: 45px;
+  right: -12px;
+  max-width: 425px;
+  width: auto;
+  height: auto;
+  z-index: 1;
+
+  .#{$prefix}--toast-notification__title {
+    margin: 9px 0 0 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+}
+
 .#{$iot-prefix}--suite-header-profile {
   background-color: $ui-05;
   color: $inverse-01;
