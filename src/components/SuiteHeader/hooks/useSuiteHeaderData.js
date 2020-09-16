@@ -195,7 +195,7 @@ const useSuiteHeaderData = ({
         setIsLoading(false);
       }
     },
-    [baseApiUrl, domain, isTest, setIsLoading, calculateRoutes]
+    [baseApiUrl, domain, isTest, setIsLoading]
   );
 
   useEffect(
