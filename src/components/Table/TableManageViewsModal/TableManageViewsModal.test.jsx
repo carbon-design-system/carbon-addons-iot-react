@@ -20,7 +20,7 @@ describe('TableManageViewsModal', () => {
     {
       isDeleteable: true,
       isEditable: true,
-      viewDescription: 'description1',
+      description: 'description1',
       id: 'view1',
       title: `myView 1`,
       isPublic: true,
@@ -28,7 +28,7 @@ describe('TableManageViewsModal', () => {
     {
       isDeleteable: false,
       isEditable: false,
-      viewDescription: 'description2',
+      description: 'description2',
       id: 'view2',
       title: `myView 2`,
       isPublic: false,
@@ -36,7 +36,7 @@ describe('TableManageViewsModal', () => {
     {
       isDeleteable: true,
       isEditable: true,
-      viewDescription: 'description3',
+      description: 'description3',
       id: 'view3',
       title: `myView 3`,
       isPublic: false,
