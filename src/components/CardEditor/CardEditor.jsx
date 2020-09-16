@@ -4,7 +4,6 @@ import { Apps16 } from '@carbon/icons-react';
 
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
-import { CARD_TYPES } from '../../constants/LayoutConstants';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -20,6 +19,7 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
+  supportedTypes: undefined,
 };
 
 const propTypes = {
@@ -33,13 +33,14 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
+  supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     openGalleryButton: PropTypes.string,
   }),
 };
 
-const CardEditor = ({ value, onShowGallery, onChange, onAddCard, i18n }) => {
+const CardEditor = ({ value, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-editor`;
@@ -66,7 +67,7 @@ const CardEditor = ({ value, onShowGallery, onChange, onAddCard, i18n }) => {
         {showGallery ? (
           <CardGalleryList
             onAddCard={onAddCard}
-            supportedTypes={Object.keys(CARD_TYPES)}
+            supportedTypes={supportedTypes}
             i18n={{
               galleryHeader: mergedI18N.galleryHeader,
             }}

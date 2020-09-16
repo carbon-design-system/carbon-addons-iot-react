@@ -21,7 +21,7 @@ describe('CardEditor', () => {
   it('fires onAddCard when user clicks on item in list', () => {
     render(
       <CardEditor
-        supportedTypes={['VALUE', 'LINECHART', 'TABLE']}
+        supportedTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
