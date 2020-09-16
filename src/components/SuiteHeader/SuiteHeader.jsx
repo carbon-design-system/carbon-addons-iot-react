@@ -90,7 +90,7 @@ const propTypes = {
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If survey.link is present, show a ToastNotification with survey.title and survey.text */
-  survey: PropTypes.shape(SuiteHeaderSurveyPropTypes),
+  survey: SuiteHeaderSurveyPropTypes,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
