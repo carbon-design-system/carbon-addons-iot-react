@@ -44,6 +44,8 @@ const propTypes = {
       PropTypes.bool,
       '\n The prop `hasRowCountInHeader` has been deprecated in favor `secondaryTitle`'
     ),
+    // True if use can save/load views
+    hasUserViewManagement: PropTypes.bool,
   }).isRequired,
   /** internationalized labels */
   i18n: PropTypes.shape({
@@ -124,6 +126,7 @@ const TableToolbar = ({
     hasRowSelection,
     hasRowCountInHeader,
     hasRowEdit,
+    hasUserViewManagement,
   },
   actions: {
     onCancelBatchAction,
@@ -191,7 +194,15 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
-            key={`table-toolbar-search${search.defaultValue}${search.value}`}
+            key={
+              // If hasUserViewManagement is active the whole table is regenerated when a new
+              // view is loaded so we probably don't need this key-gen fix to preset a search text.
+              // The userViewManagement also needs to be able to set the search.defaultValue
+              // while typing without loosing input focus.
+              hasUserViewManagement
+                ? 'table-toolbar-search'
+                : `table-toolbar-search${search.defaultValue}${search.value}`
+            }
             defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}

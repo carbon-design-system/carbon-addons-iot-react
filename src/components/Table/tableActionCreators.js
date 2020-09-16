@@ -1,4 +1,5 @@
 export const TABLE_REGISTER = 'TABLE_REGISTER';
+export const TABLE_LOAD_VIEW = 'TABLE_LOAD_VIEW';
 export const TABLE_PAGE_CHANGE = 'TABLE_PAGE_CHANGE';
 export const TABLE_FILTER_APPLY = 'TABLE_FILTER_APPLY';
 export const TABLE_FILTER_CLEAR = 'TABLE_FILTER_CLEAR';
@@ -11,6 +12,7 @@ export const TABLE_ROW_ACTION_COMPLETE = 'TABLE_ROW_ACTION_COMPLETE';
 export const TABLE_ROW_ACTION_ERROR = 'TABLE_ROW_ACTION_ERROR';
 export const TABLE_COLUMN_SORT = 'TABLE_COLUMN_SORT';
 export const TABLE_COLUMN_ORDER = 'TABLE_COLUMN_ORDER';
+export const TABLE_COLUMN_RESIZE = 'TABLE_COLUMN_RESIZE';
 export const TABLE_ROW_SELECT = 'TABLE_ROW_SELECT';
 export const TABLE_ROW_SELECT_ALL = 'TABLE_ROW_SELECT_ALL';
 export const TABLE_ROW_CLICK = 'TABLE_ROW_CLICK';
@@ -19,9 +21,16 @@ export const TABLE_SEARCH_APPLY = 'TABLE_SEARCH_APPLY';
 export const TABLE_EMPTY_STATE_ACTION = 'TABLE_EMPTY_STATE_ACTION';
 export const TABLE_LOADING_SET = 'TABLE_LOADING_SET';
 
-export const tableRegister = ({ data, isLoading, view, totalItems, instanceId = null }) => ({
+export const tableRegister = ({
+  data,
+  isLoading,
+  view,
+  totalItems,
+  hasUserViewManagement,
+  instanceId = null,
+}) => ({
   type: TABLE_REGISTER,
-  payload: { data, view, isLoading, totalItems },
+  payload: { data, view, isLoading, totalItems, hasUserViewManagement },
   instanceId,
 });
 
@@ -75,6 +84,12 @@ export const tableColumnSort = (column, columns, instanceId = null) => ({
 export const tableColumnOrder = (ordering, instanceId = null) => ({
   type: TABLE_COLUMN_ORDER,
   payload: ordering,
+  instanceId,
+});
+
+export const tableColumnResize = (columns, instanceId = null) => ({
+  type: TABLE_COLUMN_RESIZE,
+  payload: columns,
   instanceId,
 });
 
