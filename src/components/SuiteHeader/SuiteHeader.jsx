@@ -139,8 +139,10 @@ const SuiteHeader = ({
             lowContrast
             caption=""
             onCloseButtonClick={evt => {
-              evt.preventDefault();
-              evt.stopPropagation();
+              if (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+              }
               setShowSurveyToast(false);
             }}
             timeout={10000}

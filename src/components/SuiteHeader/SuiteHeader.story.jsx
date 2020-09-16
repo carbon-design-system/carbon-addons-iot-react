@@ -8,6 +8,7 @@ import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -91,6 +92,38 @@ const sideNavLinks = [
     ],
   },
 ];
+
+const HeaderWithHook = () => {
+  const [data, isLoading, error, refreshData] = useSuiteHeaderData({
+    // baseApiUrl: 'http://localhost:3001/internal',
+    domain: 'mydomain.com',
+    isTest: true,
+    surveyConfig: {
+      id: 'suite',
+      delayIntervalDays: 30,
+      frequencyDays: 90,
+    },
+  });
+  const surveyLink = data.showSurvey ? 'https://www.ibm.com' : '';
+  return (
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName={data.userDisplayName}
+      username={data.username}
+      routes={data.routes}
+      applications={data.applications}
+      sideNavProps={{
+        links: sideNavLinks,
+      }}
+      survey={{
+        link: surveyLink,
+        title: 'Survey Notification Title',
+        text: 'Survey notification text',
+      }}
+    />
+  );
+};
 
 storiesOf('Watson IoT/SuiteHeader', module)
   .add('default', () => {
@@ -209,4 +242,5 @@ storiesOf('Watson IoT/SuiteHeader', module)
         }}
       />
     );
-  });
+  })
+  .add('Header with data hook', () => <HeaderWithHook />);
