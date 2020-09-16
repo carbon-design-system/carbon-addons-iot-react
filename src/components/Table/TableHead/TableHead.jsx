@@ -330,8 +330,7 @@ const TableHead = ({
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
-          const hasOverflow =
-            matchingColumnMeta.options !== undefined && matchingColumnMeta.options !== null;
+          const hasOverflow = Array.isArray(matchingColumnMeta.overflowMenuItems);
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
@@ -386,11 +385,11 @@ const TableHead = ({
                   flipped={columnIndex === ordering.length - 1}
                   onClick={e => e.stopPropagation()}
                 >
-                  {matchingColumnMeta.options.map((option, index) => (
+                  {matchingColumnMeta.overflowMenuItems.map(menuItem => (
                     <OverflowMenuItem
-                      itemText={option.text}
-                      key={`${columnIndex}--overflow-item-${index}`}
-                      onClick={e => handleOverflowItemClick(e, option)}
+                      itemText={menuItem.text}
+                      key={`${columnIndex}--overflow-item-${menuItem.id}`}
+                      onClick={e => handleOverflowItemClick(e, menuItem)}
                     />
                   ))}
                 </OverflowMenu>

@@ -830,7 +830,6 @@ describe('Table', () => {
           width: '100px',
         }))}
         data={tableData}
-        options={{ hasResize: false }}
       />
     );
 
@@ -841,10 +840,9 @@ describe('Table', () => {
         columns={tableColumns.map(col => ({
           ...col,
           width: '100px',
-          options: overflowData,
+          overflowMenuItems: overflowData,
         }))}
         data={tableData}
-        options={{ hasResize: false }}
       />
     );
 

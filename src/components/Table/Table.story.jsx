@@ -209,49 +209,49 @@ export const tableColumnsWithOverflowMenu = [
     name: 'String',
     isSortable: true,
     filter: { placeholderText: 'enter a string' },
-    options: selectData,
+    overflowMenuItems: selectData,
   },
 
   {
     id: 'date',
     name: 'Date',
     filter: { placeholderText: 'enter a date' },
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'secretField',
     name: 'Secret Information',
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'status',
     name: 'Status',
     renderDataFunction: renderStatusIcon,
     sortFunction: customColumnSort,
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'number',
     name: 'Number',
     filter: { placeholderText: 'enter a number' },
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'boolean',
     name: 'Boolean',
     filter: { placeholderText: 'true or false' },
-    options: selectData,
+    overflowMenuItems: selectData,
   },
   {
     id: 'node',
     name: 'React Node',
-    options: selectData,
+    overflowMenuItems: selectData,
   },
 ];
 
@@ -2449,7 +2449,7 @@ storiesOf('Watson IoT/Table', module)
     {
       info: {
         text:
-          'This is an example of the <StatefulTable> component that uses local state to handle all the table actions. This is produced by wrapping the <Table> in a container component and managing the state associated with features such the toolbar, filters, row select, etc. For more robust documentation on the prop model and source, see the other "with function" stories.',
+          'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },

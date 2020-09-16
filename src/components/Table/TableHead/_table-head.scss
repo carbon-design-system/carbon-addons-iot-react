@@ -70,11 +70,6 @@
 
   .#{$iot-prefix}--table-header-checkbox {
     vertical-align: middle;
-    padding: 0 $spacing-05;
-
-    & > span {
-      padding: 0;
-    }
   }
 
   .#{$iot-prefix}--table-header-checkbox-resize {
