@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -50,6 +50,7 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
+    hasSingleNestedHierarchy: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
@@ -345,6 +346,7 @@ const TableBodyRow = ({
     hasRowExpansion,
     hasRowActions,
     hasRowNesting,
+    hasSingleNestedHierarchy,
     shouldExpandOnRowClick,
     wrapCellText,
     truncateCellText,
@@ -374,10 +376,13 @@ const TableBodyRow = ({
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
-  const nestingOffset =
-    hasRowSelection === 'single'
-      ? nestingLevel * 16 - singleSelectionIndicatorWidth
-      : nestingLevel * 16;
+  // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
+  const nestingOffset = hasSingleNestedHierarchy
+    ? 0
+    : hasRowSelection === 'single'
+    ? nestingLevel * 16 - singleSelectionIndicatorWidth
+    : nestingLevel * 16;
+
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
       <TableCell
@@ -404,13 +409,14 @@ const TableBodyRow = ({
 
   const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
   const tableCells = (
-    <React.Fragment>
+    <>
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
         // initialColumnWidth for the table body cells is needed for tables that have fixed column widths
         // and table-layout:auto combination so that cell content can be truncated
         const initialColumnWidth = matchingColumnMeta && matchingColumnMeta.width;
+        // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
@@ -476,11 +482,11 @@ const TableBodyRow = ({
       ) : (
         undefined
       )}
-    </React.Fragment>
+    </>
   );
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
-      <React.Fragment key={id}>
+      <Fragment key={id}>
         <StyledTableExpandRowExpanded
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -509,7 +515,7 @@ const TableBodyRow = ({
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </StyledExpansionTableRow>
         )}
-      </React.Fragment>
+      </Fragment>
     ) : (
       <StyledTableExpandRow
         key={id}

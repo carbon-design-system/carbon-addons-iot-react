@@ -384,6 +384,7 @@ Map {
         "hasRowNesting": false,
         "hasRowSelection": false,
         "hasSearch": false,
+        "hasSingleNestedHierarchy": false,
         "hasSingleRowEdit": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
@@ -943,6 +944,9 @@ Map {
               "type": "oneOf",
             },
             "hasSearch": Object {
+              "type": "bool",
+            },
+            "hasSingleNestedHierarchy": Object {
               "type": "bool",
             },
             "hasSingleRowEdit": Object {
@@ -1762,6 +1766,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "hasSingleNestedHierarchy": false,
       "langDir": "ltr",
       "locale": null,
       "overflowMenuAria": "More actions",
@@ -1943,6 +1948,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasSingleNestedHierarchy": Object {
+        "type": "bool",
       },
       "inProgressText": Object {
         "type": "string",
