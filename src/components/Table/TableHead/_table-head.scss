@@ -70,6 +70,8 @@
 
   .#{$iot-prefix}--table-header-checkbox {
     vertical-align: middle;
+    padding: 0 $spacing-05;
+
     & > span {
       padding: 0;
     }
@@ -107,10 +109,14 @@
 
 .#{$iot-prefix}--table-head {
   &--overflow {
+    margin: auto 0;
     flex-shrink: 0;
   }
 
   &--table-header {
+    position: relative;
+    vertical-align: middle;
+
     .#{$prefix}--table-header-label {
       height: 100%;
       min-width: var(--table-header-width);
@@ -118,8 +124,14 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      line-height: 1rem;
     }
 
-    vertical-align: middle;
+    &--with-overflow {
+      .#{$prefix}--table-header-label {
+        padding-right: 0;
+      }
+    }
   }
 }

@@ -330,6 +330,8 @@ const TableHead = ({
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+          const hasOverflow =
+            matchingColumnMeta.options !== undefined && matchingColumnMeta.options !== null;
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
@@ -361,6 +363,8 @@ const TableHead = ({
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
+                [`${iotPrefix}--table-head--table-header--with-overflow`]:
+                  matchingColumnMeta.isSortable && hasOverflow,
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
               data-floating-menu-container
@@ -374,18 +378,17 @@ const TableHead = ({
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
-              {matchingColumnMeta.options !== undefined && matchingColumnMeta.options !== null ? (
+              {hasOverflow ? (
                 <OverflowMenu
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
                   data-testid="table-head--overflow"
-                  flipped={columnIndex !== 0}
+                  flipped={columnIndex === ordering.length - 1}
                   onClick={e => e.stopPropagation()}
                 >
                   {matchingColumnMeta.options.map((option, index) => (
                     <OverflowMenuItem
                       itemText={option.text}
-                      selectorPrimaryFocus={index === 0}
                       key={`${columnIndex}--overflow-item-${index}`}
                       onClick={e => handleOverflowItemClick(e, option)}
                     />
