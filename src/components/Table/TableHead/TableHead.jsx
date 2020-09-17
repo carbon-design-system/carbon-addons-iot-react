@@ -131,6 +131,10 @@ const defaultProps = {
 const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
 
+// This increases the min width of columns when the overflow button and sort is present
+const PADDING_WITH_OVERFLOW = 24;
+const PADDING_WITH_OVERFLOW_AND_SORT = 58;
+
 const TableHead = ({
   tableId,
   options,
@@ -332,6 +336,13 @@ const TableHead = ({
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           const hasOverflow = Array.isArray(matchingColumnMeta.overflowMenuItems);
 
+          // Increases the minimum width of the Header when the overflow button is present
+          const paddingExtra = hasOverflow
+            ? matchingColumnMeta.isSortable
+              ? PADDING_WITH_OVERFLOW_AND_SORT
+              : PADDING_WITH_OVERFLOW
+            : 0;
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               width={initialColumnWidths[matchingColumnMeta.id]}
@@ -401,6 +412,7 @@ const TableHead = ({
                   currentColumnWidths={currentColumnWidths}
                   columnId={matchingColumnMeta.id}
                   ordering={ordering}
+                  paddingExtra={paddingExtra}
                 />
               ) : null}
             </TableHeader>

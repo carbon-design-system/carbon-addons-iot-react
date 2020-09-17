@@ -222,7 +222,6 @@ export const tableColumnsWithOverflowMenu = [
     id: 'select',
     name: 'Select',
     filter: { placeholderText: 'pick an option', options: selectData },
-    overflowMenuItems: selectData,
   },
   {
     id: 'secretField',
