@@ -151,6 +151,7 @@ export const defaultProps = {
     range: false,
     expand: false,
   },
+  renderExpandIcon: undefined,
   rowHeight: ROW_HEIGHT,
   breakpoint: DASHBOARD_SIZES.LARGE,
   cardDimensions: CARD_DIMENSIONS,
@@ -214,6 +215,7 @@ const Card = props => {
     timeRangeOptions,
     onCardAction,
     availableActions,
+    renderExpandIcon,
     breakpoint,
     i18n,
     style,
@@ -290,6 +292,7 @@ const Card = props => {
               <CardToolbar
                 width={cardSize.width}
                 availableActions={mergedAvailableActions}
+                renderExpandIcon={renderExpandIcon}
                 i18n={strings}
                 isEditable={isEditable}
                 isExpanded={isExpanded}

@@ -5088,6 +5088,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -8531,6 +8544,7 @@ Map {
       "onScroll": undefined,
       "onTouchEnd": undefined,
       "onTouchStart": undefined,
+      "renderExpandIcon": undefined,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,
@@ -9174,6 +9188,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -10046,6 +10073,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -10891,6 +10931,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -11639,6 +11692,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -12495,6 +12561,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -13390,6 +13469,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -14184,6 +14276,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
