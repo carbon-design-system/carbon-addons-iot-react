@@ -8,7 +8,6 @@ import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
-import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -93,6 +92,7 @@ const sideNavLinks = [
   },
 ];
 
+/* Sample of SuiteHeader usage with data hook
 const HeaderWithHook = () => {
   const [data, isLoading, error, refreshData] = useSuiteHeaderData({
     // baseApiUrl: 'http://localhost:3001/internal',
@@ -124,6 +124,7 @@ const HeaderWithHook = () => {
     />
   );
 };
+*/
 
 storiesOf('Watson IoT/SuiteHeader', module)
   .add('default', () => {
@@ -235,12 +236,7 @@ storiesOf('Watson IoT/SuiteHeader', module)
             isExternal: true,
           },
         ])}
-        survey={{
-          link: 'https://www.ibm.com',
-          title: 'Survey Notification Title',
-          text: 'Survey notification text',
-        }}
+        surveyLink="https://www.ibm.com"
       />
     );
-  })
-  .add('Header with data hook', () => <HeaderWithHook />);
+  });

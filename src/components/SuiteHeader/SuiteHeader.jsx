@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 
@@ -35,8 +35,6 @@ export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
 
 export const SuiteHeaderSurveyPropTypes = PropTypes.shape({
   link: PropTypes.string,
-  title: PropTypes.string,
-  text: PropTypes.string,
 });
 
 export const SuiteHeaderI18NPropTypes = PropTypes.shape({
@@ -59,6 +57,8 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   about: PropTypes.string,
   support: PropTypes.string,
   gettingStarted: PropTypes.string,
+  surveyTitle: PropTypes.func,
+  surveyText: PropTypes.string,
 });
 
 const defaultProps = {
@@ -66,7 +66,7 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
-  survey: null,
+  surveyLink: null,
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -90,7 +90,7 @@ const propTypes = {
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If survey.link is present, show a ToastNotification with survey.title and survey.text */
-  survey: SuiteHeaderSurveyPropTypes,
+  surveyLink: PropTypes.string,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -105,49 +105,26 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
-  survey,
+  surveyLink,
   i18n,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showSurveyToast, setShowSurveyToast] = useState(false);
-
-  useEffect(
-    () => {
-      const surveyToastTimer = setTimeout(() => {
-        if (survey?.link) {
-          setShowSurveyToast(true);
-        }
-      }, 5000);
-      return () => {
-        clearTimeout(surveyToastTimer);
-      };
-    },
-    [survey]
-  );
+  const [showToast, setShowToast] = useState(surveyLink !== null && surveyLink !== undefined);
 
   return (
     <>
-      {showSurveyToast ? (
-        <Link href={survey.link}>
-          <ToastNotification
-            className="survey-toast"
-            kind="info"
-            title={survey.title || mergedI18N.surveyTitle(appName || suiteName)}
-            subtitle={survey.text || mergedI18N.surveyText}
-            lowContrast
-            caption=""
-            onCloseButtonClick={evt => {
-              if (evt) {
-                evt.preventDefault();
-                evt.stopPropagation();
-              }
-              setShowSurveyToast(false);
-            }}
-            timeout={10000}
-          />
-        </Link>
+      {showToast ? (
+        <ToastNotification
+          className={`${settings.iotPrefix}--suite-header-survey-toast`}
+          kind="info"
+          title={mergedI18N.surveyTitle(appName || suiteName)}
+          subtitle={<Link href={surveyLink}>{mergedI18N.surveyText}</Link>}
+          lowContrast
+          caption=""
+          onCloseButtonClick={() => setShowToast(false)}
+        />
       ) : null}
       <SuiteHeaderLogoutModal
         suiteName={suiteName}

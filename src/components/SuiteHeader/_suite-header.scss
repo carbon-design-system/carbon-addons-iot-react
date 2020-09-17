@@ -1,19 +1,3 @@
-.survey-toast {
-  position: fixed;
-  top: 45px;
-  right: -12px;
-  max-width: 425px;
-  width: auto;
-  height: auto;
-  z-index: 1;
-
-  .#{$prefix}--toast-notification__title {
-    margin: 9px 0 0 0;
-    font-size: 0.875rem;
-    font-weight: bold;
-  }
-}
-
 .#{$iot-prefix}--suite-header-profile {
   background-color: $ui-05;
   color: $inverse-01;
@@ -66,6 +50,18 @@
     .#{$prefix}--btn {
       width: 100%;
     }
+  }
+}
+
+.#{$iot-prefix}--suite-header-survey-toast {
+  position: fixed;
+  top: $layout-04;
+  right: 0;
+  max-width: rem(425px);
+  width: auto;
+
+  .#{$prefix}--toast-notification__title {
+    margin-top: $spacing-04;
   }
 }
 

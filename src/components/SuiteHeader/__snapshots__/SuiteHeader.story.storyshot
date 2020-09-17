@@ -869,6 +869,83 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
     }
   >
     <div
+      className="iot--suite-header-survey-toast bx--toast-notification bx--toast-notification--low-contrast bx--toast-notification--info"
+      kind="info"
+      role="alert"
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        fill="currentColor"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+        />
+        <path
+          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+          data-icon-path="inner-path"
+          fill="none"
+        />
+        <title>
+          info icon
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Enjoying Application Name?
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          <a
+            className="bx--link"
+            href="https://www.ibm.com"
+          >
+            Click here to help us improve the product
+          </a>
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        >
+          
+        </div>
+      </div>
+      <button
+        aria-label="closes notification"
+        className="bx--toast-notification__close-button"
+        onClick={[Function]}
+        title="closes notification"
+        type="button"
+      >
+        <svg
+          aria-label="close notification"
+          className="bx--toast-notification__close-icon"
+          fill="currentColor"
+          focusable="false"
+          height={20}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
       className="bx--modal bx--modal-tall"
       onBlur={[Function]}
       onKeyDown={[Function]}
