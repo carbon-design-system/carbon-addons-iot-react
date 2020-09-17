@@ -89,7 +89,7 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
-  /** If survey.link is present, show a ToastNotification with survey.title and survey.text */
+  /** If surveyLink is present, show a ToastNotification */
   surveyLink: PropTypes.string,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,

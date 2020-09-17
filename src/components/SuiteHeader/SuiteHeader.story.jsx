@@ -116,11 +116,7 @@ const HeaderWithHook = () => {
       sideNavProps={{
         links: sideNavLinks,
       }}
-      survey={{
-        link: surveyLink,
-        title: 'Survey Notification Title',
-        text: 'Survey notification text',
-      }}
+      surveyLink={surveyLink}
     />
   );
 };
