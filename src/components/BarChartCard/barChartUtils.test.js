@@ -731,16 +731,18 @@ describe('barChartUtils', () => {
     </div>
   </li></ul>`;
 
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, undefined)).toEqual(
-      `<ul class='multi-tooltip'><li>
+    expect(
+      handleTooltip(simpleFormattedData, defaultTooltip, undefined).replace(/\s+/g, '')
+    ).toEqual(
+      `<ul class="multi-tooltip"><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Cities </p>
       <p class="value">San Francisco</p>
-    
+    </div>
   </li><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Particles </p>
       <p class="value">512</p>
     </div>
@@ -750,7 +752,7 @@ describe('barChartUtils', () => {
       <p class="label">Group</p>
       <p class="value">Particles</p>
     </div>
-  </li></ul>`
+  </li></ul>`.replace(/\s+/g, '')
     );
   });
 
@@ -765,13 +767,11 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<ul class='multi-tooltip'><li>
     <div class="datapoint-tooltip ">
-      
       <p class="label">Dates </p>
       <p class="value">Feb 12, 2020</p>
     </div>
   </li><li>
     <div class="datapoint-tooltip ">
-      
       <p class="label">Total </p>
       <p class="value">565</p>
     </div>
@@ -783,13 +783,14 @@ describe('barChartUtils', () => {
     </div>
   </li></ul>`;
 
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp')).toEqual(
-      `<ul class='multi-tooltip'><li class='datapoint-tooltip'>
-            <p class='label'>
+    expect(
+      handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp').replace(/\s+/g, '')
+    ).toEqual(
+      `<ul class="multi-tooltip"><li class="datapoint-tooltip">
+            <p class="label">
               02/11/2020 10:23:45</p>
-          </li><li><ul class='multi-tooltip'><li>
+          </li><li>
     <div class="datapoint-tooltip ">
-      
       <p class="label">Total </p>
       <p class="value">565</p>
     </div>
@@ -799,7 +800,7 @@ describe('barChartUtils', () => {
       <p class="label">Group</p>
       <p class="value">Particles</p>
     </div>
-  </li></ul></li></ul>`
+  </li></ul>`.replace(/\s+/g, '')
     );
   });
 });
