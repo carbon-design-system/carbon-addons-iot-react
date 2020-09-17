@@ -16,19 +16,22 @@ const propTypes = {
   columnId: PropTypes.string.isRequired,
   onResize: PropTypes.func.isRequired,
   ordering: PropTypes.arrayOf(PropTypes.object).isRequired,
+  paddingExtra: PropTypes.number.isRequired,
 };
 
 const dragHandleWidth = 4;
 const { iotPrefix } = settings;
 
-const getColumnDragBounds = (myColumn, siblingColumn) => {
+const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
+  const minWidth = MIN_COLUMN_WIDTH + paddingExtra;
+
   return {
-    MIN_COLUMN_WIDTH,
-    left: document.dir === 'rtl' ? MIN_COLUMN_WIDTH - siblingColumn.width : MIN_COLUMN_WIDTH,
+    minWidth,
+    left: document.dir === 'rtl' ? minWidth - siblingColumn.width : minWidth,
     right:
       document.dir === 'rtl'
-        ? myColumn.width - MIN_COLUMN_WIDTH
-        : myColumn.width + siblingColumn.width - MIN_COLUMN_WIDTH,
+        ? myColumn.width - minWidth
+        : myColumn.width + siblingColumn.width - minWidth,
   };
 };
 
@@ -52,7 +55,7 @@ const findNextVisibleSibling = (ordering, myColIndex, currentColumnWidths) => {
 };
 
 const ColumnResize = React.forwardRef((props, ref) => {
-  const { currentColumnWidths, columnId, ordering } = props;
+  const { currentColumnWidths, columnId, ordering, paddingExtra } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
@@ -78,7 +81,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const onMouseMove = e => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const bounds = getColumnDragBounds(myColumn, affectedSiblingColumn);
+      const bounds = getColumnDragBounds(myColumn, affectedSiblingColumn, paddingExtra);
       if (mousePosition > bounds.left && mousePosition < bounds.right) {
         setLeftPosition(mousePosition);
       }

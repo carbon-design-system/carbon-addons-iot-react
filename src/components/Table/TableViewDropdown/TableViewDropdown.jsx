@@ -14,7 +14,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** Set to true if the user has modfied filters etc since the view was loaded */
-  activeViewEdited: PropTypes.bool,
+  selectedViewEdited: PropTypes.bool,
   /** The id of the view that is currently selected */
   selectedViewId: PropTypes.string,
   disabled: PropTypes.bool,
@@ -25,7 +25,7 @@ const propTypes = {
     edited: PropTypes.string,
     viewAll: PropTypes.string,
     saveAsNewView: PropTypes.string,
-    saveView: PropTypes.string,
+    saveChanges: PropTypes.string,
     manageViews: PropTypes.string,
     ariaLabel: PropTypes.string,
     tableViewMenu: PropTypes.string,
@@ -35,7 +35,7 @@ const propTypes = {
     /** Callback for when the user selected save new View */
     onSaveAsNewView: PropTypes.func,
     /** Callback for when the user selected save View */
-    onSaveView: PropTypes.func,
+    onSaveChanges: PropTypes.func,
     /** Callback for when the user selected Manage views */
     onManageViews: PropTypes.func,
     /** Callback for when the current view is changed by the user */
@@ -46,6 +46,7 @@ const propTypes = {
     dropdown: OverridePropTypes,
     dropdownItem: OverridePropTypes,
   }),
+  style: PropTypes.objectOf(PropTypes.string),
   testID: PropTypes.string,
 };
 
@@ -57,25 +58,27 @@ const defaultProps = {
     edited: 'Edited',
     viewAll: 'View All',
     saveAsNewView: 'Save as new view',
-    saveView: 'Save view',
+    saveChanges: 'Save changes',
     manageViews: 'Manage views',
     ariaLabel: 'Select view',
     tableViewMenu: 'Table view menu',
   },
-  activeViewEdited: false,
+  selectedViewEdited: false,
   disabled: false,
   overrides: undefined,
+  style: undefined,
   testID: 'TableViewDropdown',
 };
 
 const TableViewDropdown = ({
   selectedViewId,
-  activeViewEdited,
+  selectedViewEdited,
   views,
-  actions: { onSaveView, onSaveAsNewView, onManageViews, onChangeView },
+  actions: { onSaveChanges, onSaveAsNewView, onManageViews, onChangeView },
   disabled,
   i18n,
   overrides,
+  style,
   testID,
 }) => {
   const viewAllItem = {
@@ -90,9 +93,9 @@ const TableViewDropdown = ({
         customAction: onSaveAsNewView,
       };
       const saveItem = {
-        id: 'save-view',
-        text: i18n.saveView,
-        customAction: onSaveView,
+        id: 'save-changes',
+        text: i18n.saveChanges,
+        customAction: onSaveChanges,
       };
       const manageViewsItem = {
         id: 'manage-views',
@@ -100,18 +103,22 @@ const TableViewDropdown = ({
         customAction: onManageViews,
         icon: Settings16,
       };
-      const dialogItems = [saveAsNewItem, saveItem, manageViewsItem];
+      const dialogItems = selectedViewEdited
+        ? [saveAsNewItem, saveItem, manageViewsItem]
+        : [saveAsNewItem, manageViewsItem];
+
       return [viewAllItem, ...views, ...dialogItems];
     },
     [
       i18n.saveAsNewView,
-      i18n.saveView,
+      i18n.saveChanges,
       i18n.manageViews,
       onSaveAsNewView,
-      onSaveView,
+      onSaveChanges,
       onManageViews,
       viewAllItem,
       views,
+      selectedViewEdited,
     ]
   );
 
@@ -134,34 +141,36 @@ const TableViewDropdown = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         return (
-          <MyDropDown
-            label={i18n.tableViewMenu}
-            data-testid={testID}
-            selectedItem={mySelectedItem}
-            ariaLabel={i18n.ariaLabel}
-            disabled={disabled}
-            id={`${iotPrefix}--view-dropdown`}
-            // We are using itemToString instead of itemToElement since we need the custom
-            // rendering to also happen when the item is selected. See closed PR
-            // https://github.com/carbon-design-system/carbon/pull/5578
-            itemToString={itemData => {
-              return (
-                <MyTableViewDropDownItem
-                  testID={`TableViewDropdownItem-${itemData.id}`}
-                  isCompact={measuredSize?.width < 200}
-                  item={itemData}
-                  isSelected={itemData.id === mySelectedItem.id}
-                  activeViewEdited={activeViewEdited}
-                  i18n={i18n}
-                  {...overrides?.dropdownItem?.props}
-                />
-              );
-            }}
-            items={allItems}
-            light={false}
-            onChange={onSelectionChange}
-            {...overrides?.dropdown?.props}
-          />
+          <div className={`${iotPrefix}--view-dropdown__container`} style={style}>
+            <MyDropDown
+              label={i18n.tableViewMenu}
+              data-testid={testID}
+              selectedItem={mySelectedItem}
+              ariaLabel={i18n.ariaLabel}
+              disabled={disabled}
+              id={`${iotPrefix}--view-dropdown`}
+              // We are using itemToString instead of itemToElement since we need the custom
+              // rendering to also happen when the item is selected. See closed PR
+              // https://github.com/carbon-design-system/carbon/pull/5578
+              itemToString={itemData => {
+                return (
+                  <MyTableViewDropDownItem
+                    testID={`TableViewDropdownItem-${itemData.id}`}
+                    isCompact={measuredSize?.width < 200}
+                    item={itemData}
+                    isSelected={itemData.id === mySelectedItem.id}
+                    activeViewEdited={selectedViewEdited}
+                    i18n={i18n}
+                    {...overrides?.dropdownItem?.props}
+                  />
+                );
+              }}
+              items={allItems}
+              light={false}
+              onChange={onSelectionChange}
+              {...overrides?.dropdown?.props}
+            />
+          </div>
         );
       }}
     </withSize.SizeMe>

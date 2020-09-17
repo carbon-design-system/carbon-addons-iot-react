@@ -36,7 +36,7 @@ storiesOf('Watson IoT/Table/TableViewDropdown', module).add(
             views={myViews}
             actions={{
               onSaveAsNewView: action('onSaveAsNewView'),
-              onSaveView: action('onSaveView'),
+              onSaveChanges: action('onSaveChanges'),
               onManageViews: action('onManageViews'),
               onChangeView: viewItem => {
                 setSelectedViewId(viewItem.id);

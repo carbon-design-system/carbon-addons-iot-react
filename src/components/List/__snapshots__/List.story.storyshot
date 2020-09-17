@@ -423,6 +423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -473,6 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -528,9 +530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -571,9 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -614,9 +612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -657,9 +653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -700,9 +694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -743,9 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -786,9 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -829,9 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -872,9 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -915,9 +899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -953,6 +935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1003,6 +986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1058,9 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1101,9 +1083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1144,9 +1124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1187,9 +1165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1230,9 +1206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1273,9 +1247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1316,9 +1288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1359,9 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1402,9 +1370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -1440,6 +1406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1490,6 +1457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1639,6 +1607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -1646,6 +1615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1721,6 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -1728,6 +1699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1803,6 +1775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -1810,6 +1783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1885,6 +1859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -1892,6 +1867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -1967,6 +1943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -1974,6 +1951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2049,6 +2027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               className="iot--list-item iot--list-item__selectable"
+              data_testid={null}
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
@@ -2056,6 +2035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2236,6 +2216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2291,11 +2272,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2390,11 +2370,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2500,11 +2479,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -2610,9 +2588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2671,9 +2647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2732,9 +2706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2793,9 +2765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2854,9 +2824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2915,9 +2883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -2976,9 +2942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -3037,9 +3001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -3098,9 +3060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -3159,9 +3119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "90px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--content"
               >
@@ -3220,11 +3178,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -3330,11 +3287,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -3429,11 +3385,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -3539,11 +3494,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"
@@ -3649,11 +3603,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "60px",
                   }
                 }
-              >
-                 
-              </div>
+              />
               <div
                 className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
                 onClick={[Function]}
                 onKeyPress={[Function]}
                 role="button"

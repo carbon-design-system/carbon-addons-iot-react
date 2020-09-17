@@ -1,57 +1,32 @@
 import React from 'react';
+import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
-import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
+import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
+
+import ListItemWrapper from './ListItemWrapper';
 
 const { iotPrefix } = settings;
 
-// internal component
-const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
-  isSelectable ? (
-    <div
-      role="button"
-      tabIndex={0}
-      className={classnames(
-        `${iotPrefix}--list-item`,
-        `${iotPrefix}--list-item__selectable`,
-        { [`${iotPrefix}--list-item__selected`]: selected },
-        { [`${iotPrefix}--list-item__large`]: isLargeRow }
-      )}
-      onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-      onClick={() => {
-        onSelect(id);
-      }}
-    >
-      {children}
-    </div>
-  ) : (
-    <div
-      className={classnames(`${iotPrefix}--list-item`, {
-        [`${iotPrefix}--list-item__large`]: isLargeRow,
-      })}
-    >
-      {children}
-    </div>
-  );
-
-const ListItemWrapperProps = {
-  id: PropTypes.string.isRequired,
-  isLargeRow: PropTypes.bool.isRequired,
-  isSelectable: PropTypes.bool.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  selected: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-};
+export const ItemType = 'ListItem';
 
 const ListItemPropTypes = {
   id: PropTypes.string.isRequired,
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   isLargeRow: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
   isSelectable: PropTypes.bool,
+  disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
@@ -60,7 +35,6 @@ const ListItemPropTypes = {
   rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
-  nestingLevel: PropTypes.number,
   isCategory: PropTypes.bool,
   /** i18n strings */
   i18n: PropTypes.shape({
@@ -76,13 +50,25 @@ const ListItemPropTypes = {
   ]),
   /** The nodes should be Carbon Tags components */
   tags: PropTypes.arrayOf(PropTypes.node),
+  /* these props come from react-dnd */
+  connectDragSource: PropTypes.func.isRequired,
+  connectDragPreview: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  dragPreviewText: PropTypes.string,
+  nestingLevel: PropTypes.number,
+  isDragging: PropTypes.bool.isRequired,
+  onItemMoved: PropTypes.func.isRequired,
+  itemWillMove: PropTypes.func.isRequired,
 };
 
 const ListItemDefaultProps = {
+  editingStyle: null,
   isLargeRow: false,
   isExpandable: false,
+  dragPreviewText: null,
   onExpand: () => {},
   isSelectable: false,
+  disabled: false,
   onSelect: () => {},
   selected: false,
   expanded: false,
@@ -90,7 +76,7 @@ const ListItemDefaultProps = {
   rowActions: [],
   icon: null,
   iconPosition: 'left',
-  nestingLevel: null,
+  nestingLevel: 0,
   isCategory: false,
   i18n: {
     expand: 'Expand',
@@ -102,6 +88,7 @@ const ListItemDefaultProps = {
 
 const ListItem = ({
   id,
+  editingStyle,
   isLargeRow,
   isExpandable,
   onExpand,
@@ -109,28 +96,34 @@ const ListItem = ({
   isSelectable,
   onSelect,
   selected,
+  disabled,
   value,
   secondaryValue,
   rowActions,
   icon,
   iconPosition, // or "right"
+  onItemMoved,
   nestingLevel,
   isCategory,
   i18n,
+  isDragging,
   selectedItemRef,
   tags,
+  connectDragSource,
+  connectDragPreview,
+  itemWillMove,
+  dragPreviewText,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
-  const renderNestingOffset = () =>
-    nestingLevel > 0 ? (
+  const renderNestingOffset = () => {
+    return nestingLevel > 0 ? (
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{ width: `${nestingLevel * 30}px` }}
-      >
-        &nbsp;
-      </div>
+      />
     ) : null;
+  };
 
   const renderExpander = () =>
     isExpandable ? (
@@ -139,6 +132,7 @@ const ListItem = ({
         tabIndex={0}
         className={`${iotPrefix}--list-item--expand-icon`}
         onClick={handleExpansionClick}
+        data-testid="expand-icon"
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
         {expanded ? (
@@ -165,14 +159,52 @@ const ListItem = ({
 
   const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
 
+  const renderDragPreview = () => {
+    if (editingStyle && connectDragPreview) {
+      return connectDragPreview(
+        <div className={`${iotPrefix}--list-item-editable--drag-preview`}>
+          {dragPreviewText || value}
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  const dragIcon = () =>
+    editingStyle ? (
+      <Draggable16
+        className={classnames(`${iotPrefix}--list-item--handle`)}
+        data-testid="list-item-editable"
+      />
+    ) : null;
+
   return (
-    <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect }}>
+    <ListItemWrapper
+      isPreview={false}
+      {...{
+        id,
+        isSelectable,
+        selected,
+        isDragging,
+        editingStyle,
+        expanded,
+        isLargeRow,
+        onSelect,
+        connectDragSource,
+        onItemMoved,
+        itemWillMove,
+        disabled,
+      }}
+    >
+      {renderDragPreview()}
+      {dragIcon()}
       {renderNestingOffset()}
       {renderExpander()}
       <div
         className={classnames(
           `${iotPrefix}--list-item--content`,
-          { [`${iotPrefix}--list-item--content__selected`]: selected },
+          { [`${iotPrefix}--list-item--content__selected`]: !editingStyle && selected },
           { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
         ref={selectedItemRef}
@@ -191,6 +223,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -212,6 +245,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}
                 >
@@ -225,6 +259,7 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                       rowActions
                     ),
@@ -240,6 +275,7 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
                         rowActions
                       ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >
                     {secondaryValue}
@@ -256,7 +292,25 @@ const ListItem = ({
   );
 };
 
-ListItemWrapper.propTypes = ListItemWrapperProps;
+const cardSource = {
+  beginDrag(props) {
+    return {
+      id: props.columnId,
+      props,
+      index: props.index,
+    };
+  },
+};
+
+const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  connectDragPreview: connect.dragPreview(),
+  isDragging: monitor.isDragging(),
+}));
+
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;
-export default ListItem;
+
+export { ListItem as UnconnectedListItem };
+
+export default ds(ListItem);
