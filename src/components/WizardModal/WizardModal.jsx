@@ -166,7 +166,7 @@ class WizardModal extends Component {
         <ProgressIndicator
           items={items}
           currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
-          setStep={this.handleClick}
+          onClickItem={this.handleClick}
           isClickable={isClickable}
         />
         <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
