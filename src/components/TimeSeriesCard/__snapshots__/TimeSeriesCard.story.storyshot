@@ -1412,6 +1412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                             data-column="timestamp"
+                            data-floating-menu-container={true}
                             id="column-timestamp"
                             onClick={[Function]}
                             style={
@@ -1478,6 +1479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="ENTITY_ID"
+                            data-floating-menu-container={true}
                             id="column-ENTITY_ID"
                             onClick={[Function]}
                             style={
@@ -1544,6 +1546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="temperature"
+                            data-floating-menu-container={true}
                             id="column-temperature"
                             onClick={[Function]}
                             style={
@@ -1610,6 +1613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="humidity"
+                            data-floating-menu-container={true}
                             id="column-humidity"
                             onClick={[Function]}
                             style={
@@ -1676,6 +1680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="ecount"
+                            data-floating-menu-container={true}
                             id="column-ecount"
                             onClick={[Function]}
                             style={
@@ -1742,6 +1747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="devname"
+                            data-floating-menu-container={true}
                             id="column-devname"
                             onClick={[Function]}
                             style={
@@ -1808,6 +1814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="pressure"
+                            data-floating-menu-container={true}
                             id="column-pressure"
                             onClick={[Function]}
                             style={
@@ -1874,6 +1881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="status"
+                            data-floating-menu-container={true}
                             id="column-status"
                             onClick={[Function]}
                             style={

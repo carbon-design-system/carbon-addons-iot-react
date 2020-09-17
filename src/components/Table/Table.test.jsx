@@ -899,4 +899,38 @@ describe('Table', () => {
       view: expectedViewProps,
     });
   });
+
+  it('renders header with overflow menu', () => {
+    const overflowData = [
+      {
+        id: 'option-A',
+        text: 'option-A',
+      },
+    ];
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+        }))}
+        data={tableData}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(0);
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+          overflowMenuItems: overflowData,
+        }))}
+        data={tableData}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+  });
 });
