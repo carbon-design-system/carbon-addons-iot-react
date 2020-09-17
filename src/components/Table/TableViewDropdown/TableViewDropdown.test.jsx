@@ -62,11 +62,13 @@ describe('TableViewDropdown', () => {
   });
 
   it('adds a "save view" item before the "manage views" item', () => {
-    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
+    const wrapper = mount(
+      <TableViewDropdown views={myViews} actions={actions} selectedViewEdited />
+    );
     // The list of options is not rendered to the DOM until the dropdown button has been clicked
     wrapper.find('button').simulate('click');
     const saveViewItem = wrapper.find(itemSelector).at(5);
-    expect(saveViewItem.text()).toEqual('Save view');
+    expect(saveViewItem.text()).toEqual('Save changes');
   });
 
   it('selected the proper item on init', () => {
@@ -103,8 +105,10 @@ describe('TableViewDropdown', () => {
     expect(view3Item.props().title).toEqual('View 3');
   });
 
-  it('adds a "edited" postfix to selected item & title when activeViewEdited is true', () => {
-    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
+  it('adds a "edited" postfix to selected item & title when selectedViewEdited is true', () => {
+    const wrapper = mount(
+      <TableViewDropdown views={myViews} actions={actions} selectedViewEdited />
+    );
     // The list of options is not rendered to the DOM until the dropdown button has been clicked
     wrapper.find('button').simulate('click');
     const selectedItem = wrapper.find(iotItemSelector);
@@ -132,7 +136,7 @@ describe('TableViewDropdown', () => {
                 setSelectedViewId(viewItem.id);
               }),
             }}
-            activeViewEdited
+            selectedViewEdited
             selectedViewId={selectedViewId}
           />
         );
@@ -188,7 +192,9 @@ describe('TableViewDropdown', () => {
   });
 
   it('renders an icon for the manage views item', () => {
-    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
+    const wrapper = mount(
+      <TableViewDropdown views={myViews} actions={actions} selectedViewEdited />
+    );
     // The list of options is not rendered to the DOM until the dropdown button has been clicked
     wrapper.find('button').simulate('click');
     const manageViewsItem = wrapper.find(itemSelector).last();
@@ -283,7 +289,7 @@ describe('TableViewDropdown', () => {
       edited: 'edited',
       viewAll: 'view-all',
       saveAsNewView: 'save-as-new',
-      saveView: 'save-view',
+      saveChanges: 'save-changes',
       manageViews: 'manage-view',
       ariaLabel: 'aria-label',
       tableViewMenu: 'table-view',
@@ -291,7 +297,9 @@ describe('TableViewDropdown', () => {
 
     const i18nDefault = TableViewDropdown.defaultProps.i18n;
 
-    render(<TableViewDropdown views={myViews} actions={actions} i18n={i18nTest} />);
+    render(
+      <TableViewDropdown views={myViews} actions={actions} i18n={i18nTest} selectedViewEdited />
+    );
 
     // The list of options is not rendered to the DOM until the dropdown button has been clicked
     fireEvent.click(screen.getByRole('button'));
@@ -299,14 +307,14 @@ describe('TableViewDropdown', () => {
     expect(screen.getAllByText(i18nTest.view, { exact: false })[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.viewAll)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.saveAsNewView)[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.saveView)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.saveChanges)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.manageViews)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.ariaLabel)[0]).toBeInTheDocument();
 
     expect(screen.queryByText(i18nDefault.view)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.viewAll)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.saveAsNewView)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.saveView)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.saveChanges)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.manageViews)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.ariaLabel)).not.toBeInTheDocument();
   });

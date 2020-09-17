@@ -53,6 +53,8 @@ const defaultProps = {
   viewDescription: undefined,
 };
 
+const preventFormSubmission = e => e.preventDefault();
+
 const TableSaveViewForm = ({
   formValues,
   disabled,
@@ -77,7 +79,7 @@ const TableSaveViewForm = ({
   const enforceControlledCheckbox = val => (val !== undefined ? val : false);
 
   return (
-    <MyForm data-testid={testID} {...overrides?.form?.props}>
+    <MyForm data-testid={testID} onSubmit={preventFormSubmission} {...overrides?.form?.props}>
       <MyTitleTextInput
         name="title"
         data-testid={`${testID}-title-input`}

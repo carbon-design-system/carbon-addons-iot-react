@@ -7,8 +7,27 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
+import {
+  EditingStyle,
+  handleEditModeSelect,
+  moveItemsInList,
+  DropLocation,
+} from '../../../utils/DragAndDropUtils';
+import { settings } from '../../../constants/Settings';
+
+import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
+import BulkActionHeader from './BulkActionHeader';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
+  /** list editing style */
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   /** List heading */
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
@@ -27,6 +46,12 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
+    itemsSelected: PropTypes.string,
+    move: PropTypes.string,
+    cancel: PropTypes.string,
+    allRows: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalDescription: PropTypes.string,
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
@@ -40,9 +65,18 @@ const propTypes = {
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
+  /** callback function returned a modified list */
+  onListUpdated: PropTypes.func,
+  /** callback function returned before a list is modified */
+  itemWillMove: PropTypes.func,
+  /** callback function to exit edit mode */
+  cancelMoveClicked: PropTypes.func,
+  /**  Is data currently being sent to the backend */
+  sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 const defaultProps = {
+  editingStyle: null,
   title: null,
   hasSearch: false,
   hasPagination: true,
@@ -52,6 +86,14 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
+    itemSelected: '1 item selected',
+    itemsSelected: '%d items selected',
+    move: 'Move',
+    cancel: 'Cancel',
+    allRows: 'All rows',
+    itemTitle: 'Move 1 item underneath',
+    itemsTitle: 'Move %d items underneath',
+    modalDescription: 'Select a destination',
   },
   isFullHeight: false,
   isLoading: false,
@@ -59,6 +101,12 @@ const defaultProps = {
   defaultSelectedId: null,
   defaultExpandedIds: [],
   onSelect: null,
+  sendingData: null,
+  onListUpdated: () => {},
+  cancelMoveClicked: () => {},
+  itemWillMove: () => {
+    return true;
+  },
 };
 
 /**
@@ -123,6 +171,7 @@ export const searchForNestedItemIds = (items, value) => {
 };
 
 const HierarchyList = ({
+  editingStyle,
   title,
   hasSearch,
   hasPagination,
@@ -136,13 +185,18 @@ const HierarchyList = ({
   defaultSelectedId,
   defaultExpandedIds,
   onSelect,
+  onListUpdated,
+  itemWillMove,
+  cancelMoveClicked,
+  sendingData,
 }) => {
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
+  const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useDeepCompareEffect(
     () => {
@@ -160,6 +214,29 @@ const HierarchyList = ({
     [defaultSelectedId]
   );
 
+  const handleSelect = (id, parentId = null) => {
+    if (editingStyle) {
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+    } else if (selectedIds.includes(id)) {
+      setSelectedIds(selectedIds.filter(item => item !== id));
+    } else {
+      if (hasMultiSelect) {
+        setSelectedIds([...selectedIds, id]);
+      } else {
+        setSelectedIds([id]);
+      }
+
+      if (onSelect) {
+        onSelect(id);
+      }
+    }
+  };
+
+  const handleBulkModalCancel = () => {
+    setEditModeSelectedIds([]);
+    cancelMoveClicked();
+  };
+
   useEffect(
     () => {
       // Expand the parent elements of the defaultSelectedId
@@ -171,33 +248,14 @@ const HierarchyList = ({
           tempExpandedIds.push(categoryItem.id);
         });
         setExpandedIds(tempExpandedIds);
+
         // If the defaultSelectedId prop is updated from the outside, we need to use it
-        if (selectedId !== defaultSelectedId) {
-          setSelectedId(defaultSelectedId);
-        }
+        handleSelect(defaultSelectedId);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId, items]
   );
-
-  const handleSelect = id => {
-    if (selectedIds.includes(id)) {
-      setSelectedId(null);
-      if (hasMultiSelect) {
-        setSelectedIds(selectedIds.filter(item => item !== id));
-      }
-    } else {
-      setSelectedId(id);
-      if (hasMultiSelect) {
-        setSelectedIds([...selectedIds, id]);
-      }
-
-      if (onSelect) {
-        onSelect(id);
-      }
-    }
-  };
 
   const numberOfItems = filteredItems.length;
   let rowsPerPage;
@@ -267,40 +325,94 @@ const HierarchyList = ({
    */
   const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
 
+  const handleMove = (dragIds, hoverId, target) => {
+    const updatedList = moveItemsInList(items, dragIds, hoverId, target);
+
+    onListUpdated(updatedList);
+    setFilteredItems(updatedList);
+  };
+
+  const handleDrag = (dragId, hoverId, target) => {
+    if (
+      editModeSelectedIds.length > 0 &&
+      editModeSelectedIds.find(selectionId => selectionId === dragId)
+    ) {
+      handleMove(editModeSelectedIds, hoverId, target);
+    } else {
+      handleMove([dragId], hoverId, target);
+    }
+  };
+
   return (
-    <List
-      title={title}
-      buttons={buttons}
-      search={
-        hasSearch
-          ? {
-              value: searchValue,
-              onChange: evt => {
-                setSearchValue(evt.target.value);
-                delayedSearch(evt.target.value);
-              },
-            }
-          : null
-      }
-      items={pageSize != null ? itemsToShow : filteredItems}
-      expandedIds={expandedIds}
-      toggleExpansion={id => {
-        if (expandedIds.filter(rowId => rowId === id).length > 0) {
-          // remove id from array
-          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-        } else {
-          setExpandedIds(expandedIds.concat([id]));
+    <>
+      <HierarchyListReorderModal
+        open={showModal}
+        items={items}
+        selectedIds={editModeSelectedIds}
+        i18n={i18n}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        onSubmit={dropId => {
+          if (dropId !== null) {
+            handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
+          }
+
+          setShowModal(false);
+        }}
+        sendingData={sendingData}
+      />
+      <List
+        title={title}
+        buttons={buttons}
+        editingStyle={editingStyle}
+        search={
+          hasSearch
+            ? {
+                value: searchValue,
+                onChange: evt => {
+                  setSearchValue(evt.target.value);
+                  delayedSearch(evt.target.value);
+                },
+              }
+            : null
         }
-      }}
-      i18n={i18n}
-      pagination={hasPagination ? pagination : null}
-      isFullHeight={isFullHeight}
-      isLoading={isLoading}
-      selectedId={selectedId}
-      selectedIds={selectedIds}
-      handleSelect={handleSelect}
-      ref={selectedItemRef}
-    />
+        items={pageSize !== null ? itemsToShow : filteredItems}
+        expandedIds={expandedIds}
+        toggleExpansion={id => {
+          if (expandedIds.filter(rowId => rowId === id).length > 0) {
+            // remove id from array
+            setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+          } else {
+            setExpandedIds(expandedIds.concat([id]));
+          }
+        }}
+        overrides={{
+          header: {
+            component:
+              editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0
+                ? BulkActionHeader
+                : null,
+            props: {
+              i18n,
+              editModeSelectedIds,
+              cancelMoveClicked: handleBulkModalCancel,
+              setShowModal,
+              className: `${iotPrefix}--hierarchy-list-bulk-header`,
+            },
+          },
+        }}
+        i18n={i18n}
+        pagination={hasPagination ? pagination : null}
+        isFullHeight={isFullHeight}
+        isLoading={isLoading}
+        itemWillMove={itemWillMove}
+        selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        handleSelect={handleSelect}
+        ref={selectedItemRef}
+        onItemMoved={handleDrag}
+      />
+    </>
   );
 };
 

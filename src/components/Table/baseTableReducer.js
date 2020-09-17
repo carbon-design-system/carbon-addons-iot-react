@@ -18,6 +18,7 @@ import {
   TABLE_COLUMN_ORDER,
   TABLE_SEARCH_APPLY,
   TABLE_LOADING_SET,
+  TABLE_COLUMN_RESIZE,
 } from './tableActionCreators';
 
 export const baseTableReducer = (state = {}, action) => {
@@ -222,6 +223,10 @@ export const baseTableReducer = (state = {}, action) => {
           },
         },
       });
+
+    case TABLE_COLUMN_RESIZE:
+      return update(state, { columns: { $set: action.payload } });
+
     // Row operations
     case TABLE_ROW_SELECT: {
       const { rowId, isSelected, hasRowSelection } = action.payload;

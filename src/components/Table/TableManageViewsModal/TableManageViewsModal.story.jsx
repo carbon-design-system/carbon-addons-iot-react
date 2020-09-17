@@ -13,7 +13,7 @@ const demoViews = Array(100)
   .fill({
     isDeleteable: true,
     isEditable: true,
-    viewDescription: 'Entities: 2 filters, Alerts: 3 filters',
+    description: 'Entities: 2 filters, Alerts: 3 filters',
   })
   .map((view, index) => ({
     ...view,
@@ -251,7 +251,7 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
 
       const getCustomRowTitle = ({ title }) => title;
 
-      const getCustomRowDescription = ({ viewDescription }) => `PREFIXED - ${viewDescription}`;
+      const getCustomRowDescription = ({ description }) => `PREFIXED - ${description}`;
 
       const getRowTags = ({ id, isPublic }, { i18n: { defaultLabelText } }) => {
         const tags =
