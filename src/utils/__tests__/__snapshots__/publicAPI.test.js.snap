@@ -310,6 +310,7 @@ Map {
   "Table" => Object {
     "defaultProps": Object {
       "actions": Object {
+        "onUserViewModified": null,
         "pagination": Object {
           "onChangePage": [Function],
         },
@@ -385,6 +386,7 @@ Map {
         "hasRowSelection": false,
         "hasSearch": false,
         "hasSingleRowEdit": false,
+        "hasUserViewManagement": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -429,6 +431,9 @@ Map {
       "actions": Object {
         "args": Array [
           Object {
+            "onUserViewModified": Object {
+              "type": "func",
+            },
             "pagination": Object {
               "args": Array [
                 Object {
@@ -963,6 +968,9 @@ Map {
               "type": "bool",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "hasUserViewManagement": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -2629,6 +2637,9 @@ Map {
           Object {
             "args": Array [
               Object {
+                "description": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "type": "string",
                 },
@@ -2642,9 +2653,6 @@ Map {
                   "type": "bool",
                 },
                 "title": Object {
-                  "type": "string",
-                },
-                "viewDescription": Object {
                   "type": "string",
                 },
               },
@@ -2958,6 +2966,9 @@ Map {
               "type": "bool",
             },
             "hasSearch": Object {
+              "type": "bool",
+            },
+            "hasUserViewManagement": Object {
               "type": "bool",
             },
           },
@@ -5602,20 +5613,21 @@ Map {
   },
   "TableViewDropdown" => Object {
     "defaultProps": Object {
-      "activeViewEdited": false,
       "disabled": false,
       "i18n": Object {
         "ariaLabel": "Select view",
         "edited": "Edited",
         "manageViews": "Manage views",
         "saveAsNewView": "Save as new view",
-        "saveView": "Save view",
+        "saveChanges": "Save changes",
         "tableViewMenu": "Table view menu",
         "view": "View",
         "viewAll": "View All",
       },
       "overrides": undefined,
+      "selectedViewEdited": false,
       "selectedViewId": undefined,
+      "style": undefined,
       "testID": "TableViewDropdown",
       "views": Array [],
     },
@@ -5632,16 +5644,13 @@ Map {
             "onSaveAsNewView": Object {
               "type": "func",
             },
-            "onSaveView": Object {
+            "onSaveChanges": Object {
               "type": "func",
             },
           },
         ],
         "isRequired": true,
         "type": "shape",
-      },
-      "activeViewEdited": Object {
-        "type": "bool",
       },
       "disabled": Object {
         "type": "bool",
@@ -5661,7 +5670,7 @@ Map {
             "saveAsNewView": Object {
               "type": "string",
             },
-            "saveView": Object {
+            "saveChanges": Object {
               "type": "string",
             },
             "tableViewMenu": Object {
@@ -5710,8 +5719,19 @@ Map {
         ],
         "type": "shape",
       },
+      "selectedViewEdited": Object {
+        "type": "bool",
+      },
       "selectedViewId": Object {
         "type": "string",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testID": Object {
         "type": "string",
@@ -21749,11 +21769,13 @@ Map {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
     "TABLE_ACTION_CANCEL": "TABLE_ACTION_CANCEL",
     "TABLE_COLUMN_ORDER": "TABLE_COLUMN_ORDER",
+    "TABLE_COLUMN_RESIZE": "TABLE_COLUMN_RESIZE",
     "TABLE_COLUMN_SORT": "TABLE_COLUMN_SORT",
     "TABLE_EMPTY_STATE_ACTION": "TABLE_EMPTY_STATE_ACTION",
     "TABLE_FILTER_APPLY": "TABLE_FILTER_APPLY",
     "TABLE_FILTER_CLEAR": "TABLE_FILTER_CLEAR",
     "TABLE_LOADING_SET": "TABLE_LOADING_SET",
+    "TABLE_LOAD_VIEW": "TABLE_LOAD_VIEW",
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
@@ -21769,6 +21791,7 @@ Map {
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
     "tableColumnOrder": Object {},
+    "tableColumnResize": Object {},
     "tableColumnSort": Object {},
     "tableEmptyStateAction": Object {},
     "tableFilterApply": Object {},
