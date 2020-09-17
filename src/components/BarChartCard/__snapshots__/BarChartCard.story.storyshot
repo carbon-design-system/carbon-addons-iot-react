@@ -1839,6 +1839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                               align="start"
                               className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
                               data-column="timestamp"
+                              data-floating-menu-container={true}
                               id="column-timestamp"
                               onClick={[Function]}
                               style={
@@ -1905,6 +1906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                               align="start"
                               className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                               data-column="Amsterdam"
+                              data-floating-menu-container={true}
                               id="column-Amsterdam"
                               onClick={[Function]}
                               style={
@@ -1971,6 +1973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                               align="start"
                               className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                               data-column="New York"
+                              data-floating-menu-container={true}
                               id="column-New York"
                               onClick={[Function]}
                               style={
@@ -2037,6 +2040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                               align="start"
                               className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                               data-column="Bangkok"
+                              data-floating-menu-container={true}
                               id="column-Bangkok"
                               onClick={[Function]}
                               style={
@@ -2103,6 +2107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                               align="start"
                               className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                               data-column="San Francisco"
+                              data-floating-menu-container={true}
                               id="column-San Francisco"
                               onClick={[Function]}
                               style={

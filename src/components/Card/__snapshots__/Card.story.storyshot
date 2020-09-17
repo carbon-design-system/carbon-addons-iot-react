@@ -685,6 +685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       align="start"
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="value1"
+                      data-floating-menu-container={true}
                       id="column-value1"
                       scope="col"
                       style={
@@ -708,6 +709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       align="start"
                       className="table-header-label-start iot--table-head--table-header"
                       data-column="timestamp"
+                      data-floating-menu-container={true}
                       id="column-timestamp"
                       scope="col"
                       style={
