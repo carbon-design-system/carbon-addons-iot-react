@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import uniqueId from 'lodash/uniqueId';
@@ -67,6 +68,7 @@ const propTypes = {
     hasRowCountInHeader: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
+    hasUserViewManagement: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
@@ -178,6 +180,8 @@ const propTypes = {
       onColumnResize: PropTypes.func,
       onOverflowItemClicked: PropTypes.func,
     }).isRequired,
+    /** callback for actions relevant for view management */
+    onUserViewModified: PropTypes.func,
   }),
   /** what locale should we use to format table values if left empty no locale formatting happens */
   locale: PropTypes.string,
@@ -204,6 +208,7 @@ export const defaultProps = baseProps => ({
     hasColumnSelectionConfig: false,
     hasResize: false,
     hasSingleRowEdit: false,
+    hasUserViewManagement: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
@@ -255,6 +260,7 @@ export const defaultProps = baseProps => ({
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
       onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
     },
+    onUserViewModified: null,
   },
   locale: null,
   i18n: {
@@ -309,6 +315,7 @@ const Table = props => {
     expandedData,
     locale,
     view,
+    actions: { onUserViewModified },
     actions,
     options,
     lightweight,
@@ -320,6 +327,35 @@ const Table = props => {
     tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
+
+  // There is no way to access the current search value in the Table
+  // so we need to track that for the save view fuctionality.
+  const searchValue = useRef(view?.toolbar?.search?.defaultValue);
+
+  const initialRendering = useRef(true);
+
+  // The save/load view functionality needs access to the latest view configuration
+  // and also needs to know when the configuration has changed for the StatefulTable.
+  // This effect satifies both those needs.
+  useDeepCompareEffect(
+    () => {
+      if (options.hasUserViewManagement && onUserViewModified) {
+        if (!initialRendering.current) {
+          onUserViewModified({
+            view,
+            columns,
+            state: {
+              currentSearchValue: searchValue.current === undefined ? '' : searchValue.current,
+            },
+          });
+        } else {
+          initialRendering.current = false;
+        }
+      }
+    },
+    [view, columns]
+  );
+
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();
 
@@ -418,17 +454,24 @@ const Table = props => {
             downloadIconDescription: i18n.downloadIconDescription,
             rowCountInHeader: i18n.rowCountInHeader,
           }}
-          actions={pick(
-            actions.toolbar,
-            'onCancelBatchAction',
-            'onApplyBatchAction',
-            'onClearAllFilters',
-            'onToggleColumnSelection',
-            'onToggleFilter',
-            'onShowRowEdit',
-            'onApplySearch',
-            'onDownloadCSV'
-          )}
+          actions={{
+            ...pick(
+              actions.toolbar,
+              'onCancelBatchAction',
+              'onApplyBatchAction',
+              'onClearAllFilters',
+              'onToggleColumnSelection',
+              'onToggleFilter',
+              'onShowRowEdit',
+              'onDownloadCSV'
+            ),
+            onApplySearch: value => {
+              searchValue.current = value;
+              if (actions.toolbar?.onApplySearch) {
+                actions.toolbar.onApplySearch(value);
+              }
+            },
+          }}
           options={{
             ...pick(
               options,
@@ -436,7 +479,8 @@ const Table = props => {
               'hasSearch',
               'hasRowSelection',
               'hasRowCountInHeader',
-              'hasRowEdit'
+              'hasRowEdit',
+              'hasUserViewManagement'
             ),
             hasFilter: Boolean(options?.hasFilter),
           }}

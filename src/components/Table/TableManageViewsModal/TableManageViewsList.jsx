@@ -48,7 +48,7 @@ const getRowActions = (
   return rowActions;
 };
 
-const getRowDescription = ({ viewDescription }) => viewDescription;
+const getRowDescription = ({ description }) => description;
 
 const getRowTags = ({ id }, { defaultViewId, i18n: { defaultLabelText } }) =>
   id === defaultViewId
