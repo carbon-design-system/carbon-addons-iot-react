@@ -813,7 +813,7 @@ storiesOf('Watson IoT/Table', module)
 
         <br />
 
-        You must also set hasRowExpansion and hasRowNested to true in your table options
+        You must also set hasRowExpansion and hasRowNesting to true in your table options
 
         <br />
 
@@ -849,8 +849,9 @@ storiesOf('Watson IoT/Table', module)
             data={tableData}
             options={{
               ...initialState.options,
-              hasRowNesting: true,
-              hasSingleNestedHierarchy: true,
+              hasRowNesting: {
+                hasSingleNestedHierarchy: true,
+              },
               wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
             }}
             actions={actions}
@@ -864,6 +865,7 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+        In addition, if there is a single level of row nesting, hasRowNesting can be customized to add additional styling seen in this story
 
         <br />
 
@@ -888,14 +890,16 @@ storiesOf('Watson IoT/Table', module)
 
         <br />
 
-        You must also set hasRowExpansion and hasRowNested to true in your table options
+        You must also set hasRowExpansion to true and hasRowNesting to an object with hasSingleLevelRowNesting to true in your table options
 
         <br />
 
         ~~~js
           options={
             hasRowExpansion: true,
-            hasRowNesting: true
+            hasRowNesting: {
+              hasSingleLevelRowNesting: true
+            }
           }
         ~~~
 

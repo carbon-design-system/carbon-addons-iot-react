@@ -384,7 +384,6 @@ Map {
         "hasRowNesting": false,
         "hasRowSelection": false,
         "hasSearch": false,
-        "hasSingleNestedHierarchy": false,
         "hasSingleRowEdit": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
@@ -931,7 +930,24 @@ Map {
               "type": "bool",
             },
             "hasRowNesting": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "hasSingleNestedHierarchy": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowSelection": Object {
               "args": Array [
@@ -944,9 +960,6 @@ Map {
               "type": "oneOf",
             },
             "hasSearch": Object {
-              "type": "bool",
-            },
-            "hasSingleNestedHierarchy": Object {
               "type": "bool",
             },
             "hasSingleRowEdit": Object {
@@ -1766,7 +1779,6 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
-      "hasSingleNestedHierarchy": false,
       "langDir": "ltr",
       "locale": null,
       "overflowMenuAria": "More actions",
@@ -1937,7 +1949,24 @@ Map {
         "type": "bool",
       },
       "hasRowNesting": Object {
-        "type": "bool",
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "hasSingleNestedHierarchy": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasRowSelection": Object {
         "args": Array [
@@ -1948,9 +1977,6 @@ Map {
           ],
         ],
         "type": "oneOf",
-      },
-      "hasSingleNestedHierarchy": Object {
-        "type": "bool",
       },
       "inProgressText": Object {
         "type": "string",

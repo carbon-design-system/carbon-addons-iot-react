@@ -51,9 +51,13 @@ const propTypes = {
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
-    hasRowNesting: PropTypes.bool,
-    /** If the hierarchy only has 1 nested level of children */
-    hasSingleNestedHierarchy: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.oneOfType([
       PropTypes.bool,
@@ -198,7 +202,6 @@ export const defaultProps = baseProps => ({
     hasRowExpansion: false,
     hasRowActions: false,
     hasRowNesting: false,
-    hasSingleNestedHierarchy: false,
     hasFilter: false,
     hasOnlyPageData: false,
     hasSearch: false,
@@ -555,7 +558,6 @@ const Table = props => {
                 'hasRowExpansion',
                 'hasRowActions',
                 'hasRowNesting',
-                'hasSingleNestedHierarchy',
                 'shouldExpandOnRowClick',
                 'shouldLazyRender'
               )}

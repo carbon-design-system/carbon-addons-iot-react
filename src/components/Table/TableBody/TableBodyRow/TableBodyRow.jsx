@@ -49,8 +49,13 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
-    hasRowNesting: PropTypes.bool,
-    hasSingleNestedHierarchy: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     shouldExpandOnRowClick: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
@@ -346,7 +351,6 @@ const TableBodyRow = ({
     hasRowExpansion,
     hasRowActions,
     hasRowNesting,
-    hasSingleNestedHierarchy,
     shouldExpandOnRowClick,
     wrapCellText,
     truncateCellText,
@@ -377,7 +381,7 @@ const TableBodyRow = ({
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
-  const nestingOffset = hasSingleNestedHierarchy
+  const nestingOffset = hasRowNesting?.hasSingleNestedHierarchy
     ? 0
     : hasRowSelection === 'single'
     ? nestingLevel * 16 - singleSelectionIndicatorWidth
