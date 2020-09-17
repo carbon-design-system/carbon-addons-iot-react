@@ -23,7 +23,9 @@ describe('TableSaveViewModal', () => {
   });
 
   it('passes along all input data onSave callback', () => {
-    render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+    render(
+      <TableSaveViewModal actions={actions} open testID="my-modal" viewDescription="My view text" />
+    );
     fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
       target: { value: 'testval1' },
     });
@@ -33,6 +35,7 @@ describe('TableSaveViewModal', () => {
       isDefault: false,
       isPublic: false,
       title: 'testval1',
+      description: 'My view text',
     });
 
     fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
@@ -46,6 +49,7 @@ describe('TableSaveViewModal', () => {
       isDefault: true,
       isPublic: true,
       title: 'testval2',
+      description: 'My view text',
     });
   });
 
@@ -256,7 +260,7 @@ describe('TableSaveViewModal', () => {
 
     const i18nDefault = TableSaveViewModal.defaultProps.i18n;
 
-    render(<TableSaveViewModal actions={actions} i18n={i18nTest} />);
+    render(<TableSaveViewModal actions={actions} open i18n={i18nTest} />);
 
     expect(screen.getByText(i18nTest.modalTitle)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.modalBodyText)).toBeInTheDocument();
