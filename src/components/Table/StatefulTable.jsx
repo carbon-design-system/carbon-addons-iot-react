@@ -99,6 +99,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onEmptyStateAction,
     onChangeOrdering,
     onColumnResize,
+    onOverflowItemClicked,
   } = table || {};
 
   const getRowAction = (data, actionId, rowId) => {
@@ -225,6 +226,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           dispatch(tableColumnResize(resizedColumns));
         }
         callbackParent(onColumnResize, resizedColumns);
+      },
+      onOverflowItemClicked: id => {
+        callbackParent(onOverflowItemClicked, id);
       },
     },
     onUserViewModified: viewConfiguration => {
