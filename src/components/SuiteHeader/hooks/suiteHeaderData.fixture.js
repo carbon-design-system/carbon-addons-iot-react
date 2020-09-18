@@ -281,6 +281,24 @@ const fixture = {
     url: 'https://myeam.mydomain.com',
     creationTimestamp: '2020-08-24T11:56:12-05:00',
   },
+  '/users/mas-admin/surveys/suite': {
+    id: 'suite',
+    delayIntervalDays: 30,
+    frequencyDays: 90,
+    enabled: true,
+    initialInteractionTimestamp: '2020-01-15T19:32:52Z',
+    lastPromptTimestamp: '2020-02-22T17:15:28Z',
+    userId: 'mas-admin',
+  },
+  '/users/mas-admin/surveys': {
+    id: 'suite',
+    delayIntervalDays: 30,
+    frequencyDays: 90,
+    enabled: true,
+    initialInteractionTimestamp: '2020-06-15T19:32:52Z',
+    lastPromptTimestamp: '2020-08-22T17:15:28Z',
+    userId: 'mas-admin',
+  },
 };
 
 export default fixture;
