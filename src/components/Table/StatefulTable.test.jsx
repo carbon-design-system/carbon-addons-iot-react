@@ -292,4 +292,63 @@ describe('stateful table with real reducer', () => {
     rerender(<AppWrapper message="message2" />);
     expect(screen.queryByText('message2')).toBeVisible();
   });
+
+  it('returns columns, view and search value in callback onUserViewModified', () => {
+    let viewProps;
+    const onUserViewModified = jest
+      .fn()
+      .mockImplementation(({ view, columns, state: { currentSearchValue } }) => {
+        viewProps = {
+          columns,
+          view: {
+            filters: view.filters,
+            table: { ordering: view.table.ordering, sort: view.table.sort },
+            toolbar: {
+              activeBar: view.toolbar.activeBar,
+              search: { ...view.toolbar.search, defaultValue: currentSearchValue },
+            },
+          },
+        };
+      });
+
+    render(
+      <StatefulTable
+        {...merge({}, initialState, {
+          view: { toolbar: { search: { defaultValue: 'Initial search' } } },
+        })}
+        options={{ ...initialState.options, hasUserViewManagement: true }}
+        actions={{ ...mockActions, onUserViewModified }}
+        data={[initialState.data[0]]}
+      />
+    );
+
+    fireEvent.click(screen.getByText('Clear all filters'));
+
+    expect(viewProps).toEqual({
+      columns: initialState.columns,
+      view: {
+        filters: [],
+        table: { ordering: initialState.view.table.ordering, sort: {} },
+        toolbar: {
+          activeBar: initialState.view.toolbar.activeBar,
+          search: { ...initialState.view.toolbar.search, defaultValue: 'Initial search' },
+        },
+      },
+    });
+
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.change(searchField, { target: { value: 'testval1' } });
+
+    expect(viewProps).toEqual({
+      columns: initialState.columns,
+      view: {
+        filters: [],
+        table: { ordering: initialState.view.table.ordering, sort: {} },
+        toolbar: {
+          activeBar: initialState.view.toolbar.activeBar,
+          search: { ...initialState.view.toolbar.search, defaultValue: 'testval1' },
+        },
+      },
+    });
+  });
 });

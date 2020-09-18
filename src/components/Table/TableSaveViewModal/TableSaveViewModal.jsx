@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import merge from 'lodash/merge';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
@@ -95,16 +96,7 @@ const defaultProps = {
 const TableSaveViewModal = ({
   actions: { onSave: onSaveCallback, onClose, onClearError, onChange: onChangeCallback },
   error,
-  i18n: {
-    modalTitle,
-    modalBodyText,
-    titleInputLabelText,
-    defaultCheckboxLabelText,
-    publicCheckboxLabelText,
-    closeIconDescription,
-    saveButtonLabelText,
-    cancelButtonLabelText,
-  },
+  i18n,
   initialFormValues,
   open,
   overrides,
@@ -116,7 +108,18 @@ const TableSaveViewModal = ({
 }) => {
   const [formValues, setFormValues] = useState(initialFormValues);
 
-  const onSave = () => onSaveCallback(formValues);
+  const {
+    modalTitle,
+    modalBodyText,
+    titleInputLabelText,
+    defaultCheckboxLabelText,
+    publicCheckboxLabelText,
+    closeIconDescription,
+    saveButtonLabelText,
+    cancelButtonLabelText,
+  } = merge({}, defaultProps.i18n, i18n);
+
+  const onSave = () => onSaveCallback({ ...formValues, description: viewDescription });
 
   const onChange = modifiedFormValue => {
     setFormValues(currentValues => ({ ...currentValues, ...modifiedFormValue }));

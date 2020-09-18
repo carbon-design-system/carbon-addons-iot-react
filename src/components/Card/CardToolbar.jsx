@@ -34,6 +34,11 @@ const propTypes = {
   isEditable: PropTypes.bool,
   /** is the card expanded */
   isExpanded: PropTypes.bool,
+  /**
+   * Define the icon render to be rendered.
+   * Can be a React component class
+   */
+  renderExpandIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   className: PropTypes.string,
   ...omit(CardRangePickerPropTypes, 'onClose'),
   /** Generates the available time range selection options. Each option should include 'this' or 'last'.
@@ -45,6 +50,7 @@ const propTypes = {
 const defaultProps = {
   isEditable: false,
   isExpanded: false,
+  renderExpandIcon: Popup16,
   className: null,
   timeRangeOptions: null,
 };
@@ -54,6 +60,7 @@ const CardToolbar = ({
   width,
   isEditable,
   isExpanded,
+  renderExpandIcon,
   availableActions,
   timeRange,
   timeRangeOptions: timeRangeOptionsProp,
@@ -150,7 +157,7 @@ const CardToolbar = ({
                 onCardAction(CARD_ACTIONS.OPEN_EXPANDED_CARD);
               }}
               iconDescription={i18n.expandLabel}
-              renderIcon={Popup16}
+              renderIcon={renderExpandIcon}
             />
           )}
         </>

@@ -8,6 +8,7 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
+import builtins from 'rollup-plugin-node-builtins';
 
 const packageJson = require('./package.json');
 
@@ -27,8 +28,8 @@ const external = id => {
   );
 };
 const plugins = [
-  resolve({ mainFields: ['module', 'main'], extensions }),
-
+  resolve({ mainFields: ['module', 'main'], extensions, preferBuiltins: true }),
+  builtins(),
   commonjs({
     namedExports: {
       'react/index.js': [
@@ -145,7 +146,9 @@ export default [
       resolve({
         browser: true,
         extensions: ['.mjs', '.js', '.jsx', '.json'],
+        preferBuiltins: true,
       }),
+      builtins(),
       commonjs({
         namedExports: {
           'react-js': ['isValidElementType'],
