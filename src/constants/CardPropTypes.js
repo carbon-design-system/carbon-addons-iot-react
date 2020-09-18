@@ -413,6 +413,11 @@ export const CardPropTypes = {
   isEditable: PropTypes.bool,
   /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
+  /**
+   * Define the icon render to be rendered.
+   * Can be a React component class
+   */
+  renderExpandIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   /** should hide the header */
   hideHeader: PropTypes.bool,
   /** sets the CardWrapper CSS overflow to visible */

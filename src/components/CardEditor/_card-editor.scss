@@ -1,0 +1,27 @@
+.#{$iot-prefix}--card-editor {
+  height: 100%;
+  width: 16rem;
+  display: flex;
+  background: $ui-01;
+  flex-direction: column;
+  &--header {
+    flex: 0 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-02;
+    border-bottom: 1px solid $ui-03;
+    h5 {
+      padding: 0 $spacing-03;
+    }
+    button.gallery-button {
+      /* make ghost button stretch full width */
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  &--content {
+    flex: 1;
+    height: 100%;
+  }
+}
