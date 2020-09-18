@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { Tree16 } from '@carbon/icons-react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -199,6 +200,28 @@ storiesOf('Watson IoT/Card', module)
           isEmpty={boolean('isEmpty', false)}
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          onCardAction={action('onCardAction')}
+          availableActions={{
+            expand: true,
+          }}
+        />
+      </div>
+    );
+  })
+  .add('is expandable - custom expand icon', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-with-loading"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          renderExpandIcon={Tree16}
           breakpoint="lg"
           onCardAction={action('onCardAction')}
           availableActions={{
