@@ -972,7 +972,24 @@ Map {
               "type": "bool",
             },
             "hasRowNesting": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "hasSingleNestedHierarchy": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowSelection": Object {
               "args": Array [
@@ -2046,7 +2063,24 @@ Map {
         "type": "bool",
       },
       "hasRowNesting": Object {
-        "type": "bool",
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "hasSingleNestedHierarchy": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasRowSelection": Object {
         "args": Array [
