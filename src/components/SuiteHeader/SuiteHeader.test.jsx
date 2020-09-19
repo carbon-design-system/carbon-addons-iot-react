@@ -1,12 +1,11 @@
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 
-import { SideNav } from '../../index';
-
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
-import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 
 const commonProps = {
   suiteName: 'Application Suite',
@@ -42,12 +41,8 @@ const commonProps = {
 };
 
 describe('SuiteHeader', () => {
-  it('renders in admin context', () => {
-    const wrapper = mount(<SuiteHeader {...commonProps} />);
-    expect(wrapper.find('button.admin-icon__selected')).toHaveLength(1);
-  });
   it('renders with sidenav', () => {
-    const wrapper = mount(
+    render(
       <SuiteHeader
         {...commonProps}
         sideNavProps={{
@@ -67,49 +62,53 @@ describe('SuiteHeader', () => {
         }}
       />
     );
-    expect(wrapper.find(SideNav)).toBeDefined();
+    expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
   });
   it('opens and closes logout modal', () => {
-    delete window.location;
-    window.location = { href: '' };
-    const wrapper = mount(<SuiteHeader {...commonProps} />);
-    const logoutButton = wrapper.find('[data-testid="suite-header-profile--logout"]').first();
-    logoutButton.simulate('click');
-    expect(wrapper.find(SuiteHeaderLogoutModal).prop('isOpen')).toBe(true);
-    const closeButton = wrapper.find('.bx--modal-footer > [kind="secondary"]');
-    closeButton.simulate('click');
-    expect(wrapper.find(SuiteHeaderLogoutModal).prop('isOpen')).toBe(false);
+    render(<SuiteHeader {...commonProps} />);
+    expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
+    userEvent.click(screen.getByTestId('suite-header-profile--logout'));
+    expect(screen.getByRole('presentation')).toHaveClass('is-visible');
+    userEvent.click(screen.getByRole('button', { name: 'Close' }));
+    expect(screen.getByRole('presentation')).not.toHaveClass('is-visible');
   });
   it('clicks logout link', () => {
     delete window.location;
     window.location = { href: '' };
-    const wrapper = mount(<SuiteHeader {...commonProps} />);
-    const logoutButton = wrapper.find('.bx--modal-footer > [kind="primary"]');
-    logoutButton.simulate('click');
+    render(<SuiteHeader {...commonProps} />);
+    userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
   it('admin link from admin view takes you to navigator route', () => {
     delete window.location;
     window.location = { href: '' };
-    const wrapper = mount(<SuiteHeader {...commonProps} isAdminView />);
-    const adminButton = wrapper.find('[data-testid="admin-icon"]').first();
-    adminButton.simulate('click');
+    render(<SuiteHeader {...commonProps} isAdminView />);
+    userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.navigator);
   });
   it('admin link from non-admin view takes you to admin route', () => {
     delete window.location;
     window.location = { href: '' };
-    const wrapper = mount(<SuiteHeader {...commonProps} isAdminView={false} />);
-    const adminButton = wrapper.find('[data-testid="admin-icon"]').first();
-    adminButton.simulate('click');
+    render(<SuiteHeader {...commonProps} isAdminView={false} />);
+    userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.admin);
   });
   it('renders all i18n', () => {
     Object.keys(SuiteHeaderI18N).forEach(language => {
-      const wrapper = mount(
-        <SuiteHeader {...commonProps} i18n={SuiteHeaderI18N[language]} isAdminView />
-      );
-      expect(wrapper.find('button.admin-icon__selected')).toHaveLength(1);
+      render(<SuiteHeader {...commonProps} i18n={SuiteHeaderI18N[language]} isAdminView />);
+      expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     });
+  });
+  it('user clicks survey link', () => {
+    const surveyLink = 'https://www.ibm.com/';
+    render(<SuiteHeader {...commonProps} appName={undefined} surveyLink={surveyLink} />);
+    expect(screen.getByRole('alert')).toBeInTheDocument();
+    userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
+    expect(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText).href).toBe(surveyLink);
+  });
+  it('user closes survey notification', () => {
+    render(<SuiteHeader {...commonProps} surveyLink="https://www.ibm.com" />);
+    userEvent.click(screen.getByRole('button', { name: 'closes notification' }));
+    expect(screen.queryByRole('alert')).toBeNull();
   });
 });

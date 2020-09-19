@@ -29,7 +29,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           aria-expanded={false}
           aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
+          aria-labelledby="downshift-2-label"
           aria-owns={null}
           className="bx--list-box__wrapper"
           role="combobox"
@@ -37,7 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <label
             className="bx--label"
             htmlFor="carbon-combobox-example"
-            id="downshift-0-label"
+            id="downshift-2-label"
           >
             Combobox title
           </label>
@@ -64,7 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-0-label"
+                aria-labelledby="downshift-2-label"
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -169,7 +169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           aria-expanded={false}
           aria-haspopup="listbox"
-          aria-labelledby="downshift-4-label"
+          aria-labelledby="downshift-6-label"
           aria-owns={null}
           className="bx--list-box__wrapper"
           role="combobox"
@@ -177,7 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <label
             className="bx--label"
             htmlFor="carbon-combobox-example"
-            id="downshift-4-label"
+            id="downshift-6-label"
           >
             Combobox title
           </label>
@@ -204,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-4-label"
+                aria-labelledby="downshift-6-label"
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -309,7 +309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           aria-expanded={false}
           aria-haspopup="listbox"
-          aria-labelledby="downshift-3-label"
+          aria-labelledby="downshift-5-label"
           aria-owns={null}
           className="bx--list-box__wrapper"
           role="combobox"
@@ -317,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <label
             className="bx--label"
             htmlFor="carbon-combobox-example"
-            id="downshift-3-label"
+            id="downshift-5-label"
           >
             Combobox title
           </label>
@@ -344,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-3-label"
+                aria-labelledby="downshift-5-label"
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -453,7 +453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           aria-expanded={false}
           aria-haspopup="listbox"
-          aria-labelledby="downshift-1-label"
+          aria-labelledby="downshift-3-label"
           aria-owns={null}
           className="bx--list-box__wrapper"
           role="combobox"
@@ -461,7 +461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <label
             className="bx--label"
             htmlFor="carbon-combobox-example"
-            id="downshift-1-label"
+            id="downshift-3-label"
           >
             Combobox title
           </label>
@@ -488,7 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-activedescendant={null}
                 aria-autocomplete="list"
                 aria-controls={null}
-                aria-labelledby="downshift-1-label"
+                aria-labelledby="downshift-3-label"
                 autoComplete="off"
                 className="bx--text-input bx--text-input--empty"
                 data-testid="combo-box"
@@ -585,7 +585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       <div
         aria-expanded={false}
         aria-haspopup="listbox"
-        aria-labelledby="downshift-2-label"
+        aria-labelledby="downshift-4-label"
         aria-owns={null}
         className="bx--list-box__wrapper"
         role="combobox"
@@ -593,7 +593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <label
           className="bx--label"
           htmlFor="carbon-combobox-example"
-          id="downshift-2-label"
+          id="downshift-4-label"
         >
           Combobox title
         </label>
@@ -620,7 +620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               aria-activedescendant={null}
               aria-autocomplete="list"
               aria-controls={null}
-              aria-labelledby="downshift-2-label"
+              aria-labelledby="downshift-4-label"
               autoComplete="off"
               className="bx--text-input"
               data-testid="combo-box"

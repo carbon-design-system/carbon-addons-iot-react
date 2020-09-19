@@ -53,6 +53,18 @@
   }
 }
 
+.#{$iot-prefix}--suite-header-survey-toast {
+  position: fixed;
+  top: $layout-04;
+  right: 0;
+  max-width: rem(425px);
+  width: auto;
+
+  .#{$prefix}--toast-notification__title {
+    margin-top: $spacing-04;
+  }
+}
+
 .#{$iot-prefix}--suite-header-app-switcher {
   padding-top: 0;
 

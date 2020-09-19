@@ -4,6 +4,8 @@ import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 
 import { HeaderContainer, SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
+import { ToastNotification } from '../Notification';
+import { Link } from '../Link';
 import { settings } from '../../constants/Settings';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
@@ -31,6 +33,10 @@ export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
   isExternal: PropTypes.bool,
 });
 
+export const SuiteHeaderSurveyPropTypes = PropTypes.shape({
+  link: PropTypes.string,
+});
+
 export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   help: PropTypes.string,
   profileTitle: PropTypes.string,
@@ -51,6 +57,8 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   about: PropTypes.string,
   support: PropTypes.string,
   gettingStarted: PropTypes.string,
+  surveyTitle: PropTypes.func,
+  surveyText: PropTypes.string,
 });
 
 const defaultProps = {
@@ -58,6 +66,7 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
+  surveyLink: null,
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -80,6 +89,8 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
+  /** If surveyLink is present, show a ToastNotification */
+  surveyLink: PropTypes.string,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -94,14 +105,27 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
+  surveyLink,
   i18n,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showToast, setShowToast] = useState(surveyLink !== null && surveyLink !== undefined);
 
   return (
     <>
+      {showToast ? (
+        <ToastNotification
+          className={`${settings.iotPrefix}--suite-header-survey-toast`}
+          kind="info"
+          title={mergedI18N.surveyTitle(appName || suiteName)}
+          subtitle={<Link href={surveyLink}>{mergedI18N.surveyText}</Link>}
+          lowContrast
+          caption=""
+          onCloseButtonClick={() => setShowToast(false)}
+        />
+      ) : null}
       <SuiteHeaderLogoutModal
         suiteName={suiteName}
         displayName={userDisplayName}
