@@ -158,7 +158,7 @@ const List = forwardRef((props, ref) => {
           id={item.id}
           index={index}
           key={`${item.id}-list-item-${level}-${value}`}
-          nestingLevel={level}
+          nestingLevel={isCategory ? level - 1 : level}
           value={value}
           icon={
             editingStyleIsMultiple(editingStyle) ? (
@@ -202,7 +202,14 @@ const List = forwardRef((props, ref) => {
     ];
   };
 
-  const listItems = items.map((item, index) => renderItemAndChildren(item, index, null, 0));
+  // If there is a mix of categories and non-categories, we should indent non-category items by 1
+  const hasCategories = items.filter(item => item?.children && item.children.length > 0);
+  // const hasNonCategories = items.filter(item => !item?.children);
+  const baseIndentLevel = hasCategories ? 1 : 0;
+
+  const listItems = items.map((item, index) =>
+    renderItemAndChildren(item, index, null, baseIndentLevel)
+  );
 
   return (
     <div
