@@ -345,29 +345,6 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
             ],
           },
         ]}
-        // items={[
-        //   ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-        //     id: team,
-        //     isCategory: true,
-        //     content: {
-        //       value: team,
-        //     },
-        //     children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-        //       id: `${team}_${player}`,
-        //       content: {
-        //         value: player,
-        //       },
-        //       isSelectable: true,
-        //     })),
-        //   })),
-        //   ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-        //     id: team,
-        //     isCategory: true,
-        //     content: {
-        //       value: team,
-        //     },
-        //   })),
-        // ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
         isLoading={boolean('isLoading', false)}
