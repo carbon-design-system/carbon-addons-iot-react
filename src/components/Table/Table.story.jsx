@@ -1762,13 +1762,93 @@ storiesOf('Watson IoT/Table', module)
 
         <br />
 
-        You must also set hasRowExpansion to true in your table options
+        You must also set hasRowExpansion and hasRowNesting to true in your table options
 
         <br />
 
         ~~~js
           options={
-            hasRowExpansion: true
+            hasRowExpansion: true,
+            hasRowNesting: true
+          }
+        ~~~
+
+        <br />
+
+        `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with single nested hierarchy',
+    () => {
+      const tableData = initialState.data.map((i, idx) => ({
+        ...i,
+        children: [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)],
+      }));
+      return (
+        <div>
+          <StatefulTable
+            id="table"
+            {...initialState}
+            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+            columns={tableColumns}
+            data={tableData}
+            options={{
+              ...initialState.options,
+              hasRowNesting: {
+                hasSingleNestedHierarchy: true,
+              },
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            }}
+            actions={actions}
+            lightweight={boolean('lightweight', false)}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+
+        This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+        In addition, if there is a single level of row nesting, hasRowNesting can be customized to add additional styling seen in this story
+
+        <br />
+
+        ~~~js
+        data=[
+          {
+            id: 'rowid',
+            values: {
+              col1: 'value1
+            },
+            children: [
+              {
+                id: 'child-rowid,
+                values: {
+                  col1: 'nested-value1'
+                }
+              }
+            ]
+          }
+        ]
+        ~~~
+
+        <br />
+
+        You must also set hasRowExpansion to true and hasRowNesting to an object with hasSingleLevelRowNesting to true in your table options
+
+        <br />
+
+        ~~~js
+          options={
+            hasRowExpansion: true,
+            hasRowNesting: {
+              hasSingleLevelRowNesting: true
+            }
           }
         ~~~
 
@@ -2203,7 +2283,7 @@ storiesOf('Watson IoT/Table', module)
       }))}
       options={{
         hasPagination: true,
-        hasRowSelection: 'single',
+        hasRowSelection: 'multi',
         hasRowExpansion: true,
         hasRowNesting: true,
       }}
