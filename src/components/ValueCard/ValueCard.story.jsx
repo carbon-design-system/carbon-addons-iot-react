@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
@@ -34,6 +35,37 @@ storiesOf('Watson IoT/ValueCard', module)
           breakpoint="lg"
           size={size}
           values={{ occupancy: number('occupancy', 88) }}
+        />
+      </div>
+    );
+  })
+  .add('small / with expand', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          availableActions={{
+            expand: true,
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ occupancy: number('occupancy', 88) }}
+          onCardAction={action('Value Card Expand Action')}
         />
       </div>
     );

@@ -52,7 +52,13 @@ const propTypes = {
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
-    hasRowNesting: PropTypes.bool,
+    hasRowNesting: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        /** If the hierarchy only has 1 nested level of children */
+        hasSingleNestedHierarchy: PropTypes.bool,
+      }),
+    ]),
     hasRowActions: PropTypes.bool,
     hasFilter: PropTypes.oneOfType([
       PropTypes.bool,
@@ -178,6 +184,7 @@ const propTypes = {
       onChangeOrdering: PropTypes.func,
       onColumnSelectionConfig: PropTypes.func,
       onColumnResize: PropTypes.func,
+      onOverflowItemClicked: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -257,6 +264,7 @@ export const defaultProps = baseProps => ({
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
+      onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
     },
     onUserViewModified: null,
   },
@@ -536,7 +544,8 @@ const Table = props => {
                 'onSelectAll',
                 'onChangeSort',
                 'onChangeOrdering',
-                'onColumnSelectionConfig'
+                'onColumnSelectionConfig',
+                'onOverflowItemClicked'
               ),
               onColumnResize: handleOnColumnResize,
             }}
