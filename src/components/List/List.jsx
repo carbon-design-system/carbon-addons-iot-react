@@ -202,10 +202,9 @@ const List = forwardRef((props, ref) => {
     ];
   };
 
-  // If there is a mix of categories and non-categories, we should indent non-category items by 1
-  const hasCategories = items.filter(item => item?.children && item.children.length > 0);
-  // const hasNonCategories = items.filter(item => !item?.children);
-  const baseIndentLevel = hasCategories ? 1 : 0;
+  // If the root level contains a category item, the base indent level should be increased by 1 to
+  // account for the caret on non-category items.
+  const baseIndentLevel = items.filter(item => item?.children && item.children.length > 0) ? 1 : 0;
 
   const listItems = items.map((item, index) =>
     renderItemAndChildren(item, index, null, baseIndentLevel)
