@@ -208,6 +208,57 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
       : undefined,
 }));
 
+export const tableColumnsWithOverflowMenu = [
+  {
+    id: 'string',
+    name: 'String',
+    isSortable: true,
+    filter: { placeholderText: 'enter a string' },
+    overflowMenuItems: selectData,
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'enter a date' },
+    overflowMenuItems: selectData,
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    overflowMenuItems: selectData,
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
+    overflowMenuItems: selectData,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+    overflowMenuItems: selectData,
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+    overflowMenuItems: selectData,
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+    overflowMenuItems: selectData,
+  },
+];
+
 const defaultOrdering = tableColumns.map(c => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
@@ -345,6 +396,7 @@ const actions = {
     onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
     onColumnResize: action('onColumnResize'),
+    onOverflowItemClicked: action('onOverflowItemClicked'),
   },
 };
 
@@ -1710,13 +1762,93 @@ storiesOf('Watson IoT/Table', module)
 
         <br />
 
-        You must also set hasRowExpansion to true in your table options
+        You must also set hasRowExpansion and hasRowNesting to true in your table options
 
         <br />
 
         ~~~js
           options={
-            hasRowExpansion: true
+            hasRowExpansion: true,
+            hasRowNesting: true
+          }
+        ~~~
+
+        <br />
+
+        `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with single nested hierarchy',
+    () => {
+      const tableData = initialState.data.map((i, idx) => ({
+        ...i,
+        children: [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)],
+      }));
+      return (
+        <div>
+          <StatefulTable
+            id="table"
+            {...initialState}
+            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+            columns={tableColumns}
+            data={tableData}
+            options={{
+              ...initialState.options,
+              hasRowNesting: {
+                hasSingleNestedHierarchy: true,
+              },
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            }}
+            actions={actions}
+            lightweight={boolean('lightweight', false)}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+
+        This stateful table has nested rows.  To setup your table this way you must pass a children prop along with each of your data rows.
+        In addition, if there is a single level of row nesting, hasRowNesting can be customized to add additional styling seen in this story
+
+        <br />
+
+        ~~~js
+        data=[
+          {
+            id: 'rowid',
+            values: {
+              col1: 'value1
+            },
+            children: [
+              {
+                id: 'child-rowid,
+                values: {
+                  col1: 'nested-value1'
+                }
+              }
+            ]
+          }
+        ]
+        ~~~
+
+        <br />
+
+        You must also set hasRowExpansion to true and hasRowNesting to an object with hasSingleLevelRowNesting to true in your table options
+
+        <br />
+
+        ~~~js
+          options={
+            hasRowExpansion: true,
+            hasRowNesting: {
+              hasSingleLevelRowNesting: true
+            }
           }
         ~~~
 
@@ -2151,7 +2283,7 @@ storiesOf('Watson IoT/Table', module)
       }))}
       options={{
         hasPagination: true,
-        hasRowSelection: 'single',
+        hasRowSelection: 'multi',
         hasRowExpansion: true,
         hasRowNesting: true,
       }}
@@ -3267,6 +3399,35 @@ storiesOf('Watson IoT/Table', module)
       centered: { disable: true },
       info: {
         text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
+      },
+    }
+  )
+  .add(
+    'Simple Stateful Example with column overflow menu',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          id="table"
+          {...initialState}
+          columns={tableColumnsWithOverflowMenu}
+          actions={actions}
+          lightweight={boolean('lightweight', false)}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+            hasResize: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          }}
+          view={{ table: { selectedIds: array('selectedIds', []) } }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text:
+          'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
       },
     }
   );

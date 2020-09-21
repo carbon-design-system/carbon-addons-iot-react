@@ -18,6 +18,7 @@ import {
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import { OverflowMenu, OverflowMenuItem } from '../../../index';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -103,6 +104,7 @@ const propTypes = {
     onColumnSelectionConfig: PropTypes.func,
     onApplyFilter: PropTypes.func,
     onColumnResize: PropTypes.func,
+    onOverflowItemClicked: PropTypes.func,
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
@@ -128,6 +130,10 @@ const defaultProps = {
 
 const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
+
+// This increases the min width of columns when the overflow button and sort is present
+const PADDING_WITH_OVERFLOW = 24;
+const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 
 const TableHead = ({
   tableId,
@@ -156,6 +162,7 @@ const TableHead = ({
     onChangeOrdering,
     onColumnSelectionConfig,
     onColumnResize,
+    onOverflowItemClicked,
   },
   selectAllText,
   clearFilterText,
@@ -228,6 +235,14 @@ const TableHead = ({
       updateColumnWidths(newColumnWidths);
     }
     onChangeOrdering(newOrdering);
+  };
+
+  const handleOverflowItemClick = (e, option) => {
+    e.stopPropagation();
+
+    if (onOverflowItemClicked) {
+      onOverflowItemClicked(option.id);
+    }
   };
 
   useLayoutEffect(
@@ -314,11 +329,20 @@ const TableHead = ({
             />
           </TableHeader>
         ) : null}
-        {ordering.map(item => {
+        {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+          const hasOverflow = Array.isArray(matchingColumnMeta.overflowMenuItems);
+
+          // Increases the minimum width of the Header when the overflow button is present
+          const paddingExtra = hasOverflow
+            ? matchingColumnMeta.isSortable
+              ? PADDING_WITH_OVERFLOW_AND_SORT
+              : PADDING_WITH_OVERFLOW
+            : 0;
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               width={initialColumnWidths[matchingColumnMeta.id]}
@@ -349,15 +373,38 @@ const TableHead = ({
                 [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
+                [`${iotPrefix}--table-head--table-header--with-overflow`]:
+                  matchingColumnMeta.isSortable && hasOverflow,
               })}
+              // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
+              data-floating-menu-container
             >
               <TableCellRenderer
+                className={`${iotPrefix}--table-head--text`}
                 wrapText={wrapCellText}
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
+
+              {hasOverflow ? (
+                <OverflowMenu
+                  className={`${iotPrefix}--table-head--overflow`}
+                  direction="bottom"
+                  data-testid="table-head--overflow"
+                  flipped={columnIndex === ordering.length - 1}
+                  onClick={e => e.stopPropagation()}
+                >
+                  {matchingColumnMeta.overflowMenuItems.map(menuItem => (
+                    <OverflowMenuItem
+                      itemText={menuItem.text}
+                      key={`${columnIndex}--overflow-item-${menuItem.id}`}
+                      onClick={e => handleOverflowItemClick(e, menuItem)}
+                    />
+                  ))}
+                </OverflowMenu>
+              ) : null}
               {hasResize && item !== lastVisibleColumn ? (
                 <ColumnResize
                   onResize={onManualColumnResize}
@@ -365,6 +412,7 @@ const TableHead = ({
                   currentColumnWidths={currentColumnWidths}
                   columnId={matchingColumnMeta.id}
                   ordering={ordering}
+                  paddingExtra={paddingExtra}
                 />
               ) : null}
             </TableHeader>
