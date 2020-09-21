@@ -1,0 +1,11 @@
+.#{$iot-prefix}--dashboard-editor {
+  display: flex;
+  height: 100%;
+  &--content {
+    flex: 1;
+    flex-direction: column;
+  }
+  &--preview {
+    flex: 1;
+  }
+}
