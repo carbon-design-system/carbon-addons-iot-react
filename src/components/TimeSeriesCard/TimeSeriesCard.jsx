@@ -517,7 +517,7 @@ const TimeSeriesCard = ({
                     }
                   : {}),
                 timeScale: {
-                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                  addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
                 },
               }}
               width="100%"
