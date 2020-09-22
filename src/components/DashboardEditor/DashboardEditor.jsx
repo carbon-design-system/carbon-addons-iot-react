@@ -14,6 +14,7 @@ const defaultProps = {
     layouts: {},
   },
   renderHeader: null,
+  renderCardPreview: null,
 };
 
 const propTypes = {
@@ -21,9 +22,11 @@ const propTypes = {
   initialValue: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
+  /** if provided, is used to render cards in dashboard */
+  renderCardPreview: PropTypes.func,
 };
 
-const DashboardEditor = ({ initialValue, renderHeader }) => {
+const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview }) => {
   const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
@@ -58,25 +61,29 @@ const DashboardEditor = ({ initialValue, renderHeader }) => {
               })
             }
           >
-            {dashboardData.cards.map(i => (
-              <Card
-                id={i.id}
-                size={i.size}
-                title={i.title}
-                isEditable
-                availableActions={{ edit: true, delete: true }}
-                onCardAction={(id, actionId) => {
-                  if (actionId === CARD_ACTIONS.EDIT_CARD) {
-                    setSelectedCardId(id);
-                  }
-                  if (actionId === CARD_ACTIONS.DELETE_CARD) {
-                    removeCard(id);
-                  }
-                }}
-              >
-                <div style={{ padding: '1rem' }}>{JSON.stringify(i, null, 4)}</div>
-              </Card>
-            ))}
+            {dashboardData.cards.map(i =>
+              renderCardPreview ? (
+                renderCardPreview(i, setSelectedCardId, removeCard)
+              ) : (
+                <Card
+                  id={i.id}
+                  size={i.size}
+                  title={i.title}
+                  isEditable
+                  availableActions={{ edit: true, delete: true }}
+                  onCardAction={(id, actionId) => {
+                    if (actionId === CARD_ACTIONS.EDIT_CARD) {
+                      setSelectedCardId(id);
+                    }
+                    if (actionId === CARD_ACTIONS.DELETE_CARD) {
+                      removeCard(id);
+                    }
+                  }}
+                >
+                  <div style={{ padding: '1rem' }}>{JSON.stringify(i, null, 4)}</div>
+                </Card>
+              )
+            )}
           </DashboardGrid>
           <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre>
         </div>
