@@ -8,5 +8,10 @@
   }
   &--preview {
     flex: 1;
+    .selected-card {
+      border: solid $spacing-01 $interactive-04;
+      box-sizing: content-box;
+      margin: -$spacing-01;
+    }
   }
 }

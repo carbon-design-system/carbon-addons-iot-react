@@ -16,4 +16,9 @@
       width: 100%;
     }
   }
+  .temp-json-editor {
+    .#{$prefix}--modal-container {
+      height: 40rem;
+    }
+  }
 }

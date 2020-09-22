@@ -49,7 +49,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
     >
       <TextArea
         labelText="Card data"
-        rows={8}
+        rows={20}
         onChange={evt => setModalData(evt.target.value)}
         value={modalData}
       />
