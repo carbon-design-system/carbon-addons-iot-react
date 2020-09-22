@@ -4,11 +4,7 @@ import capitalize from 'lodash/capitalize';
 import cheerio from 'cheerio';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
-import {
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-  DISABLED_COLORS,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 
 /**
  * Generate fake, sample values for isEditable preview state
@@ -238,11 +234,10 @@ export const mapValuesToAxes = (layout, categoryDataSourceId, timeDataSourceId, 
  * @param {Array} series an array of dataset group classifications
  * @param {Array || string || Object} series[i].color
  * @param {Array<string>} datasetNames unique dataset bar names to be used if color is an object
- * @param {Boolean} isEditable determines if this is sample, preview data or not
  *
  * @returns {Object} colors - formatted
  */
-export const formatColors = (series, datasetNames, isEditable) => {
+export const formatColors = (series, datasetNames) => {
   // first set the carbon charts config defaults
   const colors = { identifier: 'group', scale: {} };
 
@@ -270,12 +265,8 @@ export const formatColors = (series, datasetNames, isEditable) => {
   let scale = 50;
 
   datasetNames.forEach((dataset, index) => {
-    // give default disabled colors if showing samplee preview data
-    if (isEditable) {
-      colors.scale[dataset] = DISABLED_COLORS[index % DISABLED_COLORS.length];
-    }
     // if the colors aren't set, give them a default color
-    else if (!colors.scale[dataset]) {
+    if (!colors.scale[dataset]) {
       colors.scale[dataset] = DEFAULT_CHART_COLORS[index % DEFAULT_CHART_COLORS.length][scale];
 
       // Change the scale on each iteration through the colors
