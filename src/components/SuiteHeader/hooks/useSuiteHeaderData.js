@@ -4,6 +4,8 @@ import moment from 'moment';
 // eslint-disable-next-line import/extensions
 import testApiData from './suiteHeaderData.fixture.js';
 
+import SuiteHeaderI18N from '../i18n';
+
 // default route calculation logic
 const calcRoutes = (domain, user, workspaces, applications) => {
   const workspaceId = Object.keys(user.workspaces)[0];
@@ -103,6 +105,16 @@ const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
   return showSurvey;
 };
 
+// default i18n calculation logic
+const calcI18N = i18nData => ({
+  ...i18nData,
+  surveyTitle: solutionName => i18nData.surveyTitle.replace('{solutionName}', solutionName),
+  profileLogoutModalBody: (solutionName, userName) =>
+    i18nData.profileLogoutModalBody
+      .replace('{solutionName}', solutionName)
+      .replace('{userName}', userName),
+});
+
 const defaultFetchApi = async (method, url, body, headers, testResponse) =>
   testResponse ||
   fetch(url, {
@@ -125,8 +137,10 @@ const defaultFetchApi = async (method, url, body, headers, testResponse) =>
 const useSuiteHeaderData = ({
   baseApiUrl,
   domain,
+  lang = 'en',
   calculateRoutes = calcRoutes,
   calculateSurveyStatus = calcSurveyStatus,
+  calculateI18N = calcI18N,
   fetchApi = defaultFetchApi,
   surveyConfig = null,
   isTest = false,
@@ -162,6 +176,7 @@ const useSuiteHeaderData = ({
         const profileData = await api('GET', '/profile');
         const appsData = await api('GET', '/applications');
         const eamData = await api('GET', '/config/eam');
+        const i18nData = await api('GET', `/i18n/header/${isTest ? 'en' : lang}`);
 
         // Routes
         const [routes, applications] = calculateRoutes(
@@ -176,6 +191,9 @@ const useSuiteHeaderData = ({
           ? await calculateSurveyStatus(profileData.user.username, surveyConfig, api)
           : false;
 
+        // i18n
+        const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
+
         setData({
           username: profileData.user.username,
           userDisplayName: profileData.user.displayName,
@@ -187,6 +205,7 @@ const useSuiteHeaderData = ({
               : []),
             ...applications,
           ],
+          i18n,
           showSurvey,
         });
         setIsLoading(false);
