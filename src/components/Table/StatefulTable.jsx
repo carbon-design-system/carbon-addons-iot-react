@@ -43,12 +43,22 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     actions: callbackActions,
     lightweight,
   } = merge({}, defaultProps({ data: initialData, ...other }), other);
+
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
     view: initialState,
     columns: initialColumns,
   });
+
   const isLoading = get(initialState, 'table.loadingState.isLoading');
+
+  const {
+    view,
+    view: {
+      table: { filteredData, selectedIds, sort },
+    },
+  } = state;
+
   // Need to initially sort and filter the tables data, but preserve the selectedId
   useDeepCompareEffect(
     () => {
@@ -57,20 +67,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           data: initialData,
           isLoading,
           view: initialState,
-          totalItems: initialData.length,
+          totalItems: other?.view?.pagination?.totalItems || initialData.length,
           hasUserViewManagement,
         })
       );
     },
     [initialData, isLoading, initialState]
   );
-
-  const {
-    view,
-    view: {
-      table: { filteredData, selectedIds, sort },
-    },
-  } = state;
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
@@ -236,6 +239,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   };
 
+  const totalItems = state.view.pagination?.totalItems || filteredData?.length || 0;
+
   return filteredData ? (
     <Table
       {...other} // need to passthrough all other props
@@ -256,7 +261,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         },
         pagination: {
           ...view.pagination,
-          totalItems: filteredData.length,
+          totalItems:
+            (state.data?.length || 0) === filteredData.length ? totalItems : filteredData.length,
         },
       }}
       actions={actions}

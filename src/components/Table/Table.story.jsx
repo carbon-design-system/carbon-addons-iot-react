@@ -481,7 +481,6 @@ export const initialState = {
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
-      totalItems: tableData.length,
     },
     table: {
       isSelectAllSelected: false,
@@ -581,11 +580,11 @@ storiesOf('Watson IoT/Table', module)
           {...initialState}
           actions={actions}
           lightweight={boolean('lightweight', false)}
-          options={{
-            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-            hasRowExpansion: false,
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          }}
+          // options={{
+          //   hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          //   hasRowExpansion: false,
+          //   wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          // }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
       </FullWidthWrapper>
@@ -3426,6 +3425,55 @@ storiesOf('Watson IoT/Table', module)
       info: {
         text:
           'This is an example of the <StatefulTable> component that implements the overflow menu in the column header. Refer to the source files under /src/components/Table/TableHead for details. ',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with late load data',
+    () => {
+      const LateLoadDataTable = () => {
+        const [rowCount, setRowCount] = useState(5);
+
+        const data = Array(rowCount)
+          .fill(0)
+          .map((i, idx) => getNewRow(idx));
+
+        return (
+          <div>
+            <Button onClick={() => setRowCount(rowCount + 5)} style={{ marginBottom: '1rem' }}>
+              Update Total Items
+            </Button>
+            <StatefulTable
+              id="table"
+              {...initialState}
+              secondaryTitle={`Row count: ${rowCount}`}
+              data={data}
+              actions={actions}
+              lightweight={boolean('lightweight', false)}
+              options={{
+                hasRowExpansion: false,
+                hasPagination: true,
+              }}
+              view={{
+                table: { selectedIds: array('selectedIds', []) },
+                pagination: {
+                  hasPagination: true,
+                  totalItems: rowCount * 2,
+                  maxPages: 1000,
+                },
+              }}
+            />
+          </div>
+        );
+      };
+
+      return <LateLoadDataTable />;
+    },
+    {
+      info: {
+        text: 'TODO',
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
