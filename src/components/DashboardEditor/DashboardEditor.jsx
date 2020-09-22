@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid';
 
 import { settings } from '../../constants/Settings';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { Button, CodeSnippet, CardEditor } from '../../index';
+import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
+import { DashboardGrid, Card, CardEditor } from '../../index';
 
 const { iotPrefix } = settings;
 
 const defaultProps = {
-  initialValue: [],
+  initialValue: {
+    cards: [],
+    layouts: {},
+  },
   renderHeader: null,
 };
 
@@ -24,54 +27,74 @@ const DashboardEditor = ({ initialValue, renderHeader }) => {
   const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
-  const [dashboardCards, setDashboardCards] = useState(initialValue);
+  const [dashboardData, setDashboardData] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
 
-  const addCard = data => setDashboardCards([...dashboardCards, data]);
-  const removeCard = id => setDashboardCards(dashboardCards.filter(i => i.id !== id));
+  const addCard = data => {
+    setDashboardData({
+      ...dashboardData,
+      cards: [...dashboardData.cards, data],
+    });
+    setSelectedCardId(data.id);
+  };
+  const removeCard = id =>
+    setDashboardData({
+      ...dashboardData,
+      cards: dashboardData.cards.filter(i => i.id !== id),
+    });
 
   return (
     <div className={baseClassName}>
       <div className={`${baseClassName}--content`}>
         {renderHeader && renderHeader()}
         <div className={`${baseClassName}--preview`}>
-          <h5>Dashboard Template preview</h5>
-          <div>
-            As you add and edit cards, the content underneath here will be updated in real-time. We
-            will replace this with the actual Dashboard component.
-          </div>
-          <br />
-          {dashboardCards.map(i => (
-            <div style={{ paddingBottom: '2rem' }}>
-              <CodeSnippet type="multi" hideCopyButton style={{ width: '30rem' }}>
-                {JSON.stringify(i, null, 4)}
-              </CodeSnippet>
-              <br />
-              <Button
-                style={{ marginRight: '1rem' }}
-                kind="danger"
-                onClick={() => removeCard(i.id)}
+          <DashboardGrid
+            isEditable
+            onBreakpointChange={newBreakpoint => console.log('onBreakpointChange', newBreakpoint)}
+            onLayoutChange={(newLayout, newLayouts) =>
+              setDashboardData({
+                ...dashboardData,
+                layouts: newLayouts,
+              })
+            }
+          >
+            {dashboardData.cards.map(i => (
+              <Card
+                id={i.id}
+                size={i.size}
+                title={i.title}
+                isEditable
+                availableActions={{ edit: true, delete: true }}
+                onCardAction={(id, actionId) => {
+                  if (actionId === CARD_ACTIONS.EDIT_CARD) {
+                    setSelectedCardId(id);
+                  }
+                  if (actionId === CARD_ACTIONS.DELETE_CARD) {
+                    removeCard(id);
+                  }
+                }}
               >
-                Delete
-              </Button>
-              <Button disabled={selectedCardId === i.id} onClick={() => setSelectedCardId(i.id)}>
-                Edit
-              </Button>
-            </div>
-          ))}
+                <div style={{ padding: '1rem' }}>{JSON.stringify(i, null, 4)}</div>
+              </Card>
+            ))}
+          </DashboardGrid>
+          <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre>
         </div>
       </div>
       <CardEditor
-        value={dashboardCards?.find(i => i.id === selectedCardId)}
+        value={dashboardData.cards.find(i => i.id === selectedCardId)}
         onShowGallery={() => setSelectedCardId(null)}
         // NOTE: won't support changes to card ID
         onChange={cardData =>
-          setDashboardCards(dashboardCards.map(i => (i.id === cardData.id ? cardData : i)))
+          setDashboardData({
+            ...dashboardData,
+            cards: dashboardData.cards.map(i => (i.id === cardData.id ? cardData : i)),
+          })
         }
         onAddCard={type =>
           addCard({
             id: uuid.v4(),
-            title: 'New card',
+            title: `New ${type} card`,
             size: CARD_SIZES.SMALL,
             type,
           })
