@@ -98,10 +98,6 @@
   }
 }
 
-.#{$prefix}--data-table--sort thead tr:first-child th {
-  padding: 0 $spacing-05;
-}
-
 .#{$iot-prefix}--table-head {
   &--overflow {
     margin: auto 0;
