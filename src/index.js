@@ -1,6 +1,8 @@
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
 
+import CardCodeEditor from './components/CardCodeEditor/CardCodeEditor';
+
 sizeMe.noPlaceholders = true;
 
 // Components
@@ -75,6 +77,7 @@ export {
   TIME_SERIES_TYPES,
   BAR_CHART_TYPES,
 } from './constants/LayoutConstants';
+export CardCodeEditor from './components/CardCodeEditor/CardCodeEditor';
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
