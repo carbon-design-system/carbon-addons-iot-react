@@ -24,7 +24,7 @@ const propTypes = {
   onSubmit: PropTypes.func.isRequired,
   /** Callback called when modal close icon or cancel button is pressed */
   onClose: PropTypes.func.isRequired,
-  /** Callback called when modal close icon or cancel button is pressed */
+  /** Callback called when editor copy icon is pressed */
   onCopy: PropTypes.func,
   /** All the labels that need translation */
   i18n: PropTypes.shape({

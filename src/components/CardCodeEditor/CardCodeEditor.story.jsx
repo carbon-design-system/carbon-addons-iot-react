@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { select } from '@storybook/addon-knobs';
 
 import CardCodeEditor from './CardCodeEditor';
 
@@ -32,8 +33,9 @@ storiesOf('Watson IoT/CardCodeEditor', module)
     <CardCodeEditor
       onSubmit={isValidCallback}
       onClose={() => {}}
+      language={select('Editor language', ['json', 'javascript', 'css'])}
       onCopy={value => console.log(value)}
-      initialValue="// write your code here"
+      initialValue="/* write your code here */"
     />
   ))
   .add('with preloaded content', () => (
