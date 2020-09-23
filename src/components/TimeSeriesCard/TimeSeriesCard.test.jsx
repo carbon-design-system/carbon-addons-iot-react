@@ -5,7 +5,7 @@ import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS, DISABLED_COLORS } from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
@@ -359,22 +359,6 @@ describe('TimeSeriesCard', () => {
       identifier: 'group',
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
-  });
-  it('formatColors returns valid colors if the time series card isEditable is true', () => {
-    const series = [
-      {
-        label: 'Amsterdam',
-        dataSourceId: 'particles',
-        color: 'blue',
-      },
-      {
-        label: 'New York',
-        dataSourceId: 'particles',
-        color: 'yellow',
-      },
-    ];
-    const selectedColors = Object.values(formatColors(series, true).scale);
-    expect(DISABLED_COLORS).toEqual(expect.arrayContaining(selectedColors)); // all of the selectedColors should come from the DISABLED_COLORS map
   });
   it('formatColors returns correct format if series is object', () => {
     const series = {

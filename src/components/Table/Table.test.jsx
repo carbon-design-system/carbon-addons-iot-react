@@ -814,4 +814,123 @@ describe('Table', () => {
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
+
+  it('calls onUserViewModified when view or columns prop changes', () => {
+    const onUserViewModified = jest.fn();
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+    // Modify data prop should NOT trigger calback
+    rerender(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={[tableData[1]]}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+    expect(onUserViewModified).toHaveBeenCalledTimes(0);
+
+    // Modify columns prop should trigger callback
+    rerender(
+      <Table
+        id="tableid1"
+        columns={[tableColumns[1]]}
+        data={[tableData[0]]}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+    expect(onUserViewModified).toHaveBeenCalledTimes(1);
+
+    // Modify view prop should trigger callback
+    rerender(
+      <Table
+        id="tableid1"
+        view={{
+          toolbar: {
+            activeBar: 'filter',
+          },
+        }}
+        columns={[tableColumns[1]]}
+        data={[tableData[0]]}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+    expect(onUserViewModified).toHaveBeenCalledTimes(2);
+  });
+
+  it('returns columns, view and search value in callback onUserViewModified', () => {
+    const onUserViewModified = jest.fn();
+    const updatedColumns = [tableColumns[1]];
+    const expectedViewProps = defaultProps({ columns: updatedColumns }).view;
+    expectedViewProps.pagination.totalItems = tableData.length;
+
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={tableData}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+    rerender(
+      <Table
+        id="tableid1"
+        columns={updatedColumns}
+        data={tableData}
+        options={{ hasUserViewManagement: true }}
+        actions={{ onUserViewModified }}
+      />
+    );
+
+    expect(onUserViewModified).toHaveBeenCalledWith({
+      columns: updatedColumns,
+      state: { currentSearchValue: '' },
+      view: expectedViewProps,
+    });
+  });
+
+  it('renders header with overflow menu', () => {
+    const overflowData = [
+      {
+        id: 'option-A',
+        text: 'option-A',
+      },
+    ];
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+        }))}
+        data={tableData}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(0);
+
+    render(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: '100px',
+          overflowMenuItems: overflowData,
+        }))}
+        data={tableData}
+      />
+    );
+
+    expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+  });
 });

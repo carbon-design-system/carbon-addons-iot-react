@@ -310,6 +310,7 @@ Map {
   "Table" => Object {
     "defaultProps": Object {
       "actions": Object {
+        "onUserViewModified": null,
         "pagination": Object {
           "onChangePage": [Function],
         },
@@ -320,6 +321,7 @@ Map {
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
+          "onOverflowItemClicked": [Function],
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
@@ -385,6 +387,7 @@ Map {
         "hasRowSelection": false,
         "hasSearch": false,
         "hasSingleRowEdit": false,
+        "hasUserViewManagement": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -429,6 +432,9 @@ Map {
       "actions": Object {
         "args": Array [
           Object {
+            "onUserViewModified": Object {
+              "type": "func",
+            },
             "pagination": Object {
               "args": Array [
                 Object {
@@ -461,6 +467,9 @@ Map {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
+                    "type": "func",
+                  },
+                  "onOverflowItemClicked": Object {
                     "type": "func",
                   },
                   "onRowClicked": Object {
@@ -592,6 +601,39 @@ Map {
                 "name": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
                 },
                 "renderDataFunction": Object {
                   "type": "func",
@@ -930,7 +972,24 @@ Map {
               "type": "bool",
             },
             "hasRowNesting": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "hasSingleNestedHierarchy": Object {
+                          "type": "bool",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasRowSelection": Object {
               "args": Array [
@@ -946,6 +1005,9 @@ Map {
               "type": "bool",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "hasUserViewManagement": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -1349,6 +1411,9 @@ Map {
             "onColumnSelectionConfig": Object {
               "type": "func",
             },
+            "onOverflowItemClicked": Object {
+              "type": "func",
+            },
             "onSelectAll": Object {
               "type": "func",
             },
@@ -1440,6 +1505,39 @@ Map {
                 "name": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
                 },
                 "renderDataFunction": Object {
                   "type": "func",
@@ -1880,6 +1978,39 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "options": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "number",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "text": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
                 "renderDataFunction": Object {
                   "type": "func",
                 },
@@ -1932,7 +2063,24 @@ Map {
         "type": "bool",
       },
       "hasRowNesting": Object {
-        "type": "bool",
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "hasSingleNestedHierarchy": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasRowSelection": Object {
         "args": Array [
@@ -2595,6 +2743,9 @@ Map {
           Object {
             "args": Array [
               Object {
+                "description": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "type": "string",
                 },
@@ -2608,9 +2759,6 @@ Map {
                   "type": "bool",
                 },
                 "title": Object {
-                  "type": "string",
-                },
-                "viewDescription": Object {
                   "type": "string",
                 },
               },
@@ -2924,6 +3072,9 @@ Map {
               "type": "bool",
             },
             "hasSearch": Object {
+              "type": "bool",
+            },
+            "hasUserViewManagement": Object {
               "type": "bool",
             },
           },
@@ -4971,6 +5122,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -5568,20 +5732,21 @@ Map {
   },
   "TableViewDropdown" => Object {
     "defaultProps": Object {
-      "activeViewEdited": false,
       "disabled": false,
       "i18n": Object {
         "ariaLabel": "Select view",
         "edited": "Edited",
         "manageViews": "Manage views",
         "saveAsNewView": "Save as new view",
-        "saveView": "Save view",
+        "saveChanges": "Save changes",
         "tableViewMenu": "Table view menu",
         "view": "View",
         "viewAll": "View All",
       },
       "overrides": undefined,
+      "selectedViewEdited": false,
       "selectedViewId": undefined,
+      "style": undefined,
       "testID": "TableViewDropdown",
       "views": Array [],
     },
@@ -5598,16 +5763,13 @@ Map {
             "onSaveAsNewView": Object {
               "type": "func",
             },
-            "onSaveView": Object {
+            "onSaveChanges": Object {
               "type": "func",
             },
           },
         ],
         "isRequired": true,
         "type": "shape",
-      },
-      "activeViewEdited": Object {
-        "type": "bool",
       },
       "disabled": Object {
         "type": "bool",
@@ -5627,7 +5789,7 @@ Map {
             "saveAsNewView": Object {
               "type": "string",
             },
-            "saveView": Object {
+            "saveChanges": Object {
               "type": "string",
             },
             "tableViewMenu": Object {
@@ -5676,8 +5838,19 @@ Map {
         ],
         "type": "shape",
       },
+      "selectedViewEdited": Object {
+        "type": "bool",
+      },
       "selectedViewId": Object {
         "type": "string",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testID": Object {
         "type": "string",
@@ -6168,6 +6341,8 @@ Map {
         "requestEnhancement": "Request enhancement",
         "settingsIcon": "Settings",
         "support": "Support",
+        "surveyText": "Click here to help us improve the product",
+        "surveyTitle": [Function],
         "switcherLearnMoreLink": "Learn more",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
@@ -6176,6 +6351,7 @@ Map {
       },
       "isAdminView": false,
       "sideNavProps": null,
+      "surveyLink": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -6262,6 +6438,12 @@ Map {
             },
             "support": Object {
               "type": "string",
+            },
+            "surveyText": Object {
+              "type": "string",
+            },
+            "surveyTitle": Object {
+              "type": "func",
             },
             "switcherNavigatorLink": Object {
               "type": "string",
@@ -6393,6 +6575,9 @@ Map {
       },
       "suiteName": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "surveyLink": Object {
         "type": "string",
       },
       "userDisplayName": Object {
@@ -6563,75 +6748,6 @@ Map {
     },
   },
   "SuiteHeaderI18N" => Object {
-    "cs": Object {
-      "about": "O produktu",
-      "administrationIcon": "Administrace",
-      "documentation": "Dokumentace",
-      "gettingStarted": "Začínáme",
-      "help": "Nápověda",
-      "logout": "Odhlášení",
-      "profileLogoutButton": "Odhlásit",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Chcete se odhlásit?",
-      "profileLogoutModalPrimaryButton": "Odhlásit",
-      "profileLogoutModalSecondaryButton": "Storno",
-      "profileManageButton": "Spravovat profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Rozšíření požadavku",
-      "settingsIcon": "Nastavení",
-      "support": "Podpora",
-      "switcherLearnMoreLink": "Další informace",
-      "switcherNavigatorLink": "Všechny aplikace",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Uživatel",
-      "whatsNew": "Novinky",
-    },
-    "da": Object {
-      "about": "Om",
-      "administrationIcon": "Administration",
-      "documentation": "Dokumentation",
-      "gettingStarted": "Kom godt i gang",
-      "help": "Hjælp",
-      "logout": "Log af",
-      "profileLogoutButton": "Log af",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Vil du logge af?",
-      "profileLogoutModalPrimaryButton": "Log af",
-      "profileLogoutModalSecondaryButton": "Annuller",
-      "profileManageButton": "Administrer profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Anmod om forbedring",
-      "settingsIcon": "Indstillinger",
-      "support": "Support",
-      "switcherLearnMoreLink": "Få mere at vide",
-      "switcherNavigatorLink": "Alle applikationer",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Bruger",
-      "whatsNew": "Nyheder",
-    },
-    "de": Object {
-      "about": "Produktinfo",
-      "administrationIcon": "Verwaltung",
-      "documentation": "Dokumentation",
-      "gettingStarted": "Erste Schritte",
-      "help": "Hilfe",
-      "logout": "Abmelden",
-      "profileLogoutButton": "Abmelden",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Möchten Sie sich abmelden?",
-      "profileLogoutModalPrimaryButton": "Abmelden",
-      "profileLogoutModalSecondaryButton": "Abbrechen",
-      "profileManageButton": "\\"Profil verwalten",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Erweiterung anfordern",
-      "settingsIcon": "Einstellungen",
-      "support": "Support",
-      "switcherLearnMoreLink": "Weitere Informationen",
-      "switcherNavigatorLink": "Alle Anwendungen",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Benutzer",
-      "whatsNew": "Neuerungen",
-    },
     "en": Object {
       "about": "About",
       "administrationIcon": "Administration",
@@ -6649,425 +6765,13 @@ Map {
       "requestEnhancement": "Request enhancement",
       "settingsIcon": "Settings",
       "support": "Support",
+      "surveyText": "Click here to help us improve the product",
+      "surveyTitle": [Function],
       "switcherLearnMoreLink": "Learn more",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
       "userIcon": "User",
       "whatsNew": "What's new",
-    },
-    "es": Object {
-      "about": "Acerca de",
-      "administrationIcon": "Administración",
-      "documentation": "Documentación",
-      "gettingStarted": "Guía de inicio",
-      "help": "Ayuda",
-      "logout": "Finalizar sesión",
-      "profileLogoutButton": "Cerrar sesión",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "¿Desea finalizar la sesión?",
-      "profileLogoutModalPrimaryButton": "Cerrar sesión",
-      "profileLogoutModalSecondaryButton": "Cancelar",
-      "profileManageButton": "Gestionar perfil",
-      "profileTitle": "Perfil",
-      "requestEnhancement": "Mejora de solicitud",
-      "settingsIcon": "Configuración",
-      "support": "Soporte",
-      "switcherLearnMoreLink": "Obtener más información",
-      "switcherNavigatorLink": "Todas las aplicaciones",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Usuario",
-      "whatsNew": "Novedades",
-    },
-    "fr": Object {
-      "about": "A propos de",
-      "administrationIcon": "Administration",
-      "documentation": "Documentation",
-      "gettingStarted": "Démarrage",
-      "help": "Aide",
-      "logout": "Se déconnecter",
-      "profileLogoutButton": "Déconnexion",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Voulez-vous vous déconnecter ?",
-      "profileLogoutModalPrimaryButton": "Déconnexion",
-      "profileLogoutModalSecondaryButton": "Annuler",
-      "profileManageButton": "Gérer le profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Demander une amélioration",
-      "settingsIcon": "Paramètres",
-      "support": "Support",
-      "switcherLearnMoreLink": "En savoir plus",
-      "switcherNavigatorLink": "Toutes les applications",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Utilisateur",
-      "whatsNew": "Nouveautés",
-    },
-    "hr": Object {
-      "about": "O proizvodu",
-      "administrationIcon": "Administracija",
-      "documentation": "Dokumentacija",
-      "gettingStarted": "Kako započeti",
-      "help": "Pomoć",
-      "logout": "Odjava",
-      "profileLogoutButton": "Odjava",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Želite li se odjaviti?",
-      "profileLogoutModalPrimaryButton": "Odjava",
-      "profileLogoutModalSecondaryButton": "Opoziv",
-      "profileManageButton": "Upravljanje profilom",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Zatraži poboljšanje",
-      "settingsIcon": "Postavke",
-      "support": "Podrška",
-      "switcherLearnMoreLink": "Saznajte više",
-      "switcherNavigatorLink": "Sve aplikacije",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Korisnik",
-      "whatsNew": "Što je novo",
-    },
-    "hu": Object {
-      "about": "Névjegy",
-      "administrationIcon": "Adminisztráció",
-      "documentation": "Dokumentáció",
-      "gettingStarted": "Kezdeti lépések",
-      "help": "Súgó",
-      "logout": "Kijelentkezés",
-      "profileLogoutButton": "Kijelentkezés",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Ki szeretne jelentkezni?",
-      "profileLogoutModalPrimaryButton": "Kijelentkezés",
-      "profileLogoutModalSecondaryButton": "Mégse",
-      "profileManageButton": "Profil kezelése",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Bővítés kérése",
-      "settingsIcon": "Beállítások",
-      "support": "Terméktámogatás",
-      "switcherLearnMoreLink": "További információk",
-      "switcherNavigatorLink": "Minden alkalmazás",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Felhasználó",
-      "whatsNew": "Újdonságok",
-    },
-    "it": Object {
-      "about": "Informazioni su",
-      "administrationIcon": "Amministrazione",
-      "documentation": "Documentazione",
-      "gettingStarted": "Introduzione",
-      "help": "Guida",
-      "logout": "Esci",
-      "profileLogoutButton": "Esci",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Si desidera scollegarsi?",
-      "profileLogoutModalPrimaryButton": "Esci",
-      "profileLogoutModalSecondaryButton": "CaAnnullancel",
-      "profileManageButton": "Gestisci profilo",
-      "profileTitle": "Profilo",
-      "requestEnhancement": "Richiedi miglioramento",
-      "settingsIcon": "Impostazioni",
-      "support": "Supporto",
-      "switcherLearnMoreLink": "Ulteriori informazioni",
-      "switcherNavigatorLink": "Tutte le applicazioni",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Utente",
-      "whatsNew": "Novità",
-    },
-    "ja": Object {
-      "about": "概要",
-      "administrationIcon": "管理",
-      "documentation": "資料",
-      "gettingStarted": "クイック・スタート",
-      "help": "ヘルプ",
-      "logout": "ログアウト",
-      "profileLogoutButton": "ログアウト",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "ログアウトしますか?",
-      "profileLogoutModalPrimaryButton": "ログアウト",
-      "profileLogoutModalSecondaryButton": "キャンセル",
-      "profileManageButton": "プロファイルの管理",
-      "profileTitle": "プロファイル",
-      "requestEnhancement": "機能拡張の依頼",
-      "settingsIcon": "設定",
-      "support": "サポート",
-      "switcherLearnMoreLink": "詳細を表示",
-      "switcherNavigatorLink": "すべてのアプリケーション",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "ユーザー",
-      "whatsNew": "新着情報",
-    },
-    "ko": Object {
-      "about": "정보",
-      "administrationIcon": "관리",
-      "documentation": "문서",
-      "gettingStarted": "시작하기",
-      "help": "도움말",
-      "logout": "로그아웃",
-      "profileLogoutButton": "로그아웃",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "로그아웃하시겠습니까?",
-      "profileLogoutModalPrimaryButton": "로그아웃",
-      "profileLogoutModalSecondaryButton": "취소",
-      "profileManageButton": "프로파일 관리",
-      "profileTitle": "프로파일",
-      "requestEnhancement": "개선 요청",
-      "settingsIcon": "설정",
-      "support": "지원",
-      "switcherLearnMoreLink": "자세히 보기",
-      "switcherNavigatorLink": "모든 애플리케이션",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "사용자",
-      "whatsNew": "새로운 기능",
-    },
-    "nl": Object {
-      "about": "Info",
-      "administrationIcon": "Beheer",
-      "documentation": "Documentatie",
-      "gettingStarted": "Aan de slag",
-      "help": "Help",
-      "logout": "Afmelden",
-      "profileLogoutButton": "Afmelden",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Wilt u zich afmelden?",
-      "profileLogoutModalPrimaryButton": "Afmelden",
-      "profileLogoutModalSecondaryButton": "Annuleren",
-      "profileManageButton": "Profiel beheren",
-      "profileTitle": "Profiel",
-      "requestEnhancement": "Uitbreiding aanvragen",
-      "settingsIcon": "Instellingen",
-      "support": "Ondersteuning",
-      "switcherLearnMoreLink": "Meer informatie",
-      "switcherNavigatorLink": "Alle toepassingen",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Gebruiker",
-      "whatsNew": "Wat is er nieuw",
-    },
-    "no": Object {
-      "about": "Om",
-      "administrationIcon": "Administrasjon",
-      "documentation": "Dokumentasjon",
-      "gettingStarted": "Komme i gang",
-      "help": "Hjelp",
-      "logout": "Logg av avout",
-      "profileLogoutButton": "Logg av",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Vil du logge deg av?",
-      "profileLogoutModalPrimaryButton": "Logg av",
-      "profileLogoutModalSecondaryButton": "Avbryt",
-      "profileManageButton": "Administrer profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Be om utvidelse",
-      "settingsIcon": "Innstillinger",
-      "support": "Støtte",
-      "switcherLearnMoreLink": "Lær mer",
-      "switcherNavigatorLink": "Alle applikasjoner",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Bruker",
-      "whatsNew": "Hva er nytt",
-    },
-    "pl": Object {
-      "about": "Informacje",
-      "administrationIcon": "Administracja",
-      "documentation": "Dokumentacja",
-      "gettingStarted": "Pierwsze kroki",
-      "help": "Pomoc",
-      "logout": "Wyloguj się",
-      "profileLogoutButton": "Wyloguj się",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Czy chcesz się wylogować?",
-      "profileLogoutModalPrimaryButton": "Wyloguj się",
-      "profileLogoutModalSecondaryButton": "Anuluj",
-      "profileManageButton": "Zarządzaj profilem",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Wnioskuj o udoskonalenie",
-      "settingsIcon": "Ustawienia",
-      "support": "Obsługa",
-      "switcherLearnMoreLink": "Dodatkowe informacje",
-      "switcherNavigatorLink": "Wszystkie aplikacje",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Użytkownik",
-      "whatsNew": "Co nowego",
-    },
-    "pt-BR": Object {
-      "about": "Sobre",
-      "administrationIcon": "Administração",
-      "documentation": "Documentação",
-      "gettingStarted": "Introdução",
-      "help": "Ajuda",
-      "logout": "Efetuar logout",
-      "profileLogoutButton": "Efetuar logout",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Você deseja efetuar logout?",
-      "profileLogoutModalPrimaryButton": "Efetuar logout",
-      "profileLogoutModalSecondaryButton": "Cancelar",
-      "profileManageButton": "Gerenciar o perfil",
-      "profileTitle": "Perfil",
-      "requestEnhancement": "Aprimoramento de solicitação",
-      "settingsIcon": "Configurações",
-      "support": "Suporte",
-      "switcherLearnMoreLink": "Gerenciar",
-      "switcherNavigatorLink": "Todos os aplicativos",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Usuário",
-      "whatsNew": "O que há de novo",
-    },
-    "ru": Object {
-      "about": "Информация",
-      "administrationIcon": "Администрирование",
-      "documentation": "Документация",
-      "gettingStarted": "Начинаем работу",
-      "help": "Справка",
-      "logout": "Выход из системы",
-      "profileLogoutButton": "Закончить сеанс",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Вы хотите выйти из системы?",
-      "profileLogoutModalPrimaryButton": "Закончить сеанс",
-      "profileLogoutModalSecondaryButton": "Отмена",
-      "profileManageButton": "Управление профилем",
-      "profileTitle": "Профиль",
-      "requestEnhancement": "Расширение требования",
-      "settingsIcon": "Параметры",
-      "support": "Поддержка",
-      "switcherLearnMoreLink": "Дополнительная информация",
-      "switcherNavigatorLink": "Все приложения",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Пользователь",
-      "whatsNew": "Что нового",
-    },
-    "sk": Object {
-      "about": "O aplikácii",
-      "administrationIcon": "Správa",
-      "documentation": "Dokumentácia",
-      "gettingStarted": "Úvod",
-      "help": "Pomocník",
-      "logout": "Odhlásenie",
-      "profileLogoutButton": "Odhlásiť sa",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Chcete sa odhlásiť?",
-      "profileLogoutModalPrimaryButton": "Odhlásiť sa",
-      "profileLogoutModalSecondaryButton": "Zrušiť",
-      "profileManageButton": "Spravovať profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Požiadať o vylepšenie",
-      "settingsIcon": "Nastavenia",
-      "support": "Podpora",
-      "switcherLearnMoreLink": "Viac informácií",
-      "switcherNavigatorLink": "Všetky aplikácie",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Používateľ",
-      "whatsNew": "Novinky",
-    },
-    "sl": Object {
-      "about": "O programu",
-      "administrationIcon": "Skrbništvo",
-      "documentation": "Dokumentacija",
-      "gettingStarted": "Prvi koraki",
-      "help": "Pomoč",
-      "logout": "Odjava",
-      "profileLogoutButton": "Odjava",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Ali se želite odjaviti?",
-      "profileLogoutModalPrimaryButton": "Odjava",
-      "profileLogoutModalSecondaryButton": "Prekliči",
-      "profileManageButton": "Upravljanje profila",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Zahtevaj izboljšavo",
-      "settingsIcon": "Nastavitve",
-      "support": "Podpora",
-      "switcherLearnMoreLink": "Več informacij",
-      "switcherNavigatorLink": "Vse aplikacije",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Uporabnik",
-      "whatsNew": "Kaj je novega",
-    },
-    "sv": Object {
-      "about": "Om",
-      "administrationIcon": "Administration",
-      "documentation": "Dokumentation",
-      "gettingStarted": "Komma igång",
-      "help": "Hjälp",
-      "logout": "Logga ut",
-      "profileLogoutButton": "Logga ut",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Vill du logga ut?",
-      "profileLogoutModalPrimaryButton": "Logga ut",
-      "profileLogoutModalSecondaryButton": "Avbryt",
-      "profileManageButton": "Hantera profil",
-      "profileTitle": "Profil",
-      "requestEnhancement": "Begär förbättring",
-      "settingsIcon": "Inställningar",
-      "support": "Support",
-      "switcherLearnMoreLink": "Läs mer",
-      "switcherNavigatorLink": "Alla applikationer",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Användare",
-      "whatsNew": "Nyheter",
-    },
-    "tr": Object {
-      "about": "Hakkında",
-      "administrationIcon": "Yönetim",
-      "documentation": "Belge",
-      "gettingStarted": "Başlarken",
-      "help": "Yardım",
-      "logout": "Oturumu kapat",
-      "profileLogoutButton": "Oturumu kapat",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "Oturumu kapatmak istiyor musunuz?",
-      "profileLogoutModalPrimaryButton": "Oturumu kapat",
-      "profileLogoutModalSecondaryButton": "İptal et",
-      "profileManageButton": "Profili yönetin",
-      "profileTitle": "Profil",
-      "requestEnhancement": "İstek geliştirmesi",
-      "settingsIcon": "Ayarlar",
-      "support": "Destek",
-      "switcherLearnMoreLink": "Ek bilgi",
-      "switcherNavigatorLink": "Tüm uygulamalar",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "Kullanıcı",
-      "whatsNew": "Yenilikler",
-    },
-    "zh": Object {
-      "about": "关于",
-      "administrationIcon": "管理",
-      "documentation": "文档",
-      "gettingStarted": "入门",
-      "help": "帮助",
-      "logout": "注销",
-      "profileLogoutButton": "注销",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "要注销吗？",
-      "profileLogoutModalPrimaryButton": "注销",
-      "profileLogoutModalSecondaryButton": "取消",
-      "profileManageButton": "管理概要文件",
-      "profileTitle": "概要文件",
-      "requestEnhancement": "请求增强",
-      "settingsIcon": "设置",
-      "support": "支持",
-      "switcherLearnMoreLink": "了解更多信息",
-      "switcherNavigatorLink": "所有应用程序",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "用户",
-      "whatsNew": "新增内容",
-    },
-    "zh-TW": Object {
-      "about": "關於",
-      "administrationIcon": "管理",
-      "documentation": "說明文件",
-      "gettingStarted": "開始使用",
-      "help": "說明",
-      "logout": "登出",
-      "profileLogoutButton": "登出",
-      "profileLogoutModalBody": [Function],
-      "profileLogoutModalHeading": "您要登出嗎？",
-      "profileLogoutModalPrimaryButton": "登出",
-      "profileLogoutModalSecondaryButton": "登出",
-      "profileManageButton": "管理設定檔",
-      "profileTitle": "設定檔",
-      "requestEnhancement": "要求加強功能",
-      "settingsIcon": "設定",
-      "support": "支援",
-      "switcherLearnMoreLink": "進一步瞭解",
-      "switcherNavigatorLink": "所有應用程式",
-      "switcherRequestAccess": "Contact your administrator to request application access",
-      "userIcon": "使用者",
-      "whatsNew": "新增功能",
     },
   },
   "useSuiteHeaderData" => Object {},
@@ -7997,6 +7701,56 @@ Map {
       },
     },
   },
+  "CardEditor" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "closeGalleryButton": "Back",
+        "galleryHeader": "Gallery",
+        "openGalleryButton": "Open gallery",
+        "openJSONButton": "Open JSON editor",
+      },
+      "supportedTypes": undefined,
+      "value": null,
+    },
+    "propTypes": Object {
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "galleryHeader": Object {
+              "type": "string",
+            },
+            "openGalleryButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onAddCard": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onShowGallery": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "supportedTypes": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "value": Object {
+        "type": "object",
+      },
+    },
+  },
   "Card" => Object {
     "defaultProps": Object {
       "availableActions": Object {
@@ -8405,6 +8159,7 @@ Map {
       "onScroll": undefined,
       "onTouchEnd": undefined,
       "onTouchStart": undefined,
+      "renderExpandIcon": undefined,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,
@@ -9048,6 +8803,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -9920,6 +9688,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -10765,6 +10546,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -11513,6 +11307,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -12369,6 +12176,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -13264,6 +13084,19 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -14058,6 +13891,19 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "renderIconByName": Object {
         "type": "func",
@@ -21715,11 +21561,13 @@ Map {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
     "TABLE_ACTION_CANCEL": "TABLE_ACTION_CANCEL",
     "TABLE_COLUMN_ORDER": "TABLE_COLUMN_ORDER",
+    "TABLE_COLUMN_RESIZE": "TABLE_COLUMN_RESIZE",
     "TABLE_COLUMN_SORT": "TABLE_COLUMN_SORT",
     "TABLE_EMPTY_STATE_ACTION": "TABLE_EMPTY_STATE_ACTION",
     "TABLE_FILTER_APPLY": "TABLE_FILTER_APPLY",
     "TABLE_FILTER_CLEAR": "TABLE_FILTER_CLEAR",
     "TABLE_LOADING_SET": "TABLE_LOADING_SET",
+    "TABLE_LOAD_VIEW": "TABLE_LOAD_VIEW",
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
@@ -21735,6 +21583,7 @@ Map {
     "tableActionApply": Object {},
     "tableActionCancel": Object {},
     "tableColumnOrder": Object {},
+    "tableColumnResize": Object {},
     "tableColumnSort": Object {},
     "tableEmptyStateAction": Object {},
     "tableFilterApply": Object {},

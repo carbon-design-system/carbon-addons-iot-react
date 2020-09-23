@@ -22,6 +22,7 @@ import {
   TABLE_ROW_ACTION_COMPLETE,
   TABLE_ROW_ACTION_ERROR,
   TABLE_COLUMN_ORDER,
+  TABLE_COLUMN_RESIZE,
   TABLE_REGISTER,
   TABLE_SEARCH_APPLY,
 } from './tableActionCreators';
@@ -289,15 +290,25 @@ export const tableReducer = (state = {}, action) => {
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
-      const { view, totalItems } = action.payload;
+      const { view, totalItems, hasUserViewManagement } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
       // update the column ordering if I'm passed new columns
-      const ordering = get(view, 'table.ordering') || get(state, 'view.table.ordering');
+      // but only if hasUserViewManagement is not active.
+      const ordering = hasUserViewManagement
+        ? get(state, 'view.table.ordering')
+        : get(view, 'table.ordering') || get(state, 'view.table.ordering');
+
       // update the search if a new one is passed
       const searchFromState = get(state, 'view.toolbar.search');
+
+      // if hasUserViewManagement is active we rely on defaultValue
+      const searchTermFromState = hasUserViewManagement
+        ? searchFromState?.defaultValue
+        : searchFromState?.value;
+
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
@@ -321,7 +332,7 @@ export const tableReducer = (state = {}, action) => {
               $set: filterSearchAndSort(
                 updatedData,
                 get(state, 'view.table.sort'),
-                searchFromState,
+                { value: searchTermFromState },
                 get(state, 'view.filters'),
                 get(state, 'columns')
               ),
@@ -355,6 +366,7 @@ export const tableReducer = (state = {}, action) => {
     case TABLE_TOOLBAR_TOGGLE:
     case TABLE_COLUMN_ORDER:
     case TABLE_ROW_EXPAND:
+    case TABLE_COLUMN_RESIZE:
       return baseTableReducer(state, action);
     default:
       return state;
