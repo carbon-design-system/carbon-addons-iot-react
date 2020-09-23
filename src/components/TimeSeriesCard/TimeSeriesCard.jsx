@@ -19,7 +19,6 @@ import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
-  DISABLED_COLORS,
   ZOOM_BAR_ENABLED_CARD_SIZES,
 } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
@@ -207,16 +206,13 @@ export const handleTooltip = (
 /**
  * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
  * @param {Array} series an array of dataset group classifications
- * @param {Boolean} isEditable is the graph currently editable
  * @returns {Object} colors - formatted
  */
-export const formatColors = (series, isEditable) => {
+export const formatColors = series => {
   const colors = { identifier: 'group', scale: {} };
   if (Array.isArray(series)) {
-    series.forEach((dataset, index) => {
-      colors.scale[dataset.label] = !isEditable
-        ? dataset.color
-        : DISABLED_COLORS[index % DISABLED_COLORS.length];
+    series.forEach(dataset => {
+      colors.scale[dataset.label] = dataset.color;
     });
   } else {
     colors.scale[series.label] = series.color;
@@ -324,7 +320,7 @@ const TimeSeriesCard = ({
   );
 
   // Set the colors for each dataset
-  const colors = formatColors(series, isEditable);
+  const colors = formatColors(series);
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
@@ -517,7 +513,7 @@ const TimeSeriesCard = ({
                     }
                   : {}),
                 timeScale: {
-                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                  addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
                 },
               }}
               width="100%"
