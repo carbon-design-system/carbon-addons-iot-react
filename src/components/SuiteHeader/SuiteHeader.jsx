@@ -185,7 +185,7 @@ const SuiteHeader = ({
                       ),
                       onClick: () => {
                         window.location.href = isAdminView
-                          ? document.referrer !== ''
+                          ? document.referrer !== '' && document.referrer.indexOf('auth') < 0
                             ? document.referrer
                             : routes.navigator
                           : routes.admin;
