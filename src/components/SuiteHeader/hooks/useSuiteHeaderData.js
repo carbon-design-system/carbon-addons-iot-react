@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import moment from 'moment';
 
+import SuiteHeaderI18N from '../i18n';
+
 // eslint-disable-next-line import/extensions
 import testApiData from './suiteHeaderData.fixture.js';
-
-import SuiteHeaderI18N from '../i18n';
 
 // default route calculation logic
 const calcRoutes = (domain, user, workspaces, applications) => {
