@@ -66,9 +66,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "import/first": [
       2,
-      {
-        "absolute-first": true
-      }
+      "absolute-first"
     ],
     "import/order": [
       2,

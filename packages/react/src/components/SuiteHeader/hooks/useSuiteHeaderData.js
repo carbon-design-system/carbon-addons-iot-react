@@ -214,7 +214,7 @@ const useSuiteHeaderData = ({
         setIsLoading(false);
       }
     },
-    [baseApiUrl, domain, lang, isTest, setIsLoading]
+    [fetchApi, baseApiUrl, isTest, lang, calculateRoutes, domain, surveyConfig, calculateSurveyStatus, calculateI18N]
   );
 
   useEffect(

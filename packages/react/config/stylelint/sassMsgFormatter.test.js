@@ -1,5 +1,6 @@
-const formatter = require('./sassMsgFormatter');
 const chalk = require('chalk');
+
+const formatter = require('./sassMsgFormatter');
 
 const ERROR = chalk.bold.red;
 const WARNING = chalk.yellow;

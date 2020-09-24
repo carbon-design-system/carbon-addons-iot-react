@@ -25,7 +25,7 @@ function filterForErrors(result) {
  * @returns {Array[Object]} a filtered array
  */
 function filterDuplicates(results) {
-  let filteredArray = [];
+  const filteredArray = [];
   let isUnique = true;
   results.forEach(result => {
     if (filteredArray.length == 0) {
