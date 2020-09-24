@@ -28,6 +28,7 @@ const defaultProps = {
     cardType_VALUE: 'Value/KPI',
     cardType_IMAGE: 'Image',
     cardType_TABLE: 'Data table',
+    // additional card type names can be provided using the convention of `cardType_TYPE`
   },
 };
 
