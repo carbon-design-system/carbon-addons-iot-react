@@ -226,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                   >
                     <table
                       className="bx--data-table bx--data-table--no-border"
-                      data-testid="basicCardStory-table"
+                      data-testid="basicCardStoryTest-table"
                       title={null}
                     >
                       <thead

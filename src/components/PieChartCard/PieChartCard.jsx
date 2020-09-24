@@ -138,7 +138,7 @@ const PieChartCard = ({
   };
 
   const tableProps = {
-    'data-testid': `${id}-table`,
+    'data-testid': `${testID}-table`,
     id: `${id}-table`,
     className: `${iotPrefix}--pie-chart-card--stateful-table`,
     columns: generateTableColumns(values, groupDataSourceId),
@@ -146,7 +146,7 @@ const PieChartCard = ({
     actions: {
       table: {},
       toolbar: {
-        onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
+        onDownloadCSV: tableData => csvDownloadHandler(tableData, title),
       },
     },
     view: {
