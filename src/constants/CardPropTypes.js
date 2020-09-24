@@ -12,6 +12,7 @@ import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
+import { OverridePropTypes } from './SharedPropTypes';
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
@@ -295,6 +296,47 @@ export const BarChartCardPropTypes = {
   tooltipDateFormatPattern: PropTypes.string,
 };
 
+export const PieCardPropTypes = {
+  /** Configuration content for the PieChart */
+  content: PropTypes.shape({
+    /** Object that maps the groupDataSourceId with a specific color, e.g. {'Group A': 'red', 'Group B': 'blue', ... } */
+    colors: PropTypes.object,
+    /** Function to output custom HTML for the tooltip. Passed an array or object with the data,
+     * and the default tooltip markup */
+    customTooltip: PropTypes.func,
+    /** Defaults to 'group' but can be overriden to be any string property of the objects in the values array */
+    groupDataSourceId: PropTypes.string,
+    /**
+     * Function to format the labels. Input to the function is a wrapped data object containing additional
+     * chart label info such as x & y positions etc */
+    labelsFormatter: PropTypes.func,
+    /** The position of the legend in relation to the chart, can be 'bottom' or 'top'. */
+    legendPosition: PropTypes.string,
+  }),
+  /** Used to overide the internal components and props for advanced customisation */
+  overrides: PropTypes.shape({
+    card: OverridePropTypes,
+    pieChart: OverridePropTypes,
+    table: OverridePropTypes,
+  }),
+  testID: PropTypes.string,
+  /**
+   * array of data objects from the backend for instance [{group: 'Group A', value: 50}, {group: 'Group B', value: 50}, ...]
+   * The group property can be called anything since it can be mapped via the groupDataSourceId but there must at least
+   * be one property called value of type number. */
+  values: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        /** the name of the slice */
+        group: PropTypes.string.isRequired,
+        /** the value of the slice */
+        value: PropTypes.number.isRequired,
+      }),
+      PropTypes.object,
+    ])
+  ),
+};
+
 export const DonutCardPropTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
@@ -318,7 +360,6 @@ export const ImageCardPropTypes = {
   }),
 };
 
-export const PieCardPropTypes = DonutCardPropTypes;
 export const GaugeCardPropTypes = {
   tooltip: PropTypes.element,
   content: PropTypes.shape({

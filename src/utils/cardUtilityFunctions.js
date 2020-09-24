@@ -354,3 +354,20 @@ export const chartValueFormatter = (value, size, unit, locale) => {
   }
   return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
 };
+
+/**
+ * Charts render incorrectly if size is too small, so change their size to MEDIUM
+ * @param {string} size card size
+ */
+export const increaseSmallCardSize = (size, cardName) => {
+  const warnMsg = `${cardName} does not support card size ${size}`;
+  let returnSize;
+  if (size === CARD_SIZES.SMALL) {
+    console.warn(warnMsg); // eslint-disable-line no-console
+    returnSize = CARD_SIZES.MEDIUM;
+  } else if (size === CARD_SIZES.SMALLWIDE) {
+    console.warn(warnMsg); // eslint-disable-line no-console
+    returnSize = CARD_SIZES.MEDIUMWIDE;
+  }
+  return returnSize;
+};

@@ -61,6 +61,7 @@ export Dashboard from './components/Dashboard/Dashboard';
 export DashboardHeader from './components/Dashboard/DashboardHeader';
 export DashboardGrid from './components/Dashboard/DashboardGrid';
 export Card from './components/Card/Card';
+export PieChartCard from './components/PieChartCard/PieChartCard';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';

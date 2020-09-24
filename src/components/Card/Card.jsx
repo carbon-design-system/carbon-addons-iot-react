@@ -302,6 +302,7 @@ const Card = props => {
             return (
               <CardWrapper
                 {...others} // you need all of these to support dynamic positioning during edit
+                testID={testID}
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
