@@ -1,5 +1,5 @@
 {
-  "name": "ai-apps-pal",
+  "name": "ibm-ai-applications",
   "engines": {
     "node": ">= 10"
   },
