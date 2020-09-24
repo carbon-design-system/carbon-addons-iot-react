@@ -100,7 +100,17 @@ const AttributesFormItem = ({ value, onChange }) => {
             size="small"
             iconDescription="Add"
             key="expandable-list-button-add"
-            onClick={() => onChange({})}
+            onClick={() =>
+              onChange(
+                value.concat([
+                  {
+                    dataSourceId: 'newAttr',
+                    label: 'New',
+                    unit: '%',
+                  },
+                ])
+              )
+            }
           />,
         ]}
         items={value.map(attr => ({
