@@ -11,9 +11,132 @@ import {
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
-import { Tabs, Tab, Button, TextArea, List, Modal, TextInput, Dropdown } from '../../../index';
+import {
+  Tabs,
+  ComposedModal,
+  Tab,
+  Button,
+  TextArea,
+  List,
+  TextInput,
+  Dropdown,
+} from '../../../index';
 
 const { iotPrefix } = settings;
+
+const AttributesFormItem = ({ value, onChange }) => {
+  const [showEditor, setShowEditor] = useState(false);
+  const [editData, setEditData] = useState({});
+  const [editDataSourceId, setEditDataSourceId] = useState({});
+
+  return (
+    <>
+      {showEditor ? (
+        <ComposedModal
+          header={{
+            label: 'Attribute',
+            title: 'Edit attribute',
+          }}
+          onSubmit={() => {
+            onChange(value.filter(i => i.dataSourceId !== editDataSourceId).concat([editData]));
+            setShowEditor(false);
+            setEditData(null);
+          }}
+          onClose={() => {
+            setShowEditor(false);
+            setEditData(null);
+          }}
+        >
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextInput
+              id="attributeLabel"
+              labelText="Label"
+              light
+              onChange={evt =>
+                setEditData({
+                  ...editData,
+                  label: evt.target.value,
+                })
+              }
+              value={editData.label}
+            />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextInput
+              id="attributeDataSourceId"
+              labelText="Data source ID"
+              light
+              onChange={evt =>
+                setEditData({
+                  ...editData,
+                  dataSourceId: evt.target.value,
+                })
+              }
+              value={editData.dataSourceId}
+            />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextInput
+              id="attributeUnit"
+              labelText="Unit"
+              light
+              onChange={evt =>
+                setEditData({
+                  ...editData,
+                  unit: evt.target.value,
+                })
+              }
+              value={editData.unit}
+            />
+          </div>
+        </ComposedModal>
+      ) : null}
+      <List
+        title="Attributes"
+        buttons={[
+          <Button
+            renderIcon={Add16}
+            hasIconOnly
+            size="small"
+            iconDescription="Add"
+            key="expandable-list-button-add"
+            onClick={() => onChange({})}
+          />,
+        ]}
+        items={value.map(attr => ({
+          id: attr.dataSourceId,
+          content: {
+            value: attr.label,
+            rowActions: [
+              <Button
+                style={{ color: 'black' }}
+                renderIcon={Edit16}
+                hasIconOnly
+                kind="ghost"
+                size="small"
+                onClick={() => {
+                  setEditData(attr);
+                  setEditDataSourceId(attr.dataSourceId);
+                  setShowEditor(true);
+                }}
+                iconDescription="Edit"
+              />,
+              <Button
+                style={{ color: 'black' }}
+                renderIcon={Delete16}
+                hasIconOnly
+                kind="ghost"
+                size="small"
+                onClick={() => onChange(value.filter(i => i.dataSourceId !== attr.dataSourceId))}
+                iconDescription="Remove"
+              />,
+            ],
+          },
+        }))}
+      />
+    </>
+  );
+};
 
 const defaultProps = {
   value: {},
@@ -116,69 +239,17 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
   const renderValueCardBasicItems = () => {
     return (
       <>
-        <List
-          title="Attributes"
-          buttons={[
-            <Button
-              renderIcon={Add16}
-              hasIconOnly
-              size="small"
-              iconDescription="Add"
-              key="expandable-list-button-add"
-              onClick={() =>
-                onChange({
-                  ...value,
-                  content: {
-                    ...(value.content ?? {}),
-                    attributes: [
-                      ...(value?.content?.attributes ?? []),
-                      {
-                        dataSourceId: 'dataSourceId',
-                        unit: '',
-                        label: 'Label',
-                      },
-                    ],
-                  },
-                })
-              }
-            />,
-          ]}
-          items={(value?.content?.attributes ?? []).map(attr => ({
-            id: attr.dataSourceId,
-            content: {
-              value: attr.label,
-              rowActions: [
-                <Button
-                  style={{ color: 'black' }}
-                  renderIcon={Edit16}
-                  hasIconOnly
-                  kind="ghost"
-                  size="small"
-                  onClick={() => alert('edit')}
-                  iconDescription="Edit"
-                />,
-                <Button
-                  style={{ color: 'black' }}
-                  renderIcon={Delete16}
-                  hasIconOnly
-                  kind="ghost"
-                  size="small"
-                  onClick={() =>
-                    onChange({
-                      ...value,
-                      content: {
-                        ...(value.content ?? {}),
-                        attributes: value.content.attributes.filter(
-                          i => i.dataSourceId !== attr.dataSourceId
-                        ),
-                      },
-                    })
-                  }
-                  iconDescription="Remove"
-                />,
-              ],
-            },
-          }))}
+        <AttributesFormItem
+          value={value.content?.attributes ?? []}
+          onChange={newValue =>
+            onChange({
+              ...value,
+              content: {
+                ...(value.content ?? {}),
+                attributes: newValue,
+              },
+            })
+          }
         />
       </>
     );

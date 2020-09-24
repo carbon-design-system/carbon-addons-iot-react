@@ -84,10 +84,6 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
                 },
               ],
             },
-            values: {
-              key1: '94.2',
-              key2: 'a lot',
-            },
           }
         : type === CARD_TYPES.TIMESERIES
         ? {
@@ -185,7 +181,7 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
       size={cardJson.size}
       content={cardJson?.content}
       values={cardJson?.values}
-      isEditable={cardJson.values === undefined}
+      isEditable
       {...commonProps}
     />
   );
