@@ -86,7 +86,7 @@ const CardCodeEditor = ({
   };
 
   const handleOnSubmit = () => {
-    onSubmit(editorValue.current.getValue(), setError);
+    onSubmit(editorValue?.current?.getValue(), setError);
   };
 
   const handleOnExpand = () => {
@@ -94,7 +94,8 @@ const CardCodeEditor = ({
   };
 
   const handleOnCopy = () => {
-    return onCopy && onCopy(editorValue.current.getValue());
+    const value = editorValue?.current?.getValue() || initialValue;
+    return onCopy && onCopy(value);
   };
 
   return (

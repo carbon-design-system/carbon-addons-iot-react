@@ -2,6 +2,165 @@
 
 exports[`Public API should only change with a semver change 1`] = `
 Map {
+  "CardCodeEditor" => Object {
+    "defaultProps": Object {
+      "i18n": Object {
+        "errorTitle": "Error:",
+        "modalHelpText": null,
+        "modalIconDescription": "Close",
+        "modalLabel": "JSON Editor",
+        "modalTitle": "Edit the JSONs",
+      },
+      "initialValue": null,
+      "language": "json",
+      "onCopy": null,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "footer": Object {
+        "args": Array [
+          Array [
+            Object {
+              "isRequired": true,
+              "type": "element",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "isPrimaryButtonDisabled": Object {
+                    "type": "bool",
+                  },
+                  "isPrimaryButtonHidden": Object {
+                    "type": "bool",
+                  },
+                  "primaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                  "secondaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "header": Object {
+        "args": Array [
+          Object {
+            "helpText": Object {
+              "type": "node",
+            },
+            "label": Object {
+              "type": "node",
+            },
+            "title": Object {
+              "type": "node",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "copyBtnDescription": Object {
+              "type": "string",
+            },
+            "copyBtnFeedBack": Object {
+              "type": "string",
+            },
+            "errorTitle": Object {
+              "type": "string",
+            },
+            "modalHelpText": Object {
+              "type": "string",
+            },
+            "modalIconDescription": Object {
+              "type": "string",
+            },
+            "modalLabel": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "initialValue": Object {
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isLarge": Object {
+        "type": "bool",
+      },
+      "language": Object {
+        "type": "string",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onCopy": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "passiveModal": Object {
+        "type": "bool",
+      },
+      "sendingData": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "submitFailed": Object {
+        "type": "bool",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "warn",
+            "normal",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
+  },
   "AddCard" => Object {
     "propTypes": Object {
       "onClick": Object {

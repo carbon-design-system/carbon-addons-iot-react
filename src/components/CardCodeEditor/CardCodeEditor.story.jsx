@@ -6,11 +6,11 @@ import CardCodeEditor from './CardCodeEditor';
 
 const pkgjson = require('../../../package.json');
 
-const isValidCallback = (val, setError) => {
+export const isValidCallback = (val, setError) => {
   try {
     setError(false);
     // comments are not valid JSON so remove before check
-    const _value = val.replace('// write your code here', '');
+    const _value = val.replace('/* write your code here */', '');
 
     if (_value === '') {
       setError('JSON value must not be an empty string');
