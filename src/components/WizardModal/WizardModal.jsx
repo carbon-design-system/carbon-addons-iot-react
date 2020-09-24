@@ -46,6 +46,9 @@ class WizardModal extends Component {
     /** callback when dialog is submitted */
     onSubmit: PropTypes.func.isRequired,
 
+     /** callback to notify parent prop on step changes  */
+    onBack: PropTypes.func,
+
     /**
      * leftContent: Anything that will placed to the left of the buttons inside the footer
      * labels: Internationalized string labels for the buttons in the footer
@@ -62,6 +65,7 @@ class WizardModal extends Component {
   static defaultProps = {
     currentStepIndex: 0,
     isClickable: false,
+    onBack: null,
     footer: {
       leftContent: null,
       nextButtonLabel: 'Next',
@@ -80,17 +84,31 @@ class WizardModal extends Component {
   };
 
   handlePrevious = () => {
-    this.setState(state => ({ step: state.step - 1 }));
+    const stepBack = this.state.step - 1;
+    this.changedBack(stepBack);
+    this.setState(() => ({ step: stepBack }));
   };
 
   handleClick = key => {
-    const { step } = this.state;
     // If you're trying to go higher then validate
 
-    if (key < step || this.validateCurrentStep()) {
+    if (this.changedBack(key) || this.validateCurrentStep()) {
       this.setState({ step: key });
     }
   };
+
+  changedBack = (key) => {
+    // validate that we went back and call onBack with clicked key
+    const { onBack } = this.props;
+    const { step } = this.state;
+    if (key < step) {
+      if (onBack) {
+        onBack(key);
+      }
+      return true;
+    }
+    return false;
+  }
 
   validateCurrentStep = () => {
     const { steps } = this.props;
@@ -166,7 +184,7 @@ class WizardModal extends Component {
         <ProgressIndicator
           items={items}
           currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
-          setStep={this.handleClick}
+          onClickItem={this.handleClick}
           isClickable={isClickable}
         />
         <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
