@@ -46,7 +46,7 @@ class WizardModal extends Component {
     /** callback when dialog is submitted */
     onSubmit: PropTypes.func.isRequired,
 
-     /** callback to notify parent prop on step changes  */
+     /** Callback when going to previous step  */
     onBack: PropTypes.func,
 
     /**
