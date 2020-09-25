@@ -2237,7 +2237,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.3":
+"@babel/runtime@^7.10.3", "@babel/runtime@^7.11.0":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -3150,6 +3150,14 @@
     graceful-fs "^4.1.3"
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
+
+"@monaco-editor/react@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@monaco-editor/react/-/react-3.6.2.tgz#7b6310c28fe681f0fea5165dfa1a0e22f0a611cc"
+  integrity sha512-KA91FasOYLJwPz2Sp4ANoEZp9+9wCglF/f3p/aENjcG/v3s4vzcUxKEWI6X5S9z+tz0s79tUy8JTZ5gT/WCsSA==
+  dependencies:
+    "@babel/runtime" "^7.11.0"
+    state-local "^1.0.1"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -18784,6 +18792,11 @@ stack-utils@^1.0.1:
 staged-git-files@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/staged-git-files/-/staged-git-files-1.1.2.tgz#4326d33886dc9ecfa29a6193bf511ba90a46454b"
+
+state-local@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/state-local/-/state-local-1.0.1.tgz#0d3c0a2bb610d3b81699b30e98fafa00bcf4ac9c"
+  integrity sha512-CkiwT61ZhZd0/z183fcceu7+RSws/Sq5BT3RNQ2xK/Se9A/jn/4Z/eIe1bawoI9wNYC9wrcG2Drz+6GnjtKynA==
 
 state-toggle@^1.0.0:
   version "1.0.2"
