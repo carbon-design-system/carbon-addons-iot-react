@@ -67,6 +67,7 @@ const defaultProps = {
   isAdminView: false,
   sideNavProps: null,
   surveyLink: null,
+  onRequestLogout: async () => {},
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -91,6 +92,8 @@ const propTypes = {
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyLink is present, show a ToastNotification */
   surveyLink: PropTypes.string,
+  /** If defined, run this function during logout */
+  onRequestLogout: PropTypes.func,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -106,6 +109,7 @@ const SuiteHeader = ({
   applications,
   sideNavProps,
   surveyLink,
+  onRequestLogout,
   i18n,
   ...otherHeaderProps
 }) => {
@@ -120,7 +124,11 @@ const SuiteHeader = ({
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
           kind="info"
           title={mergedI18N.surveyTitle(appName || suiteName)}
-          subtitle={<Link href={surveyLink}>{mergedI18N.surveyText}</Link>}
+          subtitle={
+            <Link target="_blank" href={surveyLink}>
+              {mergedI18N.surveyText}
+            </Link>
+          }
           lowContrast
           caption=""
           onCloseButtonClick={() => setShowToast(false)}
@@ -131,7 +139,8 @@ const SuiteHeader = ({
         displayName={userDisplayName}
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={() => {
+        onLogout={async () => {
+          await onRequestLogout();
           window.location.href = routes.logout;
         }}
         i18n={{
