@@ -38,6 +38,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
+      pagination: { totalItems },
     },
     view: initialState,
     actions: callbackActions,
@@ -59,6 +60,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   } = state;
 
+  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
+
   // Need to initially sort and filter the tables data, but preserve the selectedId
   useDeepCompareEffect(
     () => {
@@ -67,7 +70,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           data: initialData,
           isLoading,
           view: initialState,
-          totalItems: other?.view?.pagination?.totalItems || initialData.length,
+          totalItems: pagination.totalItems || initialData.length,
           hasUserViewManagement,
         })
       );
@@ -78,7 +81,6 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
 
-  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
   const { onChangePage } = pagination || {};
   const {
     onApplyFilter,
@@ -239,7 +241,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   };
 
-  const totalItems = state.view.pagination?.totalItems || filteredData?.length || 0;
+  const filteredCount = filteredData?.length || 0;
+  const currentlyLoadedDataCount = state.data?.length || 0;
+
+  const filteredTotalItems =
+    filteredCount && filteredCount !== currentlyLoadedDataCount
+      ? filteredCount
+      : totalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table
@@ -261,8 +269,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         },
         pagination: {
           ...view.pagination,
-          totalItems:
-            (state.data?.length || 0) === filteredData.length ? totalItems : filteredData.length,
+          totalItems: filteredTotalItems,
         },
       }}
       actions={actions}

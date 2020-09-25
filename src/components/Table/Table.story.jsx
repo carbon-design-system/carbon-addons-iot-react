@@ -580,11 +580,11 @@ storiesOf('Watson IoT/Table', module)
           {...initialState}
           actions={actions}
           lightweight={boolean('lightweight', false)}
-          // options={{
-          //   hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-          //   hasRowExpansion: false,
-          //   wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-          // }}
+          options={{
+            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowExpansion: false,
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+          }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
       </FullWidthWrapper>
@@ -3473,7 +3473,8 @@ storiesOf('Watson IoT/Table', module)
     },
     {
       info: {
-        text: 'TODO',
+        text:
+          'This is an example of the <StatefulTable> component where you can load in more data after it is rendered. Total Items in this story will always be double the amount of data that has been loaded in.',
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
