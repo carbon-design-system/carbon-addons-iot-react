@@ -9709,6 +9709,19 @@ Map {
         ],
         "type": "shape",
       },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -16149,7 +16162,17 @@ Map {
                       "type": "elementType",
                     },
                     "props": Object {
-                      "type": "object",
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "object",
+                          },
+                          Object {
+                            "type": "func",
+                          },
+                        ],
+                      ],
+                      "type": "oneOfType",
                     },
                   },
                 ],

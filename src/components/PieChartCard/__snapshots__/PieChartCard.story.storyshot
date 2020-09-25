@@ -238,6 +238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="2V2N 9KYPM"
+                            data-floating-menu-container={true}
                             id="column-2V2N 9KYPM"
                             scope="col"
                             style={
@@ -261,6 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="L22I P66EP L22I P66EP"
+                            data-floating-menu-container={true}
                             id="column-L22I P66EP L22I P66EP"
                             scope="col"
                             style={
@@ -284,6 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="JQAI 2M4L1"
+                            data-floating-menu-container={true}
                             id="column-JQAI 2M4L1"
                             scope="col"
                             style={
@@ -307,6 +310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="J9DZ F37AP"
+                            data-floating-menu-container={true}
                             id="column-J9DZ F37AP"
                             scope="col"
                             style={
@@ -330,6 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="YEL48 Q6XK YEL48"
+                            data-floating-menu-container={true}
                             id="column-YEL48 Q6XK YEL48"
                             scope="col"
                             style={
@@ -353,6 +358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
                             align="start"
                             className="table-header-label-start iot--table-head--table-header"
                             data-column="Misc"
+                            data-floating-menu-container={true}
                             id="column-Misc"
                             scope="col"
                             style={
