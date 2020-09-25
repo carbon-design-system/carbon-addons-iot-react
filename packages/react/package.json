@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/carbon-design-system/carbon-addons-iot-react.git"
   },
-  "license": "Apache-2",
+  "license": "Apache-2.0",
   "files": [
     "lib/**/*",
     "es/**/*",
