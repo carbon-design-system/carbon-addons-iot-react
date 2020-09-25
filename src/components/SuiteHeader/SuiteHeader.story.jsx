@@ -8,6 +8,7 @@ import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+// import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -92,6 +93,38 @@ const sideNavLinks = [
   },
 ];
 
+/* Sample of SuiteHeader usage with data hook
+const HeaderWithHook = () => {
+  const [data, isLoading, error, refreshData] = useSuiteHeaderData({
+    // baseApiUrl: 'http://localhost:3001/internal',
+    domain: 'mydomain.com',
+    isTest: true,
+    surveyConfig: {
+      id: 'suite',
+      delayIntervalDays: 30,
+      frequencyDays: 90,
+    },
+    lang: 'en',
+  });
+  const surveyLink = data.showSurvey ? 'https://www.ibm.com' : '';
+  return (
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName={data.userDisplayName}
+      username={data.username}
+      routes={data.routes}
+      applications={data.applications}
+      sideNavProps={{
+        links: sideNavLinks,
+      }}
+      i18n={data.i18n}
+      surveyLink={surveyLink}
+    />
+  );
+};
+*/
+
 storiesOf('Watson IoT/SuiteHeader', module)
   .add('default', () => {
     const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -166,4 +199,44 @@ storiesOf('Watson IoT/SuiteHeader', module)
         links: sideNavLinks,
       }}
     />
-  ));
+  ))
+  .add('Header with survey notification', () => {
+    const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+    return (
+      <SuiteHeader
+        suiteName={text('suiteName', 'Application Suite')}
+        appName={text('appName', 'Application Name')}
+        userDisplayName={text('userDisplayName', 'Admin User')}
+        username={text('username', 'adminuser')}
+        isAdminView={boolean('isAdminView', false)}
+        routes={object('routes', {
+          profile: 'https://www.ibm.com',
+          navigator: 'https://www.ibm.com',
+          admin: 'https://www.ibm.com',
+          logout: 'https://www.ibm.com',
+          whatsNew: 'https://www.ibm.com',
+          gettingStarted: 'https://www.ibm.com',
+          documentation: 'https://www.ibm.com',
+          requestEnhancement: 'https://www.ibm.com',
+          support: 'https://www.ibm.com',
+          about: 'https://www.ibm.com',
+        })}
+        i18n={SuiteHeaderI18N[language]}
+        applications={object('applications', [
+          {
+            id: 'monitor',
+            name: 'Monitor',
+            href: 'https://www.ibm.com',
+          },
+          {
+            id: 'health',
+            name: 'Health',
+            href: 'https://www.ibm.com',
+            isExternal: true,
+          },
+        ])}
+        surveyLink="https://www.ibm.com"
+      />
+    );
+  });
+// .add('Header with data hook', () => <HeaderWithHook />);

@@ -4,15 +4,101 @@
   position: relative;
 }
 
+.#{$iot-prefix}--list-item-editable {
+  &--drag-container {
+    position: relative;
+    overflow: hidden;
+    align-items: stretch;
+    justify-content: space-between;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &--drop-targets {
+    width: 100%;
+    height: rem(40px);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: stretch;
+  }
+
+  &--drop-target-above {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+
+    &__over {
+      border-top: solid 2px $focus;
+    }
+  }
+
+  &--drop-target-nested {
+    position: absolute;
+    width: 100%;
+
+    top: 0;
+    bottom: 0;
+
+    &__over {
+      border: solid 2px $focus;
+    }
+  }
+
+  &--drop-target-below {
+    position: absolute;
+
+    width: 100%;
+    bottom: 0;
+
+    &__over {
+      border-bottom: solid 2px $focus;
+    }
+  }
+
+  &--drag-preview {
+    position: absolute;
+    background: $inverse-02;
+    color: $text-04;
+    padding: $spacing-02 $spacing-04;
+    border-radius: 0.125rem;
+    opacity: 1;
+
+    z-index: -100;
+  }
+
+  &-dragging {
+    background: $hover-ui;
+    cursor: grabbing;
+  }
+
+  &:hover {
+    background: $hover-ui;
+    cursor: grab;
+  }
+}
+
 .#{$iot-prefix}--list-item {
   background: $ui-01;
   border-bottom: 1px solid $ui-03;
   display: flex;
   height: rem(40px);
   color: $text-02;
-  padding: $spacing-03 $spacing-03 $spacing-03 $spacing-05;
+  padding: $spacing-03;
   align-items: center;
   overflow-x: hidden;
+
+  &--handle {
+    flex-shrink: 0;
+    fill: $inverse-02;
+    margin-right: $spacing-03;
+  }
 
   &__large {
     height: rem(96px);
@@ -44,7 +130,6 @@
     cursor: pointer;
     padding: $spacing-01;
     margin-right: $spacing-04;
-    transform: rotate(180deg);
   }
 
   &--content {
@@ -96,6 +181,9 @@
           height: rem(36px);
           overflow: hidden;
         }
+      }
+      &__disabled {
+        opacity: 0.4;
       }
     }
     &--row-actions {
