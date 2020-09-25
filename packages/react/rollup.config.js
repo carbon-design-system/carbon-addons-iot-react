@@ -45,11 +45,11 @@ const plugins = [
       'core-js': 'CoreJs',
     },
 
-    include: '/node_modules/',
+    include: /node_modules/,
   }),
 
   babel({
-    exclude: 'node_modules/**',
+    exclude: /node_modules/,
     runtimeHelpers: true,
   }),
   replace({
@@ -172,10 +172,10 @@ export default [
           ],
         },
 
-        include: 'node_modules/**',
+        include: /node_modules/,
       }),
       babel({
-        exclude: 'node_modules/**',
+        exclude: /node_modules/,
         runtimeHelpers: true,
       }),
       replace({
