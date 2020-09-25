@@ -2528,16 +2528,16 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@carbon/charts-react@^0.36.2":
-  version "0.36.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.36.2.tgz#e41c4bb3c979ab8d584ab7087fa97ac00724cc9b"
-  integrity sha512-syTg6+yS5VW97uXqNnQSHNhZSO+6A7uD6tnCzEC7Ozqix0itnDEw5omlxSU7r1VsZ81ZAYMyrShwiHdepV9arw==
+  version "0.36.4"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.36.4.tgz#acc93d1743937154681c380cfbb781af8d662695"
+  integrity sha512-ECsqhYPgkizjMTEYzgRkxkL+AUcF34TcQ33Jvm8HUCHqgoWUF4fEisUzb3+eZvn3gSBD190EFrIsYWEPwjGRvw==
   dependencies:
-    "@carbon/charts" "^0.36.2"
+    "@carbon/charts" "^0.36.4"
 
-"@carbon/charts@^0.36.2":
-  version "0.36.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.36.2.tgz#c0dcd45a27ce736f1a5fb01add4380097cd328be"
-  integrity sha512-Mgu4neBzAarRQ/IQprdHtFLLMm8klwB3vAr330/Wk4tFK9eV3PBVkYbqlWFDc4MsCDB3m+NZ/uUNpqQP3o8AWA==
+"@carbon/charts@^0.36.2", "@carbon/charts@^0.36.4":
+  version "0.36.4"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.36.4.tgz#939c255d0a6f6c0fbd34face53f7a335bc378b9c"
+  integrity sha512-wuloEMmblf+5mVeaAfMBaEMlUztJl430AAhaANlUJRqvMYuuH3SrSv6exWYL62/3tPx7+bd8/qt5NpJtnYBcuA==
   dependencies:
     "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
