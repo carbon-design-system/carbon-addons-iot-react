@@ -27,8 +27,10 @@ const calcRoutes = (domain, user, workspaces, applications) => {
   };
   const appOrdering = ['monitor', 'health', 'predict', 'visualinspection'];
   const workspaceApplications = user.workspaces[workspaceId].applications || {};
+  const applicationSyncStates = user.applications || {};
   const appData = Object.keys(workspaceApplications)
     .filter(appId => workspaceApplications[appId].role !== 'NO_ACCESS')
+    .filter(appId => applicationSyncStates[appId]?.sync?.state === 'SUCCESS')
     .filter(appId => (applications.find(i => i.id === appId) || {}).category === 'application')
     .sort((a, b) => appOrdering.findIndex(i => i === a) - appOrdering.findIndex(i => i === b))
     .map(appId => ({
