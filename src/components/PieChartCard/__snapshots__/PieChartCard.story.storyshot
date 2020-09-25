@@ -31,7 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           role="presentation"
           style={
             Object {
-              "--card-default-height": "304px",
+              "--card-default-height": "624px",
               "height": "calc(100% - 50px)",
               "width": "calc(100% - 50px)",
             }
@@ -85,7 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
             className="iot--card--content iot--card--content--expanded"
             style={
               Object {
-                "--card-content-height": "256px",
+                "--card-content-height": "576px",
               }
             }
           >
@@ -560,7 +560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -615,7 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -683,7 +683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -738,7 +738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -806,7 +806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -861,7 +861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -929,7 +929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -984,7 +984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -1052,7 +1052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -1107,7 +1107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -1178,7 +1178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -1233,7 +1233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PieCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >

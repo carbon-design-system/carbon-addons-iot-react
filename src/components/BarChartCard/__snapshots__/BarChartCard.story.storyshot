@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -373,7 +373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -2726,7 +2726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -2826,7 +2826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >

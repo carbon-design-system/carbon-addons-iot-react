@@ -360,14 +360,15 @@ export const chartValueFormatter = (value, size, unit, locale) => {
  * @param {string} size card size
  */
 export const increaseSmallCardSize = (size, cardName) => {
-  const warnMsg = `${cardName} does not support card size ${size}`;
-  let returnSize;
-  if (size === CARD_SIZES.SMALL) {
-    console.warn(warnMsg); // eslint-disable-line no-console
-    returnSize = CARD_SIZES.MEDIUM;
-  } else if (size === CARD_SIZES.SMALLWIDE) {
-    console.warn(warnMsg); // eslint-disable-line no-console
-    returnSize = CARD_SIZES.MEDIUMWIDE;
+  if (__DEV__) {
+    warning(
+      size !== CARD_SIZES.SMALL && size !== CARD_SIZES.SMALLWIDE,
+      `${cardName} does not support card size ${size}`
+    );
   }
-  return returnSize;
+  return size === CARD_SIZES.SMALL
+    ? CARD_SIZES.MEDIUM
+    : size === CARD_SIZES.SMALLWIDE
+    ? CARD_SIZES.MEDIUMWIDE
+    : size;
 };
