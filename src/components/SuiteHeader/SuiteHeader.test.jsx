@@ -72,11 +72,11 @@ describe('SuiteHeader', () => {
     userEvent.click(screen.getByRole('button', { name: 'Close' }));
     expect(screen.getByRole('presentation')).not.toHaveClass('is-visible');
   });
-  it('clicks logout link', () => {
+  it('clicks logout link', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeader {...commonProps} />);
-    userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
   it('admin link from admin view takes you to navigator route', () => {
