@@ -20,9 +20,57 @@ import {
   List,
   TextInput,
   Dropdown,
+  FileUploaderDropContainer,
+  FileUploaderItem,
+  FormLabel,
+  ToggleSmall,
 } from '../../../index';
 
 const { iotPrefix } = settings;
+
+const ImageFormItem = ({ value, onChange }) => {
+  const [imageFileName, setImageFileName] = useState(value);
+  const [error, setError] = useState();
+
+  const uploaderContent = imageFileName ? (
+    <FileUploaderItem
+      name={imageFileName}
+      invalid={error}
+      errorSubject={error}
+      status="edit"
+      onDelete={() => {
+        setImageFileName(null);
+        onChange(null);
+      }}
+    />
+  ) : (
+    <FileUploaderDropContainer
+      accept={['.jpg', '.gif', '.png']}
+      id="fileUploader"
+      labelText="Drag a file here or click to upload"
+      name="fileUploader"
+      onAddFiles={(evt, { addedFiles }) => {
+        const addedFile = addedFiles[0];
+        if (addedFile.size > 5000000) {
+          setError(`Image too large (${addedFile.size})`);
+          setImageFileName(addedFile.name);
+        } else {
+          setImageFileName(addedFile.name);
+          onChange(addedFile);
+        }
+      }}
+    />
+  );
+  return (
+    <div style={{ padding: '1rem' }}>
+      <h6 style={{ paddingBottom: '0.5rem' }}>Upload image</h6>
+      <div style={{ paddingBottom: '0.5rem' }}>
+        <small>Max file size is 5mb. Supported file types are .jpg, .png, and .gif</small>
+      </div>
+      {uploaderContent}
+    </div>
+  );
+};
 
 const AttributesFormItem = ({ value, onChange }) => {
   const [showEditor, setShowEditor] = useState(false);
@@ -183,7 +231,7 @@ const propTypes = {
   }),
 };
 
-const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
+const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalError, setModalError] = useState();
@@ -232,7 +280,6 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
       CARD_SIZES.MEDIUMTHIN,
       CARD_SIZES.MEDIUM,
       CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
       CARD_SIZES.LARGE,
       CARD_SIZES.LARGEWIDE,
     ],
@@ -266,6 +313,71 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
   };
 
   const renderValueCardAdvancedItems = () => {
+    return null;
+  };
+
+  const renderImageCardBasicItems = () => {
+    return (
+      <>
+        <ImageFormItem
+          value={value.content.alt}
+          onChange={newFile => {
+            if (newFile) {
+              onChange({
+                ...value,
+                content: {
+                  ...(value.content ?? {}),
+                  alt: newFile.name,
+                  src: URL.createObjectURL(newFile),
+                },
+              });
+            } else {
+              onChange({
+                ...value,
+                content: {
+                  ...(value.content ?? {}),
+                  alt: undefined,
+                  src: undefined,
+                },
+              });
+            }
+          }}
+        />
+      </>
+    );
+  };
+
+  const renderImageCardAdvancedItems = () => {
+    return (
+      <>
+        <div className={`${baseClassName}--input-inline`}>
+          <div className={`${baseClassName}--input-inline--label`}>Show minimap</div>
+          <ToggleSmall
+            id="minimap"
+            aria-label="Show/hide minimap"
+            labelA=""
+            labelB=""
+            toggled={!value.content.hideMinimap}
+            onToggle={val => {
+              onChange({
+                ...value,
+                content: {
+                  ...(value.content ?? {}),
+                  hideMinimap: !val,
+                },
+              });
+            }}
+          />
+        </div>
+      </>
+    );
+  };
+
+  const renderTableCardBasicItems = () => {
+    return null;
+  };
+
+  const renderTableCardAdvancedItems = () => {
     return null;
   };
 
@@ -574,6 +686,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
               {value.type === CARD_TYPES.VALUE ? renderValueCardBasicItems() : null}
               {value.type === CARD_TYPES.BAR ? renderBarChartCardBasicItems() : null}
               {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardBasicItems() : null}
+              {value.type === CARD_TYPES.IMAGE ? renderImageCardBasicItems() : null}
+              {value.type === CARD_TYPES.TABLE ? renderTableCardBasicItems() : null}
             </div>
           </Tab>
           <Tab label="Customize">
@@ -581,6 +695,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
               {value.type === CARD_TYPES.VALUE ? renderValueCardAdvancedItems() : null}
               {value.type === CARD_TYPES.BAR ? renderBarChartCardAdvancedItems() : null}
               {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardAdvancedItems() : null}
+              {value.type === CARD_TYPES.IMAGE ? renderImageCardAdvancedItems() : null}
+              {value.type === CARD_TYPES.TABLE ? renderTableCardAdvancedItems() : null}
             </div>
           </Tab>
         </Tabs>

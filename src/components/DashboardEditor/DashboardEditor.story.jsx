@@ -100,6 +100,8 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
+        onAddImage={action('onAddImage')}
+        onSubmit={action('onSubmit')}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
@@ -144,6 +146,8 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         }}
       />
       <DashboardEditor
+        onAddImage={action('onAddImage')}
+        onSubmit={action('onSubmit')}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
@@ -155,6 +159,8 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .add('custom card preview renderer', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
+        onAddImage={action('onAddImage')}
+        onSubmit={action('onSubmit')}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,

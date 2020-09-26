@@ -33,6 +33,8 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
+  /** Callback function when an image file is uploaded */
+  onAddImage: PropTypes.func.isRequired,
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -40,7 +42,15 @@ const propTypes = {
   }),
 };
 
-const CardEditor = ({ value, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
+const CardEditor = ({
+  value,
+  onShowGallery,
+  onChange,
+  onAddCard,
+  onAddImage,
+  supportedTypes,
+  i18n,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-editor`;
@@ -73,7 +83,7 @@ const CardEditor = ({ value, onShowGallery, onChange, onAddCard, supportedTypes,
             }}
           />
         ) : (
-          <CardEditForm value={value} onChange={onChange} />
+          <CardEditForm value={value} onChange={onChange} onAddImage={onAddImage} />
         )}
       </div>
     </div>

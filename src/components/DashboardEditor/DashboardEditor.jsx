@@ -18,10 +18,14 @@ import {
   ValueCard,
   TimeSeriesCard,
   BarChartCard,
+  ImageCard,
+  TableCard,
   CardEditor,
   Breadcrumb,
   BreadcrumbItem,
 } from '../../index';
+
+import sampleImage from './landscape.jpg';
 
 const { iotPrefix, prefix } = settings;
 
@@ -46,7 +50,14 @@ const propTypes = {
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
 };
 
-const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, headerBreadcrumbs }) => {
+const DashboardEditor = ({
+  initialValue,
+  renderHeader,
+  renderCardPreview,
+  headerBreadcrumbs,
+  onAddImage,
+  onSubmit,
+}) => {
   const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
@@ -58,11 +69,12 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
       [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
       [CARD_TYPES.BAR]: CARD_SIZES.MEDIUMWIDE,
       [CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
+      [CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+      [CARD_TYPES.TABLE]: CARD_SIZES.MEDIUMWIDE,
     };
     const baseCardProps = {
       id: uuid.v4(),
-      title: `New ${type} card`,
-      description: `Information about the ${type} card`,
+      title: 'Untitled',
       size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
       type,
     };
@@ -132,6 +144,86 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
                 },
               ],
               categoryDataSourceId: 'city',
+            },
+          }
+        : type === CARD_TYPES.IMAGE
+        ? {
+            ...baseCardProps,
+            content: {
+              alt: 'landscape.jpg',
+              src: sampleImage,
+              hideMinimap: true,
+              hideHotspots: false,
+              hideZoomControls: false,
+            },
+            values: {
+              hotspots: [
+                {
+                  x: 35,
+                  y: 65,
+                  icon: 'arrowDown',
+                  content: <span style={{ padding: '10px' }}>Elevators</span>,
+                },
+                {
+                  x: 45,
+                  y: 25,
+                  color: '#0f0',
+                  content: <span style={{ padding: '10px' }}>Stairs</span>,
+                },
+                {
+                  x: 45,
+                  y: 50,
+                  color: '#00f',
+                  content: <span style={{ padding: '10px' }}>Vent Fan</span>,
+                },
+                {
+                  x: 45,
+                  y: 75,
+                  icon: 'arrowUp',
+                  content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
+                },
+              ],
+            },
+          }
+        : type === CARD_TYPES.TABLE
+        ? {
+            ...baseCardProps,
+            content: {
+              columns: [
+                {
+                  dataSourceId: 'alert',
+                  label: 'Alert',
+                  priority: 1,
+                },
+                {
+                  dataSourceId: 'count',
+                  label: 'Count',
+                  priority: 3,
+                  filter: { placeholderText: 'enter a string' },
+                },
+                {
+                  dataSourceId: 'hour',
+                  label: 'Hour',
+                  priority: 2,
+                  type: 'TIMESTAMP',
+                },
+                {
+                  dataSourceId: 'pressure',
+                  label: 'Pressure',
+                  priority: 2,
+                },
+              ],
+              threshold: [
+                {
+                  dataSourceId: 'pressure',
+                  comparison: '>=',
+                  value: 1,
+                  severity: 1,
+                  label: 'Pressure',
+                  showSeverityLabel: true,
+                  severityLabel: 'Critical',
+                },
+              ],
             },
           }
         : baseCardProps;
@@ -214,6 +306,81 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
     />
   );
 
+  const renderImageCard = (cardJson, commonProps) => (
+    <ImageCard
+      id={cardJson.id}
+      title={cardJson.title}
+      tooltip={cardJson.description}
+      size={cardJson.size}
+      content={cardJson?.content}
+      values={cardJson?.values}
+      isEditable={cardJson?.content?.src === undefined}
+      // TODO: fix inability to pass className to BarChartCard
+      {...commonProps}
+    />
+  );
+
+  const renderTableCard = (cardJson, commonProps) => (
+    <TableCard
+      id={cardJson.id}
+      title={cardJson.title}
+      tooltip={cardJson.description}
+      size={cardJson.size}
+      content={cardJson?.content}
+      isEditable
+      // TODO: fix inability to pass className to BarChartCard
+      {...commonProps}
+    />
+  );
+
+  /*
+  {
+    title: 'Floor Map',
+    id: 'floor map picture',
+    size: CARD_SIZES.MEDIUM,
+    type: CARD_TYPES.IMAGE,
+    onSetupCard() {
+      return { ...cardValues[3] };
+    },
+    availableActions: {
+      range: true,
+    },
+    content: {
+      alt: 'Floor Map',
+      image: 'firstfloor',
+      src: imageFile,
+    },
+    values: {
+      hotspots: [
+        {
+          x: 35,
+          y: 65,
+          icon: 'arrowDown',
+          content: <span style={{ padding: '10px' }}>Elevators</span>,
+        },
+        {
+          x: 45,
+          y: 25,
+          color: '#0f0',
+          content: <span style={{ padding: '10px' }}>Stairs</span>,
+        },
+        {
+          x: 45,
+          y: 50,
+          color: '#00f',
+          content: <span style={{ padding: '10px' }}>Vent Fan</span>,
+        },
+        {
+          x: 45,
+          y: 75,
+          icon: 'arrowUp',
+          content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
+        },
+      ],
+    },
+  },
+  */
+
   return (
     <div className={baseClassName}>
       <div className={`${baseClassName}--content`}>
@@ -245,7 +412,9 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
                     <Button style={{ marginRight: '1rem' }} kind="tertiary" size="small">
                       Cancel
                     </Button>
-                    <Button size="small">Save and close</Button>
+                    <Button size="small" onClick={() => onSubmit(dashboardData)}>
+                      Save and close
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -288,6 +457,10 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
                 ? renderTimeSeriesCard(i, commonProps)
                 : i.type === CARD_TYPES.BAR
                 ? renderBarChartCard(i, commonProps)
+                : i.type === CARD_TYPES.IMAGE
+                ? renderImageCard(i, commonProps)
+                : i.type === CARD_TYPES.TABLE
+                ? renderTableCard(i, commonProps)
                 : renderDefaultCard(i, commonProps);
             })}
           </DashboardGrid>
@@ -306,6 +479,7 @@ const DashboardEditor = ({ initialValue, renderHeader, renderCardPreview, header
             })
           }
           onAddCard={addCard}
+          onAddImage={onAddImage}
         />
       </div>
     </div>
