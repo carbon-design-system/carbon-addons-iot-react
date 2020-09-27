@@ -1,0 +1,10 @@
+.#{$iot-prefix}--image-form-item {
+  padding: $spacing-05;
+  h6 {
+    padding-bottom: $spacing-03;
+  }
+  &--description {
+    @include type-style('helper-text-01');
+    padding-bottom: $spacing-04;
+  }
+}

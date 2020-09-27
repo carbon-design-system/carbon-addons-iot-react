@@ -156,34 +156,6 @@ const DashboardEditor = ({
               hideHotspots: false,
               hideZoomControls: false,
             },
-            values: {
-              hotspots: [
-                {
-                  x: 35,
-                  y: 65,
-                  icon: 'arrowDown',
-                  content: <span style={{ padding: '10px' }}>Elevators</span>,
-                },
-                {
-                  x: 45,
-                  y: 25,
-                  color: '#0f0',
-                  content: <span style={{ padding: '10px' }}>Stairs</span>,
-                },
-                {
-                  x: 45,
-                  y: 50,
-                  color: '#00f',
-                  content: <span style={{ padding: '10px' }}>Vent Fan</span>,
-                },
-                {
-                  x: 45,
-                  y: 75,
-                  icon: 'arrowUp',
-                  content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
-                },
-              ],
-            },
           }
         : type === CARD_TYPES.TABLE
         ? {
@@ -199,7 +171,6 @@ const DashboardEditor = ({
                   dataSourceId: 'count',
                   label: 'Count',
                   priority: 3,
-                  filter: { placeholderText: 'enter a string' },
                 },
                 {
                   dataSourceId: 'hour',

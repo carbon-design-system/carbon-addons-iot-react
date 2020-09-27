@@ -11,6 +11,7 @@ import {
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
+import ImageFormItem from './ImageFormItem/ImageFormItem';
 import {
   Tabs,
   ComposedModal,
@@ -20,57 +21,11 @@ import {
   List,
   TextInput,
   Dropdown,
-  FileUploaderDropContainer,
-  FileUploaderItem,
   FormLabel,
   ToggleSmall,
 } from '../../../index';
 
 const { iotPrefix } = settings;
-
-const ImageFormItem = ({ value, onChange }) => {
-  const [imageFileName, setImageFileName] = useState(value);
-  const [error, setError] = useState();
-
-  const uploaderContent = imageFileName ? (
-    <FileUploaderItem
-      name={imageFileName}
-      invalid={error}
-      errorSubject={error}
-      status="edit"
-      onDelete={() => {
-        setImageFileName(null);
-        onChange(null);
-      }}
-    />
-  ) : (
-    <FileUploaderDropContainer
-      accept={['.jpg', '.gif', '.png']}
-      id="fileUploader"
-      labelText="Drag a file here or click to upload"
-      name="fileUploader"
-      onAddFiles={(evt, { addedFiles }) => {
-        const addedFile = addedFiles[0];
-        if (addedFile.size > 5000000) {
-          setError(`Image too large (${addedFile.size})`);
-          setImageFileName(addedFile.name);
-        } else {
-          setImageFileName(addedFile.name);
-          onChange(addedFile);
-        }
-      }}
-    />
-  );
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h6 style={{ paddingBottom: '0.5rem' }}>Upload image</h6>
-      <div style={{ paddingBottom: '0.5rem' }}>
-        <small>Max file size is 5mb. Supported file types are .jpg, .png, and .gif</small>
-      </div>
-      {uploaderContent}
-    </div>
-  );
-};
 
 const AttributesFormItem = ({ value, onChange }) => {
   const [showEditor, setShowEditor] = useState(false);
@@ -321,27 +276,25 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
       <>
         <ImageFormItem
           value={value.content.alt}
-          onChange={newFile => {
-            if (newFile) {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  alt: newFile.name,
-                  src: URL.createObjectURL(newFile),
-                },
-              });
-            } else {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  alt: undefined,
-                  src: undefined,
-                },
-              });
-            }
-          }}
+          supportedTypes={['.jpg', '.gif', '.png']}
+          maxSizeBytes={5000000}
+          onChange={newFile =>
+            onChange({
+              ...value,
+              content: {
+                ...(value.content ?? {}),
+                ...(newFile
+                  ? {
+                      alt: newFile.name,
+                      src: URL.createObjectURL(newFile),
+                    }
+                  : {
+                      alt: undefined,
+                      src: undefined,
+                    }),
+              },
+            })
+          }
         />
       </>
     );
@@ -351,19 +304,57 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
     return (
       <>
         <div className={`${baseClassName}--input-inline`}>
-          <div className={`${baseClassName}--input-inline--label`}>Show minimap</div>
+          <div className={`${baseClassName}--input-inline--label`}>Hide minimap</div>
           <ToggleSmall
             id="minimap"
-            aria-label="Show/hide minimap"
+            aria-label="Toggle minimap"
             labelA=""
             labelB=""
-            toggled={!value.content.hideMinimap}
+            toggled={value.content.hideMinimap}
             onToggle={val => {
               onChange({
                 ...value,
                 content: {
                   ...(value.content ?? {}),
-                  hideMinimap: !val,
+                  hideMinimap: val,
+                },
+              });
+            }}
+          />
+        </div>
+        <div className={`${baseClassName}--input-inline`}>
+          <div className={`${baseClassName}--input-inline--label`}>Hide hotspots</div>
+          <ToggleSmall
+            id="hotspots"
+            aria-label="Toggle hotspots"
+            labelA=""
+            labelB=""
+            toggled={value.content.hideHotspots}
+            onToggle={val => {
+              onChange({
+                ...value,
+                content: {
+                  ...(value.content ?? {}),
+                  hideHotspots: val,
+                },
+              });
+            }}
+          />
+        </div>
+        <div className={`${baseClassName}--input-inline`}>
+          <div className={`${baseClassName}--input-inline--label`}>Hide zoom controls</div>
+          <ToggleSmall
+            id="zoomControls"
+            aria-label="Toggle zoom controls"
+            labelA=""
+            labelB=""
+            toggled={value.content.hideZoomControls}
+            onToggle={val => {
+              onChange({
+                ...value,
+                content: {
+                  ...(value.content ?? {}),
+                  hideZoomControls: val,
                 },
               });
             }}

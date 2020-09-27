@@ -9,6 +9,10 @@
   &--header {
     flex: 0;
     padding: $layout-01 0 $layout-02;
+    .#{$prefix}--grid {
+      /* allow the header to stretch the full page width */
+      max-width: none;
+    }
     .header-top {
       height: $layout-02;
       display: flex;
