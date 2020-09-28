@@ -7,6 +7,12 @@
   height: 100%;
 }
 
+// Temporary fix for issue
+// https://github.com/carbon-design-system/carbon-charts/issues/822
+.#{$iot-prefix}--pie-chart-container .#{$prefix}--chart-holder {
+  padding: 0 $spacing-05;
+}
+
 .#{$iot-prefix}--pie-chart-container__expanded {
   height: calc(100% - 9rem); // makes room for the table below which is 3 rows tall
   .#{$prefix}--chart-holder {

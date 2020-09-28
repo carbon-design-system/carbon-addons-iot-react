@@ -50,7 +50,7 @@ const chartDataExample = [
 
 storiesOf('Watson IoT/PieChartCard', module)
   .add('basic', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUM);
     const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'category');
     const chartData = object('chartData', chartDataExample);
 
