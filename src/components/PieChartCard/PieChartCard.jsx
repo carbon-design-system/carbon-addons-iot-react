@@ -105,7 +105,7 @@ const PieChartCard = ({
   const chartProps = {
     // Changes to some options does not update the chart so we modify the key for these
     // specific props, please see https://github.com/carbon-design-system/carbon-charts/issues/817
-    key: `pie-chart-${groupDataSourceId}-${legendPosition}-${isEditable}`,
+    key: `pie-chart-${groupDataSourceId}-${legendPosition}-${isEditable}-${sizeProp}`,
     data: values,
     options: {
       accessibility: true,

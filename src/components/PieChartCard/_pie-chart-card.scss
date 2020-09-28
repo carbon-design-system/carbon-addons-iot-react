@@ -7,8 +7,8 @@
   height: 100%;
 }
 
-// Temporary fix for issue
-// https://github.com/carbon-design-system/carbon-charts/issues/822
+// Temporary fix. See issue
+// https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1637
 .#{$iot-prefix}--pie-chart-container .#{$prefix}--chart-holder {
   padding: 0 $spacing-05;
 }
