@@ -3460,7 +3460,7 @@ storiesOf('Watson IoT/Table', module)
                 table: { selectedIds: array('selectedIds', []) },
                 pagination: {
                   hasPagination: true,
-                  totalItems: rowCount * 2,
+                  totalItems: number('Total Items', 300),
                   maxPages: 1000,
                 },
               }}
@@ -3474,7 +3474,7 @@ storiesOf('Watson IoT/Table', module)
     {
       info: {
         text:
-          'This is an example of the <StatefulTable> component where you can load in more data after it is rendered. Total Items in this story will always be double the amount of data that has been loaded in.',
+          'This is an example of the <StatefulTable> component where you can load in more data after it is rendered. This story shows off the flexibility of the Stateful table, where you may update the rows or the totalItems independently.',
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
