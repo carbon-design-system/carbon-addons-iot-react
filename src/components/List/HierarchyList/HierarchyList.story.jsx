@@ -277,4 +277,77 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       />
     </div>
+  ))
+  .add('with mixed hierarchies', () => (
+    <div style={{ width: 400 }}>
+      <HierarchyList
+        title={text('Title', 'Items with mixed nested hierarchies')}
+        items={[
+          {
+            id: 'Tasks',
+            isCategory: true,
+            content: {
+              value: 'Tasks',
+            },
+            children: [
+              {
+                id: 'Task 1',
+                content: {
+                  value: 'Task 1',
+                },
+                isSelectable: true,
+              },
+            ],
+          },
+          {
+            id: 'My Reports',
+            content: {
+              value: 'My Reports',
+            },
+            isSelectable: true,
+          },
+          {
+            id: 'Requests',
+            isCategory: true,
+            content: {
+              value: 'Requests',
+            },
+            children: [
+              {
+                id: 'Request 1',
+                content: {
+                  value: 'Request 1',
+                },
+                isSelectable: true,
+              },
+              {
+                id: 'Request 2',
+                isCategory: true,
+                content: {
+                  value: 'Request 2',
+                },
+                children: [
+                  {
+                    id: 'Request 2 details',
+                    content: {
+                      value: 'Request 2 details',
+                    },
+                  },
+                ],
+              },
+              {
+                id: 'Request 3',
+                content: {
+                  value: 'Request 3',
+                },
+                isSelectable: true,
+              },
+            ],
+          },
+        ]}
+        hasSearch
+        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
   ));

@@ -20,7 +20,24 @@
 * @bryancboyd @scottdickerson @davidicus @tay1orjones @leetosc @cgirani @stuckless @tomklapiscak @JoelArmendariz @jessieyan @blechner @sstone2423
 
 #####
+# Core admin team should be notified of changes to build/test/deploy
+
+# Core dependencies
+/package.json   @tay1orjones @davidicus @bryancboyd @scottdickerson
+/yarn.lock      @tay1orjones @davidicus @bryancboyd @scottdickerson
+
+# Configuration files
+**/*.config.js  @tay1orjones @davidicus @bryancboyd @scottdickerson
+**/config/      @tay1orjones @davidicus @bryancboyd @scottdickerson
+/.nvmrc         @tay1orjones @davidicus @bryancboyd @scottdickerson
+
+# Deploy configuration
+**/.storybook/  @tay1orjones @davidicus @bryancboyd @scottdickerson
+/.travis.yml    @tay1orjones @davidicus @bryancboyd @scottdickerson
+/netlify.toml   @tay1orjones @davidicus @bryancboyd @scottdickerson
+
+#####
 # Release team should be notified of Public API changes in the system
 
-**/publicAPI.test.js @tay1orjones @davidicus
+**/publicAPI.test.js      @tay1orjones @davidicus
 **/publicAPI.test.js.snap @tay1orjones @davidicus
