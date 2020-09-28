@@ -6350,7 +6350,7 @@ Map {
         "whatsNew": "What's new",
       },
       "isAdminView": false,
-      "onRequestLogout": [Function],
+      "onRouteChange": [Function],
       "sideNavProps": null,
       "surveyLink": null,
     },
@@ -6462,7 +6462,7 @@ Map {
       "isAdminView": Object {
         "type": "bool",
       },
-      "onRequestLogout": Object {
+      "onRouteChange": Object {
         "type": "func",
       },
       "routes": Object {

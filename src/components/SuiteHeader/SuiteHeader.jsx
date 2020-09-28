@@ -67,7 +67,7 @@ const defaultProps = {
   isAdminView: false,
   sideNavProps: null,
   surveyLink: null,
-  onRequestLogout: async () => {},
+  onRouteChange: async () => true,
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -92,8 +92,8 @@ const propTypes = {
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyLink is present, show a ToastNotification */
   surveyLink: PropTypes.string,
-  /** If defined, run this function during logout */
-  onRequestLogout: PropTypes.func,
+  /** Function called before any route change */
+  onRouteChange: PropTypes.func,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -109,7 +109,7 @@ const SuiteHeader = ({
   applications,
   sideNavProps,
   surveyLink,
-  onRequestLogout,
+  onRouteChange,
   i18n,
   ...otherHeaderProps
 }) => {
@@ -140,7 +140,7 @@ const SuiteHeader = ({
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
         onLogout={async () => {
-          await onRequestLogout();
+          await onRouteChange('logout');
           window.location.href = routes.logout;
         }}
         i18n={{
