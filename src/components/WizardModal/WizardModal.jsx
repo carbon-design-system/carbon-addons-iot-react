@@ -46,7 +46,7 @@ class WizardModal extends Component {
     /** callback when dialog is submitted */
     onSubmit: PropTypes.func.isRequired,
 
-     /** Callback when going to previous step  */
+    /** Callback when going to previous step  */
     onBack: PropTypes.func,
 
     /**
@@ -84,31 +84,30 @@ class WizardModal extends Component {
   };
 
   handlePrevious = () => {
-    const stepBack = this.state.step - 1;
-    this.changedBack(stepBack);
-    this.setState(() => ({ step: stepBack }));
+    const { onBack } = this.props;
+    this.setState(
+      state => ({ step: state.step - 1 }),
+      () => {
+        if (onBack) {
+          onBack(this.state.step);
+        }
+      }
+    );
   };
 
   handleClick = key => {
     // If you're trying to go higher then validate
+    const { step } = this.state;
+    const { onBack } = this.props;
 
-    if (this.changedBack(key) || this.validateCurrentStep()) {
-      this.setState({ step: key });
+    if (key < step || this.validateCurrentStep()) {
+      this.setState({ step: key }, () => {
+        if (onBack && key < step) {
+          onBack(key);
+        }
+      });
     }
   };
-
-  changedBack = (key) => {
-    // validate that we went back and call onBack with clicked key
-    const { onBack } = this.props;
-    const { step } = this.state;
-    if (key < step) {
-      if (onBack) {
-        onBack(key);
-      }
-      return true;
-    }
-    return false;
-  }
 
   validateCurrentStep = () => {
     const { steps } = this.props;
