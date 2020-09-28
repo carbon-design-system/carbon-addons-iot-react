@@ -33,6 +33,7 @@ describe('stateful table with real reducer', () => {
     );
     expect(statefulTable.find(TableSkeletonWithHeaders)).toHaveLength(1);
   });
+
   it('stateful table verify page change', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -51,6 +52,7 @@ describe('stateful table with real reducer', () => {
     statefulTable.find('button.bx--pagination__button--forward').simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
+
   it('should show singleRowEditButtons when choosing to edit a row', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -103,6 +105,7 @@ describe('stateful table with real reducer', () => {
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
+
   it('multiselect should filter properly with pre-selected filter', async () => {
     render(
       <StatefulTable
@@ -350,5 +353,25 @@ describe('stateful table with real reducer', () => {
         },
       },
     });
+  });
+
+  it('stateful table total items can be set independently', () => {
+    const totalItems = 500;
+    render(
+      <StatefulTable
+        {...merge(
+          {},
+          { ...pick(initialState, 'data', 'options', 'columns') },
+          {
+            view: {
+              pagination: { totalItems },
+            },
+          }
+        )}
+      />
+    );
+
+    expect(initialState.data.length).toEqual(100);
+    expect(screen.queryByText('1–10 of 500 items')).toBeTruthy();
   });
 });
