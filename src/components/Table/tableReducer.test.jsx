@@ -74,7 +74,17 @@ describe('table reducer', () => {
   });
   describe('pagination', () => {
     it('TABLE_PAGE_CHANGE ', () => {
-      const updatedState = tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }));
+      const updatedState = tableReducer(
+        {
+          ...initialState,
+          view: {
+            ...initialState.view,
+            pagination: { ...initialState.view.pagination, totalItems: 100 },
+          },
+        },
+        tablePageChange({ page: 3, pageSize: 10 })
+      );
+      expect(initialState.data.length).toEqual(100);
       expect(updatedState.view.pagination.page).toEqual(3);
     });
     it('TABLE_PAGE_CHANGE with invalid page', () => {
