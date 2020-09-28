@@ -231,6 +231,7 @@ const ValueCard = ({
   dataState,
   id,
   locale,
+  customFormatter,
   ...others
 }) => {
   const availableActions = {
@@ -333,6 +334,7 @@ const ValueCard = ({
                               : determineValue(attribute.secondaryValue.dataSourceId, values),
                           }
                         }
+                        customFormatter={customFormatter}
                       />
                       {isMini && <Spacer />}
                       <AttributeLabel

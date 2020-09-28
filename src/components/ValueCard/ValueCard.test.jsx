@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { screen, render } from '@testing-library/react';
 
 import { CARD_LAYOUTS, CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -81,5 +82,31 @@ describe('ValueCard', () => {
       />
     );
     expect(wrapper.find('Card#myIdTest')).toHaveLength(1);
+  });
+
+  it('Custom formatter is used', () => {
+    let originalValue = '';
+    let defaultFormattedValue = '';
+    const testValue = 'Test Value!';
+
+    render(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 10000 }}
+        customFormatter={(formatted, original) => {
+          originalValue = original;
+          defaultFormattedValue = formatted;
+
+          return testValue;
+        }}
+      />
+    );
+
+    expect(originalValue).toBe(10000);
+    expect(defaultFormattedValue).toBe('10K');
+    expect(screen.queryByText(testValue)).toBeTruthy();
   });
 });

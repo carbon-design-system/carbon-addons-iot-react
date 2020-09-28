@@ -74,6 +74,7 @@ export const ValueCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
+  customFormatter: PropTypes.func,
 };
 
 export const TableCardPropTypes = {

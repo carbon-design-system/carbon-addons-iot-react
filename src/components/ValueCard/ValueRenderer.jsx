@@ -31,6 +31,7 @@ const propTypes = {
   /** Makes the value and the unit smaller */
   wrapCompact: PropTypes.bool,
   locale: PropTypes.string,
+  customFormatter: PropTypes.func,
 };
 
 const defaultProps = {
@@ -42,6 +43,7 @@ const defaultProps = {
   isVertical: false,
   wrapCompact: false,
   locale: 'en',
+  customFormatter: null,
 };
 
 const Attribute = styled.div`
@@ -105,15 +107,18 @@ const ValueRenderer = ({
   allowedToWrap,
   wrapCompact,
   locale,
+  customFormatter,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
   const precision = determinePrecision(newSize, value, precisionProp);
   let renderValue = value;
+
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
   }
+
   if (typeof value === 'number') {
     renderValue = formatNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
@@ -123,6 +128,8 @@ const ValueRenderer = ({
   const hasWordsCheck = string =>
     typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
   const hasWords = hasWordsCheck(renderValue);
+
+  renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
 
   return (
     <Attribute
