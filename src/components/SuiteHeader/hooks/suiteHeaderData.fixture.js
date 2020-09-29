@@ -40,6 +40,7 @@ const fixture = {
         monitor: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
         health: { sync: { state: 'PENDING', timestamp: '2020-08-24T17:03:41Z' } },
         predict: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
+        visualinspection: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
       },
     },
     workspaces: [
@@ -56,6 +57,7 @@ const fixture = {
   '/applications': [
     {
       id: 'iot',
+      name: 'IoT',
       category: 'tool',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -186,6 +188,7 @@ const fixture = {
     },
     {
       id: 'monitor',
+      name: 'Monitor',
       category: 'application',
       deployed: true,
       deployedVersion: '8.1.0',
@@ -222,6 +225,7 @@ const fixture = {
     },
     {
       id: 'health',
+      name: 'Health',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -252,6 +256,7 @@ const fixture = {
     },
     {
       id: 'predict',
+      name: 'Predict',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -282,6 +287,7 @@ const fixture = {
     },
     {
       id: 'visualinspection',
+      name: 'Visual Inspection',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',

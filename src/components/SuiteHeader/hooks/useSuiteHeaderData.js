@@ -35,7 +35,9 @@ const calcRoutes = (domain, user, workspaces, applications) => {
     .sort((a, b) => appOrdering.findIndex(i => i === a) - appOrdering.findIndex(i => i === b))
     .map(appId => ({
       id: appId,
-      name: appId.charAt(0).toUpperCase() + appId.slice(1),
+      name:
+        (applications.find(i => i.id === appId) || {}).name ||
+        appId.charAt(0).toUpperCase() + appId.slice(1),
       href: getApplicationUrl(appId),
       isExternal: getApplicationUrl(appId).indexOf(domain) >= 0,
     }))
