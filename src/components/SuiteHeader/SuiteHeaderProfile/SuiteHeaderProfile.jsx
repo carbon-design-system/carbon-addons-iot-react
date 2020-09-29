@@ -22,7 +22,7 @@ const defaultProps = {
 const propTypes = {
   displayName: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  profileLink: PropTypes.string.isRequired,
+  onProfileClick: PropTypes.func.isRequired,
   onRequestLogout: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     profileTitle: PropTypes.string,
@@ -31,7 +31,7 @@ const propTypes = {
   }),
 };
 
-const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogout, i18n }) => {
+const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLogout, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-profile`;
   const chipText = (displayName || '')
@@ -55,9 +55,7 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
           kind="secondary"
           size="small"
           data-testid="suite-header-profile--profile"
-          onClick={() => {
-            window.location.href = profileLink;
-          }}
+          onClick={onProfileClick}
         >
           {mergedI18N.profileButton}
         </Button>

@@ -6,14 +6,19 @@
  * restricted by GSA ADP Schedule Contract with IBM Corp.
  */
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-script-url */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowLeft16, Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
+import SuiteHeader from '../SuiteHeader';
 
 const defaultProps = {
   applications: [],
+  onRouteChange: async () => true,
   i18n: {
     allApplicationsLink: 'All applications',
     requestAccess: 'Contact your administrator to request application access.',
@@ -32,6 +37,7 @@ const propTypes = {
   ),
   allApplicationsLink: PropTypes.string.isRequired,
   noAccessLink: PropTypes.string.isRequired,
+  onRouteChange: PropTypes.func,
   i18n: PropTypes.shape({
     allApplicationsLink: PropTypes.string,
     requestAccess: PropTypes.string,
@@ -39,26 +45,53 @@ const propTypes = {
   }),
 };
 
-const SuiteHeaderAppSwitcher = ({ applications, allApplicationsLink, noAccessLink, i18n }) => {
+const SuiteHeaderAppSwitcher = ({
+  applications,
+  allApplicationsLink,
+  noAccessLink,
+  i18n,
+  onRouteChange,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
   return (
     <ul className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
-        <a href={allApplicationsLink}>
+        <a
+          href="javascript:void(0)"
+          onClick={async () => {
+            const result = await onRouteChange(
+              SuiteHeader.ROUTE_TYPES.NAVIGATOR,
+              allApplicationsLink
+            );
+            if (result) {
+              window.location.assign(allApplicationsLink);
+            }
+          }}
+        >
           <ArrowLeft16 />
           {mergedI18n.allApplicationsLink}
         </a>
       </li>
       {applications.map(({ id, name, href, isExternal = false }) => (
         <li key={`key-${id}`} className={`${baseClassName}--app-link`}>
-          {isExternal ? (
-            <a target="_blank" rel="noopener noreferrer" href={href}>
-              {name}
-            </a>
-          ) : (
-            <a href={href}>{name}</a>
-          )}
+          <a
+            href="javascript:void(0)"
+            onClick={async () => {
+              const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+                appId: id,
+              });
+              if (result) {
+                if (isExternal) {
+                  window.open(href, 'blank');
+                } else {
+                  window.location.assign(href);
+                }
+              }
+            }}
+          >
+            {name}
+          </a>
         </li>
       ))}
       {applications.length === 0 ? (
@@ -68,7 +101,20 @@ const SuiteHeaderAppSwitcher = ({ applications, allApplicationsLink, noAccessLin
             <div className="bee-shadow" />
           </div>
           <span>{mergedI18n.requestAccess}</span>
-          <a href={noAccessLink}>{mergedI18n.learnMoreLink}</a>
+          <a
+            href="javascript:void(0)"
+            onClick={async () => {
+              const result = await onRouteChange(
+                SuiteHeader.ROUTE_TYPES.DOCUMENTATION,
+                noAccessLink
+              );
+              if (result) {
+                window.location.assign(noAccessLink);
+              }
+            }}
+          >
+            {mergedI18n.learnMoreLink}
+          </a>
         </div>
       ) : null}
     </ul>
