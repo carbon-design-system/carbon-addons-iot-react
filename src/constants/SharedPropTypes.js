@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
 export const OverridePropTypes = PropTypes.shape({
-  props: PropTypes.object,
+  props: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   component: PropTypes.elementType,
 });
