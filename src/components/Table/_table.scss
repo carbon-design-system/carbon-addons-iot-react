@@ -45,7 +45,7 @@ html[dir='rtl'] {
 }
 
 .#{$iot-prefix}--empty-table--table-row {
-  height: calc(100% - $spacing-09);
+  height: calc(100% - #{$spacing-09});
   &:hover td {
     background: inherit;
   }
