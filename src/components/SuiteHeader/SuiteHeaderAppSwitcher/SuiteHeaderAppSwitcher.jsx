@@ -65,7 +65,7 @@ const SuiteHeaderAppSwitcher = ({
               allApplicationsLink
             );
             if (result) {
-              window.location.assign(allApplicationsLink);
+              window.location.href = allApplicationsLink;
             }
           }}
         >
@@ -85,7 +85,7 @@ const SuiteHeaderAppSwitcher = ({
                 if (isExternal) {
                   window.open(href, 'blank');
                 } else {
-                  window.location.assign(href);
+                  window.location.href = href;
                 }
               }
             }}
@@ -109,7 +109,7 @@ const SuiteHeaderAppSwitcher = ({
                 noAccessLink
               );
               if (result) {
-                window.location.assign(noAccessLink);
+                window.location.href = noAccessLink;
               }
             }}
           >

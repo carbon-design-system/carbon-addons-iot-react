@@ -12,6 +12,7 @@ import { Button } from '../../../index';
 import { settings } from '../../../constants/Settings';
 
 const defaultProps = {
+  displayName: '',
   i18n: {
     profileTitle: 'Profile',
     profileButton: 'Manage profile',
@@ -20,7 +21,7 @@ const defaultProps = {
 };
 
 const propTypes = {
-  displayName: PropTypes.string.isRequired,
+  displayName: PropTypes.string,
   username: PropTypes.string.isRequired,
   onProfileClick: PropTypes.func.isRequired,
   onRequestLogout: PropTypes.func.isRequired,

@@ -156,7 +156,7 @@ const SuiteHeader = ({
         onLogout={async () => {
           const result = await onRouteChange(ROUTE_TYPES.LOGOUT, routes.logout);
           if (result) {
-            window.location.assign(routes.logout);
+            window.location.href = routes.logout;
           }
         }}
         i18n={{
@@ -224,7 +224,7 @@ const SuiteHeader = ({
                         }
                         const result = await onRouteChange(routeType, href);
                         if (result) {
-                          window.location.assign(href);
+                          window.location.href = href;
                         }
                       },
                     }
@@ -269,7 +269,7 @@ const SuiteHeader = ({
                         onClick: async () => {
                           const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
                           if (result) {
-                            window.location.assign(routes.about);
+                            window.location.href = routes.about;
                           }
                         },
                       },
@@ -299,7 +299,7 @@ const SuiteHeader = ({
                           onProfileClick={async () => {
                             const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
                             if (result) {
-                              window.location.assign(routes.profile);
+                              window.location.href = routes.profile;
                             }
                           }}
                           onRequestLogout={() => setShowLogoutModal(true)}

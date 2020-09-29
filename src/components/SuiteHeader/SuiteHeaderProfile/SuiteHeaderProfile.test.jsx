@@ -6,7 +6,9 @@ import SuiteHeaderProfile from './SuiteHeaderProfile';
 const commonProps = {
   displayName: 'Test User',
   username: 'myuser',
-  profileLink: 'https://www.ibm.com',
+  onProfileClick: () => {
+    window.location.href = 'https://www.ibm.com';
+  },
   onRequestLogout: () => {},
 };
 
@@ -27,9 +29,12 @@ describe('SuiteHeaderProfile', () => {
   it('clicks profile link', () => {
     delete window.location;
     window.location = { href: '' };
-    const wrapper = mount(<SuiteHeaderProfile {...commonProps} />);
+    const mockOnProfileClick = jest.fn();
+    const wrapper = mount(
+      <SuiteHeaderProfile {...commonProps} onProfileClick={mockOnProfileClick} />
+    );
     const profileButton = wrapper.find('[data-testid="suite-header-profile--profile"]').first();
     profileButton.simulate('click');
-    expect(window.location.href).toBe(commonProps.profileLink);
+    expect(mockOnProfileClick).toHaveBeenCalled();
   });
 });

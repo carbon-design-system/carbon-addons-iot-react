@@ -79,18 +79,18 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
-  it('admin link from admin view takes you to navigator route', () => {
+  it('admin link from admin view takes you to navigator route', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeader {...commonProps} isAdminView />);
-    userEvent.click(screen.getByTestId('admin-icon'));
+    await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.navigator);
   });
-  it('admin link from non-admin view takes you to admin route', () => {
+  it('admin link from non-admin view takes you to admin route', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeader {...commonProps} isAdminView={false} />);
-    userEvent.click(screen.getByTestId('admin-icon'));
+    await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.admin);
   });
   it('renders all i18n', () => {

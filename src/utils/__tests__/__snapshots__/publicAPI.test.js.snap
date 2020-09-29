@@ -6321,6 +6321,16 @@ Map {
     },
   },
   "SuiteHeader" => Object {
+    "ROUTE_TYPES": Object {
+      "ABOUT": "ABOUT",
+      "ADMIN": "ADMIN",
+      "APPLICATION": "APPLICATION",
+      "DOCUMENTATION": "DOCUMENTATION",
+      "LOGOUT": "LOGOUT",
+      "NAVIGATOR": "ADMIN",
+      "PROFILE": "PROFILE",
+      "REFERRER": "REFERRER",
+    },
     "defaultProps": Object {
       "appName": null,
       "className": null,
@@ -6596,6 +6606,7 @@ Map {
   },
   "SuiteHeaderProfile" => Object {
     "defaultProps": Object {
+      "displayName": "",
       "i18n": Object {
         "logoutButton": "Log out",
         "profileButton": "Manage profile",
@@ -6604,7 +6615,6 @@ Map {
     },
     "propTypes": Object {
       "displayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "i18n": Object {
@@ -6623,13 +6633,13 @@ Map {
         ],
         "type": "shape",
       },
-      "onRequestLogout": Object {
+      "onProfileClick": Object {
         "isRequired": true,
         "type": "func",
       },
-      "profileLink": Object {
+      "onRequestLogout": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "func",
       },
       "username": Object {
         "isRequired": true,
@@ -6645,6 +6655,7 @@ Map {
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "onRouteChange": [Function],
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -6697,6 +6708,9 @@ Map {
       "noAccessLink": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
     },
   },

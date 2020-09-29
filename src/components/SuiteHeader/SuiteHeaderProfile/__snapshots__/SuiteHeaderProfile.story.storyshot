@@ -53,7 +53,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
             data-testid="suite-header-profile--profile"
             disabled={false}
-            onClick={[Function]}
             tabIndex={0}
             type="button"
           >
