@@ -23,7 +23,8 @@
     "lint": "lerna run --stream lint",
     "test": "lerna run --stream test",
     "start": "lerna run --stream start",
-    "clean": "lerna run --stream clean"
+    "clean": "lerna run --stream clean",
+    "publish-npm": "lerna publish --conventional-commits --create-release github --yes"
   },
   "husky": {
     "hooks": {
