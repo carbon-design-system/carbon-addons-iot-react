@@ -27,6 +27,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--nav-link"
         >
           <a
+            data-testid="suite-header-app-switcher--all-applications"
             href="javascript:void(0)"
             onClick={[Function]}
           >
@@ -75,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Contact your administrator to request application access.
           </span>
           <a
+            data-testid="suite-header-app-switcher--no-access"
             href="javascript:void(0)"
             onClick={[Function]}
           >
@@ -137,6 +139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--nav-link"
         >
           <a
+            data-testid="suite-header-app-switcher--all-applications"
             href="javascript:void(0)"
             onClick={[Function]}
           >
@@ -161,6 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--app-link"
         >
           <a
+            data-testid="suite-header-app-switcher--monitor"
             href="javascript:void(0)"
             onClick={[Function]}
           >
@@ -171,6 +175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--app-link"
         >
           <a
+            data-testid="suite-header-app-switcher--health"
             href="javascript:void(0)"
             onClick={[Function]}
           >

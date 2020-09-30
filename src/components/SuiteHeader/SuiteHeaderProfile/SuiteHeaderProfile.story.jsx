@@ -10,7 +10,9 @@ storiesOf('Watson IoT/SuiteHeader/SuiteHeaderProfile', module).add('default', ()
     <SuiteHeaderProfile
       displayName={text('displayName', 'Test User')}
       username={text('username', 'myuser')}
-      profileLink={text('profileLink', 'https://www.ibm.com')}
+      onProfileClick={() => {
+        window.location.href = 'https://www.ibm.com';
+      }}
       onRequestLogout={action('onRequestLogout')}
     />
   </div>

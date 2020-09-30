@@ -13,6 +13,7 @@ const commonProps = {
   userDisplayName: 'Admin User',
   username: 'adminuser',
   isAdminView: true,
+  onRouteChange: async () => true,
   routes: {
     profile: 'https://www.ibm.com',
     navigator: 'https://www.ibm.com',
@@ -79,6 +80,13 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
+  it('clicks logout link (but no redirect)', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
+    expect(window.location.href).not.toBe(commonProps.routes.logout);
+  });
   it('admin link from admin view takes you to navigator route', async () => {
     delete window.location;
     window.location = { href: '' };
@@ -86,12 +94,58 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.navigator);
   });
+  it('admin link from admin view takes you to navigator route (but no redirect)', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView />);
+    await userEvent.click(screen.getByTestId('admin-icon'));
+    expect(window.location.href).not.toBe(commonProps.routes.navigator);
+  });
   it('admin link from non-admin view takes you to admin route', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeader {...commonProps} isAdminView={false} />);
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.admin);
+  });
+  it('admin link from non-admin view takes you to admin route (but no redirect)', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView={false} />);
+    await userEvent.click(screen.getByTestId('admin-icon'));
+    expect(window.location.href).not.toBe(commonProps.routes.admin);
+  });
+  it('clicks a documentation link', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    window.open = jest.fn();
+    render(<SuiteHeader {...commonProps} />);
+    await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
+    expect(window.open).toHaveBeenCalledWith(commonProps.routes.whatsNew, 'blank');
+  });
+  it('clicks a documentation link (but no redirect)', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    window.open = jest.fn();
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
+    expect(window.open).not.toHaveBeenCalled();
+  });
+  it('clicks about link', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    window.open = jest.fn();
+    render(<SuiteHeader {...commonProps} />);
+    await userEvent.click(screen.getByTestId('suite-header-help--about'));
+    expect(window.location.href).toBe(commonProps.routes.about);
+  });
+  it('clicks about link (but no redirect)', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    window.open = jest.fn();
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    await userEvent.click(screen.getByTestId('suite-header-help--about'));
+    expect(window.open).not.toHaveBeenCalled();
   });
   it('renders all i18n', () => {
     Object.keys(SuiteHeaderI18N).forEach(language => {

@@ -59,6 +59,7 @@ const SuiteHeaderAppSwitcher = ({
       <li className={`${baseClassName}--nav-link`}>
         <a
           href="javascript:void(0)"
+          data-testid="suite-header-app-switcher--all-applications"
           onClick={async () => {
             const result = await onRouteChange(
               SuiteHeader.ROUTE_TYPES.NAVIGATOR,
@@ -77,6 +78,7 @@ const SuiteHeaderAppSwitcher = ({
         <li key={`key-${id}`} className={`${baseClassName}--app-link`}>
           <a
             href="javascript:void(0)"
+            data-testid={`suite-header-app-switcher--${id}`}
             onClick={async () => {
               const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
                 appId: id,
@@ -103,6 +105,7 @@ const SuiteHeaderAppSwitcher = ({
           <span>{mergedI18n.requestAccess}</span>
           <a
             href="javascript:void(0)"
+            data-testid="suite-header-app-switcher--no-access"
             onClick={async () => {
               const result = await onRouteChange(
                 SuiteHeader.ROUTE_TYPES.DOCUMENTATION,

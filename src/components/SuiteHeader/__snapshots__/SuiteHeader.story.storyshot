@@ -237,6 +237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--whatsNew"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -252,6 +253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--gettingStarted"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -267,6 +269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--documentation"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -282,6 +285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--requestEnhancement"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -297,6 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--support"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -312,6 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--about"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -496,6 +502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--all-applications"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -520,6 +527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--monitor"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -530,6 +538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--health"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1150,6 +1159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--whatsNew"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1165,6 +1175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--gettingStarted"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1180,6 +1191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--documentation"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1195,6 +1207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--requestEnhancement"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1210,6 +1223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--support"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1225,6 +1239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--about"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1409,6 +1424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--all-applications"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1433,6 +1449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--monitor"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1443,6 +1460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--health"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1699,6 +1717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--whatsNew"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1714,6 +1733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--gettingStarted"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1729,6 +1749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--documentation"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1744,6 +1765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--requestEnhancement"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1759,6 +1781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--support"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1774,6 +1797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  data-testid="suite-header-help--about"
                   href="javascript:void(0)"
                   onClick={[Function]}
                   tabIndex={0}
@@ -1958,6 +1982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--all-applications"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1982,6 +2007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--monitor"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >
@@ -1992,6 +2018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
+                        data-testid="suite-header-app-switcher--health"
                         href="javascript:void(0)"
                         onClick={[Function]}
                       >

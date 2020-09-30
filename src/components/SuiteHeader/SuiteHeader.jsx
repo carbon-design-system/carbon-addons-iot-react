@@ -247,6 +247,7 @@ const SuiteHeader = ({
                     .map(item => ({
                       metaData: {
                         element: 'a',
+                        'data-testid': `suite-header-help--${item}`,
                         href: 'javascript:void(0)',
                         title: mergedI18N[item],
                         onClick: async () => {
@@ -264,6 +265,7 @@ const SuiteHeader = ({
                     .concat({
                       metaData: {
                         element: 'a',
+                        'data-testid': `suite-header-help--about`,
                         href: 'javascript:void(0)',
                         title: mergedI18N.about,
                         onClick: async () => {
