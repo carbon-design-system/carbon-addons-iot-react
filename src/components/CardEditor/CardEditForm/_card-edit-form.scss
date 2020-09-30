@@ -15,12 +15,30 @@
   .#{$prefix}--file__selected-file {
     background-color: $ui-02;
   }
+  .color-picker {
+    padding-top: $spacing-03;
+    .color-picker-button {
+      width: $layout-03;
+      height: $layout-03;
+      border: solid $spacing-01 $ui-01;
+    }
+    .color-picker-button__selected {
+      border: solid $spacing-01 $interactive-04;
+    }
+  }
   &--content {
     flex: 1;
     overflow-y: auto;
     margin: -$spacing-05;
     height: 100%;
     padding-top: $spacing-05;
+  }
+  &--form-section {
+    padding: $spacing-03 $spacing-05;
+    @include type-style('productive-heading-01');
+    border-top: solid 1px $ui-03;
+    border-bottom: solid 1px $ui-03;
+    margin: $spacing-05 0;
   }
   &--input {
     padding: 0 $spacing-05 $spacing-05;

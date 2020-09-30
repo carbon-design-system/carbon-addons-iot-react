@@ -101,16 +101,7 @@ const DashboardEditor = ({
         ? {
             ...baseCardProps,
             content: {
-              series: [
-                {
-                  label: 'Temperature',
-                  dataSourceId: 'temperature',
-                },
-                {
-                  label: 'Humidity',
-                  dataSourceId: 'humidity',
-                },
-              ],
+              series: [],
               xLabel: 'Time',
               yLabel: 'Temperature (˚F)',
               chartType: TIME_SERIES_TYPES.LINE,
