@@ -4,11 +4,13 @@ import { DataTable } from 'carbon-components-react';
 import VisibilitySensor from 'react-visibility-sensor';
 import pick from 'lodash/pick';
 
+import { handleOverflowDeprecation } from '../../../internal/deprecate';
 import {
   ExpandedRowsPropTypes,
   TableRowPropTypes,
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
+  CellTextOverflowPropType,
 } from '../TablePropTypes';
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
@@ -51,8 +53,9 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
-  truncateCellText: PropTypes.bool.isRequired,
+  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
+  truncateCellText: PropTypes.bool,
+  cellTextOverflow: CellTextOverflowPropType,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
@@ -103,6 +106,9 @@ const defaultProps = {
   rowEditMode: false,
   singleRowEditButtons: null,
   langDir: 'ltr',
+  cellTextOverflow: null,
+  wrapCellText: null,
+  truncateCellText: null,
 };
 
 const TableBody = ({
@@ -132,6 +138,7 @@ const TableBody = ({
   ordering,
   wrapCellText,
   truncateCellText,
+  cellTextOverflow,
   locale,
   rowEditMode,
   singleRowEditButtons,
@@ -148,6 +155,14 @@ const TableBody = ({
   );
 
   const someRowHasSingleRowEditMode = rowActionsState.some(rowAction => rowAction.isEditMode);
+
+  // Temporary deprecation code to map the deprectated wrapCellText & truncateCellText
+  // to the new cellTextOverflow
+  const myCellTextOverflow = handleOverflowDeprecation(
+    cellTextOverflow,
+    wrapCellText,
+    truncateCellText
+  );
 
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
@@ -194,8 +209,7 @@ const TableBody = ({
           hasRowNesting,
           hasRowActions,
           shouldExpandOnRowClick,
-          wrapCellText,
-          truncateCellText,
+          cellTextOverflow: myCellTextOverflow,
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}

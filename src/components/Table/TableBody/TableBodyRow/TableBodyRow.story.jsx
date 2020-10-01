@@ -24,8 +24,7 @@ const tableBodyRowProps = {
     'onClearRowError'
   ),
   options: {
-    wrapCellText: 'never',
-    truncateCellText: false,
+    cellTextOverflow: 'prevent-wrap',
   },
 };
 

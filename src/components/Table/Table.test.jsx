@@ -567,54 +567,6 @@ describe('Table', () => {
     unmount();
   });
 
-  it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ wrapCellText: 'auto', hasResize: true, useAutoTableLayoutForResize: true }}
-      />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-  });
-
-  it('cells should always wrap when wrapCellText is always', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ hasResize: true, wrapCellText: 'always' }}
-      />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns.map(col => ({ ...col, width: '100px' }))}
-        data={[tableData[0]]}
-        options={{ wrapCellText: 'always' }}
-      />
-    );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-
-    const wrapper3 = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ wrapCellText: 'always' }} />
-    );
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-  });
-
   describe('Text truncation and wrapping', () => {
     const columnHeaderText = 'String';
     const bodyRowCellText = 'toyota toyota toyota 0';

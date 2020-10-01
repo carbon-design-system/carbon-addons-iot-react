@@ -700,7 +700,7 @@ storiesOf('Watson IoT/Table', module)
             ...initialState.options,
             hasResize: true,
             hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'alwaysTruncate'),
             hasSingleRowEdit: true,
           }}
         />

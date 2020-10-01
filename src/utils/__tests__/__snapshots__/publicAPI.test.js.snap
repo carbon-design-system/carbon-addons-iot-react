@@ -1690,6 +1690,15 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "cellTextOverflow": Object {
+              "args": Array [
+                Array [
+                  "prevent-wrap",
+                  "truncate",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "hasResize": Object {
               "type": "bool",
             },
@@ -1713,7 +1722,6 @@ Map {
               "type": "bool",
             },
             "truncateCellText": Object {
-              "isRequired": true,
               "type": "bool",
             },
             "wrapCellText": Object {
@@ -1725,7 +1733,6 @@ Map {
                   "alwaysTruncate",
                 ],
               ],
-              "isRequired": true,
               "type": "oneOf",
             },
           },
@@ -1853,6 +1860,7 @@ Map {
   },
   "TableBody" => Object {
     "defaultProps": Object {
+      "cellTextOverflow": null,
       "clickToCollapseAria": "Click to collapse.",
       "clickToExpandAria": "Click to expand.",
       "columns": Array [],
@@ -1874,6 +1882,8 @@ Map {
       "shouldLazyRender": false,
       "singleRowEditButtons": null,
       "totalColumns": 0,
+      "truncateCellText": null,
+      "wrapCellText": null,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -1898,6 +1908,15 @@ Map {
         ],
         "isRequired": true,
         "type": "shape",
+      },
+      "cellTextOverflow": Object {
+        "args": Array [
+          Array [
+            "prevent-wrap",
+            "truncate",
+          ],
+        ],
+        "type": "oneOf",
       },
       "clickToCollapseAria": Object {
         "type": "string",
@@ -2330,7 +2349,6 @@ Map {
         "type": "number",
       },
       "truncateCellText": Object {
-        "isRequired": true,
         "type": "bool",
       },
       "wrapCellText": Object {
@@ -2342,7 +2360,6 @@ Map {
             "alwaysTruncate",
           ],
         ],
-        "isRequired": true,
         "type": "oneOf",
       },
     },
