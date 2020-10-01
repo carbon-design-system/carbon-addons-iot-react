@@ -77,7 +77,7 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -369,13 +369,26 @@ const Table = props => {
   const [tableId] = useState(() => uniqueId('table-'));
   const [, forceUpdateCellTextWidth] = useState(0);
 
-  const useCellTextTruncate = useMemo(
-    () =>
-      options
-        ? options.wrapCellText !== 'always' &&
-          ((options.hasResize && !options.useAutoTableLayoutForResize) ||
-            columns.some(col => col.hasOwnProperty('width')))
-        : undefined,
+  const cellTextOverflow = useMemo(
+    () => {
+      const fixedTableLayout = !options?.useAutoTableLayoutForResize;
+      const hasInitalColumnWidths = columns.some(col => col.hasOwnProperty('width'));
+      const hasCalculatedColumnWidths = options.hasResize && fixedTableLayout;
+      const dynamicCellWidths = !hasInitalColumnWidths && !hasCalculatedColumnWidths;
+      const TEXT = { TRUNCATE: 'truncate', PREVENT_WRAP: 'prevent-wrap', WRAP: undefined };
+
+      switch (options?.wrapCellText) {
+        case 'alwaysTruncate':
+          return TEXT.TRUNCATE;
+        case 'never':
+          return dynamicCellWidths ? TEXT.PREVENT_WRAP : TEXT.TRUNCATE;
+        case 'auto':
+          return dynamicCellWidths ? TEXT.WRAP : TEXT.TRUNCATE;
+        case 'always':
+        default:
+          return TEXT.WRAP;
+      }
+    },
     [options, columns]
   );
 
@@ -533,8 +546,7 @@ const Table = props => {
                 'useAutoTableLayoutForResize',
                 'hasSingleRowEdit'
               ),
-              wrapCellText: options.wrapCellText,
-              truncateCellText: useCellTextTruncate,
+              cellTextOverflow,
             }}
             columns={columns}
             filters={view.filters}
@@ -608,8 +620,7 @@ const Table = props => {
                 'shouldExpandOnRowClick',
                 'shouldLazyRender'
               )}
-              wrapCellText={options.wrapCellText}
-              truncateCellText={useCellTextTruncate}
+              cellTextOverflow={cellTextOverflow}
               ordering={view.table.ordering}
               rowEditMode={rowEditMode}
               actions={pick(

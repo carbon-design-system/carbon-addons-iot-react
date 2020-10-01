@@ -244,3 +244,6 @@ export const TableSearchPropTypes = PropTypes.shape({
 
 /** Which toolbar is currently active */
 export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);
+
+/** How should long cell texts be handled, the implicit default is wrapping */
+export const CellTextOverflowPropType = PropTypes.oneOf(['prevent-wrap', 'truncate']);

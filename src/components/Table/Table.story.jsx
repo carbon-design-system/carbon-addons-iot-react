@@ -55,7 +55,7 @@ const STATUS = {
   BROKEN: 'BROKEN',
 };
 
-const selectTextWrapping = ['always', 'never', 'auto'];
+const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
@@ -700,7 +700,7 @@ storiesOf('Watson IoT/Table', module)
             ...initialState.options,
             hasResize: true,
             hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'alwaysTruncate'),
             hasSingleRowEdit: true,
           }}
         />

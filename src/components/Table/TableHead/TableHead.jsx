@@ -14,6 +14,7 @@ import {
   I18NPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
+  CellTextOverflowPropType,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -49,8 +50,7 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
-    truncateCellText: PropTypes.bool.isRequired,
+    cellTextOverflow: CellTextOverflowPropType,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -138,14 +138,7 @@ const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 const TableHead = ({
   tableId,
   options,
-  options: {
-    hasRowExpansion,
-    hasRowSelection,
-    hasResize,
-    wrapCellText,
-    truncateCellText,
-    hasSingleRowEdit,
-  },
+  options: { hasRowExpansion, hasRowSelection, hasResize, cellTextOverflow, hasSingleRowEdit },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -381,8 +374,7 @@ const TableHead = ({
             >
               <TableCellRenderer
                 className={`${iotPrefix}--table-head--text`}
-                wrapText={wrapCellText}
-                truncateCellText={truncateCellText}
+                cellTextOverflow={cellTextOverflow}
                 allowTooltip={false}
               >
                 {matchingColumnMeta.name}

@@ -4,13 +4,13 @@ import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
+import { CellTextOverflowPropType } from '../TablePropTypes';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
-  wrapText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
-  truncateCellText: PropTypes.bool.isRequired,
+  cellTextOverflow: CellTextOverflowPropType,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */
   locale: PropTypes.string,
@@ -28,6 +28,7 @@ const defaultProps = {
   renderDataFunction: null,
   columnId: null,
   rowId: null,
+  cellTextOverflow: null,
 };
 
 const isElementTruncated = element => element.offsetWidth < element.scrollWidth;
@@ -45,9 +46,8 @@ const renderCustomCell = (renderDataFunction, args, className) => {
 /** Supports our default render decisions for primitive values */
 const TableCellRenderer = ({
   children,
-  wrapText,
   allowTooltip,
-  truncateCellText,
+  cellTextOverflow,
   locale,
   renderDataFunction,
   columnId,
@@ -56,8 +56,8 @@ const TableCellRenderer = ({
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
-    [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
-    [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--truncate`]: cellTextOverflow === 'truncate',
+    [`${iotPrefix}--table__cell-text--no-wrap`]: cellTextOverflow === 'prevent-wrap',
   });
 
   const [useTooltip, setUseTooltip] = useState(false);
@@ -81,11 +81,11 @@ const TableCellRenderer = ({
         typeof children === 'string' ||
         typeof children === 'number' ||
         typeof children === 'boolean';
-      if (canBeTruncated && truncateCellText && allowTooltip && mySpanRef && mySpanRef.current) {
+      if (canBeTruncated && cellTextOverflow === 'truncate' && allowTooltip && mySpanRef?.current) {
         setUseTooltip(isElementTruncated(mySpanRef.current));
       }
     },
-    [mySpanRef, children, wrapText, truncateCellText, allowTooltip]
+    [mySpanRef, children, cellTextOverflow, allowTooltip]
   );
 
   const cellContent = renderDataFunction ? (

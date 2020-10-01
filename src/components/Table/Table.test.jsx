@@ -12,8 +12,6 @@ import { mockActions } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
-import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
-import TableHead from './TableHead/TableHead';
 import { initialState } from './Table.story';
 
 const { iotPrefix } = settings;
@@ -464,79 +462,219 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
-  it('cells should always wrap by default', () => {
-    const wrapper = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasResize: true }} />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
+  describe('Text truncation and wrapping', () => {
+    const columnHeaderText = 'String';
+    const bodyRowCellText = 'toyota toyota toyota 0';
+    const textTruncateClassName = `${iotPrefix}--table__cell-text--truncate`;
+    const tdTruncateClassName = `${iotPrefix}--table__cell--truncate`;
+    const textNoWrapClassName = `${iotPrefix}--table__cell-text--no-wrap`;
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns.map(col => ({ ...col, width: '100px' }))}
-        data={[tableData[0]]}
-        options={{ hasResize: false }}
-      />
-    );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
+    const expectWrapping = () => {
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textNoWrapClassName);
+    };
+    const expectExplicitNoWrapping = () => {
+      expect(screen.getByText(bodyRowCellText)).toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(columnHeaderText)).toHaveClass(textNoWrapClassName);
+    };
+    const expectTruncation = (myBodyRowCellText = bodyRowCellText) => {
+      expect(screen.getByText(myBodyRowCellText)).toHaveClass(textTruncateClassName);
+      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(tdTruncateClassName);
+      expect(screen.getByText(columnHeaderText)).toHaveClass(textTruncateClassName);
+    };
+    const expectNoTruncation = () => {
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textTruncateClassName);
+      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(tdTruncateClassName);
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textTruncateClassName);
+    };
 
-    const wrapper3 = mount(<Table columns={tableColumns} data={[tableData[0]]} />);
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
-  });
+    const renderDefaultTable = (options = {}, columns = tableColumns) => {
+      render(<Table columns={columns} data={[tableData[0]]} options={options} />);
+    };
 
-  it('cells should truncate with wrapCellText:auto if resize or fixed col widths', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ hasResize: true, wrapCellText: 'auto' }}
-      />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+    it('wraps cell text by default', () => {
+      renderDefaultTable();
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns.map(col => ({ ...col, width: '100px' }))}
-        data={[tableData[0]]}
-        options={{ hasResize: false, wrapCellText: 'auto' }}
-      />
-    );
-    expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+    it('wraps cell text if resize & table-layout:auto', () => {
+      renderDefaultTable({ hasResize: true, useAutoTableLayoutForResize: true });
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
 
-    const wrapper3 = mount(
-      <Table
-        columns={tableColumns.map(col => ({
-          ...col,
-          width: undefined,
-          renderDataFunction: () => 'hello this is a custom rendered long string',
-        }))}
-        data={[tableData[0]]}
-        options={{ hasResize: false, wrapCellText: 'auto' }}
-      />
-    );
-    expect(
-      wrapper3
-        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
-        .first()
-    ).toHaveLength(1);
-  });
+    it('wraps cell text if hasResize', () => {
+      renderDefaultTable({ hasResize: true });
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
 
-  it('cells should wrap (not truncate) with wrapCellText:auto if no resize nor fixed col widths', () => {
-    const wrapper3 = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ hasResize: false, wrapCellText: 'auto' }}
-      />
-    );
-    expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
+    it('wraps cell text if column widths', () => {
+      renderDefaultTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
+    describe('wrapCellText:auto', () => {
+      const renderAutoWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'auto', ...options }}
+          />
+        );
+      };
+
+      it('wraps cell text by default', () => {
+        renderAutoWrappingTable();
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize & table-layout:auto', () => {
+        renderAutoWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('truncates cell text if hasResize', () => {
+        renderAutoWrappingTable({ hasResize: true });
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if column widths', () => {
+        renderAutoWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if renderDataFunction & column widths present but undefined', () => {
+        const customCellText = 'hello this is a custom rendered long string';
+        renderAutoWrappingTable(
+          {},
+          tableColumns.map(col => ({
+            ...col,
+            width: undefined,
+            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+          }))
+        );
+        expectTruncation(customCellText);
+        expect.assertions(3);
+      });
+    });
+
+    describe('wrapCellText:always', () => {
+      const renderAlwaysWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'always', ...options }}
+          />
+        );
+      };
+
+      it('wraps cell text by default', () => {
+        renderAlwaysWrappingTable();
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize & table-layout:auto', () => {
+        renderAlwaysWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize', () => {
+        renderAlwaysWrappingTable({ hasResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if column widths', () => {
+        renderAlwaysWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+    });
+
+    describe('wrapCellText:never', () => {
+      const renderNeverWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'never', ...options }}
+          />
+        );
+      };
+
+      it('does not wrap cell text', () => {
+        renderNeverWrappingTable();
+        expectExplicitNoWrapping();
+        expect.assertions(2);
+      });
+
+      it('truncates resize & table-layout:auto & column widths', () => {
+        renderNeverWrappingTable(
+          { hasResize: true, useAutoTableLayoutForResize: true },
+          tableColumns.map(col => ({ ...col, width: '100px' }))
+        );
+        expectTruncation();
+        expect.assertions(3);
+      });
+    });
+
+    describe('wrapCellText:alwaysTruncate', () => {
+      const renderAlwaysTruncatTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'alwaysTruncate', ...options }}
+          />
+        );
+      };
+
+      it('truncates cell text', () => {
+        renderAlwaysTruncatTable();
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if table-layout:auto', () => {
+        renderAlwaysTruncatTable({ useAutoTableLayoutForResize: true });
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if renderDataFunction', () => {
+        const customCellText = 'hello this is a custom rendered long string';
+        renderAlwaysTruncatTable(
+          {},
+          tableColumns.map(col => ({
+            ...col,
+            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+          }))
+        );
+        expectTruncation(customCellText);
+        expect.assertions(3);
+      });
+    });
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
@@ -565,54 +703,6 @@ describe('Table', () => {
 
     // unmounting to be sure to clean up the documentElement
     unmount();
-  });
-
-  it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ wrapCellText: 'auto', hasResize: true, useAutoTableLayoutForResize: true }}
-      />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-  });
-
-  it('cells should always wrap when wrapCellText is always', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={[tableData[0]]}
-        options={{ hasResize: true, wrapCellText: 'always' }}
-      />
-    );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns.map(col => ({ ...col, width: '100px' }))}
-        data={[tableData[0]]}
-        options={{ wrapCellText: 'always' }}
-      />
-    );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-
-    const wrapper3 = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ wrapCellText: 'always' }} />
-    );
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
   });
 
   it('table should get row-actions HTML class only when rowActions are enabled', () => {
