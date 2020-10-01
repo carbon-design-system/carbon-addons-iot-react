@@ -452,6 +452,12 @@ export const defaultProps = (baseProps) => ({
   testId: null,
 });
 
+export const CELL_TEXT_OVERFLOW = {
+  TRUNCATE: 'truncate',
+  GROW: 'grow',
+  WRAP: 'wrap',
+};
+
 const Table = (props) => {
   const {
     id,
@@ -539,16 +545,24 @@ const Table = (props) => {
   const [tableId] = useState(() => uniqueId('table-'));
   const [, forceUpdateCellTextWidth] = useState(0);
 
-  const useCellTextTruncate = useMemo(
-    () =>
-      options
-        ? options.wrapCellText === 'alwaysTruncate' ||
-          (options.wrapCellText !== 'always' &&
-            ((options.hasResize && !options.useAutoTableLayoutForResize) ||
-              columns.some((col) => col.hasOwnProperty('width'))))
-        : undefined,
-    [options, columns]
-  );
+  const cellTextOverflow = useMemo(() => {
+    const fixedTableLayout = !options?.useAutoTableLayoutForResize;
+    const hasInitalColumnWidths = columns.some((col) => col.hasOwnProperty('width'));
+    const hasCalculatedColumnWidths = options.hasResize && fixedTableLayout;
+    const dynamicCellWidths = !hasInitalColumnWidths && !hasCalculatedColumnWidths;
+
+    switch (options?.wrapCellText) {
+      case 'alwaysTruncate':
+        return CELL_TEXT_OVERFLOW.TRUNCATE;
+      case 'never':
+        return dynamicCellWidths ? CELL_TEXT_OVERFLOW.GROW : CELL_TEXT_OVERFLOW.TRUNCATE;
+      case 'auto':
+        return dynamicCellWidths ? CELL_TEXT_OVERFLOW.WRAP : CELL_TEXT_OVERFLOW.TRUNCATE;
+      case 'always':
+      default:
+        return CELL_TEXT_OVERFLOW.WRAP;
+    }
+  }, [options, columns]);
 
   const handleClearFilters = () => {
     if (actions.toolbar && actions.toolbar.onClearAllFilters) {
@@ -847,8 +861,7 @@ const Table = (props) => {
                 'hasMultiSort',
                 'preserveColumnWidths'
               ),
-              wrapCellText: options.wrapCellText,
-              truncateCellText: useCellTextTruncate,
+              cellTextOverflow,
             }}
             columns={columns}
             filters={view.filters}
@@ -938,8 +951,7 @@ const Table = (props) => {
                   'shouldExpandOnRowClick',
                   'shouldLazyRender'
                 )}
-                wrapCellText={options.wrapCellText}
-                truncateCellText={useCellTextTruncate}
+                cellTextOverflow={cellTextOverflow}
                 ordering={view.table.ordering}
                 rowEditMode={rowEditMode}
                 actions={pick(
