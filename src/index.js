@@ -141,6 +141,8 @@ export {
   DatePicker,
   DatePickerInput,
   Dropdown,
+  ErrorBoundary,
+  ErrorBoundaryContext,
   Filename,
   FileUploader,
   FileUploaderButton,
