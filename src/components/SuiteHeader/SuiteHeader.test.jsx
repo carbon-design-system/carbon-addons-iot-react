@@ -42,6 +42,15 @@ const commonProps = {
 };
 
 describe('SuiteHeader', () => {
+  let originalWindowLocation;
+  beforeEach(() => {
+    originalWindowLocation = { ...window.location };
+  });
+
+  afterEach(() => {
+    window.location = { ...originalWindowLocation };
+  });
+
   it('renders with sidenav', () => {
     render(
       <SuiteHeader

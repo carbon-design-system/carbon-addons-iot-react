@@ -27,8 +27,6 @@ describe('SuiteHeaderProfile', () => {
     expect(mockOnRequestLogout).toHaveBeenCalled();
   });
   it('clicks profile link', () => {
-    delete window.location;
-    window.location = { href: '' };
     const mockOnProfileClick = jest.fn();
     const wrapper = mount(
       <SuiteHeaderProfile {...commonProps} onProfileClick={mockOnProfileClick} />

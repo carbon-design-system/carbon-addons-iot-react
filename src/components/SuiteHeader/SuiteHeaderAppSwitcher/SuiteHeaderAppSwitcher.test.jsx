@@ -24,6 +24,14 @@ const commonProps = {
 };
 
 describe('SuiteHeaderAppSwitcher', () => {
+  let originalWindowLocation;
+  beforeEach(() => {
+    originalWindowLocation = { ...window.location };
+  });
+
+  afterEach(() => {
+    window.location = { ...originalWindowLocation };
+  });
   it('clicks all applications link', async () => {
     delete window.location;
     window.location = { href: '' };
