@@ -175,7 +175,7 @@ const SuiteHeader = ({
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link target="_blank" href={ibmPolicyLink}>
-                  {mergedI18N.surveyPolicy}
+                  {mergedI18N.surveyPrivacyPolicy}
                 </Link>
               </div>
             </>

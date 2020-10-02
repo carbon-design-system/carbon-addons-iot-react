@@ -24,7 +24,7 @@ const SuiteHeaderI18N = {
     gettingStarted: 'Getting started',
     surveyTitle: solutionName => `Enjoying ${solutionName}?`,
     surveyText: 'Click here to help us improve the product',
-    surveyPolicy: 'IBM Privacy Policy',
+    surveyPrivacyPolicy: 'IBM Privacy Policy',
   },
 };
 
