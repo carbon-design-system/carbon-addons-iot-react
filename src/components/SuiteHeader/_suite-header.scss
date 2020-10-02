@@ -65,6 +65,12 @@
   }
 }
 
+.#{$iot-prefix}--suite-header-survey-policy-link {
+  margin: auto;
+  width: 50%;
+  padding-top: $spacing-04;
+}
+
 .#{$iot-prefix}--suite-header-app-switcher {
   padding-top: 0;
 

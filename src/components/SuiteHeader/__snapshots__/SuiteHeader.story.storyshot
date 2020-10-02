@@ -924,6 +924,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           >
             Click here to help us improve the product
           </a>
+          <div
+            className="iot--suite-header-survey-policy-link"
+          >
+            <a
+              className="bx--link"
+              href="https://www.ibm.com/privacy/us/en"
+              target="_blank"
+            >
+              IBM Privacy Policy
+            </a>
+          </div>
         </div>
         <div
           className="bx--toast-notification__caption"

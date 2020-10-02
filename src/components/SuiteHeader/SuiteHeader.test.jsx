@@ -39,6 +39,7 @@ const commonProps = {
       isExternal: true,
     },
   ],
+  countryCode: 'en',
 };
 
 describe('SuiteHeader', () => {
@@ -55,6 +56,7 @@ describe('SuiteHeader', () => {
     render(
       <SuiteHeader
         {...commonProps}
+        countryCode="br"
         sideNavProps={{
           links: [
             {

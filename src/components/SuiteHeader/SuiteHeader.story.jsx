@@ -221,6 +221,7 @@ storiesOf('Watson IoT/SuiteHeader', module)
           support: 'https://www.ibm.com',
           about: 'https://www.ibm.com',
         })}
+        countryCode="en"
         i18n={SuiteHeaderI18N[language]}
         applications={object('applications', [
           {
