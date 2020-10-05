@@ -77,6 +77,12 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
+    /**
+     * auto - Wrap for tables with dynamic columns widths and truncate for tables with fixed or resizable columns
+     * always - Wrap if needed for all table column configurations
+     * never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.
+     * alwaysTruncate - Alwyas truncate if needed for all table column configurations
+     */
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
 

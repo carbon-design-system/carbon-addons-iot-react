@@ -20,6 +20,7 @@ import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { OverflowMenu, OverflowMenuItem } from '../../../index';
+import { handleOverflowDeprecation } from '../../../internal/deprecate';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -50,6 +51,8 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
+    truncateCellText: PropTypes.bool,
     cellTextOverflow: CellTextOverflowPropType,
   }),
   /** List of columns */
@@ -138,7 +141,15 @@ const PADDING_WITH_OVERFLOW_AND_SORT = 58;
 const TableHead = ({
   tableId,
   options,
-  options: { hasRowExpansion, hasRowSelection, hasResize, cellTextOverflow, hasSingleRowEdit },
+  options: {
+    hasRowExpansion,
+    hasRowSelection,
+    hasResize,
+    cellTextOverflow,
+    hasSingleRowEdit,
+    wrapCellText,
+    truncateCellText,
+  },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -172,6 +183,14 @@ const TableHead = ({
   const columnRef = generateOrderedColumnRefs(ordering);
   const columnResizeRefs = generateOrderedColumnRefs(ordering);
   const [currentColumnWidths, setCurrentColumnWidths] = useState({});
+
+  // Temporary deprecation code to map the deprectated wrapCellText & truncateCellText
+  // to the new cellTextOverflow
+  const myCellTextOverflow = handleOverflowDeprecation(
+    cellTextOverflow,
+    wrapCellText,
+    truncateCellText
+  );
 
   if (isEmpty(currentColumnWidths)) {
     columns.forEach(col => {
@@ -374,7 +393,7 @@ const TableHead = ({
             >
               <TableCellRenderer
                 className={`${iotPrefix}--table-head--text`}
-                cellTextOverflow={cellTextOverflow}
+                cellTextOverflow={myCellTextOverflow}
                 allowTooltip={false}
               >
                 {matchingColumnMeta.name}

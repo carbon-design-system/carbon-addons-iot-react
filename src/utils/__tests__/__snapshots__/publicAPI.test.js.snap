@@ -1721,6 +1721,19 @@ Map {
             "hasSingleRowEdit": Object {
               "type": "bool",
             },
+            "truncateCellText": Object {
+              "type": "bool",
+            },
+            "wrapCellText": Object {
+              "args": Array [
+                Array [
+                  "always",
+                  "never",
+                  "auto",
+                ],
+              ],
+              "type": "oneOf",
+            },
           },
         ],
         "type": "shape",
@@ -1868,6 +1881,8 @@ Map {
       "shouldLazyRender": false,
       "singleRowEditButtons": null,
       "totalColumns": 0,
+      "truncateCellText": null,
+      "wrapCellText": null,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -2331,6 +2346,19 @@ Map {
       },
       "totalColumns": Object {
         "type": "number",
+      },
+      "truncateCellText": Object {
+        "type": "bool",
+      },
+      "wrapCellText": Object {
+        "args": Array [
+          Array [
+            "always",
+            "never",
+            "auto",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },

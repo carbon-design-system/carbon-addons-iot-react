@@ -31,3 +31,24 @@ export default function deprecate(propType, message) {
 
   return checker;
 }
+
+const mapToCellTextOverflow = (wrapCellText, truncateCellText) => {
+  const truncate = wrapCellText === 'alwaysTruncate' || truncateCellText;
+  return truncate ? 'truncate' : wrapCellText === 'never' ? 'prevent-wrap' : undefined;
+};
+
+/**
+ * Temporary deprecation function that can be removed when the
+ * TableHead and TableBody are removed, see issue #1650, or when the
+ * deprectaed 'wrapCellText' and 'truncateCellText' are removed.
+ * @param {*} cellTextOverflow
+ * @param {*} wrapCellText
+ * @param {*} truncateCellText
+ */
+export const handleOverflowDeprecation = (cellTextOverflow, wrapCellText, truncateCellText) => {
+  const mapDeprecatedProps = !cellTextOverflow && (wrapCellText || truncateCellText);
+
+  return mapDeprecatedProps
+    ? mapToCellTextOverflow(wrapCellText, truncateCellText)
+    : cellTextOverflow;
+};
