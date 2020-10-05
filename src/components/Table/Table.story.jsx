@@ -55,7 +55,7 @@ const STATUS = {
   BROKEN: 'BROKEN',
 };
 
-const selectTextWrapping = ['always', 'never', 'auto'];
+const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {

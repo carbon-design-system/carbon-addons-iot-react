@@ -77,7 +77,13 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
+    /**
+     * auto - Wrap for tables with dynamic columns widths and truncate for tables with fixed or resizable columns
+     * always - Wrap if needed for all table column configurations
+     * never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.
+     * alwaysTruncate - Alwyas truncate if needed for all table column configurations
+     */
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -372,9 +378,10 @@ const Table = props => {
   const useCellTextTruncate = useMemo(
     () =>
       options
-        ? options.wrapCellText !== 'always' &&
-          ((options.hasResize && !options.useAutoTableLayoutForResize) ||
-            columns.some(col => col.hasOwnProperty('width')))
+        ? options.wrapCellText === 'alwaysTruncate' ||
+          (options.wrapCellText !== 'always' &&
+            ((options.hasResize && !options.useAutoTableLayoutForResize) ||
+              columns.some(col => col.hasOwnProperty('width'))))
         : undefined,
     [options, columns]
   );
