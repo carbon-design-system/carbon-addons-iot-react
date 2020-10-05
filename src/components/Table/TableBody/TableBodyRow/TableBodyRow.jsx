@@ -177,6 +177,17 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
   <TableExpandRow {...props} />
 ))`
   &&& {
+    ${
+      // if single nested hierarchy AND there are children rows (meaning this is a parent),
+      // bolden all cells of this row
+      props =>
+        props.hasRowNesting?.hasSingleNestedHierarchy && props['data-child-count'] > 0
+          ? `td {
+        font-weight: bold
+      }`
+          : ``
+    }
+
     ${props =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
@@ -245,6 +256,17 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
 ))`
   &&& {
     cursor: pointer;
+
+    ${
+      // if single nested hierarchy, bolden all cells of this row
+      props =>
+        props.hasRowNesting?.hasSingleNestedHierarchy
+          ? `td {
+        font-weight: bold
+      }`
+          : ``
+    }
+
     ${props =>
       props['data-row-nesting']
         ? `
@@ -296,6 +318,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
       border-left: 4px solid ${COLORS.blue};
       border-width: 0 0 0 4px;
       padding: 0;
+      font-weight: bold;
     }
 
     :hover {
@@ -511,6 +534,7 @@ const TableBodyRow = ({
               onRowClicked(id);
             }
           }}
+          hasRowNesting={hasRowNesting}
         >
           {tableCells}
         </StyledTableExpandRowExpanded>
@@ -544,6 +568,7 @@ const TableBodyRow = ({
             onRowClicked(id);
           }
         }}
+        hasRowNesting={hasRowNesting}
       >
         {tableCells}
       </StyledTableExpandRow>
