@@ -15,7 +15,11 @@ import {
 } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
-import { chartValueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import {
+  chartValueFormatter,
+  handleCardVariables,
+  increaseSmallCardSize,
+} from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -68,13 +72,7 @@ const BarChartCard = ({
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
 
-  // Charts render incorrectly if size is too small, so change their size to MEDIUM
-  let size = sizeProp;
-  if (sizeProp === CARD_SIZES.SMALL) {
-    size = CARD_SIZES.MEDIUM;
-  } else if (sizeProp === CARD_SIZES.SMALLWIDE) {
-    size = CARD_SIZES.MEDIUMWIDE;
-  }
+  const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
 
   // If editable, show sample presentation data
   const values = isEditable

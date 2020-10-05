@@ -354,3 +354,21 @@ export const chartValueFormatter = (value, size, unit, locale) => {
   }
   return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
 };
+
+/**
+ * Charts render incorrectly if size is too small, so change their size to MEDIUM
+ * @param {string} size card size
+ */
+export const increaseSmallCardSize = (size, cardName) => {
+  if (__DEV__) {
+    warning(
+      size !== CARD_SIZES.SMALL && size !== CARD_SIZES.SMALLWIDE,
+      `${cardName} does not support card size ${size}`
+    );
+  }
+  return size === CARD_SIZES.SMALL
+    ? CARD_SIZES.MEDIUM
+    : size === CARD_SIZES.SMALLWIDE
+    ? CARD_SIZES.MEDIUMWIDE
+    : size;
+};
