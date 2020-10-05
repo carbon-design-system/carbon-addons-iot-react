@@ -364,6 +364,7 @@ const Table = props => {
 
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();
+  const hasMultiSelect = options.hasRowSelection === 'multi';
 
   const [tableId] = useState(() => uniqueId('table-'));
   const [, forceUpdateCellTextWidth] = useState(0);
@@ -410,7 +411,7 @@ const Table = props => {
 
   const totalColumns =
     visibleColumns.length +
-    (options.hasRowSelection === 'multi' ? 1 : 0) +
+    (hasMultiSelect ? 1 : 0) +
     (options.hasRowExpansion ? 1 : 0) +
     (options.hasRowActions ? 1 : 0);
 
@@ -432,7 +433,7 @@ const Table = props => {
       {/* If there is no items being rendered in the toolbar, don't render the toolbar */
       options.hasFilter ||
       options.hasSearch ||
-      options.hasRowActions ||
+      (hasMultiSelect && view.table.selectedIds.length > 0) ||
       options.hasRowCountInHeader ||
       options.hasColumnSelection ||
       options.hasRowEdit ||

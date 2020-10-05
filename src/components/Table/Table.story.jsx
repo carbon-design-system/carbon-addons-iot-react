@@ -481,7 +481,6 @@ export const initialState = {
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
-      totalItems: tableData.length,
     },
     table: {
       isSelectAllSelected: false,

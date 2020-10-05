@@ -158,7 +158,7 @@ const List = forwardRef((props, ref) => {
           id={item.id}
           index={index}
           key={`${item.id}-list-item-${level}-${value}`}
-          nestingLevel={level}
+          nestingLevel={isCategory ? level - 1 : level}
           value={value}
           icon={
             editingStyleIsMultiple(editingStyle) ? (
@@ -202,7 +202,13 @@ const List = forwardRef((props, ref) => {
     ];
   };
 
-  const listItems = items.map((item, index) => renderItemAndChildren(item, index, null, 0));
+  // If the root level contains a category item, the base indent level should be increased by 1 to
+  // account for the caret on non-category items.
+  const baseIndentLevel = items.filter(item => item?.children && item.children.length > 0) ? 1 : 0;
+
+  const listItems = items.map((item, index) =>
+    renderItemAndChildren(item, index, null, baseIndentLevel)
+  );
 
   return (
     <div

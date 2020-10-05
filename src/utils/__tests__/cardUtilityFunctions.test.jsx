@@ -12,6 +12,7 @@ import {
   getCardVariables,
   replaceVariables,
   chartValueFormatter,
+  increaseSmallCardSize,
 } from '../cardUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -1105,5 +1106,47 @@ describe('cardUtilityFunctions', () => {
     expect(chartValueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('1,500');
     // nil
     expect(chartValueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
+  });
+  describe('Card sizes', () => {
+    const consoleSpy = jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    let originalDev;
+
+    beforeAll(() => {
+      originalDev = global.__DEV__;
+    });
+
+    afterAll(() => {
+      global.__DEV__ = originalDev;
+      consoleSpy.mockRestore();
+    });
+
+    it('increaseSmallCardSize and gives warning in DEV mode', () => {
+      global.__DEV__ = false;
+      expect(increaseSmallCardSize(CARD_SIZES.SMALL, 'testComponent')).toEqual(CARD_SIZES.MEDIUM);
+      expect(increaseSmallCardSize(CARD_SIZES.SMALLWIDE, 'testComponent')).toEqual(
+        CARD_SIZES.MEDIUMWIDE
+      );
+
+      expect(consoleSpy).not.toHaveBeenCalled();
+
+      global.__DEV__ = true;
+      expect(increaseSmallCardSize(CARD_SIZES.SMALL, 'testComponent')).toEqual(CARD_SIZES.MEDIUM);
+      expect(increaseSmallCardSize(CARD_SIZES.SMALLWIDE, 'testComponent')).toEqual(
+        CARD_SIZES.MEDIUMWIDE
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        `Warning: testComponent does not support card size ${CARD_SIZES.SMALL}`
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        `Warning: testComponent does not support card size ${CARD_SIZES.SMALLWIDE}`
+      );
+
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUM)).toEqual(CARD_SIZES.MEDIUM);
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUMTHIN)).toEqual(CARD_SIZES.MEDIUMTHIN);
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUMWIDE)).toEqual(CARD_SIZES.MEDIUMWIDE);
+      expect(increaseSmallCardSize(CARD_SIZES.LARGE)).toEqual(CARD_SIZES.LARGE);
+      expect(increaseSmallCardSize(CARD_SIZES.LARGETHIN)).toEqual(CARD_SIZES.LARGETHIN);
+      expect(increaseSmallCardSize(CARD_SIZES.LARGEWIDE)).toEqual(CARD_SIZES.LARGEWIDE);
+    });
   });
 });
