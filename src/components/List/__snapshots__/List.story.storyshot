@@ -502,14 +502,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -560,14 +552,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
@@ -1030,14 +1014,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -1088,14 +1064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
@@ -1517,14 +1485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -1575,14 +1535,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
@@ -1742,14 +1694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               tabIndex={0}
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -1833,14 +1777,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="button"
               tabIndex={0}
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
@@ -1926,14 +1862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               tabIndex={0}
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -2017,14 +1945,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="button"
               tabIndex={0}
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
@@ -2110,14 +2030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               tabIndex={0}
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
                 onClick={[Function]}
@@ -2201,14 +2113,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="button"
               tabIndex={0}
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--expand-icon"
                 data-testid="expand-icon"
