@@ -658,7 +658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundary
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -670,7 +672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundaryContext
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
