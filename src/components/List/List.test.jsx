@@ -97,4 +97,20 @@ describe('List', () => {
     );
     expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });
+  it('List shows no empty text if not defined', () => {
+    const emptyText = 'empty';
+    render(<List title="list" emptyState={emptyText} />);
+    expect(screen.queryByText(emptyText)).toBeNull();
+  });
+  it('List shows empty text if desired', () => {
+    const emptyText = 'empty';
+    render(<List title="list" hasEmptyState emptyState={emptyText} />);
+    expect(screen.getByText(emptyText)).toBeTruthy();
+  });
+  it('Renders custom component for empty state', () => {
+    const emptyText = 'empty test';
+    const emptyComponent = <div data-testid="emptyState">{emptyText}</div>;
+    render(<List title="list" hasEmptyState emptyState={emptyComponent} />);
+    expect(screen.getByTestId('emptyState').textContent).toEqual(emptyText);
+  });
 });

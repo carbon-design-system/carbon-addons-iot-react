@@ -15735,6 +15735,25 @@ Map {
               ],
             },
           },
+          "emptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'Empty list'",
+            },
+            "description": "content shown if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "union",
+              "value": Array [
+                Object {
+                  "name": "node",
+                },
+                Object {
+                  "name": "string",
+                },
+              ],
+            },
+          },
           "expandedIds": Object {
             "defaultValue": Object {
               "computed": false,
@@ -15758,6 +15777,17 @@ Map {
             "required": false,
             "type": Object {
               "name": "func",
+            },
+          },
+          "hasEmptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "false",
+            },
+            "description": "whether to show content if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "bool",
             },
           },
           "i18n": Object {
@@ -15857,8 +15887,12 @@ Map {
             },
           },
           "items": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
             "description": "data source of list items",
-            "required": true,
+            "required": false,
             "type": Object {
               "name": "arrayOf",
               "value": Object {
@@ -16010,8 +16044,10 @@ Map {
         "buttons": Array [],
         "className": null,
         "editingStyle": null,
+        "emptyState": "Empty list",
         "expandedIds": Array [],
         "handleSelect": [Function],
+        "hasEmptyState": false,
         "i18n": Object {
           "close": "Close",
           "expand": "Expand",
@@ -16022,6 +16058,7 @@ Map {
         "isLargeRow": false,
         "isLoading": false,
         "itemWillMove": [Function],
+        "items": Array [],
         "onItemMoved": [Function],
         "overrides": null,
         "pagination": null,
@@ -16053,6 +16090,19 @@ Map {
           ],
           "type": "oneOf",
         },
+        "emptyState": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "node",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
         "expandedIds": Object {
           "args": Array [
             Object {
@@ -16063,6 +16113,9 @@ Map {
         },
         "handleSelect": Object {
           "type": "func",
+        },
+        "hasEmptyState": Object {
+          "type": "bool",
         },
         "i18n": Object {
           "args": Array [
@@ -16146,7 +16199,6 @@ Map {
               "type": "shape",
             },
           ],
-          "isRequired": true,
           "type": "arrayOf",
         },
         "onItemMoved": Object {
