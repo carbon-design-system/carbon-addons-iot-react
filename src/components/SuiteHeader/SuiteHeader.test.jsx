@@ -39,7 +39,6 @@ const commonProps = {
       isExternal: true,
     },
   ],
-  countryCode: 'en',
 };
 
 describe('SuiteHeader', () => {
@@ -56,7 +55,6 @@ describe('SuiteHeader', () => {
     render(
       <SuiteHeader
         {...commonProps}
-        countryCode="br"
         sideNavProps={{
           links: [
             {
@@ -166,13 +164,19 @@ describe('SuiteHeader', () => {
   });
   it('user clicks survey link', () => {
     const surveyLink = 'https://www.ibm.com/';
-    render(<SuiteHeader {...commonProps} appName={undefined} surveyLink={surveyLink} />);
+    const surveyData = { surveyLink, privacyLink: surveyLink };
+    render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
     userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
     expect(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText).href).toBe(surveyLink);
   });
   it('user closes survey notification', () => {
-    render(<SuiteHeader {...commonProps} surveyLink="https://www.ibm.com" />);
+    render(
+      <SuiteHeader
+        {...commonProps}
+        surveyData={{ surveyLink: 'https://www.ibm.com/', privacyLink: 'https://www.ibm.com/' }}
+      />
+    );
     userEvent.click(screen.getByRole('button', { name: 'closes notification' }));
     expect(screen.queryByRole('alert')).toBeNull();
   });

@@ -16,21 +16,6 @@ import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitc
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import SuiteHeaderI18N from './i18n';
 
-const IBM_POLICY_COUNTRY_CODES = [
-  'cn',
-  'tw',
-  'en',
-  'fr',
-  'ca',
-  'de',
-  'it',
-  'jp',
-  'kr',
-  'br',
-  'ru',
-  'es',
-];
-
 const ROUTE_TYPES = {
   ADMIN: 'ADMIN',
   NAVIGATOR: 'ADMIN',
@@ -62,8 +47,9 @@ export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
   isExternal: PropTypes.bool,
 });
 
-export const SuiteHeaderSurveyPropTypes = PropTypes.shape({
-  link: PropTypes.string,
+export const SuiteHeaderSurveyDataPropTypes = PropTypes.shape({
+  surveyLink: PropTypes.string.isRequired,
+  privacyLink: PropTypes.string.isRequired,
 });
 
 export const SuiteHeaderI18NPropTypes = PropTypes.shape({
@@ -95,10 +81,9 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
-  surveyLink: null,
+  surveyData: null,
   onRouteChange: async () => true,
   i18n: SuiteHeaderI18N.en,
-  countryCode: 'en',
 };
 
 const propTypes = {
@@ -120,12 +105,10 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
-  /** If surveyLink is present, show a ToastNotification */
-  surveyLink: PropTypes.string,
+  /** If surveyData is present, show a ToastNotification */
+  surveyData: SuiteHeaderSurveyDataPropTypes,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
   onRouteChange: PropTypes.func,
-  /** Country code for IBM policy link */
-  countryCode: PropTypes.oneOf(IBM_POLICY_COUNTRY_CODES),
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -140,26 +123,14 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
-  surveyLink,
+  surveyData,
   onRouteChange,
   i18n,
-  countryCode,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showToast, setShowToast] = useState(surveyLink !== null && surveyLink !== undefined);
-
-  let ibmPolicyLink = 'https://www.ibm.com/privacy/{langpath}';
-  const countryCodeLower = countryCode.toLowerCase();
-
-  if (countryCodeLower === 'en') {
-    ibmPolicyLink = ibmPolicyLink.replace('{langpath}', 'us/en');
-  } else if (IBM_POLICY_COUNTRY_CODES.includes(countryCodeLower)) {
-    ibmPolicyLink = ibmPolicyLink.replace('{langpath}', countryCodeLower);
-  } else {
-    ibmPolicyLink = ibmPolicyLink.replace('{langpath}', 'us/en');
-  }
+  const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
 
   return (
     <>
@@ -170,11 +141,11 @@ const SuiteHeader = ({
           title={mergedI18N.surveyTitle(appName || suiteName)}
           subtitle={
             <>
-              <Link target="_blank" href={surveyLink}>
+              <Link target="_blank" href={surveyData.surveyLink}>
                 {mergedI18N.surveyText}
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
-                <Link target="_blank" href={ibmPolicyLink}>
+                <Link target="_blank" href={surveyData.privacyLink}>
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
               </div>

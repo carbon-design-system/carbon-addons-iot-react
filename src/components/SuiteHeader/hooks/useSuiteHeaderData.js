@@ -190,7 +190,7 @@ const useSuiteHeaderData = ({
           appsData
         );
 
-        // NPS
+        // Survey
         const showSurvey = surveyConfig?.id
           ? await calculateSurveyStatus(profileData.user.username, surveyConfig, api)
           : false;

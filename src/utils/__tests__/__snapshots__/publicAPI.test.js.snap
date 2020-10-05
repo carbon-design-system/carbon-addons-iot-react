@@ -6424,7 +6424,6 @@ Map {
     "defaultProps": Object {
       "appName": null,
       "className": null,
-      "countryCode": "en",
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -6442,7 +6441,7 @@ Map {
         "requestEnhancement": "Request enhancement",
         "settingsIcon": "Settings",
         "support": "Support",
-        "surveyPrivacyPolicy": "IBM Privacy Policy",
+        "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": [Function],
         "switcherLearnMoreLink": "Learn more",
@@ -6454,7 +6453,7 @@ Map {
       "isAdminView": false,
       "onRouteChange": [Function],
       "sideNavProps": null,
-      "surveyLink": null,
+      "surveyData": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -6490,25 +6489,6 @@ Map {
       },
       "className": Object {
         "type": "string",
-      },
-      "countryCode": Object {
-        "args": Array [
-          Array [
-            "cn",
-            "tw",
-            "en",
-            "fr",
-            "ca",
-            "de",
-            "it",
-            "jp",
-            "kr",
-            "br",
-            "ru",
-            "es",
-          ],
-        ],
-        "type": "oneOf",
       },
       "i18n": Object {
         "args": Array [
@@ -6702,8 +6682,20 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "surveyLink": Object {
-        "type": "string",
+      "surveyData": Object {
+        "args": Array [
+          Object {
+            "privacyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "surveyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "userDisplayName": Object {
         "isRequired": true,
@@ -6894,7 +6886,7 @@ Map {
       "requestEnhancement": "Request enhancement",
       "settingsIcon": "Settings",
       "support": "Support",
-      "surveyPrivacyPolicy": "IBM Privacy Policy",
+      "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": [Function],
       "switcherLearnMoreLink": "Learn more",

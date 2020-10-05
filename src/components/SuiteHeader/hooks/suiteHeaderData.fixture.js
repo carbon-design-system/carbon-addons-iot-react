@@ -346,6 +346,7 @@ const fixture = {
     support: 'Support',
     surveyText: 'Click here to help us improve the product',
     surveyTitle: 'Enjoying {solutionName}?',
+    surveyPrivacyPolicy: 'Privacy Policy',
     switcherLearnMoreLink: 'Learn more',
     switcherNavigatorLink: 'All applications',
     switcherRequestAccess: 'Contact your administrator to request application access',
