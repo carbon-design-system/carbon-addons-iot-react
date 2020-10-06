@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor/DashboardEditorHeader default 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 6rem)",
+        }
+      }
+    >
+      <div
+        className="iot--dashboard-editor--header"
+      >
+        <div
+          className="bx--grid"
+        >
+          <div
+            className="bx--row"
+          >
+            <div
+              className="bx--col header-left"
+            >
+              <div
+                className="header-top"
+              >
+                <div
+                  className="breadcrumb--container breadcrumb--container__overflowfull"
+                  data-testid="overflow"
+                >
+                  <nav
+                    aria-label="Breadcrumb"
+                    className={null}
+                  >
+                    <ol
+                      className="bx--breadcrumb"
+                    >
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          href="www.ibm.com"
+                        >
+                          Dashboard library
+                        </a>
+                      </li>
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          href="www.ibm.com"
+                        >
+                          Favorites
+                        </a>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <div
+                className="header-bottom"
+              >
+                <h4>
+                  New dashboard
+                </h4>
+              </div>
+            </div>
+            <div
+              className="bx--col header-right"
+            >
+              <div
+                className="header-top"
+              />
+              <div
+                className="header-bottom"
+              >
+                <button
+                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Import
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Import"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                    />
+                    <path
+                      d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Export
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Export"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 21L26.17 21 23.59 23.59 25 25 30 20 25 15 23.59 16.41 26.17 19 13 19 13 21z"
+                    />
+                    <path
+                      d="M22,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,14,2H4A2,2,0,0,0,2,4V28a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V26H20v2H4V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L19.59,10Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Save and close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

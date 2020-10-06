@@ -7791,6 +7791,109 @@ Map {
       },
     },
   },
+  "DashboardEditor" => Object {
+    "defaultProps": Object {
+      "headerBreadcrumbs": null,
+      "i18n": Object {
+        "closeGalleryButton": "Back",
+        "galleryHeader": "Gallery",
+        "headerCancelButton": "Cancel",
+        "headerExportButton": "Export",
+        "headerImportButton": "Import",
+        "headerSubmitButton": "Save and close",
+        "openGalleryButton": "Open gallery",
+        "openJSONButton": "Open JSON editor",
+      },
+      "initialValue": Object {
+        "cards": Array [],
+        "layouts": Object {},
+      },
+      "onExport": null,
+      "onImport": null,
+      "renderCardPreview": [Function],
+      "renderHeader": null,
+      "supportedCardTypes": Array [
+        "BAR",
+        "TIMESERIES",
+        "VALUE",
+        "TABLE",
+      ],
+    },
+    "propTypes": Object {
+      "headerBreadcrumbs": Object {
+        "args": Array [
+          Object {
+            "type": "element",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "headerCancelButton": Object {
+              "type": "string",
+            },
+            "headerExportButton": Object {
+              "type": "string",
+            },
+            "headerImportButton": Object {
+              "type": "string",
+            },
+            "headerSubmitButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialValue": Object {
+        "args": Array [
+          Object {
+            "cards": Object {
+              "type": "array",
+            },
+            "layouts": Object {
+              "type": "object",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "onCancel": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onExport": Object {
+        "type": "func",
+      },
+      "onImport": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "renderCardPreview": Object {
+        "type": "func",
+      },
+      "renderHeader": Object {
+        "type": "func",
+      },
+      "supportedCardTypes": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
   "CardEditor" => Object {
     "defaultProps": Object {
       "i18n": Object {
@@ -7799,7 +7902,7 @@ Map {
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
       },
-      "supportedTypes": undefined,
+      "supportedTypes": Array [],
       "value": null,
     },
     "propTypes": Object {

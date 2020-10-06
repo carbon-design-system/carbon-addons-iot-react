@@ -19,7 +19,7 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
-  supportedTypes: undefined,
+  supportedTypes: [],
 };
 
 const propTypes = {
@@ -34,7 +34,7 @@ const propTypes = {
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
   /** Callback function when an image file is uploaded */
-  onAddImage: PropTypes.func.isRequired,
+  // onAddImage: PropTypes.func.isRequired,
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -47,7 +47,7 @@ const CardEditor = ({
   onShowGallery,
   onChange,
   onAddCard,
-  onAddImage,
+  // onAddImage,
   supportedTypes,
   i18n,
 }) => {
@@ -78,12 +78,10 @@ const CardEditor = ({
           <CardGalleryList
             onAddCard={onAddCard}
             supportedTypes={supportedTypes}
-            i18n={{
-              galleryHeader: mergedI18N.galleryHeader,
-            }}
+            i18n={mergedI18N}
           />
         ) : (
-          <CardEditForm value={value} onChange={onChange} onAddImage={onAddImage} />
+          <CardEditForm value={value} onChange={onChange} /* onAddImage={onAddImage} */ />
         )}
       </div>
     </div>

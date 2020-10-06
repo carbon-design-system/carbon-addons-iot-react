@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, object } from '@storybook/addon-knobs';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
 
-import { SuiteHeader, PageTitleBar, Button, Card, Link } from '../../index';
+import { SuiteHeader, Card, Link } from '../../index';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
@@ -100,8 +100,17 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
+        title={text('title', 'My dashboard')}
         onAddImage={action('onAddImage')}
+        onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
+        supportedCardTypes={object('supportedCardTypes', [
+          'BAR',
+          'TIMESERIES',
+          'VALUE',
+          'TABLE',
+          'OTHER',
+        ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
@@ -146,8 +155,16 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         }}
       />
       <DashboardEditor
-        onAddImage={action('onAddImage')}
+        title={text('title', 'My dashboard')}
+        onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
+        supportedCardTypes={object('supportedCardTypes', [
+          'BAR',
+          'TIMESERIES',
+          'VALUE',
+          'TABLE',
+          'OTHER',
+        ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
@@ -155,35 +172,92 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
       />
     </div>
   ))
-
   .add('custom card preview renderer', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
-        onAddImage={action('onAddImage')}
+        title="Custom dashboard"
+        initialValue={{
+          cards: [
+            {
+              id: 'Custom',
+              title: 'Custom rendered card',
+              type: 'CUSTOM',
+              size: 'MEDIUM',
+              value: 35,
+            },
+            {
+              id: 'Standard',
+              title: 'Default rendered card',
+              type: 'VALUE',
+              size: 'MEDIUM',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'key1',
+                    unit: '%',
+                    label: 'Key 1',
+                  },
+                  {
+                    dataSourceId: 'key2',
+                    unit: 'lb',
+                    label: 'Key 2',
+                  },
+                ],
+              },
+            },
+          ],
+          layouts: {},
+        }}
+        onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
+        supportedCardTypes={object('supportedCardTypes', [
+          'BAR',
+          'TIMESERIES',
+          'VALUE',
+          'TABLE',
+          'CUSTOM',
+          'OTHER',
+        ])}
+        i18n={{
+          cardType_CUSTOM: 'Custom',
+        }}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
-        renderCardPreview={(cardJson, onCardSelect, onCardRemove) => (
-          <Card
-            id={cardJson.id}
-            size={cardJson.size}
-            title={cardJson.title}
-            isEditable
-            availableActions={{ edit: true, delete: true }}
-            onCardAction={(id, actionId) => {
-              if (actionId === CARD_ACTIONS.EDIT_CARD) {
-                onCardSelect(id);
-              }
-              if (actionId === CARD_ACTIONS.DELETE_CARD) {
-                onCardRemove(id);
-              }
-            }}
-          >
-            Custom content!
-          </Card>
-        )}
+        renderCardPreview={(cardJson, isSelected, onSelectCard, onRemoveCard) => {
+          const commonProps = isSelected
+            ? { className: 'selected-card' }
+            : {
+                availableActions: { edit: true, delete: true },
+                onCardAction: (id, actionId) => {
+                  if (actionId === CARD_ACTIONS.EDIT_CARD) {
+                    onSelectCard(id);
+                  }
+                  if (actionId === CARD_ACTIONS.DELETE_CARD) {
+                    onRemoveCard(id);
+                  }
+                },
+              };
+          return cardJson.type === 'CUSTOM' ? (
+            <Card
+              key={cardJson.id}
+              id={cardJson.id}
+              size={cardJson.size}
+              title={cardJson.title}
+              isEditable
+              {...commonProps}
+            >
+              <div style={{ padding: '1rem' }}>
+                This content is rendered by the renderCardPreview function. The &quot;value&quot;
+                property on the card will be rendered here:
+                <h3>{cardJson.value}</h3>
+              </div>
+            </Card>
+          ) : (
+            undefined
+          );
+        }}
       />
     </div>
   ));

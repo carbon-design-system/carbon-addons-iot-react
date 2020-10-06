@@ -1,264 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Add16, Edit16, Delete16, Code16 } from '@carbon/icons-react';
+import { Code16 } from '@carbon/icons-react';
 
 import {
   CARD_SIZES,
-  CARD_TYPES,
+  // CARD_TYPES,
   CARD_DIMENSIONS,
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
+  // BAR_CHART_TYPES,
+  // BAR_CHART_LAYOUTS,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
+import { Tabs, Tab, Button, TextArea, TextInput, Dropdown /* ToggleSmall */ } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
+
+/*
+import DataSeriesFormItem from './DataSeriesFormItem/DataSeriesFormItem';
+import AttributesFormItem from './AttributesFormItem/AttributesFormItem';
 import ImageFormItem from './ImageFormItem/ImageFormItem';
-import {
-  Tabs,
-  ComposedModal,
-  Tab,
-  Button,
-  TextArea,
-  List,
-  TextInput,
-  Dropdown,
-  MultiSelect,
-  RadioButtonGroup,
-  RadioButton,
-  FormLabel,
-  ToggleSmall,
-} from '../../../index';
+*/
 
 const { iotPrefix } = settings;
-
-const DataSeriesFormItem = ({ value = [], availableDataSourceIds, onChange }) => {
-  const [showEditor, setShowEditor] = useState(false);
-  const [editData, setEditData] = useState({});
-
-  const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  return (
-    <>
-      {showEditor ? (
-        <ComposedModal
-          header={{
-            title: 'Edit data series',
-          }}
-          onSubmit={() => {
-            onChange(value.map(i => (i.dataSourceId === editData.dataSourceId ? editData : i)));
-            setShowEditor(false);
-            setEditData(null);
-          }}
-          onClose={() => {
-            setShowEditor(false);
-            setEditData(null);
-          }}
-        >
-          <div style={{ paddingBottom: '1rem' }}>{editData.dataSourceId}</div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="seriesLabel"
-              labelText="Label"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  label: evt.target.value,
-                })
-              }
-              value={editData.label}
-            />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <div>Legend color</div>
-            <div className="color-picker">
-              {['red', 'green', 'blue', 'yellow'].map(color => (
-                <button
-                  style={{ backgroundColor: color }}
-                  className={`color-picker-button ${
-                    color === editData.color ? 'color-picker-button__selected' : ''
-                  }`}
-                  onClick={() => setEditData({ ...editData, color })}
-                />
-              ))}
-            </div>
-          </div>
-        </ComposedModal>
-      ) : null}
-      <div className={`${baseClassName}--form-section`}>Data series</div>
-      <div className={`${baseClassName}--input`}>
-        <MultiSelect
-          id="dataSourceIds"
-          label="Select data items"
-          direction="bottom"
-          itemToString={item => item.text}
-          items={availableDataSourceIds.map(i => ({ id: i, text: i }))}
-          light
-          initialSelectedItems={value.map(i => ({ id: i.dataSourceId, text: i.dataSourceId }))}
-          onChange={({ selectedItems }) => {
-            // construct new series array, duplicating existing configuration if the dataSourceId
-            // already existed
-            const newValue = selectedItems
-              .map(i => i.id)
-              .map(dataSourceId => ({
-                dataSourceId,
-                label: dataSourceId,
-                ...(value.find(i => i.dataSourceId === dataSourceId) ?? {}),
-              }));
-            onChange(newValue);
-          }}
-          titleText="Data item"
-        />
-      </div>
-      <List
-        items={value.map(series => ({
-          id: series.dataSourceId,
-          content: {
-            value: series.dataSourceId,
-            icon: <div style={{ width: '1rem', height: '1rem', backgroundColor: series.color }} />,
-            rowActions: [
-              <Button
-                style={{ color: 'black' }}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditData(series);
-                  setShowEditor(true);
-                }}
-                iconDescription="Edit"
-              />,
-            ],
-          },
-        }))}
-      />
-    </>
-  );
-};
-
-const AttributesFormItem = ({ value, onChange }) => {
-  const [showEditor, setShowEditor] = useState(false);
-  const [editData, setEditData] = useState({});
-  const [editDataSourceId, setEditDataSourceId] = useState({});
-
-  return (
-    <>
-      {showEditor ? (
-        <ComposedModal
-          header={{
-            label: 'Attribute',
-            title: 'Edit attribute',
-          }}
-          onSubmit={() => {
-            onChange(value.filter(i => i.dataSourceId !== editDataSourceId).concat([editData]));
-            setShowEditor(false);
-            setEditData(null);
-          }}
-          onClose={() => {
-            setShowEditor(false);
-            setEditData(null);
-          }}
-        >
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeLabel"
-              labelText="Label"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  label: evt.target.value,
-                })
-              }
-              value={editData.label}
-            />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeDataSourceId"
-              labelText="Data source ID"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  dataSourceId: evt.target.value,
-                })
-              }
-              value={editData.dataSourceId}
-            />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeUnit"
-              labelText="Unit"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  unit: evt.target.value,
-                })
-              }
-              value={editData.unit}
-            />
-          </div>
-        </ComposedModal>
-      ) : null}
-      <List
-        title="Attributes"
-        buttons={[
-          <Button
-            renderIcon={Add16}
-            hasIconOnly
-            size="small"
-            iconDescription="Add"
-            key="expandable-list-button-add"
-            onClick={() =>
-              onChange(
-                value.concat([
-                  {
-                    dataSourceId: 'newAttr',
-                    label: 'New',
-                    unit: '%',
-                  },
-                ])
-              )
-            }
-          />,
-        ]}
-        items={value.map(attr => ({
-          id: attr.dataSourceId,
-          content: {
-            value: attr.label,
-            rowActions: [
-              <Button
-                style={{ color: 'black' }}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditData(attr);
-                  setEditDataSourceId(attr.dataSourceId);
-                  setShowEditor(true);
-                }}
-                iconDescription="Edit"
-              />,
-              <Button
-                style={{ color: 'black' }}
-                renderIcon={Delete16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => onChange(value.filter(i => i.dataSourceId !== attr.dataSourceId))}
-                iconDescription="Remove"
-              />,
-            ],
-          },
-        }))}
-      />
-    </>
-  );
-};
 
 const defaultProps = {
   value: {},
@@ -295,15 +56,12 @@ const propTypes = {
   }),
 };
 
-const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
+const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
-  const [modalError, setModalError] = useState();
   const [modalData, setModalData] = useState();
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const allowedIntervals = ['minute', 'hour', 'day', 'week', 'month'];
 
   const allowedSizesForType = {
     VALUE: [
@@ -350,13 +108,14 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
   };
 
   const getCardSizeText = size => {
-    const sizeName = mergedI18N[`cardSize_${size}`] ?? i;
+    const sizeName = mergedI18N[`cardSize_${size}`] ?? size;
     const sizeDimensions = CARD_DIMENSIONS[size]
       ? `(${CARD_DIMENSIONS[size].lg.w}x${CARD_DIMENSIONS[size].lg.h})`
       : null;
     return `${sizeName}${sizeDimensions ? ` ${sizeDimensions}` : ''}`;
   };
 
+  /*
   const renderValueCardBasicItems = () => {
     return (
       <>
@@ -627,6 +386,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
   };
 
   const renderTimeSeriesCardBasicItems = () => {
+    const allowedIntervals = ['minute', 'hour', 'day', 'week', 'month'];
     return (
       <>
         <div className={`${baseClassName}--input`}>
@@ -644,25 +404,6 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
             titleText="Interval"
           />
         </div>
-        {/*}
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="timeDataSourceId"
-            labelText="Time data source"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  ...(evt.target.value !== '' ? { timeDataSourceId: evt.target.value } : {}),
-                },
-              })
-            }
-            value={value.content?.timeDataSourceId}
-          />
-        </div>
-          */}
         <DataSeriesFormItem
           value={value.content.series}
           availableDataSourceIds={['temperature', 'humidity', 'pressure']}
@@ -720,6 +461,50 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
       </>
     );
   };
+  */
+
+  const commonFormItems = (
+    <>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id="title"
+          labelText="Card title"
+          light
+          onChange={evt => onChange({ ...value, title: evt.target.value })}
+          value={value.title}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextArea
+          id="description"
+          labelText="Description (Optional)"
+          light
+          onChange={evt => onChange({ ...value, description: evt.target.value })}
+          value={value.description}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <Dropdown
+          id="size"
+          label="Select a size"
+          direction="bottom"
+          itemToString={item => item.text}
+          items={(allowedSizesForType[value.type] ?? Object.keys(CARD_SIZES)).map(i => {
+            return {
+              id: i,
+              text: getCardSizeText(i),
+            };
+          })}
+          light
+          selectedItem={{ id: value.size, text: getCardSizeText(value.size) }}
+          onChange={({ selectedItem }) => {
+            onChange({ ...value, size: selectedItem.id });
+          }}
+          titleText="Size"
+        />
+      </div>
+    </>
+  );
 
   return (
     <>
@@ -758,62 +543,29 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
       ) : null}
       <div className={baseClassName}>
         <Tabs>
-          <Tab label="Basics">
+          <Tab label="Configuration" /* label="Basics" */>
             <div className={`${baseClassName}--content`}>
-              <div className={`${baseClassName}--input`}>
-                <TextInput
-                  id="title"
-                  labelText="Card title"
-                  light
-                  onChange={evt => onChange({ ...value, title: evt.target.value })}
-                  value={value.title}
-                />
-              </div>
-              <div className={`${baseClassName}--input`}>
-                <TextArea
-                  id="description"
-                  labelText="Description (Optional)"
-                  light
-                  onChange={evt => onChange({ ...value, description: evt.target.value })}
-                  value={value.description}
-                />
-              </div>
-              <div className={`${baseClassName}--input`}>
-                <Dropdown
-                  id="size"
-                  label="Select a size"
-                  direction="bottom"
-                  itemToString={item => item.text}
-                  items={(allowedSizesForType[value.type] ?? Object.keys(CARD_SIZES)).map(i => {
-                    return {
-                      id: i,
-                      text: getCardSizeText(i),
-                    };
-                  })}
-                  light
-                  selectedItem={{ id: value.size, text: getCardSizeText(value.size) }}
-                  onChange={({ selectedItem }) => {
-                    onChange({ ...value, size: selectedItem.id });
-                  }}
-                  titleText="Size"
-                />
-              </div>
+              {commonFormItems}
+              {/*
               {value.type === CARD_TYPES.VALUE ? renderValueCardBasicItems() : null}
               {value.type === CARD_TYPES.BAR ? renderBarChartCardBasicItems() : null}
               {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardBasicItems() : null}
               {value.type === CARD_TYPES.IMAGE ? renderImageCardBasicItems() : null}
               {value.type === CARD_TYPES.TABLE ? renderTableCardBasicItems() : null}
+              */}
             </div>
           </Tab>
-          <Tab label="Customize">
-            <div className={`${baseClassName}--content`}>
-              {value.type === CARD_TYPES.VALUE ? renderValueCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.BAR ? renderBarChartCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.IMAGE ? renderImageCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.TABLE ? renderTableCardAdvancedItems() : null}
-            </div>
-          </Tab>
+          {/*
+            <Tab label="Customize">
+              <div className={`${baseClassName}--content`}>
+                {value.type === CARD_TYPES.VALUE ? renderValueCardAdvancedItems() : null}
+                {value.type === CARD_TYPES.BAR ? renderBarChartCardAdvancedItems() : null}
+                {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardAdvancedItems() : null}
+                {value.type === CARD_TYPES.IMAGE ? renderImageCardAdvancedItems() : null}
+                {value.type === CARD_TYPES.TABLE ? renderTableCardAdvancedItems() : null}
+              </div>
+            </Tab>
+          */}
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
