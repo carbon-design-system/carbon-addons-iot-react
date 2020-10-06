@@ -361,15 +361,21 @@ const DateTimePicker = ({
           startDate.minutes(value.absolute.startTime.split(':')[1]);
         }
         returnValue.absolute.start = new Date(startDate.valueOf());
-        const endDate = moment(value.absolute.end);
-        if (value.absolute.endTime) {
-          endDate.hours(value.absolute.endTime.split(':')[0]);
-          endDate.minutes(value.absolute.endTime.split(':')[1]);
+        if (value.absolute.end) {
+          const endDate = moment(value.absolute.end);
+          if (value.absolute.endTime) {
+            endDate.hours(value.absolute.endTime.split(':')[0]);
+            endDate.minutes(value.absolute.endTime.split(':')[1]);
+          }
+          returnValue.absolute.end = new Date(endDate.valueOf());
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+            endDate
+          ).format(dateTimeMask)}`;
+        } else {
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+            startDate
+          ).format(dateTimeMask)}`;
         }
-        returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
-          endDate
-        ).format(dateTimeMask)}`;
         break;
       }
       default:
@@ -442,15 +448,19 @@ const DateTimePicker = ({
   );
 
   const onDatePickerChange = range => {
-    if (range.length > 1) {
+    const newAbsolute = { ...absoluteValue };
+
+    if (range[1]) {
       setFocusOnFirstField(!focusOnFirstField);
+      newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+      newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
+      newAbsolute.end = range[1]; // eslint-disable-line prefer-destructuring
+      newAbsolute.endDate = moment(newAbsolute.end).format('MM/DD/YYYY');
     }
 
-    const newAbsolute = { ...absoluteValue };
-    [newAbsolute.start] = range;
+    newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
     newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
-    newAbsolute.end = range[range.length - 1];
-    newAbsolute.endDate = moment(newAbsolute.end).format('MM/DD/YYYY');
+
     setAbsoluteValue(newAbsolute);
   };
 
