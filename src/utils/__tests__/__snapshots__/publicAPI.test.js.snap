@@ -7830,6 +7830,8 @@ Map {
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
+        "headerDeleteButton": "Delete",
+        "headerEditTitleButton": "Edit title",
         "headerExportButton": "Export",
         "headerImportButton": "Import",
         "headerSubmitButton": "Save and close",
@@ -7840,6 +7842,8 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "onDelete": null,
+      "onEditTitle": null,
       "onExport": null,
       "onImport": null,
       "renderCardPreview": [Function],
@@ -7894,6 +7898,12 @@ Map {
       },
       "onCancel": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onDelete": Object {
+        "type": "func",
+      },
+      "onEditTitle": Object {
         "type": "func",
       },
       "onExport": Object {

@@ -26,7 +26,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--dashboard-editor--content"
         >
           <div
-            className="iot--dashboard-editor--header"
+            className="iot--dashboard-editor-header"
           >
             <div
               className="bx--grid"
@@ -35,10 +35,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--row"
               >
                 <div
-                  className="bx--col header-left"
+                  className="bx--col iot--dashboard-editor-header--left"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   >
                     <div
                       className="breadcrumb--container breadcrumb--container__overflowfull"
@@ -76,24 +76,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
-                    <h4>
+                    <h3>
                       Custom dashboard
-                    </h4>
+                    </h3>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Edit title
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Edit title"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22,22v6H6V4H16V2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V22Z"
+                        />
+                        <path
+                          d="M29.54,5.76l-3.3-3.3a1.6,1.6,0,0,0-2.24,0l-14,14V22h5.53l14-14a1.6,1.6,0,0,0,0-2.24ZM14.7,20H12V17.3l9.44-9.45,2.71,2.71ZM25.56,9.15,22.85,6.44l2.27-2.27,2.71,2.71Z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div
-                  className="bx--col header-right"
+                  className="bx--col iot--dashboard-editor-header--right"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   />
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Import
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Import"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                        />
+                        <path
+                          d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -126,7 +192,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Delete
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Delete"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 12H14V24H12zM18 12H20V24H18z"
+                        />
+                        <path
+                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -135,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1015,7 +1114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--dashboard-editor--content"
         >
           <div
-            className="iot--dashboard-editor--header"
+            className="iot--dashboard-editor-header"
           >
             <div
               className="bx--grid"
@@ -1024,10 +1123,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--row"
               >
                 <div
-                  className="bx--col header-left"
+                  className="bx--col iot--dashboard-editor-header--left"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   >
                     <div
                       className="breadcrumb--container breadcrumb--container__overflowfull"
@@ -1065,24 +1164,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
-                    <h4>
+                    <h3>
                       My dashboard
-                    </h4>
+                    </h3>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Edit title
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Edit title"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22,22v6H6V4H16V2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V22Z"
+                        />
+                        <path
+                          d="M29.54,5.76l-3.3-3.3a1.6,1.6,0,0,0-2.24,0l-14,14V22h5.53l14-14a1.6,1.6,0,0,0,0-2.24ZM14.7,20H12V17.3l9.44-9.45,2.71,2.71ZM25.56,9.15,22.85,6.44l2.27-2.27,2.71,2.71Z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div
-                  className="bx--col header-right"
+                  className="bx--col iot--dashboard-editor-header--right"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   />
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Import
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Import"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                        />
+                        <path
+                          d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1115,7 +1280,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Delete
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Delete"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 12H14V24H12zM18 12H20V24H18z"
+                        />
+                        <path
+                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1124,7 +1322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -1854,9 +2052,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--whatsNew"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_blank"
                     title="What's new"
                   >
                     <span
@@ -1869,9 +2068,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--gettingStarted"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_blank"
                     title="Getting started"
                   >
                     <span
@@ -1884,9 +2084,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--documentation"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_blank"
                     title="Documentation"
                   >
                     <span
@@ -1899,9 +2100,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--requestEnhancement"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_blank"
                     title="Request enhancement"
                   >
                     <span
@@ -1914,9 +2116,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--support"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_blank"
                     title="Support"
                   >
                     <span
@@ -1929,9 +2132,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <li>
                   <a
                     className="bx--header__menu-item"
-                    href="https://www.ibm.com"
+                    data-testid="suite-header-help--about"
+                    href="javascript:void(0)"
+                    onClick={[Function]}
                     tabIndex={0}
-                    target="_self"
                     title="About"
                   >
                     <span
@@ -2113,7 +2317,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--suite-header-app-switcher--nav-link"
                       >
                         <a
-                          href="https://www.ibm.com"
+                          data-testid="suite-header-app-switcher--all-applications"
+                          href="javascript:void(0)"
+                          onClick={[Function]}
                         >
                           <svg
                             aria-hidden={true}
@@ -2136,7 +2342,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--suite-header-app-switcher--app-link"
                       >
                         <a
-                          href="https://www.ibm.com"
+                          data-testid="suite-header-app-switcher--monitor"
+                          href="javascript:void(0)"
+                          onClick={[Function]}
                         >
                           Monitor
                         </a>
@@ -2145,9 +2353,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--suite-header-app-switcher--app-link"
                       >
                         <a
-                          href="https://www.ibm.com"
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          data-testid="suite-header-app-switcher--health"
+                          href="javascript:void(0)"
+                          onClick={[Function]}
                         >
                           Health
                         </a>
@@ -2453,7 +2661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--dashboard-editor--content"
         >
           <div
-            className="iot--dashboard-editor--header"
+            className="iot--dashboard-editor-header"
           >
             <div
               className="bx--grid"
@@ -2462,10 +2670,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="bx--row"
               >
                 <div
-                  className="bx--col header-left"
+                  className="bx--col iot--dashboard-editor-header--left"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   >
                     <div
                       className="breadcrumb--container breadcrumb--container__overflowfull"
@@ -2503,24 +2711,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
-                    <h4>
+                    <h3>
                       My dashboard
-                    </h4>
+                    </h3>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Edit title
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Edit title"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22,22v6H6V4H16V2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V22Z"
+                        />
+                        <path
+                          d="M29.54,5.76l-3.3-3.3a1.6,1.6,0,0,0-2.24,0l-14,14V22h5.53l14-14a1.6,1.6,0,0,0,0-2.24ZM14.7,20H12V17.3l9.44-9.45,2.71,2.71ZM25.56,9.15,22.85,6.44l2.27-2.27,2.71,2.71Z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div
-                  className="bx--col header-right"
+                  className="bx--col iot--dashboard-editor-header--right"
                 >
                   <div
-                    className="header-top"
+                    className="iot--dashboard-editor-header--top"
                   />
                   <div
-                    className="header-bottom"
+                    className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      className="iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Import
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Import"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                        />
+                        <path
+                          d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -2553,7 +2827,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Delete
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Delete"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 12H14V24H12zM18 12H20V24H18z"
+                        />
+                        <path
+                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -2562,7 +2869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cancel
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--sm bx--btn--primary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}

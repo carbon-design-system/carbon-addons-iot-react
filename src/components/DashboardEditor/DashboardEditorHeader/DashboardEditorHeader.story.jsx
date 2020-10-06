@@ -20,13 +20,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor/DashboardEditorHeader', modul
         ]}
         onImport={action('onImport')}
         onExport={action('onExport')}
+        onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         i18n={defaultI18N}
       />
     </div>
   ))
-  .add('with editable title and no import or export', () => (
+  .add('with editable title and no import/export/delete', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditorHeader
         title={text('title', 'New dashboard')}

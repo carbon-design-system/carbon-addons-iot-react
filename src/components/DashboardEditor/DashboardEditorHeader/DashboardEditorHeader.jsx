@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RequestQuote16, DocumentImport16, DocumentExport16 } from '@carbon/icons-react';
+import {
+  RequestQuote16,
+  TrashCan16,
+  DocumentImport16,
+  DocumentExport16,
+} from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, Breadcrumb, BreadcrumbItem } from '../../../index';
@@ -12,6 +17,7 @@ const defaultProps = {
   onEditTitle: null,
   onImport: null,
   onExport: null,
+  onDelete: null,
 };
 
 const propTypes = {
@@ -25,6 +31,8 @@ const propTypes = {
   onImport: PropTypes.func,
   /** if provided, renders export button linked to this callback */
   onExport: PropTypes.func,
+  /** if provided, renders delete button linked to this callback */
+  onDelete: PropTypes.func,
   /** Callback when cancel button is clicked */
   onCancel: PropTypes.func.isRequired,
   /** Callback when submit button is clicked */
@@ -34,6 +42,7 @@ const propTypes = {
     headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
     headerExportButton: PropTypes.string,
+    headerDeleteButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
   }).isRequired,
@@ -45,6 +54,7 @@ const DashboardEditorHeader = ({
   onEditTitle,
   onImport,
   onExport,
+  onDelete,
   onCancel,
   onSubmit,
   i18n,
@@ -69,7 +79,7 @@ const DashboardEditorHeader = ({
               {onEditTitle && (
                 <Button
                   kind="ghost"
-                  size="small"
+                  size="field"
                   iconDescription={i18n.headerEditTitleButton}
                   tooltipPosition="bottom"
                   hasIconOnly
@@ -87,7 +97,7 @@ const DashboardEditorHeader = ({
               {onImport && (
                 <Button
                   kind="ghost"
-                  size="small"
+                  size="field"
                   iconDescription={i18n.headerImportButton}
                   tooltipPosition="bottom"
                   hasIconOnly
@@ -98,7 +108,7 @@ const DashboardEditorHeader = ({
               {onExport && (
                 <Button
                   kind="ghost"
-                  size="small"
+                  size="field"
                   iconDescription={i18n.headerExportButton}
                   tooltipPosition="bottom"
                   hasIconOnly
@@ -106,10 +116,21 @@ const DashboardEditorHeader = ({
                   onClick={onExport}
                 />
               )}
-              <Button kind="tertiary" size="small" onClick={onCancel}>
+              {onDelete && (
+                <Button
+                  kind="ghost"
+                  size="field"
+                  iconDescription={i18n.headerDeleteButton}
+                  tooltipPosition="bottom"
+                  hasIconOnly
+                  renderIcon={TrashCan16}
+                  onClick={onDelete}
+                />
+              )}
+              <Button kind="tertiary" size="field" onClick={onCancel}>
                 {i18n.headerCancelButton}
               </Button>
-              <Button size="small" onClick={onSubmit}>
+              <Button size="field" onClick={onSubmit}>
                 {i18n.headerSubmitButton}
               </Button>
             </div>

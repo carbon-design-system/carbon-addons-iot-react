@@ -20,6 +20,11 @@ import {
 
 import sampleImage from './landscape.jpg';
 
+export const getDuplicateCard = (cardData = {}) => ({
+  ...cardData,
+  id: uuid.v4(),
+});
+
 export const getDefaultCard = type => {
   const defaultSizeForType = {
     [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
@@ -148,7 +153,13 @@ export const getDefaultCard = type => {
   return cardData;
 };
 
-export const getCardPreview = (cardData, isSelected, onSelectCard, onRemoveCard) => {
+export const getCardPreview = (
+  cardData,
+  isSelected,
+  onSelectCard,
+  onDuplicateCard,
+  onRemoveCard
+) => {
   const isCardJsonValid = cardJson => {
     if (cardJson.type === CARD_TYPES.VALUE) {
       return cardJson?.content?.attributes !== undefined;
@@ -251,10 +262,13 @@ export const getCardPreview = (cardData, isSelected, onSelectCard, onRemoveCard)
   const commonProps = isSelected
     ? { className: 'selected-card' }
     : {
-        availableActions: { edit: true, delete: true },
+        availableActions: { edit: true, clone: true, delete: true },
         onCardAction: (id, actionId) => {
           if (actionId === CARD_ACTIONS.EDIT_CARD) {
             onSelectCard(id);
+          }
+          if (actionId === CARD_ACTIONS.CLONE_CARD) {
+            onDuplicateCard(id);
           }
           if (actionId === CARD_ACTIONS.DELETE_CARD) {
             onRemoveCard(id);

@@ -6,7 +6,7 @@ import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
-import { getDefaultCard, getCardPreview } from './editorUtils';
+import { getDefaultCard, getDuplicateCard, getCardPreview } from './editorUtils';
 
 const { iotPrefix } = settings;
 
@@ -14,6 +14,7 @@ export const defaultI18N = {
   headerEditTitleButton: 'Edit title',
   headerImportButton: 'Import',
   headerExportButton: 'Export',
+  headerDeleteButton: 'Delete',
   headerCancelButton: 'Cancel',
   headerSubmitButton: 'Save and close',
   galleryHeader: 'Gallery',
@@ -32,6 +33,7 @@ const defaultProps = {
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   onEditTitle: null,
+  onDelete: null,
   onImport: null,
   onExport: null,
   i18n: defaultI18N,
@@ -59,6 +61,8 @@ const propTypes = {
   onImport: PropTypes.func,
   /** if provided, renders export button linked to this callback */
   onExport: PropTypes.func,
+  /** if provided, renders delete button linked to this callback */
+  onDelete: PropTypes.func,
   /** Callback when cancel button is clicked */
   onCancel: PropTypes.func.isRequired,
   /** Callback when submit button is clicked */
@@ -81,10 +85,11 @@ const DashboardEditor = ({
   headerBreadcrumbs,
   // onAddImage,
   onEditTitle,
-  onCancel,
-  onSubmit,
   onImport,
   onExport,
+  onDelete,
+  onCancel,
+  onSubmit,
   i18n,
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -96,6 +101,15 @@ const DashboardEditor = ({
 
   const addCard = type => {
     const cardData = getDefaultCard(type);
+    setDashboardData({
+      ...dashboardData,
+      cards: [...dashboardData.cards, cardData],
+    });
+    setSelectedCardId(cardData.id);
+  };
+
+  const duplicateCard = id => {
+    const cardData = getDuplicateCard(dashboardData.cards.find(i => i.id === id));
     setDashboardData({
       ...dashboardData,
       cards: [...dashboardData.cards, cardData],
@@ -121,6 +135,7 @@ const DashboardEditor = ({
             onEditTitle={onEditTitle}
             onImport={onImport}
             onExport={() => onExport(dashboardData)}
+            onDelete={onDelete}
             onCancel={onCancel}
             onSubmit={() => onSubmit(dashboardData)}
             i18n={mergedI18N}
@@ -140,12 +155,19 @@ const DashboardEditor = ({
             {dashboardData.cards.map(cardData => {
               const isSelected = selectedCardId === cardData.id;
               const onSelectCard = id => setSelectedCardId(id);
+              const onDuplicateCard = id => duplicateCard(id);
               const onRemoveCard = id => removeCard(id);
 
               // if function not defined, or it returns falsy, render default preview
               return (
-                renderCardPreview(cardData, isSelected, onSelectCard, onRemoveCard) ??
-                getCardPreview(cardData, isSelected, onSelectCard, onRemoveCard)
+                renderCardPreview(
+                  cardData,
+                  isSelected,
+                  onSelectCard,
+                  onDuplicateCard,
+                  onRemoveCard
+                ) ??
+                getCardPreview(cardData, isSelected, onSelectCard, onDuplicateCard, onRemoveCard)
               );
             })}
           </DashboardGrid>

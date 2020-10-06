@@ -105,6 +105,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
+        onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [
@@ -162,6 +163,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
+        onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [
@@ -217,6 +219,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
+        onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [
@@ -234,14 +237,17 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
-        renderCardPreview={(cardJson, isSelected, onSelectCard, onRemoveCard) => {
+        renderCardPreview={(cardJson, isSelected, onSelectCard, onDuplicateCard, onRemoveCard) => {
           const commonProps = isSelected
             ? { className: 'selected-card' }
             : {
-                availableActions: { edit: true, delete: true },
+                availableActions: { edit: true, clone: true, delete: true },
                 onCardAction: (id, actionId) => {
                   if (actionId === CARD_ACTIONS.EDIT_CARD) {
                     onSelectCard(id);
+                  }
+                  if (actionId === CARD_ACTIONS.CLONE_CARD) {
+                    onDuplicateCard(id);
                   }
                   if (actionId === CARD_ACTIONS.DELETE_CARD) {
                     onRemoveCard(id);
