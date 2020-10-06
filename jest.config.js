@@ -86,7 +86,7 @@ module.exports = {
     './src/components/Table/AsyncTable/AsyncTable.jsx': {
       statements: 56,
       branches: 50,
-      lines: 60,
+      lines: 57,
       functions: 13,
     },
     './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': {
