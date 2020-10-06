@@ -13,16 +13,19 @@ import { Button, Breadcrumb, BreadcrumbItem } from '../../../index';
 const { iotPrefix, prefix } = settings;
 
 const defaultProps = {
+  title: null,
   breadcrumbs: [],
   onEditTitle: null,
   onImport: null,
   onExport: null,
   onDelete: null,
+  onCancel: null,
+  onSubmit: null,
 };
 
 const propTypes = {
   /** Dashboard title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** initial dashboard data to edit */
   breadcrumbs: PropTypes.arrayOf(PropTypes.node),
   /** if provided, renders edit button next to title linked to this callback */
@@ -33,10 +36,10 @@ const propTypes = {
   onExport: PropTypes.func,
   /** if provided, renders delete button linked to this callback */
   onDelete: PropTypes.func,
-  /** Callback when cancel button is clicked */
-  onCancel: PropTypes.func.isRequired,
-  /** Callback when submit button is clicked */
-  onSubmit: PropTypes.func.isRequired,
+  /** If provided, renders cancel button linked to this callback */
+  onCancel: PropTypes.func,
+  /** If provided, renders submit button linked to this callback */
+  onSubmit: PropTypes.func,
   /** i18n */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -127,12 +130,16 @@ const DashboardEditorHeader = ({
                   onClick={onDelete}
                 />
               )}
-              <Button kind="tertiary" size="field" onClick={onCancel}>
-                {i18n.headerCancelButton}
-              </Button>
-              <Button size="field" onClick={onSubmit}>
-                {i18n.headerSubmitButton}
-              </Button>
+              {onCancel && (
+                <Button kind="tertiary" size="field" onClick={onCancel}>
+                  {i18n.headerCancelButton}
+                </Button>
+              )}
+              {onSubmit && (
+                <Button size="field" onClick={onSubmit}>
+                  {i18n.headerSubmitButton}
+                </Button>
+              )}
             </div>
           </div>
         </div>

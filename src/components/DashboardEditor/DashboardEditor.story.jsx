@@ -180,6 +180,11 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
       />
     </div>
   ))
+  .add('custom header renderer', () => (
+    <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
+      <DashboardEditor renderHeader={() => <h1>Custom Header</h1>} />
+    </div>
+  ))
   .add('custom card preview renderer', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor

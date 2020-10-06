@@ -7842,10 +7842,12 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "onCancel": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
       "onImport": null,
+      "onSubmit": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
@@ -7854,6 +7856,7 @@ Map {
         "VALUE",
         "TABLE",
       ],
+      "title": null,
     },
     "propTypes": Object {
       "headerBreadcrumbs": Object {
@@ -7897,7 +7900,6 @@ Map {
         "type": "shape",
       },
       "onCancel": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onDelete": Object {
@@ -7913,7 +7915,6 @@ Map {
         "type": "func",
       },
       "onSubmit": Object {
-        "isRequired": true,
         "type": "func",
       },
       "renderCardPreview": Object {
@@ -7931,7 +7932,6 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },

@@ -32,16 +32,19 @@ const defaultProps = {
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
+  title: null,
   onEditTitle: null,
   onDelete: null,
   onImport: null,
   onExport: null,
+  onCancel: null,
+  onSubmit: null,
   i18n: defaultI18N,
 };
 
 const propTypes = {
   /** Dashboard title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** initial dashboard data to edit */
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
@@ -63,10 +66,10 @@ const propTypes = {
   onExport: PropTypes.func,
   /** if provided, renders delete button linked to this callback */
   onDelete: PropTypes.func,
-  /** Callback when cancel button is clicked */
-  onCancel: PropTypes.func.isRequired,
-  /** Callback when submit button is clicked */
-  onSubmit: PropTypes.func.isRequired,
+  /** If provided, renders cancel button linked to this callback */
+  onCancel: PropTypes.func,
+  /** If provided, renders submit button linked to this callback */
+  onSubmit: PropTypes.func,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -79,7 +82,7 @@ const propTypes = {
 const DashboardEditor = ({
   title,
   initialValue,
-  supportedCardTypes = ['ALERT', 'VALUE', 'BAR', 'TIMESERIES'],
+  supportedCardTypes,
   renderHeader,
   renderCardPreview,
   headerBreadcrumbs,
