@@ -1,6 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useLayoutEffect, createRef, useCallback } from 'react';
+import React, {
+  useState,
+  useLayoutEffect,
+  createRef,
+  useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -75,7 +80,10 @@ const propTypes = {
       isSelectAllSelected: PropTypes.bool,
     }).isRequired,
     /** What sorting is currently applied */
-    sort: PropTypes.shape({ direction: PropTypes.string, column: PropTypes.string }).isRequired,
+    sort: PropTypes.shape({
+      direction: PropTypes.string,
+      column: PropTypes.string,
+    }).isRequired,
     /** What column ordering is currently applied to the table */
     ordering: PropTypes.arrayOf(
       PropTypes.shape({
@@ -128,8 +136,10 @@ const defaultProps = {
   hasFastFilter: true,
 };
 
-const generateOrderedColumnRefs = ordering =>
-  ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
+const generateOrderedColumnRefs = (ordering) =>
+  ordering
+    .map((col) => col.columnId)
+    .reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
 
 // This increases the min width of columns when the overflow button and sort is present
 const PADDING_WITH_OVERFLOW = 24;
@@ -181,12 +191,12 @@ const TableHead = ({
   const [currentColumnWidths, setCurrentColumnWidths] = useState({});
 
   if (isEmpty(currentColumnWidths)) {
-    columns.forEach(col => {
+    columns.forEach((col) => {
       initialColumnWidths[col.id] = col.width;
     });
   }
 
-  const forwardMouseEvent = e => {
+  const forwardMouseEvent = (e) => {
     Object.entries(columnResizeRefs).forEach(([, ref]) => {
       if (ref.current) {
         ref.current.forwardMouseEvent(e);
@@ -194,23 +204,20 @@ const TableHead = ({
     });
   };
 
-  const measureColumnWidths = useCallback(
-    () => {
-      return ordering
-        .filter(col => !col.isHidden)
-        .map(col => {
-          const ref = columnRef[col.columnId];
-          return {
-            id: col.columnId,
-            width: ref.current && ref.current.getBoundingClientRect().width,
-          };
-        });
-    },
-    [ordering, columnRef]
-  );
+  const measureColumnWidths = useCallback(() => {
+    return ordering
+      .filter((col) => !col.isHidden)
+      .map((col) => {
+        const ref = columnRef[col.columnId];
+        return {
+          id: col.columnId,
+          width: ref.current && ref.current.getBoundingClientRect().width,
+        };
+      });
+  }, [ordering, columnRef]);
 
-  const updateColumnWidths = newColumnWidths => {
-    const updatedColumns = columns.map(col => ({
+  const updateColumnWidths = (newColumnWidths) => {
+    const updatedColumns = columns.map((col) => ({
       ...col,
       width:
         newColumnWidths[col.id].width !== undefined
@@ -223,14 +230,23 @@ const TableHead = ({
     }
   };
 
-  const onManualColumnResize = modifiedColumnWidths => {
-    const newColumnWidths = createNewWidthsMap(ordering, currentColumnWidths, modifiedColumnWidths);
+  const onManualColumnResize = (modifiedColumnWidths) => {
+    const newColumnWidths = createNewWidthsMap(
+      ordering,
+      currentColumnWidths,
+      modifiedColumnWidths
+    );
     updateColumnWidths(newColumnWidths);
   };
 
   const onColumnToggle = (columnId, newOrdering) => {
     if (hasResize) {
-      const toggleArgs = { currentColumnWidths, newOrdering, columnId, columns };
+      const toggleArgs = {
+        currentColumnWidths,
+        newOrdering,
+        columnId,
+        columns,
+      };
       const newColumnWidths = calculateWidthsOnToggle(toggleArgs);
       updateColumnWidths(newColumnWidths);
     }
@@ -245,20 +261,25 @@ const TableHead = ({
     }
   };
 
-  useLayoutEffect(
-    () => {
-      // An initial measuring is needed since there might not be an initial value from the columns prop
-      // which means that the layout engine will have to set the widths dynamically
-      // before we know what they are.
-      if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
-        const measuredWidths = measureColumnWidths();
-        const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
-        const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
-        setCurrentColumnWidths(newWidthsMap);
-      }
-    },
-    [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]
-  );
+  useLayoutEffect(() => {
+    // An initial measuring is needed since there might not be an initial value from the columns prop
+    // which means that the layout engine will have to set the widths dynamically
+    // before we know what they are.
+    if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
+      const measuredWidths = measureColumnWidths();
+      const adjustedWidths = adjustLastColumnWidth(
+        ordering,
+        columns,
+        measuredWidths
+      );
+      const newWidthsMap = createNewWidthsMap(
+        ordering,
+        currentColumnWidths,
+        adjustedWidths
+      );
+      setCurrentColumnWidths(newWidthsMap);
+    }
+  }, [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]);
 
   useDeepCompareEffect(
     () => {
@@ -267,15 +288,30 @@ const TableHead = ({
       if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
         checkColumnWidthFormat(columns);
 
-        const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
-        const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
+        const removedColumnIDs = getIDsOfRemovedColumns(
+          ordering,
+          currentColumnWidths
+        );
+        const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(
+          ordering,
+          currentColumnWidths
+        );
         const adjustedForRemoved =
           removedColumnIDs.length > 0
-            ? calculateWidthOnHide(currentColumnWidths, ordering, removedColumnIDs)
+            ? calculateWidthOnHide(
+                currentColumnWidths,
+                ordering,
+                removedColumnIDs
+              )
             : currentColumnWidths;
         const adjustedForRemovedAndAdded =
           addedVisibleColumnIDs.length > 0
-            ? calculateWidthOnShow(adjustedForRemoved, ordering, addedVisibleColumnIDs, columns)
+            ? calculateWidthOnShow(
+                adjustedForRemoved,
+                ordering,
+                addedVisibleColumnIDs,
+                columns
+              )
             : adjustedForRemoved;
 
         if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
@@ -295,18 +331,21 @@ const TableHead = ({
     [hasResize, columns, ordering]
   );
 
-  const lastVisibleColumn = ordering.filter(col => !col.isHidden).slice(-1)[0];
+  const lastVisibleColumn = ordering
+    .filter((col) => !col.isHidden)
+    .slice(-1)[0];
 
   return (
     <CarbonTableHead
       className={classnames({ lightweight })}
       onMouseMove={hasResize ? forwardMouseEvent : null}
-      onMouseUp={hasResize ? forwardMouseEvent : null}
-    >
+      onMouseUp={hasResize ? forwardMouseEvent : null}>
       <TableRow>
         {hasRowExpansion ? (
           <TableExpandHeader
-            className={classnames({ [`${iotPrefix}--table-expand-resize`]: hasResize })}
+            className={classnames({
+              [`${iotPrefix}--table-expand-resize`]: hasResize,
+            })}
           />
         ) : null}
         {hasRowSelection === 'multi' ? (
@@ -314,8 +353,7 @@ const TableHead = ({
             className={classnames(`${iotPrefix}--table-header-checkbox`, {
               [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
             })}
-            translateWithId={(...args) => tableTranslateWithId(...args)}
-          >
+            translateWithId={(...args) => tableTranslateWithId(...args)}>
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -330,11 +368,20 @@ const TableHead = ({
           </TableHeader>
         ) : null}
         {ordering.map((item, columnIndex) => {
-          const matchingColumnMeta = columns.find(column => column.id === item.columnId);
-          const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
+          const matchingColumnMeta = columns.find(
+            (column) => column.id === item.columnId
+          );
+          const hasSort =
+            matchingColumnMeta &&
+            sort &&
+            sort.columnId === matchingColumnMeta.id;
           const align =
-            matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
-          const hasOverflow = Array.isArray(matchingColumnMeta.overflowMenuItems);
+            matchingColumnMeta && matchingColumnMeta.align
+              ? matchingColumnMeta.align
+              : 'start';
+          const hasOverflow = Array.isArray(
+            matchingColumnMeta.overflowMenuItems
+          );
 
           // Increases the minimum width of the Header when the overflow button is present
           const paddingExtra = hasOverflow
@@ -359,7 +406,9 @@ const TableHead = ({
                   currentColumnWidths[matchingColumnMeta.id].width,
               }}
               style={{
-                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
+                '--table-header-width': classnames(
+                  initialColumnWidths[matchingColumnMeta.id]
+                ),
               }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
@@ -370,21 +419,20 @@ const TableHead = ({
               sortDirection={hasSort ? sort.direction : 'NONE'}
               align={align}
               className={classnames(`table-header-label-${align}`, {
-                [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
+                [`${iotPrefix}--table-head--table-header`]:
+                  initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
                 [`${iotPrefix}--table-head--table-header--with-overflow`]:
                   matchingColumnMeta.isSortable && hasOverflow,
               })}
               // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
-              data-floating-menu-container
-            >
+              data-floating-menu-container>
               <TableCellRenderer
                 className={`${iotPrefix}--table-head--text`}
                 wrapText={wrapCellText}
                 truncateCellText={truncateCellText}
-                allowTooltip={false}
-              >
+                allowTooltip={false}>
                 {matchingColumnMeta.name}
               </TableCellRenderer>
 
@@ -394,13 +442,12 @@ const TableHead = ({
                   direction="bottom"
                   data-testid="table-head--overflow"
                   flipped={columnIndex === ordering.length - 1}
-                  onClick={e => e.stopPropagation()}
-                >
-                  {matchingColumnMeta.overflowMenuItems.map(menuItem => (
+                  onClick={(e) => e.stopPropagation()}>
+                  {matchingColumnMeta.overflowMenuItems.map((menuItem) => (
                     <OverflowMenuItem
                       itemText={menuItem.text}
                       key={`${columnIndex}--overflow-item-${menuItem.id}`}
-                      onClick={e => handleOverflowItemClick(e, menuItem)}
+                      onClick={(e) => handleOverflowItemClick(e, menuItem)}
                     />
                   ))}
                 </OverflowMenu>
@@ -420,16 +467,19 @@ const TableHead = ({
         })}
         {options.hasRowActions ? (
           <TableHeader
-            className={classnames(`${iotPrefix}--table-header-row-action-column`, {
-              [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
-            })}
+            className={classnames(
+              `${iotPrefix}--table-header-row-action-column`,
+              {
+                [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
+              }
+            )}
           />
         ) : null}
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
           key={!hasFastFilter && JSON.stringify(filters)}
-          columns={columns.map(column => ({
+          columns={columns.map((column) => ({
             ...column.filter,
             id: column.id,
             isFilterable: !isNil(column.filter),
@@ -452,7 +502,7 @@ const TableHead = ({
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
-          columns={columns.map(column => ({
+          columns={columns.map((column) => ({
             id: column.id,
             name: column.name,
           }))}

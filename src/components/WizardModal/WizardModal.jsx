@@ -75,15 +75,15 @@ class WizardModal extends Component {
 
   handleNext = () => {
     if (this.validateCurrentStep()) {
-      this.setState(state => ({ step: state.step + 1 }));
+      this.setState((state) => ({ step: state.step + 1 }));
     }
   };
 
   handlePrevious = () => {
-    this.setState(state => ({ step: state.step - 1 }));
+    this.setState((state) => ({ step: state.step - 1 }));
   };
 
-  handleClick = key => {
+  handleClick = (key) => {
     const { step } = this.state;
     // If you're trying to go higher then validate
 
@@ -142,10 +142,13 @@ class WizardModal extends Component {
         footerLeftContent={leftContent}
         cancelLabel={cancelButtonLabel || defaultFooterProps.cancelButtonLabel}
         nextLabel={nextButtonLabel || defaultFooterProps.nextButtonLabel}
-        backLabel={previousButtonLabel || defaultFooterProps.previousButtonLabel}
+        backLabel={
+          previousButtonLabel || defaultFooterProps.previousButtonLabel
+        }
         submitLabel={submitButtonLabel || defaultFooterProps.submitButtonLabel}
         sendingData={
-          (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
+          (typeof sendingData === 'boolean' && sendingData) ||
+          typeof sendingData === 'string'
         }
         className={`${iotPrefix}--wizard-modal__footer`}
       />
@@ -153,23 +156,35 @@ class WizardModal extends Component {
   };
 
   render() {
-    const { steps, className, currentStepIndex, isClickable, ...other } = this.props;
+    const {
+      steps,
+      className,
+      currentStepIndex,
+      isClickable,
+      ...other
+    } = this.props;
     // Transform object to be what Progress Indicator expects
-    const items = steps.map((step, index) => ({ id: index, label: step.label }));
+    const items = steps.map((step, index) => ({
+      id: index,
+      label: step.label,
+    }));
     const { step: stepIndex } = this.state;
     return (
       <ComposedModal
         {...other}
         className={classnames(`${iotPrefix}--wizard-modal`, className)}
-        footer={this.renderFooter()}
-      >
+        footer={this.renderFooter()}>
         <ProgressIndicator
           items={items}
-          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
+          currentItemId={
+            !isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null
+          }
           onClickItem={this.handleClick}
           isClickable={isClickable}
         />
-        <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
+        <div className={`${iotPrefix}--wizard-modal__content`}>
+          {steps[stepIndex].content}
+        </div>
       </ComposedModal>
     );
   }

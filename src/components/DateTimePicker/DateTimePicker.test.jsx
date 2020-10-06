@@ -10,7 +10,10 @@ import DateTimePicker, {
   PRESET_VALUES,
   PICKER_KINDS,
 } from './DateTimePicker';
-import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
+import {
+  defaultAbsoluteValue,
+  defaultRelativeValue,
+} from './DateTimePicker.story';
 
 const dateTimePickerProps = {
   id: 'datetimepicker',
@@ -68,15 +71,22 @@ describe('DateTimePicker', () => {
   });
 
   it('should have the first preset as value', () => {
-    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
+    const wrapper = mount(
+      <DateTimePicker {...dateTimePickerProps} i18n={i18n} />
+    );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(
+      PRESET_VALUES[0].label
+    );
   });
 
   it('should show the user defined tooltip for preset', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} renderPresetTooltipText={() => 'User tooltip'} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        renderPresetTooltipText={() => 'User tooltip'}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -115,12 +125,17 @@ describe('DateTimePicker', () => {
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[1].label);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(
+      PRESET_VALUES[1].label
+    );
   });
 
   it('should render with a predefined relative range', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultRelativeValue}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -138,23 +153,22 @@ describe('DateTimePicker', () => {
     const today = moment();
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
-    ).toEqual(`${today.format('YYYY-MM-DD')} 13:10 to ${today.format('YYYY-MM-DD')} 13:30`);
+      wrapper.find('.iot--date-time-picker__field').first().text()
+    ).toEqual(
+      `${today.format('YYYY-MM-DD')} 13:10 to ${today.format(
+        'YYYY-MM-DD'
+      )} 13:30`
+    );
 
-    wrapper
-      .find('.bx--number__control-btn.up-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
-    ).toEqual(`${today.format('YYYY-MM-DD')} 13:09 to ${today.format('YYYY-MM-DD')} 13:30`);
+      wrapper.find('.iot--date-time-picker__field').first().text()
+    ).toEqual(
+      `${today.format('YYYY-MM-DD')} 13:09 to ${today.format(
+        'YYYY-MM-DD'
+      )} 13:30`
+    );
 
     wrapper
       .find('.iot--time-picker__controls--btn.up-icon')
@@ -162,11 +176,12 @@ describe('DateTimePicker', () => {
       .simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
-    ).toEqual(`${today.format('YYYY-MM-DD')} 14:09 to ${today.format('YYYY-MM-DD')} 14:30`);
+      wrapper.find('.iot--date-time-picker__field').first().text()
+    ).toEqual(
+      `${today.format('YYYY-MM-DD')} 14:09 to ${today.format(
+        'YYYY-MM-DD'
+      )} 14:30`
+    );
 
     wrapper
       .find('.iot--date-time-picker__menu-btn-apply')
@@ -178,15 +193,15 @@ describe('DateTimePicker', () => {
 
   it('should render with a predefined absolute range', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 12:34 to 2020-04-06 10:49');
 
     wrapper
@@ -195,10 +210,7 @@ describe('DateTimePicker', () => {
       .simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 13:34 to 2020-04-06 10:49');
 
     wrapper
@@ -207,10 +219,7 @@ describe('DateTimePicker', () => {
       .simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 13:34 to 2020-04-06 11:49');
 
     wrapper
@@ -223,7 +232,10 @@ describe('DateTimePicker', () => {
 
   it('should switch from relative to absolute', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultRelativeValue}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -286,33 +298,27 @@ describe('DateTimePicker', () => {
       .first()
       .simulate('click');
     const today = moment();
-    wrapper
-      .find('.bx--number__control-btn.up-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.bx--number__control-btn.up-icon').first().simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual(
-      `${today.subtract(1, 'days').format('YYYY-MM-DD')} 08:56 to ${today.format(
-        'YYYY-MM-DD'
-      )} 08:57`
+      `${today
+        .subtract(1, 'days')
+        .format('YYYY-MM-DD')} 08:56 to ${today.format('YYYY-MM-DD')} 08:57`
     );
   });
 
   it('should switch from relative to presets', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultRelativeValue}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    wrapper
-      .find('.iot--date-time-picker__field')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--date-time-picker__field').first().simulate('click');
 
     wrapper
       .find('.iot--date-time-picker__menu-btn-back')
@@ -324,13 +330,12 @@ describe('DateTimePicker', () => {
 
   it('should keep preset value when switching from presets to relative and back', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
-    wrapper
-      .find('.iot--date-time-picker__field')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--date-time-picker__field').first().simulate('click');
     // if you are wondering about hostNodes https://github.com/enzymejs/enzyme/issues/836#issuecomment-401260477
     expect(
-      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+      wrapper
+        .find('.iot--date-time-picker__listitem--preset-selected')
+        .hostNodes()
     ).toHaveLength(1);
 
     wrapper
@@ -344,7 +349,9 @@ describe('DateTimePicker', () => {
       .simulate('click');
 
     expect(
-      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+      wrapper
+        .find('.iot--date-time-picker__listitem--preset-selected')
+        .hostNodes()
     ).toHaveLength(1);
   });
 
@@ -352,22 +359,18 @@ describe('DateTimePicker', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(
+      PRESET_VALUES[0].label
+    );
 
     wrapper.setProps({ defaultValue: defaultAbsoluteValue });
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 12:34 to 2020-04-06 10:49');
 
-    wrapper
-      .find('.iot--date-time-picker__icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--date-time-picker__icon').first().simulate('click');
     jest.runAllTimers();
 
     wrapper
@@ -376,10 +379,7 @@ describe('DateTimePicker', () => {
       .simulate('click');
     jest.runAllTimers();
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 13:34 to 2020-04-06 10:49');
 
     wrapper
@@ -396,10 +396,7 @@ describe('DateTimePicker', () => {
     expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(
-      wrapper
-        .find('.iot--date-time-picker__field')
-        .first()
-        .text()
+      wrapper.find('.iot--date-time-picker__field').first().text()
     ).toEqual('2020-04-01 12:34 to 2020-04-06 10:49');
   });
 
@@ -408,7 +405,13 @@ describe('DateTimePicker', () => {
       toLabel: 'to-label',
       toNowLabel: 'to-now-label',
       calendarLabel: 'calendar-label',
-      presetLabels: ['last-30-min', 'last-1-hour', 'last-6-hour', 'last-12-hour', 'last-24-hour'],
+      presetLabels: [
+        'last-30-min',
+        'last-1-hour',
+        'last-6-hour',
+        'last-12-hour',
+        'last-24-hour',
+      ],
       intervalLabels: ['mins', 'hrs', 'dys', 'wks', 'mths', 'yrs'],
       relativeLabels: ['today', 'yesterday'],
       customRangeLinkLabel: 'custom-range',
@@ -461,30 +464,44 @@ describe('DateTimePicker', () => {
       },
     ];
 
-    render(<DateTimePicker presets={presets} i18n={i18nTest} relatives={relatives} />);
-    i18nTest.presetLabels.forEach(label => {
+    render(
+      <DateTimePicker presets={presets} i18n={i18nTest} relatives={relatives} />
+    );
+    i18nTest.presetLabels.forEach((label) => {
       expect(screen.getAllByText(label)[0]).toBeInTheDocument();
     });
-    expect(screen.getAllByText(i18nTest.toNowLabel, { exact: false })[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByText(i18nTest.toNowLabel, { exact: false })[0]
+    ).toBeInTheDocument();
     expect(screen.getByLabelText(i18nTest.calendarLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.customRangeLinkLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.applyBtnLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.cancelBtnLabel)).toBeInTheDocument();
 
-    i18nDefault.presetLabels.forEach(label => {
+    i18nDefault.presetLabels.forEach((label) => {
       expect(screen.queryByText(label)).not.toBeInTheDocument();
     });
-    expect(screen.queryByText(i18nDefault.toNowLabel, { exact: false })).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.calendarLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.customRangeLinkLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.applyBtnLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.cancelBtnLabel)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.toNowLabel, { exact: false })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.calendarLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.customRangeLinkLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.applyBtnLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.cancelBtnLabel)
+    ).not.toBeInTheDocument();
     // custom relative range screen
     fireEvent.click(screen.getByText(i18nTest.customRangeLinkLabel));
-    i18nTest.intervalLabels.forEach(label => {
+    i18nTest.intervalLabels.forEach((label) => {
       expect(screen.getAllByText(label)[0]).toBeInTheDocument();
     });
-    i18nTest.relativeLabels.forEach(label => {
+    i18nTest.relativeLabels.forEach((label) => {
       expect(screen.getAllByText(label)[0]).toBeInTheDocument();
     });
     expect(screen.getByText(i18nTest.customRangeLabel)).toBeInTheDocument();
@@ -492,26 +509,38 @@ describe('DateTimePicker', () => {
     expect(screen.getByText(i18nTest.relativeLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.lastLabel)).toBeInTheDocument();
 
-    i18nDefault.intervalLabels.forEach(label => {
+    i18nDefault.intervalLabels.forEach((label) => {
       expect(screen.queryByText(label)).not.toBeInTheDocument();
     });
-    i18nDefault.relativeLabels.forEach(label => {
+    i18nDefault.relativeLabels.forEach((label) => {
       expect(screen.queryByText(label)).not.toBeInTheDocument();
     });
-    expect(screen.queryByText(i18nDefault.customRangeLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.backBtnLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.relativeLabel)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.customRangeLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.backBtnLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.relativeLabel)
+    ).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.lastLabel)).not.toBeInTheDocument();
     // custom range absolute screen.
     fireEvent.click(screen.getByText(i18nTest.absoluteLabel));
     expect(screen.getByText(i18nTest.startTimeLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.endTimeLabel)).toBeInTheDocument();
 
-    expect(screen.queryByText(i18nDefault.startTimeLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.startTimeLabel)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.endTimeLabel)
+    ).not.toBeInTheDocument();
     // click apply
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
-    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]
+    ).toBeInTheDocument();
 
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))

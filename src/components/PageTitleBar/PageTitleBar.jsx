@@ -2,7 +2,13 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import classnames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Tooltip,
+  SkeletonText,
+  Tabs,
+} from 'carbon-components-react';
 
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';
@@ -54,7 +60,10 @@ const defaultProps = {
   collapsed: false,
   editable: false,
   onEdit: null,
-  i18n: { editIconDescription: 'Edit page title', tooltipIconDescription: 'More information' },
+  i18n: {
+    editIconDescription: 'Edit page title',
+    tooltipIconDescription: 'More information',
+  },
   isLoading: false,
   tabs: undefined,
   content: undefined,
@@ -89,7 +98,9 @@ const PageTitleBar = ({
                 <div className="page-title-bar-breadcrumb">
                   <Breadcrumb>
                     {breadcrumb.map((crumb, index) => (
-                      <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+                      <BreadcrumbItem key={`breadcrumb-${index}`}>
+                        {crumb}
+                      </BreadcrumbItem>
                     ))}
                   </Breadcrumb>
                 </div>
@@ -104,9 +115,12 @@ const PageTitleBar = ({
                       triggerId="tooltip"
                       tooltipId="tooltip"
                       renderIcon={Information20}
-                      iconDescription={tooltipIconDescription}
-                    >
-                      {typeof description === 'string' ? <p>{description}</p> : description}
+                      iconDescription={tooltipIconDescription}>
+                      {typeof description === 'string' ? (
+                        <p>{description}</p>
+                      ) : (
+                        description
+                      )}
                     </Tooltip>
                   ) : null}
                   {editable ? (
@@ -135,7 +149,9 @@ const PageTitleBar = ({
               </Fragment>
             ) : null}
           </div>
-          {titleBarContent ? <div className="page-title-bar-content">{titleBarContent}</div> : null}
+          {titleBarContent ? (
+            <div className="page-title-bar-content">{titleBarContent}</div>
+          ) : null}
         </Fragment>
       )}
     </div>

@@ -19,9 +19,21 @@ describe('WizardModal', () => {
       <WizardModal
         {...commonWizardProps}
         steps={[
-          { label: 'step1', content: 'page 1', onValidate: mockValidateStepFunction },
-          { label: 'step2', content: 'page 2', onValidate: mockValidateStepFunction },
-          { label: 'step3', content: 'page 3', onValidate: mockValidateStepFunction },
+          {
+            label: 'step1',
+            content: 'page 1',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step2',
+            content: 'page 2',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step3',
+            content: 'page 3',
+            onValidate: mockValidateStepFunction,
+          },
         ]}
       />
     );
@@ -76,7 +88,11 @@ describe('WizardModal', () => {
         steps={[
           { label: 'step1', content: 'page 1' },
           { label: 'step2', content: 'page 2' },
-          { label: 'step3', content: 'page 3', onValidate: mockValidateStepFunction },
+          {
+            label: 'step3',
+            content: 'page 3',
+            onValidate: mockValidateStepFunction,
+          },
         ]}
       />
     );
@@ -156,32 +172,36 @@ describe('WizardModal', () => {
     expect(wrapper.find(Loading)).toHaveLength(1);
   });
   it('clicking on progressIndicator steps will render related content', () => {
-    render(<WizardModal {...commonWizardProps} steps={[
-      { label: 'step1', content: 'page 1' },
-      { label: 'step2', content: 'page 2', onValidate: () => false },
-      { label: 'step3', content: 'page 3' },
-    ]} />);
+    render(
+      <WizardModal
+        {...commonWizardProps}
+        steps={[
+          { label: 'step1', content: 'page 1' },
+          { label: 'step2', content: 'page 2', onValidate: () => false },
+          { label: 'step3', content: 'page 3' },
+        ]}
+      />
+    );
 
-      // analogue to ProgressIndicator test we check if clicking step will show related content
-      const [ beforeClick1 ] = screen.getByTitle('step1').children;
-    
-      screen.getByTestId('iot--progress-step-button-main-step2').click();
-    
-      // content should be page2
-      expect(screen.getByTitle('step1').children[0]).not.toContain(beforeClick1);
-      expect(screen.getByText('page 2')).toBeDefined();
+    // analogue to ProgressIndicator test we check if clicking step will show related content
+    const [beforeClick1] = screen.getByTitle('step1').children;
 
-      // clicking on step3 should not progress the modal
-      const [ beforeClick2 ] = screen.getByTitle('step2').children;
-      screen.getByTestId('iot--progress-step-button-main-step3').click();
-      
-      expect(screen.getByTitle('step2').children[0]).toEqual(beforeClick2);
-      expect(screen.getByText('page 2')).toBeDefined();
+    screen.getByTestId('iot--progress-step-button-main-step2').click();
 
-      // clicking on page 1 should go back to step 1
-      screen.getByTestId('iot--progress-step-button-main-step1').click();
-      expect(screen.getByTitle('step1').children[0]).toEqual(beforeClick1);
-      expect(screen.getByText('page 1')).toBeDefined();
+    // content should be page2
+    expect(screen.getByTitle('step1').children[0]).not.toContain(beforeClick1);
+    expect(screen.getByText('page 2')).toBeDefined();
 
+    // clicking on step3 should not progress the modal
+    const [beforeClick2] = screen.getByTitle('step2').children;
+    screen.getByTestId('iot--progress-step-button-main-step3').click();
+
+    expect(screen.getByTitle('step2').children[0]).toEqual(beforeClick2);
+    expect(screen.getByText('page 2')).toBeDefined();
+
+    // clicking on page 1 should go back to step 1
+    screen.getByTestId('iot--progress-step-button-main-step1').click();
+    expect(screen.getByTitle('step1').children[0]).toEqual(beforeClick1);
+    expect(screen.getByText('page 1')).toBeDefined();
   });
 });

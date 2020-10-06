@@ -12,13 +12,17 @@ import PageTitleBar from './PageTitleBar';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
-  description: 'Descriptive text about this page and what the user can or should do on it',
+  description:
+    'Descriptive text about this page and what the user can or should do on it',
   extraContent: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <span style={{ marginRight: spacing05 }}>
         <b>Last updated:</b> yesterday
       </span>
-      <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
+      <Button
+        className="some-right-content"
+        renderIcon={Add24}
+        onClick={action('click')}>
         Take an action
       </Button>
     </div>
@@ -33,15 +37,16 @@ export const pageTitleBarBreadcrumb = [
 
 export const PageTitleBarNodeTooltip = () => (
   <div>
-    <p>Descriptive text about this page and what the user can or should do on it </p>
+    <p>
+      Descriptive text about this page and what the user can or should do on it{' '}
+    </p>
     <div
       style={{
         display: 'flex',
         'align-items': 'center',
         'justify-content': 'space-between',
         'padding-top': spacing05,
-      }}
-    >
+      }}>
       <a href="/">Link one</a>
       <Button renderIcon={Add24} onClick={action('click')}>
         Take an action
@@ -51,10 +56,13 @@ export const PageTitleBarNodeTooltip = () => (
 );
 
 storiesOf('Watson IoT/PageTitleBar', module)
-  .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
+  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
   .add('with breadcrumb', () => (
-    <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
+    <PageTitleBar
+      title={commonPageTitleBarProps.title}
+      breadcrumb={pageTitleBarBreadcrumb}
+    />
   ))
   .add('with description', () => (
     <PageTitleBar
@@ -98,7 +106,9 @@ storiesOf('Watson IoT/PageTitleBar', module)
       onEdit={action('edit')}
     />
   ))
-  .add('with rich content', () => <PageTitleBar {...commonPageTitleBarProps} collapsed />)
+  .add('with rich content', () => (
+    <PageTitleBar {...commonPageTitleBarProps} collapsed />
+  ))
   .add('with everything', () => (
     <PageTitleBar
       title={commonPageTitleBarProps.title}
@@ -122,4 +132,6 @@ storiesOf('Watson IoT/PageTitleBar', module)
       onEdit={action('edit')}
     />
   ))
-  .add('isLoading', () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
+  .add('isLoading', () => (
+    <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
+  ));

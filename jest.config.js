@@ -36,7 +36,9 @@ module.exports = {
       lines: 36,
       functions: 20,
     },
-    './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': { branches: 70 },
+    './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': {
+      branches: 70,
+    },
     './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {
       statements: 79,
@@ -44,11 +46,17 @@ module.exports = {
       lines: 78,
       functions: 75,
     },
-    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': { functions: 66 },
+    './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': {
+      functions: 66,
+    },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
     './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
     './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
-    './src/components/Dashboard/Dashboard.jsx': { statements: 79, branches: 50, lines: 78 },
+    './src/components/Dashboard/Dashboard.jsx': {
+      statements: 79,
+      branches: 50,
+      lines: 78,
+    },
     './src/components/Dashboard/CardRenderer.jsx': {
       statements: 51,
       branches: 38,
@@ -81,14 +89,18 @@ module.exports = {
       lines: 60,
       functions: 13,
     },
-    './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': { branches: 75 },
+    './src/components/Table/TableHead/ColumnHeaderSelect/ColumnHeaderSelect.jsx': {
+      branches: 75,
+    },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
       branches: 78,
     },
-    './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': { branches: 76 },
+    './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': {
+      branches: 76,
+    },
     './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
   },
   globals: {

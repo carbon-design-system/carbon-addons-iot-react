@@ -24,8 +24,17 @@ const hotspots = [
     content: <span style={{ padding: spacing03 }}>Hotspot2</span>,
     icon: 'warning',
   },
-  { x: 30, y: 40, content: <span style={{ padding: spacing03 }}>Hotspot3</span> },
-  { x: 50, y: 60, content: <span style={{ padding: spacing03 }}>Hotspot4</span>, color: 'green' },
+  {
+    x: 30,
+    y: 40,
+    content: <span style={{ padding: spacing03 }}>Hotspot3</span>,
+  },
+  {
+    x: 50,
+    y: 60,
+    content: <span style={{ padding: spacing03 }}>Hotspot4</span>,
+    color: 'green',
+  },
 ];
 
 const componentDescription =
@@ -106,19 +115,22 @@ storiesOf('Watson IoT/ImageHotspots', module)
     );
   })
 
-  .add('image smaller than card, minimap and zoomcontrols should be hidden', () => {
-    return (
-      <div style={{ width: '560px', height: '560px' }}>
-        <ImageHotspots
-          src={text('Image', smallerImage)}
-          height={560}
-          width={560}
-          alt={text('Alternate text', 'Sample image')}
-          hideZoomControls={boolean('Hide zoom controls', false)}
-          hotspots={object('Hotspots', hotspots)}
-          hideHotspots={boolean('Hide hotspots', false)}
-          hideMinimap={boolean('Hide Minimap', false)}
-        />
-      </div>
-    );
-  });
+  .add(
+    'image smaller than card, minimap and zoomcontrols should be hidden',
+    () => {
+      return (
+        <div style={{ width: '560px', height: '560px' }}>
+          <ImageHotspots
+            src={text('Image', smallerImage)}
+            height={560}
+            width={560}
+            alt={text('Alternate text', 'Sample image')}
+            hideZoomControls={boolean('Hide zoom controls', false)}
+            hotspots={object('Hotspots', hotspots)}
+            hideHotspots={boolean('Hide hotspots', false)}
+            hideMinimap={boolean('Hide Minimap', false)}
+          />
+        </div>
+      );
+    }
+  );

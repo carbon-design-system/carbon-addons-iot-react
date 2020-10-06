@@ -3,7 +3,11 @@ import isEmpty from 'lodash/isEmpty';
 import find from 'lodash/find';
 
 /** Generate fake values for my line chart */
-export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day') => {
+export const generateSampleValues = (
+  series,
+  timeDataSourceId,
+  timeGrain = 'day'
+) => {
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -40,7 +44,9 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
           ...dataFilter,
         });
       } else {
-        const existingData = find(sampleData, { [timeDataSourceId]: nextTimeStamp });
+        const existingData = find(sampleData, {
+          [timeDataSourceId]: nextTimeStamp,
+        });
         if (existingData) {
           // add the additional dataSource to the existing datapoint
           existingData[dataSourceId] = Math.random() * 100;
@@ -66,7 +72,8 @@ export const generateTableSampleValues = (id, columns) => {
   return sampleValues.map((item, index) => ({
     id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
-      obj[column.dataSourceId] = column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--'; // eslint-disable-line no-param-reassign
+      obj[column.dataSourceId] =
+        column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--'; // eslint-disable-line no-param-reassign
       return obj;
     }, {}),
   }));
@@ -90,11 +97,19 @@ export const formatGraphTick = (
   shouldDisplayGMT
 ) => {
   moment.locale(locale);
-  const currentTimestamp = shouldDisplayGMT ? moment.utc(timestamp) : moment(timestamp);
+  const currentTimestamp = shouldDisplayGMT
+    ? moment.utc(timestamp)
+    : moment(timestamp);
 
   const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
-  const sameMonth = moment(previousTickTimestamp).isSame(currentTimestamp, 'month');
-  const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
+  const sameMonth = moment(previousTickTimestamp).isSame(
+    currentTimestamp,
+    'month'
+  );
+  const sameYear = moment(previousTickTimestamp).isSame(
+    currentTimestamp,
+    'year'
+  );
 
   // This works around a bug in moment where some Chinese languages are missing the day indicator
   // https://github.com/moment/moment/issues/5350
@@ -139,7 +154,7 @@ export const findMatchingAlertRange = (alertRanges, data) => {
   return (
     Array.isArray(alertRanges) &&
     alertRanges.filter(
-      alert =>
+      (alert) =>
         currentDatapointTimestamp <= alert.endTimestamp &&
         currentDatapointTimestamp >= alert.startTimestamp
     )

@@ -7,7 +7,7 @@ import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
 describe('List', () => {
-  const getListItems = num =>
+  const getListItems = (num) =>
     Array(num)
       .fill(0)
       .map((i, idx) => ({
@@ -17,7 +17,9 @@ describe('List', () => {
       }));
 
   it('List when pagination is null', () => {
-    const renderedElement = render(<UnconnectedList title="list" items={getListItems(5)} />);
+    const renderedElement = render(
+      <UnconnectedList title="list" items={getListItems(5)} />
+    );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
@@ -33,7 +35,11 @@ describe('List', () => {
 
   it('List when selectedIds is set', () => {
     const renderedElement = render(
-      <UnconnectedList title="list" items={getListItems(5)} selectedIds={['1', '2']} />
+      <UnconnectedList
+        title="list"
+        items={getListItems(5)}
+        selectedIds={['1', '2']}
+      />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
@@ -43,36 +49,46 @@ describe('List', () => {
       <List
         title="list"
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-              id: `${team}_${player}`,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-              id: `${team}_${player}`,
+              children: Object.keys(
+                sampleHierarchy.MLB['American League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  secondaryValue:
+                    sampleHierarchy.MLB['American League'][team][player],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
+              children: Object.keys(
+                sampleHierarchy.MLB['National League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  secondaryValue:
+                    sampleHierarchy.MLB['National League'][team][player],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
         ]}
       />
     );
@@ -84,14 +100,23 @@ describe('List', () => {
       <List
         title="list"
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-              icon: <Checkbox id={`${team}-checkbox`} name={team} labelText={`${team}`} checked />,
-            },
-          })),
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
+              content: {
+                value: team,
+                icon: (
+                  <Checkbox
+                    id={`${team}-checkbox`}
+                    name={team}
+                    labelText={`${team}`}
+                    checked
+                  />
+                ),
+              },
+            })
+          ),
         ]}
       />
     );

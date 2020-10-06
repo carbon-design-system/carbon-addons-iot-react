@@ -68,13 +68,10 @@ const CardCodeEditor = ({
   const [isExpanded, setIsExpanded] = useState();
   const [error, setError] = useState(false);
 
-  useEffect(
-    () => {
-      // eslint-disable-next-line no-unused-expressions
-      editorValue?.current?.layout();
-    },
-    [isExpanded]
-  );
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    editorValue?.current?.layout();
+  }, [isExpanded]);
 
   /**
    *
@@ -90,7 +87,7 @@ const CardCodeEditor = ({
   };
 
   const handleOnExpand = () => {
-    setIsExpanded(expandedState => !expandedState);
+    setIsExpanded((expandedState) => !expandedState);
   };
 
   const handleOnCopy = () => {
@@ -112,8 +109,7 @@ const CardCodeEditor = ({
       onSubmit={handleOnSubmit}
       onClose={onClose}
       iconDescription={i18n.modalIconDescription}
-      {...composedModalProps}
-    >
+      {...composedModalProps}>
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly

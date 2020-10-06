@@ -34,12 +34,12 @@ const IconSwitch = React.forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
     onClick({ index, name, text });
   };
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     const key = e.key || e.which;
 
     if (key === 'Enter' || key === 13 || key === ' ' || key === 32) {
@@ -131,7 +131,8 @@ IconSwitch.propTypes = {
    * Define the icon render to be rendered.
    * Can be a React component class
    */
-  renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+  renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+    .isRequired,
 };
 
 IconSwitch.defaultProps = {

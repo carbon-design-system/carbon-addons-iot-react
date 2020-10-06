@@ -1,4 +1,6 @@
-import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, {
+  multiSnapshotWithOptions,
+} from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
@@ -15,17 +17,19 @@ const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
 
 describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
-  beforeAll(done => {
+  beforeAll((done) => {
     ReactDOM.findDOMNode = jest.fn(); // needed for this issue: https://github.com/facebook/react/issues/7371
 
-    ReactDOM.createPortal = node => node; // needed for tooltips in this issue https://github.com/facebook/react/issues/11565
+    ReactDOM.createPortal = (node) => node; // needed for tooltips in this issue https://github.com/facebook/react/issues/11565
     // TODO: remove once carbon PR is merged
-    spy.console = jest.spyOn(console, 'error').mockImplementation(e => {
+    spy.console = jest.spyOn(console, 'error').mockImplementation((e) => {
       if (
         !e.includes(
           'The pseudo class ":first-child" is potentially unsafe when doing server-side rendering. Try changing it to ":first-of-type".'
         ) &&
-        !e.includes('Warning: Received `true` for a non-boolean attribute `loading`.') &&
+        !e.includes(
+          'Warning: Received `true` for a non-boolean attribute `loading`.'
+        ) &&
         // deprecation warning for our WizardInline component. Can remove once it is removed from package
         !e.includes(
           'Warning: \nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'
@@ -95,8 +99,8 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*(?<!SimpleList)(?<!TileCatalogNew)(?<!ListItem)$|.*Getting\sStarted/g,
-    test: multiSnapshotWithOptions(story => ({
-      createNodeMock: element => {
+    test: multiSnapshotWithOptions((story) => ({
+      createNodeMock: (element) => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
         // fallback is to mock something, otherwise our refs are invalid
 

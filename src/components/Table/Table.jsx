@@ -194,7 +194,7 @@ const propTypes = {
   i18n: I18NPropTypes,
 };
 
-export const defaultProps = baseProps => ({
+export const defaultProps = (baseProps) => ({
   id: null,
   useZebraStyles: false,
   lightweight: false,
@@ -239,7 +239,8 @@ export const defaultProps = baseProps => ({
       selectedIds: [],
       rowActions: [],
       sort: {},
-      ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
+      ordering:
+        baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
       },
@@ -247,13 +248,19 @@ export const defaultProps = baseProps => ({
     },
   },
   actions: {
-    pagination: { onChangePage: defaultFunction('actions.pagination.onChangePage') },
+    pagination: {
+      onChangePage: defaultFunction('actions.pagination.onChangePage'),
+    },
     toolbar: {
       onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
       onShowRowEdit: defaultFunction('actions.toolbar.onShowRowEdit'),
-      onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
+      onToggleColumnSelection: defaultFunction(
+        'actions.toolbar.onToggleColumnSelection'
+      ),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
-      onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onCancelBatchAction: defaultFunction(
+        'actions.toolbar.onCancelBatchAction'
+      ),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -262,9 +269,13 @@ export const defaultProps = baseProps => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
-      onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
+      onColumnSelectionConfig: defaultFunction(
+        'actions.table.onColumnSelectionConfig'
+      ),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
-      onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
+      onOverflowItemClicked: defaultFunction(
+        'actions.table.onOverflowItemClicked'
+      ),
     },
     onUserViewModified: null,
   },
@@ -276,7 +287,7 @@ export const defaultProps = baseProps => ({
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
     itemsRange: (min, max) => `${min}–${max} items`,
-    currentPage: page => `page ${page}`,
+    currentPage: (page) => `page ${page}`,
     itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
     pageRange: (current, total) => `${current} of ${total} pages`,
     /** table body */
@@ -301,7 +312,7 @@ export const defaultProps = baseProps => ({
     batchCancel: 'Cancel',
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
-    rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
+    rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
@@ -313,7 +324,7 @@ export const defaultProps = baseProps => ({
   },
 });
 
-const Table = props => {
+const Table = (props) => {
   const {
     id,
     columns,
@@ -343,24 +354,22 @@ const Table = props => {
   // The save/load view functionality needs access to the latest view configuration
   // and also needs to know when the configuration has changed for the StatefulTable.
   // This effect satifies both those needs.
-  useDeepCompareEffect(
-    () => {
-      if (options.hasUserViewManagement && onUserViewModified) {
-        if (!initialRendering.current) {
-          onUserViewModified({
-            view,
-            columns,
-            state: {
-              currentSearchValue: searchValue.current === undefined ? '' : searchValue.current,
-            },
-          });
-        } else {
-          initialRendering.current = false;
-        }
+  useDeepCompareEffect(() => {
+    if (options.hasUserViewManagement && onUserViewModified) {
+      if (!initialRendering.current) {
+        onUserViewModified({
+          view,
+          columns,
+          state: {
+            currentSearchValue:
+              searchValue.current === undefined ? '' : searchValue.current,
+          },
+        });
+      } else {
+        initialRendering.current = false;
       }
-    },
-    [view, columns]
-  );
+    }
+  }, [view, columns]);
 
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();
@@ -374,7 +383,7 @@ const Table = props => {
       options
         ? options.wrapCellText !== 'always' &&
           ((options.hasResize && !options.useAutoTableLayoutForResize) ||
-            columns.some(col => col.hasOwnProperty('width')))
+            columns.some((col) => col.hasOwnProperty('width')))
         : undefined,
     [options, columns]
   );
@@ -388,11 +397,11 @@ const Table = props => {
     }
   };
 
-  const handleOnColumnResize = resizedCols => {
+  const handleOnColumnResize = (resizedCols) => {
     if (actions.table && actions.table.onColumnResize) {
       actions.table.onColumnResize(resizedCols);
     }
-    forceUpdateCellTextWidth(n => !n);
+    forceUpdateCellTextWidth((n) => !n);
   };
 
   const minItemInView =
@@ -406,7 +415,12 @@ const Table = props => {
   const visibleData = data.slice(minItemInView, maxItemInView);
 
   const visibleColumns = columns.filter(
-    c => !(view.table.ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
+    (c) =>
+      !(
+        view.table.ordering.find((o) => o.columnId === c.id) || {
+          isHidden: false,
+        }
+      ).isHidden
   );
 
   const totalColumns =
@@ -423,91 +437,94 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
-  const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
+  const singleRowEditMode = !!view.table.rowActions.find(
+    (action) => action.isEditMode
+  );
 
   return (
     <TableContainer
       style={style}
-      className={classnames(className, `${iotPrefix}--table-container`)}
-    >
-      {/* If there is no items being rendered in the toolbar, don't render the toolbar */
-      options.hasFilter ||
-      options.hasSearch ||
-      (hasMultiSelect && view.table.selectedIds.length > 0) ||
-      options.hasRowCountInHeader ||
-      options.hasColumnSelection ||
-      options.hasRowEdit ||
-      actions.toolbar.onDownloadCSV ||
-      secondaryTitle ||
-      view.toolbar.customToolbarContent ||
-      tooltip ? (
-        <TableToolbar
-          tableId={id || tableId}
-          secondaryTitle={secondaryTitle}
-          tooltip={tooltip}
-          i18n={{
-            clearAllFilters: i18n.clearAllFilters,
-            columnSelectionButtonAria: i18n.columnSelectionButtonAria,
-            filterButtonAria: i18n.filterButtonAria,
-            editButtonAria: i18n.editButtonAria,
-            searchLabel: i18n.searchLabel,
-            searchPlaceholder: i18n.searchPlaceholder,
-            batchCancel: i18n.batchCancel,
-            itemsSelected: i18n.itemsSelected,
-            itemSelected: i18n.itemSelected,
-            filterNone: i18n.filterNone,
-            filterAscending: i18n.filterAscending,
-            filterDescending: i18n.filterDescending,
-            downloadIconDescription: i18n.downloadIconDescription,
-            rowCountInHeader: i18n.rowCountInHeader,
-          }}
-          actions={{
-            ...pick(
-              actions.toolbar,
-              'onCancelBatchAction',
-              'onApplyBatchAction',
-              'onClearAllFilters',
-              'onToggleColumnSelection',
-              'onToggleFilter',
-              'onShowRowEdit',
-              'onDownloadCSV'
-            ),
-            onApplySearch: value => {
-              searchValue.current = value;
-              if (actions.toolbar?.onApplySearch) {
-                actions.toolbar.onApplySearch(value);
-              }
-            },
-          }}
-          options={{
-            ...pick(
-              options,
-              'hasColumnSelection',
-              'hasSearch',
-              'hasRowSelection',
-              'hasRowCountInHeader',
-              'hasRowEdit',
-              'hasUserViewManagement'
-            ),
-            hasFilter: Boolean(options?.hasFilter),
-          }}
-          tableState={{
-            totalSelected: view.table.selectedIds.length,
-            totalFilters: view.filters ? view.filters.length : 0,
-            totalItemsCount: view.pagination.totalItems,
-            isDisabled: singleRowEditMode || view.toolbar.isDisabled,
-            ...pick(
-              view.toolbar,
-              'batchActions',
-              'search',
-              'activeBar',
-              'customToolbarContent',
-              'rowEditBarButtons'
-            ),
-          }}
-          data={data}
-        />
-      ) : null}
+      className={classnames(className, `${iotPrefix}--table-container`)}>
+      {
+        /* If there is no items being rendered in the toolbar, don't render the toolbar */
+        options.hasFilter ||
+        options.hasSearch ||
+        (hasMultiSelect && view.table.selectedIds.length > 0) ||
+        options.hasRowCountInHeader ||
+        options.hasColumnSelection ||
+        options.hasRowEdit ||
+        actions.toolbar.onDownloadCSV ||
+        secondaryTitle ||
+        view.toolbar.customToolbarContent ||
+        tooltip ? (
+          <TableToolbar
+            tableId={id || tableId}
+            secondaryTitle={secondaryTitle}
+            tooltip={tooltip}
+            i18n={{
+              clearAllFilters: i18n.clearAllFilters,
+              columnSelectionButtonAria: i18n.columnSelectionButtonAria,
+              filterButtonAria: i18n.filterButtonAria,
+              editButtonAria: i18n.editButtonAria,
+              searchLabel: i18n.searchLabel,
+              searchPlaceholder: i18n.searchPlaceholder,
+              batchCancel: i18n.batchCancel,
+              itemsSelected: i18n.itemsSelected,
+              itemSelected: i18n.itemSelected,
+              filterNone: i18n.filterNone,
+              filterAscending: i18n.filterAscending,
+              filterDescending: i18n.filterDescending,
+              downloadIconDescription: i18n.downloadIconDescription,
+              rowCountInHeader: i18n.rowCountInHeader,
+            }}
+            actions={{
+              ...pick(
+                actions.toolbar,
+                'onCancelBatchAction',
+                'onApplyBatchAction',
+                'onClearAllFilters',
+                'onToggleColumnSelection',
+                'onToggleFilter',
+                'onShowRowEdit',
+                'onDownloadCSV'
+              ),
+              onApplySearch: (value) => {
+                searchValue.current = value;
+                if (actions.toolbar?.onApplySearch) {
+                  actions.toolbar.onApplySearch(value);
+                }
+              },
+            }}
+            options={{
+              ...pick(
+                options,
+                'hasColumnSelection',
+                'hasSearch',
+                'hasRowSelection',
+                'hasRowCountInHeader',
+                'hasRowEdit',
+                'hasUserViewManagement'
+              ),
+              hasFilter: Boolean(options?.hasFilter),
+            }}
+            tableState={{
+              totalSelected: view.table.selectedIds.length,
+              totalFilters: view.filters ? view.filters.length : 0,
+              totalItemsCount: view.pagination.totalItems,
+              isDisabled: singleRowEditMode || view.toolbar.isDisabled,
+              ...pick(
+                view.toolbar,
+                'batchActions',
+                'search',
+                'activeBar',
+                'customToolbarContent',
+                'rowEditBarButtons'
+              ),
+            }}
+            data={data}
+          />
+        ) : null
+      }
       <div className="addons-iot-table-container">
         <CarbonTable
           className={classnames({
@@ -516,8 +533,7 @@ const Table = props => {
               options.hasResize && !options.useAutoTableLayoutForResize,
             [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
-          {...others}
-        >
+          {...others}>
           <TableHead
             {...others}
             i18n={i18n}
@@ -572,7 +588,12 @@ const Table = props => {
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
               columns={visibleColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions'
+              )}
               rowCount={view.table.loadingState.rowCount}
             />
           ) : visibleData && visibleData.length ? (

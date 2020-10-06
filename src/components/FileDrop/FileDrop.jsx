@@ -96,14 +96,19 @@ class FileDrop extends React.Component {
   };
 
   /* Drag hover event */
-  fileDragHover = evt => {
+  fileDragHover = (evt) => {
     evt.preventDefault();
 
     const rect = evt.currentTarget.getBoundingClientRect();
     const x = evt.pageX - window.pageXOffset;
     const y = evt.pageY - window.pageYOffset;
 
-    const inArea = !(x < rect.left || x > rect.right || y < rect.top || y > rect.bottom);
+    const inArea = !(
+      x < rect.left ||
+      x > rect.right ||
+      y < rect.top ||
+      y > rect.bottom
+    );
 
     this.setState({
       hover: inArea && evt.type !== 'drop',
@@ -111,7 +116,7 @@ class FileDrop extends React.Component {
   };
 
   /* Drop event */
-  fileDrop = evt => {
+  fileDrop = (evt) => {
     evt.stopPropagation();
 
     this.fileDragHover(evt);
@@ -124,12 +129,13 @@ class FileDrop extends React.Component {
    * and creates a FileReader for each one, setting up the appropriate onload, onerror handlers, and then
    * actually calls the readAsBinaryString method to trigger the loading of the file.
    */
-  readFileContent = files => {
+  readFileContent = (files) => {
     const { fileType } = this.props;
-    Array.prototype.forEach.call(files, file => {
+    Array.prototype.forEach.call(files, (file) => {
       this.readers[file.name] = new FileReader();
       this.readers[file.name].onload = () => this.handleFileLoad(file);
-      this.readers[file.name].onerror = evt => this.handleFileError(evt, file);
+      this.readers[file.name].onerror = (evt) =>
+        this.handleFileError(evt, file);
       if (fileType === FILE_TYPES.BINARY) {
         this.readers[file.name].readAsBinaryString(file);
       } else {
@@ -152,10 +158,10 @@ class FileDrop extends React.Component {
    *
    * Finally it clears the reader
    */
-  handleFileLoad = file => {
-    this.setState(state => {
+  handleFileLoad = (file) => {
+    this.setState((state) => {
       const newState = {
-        files: state.files.map(i =>
+        files: state.files.map((i) =>
           i.name === file.name // only change the new reader result, preserve the rest
             ? {
                 name: i.name,
@@ -166,10 +172,10 @@ class FileDrop extends React.Component {
         ),
       };
 
-      if (newState.files.filter(i => i.contents === null).length === 0) {
+      if (newState.files.filter((i) => i.contents === null).length === 0) {
         // all data is loaded, trigger callback
         this.props.onData(
-          newState.files.map(i => ({
+          newState.files.map((i) => ({
             name: i.name,
             contents: i.contents,
           }))
@@ -180,13 +186,13 @@ class FileDrop extends React.Component {
     delete this.readers[file.name];
   };
 
-  addNewFiles = files => {
+  addNewFiles = (files) => {
     const { multiple } = this.props;
-    const filenames = Array.prototype.map.call(files, f => f.name);
-    this.setState(state => ({
+    const filenames = Array.prototype.map.call(files, (f) => f.name);
+    this.setState((state) => ({
       files: (multiple ? state.files : []) // if we're not multiple, always restart
         .concat(
-          filenames.map(name => ({
+          filenames.map((name) => ({
             name,
             uploadState: 'uploading',
             contents: null,
@@ -194,20 +200,21 @@ class FileDrop extends React.Component {
         )
         .filter(
           (elem, index, arr) =>
-            index === arr.findIndex(indexFound => indexFound.name === elem.name) &&
+            index ===
+              arr.findIndex((indexFound) => indexFound.name === elem.name) &&
             (multiple || index === 0) // only support the first if set to multiple=false
         ),
     }));
     this.readFileContent(files);
   };
 
-  clearFile = filename =>
-    this.setState(state => {
+  clearFile = (filename) =>
+    this.setState((state) => {
       const newState = {
         files: state.files.filter(({ name }) => name !== filename),
       };
       this.props.onData(
-        newState.files.map(i => ({
+        newState.files.map((i) => ({
           name: i.name,
           contents: i.contents,
         }))
@@ -216,7 +223,7 @@ class FileDrop extends React.Component {
     });
 
   /** This job is to add new files based on a fileDrop event */
-  handleChange = evt => {
+  handleChange = (evt) => {
     evt.stopPropagation();
     this.addNewFiles(evt.target.files);
   };
@@ -256,8 +263,7 @@ class FileDrop extends React.Component {
               this.fileInput.click();
             }
           }}
-          role="presentation"
-        >
+          role="presentation">
           <LinkButton>{buttonLabel}</LinkButton>
         </span>
         <div>{description}</div>
@@ -272,18 +278,18 @@ class FileDrop extends React.Component {
               <Span
                 key={`${name}-${index}`}
                 className="bx--file__selected-file"
-                ref={node => (this.nodes[index] = node)} // eslint-disable-line no-return-assign
+                ref={(node) => (this.nodes[index] = node)} // eslint-disable-line no-return-assign
               >
                 <p className="bx--file-filename">{name}</p>
                 <span className="bx--file__state-container">
                   <Filename
                     status={uploadState}
-                    onKeyDown={evt => {
+                    onKeyDown={(evt) => {
                       if (evt.which === 13 || evt.which === 32) {
                         this.handleClick(evt, index);
                       }
                     }}
-                    onClick={evt => {
+                    onClick={(evt) => {
                       if (uploadState === 'edit') {
                         this.handleClick(evt, index);
                       }
@@ -301,17 +307,20 @@ class FileDrop extends React.Component {
         <input
           style={{ visibility: 'hidden' }}
           type="file"
-          ref={ref => (this.fileInput = ref)} // eslint-disable-line no-return-assign
+          ref={(ref) => (this.fileInput = ref)} // eslint-disable-line no-return-assign
           accept={accept}
           multiple={multiple}
           onChange={this.handleChange}
         />
         <Text
-          style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
+          style={
+            hover
+              ? { border: '1px solid #3D70B2' }
+              : { border: '1px dashed #8C8C8C' }
+          }
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
-          onDrop={this.fileDrop}
-        >
+          onDrop={this.fileDrop}>
           {linkElement}
         </Text>
         {showFiles ? fileNameElements : null}
@@ -319,7 +328,9 @@ class FileDrop extends React.Component {
     ) : (
       <div id={id} className="bx--form-item">
         {title ? <strong className="bx--label">{title}</strong> : null}
-        {description ? <p className="bx--label-description">{description}</p> : null}
+        {description ? (
+          <p className="bx--label-description">{description}</p>
+        ) : null}
         <FileUploaderButton
           labelText={buttonLabel}
           multiple={multiple}

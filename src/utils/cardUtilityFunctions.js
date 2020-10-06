@@ -9,16 +9,26 @@ import { CARD_SIZES } from '../constants/LayoutConstants';
  * determine time range from drop down action
  * range - requested range from card dropdown action
  */
-export const determineCardRange = range => {
+export const determineCardRange = (range) => {
   switch (range) {
     case 'last24Hours':
       return { interval: 'day', count: -1, timeGrain: 'hour', type: 'rolling' };
     case 'last7Days':
       return { interval: 'week', count: -1, timeGrain: 'day', type: 'rolling' };
     case 'lastMonth':
-      return { interval: 'month', count: -1, timeGrain: 'day', type: 'rolling' };
+      return {
+        interval: 'month',
+        count: -1,
+        timeGrain: 'day',
+        type: 'rolling',
+      };
     case 'lastQuarter':
-      return { interval: 'quarter', count: -1, timeGrain: 'month', type: 'rolling' };
+      return {
+        interval: 'quarter',
+        count: -1,
+        timeGrain: 'month',
+        type: 'rolling',
+      };
     case 'lastYear':
       return {
         interval: 'year',
@@ -41,7 +51,12 @@ export const determineCardRange = range => {
         type: 'periodToDate',
       };
     case 'thisQuarter':
-      return { interval: 'quarter', count: -1, timeGrain: 'month', type: 'periodToDate' };
+      return {
+        interval: 'quarter',
+        count: -1,
+        timeGrain: 'month',
+        type: 'periodToDate',
+      };
     case 'thisYear':
       return {
         interval: 'year',
@@ -74,7 +89,10 @@ export const compareGrains = (grain1, grain2) => {
 };
 
 /** Determine the max value card attribute count */
-export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
+export const determineMaxValueCardAttributeCount = (
+  size,
+  currentAttributeCount
+) => {
   let attributeCount = currentAttributeCount;
   switch (size) {
     case CARD_SIZES.SMALL:
@@ -100,7 +118,7 @@ export const determineMaxValueCardAttributeCount = (size, currentAttributeCount)
   return attributeCount;
 };
 
-export const getUpdatedCardSize = oldSize => {
+export const getUpdatedCardSize = (oldSize) => {
   const changedSize =
     oldSize === 'XSMALL'
       ? 'SMALL'
@@ -132,7 +150,11 @@ export const getUpdatedCardSize = oldSize => {
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
  */
-export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') => {
+export const formatNumberWithPrecision = (
+  value,
+  precision = 0,
+  locale = 'en'
+) => {
   return value > 1000000000000
     ? `${(value / 1000000000000).toLocaleString(
         locale,
@@ -189,9 +211,12 @@ export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =
  * @param {string} value A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
  * @returns {Array<String>} an array of variables, i.e. ['manufacturer', 'sensor']
  */
-export const getVariables = value => {
-  let variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z0-9_-]+}/g) : null;
-  variables = variables?.map(variable => variable.replace(/[{}]/g, ''));
+export const getVariables = (value) => {
+  let variables =
+    value && typeof value === 'string'
+      ? value.match(/{[a-zA-Z0-9_-]+}/g)
+      : null;
+  variables = variables?.map((variable) => variable.replace(/[{}]/g, ''));
   return variables;
 };
 
@@ -204,14 +229,19 @@ export const getVariables = value => {
  */
 export const replaceVariables = (variables, cardVariables, target) => {
   // Need to create a copy of cardVariables with all lower-case keys
-  const insensitiveCardVariables = Object.keys(cardVariables).reduce((acc, variable) => {
-    acc[variable.toLowerCase()] = cardVariables[variable];
-    return acc;
-  }, {});
+  const insensitiveCardVariables = Object.keys(cardVariables).reduce(
+    (acc, variable) => {
+      acc[variable.toLowerCase()] = cardVariables[variable];
+      return acc;
+    },
+    {}
+  );
 
   // if it's an array then recursively place the variables in each element
   if (Array.isArray(target)) {
-    return target.map(element => replaceVariables(variables, cardVariables, element));
+    return target.map((element) =>
+      replaceVariables(variables, cardVariables, element)
+    );
   }
 
   // if it's an object, then recursively replace each value unless it's a react element
@@ -219,7 +249,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
     // if it's a react element, leave it alone
     return React.isValidElement(target)
       ? target
-      : mapValues(target, property =>
+      : mapValues(target, (property) =>
           replaceVariables(variables, insensitiveCardVariables, property)
         );
   }
@@ -229,7 +259,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
     return target;
   }
   let updatedTarget = target;
-  variables.forEach(variable => {
+  variables.forEach((variable) => {
     const insensitiveVariable = variable.toLowerCase();
     const variableRegex = new RegExp(`{${variable}}`, 'g');
     const exactMatch = new RegExp(`^{${insensitiveVariable}}$`, 'g');
@@ -239,14 +269,20 @@ export const replaceVariables = (variables, cardVariables, target) => {
       typeof insensitiveCardVariables[insensitiveVariable] === 'number'
     ) {
       updatedTarget = insensitiveCardVariables[insensitiveVariable];
-    } else if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
+    } else if (
+      typeof insensitiveCardVariables[insensitiveVariable] === 'function'
+    ) {
       const callback = insensitiveCardVariables[insensitiveVariable];
       updatedTarget = callback(variable, target);
     } else {
       // if the target is still a string then continue
       updatedTarget =
-        typeof updatedTarget === 'string' && !isNil(insensitiveCardVariables[insensitiveVariable])
-          ? updatedTarget.replace(variableRegex, insensitiveCardVariables[insensitiveVariable])
+        typeof updatedTarget === 'string' &&
+        !isNil(insensitiveCardVariables[insensitiveVariable])
+          ? updatedTarget.replace(
+              variableRegex,
+              insensitiveCardVariables[insensitiveVariable]
+            )
           : updatedTarget;
     }
   });
@@ -257,20 +293,27 @@ export const replaceVariables = (variables, cardVariables, target) => {
  * @param {Object} cardProperty
  * @returns {Array<String>} an array of unique variable values
  */
-export const getCardVariables = cardProperty => {
-  const propertyVariables = Object.values(cardProperty).reduce((acc, property) => {
-    if (typeof property === 'object' && !React.isValidElement(property) && !isNil(property)) {
-      // recursively search any objects for additional string properties
-      acc.push(...getCardVariables(property));
-    } else if (typeof property === 'string') {
-      // if it's a string, look for variables
-      const detectedVariables = getVariables(property);
-      if (detectedVariables) {
-        acc.push(...detectedVariables);
+export const getCardVariables = (cardProperty) => {
+  const propertyVariables = Object.values(cardProperty).reduce(
+    (acc, property) => {
+      if (
+        typeof property === 'object' &&
+        !React.isValidElement(property) &&
+        !isNil(property)
+      ) {
+        // recursively search any objects for additional string properties
+        acc.push(...getCardVariables(property));
+      } else if (typeof property === 'string') {
+        // if it's a string, look for variables
+        const detectedVariables = getVariables(property);
+        if (detectedVariables) {
+          acc.push(...detectedVariables);
+        }
       }
-    }
-    return acc;
-  }, []);
+      return acc;
+    },
+    []
+  );
   return [...new Set(propertyVariables)];
 };
 
@@ -305,7 +348,11 @@ export const handleCardVariables = (title, content, values, card) => {
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
  */
-export const formatChartNumberWithPrecision = (value, precision = 0, locale = 'en') => {
+export const formatChartNumberWithPrecision = (
+  value,
+  precision = 0,
+  locale = 'en'
+) => {
   return value.toLocaleString(
     locale,
     !isNil(precision)
@@ -331,7 +378,11 @@ export const determinePrecision = (size, value, precision) => {
   // If the card is xsmall we don't have room for decimals!
   switch (size) {
     case CARD_SIZES.SMALL:
-      return !isNil(precision) ? precision : Math.abs(value) > 9 ? 0 : undefined;
+      return !isNil(precision)
+        ? precision
+        : Math.abs(value) > 9
+        ? 0
+        : undefined;
     default:
   }
   return precision;
@@ -345,7 +396,11 @@ export const determinePrecision = (size, value, precision) => {
  * @param {string} unit any optional units to show
  */
 export const chartValueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
+  const precision = determinePrecision(
+    size,
+    value,
+    Math.abs(value) > 1 ? 1 : 3
+  );
   let renderValue = value;
   if (typeof value === 'number') {
     renderValue = formatChartNumberWithPrecision(value, precision, locale);

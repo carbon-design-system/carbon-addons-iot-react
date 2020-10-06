@@ -3,7 +3,12 @@ import { mount } from 'enzyme';
 import { render, within, screen } from '@testing-library/react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
+import {
+  tableColumns,
+  tableData,
+  actions2,
+  tableColumnsWithLinks,
+} from '../../utils/sample';
 
 import TableCard, {
   findMatchingThresholds,
@@ -17,7 +22,12 @@ describe('TableCard', () => {
     { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
-    { comparison: '=', dataSourceId: 'airflow_status', severity: 1, value: 'High' },
+    {
+      comparison: '=',
+      dataSourceId: 'airflow_status',
+      severity: 1,
+      value: 'High',
+    },
   ];
   it('findMatchingThresholds', () => {
     const oneMatchingThreshold = findMatchingThresholds(
@@ -52,25 +62,47 @@ describe('TableCard', () => {
     expect(twoMatchingThresholds[1].dataSourceId).toEqual('airflow_max');
   });
   it('findMatchingThresholds no column', () => {
-    const thresholds = [{ comparison: '<', dataSourceId: 'airflow_mean', severity: 1, value: 4.5 }];
-    const oneMatchingThreshold = findMatchingThresholds(thresholds, { airflow_mean: 4 });
+    const thresholds = [
+      {
+        comparison: '<',
+        dataSourceId: 'airflow_mean',
+        severity: 1,
+        value: 4.5,
+      },
+    ];
+    const oneMatchingThreshold = findMatchingThresholds(thresholds, {
+      airflow_mean: 4,
+    });
     expect(oneMatchingThreshold).toHaveLength(1);
     // The highest severity should match
     expect(oneMatchingThreshold[0].severity).toEqual(1);
 
     // shouldn't match on null values
-    const zeroMatchingThreshold = findMatchingThresholds(thresholds, { airflow_mean: null });
+    const zeroMatchingThreshold = findMatchingThresholds(thresholds, {
+      airflow_mean: null,
+    });
     expect(zeroMatchingThreshold).toHaveLength(0);
     // shouldn't match on null values
     const zeroMatchingThreshold2 = findMatchingThresholds(
-      [{ comparison: '<=', dataSourceId: 'airflow_mean', severity: 1, value: 4.5 }],
+      [
+        {
+          comparison: '<=',
+          dataSourceId: 'airflow_mean',
+          severity: 1,
+          value: 4.5,
+        },
+      ],
       { airflow_mean: null }
     );
     expect(zeroMatchingThreshold2).toHaveLength(0);
   });
   it('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
-    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
-    const columnsWithlinks = columnsWithFormattedLinks.filter(column => column.renderDataFunction);
+    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(
+      tableColumnsWithLinks
+    );
+    const columnsWithlinks = columnsWithFormattedLinks.filter(
+      (column) => column.renderDataFunction
+    );
     expect(columnsWithlinks).toHaveLength(1);
   });
   it('handleExpandedItemLinks correctly applies linkTemplates and variables', () => {
@@ -106,7 +138,10 @@ describe('TableCard', () => {
     };
 
     // with row specific variables
-    const updatedRowSpecificExpandedItems = handleExpandedItemLinks(row, expandedRow);
+    const updatedRowSpecificExpandedItems = handleExpandedItemLinks(
+      row,
+      expandedRow
+    );
     expect(updatedRowSpecificExpandedItems).toEqual([
       {
         id: 'count',
@@ -128,7 +163,11 @@ describe('TableCard', () => {
       },
     ]);
     // if cardVariables are given, then this function should return its original data
-    const updatedExpandedItems = handleExpandedItemLinks(row, expandedRow, cardVariables);
+    const updatedExpandedItems = handleExpandedItemLinks(
+      row,
+      expandedRow,
+      cardVariables
+    );
     expect(updatedExpandedItems).toEqual(expandedRow);
   });
   it('Row specific link variables populate correctly', () => {
@@ -200,12 +239,14 @@ describe('TableCard', () => {
       />
     );
     expect(screen.getAllByText('Link').length).toEqual(11);
-    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73003');
+    expect(document.querySelector('a').getAttribute('href')).toEqual(
+      'https://ibm.com/73003'
+    );
   });
   it('Clicked row actions', () => {
     const onCardAction = jest.fn();
 
-    const tableDataWithActions = tableData.map(item => {
+    const tableDataWithActions = tableData.map((item) => {
       return {
         ...item,
         actions: actions2,
@@ -224,10 +265,7 @@ describe('TableCard', () => {
       />
     );
 
-    wrapper
-      .find('.iot--table-card--action-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--table-card--action-icon').first().simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);
   });
   it('Columns displayed XLarge', () => {
@@ -255,11 +293,13 @@ describe('TableCard', () => {
       />
     );
 
-    const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
+    const totalColumns = tableColumns.filter(
+      (item) => item.priority === 1 || item.priority === 2
+    );
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
   });
   it('Columns displayed Large with actions', () => {
-    const tableDataWithActions = tableData.map(item => {
+    const tableDataWithActions = tableData.map((item) => {
       return {
         ...item,
         actions: actions2,
@@ -277,7 +317,9 @@ describe('TableCard', () => {
       />
     );
 
-    const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
+    const totalColumns = tableColumns.filter(
+      (item) => item.priority === 1 || item.priority === 2
+    );
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length + 1); // +1 for action column
   });
   it('Columns should use custom render fuction when present', () => {
