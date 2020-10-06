@@ -6,7 +6,7 @@
     flex-direction: column;
     display: flex;
   }
-  &--header {
+  &-header {
     flex: 0;
     padding: $spacing-05 0 $spacing-03;
     .#{$prefix}--grid {
@@ -15,33 +15,34 @@
       padding-left: $spacing-07;
       padding-right: $spacing-05;
     }
-    .header-top {
+    &--top {
       height: $layout-02;
       display: flex;
       align-items: center;
     }
-    .header-bottom {
+    &--bottom {
       height: $layout-03;
       display: flex;
       align-items: center;
       .#{$prefix}--btn--sm {
         margin-left: $spacing-05;
+      }
+      .#{$prefix}--btn--tertiary,
+      .#{$prefix}--btn--primary {
+        margin-left: $spacing-05;
         padding-left: $spacing-05;
         padding-right: $spacing-05;
       }
     }
-    .header-left {
+    &--left {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    .header-right {
+    &--right {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-    }
-    .last-updated {
-      @include type-style('label-01');
     }
   }
   &--preview {

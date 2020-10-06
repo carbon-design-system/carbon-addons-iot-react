@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DocumentImport16, DocumentExport16 } from '@carbon/icons-react';
+import { RequestQuote16, DocumentImport16, DocumentExport16 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, Breadcrumb, BreadcrumbItem } from '../../../index';
@@ -9,6 +9,7 @@ const { iotPrefix, prefix } = settings;
 
 const defaultProps = {
   breadcrumbs: [],
+  onEditTitle: null,
   onImport: null,
   onExport: null,
 };
@@ -18,6 +19,8 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   /** initial dashboard data to edit */
   breadcrumbs: PropTypes.arrayOf(PropTypes.node),
+  /** if provided, renders edit button next to title linked to this callback */
+  onEditTitle: PropTypes.func,
   /** if provided, renders import button linked to this callback */
   onImport: PropTypes.func,
   /** if provided, renders export button linked to this callback */
@@ -28,6 +31,7 @@ const propTypes = {
   onSubmit: PropTypes.func.isRequired,
   /** i18n */
   i18n: PropTypes.shape({
+    headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
     headerExportButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
@@ -38,19 +42,20 @@ const propTypes = {
 const DashboardEditorHeader = ({
   title,
   breadcrumbs,
+  onEditTitle,
   onImport,
   onExport,
   onCancel,
   onSubmit,
   i18n,
 }) => {
-  const baseClassName = `${iotPrefix}--dashboard-editor`;
+  const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   return (
-    <div className={`${baseClassName}--header`}>
+    <div className={baseClassName}>
       <div className={`${prefix}--grid`}>
         <div className={`${prefix}--row`}>
-          <div className={`${prefix}--col header-left`}>
-            <div className="header-top">
+          <div className={`${prefix}--col ${baseClassName}--left`}>
+            <div className={`${baseClassName}--top`}>
               {breadcrumbs ? (
                 <Breadcrumb>
                   {breadcrumbs.map((crumb, index) => (
@@ -59,19 +64,32 @@ const DashboardEditorHeader = ({
                 </Breadcrumb>
               ) : null}
             </div>
-            <div className="header-bottom">
-              <h4>{title}</h4>
+            <div className={`${baseClassName}--bottom`}>
+              <h3>{title}</h3>
+              {onEditTitle && (
+                <Button
+                  kind="ghost"
+                  size="small"
+                  iconDescription={i18n.headerEditTitleButton}
+                  tooltipPosition="bottom"
+                  hasIconOnly
+                  renderIcon={RequestQuote16}
+                  onClick={onEditTitle}
+                />
+              )}
             </div>
           </div>
-          <div className={`${prefix}--col header-right`}>
-            <div className="header-top">
+          <div className={`${prefix}--col ${baseClassName}--right`}>
+            <div className={`${baseClassName}--top`}>
               {/* <span className="last-updated">Last updated: XYZ</span> */}
             </div>
-            <div className="header-bottom">
+            <div className={`${baseClassName}--bottom`}>
               {onImport && (
                 <Button
                   kind="ghost"
+                  size="small"
                   iconDescription={i18n.headerImportButton}
+                  tooltipPosition="bottom"
                   hasIconOnly
                   renderIcon={DocumentImport16}
                   onClick={onImport}
@@ -80,7 +98,9 @@ const DashboardEditorHeader = ({
               {onExport && (
                 <Button
                   kind="ghost"
+                  size="small"
                   iconDescription={i18n.headerExportButton}
+                  tooltipPosition="bottom"
                   hasIconOnly
                   renderIcon={DocumentExport16}
                   onClick={onExport}

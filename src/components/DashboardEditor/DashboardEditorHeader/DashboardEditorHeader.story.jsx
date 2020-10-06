@@ -19,7 +19,22 @@ storiesOf('Watson IoT Experimental/DashboardEditor/DashboardEditorHeader', modul
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
         onImport={action('onImport')}
-        onExport={action('onSubmit')}
+        onExport={action('onExport')}
+        onCancel={action('onCancel')}
+        onSubmit={action('onSubmit')}
+        i18n={defaultI18N}
+      />
+    </div>
+  ))
+  .add('with editable title and no import or export', () => (
+    <div style={{ height: 'calc(100vh - 6rem)' }}>
+      <DashboardEditorHeader
+        title={text('title', 'New dashboard')}
+        breadcrumbs={[
+          <Link href="www.ibm.com">Dashboard library</Link>,
+          <Link href="www.ibm.com">Favorites</Link>,
+        ]}
+        onEditTitle={action('onEditTitle')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         i18n={defaultI18N}

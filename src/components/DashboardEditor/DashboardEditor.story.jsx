@@ -102,6 +102,9 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
       <DashboardEditor
         title={text('title', 'My dashboard')}
         onAddImage={action('onAddImage')}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [
@@ -156,6 +159,9 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
       />
       <DashboardEditor
         title={text('title', 'My dashboard')}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [
@@ -208,6 +214,9 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           ],
           layouts: {},
         }}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={object('supportedCardTypes', [

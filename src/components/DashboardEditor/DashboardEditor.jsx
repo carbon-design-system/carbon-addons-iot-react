@@ -11,6 +11,7 @@ import { getDefaultCard, getCardPreview } from './editorUtils';
 const { iotPrefix } = settings;
 
 export const defaultI18N = {
+  headerEditTitleButton: 'Edit title',
   headerImportButton: 'Import',
   headerExportButton: 'Export',
   headerCancelButton: 'Cancel',
@@ -30,6 +31,7 @@ const defaultProps = {
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
+  onEditTitle: null,
   onImport: null,
   onExport: null,
   i18n: defaultI18N,
@@ -51,6 +53,8 @@ const propTypes = {
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
+  /** if provided, renders edit button next to title linked to this callback */
+  onEditTitle: PropTypes.func,
   /** if provided, renders import button linked to this callback */
   onImport: PropTypes.func,
   /** if provided, renders export button linked to this callback */
@@ -76,6 +80,7 @@ const DashboardEditor = ({
   renderCardPreview,
   headerBreadcrumbs,
   // onAddImage,
+  onEditTitle,
   onCancel,
   onSubmit,
   onImport,
@@ -113,6 +118,7 @@ const DashboardEditor = ({
           <DashboardEditorHeader
             title={title}
             breadcrumbs={headerBreadcrumbs}
+            onEditTitle={onEditTitle}
             onImport={onImport}
             onExport={() => onExport(dashboardData)}
             onCancel={onCancel}
@@ -123,7 +129,7 @@ const DashboardEditor = ({
         <div className={`${baseClassName}--preview`}>
           <DashboardGrid
             isEditable
-            /* onBreakpointChange={newBreakpoint => console.log('onBreakpointChange', newBreakpoint)} */
+            onBreakpointChange={() => {}}
             onLayoutChange={(newLayout, newLayouts) =>
               setDashboardData({
                 ...dashboardData,
