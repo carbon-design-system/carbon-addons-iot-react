@@ -61,7 +61,7 @@ export const AboutStorybook = () => (
             </StructuredListRow>
           </StructuredListHead>
           <StructuredListBody>
-            {union(carbonExports, iotAddonsExports).map((item) => (
+            {union(carbonExports, iotAddonsExports).map(item => (
               <StructuredListRow key={item}>
                 <StructuredListCell>
                   {carbonExports.includes(item) ? item : null}

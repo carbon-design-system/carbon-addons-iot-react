@@ -22,7 +22,7 @@ class SVGPathElement extends HTMLElement {}
 
 window.SVGPathElement = SVGPathElement;
 
-window.Element.prototype.getComputedTextLength = function () {
+window.Element.prototype.getComputedTextLength = function() {
   return 200;
 };
 

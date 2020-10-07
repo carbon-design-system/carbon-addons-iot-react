@@ -24,6 +24,6 @@ addDecorator(
     inline: false, // Global configuration for the info addon across all of your stories.
   })
 );
-addDecorator((story) => <Container story={story} />);
+addDecorator(story => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);

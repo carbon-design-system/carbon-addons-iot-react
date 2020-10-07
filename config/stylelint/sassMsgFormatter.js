@@ -27,12 +27,12 @@ function filterForErrors(result) {
 function filterDuplicates(results) {
   let filteredArray = [];
   let isUnique = true;
-  results.forEach((result) => {
+  results.forEach(result => {
     if (filteredArray.length == 0) {
       // if the filtered array is empty then it's automatically unique
       filteredArray.push(result);
     } else {
-      filteredArray.forEach((uniqueResult) => {
+      filteredArray.forEach(uniqueResult => {
         if (uniqueResult.source === result.source) {
           // each result comes from one source
           isUnique = false;
@@ -135,7 +135,7 @@ function formatter(results) {
     if (filesWithErrors.length > 0) {
       formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
     }
-    filesWithErrors.forEach((result) => {
+    filesWithErrors.forEach(result => {
       const errors = result.warnings;
       const errorMessage = formatError(errors);
       formattedMsg += chalk.bold('Source: ');

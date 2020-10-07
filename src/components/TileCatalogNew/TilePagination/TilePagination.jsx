@@ -29,7 +29,7 @@ const defaultProps = {
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
   const [selectedValue, setSelectedValue] = useState();
 
-  const getPageButton = (pageNumber) => (
+  const getPageButton = pageNumber => (
     <button
       type="button"
       onClick={() => onChange(pageNumber)}
@@ -53,7 +53,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           data-page-select
           value={selectedValue}
           aria-label={i18n.ariaLabelSelect}
-          onChange={(evt) => {
+          onChange={evt => {
             onChange(Number(evt.target.value));
             setSelectedValue('default');
           }}
