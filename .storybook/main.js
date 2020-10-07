@@ -47,7 +47,7 @@ module.exports = {
 
     // Remove the existing css rule
     // https://github.com/storybookjs/storybook/issues/6319#issuecomment-477852640
-    config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
+    config.module.rules = config.module.rules.filter((f) => f.test.toString() !== '/\\.css$/');
 
     // Define our desired scss/css rule
     config.module.rules.push({
