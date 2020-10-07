@@ -652,8 +652,8 @@ const TableCard = ({
             // map each of the matching thresholds into a data object
             const iconColumns = matchingThresholds
               ? matchingThresholds.reduce((thresholdData, threshold) => {
-                  thresholdData[`iconColumn-${threshold.dataSourceId}`] =
-                    threshold.severity; // eslint-disable-line no-param-reassign
+                  thresholdData[`iconColumn-${threshold.dataSourceId}`] = // eslint-disable-line no-param-reassign
+                    threshold.severity;
                   return thresholdData;
                 }, {})
               : null;

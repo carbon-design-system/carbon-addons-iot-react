@@ -193,12 +193,14 @@ const CardRenderer = React.memo(
           setIsExpanded(false);
         }
       },
+      /* eslint-disable react-hooks/exhaustive-deps */
       [
         card,
         onFetchData,
         originalDataSource && originalDataSource.range,
         timeGrain,
-      ] // eslint-disable-line react-hooks/exhaustive-deps
+      ]
+      /* eslint-enable react-hooks/exhaustive-deps */
     );
 
     const commonCardProps = {

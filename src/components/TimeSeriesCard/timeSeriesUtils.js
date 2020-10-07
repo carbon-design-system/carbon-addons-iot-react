@@ -72,8 +72,8 @@ export const generateTableSampleValues = (id, columns) => {
   return sampleValues.map((item, index) => ({
     id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
-      obj[column.dataSourceId] =
-        column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--'; // eslint-disable-line no-param-reassign
+      obj[column.dataSourceId] = // eslint-disable-line no-param-reassign
+        column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--';
       return obj;
     }, {}),
   }));

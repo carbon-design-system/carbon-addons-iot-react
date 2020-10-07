@@ -93,12 +93,14 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
           breakingWidth.current.pop();
         }
       }
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    /* eslint-disable react-hooks/exhaustive-deps */
     [
       breadcrumbRef?.current?.clientWidth,
       breadcrumbRef?.current?.scrollWidth,
       prevChildren,
     ]
+    /* eslint-enable react-hooks/exhaustive-deps */
   );
 
   return (

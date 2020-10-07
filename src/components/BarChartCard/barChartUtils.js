@@ -329,9 +329,9 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  const data = dataOrHoveredElement.__data__
-    ? dataOrHoveredElement.__data__
-    : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
+  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    : dataOrHoveredElement;
   const typedData = Array.isArray(data) ? data[0] : data;
 
   const parsedTooltip = cheerio.load(defaultTooltip);

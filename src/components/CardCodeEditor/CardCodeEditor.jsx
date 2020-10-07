@@ -16,6 +16,7 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   ...ComposedModal.propTypes,
   /*
    * On submit callback. It's called with editor value, and a callback to set an error messages

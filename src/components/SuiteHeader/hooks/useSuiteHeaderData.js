@@ -259,7 +259,7 @@ const useSuiteHeaderData = ({
       setError(err);
       setIsLoading(false);
     }
-  }, [baseApiUrl, domain, lang, isTest, setIsLoading]);
+  }, [baseApiUrl, domain, lang, isTest, setIsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // load actual data
