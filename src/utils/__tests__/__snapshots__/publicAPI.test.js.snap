@@ -6411,6 +6411,16 @@ Map {
     },
   },
   "SuiteHeader" => Object {
+    "ROUTE_TYPES": Object {
+      "ABOUT": "ABOUT",
+      "ADMIN": "ADMIN",
+      "APPLICATION": "APPLICATION",
+      "DOCUMENTATION": "DOCUMENTATION",
+      "LOGOUT": "LOGOUT",
+      "NAVIGATOR": "ADMIN",
+      "PROFILE": "PROFILE",
+      "REFERRER": "REFERRER",
+    },
     "defaultProps": Object {
       "appName": null,
       "className": null,
@@ -6431,6 +6441,7 @@ Map {
         "requestEnhancement": "Request enhancement",
         "settingsIcon": "Settings",
         "support": "Support",
+        "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": [Function],
         "switcherLearnMoreLink": "Learn more",
@@ -6440,8 +6451,9 @@ Map {
         "whatsNew": "What's new",
       },
       "isAdminView": false,
+      "onRouteChange": [Function],
       "sideNavProps": null,
-      "surveyLink": null,
+      "surveyData": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -6550,6 +6562,9 @@ Map {
       },
       "isAdminView": Object {
         "type": "bool",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
       "routes": Object {
         "args": Array [
@@ -6667,8 +6682,20 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "surveyLink": Object {
-        "type": "string",
+      "surveyData": Object {
+        "args": Array [
+          Object {
+            "privacyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "surveyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "userDisplayName": Object {
         "isRequired": true,
@@ -6682,6 +6709,7 @@ Map {
   },
   "SuiteHeaderProfile" => Object {
     "defaultProps": Object {
+      "displayName": "",
       "i18n": Object {
         "logoutButton": "Log out",
         "profileButton": "Manage profile",
@@ -6690,7 +6718,6 @@ Map {
     },
     "propTypes": Object {
       "displayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "i18n": Object {
@@ -6709,13 +6736,13 @@ Map {
         ],
         "type": "shape",
       },
-      "onRequestLogout": Object {
+      "onProfileClick": Object {
         "isRequired": true,
         "type": "func",
       },
-      "profileLink": Object {
+      "onRequestLogout": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "func",
       },
       "username": Object {
         "isRequired": true,
@@ -6731,6 +6758,7 @@ Map {
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "onRouteChange": [Function],
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -6783,6 +6811,9 @@ Map {
       "noAccessLink": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
     },
   },
@@ -6855,6 +6886,7 @@ Map {
       "requestEnhancement": "Request enhancement",
       "settingsIcon": "Settings",
       "support": "Support",
+      "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": [Function],
       "switcherLearnMoreLink": "Learn more",
@@ -18281,6 +18313,43 @@ Map {
       },
     },
     "render": [Function],
+  },
+  "ErrorBoundary" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": Object {
+        "log": [Function],
+      },
+      "_currentValue2": Object {
+        "log": [Function],
+      },
+      "_threadCount": 0,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "fallback": Object {
+        "type": "node",
+      },
+    },
+  },
+  "ErrorBoundaryContext" => Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": "React.Consumer",
+    "Provider": "React.Provider",
   },
   "Filename" => Object {
     "defaultProps": Object {
