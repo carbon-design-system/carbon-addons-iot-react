@@ -2,8 +2,6 @@
 @import '~carbon-components/scss/globals/scss/typography';
 
 .page-title-bar {
-  padding: $spacing-06 $spacing-07 $spacing-03 $spacing-07;
-
   &-title {
     display: flex;
     align-items: center;
@@ -14,8 +12,12 @@
       display: flex;
 
       h2 {
-        @include type-style('productive-heading-03');
+        @include type-style('productive-heading-04');
       }
+    }
+
+    &--edit {
+      margin-left: $spacing-05;
     }
   }
   .#{$prefix}--tab-content {
@@ -26,6 +28,16 @@
   &-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: $spacing-05 $spacing-07 $spacing-06 $spacing-07;
+
+    &-left {
+      margin-right: $spacing-05;
+    }
+    &-right {
+      margin-left: $spacing-05;
+    }
   }
 
   &-description {
@@ -41,12 +53,10 @@
 
   &-loading {
     height: carbon--rem(20px);
-    margin-top: carbon--rem(8.5px);
-    margin-bottom: carbon--rem(7px);
-    margin-left: carbon--rem(2.5px);
+    margin: $spacing-05 0 0 $spacing-07;
   }
 
   &-content {
-    margin-top: $spacing-05;
+    padding: 0 $spacing-07;
   }
 }
