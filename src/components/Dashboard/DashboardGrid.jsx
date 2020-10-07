@@ -124,8 +124,6 @@ export const findLayoutOrGenerate = (layouts, cards) => {
  *
  * You can also pass any of the additional properties documented here:
  * https://github.com/STRML/react-grid-layout#grid-layout-props
- *
- *
  */
 const DashboardGrid = ({
   children,
@@ -134,6 +132,7 @@ const DashboardGrid = ({
   layouts,
   onLayoutChange,
   onBreakpointChange,
+  className,
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
@@ -178,7 +177,7 @@ const DashboardGrid = ({
   );
 
   return (
-    <div style={{ flex: 1 }}>
+    <div className={className} style={{ flex: 1 }}>
       <StyledGridLayout
         layouts={generatedLayouts}
         compactType="vertical"

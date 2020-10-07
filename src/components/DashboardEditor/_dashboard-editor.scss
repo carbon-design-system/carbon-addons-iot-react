@@ -5,6 +5,7 @@
     flex: 1;
     flex-direction: column;
     display: flex;
+    overflow-x: auto;
   }
   &--header {
     flex: 0;
@@ -41,10 +42,22 @@
     flex: 1;
     margin-top: -$spacing-03;
     padding: $spacing-05;
+    overflow-x: auto;
+
     .selected-card {
       border: solid $spacing-01 $interactive-04;
       box-sizing: content-box;
       margin: -$spacing-01;
+    }
+
+    &-tablet {
+      width: 672px;
+    }
+    &-laptop {
+      width: 1056px;
+    }
+    &-screen {
+      width: 1312px;
     }
   }
   &--sidebar {

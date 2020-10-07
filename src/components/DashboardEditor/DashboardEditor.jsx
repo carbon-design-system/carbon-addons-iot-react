@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
+import { Screen16, Tablet16, Laptop16, Maximize16 } from '@carbon/icons-react';
+import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -23,7 +25,9 @@ import {
   CardEditor,
   Breadcrumb,
   BreadcrumbItem,
+  ContentSwitcher,
 } from '../../index';
+import IconSwitch from '../IconSwitch/IconSwitch';
 
 import sampleImage from './landscape.jpg';
 
@@ -50,6 +54,13 @@ const propTypes = {
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
 };
 
+const BREAKPOINTS = {
+  TABLET: 1,
+  LAPTOP: 2,
+  SCREEN: 3,
+  FIT_TO_SCREEN: 0,
+};
+
 const DashboardEditor = ({
   initialValue,
   renderHeader,
@@ -63,6 +74,14 @@ const DashboardEditor = ({
   // show the gallery if no card is being edited
   const [dashboardData, setDashboardData] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
+  const [selectedBreakpoint, setSelectedBreakpoint] = useState(BREAKPOINTS.FIT_TO_SCREEN);
+
+  useEffect(
+    () => {
+      window.dispatchEvent(new Event('resize'));
+    },
+    [selectedBreakpoint]
+  );
 
   const addCard = type => {
     const defaultSizeForType = {
@@ -380,6 +399,19 @@ const DashboardEditor = ({
                     {/* <span className="last-updated">Last updated: XYZ</span> */}
                   </div>
                   <div className="header-bottom">
+                    <ContentSwitcher
+                      onChange={e => setSelectedBreakpoint(e.index)}
+                      selectedIndex={selectedBreakpoint}
+                    >
+                      <IconSwitch
+                        name="fit-to-screen"
+                        text="Fit to screen"
+                        renderIcon={Maximize16}
+                      />
+                      <IconSwitch name="tablet" text="Tablet view" renderIcon={Tablet16} />
+                      <IconSwitch name="laptop" text="Laptop View" renderIcon={Laptop16} />
+                      <IconSwitch name="screen" text="Desktop View" renderIcon={Screen16} />
+                    </ContentSwitcher>
                     <Button style={{ marginRight: '1rem' }} kind="tertiary" size="small">
                       Cancel
                     </Button>
@@ -395,6 +427,7 @@ const DashboardEditor = ({
         <div className={`${baseClassName}--preview`}>
           <DashboardGrid
             isEditable
+            breakpoint="lg"
             onBreakpointChange={newBreakpoint => console.log('onBreakpointChange', newBreakpoint)}
             onLayoutChange={(newLayout, newLayouts) =>
               setDashboardData({
@@ -402,6 +435,11 @@ const DashboardEditor = ({
                 layouts: newLayouts,
               })
             }
+            className={classNames({
+              [`${baseClassName}--preview-tablet`]: selectedBreakpoint === BREAKPOINTS.TABLET,
+              [`${baseClassName}--preview-laptop`]: selectedBreakpoint === BREAKPOINTS.LAPTOP,
+              [`${baseClassName}--preview-screen`]: selectedBreakpoint === BREAKPOINTS.SCREEN,
+            })}
           >
             {dashboardData.cards.map(i => {
               const isSelected = selectedCardId === i.id;
@@ -435,7 +473,7 @@ const DashboardEditor = ({
                 : renderDefaultCard(i, commonProps);
             })}
           </DashboardGrid>
-          <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre>
+          {/* <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre> */}
         </div>
       </div>
       <div className={`${baseClassName}--sidebar`}>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
@@ -79,15 +79,16 @@ storiesOf('Watson IoT/Dashboard Grid', module)
         <Fragment>
           You can drag and drop the cards around. Watch the handler get triggered on the Actions
           tab.
-          <FullWidthWrapper>
+          <div style={{ width: text('width', '1200px') }}>
             <DashboardGrid
               {...commonGridProps}
+              breakpoint={select('breakpoint', ['max', 'xl', 'md', 'sm'], 'xl')}
               isEditable={boolean('isEditable', true)}
               isResizable={boolean('isResizable', true)}
             >
               {Cards}
             </DashboardGrid>
-          </FullWidthWrapper>
+          </div>
         </Fragment>
       );
     },
@@ -111,6 +112,7 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           <FullWidthWrapper>
             <DashboardGrid
               {...commonGridProps}
+              breakpoint={select('breakpoint', ['md', 'lg'])}
               layouts={{
                 lg: [
                   { i: 'facility', x: 4, y: 4, w: 1, h: 1 },
