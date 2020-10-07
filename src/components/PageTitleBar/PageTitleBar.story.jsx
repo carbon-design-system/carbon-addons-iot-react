@@ -120,6 +120,8 @@ storiesOf('Watson IoT/PageTitleBar', module)
               hasIconOnly
               iconDescription="Add"
               kind="ghost"
+              tooltipPosition="bottom"
+              tooltipAlignment="center"
             />
             <Button
               renderIcon={TrashCan24}
@@ -128,6 +130,8 @@ storiesOf('Watson IoT/PageTitleBar', module)
               hasIconOnly
               iconDescription="Remove"
               kind="ghost"
+              tooltipPosition="bottom"
+              tooltipAlignment="center"
             />
             <Button onClick={action('click')} size="field">
               Take an action
