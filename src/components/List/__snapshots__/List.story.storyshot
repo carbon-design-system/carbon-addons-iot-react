@@ -49,14 +49,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -83,14 +75,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -119,14 +103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -153,14 +129,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -189,14 +157,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -223,14 +183,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -259,14 +211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -293,14 +237,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -329,14 +265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -363,14 +291,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -3865,14 +3785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item iot--list-item__large"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
                 <div
@@ -3923,14 +3835,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item iot--list-item__large"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
@@ -3983,14 +3887,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item iot--list-item__large"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
                 <div
@@ -4041,14 +3937,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item iot--list-item__large"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
@@ -4101,14 +3989,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item iot--list-item__large"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
                 <div
@@ -4159,14 +4039,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item iot--list-item__large"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
@@ -4219,14 +4091,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item iot--list-item__large"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
                 <div
@@ -4277,14 +4141,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item iot--list-item__large"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
@@ -4337,14 +4193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item iot--list-item__large"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
                 <div
@@ -4395,14 +4243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item iot--list-item__large"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content iot--list-item--content__large"
               >
@@ -4526,14 +4366,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -4616,14 +4448,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -4708,14 +4532,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -4798,14 +4614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -4890,14 +4698,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -4980,14 +4780,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5072,14 +4864,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -5162,14 +4946,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5254,14 +5030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -5344,14 +5112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5507,14 +5267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -5586,14 +5338,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5667,14 +5411,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -5746,14 +5482,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5827,14 +5555,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -5906,14 +5626,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -5987,14 +5699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6066,14 +5770,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6147,14 +5843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6226,14 +5914,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6378,14 +6058,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6418,14 +6090,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6460,14 +6124,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6500,14 +6156,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6542,14 +6190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6582,14 +6222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6624,14 +6256,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6664,14 +6288,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6706,14 +6322,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6746,14 +6354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6859,14 +6459,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6901,14 +6493,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -6945,14 +6529,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -6987,14 +6563,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -7031,14 +6599,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -7073,14 +6633,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -7117,14 +6669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -7159,14 +6703,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
@@ -7203,14 +6739,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item"
             >
               <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
-              <div
                 className="iot--list-item--content"
               >
                 <div
@@ -7245,14 +6773,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-item"
             >
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "30px",
-                  }
-                }
-              />
               <div
                 className="iot--list-item--content"
               >
