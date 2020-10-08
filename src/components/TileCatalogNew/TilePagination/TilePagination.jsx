@@ -60,7 +60,11 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         >
           <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
-            <option value={i + accumulator} data-page={i + accumulator}>
+            <option
+              key={`TilePagination-option-${i + accumulator}`}
+              value={i + accumulator}
+              data-page={i + accumulator}
+            >
               {i + accumulator}
             </option>
           ))}
@@ -102,27 +106,72 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     let buttons = [];
     if (!isLargeNumberOfButtons) {
       buttons = Array.from({ length: numPages - 2 }, (v, i) => (
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(i + 2)}</li>
+        <li
+          key={`TilePagination-page-number-button-${i + 2}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(i + 2)}
+        </li>
       ));
     }
     if (!showFrontOverFlowMenu && showBackOverFlowMenu) {
       buttons = Array.from({ length: 4 }, (v, i) => (
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(i + 2)}</li>
+        <li
+          key={`TilePagination-page-number-button-${i + 2}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(i + 2)}
+        </li>
       ));
     }
     if (showFrontOverFlowMenu && showBackOverFlowMenu) {
       buttons = [
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page - 1)}</li>,
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page)}</li>,
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page + 1)}</li>,
+        <li
+          key={`TilePagination-page-number-button-${page - 1}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(page - 1)}
+        </li>,
+        <li
+          key={`TilePagination-page-number-button-${page}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(page)}
+        </li>,
+        <li
+          key={`TilePagination-page-number-button-${page + 1}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(page + 1)}
+        </li>,
       ];
     }
     if (showFrontOverFlowMenu && !showBackOverFlowMenu) {
       buttons = [
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 4)}</li>,
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 3)}</li>,
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 2)}</li>,
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 1)}</li>,
+        <li
+          key={`TilePagination-page-number-button-${numPages - 4}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(numPages - 4)}
+        </li>,
+        <li
+          key={`TilePagination-page-number-button-${numPages - 3}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(numPages - 3)}
+        </li>,
+        <li
+          key={`TilePagination-page-number-button-${numPages - 2}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(numPages - 2)}
+        </li>,
+        <li
+          key={`TilePagination-page-number-button-${numPages - 1}`}
+          className={`${prefix}--pagination-nav__list-item`}
+        >
+          {getPageButton(numPages - 1)}
+        </li>,
       ];
     }
 
