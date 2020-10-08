@@ -11,11 +11,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { OverflowMenu, OverflowMenuItem } from '../../index';
-
-import OverflowREADME from './README.md';
 
 const directions = {
   'Bottom of the trigger button (bottom)': 'bottom',
@@ -62,12 +59,12 @@ storiesOf('OverflowMenu', module)
   .addDecorator(withKnobs)
   .add(
     'basic',
-    withReadme(OverflowREADME, () => (
+    () => (
       <OverflowMenuExample
         overflowMenuProps={props.menu()}
         overflowMenuItemProps={props.menuItem()}
       />
-    )),
+    ),
     {
       info: {
         text: `
@@ -79,7 +76,7 @@ storiesOf('OverflowMenu', module)
   )
   .add(
     'with links',
-    withReadme(OverflowREADME, () => (
+    () => (
       <OverflowMenuExample
         overflowMenuProps={props.menu()}
         overflowMenuItemProps={{
@@ -87,7 +84,7 @@ storiesOf('OverflowMenu', module)
           href: 'https://www.ibm.com',
         }}
       />
-    )),
+    ),
     {
       info: {
         text: `
@@ -101,7 +98,7 @@ storiesOf('OverflowMenu', module)
   )
   .add(
     'custom trigger',
-    withReadme(OverflowREADME, () => (
+    () => (
       <OverflowMenuExample
         overflowMenuProps={{
           ...props.menu(),
@@ -111,7 +108,7 @@ storiesOf('OverflowMenu', module)
         }}
         overflowMenuItemProps={props.menuItem()}
       />
-    )),
+    ),
     {
       info: {
         text: `

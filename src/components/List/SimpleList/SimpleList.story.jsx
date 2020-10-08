@@ -5,12 +5,10 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
-import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
-import SimpleListREADME from './README.md';
 
 export const getListItems = num =>
   Array(num)
@@ -110,237 +108,183 @@ const buttonsToRender = [
 ];
 
 storiesOf('Watson IoT Experimental/SimpleList', module)
-  .add(
-    'basic - SimpleList',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItems(30)}
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    {
-      info: {
-        text: ``,
-      },
-    }
-  )
-  .add(
-    'tall list (isFullHeight = true)',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          isFullHeight
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItems(3)}
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    {
-      info: { text: `` },
-    }
-  )
-  .add(
-    'tall list (isFullHeight = false)',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItems(3)}
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    {
-      info: {
-        text: `SimpleList is used when `,
-      },
-    }
-  )
-  .add(
-    'list with overflow grow',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItems(20)}
-          pageSize="xl"
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'list with pageSize',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItems(20)}
-          pageSize="sm"
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'list with empty row',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={listItemsWithEmptyRow}
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'list with large row',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getFatRowListItems(20)}
-          pageSize="sm"
-          isLargeRow
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'list with multiple actions',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItemsWithActions(5)}
-          pageSize="sm"
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'list with overflow menu',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getListItemsWithOverflowMenu(5)}
-          pageSize="sm"
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
+  .add('basic - SimpleList', () => (
+    <div style={{ width: 500 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(30)}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('tall list (isFullHeight = true)', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        isFullHeight
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(3)}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('tall list (isFullHeight = false)', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(3)}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with overflow grow', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(20)}
+        pageSize="xl"
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with pageSize', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItems(20)}
+        pageSize="sm"
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with empty row', () => (
+    <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={listItemsWithEmptyRow}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with large row', () => (
+    <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getFatRowListItems(20)}
+        pageSize="sm"
+        isLargeRow
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with multiple actions', () => (
+    <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItemsWithActions(5)}
+        pageSize="sm"
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('list with overflow menu', () => (
+    <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getListItemsWithOverflowMenu(5)}
+        pageSize="sm"
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
 
-  .add(
-    'large row list with multiple actions',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getFatRowListItemsWithActions(5)}
-          pageSize="sm"
-          isLargeRow
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
-  .add(
-    'large row list with overflow menu',
-    withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
-        <SimpleList
-          title={text('Text', 'Simple List')}
-          hasSearch
-          i18n={{
-            searchPlaceHolderText: 'Enter a search',
-            pageOfPagesText: pageNumber => `Page ${pageNumber}`,
-          }}
-          buttons={buttonsToRender}
-          items={getFatRowListItemsWithOverflowMenu(5)}
-          pageSize="sm"
-          isLargeRow
-          isLoading={boolean('isLoading', false)}
-        />
-      </div>
-    )),
-    { info: { text: `` } }
-  )
+  .add('large row list with multiple actions', () => (
+    <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getFatRowListItemsWithActions(5)}
+        pageSize="sm"
+        isLargeRow
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
+  .add('large row list with overflow menu', () => (
+    <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getFatRowListItemsWithOverflowMenu(5)}
+        pageSize="sm"
+        isLargeRow
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ))
   .add('list with reorder', () => {
     const SimpleListWithReorder = () => {
       const [items, setItems] = useState(getListItems(15));
