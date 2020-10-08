@@ -567,12 +567,12 @@ const DateTimePicker = ({
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
       if (selectedPreset) {
-        const preset = presets.filter(x => {
+        const preset = presets.filter(p => {
           let filteredPreset;
-          if (x.id) {
-            filteredPreset = x.id === selectedPreset;
+          if (p.id) {
+            filteredPreset = p.id === selectedPreset;
           } else {
-            filteredPreset = x.offset === selectedPreset;
+            filteredPreset = p.offset === selectedPreset;
           }
           return filteredPreset;
         })[0];
