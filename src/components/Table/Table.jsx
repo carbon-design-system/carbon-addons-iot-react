@@ -241,7 +241,7 @@ export const defaultProps = baseProps => ({
     },
     table: {
       expandedIds: [],
-      isSelectAllSelected: false,
+      isSelectAllSelected: undefined,
       selectedIds: [],
       rowActions: [],
       sort: {},
@@ -432,6 +432,18 @@ const Table = props => {
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
   const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
 
+  const allRowsAreSelected = view.table.selectedIds.length === visibleData.length;
+  const someRowsAreSelected = view.table.selectedIds.length > 0 && !allRowsAreSelected;
+
+  const noSelectAllProp = view.table.isSelectAllSelected === undefined;
+  const isSelectAllSelected = noSelectAllProp ? allRowsAreSelected : view.table.isSelectAllSelected;
+
+  const noIndeterminateProp = view.table.isSelectAllIndeterminate === undefined;
+  const isSelectAllIndeterminate =
+    noIndeterminateProp && noSelectAllProp
+      ? someRowsAreSelected
+      : view.table.isSelectAllIndeterminate;
+
   return (
     <TableContainer
       style={style}
@@ -569,10 +581,7 @@ const Table = props => {
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
-              selection: {
-                isSelectAllSelected: view.table.isSelectAllSelected,
-                isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
-              },
+              selection: { isSelectAllSelected, isSelectAllIndeterminate },
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
           />

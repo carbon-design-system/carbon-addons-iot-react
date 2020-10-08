@@ -1148,4 +1148,159 @@ describe('Table', () => {
 
     expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
   });
+
+  it('automatically checks "select all" if all rows are selected', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5) },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+  });
+
+  it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5), isSelectAllSelected: true },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds, isSelectAllSelected: false },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+  });
+
+  it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5) },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+  });
+
+  it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllSelected: false,
+          },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllSelected: true,
+          },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+
+    rerender(
+      <Table
+        id="tableid3"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllIndeterminate: false,
+          },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+  });
 });
