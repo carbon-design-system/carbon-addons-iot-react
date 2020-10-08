@@ -45,9 +45,23 @@ describe('DateTimePicker', () => {
     mount(
       <DateTimePicker
         {...dateTimePickerProps}
+        presets={[
+          {
+            label: 'Last 30 minutes',
+            offset: 30,
+          },
+          {
+            label: 'Last 1 hour',
+            offset: 60,
+          },
+        ]}
         defaultValue={{
           timeRangeKind: PICKER_KINDS.PRESET,
-          timeRangeValue: PRESET_VALUES[1],
+          // test not having id
+          timeRangeValue: {
+            label: 'Last 30 minutes',
+            offset: 30,
+          },
         }}
       />
     );

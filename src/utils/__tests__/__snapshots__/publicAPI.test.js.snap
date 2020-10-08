@@ -5553,7 +5553,6 @@ Map {
                     "args": Array [
                       Object {
                         "id": Object {
-                          "isRequired": true,
                           "type": "string",
                         },
                         "label": Object {

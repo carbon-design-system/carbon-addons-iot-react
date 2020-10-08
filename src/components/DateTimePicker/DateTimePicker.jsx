@@ -77,7 +77,7 @@ const propTypes = {
     PropTypes.exact({
       timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
       timeRangeValue: PropTypes.exact({
-        id: PropTypes.string.isRequired,
+        id: PropTypes.string,
         label: PropTypes.string.isRequired,
         offset: PropTypes.number.isRequired,
       }).isRequired,
