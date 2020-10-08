@@ -412,7 +412,7 @@ Map {
         },
         "table": Object {
           "expandedIds": Array [],
-          "isSelectAllSelected": false,
+          "isSelectAllSelected": undefined,
           "loadingState": Object {
             "rowCount": 5,
           },
