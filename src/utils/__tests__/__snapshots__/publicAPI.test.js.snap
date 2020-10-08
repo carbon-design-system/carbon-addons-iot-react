@@ -7842,6 +7842,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "notification": null,
       "onCancel": null,
       "onDelete": null,
       "onEditTitle": null,
@@ -7898,6 +7899,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "notification": Object {
+        "type": "node",
       },
       "onCancel": Object {
         "type": "func",

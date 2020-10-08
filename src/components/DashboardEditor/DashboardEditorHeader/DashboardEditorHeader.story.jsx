@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { Link } from '../../../index';
-import { defaultI18N } from '../DashboardEditor';
 
 import DashboardEditorHeader from './DashboardEditorHeader';
 
@@ -23,7 +22,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor/DashboardEditorHeader', modul
         onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
-        i18n={defaultI18N}
+        dashboardJson={{}}
       />
     </div>
   ))
@@ -38,7 +37,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor/DashboardEditorHeader', modul
         onEditTitle={action('onEditTitle')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
-        i18n={defaultI18N}
+        dashboardJson={{}}
       />
     </div>
   ));

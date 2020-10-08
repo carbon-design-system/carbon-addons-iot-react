@@ -18,11 +18,12 @@ import {
   TableCard,
 } from '../../index';
 
-import sampleImage from './landscape.jpg';
+// import sampleImage from './landscape.jpg';
 
 /**
- * This function returns a duplicate card configuration
- * @param {object} cardData, card JSON configuration
+ * Returns a duplicate card configuration
+ * @param {Object} cardData, card JSON configuration
+ * @returns {Object} duplicated card JSON
  */
 export const getDuplicateCard = (cardData = {}) => ({
   ...cardData,
@@ -30,8 +31,9 @@ export const getDuplicateCard = (cardData = {}) => ({
 });
 
 /**
- * This function returns a default card configuration
+ * Returns a default card configuration
  * @param {string} type, card type
+ * @returns {Object} default card JSON
  */
 export const getDefaultCard = type => {
   const defaultSizeForType = {
@@ -174,6 +176,11 @@ export const getDefaultCard = type => {
   }
 };
 
+/**
+ * determines if a card JSON is valid depending on its card type
+ * @param {Object} cardJson
+ * @returns {Boolean}
+ */
 const isCardJsonValid = cardJson => {
   switch (cardJson.type) {
     case CARD_TYPES.VALUE:
@@ -189,6 +196,12 @@ const isCardJsonValid = cardJson => {
   }
 };
 
+/**
+ * Renders a card and lists the JSON within
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
 const renderDefaultCard = (cardJson, commonProps) => (
   <Card
     key={cardJson.id}
@@ -203,6 +216,11 @@ const renderDefaultCard = (cardJson, commonProps) => (
   </Card>
 );
 
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
 const renderValueCard = (cardJson, commonProps) => (
   <ValueCard
     key={cardJson.id}
@@ -216,6 +234,11 @@ const renderValueCard = (cardJson, commonProps) => (
   />
 );
 
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
 const renderTimeSeriesCard = (cardJson, commonProps) => (
   <TimeSeriesCard
     key={cardJson.id}
@@ -229,6 +252,11 @@ const renderTimeSeriesCard = (cardJson, commonProps) => (
   />
 );
 
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
 const renderBarChartCard = (cardJson, commonProps) => (
   <BarChartCard
     key={cardJson.id}
@@ -243,6 +271,11 @@ const renderBarChartCard = (cardJson, commonProps) => (
   />
 );
 
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
 const renderTableCard = (cardJson, commonProps) => (
   <TableCard
     key={cardJson.id}
@@ -252,7 +285,6 @@ const renderTableCard = (cardJson, commonProps) => (
     size={cardJson.size}
     content={cardJson?.content}
     isEditable
-    // TODO: fix inability to pass className to BarChartCard
     {...commonProps}
   />
 );
@@ -273,12 +305,13 @@ const renderImageCard = (cardJson, commonProps) => (
 */
 
 /**
- * This function returns a Card component for preview in the dashboard
- * @param {object} cardData, the JSON configuration of the card
- * @param {boolean} isSelected, is the card in a selected state
- * @param {function} onSelectCard, callback when card is selected for editing
- * @param {function} onDuplicateCard, callback when card clone button is clicked
- * @param {function} onRemoveCard, callback when card delete button is clicked
+ * Returns a Card component for preview in the dashboard
+ * @param {Object} cardData, the JSON configuration of the card
+ * @param {Boolean} isSelected, is the card in a selected state
+ * @param {Function} onSelectCard, callback when card is selected for editing
+ * @param {Function} onDuplicateCard, callback when card clone button is clicked
+ * @param {Function} onRemoveCard, callback when card delete button is clicked
+ * @returns {Node}
  */
 export const getCardPreview = (
   cardData,

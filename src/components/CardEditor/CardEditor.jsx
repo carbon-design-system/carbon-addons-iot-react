@@ -10,18 +10,6 @@ import CardEditForm from './CardEditForm/CardEditForm';
 
 const { iotPrefix } = settings;
 
-const defaultProps = {
-  value: null,
-  // errors: null,
-  i18n: {
-    galleryHeader: 'Gallery',
-    openGalleryButton: 'Open gallery',
-    closeGalleryButton: 'Back',
-    openJSONButton: 'Open JSON editor',
-  },
-  supportedTypes: [],
-};
-
 const propTypes = {
   /** card data being edited */
   value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -40,6 +28,18 @@ const propTypes = {
     galleryHeader: PropTypes.string,
     openGalleryButton: PropTypes.string,
   }),
+};
+
+const defaultProps = {
+  value: null,
+  // errors: null,
+  i18n: {
+    galleryHeader: 'Gallery',
+    openGalleryButton: 'Open gallery',
+    closeGalleryButton: 'Back',
+    openJSONButton: 'Open JSON editor',
+  },
+  supportedTypes: [],
 };
 
 const CardEditor = ({

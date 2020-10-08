@@ -8,6 +8,7 @@ import {
   CARD_DIMENSIONS,
   // BAR_CHART_TYPES,
   // BAR_CHART_LAYOUTS,
+  ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button, TextArea, TextInput, Dropdown /* ToggleSmall */ } from '../../../index';
@@ -62,50 +63,6 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
   const [modalData, setModalData] = useState();
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const allowedSizesForType = {
-    VALUE: [
-      CARD_SIZES.SMALL,
-      CARD_SIZES.SMALLWIDE,
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    TIMESERIES: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    BAR: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    TABLE: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    IMAGE: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-  };
 
   const getCardSizeText = size => {
     const sizeName = mergedI18N[`cardSize_${size}`] ?? size;
@@ -489,10 +446,10 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
           label="Select a size"
           direction="bottom"
           itemToString={item => item.text}
-          items={(allowedSizesForType[value.type] ?? Object.keys(CARD_SIZES)).map(i => {
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[value.type] ?? Object.keys(CARD_SIZES)).map(size => {
             return {
-              id: i,
-              text: getCardSizeText(i),
+              id: size,
+              text: getCardSizeText(size),
             };
           })}
           light

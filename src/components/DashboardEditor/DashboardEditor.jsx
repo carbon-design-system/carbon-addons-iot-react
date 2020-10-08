@@ -10,38 +10,6 @@ import { getDefaultCard, getDuplicateCard, getCardPreview } from './editorUtils'
 
 const { iotPrefix } = settings;
 
-export const defaultI18N = {
-  headerEditTitleButton: 'Edit title',
-  headerImportButton: 'Import',
-  headerExportButton: 'Export',
-  headerDeleteButton: 'Delete',
-  headerCancelButton: 'Cancel',
-  headerSubmitButton: 'Save and close',
-  galleryHeader: 'Gallery',
-  openGalleryButton: 'Open gallery',
-  closeGalleryButton: 'Back',
-  openJSONButton: 'Open JSON editor',
-};
-
-const defaultProps = {
-  initialValue: {
-    cards: [],
-    layouts: {},
-  },
-  supportedCardTypes: [CARD_TYPES.BAR, CARD_TYPES.TIMESERIES, CARD_TYPES.VALUE, CARD_TYPES.TABLE],
-  renderHeader: null,
-  renderCardPreview: () => null,
-  headerBreadcrumbs: null,
-  title: null,
-  onEditTitle: null,
-  onDelete: null,
-  onImport: null,
-  onExport: null,
-  onCancel: null,
-  onSubmit: null,
-  i18n: defaultI18N,
-};
-
 const propTypes = {
   /** Dashboard title */
   title: PropTypes.string,
@@ -58,17 +26,25 @@ const propTypes = {
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
+  /** if provided, renders node underneath the header and above the dashboard grid */
+  notification: PropTypes.node,
   /** if provided, renders edit button next to title linked to this callback */
   onEditTitle: PropTypes.func,
-  /** if provided, renders import button linked to this callback */
+  /** if provided, renders import button linked to this callback
+   * onImport(data, setNotification?)
+   */
   onImport: PropTypes.func,
-  /** if provided, renders export button linked to this callback */
+  /** if provided, renders export button linked to this callback
+   * onExport(dashboardJson)
+   */
   onExport: PropTypes.func,
   /** if provided, renders delete button linked to this callback */
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
-  /** If provided, renders submit button linked to this callback */
+  /** If provided, renders submit button linked to this callback
+   * onSubmit(dashboardData)
+   */
   onSubmit: PropTypes.func,
   /** internationalization strings */
   i18n: PropTypes.shape({
@@ -79,6 +55,37 @@ const propTypes = {
   }),
 };
 
+const defaultProps = {
+  initialValue: {
+    cards: [],
+    layouts: {},
+  },
+  supportedCardTypes: [CARD_TYPES.BAR, CARD_TYPES.TIMESERIES, CARD_TYPES.VALUE, CARD_TYPES.TABLE],
+  renderHeader: null,
+  renderCardPreview: () => null,
+  headerBreadcrumbs: null,
+  notification: null,
+  title: null,
+  onEditTitle: null,
+  onDelete: null,
+  onImport: null,
+  onExport: null,
+  onCancel: null,
+  onSubmit: null,
+  i18n: {
+    headerEditTitleButton: 'Edit title',
+    headerImportButton: 'Import',
+    headerExportButton: 'Export',
+    headerDeleteButton: 'Delete',
+    headerCancelButton: 'Cancel',
+    headerSubmitButton: 'Save and close',
+    galleryHeader: 'Gallery',
+    openGalleryButton: 'Open gallery',
+    closeGalleryButton: 'Back',
+    openJSONButton: 'Open JSON editor',
+  },
+};
+
 const DashboardEditor = ({
   title,
   initialValue,
@@ -86,6 +93,7 @@ const DashboardEditor = ({
   renderHeader,
   renderCardPreview,
   headerBreadcrumbs,
+  notification,
   // onAddImage,
   onEditTitle,
   onImport,
@@ -99,31 +107,31 @@ const DashboardEditor = ({
   const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
-  const [dashboardData, setDashboardData] = useState(initialValue);
+  const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
 
   const addCard = type => {
     const cardData = getDefaultCard(type);
-    setDashboardData({
-      ...dashboardData,
-      cards: [...dashboardData.cards, cardData],
+    setDashboardJson({
+      ...dashboardJson,
+      cards: [...dashboardJson.cards, cardData],
     });
     setSelectedCardId(cardData.id);
   };
 
   const duplicateCard = id => {
-    const cardData = getDuplicateCard(dashboardData.cards.find(i => i.id === id));
-    setDashboardData({
-      ...dashboardData,
-      cards: [...dashboardData.cards, cardData],
+    const cardData = getDuplicateCard(dashboardJson.cards.find(i => i.id === id));
+    setDashboardJson({
+      ...dashboardJson,
+      cards: [...dashboardJson.cards, cardData],
     });
     setSelectedCardId(cardData.id);
   };
 
   const removeCard = id =>
-    setDashboardData({
-      ...dashboardData,
-      cards: dashboardData.cards.filter(i => i.id !== id),
+    setDashboardJson({
+      ...dashboardJson,
+      cards: dashboardJson.cards.filter(i => i.id !== id),
     });
 
   return (
@@ -137,25 +145,27 @@ const DashboardEditor = ({
             breadcrumbs={headerBreadcrumbs}
             onEditTitle={onEditTitle}
             onImport={onImport}
-            onExport={() => onExport(dashboardData)}
+            onExport={() => onExport(dashboardJson)}
             onDelete={onDelete}
             onCancel={onCancel}
-            onSubmit={() => onSubmit(dashboardData)}
+            onSubmit={() => onSubmit(dashboardJson)}
             i18n={mergedI18N}
+            dashboardJson={dashboardJson}
           />
         )}
+        {notification}
         <div className={`${baseClassName}--preview`}>
           <DashboardGrid
             isEditable
             onBreakpointChange={() => {}}
             onLayoutChange={(newLayout, newLayouts) =>
-              setDashboardData({
-                ...dashboardData,
+              setDashboardJson({
+                ...dashboardJson,
                 layouts: newLayouts,
               })
             }
           >
-            {dashboardData.cards.map(cardData => {
+            {dashboardJson.cards.map(cardData => {
               const isSelected = selectedCardId === cardData.id;
               const onSelectCard = id => setSelectedCardId(id);
               const onDuplicateCard = id => duplicateCard(id);
@@ -178,12 +188,12 @@ const DashboardEditor = ({
       </div>
       <div className={`${baseClassName}--sidebar`}>
         <CardEditor
-          value={dashboardData.cards.find(i => i.id === selectedCardId)}
+          value={dashboardJson.cards.find(i => i.id === selectedCardId)}
           onShowGallery={() => setSelectedCardId(null)}
           onChange={cardData =>
-            setDashboardData({
-              ...dashboardData,
-              cards: dashboardData.cards.map(i => (i.id === cardData.id ? cardData : i)),
+            setDashboardJson({
+              ...dashboardJson,
+              cards: dashboardJson.cards.map(i => (i.id === cardData.id ? cardData : i)),
             })
           }
           onAddCard={addCard}

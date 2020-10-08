@@ -24,9 +24,16 @@
       height: calc(#{$spacing-07} + #{$spacing-02});
       display: flex;
       align-items: center;
-      .#{$prefix}--btn {
-        margin-left: $spacing-05;
+      // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
+      &__import.#{$prefix}--tooltip__trigger {
+        span {
+          padding-top: 3px;
+        }
+        svg {
+          fill: $icon-01;
+        }
       }
+
       .#{$prefix}--btn--tertiary,
       .#{$prefix}--btn--primary {
         margin-left: $spacing-05;
