@@ -495,7 +495,7 @@ const DateTimePicker = ({
   };
 
   const onPresetClick = preset => {
-    setSelectedPreset(preset.id);
+    setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
   };
 
