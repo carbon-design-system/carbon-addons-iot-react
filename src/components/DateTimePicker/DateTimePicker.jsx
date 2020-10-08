@@ -415,7 +415,15 @@ const DateTimePicker = ({
       value.kind = customRangeKind;
     } else {
       const preset = presets
-        .filter(p => p.id === (clickedPreset ? clickedPreset.id : selectedPreset))
+        .filter(p => {
+          let filteredPreset;
+          if (p.id) {
+            filteredPreset = p.id === (clickedPreset ? clickedPreset.id : selectedPreset);
+          } else {
+            filteredPreset = p.offset === (clickedPreset ? clickedPreset.offset : selectedPreset);
+          }
+          return filteredPreset;
+        })
         .pop();
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
@@ -559,7 +567,17 @@ const DateTimePicker = ({
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
       if (selectedPreset) {
-        onPresetClick(presets.filter(x => x.id === selectedPreset)[0]);
+        const preset = presets.filter(x => {
+          let filteredPreset;
+          if (x.id) {
+            filteredPreset = x.id === selectedPreset;
+          } else {
+            filteredPreset = x.offset === selectedPreset;
+          }
+          return filteredPreset;
+        })[0];
+
+        onPresetClick(preset);
         resetAbsoluteValue();
         resetRelativeValue();
       } else {
@@ -736,7 +754,7 @@ const DateTimePicker = ({
                         `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
                         {
                           [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                            selectedPreset === preset.id,
+                            selectedPreset === (preset.id ?? preset.offset),
                         }
                       )}
                     >
