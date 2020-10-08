@@ -181,6 +181,10 @@
       }
     }
   }
+
+  .#{$iot-prefix}--date-time-picker__box--light {
+    background-color: $field-02;
+  }
 }
 
 html[dir='rtl'] {
