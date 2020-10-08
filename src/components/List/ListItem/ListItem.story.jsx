@@ -77,7 +77,6 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       <div style={{ width: 400 }}>
         <ListItem
           {...dndProps}
-          {...dndProps}
           id="list-item"
           value={value}
           secondaryValue={secondaryValue}
