@@ -149,7 +149,7 @@ const ComboBox = ({
   const handleOnKeypress = evt => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
-    if (evt.key === 'Enter' && currentValue) {
+    if (evt.type === 'blur' || (evt.key === 'Enter' && currentValue)) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
@@ -195,7 +195,8 @@ const ComboBox = ({
         { [`${iotPrefix}--combobox-size-${size}`]: size },
         { [`${iotPrefix}--combobox-helper-text`]: helperText }
       )}
-      onKeyDown={evt => handleOnKeypress(evt)}
+      onKeyDown={handleOnKeypress}
+      onBlur={handleOnKeypress}
       data-testid="combo-wrapper"
       data-edit-option-text={editOptionText}
     >
