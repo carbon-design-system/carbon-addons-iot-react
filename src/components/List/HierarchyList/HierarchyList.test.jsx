@@ -205,6 +205,51 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
   });
 
+  it('search should include categories', () => {
+    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+      target: { value: 'Chicago White Sox' },
+    });
+
+    // Matched Category should appear
+    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+    // All items in Category should appear
+    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+    expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+
+    expect(screen.queryByTitle('New York Mets')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
+    expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+      target: { value: 'Ch' },
+    });
+
+    // Matched Category should appear
+    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+    // All child items in Category should appear, including items that do not match
+    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+    expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+
+    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+    expect(screen.getByTitle('Gary Sanchez')).toBeInTheDocument();
+
+    // // Category with matching child items should appear
+    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+    expect(screen.getByTitle('Michael Brantley')).toBeInTheDocument();
+    expect(screen.getByTitle('Robinson Chirinos')).toBeInTheDocument();
+
+    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+    expect(screen.getByTitle(/Michael Conforto/i)).toBeInTheDocument();
+
+    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+    expect(screen.getByTitle('Max Scherzer')).toBeInTheDocument();
+
+    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+  });
+
   it('all items should return if search value is empty string', () => {
     render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
