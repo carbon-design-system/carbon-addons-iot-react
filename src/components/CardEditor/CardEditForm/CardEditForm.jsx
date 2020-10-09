@@ -69,9 +69,10 @@ export const getCardSizeText = (size, i18n) => {
  */
 export const handleSubmit = (val, setError, onChange, setShowEditor) => {
   try {
-    setError(false);
+    let error = false;
     if (val === '') {
       setError('JSON value must not be an empty string');
+      error = true;
     } else {
       const json = JSON.parse(val);
       // Check for non-exception throwing cases (false, 1234, null)
@@ -80,9 +81,15 @@ export const handleSubmit = (val, setError, onChange, setShowEditor) => {
         setShowEditor(false);
       }
       setError(`${val.substring(0, 8)} is not valid JSON`);
+      error = true;
+    }
+    if (!error) {
+      setError(false);
+      return true;
     }
   } catch (e) {
     setError(e.message);
+    return false;
   }
   return false;
 };
