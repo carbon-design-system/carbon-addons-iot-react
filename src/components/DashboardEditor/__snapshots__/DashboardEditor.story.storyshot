@@ -253,7 +253,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <button
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
-                      onClick={[Function]}
                       tabIndex={0}
                       type="button"
                     >
@@ -1797,7 +1796,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <button
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
-                      onClick={[Function]}
                       tabIndex={0}
                       type="button"
                     >
@@ -2533,7 +2531,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <button
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
-                      onClick={[Function]}
                       tabIndex={0}
                       type="button"
                     >
@@ -3641,7 +3638,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <button
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
-                      onClick={[Function]}
                       tabIndex={0}
                       type="button"
                     >
@@ -5419,7 +5415,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <button
                       className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                       disabled={false}
-                      onClick={[Function]}
                       tabIndex={0}
                       type="button"
                     >

@@ -1,11 +1,11 @@
 import React from 'react';
 import uuid from 'uuid';
+import isNil from 'lodash/isNil';
 
 import {
   CARD_SIZES,
   CARD_ACTIONS,
   CARD_TYPES,
-  TIME_SERIES_TYPES,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
@@ -25,7 +25,7 @@ import {
  * @param {Object} cardData, card JSON configuration
  * @returns {Object} duplicated card JSON
  */
-export const getDuplicateCard = (cardData = {}) => ({
+export const getDuplicateCard = cardData => ({
   ...cardData,
   id: uuid.v4(),
 });
@@ -85,7 +85,6 @@ export const getDefaultCard = type => {
           ],
           xLabel: 'Time',
           yLabel: 'Temperature (˚F)',
-          chartType: TIME_SERIES_TYPES.LINE,
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -181,16 +180,16 @@ export const getDefaultCard = type => {
  * @param {Object} cardJson
  * @returns {Boolean}
  */
-const isCardJsonValid = cardJson => {
+export const isCardJsonValid = cardJson => {
   switch (cardJson.type) {
     case CARD_TYPES.VALUE:
-      return cardJson?.content?.attributes !== undefined;
+      return !isNil(cardJson?.content?.attributes);
     case CARD_TYPES.TIMESERIES:
-      return cardJson?.content !== undefined;
+      return !isNil(cardJson?.content);
     case CARD_TYPES.BAR:
-      return cardJson?.content !== undefined;
+      return !isNil(cardJson?.content);
     case CARD_TYPES.TABLE:
-      return cardJson?.content !== undefined;
+      return !isNil(cardJson?.content);
     default:
       return true;
   }
@@ -298,7 +297,6 @@ const renderImageCard = (cardJson, commonProps) => (
     size={cardJson.size}
     content={cardJson?.content}
     isEditable={cardJson?.content?.src === undefined}
-    // TODO: fix inability to pass className to BarChartCard
     {...commonProps}
   />
 );

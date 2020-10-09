@@ -129,7 +129,7 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button size="field" onClick={onSubmit}>
+          <Button size="field" onClick={onSubmit(dashboardJson)}>
             {i18n.headerSubmitButton}
           </Button>
         )}

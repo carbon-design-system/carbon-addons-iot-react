@@ -148,7 +148,7 @@ const DashboardEditor = ({
             onExport={() => onExport(dashboardJson)}
             onDelete={onDelete}
             onCancel={onCancel}
-            onSubmit={() => onSubmit(dashboardJson)}
+            onSubmit={onSubmit}
             i18n={mergedI18N}
             dashboardJson={dashboardJson}
           />
@@ -193,7 +193,7 @@ const DashboardEditor = ({
           onChange={cardData =>
             setDashboardJson({
               ...dashboardJson,
-              cards: dashboardJson.cards.map(i => (i.id === cardData.id ? cardData : i)),
+              cards: dashboardJson.cards.map(card => (card.id === cardData.id ? cardData : card)),
             })
           }
           onAddCard={addCard}

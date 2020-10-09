@@ -56,6 +56,24 @@ describe('CardEditor', () => {
     });
   });
 
+  it('fires onChange when user edits description in form', () => {
+    render(
+      <CardEditor
+        value={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
+    );
+    userEvent.type(screen.getByLabelText('Description (Optional)'), 'z');
+    userEvent.tab();
+    expect(actions.onChange).toHaveBeenCalledWith({
+      ...defaultCard,
+      description: `z`,
+    });
+    actions.onChange.mockReset();
+  });
+
   it('fires onShowGallery when user clicks button', () => {
     render(
       <CardEditor

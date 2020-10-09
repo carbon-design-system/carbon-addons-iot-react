@@ -26,6 +26,7 @@
       align-items: center;
       // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
       &__import.#{$prefix}--tooltip__trigger {
+        // have to force the span containing the svg down to be aligned with other iconOnly buttons
         span {
           padding-top: 3px;
         }
