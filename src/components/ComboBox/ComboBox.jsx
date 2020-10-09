@@ -149,7 +149,7 @@ const ComboBox = ({
   const handleOnKeypress = evt => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
-    if (evt.type === 'blur' || (evt.key === 'Enter' && currentValue)) {
+    if ((evt.type === 'blur' && addToList) || (evt.key === 'Enter' && currentValue)) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
