@@ -136,7 +136,7 @@ const SuiteHeader = ({
   // not only at mount time
   useEffect(
     () => {
-      if (surveyData) {
+      if (surveyData !== null && surveyData !== undefined) {
         setShowToast(true);
       }
     },
