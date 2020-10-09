@@ -7,42 +7,58 @@
     display: flex;
     overflow-x: auto;
   }
-  &--header {
+  &-header {
     flex: 0;
-    padding: $layout-01 0 $layout-02;
+    padding: $spacing-05 0 $spacing-06;
     .#{$prefix}--grid {
       /* allow the header to stretch the full page width */
       max-width: none;
+      padding-left: $spacing-07;
+      padding-right: $spacing-05;
     }
-    .header-top {
-      height: $layout-02;
+    &--top {
+      height: calc(#{$spacing-05} + #{$spacing-02});
       display: flex;
       align-items: center;
     }
-    .header-bottom {
-      height: $layout-03;
+    &--bottom {
+      height: calc(#{$spacing-07} + #{$spacing-02});
       display: flex;
       align-items: center;
+      // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
+      &__import.#{$prefix}--tooltip__trigger {
+        // have to force the span containing the svg down to be aligned with other iconOnly buttons
+        span {
+          padding-top: 3px;
+        }
+        svg {
+          fill: $icon-01;
+        }
+      }
+
+      .#{$prefix}--btn--tertiary,
+      .#{$prefix}--btn--primary {
+        margin-left: $spacing-05;
+        padding-left: $spacing-05;
+        padding-right: $spacing-05;
+      }
     }
-    .header-left {
+    &--left {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    .header-right {
+    &--right {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-    }
-    .last-updated {
-      @include type-style('label-01');
     }
   }
   &--preview {
     flex: 1;
     margin-top: -$spacing-03;
-    padding: $spacing-05;
     overflow-x: auto;
+    padding: 0 $spacing-05 $spacing-05;
 
     .selected-card {
       border: solid $spacing-01 $interactive-04;

@@ -1,155 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Add16, Edit16, Delete16, Code16 } from '@carbon/icons-react';
+import { Code16 } from '@carbon/icons-react';
 
 import {
   CARD_SIZES,
-  CARD_TYPES,
   CARD_DIMENSIONS,
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
+  ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
+import { Tabs, Tab, Button, TextArea, TextInput, Dropdown } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
-import ImageFormItem from './ImageFormItem/ImageFormItem';
-import {
-  Tabs,
-  ComposedModal,
-  Tab,
-  Button,
-  TextArea,
-  List,
-  TextInput,
-  Dropdown,
-  FormLabel,
-  ToggleSmall,
-} from '../../../index';
 
 const { iotPrefix } = settings;
-
-const AttributesFormItem = ({ value, onChange }) => {
-  const [showEditor, setShowEditor] = useState(false);
-  const [editData, setEditData] = useState({});
-  const [editDataSourceId, setEditDataSourceId] = useState({});
-
-  return (
-    <>
-      {showEditor ? (
-        <ComposedModal
-          header={{
-            label: 'Attribute',
-            title: 'Edit attribute',
-          }}
-          onSubmit={() => {
-            onChange(value.filter(i => i.dataSourceId !== editDataSourceId).concat([editData]));
-            setShowEditor(false);
-            setEditData(null);
-          }}
-          onClose={() => {
-            setShowEditor(false);
-            setEditData(null);
-          }}
-        >
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeLabel"
-              labelText="Label"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  label: evt.target.value,
-                })
-              }
-              value={editData.label}
-            />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeDataSourceId"
-              labelText="Data source ID"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  dataSourceId: evt.target.value,
-                })
-              }
-              value={editData.dataSourceId}
-            />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextInput
-              id="attributeUnit"
-              labelText="Unit"
-              light
-              onChange={evt =>
-                setEditData({
-                  ...editData,
-                  unit: evt.target.value,
-                })
-              }
-              value={editData.unit}
-            />
-          </div>
-        </ComposedModal>
-      ) : null}
-      <List
-        title="Attributes"
-        buttons={[
-          <Button
-            renderIcon={Add16}
-            hasIconOnly
-            size="small"
-            iconDescription="Add"
-            key="expandable-list-button-add"
-            onClick={() =>
-              onChange(
-                value.concat([
-                  {
-                    dataSourceId: 'newAttr',
-                    label: 'New',
-                    unit: '%',
-                  },
-                ])
-              )
-            }
-          />,
-        ]}
-        items={value.map(attr => ({
-          id: attr.dataSourceId,
-          content: {
-            value: attr.label,
-            rowActions: [
-              <Button
-                style={{ color: 'black' }}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditData(attr);
-                  setEditDataSourceId(attr.dataSourceId);
-                  setShowEditor(true);
-                }}
-                iconDescription="Edit"
-              />,
-              <Button
-                style={{ color: 'black' }}
-                renderIcon={Delete16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => onChange(value.filter(i => i.dataSourceId !== attr.dataSourceId))}
-                iconDescription="Remove"
-              />,
-            ],
-          },
-        }))}
-      />
-    </>
-  );
-};
 
 const defaultProps = {
   value: {},
@@ -186,440 +48,107 @@ const propTypes = {
   }),
 };
 
-const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+/**
+ * Returns card size and dimensions labels
+ * @param {string} size
+ * @param {Object<string>} i18n
+ * @returns {string}
+ */
+export const getCardSizeText = (size, i18n) => {
+  const sizeName = i18n[`cardSize_${size}`];
+  const sizeDimensions = `(${CARD_DIMENSIONS[size].lg.w}x${CARD_DIMENSIONS[size].lg.h})`;
+  return `${sizeName} ${sizeDimensions}`;
+};
+
+/**
+ * Checks for JSON form errors
+ * @param {Object} val card JSON text input
+ * @param {Function} setError
+ * @param {Function} onChange
+ * @param {Function} setShowEditor
+ */
+export const handleSubmit = (val, setError, onChange, setShowEditor) => {
+  try {
+    let error = false;
+    if (val === '') {
+      setError('JSON value must not be an empty string');
+      error = true;
+    } else {
+      const json = JSON.parse(val);
+      // Check for non-exception throwing cases (false, 1234, null)
+      if (json && typeof json === 'object') {
+        onChange(json);
+        setShowEditor(false);
+      }
+      setError(`${val.substring(0, 8)} is not valid JSON`);
+      error = true;
+    }
+    if (!error) {
+      setError(false);
+      return true;
+    }
+  } catch (e) {
+    setError(e.message);
+    return false;
+  }
+  return false;
+};
+
+const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n }) => {
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
-  const [modalError, setModalError] = useState();
   const [modalData, setModalData] = useState();
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const allowedIntervals = ['minute', 'hour', 'day', 'week', 'month'];
-
-  const allowedSizesForType = {
-    VALUE: [
-      CARD_SIZES.SMALL,
-      CARD_SIZES.SMALLWIDE,
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    TIMESERIES: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    BAR: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    TABLE: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGETHIN,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-    IMAGE: [
-      CARD_SIZES.MEDIUMTHIN,
-      CARD_SIZES.MEDIUM,
-      CARD_SIZES.MEDIUMWIDE,
-      CARD_SIZES.LARGE,
-      CARD_SIZES.LARGEWIDE,
-    ],
-  };
-
-  const getCardSizeText = size => {
-    const sizeName = mergedI18N[`cardSize_${size}`] ?? i;
-    const sizeDimensions = CARD_DIMENSIONS[size]
-      ? `(${CARD_DIMENSIONS[size].lg.w}x${CARD_DIMENSIONS[size].lg.h})`
-      : null;
-    return `${sizeName}${sizeDimensions ? ` ${sizeDimensions}` : ''}`;
-  };
-
-  const renderValueCardBasicItems = () => {
-    return (
-      <>
-        <AttributesFormItem
-          value={value.content?.attributes ?? []}
-          onChange={newValue =>
-            onChange({
-              ...value,
-              content: {
-                ...(value.content ?? {}),
-                attributes: newValue,
-              },
-            })
-          }
+  const commonFormItems = (
+    <>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id="title"
+          labelText="Card title"
+          light
+          onChange={evt => onChange({ ...value, title: evt.target.value })}
+          value={value.title}
         />
-      </>
-    );
-  };
-
-  const renderValueCardAdvancedItems = () => {
-    return null;
-  };
-
-  const renderImageCardBasicItems = () => {
-    return (
-      <>
-        <ImageFormItem
-          value={value.content.alt}
-          supportedTypes={['.jpg', '.gif', '.png']}
-          maxSizeBytes={5000000}
-          onChange={newFile =>
-            onChange({
-              ...value,
-              content: {
-                ...(value.content ?? {}),
-                ...(newFile
-                  ? {
-                      alt: newFile.name,
-                      src: URL.createObjectURL(newFile),
-                    }
-                  : {
-                      alt: undefined,
-                      src: undefined,
-                    }),
-              },
-            })
-          }
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextArea
+          id="description"
+          labelText="Description (Optional)"
+          light
+          onChange={evt => onChange({ ...value, description: evt.target.value })}
+          value={value.description}
         />
-      </>
-    );
-  };
-
-  const renderImageCardAdvancedItems = () => {
-    return (
-      <>
-        <div className={`${baseClassName}--input-inline`}>
-          <div className={`${baseClassName}--input-inline--label`}>Hide minimap</div>
-          <ToggleSmall
-            id="minimap"
-            aria-label="Toggle minimap"
-            labelA=""
-            labelB=""
-            toggled={value.content.hideMinimap}
-            onToggle={val => {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  hideMinimap: val,
-                },
-              });
-            }}
-          />
-        </div>
-        <div className={`${baseClassName}--input-inline`}>
-          <div className={`${baseClassName}--input-inline--label`}>Hide hotspots</div>
-          <ToggleSmall
-            id="hotspots"
-            aria-label="Toggle hotspots"
-            labelA=""
-            labelB=""
-            toggled={value.content.hideHotspots}
-            onToggle={val => {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  hideHotspots: val,
-                },
-              });
-            }}
-          />
-        </div>
-        <div className={`${baseClassName}--input-inline`}>
-          <div className={`${baseClassName}--input-inline--label`}>Hide zoom controls</div>
-          <ToggleSmall
-            id="zoomControls"
-            aria-label="Toggle zoom controls"
-            labelA=""
-            labelB=""
-            toggled={value.content.hideZoomControls}
-            onToggle={val => {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  hideZoomControls: val,
-                },
-              });
-            }}
-          />
-        </div>
-      </>
-    );
-  };
-
-  const renderTableCardBasicItems = () => {
-    return null;
-  };
-
-  const renderTableCardAdvancedItems = () => {
-    return null;
-  };
-
-  const renderBarChartCardBasicItems = () => {
-    return (
-      <>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="categoryDataSourceId"
-            labelText="Category data source"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  categoryDataSourceId: evt.target.value,
-                },
-              })
-            }
-            value={value.content?.categoryDataSourceId}
-          />
-        </div>
-      </>
-    );
-  };
-
-  const renderBarChartCardAdvancedItems = () => {
-    return (
-      <>
-        <div className={`${baseClassName}--input`}>
-          <Dropdown
-            id="barChartType"
-            label="Select a chart type"
-            direction="bottom"
-            itemToString={item => item.text}
-            items={Object.keys(BAR_CHART_TYPES).map(i => ({
-              id: i,
-              text: mergedI18N[`barChartType_${i}`] ?? i,
-            }))}
-            light
-            selectedItem={
-              value?.content?.type
-                ? {
-                    id: value.content.type,
-                    text: mergedI18N[`barChartType_${value.content.type}`] ?? value.content.type,
-                  }
-                : null
-            }
-            onChange={({ selectedItem }) => {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  type: selectedItem.id,
-                },
-              });
-            }}
-            titleText="Chart type"
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <Dropdown
-            id="layout"
-            label="Select a layout type"
-            direction="bottom"
-            itemToString={item => item.text}
-            items={Object.keys(BAR_CHART_LAYOUTS).map(i => ({
-              id: i,
-              text: mergedI18N[`barChartLayout_${i}`] ?? i,
-            }))}
-            light
-            selectedItem={
-              value?.content?.layout
-                ? {
-                    id: value.content.layout,
-                    text:
-                      mergedI18N[`barChartLayout_${value.content.layout}`] ?? value.content.layout,
-                  }
-                : null
-            }
-            onChange={({ selectedItem }) => {
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  layout: selectedItem.id,
-                },
-              });
-            }}
-            titleText="Layout"
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="categoryDataSourceId"
-            labelText="Category data source"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  ...(evt.target.value !== '' ? { categoryDataSourceId: evt.target.value } : {}),
-                },
-              })
-            }
-            value={value.content?.categoryDataSourceId}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="title"
-            labelText="X-axis label (Optional)"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  xLabel: evt.target.value,
-                },
-              })
-            }
-            value={value.content?.xLabel}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="title"
-            labelText="Y-axis label (Optional)"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  yLabel: evt.target.value,
-                },
-              })
-            }
-            value={value.content?.yLabel}
-          />
-        </div>
-      </>
-    );
-  };
-
-  const renderTimeSeriesCardBasicItems = () => {
-    return (
-      <>
-        <div className={`${baseClassName}--input`}>
-          <Dropdown
-            id="interval"
-            label="Select a time interval"
-            direction="bottom"
-            itemToString={item => item.text}
-            items={allowedIntervals.map(i => ({ id: i, text: i }))}
-            light
-            selectedItem={value.interval ? { id: value.interval, text: value.interval } : null}
-            onChange={({ selectedItem }) => {
-              onChange({ ...value, interval: selectedItem.id });
-            }}
-            titleText="Interval"
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="timeDataSourceId"
-            labelText="Time data source"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  ...(evt.target.value !== '' ? { timeDataSourceId: evt.target.value } : {}),
-                },
-              })
-            }
-            value={value.content?.timeDataSourceId}
-          />
-        </div>
-      </>
-    );
-  };
-
-  const renderTimeSeriesCardAdvancedItems = () => {
-    return (
-      <>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="title"
-            labelText="X-axis label (Optional)"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  xLabel: evt.target.value,
-                },
-              })
-            }
-            value={value.content?.xLabel}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id="title"
-            labelText="Y-axis label (Optional)"
-            light
-            onChange={evt =>
-              onChange({
-                ...value,
-                content: {
-                  ...(value.content ?? {}),
-                  yLabel: evt.target.value,
-                },
-              })
-            }
-            value={value.content?.yLabel}
-          />
-        </div>
-      </>
-    );
-  };
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <Dropdown
+          id="size"
+          label="Select a size"
+          direction="bottom"
+          itemToString={item => item.text}
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[value.type] ?? Object.keys(CARD_SIZES)).map(size => {
+            return {
+              id: size,
+              text: getCardSizeText(size, mergedI18n),
+            };
+          })}
+          light
+          selectedItem={{ id: value.size, text: getCardSizeText(value.size, mergedI18n) }}
+          onChange={({ selectedItem }) => {
+            onChange({ ...value, size: selectedItem.id });
+          }}
+          titleText="Size"
+        />
+      </div>
+    </>
+  );
 
   return (
     <>
       {showEditor ? (
         <CardCodeEditor
-          onSubmit={(val, setError) => {
-            try {
-              setError(false);
-              if (val === '') {
-                setError('JSON value must not be an empty string');
-              } else {
-                const json = JSON.parse(val);
-                // Check for non-exception throwing cases (false, 1234, null)
-                if (json && typeof json === 'object') {
-                  onChange(json);
-                  setShowEditor(false);
-                }
-                setError(`${val.substring(0, 8)} is not valid JSON`);
-              }
-            } catch (e) {
-              setError(e.message);
-            }
-            return false;
-          }}
+          onSubmit={(val, setError) => handleSubmit(val, setError, onChange, setShowEditor)}
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
           i18n={{
@@ -634,61 +163,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
       ) : null}
       <div className={baseClassName}>
         <Tabs>
-          <Tab label="Basics">
-            <div className={`${baseClassName}--content`}>
-              <div className={`${baseClassName}--input`}>
-                <TextInput
-                  id="title"
-                  labelText="Card title"
-                  light
-                  onChange={evt => onChange({ ...value, title: evt.target.value })}
-                  value={value.title}
-                />
-              </div>
-              <div className={`${baseClassName}--input`}>
-                <TextArea
-                  id="description"
-                  labelText="Description (Optional)"
-                  light
-                  onChange={evt => onChange({ ...value, description: evt.target.value })}
-                  value={value.description}
-                />
-              </div>
-              <div className={`${baseClassName}--input`}>
-                <Dropdown
-                  id="size"
-                  label="Select a size"
-                  direction="bottom"
-                  itemToString={item => item.text}
-                  items={(allowedSizesForType[value.type] ?? Object.keys(CARD_SIZES)).map(i => {
-                    return {
-                      id: i,
-                      text: getCardSizeText(i),
-                    };
-                  })}
-                  light
-                  selectedItem={{ id: value.size, text: getCardSizeText(value.size) }}
-                  onChange={({ selectedItem }) => {
-                    onChange({ ...value, size: selectedItem.id });
-                  }}
-                  titleText="Size"
-                />
-              </div>
-              {value.type === CARD_TYPES.VALUE ? renderValueCardBasicItems() : null}
-              {value.type === CARD_TYPES.BAR ? renderBarChartCardBasicItems() : null}
-              {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardBasicItems() : null}
-              {value.type === CARD_TYPES.IMAGE ? renderImageCardBasicItems() : null}
-              {value.type === CARD_TYPES.TABLE ? renderTableCardBasicItems() : null}
-            </div>
-          </Tab>
-          <Tab label="Customize">
-            <div className={`${baseClassName}--content`}>
-              {value.type === CARD_TYPES.VALUE ? renderValueCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.BAR ? renderBarChartCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.TIMESERIES ? renderTimeSeriesCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.IMAGE ? renderImageCardAdvancedItems() : null}
-              {value.type === CARD_TYPES.TABLE ? renderTableCardAdvancedItems() : null}
-            </div>
+          <Tab label="Configuration" /* label="Basics" */>
+            <div className={`${baseClassName}--content`}>{commonFormItems}</div>
           </Tab>
         </Tabs>
         <div className={`${baseClassName}--footer`}>
@@ -701,7 +177,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, onAddImage, i18n }) => {
               setShowEditor(true);
             }}
           >
-            {mergedI18N.openEditorButton}
+            {mergedI18n.openEditorButton}
           </Button>
         </div>
       </div>

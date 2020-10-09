@@ -1,8 +1,6 @@
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';
 
-import CardCodeEditor from './components/CardCodeEditor/CardCodeEditor';
-
 sizeMe.noPlaceholders = true;
 
 // Components
@@ -65,6 +63,7 @@ export DashboardGrid from './components/Dashboard/DashboardGrid';
 export DashboardEditor from './components/DashboardEditor/DashboardEditor';
 export CardEditor from './components/CardEditor/CardEditor';
 export Card from './components/Card/Card';
+export PieChartCard from './components/PieChartCard/PieChartCard';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
@@ -79,7 +78,6 @@ export {
   TIME_SERIES_TYPES,
   BAR_CHART_TYPES,
 } from './constants/LayoutConstants';
-export CardCodeEditor from './components/CardCodeEditor/CardCodeEditor';
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
@@ -144,6 +142,8 @@ export {
   DatePicker,
   DatePickerInput,
   Dropdown,
+  ErrorBoundary,
+  ErrorBoundaryContext,
   Filename,
   FileUploader,
   FileUploaderButton,

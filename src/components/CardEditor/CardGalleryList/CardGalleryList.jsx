@@ -15,7 +15,7 @@ const propTypes = {
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   onAddCard: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    closeGalleryButton: PropTypes.string,
+    galleryHeader: PropTypes.string,
   }),
 };
 
@@ -28,6 +28,7 @@ const defaultProps = {
     cardType_VALUE: 'Value/KPI',
     cardType_IMAGE: 'Image',
     cardType_TABLE: 'Data table',
+    cardType_OTHER: 'Other',
     // additional card type names can be provided using the convention of `cardType_TYPE`
   },
 };
@@ -48,6 +49,7 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
       isFullHeight
       items={supportedTypes.map(i => ({
         id: i,
+        isCategory: true,
         content: {
           value: mergedI18N[`cardType_${i}`] || i,
           icon: iconTypeMap[i],

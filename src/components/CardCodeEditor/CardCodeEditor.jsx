@@ -16,10 +16,10 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  ...ComposedModal.propTypes,
+  ...ComposedModal.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
   /*
    * On submit callback. It's called with editor value, and a callback to set an error messages
-   * onSumbit(value, setError)
+   * onSubmit(value, setError)
    */
   onSubmit: PropTypes.func.isRequired,
   /** Callback called when modal close icon or cancel button is pressed */
@@ -86,7 +86,7 @@ const CardCodeEditor = ({
   };
 
   const handleOnSubmit = () => {
-    onSubmit(editorValue.current.getValue(), setError);
+    onSubmit(editorValue?.current?.getValue(), setError);
   };
 
   const handleOnExpand = () => {
@@ -94,7 +94,8 @@ const CardCodeEditor = ({
   };
 
   const handleOnCopy = () => {
-    return onCopy && onCopy(editorValue.current.getValue());
+    const value = editorValue?.current?.getValue() || initialValue;
+    return onCopy && onCopy(value);
   };
 
   return (

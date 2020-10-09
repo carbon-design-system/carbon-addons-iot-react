@@ -26,7 +26,11 @@ const fixture = {
             },
             predict: {
               role: 'ADMIN',
-              href: 'https://mockedworkspace.health.mydomain.com/maximo',
+              href: 'https://mockedworkspace.predict.mydomain.com',
+            },
+            visualinspection: {
+              role: 'ADMIN',
+              href: 'https://mockedworkspace.visualinspection.mydomain.com',
             },
           },
         },
@@ -34,8 +38,9 @@ const fixture = {
       applications: {
         iot: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
         monitor: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
-        health: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
+        health: { sync: { state: 'PENDING', timestamp: '2020-08-24T17:03:41Z' } },
         predict: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
+        visualinspection: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
       },
     },
     workspaces: [
@@ -52,6 +57,7 @@ const fixture = {
   '/applications': [
     {
       id: 'iot',
+      name: 'IoT',
       category: 'tool',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -182,6 +188,7 @@ const fixture = {
     },
     {
       id: 'monitor',
+      name: 'Monitor',
       category: 'application',
       deployed: true,
       deployedVersion: '8.1.0',
@@ -218,6 +225,7 @@ const fixture = {
     },
     {
       id: 'health',
+      name: 'Health',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -248,6 +256,7 @@ const fixture = {
     },
     {
       id: 'predict',
+      name: 'Predict',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -276,6 +285,24 @@ const fixture = {
         },
       ],
     },
+    {
+      id: 'visualinspection',
+      name: 'Visual Inspection',
+      category: 'application',
+      deployed: true,
+      deployedVersion: '8.0.0',
+      deployedSpec: { test: { foo: 'bar' } },
+      components: [
+        {
+          name: 'visualinspection',
+          version: '8.0.0',
+          state: 'DEPLOYED',
+          timestamp: '2020-08-24T12:03:08-05:00',
+        },
+      ],
+      entitlement: 'PREMIUM',
+      supportedReleases: [],
+    },
   ],
   '/config/eam': {
     url: 'https://myeam.mydomain.com',
@@ -298,6 +325,33 @@ const fixture = {
     initialInteractionTimestamp: '2020-06-15T19:32:52Z',
     lastPromptTimestamp: '2020-08-22T17:15:28Z',
     userId: 'mas-admin',
+  },
+  '/i18n/header/en': {
+    about: 'About',
+    administrationIcon: 'Administration',
+    documentation: 'Documentation',
+    gettingStarted: 'Getting started',
+    help: 'Help',
+    logout: 'Logout',
+    profileLogoutButton: 'Log out',
+    profileLogoutModalBody:
+      'You are logged in to {solutionName} as {userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
+    profileLogoutModalHeading: 'Do you wish to log out?',
+    profileLogoutModalPrimaryButton: 'Log out',
+    profileLogoutModalSecondaryButton: 'Cancel',
+    profileManageButton: 'Manage profile',
+    profileTitle: 'Profile PT-BR',
+    requestEnhancement: 'Request enhancement',
+    settingsIcon: 'Settings',
+    support: 'Support',
+    surveyText: 'Click here to help us improve the product',
+    surveyTitle: 'Enjoying {solutionName}?',
+    surveyPrivacyPolicy: 'Privacy Policy',
+    switcherLearnMoreLink: 'Learn more',
+    switcherNavigatorLink: 'All applications',
+    switcherRequestAccess: 'Contact your administrator to request application access',
+    userIcon: 'User',
+    whatsNew: "What's new",
   },
 };
 

@@ -39,7 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-4"
+            id="bx--modal-header__heading--modal-3"
           >
             Do you wish to log out?
           </h3>
@@ -69,9 +69,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-4"
+          aria-labelledby="bx--modal-header__heading--modal-3"
           className="bx--modal-content"
-          id="bx--modal-body--modal-4"
+          id="bx--modal-body--modal-3"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
@@ -237,9 +237,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--whatsNew"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="What's new"
                 >
                   <span
@@ -252,9 +253,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--gettingStarted"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Getting started"
                 >
                   <span
@@ -267,9 +269,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--documentation"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Documentation"
                 >
                   <span
@@ -282,9 +285,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--requestEnhancement"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Request enhancement"
                 >
                   <span
@@ -297,9 +301,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--support"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Support"
                 >
                   <span
@@ -312,9 +317,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--about"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_self"
                   title="About"
                 >
                   <span
@@ -496,7 +502,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         <svg
                           aria-hidden={true}
@@ -519,7 +527,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--monitor"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Monitor
                       </a>
@@ -528,9 +538,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
-                        rel="noopener noreferrer"
-                        target="_blank"
+                        data-testid="suite-header-app-switcher--health"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Health
                       </a>
@@ -910,9 +920,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           <a
             className="bx--link"
             href="https://www.ibm.com"
+            target="_blank"
           >
             Click here to help us improve the product
           </a>
+          <div
+            className="iot--suite-header-survey-policy-link"
+          >
+            <a
+              className="bx--link"
+              href="https://www.ibm.com"
+              target="_blank"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
         <div
           className="bx--toast-notification__caption"
@@ -972,7 +994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-5"
+            id="bx--modal-header__heading--modal-4"
           >
             Do you wish to log out?
           </h3>
@@ -1002,9 +1024,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-5"
+          aria-labelledby="bx--modal-header__heading--modal-4"
           className="bx--modal-content"
-          id="bx--modal-body--modal-5"
+          id="bx--modal-body--modal-4"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
@@ -1148,9 +1170,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--whatsNew"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="What's new"
                 >
                   <span
@@ -1163,9 +1186,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--gettingStarted"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Getting started"
                 >
                   <span
@@ -1178,9 +1202,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--documentation"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Documentation"
                 >
                   <span
@@ -1193,9 +1218,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--requestEnhancement"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Request enhancement"
                 >
                   <span
@@ -1208,9 +1234,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--support"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Support"
                 >
                   <span
@@ -1223,9 +1250,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--about"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_self"
                   title="About"
                 >
                   <span
@@ -1407,7 +1435,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         <svg
                           aria-hidden={true}
@@ -1430,7 +1460,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--monitor"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Monitor
                       </a>
@@ -1439,9 +1471,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
-                        rel="noopener noreferrer"
-                        target="_blank"
+                        data-testid="suite-header-app-switcher--health"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Health
                       </a>
@@ -1520,7 +1552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-3"
+            id="bx--modal-header__heading--modal-2"
           >
             Do you wish to log out?
           </h3>
@@ -1550,9 +1582,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-3"
+          aria-labelledby="bx--modal-header__heading--modal-2"
           className="bx--modal-content"
-          id="bx--modal-body--modal-3"
+          id="bx--modal-body--modal-2"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
@@ -1696,9 +1728,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--whatsNew"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="What's new"
                 >
                   <span
@@ -1711,9 +1744,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--gettingStarted"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Getting started"
                 >
                   <span
@@ -1726,9 +1760,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--documentation"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Documentation"
                 >
                   <span
@@ -1741,9 +1776,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--requestEnhancement"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Request enhancement"
                 >
                   <span
@@ -1756,9 +1792,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--support"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_blank"
                   title="Support"
                 >
                   <span
@@ -1771,9 +1808,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
-                  href="https://www.ibm.com"
+                  data-testid="suite-header-help--about"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
                   tabIndex={0}
-                  target="_self"
                   title="About"
                 >
                   <span
@@ -1955,7 +1993,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--nav-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         <svg
                           aria-hidden={true}
@@ -1978,7 +2018,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
+                        data-testid="suite-header-app-switcher--monitor"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Monitor
                       </a>
@@ -1987,9 +2029,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       className="iot--suite-header-app-switcher--app-link"
                     >
                       <a
-                        href="https://www.ibm.com"
-                        rel="noopener noreferrer"
-                        target="_blank"
+                        data-testid="suite-header-app-switcher--health"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
                       >
                         Health
                       </a>

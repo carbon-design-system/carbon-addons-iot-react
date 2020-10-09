@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-script-url */
+
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
@@ -12,6 +15,17 @@ import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import SuiteHeaderI18N from './i18n';
+
+const ROUTE_TYPES = {
+  ADMIN: 'ADMIN',
+  NAVIGATOR: 'ADMIN',
+  REFERRER: 'REFERRER',
+  APPLICATION: 'APPLICATION',
+  PROFILE: 'PROFILE',
+  ABOUT: 'ABOUT',
+  LOGOUT: 'LOGOUT',
+  DOCUMENTATION: 'DOCUMENTATION',
+};
 
 export const SuiteHeaderRoutePropTypes = PropTypes.shape({
   profile: PropTypes.string,
@@ -33,8 +47,9 @@ export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
   isExternal: PropTypes.bool,
 });
 
-export const SuiteHeaderSurveyPropTypes = PropTypes.shape({
-  link: PropTypes.string,
+export const SuiteHeaderSurveyDataPropTypes = PropTypes.shape({
+  surveyLink: PropTypes.string.isRequired,
+  privacyLink: PropTypes.string.isRequired,
 });
 
 export const SuiteHeaderI18NPropTypes = PropTypes.shape({
@@ -66,7 +81,8 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
-  surveyLink: null,
+  surveyData: null,
+  onRouteChange: async () => true,
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -89,8 +105,10 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
-  /** If surveyLink is present, show a ToastNotification */
-  surveyLink: PropTypes.string,
+  /** If surveyData is present, show a ToastNotification */
+  surveyData: SuiteHeaderSurveyDataPropTypes,
+  /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
+  onRouteChange: PropTypes.func,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
 };
@@ -105,13 +123,14 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
-  surveyLink,
+  surveyData,
+  onRouteChange,
   i18n,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showToast, setShowToast] = useState(surveyLink !== null && surveyLink !== undefined);
+  const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
 
   return (
     <>
@@ -120,7 +139,18 @@ const SuiteHeader = ({
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
           kind="info"
           title={mergedI18N.surveyTitle(appName || suiteName)}
-          subtitle={<Link href={surveyLink}>{mergedI18N.surveyText}</Link>}
+          subtitle={
+            <>
+              <Link target="_blank" href={surveyData.surveyLink}>
+                {mergedI18N.surveyText}
+              </Link>
+              <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
+                <Link target="_blank" href={surveyData.privacyLink}>
+                  {mergedI18N.surveyPrivacyPolicy}
+                </Link>
+              </div>
+            </>
+          }
           lowContrast
           caption=""
           onCloseButtonClick={() => setShowToast(false)}
@@ -131,8 +161,11 @@ const SuiteHeader = ({
         displayName={userDisplayName}
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={() => {
-          window.location.href = routes.logout;
+        onLogout={async () => {
+          const result = await onRouteChange(ROUTE_TYPES.LOGOUT, routes.logout);
+          if (result) {
+            window.location.href = routes.logout;
+          }
         }}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
@@ -157,6 +190,7 @@ const SuiteHeader = ({
                     applications={applications}
                     allApplicationsLink={routes.navigator}
                     noAccessLink={routes.gettingStarted}
+                    onRouteChange={onRouteChange}
                     i18n={{
                       allApplicationsLink: mergedI18N.switcherNavigatorLink,
                       requestAccess: mergedI18N.switcherRequestAccess,
@@ -183,12 +217,23 @@ const SuiteHeader = ({
                           />
                         </>
                       ),
-                      onClick: () => {
-                        window.location.href = isAdminView
-                          ? document.referrer !== ''
-                            ? document.referrer
-                            : routes.navigator
-                          : routes.admin;
+                      onClick: async () => {
+                        let href = routes.admin;
+                        let routeType = ROUTE_TYPES.ADMIN;
+                        if (isAdminView) {
+                          // Only use referrer URL if it is not the login screen.
+                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
+                            href = document.referrer;
+                            routeType = ROUTE_TYPES.REFERRER;
+                          } else {
+                            href = routes.navigator;
+                            routeType = ROUTE_TYPES.NAVIGATOR;
+                          }
+                        }
+                        const result = await onRouteChange(routeType, href);
+                        if (result) {
+                          window.location.href = href;
+                        }
                       },
                     }
                   : null,
@@ -201,61 +246,45 @@ const SuiteHeader = ({
                     </Fragment>
                   ),
                   childContent: [
-                    {
+                    'whatsNew',
+                    'gettingStarted',
+                    'documentation',
+                    'requestEnhancement',
+                    'support',
+                  ]
+                    .map(item => ({
                       metaData: {
                         element: 'a',
-                        href: routes.whatsNew,
-                        title: mergedI18N.whatsNew,
-                        target: '_blank',
+                        'data-testid': `suite-header-help--${item}`,
+                        href: 'javascript:void(0)',
+                        title: mergedI18N[item],
+                        onClick: async () => {
+                          const result = await onRouteChange(
+                            ROUTE_TYPES.DOCUMENTATION,
+                            routes[item]
+                          );
+                          if (result) {
+                            window.open(routes[item], 'blank');
+                          }
+                        },
                       },
-                      content: mergedI18N.whatsNew,
-                    },
-                    {
+                      content: mergedI18N[item],
+                    }))
+                    .concat({
                       metaData: {
                         element: 'a',
-                        href: routes.gettingStarted,
-                        title: mergedI18N.gettingStarted,
-                        target: '_blank',
-                      },
-                      content: mergedI18N.gettingStarted,
-                    },
-                    {
-                      metaData: {
-                        element: 'a',
-                        href: routes.documentation,
-                        title: mergedI18N.documentation,
-                        target: '_blank',
-                      },
-                      content: mergedI18N.documentation,
-                    },
-                    {
-                      metaData: {
-                        element: 'a',
-                        href: routes.requestEnhancement,
-                        title: mergedI18N.requestEnhancement,
-                        target: '_blank',
-                      },
-                      content: mergedI18N.requestEnhancement,
-                    },
-                    {
-                      metaData: {
-                        element: 'a',
-                        href: routes.support,
-                        title: mergedI18N.support,
-                        target: '_blank',
-                      },
-                      content: mergedI18N.support,
-                    },
-                    {
-                      metaData: {
-                        element: 'a',
-                        href: routes.about,
+                        'data-testid': `suite-header-help--about`,
+                        href: 'javascript:void(0)',
                         title: mergedI18N.about,
-                        target: '_self',
+                        onClick: async () => {
+                          const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
+                          if (result) {
+                            window.location.href = routes.about;
+                          }
+                        },
                       },
                       content: mergedI18N.about,
-                    },
-                  ],
+                    }),
                 },
                 {
                   label: 'user',
@@ -277,7 +306,12 @@ const SuiteHeader = ({
                         <SuiteHeaderProfile
                           displayName={userDisplayName}
                           username={username}
-                          profileLink={routes.profile}
+                          onProfileClick={async () => {
+                            const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
+                            if (result) {
+                              window.location.href = routes.profile;
+                            }
+                          }}
                           onRequestLogout={() => setShowLogoutModal(true)}
                           i18n={{
                             profileTitle: mergedI18N.profileTitle,
@@ -304,5 +338,7 @@ const SuiteHeader = ({
 
 SuiteHeader.defaultProps = defaultProps;
 SuiteHeader.propTypes = propTypes;
+
+SuiteHeader.ROUTE_TYPES = ROUTE_TYPES;
 
 export default SuiteHeader;

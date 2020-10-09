@@ -38,32 +38,20 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
+      pagination: { totalItems },
     },
     view: initialState,
     actions: callbackActions,
     lightweight,
   } = merge({}, defaultProps({ data: initialData, ...other }), other);
+
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
     view: initialState,
     columns: initialColumns,
   });
+
   const isLoading = get(initialState, 'table.loadingState.isLoading');
-  // Need to initially sort and filter the tables data, but preserve the selectedId
-  useDeepCompareEffect(
-    () => {
-      dispatch(
-        tableRegister({
-          data: initialData,
-          isLoading,
-          view: initialState,
-          totalItems: initialData.length,
-          hasUserViewManagement,
-        })
-      );
-    },
-    [initialData, isLoading, initialState]
-  );
 
   const {
     view,
@@ -72,10 +60,27 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   } = state;
 
+  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
+
+  // Need to initially sort and filter the tables data, but preserve the selectedId
+  useDeepCompareEffect(
+    () => {
+      dispatch(
+        tableRegister({
+          data: initialData,
+          isLoading,
+          view: initialState,
+          totalItems: pagination.totalItems || initialData.length,
+          hasUserViewManagement,
+        })
+      );
+    },
+    [initialData, isLoading, initialState]
+  );
+
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
 
-  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
   const { onChangePage } = pagination || {};
   const {
     onApplyFilter,
@@ -236,6 +241,14 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   };
 
+  const filteredCount = filteredData?.length || 0;
+  const currentlyLoadedDataCount = state.data?.length || 0;
+
+  const filteredTotalItems =
+    filteredCount && filteredCount !== currentlyLoadedDataCount
+      ? filteredCount
+      : totalItems || currentlyLoadedDataCount;
+
   return filteredData ? (
     <Table
       {...other} // need to passthrough all other props
@@ -256,7 +269,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         },
         pagination: {
           ...view.pagination,
-          totalItems: filteredData.length,
+          totalItems: filteredTotalItems,
         },
       }}
       actions={actions}

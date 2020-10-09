@@ -658,7 +658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundary
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -670,7 +672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundaryContext
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -3037,6 +3041,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    DashboardEditor
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     CardEditor
                   </div>
                 </div>
@@ -3050,6 +3066,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     Card
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PieChartCard
                   </div>
                 </div>
                 <div

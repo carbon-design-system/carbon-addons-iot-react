@@ -1,57 +1,90 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid';
-import { Screen16, Tablet16, Laptop16, Maximize16 } from '@carbon/icons-react';
 import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import {
-  CARD_SIZES,
-  CARD_ACTIONS,
-  CARD_TYPES,
-  TIME_SERIES_TYPES,
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-} from '../../constants/LayoutConstants';
-import {
-  DashboardGrid,
-  Button,
-  Card,
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  CardEditor,
-  Breadcrumb,
-  BreadcrumbItem,
-  ContentSwitcher,
-} from '../../index';
-import IconSwitch from '../IconSwitch/IconSwitch';
+import { CARD_TYPES } from '../../constants/LayoutConstants';
+import { DashboardGrid, CardEditor } from '../../index';
 
-import sampleImage from './landscape.jpg';
+import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
+import { getDefaultCard, getDuplicateCard, getCardPreview } from './editorUtils';
 
-const { iotPrefix, prefix } = settings;
-
-const defaultProps = {
-  initialValue: {
-    cards: [],
-    layouts: {},
-  },
-  renderHeader: null,
-  renderCardPreview: null,
-  headerBreadcrumbs: null,
-};
+const { iotPrefix } = settings;
 
 const propTypes = {
+  /** Dashboard title */
+  title: PropTypes.string,
   /** initial dashboard data to edit */
-  initialValue: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  initialValue: PropTypes.shape({
+    cards: PropTypes.array,
+    layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  }),
+  /** supported card types */
+  supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
   /** if provided, is used to render cards in dashboard */
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
+  /** if provided, renders node underneath the header and above the dashboard grid */
+  notification: PropTypes.node,
+  /** if provided, renders edit button next to title linked to this callback */
+  onEditTitle: PropTypes.func,
+  /** if provided, renders import button linked to this callback
+   * onImport(data, setNotification?)
+   */
+  onImport: PropTypes.func,
+  /** if provided, renders export button linked to this callback
+   * onExport(dashboardJson)
+   */
+  onExport: PropTypes.func,
+  /** if provided, renders delete button linked to this callback */
+  onDelete: PropTypes.func,
+  /** If provided, renders cancel button linked to this callback */
+  onCancel: PropTypes.func,
+  /** If provided, renders submit button linked to this callback
+   * onSubmit(dashboardData)
+   */
+  onSubmit: PropTypes.func,
+  /** internationalization strings */
+  i18n: PropTypes.shape({
+    headerImportButton: PropTypes.string,
+    headerExportButton: PropTypes.string,
+    headerCancelButton: PropTypes.string,
+    headerSubmitButton: PropTypes.string,
+  }),
+};
+
+const defaultProps = {
+  initialValue: {
+    cards: [],
+    layouts: {},
+  },
+  supportedCardTypes: [CARD_TYPES.BAR, CARD_TYPES.TIMESERIES, CARD_TYPES.VALUE, CARD_TYPES.TABLE],
+  renderHeader: null,
+  renderCardPreview: () => null,
+  headerBreadcrumbs: null,
+  notification: null,
+  title: null,
+  onEditTitle: null,
+  onDelete: null,
+  onImport: null,
+  onExport: null,
+  onCancel: null,
+  onSubmit: null,
+  i18n: {
+    headerEditTitleButton: 'Edit title',
+    headerImportButton: 'Import',
+    headerExportButton: 'Export',
+    headerDeleteButton: 'Delete',
+    headerCancelButton: 'Cancel',
+    headerSubmitButton: 'Save and close',
+    galleryHeader: 'Gallery',
+    openGalleryButton: 'Open gallery',
+    closeGalleryButton: 'Back',
+    openJSONButton: 'Open JSON editor',
+  },
 };
 
 const BREAKPOINTS = {
@@ -62,17 +95,27 @@ const BREAKPOINTS = {
 };
 
 const DashboardEditor = ({
+  title,
   initialValue,
+  supportedCardTypes,
   renderHeader,
   renderCardPreview,
   headerBreadcrumbs,
-  onAddImage,
+  notification,
+  // onAddImage,
+  onEditTitle,
+  onImport,
+  onExport,
+  onDelete,
+  onCancel,
   onSubmit,
+  i18n,
 }) => {
+  const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
-  const [dashboardData, setDashboardData] = useState(initialValue);
+  const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
   const [selectedBreakpoint, setSelectedBreakpoint] = useState(BREAKPOINTS.FIT_TO_SCREEN);
 
@@ -84,292 +127,28 @@ const DashboardEditor = ({
   );
 
   const addCard = type => {
-    const defaultSizeForType = {
-      [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-      [CARD_TYPES.BAR]: CARD_SIZES.MEDIUMWIDE,
-      [CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-      [CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
-      [CARD_TYPES.TABLE]: CARD_SIZES.MEDIUMWIDE,
-    };
-    const baseCardProps = {
-      id: uuid.v4(),
-      title: 'Untitled',
-      size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
-      type,
-    };
-    const cardData =
-      type === CARD_TYPES.VALUE
-        ? {
-            ...baseCardProps,
-            content: {
-              attributes: [
-                {
-                  dataSourceId: 'key1',
-                  unit: '%',
-                  label: 'Key 1',
-                },
-                {
-                  dataSourceId: 'key2',
-                  unit: 'lb',
-                  label: 'Key 2',
-                },
-              ],
-            },
-          }
-        : type === CARD_TYPES.TIMESERIES
-        ? {
-            ...baseCardProps,
-            content: {
-              series: [
-                {
-                  label: 'Temperature',
-                  dataSourceId: 'temperature',
-                },
-                {
-                  label: 'Humidity',
-                  dataSourceId: 'humidity',
-                },
-              ],
-              xLabel: 'Time',
-              yLabel: 'Temperature (˚F)',
-              chartType: TIME_SERIES_TYPES.LINE,
-              includeZeroOnXaxis: true,
-              includeZeroOnYaxis: true,
-              timeDataSourceId: 'timestamp',
-              addSpaceOnEdges: 1,
-            },
-            interval: 'day',
-          }
-        : type === CARD_TYPES.BAR
-        ? {
-            ...baseCardProps,
-            content: {
-              type: BAR_CHART_TYPES.SIMPLE,
-              xLabel: 'Cities',
-              yLabel: 'Total',
-              layout: BAR_CHART_LAYOUTS.VERTICAL,
-              series: [
-                {
-                  dataSourceId: 'particles',
-                  label: 'Particles',
-                },
-                {
-                  dataSourceId: 'temperature',
-                  label: 'Temperature',
-                },
-                {
-                  dataSourceId: 'emissions',
-                  label: 'Emissions',
-                },
-              ],
-              categoryDataSourceId: 'city',
-            },
-          }
-        : type === CARD_TYPES.IMAGE
-        ? {
-            ...baseCardProps,
-            content: {
-              alt: 'landscape.jpg',
-              src: sampleImage,
-              hideMinimap: true,
-              hideHotspots: false,
-              hideZoomControls: false,
-            },
-          }
-        : type === CARD_TYPES.TABLE
-        ? {
-            ...baseCardProps,
-            content: {
-              columns: [
-                {
-                  dataSourceId: 'alert',
-                  label: 'Alert',
-                  priority: 1,
-                },
-                {
-                  dataSourceId: 'count',
-                  label: 'Count',
-                  priority: 3,
-                },
-                {
-                  dataSourceId: 'hour',
-                  label: 'Hour',
-                  priority: 2,
-                  type: 'TIMESTAMP',
-                },
-                {
-                  dataSourceId: 'pressure',
-                  label: 'Pressure',
-                  priority: 2,
-                },
-              ],
-              threshold: [
-                {
-                  dataSourceId: 'pressure',
-                  comparison: '>=',
-                  value: 1,
-                  severity: 1,
-                  label: 'Pressure',
-                  showSeverityLabel: true,
-                  severityLabel: 'Critical',
-                },
-              ],
-            },
-          }
-        : baseCardProps;
-    setDashboardData({
-      ...dashboardData,
-      cards: [...dashboardData.cards, cardData],
+    const cardData = getDefaultCard(type);
+    setDashboardJson({
+      ...dashboardJson,
+      cards: [...dashboardJson.cards, cardData],
     });
     setSelectedCardId(cardData.id);
   };
-  const removeCard = id =>
-    setDashboardData({
-      ...dashboardData,
-      cards: dashboardData.cards.filter(i => i.id !== id),
-    });
 
-  const isCardJsonValid = cardJson => {
-    if (cardJson.type === CARD_TYPES.VALUE) {
-      return cardJson?.content?.attributes !== undefined;
-    }
-    if (cardJson.type === CARD_TYPES.TIMESERIES) {
-      return cardJson?.content !== undefined;
-    }
-    if (cardJson.type === CARD_TYPES.BAR) {
-      return cardJson?.content !== undefined;
-    }
-    return true;
+  const duplicateCard = id => {
+    const cardData = getDuplicateCard(dashboardJson.cards.find(i => i.id === id));
+    setDashboardJson({
+      ...dashboardJson,
+      cards: [...dashboardJson.cards, cardData],
+    });
+    setSelectedCardId(cardData.id);
   };
 
-  const renderDefaultCard = (cardJson, commonProps) => (
-    <Card
-      id={cardJson.id}
-      size={cardJson.size}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      isEditable
-      {...commonProps}
-    >
-      <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
-    </Card>
-  );
-
-  const renderValueCard = (cardJson, commonProps) => (
-    <ValueCard
-      id={cardJson.id}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      size={cardJson.size}
-      content={cardJson?.content}
-      values={cardJson?.values}
-      isEditable
-      {...commonProps}
-    />
-  );
-
-  const renderTimeSeriesCard = (cardJson, commonProps) => (
-    <TimeSeriesCard
-      id={cardJson.id}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      size={cardJson.size}
-      content={cardJson?.content}
-      values={cardJson?.values}
-      interval={cardJson?.interval}
-      isEditable={cardJson.values === undefined}
-      {...commonProps}
-    />
-  );
-
-  const renderBarChartCard = (cardJson, commonProps) => (
-    <BarChartCard
-      id={cardJson.id}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      size={cardJson.size}
-      content={cardJson?.content}
-      values={cardJson?.values}
-      isEditable={cardJson.values === undefined}
-      // TODO: fix inability to pass className to BarChartCard
-      {...(commonProps.className ? {} : commonProps)}
-    />
-  );
-
-  const renderImageCard = (cardJson, commonProps) => (
-    <ImageCard
-      id={cardJson.id}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      size={cardJson.size}
-      content={cardJson?.content}
-      values={cardJson?.values}
-      isEditable={cardJson?.content?.src === undefined}
-      // TODO: fix inability to pass className to BarChartCard
-      {...commonProps}
-    />
-  );
-
-  const renderTableCard = (cardJson, commonProps) => (
-    <TableCard
-      id={cardJson.id}
-      title={cardJson.title}
-      tooltip={cardJson.description}
-      size={cardJson.size}
-      content={cardJson?.content}
-      isEditable
-      // TODO: fix inability to pass className to BarChartCard
-      {...commonProps}
-    />
-  );
-
-  /*
-  {
-    title: 'Floor Map',
-    id: 'floor map picture',
-    size: CARD_SIZES.MEDIUM,
-    type: CARD_TYPES.IMAGE,
-    onSetupCard() {
-      return { ...cardValues[3] };
-    },
-    availableActions: {
-      range: true,
-    },
-    content: {
-      alt: 'Floor Map',
-      image: 'firstfloor',
-      src: imageFile,
-    },
-    values: {
-      hotspots: [
-        {
-          x: 35,
-          y: 65,
-          icon: 'arrowDown',
-          content: <span style={{ padding: '10px' }}>Elevators</span>,
-        },
-        {
-          x: 45,
-          y: 25,
-          color: '#0f0',
-          content: <span style={{ padding: '10px' }}>Stairs</span>,
-        },
-        {
-          x: 45,
-          y: 50,
-          color: '#00f',
-          content: <span style={{ padding: '10px' }}>Vent Fan</span>,
-        },
-        {
-          x: 45,
-          y: 75,
-          icon: 'arrowUp',
-          content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
-        },
-      ],
-    },
-  },
-  */
+  const removeCard = id =>
+    setDashboardJson({
+      ...dashboardJson,
+      cards: dashboardJson.cards.filter(i => i.id !== id),
+    });
 
   return (
     <div className={baseClassName}>
@@ -377,61 +156,29 @@ const DashboardEditor = ({
         {renderHeader ? (
           renderHeader()
         ) : (
-          <div className={`${baseClassName}--header`}>
-            <div className={`${prefix}--grid`}>
-              <div className={`${prefix}--row`}>
-                <div className={`${prefix}--col header-left`}>
-                  <div className="header-top">
-                    {headerBreadcrumbs ? (
-                      <Breadcrumb>
-                        {headerBreadcrumbs.map((crumb, index) => (
-                          <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
-                        ))}
-                      </Breadcrumb>
-                    ) : null}
-                  </div>
-                  <div className="header-bottom">
-                    <h4>Dashboard title</h4>
-                  </div>
-                </div>
-                <div className={`${prefix}--col header-right`}>
-                  <div className="header-top">
-                    {/* <span className="last-updated">Last updated: XYZ</span> */}
-                  </div>
-                  <div className="header-bottom">
-                    <ContentSwitcher
-                      onChange={e => setSelectedBreakpoint(e.index)}
-                      selectedIndex={selectedBreakpoint}
-                    >
-                      <IconSwitch
-                        name="fit-to-screen"
-                        text="Fit to screen"
-                        renderIcon={Maximize16}
-                      />
-                      <IconSwitch name="tablet" text="Tablet view" renderIcon={Tablet16} />
-                      <IconSwitch name="laptop" text="Laptop View" renderIcon={Laptop16} />
-                      <IconSwitch name="screen" text="Desktop View" renderIcon={Screen16} />
-                    </ContentSwitcher>
-                    <Button style={{ marginRight: '1rem' }} kind="tertiary" size="small">
-                      Cancel
-                    </Button>
-                    <Button size="small" onClick={() => onSubmit(dashboardData)}>
-                      Save and close
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DashboardEditorHeader
+            title={title}
+            breadcrumbs={headerBreadcrumbs}
+            onEditTitle={onEditTitle}
+            onImport={onImport}
+            onExport={() => onExport(dashboardJson)}
+            onDelete={onDelete}
+            onCancel={onCancel}
+            onSubmit={onSubmit}
+            i18n={mergedI18N}
+            dashboardJson={dashboardJson}
+            selectedBreakpoint={selectedBreakpoint}
+            setSelectedBreakpoint={setSelectedBreakpoint}
+          />
         )}
+        {notification}
         <div className={`${baseClassName}--preview`}>
           <DashboardGrid
             isEditable
-            breakpoint="lg"
-            onBreakpointChange={newBreakpoint => console.log('onBreakpointChange', newBreakpoint)}
+            // onBreakpointChange={() => {}}
             onLayoutChange={(newLayout, newLayouts) =>
-              setDashboardData({
-                ...dashboardData,
+              setDashboardJson({
+                ...dashboardJson,
                 layouts: newLayouts,
               })
             }
@@ -441,36 +188,23 @@ const DashboardEditor = ({
               [`${baseClassName}--preview-screen`]: selectedBreakpoint === BREAKPOINTS.SCREEN,
             })}
           >
-            {dashboardData.cards.map(i => {
-              const isSelected = selectedCardId === i.id;
-              const commonProps = isSelected
-                ? { className: 'selected-card' }
-                : {
-                    availableActions: { edit: true, delete: true },
-                    onCardAction: (id, actionId) => {
-                      if (actionId === CARD_ACTIONS.EDIT_CARD) {
-                        setSelectedCardId(id);
-                      }
-                      if (actionId === CARD_ACTIONS.DELETE_CARD) {
-                        removeCard(id);
-                      }
-                    },
-                  };
-              return renderCardPreview
-                ? renderCardPreview(i, setSelectedCardId, removeCard)
-                : !isCardJsonValid(i)
-                ? renderDefaultCard(i, commonProps)
-                : i.type === CARD_TYPES.VALUE
-                ? renderValueCard(i, commonProps)
-                : i.type === CARD_TYPES.TIMESERIES
-                ? renderTimeSeriesCard(i, commonProps)
-                : i.type === CARD_TYPES.BAR
-                ? renderBarChartCard(i, commonProps)
-                : i.type === CARD_TYPES.IMAGE
-                ? renderImageCard(i, commonProps)
-                : i.type === CARD_TYPES.TABLE
-                ? renderTableCard(i, commonProps)
-                : renderDefaultCard(i, commonProps);
+            {dashboardJson.cards.map(cardData => {
+              const isSelected = selectedCardId === cardData.id;
+              const onSelectCard = id => setSelectedCardId(id);
+              const onDuplicateCard = id => duplicateCard(id);
+              const onRemoveCard = id => removeCard(id);
+
+              // if function not defined, or it returns falsy, render default preview
+              return (
+                renderCardPreview(
+                  cardData,
+                  isSelected,
+                  onSelectCard,
+                  onDuplicateCard,
+                  onRemoveCard
+                ) ??
+                getCardPreview(cardData, isSelected, onSelectCard, onDuplicateCard, onRemoveCard)
+              );
             })}
           </DashboardGrid>
           {/* <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre> */}
@@ -478,17 +212,18 @@ const DashboardEditor = ({
       </div>
       <div className={`${baseClassName}--sidebar`}>
         <CardEditor
-          value={dashboardData.cards.find(i => i.id === selectedCardId)}
+          value={dashboardJson.cards.find(i => i.id === selectedCardId)}
           onShowGallery={() => setSelectedCardId(null)}
-          // NOTE: won't support changes to card ID
           onChange={cardData =>
-            setDashboardData({
-              ...dashboardData,
-              cards: dashboardData.cards.map(i => (i.id === cardData.id ? cardData : i)),
+            setDashboardJson({
+              ...dashboardJson,
+              cards: dashboardJson.cards.map(card => (card.id === cardData.id ? cardData : card)),
             })
           }
           onAddCard={addCard}
-          onAddImage={onAddImage}
+          supportedTypes={supportedCardTypes}
+          // onAddImage={onAddImage}
+          i18n={mergedI18N}
         />
       </div>
     </div>

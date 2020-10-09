@@ -318,3 +318,12 @@ export const browserSupports = api => {
       return undefined;
   }
 };
+
+/**
+ * Helper function for using the overrides props as object or a function that returns an object
+ * @param {Object | Function} props the props that should override existing props
+ * @param {Object} originalProps the original props, can be used as input for creating new props
+ */
+export const getOverrides = (props, originalProps) => {
+  return typeof props === 'function' ? props(originalProps) : props;
+};

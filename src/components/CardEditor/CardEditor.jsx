@@ -10,18 +10,6 @@ import CardEditForm from './CardEditForm/CardEditForm';
 
 const { iotPrefix } = settings;
 
-const defaultProps = {
-  value: null,
-  // errors: null,
-  i18n: {
-    galleryHeader: 'Gallery',
-    openGalleryButton: 'Open gallery',
-    closeGalleryButton: 'Back',
-    openJSONButton: 'Open JSON editor',
-  },
-  supportedTypes: undefined,
-};
-
 const propTypes = {
   /** card data being edited */
   value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -34,7 +22,7 @@ const propTypes = {
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
   /** Callback function when an image file is uploaded */
-  onAddImage: PropTypes.func.isRequired,
+  // onAddImage: PropTypes.func.isRequired,
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -42,12 +30,24 @@ const propTypes = {
   }),
 };
 
+const defaultProps = {
+  value: null,
+  // errors: null,
+  i18n: {
+    galleryHeader: 'Gallery',
+    openGalleryButton: 'Open gallery',
+    closeGalleryButton: 'Back',
+    openJSONButton: 'Open JSON editor',
+  },
+  supportedTypes: [],
+};
+
 const CardEditor = ({
   value,
   onShowGallery,
   onChange,
   onAddCard,
-  onAddImage,
+  // onAddImage,
   supportedTypes,
   i18n,
 }) => {
@@ -78,12 +78,10 @@ const CardEditor = ({
           <CardGalleryList
             onAddCard={onAddCard}
             supportedTypes={supportedTypes}
-            i18n={{
-              galleryHeader: mergedI18N.galleryHeader,
-            }}
+            i18n={mergedI18N}
           />
         ) : (
-          <CardEditForm value={value} onChange={onChange} onAddImage={onAddImage} />
+          <CardEditForm value={value} onChange={onChange} /* onAddImage={onAddImage} */ />
         )}
       </div>
     </div>
