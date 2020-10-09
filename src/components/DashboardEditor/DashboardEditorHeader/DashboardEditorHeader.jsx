@@ -9,10 +9,11 @@ import {
   Laptop16,
   Screen16,
 } from '@carbon/icons-react';
-import { FileUploaderButton, TooltipIcon } from 'carbon-components-react';
+import { FileUploaderButton, TooltipIcon, ContentSwitcher } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
-import { Button, PageTitleBar, ContentSwitcher, IconSwitch } from '../../../index';
+import { Button, PageTitleBar } from '../../../index';
+import IconSwitch from '../../IconSwitch/IconSwitch';
 
 const { iotPrefix } = settings;
 
@@ -51,9 +52,16 @@ const propTypes = {
   /** The current dashboard's JSON */
   dashboardJson: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   /** currently selected breakpoint which is being held in state by DashboardEditor */
-  selectedBreakpoint: PropTypes.string,
+  selectedBreakpointIndex: PropTypes.number,
   /** handler to change the selectedBreakpoint state */
-  setSelectedBreakpoint: PropTypes.func,
+  setSelectedBreakpointIndex: PropTypes.func,
+  /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
+   * regardless of the screen width
+   */
+  breakpointSwitcher: PropTypes.shape({
+    enabled: PropTypes.bool,
+    allowedBreakpoints: PropTypes.arrayOf(PropTypes.string),
+  }),
 };
 
 const defaultProps = {
@@ -73,8 +81,9 @@ const defaultProps = {
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Submit',
   },
-  selectedBreakpoint: null,
-  setSelectedBreakpoint: null,
+  selectedBreakpointIndex: null,
+  setSelectedBreakpointIndex: null,
+  breakpointSwitcher: null,
 };
 
 const DashboardEditorHeader = ({
@@ -88,8 +97,9 @@ const DashboardEditorHeader = ({
   onSubmit,
   i18n,
   dashboardJson,
-  selectedBreakpoint,
-  setSelectedBreakpoint,
+  selectedBreakpointIndex,
+  setSelectedBreakpointIndex,
+  breakpointSwitcher,
 }) => {
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
@@ -98,15 +108,19 @@ const DashboardEditorHeader = ({
         {/* <span className="last-updated">Last updated: XYZ</span> */}
       </div>
       <div className={`${baseClassName}--bottom`}>
-        <ContentSwitcher
-          onChange={e => setSelectedBreakpoint(e.index)}
-          selectedIndex={selectedBreakpoint}
-        >
-          <IconSwitch name="fit-to-screen" text="Fit to screen" renderIcon={Maximize16} />
-          <IconSwitch name="tablet" text="Tablet view" renderIcon={Tablet16} />
-          <IconSwitch name="laptop" text="Laptop View" renderIcon={Laptop16} />
-          <IconSwitch name="screen" text="Desktop View" renderIcon={Screen16} />
-        </ContentSwitcher>
+        {breakpointSwitcher?.enabled && (
+          <ContentSwitcher
+            onChange={e => setSelectedBreakpointIndex(e.index)}
+            selectedIndex={selectedBreakpointIndex}
+            className={`${baseClassName}--bottom__switcher`}
+          >
+            <IconSwitch name="fit-to-screen" text="Fit to screen" renderIcon={Maximize16} />
+            <IconSwitch name="tablet" text="Tablet view" renderIcon={Tablet16} />
+            <IconSwitch name="laptop" text="Laptop View" renderIcon={Laptop16} />
+            <IconSwitch name="screen" text="Desktop View" renderIcon={Screen16} />
+          </ContentSwitcher>
+        )}
+
         {// FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
         onImport && (
           <TooltipIcon

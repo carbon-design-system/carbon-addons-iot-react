@@ -21,6 +21,13 @@ const propTypes = {
   }),
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
+   * regardless of the screen width
+   */
+  breakpointSwitcher: PropTypes.shape({
+    enabled: PropTypes.bool,
+    initialValue: PropTypes.string,
+  }),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
   /** if provided, is used to render cards in dashboard */
@@ -62,6 +69,7 @@ const defaultProps = {
     layouts: {},
   },
   supportedCardTypes: [CARD_TYPES.BAR, CARD_TYPES.TIMESERIES, CARD_TYPES.VALUE, CARD_TYPES.TABLE],
+  breakpointSwitcher: null,
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
@@ -87,17 +95,18 @@ const defaultProps = {
   },
 };
 
-const BREAKPOINTS = {
-  TABLET: 1,
-  LAPTOP: 2,
-  SCREEN: 3,
-  FIT_TO_SCREEN: 0,
+const LAYOUTS = {
+  FIT_TO_SCREEN: { breakpoint: 'max', index: 0 },
+  TABLET: { breakpoint: 'md', index: 1 },
+  LAPTOP: { breakpoint: 'lg', index: 2 },
+  SCREEN: { breakpoint: 'xk', index: 3 },
 };
 
 const DashboardEditor = ({
   title,
   initialValue,
   supportedCardTypes,
+  breakpointSwitcher,
   renderHeader,
   renderCardPreview,
   headerBreadcrumbs,
@@ -117,13 +126,22 @@ const DashboardEditor = ({
   // show the gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
-  const [selectedBreakpoint, setSelectedBreakpoint] = useState(BREAKPOINTS.FIT_TO_SCREEN);
+  const [selectedBreakpointIndex, setSelectedBreakpointIndex] = useState(
+    breakpointSwitcher?.initialValue
+      ? LAYOUTS[breakpointSwitcher.initialValue].index
+      : LAYOUTS.FIT_TO_SCREEN.index
+  );
+  const [currentBreakpoint, setCurrentBreakpoint] = useState(
+    breakpointSwitcher?.initialValue
+      ? LAYOUTS[breakpointSwitcher.initialValue].breakpoint
+      : LAYOUTS.FIT_TO_SCREEN.breakpoint
+  );
 
   useEffect(
     () => {
       window.dispatchEvent(new Event('resize'));
     },
-    [selectedBreakpoint]
+    [selectedBreakpointIndex]
   );
 
   const addCard = type => {
@@ -167,46 +185,72 @@ const DashboardEditor = ({
             onSubmit={onSubmit}
             i18n={mergedI18N}
             dashboardJson={dashboardJson}
-            selectedBreakpoint={selectedBreakpoint}
-            setSelectedBreakpoint={setSelectedBreakpoint}
+            selectedBreakpointIndex={selectedBreakpointIndex}
+            setSelectedBreakpointIndex={setSelectedBreakpointIndex}
+            breakpointSwitcher={breakpointSwitcher}
           />
         )}
         {notification}
-        <div className={`${baseClassName}--preview`}>
-          <DashboardGrid
-            isEditable
-            // onBreakpointChange={() => {}}
-            onLayoutChange={(newLayout, newLayouts) =>
-              setDashboardJson({
-                ...dashboardJson,
-                layouts: newLayouts,
-              })
-            }
-            className={classNames({
-              [`${baseClassName}--preview-tablet`]: selectedBreakpoint === BREAKPOINTS.TABLET,
-              [`${baseClassName}--preview-laptop`]: selectedBreakpoint === BREAKPOINTS.LAPTOP,
-              [`${baseClassName}--preview-screen`]: selectedBreakpoint === BREAKPOINTS.SCREEN,
-            })}
-          >
-            {dashboardJson.cards.map(cardData => {
-              const isSelected = selectedCardId === cardData.id;
-              const onSelectCard = id => setSelectedCardId(id);
-              const onDuplicateCard = id => duplicateCard(id);
-              const onRemoveCard = id => removeCard(id);
+        <div
+          className={classNames(`${baseClassName}--preview`, {
+            [`${baseClassName}--preview__breakpoint-switcher`]: breakpointSwitcher?.enabled,
+          })}
+        >
+          {breakpointSwitcher?.enabled && (
+            <div
+              className={classNames({
+                [`${baseClassName}--preview__tablet ${baseClassName}--preview__outline`]:
+                  selectedBreakpointIndex === LAYOUTS.TABLET.index,
+                [`${baseClassName}--preview__laptop ${baseClassName}--preview__outline`]:
+                  selectedBreakpointIndex === LAYOUTS.LAPTOP.index,
+                [`${baseClassName}--preview__screen ${baseClassName}--preview__outline`]:
+                  selectedBreakpointIndex === LAYOUTS.SCREEN.index,
+              })}
+            >
+              <div className={`${baseClassName}--preview__breakpoint-info`}>
+                Edit dashboard layout at medium breakpoint
+              </div>
+              <DashboardGrid
+                isEditable
+                breakpoint={currentBreakpoint}
+                onBreakpointChange={newBreakpoint => {
+                  setCurrentBreakpoint(newBreakpoint);
+                }}
+                onLayoutChange={(newLayout, newLayouts) =>
+                  setDashboardJson({
+                    ...dashboardJson,
+                    layouts: newLayouts,
+                  })
+                }
+              >
+                {dashboardJson.cards.map(cardData => {
+                  const isSelected = selectedCardId === cardData.id;
+                  const onSelectCard = id => setSelectedCardId(id);
+                  const onDuplicateCard = id => duplicateCard(id);
+                  const onRemoveCard = id => removeCard(id);
 
-              // if function not defined, or it returns falsy, render default preview
-              return (
-                renderCardPreview(
-                  cardData,
-                  isSelected,
-                  onSelectCard,
-                  onDuplicateCard,
-                  onRemoveCard
-                ) ??
-                getCardPreview(cardData, isSelected, onSelectCard, onDuplicateCard, onRemoveCard)
-              );
-            })}
-          </DashboardGrid>
+                  // if function not defined, or it returns falsy, render default preview
+                  return (
+                    renderCardPreview(
+                      cardData,
+                      isSelected,
+                      onSelectCard,
+                      onDuplicateCard,
+                      onRemoveCard
+                    ) ??
+                    getCardPreview(
+                      cardData,
+                      isSelected,
+                      onSelectCard,
+                      onDuplicateCard,
+                      onRemoveCard
+                    )
+                  );
+                })}
+              </DashboardGrid>
+            </div>
+          )}
+
           {/* <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre> */}
         </div>
       </div>

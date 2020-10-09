@@ -229,6 +229,32 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
       />
     </div>
   ))
+  .add('with breakpointSwitcher', () => (
+    <div style={{ height: 'calc(100vh - 6rem)' }}>
+      <DashboardEditor
+        title={text('title', 'My dashboard')}
+        onAddImage={action('onAddImage')}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
+        onDelete={action('onDelete')}
+        onCancel={action('onCancel')}
+        onSubmit={action('onSubmit')}
+        supportedCardTypes={array('supportedCardTypes', [
+          'BAR',
+          'TIMESERIES',
+          'VALUE',
+          'TABLE',
+          'OTHER',
+        ])}
+        headerBreadcrumbs={[
+          <Link href="www.ibm.com">Dashboard library</Link>,
+          <Link href="www.ibm.com">Favorites</Link>,
+        ]}
+        breakpointSwitcher={{ enabled: true }}
+      />
+    </div>
+  ))
   .add('wrapped in SuiteHeader', () => (
     <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
       <SuiteHeader

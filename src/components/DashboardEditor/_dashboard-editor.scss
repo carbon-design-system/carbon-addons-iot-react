@@ -36,6 +36,10 @@
         }
       }
 
+      &__switcher {
+        margin-right: $spacing-05;
+      }
+
       .#{$prefix}--btn--tertiary,
       .#{$prefix}--btn--primary {
         margin-left: $spacing-05;
@@ -50,8 +54,6 @@
     }
     &--right {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
     }
   }
   &--preview {
@@ -66,14 +68,32 @@
       margin: -$spacing-01;
     }
 
-    &-tablet {
+    &__tablet {
       width: 672px;
     }
-    &-laptop {
+    &__laptop {
       width: 1056px;
     }
-    &-screen {
+    &__screen {
       width: 1312px;
+    }
+
+    &__breakpoint-switcher {
+      background-color: $text-03;
+
+      .react-grid-layout {
+        background-color: $ui-background;
+      }
+    }
+
+    &__breakpoint-info {
+      padding: 1rem;
+      width: 100%;
+      background-color: $ui-03;
+    }
+
+    &__outline {
+      border: 1px dotted $ui-04;
     }
   }
   &--sidebar {
