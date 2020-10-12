@@ -15,6 +15,7 @@ const StyledWizard = styled(WizardModal)`
 const commonWizardProps = {
   onSubmit: action('submit'),
   onClose: action('close'),
+  onBack: action('onBack'),
 };
 
 storiesOf('Watson IoT/WizardModal', module)
