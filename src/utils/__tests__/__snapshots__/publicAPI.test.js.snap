@@ -3267,6 +3267,7 @@ Map {
         "submitButtonLabel": "Submit",
       },
       "isClickable": false,
+      "onBack": null,
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3314,6 +3315,9 @@ Map {
       },
       "isClickable": Object {
         "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
       },
       "onSubmit": Object {
         "isRequired": true,
