@@ -7,7 +7,21 @@ import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
 import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
 import { Tag } from '../../Tag';
 
-import ListItem from './ListItem';
+import { UnconnectedListItem as ListItem } from './ListItem';
+
+// Since we are only interested in rendering the ListItem in isolation, and not the
+// interaction, we'll supply an identity function to stub the connector methods that
+// are usually provided by DndProvider, but are unessecary here.
+const identity = el => el;
+const dndProps = {
+  connectDragSource: identity,
+  connectDragPreview: identity,
+  index: 0,
+  dragPreviewText: '',
+  isDragging: false,
+  onItemMoved: identity,
+  itemWillMove: identity,
+};
 
 storiesOf('Watson IoT Experimental/ListItem', module)
   .add('basic w/ knobs', () => {
@@ -62,6 +76,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     return (
       <div style={{ width: 400 }}>
         <ListItem
+          {...dndProps}
           id="list-item"
           value={value}
           secondaryValue={secondaryValue}
@@ -84,17 +99,18 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   })
   .add('with value', () => (
     <div style={{ width: 400 }}>
-      <ListItem id="list-item" value="List Item" />
+      <ListItem {...dndProps} id="list-item" value="List Item" />
     </div>
   ))
   .add('with secondaryValue', () => (
     <div style={{ width: 400 }}>
-      <ListItem id="list-item" value="List Item" secondaryValue="Secondary Value" />
+      <ListItem {...dndProps} id="list-item" value="List Item" secondaryValue="Secondary Value" />
     </div>
   ))
   .add('testing secondaryValue overflow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="List Item this could be a really long value that can't quite fit"
         secondaryValue="Secondary Value could also be a really, extraordinarily long value"
@@ -105,6 +121,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with icon', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="List Item"
         icon={<Star16 />}
@@ -115,6 +132,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isSelectable', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="Selectable List Item"
         secondaryValue={text('secondaryValue', '')}
@@ -127,6 +145,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isLargeRow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="List Item"
         secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item"
@@ -137,6 +156,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('testing isLargeRow overflow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="List Item this could be a reaaaaaaaaaaally really long value"
         secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
@@ -147,6 +167,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isExpandable', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="Expandable List Item"
         secondaryValue={text('secondaryValue', '')}
@@ -159,6 +180,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isCategory', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value="List Item"
         secondaryValue={text('secondaryValue', '')}
@@ -171,6 +193,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with single row action', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value={text('value', 'List Item')}
         secondaryValue={text('secondaryValue', 'Secondary Value')}
@@ -192,6 +215,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with disabled', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value={text('value', 'List Item')}
         secondaryValue={text('secondaryValue', 'Secondary Value')}
@@ -216,16 +240,22 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with OverflowMenu row actions', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value={text('value', 'List Item')}
         isExpandable={boolean('isExpandable', true)}
         onExpand={action('onExpand')}
         rowActions={[
-          <OverflowMenu flipped>
-            <OverflowMenuItem itemText="Edit" />
-            <OverflowMenuItem itemText="Add" />
-            <OverflowMenuItem itemText="Delete" />
-            <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
+          <OverflowMenu key="ListItem-action-overflow-menu" flipped>
+            <OverflowMenuItem key="ListItem-action-overflow-Edit" itemText="Edit" />
+            <OverflowMenuItem key="ListItem-action-overflow-Add" itemText="Add" />
+            <OverflowMenuItem key="ListItem-action-overflow-Delete" itemText="Delete" />
+            <OverflowMenuItem
+              key="ListItem-action-overflow-Danger"
+              itemText="Danger option"
+              hasDivider
+              isDelete
+            />
           </OverflowMenu>,
         ]}
       />
@@ -234,6 +264,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with Tags', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        {...dndProps}
         id="list-item"
         value={text('value', 'List Item')}
         tags={[
