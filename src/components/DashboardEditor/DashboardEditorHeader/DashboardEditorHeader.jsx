@@ -108,7 +108,7 @@ const DashboardEditorHeader = ({
             tooltipAlignment="center"
             hasIconOnly
             renderIcon={DocumentExport16}
-            onClick={onExport(dashboardJson)}
+            onClick={() => onExport(dashboardJson)}
           />
         )}
         {onDelete && (
@@ -129,7 +129,7 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button size="field" onClick={onSubmit(dashboardJson)}>
+          <Button size="field" onClick={() => onSubmit(dashboardJson)}>
             {i18n.headerSubmitButton}
           </Button>
         )}
