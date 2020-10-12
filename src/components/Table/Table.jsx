@@ -77,7 +77,13 @@ const propTypes = {
     hasUserViewManagement: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
+    /**
+     * auto - Wrap for tables with dynamic columns widths and truncate for tables with fixed or resizable columns
+     * always - Wrap if needed for all table column configurations
+     * never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.
+     * alwaysTruncate - Always truncate if needed for all table column configurations
+     */
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -235,7 +241,7 @@ export const defaultProps = baseProps => ({
     },
     table: {
       expandedIds: [],
-      isSelectAllSelected: false,
+      isSelectAllSelected: undefined,
       selectedIds: [],
       rowActions: [],
       sort: {},
@@ -372,9 +378,10 @@ const Table = props => {
   const useCellTextTruncate = useMemo(
     () =>
       options
-        ? options.wrapCellText !== 'always' &&
-          ((options.hasResize && !options.useAutoTableLayoutForResize) ||
-            columns.some(col => col.hasOwnProperty('width')))
+        ? options.wrapCellText === 'alwaysTruncate' ||
+          (options.wrapCellText !== 'always' &&
+            ((options.hasResize && !options.useAutoTableLayoutForResize) ||
+              columns.some(col => col.hasOwnProperty('width'))))
         : undefined,
     [options, columns]
   );
@@ -424,6 +431,18 @@ const Table = props => {
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
   const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
+
+  const allRowsAreSelected = view.table.selectedIds.length === visibleData.length;
+  const someRowsAreSelected = view.table.selectedIds.length > 0 && !allRowsAreSelected;
+
+  const noSelectAllProp = view.table.isSelectAllSelected === undefined;
+  const isSelectAllSelected = noSelectAllProp ? allRowsAreSelected : view.table.isSelectAllSelected;
+
+  const noIndeterminateProp = view.table.isSelectAllIndeterminate === undefined;
+  const isSelectAllIndeterminate =
+    noIndeterminateProp && noSelectAllProp
+      ? someRowsAreSelected
+      : view.table.isSelectAllIndeterminate;
 
   return (
     <TableContainer
@@ -562,10 +581,7 @@ const Table = props => {
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
-              selection: {
-                isSelectAllSelected: view.table.isSelectAllSelected,
-                isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
-              },
+              selection: { isSelectAllSelected, isSelectAllIndeterminate },
             }}
             hasFastFilter={options?.hasFilter === 'onKeyPress'}
           />

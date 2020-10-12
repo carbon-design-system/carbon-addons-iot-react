@@ -412,7 +412,7 @@ Map {
         },
         "table": Object {
           "expandedIds": Array [],
-          "isSelectAllSelected": false,
+          "isSelectAllSelected": undefined,
           "loadingState": Object {
             "rowCount": 5,
           },
@@ -1022,6 +1022,7 @@ Map {
                   "always",
                   "never",
                   "auto",
+                  "alwaysTruncate",
                 ],
               ],
               "type": "oneOf",
@@ -1721,6 +1722,7 @@ Map {
                   "always",
                   "never",
                   "auto",
+                  "alwaysTruncate",
                 ],
               ],
               "isRequired": true,
@@ -2337,6 +2339,7 @@ Map {
             "always",
             "never",
             "auto",
+            "alwaysTruncate",
           ],
         ],
         "isRequired": true,
@@ -3264,6 +3267,7 @@ Map {
         "submitButtonLabel": "Submit",
       },
       "isClickable": false,
+      "onBack": null,
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3311,6 +3315,9 @@ Map {
       },
       "isClickable": Object {
         "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
       },
       "onSubmit": Object {
         "isRequired": true,
@@ -5484,26 +5491,32 @@ Map {
           "value": "YEARS",
         },
       ],
+      "light": false,
       "onApply": null,
       "onCancel": null,
       "presets": Array [
         Object {
+          "id": "item-01",
           "label": "Last 30 minutes",
           "offset": 30,
         },
         Object {
+          "id": "item-02",
           "label": "Last 1 hour",
           "offset": 60,
         },
         Object {
+          "id": "item-03",
           "label": "Last 6 hours",
           "offset": 360,
         },
         Object {
+          "id": "item-04",
           "label": "Last 12 hours",
           "offset": 720,
         },
         Object {
+          "id": "item-05",
           "label": "Last 24 hours",
           "offset": 1440,
         },
@@ -5543,6 +5556,9 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "id": Object {
+                          "type": "string",
+                        },
                         "label": Object {
                           "isRequired": true,
                           "type": "string",
@@ -5749,6 +5765,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "onApply": Object {
         "type": "func",
@@ -6411,6 +6430,16 @@ Map {
     },
   },
   "SuiteHeader" => Object {
+    "ROUTE_TYPES": Object {
+      "ABOUT": "ABOUT",
+      "ADMIN": "ADMIN",
+      "APPLICATION": "APPLICATION",
+      "DOCUMENTATION": "DOCUMENTATION",
+      "LOGOUT": "LOGOUT",
+      "NAVIGATOR": "ADMIN",
+      "PROFILE": "PROFILE",
+      "REFERRER": "REFERRER",
+    },
     "defaultProps": Object {
       "appName": null,
       "className": null,
@@ -6431,6 +6460,7 @@ Map {
         "requestEnhancement": "Request enhancement",
         "settingsIcon": "Settings",
         "support": "Support",
+        "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": [Function],
         "switcherLearnMoreLink": "Learn more",
@@ -6440,8 +6470,9 @@ Map {
         "whatsNew": "What's new",
       },
       "isAdminView": false,
+      "onRouteChange": [Function],
       "sideNavProps": null,
-      "surveyLink": null,
+      "surveyData": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -6550,6 +6581,9 @@ Map {
       },
       "isAdminView": Object {
         "type": "bool",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
       "routes": Object {
         "args": Array [
@@ -6667,8 +6701,20 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "surveyLink": Object {
-        "type": "string",
+      "surveyData": Object {
+        "args": Array [
+          Object {
+            "privacyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "surveyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "userDisplayName": Object {
         "isRequired": true,
@@ -6682,6 +6728,7 @@ Map {
   },
   "SuiteHeaderProfile" => Object {
     "defaultProps": Object {
+      "displayName": "",
       "i18n": Object {
         "logoutButton": "Log out",
         "profileButton": "Manage profile",
@@ -6690,7 +6737,6 @@ Map {
     },
     "propTypes": Object {
       "displayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "i18n": Object {
@@ -6709,13 +6755,13 @@ Map {
         ],
         "type": "shape",
       },
-      "onRequestLogout": Object {
+      "onProfileClick": Object {
         "isRequired": true,
         "type": "func",
       },
-      "profileLink": Object {
+      "onRequestLogout": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "func",
       },
       "username": Object {
         "isRequired": true,
@@ -6731,6 +6777,7 @@ Map {
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "onRouteChange": [Function],
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -6783,6 +6830,9 @@ Map {
       "noAccessLink": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
     },
   },
@@ -6855,6 +6905,7 @@ Map {
       "requestEnhancement": "Request enhancement",
       "settingsIcon": "Settings",
       "support": "Support",
+      "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": [Function],
       "switcherLearnMoreLink": "Learn more",
@@ -16368,6 +16419,7 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "className": undefined,
+      "light": false,
       "name": "",
       "selected": false,
       "size": "default",
@@ -16379,6 +16431,9 @@ Map {
       "index": Object {
         "isRequired": true,
         "type": "number",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "name": Object {
         "args": Array [
@@ -18229,6 +18284,43 @@ Map {
       },
     },
     "render": [Function],
+  },
+  "ErrorBoundary" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": Object {
+        "log": [Function],
+      },
+      "_currentValue2": Object {
+        "log": [Function],
+      },
+      "_threadCount": 0,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "fallback": Object {
+        "type": "node",
+      },
+    },
+  },
+  "ErrorBoundaryContext" => Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": "React.Consumer",
+    "Provider": "React.Provider",
   },
   "Filename" => Object {
     "defaultProps": Object {

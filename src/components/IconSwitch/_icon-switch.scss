@@ -63,6 +63,9 @@ $icon-switch-size-large: $spacing-09;
       }
     }
   }
+  &--unselected--light {
+    background-color: $ui-02;
+  }
   &.#{$prefix}--btn {
     &:not(:focus) {
       &:hover {

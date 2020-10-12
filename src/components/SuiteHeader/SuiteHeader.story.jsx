@@ -106,7 +106,12 @@ const HeaderWithHook = () => {
     },
     lang: 'en',
   });
-  const surveyLink = data.showSurvey ? 'https://www.ibm.com' : '';
+  const surveyData = data.showSurvey
+    ? {
+        surveyLink: 'https://www.ibm.com',
+        privacyLink: 'https://www.ibm.com',
+      }
+    : null;
   return (
     <SuiteHeader
       suiteName="Application Suite"
@@ -119,7 +124,7 @@ const HeaderWithHook = () => {
         links: sideNavLinks,
       }}
       i18n={data.i18n}
-      surveyLink={surveyLink}
+      surveyData={surveyData}
     />
   );
 };
@@ -235,7 +240,10 @@ storiesOf('Watson IoT/SuiteHeader', module)
             isExternal: true,
           },
         ])}
-        surveyLink="https://www.ibm.com"
+        surveyData={object('survey', {
+          surveyLink: 'https://www.ibm.com',
+          privacyLink: 'https://www.ibm.com',
+        })}
       />
     );
   });
