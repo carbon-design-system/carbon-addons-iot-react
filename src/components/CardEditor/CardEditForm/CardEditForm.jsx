@@ -14,9 +14,10 @@ import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
 const { iotPrefix } = settings;
 
 const defaultProps = {
-  value: {},
+  cardJson: {},
   i18n: {
     openEditorButton: 'Open JSON editor',
+    contentTabLabel: 'Content',
     cardSize_SMALL: 'Small',
     cardSize_SMALLWIDE: 'Small wide',
     cardSize_MEDIUM: 'Medium',
@@ -38,9 +39,7 @@ const defaultProps = {
 
 const propTypes = {
   /** card data value */
-  value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** card data errors */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
@@ -94,7 +93,7 @@ export const handleSubmit = (val, setError, onChange, setShowEditor) => {
   return false;
 };
 
-const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n }) => {
+const CardEditForm = ({ cardJson, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
@@ -108,8 +107,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
           id="title"
           labelText="Card title"
           light
-          onChange={evt => onChange({ ...value, title: evt.target.value })}
-          value={value.title}
+          onChange={evt => onChange({ ...cardJson, title: evt.target.value })}
+          value={cardJson.title}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -117,8 +116,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
           id="description"
           labelText="Description (Optional)"
           light
-          onChange={evt => onChange({ ...value, description: evt.target.value })}
-          value={value.description}
+          onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
+          value={cardJson.description}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -127,16 +126,18 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
           label="Select a size"
           direction="bottom"
           itemToString={item => item.text}
-          items={(ALLOWED_CARD_SIZES_PER_TYPE[value.type] ?? Object.keys(CARD_SIZES)).map(size => {
-            return {
-              id: size,
-              text: getCardSizeText(size, mergedI18n),
-            };
-          })}
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[cardJson.type] ?? Object.keys(CARD_SIZES)).map(
+            size => {
+              return {
+                id: size,
+                text: getCardSizeText(size, mergedI18n),
+              };
+            }
+          )}
           light
-          selectedItem={{ id: value.size, text: getCardSizeText(value.size, mergedI18n) }}
+          selectedItem={{ id: cardJson.size, text: getCardSizeText(cardJson.size, mergedI18n) }}
           onChange={({ selectedItem }) => {
-            onChange({ ...value, size: selectedItem.id });
+            onChange({ ...cardJson, size: selectedItem.id });
           }}
           titleText="Size"
         />
@@ -163,7 +164,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
       ) : null}
       <div className={baseClassName}>
         <Tabs>
-          <Tab label="Configuration" /* label="Basics" */>
+          <Tab label={i18n.contentTabLabel}>
             <div className={`${baseClassName}--content`}>{commonFormItems}</div>
           </Tab>
         </Tabs>
@@ -173,7 +174,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, /* onAddImage, */ i18n })
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(value, null, 4));
+              setModalData(JSON.stringify(cardJson, null, 4));
               setShowEditor(true);
             }}
           >

@@ -12,17 +12,13 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data being edited */
-  value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** validation errors on the value object */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
-  /** Callback function when an image file is uploaded */
-  // onAddImage: PropTypes.func.isRequired,
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -31,32 +27,23 @@ const propTypes = {
 };
 
 const defaultProps = {
-  value: null,
-  // errors: null,
+  cardJson: null,
   i18n: {
     galleryHeader: 'Gallery',
-    openGalleryButton: 'Open gallery',
+    openGalleryButton: 'Add card',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
   supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
 };
 
-const CardEditor = ({
-  value,
-  onShowGallery,
-  onChange,
-  onAddCard,
-  // onAddImage,
-  supportedTypes,
-  i18n,
-}) => {
+const CardEditor = ({ cardJson, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-editor`;
 
   // show the gallery if no card is being edited
-  const showGallery = value === null || value === undefined;
+  const showGallery = cardJson === null || cardJson === undefined;
 
   return (
     <div className={baseClassName}>
@@ -81,7 +68,7 @@ const CardEditor = ({
             i18n={mergedI18N}
           />
         ) : (
-          <CardEditForm value={value} onChange={onChange} /* onAddImage={onAddImage} */ />
+          <CardEditForm cardJson={cardJson} onChange={onChange} />
         )}
       </div>
     </div>

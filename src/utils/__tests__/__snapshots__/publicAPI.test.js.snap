@@ -7961,10 +7961,11 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "cardJson": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
-        "openGalleryButton": "Open gallery",
+        "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
       },
       "supportedTypes": Array [
@@ -7974,9 +7975,11 @@ Map {
         "IMAGE",
         "TABLE",
       ],
-      "value": null,
     },
     "propTypes": Object {
+      "cardJson": Object {
+        "type": "object",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -8009,9 +8012,6 @@ Map {
           },
         ],
         "type": "arrayOf",
-      },
-      "value": Object {
-        "type": "object",
       },
     },
   },

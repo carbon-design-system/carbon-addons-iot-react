@@ -188,7 +188,7 @@ const DashboardEditor = ({
       </div>
       <div className={`${baseClassName}--sidebar`}>
         <CardEditor
-          value={dashboardJson.cards.find(i => i.id === selectedCardId)}
+          cardJson={dashboardJson.cards.find(i => i.id === selectedCardId)}
           onShowGallery={() => setSelectedCardId(null)}
           onChange={cardData =>
             setDashboardJson({
@@ -198,7 +198,6 @@ const DashboardEditor = ({
           }
           onAddCard={addCard}
           supportedTypes={supportedCardTypes}
-          // onAddImage={onAddImage}
           i18n={mergedI18N}
         />
       </div>
