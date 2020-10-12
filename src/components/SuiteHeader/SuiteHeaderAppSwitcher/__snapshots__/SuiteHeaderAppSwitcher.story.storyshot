@@ -27,7 +27,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--nav-link"
         >
           <a
-            href="https://www.ibm.com"
+            data-testid="suite-header-app-switcher--all-applications"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -74,7 +76,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             Contact your administrator to request application access.
           </span>
           <a
-            href="https://www.ibm.com"
+            data-testid="suite-header-app-switcher--no-access"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             Learn more
           </a>
@@ -135,7 +139,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--nav-link"
         >
           <a
-            href="https://www.ibm.com"
+            data-testid="suite-header-app-switcher--all-applications"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -158,7 +164,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--app-link"
         >
           <a
-            href="https://www.ibm.com"
+            data-testid="suite-header-app-switcher--monitor"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             Monitor
           </a>
@@ -167,9 +175,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-app-switcher--app-link"
         >
           <a
-            href="https://www.ibm.com"
-            rel="noopener noreferrer"
-            target="_blank"
+            data-testid="suite-header-app-switcher--health"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             Health
           </a>
