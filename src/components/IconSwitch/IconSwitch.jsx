@@ -31,6 +31,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
     selected,
     size,
     text,
+    light,
     ...other
   } = props;
 
@@ -51,7 +52,8 @@ const IconSwitch = React.forwardRef((props, ref) => {
     className,
     `${iotPrefix}--icon-switch`,
     `${iotPrefix}--icon-switch--${size}`,
-    { [`${iotPrefix}--icon-switch--unselected`]: !selected }
+    { [`${iotPrefix}--icon-switch--unselected`]: !selected },
+    { [`${iotPrefix}--icon-switch--unselected--light`]: light && !selected }
   );
 
   const commonProps = {
@@ -132,6 +134,11 @@ IconSwitch.propTypes = {
    * Can be a React component class
    */
   renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+
+  /**
+   *  Light version
+   */
+  light: PropTypes.bool,
 };
 
 IconSwitch.defaultProps = {
@@ -139,6 +146,7 @@ IconSwitch.defaultProps = {
   selected: false,
   name: '',
   size: 'default',
+  light: false,
 };
 
 export default IconSwitch;

@@ -243,6 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="iot--list-item--expand-icon"
+          data-testid="expand-icon"
           onClick={[Function]}
           onKeyPress={[Function]}
           role="button"
@@ -250,6 +251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <svg
             aria-label="Close"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -291,10 +293,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   onKeyDown={[Function]}
                   open={false}
                   tabIndex={0}
+                  type="button"
                 >
                   <svg
                     aria-label="open and close list of options"
                     className="bx--overflow-menu__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     onClick={[Function]}
@@ -323,6 +327,203 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <title>
                       open and close list of options
                     </title>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListItem with Tags 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list-item"
+      >
+        <div
+          className="iot--list-item--content"
+        >
+          <div
+            className="iot--list-item--content--values"
+          >
+            <div
+              className="iot--list-item--content--values--main"
+            >
+              <div
+                className="iot--list-item--content--values--value"
+                title="List Item"
+              >
+                List Item
+              </div>
+              <div>
+                <span
+                  className="bx--tag bx--tag--blue"
+                  title="default"
+                >
+                  default
+                </span>
+                <span
+                  className="bx--tag bx--tag--disabled bx--tag--red"
+                  title="disabled tag"
+                >
+                  disabled tag
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListItem with disabled 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list-item"
+      >
+        <div
+          className="iot--list-item--content"
+        >
+          <div
+            className="iot--list-item--content--values"
+          >
+            <div
+              className="iot--list-item--content--values--main"
+            >
+              <div
+                className="iot--list-item--content--values--value iot--list-item--content--values__disabled iot--list-item--content--values--value__with-actions"
+                title="List Item"
+              >
+                List Item
+              </div>
+              <div
+                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions iot--list-item--content--values__disabled"
+                title="Secondary Value"
+              >
+                Secondary Value
+              </div>
+              <div
+                className="iot--list-item--content--row-actions"
+              >
+                <button
+                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  disabled={true}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "color": "black",
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Edit
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Edit"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                    />
                   </svg>
                 </button>
               </div>
@@ -388,6 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <svg
               aria-hidden={true}
+              fill="currentColor"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
@@ -468,6 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="iot--list-item--expand-icon"
+          data-testid="expand-icon"
           onClick={[Function]}
           onKeyPress={[Function]}
           role="button"
@@ -475,6 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <svg
             aria-label="Close"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -559,6 +763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       >
         <div
           className="iot--list-item--expand-icon"
+          data-testid="expand-icon"
           onClick={[Function]}
           onKeyPress={[Function]}
           role="button"
@@ -566,6 +771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <svg
             aria-label="Close"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -722,6 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--list-item iot--list-item__selectable"
+        data_testid={null}
         onClick={[Function]}
         onKeyPress={[Function]}
         role="button"
@@ -916,6 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden="true"
                     aria-label="Edit"
                     className="bx--btn__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
