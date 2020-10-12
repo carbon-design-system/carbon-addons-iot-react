@@ -396,7 +396,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >

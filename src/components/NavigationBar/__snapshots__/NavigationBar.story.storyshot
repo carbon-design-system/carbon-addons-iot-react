@@ -26,7 +26,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-title"
             >
@@ -45,13 +47,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             </p>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div>
               Extra Content
             </div>
@@ -238,7 +235,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-title"
             >
@@ -257,13 +256,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             </p>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div>
               Extra Content
             </div>
@@ -437,7 +431,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-title"
             >
@@ -456,13 +452,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             </p>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div>
               Extra Content
             </div>
@@ -636,7 +627,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-title"
             >
@@ -655,13 +648,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             </p>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div>
               Extra Content
             </div>
