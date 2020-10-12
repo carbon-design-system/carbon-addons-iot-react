@@ -82,8 +82,6 @@ const propTypes = {
   onItemMoved: PropTypes.func,
   /** callback function when reorder will occur - can cancel the move by returning false */
   itemWillMove: PropTypes.func,
-  /** whether to show content if list is empty */
-  hasEmptyState: PropTypes.bool,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
@@ -114,8 +112,7 @@ const defaultProps = {
   itemWillMove: () => {
     return true;
   },
-  hasEmptyState: false,
-  emptyState: 'Empty list',
+  emptyState: 'No list items to show',
 };
 
 const List = forwardRef((props, ref) => {
@@ -140,7 +137,6 @@ const List = forwardRef((props, ref) => {
     isLoading,
     onItemMoved,
     itemWillMove,
-    hasEmptyState,
     emptyState,
   } = props;
   const selectedItemRef = ref;
@@ -260,7 +256,7 @@ const List = forwardRef((props, ref) => {
         )}
       >
         {!isLoading ? (
-          <>{listItems.length ? listItems : hasEmptyState && emptyContent}</>
+          <>{listItems.length ? listItems : emptyContent}</>
         ) : (
           <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />
         )}

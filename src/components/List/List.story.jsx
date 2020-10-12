@@ -310,7 +310,7 @@ storiesOf('Watson IoT Experimental/List', module)
         items={[]}
         isLoading={boolean('isLoading', false)}
         isFullHeight={boolean('isFullHeight', true)}
-        hasEmptyState={boolean('hasEmptyState', true)}
+        emptyState={text('hasEmptyState', 'No list items to show')}
       />
     </div>
   ))

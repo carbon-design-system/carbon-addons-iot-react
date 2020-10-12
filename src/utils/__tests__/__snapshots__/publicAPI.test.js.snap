@@ -15738,7 +15738,7 @@ Map {
           "emptyState": Object {
             "defaultValue": Object {
               "computed": false,
-              "value": "'Empty list'",
+              "value": "'No list items to show'",
             },
             "description": "content shown if list is empty",
             "required": false,
@@ -15777,17 +15777,6 @@ Map {
             "required": false,
             "type": Object {
               "name": "func",
-            },
-          },
-          "hasEmptyState": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "false",
-            },
-            "description": "whether to show content if list is empty",
-            "required": false,
-            "type": Object {
-              "name": "bool",
             },
           },
           "i18n": Object {
@@ -16044,10 +16033,9 @@ Map {
         "buttons": Array [],
         "className": null,
         "editingStyle": null,
-        "emptyState": "Empty list",
+        "emptyState": "No list items to show",
         "expandedIds": Array [],
         "handleSelect": [Function],
-        "hasEmptyState": false,
         "i18n": Object {
           "close": "Close",
           "expand": "Expand",
@@ -16113,9 +16101,6 @@ Map {
         },
         "handleSelect": Object {
           "type": "func",
-        },
-        "hasEmptyState": Object {
-          "type": "bool",
         },
         "i18n": Object {
           "args": Array [

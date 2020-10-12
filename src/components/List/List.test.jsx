@@ -6,6 +6,8 @@ import { Checkbox } from '../..';
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
+const defaultEmptyText = 'No list items to show';
+
 describe('List', () => {
   const getListItems = num =>
     Array(num)
@@ -97,10 +99,13 @@ describe('List', () => {
     );
     expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });
-  it('List shows no empty text if not defined', () => {
-    const emptyText = 'empty';
-    render(<List title="list" emptyState={emptyText} />);
-    expect(screen.queryByText(emptyText)).toBeNull();
+  it('List shows default empty text if not empty state defined', () => {
+    render(<List title="list" />);
+    expect(screen.getByText(defaultEmptyText)).toBeTruthy();
+  });
+  it('List shows no empty text if defined', () => {
+    render(<List title="list" emptyState="" />);
+    expect(screen.queryByText(defaultEmptyText)).toBeNull();
   });
   it('List shows empty text if desired', () => {
     const emptyText = 'empty';

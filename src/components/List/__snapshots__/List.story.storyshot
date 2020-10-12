@@ -2306,7 +2306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               />
             </svg>
             <p>
-              Empty list
+              No list items to show
             </p>
           </div>
         </div>
