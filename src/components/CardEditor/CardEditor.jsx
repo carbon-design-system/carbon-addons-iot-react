@@ -39,7 +39,7 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
-  supportedTypes: [],
+  supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
 };
 
 const CardEditor = ({

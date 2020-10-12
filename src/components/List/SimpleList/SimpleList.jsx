@@ -51,6 +51,12 @@ const propTypes = {
   pageSize: PropTypes.string,
   /** callback function returned a modified list */
   onListUpdated: PropTypes.func,
+  /** optionally renders SimplePagination at the bottom of the list */
+  showPagination: PropTypes.bool,
+  /** Optional callback when a item is selected.
+   * OnSelect(itemId, parentItemId)
+   */
+  onSelect: PropTypes.func,
 };
 
 const defaultProps = {
@@ -67,6 +73,8 @@ const defaultProps = {
   isFullHeight: false,
   isLoading: false,
   pageSize: null,
+  showPagination: true,
+  onSelect: null,
 };
 
 const SimpleList = ({
@@ -80,8 +88,11 @@ const SimpleList = ({
   items,
   onListUpdated,
   pageSize,
+  showPagination,
   title,
+  onSelect,
 }) => {
+  const mergedI18n = { ...i18n, ...defaultProps.i18n };
   const [selectedIds, setSelectedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
@@ -111,6 +122,9 @@ const SimpleList = ({
           ? selectedIds.filter(item => item !== id)
           : [...selectedIds, id]
       );
+      if (onSelect) {
+        onSelect(id, parentId);
+      }
     }
   };
 
@@ -129,7 +143,7 @@ const SimpleList = ({
     page: currentPageNumber,
     onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
-    pageOfPagesText: page => i18n.pageOfPagesText(page),
+    pageOfPagesText: page => mergedI18n.pageOfPagesText(page),
   };
 
   const onItemMoved = (dragId, hoverId, target) => {
@@ -185,10 +199,10 @@ const SimpleList = ({
           : null
       }
       buttons={buttons}
-      i18n={i18n}
+      i18n={mergedI18n}
       isFullHeight={isFullHeight}
       items={pageSize != null ? itemsToShow : filteredItems}
-      pagination={pagination}
+      pagination={showPagination ? pagination : null}
       selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
       handleSelect={handleSelect}
       isLargeRow={isLargeRow}

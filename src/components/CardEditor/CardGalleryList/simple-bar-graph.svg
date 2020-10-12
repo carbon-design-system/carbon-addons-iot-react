@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="32px" viewBox="0 0 40 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bar-graph</title>
+    <g id="Dashboard-Views" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Entity-dashboard-editor" transform="translate(-1344.000000, -216.000000)" fill="#0062FF" fill-rule="nonzero">
+            <g id="Group-7" transform="translate(1328.000000, 48.000000)">
+                <g id="bar-graph" transform="translate(16.000000, 168.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="1.11111111" height="32"></rect>
+                    <rect id="Rectangle-Copy-13" x="31.1111111" y="2.96296296" width="1.11111111" height="29.037037"></rect>
+                    <rect id="Rectangle-Copy-7" x="7.77777778" y="19.2592593" width="1.11111111" height="12.7407407"></rect>
+                    <rect id="Rectangle-Copy-9" x="15.5555556" y="11.8518519" width="1.11111111" height="20.1481481"></rect>
+                    <rect id="Rectangle-Copy-15" x="38.8888889" y="26.3703704" width="1.11111111" height="5.62962963"></rect>
+                    <rect id="Rectangle-Copy-11" x="23.3333333" y="14.2222222" width="1.11111111" height="17.7777778"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -25,7 +25,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -71,13 +73,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div
               className="iot--dashboard-editor-header--right"
             >
@@ -143,6 +140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
                   disabled={false}
+                  onClick={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -217,6 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                   disabled={false}
+                  onClick={[Function]}
                   tabIndex={0}
                   type="button"
                 >
@@ -280,7 +279,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -323,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   New dashboard
                 </h2>
                 <button
-                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                  className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -356,13 +357,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "flex": 1,
-              }
-            }
-          />
-          <div>
+            className="page-title-bar-header-right"
+          >
             <div
               className="iot--dashboard-editor-header--right"
             >
@@ -384,6 +380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <button
                   className="iot--btn bx--btn bx--btn--field bx--btn--primary"
                   disabled={false}
+                  onClick={[Function]}
                   tabIndex={0}
                   type="button"
                 >
