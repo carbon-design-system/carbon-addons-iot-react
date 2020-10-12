@@ -81,6 +81,4 @@ export const AboutStorybook = () => (
   </div>
 );
 
-AboutStorybook.story = {
-  name: 'About Storybook',
-};
+AboutStorybook.storyName = 'About Storybook';
