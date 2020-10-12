@@ -8,7 +8,7 @@ import {
   Rocket32,
   StarFilled16,
   Activity32,
-  Sunny32,
+  Light32,
 } from '@carbon/icons-react';
 import { green40 } from '@carbon/colors';
 import { spacing07 } from '@carbon/layout';
@@ -61,7 +61,7 @@ export const content = (
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
+        thumbnail={<Light32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -72,7 +72,7 @@ export const content = (
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={<Sunny32 fill="black" description="Icon" width={50} height={50} />}
+        thumbnail={<Light32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -98,7 +98,7 @@ export const galleryData = [
         description: 'More about your dashboard',
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
-        thumbnail: <Sunny32 />,
+        thumbnail: <Light32 />,
         onClick: action('Card Clicked'),
       },
       {
@@ -128,7 +128,7 @@ export const galleryData = [
         description: 'More about your dashboard',
         icon: <StarFilled16 />,
         afterContent: overflowComponent,
-        thumbnail: <Sunny32 />,
+        thumbnail: <Light32 />,
         onClick: action('Card Clicked'),
       },
       {
