@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 import { Loading } from 'carbon-components-react';
 
 import WizardModal from './WizardModal';
@@ -154,6 +155,37 @@ describe('WizardModal', () => {
     // Should show Loading button
     wrapper.setState({ step: 2 });
     expect(wrapper.find(Loading)).toHaveLength(1);
+  });
+  it('clicking on previous button or previous step will call onBack', () => {
+    const callBack = jest.fn();
+
+    const getStep = (step) => screen.getByTestId(`iot--progress-step-button-main-${step}`);
+
+    render(<WizardModal 
+      {...commonWizardProps} 
+      onBack={callBack}
+        steps={[
+        { label: 'step1', content: 'page 1' },
+        { label: 'step2', content: 'page 2' },
+        { label: 'step3', content: 'page 3' },
+      ]} 
+    />);
+
+      // Go to second step
+      getStep('step2').click();
+
+      // clicking previous step in progressIndicator will call callBack
+      userEvent.click(getStep('step1'));
+      expect(callBack).toHaveBeenCalled();
+      expect(callBack.mock.calls[0][0]).toBe(0);
+
+      // Go to third step
+      getStep('step3').click();
+
+      // clicking on previous button will trigger onBack
+      userEvent.click(screen.getByText('Previous'));
+      expect(callBack).toHaveBeenCalledTimes(2);
+      expect(callBack.mock.calls[1][0]).toBe(1);
   });
   it('clicking on progressIndicator steps will render related content', () => {
     render(
