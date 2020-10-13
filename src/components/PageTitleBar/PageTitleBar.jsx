@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
 import {
@@ -84,16 +84,15 @@ const PageTitleBar = ({
   tabs,
   content,
 }) => {
-  //
   const titleBarContent = content || tabs;
   return (
     <div className={classnames(className, 'page-title-bar')}>
       {isLoading ? (
         <SkeletonText className="page-title-bar-loading" heading width="30%" />
       ) : (
-        <Fragment>
+        <>
           <div className="page-title-bar-header">
-            <div>
+            <div className="page-title-bar-header-left">
               {breadcrumb ? (
                 <div className="page-title-bar-breadcrumb">
                   <Breadcrumb>
@@ -127,7 +126,7 @@ const PageTitleBar = ({
                     <Button
                       className="page-title-bar-title--edit"
                       kind="ghost"
-                      size="small"
+                      size="field"
                       hasIconOnly
                       renderIcon={Edit20}
                       iconDescription={editIconDescription}
@@ -143,16 +142,15 @@ const PageTitleBar = ({
               ) : null}
             </div>
             {extraContent || rightContent ? (
-              <Fragment>
-                <div style={{ flex: 1 }} />
-                <div>{extraContent || rightContent}</div>
-              </Fragment>
+              <div className="page-title-bar-header-right">
+                {extraContent || rightContent}
+              </div>
             ) : null}
           </div>
           {titleBarContent ? (
             <div className="page-title-bar-content">{titleBarContent}</div>
           ) : null}
-        </Fragment>
+        </>
       )}
     </div>
   );

@@ -32,22 +32,27 @@ export const PICKER_KINDS = {
 
 export const PRESET_VALUES = [
   {
+    id: 'item-01',
     label: 'Last 30 minutes',
     offset: 30,
   },
   {
+    id: 'item-02',
     label: 'Last 1 hour',
     offset: 60,
   },
   {
+    id: 'item-03',
     label: 'Last 6 hours',
     offset: 360,
   },
   {
+    id: 'item-04',
     label: 'Last 12 hours',
     offset: 720,
   },
   {
+    id: 'item-05',
     label: 'Last 24 hours',
     offset: 1440,
   },
@@ -72,6 +77,7 @@ const propTypes = {
     PropTypes.exact({
       timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
       timeRangeValue: PropTypes.exact({
+        id: PropTypes.string,
         label: PropTypes.string.isRequired,
         offset: PropTypes.number.isRequired,
       }).isRequired,
@@ -156,6 +162,8 @@ const propTypes = {
     cancelBtnLabel: PropTypes.string,
     backBtnLabel: PropTypes.string,
   }),
+  /** Light version  */
+  light: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -231,6 +239,7 @@ const defaultProps = {
     cancelBtnLabel: 'Cancel',
     backBtnLabel: 'Back',
   },
+  light: false,
 };
 
 const DateTimePicker = ({
@@ -247,6 +256,7 @@ const DateTimePicker = ({
   onCancel,
   onApply,
   i18n,
+  light,
   ...others
 }) => {
   const strings = {
@@ -275,6 +285,7 @@ const DateTimePicker = ({
   const dateTimePickerBaseValue = {
     kind: '',
     preset: {
+      id: presets[0].id,
       label: presets[0].label,
       offset: presets[0].offset,
     },
@@ -364,15 +375,21 @@ const DateTimePicker = ({
           startDate.minutes(value.absolute.startTime.split(':')[1]);
         }
         returnValue.absolute.start = new Date(startDate.valueOf());
-        const endDate = moment(value.absolute.end);
-        if (value.absolute.endTime) {
-          endDate.hours(value.absolute.endTime.split(':')[0]);
-          endDate.minutes(value.absolute.endTime.split(':')[1]);
+        if (value.absolute.end) {
+          const endDate = moment(value.absolute.end);
+          if (value.absolute.endTime) {
+            endDate.hours(value.absolute.endTime.split(':')[0]);
+            endDate.minutes(value.absolute.endTime.split(':')[1]);
+          }
+          returnValue.absolute.end = new Date(endDate.valueOf());
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${
+            strings.toLabel
+          } ${moment(endDate).format(dateTimeMask)}`;
+        } else {
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${
+            strings.toLabel
+          } ${moment(startDate).format(dateTimeMask)}`;
         }
-        returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format(dateTimeMask)} ${
-          strings.toLabel
-        } ${moment(endDate).format(dateTimeMask)}`;
         break;
       }
       default:
@@ -401,10 +418,18 @@ const DateTimePicker = ({
       value.kind = customRangeKind;
     } else {
       const preset = presets
-        .filter(
-          (p) =>
-            p.offset === (clickedPreset ? clickedPreset.offset : selectedPreset)
-        )
+        .filter((p) => {
+          let filteredPreset;
+          if (p.id) {
+            filteredPreset =
+              p.id === (clickedPreset ? clickedPreset.id : selectedPreset);
+          } else {
+            filteredPreset =
+              p.offset ===
+              (clickedPreset ? clickedPreset.offset : selectedPreset);
+          }
+          return filteredPreset;
+        })
         .pop();
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
@@ -448,15 +473,19 @@ const DateTimePicker = ({
   );
 
   const onDatePickerChange = (range) => {
-    if (range.length > 1) {
+    const newAbsolute = { ...absoluteValue };
+
+    if (range[1]) {
       setFocusOnFirstField(!focusOnFirstField);
+      newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
+      newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
+      newAbsolute.end = range[1]; // eslint-disable-line prefer-destructuring
+      newAbsolute.endDate = moment(newAbsolute.end).format('MM/DD/YYYY');
     }
 
-    const newAbsolute = { ...absoluteValue };
-    [newAbsolute.start] = range;
+    newAbsolute.start = range[0]; // eslint-disable-line prefer-destructuring
     newAbsolute.startDate = moment(newAbsolute.start).format('MM/DD/YYYY');
-    newAbsolute.end = range[range.length - 1];
-    newAbsolute.endDate = moment(newAbsolute.end).format('MM/DD/YYYY');
+
     setAbsoluteValue(newAbsolute);
   };
 
@@ -472,7 +501,7 @@ const DateTimePicker = ({
   };
 
   const onPresetClick = (preset) => {
-    setSelectedPreset(preset.offset);
+    setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
   };
 
@@ -544,7 +573,9 @@ const DateTimePicker = ({
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
       if (selectedPreset) {
-        onPresetClick(presets.filter((x) => x.offset === selectedPreset)[0]);
+        onPresetClick(
+          presets.filter((p) => p.id ?? p.offset === selectedPreset)[0]
+        );
         resetAbsoluteValue();
         resetRelativeValue();
       } else {
@@ -663,7 +694,10 @@ const DateTimePicker = ({
     <div
       id={`${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}>
-      <div className={`${iotPrefix}--date-time-picker__box`}>
+      <div
+        className={`${iotPrefix}--date-time-picker__box ${
+          light ? `${iotPrefix}--date-time-picker__box--light` : ''
+        }`}>
         <div
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
@@ -715,7 +749,7 @@ const DateTimePicker = ({
                         `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
                         {
                           [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                            selectedPreset === preset.offset,
+                            selectedPreset === (preset.id ?? preset.offset),
                         }
                       )}>
                       {strings.presetLabels[i] || preset.label}

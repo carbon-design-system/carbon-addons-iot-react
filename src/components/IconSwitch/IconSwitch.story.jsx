@@ -123,4 +123,43 @@ storiesOf('Watson IoT/IconSwitch', module)
         />
       </ContentSwitcher>
     );
+  })
+  .add('example - used in ContentSwitcher light version ', () => {
+    const size = select(
+      'Size',
+      Object.values(ICON_SWITCH_SIZES),
+      ICON_SWITCH_SIZES.default,
+      'size'
+    );
+
+    return (
+      <ContentSwitcher
+        className={`${iotPrefix}--content-switcher--icon`}
+        onChange={function noRefCheck() {}}
+        selectedIndex={0}
+      >
+        <IconSwitch
+          name="one"
+          onClick={function noRefCheck() {}}
+          onKeyDown={function noRefCheck() {}}
+          selected
+          text="Graphical View"
+          renderIcon={listIcons[size]}
+          size={size}
+          index={0}
+          light
+        />
+        <IconSwitch
+          name="two"
+          onClick={function noRefCheck() {}}
+          onKeyDown={function noRefCheck() {}}
+          selected={false}
+          text="Source View"
+          renderIcon={codeIcons[size]}
+          size={size}
+          index={1}
+          light
+        />
+      </ContentSwitcher>
+    );
   });

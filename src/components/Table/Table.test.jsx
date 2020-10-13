@@ -728,6 +728,221 @@ describe('Table', () => {
     ).toBeFalsy();
   });
 
+  describe('Text truncation and wrapping', () => {
+    const columnHeaderText = 'String';
+    const bodyRowCellText = 'toyota toyota toyota 0';
+    const textTruncateClassName = `${iotPrefix}--table__cell-text--truncate`;
+    const tdTruncateClassName = `${iotPrefix}--table__cell--truncate`;
+    const textNoWrapClassName = `${iotPrefix}--table__cell-text--no-wrap`;
+
+    const expectWrapping = () => {
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textNoWrapClassName);
+    };
+    const expectExplicitNoWrapping = () => {
+      expect(screen.getByText(bodyRowCellText)).toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(columnHeaderText)).toHaveClass(textNoWrapClassName);
+    };
+    const expectTruncation = (myBodyRowCellText = bodyRowCellText) => {
+      expect(screen.getByText(myBodyRowCellText)).toHaveClass(textTruncateClassName);
+      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(tdTruncateClassName);
+      expect(screen.getByText(columnHeaderText)).toHaveClass(textTruncateClassName);
+    };
+    const expectNoTruncation = () => {
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textTruncateClassName);
+      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(tdTruncateClassName);
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textTruncateClassName);
+    };
+
+    const renderDefaultTable = (options = {}, columns = tableColumns) => {
+      render(<Table columns={columns} data={[tableData[0]]} options={options} />);
+    };
+
+    it('wraps cell text by default', () => {
+      renderDefaultTable();
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
+    it('wraps cell text if resize & table-layout:auto', () => {
+      renderDefaultTable({ hasResize: true, useAutoTableLayoutForResize: true });
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
+    it('wraps cell text if hasResize', () => {
+      renderDefaultTable({ hasResize: true });
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
+    it('wraps cell text if column widths', () => {
+      renderDefaultTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+      expectWrapping();
+      expectNoTruncation();
+      expect.assertions(5);
+    });
+
+    describe('wrapCellText:auto', () => {
+      const renderAutoWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'auto', ...options }}
+          />
+        );
+      };
+
+      it('wraps cell text by default', () => {
+        renderAutoWrappingTable();
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize & table-layout:auto', () => {
+        renderAutoWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('truncates cell text if hasResize', () => {
+        renderAutoWrappingTable({ hasResize: true });
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if column widths', () => {
+        renderAutoWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if renderDataFunction & column widths present but undefined', () => {
+        const customCellText = 'hello this is a custom rendered long string';
+        renderAutoWrappingTable(
+          {},
+          tableColumns.map(col => ({
+            ...col,
+            width: undefined,
+            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+          }))
+        );
+        expectTruncation(customCellText);
+        expect.assertions(3);
+      });
+    });
+
+    describe('wrapCellText:always', () => {
+      const renderAlwaysWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'always', ...options }}
+          />
+        );
+      };
+
+      it('wraps cell text by default', () => {
+        renderAlwaysWrappingTable();
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize & table-layout:auto', () => {
+        renderAlwaysWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if hasResize', () => {
+        renderAlwaysWrappingTable({ hasResize: true });
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+
+      it('wraps cell text if column widths', () => {
+        renderAlwaysWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        expectWrapping();
+        expectNoTruncation();
+        expect.assertions(5);
+      });
+    });
+
+    describe('wrapCellText:never', () => {
+      const renderNeverWrappingTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'never', ...options }}
+          />
+        );
+      };
+
+      it('does not wrap cell text', () => {
+        renderNeverWrappingTable();
+        expectExplicitNoWrapping();
+        expect.assertions(2);
+      });
+
+      it('truncates resize & table-layout:auto & column widths', () => {
+        renderNeverWrappingTable(
+          { hasResize: true, useAutoTableLayoutForResize: true },
+          tableColumns.map(col => ({ ...col, width: '100px' }))
+        );
+        expectTruncation();
+        expect.assertions(3);
+      });
+    });
+
+    describe('wrapCellText:alwaysTruncate', () => {
+      const renderAlwaysTruncatTable = (options = {}, columns = tableColumns) => {
+        render(
+          <Table
+            columns={columns}
+            data={[tableData[0]]}
+            options={{ wrapCellText: 'alwaysTruncate', ...options }}
+          />
+        );
+      };
+
+      it('truncates cell text', () => {
+        renderAlwaysTruncatTable();
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if table-layout:auto', () => {
+        renderAlwaysTruncatTable({ useAutoTableLayoutForResize: true });
+        expectTruncation();
+        expect.assertions(3);
+      });
+
+      it('truncates cell text if renderDataFunction', () => {
+        const customCellText = 'hello this is a custom rendered long string';
+        renderAlwaysTruncatTable(
+          {},
+          tableColumns.map(col => ({
+            ...col,
+            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+          }))
+        );
+        expectTruncation(customCellText);
+        expect.assertions(3);
+      });
+    });
+  });
+
   it('table should get row-actions HTML class only when rowActions are enabled', () => {
     const wrapper = mount(
       <Table
@@ -1136,5 +1351,160 @@ describe('Table', () => {
     );
 
     expect(screen.queryAllByTestId('table-head--overflow').length).toBe(5);
+  });
+
+  it('automatically checks "select all" if all rows are selected', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5) },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+  });
+
+  it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5), isSelectAllSelected: true },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('checked', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds, isSelectAllSelected: false },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+  });
+
+  it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds: selectedIds.slice(1, 5) },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('indeterminate', true);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: { selectedIds },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+  });
+
+  it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map(row => row.id);
+    const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
+    const { rerender } = render(
+      <Table
+        id="tableid1"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllSelected: false,
+          },
+        }}
+      />
+    );
+
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('indeterminate', false);
+
+    rerender(
+      <Table
+        id="tableid2"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllSelected: true,
+          },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+
+    rerender(
+      <Table
+        id="tableid3"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+            isSelectAllIndeterminate: false,
+          },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
   });
 });

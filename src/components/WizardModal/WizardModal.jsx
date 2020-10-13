@@ -46,6 +46,9 @@ class WizardModal extends Component {
     /** callback when dialog is submitted */
     onSubmit: PropTypes.func.isRequired,
 
+    /** Callback when going to previous step  */
+    onBack: PropTypes.func,
+
     /**
      * leftContent: Anything that will placed to the left of the buttons inside the footer
      * labels: Internationalized string labels for the buttons in the footer
@@ -62,6 +65,7 @@ class WizardModal extends Component {
   static defaultProps = {
     currentStepIndex: 0,
     isClickable: false,
+    onBack: null,
     footer: {
       leftContent: null,
       nextButtonLabel: 'Next',
@@ -80,15 +84,28 @@ class WizardModal extends Component {
   };
 
   handlePrevious = () => {
-    this.setState((state) => ({ step: state.step - 1 }));
+    const { onBack } = this.props;
+    this.setState(
+      (state) => ({ step: state.step - 1 }),
+      () => {
+        if (onBack) {
+          onBack(this.state.step);
+        }
+      }
+    );
   };
 
   handleClick = (key) => {
-    const { step } = this.state;
     // If you're trying to go higher then validate
+    const { step } = this.state;
+    const { onBack } = this.props;
 
     if (key < step || this.validateCurrentStep()) {
-      this.setState({ step: key });
+      this.setState({ step: key }, () => {
+        if (onBack && key < step) {
+          onBack(key);
+        }
+      });
     }
   };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Add24 } from '@carbon/icons-react';
+import { Add24, TrashCan24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab } from 'carbon-components-react';
 
@@ -114,7 +114,41 @@ storiesOf('Watson IoT/PageTitleBar', module)
       title={commonPageTitleBarProps.title}
       description={commonPageTitleBarProps.description}
       breadcrumb={pageTitleBarBreadcrumb}
-      extraContent={commonPageTitleBarProps.extraContent}
+      extraContent={
+        <div>
+          <div
+            className="top"
+            style={{ marginBottom: '8px', display: 'flex', flexDirection: 'row-reverse' }}
+          >
+            <span>Last updated: yesterday</span>
+          </div>
+          <div className="bottom">
+            <Button
+              renderIcon={Add24}
+              onClick={action('click')}
+              size="field"
+              hasIconOnly
+              iconDescription="Add"
+              kind="ghost"
+              tooltipPosition="bottom"
+              tooltipAlignment="center"
+            />
+            <Button
+              renderIcon={TrashCan24}
+              onClick={action('click')}
+              size="field"
+              hasIconOnly
+              iconDescription="Remove"
+              kind="ghost"
+              tooltipPosition="bottom"
+              tooltipAlignment="center"
+            />
+            <Button onClick={action('click')} size="field">
+              Take an action
+            </Button>
+          </div>
+        </div>
+      }
       editable
       content={
         <Tabs>

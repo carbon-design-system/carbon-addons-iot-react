@@ -25,7 +25,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -44,13 +46,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </p>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}
@@ -452,7 +449,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -466,13 +465,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </div>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}
@@ -853,7 +847,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -867,13 +863,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </div>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}
@@ -1253,7 +1244,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -1267,13 +1260,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </div>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}
@@ -1666,7 +1654,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -1680,13 +1670,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </div>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}
@@ -2067,7 +2052,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <div
             className="page-title-bar-header"
           >
-            <div>
+            <div
+              className="page-title-bar-header-left"
+            >
               <div
                 className="page-title-bar-title"
               >
@@ -2081,13 +2068,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </div>
             </div>
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
-            />
-            <div>
+              className="page-title-bar-header-right"
+            >
               <button
                 className="bx--modal-close iot--btn bx--btn bx--btn--primary"
                 disabled={false}

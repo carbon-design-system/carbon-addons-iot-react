@@ -132,4 +132,22 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
         />
       </div>
     );
+  })
+  .add('Light version', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+        <DateTimePicker
+          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+          relatives={[
+            {
+              label: 'Yesterday',
+              value: RELATIVE_VALUES.YESTERDAY,
+            },
+          ]}
+          light
+          hasTimeInput={boolean('hasTimeInput', true)}
+        />
+      </div>
+    );
   });

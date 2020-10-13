@@ -98,7 +98,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
   });
   initStoryshots({
-    storyKindRegex: /Watson\sIoT.*(?<!SimpleList)(?<!TileCatalogNew)(?<!ListItem)$|.*Getting\sStarted/g,
+    storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
     test: multiSnapshotWithOptions((story) => ({
       createNodeMock: (element) => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs

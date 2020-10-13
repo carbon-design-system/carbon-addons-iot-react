@@ -13,7 +13,7 @@ const wrapInTestContext = (DecoratedComponent, props) =>
 
 describe('ListItem', () => {
   it('test ListItem gets rendered', () => {
-    render(<UnconnectedListItem id="1" value="some content" index="0" />);
+    render(<UnconnectedListItem id="1" value="some content" index={0} />);
     expect(screen.getByText('some content')).toBeTruthy();
   });
 
@@ -23,7 +23,7 @@ describe('ListItem', () => {
         id="1"
         value="some content"
         secondaryValue="second"
-        index="0"
+        index={0}
         isLargeRow
       />
     );
@@ -39,7 +39,7 @@ describe('ListItem', () => {
         value="test"
         isSelectable
         onSelect={onSelect}
-        index="0"
+        index={0}
       />
     );
     fireEvent.keyPress(screen.getAllByRole('button')[0], {
@@ -66,7 +66,7 @@ describe('ListItem', () => {
         value=""
         isExpandable
         onExpand={onExpand}
-        index="0"
+        index={0}
       />
     );
     fireEvent.keyPress(screen.getAllByRole('button')[0], {
@@ -84,7 +84,7 @@ describe('ListItem', () => {
         value=""
         isExpandable
         onExpand={onExpand}
-        index="0"
+        index={0}
       />
     );
     fireEvent.click(screen.getAllByRole('button')[0]);
@@ -99,7 +99,7 @@ describe('ListItem', () => {
         value="test"
         icon={<Add16 title="iconTitle" onClick={onClick} />}
         iconPosition="left"
-        index="0"
+        index={0}
       />
     );
     fireEvent.click(screen.getByTitle('iconTitle'));
@@ -116,7 +116,7 @@ describe('ListItem', () => {
         id="1"
         value="test"
         rowActions={rowActions}
-        index="0"
+        index={0}
       />
     );
     fireEvent.click(screen.getByTitle('iconTitle'));
@@ -133,7 +133,7 @@ describe('ListItem', () => {
         id="1"
         value="test value with a really long string to ensure that it stretches the length of the ListItem"
         rowActions={rowActions}
-        index="0"
+        index={0}
       />
     );
     fireEvent.click(screen.getByTitle('iconTitle'));
@@ -153,7 +153,7 @@ describe('ListItem', () => {
         id="1"
         value=""
         isExpandable
-        index="0"
+        index={0}
       />
     );
     expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
@@ -184,7 +184,7 @@ describe('ListItem', () => {
       </Tag>,
     ];
     const { rerender } = render(
-      <UnconnectedListItem id="1" value="test" index="0" />
+      <UnconnectedListItem id="1" value="test" index={0} />
     );
     expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
     expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();
@@ -200,7 +200,7 @@ describe('ListItem', () => {
         id="1"
         value="test"
         editingStyle="multiple"
-        index="0"
+        index={0}
       />
     );
     expect(screen.getByTestId('list-item-editable')).toBeTruthy();

@@ -69,7 +69,7 @@ const STATUS = {
   BROKEN: 'BROKEN',
 };
 
-const selectTextWrapping = ['always', 'never', 'auto'];
+const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
@@ -2463,42 +2463,65 @@ storiesOf('Watson IoT/Table', module)
       },
     }
   )
-  .add('with multi select and batch actions', () => (
-    <StatefulTable
-      id="table"
-      secondaryTitle={text(
-        'Secondary Title',
-        `Row count: ${initialState.data.length}`
-      )}
-      columns={tableColumns}
-      data={tableData}
-      actions={actions}
-      options={{
-        hasFilter: true,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-      }}
-      view={{
-        filters: [],
-        toolbar: {
-          batchActions: [
-            {
-              id: 'delete',
-              labelText: 'Delete',
-              renderIcon: TrashCan16,
-              iconDescription: 'Delete Item',
-            },
-          ],
-        },
-        table: {
-          ordering: defaultOrdering,
-          isSelectAllSelected: false,
-          isSelectAllIndeterminate: true,
-          selectedIds: ['row-3', 'row-4', 'row-6', 'row-7'],
-        },
-      }}
-    />
-  ))
+  .add('with multi select and batch actions', () => {
+    const selectedTableType = select(
+      'Type of Table',
+      ['Table', 'StatefulTable'],
+      'StatefulTable'
+    );
+    const MyTable =
+      selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+
+    return (
+      <MyTable
+        id="table"
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
+        columns={tableColumns}
+        data={tableData.slice(0, 10)}
+        actions={actions}
+        options={{
+          hasFilter: true,
+          hasPagination: true,
+          hasRowSelection: 'multi',
+        }}
+        view={{
+          filters: [],
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
+          },
+          table: {
+            ordering: defaultOrdering,
+            isSelectAllSelected: select(
+              'isSelectAllSelected',
+              [undefined, true, false],
+              undefined
+            ),
+            isSelectAllIndeterminate: select(
+              'isSelectAllIndeterminate',
+              [undefined, true, false],
+              undefined
+            ),
+            selectedIds: array('selectedIds', [
+              'row-3',
+              'row-4',
+              'row-6',
+              'row-7',
+            ]),
+          },
+        }}
+      />
+    );
+  })
   .add('with single select', () => (
     <Table
       id="table"

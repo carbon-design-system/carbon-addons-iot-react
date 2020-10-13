@@ -57,7 +57,8 @@ const propTypes = {
       }),
     ]),
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+      .isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
 
@@ -183,7 +184,8 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     ${// if single nested hierarchy AND there are children rows (meaning this is a parent),
     // bolden all cells of this row
     (props) =>
-      props.hasRowNesting?.hasSingleNestedHierarchy &&
+      props['data-row-nesting'] &&
+      props['data-row-nesting'].hasSingleNestedHierarchy &&
       props['data-child-count'] > 0
         ? `td {
         font-weight: bold
@@ -261,7 +263,8 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
 
     ${// if single nested hierarchy, bolden all cells of this row
     (props) =>
-      props.hasRowNesting?.hasSingleNestedHierarchy
+      props['data-row-nesting'] &&
+      props['data-row-nesting'].hasSingleNestedHierarchy
         ? `td {
         font-weight: bold
       }`
@@ -544,8 +547,7 @@ const TableBodyRow = ({
             if (isSelectable !== false) {
               onRowClicked(id);
             }
-          }}
-          hasRowNesting={hasRowNesting}>
+          }}>
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
@@ -580,8 +582,7 @@ const TableBodyRow = ({
           if (isSelectable !== false) {
             onRowClicked(id);
           }
-        }}
-        hasRowNesting={hasRowNesting}>
+        }}>
         {tableCells}
       </StyledTableExpandRow>
     )
