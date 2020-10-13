@@ -24,5 +24,9 @@
   &--content {
     flex: 1;
     height: 100%;
+
+    .#{$iot-prefix}--list-item {
+      height: $spacing-09;
+    }
   }
 }

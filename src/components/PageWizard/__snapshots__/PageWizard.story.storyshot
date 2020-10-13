@@ -625,7 +625,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -1030,7 +1032,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -1443,7 +1447,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -2271,7 +2277,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >
@@ -3282,7 +3290,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
         <div
           className="page-title-bar-header"
         >
-          <div>
+          <div
+            className="page-title-bar-header-left"
+          >
             <div
               className="page-title-bar-breadcrumb"
             >

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="32px" viewBox="0 0 40 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 5</title>
+    <defs>
+        <path d="M14.94,13.26 L8.44,1.26 C8.35271733,1.0982884 8.18376318,0.997486842 8,0.997486842 C7.81623682,0.997486842 7.64728267,1.0982884 7.56,1.26 L1.06,13.26 C0.970683603,13.4147005 0.970683603,13.6052995 1.06,13.76 C1.15308746,13.9130405 1.32093133,14.0045917 1.5,14 L14.5,14 C14.6765336,13.9999692 14.8399678,13.9068497 14.93,13.755 C15.0205246,13.6033467 15.0243258,13.4151856 14.94,13.26 Z" id="path-1"></path>
+        <path d="M8,10.5 C8.41421356,10.5 8.75,10.8357864 8.75,11.25 C8.75,11.6642136 8.41421356,12 8,12 C7.58578644,12 7.25,11.6642136 7.25,11.25 C7.25,10.8357864 7.58578644,10.5 8,10.5 Z M8.565,5.505 L8.565,9.505 L7.44,9.505 L7.44,5.505 L8.565,5.505 Z" id="path-3"></path>
+    </defs>
+    <g id="Dashboard-Views" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Entity-dashboard-editor" transform="translate(-1344.000000, -503.000000)">
+            <g id="Group-7" transform="translate(1328.000000, 48.000000)">
+                <g id="Group-2-Copy-9" transform="translate(0.000000, 447.000000)">
+                    <g id="Group-5" transform="translate(16.000000, 8.000000)">
+                        <rect id="Rectangle" fill="#0058FF" x="0" y="0" width="40" height="2.75862069"></rect>
+                        <rect id="Rectangle" stroke="#005BFF" x="0.5" y="3.25862069" width="39" height="28.2413793"></rect>
+                        <rect id="Rectangle" fill="#D8D8D8" x="3.5" y="6.62068966" width="19" height="2.75862069"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#D8D8D8" x="25" y="6.62068966" width="11" height="2.75862069"></rect>
+                        <rect id="Rectangle-Copy-6" fill="#D8D8D8" x="3.5" y="18.7586207" width="19" height="2.75862069"></rect>
+                        <rect id="Rectangle-Copy" fill="#D8D8D8" x="3.5" y="12.6896552" width="19" height="2.75862069"></rect>
+                        <rect id="Rectangle-Copy-3" fill="#D8D8D8" x="25" y="12.6896552" width="11" height="2.75862069"></rect>
+                        <rect id="Rectangle-Copy-7" fill="#D8D8D8" x="3.5" y="24.8275862" width="19" height="2.75862069"></rect>
+                        <g id="Organization-/-Data-/-data--structured-/-16" transform="translate(21.000000, 13.714286)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="icon-color" fill="#0F62FE" xlink:href="#path-1"></use>
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="icon-color" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
