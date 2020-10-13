@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 
@@ -18,7 +18,7 @@ import SuiteHeaderI18N from './i18n';
 
 const ROUTE_TYPES = {
   ADMIN: 'ADMIN',
-  NAVIGATOR: 'ADMIN',
+  NAVIGATOR: 'NAVIGATOR',
   REFERRER: 'REFERRER',
   APPLICATION: 'APPLICATION',
   PROFILE: 'PROFILE',
@@ -131,6 +131,17 @@ const SuiteHeader = ({
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
+
+  // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
+  // not only at mount time
+  useEffect(
+    () => {
+      if (surveyData !== null && surveyData !== undefined) {
+        setShowToast(true);
+      }
+    },
+    [surveyData]
+  );
 
   return (
     <>
