@@ -41,6 +41,10 @@ const CardWrapper = ({
   onMouseUp,
   onTouchEnd,
   onTouchStart,
+  onMouseOver,
+  onFocus,
+  onBlur,
+  tabIndex,
   testID,
   ...others
 }) => {
@@ -56,6 +60,10 @@ const CardWrapper = ({
       onTouchEnd={onTouchEnd}
       onTouchStart={onTouchStart}
       onScroll={onScroll}
+      onMouseOver={onMouseOver}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`)}
       {...validOthers}
     >
@@ -110,15 +118,34 @@ CardWrapper.propTypes = {
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
   testID: CardPropTypes.testID,
-  /* eslint-disable react/require-default-props */
   onMouseDown: PropTypes.func,
   onMouseUp: PropTypes.func,
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
-  /* eslint-enable react/require-default-props  */
+  /** Allows custom mouse over event handlers, such as changing the style */
+  onMouseOver: PropTypes.func,
+  /** Allows custom keyboard event handlers, such as changing the style */
+  onFocus: PropTypes.func,
+  /** Allows custom keyboard event handlers, such as changing the style */
+  onBlur: PropTypes.func,
+  /** Optionally sets a keyboard tab index for the container */
+  tabIndex: PropTypes.number,
 };
-CardWrapper.defaultProps = { id: undefined, style: undefined, testID: 'Card' };
+CardWrapper.defaultProps = {
+  id: undefined,
+  style: undefined,
+  testID: 'Card',
+  onMouseDown: undefined,
+  onMouseUp: undefined,
+  onTouchEnd: undefined,
+  onTouchStart: undefined,
+  onScroll: undefined,
+  onMouseOver: undefined,
+  onFocus: undefined,
+  onBlur: undefined,
+  tabIndex: undefined,
+};
 CardContent.propTypes = {
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,

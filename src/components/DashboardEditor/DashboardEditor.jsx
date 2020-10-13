@@ -86,6 +86,8 @@ const defaultProps = {
   },
 };
 
+export const baseClassName = `${iotPrefix}--dashboard-editor`;
+
 const DashboardEditor = ({
   title,
   initialValue,
@@ -104,11 +106,11 @@ const DashboardEditor = ({
   i18n,
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
-  const baseClassName = `${iotPrefix}--dashboard-editor`;
 
   // show the gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
+  const [borderHoveredCardId, setBorderHoveredCardId] = useState(null);
 
   const addCard = type => {
     const cardData = getDefaultCard(type);
@@ -156,7 +158,7 @@ const DashboardEditor = ({
         {notification}
         <div className={`${baseClassName}--preview`}>
           <DashboardGrid
-            isEditable
+            isEditable={!!borderHoveredCardId}
             onBreakpointChange={() => {}}
             onLayoutChange={(newLayout, newLayouts) =>
               setDashboardJson({
@@ -167,7 +169,8 @@ const DashboardEditor = ({
           >
             {dashboardJson.cards.map(cardData => {
               const isSelected = selectedCardId === cardData.id;
-              const onSelectCard = id => setSelectedCardId(id);
+              const isBorderHovered = borderHoveredCardId === cardData.id;
+              const onSelectCard = () => setSelectedCardId(cardData.id);
               const onDuplicateCard = id => duplicateCard(id);
               const onRemoveCard = id => removeCard(id);
 
@@ -176,11 +179,21 @@ const DashboardEditor = ({
                 renderCardPreview(
                   cardData,
                   isSelected,
+                  isBorderHovered,
+                  setBorderHoveredCardId,
                   onSelectCard,
                   onDuplicateCard,
                   onRemoveCard
                 ) ??
-                getCardPreview(cardData, isSelected, onSelectCard, onDuplicateCard, onRemoveCard)
+                getCardPreview(
+                  cardData,
+                  isSelected,
+                  isBorderHovered,
+                  setBorderHoveredCardId,
+                  onSelectCard,
+                  onDuplicateCard,
+                  onRemoveCard
+                )
               );
             })}
           </DashboardGrid>

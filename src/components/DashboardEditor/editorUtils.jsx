@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import classNames from 'classnames';
 
 import {
   CARD_SIZES,
@@ -17,6 +18,8 @@ import {
   // ImageCard,
   TableCard,
 } from '../../index';
+
+import { baseClassName } from './DashboardEditor';
 
 // import sampleImage from './landscape.jpg';
 
@@ -265,8 +268,7 @@ const renderBarChartCard = (cardJson, commonProps) => (
     size={cardJson.size}
     content={cardJson?.content}
     isEditable
-    // TODO: fix inability to pass className to BarChartCard
-    {...(commonProps.className ? {} : commonProps)}
+    {...commonProps}
   />
 );
 
@@ -314,26 +316,56 @@ const renderImageCard = (cardJson, commonProps) => (
 export const getCardPreview = (
   cardData,
   isSelected,
+  isBorderHovered,
+  setBorderHoveredCardId,
   onSelectCard,
   onDuplicateCard,
   onRemoveCard
 ) => {
-  const commonProps = isSelected
-    ? { className: 'selected-card' }
-    : {
-        availableActions: { edit: true, clone: true, delete: true },
-        onCardAction: (id, actionId) => {
-          if (actionId === CARD_ACTIONS.EDIT_CARD) {
-            onSelectCard(id);
-          }
-          if (actionId === CARD_ACTIONS.CLONE_CARD) {
-            onDuplicateCard(id);
-          }
-          if (actionId === CARD_ACTIONS.DELETE_CARD) {
-            onRemoveCard(id);
-          }
-        },
-      };
+  const commonProps = {
+    ...(isSelected || isBorderHovered
+      ? {
+          className: classNames({
+            [`${baseClassName}--preview__selected-card`]: isSelected,
+            [`${baseClassName}--preview__border-hovered-card`]: isBorderHovered,
+          }),
+        }
+      : {}),
+    availableActions: { edit: true, clone: true, delete: true },
+    onCardAction: (id, actionId) => {
+      if (actionId === CARD_ACTIONS.EDIT_CARD) {
+        onSelectCard();
+      }
+      if (actionId === CARD_ACTIONS.CLONE_CARD) {
+        onDuplicateCard(id);
+      }
+      if (actionId === CARD_ACTIONS.DELETE_CARD) {
+        onRemoveCard(id);
+      }
+    },
+    onMouseOver: e => {
+      if (
+        // if the card is already selected, the full card wrapper can be captured in the event
+        e.target?.getAttribute('class')?.includes('iot--card ') ||
+        // if the card is not selected, use the relatedTarget, AKA where the event originated
+        // from which is the outer editor preview or the grid-layout
+        e.relatedTarget?.getAttribute('class')?.includes('iot--dashboard-editor--preview') ||
+        e.relatedTarget?.getAttribute('class')?.includes('react-grid-layout')
+      ) {
+        setBorderHoveredCardId(cardData.id);
+      } else {
+        setBorderHoveredCardId(null);
+      }
+    },
+    onFocus: () => {
+      setBorderHoveredCardId(cardData.id);
+    },
+    onBlur: () => {
+      setBorderHoveredCardId(null);
+    },
+    tabIndex: 0,
+    onClick: () => onSelectCard(),
+  };
 
   if (!isCardJsonValid(cardData)) {
     return renderDefaultCard(cardData, commonProps);

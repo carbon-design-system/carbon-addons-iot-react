@@ -284,8 +284,9 @@ const ValueCard = ({
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {dataState && <DataStateRenderer dataState={dataState} size={newSize} id={id} />}
-              {!dataState &&
+              {dataState ? (
+                <DataStateRenderer dataState={dataState} size={newSize} id={id} />
+              ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment
                     key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
@@ -361,7 +362,8 @@ const ValueCard = ({
                       </AttributeWrapper>
                     ) : null}
                   </React.Fragment>
-                ))}
+                ))
+              )}
             </ContentWrapper>
           </Card>
         );

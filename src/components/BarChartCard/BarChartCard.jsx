@@ -2,7 +2,7 @@ import React from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
@@ -120,7 +120,7 @@ const BarChartCard = ({
   return (
     <Card
       title={title}
-      className={`${iotPrefix}--bar-chart-card`}
+      className={classNames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
       i18n={i18n}
       isExpanded={isExpanded}
@@ -132,14 +132,10 @@ const BarChartCard = ({
     >
       {!isAllValuesEmpty ? (
         <div
-          className={classnames(
-            `${iotPrefix}--bar-chart-container`,
-            {
-              [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
-              [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
-            },
-            className
-          )}
+          className={classNames(`${iotPrefix}--bar-chart-container`, {
+            [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
+            [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
+          })}
         >
           <ChartComponent
             data={chartData}
@@ -189,7 +185,7 @@ const BarChartCard = ({
               (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                 ? {
                     zoomBar: {
-                      // [zoomBar.axes]: {    TODO: the top axes is the only one support at the moment so default to top
+                      // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
                       top: {
                         enabled: zoomBar.enabled,
                         initialZoomDomain: zoomBar.initialZoomDomain,
