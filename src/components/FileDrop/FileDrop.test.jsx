@@ -20,7 +20,9 @@ const dragAndDropProps = {
   onData: jest.fn(),
   onError: jest.fn(),
 };
-const mockFiles = [{ name: 'fakeFileLoad', uploadState: 'uploading', contents: null }];
+const mockFiles = [
+  { name: 'fakeFileLoad', uploadState: 'uploading', contents: null },
+];
 
 const mockHoverEvent = {
   preventDefault: jest.fn(),
@@ -76,7 +78,9 @@ describe('File Drop', () => {
   it('fileType', () => {
     const textWrapper = mount(<FileDrop {...commonProps} fileType="TEXT" />);
     const textInstance = textWrapper.instance();
-    const binaryWrapper = mount(<FileDrop {...commonProps} fileType="BINARY" />);
+    const binaryWrapper = mount(
+      <FileDrop {...commonProps} fileType="BINARY" />
+    );
     const binaryInstance = binaryWrapper.instance();
     textInstance.readFileContent([{ name: 'fakeFileName' }]);
     expect(mockFileReader.readAsText).toHaveBeenCalled();
@@ -143,6 +147,8 @@ describe('File Drop', () => {
     instance.addNewFiles([{ name: 'fakeFileLoad' }]);
     const filesInState = wrapper.state('files');
     expect(filesInState).toHaveLength(1);
-    expect(filesInState[0]).toEqual(expect.objectContaining({ name: 'fakeFileLoad' }));
+    expect(filesInState[0]).toEqual(
+      expect.objectContaining({ name: 'fakeFileLoad' })
+    );
   });
 });

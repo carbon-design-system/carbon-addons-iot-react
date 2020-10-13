@@ -5,13 +5,16 @@ import '@testing-library/jest-dom/extend-expect';
 import TileCatalogNew from './TileCatalogNew';
 import SampleTile from './SampleTile';
 
-const getTiles = num => {
+const getTiles = (num) => {
   const tiles = [];
   Array(num)
     .fill(0)
     .map((i, idx) => {
       tiles[idx] = (
-        <SampleTile title={`Tile ${idx + 1}`} description="This is a sample product tile" />
+        <SampleTile
+          title={`Tile ${idx + 1}`}
+          description="This is a sample product tile"
+        />
       );
       return tiles[idx];
     });
@@ -63,7 +66,9 @@ describe('TileCatalogNew', () => {
         onSearch={onSearch}
       />
     );
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+      target: { value: '5' },
+    });
     expect(onSearch).toHaveBeenCalledTimes(1);
   });
 
@@ -86,7 +91,9 @@ describe('TileCatalogNew', () => {
         hasSearch="true"
       />
     );
-    fireEvent.change(screen.getByDisplayValue('Choose from options'), { target: { value: 'Z-A' } });
+    fireEvent.change(screen.getByDisplayValue('Choose from options'), {
+      target: { value: 'Z-A' },
+    });
     expect(onSort).toHaveBeenCalledTimes(1);
   });
 
@@ -159,7 +166,11 @@ describe('TileCatalogNew', () => {
 
   it('TileCatalogNew pagination does not render with minTileWidth', () => {
     render(
-      <TileCatalogNew title="Test Tile Catalog" tiles={getTiles(4, 'Tile')} minTileWidth="20rem" />
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(4, 'Tile')}
+        minTileWidth="20rem"
+      />
     );
 
     expect(screen.queryByText('Next page')).toBeNull();
@@ -183,9 +194,13 @@ describe('TileCatalogNew', () => {
 
   it('TileCatalogNew renders error state', () => {
     // trigger an error by not giving the catalog tiles
-    render(<TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />);
+    render(
+      <TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />
+    );
     expect(
-      screen.getByText('An error has occurred. Please make sure your catalog has content.')
+      screen.getByText(
+        'An error has occurred. Please make sure your catalog has content.'
+      )
     ).toBeTruthy();
   });
 
@@ -198,7 +213,9 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    fireEvent.change(screen.getByLabelText('select page number'), { target: { value: 14 } });
+    fireEvent.change(screen.getByLabelText('select page number'), {
+      target: { value: 14 },
+    });
     expect(screen.getByText('Tile 53')).toBeTruthy();
     expect(screen.getByText('Tile 54')).toBeTruthy();
     expect(screen.getByText('Tile 55')).toBeTruthy();
@@ -214,7 +231,9 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    fireEvent.change(screen.getByLabelText('select page number'), { target: { value: 7 } });
+    fireEvent.change(screen.getByLabelText('select page number'), {
+      target: { value: 7 },
+    });
     expect(screen.getByText('Tile 25')).toBeTruthy();
     expect(screen.getByText('Tile 26')).toBeTruthy();
     expect(screen.getByText('Tile 27')).toBeTruthy();

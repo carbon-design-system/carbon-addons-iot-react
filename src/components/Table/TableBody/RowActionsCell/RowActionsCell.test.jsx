@@ -23,7 +23,9 @@ describe('RowActionsCell', () => {
 
   it('click handler', () => {
     const tableRow = document.createElement('tr');
-    const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
+    const actions = [
+      { id: 'addAction', renderIcon: Add32, iconDescription: 'See more' },
+    ];
     render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
       container: document.body.appendChild(tableRow),
     });
@@ -38,7 +40,11 @@ describe('RowActionsCell', () => {
   it('custom SVG in button', () => {
     const tableRow = document.createElement('tr');
     const actions = [
-      { id: 'addAction', renderIcon: () => <svg title="my svg" />, iconDescription: 'See more' },
+      {
+        id: 'addAction',
+        renderIcon: () => <svg title="my svg" />,
+        iconDescription: 'See more',
+      },
     ];
     render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
       container: document.body.appendChild(tableRow),
@@ -78,17 +84,24 @@ describe('RowActionsCell', () => {
     });
 
     //  Container background div is present
-    expect(screen.queryByTestId('row-action-container-background')).toBeTruthy();
+    expect(
+      screen.queryByTestId('row-action-container-background')
+    ).toBeTruthy();
     // Action text matches the action.labelText prop value
     expect(screen.queryByText(action.labelText)).toBeTruthy();
   });
 
   it('action container background knows when overflow menu is open (in order to stay visible)', () => {
     const tableRow = document.createElement('tr');
-    const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
-    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      attachTo: tableRow,
-    });
+    const actions = [
+      { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+    ];
+    const wrapper = mount(
+      <RowActionsCell {...commonRowActionsProps} actions={actions} />,
+      {
+        attachTo: tableRow,
+      }
+    );
 
     let container = wrapper.find(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
@@ -116,12 +129,21 @@ describe('RowActionsCell', () => {
     const tableRow = document.createElement('tr');
     const actions = [
       { disabled: true, id: 'add', isOverflow: true, labelText: 'Add' },
-      { disabled: false, id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+      {
+        disabled: false,
+        id: 'edit',
+        renderIcon: Edit16,
+        isOverflow: true,
+        labelText: 'Edit',
+      },
     ];
 
-    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
-      attachTo: tableRow,
-    });
+    const wrapper = mount(
+      <RowActionsCell {...commonRowActionsProps} actions={actions} />,
+      {
+        attachTo: tableRow,
+      }
+    );
     const container = wrapper.find(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
     );
@@ -138,20 +160,12 @@ describe('RowActionsCell', () => {
     const menuItems = wrapper.find(
       `.${iotPrefix}--row-actions-container .${iotPrefix}--action-overflow-item`
     );
-    expect(
-      menuItems
-        .first()
-        .find('button')
-        .getDOMNode().disabled
-    ).toBeTruthy();
+    expect(menuItems.first().find('button').getDOMNode().disabled).toBeTruthy();
+    expect(menuItems.at(2).find('button').getDOMNode().disabled).toBeFalsy();
     expect(
       menuItems
         .at(2)
-        .find('button')
-        .getDOMNode().disabled
-    ).toBeFalsy();
-    expect(
-      menuItems.at(2).hasClass(`${iotPrefix}--action-overflow-item--initialFocus`)
+        .hasClass(`${iotPrefix}--action-overflow-item--initialFocus`)
     ).toBeTruthy();
   });
 });

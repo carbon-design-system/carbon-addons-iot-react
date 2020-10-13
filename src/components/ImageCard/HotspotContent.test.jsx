@@ -47,7 +47,12 @@ describe('HotspotContent', () => {
         values={{ deviceid: '73000' }}
         attributes={[
           { dataSourceId: 'deviceid', label: 'Device' },
-          { dataSourceId: 'temperature', label: 'Temp', precision: 2, unit: 'Celsius' },
+          {
+            dataSourceId: 'temperature',
+            label: 'Temp',
+            precision: 2,
+            unit: 'Celsius',
+          },
         ]}
       />
     );
@@ -59,7 +64,12 @@ describe('HotspotContent', () => {
     render(
       <HotspotContent
         title={<span>My hotspot</span>}
-        values={{ deviceid: '73000', temperature: 35.05, humidity: 0, accuracy: 0.1245 }}
+        values={{
+          deviceid: '73000',
+          temperature: 35.05,
+          humidity: 0,
+          accuracy: 0.1245,
+        }}
         attributes={[
           { dataSourceId: 'deviceid', label: 'Device' },
           { dataSourceId: 'temperature', label: 'Temp' },
@@ -79,7 +89,12 @@ describe('HotspotContent', () => {
         values={{ deviceid: '73000', temperature: 35.05 }}
         attributes={[
           { dataSourceId: 'deviceid', label: 'Device' },
-          { dataSourceId: 'temperature', label: 'Temp', precision: 2, unit: 'Celsius' },
+          {
+            dataSourceId: 'temperature',
+            label: 'Temp',
+            precision: 2,
+            unit: 'Celsius',
+          },
         ]}
       />
     );
@@ -116,7 +131,9 @@ describe('HotspotContent', () => {
             dataSourceId: 'temperature',
             label: 'Temp',
             precision: 2,
-            thresholds: [{ comparison: '>', value: 0.05, icon: 'Warning', color: red60 }],
+            thresholds: [
+              { comparison: '>', value: 0.05, icon: 'Warning', color: red60 },
+            ],
           },
         ]}
         locale="fr"
@@ -177,6 +194,9 @@ describe('HotspotContent', () => {
       />
     );
     // custom render icon should be called
-    expect(mockRenderIconByName).toHaveBeenCalledWith('Warning', expect.anything());
+    expect(mockRenderIconByName).toHaveBeenCalledWith(
+      'Warning',
+      expect.anything()
+    );
   });
 });

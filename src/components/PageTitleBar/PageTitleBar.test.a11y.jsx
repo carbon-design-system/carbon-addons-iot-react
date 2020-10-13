@@ -16,20 +16,28 @@ describe('PageTitleBar', () => {
   });
 
   it('is accessible', async () => {
-    const { container } = render(<PageTitleBar title={commonPageTitleBarProps.title} />, {
-      container: document.getElementById('main'),
-    });
+    const { container } = render(
+      <PageTitleBar title={commonPageTitleBarProps.title} />,
+      {
+        container: document.getElementById('main'),
+      }
+    );
     await expect(container).toBeAccessible('PageTitleBar is accessible');
   }, 20000);
 
   it('is accessible with breadcrumb', async () => {
     const { container } = render(
-      <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />,
+      <PageTitleBar
+        title={commonPageTitleBarProps.title}
+        breadcrumb={pageTitleBarBreadcrumb}
+      />,
       {
         container: document.getElementById('main'),
       }
     );
-    await expect(container).toBeAccessible('PageTitleBar is accessible with breadcrumb');
+    await expect(container).toBeAccessible(
+      'PageTitleBar is accessible with breadcrumb'
+    );
   }, 20000);
 
   it('is accessible with description', async () => {
@@ -42,7 +50,9 @@ describe('PageTitleBar', () => {
         container: document.getElementById('main'),
       }
     );
-    await expect(container).toBeAccessible('PageTitleBar is accessible with description');
+    await expect(container).toBeAccessible(
+      'PageTitleBar is accessible with description'
+    );
   }, 20000);
 
   it('is accessible with tooltip description with node', async () => {

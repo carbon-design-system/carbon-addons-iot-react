@@ -29,14 +29,22 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
       return React.createElement(() => {
         const rowPerPage = 10;
         const [currentPageNumber, setCurrentPageNumber] = useState(1);
-        const [currentFilters, setCurrentFilters] = useState({ searchTerm: '', showPublic: true });
+        const [currentFilters, setCurrentFilters] = useState({
+          searchTerm: '',
+          showPublic: true,
+        });
         const [isOpen, setIsOpen] = useState(true);
         const [filteredViews, setFilteredViews] = useState(demoViews);
-        const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
+        const [viewsToShow, setViewsToShow] = useState(
+          demoViews.slice(0, rowPerPage)
+        );
 
         const showPage = (pageNumber, views) => {
           const rowUpperLimit = pageNumber * rowPerPage;
-          const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+          const currentItemsOnPage = views.slice(
+            rowUpperLimit - rowPerPage,
+            rowUpperLimit
+          );
           setCurrentPageNumber(pageNumber);
           setViewsToShow(currentItemsOnPage);
         };
@@ -44,18 +52,18 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
         const applyFiltering = ({ searchTerm, showPublic }) => {
           const views = demoViews
             .filter(
-              view =>
+              (view) =>
                 searchTerm === '' ||
                 view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
             )
-            .filter(view => (showPublic ? view : !view.isPublic));
+            .filter((view) => (showPublic ? view : !view.isPublic));
 
           setFilteredViews(views);
           showPage(1, views);
         };
 
-        const onDelete = viewId => {
-          const deleteIndex = demoViews.findIndex(view => view.id === viewId);
+        const onDelete = (viewId) => {
+          const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
           demoViews.splice(deleteIndex, 1);
           setFilteredViews(demoViews);
           showPage(1, demoViews);
@@ -65,23 +73,23 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
           setIsOpen(false);
         };
 
-        const onEdit = viewId => {
+        const onEdit = (viewId) => {
           /* eslint-disable-next-line no-alert */
           alert(
             `EDIT ${viewId} \nThis action should close this modal and open TableSaveViewModal with the data of this view prefilled.`
           );
         };
 
-        const onPage = pageNumber => showPage(pageNumber, filteredViews);
+        const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
 
-        const onSearchChange = val => {
+        const onSearchChange = (val) => {
           const searchTerm = val === undefined ? '' : val;
           const newFilters = { ...currentFilters, searchTerm };
           setCurrentFilters(newFilters);
           applyFiltering(newFilters);
         };
 
-        const onDisplayPublicChange = showPublic => {
+        const onDisplayPublicChange = (showPublic) => {
           const newFilters = { ...currentFilters, showPublic };
           setCurrentFilters(newFilters);
           applyFiltering(newFilters);
@@ -91,7 +99,7 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
           page: currentPageNumber,
           onPage,
           maxPage: Math.ceil(filteredViews.length / rowPerPage),
-          pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+          pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
         };
 
         return (
@@ -219,7 +227,7 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
     'with custom row actions, custom rendering and no Pagination',
     () => {
       const defaultViewId = 'id1';
-      const myViews = demoViews.map(view => ({ ...view, isClonable: true }));
+      const myViews = demoViews.map((view) => ({ ...view, isClonable: true }));
       const renderButton = (id, onClick, icon, key, iconText) => (
         <Button
           key={key}
@@ -235,23 +243,41 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
         />
       );
 
-      const getCustomRowActions = ({ id, isEditable, isDeleteable, isClonable }) => {
+      const getCustomRowActions = ({
+        id,
+        isEditable,
+        isDeleteable,
+        isClonable,
+      }) => {
         const rowActions = [];
         if (isEditable) {
-          rowActions.push(renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit'));
+          rowActions.push(
+            renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit')
+          );
         }
         if (isDeleteable) {
-          rowActions.push(renderButton(id, action('onDelete'), TrashCan16, 'deleteKey', 'Delete'));
+          rowActions.push(
+            renderButton(
+              id,
+              action('onDelete'),
+              TrashCan16,
+              'deleteKey',
+              'Delete'
+            )
+          );
         }
         if (isClonable) {
-          rowActions.push(renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy'));
+          rowActions.push(
+            renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy')
+          );
         }
         return rowActions;
       };
 
       const getCustomRowTitle = ({ title }) => title;
 
-      const getCustomRowDescription = ({ description }) => `PREFIXED - ${description}`;
+      const getCustomRowDescription = ({ description }) =>
+        `PREFIXED - ${description}`;
 
       const getRowTags = ({ id, isPublic }, { i18n: { defaultLabelText } }) => {
         const tags =

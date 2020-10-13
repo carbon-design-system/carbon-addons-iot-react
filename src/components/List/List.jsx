@@ -5,9 +5,14 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 import { settings } from '../../constants/Settings';
-import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
+import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
-import { EditingStyle, editingStyleIsMultiple } from '../../utils/DragAndDropUtils';
+import {
+  EditingStyle,
+  editingStyleIsMultiple,
+} from '../../utils/DragAndDropUtils';
 import { Checkbox } from '../..';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
@@ -137,8 +142,9 @@ const List = forwardRef((props, ref) => {
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
-    const isSelected = selectedIds.some(id => item.id === id);
-    const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
+    const isSelected = selectedIds.some((id) => item.id === id);
+    const isExpanded =
+      expandedIds.filter((rowId) => rowId === item.id).length > 0;
 
     const {
       content: { value, secondaryValue, icon, rowActions, tags },
@@ -152,8 +158,7 @@ const List = forwardRef((props, ref) => {
       <div
         key={`${item.id}-list-item-parent-${level}-${value}`}
         data-floating-menu-container
-        className={`${iotPrefix}--list-item-parent`}
-      >
+        className={`${iotPrefix}--list-item-parent`}>
         <ListItem
           id={item.id}
           index={index}
@@ -196,7 +201,12 @@ const List = forwardRef((props, ref) => {
       </div>,
       ...(hasChildren && isExpanded
         ? item.children.map((child, nestedIndex) => {
-            return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
+            return renderItemAndChildren(
+              child,
+              nestedIndex,
+              item.id,
+              level + 1
+            );
           })
         : []),
     ];
@@ -204,7 +214,11 @@ const List = forwardRef((props, ref) => {
 
   // If the root level contains a category item, the base indent level should be increased by 1 to
   // account for the caret on non-category items.
-  const baseIndentLevel = items.some(item => item?.children && item.children.length > 0) ? 1 : 0;
+  const baseIndentLevel = items.some(
+    (item) => item?.children && item.children.length > 0
+  )
+    ? 1
+    : 0;
 
   const listItems = items.map((item, index) =>
     renderItemAndChildren(item, index, null, baseIndentLevel)
@@ -214,10 +228,12 @@ const List = forwardRef((props, ref) => {
     <div
       className={classnames(`${iotPrefix}--list`, className, {
         [`${iotPrefix}--list__full-height`]: isFullHeight,
-      })}
-    >
+      })}>
       <ListHeader
-        className={classnames(`${iotPrefix}--list--header`, overrides?.header?.props?.className)}
+        className={classnames(
+          `${iotPrefix}--list--header`,
+          overrides?.header?.props?.className
+        )}
         title={title}
         buttons={buttons}
         search={search}
@@ -233,12 +249,14 @@ const List = forwardRef((props, ref) => {
             [`${iotPrefix}--list--content__full-height`]: isFullHeight,
           },
           `${iotPrefix}--list--content`
-        )}
-      >
+        )}>
         {!isLoading ? (
           listItems
         ) : (
-          <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />
+          <SkeletonText
+            className={`${iotPrefix}--list--skeleton`}
+            width="90%"
+          />
         )}
       </div>
       {pagination && !isLoading ? (

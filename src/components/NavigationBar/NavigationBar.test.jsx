@@ -19,7 +19,10 @@ describe('NavigationBar', () => {
 
     const mockSelectionChange = jest.fn();
     const wrapper2 = mount(
-      <NavigationBar {...commonNavigationBarProps} onSelectionChange={mockSelectionChange} />
+      <NavigationBar
+        {...commonNavigationBarProps}
+        onSelectionChange={mockSelectionChange}
+      />
     );
     const tab2 = wrapper2.find('[data-id="tab2"]');
     expect(mockSelectionChange).not.toHaveBeenCalled();

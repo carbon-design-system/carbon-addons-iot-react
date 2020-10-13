@@ -63,20 +63,17 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const { pagination, toolbar, table, onUserViewModified } = callbackActions;
 
   // Need to initially sort and filter the tables data, but preserve the selectedId
-  useDeepCompareEffect(
-    () => {
-      dispatch(
-        tableRegister({
-          data: initialData,
-          isLoading,
-          view: initialState,
-          totalItems: pagination.totalItems || initialData.length,
-          hasUserViewManagement,
-        })
-      );
-    },
-    [initialData, isLoading, initialState]
-  );
+  useDeepCompareEffect(() => {
+    dispatch(
+      tableRegister({
+        data: initialData,
+        isLoading,
+        view: initialState,
+        totalItems: pagination.totalItems || initialData.length,
+        hasUserViewManagement,
+      })
+    );
+  }, [initialData, isLoading, initialState]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
@@ -112,7 +109,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     for (let idx = 0; idx < data.length; idx += 1) {
       const element = data[idx];
       if (element.id === rowId) {
-        item = element.rowActions.find(action => action.id === actionId);
+        item = element.rowActions.find((action) => action.id === actionId);
         if (item) {
           break;
         }
@@ -136,13 +133,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
     pagination: {
-      onChangePage: paginationValues => {
+      onChangePage: (paginationValues) => {
         dispatch(tablePageChange(paginationValues));
         callbackParent(onChangePage, paginationValues);
       },
     },
     toolbar: {
-      onApplyFilter: filterValues => {
+      onApplyFilter: (filterValues) => {
         dispatch(tableFilterApply(filterValues));
         callbackParent(onApplyFilter, filterValues);
       },
@@ -166,18 +163,18 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableActionCancel());
         callbackParent(onCancelBatchAction);
       },
-      onApplyBatchAction: id => {
+      onApplyBatchAction: (id) => {
         dispatch(tableActionApply(id));
         callbackParent(onApplyBatchAction, id, selectedIds);
       },
-      onApplySearch: string => {
+      onApplySearch: (string) => {
         dispatch(tableSearchApply(string));
         callbackParent(onApplySearch, string);
       },
       onDownloadCSV,
     },
     table: {
-      onChangeSort: column => {
+      onChangeSort: (column) => {
         const sortDirection = sort ? sort.direction : undefined;
         dispatch(tableColumnSort(column, columns));
         callbackParent(onChangeSort, column, sortDirection);
@@ -186,11 +183,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
         callbackParent(onRowSelected, rowId, isSelected);
       },
-      onRowClicked: rowId => {
+      onRowClicked: (rowId) => {
         // This action doesn't update our table state, it's up to the user
         callbackParent(onRowClicked, rowId);
       },
-      onSelectAll: isSelected => {
+      onSelectAll: (isSelected) => {
         dispatch(tableRowSelectAll(isSelected));
         callbackParent(onSelectAll, isSelected);
       },
@@ -212,7 +209,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           dispatch(tableRowActionError(rowId, error));
         }
       },
-      onClearRowError: rowId => {
+      onClearRowError: (rowId) => {
         dispatch(tableRowActionComplete(rowId));
         callbackParent(onClearRowError, rowId);
       },
@@ -221,22 +218,22 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
             // This action doesn't update our table state, it's up to the user
             callbackParent(onEmptyStateAction)
         : null,
-      onChangeOrdering: ordering => {
+      onChangeOrdering: (ordering) => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
       },
-      onColumnResize: resizedColumns => {
+      onColumnResize: (resizedColumns) => {
         // For backwards compatability we only update the state when hasUserViewManagement is active
         if (hasUserViewManagement) {
           dispatch(tableColumnResize(resizedColumns));
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: id => {
+      onOverflowItemClicked: (id) => {
         callbackParent(onOverflowItemClicked, id);
       },
     },
-    onUserViewModified: viewConfiguration => {
+    onUserViewModified: (viewConfiguration) => {
       callbackParent(onUserViewModified, viewConfiguration);
     },
   };

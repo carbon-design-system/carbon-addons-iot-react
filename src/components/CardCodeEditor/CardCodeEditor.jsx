@@ -16,6 +16,7 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  // eslint-disable-next-line react/forbid-foreign-prop-types
   ...ComposedModal.propTypes,
   /*
    * On submit callback. It's called with editor value, and a callback to set an error messages
@@ -68,13 +69,10 @@ const CardCodeEditor = ({
   const [isExpanded, setIsExpanded] = useState();
   const [error, setError] = useState(false);
 
-  useEffect(
-    () => {
-      // eslint-disable-next-line no-unused-expressions
-      editorValue?.current?.layout();
-    },
-    [isExpanded]
-  );
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    editorValue?.current?.layout();
+  }, [isExpanded]);
 
   /**
    *
@@ -90,7 +88,7 @@ const CardCodeEditor = ({
   };
 
   const handleOnExpand = () => {
-    setIsExpanded(expandedState => !expandedState);
+    setIsExpanded((expandedState) => !expandedState);
   };
 
   const handleOnCopy = () => {
@@ -112,8 +110,7 @@ const CardCodeEditor = ({
       onSubmit={handleOnSubmit}
       onClose={onClose}
       iconDescription={i18n.modalIconDescription}
-      {...composedModalProps}
-    >
+      {...composedModalProps}>
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly

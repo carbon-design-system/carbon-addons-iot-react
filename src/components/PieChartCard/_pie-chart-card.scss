@@ -14,7 +14,9 @@
 }
 
 .#{$iot-prefix}--pie-chart-container__expanded {
-  height: calc(100% - 9rem); // makes room for the table below which is 3 rows tall
+  height: calc(
+    100% - 9rem
+  ); // makes room for the table below which is 3 rows tall
   .#{$prefix}--chart-holder {
     padding-bottom: $spacing-01;
   }

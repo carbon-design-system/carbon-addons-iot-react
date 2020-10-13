@@ -54,7 +54,11 @@ const content = {
 storiesOf('Watson IoT Experimental/GaugeCard', module)
   .add('basic', () => {
     return (
-      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+          margin: layout05,
+        }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
@@ -72,7 +76,11 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
   })
   .add('basic with expand', () => {
     return (
-      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+          margin: layout05,
+        }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
@@ -95,7 +103,11 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
   })
   .add('with data state no-data', () => {
     const myDataState = {
-      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
+      type: select(
+        'dataState : Type',
+        Object.keys(CARD_DATA_STATE),
+        CARD_DATA_STATE.NO_DATA
+      ),
       ...getDataStateProp(),
     };
     const content = {

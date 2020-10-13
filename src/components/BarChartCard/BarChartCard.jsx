@@ -6,7 +6,10 @@ import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
-import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  BarChartCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   BAR_CHART_TYPES,
@@ -76,10 +79,21 @@ const BarChartCard = ({
 
   // If editable, show sample presentation data
   const values = isEditable
-    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval, categoryDataSourceId)
+    ? memoizedGenerateSampleValues(
+        series,
+        timeDataSourceId,
+        interval,
+        categoryDataSourceId
+      )
     : valuesProp;
 
-  const chartData = formatChartData(series, values, categoryDataSourceId, timeDataSourceId, type);
+  const chartData = formatChartData(
+    series,
+    values,
+    categoryDataSourceId,
+    timeDataSourceId,
+    type
+  );
 
   const isAllValuesEmpty = isEmpty(chartData);
 
@@ -92,10 +106,17 @@ const BarChartCard = ({
 
   const scaleType = timeDataSourceId ? 'time' : 'labels';
 
-  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
+  const axes = mapValuesToAxes(
+    layout,
+    categoryDataSourceId,
+    timeDataSourceId,
+    type
+  );
 
   // Set the colors for each dataset
-  const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
+  const uniqueDatasets = [
+    ...new Set(chartData.map((dataset) => dataset.group)),
+  ];
   const colors = formatColors(series, uniqueDatasets, isEditable);
 
   let tableColumns = [];
@@ -113,7 +134,13 @@ const BarChartCard = ({
     );
 
     tableData = tableData.concat(
-      formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
+      formatTableData(
+        timeDataSourceId,
+        categoryDataSourceId,
+        type,
+        values,
+        chartData
+      )
     );
   }
 
@@ -128,8 +155,7 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
-      {...others}
-    >
+      {...others}>
       {!isAllValuesEmpty ? (
         <div
           className={classnames(
@@ -139,8 +165,7 @@ const BarChartCard = ({
               [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
             },
             className
-          )}
-        >
+          )}>
           <ChartComponent
             data={chartData}
             options={{
@@ -149,9 +174,14 @@ const BarChartCard = ({
               axes: {
                 bottom: {
                   title: `${xLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED &&
                     layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
@@ -163,25 +193,42 @@ const BarChartCard = ({
                 },
                 left: {
                   title: `${yLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.VERTICAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+                    type === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+                  ...(domainRange &&
+                  layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+                  timeDataSourceId
                     ? { domain: domainRange }
                     : {}),
                 },
               },
-              legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
+              legend: {
+                position: 'bottom',
+                enabled: chartData.length > 1,
+                clickable: !isEditable,
+              },
               containerResizable: true,
               color: colors,
               tooltip: {
-                valueFormatter: tooltipValue =>
+                valueFormatter: (tooltipValue) =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) =>
-                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+                  handleTooltip(
+                    ...args,
+                    timeDataSourceId,
+                    showTimeInGMT,
+                    tooltipDateFormatPattern
+                  ),
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -215,7 +262,8 @@ const BarChartCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
+                  onDownloadCSV: (filteredData) =>
+                    csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{
