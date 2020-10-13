@@ -54,7 +54,8 @@ const propTypes = {
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+      .isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
   /** List of columns */

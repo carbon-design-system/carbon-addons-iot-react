@@ -736,26 +736,48 @@ describe('Table', () => {
     const textNoWrapClassName = `${iotPrefix}--table__cell-text--no-wrap`;
 
     const expectWrapping = () => {
-      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textNoWrapClassName);
-      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(
+        textNoWrapClassName
+      );
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(
+        textNoWrapClassName
+      );
     };
     const expectExplicitNoWrapping = () => {
-      expect(screen.getByText(bodyRowCellText)).toHaveClass(textNoWrapClassName);
-      expect(screen.getByText(columnHeaderText)).toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(bodyRowCellText)).toHaveClass(
+        textNoWrapClassName
+      );
+      expect(screen.getByText(columnHeaderText)).toHaveClass(
+        textNoWrapClassName
+      );
     };
     const expectTruncation = (myBodyRowCellText = bodyRowCellText) => {
-      expect(screen.getByText(myBodyRowCellText)).toHaveClass(textTruncateClassName);
-      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(tdTruncateClassName);
-      expect(screen.getByText(columnHeaderText)).toHaveClass(textTruncateClassName);
+      expect(screen.getByText(myBodyRowCellText)).toHaveClass(
+        textTruncateClassName
+      );
+      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(
+        tdTruncateClassName
+      );
+      expect(screen.getByText(columnHeaderText)).toHaveClass(
+        textTruncateClassName
+      );
     };
     const expectNoTruncation = () => {
-      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textTruncateClassName);
-      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(tdTruncateClassName);
-      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textTruncateClassName);
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(
+        textTruncateClassName
+      );
+      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(
+        tdTruncateClassName
+      );
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(
+        textTruncateClassName
+      );
     };
 
     const renderDefaultTable = (options = {}, columns = tableColumns) => {
-      render(<Table columns={columns} data={[tableData[0]]} options={options} />);
+      render(
+        <Table columns={columns} data={[tableData[0]]} options={options} />
+      );
     };
 
     it('wraps cell text by default', () => {
@@ -766,7 +788,10 @@ describe('Table', () => {
     });
 
     it('wraps cell text if resize & table-layout:auto', () => {
-      renderDefaultTable({ hasResize: true, useAutoTableLayoutForResize: true });
+      renderDefaultTable({
+        hasResize: true,
+        useAutoTableLayoutForResize: true,
+      });
       expectWrapping();
       expectNoTruncation();
       expect.assertions(5);
@@ -780,14 +805,20 @@ describe('Table', () => {
     });
 
     it('wraps cell text if column widths', () => {
-      renderDefaultTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+      renderDefaultTable(
+        {},
+        tableColumns.map((col) => ({ ...col, width: '100px' }))
+      );
       expectWrapping();
       expectNoTruncation();
       expect.assertions(5);
     });
 
     describe('wrapCellText:auto', () => {
-      const renderAutoWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderAutoWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -805,7 +836,10 @@ describe('Table', () => {
       });
 
       it('wraps cell text if hasResize & table-layout:auto', () => {
-        renderAutoWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        renderAutoWrappingTable({
+          hasResize: true,
+          useAutoTableLayoutForResize: true,
+        });
         expectWrapping();
         expectNoTruncation();
         expect.assertions(5);
@@ -818,7 +852,10 @@ describe('Table', () => {
       });
 
       it('truncates cell text if column widths', () => {
-        renderAutoWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        renderAutoWrappingTable(
+          {},
+          tableColumns.map((col) => ({ ...col, width: '100px' }))
+        );
         expectTruncation();
         expect.assertions(3);
       });
@@ -827,10 +864,11 @@ describe('Table', () => {
         const customCellText = 'hello this is a custom rendered long string';
         renderAutoWrappingTable(
           {},
-          tableColumns.map(col => ({
+          tableColumns.map((col) => ({
             ...col,
             width: undefined,
-            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+            renderDataFunction:
+              col.id === 'string' ? () => customCellText : undefined,
           }))
         );
         expectTruncation(customCellText);
@@ -839,7 +877,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:always', () => {
-      const renderAlwaysWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderAlwaysWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -857,7 +898,10 @@ describe('Table', () => {
       });
 
       it('wraps cell text if hasResize & table-layout:auto', () => {
-        renderAlwaysWrappingTable({ hasResize: true, useAutoTableLayoutForResize: true });
+        renderAlwaysWrappingTable({
+          hasResize: true,
+          useAutoTableLayoutForResize: true,
+        });
         expectWrapping();
         expectNoTruncation();
         expect.assertions(5);
@@ -871,7 +915,10 @@ describe('Table', () => {
       });
 
       it('wraps cell text if column widths', () => {
-        renderAlwaysWrappingTable({}, tableColumns.map(col => ({ ...col, width: '100px' })));
+        renderAlwaysWrappingTable(
+          {},
+          tableColumns.map((col) => ({ ...col, width: '100px' }))
+        );
         expectWrapping();
         expectNoTruncation();
         expect.assertions(5);
@@ -879,7 +926,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:never', () => {
-      const renderNeverWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderNeverWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -898,7 +948,7 @@ describe('Table', () => {
       it('truncates resize & table-layout:auto & column widths', () => {
         renderNeverWrappingTable(
           { hasResize: true, useAutoTableLayoutForResize: true },
-          tableColumns.map(col => ({ ...col, width: '100px' }))
+          tableColumns.map((col) => ({ ...col, width: '100px' }))
         );
         expectTruncation();
         expect.assertions(3);
@@ -906,7 +956,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:alwaysTruncate', () => {
-      const renderAlwaysTruncatTable = (options = {}, columns = tableColumns) => {
+      const renderAlwaysTruncatTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -932,9 +985,10 @@ describe('Table', () => {
         const customCellText = 'hello this is a custom rendered long string';
         renderAlwaysTruncatTable(
           {},
-          tableColumns.map(col => ({
+          tableColumns.map((col) => ({
             ...col,
-            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+            renderDataFunction:
+              col.id === 'string' ? () => customCellText : undefined,
           }))
         );
         expectTruncation(customCellText);
@@ -1355,7 +1409,7 @@ describe('Table', () => {
 
   it('automatically checks "select all" if all rows are selected', () => {
     const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map(row => row.id);
+    const selectedIds = rows.map((row) => row.id);
     const { rerender } = render(
       <Table
         id="tableid1"
@@ -1383,12 +1437,15 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'checked',
+      false
+    );
   });
 
   it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
     const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map(row => row.id);
+    const selectedIds = rows.map((row) => row.id);
     const { rerender } = render(
       <Table
         id="tableid1"
@@ -1396,7 +1453,10 @@ describe('Table', () => {
         data={rows}
         options={{ hasRowSelection: 'multi' }}
         view={{
-          table: { selectedIds: selectedIds.slice(1, 5), isSelectAllSelected: true },
+          table: {
+            selectedIds: selectedIds.slice(1, 5),
+            isSelectAllSelected: true,
+          },
         }}
       />
     );
@@ -1416,12 +1476,15 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'checked',
+      false
+    );
   });
 
   it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
     const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map(row => row.id);
+    const selectedIds = rows.map((row) => row.id);
     const { rerender } = render(
       <Table
         id="tableid1"
@@ -1449,12 +1512,15 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
   });
 
   it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
     const rows = tableData.slice(0, 5);
-    const selectedIds = rows.map(row => row.id);
+    const selectedIds = rows.map((row) => row.id);
     const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
     const { rerender } = render(
       <Table
@@ -1489,7 +1555,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
 
     rerender(
       <Table
@@ -1505,6 +1574,9 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
   });
 });

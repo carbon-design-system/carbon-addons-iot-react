@@ -230,7 +230,14 @@ describe('HierarchyList', () => {
   });
 
   it('search should include categories', () => {
-    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
+    render(
+      <HierarchyList
+        items={items}
+        hasSearch
+        title="Hierarchy List"
+        pageSize="lg"
+      />
+    );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'Chicago White Sox' },
     });

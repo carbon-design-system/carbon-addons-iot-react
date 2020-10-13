@@ -9,7 +9,8 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
-  wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+  wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+    .isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */

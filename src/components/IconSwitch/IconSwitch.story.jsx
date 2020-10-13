@@ -136,8 +136,7 @@ storiesOf('Watson IoT/IconSwitch', module)
       <ContentSwitcher
         className={`${iotPrefix}--content-switcher--icon`}
         onChange={function noRefCheck() {}}
-        selectedIndex={0}
-      >
+        selectedIndex={0}>
         <IconSwitch
           name="one"
           onClick={function noRefCheck() {}}

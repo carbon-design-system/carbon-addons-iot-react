@@ -136,14 +136,11 @@ const SuiteHeader = ({
 
   // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
   // not only at mount time
-  useEffect(
-    () => {
-      if (surveyData !== null && surveyData !== undefined) {
-        setShowToast(true);
-      }
-    },
-    [surveyData]
-  );
+  useEffect(() => {
+    if (surveyData !== null && surveyData !== undefined) {
+      setShowToast(true);
+    }
+  }, [surveyData]);
 
   return (
     <>

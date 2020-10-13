@@ -118,8 +118,11 @@ storiesOf('Watson IoT/PageTitleBar', module)
         <div>
           <div
             className="top"
-            style={{ marginBottom: '8px', display: 'flex', flexDirection: 'row-reverse' }}
-          >
+            style={{
+              marginBottom: '8px',
+              display: 'flex',
+              flexDirection: 'row-reverse',
+            }}>
             <span>Last updated: yesterday</span>
           </div>
           <div className="bottom">
