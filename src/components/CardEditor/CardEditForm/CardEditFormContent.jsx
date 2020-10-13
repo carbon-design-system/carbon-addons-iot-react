@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 
 import {
+  CARD_TYPES,
   CARD_SIZES,
   CARD_DIMENSIONS,
   ALLOWED_CARD_SIZES_PER_TYPE,
@@ -11,7 +12,7 @@ import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button, TextArea, TextInput, Dropdown } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
 
-import CardEditFormContent from './CardEditFormContent';
+import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
 
 const { iotPrefix } = settings;
 
@@ -96,14 +97,13 @@ export const handleSubmit = (val, setError, onChange, setShowEditor) => {
   return false;
 };
 
-const CardEditForm = ({ cardJson, /* errors, */ onChange, /* onAddImage, */ i18n }) => {
+const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
+  const { title, description, size, type } = cardJson;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const [showEditor, setShowEditor] = useState(false);
-  const [modalData, setModalData] = useState();
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const cardContentsTab = (
+  return (
     <>
       <div className={`${baseClassName}--input`}>
         <TextInput
@@ -111,7 +111,7 @@ const CardEditForm = ({ cardJson, /* errors, */ onChange, /* onAddImage, */ i18n
           labelText="Card title"
           light
           onChange={evt => onChange({ ...cardJson, title: evt.target.value })}
-          value={cardJson.title}
+          value={title}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -120,7 +120,7 @@ const CardEditForm = ({ cardJson, /* errors, */ onChange, /* onAddImage, */ i18n
           labelText="Description (Optional)"
           light
           onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
-          value={cardJson.description}
+          value={description}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -129,72 +129,45 @@ const CardEditForm = ({ cardJson, /* errors, */ onChange, /* onAddImage, */ i18n
           label="Select a size"
           direction="bottom"
           itemToString={item => item.text}
-          items={(ALLOWED_CARD_SIZES_PER_TYPE[cardJson.type] ?? Object.keys(CARD_SIZES)).map(
-            size => {
-              return {
-                id: size,
-                text: getCardSizeText(size, mergedI18n),
-              };
-            }
-          )}
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)).map(cardSize => {
+            return {
+              id: cardSize,
+              text: getCardSizeText(cardSize, mergedI18n),
+            };
+          })}
           light
-          selectedItem={{ id: cardJson.size, text: getCardSizeText(cardJson.size, mergedI18n) }}
+          selectedItem={{ id: size, text: getCardSizeText(size, mergedI18n) }}
           onChange={({ selectedItem }) => {
             onChange({ ...cardJson, size: selectedItem.id });
           }}
           titleText="Size"
         />
       </div>
-    </>
-  );
-  const cardSettingsTab = <>SETTINGS</>;
-
-  return (
-    <>
-      {showEditor ? (
-        <CardCodeEditor
-          onSubmit={(val, setError) => handleSubmit(val, setError, onChange, setShowEditor)}
-          onClose={() => setShowEditor(false)}
-          initialValue={modalData}
-          i18n={{
-            errorTitle: 'Error:',
-            modalTitle: 'Edit card JSON configuration',
-            modalLabel: 'Card editor',
-            modalHelpText:
-              'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
-            modalIconDescription: 'Close',
-          }}
-        />
-      ) : null}
-      <div className={baseClassName}>
-        <Tabs>
-          <Tab label="Content">
-            {/* <div className={`${baseClassName}--content`}>{cardContentsTab}</div> */}
-            <CardEditFormContent cardJson={cardJson} onChange={onChange} i18n={i18n} />
-          </Tab>
-          <Tab label="Settings">
-            <div className={`${baseClassName}--content`}>{cardSettingsTab}</div>
-          </Tab>
-        </Tabs>
-        <div className={`${baseClassName}--footer`}>
-          <Button
-            kind="tertiary"
-            size="small"
-            renderIcon={Code16}
-            onClick={() => {
-              setModalData(JSON.stringify(cardJson, null, 4));
-              setShowEditor(true);
-            }}
-          >
-            {mergedI18n.openEditorButton}
-          </Button>
-        </div>
-      </div>
+      {type === CARD_TYPES.TIMESERIES && (
+        <>
+          <div className={`${baseClassName}--input`}>
+            <Dropdown
+              id="timeRange"
+              label="Select a time range"
+              direction="bottom"
+              itemToString={item => item.text}
+              items={[]}
+              light
+              //   selectedItem={{}}
+              onChange={({ selectedItem }) => {
+                // onChange({ ...cardJson, size: selectedItem.id });
+              }}
+              titleText="Time range"
+            />
+          </div>
+          <DataSeriesFormItem cardJson={[cardJson]} dataItems={[]} onChange={onChange} />
+        </>
+      )}
     </>
   );
 };
 
-CardEditForm.propTypes = propTypes;
-CardEditForm.defaultProps = defaultProps;
+CardEditFormContent.propTypes = propTypes;
+CardEditFormContent.defaultProps = defaultProps;
 
-export default CardEditForm;
+export default CardEditFormContent;

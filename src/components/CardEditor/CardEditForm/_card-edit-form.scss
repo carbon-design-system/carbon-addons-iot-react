@@ -38,10 +38,10 @@
     @include type-style('productive-heading-01');
     border-top: solid 1px $ui-03;
     border-bottom: solid 1px $ui-03;
-    margin: $spacing-05 0;
+    margin-bottom: $spacing-05;
   }
   &--input {
-    padding: 0 $spacing-05 $spacing-05;
+    padding-bottom: $spacing-05;
   }
   &--input-inline {
     padding: 0 $spacing-05 $spacing-05;

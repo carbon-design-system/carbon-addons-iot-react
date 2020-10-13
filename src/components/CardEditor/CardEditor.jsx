@@ -12,8 +12,8 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data being edited */
-  value: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** validation errors on the value object */
+  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** validation errors on the cardJson object */
   // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
@@ -26,16 +26,16 @@ const propTypes = {
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
-    openGalleryButton: PropTypes.string,
+    addCardButton: PropTypes.string,
   }),
 };
 
 const defaultProps = {
-  value: null,
+  cardJson: null,
   // errors: null,
   i18n: {
     galleryHeader: 'Gallery',
-    openGalleryButton: 'Open gallery',
+    addCardButton: 'Add card',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
@@ -43,7 +43,7 @@ const defaultProps = {
 };
 
 const CardEditor = ({
-  value,
+  cardJson,
   onShowGallery,
   onChange,
   onAddCard,
@@ -56,7 +56,7 @@ const CardEditor = ({
   const baseClassName = `${iotPrefix}--card-editor`;
 
   // show the gallery if no card is being edited
-  const showGallery = value === null || value === undefined;
+  const showGallery = cardJson === null || cardJson === undefined;
 
   return (
     <div className={baseClassName}>
@@ -69,7 +69,7 @@ const CardEditor = ({
             renderIcon={Apps16}
             onClick={onShowGallery}
           >
-            {mergedI18N.openGalleryButton}
+            {mergedI18N.addCardButton}
           </Button>
         </div>
       ) : null}
@@ -81,7 +81,7 @@ const CardEditor = ({
             i18n={mergedI18N}
           />
         ) : (
-          <CardEditForm value={value} onChange={onChange} /* onAddImage={onAddImage} */ />
+          <CardEditForm cardJson={cardJson} onChange={onChange} /* onAddImage={onAddImage} */ />
         )}
       </div>
     </div>
