@@ -15,7 +15,6 @@ const propTypes = {
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     searchPlaceHolderText: PropTypes.string,
-    pageOfPagesText: PropTypes.func,
     cardType_TIMESERIES: PropTypes.string,
     cardType_BAR: PropTypes.string,
     cardType_VALUE: PropTypes.string,
@@ -30,7 +29,6 @@ const defaultProps = {
   i18n: {
     galleryHeader: 'Gallery',
     searchPlaceHolderText: 'Enter a search',
-    pageOfPagesText: (page) => `Page ${page}`,
     cardType_TIMESERIES: 'Time series line',
     cardType_BAR: 'Simple bar',
     cardType_VALUE: 'Value / KPI',
@@ -71,7 +69,6 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
       }}
       i18n={{
         searchPlaceHolderText: i18n.searchPlaceHolderText,
-        pageOfPagesText: i18n.pageOfPagesText,
       }}
     />
   );

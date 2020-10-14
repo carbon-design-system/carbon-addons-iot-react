@@ -82,9 +82,7 @@ const DashboardEditorHeader = ({
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
-      <div className={`${baseClassName}--top`}>
-        {/* <span className="last-updated">Last updated: XYZ</span> */}
-      </div>
+      <div className={`${baseClassName}--top`} />
       <div className={`${baseClassName}--bottom`}>
         {
           // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
