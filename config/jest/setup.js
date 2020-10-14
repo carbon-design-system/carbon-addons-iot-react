@@ -4,8 +4,8 @@ import addons, { mockChannel } from '@storybook/addons';
 
 addons.setChannel(mockChannel());
 
-const enzyme = require.requireActual('enzyme');
-const Adapter = require.requireActual('enzyme-adapter-react-16');
+const enzyme = jest.requireActual('enzyme');
+const Adapter = jest.requireActual('enzyme-adapter-react-16');
 
 // To support storybooks inside jest
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
@@ -44,7 +44,7 @@ import sizeMe from 'react-sizeme';
 sizeMe.noPlaceholders = true;
 
 // Force the timezone to be the same everywhere
-const moment = require.requireActual('moment-timezone');
+const moment = jest.requireActual('moment-timezone');
 moment.fn.local = moment.fn.utc; // mock the local function to return utc
 jest.doMock('moment', () => {
   moment.tz.setDefault('America/Chicago');
