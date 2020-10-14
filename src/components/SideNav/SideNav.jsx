@@ -79,16 +79,22 @@ const defaultProps = {
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
+const SideNav = ({
+  links,
+  defaultExpanded,
+  isSideNavExpanded,
+  i18n,
+  ...props
+}) => {
   const nav = links
-    .map(link => {
+    .map((link) => {
       const enabled = link.isEnabled ? link.isEnabled : false;
       if (!enabled) {
         return null;
       }
       if (link.hasOwnProperty('childContent')) {
         let parentActive = false;
-        const children = link.childContent.map(childlink => {
+        const children = link.childContent.map((childlink) => {
           if (childlink.isActive) {
             parentActive = true;
           }
@@ -96,8 +102,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             <SideNavMenuItem
               key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
               isActive={childlink.isActive}
-              {...childlink.metaData}
-            >
+              {...childlink.metaData}>
               {childlink.content}
             </SideNavMenuItem>
           );
@@ -109,8 +114,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
             title={link.linkContent}
-            large
-          >
+            large>
             {children}
           </SideNavMenu>
         );
@@ -124,15 +128,14 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
           renderIcon={link.icon}
           isActive={link.isActive}
           {...link.metaData}
-          large
-        >
+          large>
           {link.linkContent}
         </SideNavLink>
       );
     })
-    .filter(i => i);
+    .filter((i) => i);
 
-  const translateById = id =>
+  const translateById = (id) =>
     id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
 
   return (

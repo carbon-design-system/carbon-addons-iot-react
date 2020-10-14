@@ -21,16 +21,21 @@ export default {
 export const WithDeferredContentRendering = () => (
   <FullWidthWrapper>
     <Accordion>
-      <AccordionItem id="a" title="A section without deferred content rendering">
+      <AccordionItem
+        id="a"
+        title="A section without deferred content rendering">
         <p>
-          This content is always rendered to the DOM, no matter if the accordion item has been open
-          or closed.
+          This content is always rendered to the DOM, no matter if the accordion
+          item has been open or closed.
         </p>
       </AccordionItem>
-      <AccordionItemDefer id="b" title="A section with deferred content rendering">
+      <AccordionItemDefer
+        id="b"
+        title="A section with deferred content rendering">
         <p>
-          This content will not be rendered to the DOM until the accordion item is opened. It is not
-          removed from the DOM when the accordion is closed.
+          This content will not be rendered to the DOM until the accordion item
+          is opened. It is not removed from the DOM when the accordion is
+          closed.
         </p>
       </AccordionItemDefer>
     </Accordion>

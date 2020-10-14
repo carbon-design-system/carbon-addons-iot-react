@@ -25,7 +25,10 @@ storiesOf('Watson IoT/Table/TableSaveViewModal', module)
           open={boolean('open', true)}
           titleInputInvalid={boolean('titleInputInvalid', false)}
           titleInputInvalidText={text('titleInputInvalidText', undefined)}
-          viewDescription={text('viewDescription', 'Entities: 2 filters, Alerts: 3 filters')}
+          viewDescription={text(
+            'viewDescription',
+            'Entities: 2 filters, Alerts: 3 filters'
+          )}
         />
       );
     },
@@ -79,14 +82,14 @@ storiesOf('Watson IoT/Table/TableSaveViewModal', module)
         <Fragment>
           <AccordionItem title="4 active filters">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </AccordionItem>
           <AccordionItem title="1 hidden column">
             <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
           </AccordionItem>
         </Fragment>
@@ -221,7 +224,7 @@ storiesOf('Watson IoT/Table/TableSaveViewModal', module)
                       labelText="My custom form element"
                       // ID is needed to make this element focused by default
                       id={myPrimaryInputId}
-                      onChange={evt => {
+                      onChange={(evt) => {
                         // We need to emit the name and the value of our changed form element so that
                         // the parent (TableSaveViewModal) can manage the state for us.
                         onChange({ myTextArea: evt.target.value });

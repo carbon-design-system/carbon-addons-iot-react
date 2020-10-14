@@ -34,7 +34,7 @@ storiesOf('Watson IoT/CardCodeEditor', module)
       onSubmit={isValidCallback}
       onClose={() => {}}
       language={select('Editor language', ['json', 'javascript', 'css'])}
-      onCopy={value => console.log(value)}
+      onCopy={(value) => console.log(value)}
       initialValue="/* write your code here */"
     />
   ))
@@ -42,7 +42,7 @@ storiesOf('Watson IoT/CardCodeEditor', module)
     <CardCodeEditor
       onSubmit={isValidCallback}
       onClose={() => {}}
-      onCopy={value => console.log(value)}
+      onCopy={(value) => console.log(value)}
       initialValue={JSON.stringify(pkgjson, null, 2)}
     />
   ));

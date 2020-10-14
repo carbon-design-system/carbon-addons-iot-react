@@ -35,13 +35,13 @@ const HeaderAction = ({ item, index }) => {
 
   // expanded state for HeaderAction dropdowns
   const toggleExpandedState = () => {
-    setIsExpanded(state => !state);
+    setIsExpanded((state) => !state);
   };
 
   /**
    * close header panel when focus is lost as long as we didn't enter into the child panel
    * */
-  const handleHeaderClose = event => {
+  const handleHeaderClose = (event) => {
     if (!parentContainerRef.current.contains(event.relatedTarget)) {
       // Only close the header if the header is already expanded
       if (isExpanded) toggleExpandedState();
@@ -51,7 +51,7 @@ const HeaderAction = ({ item, index }) => {
   /**
    * Close expanded menu when ESC is pressed, then return focus to menu button
    */
-  const handleHeaderKeyDown = event => {
+  const handleHeaderKeyDown = (event) => {
     // Handle keydowns for opening and closing the menus
     if (
       (event.keyCode === keyCodes.ESCAPE && isExpanded) ||
@@ -76,10 +76,9 @@ const HeaderAction = ({ item, index }) => {
         data-testid="action-btn__group"
         className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn action-btn__group`}
         key={`submenu-${index}`}
-        onBlur={e => handleHeaderClose(e)}
+        onBlur={(e) => handleHeaderClose(e)}
         onKeyDown={handleHeaderKeyDown}
-        ref={parentContainerRef}
-      >
+        ref={parentContainerRef}>
         {item.hasOwnProperty('hasHeaderPanel') ? (
           // Render a subpanel type action
           <HeaderActionPanel
@@ -113,11 +112,13 @@ const HeaderAction = ({ item, index }) => {
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
-      className={classnames(`${carbonPrefix}--header-action-btn`, item.className)}
+      className={classnames(
+        `${carbonPrefix}--header-action-btn`,
+        item.className
+      )}
       key={`menu-item-${item.label}-global-${index}`}
       aria-label={item.label}
-      onClick={item.onClick || (() => {})}
-    >
+      onClick={item.onClick || (() => {})}>
       {item.btnContent}
     </HeaderGlobalAction>
   );

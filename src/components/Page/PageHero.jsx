@@ -21,7 +21,9 @@ const propTypes = {
   crumb: (props, propName, componentName) => {
     const { crumb, title } = props;
     if (!crumb && !title) {
-      return new Error(`One of props 'crumb' or 'title' was not specified in '${componentName}'.`);
+      return new Error(
+        `One of props 'crumb' or 'title' was not specified in '${componentName}'.`
+      );
     }
     if (crumb) {
       PropTypes.checkPropTypes(
@@ -78,7 +80,7 @@ const StyledPageHero = styled.div`
   display: flex;
   flex: 1 1;
   flex-flow: row nowrap;
-  min-height: ${props => (props.big ? '193px' : 'unset')};
+  min-height: ${(props) => (props.big ? '193px' : 'unset')};
 `;
 
 const StyledPageHeroWrap = styled.div`
@@ -134,15 +136,21 @@ const PageHero = ({
     <StyledPageHero className={className}>
       {crumb || (
         <Fragment>
-          {leftContent ? <StyledLeftContent>{leftContent}</StyledLeftContent> : null}
+          {leftContent ? (
+            <StyledLeftContent>{leftContent}</StyledLeftContent>
+          ) : null}
           <StyledTitle>
             <PageTitle section={section} title={title} />
-            {switcher && switcher.options.length ? <PageSwitcher switcher={switcher} /> : null}
+            {switcher && switcher.options.length ? (
+              <PageSwitcher switcher={switcher} />
+            ) : null}
             <StyledPageHeroWrap>
               {blurb ? <StyledPageBlurb>{blurb}</StyledPageBlurb> : null}
             </StyledPageHeroWrap>
           </StyledTitle>
-          {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+          {rightContent ? (
+            <StyledRightContent>{rightContent}</StyledRightContent>
+          ) : null}
         </Fragment>
       )}
     </StyledPageHero>

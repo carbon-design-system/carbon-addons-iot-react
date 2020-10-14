@@ -6436,7 +6436,7 @@ Map {
       "APPLICATION": "APPLICATION",
       "DOCUMENTATION": "DOCUMENTATION",
       "LOGOUT": "LOGOUT",
-      "NAVIGATOR": "ADMIN",
+      "NAVIGATOR": "NAVIGATOR",
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
     },
@@ -16018,7 +16018,9 @@ Map {
             "type": Object {
               "computed": true,
               "name": "shape",
-              "value": "import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';",
+              "value": "import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';",
             },
           },
           "search": Object {

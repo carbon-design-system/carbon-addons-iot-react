@@ -31,9 +31,21 @@ storiesOf('Watson IoT/WizardModal', module)
         title: 'Gimme 3 Steps',
       }}
       steps={[
-        { label: 'step1', content: 'page 1', onValidate: action('validateStep1') },
-        { label: 'step2', content: 'page 2', onValidate: action('validateStep2') },
-        { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
+        {
+          label: 'step1',
+          content: 'page 1',
+          onValidate: action('validateStep1'),
+        },
+        {
+          label: 'step2',
+          content: 'page 2',
+          onValidate: action('validateStep2'),
+        },
+        {
+          label: 'step3',
+          content: 'page 3',
+          onValidate: action('validateStep3'),
+        },
       ]}
       isClickable
       {...commonWizardProps}
@@ -46,9 +58,21 @@ storiesOf('Watson IoT/WizardModal', module)
         title: 'Gimme 3 Steps',
       }}
       steps={[
-        { label: 'step1', content: 'page 1', onValidate: action('validateStep1') },
-        { label: 'step2', content: 'page 2', onValidate: action('validateStep2') },
-        { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
+        {
+          label: 'step1',
+          content: 'page 1',
+          onValidate: action('validateStep1'),
+        },
+        {
+          label: 'step2',
+          content: 'page 2',
+          onValidate: action('validateStep2'),
+        },
+        {
+          label: 'step3',
+          content: 'page 3',
+          onValidate: action('validateStep3'),
+        },
       ]}
       footer={{
         leftContent: <p>Custom content</p>,
@@ -67,9 +91,21 @@ storiesOf('Watson IoT/WizardModal', module)
         title: 'Gimme 3 Steps',
       }}
       steps={[
-        { label: 'step1', content: 'page 1', onValidate: action('validateStep1') },
-        { label: 'step2', content: 'page 2', onValidate: action('validateStep2') },
-        { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
+        {
+          label: 'step1',
+          content: 'page 1',
+          onValidate: action('validateStep1'),
+        },
+        {
+          label: 'step2',
+          content: 'page 2',
+          onValidate: action('validateStep2'),
+        },
+        {
+          label: 'step3',
+          content: 'page 3',
+          onValidate: action('validateStep3'),
+        },
       ]}
       {...commonWizardProps}
       currentStepIndex={2}

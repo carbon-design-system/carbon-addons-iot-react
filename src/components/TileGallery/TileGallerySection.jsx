@@ -22,7 +22,9 @@ const defaultProps = {
 const TileGallerySection = ({ children, title, isOpen, onClick }) => {
   const [open, setOpen] = useState(isOpen);
 
-  const galleryItems = <div className="tile-gallery--section--items">{children}</div>;
+  const galleryItems = (
+    <div className="tile-gallery--section--items">{children}</div>
+  );
 
   return (
     <div className="tile-gallery--section">
@@ -30,12 +32,11 @@ const TileGallerySection = ({ children, title, isOpen, onClick }) => {
         <Accordion>
           <AccordionItem
             title={title}
-            onHeadingClick={evt => {
+            onHeadingClick={(evt) => {
               setOpen(!open);
               onClick(evt);
             }}
-            open={open}
-          >
+            open={open}>
             {galleryItems}
           </AccordionItem>
         </Accordion>

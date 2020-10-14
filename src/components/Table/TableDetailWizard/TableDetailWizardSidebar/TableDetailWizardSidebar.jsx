@@ -46,7 +46,7 @@ class DetailWizardSidebar extends Component {
     const sideBarProgressIndicator = (
       <ProgressIndicator
         currentItemId={currentItemId}
-        items={items.map(item => ({ id: item.id, label: item.name }))}
+        items={items.map((item) => ({ id: item.id, label: item.name }))}
         showLabels={showLabels}
         onClickItem={setItem}
         stepWidth={stepWidth}
@@ -55,7 +55,11 @@ class DetailWizardSidebar extends Component {
       />
     );
     return (
-      <div className={classnames(className, `${iotPrefix}--table-detail-wizard-sidebar--header`)}>
+      <div
+        className={classnames(
+          className,
+          `${iotPrefix}--table-detail-wizard-sidebar--header`
+        )}>
         <WizardSidebar sidebar={sideBarProgressIndicator} width={250} />
       </div>
     );

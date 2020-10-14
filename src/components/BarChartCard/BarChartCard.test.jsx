@@ -5,7 +5,10 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import {
+  BAR_CHART_LAYOUTS,
+  BAR_CHART_TYPES,
+} from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
 
@@ -25,7 +28,7 @@ const barChartCardProps = {
     layout: BAR_CHART_LAYOUTS.VERTICAL,
     type: BAR_CHART_TYPES.SIMPLE,
   },
-  values: barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
+  values: barChartData.quarters.filter((q) => q.quarter === '2020-Q1'),
   breakpoint: 'lg',
   size: 'LARGE',
   onCardAction: () => {},
@@ -54,7 +57,7 @@ describe('BarChartCard', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
-        values={barChartData.quarters.filter(q => q.quarter === 'NOT_VALID')}
+        values={barChartData.quarters.filter((q) => q.quarter === 'NOT_VALID')}
       />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
@@ -97,7 +100,7 @@ describe('BarChartCard', () => {
           ],
           categoryDataSourceId: 'city',
         }}
-        values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
+        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
@@ -124,7 +127,7 @@ describe('BarChartCard', () => {
           ],
           categoryDataSourceId: 'city',
         }}
-        values={barChartData.quarters.filter(a => a.quarter === '2020-Q3')}
+        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q3')}
       />
     );
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
@@ -146,7 +149,7 @@ describe('BarChartCard', () => {
           timeDataSourceId: 'timestamp',
           type: BAR_CHART_TYPES.STACKED,
         }}
-        values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
+        values={barChartData.timestamps.filter((t) => t.city === 'Amsterdam')}
       />
     );
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
@@ -174,7 +177,7 @@ describe('BarChartCard', () => {
           layout: BAR_CHART_LAYOUTS.HORIZONTAL,
           type: BAR_CHART_TYPES.GROUPED,
         }}
-        values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
+        values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);

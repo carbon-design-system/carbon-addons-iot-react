@@ -4,8 +4,16 @@ import { mount } from 'enzyme';
 import ListCard from './ListCard';
 
 const data = [
-  { id: 'row-1', value: 'Row content 1', link: 'https://internetofthings.ibmcloud.com/' },
-  { id: 'row-2', value: 'Row content 2', link: 'https://internetofthings.ibmcloud.com/' },
+  {
+    id: 'row-1',
+    value: 'Row content 1',
+    link: 'https://internetofthings.ibmcloud.com/',
+  },
+  {
+    id: 'row-2',
+    value: 'Row content 2',
+    link: 'https://internetofthings.ibmcloud.com/',
+  },
   { id: 'row-3', value: 'Row content 3' },
   {
     id: 'row-4',
@@ -40,7 +48,13 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} data={data} />
+      <ListCard
+        title="Testing"
+        loadData={onLoadData}
+        hasMoreData
+        isLoading={false}
+        data={data}
+      />
     );
 
     wrapper.find('Card').prop('onScroll')(mockScrollEvent);
@@ -51,7 +65,12 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} />
+      <ListCard
+        title="Testing"
+        loadData={onLoadData}
+        hasMoreData
+        isLoading={false}
+      />
     );
 
     expect(wrapper.find('InlineLoading')).toHaveLength(0);
@@ -61,7 +80,13 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading data={data} />
+      <ListCard
+        title="Testing"
+        loadData={onLoadData}
+        hasMoreData
+        isLoading
+        data={data}
+      />
     );
 
     expect(wrapper.find('InlineLoading')).toHaveLength(1);

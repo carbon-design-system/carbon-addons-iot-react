@@ -30,7 +30,13 @@ afterAll(() => {
 describe('render tests for the image hotspots component', () => {
   it('minimap rendering', () => {
     render(
-      <div style={{ maxWidth: '50px', maxHeight: '50px', width: '50px', height: '50px' }}>
+      <div
+        style={{
+          maxWidth: '50px',
+          maxHeight: '50px',
+          width: '50px',
+          height: '50px',
+        }}>
         <ImageHotspots
           src={Landscape}
           alt="landscape"
@@ -42,7 +48,9 @@ describe('render tests for the image hotspots component', () => {
     );
 
     const img = screen.getByAltText('landscape');
-    const imageLoadEvent = { target: { offsetWidth: 2000, offsetHeight: 2000 } };
+    const imageLoadEvent = {
+      target: { offsetWidth: 2000, offsetHeight: 2000 },
+    };
     // Image should appear
     expect(img).toBeTruthy();
     // Minimap should not appear before drag starts

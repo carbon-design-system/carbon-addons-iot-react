@@ -4,7 +4,11 @@ import { action } from '@storybook/addon-actions';
 import { boolean, object, text } from '@storybook/addon-knobs';
 import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
-import { OverflowMenu, OverflowMenuItem, Tooltip } from 'carbon-components-react';
+import {
+  OverflowMenu,
+  OverflowMenuItem,
+  Tooltip,
+} from 'carbon-components-react';
 
 import ComposedModal from './ComposedModal';
 
@@ -49,12 +53,13 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Needs a lot of space to contain all the info',
       }}
       onSubmit={action('submit')}
-      onClose={action('close')}
-    >
+      onClose={action('close')}>
       Lots of really wide content here...
     </ComposedModal>
   ))
-  .add('fetching data', () => <ComposedModal isFetchingData onClose={action('close')} />)
+  .add('fetching data', () => (
+    <ComposedModal isFetchingData onClose={action('close')} />
+  ))
   .add('error states', () => (
     <ComposedModal
       error="Error sending data to server"
@@ -64,8 +69,7 @@ REDUXFORM or REDUXDIALOG`,
       }}
       onSubmit={action('submit')}
       onClose={action('close')}
-      onClearError={action('onClearError')}
-    >
+      onClearError={action('onClearError')}>
       {text('body content', '')}
     </ComposedModal>
   ))
@@ -108,7 +112,10 @@ REDUXFORM or REDUXDIALOG`,
         label: 'Custom footer',
         title: 'Custom footer element',
       }}
-      footer={object('footer', { isPrimaryButtonHidden: true, isPrimaryButtonDisabled: false })}
+      footer={object('footer', {
+        isPrimaryButtonHidden: true,
+        isPrimaryButtonDisabled: false,
+      })}
       onClose={action('close')}
     />
   ))
@@ -129,7 +136,10 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Dialog with bottom buttons and close button flyover translated',
       }}
       iconDescription="My Close Button"
-      footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
+      footer={{
+        primaryButtonLabel: 'My Submit',
+        secondaryButtonLabel: 'My Cancel',
+      }}
       onClose={action('close')}
       onSubmit={action('submit')}
     />
@@ -141,12 +151,18 @@ REDUXFORM or REDUXDIALOG`,
         title: 'Dialog with bottom buttons and close button flyover translated',
       }}
       iconDescription="My Close Button"
-      footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
+      footer={{
+        primaryButtonLabel: 'My Submit',
+        secondaryButtonLabel: 'My Cancel',
+      }}
       onClose={action('close')}
-      onSubmit={action('submit')}
-    >
+      onSubmit={action('submit')}>
       <OverflowMenu title="Test Overflow" iconDescription="Expand">
-        <OverflowMenuItem key="default" onClick={action('onClick')} itemText="Click me" />
+        <OverflowMenuItem
+          key="default"
+          onClick={action('onClick')}
+          itemText="Click me"
+        />
       </OverflowMenu>
       <Tooltip triggerId="my test tooltip" triggerText="Trigger Text">
         Hi there

@@ -21,7 +21,9 @@ describe('TableDetailWizard', () => {
         onClearError={onClearError}
       />
     );
-    expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(errorString);
+    expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(
+      errorString
+    );
   });
   it('Error dialog without currentItemId', () => {
     const onClearError = jest.fn();
@@ -39,7 +41,9 @@ describe('TableDetailWizard', () => {
         onClearError={onClearError}
       />
     );
-    expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(errorString);
+    expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(
+      errorString
+    );
   });
   it('Handle Clear error', () => {
     const onClearError = jest.fn();

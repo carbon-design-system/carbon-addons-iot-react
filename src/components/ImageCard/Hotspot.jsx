@@ -13,8 +13,10 @@ export const propTypes = {
   /** percentage from the top of the image to show this hotspot */
   y: PropTypes.number.isRequired,
   /** the content of the hotspot, either a react element or an object to use the default hotspot */
-  content: PropTypes.oneOfType([PropTypes.element, PropTypes.shape(HotspotContentPropTypes)])
-    .isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.shape(HotspotContentPropTypes),
+  ]).isRequired,
   /** points to one of our enumerated icon names (ex. caretUp, edit, close)
    * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
    */
@@ -43,7 +45,7 @@ const StyledHotspot = styled(({ className, children }) => (
   <div className={className}>{children}</div>
 ))`
   position: absolute;
-  ${props => `
+  ${(props) => `
     top: calc(${props.y}% - ${props.height / 2}px);
     left: calc(${props.x}% - ${props.width / 2}px);
   `}
@@ -51,7 +53,7 @@ const StyledHotspot = styled(({ className, children }) => (
   pointer-events: auto;
 
   .bx--tooltip__label {
-    ${props =>
+    ${(props) =>
       props.icon
         ? `
       border: solid 1px #aaa;
@@ -128,8 +130,7 @@ const Hotspot = ({
         triggerText={iconToRender}
         showIcon={false}
         triggerId={`hotspot-${x}-${y}`}
-        tooltipId={`hotspot-${x}-${y}`}
-      >
+        tooltipId={`hotspot-${x}-${y}`}>
         {content}
       </Tooltip>
     </StyledHotspot>

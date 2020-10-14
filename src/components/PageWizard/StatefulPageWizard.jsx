@@ -74,9 +74,11 @@ const StatefulPageWizard = ({
   setStep,
   ...other
 }) => {
-  const steps = React.Children.map(children, step => step.props);
-  const [currentStepId, setCurrentStepId] = useState(currentStepIdProp || (steps && steps[0].id));
-  const currentStepIndex = steps.findIndex(i => i.id === currentStepId);
+  const steps = React.Children.map(children, (step) => step.props);
+  const [currentStepId, setCurrentStepId] = useState(
+    currentStepIdProp || (steps && steps[0].id)
+  );
+  const currentStepIndex = steps.findIndex((i) => i.id === currentStepId);
 
   const getNextStep = () => {
     let nextStep;
@@ -106,12 +108,12 @@ const StatefulPageWizard = ({
     return prevStep;
   };
 
-  const handleNext = id => {
+  const handleNext = (id) => {
     setCurrentStepId(id);
     if (onNext) onNext(id);
   };
 
-  const handleBack = id => {
+  const handleBack = (id) => {
     setCurrentStepId(id);
     if (onBack) onBack(id);
   };
@@ -130,14 +132,13 @@ const StatefulPageWizard = ({
       onBack={() => handleBack(getPreviousStep().id)}
       onNext={() => handleNext(getNextStep().id)}
       currentStepId={currentStepId}
-      setStep={id => {
-        const idx = steps.findIndex(i => i.id === id);
+      setStep={(id) => {
+        const idx = steps.findIndex((i) => i.id === id);
         if (idx <= currentStepIndex || validateSteps(currentStepIndex, idx)) {
           setCurrentStepId(id);
           setStep(id);
         }
-      }}
-    >
+      }}>
       {children}
     </PageWizard>
   );
