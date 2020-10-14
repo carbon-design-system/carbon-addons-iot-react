@@ -327,6 +327,18 @@ storiesOf('Watson IoT Experimental/List', module)
       />
     </div>
   ))
+  .add('with empty state', () => (
+    <div style={{ width: 400, height: 600 }}>
+      <List
+        title="Major League Baseball"
+        buttons={[headerButton]}
+        items={[]}
+        isLoading={boolean('isLoading', false)}
+        isFullHeight={boolean('isFullHeight', true)}
+        emptyState={text('hasEmptyState', 'No list items to show')}
+      />
+    </div>
+  ))
   .add('with checkbox multi-selection', () => {
     const MultiSelectList = () => {
       const [selectedIds, setSelectedIds] = useState([]);

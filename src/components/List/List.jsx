@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import { Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, {
@@ -50,7 +51,7 @@ const propTypes = {
     header: OverridePropTypes,
   }),
   /** data source of list items */
-  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)),
   /** list editing style */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,
@@ -86,6 +87,8 @@ const propTypes = {
   onItemMoved: PropTypes.func,
   /** callback function when reorder will occur - can cancel the move by returning false */
   itemWillMove: PropTypes.func,
+  /** content shown if list is empty */
+  emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -107,12 +110,14 @@ const defaultProps = {
   pagination: null,
   selectedIds: [],
   expandedIds: [],
+  items: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
   onItemMoved: () => {},
   itemWillMove: () => {
     return true;
   },
+  emptyState: 'No list items to show',
 };
 
 const List = forwardRef((props, ref) => {
@@ -137,6 +142,7 @@ const List = forwardRef((props, ref) => {
     isLoading,
     onItemMoved,
     itemWillMove,
+    emptyState,
   } = props;
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -224,6 +230,19 @@ const List = forwardRef((props, ref) => {
     renderItemAndChildren(item, index, null, baseIndentLevel)
   );
 
+  const emptyContent =
+    typeof emptyState === 'string' ? (
+      <div
+        className={classnames(`${iotPrefix}--list--empty-state`, {
+          [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
+        })}>
+        <Bee32 />
+        <p>{emptyState}</p>
+      </div>
+    ) : (
+      emptyState
+    );
+
   return (
     <div
       className={classnames(`${iotPrefix}--list`, className, {
@@ -251,7 +270,7 @@ const List = forwardRef((props, ref) => {
           `${iotPrefix}--list--content`
         )}>
         {!isLoading ? (
-          listItems
+          <>{listItems.length ? listItems : emptyContent}</>
         ) : (
           <SkeletonText
             className={`${iotPrefix}--list--skeleton`}
