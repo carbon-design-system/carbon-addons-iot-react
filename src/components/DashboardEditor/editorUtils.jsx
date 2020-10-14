@@ -316,52 +316,26 @@ const renderImageCard = (cardJson, commonProps) => (
 export const getCardPreview = (
   cardData,
   isSelected,
-  isBorderHovered,
-  setBorderHoveredCardId,
   onSelectCard,
   onDuplicateCard,
   onRemoveCard
 ) => {
   const commonProps = {
-    ...(isSelected || isBorderHovered
+    ...(isSelected
       ? {
           className: classNames({
             [`${baseClassName}--preview__selected-card`]: isSelected,
-            [`${baseClassName}--preview__border-hovered-card`]: isBorderHovered,
           }),
         }
       : {}),
-    availableActions: { edit: true, clone: true, delete: true },
+    availableActions: { clone: true, delete: true },
     onCardAction: (id, actionId) => {
-      if (actionId === CARD_ACTIONS.EDIT_CARD) {
-        onSelectCard();
-      }
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
         onDuplicateCard(id);
       }
       if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
       }
-    },
-    onMouseOver: e => {
-      if (
-        // if the card is already selected, the full card wrapper can be captured in the event
-        e.target?.getAttribute('class')?.includes('iot--card ') ||
-        // if the card is not selected, use the relatedTarget, AKA where the event originated
-        // from which is the outer editor preview or the grid-layout
-        e.relatedTarget?.getAttribute('class')?.includes('iot--dashboard-editor--preview') ||
-        e.relatedTarget?.getAttribute('class')?.includes('react-grid-layout')
-      ) {
-        setBorderHoveredCardId(cardData.id);
-      } else {
-        setBorderHoveredCardId(null);
-      }
-    },
-    onFocus: () => {
-      setBorderHoveredCardId(cardData.id);
-    },
-    onBlur: () => {
-      setBorderHoveredCardId(null);
     },
     tabIndex: 0,
     onClick: () => onSelectCard(),

@@ -37,10 +37,10 @@ const defaultProps = {
   supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
 };
 
+const baseClassName = `${iotPrefix}--card-editor`;
+
 const CardEditor = ({ cardJson, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
-
-  const baseClassName = `${iotPrefix}--card-editor`;
 
   // show the gallery if no card is being edited
   const showGallery = cardJson === null || cardJson === undefined;

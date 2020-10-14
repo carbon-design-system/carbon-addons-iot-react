@@ -285,7 +285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
                   onMouseDown={[Function]}
@@ -403,14 +403,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
                 <div
-                  className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onBlur={[Function]}
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onMouseDown={[Function]}
-                  onMouseOver={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
                   role="presentation"
@@ -2185,14 +2182,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
-                  onBlur={[Function]}
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onMouseDown={[Function]}
-                  onMouseOver={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
                   role="presentation"
@@ -2311,14 +2305,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
                 <div
-                  className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onBlur={[Function]}
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onMouseDown={[Function]}
-                  onMouseOver={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
                   role="presentation"
