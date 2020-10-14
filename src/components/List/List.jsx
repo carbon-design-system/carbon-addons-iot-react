@@ -235,8 +235,7 @@ const List = forwardRef((props, ref) => {
       <div
         className={classnames(`${iotPrefix}--list--empty-state`, {
           [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
-        })}
-      >
+        })}>
         <Bee32 />
         <p>{emptyState}</p>
       </div>
