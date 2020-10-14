@@ -144,6 +144,7 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
+      isRail
       {...props} // spreading here as base component does not pass to DOM element.
     >
       {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
