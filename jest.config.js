@@ -13,11 +13,16 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|DashboardGrid).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
       lines: 80,
+    },
+    './src/components/Dashboard/DashboardGrid.jsx': {
+      statements: 74,
+      branches: 61,
+      lines: 74,
     },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved

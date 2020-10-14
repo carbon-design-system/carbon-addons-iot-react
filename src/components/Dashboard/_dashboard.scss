@@ -1,5 +1,6 @@
 @import '~react-grid-layout/css/styles';
 @import '~react-resizable/css/styles';
+@import '../../globals/vars';
 
 .dashboard {
   &--header {
@@ -59,4 +60,9 @@
       margin-left: $spacing-03;
     }
   }
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: none;
+  border: 3px dashed gray;
 }

@@ -28,6 +28,7 @@ import {
   getUpdatedCardSize,
   handleCardVariables,
   chartValueFormatter,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -249,9 +250,11 @@ export const formatColors = (series) => {
 const TimeSeriesCard = ({
   title: titleProp,
   content,
+  children,
   size,
   interval,
   isEditable,
+  isResizable,
   values: initialValues,
   locale,
   i18n: { alertDetected, noDataLabel },
@@ -458,6 +461,8 @@ const TimeSeriesCard = ({
   const ChartComponent =
     chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       title={title}
@@ -468,7 +473,8 @@ const TimeSeriesCard = ({
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
-      isLoading={isLoading}>
+      isLoading={isLoading}
+      resizeHandles={resizeHandles}>
       {!isChartDataEmpty ? (
         <>
           <div

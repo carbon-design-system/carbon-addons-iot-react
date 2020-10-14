@@ -5173,6 +5173,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -5222,6 +5225,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -5240,6 +5246,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
@@ -7503,6 +7512,9 @@ Map {
       "onBreakpointChange": Object {
         "type": "func",
       },
+      "onCardSizeChange": Object {
+        "type": "func",
+      },
       "onDashboardAction": Object {
         "type": "func",
       },
@@ -7510,6 +7522,9 @@ Map {
         "type": "func",
       },
       "onLayoutChange": Object {
+        "type": "func",
+      },
+      "onResizeStop": Object {
         "type": "func",
       },
       "onSetupCard": Object {
@@ -7647,7 +7662,9 @@ Map {
       "isEditable": false,
       "layouts": Object {},
       "onBreakpointChange": null,
+      "onCardSizeChange": null,
       "onLayoutChange": null,
+      "onResizeStop": null,
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -7847,7 +7864,13 @@ Map {
       "onBreakpointChange": Object {
         "type": "func",
       },
+      "onCardSizeChange": Object {
+        "type": "func",
+      },
       "onLayoutChange": Object {
+        "type": "func",
+      },
+      "onResizeStop": Object {
         "type": "func",
       },
     },
@@ -9101,6 +9124,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -9150,6 +9176,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -9168,6 +9197,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -9849,6 +9881,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -9974,6 +10009,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -9992,6 +10030,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -10853,6 +10894,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -10902,6 +10946,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -10920,6 +10967,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -11720,6 +11770,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -11769,6 +11822,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -11787,6 +11843,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
@@ -12491,6 +12550,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -12540,6 +12602,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -12558,6 +12623,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -13369,6 +13437,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -13418,6 +13489,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -13436,6 +13510,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -14285,6 +14362,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -14334,6 +14414,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -14352,6 +14435,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -15104,6 +15190,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "type": "string",
       },
@@ -15151,6 +15240,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -15169,6 +15261,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showContentDuringResize": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
