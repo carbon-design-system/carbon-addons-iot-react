@@ -9,7 +9,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
-    'storybook-readme',
+    '@storybook/addon-controls',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

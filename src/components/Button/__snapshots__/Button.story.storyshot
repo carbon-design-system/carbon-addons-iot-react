@@ -7,89 +7,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "alignItems": "center",
+        "display": "flex",
+        "flexWrap": "wrap",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
+    <button
+      className="some-class iot--btn bx--btn bx--btn--primary"
+      disabled={false}
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <button
-        className="some-class iot--btn bx--btn bx--btn--primary"
-        disabled={false}
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Button
-      </button>
-       
-      <a
-        className="some-class iot--btn bx--btn bx--btn--primary"
-        href="#"
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-      >
-        Link
-      </a>
-       
-      <p
-        className="some-class iot--btn bx--btn bx--btn--primary"
-        disabled={false}
-        href="#"
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Element
-      </p>
-       
-      <a
-        className="some-class iot--btn bx--btn bx--btn--primary"
-        disabled={false}
-        href="#"
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Custom component
-      </a>
-    </div>
+      Button
+    </button>
+     
+    <a
+      className="some-class iot--btn bx--btn bx--btn--primary"
+      href="#"
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+    >
+      Link
+    </a>
+     
+    <p
+      className="some-class iot--btn bx--btn bx--btn--primary"
+      disabled={false}
+      href="#"
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Element
+    </p>
+     
+    <a
+      className="some-class iot--btn bx--btn bx--btn--primary"
+      disabled={false}
+      href="#"
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Custom component
+    </a>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -97,68 +65,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      className="some-class iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-      disabled={false}
-      onClick={[Function]}
-      onFocus={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="bx--assistive-text"
-      >
-        Button icon
-      </span>
-      <svg
-        aria-hidden="true"
-        aria-label="Button icon"
-        className="bx--btn__icon"
-        fill="currentColor"
-        focusable="false"
-        height={16}
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        viewBox="0 0 32 32"
-        width={16}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-        />
-      </svg>
-    </button>
-  </div>
   <button
-    className="info__show-button"
+    className="some-class iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+    disabled={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    onFocus={[Function]}
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    <span
+      className="bx--assistive-text"
+    >
+      Button icon
+    </span>
+    <svg
+      aria-hidden="true"
+      aria-label="Button icon"
+      className="bx--btn__icon"
+      fill="currentColor"
+      focusable="false"
+      height={16}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      viewBox="0 0 32 32"
+      width={16}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -167,68 +103,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      className="some-class iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
-      disabled={false}
-      onClick={[Function]}
-      onFocus={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="bx--assistive-text"
-      >
-        Button icon
-      </span>
-      <svg
-        aria-hidden="true"
-        aria-label="Button icon"
-        className="bx--btn__icon"
-        fill="currentColor"
-        focusable="false"
-        height={16}
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        viewBox="0 0 32 32"
-        width={16}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-        />
-      </svg>
-    </button>
-  </div>
   <button
-    className="info__show-button"
+    className="some-class iot--btn bx--btn bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+    disabled={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    onFocus={[Function]}
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    <span
+      className="bx--assistive-text"
+    >
+      Button icon
+    </span>
+    <svg
+      aria-hidden="true"
+      aria-label="Button icon"
+      className="bx--btn__icon"
+      fill="currentColor"
+      focusable="false"
+      height={16}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      viewBox="0 0 32 32"
+      width={16}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -238,61 +142,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--btn-set"
   >
-    <div
-      className="bx--btn-set"
+    <button
+      className="some-class iot--btn bx--btn bx--btn--secondary"
+      disabled={false}
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <button
-        className="some-class iot--btn bx--btn bx--btn--secondary"
-        disabled={false}
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Secondary button
-      </button>
-      <button
-        className="some-class iot--btn bx--btn bx--btn--primary"
-        disabled={false}
-        onClick={[Function]}
-        onFocus={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        Primary button
-      </button>
-    </div>
+      Secondary button
+    </button>
+    <button
+      className="some-class iot--btn bx--btn bx--btn--primary"
+      disabled={false}
+      onClick={[Function]}
+      onFocus={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Primary button
+    </button>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -300,79 +172,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-      disabled={true}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-1"
-        aria-live="assertive"
-        className="bx--loading bx--loading--small"
-      >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-1"
-        >
-          Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__background"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-        </svg>
-      </div>
-      Test Button
-    </button>
-  </div>
   <button
-    className="info__show-button"
+    className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+    disabled={true}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    <div
+      aria-atomic="true"
+      aria-labelledby="loading-id-1"
+      aria-live="assertive"
+      className="bx--loading bx--loading--small"
+    >
+      <label
+        className="bx--visually-hidden"
+        id="loading-id-1"
+      >
+        Active loading indicator
+      </label>
+      <svg
+        className="bx--loading__svg"
+        viewBox="-75 -75 150 150"
+      >
+        <title>
+          Active loading indicator
+        </title>
+        <circle
+          className="bx--loading__background"
+          cx="0"
+          cy="0"
+          r="26.8125"
+        />
+        <circle
+          className="bx--loading__stroke"
+          cx="0"
+          cy="0"
+          r="26.8125"
+        />
+      </svg>
+    </div>
+    Test Button
   </button>
 </div>
 `;
@@ -381,79 +221,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
-      disabled={true}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-2"
-        aria-live="assertive"
-        className="bx--loading bx--loading--small"
-      >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-2"
-        >
-          Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__background"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="26.8125"
-          />
-        </svg>
-      </div>
-      Test Button
-    </button>
-  </div>
   <button
-    className="info__show-button"
+    className="iot--btn bx--btn bx--btn--secondary bx--btn--disabled"
+    disabled={true}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    <div
+      aria-atomic="true"
+      aria-labelledby="loading-id-2"
+      aria-live="assertive"
+      className="bx--loading bx--loading--small"
+    >
+      <label
+        className="bx--visually-hidden"
+        id="loading-id-2"
+      >
+        Active loading indicator
+      </label>
+      <svg
+        className="bx--loading__svg"
+        viewBox="-75 -75 150 150"
+      >
+        <title>
+          Active loading indicator
+        </title>
+        <circle
+          className="bx--loading__background"
+          cx="0"
+          cy="0"
+          r="26.8125"
+        />
+        <circle
+          className="bx--loading__stroke"
+          cx="0"
+          cy="0"
+          r="26.8125"
+        />
+      </svg>
+    </div>
+    Test Button
   </button>
 </div>
 `;
@@ -462,46 +270,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <button
-      className="iot--btn bx--btn bx--btn--primary"
-      disabled={false}
-      onClick={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      Test Button
-    </button>
-  </div>
   <button
-    className="info__show-button"
+    className="iot--btn bx--btn bx--btn--primary"
+    disabled={false}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
+    tabIndex={0}
     type="button"
   >
-    Show Info
+    Test Button
   </button>
 </div>
 `;
@@ -510,53 +286,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 <div
   className="storybook-container"
 >
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="bx--skeleton bx--btn"
-      />
-       
-      <a
-        className="bx--skeleton bx--btn"
-        href="#"
-        role="button"
-      />
-       
-      <div
-        className="bx--skeleton bx--btn"
-        size="small"
-      />
-    </div>
+  <div>
+    <div
+      className="bx--skeleton bx--btn"
+    />
+     
+    <a
+      className="bx--skeleton bx--btn"
+      href="#"
+      role="button"
+    />
+     
+    <div
+      className="bx--skeleton bx--btn"
+      size="small"
+    />
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

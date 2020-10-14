@@ -7,71 +7,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "minWidth": "1000px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "minWidth": "1000px",
-        }
-      }
+      className="dashboard--header"
     >
       <div
-        className="dashboard--header"
+        className="dashboard--header-left"
+      >
+        <h2>
+          Monthly Building: Munich
+        </h2>
+        <p>
+          Shows an overview of monthly data for a building
+        </p>
+        <div
+          className="dashboard--lastupdated"
+        >
+          Last updated:
+           
+          03/31/2019 13:55
+        </div>
+      </div>
+      <div
+        className="dashboard--header-right"
       >
         <div
-          className="dashboard--header-left"
-        >
-          <h2>
-            Monthly Building: Munich
-          </h2>
-          <p>
-            Shows an overview of monthly data for a building
-          </p>
-          <div
-            className="dashboard--lastupdated"
-          >
-            Last updated:
-             
-            03/31/2019 13:55
-          </div>
-        </div>
-        <div
-          className="dashboard--header-right"
-        >
-          <div
-            className="dashboard--header-actions"
-          />
-        </div>
+          className="dashboard--header-actions"
+        />
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -82,141 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "1000px",
-        }
-      }
-    >
-      <div
-        className="dashboard--header"
-      >
-        <div
-          className="dashboard--header-left"
-        >
-          <h2>
-            Monthly Building: Munich
-          </h2>
-          <p>
-            Shows an overview of daily data for a building
-          </p>
-          <div
-            className="dashboard--lastupdated"
-          >
-            Last updated:
-             
-            03/31/2019 13:55
-          </div>
-        </div>
-        <div
-          className="dashboard--header-right"
-        >
-          <div
-            className="dashboard--header-actions"
-          >
-            <button
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              id="action-icon--edit"
-              onClick={[Function]}
-              tabIndex={0}
-              title="Edit"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Edit"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                />
-              </svg>
-            </button>
-            <button
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              id="action-icon--delete"
-              onClick={[Function]}
-              tabIndex={0}
-              title="Delete"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="Delete"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 12H14V24H12zM18 12H20V24H18z"
-                />
-                <path
-                  d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header (Deprecated) with custom actions component 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "1000px",
       }
     }
   >
@@ -246,36 +80,106 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         <div
           className="dashboard--header-actions"
         >
-          <div>
-            we can now send custom components
-          </div>
+          <button
+            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            disabled={false}
+            id="action-icon--edit"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Edit"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Edit"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+              />
+            </svg>
+          </button>
+          <button
+            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            disabled={false}
+            id="action-icon--delete"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Delete"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Delete"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 12H14V24H12zM18 12H20V24H18z"
+              />
+              <path
+                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header (Deprecated) with custom actions component 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="dashboard--header"
   >
-    Show Info
-  </button>
+    <div
+      className="dashboard--header-left"
+    >
+      <h2>
+        Monthly Building: Munich
+      </h2>
+      <p>
+        Shows an overview of daily data for a building
+      </p>
+      <div
+        className="dashboard--lastupdated"
+      >
+        Last updated:
+         
+        03/31/2019 13:55
+      </div>
+    </div>
+    <div
+      className="dashboard--header-right"
+    >
+      <div
+        className="dashboard--header-actions"
+      >
+        <div>
+          we can now send custom components
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -286,124 +190,92 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "1000px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "1000px",
-        }
-      }
+      className="dashboard--header"
     >
       <div
-        className="dashboard--header"
+        className="dashboard--header-left"
+      >
+        <h2>
+          Monthly Building: Munich
+        </h2>
+        <p>
+          Shows an overview of daily data for a building
+        </p>
+        <div
+          className="dashboard--lastupdated"
+        >
+          Last updated:
+           
+          03/31/2019 13:55
+        </div>
+      </div>
+      <div
+        className="dashboard--header-right"
       >
         <div
-          className="dashboard--header-left"
-        >
-          <h2>
-            Monthly Building: Munich
-          </h2>
-          <p>
-            Shows an overview of daily data for a building
-          </p>
-          <div
-            className="dashboard--lastupdated"
-          >
-            Last updated:
-             
-            03/31/2019 13:55
-          </div>
-        </div>
-        <div
-          className="dashboard--header-right"
+          className="bx--form-item"
         >
           <div
-            className="bx--form-item"
+            className="bx--date-picker bx--date-picker--single"
+            id="date-picker"
           >
             <div
-              className="bx--date-picker bx--date-picker--single"
-              id="date-picker"
+              className="bx--date-picker-container"
             >
-              <div
-                className="bx--date-picker-container"
+              <label
+                className="bx--label"
+                htmlFor="date-picker-input-id"
               >
-                <label
-                  className="bx--label"
-                  htmlFor="date-picker-input-id"
+                Select day
+              </label>
+              <div
+                className="bx--date-picker-input__wrapper"
+              >
+                <input
+                  className="bx--date-picker__input"
+                  disabled={false}
+                  id="date-picker-input-id"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  pattern="d{1,2}/d{4}"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                />
+                <svg
+                  aria-label="Icon description"
+                  className="bx--date-picker__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Select day
-                </label>
-                <div
-                  className="bx--date-picker-input__wrapper"
-                >
-                  <input
-                    className="bx--date-picker__input"
-                    disabled={false}
-                    id="date-picker-input-id"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    pattern="d{1,2}/d{4}"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
+                  <path
+                    d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
                   />
-                  <svg
-                    aria-label="Icon description"
-                    className="bx--date-picker__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    onClick={[Function]}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-                    />
-                    <title>
-                      Icon description
-                    </title>
-                  </svg>
-                </div>
+                  <title>
+                    Icon description
+                  </title>
+                </svg>
               </div>
             </div>
           </div>
-          <div
-            className="dashboard--header-actions"
-          />
         </div>
+        <div
+          className="dashboard--header-actions"
+        />
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -414,208 +286,176 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "1000px",
       }
     }
   >
     <div
-      style={
-        Object {
-          "width": "1000px",
-        }
-      }
+      className="dashboard--header"
     >
       <div
-        className="dashboard--header"
+        className="dashboard--header-left"
+      >
+        <h2>
+          Monthly Building: Munich
+        </h2>
+        <p>
+          Shows an overview of daily data for a building
+        </p>
+        <div
+          className="dashboard--lastupdated"
+        >
+          Last updated:
+           
+          03/31/2019 13:55
+        </div>
+      </div>
+      <div
+        className="dashboard--header-right"
       >
         <div
-          className="dashboard--header-left"
-        >
-          <h2>
-            Monthly Building: Munich
-          </h2>
-          <p>
-            Shows an overview of daily data for a building
-          </p>
-          <div
-            className="dashboard--lastupdated"
-          >
-            Last updated:
-             
-            03/31/2019 13:55
-          </div>
-        </div>
-        <div
-          className="dashboard--header-right"
+          className="bx--form-item"
         >
           <div
-            className="bx--form-item"
+            className="bx--date-picker bx--date-picker--single"
+            id="date-picker"
           >
             <div
-              className="bx--date-picker bx--date-picker--single"
-              id="date-picker"
+              className="bx--date-picker-container"
             >
-              <div
-                className="bx--date-picker-container"
+              <label
+                className="bx--label bx--visually-hidden"
+                htmlFor="date-picker-input-id"
               >
-                <label
-                  className="bx--label bx--visually-hidden"
-                  htmlFor="date-picker-input-id"
+                Select day
+              </label>
+              <div
+                className="bx--date-picker-input__wrapper"
+              >
+                <input
+                  className="bx--date-picker__input"
+                  disabled={false}
+                  id="date-picker-input-id"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  pattern="d{1,2}/d{4}"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                />
+                <svg
+                  aria-label="Icon description"
+                  className="bx--date-picker__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Select day
-                </label>
-                <div
-                  className="bx--date-picker-input__wrapper"
-                >
-                  <input
-                    className="bx--date-picker__input"
-                    disabled={false}
-                    id="date-picker-input-id"
-                    onChange={[Function]}
-                    onClick={[Function]}
-                    pattern="d{1,2}/d{4}"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
+                  <path
+                    d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
                   />
-                  <svg
-                    aria-label="Icon description"
-                    className="bx--date-picker__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    onClick={[Function]}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-                    />
-                    <title>
-                      Icon description
-                    </title>
-                  </svg>
-                </div>
+                  <title>
+                    Icon description
+                  </title>
+                </svg>
               </div>
             </div>
           </div>
-          <div
-            className="dashboard--header-actions"
+        </div>
+        <div
+          className="dashboard--header-actions"
+        >
+          <button
+            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            disabled={false}
+            id="action-icon--edit"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Edit"
+            type="button"
           >
-            <button
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              id="action-icon--edit"
-              onClick={[Function]}
-              tabIndex={0}
-              title="Edit"
-              type="button"
+            <svg
+              aria-hidden="true"
+              aria-label="Edit"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                aria-label="Edit"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                />
-              </svg>
-            </button>
-            <button
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              id="action-icon--delete"
-              onClick={[Function]}
-              tabIndex={0}
-              title="Delete"
-              type="button"
+              <path
+                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+              />
+            </svg>
+          </button>
+          <button
+            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            disabled={false}
+            id="action-icon--delete"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Delete"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Delete"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                aria-label="Delete"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 12H14V24H12zM18 12H20V24H18z"
-                />
-                <path
-                  d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                />
-              </svg>
-            </button>
-            <button
-              className="bx--btn--icon-only bx--btn bx--btn--ghost"
-              disabled={false}
-              id="action-icon--pin"
-              onClick={[Function]}
-              tabIndex={0}
-              title="Pin"
-              type="button"
+              <path
+                d="M12 12H14V24H12zM18 12H20V24H18z"
+              />
+              <path
+                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+              />
+            </svg>
+          </button>
+          <button
+            className="bx--btn--icon-only bx--btn bx--btn--ghost"
+            disabled={false}
+            id="action-icon--pin"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Pin"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Pin"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                aria-label="Pin"
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28.59,13.31,30,11.9,20,2,18.69,3.42,19.87,4.6,8.38,14.32,6.66,12.61,5.25,14l5.66,5.68L2,28.58,3.41,30l8.91-8.91L18,26.75l1.39-1.42-1.71-1.71L27.4,12.13ZM16.26,22.2,9.8,15.74,21.29,6,26,10.71Z"
-                />
-              </svg>
-            </button>
-          </div>
+              <path
+                d="M28.59,13.31,30,11.9,20,2,18.69,3.42,19.87,4.6,8.38,14.32,6.66,12.61,5.25,14l5.66,5.68L2,28.58,3.41,30l8.91-8.91L18,26.75l1.39-1.42-1.71-1.71L27.4,12.13ZM16.26,22.2,9.8,15.74,21.29,6,26,10.71Z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

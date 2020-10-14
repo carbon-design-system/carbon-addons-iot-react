@@ -4,540 +4,508 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 <div
   className="storybook-container"
 >
+  Resize your window to see the callback handlers get triggered in the Actions tab.
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
-    Resize your window to see the callback handlers get triggered in the Actions tab.
     <div
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "flex": 1,
         }
       }
     >
       <div
+        className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         style={
           Object {
-            "flex": 1,
+            "height": "1744px",
           }
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Small"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
           style={
             Object {
-              "height": "1744px",
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
             }
           }
+          type="VALUE"
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Small"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
+            className="iot--card--header"
           >
-            <div
-              className="iot--card--header"
+            <span
+              className="iot--card--title"
+              title="Small"
             >
-              <span
-                className="iot--card--title"
-                title="Small"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Small
-                </div>
-              </span>
               <div
-                className="iot--card--toolbar"
-              />
-            </div>
+                className="iot--card--title--text"
+              >
+                Small
+              </div>
+            </span>
             <div
-              className="iot--card--content"
-              style={
-                Object {
-                  "--card-content-height": "96px",
-                }
-              }
-            >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Small Wide"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "96px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Small Wide"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Small Wide
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Small Wide"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Small Wide"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Small Wide
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Medium Thin"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "--card-content-height": "96px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Medium Thin"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Medium Thin
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "256px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Medium Thin"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "304px",
+              "height": "304px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "160px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Medium Thin"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Medium Thin
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Medium"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Medium"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Medium
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "256px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Medium"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "304px",
+              "height": "304px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "160px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Medium"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Medium
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Medium Wide"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "50.625%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Medium Wide"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Medium Wide
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "256px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Medium Wide"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "304px",
+              "height": "304px",
+              "left": "50.625%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "49.375%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Medium Wide"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Medium Wide
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Large Thin"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "624px",
-                "height": "624px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "480px",
-                "width": "24.0625%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Large Thin"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Large Thin
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "576px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Large Thin"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "624px",
+              "height": "624px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "480px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Large Thin"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Large Thin
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Large"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "624px",
-                "height": "624px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "480px",
-                "width": "49.375%",
+                "--card-content-height": "576px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Large"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Large
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "576px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Large"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "624px",
+              "height": "624px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "480px",
+              "width": "49.375%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Large"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Large
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            data-testid="Card"
-            id="Large Wide"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "624px",
-                "height": "624px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "1120px",
-                "width": "100%",
+                "--card-content-height": "576px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Large Wide"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Large Wide
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "576px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          data-testid="Card"
+          id="Large Wide"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "624px",
+              "height": "624px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "1120px",
+              "width": "100%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Large Wide"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
+              <div
+                className="iot--card--title--text"
+              >
+                Large Wide
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
+          </div>
+          <div
+            className="iot--card--content"
+            style={
+              Object {
+                "--card-content-height": "576px",
+              }
+            }
+          >
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
                 }
-              />
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -545,248 +513,216 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 <div
   className="storybook-container"
 >
+  Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom layout defined. Resize the screen to see the cards reposition and resize themselves at different layouts.
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
-    Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom layout defined. Resize the screen to see the cards reposition and resize themselves at different layouts.
     <div
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "flex": 1,
         }
       }
     >
       <div
+        className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         style={
           Object {
-            "flex": 1,
+            "height": "624px",
           }
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My Facility Metrics"
+          data-testid="Card"
+          id="facility"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
           style={
             Object {
-              "height": "624px",
+              "--card-default-height": "304px",
+              "height": "304px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "320px",
+              "width": "24.0625%",
             }
           }
+          type="VALUE"
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
-            data-testid="Card"
-            id="facility"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "320px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
+            className="iot--card--header"
           >
-            <div
-              className="iot--card--header"
+            <span
+              className="iot--card--title"
+              title="Facility Metrics"
             >
-              <span
-                className="iot--card--title"
-                title="Facility Metrics"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Facility Metrics
-                </div>
-              </span>
               <div
-                className="iot--card--toolbar"
-              />
-            </div>
+                className="iot--card--title--text"
+              >
+                Facility Metrics
+              </div>
+            </span>
             <div
-              className="iot--card--content"
-              style={
-                Object {
-                  "--card-content-height": "256px",
-                }
-              }
-            >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Humidity Values"
-            data-testid="Card"
-            id="humidity"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Humidity"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Humidity
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My Humidity Values"
+          data-testid="Card"
+          id="humidity"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Humidity"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Humidity
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My utilization chart"
-            data-testid="Card"
-            id="utilization"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "18.984375%",
-                "position": "absolute",
-                "top": "160px",
-                "width": "24.0625%",
+                "--card-content-height": "96px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Utilization"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Utilization
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My utilization chart"
+          data-testid="Card"
+          id="utilization"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "18.984375%",
+              "position": "absolute",
+              "top": "160px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Utilization"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
+              <div
+                className="iot--card--title--text"
+              >
+                Utilization
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
+          </div>
+          <div
+            className="iot--card--content"
+            style={
+              Object {
+                "--card-content-height": "96px",
+              }
+            }
+          >
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
                 }
-              />
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -794,248 +730,216 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 <div
   className="storybook-container"
 >
+  Resize your window to see the callback handlers get triggered in the Actions tab.
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
-    Resize your window to see the callback handlers get triggered in the Actions tab.
     <div
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "flex": 1,
         }
       }
     >
       <div
+        className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         style={
           Object {
-            "flex": 1,
+            "height": "304px",
           }
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My Facility Metrics"
+          data-testid="Card"
+          id="facility"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
           style={
             Object {
+              "--card-default-height": "304px",
               "height": "304px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
             }
           }
+          type="VALUE"
         >
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
-            data-testid="Card"
-            id="facility"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
+            className="iot--card--header"
           >
-            <div
-              className="iot--card--header"
+            <span
+              className="iot--card--title"
+              title="Facility Metrics"
             >
-              <span
-                className="iot--card--title"
-                title="Facility Metrics"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Facility Metrics
-                </div>
-              </span>
               <div
-                className="iot--card--toolbar"
-              />
-            </div>
+                className="iot--card--title--text"
+              >
+                Facility Metrics
+              </div>
+            </span>
             <div
-              className="iot--card--content"
-              style={
-                Object {
-                  "--card-content-height": "256px",
-                }
-              }
-            >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Humidity Values"
-            data-testid="Card"
-            id="humidity"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Humidity"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Humidity
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My Humidity Values"
+          data-testid="Card"
+          id="humidity"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Humidity"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Humidity
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
-            content="My utilization chart"
-            data-testid="Card"
-            id="utilization"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "50.625%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "96px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Utilization"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Utilization
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+          content="My utilization chart"
+          data-testid="Card"
+          id="utilization"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "50.625%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Utilization"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
+              <div
+                className="iot--card--title--text"
+              >
+                Utilization
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
+          </div>
+          <div
+            className="iot--card--content"
+            style={
+              Object {
+                "--card-content-height": "96px",
+              }
+            }
+          >
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
                 }
-              />
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -1043,247 +947,215 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 <div
   className="storybook-container"
 >
+  You can drag and drop the cards around. Watch the handler get triggered on the Actions tab.
   <div
     style={
       Object {
-        "position": "relative",
-        "zIndex": 0,
+        "width": "calc(100vw - 6rem)",
       }
     }
   >
-    You can drag and drop the cards around. Watch the handler get triggered on the Actions tab.
     <div
       style={
         Object {
-          "width": "calc(100vw - 6rem)",
+          "flex": 1,
         }
       }
     >
       <div
+        className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         style={
           Object {
-            "flex": 1,
+            "height": "304px",
           }
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-          onDragEnter={[Function]}
-          onDragLeave={[Function]}
-          onDragOver={[Function]}
-          onDrop={[Function]}
+          className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+          content="My Facility Metrics"
+          data-testid="Card"
+          id="facility"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
           style={
             Object {
+              "--card-default-height": "304px",
               "height": "304px",
+              "left": "0%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
             }
           }
+          type="VALUE"
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
-            data-testid="Card"
-            id="facility"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
-            style={
-              Object {
-                "--card-default-height": "304px",
-                "height": "304px",
-                "left": "0%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
-              }
-            }
-            type="VALUE"
+            className="iot--card--header"
           >
-            <div
-              className="iot--card--header"
+            <span
+              className="iot--card--title"
+              title="Facility Metrics"
             >
-              <span
-                className="iot--card--title"
-                title="Facility Metrics"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Facility Metrics
-                </div>
-              </span>
               <div
-                className="iot--card--toolbar"
-              />
-            </div>
+                className="iot--card--title--text"
+              >
+                Facility Metrics
+              </div>
+            </span>
             <div
-              className="iot--card--content"
-              style={
-                Object {
-                  "--card-content-height": "256px",
-                }
-              }
-            >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
-            content="My Humidity Values"
-            data-testid="Card"
-            id="humidity"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "25.3125%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "256px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Humidity"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Humidity
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+          content="My Humidity Values"
+          data-testid="Card"
+          id="humidity"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "25.3125%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Humidity"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
-                }
-              />
-            </div>
+              <div
+                className="iot--card--title--text"
+              >
+                Humidity
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
-            content="My utilization chart"
-            data-testid="Card"
-            id="utilization"
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            role="presentation"
+            className="iot--card--content"
             style={
               Object {
-                "--card-default-height": "144px",
-                "height": "144px",
-                "left": "50.625%",
-                "position": "absolute",
-                "top": "0px",
-                "width": "24.0625%",
+                "--card-content-height": "96px",
               }
             }
-            type="VALUE"
           >
-            <div
-              className="iot--card--header"
-            >
-              <span
-                className="iot--card--title"
-                title="Utilization"
-              >
-                <div
-                  className="iot--card--title--text"
-                >
-                  Utilization
-                </div>
-              </span>
-              <div
-                className="iot--card--toolbar"
-              />
-            </div>
-            <div
-              className="iot--card--content"
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
               style={
                 Object {
-                  "--card-content-height": "96px",
+                  "touchAction": "none",
                 }
               }
+            />
+          </div>
+        </div>
+        <div
+          className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+          content="My utilization chart"
+          data-testid="Card"
+          id="utilization"
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="presentation"
+          style={
+            Object {
+              "--card-default-height": "144px",
+              "height": "144px",
+              "left": "50.625%",
+              "position": "absolute",
+              "top": "0px",
+              "width": "24.0625%",
+            }
+          }
+          type="VALUE"
+        >
+          <div
+            className="iot--card--header"
+          >
+            <span
+              className="iot--card--title"
+              title="Utilization"
             >
-              <span
-                className="react-resizable-handle react-resizable-handle-se"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                  }
+              <div
+                className="iot--card--title--text"
+              >
+                Utilization
+              </div>
+            </span>
+            <div
+              className="iot--card--toolbar"
+            />
+          </div>
+          <div
+            className="iot--card--content"
+            style={
+              Object {
+                "--card-content-height": "96px",
+              }
+            }
+          >
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
                 }
-              />
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;

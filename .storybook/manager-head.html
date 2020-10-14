@@ -1,26 +1,72 @@
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64" />
-<link rel="icon" type="image/png" href="/favicon-1024x1024-with-padding.png" sizes="1024x1024" />
-<link rel="apple-touch-icon" href="/favicon-1024x1024-with-padding.png" sizes="1024x1024" />
+<link
+  rel="icon"
+  type="image/png"
+  href="/favicon-1024x1024-with-padding.png"
+  sizes="1024x1024"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/favicon-1024x1024-with-padding.png"
+  sizes="1024x1024"
+/>
 <style>
+  /* logo image container */
+  .sidebar-header div {
+    margin: 0;
+  }
+
+  /* center the logo image */
   .sidebar-header img {
     margin: 0 auto;
   }
 
-  .simplebar-content section:last-of-type .sidebar-subheading {
-    position: relative;
+  /* sidebar area underneath the search box (all story roots) */
+  .sidebar-header ~ div div {
+    display: flex;
+    flex-direction: column;
   }
 
-  .simplebar-content section:last-of-type .sidebar-subheading::after {
-    content: 'Carbon';
-    position: absolute;
-    left: 0;
-    background: white;
-    padding-right: 4rem;
+  /* "Getting Started" story should always be first */
+  .sidebar-header ~ div div section[data-title='0'] {
+    order: 1;
   }
 
-  .simplebar-content section:first-of-type .sidebar-subheading {
+  /* Hide the first section's root */
+  .sidebar-header ~ div div section[data-title='0'] .sidebar-subheading {
     display: none;
+  }
+
+  .sidebar-header ~ div div section[data-title='Watson IoT'] {
+    order: 2;
+  }
+
+  .sidebar-header ~ div div section[data-title='Watson IoT Experimental'] {
+    order: 3;
+  }
+
+  /* Stories without a root (imported from Carbon)*/
+  .sidebar-header ~ div div section[data-title='categorized'] {
+    order: 4;
+    margin-top: 15px;
+  }
+
+  /* Label the stories without a root as "Carbon" */
+  .sidebar-header ~ div div section[data-title='categorized']::before {
+    content: 'carbon';
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 11px; /* stylelint-disable-line declaration-property-unit-blacklist */
+    line-height: 24px;
+    color: rgba(
+      /* stylelint-disable-line declaration-property-value-blacklist */ 22,
+      22,
+      22,
+      0.5
+    );
+    margin: 0 20px; /* stylelint-disable-line declaration-property-unit-blacklist */
   }
 </style>

@@ -5,132 +5,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Big Modal
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Needs a lot of space to contain all the info
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          Lots of really wide content here...
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Big Modal
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Needs a lot of space to contain all the info
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        Lots of really wide content here...
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;
 
@@ -139,217 +107,185 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-header"
       >
-        <div
-          className="bx--modal-header"
+        <p
+          className="bx--modal-header__label bx--type-delta"
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          Translated bottom buttons
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Dialog with bottom buttons and close button flyover translated
+        </p>
+        <button
+          aria-label="My Close Button"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="My Close Button"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Translated bottom buttons
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Dialog with bottom buttons and close button flyover translated
-          </p>
-          <button
-            aria-label="My Close Button"
-            className="bx--modal-close"
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          aria-label="Menu"
+          className="bx--overflow-menu"
+          onClick={[Function]}
+          onClose={[Function]}
+          onKeyDown={[Function]}
+          open={false}
+          tabIndex={0}
+          title="Test Overflow"
+          type="button"
+        >
+          <svg
+            aria-label="Expand"
+            className="bx--overflow-menu__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
             onClick={[Function]}
-            title="My Close Button"
-            type="button"
+            onKeyDown={[Function]}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="16"
+              cy="8"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="16"
+              r="2"
+            />
+            <circle
+              cx="16"
+              cy="24"
+              r="2"
+            />
+            <title>
+              Expand
+            </title>
+          </svg>
+        </button>
+        <div
+          className="bx--tooltip__label"
+          id="my test tooltip"
+        >
+          Trigger Text
+          <div
+            aria-describedby={null}
+            aria-labelledby="my test tooltip"
+            className="bx--tooltip__trigger"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
           >
             <svg
               aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          <button
-            aria-expanded={false}
-            aria-haspopup={true}
-            aria-label="Menu"
-            className="bx--overflow-menu"
-            onClick={[Function]}
-            onClose={[Function]}
-            onKeyDown={[Function]}
-            open={false}
-            tabIndex={0}
-            title="Test Overflow"
-            type="button"
-          >
-            <svg
-              aria-label="Expand"
-              className="bx--overflow-menu__icon"
+              description={null}
               fill="currentColor"
               focusable="false"
               height={16}
-              onClick={[Function]}
-              onKeyDown={[Function]}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
+              role={null}
+              viewBox="0 0 16 16"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle
-                cx="16"
-                cy="8"
-                r="2"
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
               />
-              <circle
-                cx="16"
-                cy="16"
-                r="2"
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
               />
-              <circle
-                cx="16"
-                cy="24"
-                r="2"
-              />
-              <title>
-                Expand
-              </title>
             </svg>
-          </button>
-          <div
-            className="bx--tooltip__label"
-            id="my test tooltip"
-          >
-            Trigger Text
-            <div
-              aria-describedby={null}
-              aria-labelledby="my test tooltip"
-              className="bx--tooltip__trigger"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                description={null}
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                role={null}
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                />
-                <path
-                  d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Submit
-          </button>
-        </div>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
       >
-        Focus sentinel
-      </span>
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          My Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          My Submit
+        </button>
+      </div>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -358,114 +294,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Custom footer
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Custom footer element
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
       >
         <div
-          className="bx--modal-header"
+          className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Custom footer
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Custom footer element
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <div
-            className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
-          >
-            custom footer element
-          </div>
+          custom footer element
         </div>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -474,198 +378,166 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          DataError
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Cannot communicate with server
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="iot--composed-modal--inline-notification bx--inline-notification bx--inline-notification--error"
+        kind="error"
+        role="alert"
       >
         <div
-          className="bx--modal-header"
+          className="bx--inline-notification__details"
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          <svg
+            aria-hidden={true}
+            className="bx--inline-notification__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 20 20"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            DataError
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Cannot communicate with server
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="iot--composed-modal--inline-notification bx--inline-notification bx--inline-notification--error"
-          kind="error"
-          role="alert"
-        >
+            <path
+              d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+            />
+            <path
+              d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+              data-icon-path="inner-path"
+              opacity="0"
+            />
+            <title>
+              error icon
+            </title>
+          </svg>
           <div
-            className="bx--inline-notification__details"
+            className="bx--inline-notification__text-wrapper"
           >
-            <svg
-              aria-hidden={true}
-              className="bx--inline-notification__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 20 20"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <p
+              className="bx--inline-notification__title"
             >
-              <path
-                d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-              />
-              <path
-                d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-                data-icon-path="inner-path"
-                opacity="0"
-              />
-              <title>
-                error icon
-              </title>
-            </svg>
+              Error sending data to server
+            </p>
             <div
-              className="bx--inline-notification__text-wrapper"
+              className="bx--inline-notification__subtitle"
             >
-              <p
-                className="bx--inline-notification__title"
-              >
-                Error sending data to server
-              </p>
-              <div
-                className="bx--inline-notification__subtitle"
-              >
-                
-              </div>
+              
             </div>
           </div>
-          <button
-            aria-label="closes notification"
-            className="bx--inline-notification__close-button"
-            onClick={[Function]}
-            title="closes notification"
-            type="button"
-          >
-            <svg
-              aria-label="close notification"
-              className="bx--inline-notification__close-icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              role="img"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
         </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
+        <button
+          aria-label="closes notification"
+          className="bx--inline-notification__close-button"
+          onClick={[Function]}
+          title="closes notification"
+          type="button"
         >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
+          <svg
+            aria-label="close notification"
+            className="bx--inline-notification__close-icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
       >
-        Focus sentinel
-      </span>
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -674,68 +546,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--loading-overlay"
   >
     <div
-      className="bx--loading-overlay"
+      aria-atomic="true"
+      aria-labelledby="loading-id-3"
+      aria-live="assertive"
+      className="bx--loading"
     >
-      <div
-        aria-atomic="true"
-        aria-labelledby="loading-id-3"
-        aria-live="assertive"
-        className="bx--loading"
+      <label
+        className="bx--visually-hidden"
+        id="loading-id-3"
       >
-        <label
-          className="bx--visually-hidden"
-          id="loading-id-3"
-        >
+        Active loading indicator
+      </label>
+      <svg
+        className="bx--loading__svg"
+        viewBox="-75 -75 150 150"
+      >
+        <title>
           Active loading indicator
-        </label>
-        <svg
-          className="bx--loading__svg"
-          viewBox="-75 -75 150 150"
-        >
-          <title>
-            Active loading indicator
-          </title>
-          <circle
-            className="bx--loading__stroke"
-            cx="0"
-            cy="0"
-            r="37.5"
-          />
-        </svg>
-      </div>
+        </title>
+        <circle
+          className="bx--loading__stroke"
+          cx="0"
+          cy="0"
+          r="37.5"
+        />
+      </svg>
     </div>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -744,131 +584,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            <strong>
-              Custom node label
-            </strong>
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            <strong>
-              Custom node title
-            </strong>
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          <strong>
+            Custom node label
+          </strong>
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          <strong>
+            Custom node title
+          </strong>
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;
 
@@ -877,127 +685,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Translated bottom buttons
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Dialog with bottom buttons and close button flyover translated
-          </p>
-          <button
-            aria-label="My Close Button"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="My Close Button"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            My Submit
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Translated bottom buttons
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Dialog with bottom buttons and close button flyover translated
+        </p>
+        <button
+          aria-label="My Close Button"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="My Close Button"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          My Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          My Submit
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;
 
@@ -1006,105 +782,73 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            No footer
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Dialog without footer
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          No footer
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Dialog without footer
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;
 
@@ -1113,118 +857,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Custom footer
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Custom footer element
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Custom footer
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Custom footer element
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;
 
@@ -1233,160 +945,128 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
     >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
       <div
-        className="bx--modal-container"
-        role="dialog"
+        className="bx--modal-header"
       >
-        <div
-          className="bx--modal-header"
+        <p
+          className="bx--modal-header__label bx--type-delta"
         >
-          <p
-            className="bx--modal-header__label bx--type-delta"
+          Sending data
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          We are submitting data to the backend
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Sending data
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+          disabled={true}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            aria-atomic="true"
+            aria-labelledby="loading-id-4"
+            aria-live="assertive"
+            className="bx--loading bx--loading--small"
           >
-            We are submitting data to the backend
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <label
+              className="bx--visually-hidden"
+              id="loading-id-4"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              Active loading indicator
+            </label>
+            <svg
+              className="bx--loading__svg"
+              viewBox="-75 -75 150 150"
+            >
+              <title>
+                Active loading indicator
+              </title>
+              <circle
+                className="bx--loading__background"
+                cx="0"
+                cy="0"
+                r="26.8125"
+              />
+              <circle
+                className="bx--loading__stroke"
+                cx="0"
+                cy="0"
+                r="26.8125"
               />
             </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
-            disabled={true}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            <div
-              aria-atomic="true"
-              aria-labelledby="loading-id-4"
-              aria-live="assertive"
-              className="bx--loading bx--loading--small"
-            >
-              <label
-                className="bx--visually-hidden"
-                id="loading-id-4"
-              >
-                Active loading indicator
-              </label>
-              <svg
-                className="bx--loading__svg"
-                viewBox="-75 -75 150 150"
-              >
-                <title>
-                  Active loading indicator
-                </title>
-                <circle
-                  className="bx--loading__background"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
-                />
-                <circle
-                  className="bx--loading__stroke"
-                  cx="0"
-                  cy="0"
-                  r="26.8125"
-                />
-              </svg>
-            </div>
-            Save
-          </button>
-        </div>
+          </div>
+          Save
+        </button>
       </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
     </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
   </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
 </div>
 `;
 
@@ -1395,131 +1075,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      className="bx--modal is-visible iot--composed-modal"
-      data-floating-menu-container={true}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      onTransitionEnd={[Function]}
-      open={true}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <p
-            className="bx--modal-header__label bx--type-delta"
-          >
-            Scary Operation
-          </p>
-          <p
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Delete Stuff
-          </p>
-          <p
-            className="bx--modal-content__text"
-          >
-            Deleting stuff can be hazardous to your health..
-          </p>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer"
-        >
-          <button
-            className="iot--btn bx--btn bx--btn--secondary"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className="iot--btn bx--btn bx--btn--danger"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    onBlur={[Function]}
     onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
   >
-    Show Info
-  </button>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <p
+          className="bx--modal-header__label bx--type-delta"
+        >
+          Scary Operation
+        </p>
+        <p
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Delete Stuff
+        </p>
+        <p
+          className="bx--modal-content__text"
+        >
+          Deleting stuff can be hazardous to your health..
+        </p>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer"
+      >
+        <button
+          className="iot--btn bx--btn bx--btn--secondary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="iot--btn bx--btn bx--btn--danger"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
 </div>
 `;

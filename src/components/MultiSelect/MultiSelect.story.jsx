@@ -17,11 +17,8 @@ import {
   text,
   object,
 } from '@storybook/addon-knobs';
-import { withReadme } from 'storybook-readme';
 
 import { MultiSelect } from '../../index';
-
-import readme from './README.md';
 
 const items = [
   {
@@ -94,7 +91,7 @@ storiesOf('MultiSelect', module)
   .addDecorator(withKnobs)
   .add(
     'default',
-    withReadme(readme, () => {
+    () => {
       const {
         filterable,
         listBoxMenuIconTranslationIds,
@@ -115,7 +112,7 @@ storiesOf('MultiSelect', module)
           />
         </div>
       );
-    }),
+    },
     {
       info: {
         text: `
@@ -126,7 +123,7 @@ storiesOf('MultiSelect', module)
   )
   .add(
     'with initial selected items',
-    withReadme(readme, () => {
+    () => {
       const {
         filterable,
         listBoxMenuIconTranslationIds,
@@ -149,7 +146,7 @@ storiesOf('MultiSelect', module)
           />
         </div>
       );
-    }),
+    },
     {
       info: {
         text: `

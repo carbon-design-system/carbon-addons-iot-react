@@ -81,6 +81,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // TODO: remove when ComboBox addToList prop is no longer experimental
           'The prop `addToList` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
+        ) &&
+        !e.includes(
+          // jsdom warns about this when trying to use the pseudoElt parameter, and throws when trying to get the computed style of a Shadow DOM pseudo‑element.
+          // https://github.com/jsdom/jsdom/pull/2918
+          // https://github.com/jsdom/jsdom/issues/3025
+          'Error: Not implemented: window.computedStyle(elt, pseudoElt)'
         )
       ) {
         done.fail(e);
