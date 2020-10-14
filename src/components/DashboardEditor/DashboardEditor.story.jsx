@@ -349,7 +349,13 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
-        renderCardPreview={(cardJson, isSelected, onSelectCard, onDuplicateCard, onRemoveCard) => {
+        renderCardPreview={(
+          cardJson,
+          isSelected,
+          onSelectCard,
+          onDuplicateCard,
+          onRemoveCard
+        ) => {
           const commonProps = isSelected
             ? { className: 'selected-card' }
             : {
@@ -373,17 +379,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
               size={cardJson.size}
               title={cardJson.title}
               isEditable
-              {...commonProps}
-            >
+              {...commonProps}>
               <div style={{ padding: '1rem' }}>
-                This content is rendered by the renderCardPreview function. The &quot;value&quot;
-                property on the card will be rendered here:
+                This content is rendered by the renderCardPreview function. The
+                &quot;value&quot; property on the card will be rendered here:
                 <h3>{cardJson.value}</h3>
               </div>
             </Card>
-          ) : (
-            undefined
-          );
+          ) : undefined;
         }}
       />
     </div>

@@ -120,7 +120,7 @@ const defaultProps = {
  */
 export const searchForNestedItemValues = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach(item => {
+  cloneDeep(items).forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
       // if the parent matches the search then add the parent and all children
@@ -137,7 +137,10 @@ export const searchForNestedItemValues = (items, value) => {
     } // if the item matches, add it to the filterItems array
     else if (
       !isNil(item.content.secondaryValue) &&
-      caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)
+      caseInsensitiveSearch(
+        [item.content.value, item.content.secondaryValue],
+        value
+      )
     ) {
       filteredItems.push(item);
     } else if (caseInsensitiveSearch([item.content.value], value)) {
@@ -158,7 +161,7 @@ export const searchForNestedItemValues = (items, value) => {
  */
 export const searchForNestedItemIds = (items, value) => {
   const filteredItems = [];
-  cloneDeep(items).forEach(item => {
+  cloneDeep(items).forEach((item) => {
     // if the item has children, recurse and search children
     if (item.children) {
       // eslint-disable-next-line no-param-reassign
@@ -203,15 +206,12 @@ const HierarchyList = ({
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
-  useDeepCompareEffect(
-    () => {
-      setFilteredItems(items);
-    },
-    [items]
-  );
+  useDeepCompareEffect(() => {
+    setFilteredItems(items);
+  }, [items]);
 
   const selectedItemRef = useCallback(
-    node => {
+    (node) => {
       // eslint-disable-next-line no-unused-expressions
       node?.parentNode?.scrollIntoView();
     },
@@ -221,9 +221,11 @@ const HierarchyList = ({
 
   const handleSelect = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId)
+      );
     } else if (selectedIds.includes(id)) {
-      setSelectedIds(selectedIds.filter(item => item !== id));
+      setSelectedIds(selectedIds.filter((item) => item !== id));
     } else {
       if (hasMultiSelect) {
         setSelectedIds([...selectedIds, id]);
@@ -246,10 +248,13 @@ const HierarchyList = ({
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(items, defaultSelectedId);
+        const tempFilteredItems = searchForNestedItemIds(
+          items,
+          defaultSelectedId
+        );
         const tempExpandedIds = [...expandedIds];
         // Expand the categories that have found results
-        tempFilteredItems.forEach(categoryItem => {
+        tempFilteredItems.forEach((categoryItem) => {
           tempExpandedIds.push(categoryItem.id);
         });
         setExpandedIds(tempExpandedIds);
@@ -278,19 +283,21 @@ const HierarchyList = ({
       rowsPerPage = numberOfItems;
   }
 
-  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowsPerPage));
-
-  // Needed for updates to the filteredItems state on pageSize change
-  useEffect(
-    () => {
-      setItemsToShow(filteredItems.slice(0, rowsPerPage));
-    },
-    [filteredItems, rowsPerPage]
+  const [itemsToShow, setItemsToShow] = useState(
+    filteredItems.slice(0, rowsPerPage)
   );
 
-  const onPage = page => {
+  // Needed for updates to the filteredItems state on pageSize change
+  useEffect(() => {
+    setItemsToShow(filteredItems.slice(0, rowsPerPage));
+  }, [filteredItems, rowsPerPage]);
+
+  const onPage = (page) => {
     const rowUpperLimit = page * rowsPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
+    const currentItemsOnPage = filteredItems.slice(
+      rowUpperLimit - rowsPerPage,
+      rowUpperLimit
+    );
     setCurrentPageNumber(page);
     setItemsToShow(currentItemsOnPage);
   };
@@ -299,7 +306,7 @@ const HierarchyList = ({
     page: currentPageNumber,
     onPage,
     maxPage: Math.ceil(numberOfItems / rowsPerPage),
-    pageOfPagesText: page => `Page ${page}`,
+    pageOfPagesText: (page) => `Page ${page}`,
   };
 
   /**
@@ -309,11 +316,11 @@ const HierarchyList = ({
    * be searched in the same fashion.
    * @param {String} text keyed values from search input
    */
-  const handleSearch = text => {
+  const handleSearch = (text) => {
     const tempFilteredItems = searchForNestedItemValues(items, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
-    tempFilteredItems.forEach(categoryItem => {
+    tempFilteredItems.forEach((categoryItem) => {
       tempExpandedIds.push(categoryItem.id);
     });
     setExpandedIds(tempExpandedIds);
@@ -328,7 +335,10 @@ const HierarchyList = ({
    * search by 150ms which is a reasonable amount of time for a single word to
    * be typed.
    */
-  const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
+  const delayedSearch = useCallback(
+    debounce((textInput) => handleSearch(textInput), 150),
+    [items]
+  );
 
   const handleMove = (dragIds, hoverId, target) => {
     const updatedList = moveItemsInList(items, dragIds, hoverId, target);
@@ -340,7 +350,7 @@ const HierarchyList = ({
   const handleDrag = (dragId, hoverId, target) => {
     if (
       editModeSelectedIds.length > 0 &&
-      editModeSelectedIds.find(selectionId => selectionId === dragId)
+      editModeSelectedIds.find((selectionId) => selectionId === dragId)
     ) {
       handleMove(editModeSelectedIds, hoverId, target);
     } else {
@@ -358,7 +368,7 @@ const HierarchyList = ({
         onClose={() => {
           setShowModal(false);
         }}
-        onSubmit={dropId => {
+        onSubmit={(dropId) => {
           if (dropId !== null) {
             handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
           }
@@ -375,7 +385,7 @@ const HierarchyList = ({
           hasSearch
             ? {
                 value: searchValue,
-                onChange: evt => {
+                onChange: (evt) => {
                   setSearchValue(evt.target.value);
                   delayedSearch(evt.target.value);
                 },
@@ -384,10 +394,10 @@ const HierarchyList = ({
         }
         items={pageSize !== null ? itemsToShow : filteredItems}
         expandedIds={expandedIds}
-        toggleExpansion={id => {
-          if (expandedIds.filter(rowId => rowId === id).length > 0) {
+        toggleExpansion={(id) => {
+          if (expandedIds.filter((rowId) => rowId === id).length > 0) {
             // remove id from array
-            setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+            setExpandedIds(expandedIds.filter((rowId) => rowId !== id));
           } else {
             setExpandedIds(expandedIds.concat([id]));
           }
@@ -395,7 +405,8 @@ const HierarchyList = ({
         overrides={{
           header: {
             component:
-              editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0
+              editingStyle === EditingStyle.MultipleNesting &&
+              editModeSelectedIds.length > 0
                 ? BulkActionHeader
                 : null,
             props: {

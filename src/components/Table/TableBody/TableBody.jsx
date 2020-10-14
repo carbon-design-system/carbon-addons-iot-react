@@ -51,7 +51,8 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+    .isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
@@ -140,22 +141,29 @@ const TableBody = ({
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
     () =>
-      ordering.map(col => ({
+      ordering.map((col) => ({
         ...col,
-        ...columns.find(column => column.id === col.columnId),
+        ...columns.find((column) => column.id === col.columnId),
       })),
     [columns, ordering]
   );
 
-  const someRowHasSingleRowEditMode = rowActionsState.some(rowAction => rowAction.isEditMode);
+  const someRowHasSingleRowEditMode = rowActionsState.some(
+    (rowAction) => rowAction.isEditMode
+  );
 
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
-    const myRowActionState = rowActionsState.find(rowAction => rowAction.rowId === row.id);
-    const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
-    const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
+    const myRowActionState = rowActionsState.find(
+      (rowAction) => rowAction.rowId === row.id
+    );
+    const rowHasSingleRowEditMode = !!(
+      myRowActionState && myRowActionState.isEditMode
+    );
+    const isSelectable =
+      rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
 
     const rowElement = (
       <TableBodyRow
@@ -168,12 +176,14 @@ const TableBody = ({
         singleRowEditMode={rowHasSingleRowEditMode}
         singleRowEditButtons={singleRowEditButtons}
         rowDetails={
-          isRowExpanded && expandedRows.find(j => j.rowId === row.id)
-            ? expandedRows.find(j => j.rowId === row.id).content
+          isRowExpanded && expandedRows.find((j) => j.rowId === row.id)
+            ? expandedRows.find((j) => j.rowId === row.id).content
             : null
         }
         rowActionsError={myRowActionState ? myRowActionState.error : null}
-        isRowActionRunning={myRowActionState ? myRowActionState.isRunning : null}
+        isRowActionRunning={
+          myRowActionState ? myRowActionState.isRunning : null
+        }
         ordering={orderingMap}
         selectRowAria={selectRowAria}
         overflowMenuAria={overflowMenuAria}
@@ -212,20 +222,21 @@ const TableBody = ({
       />
     );
     return shouldShowChildren
-      ? [rowElement].concat(row.children.map(childRow => renderRow(childRow, nestingLevel + 1)))
+      ? [rowElement].concat(
+          row.children.map((childRow) => renderRow(childRow, nestingLevel + 1))
+        )
       : rowElement;
   };
 
   return (
     <CarbonTableBody>
-      {rows.map(row => {
+      {rows.map((row) => {
         return shouldLazyRender ? (
           <VisibilitySensor
             key={`visibilitysensor-${row.id}`}
             scrollCheck
             partialVisibility
-            resizeCheck
-          >
+            resizeCheck>
             {({ isVisible }) => (isVisible ? renderRow(row) : <tr />)}
           </VisibilitySensor>
         ) : (

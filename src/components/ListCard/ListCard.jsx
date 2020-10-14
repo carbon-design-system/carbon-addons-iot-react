@@ -26,7 +26,7 @@ const ListCard = ({
   className,
   ...others
 }) => {
-  const handleScroll = e => {
+  const handleScroll = (e) => {
     const element = e.target;
     //  height of the elements content - height element’s content is scrolled vertically === height of the scrollable part of the element
     if (
@@ -47,18 +47,22 @@ const ListCard = ({
           paddingRight: CARD_CONTENT_PADDING,
           paddingBottom: 0,
           paddingLeft: CARD_CONTENT_PADDING,
-        }}
-      >
+        }}>
         <StructuredListWrapper>
           <StructuredListBody>
             {data
-              ? data.map(item => {
+              ? data.map((item) => {
                   return (
                     <StructuredListRow key={item.id}>
-                      <StructuredListCell className="list-card--item" key={`${item.id}-cell`}>
+                      <StructuredListCell
+                        className="list-card--item"
+                        key={`${item.id}-cell`}>
                         <div className="list-card--item--value">
                           {item.link ? (
-                            <Link style={{ display: 'inherit' }} target="_blank" href={item.link}>
+                            <Link
+                              style={{ display: 'inherit' }}
+                              target="_blank"
+                              href={item.link}>
                               {item.value}
                             </Link>
                           ) : (
@@ -66,7 +70,9 @@ const ListCard = ({
                           )}
                         </div>
                         {item.extraContent ? (
-                          <div className="list-card--item--extra-content">{item.extraContent}</div>
+                          <div className="list-card--item--extra-content">
+                            {item.extraContent}
+                          </div>
                         ) : null}
                       </StructuredListCell>
                     </StructuredListRow>
@@ -74,7 +80,9 @@ const ListCard = ({
                 })
               : null}
 
-            {isLoading ? <InlineLoading description="Loading data..." status="active" /> : null}
+            {isLoading ? (
+              <InlineLoading description="Loading data..." status="active" />
+            ) : null}
           </StructuredListBody>
         </StructuredListWrapper>
       </div>

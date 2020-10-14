@@ -103,7 +103,8 @@ const TableDetailWizard = ({
   onClearError,
   isClickable,
 }) => {
-  const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
+  const currentItemObj =
+    items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
 
   const hasNext = currentItemIndex !== items.length - 1;
@@ -115,7 +116,7 @@ const TableDetailWizard = ({
     }
   };
 
-  const isValid = callback => {
+  const isValid = (callback) => {
     if (currentItemObj && currentItemObj.onValidate) {
       if (currentItemObj.onValidate(currentItemId)) {
         callback();
@@ -125,13 +126,17 @@ const TableDetailWizard = ({
   };
 
   return (
-    <div className={classnames(className, `${iotPrefix}--table-detail-wizard--wizard-wrapper`)}>
+    <div
+      className={classnames(
+        className,
+        `${iotPrefix}--table-detail-wizard--wizard-wrapper`
+      )}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
       <div className={`${iotPrefix}--table-detail-wizard--wizard-container`}>
         <DetailWizardSidebar
           currentItemId={currentItemId}
           // only go if current step passes validation
-          setItem={id => isValid(() => setItem(id))}
+          setItem={(id) => isValid(() => setItem(id))}
           items={items}
           showLabels={showLabels}
           stepWidth={stepWidth}
@@ -150,7 +155,11 @@ const TableDetailWizard = ({
           className={`${iotPrefix}--table-detail-wizard--inline-notification`}
         />
       ) : null}
-      <div className={classnames(className, `${iotPrefix}--table-detail-wizard--footer`)}>
+      <div
+        className={classnames(
+          className,
+          `${iotPrefix}--table-detail-wizard--footer`
+        )}>
         <div className="bx--modal-footer">
           <WizardFooter
             backLabel={backLabel}
@@ -160,7 +169,7 @@ const TableDetailWizard = ({
             cancelLabel={cancelLabel}
             submitLabel={submitLabel}
             // Validate before next
-            onNext={event => isValid(() => onNext(event))}
+            onNext={(event) => isValid(() => onNext(event))}
             onBack={onBack}
             onSubmit={onSubmit}
             onCancel={onClose}

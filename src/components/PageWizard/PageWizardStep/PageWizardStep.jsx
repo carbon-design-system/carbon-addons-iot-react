@@ -102,8 +102,7 @@ const PageWizardStep = ({
         hasStickyFooter
           ? `${iotPrefix}--page-wizard--content--actions--sticky`
           : `${iotPrefix}--page-wizard--content--actions`
-      }
-    >
+      }>
       {beforeFooterContent}
       {!hasPrev ? (
         <Button onClick={onClose} kind="secondary">
@@ -122,16 +121,14 @@ const PageWizardStep = ({
               if (onNext) onNext();
             }
           }}
-          disabled={nextDisabled}
-        >
+          disabled={nextDisabled}>
           {i18n.next}
         </Button>
       ) : (
         <Button
           onClick={() => onValidate() && onSubmit()}
           disabled={nextDisabled}
-          loading={sendingData}
-        >
+          loading={sendingData}>
           {i18n.submit}
         </Button>
       )}

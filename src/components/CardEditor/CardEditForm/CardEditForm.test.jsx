@@ -1,4 +1,7 @@
-import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_SIZES,
+} from '../../../constants/LayoutConstants';
 
 import { getCardSizeText, handleSubmit } from './CardEditForm';
 
@@ -25,35 +28,25 @@ describe('CardEditForm', () => {
         `${i18n.cardSize_SMALL} (${CARD_DIMENSIONS.SMALL.lg.w}x${CARD_DIMENSIONS.SMALL.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.SMALLWIDE, i18n)).toEqual(
-        `${i18n.cardSize_SMALLWIDE} (${CARD_DIMENSIONS.SMALLWIDE.lg.w}x${
-          CARD_DIMENSIONS.SMALLWIDE.lg.h
-        })`
+        `${i18n.cardSize_SMALLWIDE} (${CARD_DIMENSIONS.SMALLWIDE.lg.w}x${CARD_DIMENSIONS.SMALLWIDE.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.MEDIUM, i18n)).toEqual(
         `${i18n.cardSize_MEDIUM} (${CARD_DIMENSIONS.MEDIUM.lg.w}x${CARD_DIMENSIONS.MEDIUM.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.MEDIUMTHIN, i18n)).toEqual(
-        `${i18n.cardSize_MEDIUMTHIN} (${CARD_DIMENSIONS.MEDIUMTHIN.lg.w}x${
-          CARD_DIMENSIONS.MEDIUMTHIN.lg.h
-        })`
+        `${i18n.cardSize_MEDIUMTHIN} (${CARD_DIMENSIONS.MEDIUMTHIN.lg.w}x${CARD_DIMENSIONS.MEDIUMTHIN.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.MEDIUMWIDE, i18n)).toEqual(
-        `${i18n.cardSize_MEDIUMWIDE} (${CARD_DIMENSIONS.MEDIUMWIDE.lg.w}x${
-          CARD_DIMENSIONS.MEDIUMWIDE.lg.h
-        })`
+        `${i18n.cardSize_MEDIUMWIDE} (${CARD_DIMENSIONS.MEDIUMWIDE.lg.w}x${CARD_DIMENSIONS.MEDIUMWIDE.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.LARGE, i18n)).toEqual(
         `${i18n.cardSize_LARGE} (${CARD_DIMENSIONS.LARGE.lg.w}x${CARD_DIMENSIONS.LARGE.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.LARGETHIN, i18n)).toEqual(
-        `${i18n.cardSize_LARGETHIN} (${CARD_DIMENSIONS.LARGETHIN.lg.w}x${
-          CARD_DIMENSIONS.LARGETHIN.lg.h
-        })`
+        `${i18n.cardSize_LARGETHIN} (${CARD_DIMENSIONS.LARGETHIN.lg.w}x${CARD_DIMENSIONS.LARGETHIN.lg.h})`
       );
       expect(getCardSizeText(CARD_SIZES.LARGEWIDE, i18n)).toEqual(
-        `${i18n.cardSize_LARGEWIDE} (${CARD_DIMENSIONS.LARGEWIDE.lg.w}x${
-          CARD_DIMENSIONS.LARGEWIDE.lg.h
-        })`
+        `${i18n.cardSize_LARGEWIDE} (${CARD_DIMENSIONS.LARGEWIDE.lg.w}x${CARD_DIMENSIONS.LARGEWIDE.lg.h})`
       );
     });
   });
@@ -63,7 +56,9 @@ describe('CardEditForm', () => {
   describe('handleSubmit', () => {
     it('should throw error if JSON is empty', () => {
       handleSubmit('', mockSetError, mockOnChange, mockSetShowEditor);
-      expect(mockSetError).toBeCalledWith('JSON value must not be an empty string');
+      expect(mockSetError).toBeCalledWith(
+        'JSON value must not be an empty string'
+      );
     });
     it('should call onChange and setShowEditor if JSON is valid', () => {
       handleSubmit('{}', mockSetError, mockOnChange, mockSetShowEditor);

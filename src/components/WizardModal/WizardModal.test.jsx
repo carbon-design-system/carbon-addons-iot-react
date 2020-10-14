@@ -20,9 +20,21 @@ describe('WizardModal', () => {
       <WizardModal
         {...commonWizardProps}
         steps={[
-          { label: 'step1', content: 'page 1', onValidate: mockValidateStepFunction },
-          { label: 'step2', content: 'page 2', onValidate: mockValidateStepFunction },
-          { label: 'step3', content: 'page 3', onValidate: mockValidateStepFunction },
+          {
+            label: 'step1',
+            content: 'page 1',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step2',
+            content: 'page 2',
+            onValidate: mockValidateStepFunction,
+          },
+          {
+            label: 'step3',
+            content: 'page 3',
+            onValidate: mockValidateStepFunction,
+          },
         ]}
       />
     );
@@ -77,7 +89,11 @@ describe('WizardModal', () => {
         steps={[
           { label: 'step1', content: 'page 1' },
           { label: 'step2', content: 'page 2' },
-          { label: 'step3', content: 'page 3', onValidate: mockValidateStepFunction },
+          {
+            label: 'step3',
+            content: 'page 3',
+            onValidate: mockValidateStepFunction,
+          },
         ]}
       />
     );
@@ -159,7 +175,8 @@ describe('WizardModal', () => {
   it('clicking on previous button or previous step will call onBack', () => {
     const callBack = jest.fn();
 
-    const getStep = step => screen.getByTestId(`iot--progress-step-button-main-${step}`);
+    const getStep = (step) =>
+      screen.getByTestId(`iot--progress-step-button-main-${step}`);
 
     render(
       <WizardModal

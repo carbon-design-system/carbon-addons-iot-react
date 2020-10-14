@@ -14,7 +14,7 @@ const defaultProps = {
 };
 
 const StyledSidebar = styled.div`
-  min-width: ${props => `${props.width}px`};
+  min-width: ${(props) => `${props.width}px`};
   width: 25%;
   padding-left: ${spacing05};
 `;

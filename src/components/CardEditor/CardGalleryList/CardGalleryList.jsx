@@ -30,7 +30,7 @@ const defaultProps = {
   i18n: {
     galleryHeader: 'Gallery',
     searchPlaceHolderText: 'Enter a search',
-    pageOfPagesText: page => `Page ${page}`,
+    pageOfPagesText: (page) => `Page ${page}`,
     cardType_TIMESERIES: 'Time series line',
     cardType_BAR: 'Simple bar',
     cardType_VALUE: 'Value / KPI',
@@ -58,7 +58,7 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
       isFullHeight
       hasSearch
       showPagination={false}
-      items={supportedTypes.map(cardType => ({
+      items={supportedTypes.map((cardType) => ({
         id: cardType,
         content: {
           value: mergedI18n[`cardType_${cardType}`] || cardType,
@@ -66,7 +66,7 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
         },
         isSelectable: true,
       }))}
-      onSelect={cardType => {
+      onSelect={(cardType) => {
         onAddCard(cardType);
       }}
       i18n={{

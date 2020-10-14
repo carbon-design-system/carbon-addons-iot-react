@@ -39,8 +39,15 @@ const defaultProps = {
 
 const baseClassName = `${iotPrefix}--card-editor`;
 
-const CardEditor = ({ cardJson, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+const CardEditor = ({
+  cardJson,
+  onShowGallery,
+  onChange,
+  onAddCard,
+  supportedTypes,
+  i18n,
+}) => {
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // show the gallery if no card is being edited
   const showGallery = cardJson === null || cardJson === undefined;
@@ -54,9 +61,8 @@ const CardEditor = ({ cardJson, onShowGallery, onChange, onAddCard, supportedTyp
             kind="ghost"
             size="small"
             renderIcon={Apps16}
-            onClick={onShowGallery}
-          >
-            {mergedI18N.openGalleryButton}
+            onClick={onShowGallery}>
+            {mergedI18n.openGalleryButton}
           </Button>
         </div>
       ) : null}
@@ -65,7 +71,7 @@ const CardEditor = ({ cardJson, onShowGallery, onChange, onAddCard, supportedTyp
           <CardGalleryList
             onAddCard={onAddCard}
             supportedTypes={supportedTypes}
-            i18n={mergedI18N}
+            i18n={mergedI18n}
           />
         ) : (
           <CardEditForm cardJson={cardJson} onChange={onChange} />

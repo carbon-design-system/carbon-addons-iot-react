@@ -188,7 +188,8 @@ const WizardInline = ({
     );
   }
 
-  const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
+  const currentItemObj =
+    items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
@@ -199,7 +200,7 @@ const WizardInline = ({
     }
   };
 
-  const isValid = callback => {
+  const isValid = (callback) => {
     if (currentItemObj && currentItemObj.onValidate) {
       if (currentItemObj.onValidate(currentItemId)) {
         callback();
@@ -218,7 +219,7 @@ const WizardInline = ({
           currentItemId={currentItemId}
           breadcrumb={breadcrumb}
           // only go if current step passes validation
-          setItem={id => isValid(() => setItem(id))}
+          setItem={(id) => isValid(() => setItem(id))}
           items={items}
           showLabels={showLabels}
           onClose={showCloseButton ? onClose : null}
@@ -252,7 +253,7 @@ const WizardInline = ({
               cancelLabel={cancelLabel}
               submitLabel={submitLabel}
               // Validate before next
-              onNext={event => isValid(() => onNext(event))}
+              onNext={(event) => isValid(() => onNext(event))}
               onBack={onBack}
               onSubmit={onSubmit}
               onCancel={onClose}

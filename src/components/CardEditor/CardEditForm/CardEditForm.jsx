@@ -8,7 +8,14 @@ import {
   ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab, Button, TextArea, TextInput, Dropdown } from '../../../index';
+import {
+  Tabs,
+  Tab,
+  Button,
+  TextArea,
+  TextInput,
+  Dropdown,
+} from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
 
 const { iotPrefix } = settings;
@@ -107,7 +114,7 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
           id="title"
           labelText="Card title"
           light
-          onChange={evt => onChange({ ...cardJson, title: evt.target.value })}
+          onChange={(evt) => onChange({ ...cardJson, title: evt.target.value })}
           value={cardJson.title}
         />
       </div>
@@ -116,7 +123,9 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
           id="description"
           labelText="Description (Optional)"
           light
-          onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
+          onChange={(evt) =>
+            onChange({ ...cardJson, description: evt.target.value })
+          }
           value={cardJson.description}
         />
       </div>
@@ -125,17 +134,21 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
           id="size"
           label="Select a size"
           direction="bottom"
-          itemToString={item => item.text}
-          items={(ALLOWED_CARD_SIZES_PER_TYPE[cardJson.type] ?? Object.keys(CARD_SIZES)).map(
-            size => {
-              return {
-                id: size,
-                text: getCardSizeText(size, mergedI18n),
-              };
-            }
-          )}
+          itemToString={(item) => item.text}
+          items={(
+            ALLOWED_CARD_SIZES_PER_TYPE[cardJson.type] ??
+            Object.keys(CARD_SIZES)
+          ).map((size) => {
+            return {
+              id: size,
+              text: getCardSizeText(size, mergedI18n),
+            };
+          })}
           light
-          selectedItem={{ id: cardJson.size, text: getCardSizeText(cardJson.size, mergedI18n) }}
+          selectedItem={{
+            id: cardJson.size,
+            text: getCardSizeText(cardJson.size, mergedI18n),
+          }}
           onChange={({ selectedItem }) => {
             onChange({ ...cardJson, size: selectedItem.id });
           }}
@@ -149,7 +162,9 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
     <>
       {showEditor ? (
         <CardCodeEditor
-          onSubmit={(val, setError) => handleSubmit(val, setError, onChange, setShowEditor)}
+          onSubmit={(val, setError) =>
+            handleSubmit(val, setError, onChange, setShowEditor)
+          }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
           i18n={{
@@ -176,8 +191,7 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
             onClick={() => {
               setModalData(JSON.stringify(cardJson, null, 4));
               setShowEditor(true);
-            }}
-          >
+            }}>
             {mergedI18n.openEditorButton}
           </Button>
         </div>

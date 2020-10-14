@@ -6,7 +6,11 @@ import { CARD_TYPES } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
-import { getDefaultCard, getDuplicateCard, getCardPreview } from './editorUtils';
+import {
+  getDefaultCard,
+  getDuplicateCard,
+  getCardPreview,
+} from './editorUtils';
 
 const { iotPrefix } = settings;
 
@@ -60,7 +64,12 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
-  supportedCardTypes: [CARD_TYPES.BAR, CARD_TYPES.TIMESERIES, CARD_TYPES.VALUE, CARD_TYPES.TABLE],
+  supportedCardTypes: [
+    CARD_TYPES.BAR,
+    CARD_TYPES.TIMESERIES,
+    CARD_TYPES.VALUE,
+    CARD_TYPES.TABLE,
+  ],
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
@@ -111,7 +120,7 @@ const DashboardEditor = ({
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
 
-  const addCard = type => {
+  const addCard = (type) => {
     const cardData = getDefaultCard(type);
     setDashboardJson({
       ...dashboardJson,
@@ -120,8 +129,10 @@ const DashboardEditor = ({
     setSelectedCardId(cardData.id);
   };
 
-  const duplicateCard = id => {
-    const cardData = getDuplicateCard(dashboardJson.cards.find(i => i.id === id));
+  const duplicateCard = (id) => {
+    const cardData = getDuplicateCard(
+      dashboardJson.cards.find((i) => i.id === id)
+    );
     setDashboardJson({
       ...dashboardJson,
       cards: [...dashboardJson.cards, cardData],
@@ -129,10 +140,10 @@ const DashboardEditor = ({
     setSelectedCardId(cardData.id);
   };
 
-  const removeCard = id =>
+  const removeCard = (id) =>
     setDashboardJson({
       ...dashboardJson,
-      cards: dashboardJson.cards.filter(i => i.id !== id),
+      cards: dashboardJson.cards.filter((i) => i.id !== id),
     });
 
   return (
@@ -164,13 +175,12 @@ const DashboardEditor = ({
                 ...dashboardJson,
                 layouts: newLayouts,
               })
-            }
-          >
-            {dashboardJson.cards.map(cardData => {
+            }>
+            {dashboardJson.cards.map((cardData) => {
               const isSelected = selectedCardId === cardData.id;
               const onSelectCard = () => setSelectedCardId(cardData.id);
-              const onDuplicateCard = id => duplicateCard(id);
-              const onRemoveCard = id => removeCard(id);
+              const onDuplicateCard = (id) => duplicateCard(id);
+              const onRemoveCard = (id) => removeCard(id);
 
               // if function not defined, or it returns falsy, render default preview
               return (
@@ -181,7 +191,13 @@ const DashboardEditor = ({
                   onDuplicateCard,
                   onRemoveCard
                 ) ??
-                getCardPreview(cardData, isSelected, onSelectCard, onDuplicateCard, onRemoveCard)
+                getCardPreview(
+                  cardData,
+                  isSelected,
+                  onSelectCard,
+                  onDuplicateCard,
+                  onRemoveCard
+                )
               );
             })}
           </DashboardGrid>
@@ -189,12 +205,14 @@ const DashboardEditor = ({
       </div>
       <div className={`${baseClassName}--sidebar`}>
         <CardEditor
-          cardJson={dashboardJson.cards.find(i => i.id === selectedCardId)}
+          cardJson={dashboardJson.cards.find((i) => i.id === selectedCardId)}
           onShowGallery={() => setSelectedCardId(null)}
-          onChange={cardData =>
+          onChange={(cardData) =>
             setDashboardJson({
               ...dashboardJson,
-              cards: dashboardJson.cards.map(card => (card.id === cardData.id ? cardData : card)),
+              cards: dashboardJson.cards.map((card) =>
+                card.id === cardData.id ? cardData : card
+              ),
             })
           }
           onAddCard={addCard}

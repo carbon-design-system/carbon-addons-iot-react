@@ -44,12 +44,19 @@ describe('DashboardEditor', () => {
   };
 
   it('selecting edit card should select the card', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getByTitle(
+      'Open and close list of options'
+    );
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -65,11 +72,18 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting clone card should duplicate card', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getByTitle(
+      'Open and close list of options'
+    );
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -81,11 +95,18 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting remove card should remove card', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getByTitle(
+      'Open and close list of options'
+    );
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -109,7 +130,9 @@ describe('DashboardEditor', () => {
     expect(openGalleryBtn).toBeInTheDocument();
     fireEvent.click(openGalleryBtn);
     // now find and click Time series
-    const timeSeriesBtn = screen.getByTestId('card-gallery-list-TIMESERIES-add');
+    const timeSeriesBtn = screen.getByTestId(
+      'card-gallery-list-TIMESERIES-add'
+    );
     expect(timeSeriesBtn).toBeInTheDocument();
     fireEvent.click(timeSeriesBtn);
     // then find the card title that was created, but these will have the same names so check the length
@@ -146,7 +169,9 @@ describe('DashboardEditor', () => {
     // card edit form should be open
     const cardSizeFormInput = screen.getByDisplayValue('Untitled');
     expect(cardSizeFormInput).toBeInTheDocument();
-    fireEvent.change(cardSizeFormInput, { target: { value: 'My new card title' } });
+    fireEvent.change(cardSizeFormInput, {
+      target: { value: 'My new card title' },
+    });
     expect(screen.getByTitle('My new card title')).toBeInTheDocument();
   });
 });

@@ -116,7 +116,11 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
       isMultiselect: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+          id: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]).isRequired,
           text: PropTypes.string.isRequired,
         })
       ),
@@ -129,7 +133,11 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      */
     options: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+        id: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+        ]).isRequired,
         text: PropTypes.string.isRequired,
       })
     ),
@@ -195,7 +203,7 @@ export const defaultI18NPropTypes = {
   pageNumberAria: 'Page Number',
   itemsPerPage: 'Items per page:',
   itemsRange: (min, max) => `${min}–${max} items`,
-  currentPage: page => `page ${page}`,
+  currentPage: (page) => `page ${page}`,
   itemsRangeWithTotal: (min, max, total) => `${min}–${max} of ${total} items`,
   pageRange: (current, total) => `${current} of ${total} pages`,
   /** table body */
@@ -228,7 +236,7 @@ export const defaultI18NPropTypes = {
   filterNone: 'Unsort rows by this header',
   filterAscending: 'Sort rows by this header in ascending order',
   filterDescending: 'Sort rows by this header in descending order',
-  rowCountInHeader: totalRowCount => `Results: ${totalRowCount}`,
+  rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -243,4 +251,8 @@ export const TableSearchPropTypes = PropTypes.shape({
 });
 
 /** Which toolbar is currently active */
-export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);
+export const ActiveTableToolbarPropType = PropTypes.oneOf([
+  'column',
+  'filter',
+  'rowEdit',
+]);

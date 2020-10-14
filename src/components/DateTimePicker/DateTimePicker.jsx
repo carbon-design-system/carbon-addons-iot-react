@@ -303,28 +303,29 @@ const DateTimePicker = ({
     },
   };
 
-  useEffect(
-    () => {
-      const timeout = setTimeout(() => {
-        if (datePickerRef && datePickerRef.current) {
-          datePickerRef.current.cal.open();
-          // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-          // the only way to display the calendar inline is to reparent its DOM to our component
-          const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
-          if (typeof wrapper !== 'undefined' && wrapper !== null) {
-            const dp = document
-              .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
-              .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-            dp.appendChild(datePickerRef.current.cal.calendarContainer);
-          }
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (datePickerRef && datePickerRef.current) {
+        datePickerRef.current.cal.open();
+        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
+        // the only way to display the calendar inline is to reparent its DOM to our component
+        const wrapper = document.getElementById(
+          `${iotPrefix}--date-time-picker__wrapper`
+        );
+        if (typeof wrapper !== 'undefined' && wrapper !== null) {
+          const dp = document
+            .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
+            .getElementsByClassName(
+              `${iotPrefix}--date-time-picker__datepicker`
+            )[0];
+          dp.appendChild(datePickerRef.current.cal.calendarContainer);
         }
-      }, 0);
-      return () => {
-        clearTimeout(timeout);
-      };
-    },
-    [datePickerRef]
-  );
+      }
+    }, 0);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [datePickerRef]);
 
   /**
    * Parses a value object into a human readable value
@@ -335,7 +336,7 @@ const DateTimePicker = ({
    * @param {Object} value.absolute - the absolute time selection
    * @returns {Object} a human readable value and a furtherly augmented value object
    */
-  const parseValue = value => {
+  const parseValue = (value) => {
     setCurrentValue(value);
     let readableValue = '';
     const returnValue = { ...value };
@@ -356,13 +357,15 @@ const DateTimePicker = ({
           .clone()
           .subtract(
             value.relative.lastNumber,
-            value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
+            value.relative.lastInterval
+              ? value.relative.lastInterval
+              : INTERVAL_VALUES.MINUTES
           );
         returnValue.relative.start = new Date(startDate.valueOf());
         returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
-          endDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${moment(startDate).format(dateTimeMask)} ${
+          strings.toLabel
+        } ${moment(endDate).format(dateTimeMask)}`;
         break;
       }
       case PICKER_KINDS.ABSOLUTE: {
@@ -379,13 +382,13 @@ const DateTimePicker = ({
             endDate.minutes(value.absolute.endTime.split(':')[1]);
           }
           returnValue.absolute.end = new Date(endDate.valueOf());
-          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
-            endDate
-          ).format(dateTimeMask)}`;
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${
+            strings.toLabel
+          } ${moment(endDate).format(dateTimeMask)}`;
         } else {
-          readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
-            startDate
-          ).format(dateTimeMask)}`;
+          readableValue = `${moment(startDate).format(dateTimeMask)} ${
+            strings.toLabel
+          } ${moment(startDate).format(dateTimeMask)}`;
         }
         break;
       }
@@ -415,12 +418,15 @@ const DateTimePicker = ({
       value.kind = customRangeKind;
     } else {
       const preset = presets
-        .filter(p => {
+        .filter((p) => {
           let filteredPreset;
           if (p.id) {
-            filteredPreset = p.id === (clickedPreset ? clickedPreset.id : selectedPreset);
+            filteredPreset =
+              p.id === (clickedPreset ? clickedPreset.id : selectedPreset);
           } else {
-            filteredPreset = p.offset === (clickedPreset ? clickedPreset.offset : selectedPreset);
+            filteredPreset =
+              p.offset ===
+              (clickedPreset ? clickedPreset.offset : selectedPreset);
           }
           return filteredPreset;
         })
@@ -466,7 +472,7 @@ const DateTimePicker = ({
     [focusOnFirstField]
   );
 
-  const onDatePickerChange = range => {
+  const onDatePickerChange = (range) => {
     const newAbsolute = { ...absoluteValue };
 
     if (range[1]) {
@@ -490,11 +496,11 @@ const DateTimePicker = ({
     }
   };
 
-  const onCustomRangeChange = kind => {
+  const onCustomRangeChange = (kind) => {
     setCustomRangeKind(kind);
   };
 
-  const onPresetClick = preset => {
+  const onPresetClick = (preset) => {
     setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
   };
@@ -517,7 +523,7 @@ const DateTimePicker = ({
     });
   };
 
-  const parseDefaultValue = parsableValue => {
+  const parseDefaultValue = (parsableValue) => {
     const currentCustomRangeKind = showRelativeOption
       ? PICKER_KINDS.RELATIVE
       : PICKER_KINDS.ABSOLUTE;
@@ -567,7 +573,9 @@ const DateTimePicker = ({
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
       if (selectedPreset) {
-        onPresetClick(presets.filter(p => p.id ?? p.offset === selectedPreset)[0]);
+        onPresetClick(
+          presets.filter((p) => p.id ?? p.offset === selectedPreset)[0]
+        );
         resetAbsoluteValue();
         resetRelativeValue();
       } else {
@@ -647,16 +655,19 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a relative value update
-  const onRelativeLastNumberChange = event => {
-    changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
+  const onRelativeLastNumberChange = (event) => {
+    changeRelativePropertyValue(
+      'lastNumber',
+      Number(event.imaginaryTarget.value)
+    );
   };
-  const onRelativeLastIntervalChange = event => {
+  const onRelativeLastIntervalChange = (event) => {
     changeRelativePropertyValue('lastInterval', event.currentTarget.value);
   };
-  const onRelativeToWhenChange = event => {
+  const onRelativeToWhenChange = (event) => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-  const onRelativeToTimeChange = pickerValue => {
+  const onRelativeToTimeChange = (pickerValue) => {
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
@@ -668,10 +679,10 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = pickerValue => {
+  const onAbsoluteStartTimeChange = (pickerValue) => {
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-  const onAbsoluteEndTimeChange = pickerValue => {
+  const onAbsoluteEndTimeChange = (pickerValue) => {
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
@@ -682,29 +693,26 @@ const DateTimePicker = ({
   return (
     <div
       id={`${iotPrefix}--date-time-picker__wrapper`}
-      className={`${iotPrefix}--date-time-picker__wrapper`}
-    >
+      className={`${iotPrefix}--date-time-picker__wrapper`}>
       <div
         className={`${iotPrefix}--date-time-picker__box ${
           light ? `${iotPrefix}--date-time-picker__box--light` : ''
-        }`}
-      >
+        }`}>
         <div
           className={`${iotPrefix}--date-time-picker__field`}
           role="button"
           onClick={onFieldClick}
           onKeyPress={onFieldClick}
-          tabIndex={0}
-        >
-          {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
+          tabIndex={0}>
+          {isExpanded ||
+          (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
             <span title={humanValue}>{humanValue}</span>
           ) : humanValue ? (
             <TooltipDefinition
               align="start"
               direction="bottom"
               tooltipText={tooltipValue}
-              triggerClassName=""
-            >
+              triggerClassName="">
               {humanValue}
             </TooltipDefinition>
           ) : null}
@@ -717,22 +725,19 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
-          role="listbox"
-        >
+          role="listbox">
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
               <OrderedList nested={false}>
                 {tooltipValue ? (
                   <ListItem
-                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
-                  >
+                    className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}>
                     {tooltipValue}
                   </ListItem>
                 ) : null}
                 <ListItem
                   onClick={toggleIsCustomRange}
-                  className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
-                >
+                  className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}>
                   {strings.customRangeLinkLabel}
                 </ListItem>
                 {presets.map((preset, i) => {
@@ -746,8 +751,7 @@ const DateTimePicker = ({
                           [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
                             selectedPreset === (preset.id ?? preset.offset),
                         }
-                      )}
-                    >
+                      )}>
                       {strings.presetLabels[i] || preset.label}
                     </ListItem>
                   );
@@ -758,13 +762,11 @@ const DateTimePicker = ({
                 {showRelativeOption ? (
                   <FormGroup
                     legendText={strings.customRangeLabel}
-                    className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                  >
+                    className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
                     <RadioButtonGroup
                       valueSelected={customRangeKind}
                       onChange={onCustomRangeChange}
-                      name="radiogroup"
-                    >
+                      name="radiogroup">
                       <RadioButton
                         value={PICKER_KINDS.RELATIVE}
                         id="relative"
@@ -778,13 +780,14 @@ const DateTimePicker = ({
                     </RadioButtonGroup>
                   </FormGroup>
                 ) : null}
-                {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
+                {showRelativeOption &&
+                customRangeKind === PICKER_KINDS.RELATIVE ? (
                   <div>
                     <FormGroup
                       legendText={strings.lastLabel}
-                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                    >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
+                      <div
+                        className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <NumberInput
                           id="last-number"
                           invalidText={strings.invalidNumberLabel}
@@ -797,17 +800,20 @@ const DateTimePicker = ({
                           {...others}
                           id="last-interval"
                           defaultValue={
-                            relativeValue ? relativeValue.lastInterval : INTERVAL_VALUES.MINUTES
+                            relativeValue
+                              ? relativeValue.lastInterval
+                              : INTERVAL_VALUES.MINUTES
                           }
                           onChange={onRelativeLastIntervalChange}
-                          hideLabel
-                        >
+                          hideLabel>
                           {intervals.map((interval, i) => {
                             return (
                               <SelectItem
                                 key={i}
                                 value={interval.value}
-                                text={strings.intervalLabels[i] || interval.label}
+                                text={
+                                  strings.intervalLabels[i] || interval.label
+                                }
                               />
                             );
                           })}
@@ -816,25 +822,27 @@ const DateTimePicker = ({
                     </FormGroup>
                     <FormGroup
                       legendText={strings.relativeToLabel}
-                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                    >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
+                      <div
+                        className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <Select
                           {...others}
                           ref={relativeSelect}
                           id="relative-to-when"
-                          defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
+                          defaultValue={
+                            relativeValue ? relativeValue.relativeToWhen : ''
+                          }
                           onChange={onRelativeToWhenChange}
-                          hideLabel
-                        >
+                          hideLabel>
                           {relatives.map((relative, i) => {
                             return (
                               <SelectItem
                                 key={i}
                                 value={relative.value}
                                 text={
-                                  strings.relativeLabels.filter(x => x === relative.label)[0] ||
-                                  relative.label
+                                  strings.relativeLabels.filter(
+                                    (x) => x === relative.label
+                                  )[0] || relative.label
                                 }
                               />
                             );
@@ -843,7 +851,9 @@ const DateTimePicker = ({
                         {hasTimeInput ? (
                           <TimePickerSpinner
                             id="relative-to-time"
-                            value={relativeValue ? relativeValue.relativeToTime : ''}
+                            value={
+                              relativeValue ? relativeValue.relativeToTime : ''
+                            }
                             onChange={onRelativeToTimeChange}
                             spinner
                             autoComplete="off"
@@ -854,7 +864,8 @@ const DateTimePicker = ({
                   </div>
                 ) : (
                   <div>
-                    <div className={`${iotPrefix}--date-time-picker__datepicker`}>
+                    <div
+                      className={`${iotPrefix}--date-time-picker__datepicker`}>
                       <DatePicker
                         datePickerType="range"
                         dateFormat="m/d/Y"
@@ -862,23 +873,34 @@ const DateTimePicker = ({
                         onChange={onDatePickerChange}
                         onClose={onDatePickerClose}
                         value={
-                          absoluteValue ? [absoluteValue.startDate, absoluteValue.endDate] : ''
-                        }
-                      >
-                        <DatePickerInput labelText="" id="date-picker-input-start" hideLabel />
-                        <DatePickerInput labelText="" id="date-picker-input-end" hideLabel />
+                          absoluteValue
+                            ? [absoluteValue.startDate, absoluteValue.endDate]
+                            : ''
+                        }>
+                        <DatePickerInput
+                          labelText=""
+                          id="date-picker-input-start"
+                          hideLabel
+                        />
+                        <DatePickerInput
+                          labelText=""
+                          id="date-picker-input-end"
+                          hideLabel
+                        />
                       </DatePicker>
                     </div>
                     {hasTimeInput ? (
                       <FormGroup
                         legendText=""
-                        className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                      >
-                        <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                        className={`${iotPrefix}--date-time-picker__menu-formgroup`}>
+                        <div
+                          className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <TimePickerSpinner
                             id="start-time"
                             labelText={strings.startTimeLabel}
-                            value={absoluteValue ? absoluteValue.startTime : '00:00'}
+                            value={
+                              absoluteValue ? absoluteValue.startTime : '00:00'
+                            }
                             onChange={onAbsoluteStartTimeChange}
                             spinner
                             autoComplete="off"
@@ -886,7 +908,9 @@ const DateTimePicker = ({
                           <TimePickerSpinner
                             id="end-time"
                             labelText={strings.endTimeLabel}
-                            value={absoluteValue ? absoluteValue.endTime : '00:00'}
+                            value={
+                              absoluteValue ? absoluteValue.endTime : '00:00'
+                            }
                             onChange={onAbsoluteEndTimeChange}
                             spinner
                             autoComplete="off"
@@ -894,7 +918,9 @@ const DateTimePicker = ({
                         </div>
                       </FormGroup>
                     ) : (
-                      <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
+                      <div
+                        className={`${iotPrefix}--date-time-picker__no-formgroup`}
+                      />
                     )}
                   </div>
                 )}
@@ -907,8 +933,7 @@ const DateTimePicker = ({
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
                 {...others}
-                onClick={toggleIsCustomRange}
-              >
+                onClick={toggleIsCustomRange}>
                 {strings.backBtnLabel}
               </Button>
             ) : (
@@ -916,8 +941,7 @@ const DateTimePicker = ({
                 kind="secondary"
                 className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-cancel`}
                 onClick={onCancelClick}
-                {...others}
-              >
+                {...others}>
                 {strings.cancelBtnLabel}
               </Button>
             )}
@@ -925,8 +949,7 @@ const DateTimePicker = ({
               kind="primary"
               className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
               {...others}
-              onClick={onApplyClick}
-            >
+              onClick={onApplyClick}>
               {strings.applyBtnLabel}
             </Button>
           </div>

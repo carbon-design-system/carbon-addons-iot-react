@@ -28,7 +28,7 @@ import { baseClassName } from './DashboardEditor';
  * @param {Object} cardData, card JSON configuration
  * @returns {Object} duplicated card JSON
  */
-export const getDuplicateCard = cardData => ({
+export const getDuplicateCard = (cardData) => ({
   ...cardData,
   id: uuid.v4(),
 });
@@ -38,7 +38,7 @@ export const getDuplicateCard = cardData => ({
  * @param {string} type, card type
  * @returns {Object} default card JSON
  */
-export const getDefaultCard = type => {
+export const getDefaultCard = (type) => {
   const defaultSizeForType = {
     [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
     [CARD_TYPES.BAR]: CARD_SIZES.MEDIUMWIDE,
@@ -183,7 +183,7 @@ export const getDefaultCard = type => {
  * @param {Object} cardJson
  * @returns {Boolean}
  */
-export const isCardJsonValid = cardJson => {
+export const isCardJsonValid = (cardJson) => {
   switch (cardJson.type) {
     case CARD_TYPES.VALUE:
       return !isNil(cardJson?.content?.attributes);
@@ -212,8 +212,7 @@ const renderDefaultCard = (cardJson, commonProps) => (
     title={cardJson.title}
     tooltip={cardJson.description}
     isEditable
-    {...commonProps}
-  >
+    {...commonProps}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
   </Card>
 );

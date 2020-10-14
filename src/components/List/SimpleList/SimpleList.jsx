@@ -66,7 +66,7 @@ const defaultProps = {
   onListUpdated: () => {},
   i18n: {
     searchPlaceHolderText: 'Enter a value',
-    pageOfPagesText: page => `Page ${page}`,
+    pageOfPagesText: (page) => `Page ${page}`,
     items: '%d items',
   },
   isLargeRow: false,
@@ -115,11 +115,13 @@ const SimpleList = ({
 
   const handleSelect = (id, parentId) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId)
+      );
     } else {
       setSelectedIds(
         selectedIds.indexOf(id) !== -1
-          ? selectedIds.filter(item => item !== id)
+          ? selectedIds.filter((item) => item !== id)
           : [...selectedIds, id]
       );
       if (onSelect) {
@@ -130,11 +132,16 @@ const SimpleList = ({
 
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
+  const [itemsToShow, setItemsToShow] = useState(
+    filteredItems.slice(0, rowPerPage)
+  );
 
-  const onPage = page => {
+  const onPage = (page) => {
     const rowUpperLimit = page * rowPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+    const currentItemsOnPage = filteredItems.slice(
+      rowUpperLimit - rowPerPage,
+      rowUpperLimit
+    );
     setCurrentPageNumber(page);
     setItemsToShow(currentItemsOnPage);
   };
@@ -143,7 +150,7 @@ const SimpleList = ({
     page: currentPageNumber,
     onPage,
     maxPage: Math.ceil(numberOfItems / rowPerPage),
-    pageOfPagesText: page => mergedI18n.pageOfPagesText(page),
+    pageOfPagesText: (page) => mergedI18n.pageOfPagesText(page),
   };
 
   const onItemMoved = (dragId, hoverId, target) => {
@@ -151,9 +158,14 @@ const SimpleList = ({
 
     if (
       editModeSelectedIds.length > 0 &&
-      editModeSelectedIds.find(selectionId => selectionId === dragId)
+      editModeSelectedIds.find((selectionId) => selectionId === dragId)
     ) {
-      updatedList = moveItemsInList(items, editModeSelectedIds, hoverId, target);
+      updatedList = moveItemsInList(
+        items,
+        editModeSelectedIds,
+        hoverId,
+        target
+      );
     } else {
       updatedList = moveItemsInList(items, [dragId], hoverId, target);
     }
@@ -169,23 +181,33 @@ const SimpleList = ({
         hasSearch
           ? {
               value: searchValue,
-              onChange: evt => {
+              onChange: (evt) => {
                 setSearchValue(evt.target.value);
-                const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
-                const searchFilteredItems = items.filter(item => {
-                  if (item.content.value !== '' && item.content.value !== undefined) {
+                const searchTerm =
+                  evt.target.value === undefined ? '' : evt.target.value;
+                const searchFilteredItems = items.filter((item) => {
+                  if (
+                    item.content.value !== '' &&
+                    item.content.value !== undefined
+                  ) {
                     if (
                       item.content.secondaryValue !== '' &&
                       item.content.secondaryValue !== undefined
                     ) {
                       return (
-                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
+                        item.content.value
+                          .toLowerCase()
+                          .search(searchTerm.toLowerCase()) !== -1 ||
                         item.content.secondaryValue
                           .toLowerCase()
                           .search(searchTerm.toLowerCase()) !== -1
                       );
                     }
-                    return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
+                    return (
+                      item.content.value
+                        .toLowerCase()
+                        .search(searchTerm.toLowerCase()) !== -1
+                    );
                   }
                   return false;
                 });
