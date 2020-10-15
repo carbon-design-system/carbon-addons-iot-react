@@ -78,6 +78,15 @@ export const DASHBOARD_BREAKPOINTS = {
   xs: 320,
 };
 
+export const DASHBOARD_CONTAINER_PADDING = {
+  max: [0, 0],
+  xl: [0, 0],
+  lg: [0, 0],
+  md: [0, 0],
+  sm: [0, 0],
+  xs: [0, 0],
+};
+
 export const ROW_HEIGHT = {
   max: 144,
   xl: 144,
