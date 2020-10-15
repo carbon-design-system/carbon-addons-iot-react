@@ -2,7 +2,7 @@ import React from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
@@ -151,7 +151,7 @@ const BarChartCard = ({
   return (
     <Card
       title={title}
-      className={classNames(className, `${iotPrefix}--bar-chart-card`)}
+      className={classnames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
       i18n={i18n}
       isExpanded={isExpanded}
@@ -162,7 +162,7 @@ const BarChartCard = ({
       {...others}>
       {!isAllValuesEmpty ? (
         <div
-          className={classNames(`${iotPrefix}--bar-chart-container`, {
+          className={classnames(`${iotPrefix}--bar-chart-container`, {
             [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
             [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
           })}>
