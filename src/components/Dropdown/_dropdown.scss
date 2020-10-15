@@ -1,1 +1,92 @@
 @import '~carbon-components/scss/components/dropdown/dropdown';
+
+@import '../../globals/vars';
+
+.#{$iot-prefix}--dropdown__selection-buttons {
+  // width: 170px;
+
+  > .#{$prefix}--list-box__field {
+    padding: 0 $spacing-09 0 $spacing-03;
+  }
+
+  > .#{$prefix}--list-box__menu {
+    > .#{$prefix}--list-box__menu-item--active {
+      background: transparent;
+
+      > .#{$prefix}--list-box__menu-item__option {
+        > .#{$iot-prefix}--dropdown__image-button {
+          border: 1px $focus solid;
+        }
+      }
+    }
+
+    > .#{$prefix}--list-box__menu-item--highlighted {
+      background: transparent;
+
+      > div > button {
+        border: 2px $focus solid;
+      }
+    }
+
+    > .#{$prefix}--list-box__menu-item {
+      display: inline-flex;
+      height: min-content;
+
+      > .#{$prefix}--list-box__menu-item__option {
+        overflow: visible;
+
+        > .#{$iot-prefix}--dropdown__selected-icon-label {
+          display: none;
+        }
+
+        > .#{$prefix}--list-box__menu-item__selected-icon {
+          display: none;
+        }
+
+        padding: 0;
+        margin: $spacing-02;
+        height: min-content;
+
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        border: none;
+      }
+    }
+  }
+
+  .#{$prefix}--list-box__label {
+    > .#{$iot-prefix}--dropdown__image-button.bx--btn {
+      display: none;
+    }
+
+    > .#{$iot-prefix}--dropdown__text {
+      height: 100%;
+    }
+  }
+}
+
+.#{$iot-prefix}--dropdown__selected-icon-label {
+  display: flex;
+
+  > svg {
+    min-width: 16px;
+    width: 16px;
+  }
+
+  &__content {
+    margin: auto calc(#{$spacing-03} - 4px);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--open {
+      color: $active-ui;
+    }
+  }
+}
+
+.#{$iot-prefix}--dropdown__image-button {
+  background-color: $ui-02;
+  border: 2px transparent solid;
+}
