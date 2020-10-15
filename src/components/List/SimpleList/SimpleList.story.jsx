@@ -131,7 +131,7 @@ const buttonsToRender = [
 
 storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
-    'basic - SimpleList',
+    'basic',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500 }}>
         <SimpleList
@@ -146,12 +146,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    {
-      info: {
-        text: ``,
-      },
-    }
+    ))
   )
   .add(
     'tall list (isFullHeight = true)',
@@ -176,10 +171,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    {
-      info: { text: `` },
-    }
+    ))
   )
   .add(
     'tall list (isFullHeight = false)',
@@ -203,12 +195,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    {
-      info: {
-        text: `SimpleList is used when `,
-      },
-    }
+    ))
   )
   .add(
     'list with overflow grow',
@@ -233,8 +220,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'list with pageSize',
@@ -259,8 +245,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'list with empty row',
@@ -284,8 +269,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'list with large row',
@@ -311,8 +295,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'list with multiple actions',
@@ -337,8 +320,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'list with overflow menu',
@@ -363,8 +345,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
 
   .add(
@@ -391,8 +372,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add(
     'large row list with overflow menu',
@@ -418,8 +398,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           isLoading={boolean('isLoading', false)}
         />
       </div>
-    )),
-    { info: { text: `` } }
+    ))
   )
   .add('list with reorder', () => {
     const SimpleListWithReorder = () => {
@@ -452,4 +431,27 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
     };
 
     return <SimpleListWithReorder />;
-  });
+  })
+  .add(
+    'hidden pagination',
+    withReadme(SimpleListREADME, () => (
+      <div style={{ width: 500 }}>
+        <SimpleList
+          title={text('Text', 'Simple List')}
+          hasSearch
+          i18n={{
+            searchPlaceHolderText: 'Enter a search',
+          }}
+          buttons={buttonsToRender}
+          items={getListItems(5)}
+          isLoading={boolean('isLoading', false)}
+          showPagination={false}
+        />
+      </div>
+    )),
+    {
+      info: {
+        text: `Optionally hide the pagination by passing 'showPagination: false'`,
+      },
+    }
+  );

@@ -312,4 +312,17 @@ storiesOf('Watson IoT Experimental/ListCard', module)
         size={size}
       />
     );
+  })
+  .add('empty', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+
+    return (
+      <ListCard
+        id="ListCard"
+        title={text('Text', 'Simple List with Icon')}
+        size={size}
+        data={[]}
+        loadData={() => {}}
+      />
+    );
   });
