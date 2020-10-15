@@ -91,7 +91,6 @@ const ComboBox = ({
     prevTagAndListCount.current = currentTagAndListCount;
   }, [tagItems, listItems, comboRef]);
 
-<<<<<<< HEAD
   /**
    * List to the blur event and trigger parent onBlur
    * @param {event} e
@@ -103,9 +102,6 @@ const ComboBox = ({
   };
 
   const handleOnClose = e => {
-=======
-  const handleOnClose = (e) => {
->>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
     // Get close target's text
     const closedValue = e.currentTarget.parentNode?.children[0]?.textContent;
     // If there is a tag with the same value then remove from tag array
@@ -181,15 +177,9 @@ const ComboBox = ({
     }
   };
 
-<<<<<<< HEAD
   const handleInputChange = e => {
     const matchedItem = listItems.filter(x => itemToString(x) === e)[0];
     if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
-=======
-  const handleInputChange = (e) => {
-    const matchedItem = listItems.filter((x) => itemToString(x) === e)[0];
-    if ((addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
->>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -224,12 +214,8 @@ const ComboBox = ({
         { [`${iotPrefix}--combobox-size-${size}`]: size },
         { [`${iotPrefix}--combobox-helper-text`]: helperText }
       )}
-<<<<<<< HEAD
       onKeyDown={handleOnKeypress}
       onBlur={handleOnBlur}
-=======
-      onKeyDown={(evt) => handleOnKeypress(evt)}
->>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
       data-testid="combo-wrapper"
       data-edit-option-text={editOptionText}>
       <CarbonComboBox
