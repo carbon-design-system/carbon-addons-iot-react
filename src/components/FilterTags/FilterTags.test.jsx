@@ -29,14 +29,13 @@ describe('Filtertags', () => {
   it('will render tags without overflow when size is large enough', () => {
     const { rerender } = render(
       <FilterTags>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -51,14 +50,13 @@ describe('Filtertags', () => {
     });
     rerender(
       <FilterTags>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -70,14 +68,13 @@ describe('Filtertags', () => {
   it('will render tags without overflow when hasOverflow is false', () => {
     render(
       <FilterTags hasOverflow={false}>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -89,14 +86,13 @@ describe('Filtertags', () => {
   it('will render tags with overflow tag when size is too small', () => {
     render(
       <FilterTags>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -108,14 +104,13 @@ describe('Filtertags', () => {
   it('will collapse tags that do not fit into an overflow menu', () => {
     render(
       <FilterTags>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -132,15 +127,14 @@ describe('Filtertags', () => {
     const mockOnClose = jest.fn();
     render(
       <FilterTags>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
             style={{ marginRight: '1rem' }}
-            onClose={() => mockOnClose(tag.id)}
-          >
+            onClose={() => mockOnClose(tag.id)}>
             {tag.text}
           </Tag>
         ))}

@@ -5,9 +5,7 @@ import { spacing05 } from '@carbon/layout';
 
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
-export {
-  default as TimePickerStory,
-} from 'carbon-components-react/lib/components/TimePicker/TimePicker-story';
+export { default as TimePickerStory } from 'carbon-components-react/lib/components/TimePicker/TimePicker-story';
 
 storiesOf('Watson IoT Experimental/TimePickerSpinner', module)
   .add('With spinner', () => {

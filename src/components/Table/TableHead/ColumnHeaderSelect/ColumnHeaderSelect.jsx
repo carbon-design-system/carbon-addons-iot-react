@@ -38,13 +38,12 @@ const ColumnHeaderSelect = ({
       data-ishidden={isHidden}
       renderIcon={Draggable16}
       size="small"
-      ref={instance => {
+      ref={(instance) => {
         if (!isDisabled) {
           connectDragSource(instance);
           connectDropTarget(instance);
         }
-      }}
-    >
+      }}>
       {children}
     </Button>
   );
@@ -95,7 +94,7 @@ const cardTarget = {
   },
 };
 
-const ds = DragSource('ColumnHeaderSelect', cardSource, connect => ({
+const ds = DragSource('ColumnHeaderSelect', cardSource, (connect) => ({
   connectDragSource: connect.dragSource(),
 }));
 

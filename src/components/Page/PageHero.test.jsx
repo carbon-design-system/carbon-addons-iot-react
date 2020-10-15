@@ -27,18 +27,14 @@ describe('PageHero', () => {
         },
       ],
     };
-    const wrapper = mount(<PageHero {...commonPageHeroProps} switcher={commonSwitchProps} />);
+    const wrapper = mount(
+      <PageHero {...commonPageHeroProps} switcher={commonSwitchProps} />
+    );
 
-    wrapper
-      .find('Switch[onClick]')
-      .last()
-      .simulate('click');
+    wrapper.find('Switch[onClick]').last().simulate('click');
 
-    expect(
-      wrapper
-        .find('Switch[onClick]')
-        .last()
-        .props().selected
-    ).toEqual(true);
+    expect(wrapper.find('Switch[onClick]').last().props().selected).toEqual(
+      true
+    );
   });
 });
