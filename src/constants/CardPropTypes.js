@@ -75,6 +75,10 @@ export const ValueCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
+  /**
+   * Value Card's formatting can be updated at runtime, customFormatter is provided the default formatted value and
+   * the original value and expects a value to be returned that will be rendered on the value card.
+   */
   customFormatter: PropTypes.func,
 };
 
