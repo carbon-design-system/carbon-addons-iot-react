@@ -109,7 +109,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
             title={link.linkContent}
-            large
           >
             {children}
           </SideNavMenu>
@@ -124,7 +123,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
           renderIcon={link.icon}
           isActive={link.isActive}
           {...link.metaData}
-          large
         >
           {link.linkContent}
         </SideNavLink>
@@ -137,10 +135,11 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   return (
     <CarbonSideNav
-      className={classnames({
+      className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
       })}
+      expanded={isSideNavExpanded}
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
