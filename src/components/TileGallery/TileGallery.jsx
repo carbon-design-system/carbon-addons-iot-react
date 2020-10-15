@@ -8,7 +8,9 @@ const propTypes = {
 
 const defaultProps = {};
 
-const TileGallery = ({ children }) => <div className="tile-gallery">{children}</div>;
+const TileGallery = ({ children }) => (
+  <div className="tile-gallery">{children}</div>
+);
 
 TileGallery.propTypes = propTypes;
 TileGallery.defaultProps = defaultProps;

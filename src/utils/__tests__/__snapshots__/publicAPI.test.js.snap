@@ -15786,6 +15786,25 @@ Map {
               ],
             },
           },
+          "emptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'No list items to show'",
+            },
+            "description": "content shown if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "union",
+              "value": Array [
+                Object {
+                  "name": "node",
+                },
+                Object {
+                  "name": "string",
+                },
+              ],
+            },
+          },
           "expandedIds": Object {
             "defaultValue": Object {
               "computed": false,
@@ -15908,8 +15927,12 @@ Map {
             },
           },
           "items": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
             "description": "data source of list items",
-            "required": true,
+            "required": false,
             "type": Object {
               "name": "arrayOf",
               "value": Object {
@@ -15995,7 +16018,9 @@ Map {
             "type": Object {
               "computed": true,
               "name": "shape",
-              "value": "import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';",
+              "value": "import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';",
             },
           },
           "search": Object {
@@ -16061,6 +16086,7 @@ Map {
         "buttons": Array [],
         "className": null,
         "editingStyle": null,
+        "emptyState": "No list items to show",
         "expandedIds": Array [],
         "handleSelect": [Function],
         "i18n": Object {
@@ -16073,6 +16099,7 @@ Map {
         "isLargeRow": false,
         "isLoading": false,
         "itemWillMove": [Function],
+        "items": Array [],
         "onItemMoved": [Function],
         "overrides": null,
         "pagination": null,
@@ -16103,6 +16130,19 @@ Map {
             ],
           ],
           "type": "oneOf",
+        },
+        "emptyState": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "node",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
         },
         "expandedIds": Object {
           "args": Array [
@@ -16197,7 +16237,6 @@ Map {
               "type": "shape",
             },
           ],
-          "isRequired": true,
           "type": "arrayOf",
         },
         "onItemMoved": Object {

@@ -9,4 +9,6 @@ const AddCardProps = {
   title: 'Click me',
 };
 
-storiesOf('Watson IoT/AddCard', module).add('handles click', () => <AddCard {...AddCardProps} />);
+storiesOf('Watson IoT/AddCard', module).add('handles click', () => (
+  <AddCard {...AddCardProps} />
+));

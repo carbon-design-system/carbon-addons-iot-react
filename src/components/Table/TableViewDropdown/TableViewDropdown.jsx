@@ -85,48 +85,47 @@ const TableViewDropdown = ({
     id: 'view-all',
     text: i18n.viewAll,
   };
-  const allItems = useMemo(
-    () => {
-      const saveAsNewItem = {
-        id: 'save-new-view',
-        text: i18n.saveAsNewView,
-        customAction: onSaveAsNewView,
-      };
-      const saveItem = {
-        id: 'save-changes',
-        text: i18n.saveChanges,
-        customAction: onSaveChanges,
-      };
-      const manageViewsItem = {
-        id: 'manage-views',
-        text: i18n.manageViews,
-        customAction: onManageViews,
-        icon: Settings16,
-      };
-      const dialogItems = selectedViewEdited
-        ? [saveAsNewItem, saveItem, manageViewsItem]
-        : [saveAsNewItem, manageViewsItem];
+  const allItems = useMemo(() => {
+    const saveAsNewItem = {
+      id: 'save-new-view',
+      text: i18n.saveAsNewView,
+      customAction: onSaveAsNewView,
+    };
+    const saveItem = {
+      id: 'save-changes',
+      text: i18n.saveChanges,
+      customAction: onSaveChanges,
+    };
+    const manageViewsItem = {
+      id: 'manage-views',
+      text: i18n.manageViews,
+      customAction: onManageViews,
+      icon: Settings16,
+    };
+    const dialogItems = selectedViewEdited
+      ? [saveAsNewItem, saveItem, manageViewsItem]
+      : [saveAsNewItem, manageViewsItem];
 
-      return [viewAllItem, ...views, ...dialogItems];
-    },
-    [
-      i18n.saveAsNewView,
-      i18n.saveChanges,
-      i18n.manageViews,
-      onSaveAsNewView,
-      onSaveChanges,
-      onManageViews,
-      viewAllItem,
-      views,
-      selectedViewEdited,
-    ]
-  );
+    return [viewAllItem, ...views, ...dialogItems];
+  }, [
+    i18n.saveAsNewView,
+    i18n.saveChanges,
+    i18n.manageViews,
+    onSaveAsNewView,
+    onSaveChanges,
+    onManageViews,
+    viewAllItem,
+    views,
+    selectedViewEdited,
+  ]);
 
-  const mySelectedItem = allItems.find(item => item.id === selectedViewId) || viewAllItem;
+  const mySelectedItem =
+    allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
-  const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
+  const MyTableViewDropDownItem =
+    overrides?.dropdownItem?.component || TableViewDropdownItem;
 
-  const onSelectionChange = change => {
+  const onSelectionChange = (change) => {
     const item = change.selectedItem;
     if (item) {
       if (item.customAction) {
@@ -141,7 +140,9 @@ const TableViewDropdown = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         return (
-          <div className={`${iotPrefix}--view-dropdown__container`} style={style}>
+          <div
+            className={`${iotPrefix}--view-dropdown__container`}
+            style={style}>
             <MyDropDown
               label={i18n.tableViewMenu}
               data-testid={testID}
@@ -152,7 +153,7 @@ const TableViewDropdown = ({
               // We are using itemToString instead of itemToElement since we need the custom
               // rendering to also happen when the item is selected. See closed PR
               // https://github.com/carbon-design-system/carbon/pull/5578
-              itemToString={itemData => {
+              itemToString={(itemData) => {
                 return (
                   <MyTableViewDropDownItem
                     testID={`TableViewDropdownItem-${itemData.id}`}

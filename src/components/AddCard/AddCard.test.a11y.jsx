@@ -11,9 +11,12 @@ describe('AddCard', () => {
   });
 
   it('is accessible', async () => {
-    const { container } = render(<AddCard title="accessibility test" onClick={() => {}} />, {
-      container: document.getElementById('main'),
-    });
+    const { container } = render(
+      <AddCard title="accessibility test" onClick={() => {}} />,
+      {
+        container: document.getElementById('main'),
+      }
+    );
     await expect(container).toBeAccessible('AddCard is accessible');
   }, 20000);
 });

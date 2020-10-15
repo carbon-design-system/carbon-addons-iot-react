@@ -36,23 +36,34 @@ describe('SuiteHeaderAppSwitcher', () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeaderAppSwitcher {...commonProps} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--all-applications'));
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--all-applications')
+    );
     expect(window.location.href).toBe(commonProps.allApplicationsLink);
   });
   it('clicks all applications link (but no redirect)', async () => {
     delete window.location;
     window.location = { href: '' };
-    render(<SuiteHeaderAppSwitcher {...commonProps} onRouteChange={async () => false} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--all-applications'));
+    render(
+      <SuiteHeaderAppSwitcher
+        {...commonProps}
+        onRouteChange={async () => false}
+      />
+    );
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--all-applications')
+    );
     expect(window.location.href).not.toBe(commonProps.allApplicationsLink);
   });
   it('clicks an application link', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeaderAppSwitcher {...commonProps} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--monitor'));
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--monitor')
+    );
     expect(window.location.href).toBe(
-      commonProps.applications.find(app => app.id === 'monitor').href
+      commonProps.applications.find((app) => app.id === 'monitor').href
     );
   });
   it('clicks an external application link', async () => {
@@ -60,26 +71,37 @@ describe('SuiteHeaderAppSwitcher', () => {
     window.location = { href: '' };
     window.open = jest.fn();
     render(<SuiteHeaderAppSwitcher {...commonProps} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--health'));
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--health')
+    );
     expect(window.open).toHaveBeenCalledWith(
-      commonProps.applications.find(app => app.id === 'health').href,
+      commonProps.applications.find((app) => app.id === 'health').href,
       'blank'
     );
   });
   it('clicks an application link (but no redirect)', async () => {
     delete window.location;
     window.location = { href: '' };
-    render(<SuiteHeaderAppSwitcher {...commonProps} onRouteChange={async () => false} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--monitor'));
+    render(
+      <SuiteHeaderAppSwitcher
+        {...commonProps}
+        onRouteChange={async () => false}
+      />
+    );
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--monitor')
+    );
     expect(window.location.href).not.toBe(
-      commonProps.applications.find(app => app.id === 'monitor').href
+      commonProps.applications.find((app) => app.id === 'monitor').href
     );
   });
   it('clicks no access link', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<SuiteHeaderAppSwitcher {...commonProps} applications={[]} />);
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--no-access'));
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--no-access')
+    );
     expect(window.location.href).toBe(commonProps.noAccessLink);
   });
   it('clicks no access link (but no redirect)', async () => {
@@ -92,7 +114,9 @@ describe('SuiteHeaderAppSwitcher', () => {
         onRouteChange={async () => false}
       />
     );
-    await userEvent.click(screen.getByTestId('suite-header-app-switcher--no-access'));
+    await userEvent.click(
+      screen.getByTestId('suite-header-app-switcher--no-access')
+    );
     expect(window.location.href).not.toBe(commonProps.noAccessLink);
   });
 });

@@ -32,7 +32,8 @@ export const items = [
   },
   {
     id: 'option-4',
-    text: 'An example option that is really long to show what should be done to handle long text',
+    text:
+      'An example option that is really long to show what should be done to handle long text',
   },
 ];
 
@@ -55,17 +56,20 @@ const props = () => ({
   onChange: action('fired onChange'),
 });
 
-const itemToElement = item => {
+const itemToElement = (item) => {
   const itemAsArray = item.text.split(' ');
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
+      <span style={{ color: 'blue' }}>
+        {' '}
+        {itemAsArray.splice(1, itemAsArray.length).join(' ')}
+      </span>
     </div>
   );
 };
 
-const ControlledComboBoxApp = props => {
+const ControlledComboBoxApp = (props) => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
   let uid = items.length;
   return (
@@ -73,8 +77,8 @@ const ControlledComboBoxApp = props => {
       <ComboBox
         {...props}
         items={items}
-        itemToString={item => (item ? item.text : '')}
-        onChange={changeSelection => {
+        itemToString={(item) => (item ? item.text : '')}
+        onChange={(changeSelection) => {
           if (changeSelection) {
             setSelectedItem(changeSelection.selectedItem);
           }
@@ -90,15 +94,16 @@ const ControlledComboBoxApp = props => {
             text: `Option ${uid}`,
           });
           setSelectedItem(items[items.length - 1]);
-        }}
-      >
+        }}>
         Add new item
       </Button>
     </>
   );
 };
 
-const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
+const Wrapper = ({ children }) => (
+  <div style={{ width: 300, padding: '1rem' }}>{children}</div>
+);
 
 storiesOf('Watson IoT Experimental/ComboBox', module)
   .addDecorator(withKnobs)
@@ -106,7 +111,11 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     'Default',
     () => (
       <Wrapper>
-        <ComboBox items={items} itemToString={item => (item ? item.text : '')} {...props()} />
+        <ComboBox
+          items={items}
+          itemToString={(item) => (item ? item.text : '')}
+          {...props()}
+        />
       </Wrapper>
     ),
     {
@@ -123,7 +132,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
         <ComboBox
           {...props()}
           items={items}
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
           itemToElement={itemToElement}
         />
       </Wrapper>
@@ -135,13 +144,17 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
       },
     }
   )
-  .add('application-level control for selection', () => <ControlledComboBoxApp {...props()} />, {
-    info: {
-      text: `Controlled ComboBox example application`,
-      propTables: [ComboBox],
-      propTablesExclude: [ControlledComboBoxApp],
-    },
-  })
+  .add(
+    'application-level control for selection',
+    () => <ControlledComboBoxApp {...props()} />,
+    {
+      info: {
+        text: `Controlled ComboBox example application`,
+        propTables: [ComboBox],
+        propTablesExclude: [ControlledComboBoxApp],
+      },
+    }
+  )
   .add(
     'Experimental multi-value tags',
     () => (
@@ -150,7 +163,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
           {...props()}
           items={items}
           hasMultiValue
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
         />
       </Wrapper>
     ),
@@ -169,7 +182,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
         <ComboBox
           {...props()}
           items={items}
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
           addToList
         />
       </Wrapper>

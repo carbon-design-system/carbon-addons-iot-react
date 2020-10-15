@@ -122,12 +122,15 @@ describe('Header', () => {
 
   it('children should render inside UL', () => {
     render(<Header {...HeaderProps} />);
-    expect(screen.getByText('This is a link').parentElement.parentElement.nodeName).toBe('LI');
-    expect(screen.getByText('This is a link').parentElement.parentElement.className).toEqual(
-      'action-btn__headerpanel-li'
-    );
     expect(
-      screen.getByText('This is a link').parentElement.parentElement.parentNode.childElementCount
+      screen.getByText('This is a link').parentElement.parentElement.nodeName
+    ).toBe('LI');
+    expect(
+      screen.getByText('This is a link').parentElement.parentElement.className
+    ).toEqual('action-btn__headerpanel-li');
+    expect(
+      screen.getByText('This is a link').parentElement.parentElement.parentNode
+        .childElementCount
     ).toEqual(2);
   });
 
@@ -193,14 +196,14 @@ describe('Header', () => {
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
-    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded bx--app-switcher'
-    );
+    expect(
+      screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className
+    ).toContain('bx--header-panel bx--header-panel--expanded bx--app-switcher');
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
-    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--app-switcher'
-    );
+    expect(
+      screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className
+    ).toContain('bx--header-panel bx--app-switcher');
   });
 
   it('onClick expands', () => {

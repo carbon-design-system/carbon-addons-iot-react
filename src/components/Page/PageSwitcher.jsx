@@ -40,8 +40,10 @@ const defaultProps = {
 };
 
 const PageSwitcher = ({ switcher: { onChange, selectedIndex, options } }) => (
-  <StyledContentSwitcher onChange={id => onChange(id)} selectedIndex={selectedIndex}>
-    {options.map(item => (
+  <StyledContentSwitcher
+    onChange={(id) => onChange(id)}
+    selectedIndex={selectedIndex}>
+    {options.map((item) => (
       <Switch key={item.id} text={item.text} data-tip={item.text} />
     ))}
   </StyledContentSwitcher>
