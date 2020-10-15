@@ -95,13 +95,13 @@ const ComboBox = ({
    * List to the blur event and trigger parent onBlur
    * @param {event} e
    */
-  const handleOnBlur = e => {
+  const handleOnBlur = (e) => {
     if (onBlur) {
       onBlur(inputValue, e);
     }
   };
 
-  const handleOnClose = e => {
+  const handleOnClose = (e) => {
     // Get close target's text
     const closedValue = e.currentTarget.parentNode?.children[0]?.textContent;
     // If there is a tag with the same value then remove from tag array
@@ -177,9 +177,14 @@ const ComboBox = ({
     }
   };
 
-  const handleInputChange = e => {
-    const matchedItem = listItems.filter(x => itemToString(x) === e)[0];
-    if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
+  const handleInputChange = (e) => {
+    const matchedItem = listItems.filter((x) => itemToString(x) === e)[0];
+    if (
+      (onBlur || addToList || hasMultiValue) &&
+      e &&
+      e !== '' &&
+      !matchedItem
+    ) {
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,

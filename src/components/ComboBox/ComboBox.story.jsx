@@ -77,13 +77,13 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
   const [localStateItems, setLocalStateItems] = useState(items);
   const [selectedItem, setSelectedItem] = useState(localStateItems[0]);
 
-  const itemToString = item => (item ? item.text : '');
+  const itemToString = (item) => (item ? item.text : '');
 
-  const handleBlur = inputValue => {
+  const handleBlur = (inputValue) => {
     if (
       !isEmpty(inputValue) &&
       !isEqual(inputValue, selectedItem) &&
-      items.every(item => !isEqual(item, inputValue)) // only actually trigger this if this is a new item
+      items.every((item) => !isEqual(item, inputValue)) // only actually trigger this if this is a new item
     ) {
       setSelectedItem(inputValue);
       // Trigger normal onChange to update the form
@@ -102,14 +102,16 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
         onBlur={onBlur ? handleBlur : undefined} // if onBlur is true then attach our custom handler
         items={localStateItems}
         itemToString={itemToString}
-        onChange={changedItem => {
+        onChange={(changedItem) => {
           if (changedItem) {
-            setSelectedItem(localStateItems.find(item => isEqual(item, changedItem))); // because combobox is stupid I have to find the exact same one https://github.com/carbon-design-system/carbon/issues/7055
+            setSelectedItem(
+              localStateItems.find((item) => isEqual(item, changedItem))
+            ); // because combobox is stupid I have to find the exact same one https://github.com/carbon-design-system/carbon/issues/7055
             if (
               // if the selected item is one of the original items and we're blurring, remove it from list
               !isEqual(items, localStateItems) &&
               onBlur &&
-              items.find(item => isEqual(item, changedItem))
+              items.find((item) => isEqual(item, changedItem))
             ) {
               setLocalStateItems(items);
             }
@@ -232,7 +234,10 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     () => {
       return (
         <Wrapper>
-          <ControlledComboBoxApp {...props()} onBlur={boolean('onBlur', true)} />
+          <ControlledComboBoxApp
+            {...props()}
+            onBlur={boolean('onBlur', true)}
+          />
         </Wrapper>
       );
     },
