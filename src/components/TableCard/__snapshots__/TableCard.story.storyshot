@@ -8435,7 +8435,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -8534,7 +8533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -8633,7 +8631,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -8732,7 +8729,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -8831,7 +8827,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -8930,7 +8925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -9029,7 +9023,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -9128,7 +9121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -9227,7 +9219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -9326,7 +9317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20241,7 +20231,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20340,7 +20329,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20439,7 +20427,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20538,7 +20525,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20637,7 +20623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20736,7 +20721,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20835,7 +20819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -20934,7 +20917,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -21033,7 +21015,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -21132,7 +21113,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22050,7 +22030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22149,7 +22128,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22248,7 +22226,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22347,7 +22324,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22446,7 +22422,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22545,7 +22520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22644,7 +22618,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22743,7 +22716,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22842,7 +22814,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -22941,7 +22912,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -23859,7 +23829,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -23958,7 +23927,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24057,7 +24025,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24156,7 +24123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24255,7 +24221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24354,7 +24319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24453,7 +24417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24552,7 +24515,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24651,7 +24613,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -24750,7 +24711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -32524,7 +32484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -32677,7 +32636,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -32830,7 +32788,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -32983,7 +32940,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -33136,7 +33092,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -33364,7 +33319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -33547,7 +33501,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -33700,7 +33653,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -33898,7 +33850,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -34051,7 +34002,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35167,7 +35117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35330,7 +35279,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35491,7 +35439,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35654,7 +35601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35817,7 +35763,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -35978,7 +35923,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -36139,7 +36083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -36300,7 +36243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -36461,7 +36403,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
@@ -36577,7 +36518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-nesting-offset={0}
                       data-parent-row={true}
                       data-row-nesting={false}
-                      hasRowNesting={false}
                       onClick={[Function]}
                     >
                       <td
