@@ -3267,6 +3267,7 @@ Map {
         "submitButtonLabel": "Submit",
       },
       "isClickable": false,
+      "onBack": null,
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3314,6 +3315,9 @@ Map {
       },
       "isClickable": Object {
         "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
       },
       "onSubmit": Object {
         "isRequired": true,
@@ -4507,6 +4511,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -6432,7 +6437,7 @@ Map {
       "APPLICATION": "APPLICATION",
       "DOCUMENTATION": "DOCUMENTATION",
       "LOGOUT": "LOGOUT",
-      "NAVIGATOR": "ADMIN",
+      "NAVIGATOR": "NAVIGATOR",
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
     },
@@ -7843,6 +7848,7 @@ Map {
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
         "headerDeleteButton": "Delete",
@@ -7850,6 +7856,7 @@ Map {
         "headerExportButton": "Export",
         "headerImportButton": "Import",
         "headerSubmitButton": "Save and close",
+        "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
       },
@@ -7867,10 +7874,16 @@ Map {
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
-        "BAR",
         "TIMESERIES",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
         "VALUE",
+        "IMAGE",
         "TABLE",
+        "ALERT",
+        "LIST",
+        "CUSTOM",
       ],
       "title": null,
     },
@@ -7886,7 +7899,22 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "closeGalleryButton": Object {
+              "type": "string",
+            },
+            "defaultCardTitle": Object {
+              "type": "string",
+            },
+            "galleryHeader": Object {
+              "type": "string",
+            },
             "headerCancelButton": Object {
+              "type": "string",
+            },
+            "headerDeleteButton": Object {
+              "type": "string",
+            },
+            "headerEditTitleButton": Object {
               "type": "string",
             },
             "headerExportButton": Object {
@@ -7896,6 +7924,15 @@ Map {
               "type": "string",
             },
             "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "openGalleryButton": Object {
+              "type": "string",
+            },
+            "openJSONButton": Object {
               "type": "string",
             },
           },
@@ -7957,16 +7994,25 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "cardJson": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
-        "openGalleryButton": "Open gallery",
+        "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
       },
-      "supportedTypes": Array [],
-      "value": null,
+      "supportedTypes": Array [
+        "BAR",
+        "TIMESERIES",
+        "VALUE",
+        "IMAGE",
+        "TABLE",
+      ],
     },
     "propTypes": Object {
+      "cardJson": Object {
+        "type": "object",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7999,9 +8045,6 @@ Map {
           },
         ],
         "type": "arrayOf",
-      },
-      "value": Object {
-        "type": "object",
       },
     },
   },
@@ -9979,8 +10022,10 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "dataState": null,
       "locale": "en",
       "size": "MEDIUM",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -15899,6 +15944,25 @@ Map {
               ],
             },
           },
+          "emptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'No list items to show'",
+            },
+            "description": "content shown if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "union",
+              "value": Array [
+                Object {
+                  "name": "node",
+                },
+                Object {
+                  "name": "string",
+                },
+              ],
+            },
+          },
           "expandedIds": Object {
             "defaultValue": Object {
               "computed": false,
@@ -16021,8 +16085,12 @@ Map {
             },
           },
           "items": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
             "description": "data source of list items",
-            "required": true,
+            "required": false,
             "type": Object {
               "name": "arrayOf",
               "value": Object {
@@ -16108,7 +16176,9 @@ Map {
             "type": Object {
               "computed": true,
               "name": "shape",
-              "value": "import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';",
+              "value": "import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';",
             },
           },
           "search": Object {
@@ -16174,6 +16244,7 @@ Map {
         "buttons": Array [],
         "className": null,
         "editingStyle": null,
+        "emptyState": "No list items to show",
         "expandedIds": Array [],
         "handleSelect": [Function],
         "i18n": Object {
@@ -16186,6 +16257,7 @@ Map {
         "isLargeRow": false,
         "isLoading": false,
         "itemWillMove": [Function],
+        "items": Array [],
         "onItemMoved": [Function],
         "overrides": null,
         "pagination": null,
@@ -16216,6 +16288,19 @@ Map {
             ],
           ],
           "type": "oneOf",
+        },
+        "emptyState": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "node",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
         },
         "expandedIds": Object {
           "args": Array [
@@ -16310,7 +16395,6 @@ Map {
               "type": "shape",
             },
           ],
-          "isRequired": true,
           "type": "arrayOf",
         },
         "onItemMoved": Object {
@@ -16423,7 +16507,9 @@ Map {
       "isLargeRow": false,
       "isLoading": false,
       "onListUpdated": [Function],
+      "onSelect": null,
       "pageSize": null,
+      "showPagination": true,
     },
     "propTypes": Object {
       "buttons": Object {
@@ -16519,8 +16605,14 @@ Map {
       "onListUpdated": Object {
         "type": "func",
       },
+      "onSelect": Object {
+        "type": "func",
+      },
       "pageSize": Object {
         "type": "string",
+      },
+      "showPagination": Object {
+        "type": "bool",
       },
       "title": Object {
         "isRequired": true,

@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
@@ -55,12 +55,13 @@ storiesOf('Watson IoT/Dashboard Grid', module)
     'dashboard, default layouts',
     () => {
       return (
-        <Fragment>
-          Resize your window to see the callback handlers get triggered in the Actions tab.
+        <>
+          Resize your window to see the callback handlers get triggered in the
+          Actions tab.
           <FullWidthWrapper>
             <DashboardGrid {...commonGridProps}>{Cards}</DashboardGrid>
           </FullWidthWrapper>
-        </Fragment>
+        </>
       );
     },
     {
@@ -76,20 +77,19 @@ storiesOf('Watson IoT/Dashboard Grid', module)
     'dashboard, is Editable',
     () => {
       return (
-        <Fragment>
-          You can drag and drop the cards around. Watch the handler get triggered on the Actions
-          tab.
-          <div style={{ width: text('width', '1200px') }}>
+        <>
+          You can drag and drop the cards around. Watch the handler get
+          triggered on the Actions tab.
+          <FullWidthWrapper>
             <DashboardGrid
               {...commonGridProps}
               breakpoint={select('breakpoint', ['max', 'xl', 'md', 'sm'], 'xl')}
               isEditable={boolean('isEditable', true)}
-              isResizable={boolean('isResizable', true)}
-            >
+              isResizable={boolean('isResizable', true)}>
               {Cards}
             </DashboardGrid>
-          </div>
-        </Fragment>
+          </FullWidthWrapper>
+        </>
       );
     },
     {
@@ -105,10 +105,10 @@ storiesOf('Watson IoT/Dashboard Grid', module)
     'dashboard, custom layout',
     () => {
       return (
-        <Fragment>
-          Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom
-          layout defined. Resize the screen to see the cards reposition and resize themselves at
-          different layouts.
+        <>
+          Passes a custom layout to the dashboard grid. Only the lg and md
+          breakpoint have a custom layout defined. Resize the screen to see the
+          cards reposition and resize themselves at different layouts.
           <FullWidthWrapper>
             <DashboardGrid
               {...commonGridProps}
@@ -124,12 +124,11 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                   { i: 'humidity', x: 0, y: 1, w: 1, h: 1 },
                   { i: 'utilization', x: 0, y: 2, w: 1, h: 1 },
                 ],
-              }}
-            >
+              }}>
               {Cards}
             </DashboardGrid>
           </FullWidthWrapper>
-        </Fragment>
+        </>
       );
     },
     {
@@ -229,8 +228,9 @@ storiesOf('Watson IoT/Dashboard Grid', module)
         />,
       ];
       return (
-        <Fragment>
-          Resize your window to see the callback handlers get triggered in the Actions tab.
+        <>
+          Resize your window to see the callback handlers get triggered in the
+          Actions tab.
           <FullWidthWrapper>
             <DashboardGrid
               {...commonGridProps}
@@ -295,12 +295,11 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                   { i: 'Large', x: 4, y: 0, w: 4, h: 4 },
                   { i: 'Large Wide', x: 8, y: 0, w: 4, h: 4 },
                 ],
-              }}
-            >
+              }}>
               {CARDS_ALL_SIZES}
             </DashboardGrid>
           </FullWidthWrapper>
-        </Fragment>
+        </>
       );
     },
     {

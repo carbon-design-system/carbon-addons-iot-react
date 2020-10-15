@@ -9,7 +9,11 @@ import {
   Laptop16,
   Screen16,
 } from '@carbon/icons-react';
-import { FileUploaderButton, TooltipIcon, ContentSwitcher } from 'carbon-components-react';
+import {
+  FileUploaderButton,
+  TooltipIcon,
+  ContentSwitcher,
+} from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, PageTitleBar } from '../../../index';
@@ -40,7 +44,7 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
-  /** i18n */
+  /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
@@ -104,40 +108,54 @@ const DashboardEditorHeader = ({
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
-      <div className={`${baseClassName}--top`}>
-        {/* <span className="last-updated">Last updated: XYZ</span> */}
-      </div>
+      <div className={`${baseClassName}--top`} />
       <div className={`${baseClassName}--bottom`}>
         {breakpointSwitcher?.enabled && (
           <ContentSwitcher
-            onChange={e => setSelectedBreakpointIndex(e.index)}
+            onChange={(e) => setSelectedBreakpointIndex(e.index)}
             selectedIndex={selectedBreakpointIndex}
-            className={`${baseClassName}--bottom__switcher`}
-          >
-            <IconSwitch name="fit-to-screen" text="Fit to screen" renderIcon={Maximize16} />
-            <IconSwitch name="tablet" text="Tablet view" renderIcon={Tablet16} />
-            <IconSwitch name="laptop" text="Laptop View" renderIcon={Laptop16} />
-            <IconSwitch name="screen" text="Desktop View" renderIcon={Screen16} />
+            className={`${baseClassName}--bottom__switcher`}>
+            <IconSwitch
+              name="fit-to-screen"
+              text="Fit to screen"
+              renderIcon={Maximize16}
+            />
+            <IconSwitch
+              name="tablet"
+              text="Tablet view"
+              renderIcon={Tablet16}
+            />
+            <IconSwitch
+              name="laptop"
+              text="Laptop View"
+              renderIcon={Laptop16}
+            />
+            <IconSwitch
+              name="screen"
+              text="Desktop View"
+              renderIcon={Screen16}
+            />
           </ContentSwitcher>
         )}
 
-        {// FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
-        onImport && (
-          <TooltipIcon
-            align="center"
-            direction="bottom"
-            tooltipText={i18n.headerImportButton}
-            className={`${baseClassName}--bottom__import`}
-          >
-            <FileUploaderButton
-              buttonKind="ghost"
-              size="field"
-              labelText={<DocumentImport16 fill="#161616" />}
-              onChange={onImport}
-              disableLabelChanges
-            />
-          </TooltipIcon>
-        )}
+        {
+          // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
+          onImport && (
+            <TooltipIcon
+              align="center"
+              direction="bottom"
+              tooltipText={i18n.headerImportButton}
+              className={`${baseClassName}--bottom__import`}>
+              <FileUploaderButton
+                buttonKind="ghost"
+                size="field"
+                labelText={<DocumentImport16 fill="#161616" />}
+                onChange={onImport}
+                disableLabelChanges
+              />
+            </TooltipIcon>
+          )
+        }
         {onExport && (
           <Button
             kind="ghost"
@@ -147,7 +165,7 @@ const DashboardEditorHeader = ({
             tooltipAlignment="center"
             hasIconOnly
             renderIcon={DocumentExport16}
-            onClick={onExport(dashboardJson)}
+            onClick={() => onExport(dashboardJson)}
           />
         )}
         {onDelete && (
@@ -168,7 +186,7 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button size="field" onClick={onSubmit(dashboardJson)}>
+          <Button size="field" onClick={() => onSubmit(dashboardJson)}>
             {i18n.headerSubmitButton}
           </Button>
         )}

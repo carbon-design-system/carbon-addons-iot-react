@@ -18,7 +18,10 @@ import {
   DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
-import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
+import {
+  getCardMinSize,
+  filterValidAttributes,
+} from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
@@ -41,6 +44,7 @@ const CardWrapper = ({
   onMouseUp,
   onTouchEnd,
   onTouchStart,
+  tabIndex,
   testID,
   ...others
 }) => {
@@ -56,9 +60,9 @@ const CardWrapper = ({
       onTouchEnd={onTouchEnd}
       onTouchStart={onTouchStart}
       onScroll={onScroll}
+      tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`)}
-      {...validOthers}
-    >
+      {...validOthers}>
       {children}
     </div>
   );
@@ -85,8 +89,7 @@ const CardContent = props => {
       style={{ [`--card-content-height`]: height }}
       className={classnames(`${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
-      })}
-    >
+      })}>
       {children}
     </div>
   );
@@ -97,8 +100,7 @@ const EmptyMessageWrapper = props => {
   return (
     <div
       style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
-      className={`${iotPrefix}--card--empty-message-wrapper`}
-    >
+      className={`${iotPrefix}--card--empty-message-wrapper`}>
       {children}
     </div>
   );
@@ -106,22 +108,34 @@ const EmptyMessageWrapper = props => {
 
 CardWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
+    .isRequired,
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
   testID: CardPropTypes.testID,
-  /* eslint-disable react/require-default-props */
   onMouseDown: PropTypes.func,
   onMouseUp: PropTypes.func,
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
-  /* eslint-enable react/require-default-props  */
+  /** Optionally sets a keyboard tab index for the container */
+  tabIndex: PropTypes.number,
 };
-CardWrapper.defaultProps = { id: undefined, style: undefined, testID: 'Card' };
+CardWrapper.defaultProps = {
+  id: undefined,
+  style: undefined,
+  testID: 'Card',
+  onMouseDown: undefined,
+  onMouseUp: undefined,
+  onTouchEnd: undefined,
+  onTouchStart: undefined,
+  onScroll: undefined,
+  tabIndex: undefined,
+};
 CardContent.propTypes = {
   children: PropTypes.node,
-  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
+    .isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
 };
 CardContent.defaultProps = { children: undefined };
@@ -247,7 +261,9 @@ const Card = props => {
     [availableActions]
   );
 
-  const hasToolbarActions = Object.values(mergedAvailableActions).includes(true);
+  const hasToolbarActions = Object.values(mergedAvailableActions).includes(
+    true
+  );
 
   const strings = {
     ...defaultProps.i18n,
@@ -255,10 +271,10 @@ const Card = props => {
   };
 
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
-    onCardAction,
-    id,
-  ]);
+  const cachedOnCardAction = useCallback(
+    (...args) => onCardAction(id, ...args),
+    [onCardAction, id]
+  );
 
   const getChildSize = (cardSize, cardTitle) => {
     const childSize = {
@@ -275,7 +291,10 @@ const Card = props => {
   const titleRef = React.createRef();
   const [hasTitleTooltip, setHasTitleTooltip] = useState(false);
   useEffect(() => {
-    if (titleRef.current && titleRef.current.clientWidth < titleRef.current.scrollWidth) {
+    if (
+      titleRef.current &&
+      titleRef.current.clientWidth < titleRef.current.scrollWidth
+    ) {
       setHasTitleTooltip(true);
     } else {
       setHasTitleTooltip(false);
@@ -317,8 +336,7 @@ const Card = props => {
                         width: 'calc(100% - 50px)',
                       }
                 }
-                className={classnames(`${iotPrefix}--card`, className)}
-              >
+                className={classnames(`${iotPrefix}--card`, className)}>
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
@@ -327,12 +345,13 @@ const Card = props => {
                           ref={titleRef}
                           showIcon={false}
                           triggerClassName={`${iotPrefix}--card--title--text`}
-                          triggerText={title}
-                        >
+                          triggerText={title}>
                           {title}
                         </Tooltip>
                       ) : (
-                        <div ref={titleRef} className={`${iotPrefix}--card--title--text`}>
+                        <div
+                          ref={titleRef}
+                          className={`${iotPrefix}--card--title--text`}>
                           {title}
                         </div>
                       )}
@@ -341,8 +360,7 @@ const Card = props => {
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
                           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
-                          triggerText=""
-                        >
+                          triggerText="">
                           {tooltip}
                         </Tooltip>
                       )}
@@ -358,19 +376,22 @@ const Card = props => {
                       style={{
                         '--card-content-padding': `${CARD_CONTENT_PADDING}px`,
                       }}
-                      className={`${iotPrefix}--card--skeleton-wrapper`}
-                    >
+                      className={`${iotPrefix}--card--skeleton-wrapper`}>
                       <OptimizedSkeletonText
                         paragraph
                         lineCount={
-                          newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3
+                          newSize === CARD_SIZES.SMALL ||
+                          newSize === CARD_SIZES.SMALLWIDE
+                            ? 2
+                            : 3
                         }
                         width="100%"
                       />
                     </div>
                   ) : error ? (
                     <EmptyMessageWrapper>
-                      {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
+                      {newSize === CARD_SIZES.SMALL ||
+                      newSize === CARD_SIZES.SMALLWIDE
                         ? strings.errorLoadingDataShortLabel
                         : `${strings.errorLoadingDataLabel} ${error}`}
                     </EmptyMessageWrapper>
@@ -398,8 +419,7 @@ const Card = props => {
   return isExpanded ? (
     <div
       data-floating-menu-container // needed to place overflow floating menus within the modal so we can control them through css
-      className={`${prefix}--modal is-visible`}
-    >
+      className={`${prefix}--modal is-visible`}>
       {card}
     </div>
   ) : (

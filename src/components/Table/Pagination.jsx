@@ -13,7 +13,14 @@ const { iotPrefix } = settings;
  * It also hides the Items per page and x of x items text if the total width of the pagination bar is less than 500 px
  */
 const SizedPagination = sizeMe({ noPlaceholder: true })(
-  ({ isItemPerPageHidden, size, className, preventInteraction, disabled, ...rest }) => (
+  ({
+    isItemPerPageHidden,
+    size,
+    className,
+    preventInteraction,
+    disabled,
+    ...rest
+  }) => (
     <Pagination
       {...rest}
       disabled={preventInteraction || disabled}
@@ -21,7 +28,10 @@ const SizedPagination = sizeMe({ noPlaceholder: true })(
         [`${iotPrefix}--pagination--hide-page`]: isItemPerPageHidden,
         [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
       })}
-      style={{ '--pagination-text-display': size?.width && size?.width < 500 ? 'none' : 'flex' }}
+      style={{
+        '--pagination-text-display':
+          size?.width && size?.width < 500 ? 'none' : 'flex',
+      }}
     />
   )
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import classNames from 'classnames';
 
 import {
   CARD_SIZES,
@@ -8,24 +9,27 @@ import {
   CARD_TYPES,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
+  DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import {
   Card,
   ValueCard,
   TimeSeriesCard,
   BarChartCard,
-  // ImageCard,
+  ImageCard,
   TableCard,
+  ListCard,
 } from '../../index';
+import sampleImage from '../CardEditor/CardGalleryList/image.svg';
 
-// import sampleImage from './landscape.jpg';
+import { baseClassName } from './DashboardEditor';
 
 /**
  * Returns a duplicate card configuration
  * @param {Object} cardData, card JSON configuration
  * @returns {Object} duplicated card JSON
  */
-export const getDuplicateCard = cardData => ({
+export const getDuplicateCard = (cardData) => ({
   ...cardData,
   id: uuid.v4(),
 });
@@ -35,143 +39,105 @@ export const getDuplicateCard = cardData => ({
  * @param {string} type, card type
  * @returns {Object} default card JSON
  */
-export const getDefaultCard = type => {
+export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
-    [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    [CARD_TYPES.BAR]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.TABLE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
   };
+
   const baseCardProps = {
     id: uuid.v4(),
-    title: 'Untitled',
+    title: i18n.defaultCardTitle,
     size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
-    type,
+    ...(type.includes(CARD_TYPES.BAR) ? { type: CARD_TYPES.BAR } : { type }),
   };
 
   switch (type) {
-    case CARD_TYPES.VALUE:
+    case DASHBOARD_EDITOR_CARD_TYPES.VALUE:
       return {
         ...baseCardProps,
         content: {
-          attributes: [
-            {
-              dataSourceId: 'key1',
-              unit: '%',
-              label: 'Key 1',
-            },
-            {
-              dataSourceId: 'key2',
-              unit: 'lb',
-              label: 'Key 2',
-            },
-          ],
+          attributes: [],
         },
+        i18n,
       };
-    case CARD_TYPES.TIMESERIES:
+    case DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES:
       return {
         ...baseCardProps,
         content: {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          series: [],
           timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
         },
         interval: 'day',
+        i18n,
       };
-    case CARD_TYPES.BAR:
+    case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
         ...baseCardProps,
         content: {
           type: BAR_CHART_TYPES.SIMPLE,
-          xLabel: 'Cities',
-          yLabel: 'Total',
           layout: BAR_CHART_LAYOUTS.VERTICAL,
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emissions',
-            },
-          ],
-          categoryDataSourceId: 'city',
+          series: [],
         },
+        i18n,
       };
-    case CARD_TYPES.TABLE:
+    case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
+      return {
+        ...baseCardProps,
+        content: {
+          type: BAR_CHART_TYPES.GROUPED,
+          layout: BAR_CHART_LAYOUTS.VERTICAL,
+          series: [],
+        },
+        i18n,
+      };
+    case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:
+      return {
+        ...baseCardProps,
+        content: {
+          type: BAR_CHART_TYPES.STACKED,
+          layout: BAR_CHART_LAYOUTS.VERTICAL,
+          series: [],
+        },
+        i18n,
+      };
+    case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
       return {
         ...baseCardProps,
         content: {
           columns: [
             {
-              dataSourceId: 'alert',
-              label: 'Alert',
-              priority: 1,
+              dataSourceId: 'undefined',
+              label: '--',
             },
             {
-              dataSourceId: 'count',
-              label: 'Count',
-              priority: 3,
-            },
-            {
-              dataSourceId: 'hour',
-              label: 'Hour',
-              priority: 2,
-              type: 'TIMESTAMP',
-            },
-            {
-              dataSourceId: 'pressure',
-              label: 'Pressure',
-              priority: 2,
-            },
-          ],
-          threshold: [
-            {
-              dataSourceId: 'pressure',
-              comparison: '>=',
-              value: 1,
-              severity: 1,
-              label: 'Pressure',
-              showSeverityLabel: true,
-              severityLabel: 'Critical',
+              dataSourceId: 'undefined2',
+              label: '--',
             },
           ],
         },
+        i18n,
       };
-    /*
-    case CARD_TYPES.IMAGE:
+    case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
       return {
-          ...baseCardProps,
-          content: {
-            alt: 'landscape.jpg',
-            src: sampleImage,
-            hideMinimap: true,
-            hideHotspots: false,
-            hideZoomControls: false,
-          },
-      }
-    */
+        ...baseCardProps,
+        content: {
+          alt: 'Sample image',
+          src: sampleImage,
+          hideMinimap: true,
+          hideHotspots: false,
+          hideZoomControls: false,
+        },
+        i18n,
+      };
+
     default:
-      return baseCardProps;
+      return { ...baseCardProps, i18n };
   }
 };
 
@@ -180,7 +146,7 @@ export const getDefaultCard = type => {
  * @param {Object} cardJson
  * @returns {Boolean}
  */
-export const isCardJsonValid = cardJson => {
+export const isCardJsonValid = (cardJson) => {
   switch (cardJson.type) {
     case CARD_TYPES.VALUE:
       return !isNil(cardJson?.content?.attributes);
@@ -202,15 +168,7 @@ export const isCardJsonValid = cardJson => {
  * @returns {Node}
  */
 const renderDefaultCard = (cardJson, commonProps) => (
-  <Card
-    key={cardJson.id}
-    id={cardJson.id}
-    size={cardJson.size}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    isEditable
-    {...commonProps}
-  >
+  <Card isEditable {...cardJson} {...commonProps}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
   </Card>
 );
@@ -221,16 +179,7 @@ const renderDefaultCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderValueCard = (cardJson, commonProps) => (
-  <ValueCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    {...commonProps}
-  />
+  <ValueCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
@@ -239,16 +188,7 @@ const renderValueCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderTimeSeriesCard = (cardJson, commonProps) => (
-  <TimeSeriesCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    {...commonProps}
-  />
+  <TimeSeriesCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
@@ -257,17 +197,7 @@ const renderTimeSeriesCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderBarChartCard = (cardJson, commonProps) => (
-  <BarChartCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    // TODO: fix inability to pass className to BarChartCard
-    {...(commonProps.className ? {} : commonProps)}
-  />
+  <BarChartCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
@@ -276,31 +206,25 @@ const renderBarChartCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderTableCard = (cardJson, commonProps) => (
-  <TableCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
+  <TableCard isEditable {...cardJson} {...commonProps} />
+);
+
+const renderImageCard = (cardJson, commonProps) => (
+  <ImageCard
+    isEditable={cardJson?.content?.src === undefined}
+    {...cardJson}
     {...commonProps}
   />
 );
 
-/*
-const renderImageCard = (cardJson, commonProps) => (
-  <ImageCard
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable={cardJson?.content?.src === undefined}
-    {...commonProps}
-  />
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
+const renderListCard = (cardJson, commonProps) => (
+  <ListCard isEditable {...cardJson} {...commonProps} />
 );
-*/
 
 /**
  * Returns a Card component for preview in the dashboard
@@ -318,22 +242,28 @@ export const getCardPreview = (
   onDuplicateCard,
   onRemoveCard
 ) => {
-  const commonProps = isSelected
-    ? { className: 'selected-card' }
-    : {
-        availableActions: { edit: true, clone: true, delete: true },
-        onCardAction: (id, actionId) => {
-          if (actionId === CARD_ACTIONS.EDIT_CARD) {
-            onSelectCard(id);
-          }
-          if (actionId === CARD_ACTIONS.CLONE_CARD) {
-            onDuplicateCard(id);
-          }
-          if (actionId === CARD_ACTIONS.DELETE_CARD) {
-            onRemoveCard(id);
-          }
-        },
-      };
+  const commonProps = {
+    key: cardData.id,
+    tooltip: cardData.description,
+    ...(isSelected
+      ? {
+          className: classNames({
+            [`${baseClassName}--preview__selected-card`]: isSelected,
+          }),
+        }
+      : {}),
+    availableActions: { clone: true, delete: true },
+    onCardAction: (id, actionId) => {
+      if (actionId === CARD_ACTIONS.CLONE_CARD) {
+        onDuplicateCard(id);
+      }
+      if (actionId === CARD_ACTIONS.DELETE_CARD) {
+        onRemoveCard(id);
+      }
+    },
+    tabIndex: 0,
+    onClick: () => onSelectCard(),
+  };
 
   if (!isCardJsonValid(cardData)) {
     return renderDefaultCard(cardData, commonProps);
@@ -348,6 +278,10 @@ export const getCardPreview = (
       return renderBarChartCard(cardData, commonProps);
     case CARD_TYPES.TABLE:
       return renderTableCard(cardData, commonProps);
+    case CARD_TYPES.IMAGE:
+      return renderImageCard(cardData, commonProps);
+    case CARD_TYPES.LIST:
+      return renderListCard(cardData, commonProps);
     default:
       return renderDefaultCard(cardData, commonProps);
   }

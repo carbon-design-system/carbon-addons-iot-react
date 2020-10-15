@@ -18,17 +18,20 @@ const { iotPrefix } = settings;
 
 const StyledAttribute = styled.div`
   display: flex;
-  align-items: ${props => (props.isMini ? 'center' : 'baseline')};
-  ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
+  align-items: ${(props) => (props.isMini ? 'center' : 'baseline')};
+  ${(props) =>
+    props.isVertical && props.alignValue
+      ? `justify-content: ${props.alignValue};`
+      : ''};
   order: 1;
-  ${props =>
+  ${(props) =>
     !props.label || props.isVertical || props.size === CARD_SIZES.SMALL
       ? 'width: 100%'
       : 'width: 50%'};
 `;
 
 const ThresholdIcon = styled(CardIcon)`
-  ${props =>
+  ${(props) =>
     props.color &&
     `
     color: ${props.color};
@@ -40,11 +43,11 @@ const AttributeSecondaryValue = styled.div`
   height: 24px;
   display: flex;
   align-items: center;
-  color: ${props => props.color || '#777'};
-  fill: ${props => props.color || '#777'};
+  color: ${(props) => props.color || '#777'};
+  fill: ${(props) => props.color || '#777'};
   font-size: 0.875rem;
-  padding-left: ${props => (props.isMini ? '0.5rem' : '0.25rem')};
-  margin-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
+  padding-left: ${(props) => (props.isMini ? '0.5rem' : '0.25rem')};
+  margin-bottom: ${(props) => (props.isMini ? '0' : '0.25rem')};
 `;
 
 const propTypes = {
@@ -67,7 +70,8 @@ const propTypes = {
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
       color: PropTypes.string,
       icon: PropTypes.string,
     })
@@ -119,7 +123,7 @@ const Attribute = ({
 
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
-    .filter(t => {
+    .filter((t) => {
       switch (t.comparison) {
         case '<':
           return !isNil(value) && value < t.value;
@@ -137,18 +141,19 @@ const Attribute = ({
     })
     .concat([null])[0];
   const valueColor =
-    matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
+    matchingThreshold && matchingThreshold.icon === undefined
+      ? matchingThreshold.color
+      : null;
 
   const bemBase = `${iotPrefix}--value-card__attribute`;
 
-  const renderThresholdIcon = allowedToWrap => {
+  const renderThresholdIcon = (allowedToWrap) => {
     return (
       <div
         className={classnames(`${bemBase}-threshold-icon-container`, {
           [`${bemBase}-threshold-icon-container--mini`]: isMini,
           [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
-        })}
-      >
+        })}>
         <ThresholdIcon
           {...matchingThreshold}
           width={16}
@@ -164,7 +169,8 @@ const Attribute = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         const allowWrap = measuredSize && measuredSize.width <= 100;
-        const wrapCompact = allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
+        const wrapCompact =
+          allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
         return (
           <StyledAttribute
             size={newSize}
@@ -172,8 +178,7 @@ const Attribute = ({
             isVertical={isVertical}
             isMini={isMini}
             label={label}
-            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}
-          >
+            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}>
             <ValueRenderer
               value={value}
               unit={unit}
@@ -198,16 +203,22 @@ const Attribute = ({
               wrapCompact={wrapCompact}
               attributeCount={attributeCount}
             />
-            {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
+            {!isNil(secondaryValue) &&
+            (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue
                 color={secondaryValue.color}
                 trend={secondaryValue.trend}
-                isMini={isMini}
-              >
+                isMini={isMini}>
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <CaretUp16 className={`${bemBase}_trend-icon`} aria-label="trending up" />
+                  <CaretUp16
+                    className={`${bemBase}_trend-icon`}
+                    aria-label="trending up"
+                  />
                 ) : secondaryValue.trend === 'down' ? (
-                  <CaretDown16 className={`${bemBase}_trend-icon`} aria-label="trending down" />
+                  <CaretDown16
+                    className={`${bemBase}_trend-icon`}
+                    aria-label="trending down"
+                  />
                 ) : null}
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
@@ -216,8 +227,7 @@ const Attribute = ({
               <div
                 className={classnames(`${bemBase}-icon-container`, {
                   [`${bemBase}-icon-container--wrappable`]: allowWrap,
-                })}
-              >
+                })}>
                 {renderThresholdIcon(allowWrap)}
               </div>
             ) : null}

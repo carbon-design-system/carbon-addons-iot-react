@@ -69,7 +69,10 @@ describe('TableBodyRow', () => {
       values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
-      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithUndefined} />
+      <TableBodyRow
+        tableActions={mockActions}
+        {...tableRowPropsWithUndefined}
+      />
     );
     expect(wrapper).toBeDefined();
   });
@@ -112,13 +115,19 @@ describe('TableBodyRow', () => {
       totalColumns: 2,
       id: 'tableRow',
       options: { hasRowSelection: 'multi' },
-      tableActions: { onRowSelected: mockRowSelection, onRowClicked: mockRowClicked },
+      tableActions: {
+        onRowSelected: mockRowSelection,
+        onRowClicked: mockRowClicked,
+      },
       columns: [{ id: 'col1' }, { id: 'col2' }],
       ordering: [{ columnId: 'col1' }, { columnId: 'col2' }],
       values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
-      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithSelection} />
+      <TableBodyRow
+        tableActions={mockActions}
+        {...tableRowPropsWithSelection}
+      />
     );
     wrapper.find('input').simulate('change', { stopPropagation: () => true });
     expect(mockRowSelection).toHaveBeenCalled();

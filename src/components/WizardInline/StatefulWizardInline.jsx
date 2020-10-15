@@ -10,11 +10,17 @@ const StatefulWizardInline = ({
   setItem,
   ...other
 }) => {
-  const [currentItemId, setCurrentItemId] = useState(currentItemIdProp || (items && items[0].id));
-  const currentItemIndex = items.findIndex(item => item.id === currentItemId);
-  const nextItem = currentItemIndex < items.length - 1 ? items[currentItemIndex + 1] : undefined;
-  const prevItem = currentItemIndex > 0 ? items[currentItemIndex - 1] : undefined;
-  const handleNext = id => {
+  const [currentItemId, setCurrentItemId] = useState(
+    currentItemIdProp || (items && items[0].id)
+  );
+  const currentItemIndex = items.findIndex((item) => item.id === currentItemId);
+  const nextItem =
+    currentItemIndex < items.length - 1
+      ? items[currentItemIndex + 1]
+      : undefined;
+  const prevItem =
+    currentItemIndex > 0 ? items[currentItemIndex - 1] : undefined;
+  const handleNext = (id) => {
     // Find the last one
     setCurrentItemId(id);
     if (onNext) {
@@ -22,7 +28,7 @@ const StatefulWizardInline = ({
     }
   };
 
-  const handleBack = id => {
+  const handleBack = (id) => {
     // Find the first one
     setCurrentItemId(id);
     if (onBack) {
@@ -36,7 +42,7 @@ const StatefulWizardInline = ({
       onBack={() => handleBack(prevItem.id)}
       onNext={() => handleNext(nextItem.id)}
       currentItemId={currentItemId}
-      setItem={id => {
+      setItem={(id) => {
         setCurrentItemId(id);
         if (setItem) {
           setItem(id);

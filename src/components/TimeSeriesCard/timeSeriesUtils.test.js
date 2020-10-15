@@ -86,42 +86,112 @@ describe('timeSeriesUtils', () => {
   it('formatGraphTick', () => {
     // hour different day
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572912000000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'hour',
+        'en',
+        1572912000000
+      )
     ).toContain('Nov 05');
     // hour same day
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572933600000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'hour',
+        'en',
+        1572933600000
+      )
     ).toContain('00:00');
     // day same day should skip
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'day', 'en', 1572933600000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'day',
+        'en',
+        1572933600000
+      )
     ).toEqual('');
     // month different year
     expect(
-      formatGraphTick(1546322400000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1522558800000)
+      formatGraphTick(
+        1546322400000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'month',
+        'en',
+        1522558800000
+      )
     ).toContain('Jan 2019');
     // month same year
     expect(
-      formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572584400000)
+      formatGraphTick(
+        1561957200000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'month',
+        'en',
+        1572584400000
+      )
     ).toContain('Jul');
     // week shouldn't show year
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'week', 'en', 1572912000000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'week',
+        'en',
+        1572912000000
+      )
     ).toContain('Nov 05');
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'week', 'en', 1572912000000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'week',
+        'en',
+        1572912000000
+      )
     ).not.toContain('Nov 05 2019');
     // same year should not repeat
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'year', 'en', 1572933600000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'year',
+        'en',
+        1572933600000
+      )
     ).toEqual('');
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'year', 'en', 872912000000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'year',
+        'en',
+        872912000000
+      )
     ).toContain('2019');
 
     // same month should not repeat
     expect(
-      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572933600000)
+      formatGraphTick(
+        1572933600000,
+        1,
+        [1, 2, 3, 4, 5, 6],
+        'month',
+        'en',
+        1572933600000
+      )
     ).toEqual('');
   });
   it('findMatchingAlertRange', () => {

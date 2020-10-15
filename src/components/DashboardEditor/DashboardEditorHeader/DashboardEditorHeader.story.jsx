@@ -7,7 +7,10 @@ import { Link } from '../../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader';
 
-storiesOf('Watson IoT Experimental/DashboardEditor/DashboardEditorHeader', module)
+storiesOf(
+  'Watson IoT Experimental/DashboardEditor/DashboardEditorHeader',
+  module
+)
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>

@@ -37,12 +37,24 @@ const getRowActions = (
   const rowActions = [];
   if (isEditable) {
     const editItemKey = `${testID}-row-action-${id}-edit`;
-    const editButton = renderButton(id, onEdit, Edit16, editItemKey, editIconText);
+    const editButton = renderButton(
+      id,
+      onEdit,
+      Edit16,
+      editItemKey,
+      editIconText
+    );
     rowActions.push(editButton);
   }
   if (isDeleteable) {
     const deleteItemKey = `${testID}-row-action-${id}-delete`;
-    const deleteButton = renderButton(id, onDelete, TrashCan16, deleteItemKey, deleteIconText);
+    const deleteButton = renderButton(
+      id,
+      onDelete,
+      TrashCan16,
+      deleteItemKey,
+      deleteIconText
+    );
     rowActions.push(deleteButton);
   }
   return rowActions;
@@ -121,7 +133,7 @@ const TableManageViewsList = ({
 }) => {
   const MyList = overrides?.list?.component || List;
 
-  const listItems = views.map(view => {
+  const listItems = views.map((view) => {
     const { id } = view;
     return {
       content: {

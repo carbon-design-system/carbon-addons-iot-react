@@ -24,7 +24,11 @@ describe('ComposedModal', () => {
   it('errors should be cleared', () => {
     const onClearError = jest.fn();
     const wrapper = mount(
-      <ComposedModal {...modalProps} error="error" onClearError={onClearError} />
+      <ComposedModal
+        {...modalProps}
+        error="error"
+        onClearError={onClearError}
+      />
     );
     wrapper
       .find('.bx--inline-notification__close-button')

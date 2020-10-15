@@ -57,10 +57,7 @@ describe('Structured List', () => {
         onRowClick={onRowClick}
       />
     );
-    wrapper
-      .find('div[onClick]')
-      .first()
-      .simulate('click');
+    wrapper.find('div[onClick]').first().simulate('click');
     expect(onRowClick.mock.calls).toHaveLength(1);
   });
 });

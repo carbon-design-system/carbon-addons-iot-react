@@ -1,6 +1,10 @@
 import { CARD_TYPES } from '../..';
 
-import { getDuplicateCard, getDefaultCard, isCardJsonValid } from './editorUtils';
+import {
+  getDuplicateCard,
+  getDefaultCard,
+  isCardJsonValid,
+} from './editorUtils';
 
 describe('editorUtils', () => {
   const mockValueCard = {
@@ -52,47 +56,68 @@ describe('editorUtils', () => {
   });
 
   describe('getDefaultCard', () => {
+    const i18n = {
+      defaultCardTitle: 'Untitled',
+    };
     it('should return ValueCard', () => {
-      expect(getDefaultCard(CARD_TYPES.VALUE).type).toEqual(CARD_TYPES.VALUE);
-      expect(getDefaultCard(CARD_TYPES.VALUE).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).type).toEqual(
+        CARD_TYPES.VALUE
+      );
+      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).content).toBeDefined();
     });
     it('should return TimeSeriesCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).type).toEqual(CARD_TYPES.TIMESERIES);
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).type).toEqual(
+        CARD_TYPES.TIMESERIES
+      );
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
     });
     it('should return BarChartCard', () => {
-      expect(getDefaultCard(CARD_TYPES.BAR).type).toEqual(CARD_TYPES.BAR);
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.BAR, i18n).type).toEqual(CARD_TYPES.BAR);
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
     });
     it('should return TableCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TABLE).type).toEqual(CARD_TYPES.TABLE);
-      expect(getDefaultCard(CARD_TYPES.TABLE).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).type).toEqual(
+        CARD_TYPES.TABLE
+      );
+      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).content).toBeDefined();
     });
     it('should return CustomCard', () => {
-      expect(getDefaultCard(CARD_TYPES.CUSTOM).type).toEqual(CARD_TYPES.CUSTOM);
-      expect(getDefaultCard(CARD_TYPES.CUSTOM).content).toBeUndefined();
+      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).type).toEqual(
+        CARD_TYPES.CUSTOM
+      );
+      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).content).toBeUndefined();
     });
   });
 
   describe('isCardJsonValid', () => {
     it('ValueCard', () => {
       expect(isCardJsonValid(mockValueCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(
+        false
+      );
     });
     it('TimeSeriesCard', () => {
       expect(isCardJsonValid(mockTimeSeriesCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(
+        false
+      );
     });
     it('BarChartCard', () => {
       expect(isCardJsonValid(mockBarChartCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(
+        false
+      );
     });
     it('TableCard', () => {
       expect(isCardJsonValid(mockTableCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(
+        false
+      );
     });
     it('CustomCard', () => {
-      expect(isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })).toEqual(true);
+      expect(
+        isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })
+      ).toEqual(true);
     });
   });
 });

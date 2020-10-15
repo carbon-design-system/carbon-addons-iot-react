@@ -101,7 +101,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
-        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
@@ -109,11 +108,16 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -165,12 +169,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'CUSTOM',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -186,7 +193,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
-        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
@@ -194,11 +200,16 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -300,11 +311,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -361,12 +376,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'CUSTOM',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -375,7 +393,13 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
-        renderCardPreview={(cardJson, isSelected, onSelectCard, onDuplicateCard, onRemoveCard) => {
+        renderCardPreview={(
+          cardJson,
+          isSelected,
+          onSelectCard,
+          onDuplicateCard,
+          onRemoveCard
+        ) => {
           const commonProps = isSelected
             ? { className: 'selected-card' }
             : {
@@ -399,17 +423,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
               size={cardJson.size}
               title={cardJson.title}
               isEditable
-              {...commonProps}
-            >
+              {...commonProps}>
               <div style={{ padding: '1rem' }}>
-                This content is rendered by the renderCardPreview function. The &quot;value&quot;
-                property on the card will be rendered here:
+                This content is rendered by the renderCardPreview function. The
+                &quot;value&quot; property on the card will be rendered here:
                 <h3>{cardJson.value}</h3>
               </div>
             </Card>
-          ) : (
-            undefined
-          );
+          ) : undefined;
         }}
       />
     </div>

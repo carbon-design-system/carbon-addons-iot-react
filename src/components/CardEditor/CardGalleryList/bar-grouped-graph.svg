@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="32px" viewBox="0 0 40 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bargrouped-graph</title>
+    <g id="Dashboard-Views" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Entity-dashboard-editor" transform="translate(-1344.000000, -263.000000)" fill-rule="nonzero">
+            <g id="Group-7" transform="translate(1328.000000, 48.000000)">
+                <g id="bargrouped-graph" transform="translate(16.000000, 215.000000)">
+                    <rect id="Rectangle-9" fill="#97C1FF" x="38.9261745" y="7.82222222" width="1.0738255" height="24.1777778"></rect>
+                    <rect id="Rectangle-9" fill="#0062FF" x="37.5838926" y="17.4222222" width="1.0738255" height="14.5777778"></rect>
+                    <polygon id="Rectangle-9" fill="#97C1FF" points="31.409396 3.2 32.4832215 3.2 32.4832215 32 31.409396 32"></polygon>
+                    <rect id="Rectangle-9" fill="#0062FF" x="30.0671141" y="9.95555556" width="1.0738255" height="22.0444444"></rect>
+                    <polygon id="Rectangle-9" fill="#97C1FF" points="23.8926174 14.5777778 24.966443 14.5777778 24.966443 32 23.8926174 32"></polygon>
+                    <rect id="Rectangle-9" fill="#0062FF" x="22.5503356" y="21.3333333" width="1.0738255" height="10.6666667"></rect>
+                    <polygon id="Rectangle-9" fill="#97C1FF" points="16.6442953 12.0888889 17.7181208 12.0888889 17.7181208 32 16.6442953 32"></polygon>
+                    <rect id="Rectangle-9" fill="#0062FF" x="15.3020134" y="25.6" width="1.0738255" height="6.4"></rect>
+                    <polygon id="Rectangle-9" fill="#97C1FF" points="8.8590604 20.2666667 9.93288591 20.2666667 9.93288591 32 8.8590604 32"></polygon>
+                    <rect id="Rectangle-9" fill="#0062FF" x="7.51677852" y="23.1111111" width="1.0738255" height="8.88888889"></rect>
+                    <rect id="Rectangle-9" fill="#97C1FF" x="1.34228188" y="0" width="1.0738255" height="32"></rect>
+                    <rect id="Rectangle-9-Copy" fill="#0062FF" x="-6.10622664e-15" y="14.2222222" width="1.0738255" height="17.7777778"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

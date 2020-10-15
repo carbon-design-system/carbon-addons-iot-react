@@ -94,7 +94,12 @@ const defaultProps = {
 };
 
 const TableSaveViewModal = ({
-  actions: { onSave: onSaveCallback, onClose, onClearError, onChange: onChangeCallback },
+  actions: {
+    onSave: onSaveCallback,
+    onClose,
+    onClearError,
+    onChange: onChangeCallback,
+  },
   error,
   i18n,
   initialFormValues,
@@ -119,10 +124,14 @@ const TableSaveViewModal = ({
     cancelButtonLabelText,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const onSave = () => onSaveCallback({ ...formValues, description: viewDescription });
+  const onSave = () =>
+    onSaveCallback({ ...formValues, description: viewDescription });
 
-  const onChange = modifiedFormValue => {
-    setFormValues(currentValues => ({ ...currentValues, ...modifiedFormValue }));
+  const onChange = (modifiedFormValue) => {
+    setFormValues((currentValues) => ({
+      ...currentValues,
+      ...modifiedFormValue,
+    }));
     onChangeCallback(modifiedFormValue);
   };
 
@@ -133,11 +142,15 @@ const TableSaveViewModal = ({
   };
 
   const MyComposedModal = overrides?.composedModal?.component || ComposedModal;
-  const MyTableSaveViewForm = overrides?.tableSaveViewForm?.component || TableSaveViewForm;
+  const MyTableSaveViewForm =
+    overrides?.tableSaveViewForm?.component || TableSaveViewForm;
 
   return (
     <MyComposedModal
-      footer={{ ...i18nFooter, isPrimaryButtonDisabled: formValues.title === '' }}
+      footer={{
+        ...i18nFooter,
+        isPrimaryButtonDisabled: formValues.title === '',
+      }}
       iconDescription={closeIconDescription}
       data-testid={testID}
       error={error}
@@ -150,9 +163,10 @@ const TableSaveViewModal = ({
       open={open}
       sendingData={sendingData}
       selectorPrimaryFocus={`#${primaryInputId}`}
-      {...overrides?.composedModal?.props}
-    >
-      <p className={`${iotPrefix}--save-view-modal__body-text`}>{modalBodyText}</p>
+      {...overrides?.composedModal?.props}>
+      <p className={`${iotPrefix}--save-view-modal__body-text`}>
+        {modalBodyText}
+      </p>
       <MyTableSaveViewForm
         viewDescription={viewDescription}
         titleInputInvalid={titleInputInvalid}
@@ -161,7 +175,11 @@ const TableSaveViewModal = ({
         formValues={formValues}
         disabled={sendingData}
         primaryInputId={primaryInputId}
-        i18n={{ titleInputLabelText, defaultCheckboxLabelText, publicCheckboxLabelText }}
+        i18n={{
+          titleInputLabelText,
+          defaultCheckboxLabelText,
+          publicCheckboxLabelText,
+        }}
         testID={`${testID}-form`}
         {...overrides?.tableSaveViewForm?.props}
       />
