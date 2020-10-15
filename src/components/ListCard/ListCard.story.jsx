@@ -317,12 +317,14 @@ storiesOf('Watson IoT Experimental/ListCard', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
     return (
-      <ListCard
-        id="ListCard"
-        title={text('Text', 'Simple List with Icon')}
-        size={size}
-        data={[]}
-        loadData={() => {}}
-      />
+      <div style={{ width: text('cardWidth', `250px`), margin: 20 }}>
+        <ListCard
+          id="ListCard"
+          title={text('Text', 'Simple List with Icon')}
+          size={size}
+          data={[]}
+          loadData={() => {}}
+        />
+      </div>
     );
   });

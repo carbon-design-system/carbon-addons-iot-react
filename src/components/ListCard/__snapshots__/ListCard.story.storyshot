@@ -273,48 +273,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     }
   >
     <div
-      className="iot--card iot--card--wrapper"
-      data-testid="Card"
-      id="ListCard"
-      onScroll={[Function]}
-      role="presentation"
       style={
         Object {
-          "--card-default-height": "304px",
+          "margin": 20,
+          "width": "250px",
         }
       }
     >
       <div
-        className="iot--card--header"
-      >
-        <span
-          className="iot--card--title"
-          title="Simple List with Icon"
-        >
-          <div
-            className="iot--card--title--text"
-          >
-            Simple List with Icon
-          </div>
-        </span>
-      </div>
-      <div
-        className="iot--card--content"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="ListCard"
+        onScroll={[Function]}
+        role="presentation"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-default-height": "304px",
           }
         }
       >
         <div
-          className="iot--card--empty-message-wrapper"
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Simple List with Icon"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Simple List with Icon
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
           style={
             Object {
-              "--card-content-padding": "16px",
+              "--card-content-height": "256px",
             }
           }
         >
-          No data is available for this time range.
+          <div
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
+          >
+            No data is available for this time range.
+          </div>
         </div>
       </div>
     </div>
