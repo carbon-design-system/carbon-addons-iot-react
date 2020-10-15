@@ -20,6 +20,8 @@ const propTypes = {
   editOptionText: PropTypes.string,
   // String to pass for tags close button aria-label. Will be prepended to value name
   closeButtonText: PropTypes.string,
+  // Allow custom onBlur function to be passed to the combobox textinput
+  onBlur: PropTypes.func,
   // Bit that will allow mult value and tag feature
   hasMultiValue: deprecate(
     PropTypes.bool,
@@ -42,6 +44,7 @@ const defaultProps = {
   addToList: false,
   items: [],
   onInputChange: null,
+  onBlur: null,
 };
 
 const ComboBox = ({
@@ -61,6 +64,7 @@ const ComboBox = ({
   addToList,
   helperText,
   shouldFilterItem,
+  onBlur,
   ...rest
 }) => {
   // Ref for the combobox input
@@ -89,6 +93,16 @@ const ComboBox = ({
     },
     [tagItems, listItems, comboRef]
   );
+
+  /**
+   * List to the blur event and trigger parent onBlur
+   * @param {event} e
+   */
+  const handleOnBlur = e => {
+    if (onBlur) {
+      onBlur(inputValue, e);
+    }
+  };
 
   const handleOnClose = e => {
     // Get close target's text
@@ -149,7 +163,7 @@ const ComboBox = ({
   const handleOnKeypress = evt => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
-    if ((evt.type === 'blur' && addToList) || (evt.key === 'Enter' && currentValue)) {
+    if (evt.key === 'Enter' && currentValue) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
@@ -160,7 +174,7 @@ const ComboBox = ({
 
   const handleInputChange = e => {
     const matchedItem = listItems.filter(x => itemToString(x) === e)[0];
-    if ((addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
+    if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -196,7 +210,7 @@ const ComboBox = ({
         { [`${iotPrefix}--combobox-helper-text`]: helperText }
       )}
       onKeyDown={handleOnKeypress}
-      onBlur={handleOnKeypress}
+      onBlur={handleOnBlur}
       data-testid="combo-wrapper"
       data-edit-option-text={editOptionText}
     >
