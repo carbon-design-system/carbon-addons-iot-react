@@ -58,9 +58,8 @@
   }
   &--preview {
     flex: 1;
-    margin-top: -$spacing-03;
     overflow-x: auto;
-    padding: 0 $spacing-05 $spacing-05;
+    background-color: $text-03;
 
     .selected-card {
       border: solid $spacing-01 $interactive-04;
@@ -68,22 +67,14 @@
       margin: -$spacing-01;
     }
 
-    &__tablet {
-      width: 672px;
+    &__md {
+      width: 1018px;
     }
-    &__laptop {
-      width: 1056px;
+    &__lg {
+      width: 1314px;
     }
-    &__screen {
-      width: 1312px;
-    }
-
-    &__breakpoint-switcher {
-      background-color: $text-03;
-
-      .react-grid-layout {
-        background-color: $ui-background;
-      }
+    &__xl {
+      width: 1568px;
     }
 
     &__breakpoint-info {
@@ -93,7 +84,13 @@
     }
 
     &__outline {
-      border: 1px dotted $ui-04;
+      border: 2px dashed $ui-04;
+    }
+
+    &__grid-container {
+      // force a larger height so the background color will stretch the full height
+      height: 85vh;
+      background-color: $ui-background;
     }
   }
   &--sidebar {

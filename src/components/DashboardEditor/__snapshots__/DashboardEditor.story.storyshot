@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-5"
+                      aria-describedby="icon-tooltip-6"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -129,14 +129,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-5"
+                        id="icon-tooltip-6"
                       >
                         Import
                       </span>
                       <label
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id5"
+                        htmlFor="id6"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -165,7 +165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id5"
+                        id="id6"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -266,328 +266,336 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "304px",
-                  }
-                }
+                className="iot--dashboard-editor--preview__grid-container"
               >
                 <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Custom"
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
                   style={
                     Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "0%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
+                      "flex": 1,
                     }
                   }
                 >
                   <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Custom rendered card"
-                    >
-                      <div
-                        className="iot--card--title--text"
-                      >
-                        Custom rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
                     style={
                       Object {
-                        "--card-content-height": "256px",
+                        "height": "304px",
                       }
                     }
                   >
                     <div
-                      style={
-                        Object {
-                          "padding": "1rem",
-                        }
-                      }
-                    >
-                      This content is rendered by the renderCardPreview function. The "value" property on the card will be rendered here:
-                      <h3>
-                        35
-                      </h3>
-                    </div>
-                    <span
-                      className="react-resizable-handle react-resizable-handle-se"
+                      className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      data-testid="Card"
+                      id="Custom"
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
+                      role="presentation"
                       style={
                         Object {
-                          "touchAction": "none",
+                          "--card-default-height": "304px",
+                          "height": "304px",
+                          "left": "0%",
+                          "position": "absolute",
+                          "top": "0px",
+                          "width": "24.0625%",
                         }
                       }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Standard"
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
-                  style={
-                    Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "25.3125%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
-                    }
-                  }
-                  tabIndex={0}
-                  type="VALUE"
-                >
-                  <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Default rendered card"
                     >
                       <div
-                        className="iot--card--title--text"
+                        className="iot--card--header"
                       >
-                        Default rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
-                    style={
-                      Object {
-                        "--card-content-height": "256px",
-                      }
-                    }
-                  >
-                    <div
-                      className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
-                    >
-                      <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
-                      >
-                        <div
-                          className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                          label="Key 1"
-                          size="MEDIUM"
+                        <span
+                          className="iot--card--title"
+                          title="Custom rendered card"
                         >
                           <div
-                            className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                            color={null}
+                            className="iot--card--title--text"
                           >
-                            <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                              size="MEDIUM"
-                              title="-- %"
-                              value="--"
-                            >
-                              --
-                            </span>
+                            Custom rendered card
                           </div>
-                          <span
-                            className="iot--value-card__attribute-unit"
-                            style={
-                              Object {
-                                "--default-font-size": "1.5rem",
-                              }
-                            }
-                          >
-                            %
-                          </span>
-                        </div>
+                        </span>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                          size="MEDIUM"
-                          title="Key 1"
+                          className="iot--card--toolbar"
                         >
-                          Key 1
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
+                        className="iot--card--content"
+                        style={
+                          Object {
+                            "--card-content-height": "256px",
+                          }
+                        }
                       >
-                        <hr
-                          className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
+                        <div
+                          style={
+                            Object {
+                              "padding": "1rem",
+                            }
+                          }
+                        >
+                          This content is rendered by the renderCardPreview function. The "value" property on the card will be rendered here:
+                          <h3>
+                            35
+                          </h3>
+                        </div>
+                        <span
+                          className="react-resizable-handle react-resizable-handle-se"
+                          onMouseDown={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchStart={[Function]}
+                          style={
+                            Object {
+                              "touchAction": "none",
+                            }
+                          }
                         />
                       </div>
+                    </div>
+                    <div
+                      className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      data-testid="Card"
+                      id="Standard"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      role="presentation"
+                      style={
+                        Object {
+                          "--card-default-height": "304px",
+                          "height": "304px",
+                          "left": "25.3125%",
+                          "position": "absolute",
+                          "top": "0px",
+                          "width": "24.0625%",
+                        }
+                      }
+                      tabIndex={0}
+                      type="VALUE"
+                    >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
+                        className="iot--card--header"
                       >
-                        <div
-                          className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                          label="Key 2"
-                          size="MEDIUM"
+                        <span
+                          className="iot--card--title"
+                          title="Default rendered card"
                         >
                           <div
-                            className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                            color={null}
+                            className="iot--card--title--text"
                           >
-                            <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                              size="MEDIUM"
-                              title="-- lb"
-                              value="--"
-                            >
-                              --
-                            </span>
+                            Default rendered card
                           </div>
-                          <span
-                            className="iot--value-card__attribute-unit"
-                            style={
-                              Object {
-                                "--default-font-size": "1.5rem",
-                              }
-                            }
-                          >
-                            lb
-                          </span>
-                        </div>
+                        </span>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                          size="MEDIUM"
-                          title="Key 2"
+                          className="iot--card--toolbar"
                         >
-                          Key 2
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--card--content"
+                        style={
+                          Object {
+                            "--card-content-height": "256px",
+                          }
+                        }
+                      >
+                        <div
+                          className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                        >
+                          <div
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
+                          >
+                            <div
+                              className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                              label="Key 1"
+                              size="MEDIUM"
+                            >
+                              <div
+                                className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                                color={null}
+                              >
+                                <span
+                                  className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                                  size="MEDIUM"
+                                  title="-- %"
+                                  value="--"
+                                >
+                                  --
+                                </span>
+                              </div>
+                              <span
+                                className="iot--value-card__attribute-unit"
+                                style={
+                                  Object {
+                                    "--default-font-size": "1.5rem",
+                                  }
+                                }
+                              >
+                                %
+                              </span>
+                            </div>
+                            <div
+                              className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                              size="MEDIUM"
+                              title="Key 1"
+                            >
+                              Key 1
+                            </div>
+                          </div>
+                          <div
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
+                          >
+                            <hr
+                              className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
+                            />
+                          </div>
+                          <div
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
+                          >
+                            <div
+                              className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                              label="Key 2"
+                              size="MEDIUM"
+                            >
+                              <div
+                                className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                                color={null}
+                              >
+                                <span
+                                  className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                                  size="MEDIUM"
+                                  title="-- lb"
+                                  value="--"
+                                >
+                                  --
+                                </span>
+                              </div>
+                              <span
+                                className="iot--value-card__attribute-unit"
+                                style={
+                                  Object {
+                                    "--default-font-size": "1.5rem",
+                                  }
+                                }
+                              >
+                                lb
+                              </span>
+                            </div>
+                            <div
+                              className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                              size="MEDIUM"
+                              title="Key 2"
+                            >
+                              Key 2
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -965,86 +973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               title="Data table"
                             >
                               Data table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
                             </div>
                           </div>
                         </div>
@@ -1118,24 +1046,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "-16px",
+                className="iot--dashboard-editor--preview__grid-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
                   }
-                }
-              />
+                >
+                  <div
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    style={
+                      Object {
+                        "height": "-16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1249,14 +1185,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
-                        </div>
-                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -1264,329 +1192,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="Time series line"
+                              title={
+                                Array [
+                                  "VALUE",
+                                  "VALUE",
+                                ]
+                              }
                             >
-                              Time series line
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Simple bar"
-                            >
-                              Simple bar
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Grouped bar"
-                            >
-                              Grouped bar
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Stacked bar"
-                            >
-                              Stacked bar
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Value / KPI"
-                            >
-                              Value / KPI
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Image"
-                            >
-                              Image
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Data table"
-                            >
-                              Data table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
+                              VALUE
+                              VALUE
                             </div>
                           </div>
                         </div>
@@ -1616,9 +1230,205 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="CUSTOM"
+                              title={
+                                Array [
+                                  "TIMESERIES",
+                                  "TIMESERIES",
+                                ]
+                              }
                             >
-                              CUSTOM
+                              TIMESERIES
+                              TIMESERIES
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title={
+                                Array [
+                                  "IMAGE",
+                                  "IMAGE",
+                                ]
+                              }
+                            >
+                              IMAGE
+                              IMAGE
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title={
+                                Array [
+                                  "TABLE",
+                                  "TABLE",
+                                ]
+                              }
+                            >
+                              TABLE
+                              TABLE
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title={
+                                Array [
+                                  "SIMPLE_BAR",
+                                  "SIMPLE_BAR",
+                                ]
+                              }
+                            >
+                              SIMPLE_BAR
+                              SIMPLE_BAR
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title={
+                                Array [
+                                  "GROUP_BAR",
+                                  "GROUPED_BAR",
+                                ]
+                              }
+                            >
+                              GROUP_BAR
+                              GROUPED_BAR
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title={
+                                Array [
+                                  "STACKED_BAR",
+                                  "STACKED_BAR",
+                                ]
+                              }
+                            >
+                              STACKED_BAR
+                              STACKED_BAR
                             </div>
                           </div>
                         </div>
@@ -1925,24 +1735,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "-16px",
+                className="iot--dashboard-editor--preview__grid-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
                   }
-                }
-              />
+                >
+                  <div
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    style={
+                      Object {
+                        "height": "-16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2336,86 +2154,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -2426,6 +2164,852 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               title="CUSTOM"
                             >
                               CUSTOM
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor with breakpointSwitcher 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 6rem)",
+        }
+      }
+    >
+      <div
+        className="iot--dashboard-editor"
+      >
+        <div
+          className="iot--dashboard-editor--content"
+        >
+          <div
+            className="page-title-bar"
+          >
+            <div
+              className="page-title-bar-header"
+            >
+              <div
+                className="page-title-bar-header-left"
+              >
+                <div
+                  className="page-title-bar-breadcrumb"
+                >
+                  <nav
+                    aria-label="Breadcrumb"
+                  >
+                    <ol
+                      className="bx--breadcrumb"
+                    >
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          href="www.ibm.com"
+                        >
+                          Dashboard library
+                        </a>
+                      </li>
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          href="www.ibm.com"
+                        >
+                          Favorites
+                        </a>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div
+                  className="page-title-bar-title"
+                >
+                  <div
+                    className="page-title-bar-title--text"
+                  >
+                    <h2>
+                      My dashboard
+                    </h2>
+                    <button
+                      className="page-title-bar-title--edit iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Edit title
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Edit title"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="page-title-bar-header-right"
+              >
+                <div
+                  className="iot--dashboard-editor-header--right"
+                >
+                  <div
+                    className="iot--dashboard-editor-header--top"
+                  />
+                  <div
+                    className="iot--dashboard-editor-header--bottom"
+                  >
+                    <div
+                      className="bx--content-switcher iot--dashboard-editor-header--bottom__switcher"
+                      onChange={[Function]}
+                      role="tablist"
+                    >
+                      <button
+                        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        disabled={false}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Fit to screen
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Fit to screen"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 15L6 14 2.7 14 7 9.7 6.3 9 2 13.3 2 10 1 10 1 15zM10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        disabled={false}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          X-large View
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="X-large View"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28,4H4A2,2,0,0,0,2,6V22a2,2,0,0,0,2,2h8v4H8v2H24V28H20V24h8a2,2,0,0,0,2-2V6A2,2,0,0,0,28,4ZM18,28H14V24h4Zm10-6H4V6H28Z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        disabled={false}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Large View
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Large View"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M26,24H6a2.0023,2.0023,0,0,1-2-2V8A2.002,2.002,0,0,1,6,6H26a2.0023,2.0023,0,0,1,2,2V22A2.0027,2.0027,0,0,1,26,24ZM6,8V22H26V8Z"
+                            transform="translate(0 .005)"
+                          />
+                          <path
+                            d="M2 26.005H30V28.005H2z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        disabled={false}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Medium view
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Medium view"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 22H17V28H15z"
+                            transform="rotate(90 16 25)"
+                          />
+                          <path
+                            d="M25,30H7a2.0023,2.0023,0,0,1-2-2V4A2.002,2.002,0,0,1,7,2H25a2.0023,2.0023,0,0,1,2,2V28A2.0027,2.0027,0,0,1,25,30ZM7,4V28H25V4Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button
+                      aria-describedby="icon-tooltip-4"
+                      className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                        id="icon-tooltip-4"
+                      >
+                        Import
+                      </span>
+                      <label
+                        aria-disabled={false}
+                        className="bx--btn bx--btn--ghost bx--btn--field"
+                        htmlFor="id4"
+                        onKeyDown={[Function]}
+                        tabIndex={0}
+                      >
+                        <span
+                          role="button"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="#161616"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M28 19L14.83 19 17.41 16.41 16 15 11 20 16 25 17.41 23.59 14.83 21 28 21 28 19z"
+                            />
+                            <path
+                              d="M24,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,16,2H6A2,2,0,0,0,4,4V28a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V26H22v2H6V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L21.59,10Z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <input
+                        className="bx--visually-hidden"
+                        disabled={false}
+                        id="id4"
+                        multiple={false}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        tabIndex="-1"
+                        type="file"
+                      />
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Export
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Export"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 21L26.17 21 23.59 23.59 25 25 30 20 25 15 23.59 16.41 26.17 19 13 19 13 21z"
+                        />
+                        <path
+                          d="M22,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,14,2H4A2,2,0,0,0,2,4V28a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V26H20v2H4V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L19.59,10Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Delete
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Delete"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 12H14V24H12zM18 12H20V24H18z"
+                        />
+                        <path
+                          d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="iot--btn bx--btn bx--btn--field bx--btn--primary"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      Save and close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--dashboard-editor--preview"
+          >
+            <div
+              className="iot--dashboard-editor--preview__outline"
+            >
+              <div
+                className="iot--dashboard-editor--preview__breakpoint-info"
+              >
+                Edit dashboard at maximum layout (1312 - 1800px)
+              </div>
+              <div
+                className="iot--dashboard-editor--preview__grid-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <div
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    style={
+                      Object {
+                        "height": "-16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--dashboard-editor--sidebar"
+        >
+          <div
+            className="iot--card-editor"
+          >
+            <div
+              className="iot--card-editor--content"
+            >
+              <div
+                className="iot--list iot--list__full-height"
+              >
+                <div
+                  className="iot--list-header-container"
+                >
+                  <div
+                    className="iot--list-header"
+                  >
+                    <div
+                      className="iot--list-header--title"
+                    >
+                      Gallery
+                    </div>
+                    <div
+                      className="iot--list-header--btn-container"
+                    />
+                  </div>
+                  <div
+                    className="iot--list-header--search"
+                  >
+                    <div
+                      aria-labelledby="iot--list-header--search-search"
+                      className="bx--search bx--search--sm"
+                      role="search"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="bx--search-magnifier"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                        />
+                      </svg>
+                      <label
+                        className="bx--label"
+                        htmlFor="iot--list-header--search"
+                        id="iot--list-header--search-search"
+                      >
+                        Enter a value
+                      </label>
+                      <input
+                        autoComplete="off"
+                        className="bx--search-input"
+                        id="iot--list-header--search"
+                        onChange={[Function]}
+                        placeholder="Enter a value"
+                        role="searchbox"
+                        type="text"
+                        value=""
+                      />
+                      <button
+                        aria-label="Clear search input"
+                        className="bx--search-close bx--search-close--hidden"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--list--content__full-height iot--list--content"
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Time series"
+                            src="line-graph.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Time series line"
+                            >
+                              Time series line
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Simple bar"
+                            src="simple-bar-graph.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Simple bar"
+                            >
+                              Simple bar
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Grouped bar"
+                            src="bar-grouped-graph.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Grouped bar"
+                            >
+                              Grouped bar
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Stacked bar"
+                            src="bar-stack-graph.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Stacked bar"
+                            >
+                              Stacked bar
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Value / KPI"
+                            src="value-kpi.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Value / KPI"
+                            >
+                              Value / KPI
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Image card"
+                            src="image.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Image"
+                            >
+                              Image
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item iot--list-item__selectable"
+                      data_testid={null}
+                      onClick={[Function]}
+                      onKeyPress={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <img
+                            alt="Table"
+                            src="data-table.svg"
+                          />
+                        </div>
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Data table"
+                            >
+                              Data table
                             </div>
                           </div>
                         </div>
@@ -2732,335 +3316,343 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "304px",
-                  }
-                }
+                className="iot--dashboard-editor--preview__grid-container"
               >
                 <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Custom"
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
                   style={
                     Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "0%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
+                      "flex": 1,
                     }
                   }
-                  tabIndex={0}
-                  type="CUSTOM"
-                  value={35}
                 >
                   <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Custom rendered card"
-                    >
-                      <div
-                        className="iot--card--title--text"
-                      >
-                        Custom rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
                     style={
                       Object {
-                        "--card-content-height": "256px",
+                        "height": "304px",
                       }
                     }
                   >
                     <div
+                      className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      data-testid="Card"
+                      id="Custom"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      role="presentation"
                       style={
                         Object {
-                          "padding": "1rem",
+                          "--card-default-height": "304px",
+                          "height": "304px",
+                          "left": "0%",
+                          "position": "absolute",
+                          "top": "0px",
+                          "width": "24.0625%",
                         }
                       }
+                      tabIndex={0}
+                      type="CUSTOM"
+                      value={35}
                     >
-                      {
+                      <div
+                        className="iot--card--header"
+                      >
+                        <span
+                          className="iot--card--title"
+                          title="Custom rendered card"
+                        >
+                          <div
+                            className="iot--card--title--text"
+                          >
+                            Custom rendered card
+                          </div>
+                        </span>
+                        <div
+                          className="iot--card--toolbar"
+                        >
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--card--content"
+                        style={
+                          Object {
+                            "--card-content-height": "256px",
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "padding": "1rem",
+                            }
+                          }
+                        >
+                          {
     "id": "Custom",
     "title": "Custom rendered card",
     "type": "CUSTOM",
     "size": "MEDIUM",
     "value": 35
 }
+                        </div>
+                        <span
+                          className="react-resizable-handle react-resizable-handle-se"
+                          onMouseDown={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchStart={[Function]}
+                          style={
+                            Object {
+                              "touchAction": "none",
+                            }
+                          }
+                        />
+                      </div>
                     </div>
-                    <span
-                      className="react-resizable-handle react-resizable-handle-se"
+                    <div
+                      className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      data-testid="Card"
+                      id="Standard"
+                      onClick={[Function]}
                       onMouseDown={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
+                      role="presentation"
                       style={
                         Object {
-                          "touchAction": "none",
+                          "--card-default-height": "304px",
+                          "height": "304px",
+                          "left": "25.3125%",
+                          "position": "absolute",
+                          "top": "0px",
+                          "width": "24.0625%",
                         }
                       }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Standard"
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
-                  style={
-                    Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "25.3125%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
-                    }
-                  }
-                  tabIndex={0}
-                  type="VALUE"
-                >
-                  <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Default rendered card"
+                      tabIndex={0}
+                      type="VALUE"
                     >
                       <div
-                        className="iot--card--title--text"
+                        className="iot--card--header"
                       >
-                        Default rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
-                    style={
-                      Object {
-                        "--card-content-height": "256px",
-                      }
-                    }
-                  >
-                    <div
-                      className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
-                    >
-                      <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
-                      >
-                        <div
-                          className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                          label="Key 1"
-                          size="MEDIUM"
+                        <span
+                          className="iot--card--title"
+                          title="Default rendered card"
                         >
                           <div
-                            className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                            color={null}
+                            className="iot--card--title--text"
                           >
-                            <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                              size="MEDIUM"
-                              title="-- %"
-                              value="--"
-                            >
-                              --
-                            </span>
+                            Default rendered card
                           </div>
-                          <span
-                            className="iot--value-card__attribute-unit"
-                            style={
-                              Object {
-                                "--default-font-size": "1.5rem",
-                              }
-                            }
-                          >
-                            %
-                          </span>
-                        </div>
+                        </span>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                          size="MEDIUM"
-                          title="Key 1"
+                          className="iot--card--toolbar"
                         >
-                          Key 1
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
-                      >
-                        <hr
-                          className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                        />
-                      </div>
-                      <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                        size="MEDIUM"
+                        className="iot--card--content"
+                        style={
+                          Object {
+                            "--card-content-height": "256px",
+                          }
+                        }
                       >
                         <div
-                          className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                          label="Key 2"
-                          size="MEDIUM"
+                          className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
                         >
                           <div
-                            className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                            color={null}
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
                           >
-                            <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                            <div
+                              className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                              label="Key 1"
                               size="MEDIUM"
-                              title="-- lb"
-                              value="--"
                             >
-                              --
-                            </span>
+                              <div
+                                className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                                color={null}
+                              >
+                                <span
+                                  className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                                  size="MEDIUM"
+                                  title="-- %"
+                                  value="--"
+                                >
+                                  --
+                                </span>
+                              </div>
+                              <span
+                                className="iot--value-card__attribute-unit"
+                                style={
+                                  Object {
+                                    "--default-font-size": "1.5rem",
+                                  }
+                                }
+                              >
+                                %
+                              </span>
+                            </div>
+                            <div
+                              className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                              size="MEDIUM"
+                              title="Key 1"
+                            >
+                              Key 1
+                            </div>
                           </div>
-                          <span
-                            className="iot--value-card__attribute-unit"
-                            style={
-                              Object {
-                                "--default-font-size": "1.5rem",
-                              }
-                            }
+                          <div
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
                           >
-                            lb
-                          </span>
-                        </div>
-                        <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                          size="MEDIUM"
-                          title="Key 2"
-                        >
-                          Key 2
+                            <hr
+                              className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
+                            />
+                          </div>
+                          <div
+                            className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                            size="MEDIUM"
+                          >
+                            <div
+                              className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                              label="Key 2"
+                              size="MEDIUM"
+                            >
+                              <div
+                                className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                                color={null}
+                              >
+                                <span
+                                  className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                                  size="MEDIUM"
+                                  title="-- lb"
+                                  value="--"
+                                >
+                                  --
+                                </span>
+                              </div>
+                              <span
+                                className="iot--value-card__attribute-unit"
+                                style={
+                                  Object {
+                                    "--default-font-size": "1.5rem",
+                                  }
+                                }
+                              >
+                                lb
+                              </span>
+                            </div>
+                            <div
+                              className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                              size="MEDIUM"
+                              title="Key 2"
+                            >
+                              Key 2
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3438,86 +4030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               title="Data table"
                             >
                               Data table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
                             </div>
                           </div>
                         </div>
@@ -4038,24 +4550,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "-16px",
+                className="iot--dashboard-editor--preview__grid-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
                   }
-                }
-              />
+                >
+                  <div
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    style={
+                      Object {
+                        "height": "-16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4427,86 +4947,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               title="Data table"
                             >
                               Data table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
                             </div>
                           </div>
                         </div>
@@ -5528,7 +5968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-4"
+                      aria-describedby="icon-tooltip-5"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -5536,14 +5976,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-4"
+                        id="icon-tooltip-5"
                       >
                         Import
                       </span>
                       <label
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id4"
+                        htmlFor="id5"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -5572,7 +6012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id4"
+                        id="id5"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -5673,24 +6113,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              style={
-                Object {
-                  "flex": 1,
-                }
-              }
+              className="iot--dashboard-editor--preview__outline"
             >
               <div
-                className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                style={
-                  Object {
-                    "height": "-16px",
+                className="iot--dashboard-editor--preview__grid-container"
+              >
+                <div
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
                   }
-                }
-              />
+                >
+                  <div
+                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    style={
+                      Object {
+                        "height": "-16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -6062,86 +6510,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               title="Data table"
                             >
                               Data table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="Alert table"
-                            src="alert-table.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="Alert table"
-                            >
-                              Alert table
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--list-item-parent"
-                    data-floating-menu-container={true}
-                  >
-                    <div
-                      className="iot--list-item iot--list-item__selectable"
-                      data_testid={null}
-                      onClick={[Function]}
-                      onKeyPress={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="iot--list-item--content"
-                      >
-                        <div
-                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                        >
-                          <img
-                            alt="List"
-                            src="list.svg"
-                          />
-                        </div>
-                        <div
-                          className="iot--list-item--content--values"
-                        >
-                          <div
-                            className="iot--list-item--content--values--main"
-                          >
-                            <div
-                              className="iot--list-item--content--values--value"
-                              title="List"
-                            >
-                              List
                             </div>
                           </div>
                         </div>

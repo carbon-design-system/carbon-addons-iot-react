@@ -7845,6 +7845,7 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "breakpointSwitcher": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7856,6 +7857,12 @@ Map {
         "headerExportButton": "Export",
         "headerImportButton": "Import",
         "headerSubmitButton": "Save and close",
+        "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
+        "layoutInfoMax": "Edit dashboard at maximum layout (1312 - 1800px)",
+        "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
+        "layoutInfoSm": "Edit dashboard at small layout (320 - 480px)",
+        "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
+        "layoutInfoXs": "Edit dashboard at extra small layout (0 - 320px)",
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
@@ -7874,20 +7881,51 @@ Map {
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
-        "TIMESERIES",
-        "SIMPLE_BAR",
-        "GROUPED_BAR",
-        "STACKED_BAR",
-        "VALUE",
-        "IMAGE",
-        "TABLE",
-        "ALERT",
-        "LIST",
-        "CUSTOM",
+        Array [
+          "VALUE",
+          "VALUE",
+        ],
+        Array [
+          "TIMESERIES",
+          "TIMESERIES",
+        ],
+        Array [
+          "IMAGE",
+          "IMAGE",
+        ],
+        Array [
+          "TABLE",
+          "TABLE",
+        ],
+        Array [
+          "SIMPLE_BAR",
+          "SIMPLE_BAR",
+        ],
+        Array [
+          "GROUP_BAR",
+          "GROUPED_BAR",
+        ],
+        Array [
+          "STACKED_BAR",
+          "STACKED_BAR",
+        ],
       ],
       "title": null,
     },
     "propTypes": Object {
+      "breakpointSwitcher": Object {
+        "args": Array [
+          Object {
+            "enabled": Object {
+              "type": "bool",
+            },
+            "initialValue": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "headerBreadcrumbs": Object {
         "args": Array [
           Object {
@@ -7924,6 +7962,24 @@ Map {
               "type": "string",
             },
             "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "layoutInfoLg": Object {
+              "type": "string",
+            },
+            "layoutInfoMax": Object {
+              "type": "string",
+            },
+            "layoutInfoMd": Object {
+              "type": "string",
+            },
+            "layoutInfoSm": Object {
+              "type": "string",
+            },
+            "layoutInfoXl": Object {
+              "type": "string",
+            },
+            "layoutInfoXs": Object {
               "type": "string",
             },
             "noDataLabel": Object {
@@ -8002,11 +8058,34 @@ Map {
         "openJSONButton": "Open JSON editor",
       },
       "supportedTypes": Array [
-        "BAR",
-        "TIMESERIES",
-        "VALUE",
-        "IMAGE",
-        "TABLE",
+        Array [
+          "VALUE",
+          "VALUE",
+        ],
+        Array [
+          "TIMESERIES",
+          "TIMESERIES",
+        ],
+        Array [
+          "IMAGE",
+          "IMAGE",
+        ],
+        Array [
+          "TABLE",
+          "TABLE",
+        ],
+        Array [
+          "SIMPLE_BAR",
+          "SIMPLE_BAR",
+        ],
+        Array [
+          "GROUP_BAR",
+          "GROUPED_BAR",
+        ],
+        Array [
+          "STACKED_BAR",
+          "STACKED_BAR",
+        ],
       ],
     },
     "propTypes": Object {

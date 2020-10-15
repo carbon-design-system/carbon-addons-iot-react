@@ -115,8 +115,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           'VALUE',
           'IMAGE',
           'TABLE',
-          'ALERT',
-          'LIST',
           'CUSTOM',
         ])}
         headerBreadcrumbs={[
@@ -176,8 +174,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           'VALUE',
           'IMAGE',
           'TABLE',
-          'ALERT',
-          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -207,8 +203,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           'VALUE',
           'IMAGE',
           'TABLE',
-          'ALERT',
-          'LIST',
           'CUSTOM',
         ])}
         headerBreadcrumbs={[
@@ -252,11 +246,13 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -318,8 +314,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           'VALUE',
           'IMAGE',
           'TABLE',
-          'ALERT',
-          'LIST',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -383,8 +377,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           'VALUE',
           'IMAGE',
           'TABLE',
-          'ALERT',
-          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',

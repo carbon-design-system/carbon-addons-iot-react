@@ -11,6 +11,7 @@ import {
   getDefaultCard,
   getDuplicateCard,
   getCardPreview,
+  renderBreakpointInfo,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -72,6 +73,12 @@ const propTypes = {
     openGalleryButton: PropTypes.string,
     closeGalleryButton: PropTypes.string,
     openJSONButton: PropTypes.string,
+    layoutInfoMax: PropTypes.string,
+    layoutInfoXl: PropTypes.string,
+    layoutInfoLg: PropTypes.string,
+    layoutInfoMd: PropTypes.string,
+    layoutInfoSm: PropTypes.string,
+    layoutInfoXs: PropTypes.string,
   }),
 };
 
@@ -106,14 +113,20 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
+    layoutInfoMax: 'Edit dashboard at maximum layout (1312 - 1800px)',
+    layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
+    layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
+    layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
+    layoutInfoSm: 'Edit dashboard at small layout (320 - 480px)',
+    layoutInfoXs: 'Edit dashboard at extra small layout (0 - 320px)',
   },
 };
 
 const LAYOUTS = {
   FIT_TO_SCREEN: { breakpoint: 'max', index: 0 },
-  TABLET: { breakpoint: 'md', index: 1 },
-  LAPTOP: { breakpoint: 'lg', index: 2 },
-  SCREEN: { breakpoint: 'xk', index: 3 },
+  MEDIUM: { breakpoint: 'md', index: 3 },
+  LARGE: { breakpoint: 'lg', index: 2 },
+  XLARGE: { breakpoint: 'xk', index: 1 },
 };
 export const baseClassName = `${iotPrefix}--dashboard-editor`;
 
@@ -215,23 +228,22 @@ const DashboardEditor = ({
           />
         )}
         {notification}
-        <div
-          className={classNames(`${baseClassName}--preview`, {
-            [`${baseClassName}--preview__breakpoint-switcher`]: breakpointSwitcher?.enabled,
-          })}>
-          {breakpointSwitcher?.enabled && (
-            <div
-              className={classNames({
-                [`${baseClassName}--preview__tablet ${baseClassName}--preview__outline`]:
-                  selectedBreakpointIndex === LAYOUTS.TABLET.index,
-                [`${baseClassName}--preview__laptop ${baseClassName}--preview__outline`]:
-                  selectedBreakpointIndex === LAYOUTS.LAPTOP.index,
-                [`${baseClassName}--preview__screen ${baseClassName}--preview__outline`]:
-                  selectedBreakpointIndex === LAYOUTS.SCREEN.index,
-              })}>
+        <div className={`${baseClassName}--preview`}>
+          <div
+            className={classNames(`${baseClassName}--preview__outline`, {
+              [`${baseClassName}--preview__md`]:
+                selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
+              [`${baseClassName}--preview__lg`]:
+                selectedBreakpointIndex === LAYOUTS.LARGE.index,
+              [`${baseClassName}--preview__xl`]:
+                selectedBreakpointIndex === LAYOUTS.XLARGE.index,
+            })}>
+            {breakpointSwitcher?.enabled && (
               <div className={`${baseClassName}--preview__breakpoint-info`}>
-                Edit dashboard layout at medium breakpoint
+                {renderBreakpointInfo(currentBreakpoint, i18n)}
               </div>
+            )}
+            <div className={`${baseClassName}--preview__grid-container`}>
               <DashboardGrid
                 isEditable
                 breakpoint={currentBreakpoint}
@@ -270,7 +282,8 @@ const DashboardEditor = ({
                 })}
               </DashboardGrid>
             </div>
-          )}
+          </div>
+
           {/* <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre> */}
         </div>
       </div>

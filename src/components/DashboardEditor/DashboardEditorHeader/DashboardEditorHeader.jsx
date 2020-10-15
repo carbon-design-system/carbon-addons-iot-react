@@ -121,19 +121,15 @@ const DashboardEditorHeader = ({
               renderIcon={Maximize16}
             />
             <IconSwitch
-              name="tablet"
-              text="Tablet view"
-              renderIcon={Tablet16}
-            />
-            <IconSwitch
-              name="laptop"
-              text="Laptop View"
-              renderIcon={Laptop16}
-            />
-            <IconSwitch
-              name="screen"
-              text="Desktop View"
+              name="xlarge"
+              text="X-large View"
               renderIcon={Screen16}
+            />
+            <IconSwitch name="large" text="Large View" renderIcon={Laptop16} />
+            <IconSwitch
+              name="medium"
+              text="Medium view"
+              renderIcon={Tablet16}
             />
           </ContentSwitcher>
         )}
