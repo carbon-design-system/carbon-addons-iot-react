@@ -78,14 +78,15 @@ const BarChartCard = ({
   const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
 
   // If editable, show sample presentation data
-  const values = isEditable
-    ? memoizedGenerateSampleValues(
-        series,
-        timeDataSourceId,
-        interval,
-        categoryDataSourceId
-      )
-    : valuesProp;
+  const values =
+    isEditable && !isEmpty(series)
+      ? memoizedGenerateSampleValues(
+          series,
+          timeDataSourceId,
+          interval,
+          categoryDataSourceId
+        )
+      : valuesProp;
 
   const chartData = formatChartData(
     series,
@@ -117,7 +118,9 @@ const BarChartCard = ({
   const uniqueDatasets = [
     ...new Set(chartData.map((dataset) => dataset.group)),
   ];
-  const colors = formatColors(series, uniqueDatasets, isEditable);
+  const colors = !isAllValuesEmpty
+    ? formatColors(series, uniqueDatasets, isEditable)
+    : null;
 
   let tableColumns = [];
   let tableData = [];
@@ -305,6 +308,7 @@ BarChartCard.defaultProps = {
   locale: 'en',
   showTimeInGMT: false,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  values: null,
 };
 
 export default BarChartCard;

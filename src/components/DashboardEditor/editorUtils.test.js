@@ -56,27 +56,36 @@ describe('editorUtils', () => {
   });
 
   describe('getDefaultCard', () => {
+    const i18n = {
+      defaultCardTitle: 'Untitled',
+    };
     it('should return ValueCard', () => {
-      expect(getDefaultCard(CARD_TYPES.VALUE).type).toEqual(CARD_TYPES.VALUE);
-      expect(getDefaultCard(CARD_TYPES.VALUE).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).type).toEqual(
+        CARD_TYPES.VALUE
+      );
+      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).content).toBeDefined();
     });
     it('should return TimeSeriesCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).type).toEqual(
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).type).toEqual(
         CARD_TYPES.TIMESERIES
       );
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
     });
     it('should return BarChartCard', () => {
-      expect(getDefaultCard(CARD_TYPES.BAR).type).toEqual(CARD_TYPES.BAR);
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.BAR, i18n).type).toEqual(CARD_TYPES.BAR);
+      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
     });
     it('should return TableCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TABLE).type).toEqual(CARD_TYPES.TABLE);
-      expect(getDefaultCard(CARD_TYPES.TABLE).content).toBeDefined();
+      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).type).toEqual(
+        CARD_TYPES.TABLE
+      );
+      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).content).toBeDefined();
     });
     it('should return CustomCard', () => {
-      expect(getDefaultCard(CARD_TYPES.CUSTOM).type).toEqual(CARD_TYPES.CUSTOM);
-      expect(getDefaultCard(CARD_TYPES.CUSTOM).content).toBeUndefined();
+      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).type).toEqual(
+        CARD_TYPES.CUSTOM
+      );
+      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).content).toBeUndefined();
     });
   });
 

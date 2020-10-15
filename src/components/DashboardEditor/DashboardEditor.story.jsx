@@ -109,11 +109,16 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -165,12 +170,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'CUSTOM',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -194,11 +202,16 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -274,11 +287,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -335,12 +352,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'CUSTOM',
-          'OTHER',
+          'ALERT',
+          'LIST',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',

@@ -81,7 +81,7 @@ export const CardTitle = (
   </span>
 );
 
-const CardContent = (props) => {
+const CardContent = props => {
   const { children, dimensions, isExpanded } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
@@ -95,7 +95,7 @@ const CardContent = (props) => {
   );
 };
 
-const EmptyMessageWrapper = (props) => {
+const EmptyMessageWrapper = props => {
   const { children } = props;
   return (
     <div
@@ -210,7 +210,7 @@ export const defaultProps = {
 };
 
 /** Dumb component that renders the card basics */
-const Card = (props) => {
+const Card = props => {
   const {
     size,
     children,

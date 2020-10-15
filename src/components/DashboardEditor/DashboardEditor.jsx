@@ -56,6 +56,14 @@ const propTypes = {
     headerExportButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
+    headerDeleteButton: PropTypes.string,
+    noDataLabel: PropTypes.string,
+    defaultCardTitle: PropTypes.string,
+    headerEditTitleButton: PropTypes.string,
+    galleryHeader: PropTypes.string,
+    openGalleryButton: PropTypes.string,
+    closeGalleryButton: PropTypes.string,
+    openJSONButton: PropTypes.string,
   }),
 };
 
@@ -65,10 +73,16 @@ const defaultProps = {
     layouts: {},
   },
   supportedCardTypes: [
-    CARD_TYPES.BAR,
     CARD_TYPES.TIMESERIES,
+    'SIMPLE_BAR',
+    'GROUPED_BAR',
+    'STACKED_BAR',
     CARD_TYPES.VALUE,
+    CARD_TYPES.IMAGE,
     CARD_TYPES.TABLE,
+    'ALERT',
+    CARD_TYPES.LIST,
+    CARD_TYPES.CUSTOM,
   ],
   renderHeader: null,
   renderCardPreview: () => null,
@@ -92,6 +106,8 @@ const defaultProps = {
     openGalleryButton: 'Open gallery',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
+    noDataLabel: 'No data source is defined',
+    defaultCardTitle: 'Untitled',
   },
 };
 
@@ -114,14 +130,14 @@ const DashboardEditor = ({
   onSubmit,
   i18n,
 }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // show the gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
 
   const addCard = (type) => {
-    const cardData = getDefaultCard(type);
+    const cardData = getDefaultCard(type, mergedI18n);
     setDashboardJson({
       ...dashboardJson,
       cards: [...dashboardJson.cards, cardData],
@@ -161,7 +177,7 @@ const DashboardEditor = ({
             onDelete={onDelete}
             onCancel={onCancel}
             onSubmit={onSubmit}
-            i18n={mergedI18N}
+            i18n={mergedI18n}
             dashboardJson={dashboardJson}
           />
         )}
@@ -217,7 +233,7 @@ const DashboardEditor = ({
           }
           onAddCard={addCard}
           supportedTypes={supportedCardTypes}
-          i18n={mergedI18N}
+          i18n={mergedI18n}
         />
       </div>
     </div>

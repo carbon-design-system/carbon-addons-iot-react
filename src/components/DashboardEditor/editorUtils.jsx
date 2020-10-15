@@ -15,13 +15,13 @@ import {
   ValueCard,
   TimeSeriesCard,
   BarChartCard,
-  // ImageCard,
+  ImageCard,
   TableCard,
+  ListCard,
 } from '../../index';
 
 import { baseClassName } from './DashboardEditor';
-
-// import sampleImage from './landscape.jpg';
+import sampleImage from './landscape.jpg';
 
 /**
  * Returns a duplicate card configuration
@@ -38,19 +38,24 @@ export const getDuplicateCard = (cardData) => ({
  * @param {string} type, card type
  * @returns {Object} default card JSON
  */
-export const getDefaultCard = (type) => {
+export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
     [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    [CARD_TYPES.BAR]: CARD_SIZES.MEDIUMWIDE,
+    SIMPLE_BAR: CARD_SIZES.MEDIUMWIDE,
+    GROUPED_BAR: CARD_SIZES.MEDIUMWIDE,
+    STACKED_BAR: CARD_SIZES.MEDIUMWIDE,
     [CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
     [CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.TABLE]: CARD_SIZES.MEDIUMWIDE,
+    [CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
+    ALERT: CARD_SIZES.LARGE,
+    [CARD_TYPES.LIST]: CARD_SIZES.MEDIUM,
   };
+
   const baseCardProps = {
     id: uuid.v4(),
-    title: 'Untitled',
+    title: i18n.defaultCardTitle,
     size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
-    type,
+    ...(type.includes(CARD_TYPES.BAR) ? { type: CARD_TYPES.BAR } : { type }),
   };
 
   switch (type) {
@@ -58,67 +63,49 @@ export const getDefaultCard = (type) => {
       return {
         ...baseCardProps,
         content: {
-          attributes: [
-            {
-              dataSourceId: 'key1',
-              unit: '%',
-              label: 'Key 1',
-            },
-            {
-              dataSourceId: 'key2',
-              unit: 'lb',
-              label: 'Key 2',
-            },
-          ],
+          attributes: [],
         },
+        i18n,
       };
     case CARD_TYPES.TIMESERIES:
       return {
         ...baseCardProps,
         content: {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-          ],
-          xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          series: [],
           timeDataSourceId: 'timestamp',
-          addSpaceOnEdges: 1,
         },
         interval: 'day',
+        i18n,
       };
-    case CARD_TYPES.BAR:
+    case 'SIMPLE_BAR':
       return {
         ...baseCardProps,
         content: {
           type: BAR_CHART_TYPES.SIMPLE,
-          xLabel: 'Cities',
-          yLabel: 'Total',
           layout: BAR_CHART_LAYOUTS.VERTICAL,
-          series: [
-            {
-              dataSourceId: 'particles',
-              label: 'Particles',
-            },
-            {
-              dataSourceId: 'temperature',
-              label: 'Temperature',
-            },
-            {
-              dataSourceId: 'emissions',
-              label: 'Emissions',
-            },
-          ],
-          categoryDataSourceId: 'city',
+          series: [],
         },
+        i18n,
+      };
+    case 'GROUPED_BAR':
+      return {
+        ...baseCardProps,
+        content: {
+          type: BAR_CHART_TYPES.GROUPED,
+          layout: BAR_CHART_LAYOUTS.VERTICAL,
+          series: [],
+        },
+        i18n,
+      };
+    case 'STACKED_BAR':
+      return {
+        ...baseCardProps,
+        content: {
+          type: BAR_CHART_TYPES.STACKED,
+          layout: BAR_CHART_LAYOUTS.VERTICAL,
+          series: [],
+        },
+        i18n,
       };
     case CARD_TYPES.TABLE:
       return {
@@ -126,55 +113,38 @@ export const getDefaultCard = (type) => {
         content: {
           columns: [
             {
-              dataSourceId: 'alert',
-              label: 'Alert',
-              priority: 1,
+              dataSourceId: 'undefined',
+              label: '--',
             },
             {
-              dataSourceId: 'count',
-              label: 'Count',
-              priority: 3,
-            },
-            {
-              dataSourceId: 'hour',
-              label: 'Hour',
-              priority: 2,
-              type: 'TIMESTAMP',
-            },
-            {
-              dataSourceId: 'pressure',
-              label: 'Pressure',
-              priority: 2,
-            },
-          ],
-          threshold: [
-            {
-              dataSourceId: 'pressure',
-              comparison: '>=',
-              value: 1,
-              severity: 1,
-              label: 'Pressure',
-              showSeverityLabel: true,
-              severityLabel: 'Critical',
+              dataSourceId: 'undefined2',
+              label: '--',
             },
           ],
         },
+        i18n,
       };
-    /*
+    case CARD_TYPES.LIST:
+      return {
+        ...baseCardProps,
+        data: [],
+        i18n,
+      };
     case CARD_TYPES.IMAGE:
       return {
-          ...baseCardProps,
-          content: {
-            alt: 'landscape.jpg',
-            src: sampleImage,
-            hideMinimap: true,
-            hideHotspots: false,
-            hideZoomControls: false,
-          },
-      }
-    */
+        ...baseCardProps,
+        content: {
+          alt: 'Sample image',
+          src: sampleImage,
+          hideMinimap: true,
+          hideHotspots: false,
+          hideZoomControls: false,
+        },
+        i18n,
+      };
+
     default:
-      return baseCardProps;
+      return { ...baseCardProps, i18n };
   }
 };
 
@@ -205,14 +175,7 @@ export const isCardJsonValid = (cardJson) => {
  * @returns {Node}
  */
 const renderDefaultCard = (cardJson, commonProps) => (
-  <Card
-    key={cardJson.id}
-    id={cardJson.id}
-    size={cardJson.size}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    isEditable
-    {...commonProps}>
+  <Card isEditable {...cardJson} {...commonProps}>
     <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
   </Card>
 );
@@ -223,16 +186,7 @@ const renderDefaultCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderValueCard = (cardJson, commonProps) => (
-  <ValueCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    {...commonProps}
-  />
+  <ValueCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
@@ -241,16 +195,7 @@ const renderValueCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderTimeSeriesCard = (cardJson, commonProps) => (
-  <TimeSeriesCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    {...commonProps}
-  />
+  <TimeSeriesCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
@@ -259,14 +204,22 @@ const renderTimeSeriesCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderBarChartCard = (cardJson, commonProps) => (
-  <BarChartCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
+  <BarChartCard isEditable {...cardJson} {...commonProps} />
+);
+
+/**
+ * @param {Object} cardJson
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
+const renderTableCard = (cardJson, commonProps) => (
+  <TableCard isEditable {...cardJson} {...commonProps} />
+);
+
+const renderImageCard = (cardJson, commonProps) => (
+  <ImageCard
+    isEditable={cardJson?.content?.src === undefined}
+    {...cardJson}
     {...commonProps}
   />
 );
@@ -276,32 +229,9 @@ const renderBarChartCard = (cardJson, commonProps) => (
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTableCard = (cardJson, commonProps) => (
-  <TableCard
-    key={cardJson.id}
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable
-    {...commonProps}
-  />
+const renderListCard = (cardJson, commonProps) => (
+  <ListCard isEditable {...cardJson} {...commonProps} />
 );
-
-/*
-const renderImageCard = (cardJson, commonProps) => (
-  <ImageCard
-    id={cardJson.id}
-    title={cardJson.title}
-    tooltip={cardJson.description}
-    size={cardJson.size}
-    content={cardJson?.content}
-    isEditable={cardJson?.content?.src === undefined}
-    {...commonProps}
-  />
-);
-*/
 
 /**
  * Returns a Card component for preview in the dashboard
@@ -320,6 +250,8 @@ export const getCardPreview = (
   onRemoveCard
 ) => {
   const commonProps = {
+    key: cardData.id,
+    tooltip: cardData.description,
     ...(isSelected
       ? {
           className: classNames({
@@ -353,6 +285,10 @@ export const getCardPreview = (
       return renderBarChartCard(cardData, commonProps);
     case CARD_TYPES.TABLE:
       return renderTableCard(cardData, commonProps);
+    case CARD_TYPES.IMAGE:
+      return renderImageCard(cardData, commonProps);
+    case CARD_TYPES.LIST:
+      return renderListCard(cardData, commonProps);
     default:
       return renderDefaultCard(cardData, commonProps);
   }

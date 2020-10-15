@@ -425,6 +425,8 @@ ValueCard.propTypes = { ...CardPropTypes, ...ValueCardPropTypes };
 ValueCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   locale: 'en',
+  dataState: null,
+  values: null,
 };
 
 export default ValueCard;

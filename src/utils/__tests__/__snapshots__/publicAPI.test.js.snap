@@ -4511,6 +4511,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -7847,6 +7848,7 @@ Map {
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
         "headerCancelButton": "Cancel",
         "headerDeleteButton": "Delete",
@@ -7854,6 +7856,7 @@ Map {
         "headerExportButton": "Export",
         "headerImportButton": "Import",
         "headerSubmitButton": "Save and close",
+        "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
       },
@@ -7871,10 +7874,16 @@ Map {
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
-        "BAR",
         "TIMESERIES",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
         "VALUE",
+        "IMAGE",
         "TABLE",
+        "ALERT",
+        "LIST",
+        "CUSTOM",
       ],
       "title": null,
     },
@@ -7890,7 +7899,22 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "closeGalleryButton": Object {
+              "type": "string",
+            },
+            "defaultCardTitle": Object {
+              "type": "string",
+            },
+            "galleryHeader": Object {
+              "type": "string",
+            },
             "headerCancelButton": Object {
+              "type": "string",
+            },
+            "headerDeleteButton": Object {
+              "type": "string",
+            },
+            "headerEditTitleButton": Object {
               "type": "string",
             },
             "headerExportButton": Object {
@@ -7900,6 +7924,15 @@ Map {
               "type": "string",
             },
             "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "openGalleryButton": Object {
+              "type": "string",
+            },
+            "openJSONButton": Object {
               "type": "string",
             },
           },
@@ -9989,8 +10022,10 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "dataState": null,
       "locale": "en",
       "size": "MEDIUM",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
