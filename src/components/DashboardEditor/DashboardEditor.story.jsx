@@ -101,7 +101,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
-        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
@@ -194,7 +193,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
-        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}

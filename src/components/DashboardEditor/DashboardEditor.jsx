@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
-import { CARD_TYPES } from '../../constants/LayoutConstants';
+import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
@@ -72,18 +72,7 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
-  supportedCardTypes: [
-    CARD_TYPES.TIMESERIES,
-    'SIMPLE_BAR',
-    'GROUPED_BAR',
-    'STACKED_BAR',
-    CARD_TYPES.VALUE,
-    CARD_TYPES.IMAGE,
-    CARD_TYPES.TABLE,
-    'ALERT',
-    CARD_TYPES.LIST,
-    CARD_TYPES.CUSTOM,
-  ],
+  supportedCardTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
@@ -121,7 +110,6 @@ const DashboardEditor = ({
   renderCardPreview,
   headerBreadcrumbs,
   notification,
-  // onAddImage,
   onEditTitle,
   onImport,
   onExport,
@@ -136,6 +124,10 @@ const DashboardEditor = ({
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
 
+  /**
+   * Adds a default, empty card to the preview
+   * @param {string} type card type
+   */
   const addCard = (type) => {
     const cardData = getDefaultCard(type, mergedI18n);
     setDashboardJson({
@@ -145,6 +137,10 @@ const DashboardEditor = ({
     setSelectedCardId(cardData.id);
   };
 
+  /**
+   * Adds a cloned card with a new unique id to the preview
+   * @param {string} id
+   */
   const duplicateCard = (id) => {
     const cardData = getDuplicateCard(
       dashboardJson.cards.find((i) => i.id === id)
@@ -156,6 +152,10 @@ const DashboardEditor = ({
     setSelectedCardId(cardData.id);
   };
 
+  /**
+   * Deletes a card from the preview
+   * @param {string} id
+   */
   const removeCard = (id) =>
     setDashboardJson({
       ...dashboardJson,
@@ -224,6 +224,7 @@ const DashboardEditor = ({
           cardJson={dashboardJson.cards.find((i) => i.id === selectedCardId)}
           onShowGallery={() => setSelectedCardId(null)}
           onChange={(cardData) =>
+            // TODO: this is really inefficient
             setDashboardJson({
               ...dashboardJson,
               cards: dashboardJson.cards.map((card) =>

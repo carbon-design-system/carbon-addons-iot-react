@@ -35,7 +35,7 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
-  /** i18n */
+  /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,

@@ -4,6 +4,7 @@ import { Apps16 } from '@carbon/icons-react';
 
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
+import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -34,7 +35,7 @@ const defaultProps = {
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
   },
-  supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
+  supportedTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;

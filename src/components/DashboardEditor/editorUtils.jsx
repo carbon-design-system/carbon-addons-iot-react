@@ -9,6 +9,7 @@ import {
   CARD_TYPES,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
+  DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import {
   Card,
@@ -40,15 +41,13 @@ export const getDuplicateCard = (cardData) => ({
  */
 export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
-    [CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    SIMPLE_BAR: CARD_SIZES.MEDIUMWIDE,
-    GROUPED_BAR: CARD_SIZES.MEDIUMWIDE,
-    STACKED_BAR: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
-    [CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
-    ALERT: CARD_SIZES.LARGE,
-    [CARD_TYPES.LIST]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
   };
 
   const baseCardProps = {
@@ -59,7 +58,7 @@ export const getDefaultCard = (type, i18n) => {
   };
 
   switch (type) {
-    case CARD_TYPES.VALUE:
+    case DASHBOARD_EDITOR_CARD_TYPES.VALUE:
       return {
         ...baseCardProps,
         content: {
@@ -67,7 +66,7 @@ export const getDefaultCard = (type, i18n) => {
         },
         i18n,
       };
-    case CARD_TYPES.TIMESERIES:
+    case DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES:
       return {
         ...baseCardProps,
         content: {
@@ -77,7 +76,7 @@ export const getDefaultCard = (type, i18n) => {
         interval: 'day',
         i18n,
       };
-    case 'SIMPLE_BAR':
+    case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
         ...baseCardProps,
         content: {
@@ -87,7 +86,7 @@ export const getDefaultCard = (type, i18n) => {
         },
         i18n,
       };
-    case 'GROUPED_BAR':
+    case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
       return {
         ...baseCardProps,
         content: {
@@ -97,7 +96,7 @@ export const getDefaultCard = (type, i18n) => {
         },
         i18n,
       };
-    case 'STACKED_BAR':
+    case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:
       return {
         ...baseCardProps,
         content: {
@@ -107,7 +106,7 @@ export const getDefaultCard = (type, i18n) => {
         },
         i18n,
       };
-    case CARD_TYPES.TABLE:
+    case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
       return {
         ...baseCardProps,
         content: {
@@ -124,13 +123,7 @@ export const getDefaultCard = (type, i18n) => {
         },
         i18n,
       };
-    case CARD_TYPES.LIST:
-      return {
-        ...baseCardProps,
-        data: [],
-        i18n,
-      };
-    case CARD_TYPES.IMAGE:
+    case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
       return {
         ...baseCardProps,
         content: {

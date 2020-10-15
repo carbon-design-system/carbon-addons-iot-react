@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { SimpleList } from '../../../index';
+import { DASHBOARD_EDITOR_CARD_TYPES } from '../../../constants/LayoutConstants';
 
 import timeSeriesImg from './line-graph.svg';
 import simpleBarImg from './simple-bar-graph.svg';
@@ -33,7 +34,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
+  supportedTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
   i18n: {
     galleryHeader: 'Gallery',
     searchPlaceHolderText: 'Enter a search',
