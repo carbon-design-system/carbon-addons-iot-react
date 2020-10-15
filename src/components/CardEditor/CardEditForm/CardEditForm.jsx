@@ -45,12 +45,11 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
         onChange(JSON.parse(modalData));
       }}
       primaryButtonText="Save"
-      secondaryButtonText="Cancel"
-    >
+      secondaryButtonText="Cancel">
       <TextArea
         labelText="Card data"
         rows={8}
-        onChange={evt => setModalData(evt.target.value)}
+        onChange={(evt) => setModalData(evt.target.value)}
         value={modalData}
       />
     </Modal>
@@ -68,7 +67,9 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
               id="title"
               labelText="Card title"
               light
-              onChange={evt => onChange({ ...value, title: evt.target.value })}
+              onChange={(evt) =>
+                onChange({ ...value, title: evt.target.value })
+              }
               value={value.title}
             />
           </div>
@@ -77,8 +78,8 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
               id="size"
               label="Select a size"
               direction="bottom"
-              itemToString={item => item.text}
-              items={Object.keys(CARD_SIZES).map(i => ({ id: i, text: i }))}
+              itemToString={(item) => item.text}
+              items={Object.keys(CARD_SIZES).map((i) => ({ id: i, text: i }))}
               light
               selectedItem={{ id: value.size, text: value.size }}
               onChange={({ selectedItem }) => {
@@ -96,8 +97,7 @@ const CardEditForm = ({ value, /* errors, */ onChange, i18n }) => {
             onClick={() => {
               setModalData(JSON.stringify(value, null, 4));
               setShowEditor(true);
-            }}
-          >
+            }}>
             {mergedI18N.openEditorButton}
           </Button>
         </div>

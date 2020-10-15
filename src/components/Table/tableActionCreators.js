@@ -125,7 +125,12 @@ export const tableRowActionError = (rowId, error, instanceId = null) => ({
 });
 
 /** Select a row of the table */
-export const tableRowSelect = (rowId, isSelected, hasRowSelection, instanceId = null) => ({
+export const tableRowSelect = (
+  rowId,
+  isSelected,
+  hasRowSelection,
+  instanceId = null
+) => ({
   type: TABLE_ROW_SELECT,
   payload: { rowId, isSelected, hasRowSelection },
   instanceId,

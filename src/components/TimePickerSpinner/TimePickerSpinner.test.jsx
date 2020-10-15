@@ -83,7 +83,9 @@ describe('TimePickerSpinner', () => {
   });
 
   it('work with strings', () => {
-    const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
+    const wrapper = mount(
+      <TimePickerSpinner {...timePickerProps} value="xyz" spinner />
+    );
 
     wrapper.find('input').simulate('blur');
 
@@ -103,8 +105,12 @@ describe('TimePickerSpinner', () => {
   it('show indicator', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
 
-    const upButton = wrapper.find('.iot--time-picker__controls--btn.up-icon').first();
-    const downButton = wrapper.find('.iot--time-picker__controls--btn.down-icon').first();
+    const upButton = wrapper
+      .find('.iot--time-picker__controls--btn.up-icon')
+      .first();
+    const downButton = wrapper
+      .find('.iot--time-picker__controls--btn.down-icon')
+      .first();
 
     upButton.simulate('focus');
     upButton.simulate('click');

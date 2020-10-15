@@ -2,7 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { ContentSwitcher } from 'carbon-components-react';
-import { List16, Code16, List20, Code20, List24, Code24 } from '@carbon/icons-react';
+import {
+  List16,
+  Code16,
+  List20,
+  Code20,
+  List24,
+  Code24,
+} from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -47,7 +54,8 @@ storiesOf('Watson IoT/IconSwitch', module)
     },
     {
       info: {
-        text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
+        text:
+          'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
       },
     }
   )
@@ -75,7 +83,8 @@ storiesOf('Watson IoT/IconSwitch', module)
     },
     {
       info: {
-        text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
+        text:
+          'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
       },
     }
   )
@@ -91,8 +100,7 @@ storiesOf('Watson IoT/IconSwitch', module)
       <ContentSwitcher
         className={`${iotPrefix}--content-switcher--icon`}
         onChange={function noRefCheck() {}}
-        selectedIndex={0}
-      >
+        selectedIndex={0}>
         <IconSwitch
           name="one"
           onClick={function noRefCheck() {}}
@@ -128,8 +136,7 @@ storiesOf('Watson IoT/IconSwitch', module)
       <ContentSwitcher
         className={`${iotPrefix}--content-switcher--icon`}
         onChange={function noRefCheck() {}}
-        selectedIndex={0}
-      >
+        selectedIndex={0}>
         <IconSwitch
           name="one"
           onClick={function noRefCheck() {}}

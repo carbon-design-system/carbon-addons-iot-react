@@ -79,21 +79,19 @@ const ComboBox = ({
   const prevTagAndListCount = useRef(items.length + tagItems.length);
 
   // Handle focus after adding new tags or list items
-  useEffect(
-    () => {
-      const currentTagAndListCount = tagItems.length + listItems.length;
+  useEffect(() => {
+    const currentTagAndListCount = tagItems.length + listItems.length;
 
-      // only focus input if the tags or list have increased
-      if (prevTagAndListCount.current < currentTagAndListCount) {
-        comboRef.current.textInput.current.focus();
-      }
+    // only focus input if the tags or list have increased
+    if (prevTagAndListCount.current < currentTagAndListCount) {
+      comboRef.current.textInput.current.focus();
+    }
 
-      // Store the value for the next render
-      prevTagAndListCount.current = currentTagAndListCount;
-    },
-    [tagItems, listItems, comboRef]
-  );
+    // Store the value for the next render
+    prevTagAndListCount.current = currentTagAndListCount;
+  }, [tagItems, listItems, comboRef]);
 
+<<<<<<< HEAD
   /**
    * List to the blur event and trigger parent onBlur
    * @param {event} e
@@ -105,6 +103,9 @@ const ComboBox = ({
   };
 
   const handleOnClose = e => {
+=======
+  const handleOnClose = (e) => {
+>>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
     // Get close target's text
     const closedValue = e.currentTarget.parentNode?.children[0]?.textContent;
     // If there is a tag with the same value then remove from tag array
@@ -124,21 +125,27 @@ const ComboBox = ({
     const newItem =
       downShiftSelectedItem &&
       Object.keys(downShiftSelectedItem).reduce(
-        (acc, currentId) => ({ ...acc, [currentId]: downShiftSelectedItem[currentId].trim() }),
+        (acc, currentId) => ({
+          ...acc,
+          [currentId]: downShiftSelectedItem[currentId].trim(),
+        }),
         {}
       );
 
     const currentValue = itemToString(newItem);
     // Check that there is no existing tag
-    const hasNoExistingTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
+    const hasNoExistingTag =
+      tagItems.filter((x) => itemToString(x) === currentValue).length < 1;
     // Check if value is part of items array
-    const isInList = listItems.filter(x => itemToString(x).trim() === currentValue)[0];
+    const isInList = listItems.filter(
+      (x) => itemToString(x).trim() === currentValue
+    )[0];
 
     if (hasMultiValue) {
       // If tags array does not contain new value
       if (newItem && hasNoExistingTag) {
         // Add new value to tags array
-        setTagItems(inputValues => [...inputValues, newItem]);
+        setTagItems((inputValues) => [...inputValues, newItem]);
         // pass the combobox value to user's onChange callback
         onChange([...tagItems, newItem]);
       }
@@ -152,7 +159,7 @@ const ComboBox = ({
       !isInList
     ) {
       // Add new item to items array
-      setListItems(currentList => [newItem, ...currentList]);
+      setListItems((currentList) => [newItem, ...currentList]);
     }
 
     setInputValue(null);
@@ -160,21 +167,29 @@ const ComboBox = ({
 
   // If the input text doesn't match something in the list, the CarbonComboBox does not call the onChange handler
   // https://github.com/carbon-design-system/carbon/issues/6613
-  const handleOnKeypress = evt => {
+  const handleOnKeypress = (evt) => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
     if (evt.key === 'Enter' && currentValue) {
       const newItem = {
-        id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
+        id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${
+          currentValue.length
+        }`,
         text: currentValue,
       };
       handleOnChange({ selectedItem: newItem });
     }
   };
 
+<<<<<<< HEAD
   const handleInputChange = e => {
     const matchedItem = listItems.filter(x => itemToString(x) === e)[0];
     if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
+=======
+  const handleInputChange = (e) => {
+    const matchedItem = listItems.filter((x) => itemToString(x) === e)[0];
+    if ((addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
+>>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -188,10 +203,10 @@ const ComboBox = ({
     }
   };
 
-  const combinedItems = useMemo(() => (inputValue ? [inputValue, ...listItems] : listItems), [
-    inputValue,
-    listItems,
-  ]);
+  const combinedItems = useMemo(
+    () => (inputValue ? [inputValue, ...listItems] : listItems),
+    [inputValue, listItems]
+  );
 
   const shouldFilterItemForTags = ({
     item,
@@ -209,11 +224,14 @@ const ComboBox = ({
         { [`${iotPrefix}--combobox-size-${size}`]: size },
         { [`${iotPrefix}--combobox-helper-text`]: helperText }
       )}
+<<<<<<< HEAD
       onKeyDown={handleOnKeypress}
       onBlur={handleOnBlur}
+=======
+      onKeyDown={(evt) => handleOnKeypress(evt)}
+>>>>>>> 6ab895780e1bd0ddc65e5c82625a9fdf7c26434e
       data-testid="combo-wrapper"
-      data-edit-option-text={editOptionText}
-    >
+      data-edit-option-text={editOptionText}>
       <CarbonComboBox
         data-testid="combo-box"
         id={id}
@@ -227,7 +245,11 @@ const ComboBox = ({
         className={classnames(className, `${iotPrefix}--combobox-input`)}
         disabled={disabled || (loading !== undefined && loading !== false)}
         helperText={helperText}
-        shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
+        shouldFilterItem={
+          hasMultiValue || addToList
+            ? shouldFilterItemForTags
+            : shouldFilterItem
+        }
         {...rest}
       />
       {hasMultiValue ? (
@@ -237,9 +259,8 @@ const ComboBox = ({
               <Tag
                 key={`tag-${item?.id}-${idx}`}
                 filter
-                onClose={e => handleOnClose(e)}
-                title={closeButtonText}
-              >
+                onClose={(e) => handleOnClose(e)}
+                title={closeButtonText}>
                 {itemToString(item)}
               </Tag>
             </li>

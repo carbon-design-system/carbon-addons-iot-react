@@ -38,10 +38,7 @@ describe('ResourceList', () => {
       />
     );
 
-    wrapper
-      .find('label[onClick]')
-      .first()
-      .simulate('click');
+    wrapper.find('label[onClick]').first().simulate('click');
     expect(onRowClick.mock.calls).toHaveLength(1);
   });
   it('customAction', () => {
@@ -57,10 +54,7 @@ describe('ResourceList', () => {
         }}
       />
     );
-    wrapper
-      .find('button[onClick]')
-      .first()
-      .simulate('click');
+    wrapper.find('button[onClick]').first().simulate('click');
     expect(actionClick.mock.calls).toHaveLength(1);
   });
   it('extraContent', () => {
@@ -69,7 +63,7 @@ describe('ResourceList', () => {
         design="normal"
         data={resourceData}
         currentItemId="row-2"
-        extraContent={resourceData.map(i => i.id)}
+        extraContent={resourceData.map((i) => i.id)}
       />
     );
     expect(

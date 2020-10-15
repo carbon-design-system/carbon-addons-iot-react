@@ -129,7 +129,14 @@ const defaultProps = {
 /**
  * This component is just wrapping up the Carbon Tabs, adding some optional action buttons at the right side.  And for now automatically rendering a page hero component across all tabs
  */
-const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...others }) => (
+const NavigationBar = ({
+  tabs,
+  hero,
+  actions,
+  onSelectionChange,
+  workArea,
+  ...others
+}) => (
   <Fragment>
     {workArea || null}
     <StyledNavigationContainer hasActions={actions.length > 0}>
@@ -138,8 +145,9 @@ const NavigationBar = ({ tabs, hero, actions, onSelectionChange, workArea, ...ot
       <StyledTabToContent>
         <Tabs
           {...others}
-          onSelectionChange={index => onSelectionChange && onSelectionChange(tabs[index].id)}
-        >
+          onSelectionChange={(index) =>
+            onSelectionChange && onSelectionChange(tabs[index].id)
+          }>
           {tabs.map(({ children, id, ...other }) => (
             <Tab key={id} {...other}>
               <StyledTabContent>

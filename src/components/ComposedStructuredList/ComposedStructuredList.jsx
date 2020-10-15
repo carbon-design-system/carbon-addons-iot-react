@@ -19,7 +19,7 @@ const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (
   <StructuredListWrapper {...others} />
 ))`
   && {
-    width: ${props => (props.isFixedWidth ? 'inherit;' : '')};
+    width: ${(props) => (props.isFixedWidth ? 'inherit;' : '')};
   }
 `;
 
@@ -45,7 +45,7 @@ const LoadingDiv = styled.div`
 
 const StyledStructuredListCell = styled(StructuredListCell)`
   &&& {
-    ${props => {
+    ${(props) => {
       const { width } = props;
       return width !== undefined
         ? `
@@ -84,21 +84,26 @@ const StructuredList = ({
       <StructuredListWrapperStyled
         {...StructuredListWrapperProps}
         selection
-        isFixedWidth={isFixedWidth}
-      >
+        isFixedWidth={isFixedWidth}>
         <StructuredListHead className={StructuredListHeadClassName}>
           <StructuredListRow head>
             {columns.map(({ id, title, width = undefined }) => (
-              <StyledStructuredListCell key={`${id}-column`} title={title} width={width} head>
+              <StyledStructuredListCell
+                key={`${id}-column`}
+                title={title}
+                width={width}
+                head>
                 {title}
               </StyledStructuredListCell>
             ))}
           </StructuredListRow>
         </StructuredListHead>
         <StructuredListBody>
-          {data.map(item => (
-            <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
-              {columns.map(col => (
+          {data.map((item) => (
+            <StructuredListRow
+              key={`${item.id}-row`}
+              onClick={() => onRowClick(item.id)}>
+              {columns.map((col) => (
                 <StyledStructuredListCell
                   key={`${col.id}-item`}
                   noWrap
@@ -109,8 +114,7 @@ const StructuredList = ({
                       : null
                   }
                   width={col.width}
-                  style={design === 'normal' ? { lineHeight: '16px' } : {}}
-                >
+                  style={design === 'normal' ? { lineHeight: '16px' } : {}}>
                   {col.renderDataFunction
                     ? col.renderDataFunction({
                         // Call the column renderer if it's provided
@@ -130,9 +134,7 @@ const StructuredList = ({
             <Bee32 width={100} height={100} fill={COLORS.gray} />
             <LoadingDiv>{loadingDataLabel}</LoadingDiv>
           </EmptyContent>
-        ) : (
-          undefined
-        )}
+        ) : undefined}
       </StructuredListWrapperStyled>
     </Fragment>
   );

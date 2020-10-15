@@ -45,7 +45,7 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
     <List
       title={mergedI18N.galleryHeader}
       isFullHeight
-      items={supportedTypes.map(i => ({
+      items={supportedTypes.map((i) => ({
         id: i,
         content: {
           value: mergedI18N[`cardType_${i}`] || i,

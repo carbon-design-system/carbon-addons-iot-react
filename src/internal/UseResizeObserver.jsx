@@ -3,7 +3,7 @@ import warning from 'warning';
 
 import { browserSupports } from '../utils/componentUtilityFunctions';
 
-export const useResize = resizeRef => {
+export const useResize = (resizeRef) => {
   if (!browserSupports('ResizeObserver')) {
     warning(
       !__DEV__,
