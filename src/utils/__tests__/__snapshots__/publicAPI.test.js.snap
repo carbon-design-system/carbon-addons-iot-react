@@ -16349,7 +16349,9 @@ Map {
       "isLargeRow": false,
       "isLoading": false,
       "onListUpdated": [Function],
+      "onSelect": null,
       "pageSize": null,
+      "showPagination": true,
     },
     "propTypes": Object {
       "buttons": Object {
@@ -16445,8 +16447,14 @@ Map {
       "onListUpdated": Object {
         "type": "func",
       },
+      "onSelect": Object {
+        "type": "func",
+      },
       "pageSize": Object {
         "type": "string",
+      },
+      "showPagination": Object {
+        "type": "bool",
       },
       "title": Object {
         "isRequired": true,
