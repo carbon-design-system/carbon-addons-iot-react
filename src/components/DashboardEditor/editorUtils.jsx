@@ -20,9 +20,9 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
+import sampleImage from '../CardEditor/CardGalleryList/image.svg';
 
 import { baseClassName } from './DashboardEditor';
-import sampleImage from './landscape.jpg';
 
 /**
  * Returns a duplicate card configuration
