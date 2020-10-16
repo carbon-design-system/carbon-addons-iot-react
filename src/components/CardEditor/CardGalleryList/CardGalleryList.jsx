@@ -72,7 +72,7 @@ const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
       title={mergedI18n.galleryHeader}
       isFullHeight
       hasSearch
-      showPagination={false}
+      hasPagination={false}
       items={supportedTypes.map((cardType) => ({
         id: cardType,
         content: {

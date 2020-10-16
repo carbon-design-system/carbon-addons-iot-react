@@ -363,6 +363,21 @@ describe('barChartUtils', () => {
     ]);
   });
 
+  it('formatChartData returns empty array is series is empty', () => {
+    const series = [];
+    const emptyData = [];
+    // check horizontal layout
+    expect(
+      formatChartData(
+        series,
+        emptyData,
+        undefined,
+        null,
+        BAR_CHART_TYPES.SIMPLE
+      )
+    ).toEqual([]);
+  });
+
   it('formatColors returns correct format if color is string', () => {
     const series = [
       {
