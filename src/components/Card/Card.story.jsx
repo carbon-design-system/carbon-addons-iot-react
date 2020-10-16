@@ -46,7 +46,7 @@ storiesOf('Watson IoT/Card', module)
           breakpoint="lg"
           availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
-          onFocus={() => console.log('onFocus')}
+          onFocus={action('onFocus')}
           onBlur={() => console.log('onBlur')}
           tabIndex={0}
         />
