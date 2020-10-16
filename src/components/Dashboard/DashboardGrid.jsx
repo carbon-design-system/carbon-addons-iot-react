@@ -12,6 +12,7 @@ import {
   CARD_DIMENSIONS,
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
+  DASHBOARD_CONTAINER_PADDING,
 } from '../../constants/LayoutConstants';
 import { DashboardLayoutPropTypes } from '../../constants/CardPropTypes';
 
@@ -191,6 +192,7 @@ const DashboardGrid = ({
         cols={DASHBOARD_COLUMNS}
         breakpoints={DASHBOARD_BREAKPOINTS}
         margin={cachedMargin}
+        containerPadding={DASHBOARD_CONTAINER_PADDING}
         rowHeight={ROW_HEIGHT[breakpoint]}
         preventCollision={false}
         // Stop the initial animation unless we need to support editing drag-and-drop

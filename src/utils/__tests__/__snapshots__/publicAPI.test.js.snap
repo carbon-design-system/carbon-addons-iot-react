@@ -4511,6 +4511,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -16659,6 +16660,7 @@ Map {
       "items": Array [],
       "light": false,
       "loading": false,
+      "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
       "type": "default",
@@ -16855,6 +16857,9 @@ Map {
       },
       "loading": Object {
         "type": "bool",
+      },
+      "onBlur": Object {
+        "type": "func",
       },
       "onChange": Object {
         "isRequired": true,

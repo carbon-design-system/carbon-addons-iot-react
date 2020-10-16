@@ -1,5 +1,6 @@
 import moment from 'moment';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
 import cheerio from 'cheerio';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
@@ -104,7 +105,7 @@ export const formatChartData = (
   type
 ) => {
   const data = [];
-  if (!isNil(values)) {
+  if (!isNil(values) || !isEmpty(series)) {
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
       let uniqueDatasetNames;
