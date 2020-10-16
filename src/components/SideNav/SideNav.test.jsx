@@ -160,14 +160,7 @@ describe('SideNav', () => {
   it('should render an button tag for a subNav', () => {
     const wrapper = mount(<SideNav {...mockProps} />);
     expect(
-      render(
-        wrapper
-          .find('ul')
-          .first()
-          .childAt(2)
-      )
-        .children()
-        .first()[0].name
+      render(wrapper.find('ul').first().childAt(2)).children().first()[0].name
     ).toEqual('button');
   });
 
@@ -188,14 +181,7 @@ describe('SideNav', () => {
     const wrapper = mount(<SideNav {...mockProps} />);
 
     expect(
-      render(
-        wrapper
-          .find('ul')
-          .first()
-          .childAt(0)
-      )
-        .children()
-        .first()[0].name
+      render(wrapper.find('ul').first().childAt(0)).children().first()[0].name
     ).toEqual('a');
   });
 
@@ -206,14 +192,7 @@ describe('SideNav', () => {
     };
     const wrapper = mount(<SideNav {...mockProps} />);
     expect(
-      render(
-        wrapper
-          .find('ul')
-          .first()
-          .childAt(2)
-      )
-        .children()
-        .first()[0].name
+      render(wrapper.find('ul').first().childAt(2)).children().first()[0].name
     ).not.toEqual('button');
   });
 

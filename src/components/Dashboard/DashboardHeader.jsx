@@ -83,7 +83,7 @@ const DashboardHeader = ({
       <div className="dashboard--header-right">
         {filter}
         <div className="dashboard--header-actions">
-          {actions.map(action =>
+          {actions.map((action) =>
             action.icon ? (
               <Button
                 className={`${prefix}--btn--icon-only`}
@@ -96,13 +96,15 @@ const DashboardHeader = ({
                   typeof action.icon === 'string' // legacy support for naming the icon by string
                     ? icons[action.icon]
                     : React.isValidElement(action.icon)
-                    ? props => React.cloneElement(action.icon, props)
+                    ? (props) => React.cloneElement(action.icon, props)
                     : action.icon // alternatively you can pass the
                 }
                 iconDescription={action.labelText}
               />
             ) : (
-              React.cloneElement(action.customActionComponent, { key: `icon-${action.id}` })
+              React.cloneElement(action.customActionComponent, {
+                key: `icon-${action.id}`,
+              })
             )
           )}
         </div>

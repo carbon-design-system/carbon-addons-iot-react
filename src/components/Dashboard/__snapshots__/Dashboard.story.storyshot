@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
                 data-testid="Card"
                 id="barchartcard"
                 onMouseDown={[Function]}
@@ -330,7 +330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                    className="iot--bar-chart-container"
                   >
                     <div
                       className="chart-holder"
@@ -2582,7 +2582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
                 data-testid="Card"
                 id="barchartcard"
                 onMouseDown={[Function]}
@@ -2657,7 +2657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                    className="iot--bar-chart-container"
                   >
                     <div
                       className="chart-holder"
@@ -4937,7 +4937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
                 data-testid="Card"
                 id="barchartcard"
                 onMouseDown={[Function]}
@@ -5012,7 +5012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                    className="iot--bar-chart-container"
                   >
                     <div
                       className="chart-holder"
@@ -7074,7 +7074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             }
           >
             <div
-              className="iot--card iot--bar-chart-card iot--card--wrapper"
+              className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
               data-testid="Card"
               id="expandedcard"
               onMouseDown={[Function]}
@@ -7149,7 +7149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                  className="iot--bar-chart-container"
                 >
                   <div
                     className="chart-holder"
@@ -9846,7 +9846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
                 data-testid="Card"
                 id="barchartcard"
                 onMouseDown={[Function]}
@@ -9921,7 +9921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                    className="iot--bar-chart-container"
                   >
                     <div
                       className="chart-holder"
@@ -24576,7 +24576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                className="iot--card react-grid-item react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
                 data-testid="Card"
                 id="barchartcard"
                 onMouseDown={[Function]}
@@ -24651,7 +24651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="iot--bar-chart-container react-grid-item react-resizable-hide react-resizable"
+                    className="iot--bar-chart-container"
                   >
                     <div
                       className="chart-holder"

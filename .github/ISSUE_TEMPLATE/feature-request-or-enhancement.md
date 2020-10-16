@@ -2,7 +2,9 @@
 name: "Feature request or enhancement \U0001F4A1"
 about: Suggest an idea for improvement
 title: '[ComponentName] request_title'
-labels: 'type: enhancement :bulb:, status: needs triage :mag:, status: needs priority :inbox_tray:'
+labels:
+  'type: enhancement :bulb:, status: needs triage :mag:, status: needs priority
+  :inbox_tray:'
 assignees: ''
 ---
 
@@ -26,8 +28,8 @@ If you are reporting a bug or problem, please use the bug template instead.
 
 Please describe your request in one or two sentences.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Additional context** Add any other context or screenshots about the feature
+request here.
 
 ### Specific timeline issues / requests
 
@@ -42,4 +44,5 @@ date, the better!_
 
 What resources do you have to assist this effort?
 
-_Carbon add-ons for Watson IoT is a collaborative system. We encourage teams to build components and submit them for integration._
+_Carbon add-ons for Watson IoT is a collaborative system. We encourage teams to
+build components and submit them for integration._

@@ -59,7 +59,9 @@ export const handleClose = (resetSelectionCB, onCloseCB) => {
 
 const getBreadCrumbData = (breadcrumbs, selectedItems, path, pathIndex) => {
   if (pathIndex < path.length) {
-    const breadCrumbItem = selectedItems.find(item => item.id === path[pathIndex]);
+    const breadCrumbItem = selectedItems.find(
+      (item) => item.id === path[pathIndex]
+    );
 
     return getBreadCrumbData(
       [...breadcrumbs, breadCrumbItem],
@@ -100,7 +102,7 @@ const HierarchyListReorderModal = ({
     setSelectedItem(null);
   };
 
-  const handleLineItemClicked = item => {
+  const handleLineItemClicked = (item) => {
     if (item.children && item.children.length > 0) {
       setSelectedParentPath([...selectedParentPath, item.id]);
       setSelectedItem(null);
@@ -114,7 +116,9 @@ const HierarchyListReorderModal = ({
       return;
     }
 
-    const index = selectedParentPath.findIndex(pathItem => pathItem === item?.id);
+    const index = selectedParentPath.findIndex(
+      (pathItem) => pathItem === item?.id
+    );
 
     if (item !== null && index >= 0) {
       setSelectedParentPath(selectedParentPath.slice(0, index + 1));
@@ -124,21 +128,23 @@ const HierarchyListReorderModal = ({
   };
 
   const group =
-    breadCrumbData.length > 0 ? breadCrumbData[breadCrumbData.length - 1].children : items;
+    breadCrumbData.length > 0
+      ? breadCrumbData[breadCrumbData.length - 1].children
+      : items;
 
   const firstCrumb = [
     <BreadcrumbItem
       className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb`}
       title={i18n.allRows}
       key={`breadcrumb-all-${i18n.allRows}`}
-      isCurrentPage={selectedParentPath.length === 0}
-    >
+      isCurrentPage={selectedParentPath.length === 0}>
       <button
         type="button"
         className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb-button`}
         kind="ghost"
-        onClick={() => handleBreadcrumbClick(null, selectedParentPath.length === 0)}
-      >
+        onClick={() =>
+          handleBreadcrumbClick(null, selectedParentPath.length === 0)
+        }>
         {i18n.allRows}
       </button>
     </BreadcrumbItem>,
@@ -151,14 +157,14 @@ const HierarchyListReorderModal = ({
         className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb`}
         title={crumb?.content?.value}
         key={`breadcrumb-${crumb?.id}-${crumb?.content?.value}`}
-        isCurrentPage={index === breadCrumbData.length - 1}
-      >
+        isCurrentPage={index === breadCrumbData.length - 1}>
         <button
           type="button"
           className={`${iotPrefix}--hierarchy-list-bulk-modal--breadcrumb-button`}
           kind="ghost"
-          onClick={() => handleBreadcrumbClick(crumb, index === breadCrumbData.length - 1)}
-        >
+          onClick={() =>
+            handleBreadcrumbClick(crumb, index === breadCrumbData.length - 1)
+          }>
           {crumb?.content?.value}
         </button>
       </BreadcrumbItem>
@@ -177,8 +183,7 @@ const HierarchyListReorderModal = ({
       }}
       onClose={() => handleClose(resetSelection, onClose)}
       onSubmit={() => handleSubmit(onSubmit, resetSelection, selectedItem)}
-      sendingData={sendingData}
-    >
+      sendingData={sendingData}>
       <div className={`${iotPrefix}--hierarchy-list-bulk-modal--title`}>
         {i18n.modalDescription}
       </div>

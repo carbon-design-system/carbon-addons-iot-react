@@ -37,18 +37,21 @@ const UnitRenderer = ({
   attributeCount, // eslint-disable-line react/prop-types
 }) => {
   const bemBase = `${iotPrefix}--value-card__attribute-unit`;
-  const notAllowedToWrap = typeof value === 'string' && !allowedToWrap && attributeCount === 1;
+  const notAllowedToWrap =
+    typeof value === 'string' && !allowedToWrap && attributeCount === 1;
 
   const unitElement = (
     <span
-      style={{ '--default-font-size': layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem' }}
+      style={{
+        '--default-font-size':
+          layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem',
+      }}
       className={classnames(bemBase, {
         [`${bemBase}--wrappable`]: allowedToWrap,
         [`${bemBase}--not-wrappable`]: notAllowedToWrap,
         [`${bemBase}--wrappable-compact`]: wrapCompact,
         [`${bemBase}--mini`]: isMini,
-      })}
-    >
+      })}>
       {unit}
     </span>
   );

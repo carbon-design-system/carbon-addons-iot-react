@@ -51,7 +51,9 @@ const WizardFooter = ({
 }) => (
   <Fragment>
     {footerLeftContent && (
-      <div className="WizardInline-custom-footer-content">{footerLeftContent}</div>
+      <div className="WizardInline-custom-footer-content">
+        {footerLeftContent}
+      </div>
     )}
     <StyledFooterButtons className={className}>
       {!hasPrev ? (
@@ -69,7 +71,10 @@ const WizardFooter = ({
           {nextLabel}
         </Button>
       ) : (
-        <Button onClick={onSubmit} disabled={nextDisabled} loading={sendingData}>
+        <Button
+          onClick={onSubmit}
+          disabled={nextDisabled}
+          loading={sendingData}>
           {submitLabel}
         </Button>
       )}

@@ -40,7 +40,9 @@ const PageTitle = ({ title, section }) => (
   <StyledPageTitle>
     {title ? (
       <StyledPageTitleH1>
-        {section ? <StyledPageSection>{`${section} /`}</StyledPageSection> : null}
+        {section ? (
+          <StyledPageSection>{`${section} /`}</StyledPageSection>
+        ) : null}
         {title}
       </StyledPageTitleH1>
     ) : null}

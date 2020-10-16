@@ -65,7 +65,9 @@ describe('PieChartCard', () => {
 
   it('shows loading skeleton for isLoading even for empty data  ', () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
-    const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);
+    const { container, rerender } = render(
+      <PieChartCard {...pieChartCardProps} />
+    );
     let svgLoadingIcon = container.querySelector(loadingSkeletonQuery);
     expect(svgLoadingIcon).toBeFalsy();
 
@@ -84,7 +86,13 @@ describe('PieChartCard', () => {
 
   it('shows empty data message when there are no values', () => {
     const noDataMsg = 'No data for this card';
-    render(<PieChartCard {...pieChartCardProps} i18n={{ noDataLabel: noDataMsg }} values={[]} />);
+    render(
+      <PieChartCard
+        {...pieChartCardProps}
+        i18n={{ noDataLabel: noDataMsg }}
+        values={[]}
+      />
+    );
     expect(screen.queryByText(noDataMsg)).toBeVisible();
   });
 
@@ -96,11 +104,20 @@ describe('PieChartCard', () => {
   it('shows uses labels based on groupDataSourceId', () => {
     const groupBasedLabelExample = 'Misc';
     const categoryBasedLabelExample = 'cat A';
-    const { rerender } = render(<PieChartCard {...pieChartCardProps} groupDataSourceId="group" />);
+    const { rerender } = render(
+      <PieChartCard {...pieChartCardProps} groupDataSourceId="group" />
+    );
     expect(screen.getByText(groupBasedLabelExample)).toBeVisible();
-    expect(screen.queryByText(categoryBasedLabelExample)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(categoryBasedLabelExample)
+    ).not.toBeInTheDocument();
 
-    rerender(<PieChartCard {...pieChartCardProps} content={{ groupDataSourceId: 'category' }} />);
+    rerender(
+      <PieChartCard
+        {...pieChartCardProps}
+        content={{ groupDataSourceId: 'category' }}
+      />
+    );
     expect(screen.getByText(categoryBasedLabelExample)).toBeVisible();
     expect(screen.queryByText(groupBasedLabelExample)).toBeFalsy();
   });
@@ -138,13 +155,17 @@ describe('PieChartCard', () => {
       />
     );
 
-    const slices = screen.getByLabelText('slices').getElementsByClassName('slice');
+    const slices = screen
+      .getByLabelText('slices')
+      .getElementsByClassName('slice');
     const orderedColors = chartDataExample
       .sort((a, b) => b.value - a.value)
-      .map(data => colorsMap[data.category]);
+      .map((data) => colorsMap[data.category]);
 
     for (let index = 0; index < orderedColors.length; index += 1) {
-      expect(slices.item(index).getAttribute('fill')).toEqual(orderedColors[index]);
+      expect(slices.item(index).getAttribute('fill')).toEqual(
+        orderedColors[index]
+      );
     }
   });
 
@@ -153,14 +174,14 @@ describe('PieChartCard', () => {
       <PieChartCard
         {...pieChartCardProps}
         content={{
-          labelsFormatter: wrapper => {
+          labelsFormatter: (wrapper) => {
             return `test-label-${wrapper.value}`;
           },
         }}
       />
     );
 
-    chartDataExample.forEach(sliceData => {
+    chartDataExample.forEach((sliceData) => {
       expect(screen.getByText(`test-label-${sliceData.value}`)).toBeVisible();
     });
   });
@@ -188,7 +209,9 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 0')).toBeVisible();
     expect(screen.getByText('Sample 1')).toBeVisible();
 
-    const slices = screen.getByLabelText('slices').getElementsByClassName('slice');
+    const slices = screen
+      .getByLabelText('slices')
+      .getElementsByClassName('slice');
     const firstSliceColor = slices.item(0).getAttribute('fill');
     const secondSliceColor = slices.item(1).getAttribute('fill');
 
@@ -199,13 +222,13 @@ describe('PieChartCard', () => {
   });
 
   it('can be customised with component overrides', () => {
-    const TestCard = props => {
+    const TestCard = (props) => {
       return <Card {...props} data-testid="custom-test-card" />;
     };
     const TestPieChart = () => {
       return <div>I am not a pie chart</div>;
     };
-    const TestTable = props => {
+    const TestTable = (props) => {
       return <Table {...props} data-testid="custom-test-table" />;
     };
 
@@ -234,7 +257,7 @@ describe('PieChartCard', () => {
         overrides={{
           card: { props: { 'data-testid': 'custom-test-card' } },
           pieChart: {
-            props: origProps => {
+            props: (origProps) => {
               const propCopy = { ...origProps };
               propCopy.options.data.groupMapsTo = 'category';
               return propCopy;

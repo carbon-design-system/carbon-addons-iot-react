@@ -15,8 +15,11 @@ export const EditingStyle = {
  * Returns true if a passed in editing style is multiple rather than single
  * @param {EditingStyle} editingStyle current editing style
  */
-export const editingStyleIsMultiple = editingStyle => {
-  return editingStyle === EditingStyle.MultipleNesting || editingStyle === EditingStyle.Multiple;
+export const editingStyleIsMultiple = (editingStyle) => {
+  return (
+    editingStyle === EditingStyle.MultipleNesting ||
+    editingStyle === EditingStyle.Multiple
+  );
 };
 
 /**
@@ -27,11 +30,14 @@ export const editingStyleIsMultiple = editingStyle => {
 const searchDraggedItem = (items, ids) => {
   let draggedItems = [];
 
-  items.forEach(item => {
-    if (ids.some(id => item.id === id)) {
+  items.forEach((item) => {
+    if (ids.some((id) => item.id === id)) {
       draggedItems.push(item);
     } else if (item.children) {
-      draggedItems = [...draggedItems, ...searchDraggedItem(item.children, ids)];
+      draggedItems = [
+        ...draggedItems,
+        ...searchDraggedItem(item.children, ids),
+      ];
     }
   });
 
@@ -50,10 +56,14 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
   let finalList = [];
   let itemDropped = dropped; // Protects against dupe ids and multiple drops
 
-  if (items && !draggedItems[0]?.children?.some(x => x.id === dropId)) {
-    items.forEach(item => {
+  if (items && !draggedItems[0]?.children?.some((x) => x.id === dropId)) {
+    items.forEach((item) => {
       // Insert dragged items in before location
-      if (!itemDropped && item.id === dropId && location === DropLocation.Above) {
+      if (
+        !itemDropped &&
+        item.id === dropId &&
+        location === DropLocation.Above
+      ) {
         finalList = [...finalList, ...draggedItems];
         itemDropped = true;
       }
@@ -61,23 +71,37 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
       let { children = [] } = item;
 
       // Insert dragged items in nested location
-      if (!itemDropped && location === DropLocation.Nested && dropId === item.id) {
+      if (
+        !itemDropped &&
+        location === DropLocation.Nested &&
+        dropId === item.id
+      ) {
         itemDropped = true;
         children = draggedItems.concat(
           updateList(children, draggedItems, dropId, location, itemDropped)
         );
       } else if (children?.length) {
-        children = updateList(children, draggedItems, dropId, location, itemDropped);
+        children = updateList(
+          children,
+          draggedItems,
+          dropId,
+          location,
+          itemDropped
+        );
       }
 
       // Add item into final list if it isn't a dragged item
-      if (!draggedItems.find(drag => drag.id === item.id)) {
+      if (!draggedItems.find((drag) => drag.id === item.id)) {
         item.children = children; // eslint-disable-line no-param-reassign
         finalList.push(item);
       }
 
       // Insert dragged items in after location
-      if (!itemDropped && item.id === dropId && location === DropLocation.Below) {
+      if (
+        !itemDropped &&
+        item.id === dropId &&
+        location === DropLocation.Below
+      ) {
         finalList = [...finalList, ...draggedItems];
       }
     });
@@ -95,7 +119,10 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
  * @param {DropLocation} location Where the drop will occur, above or below the specified id or as the first child of the specified id
  */
 export const moveItemsInList = (items, dragIds, dropId, location) => {
-  const draggedItems = searchDraggedItem(items, dragIds.filter(id => id !== dropId));
+  const draggedItems = searchDraggedItem(
+    items,
+    dragIds.filter((id) => id !== dropId)
+  );
 
   return updateList(items, draggedItems, dropId, location);
 };
@@ -104,11 +131,11 @@ export const moveItemsInList = (items, dragIds, dropId, location) => {
  * Returns every child id from the ListItem and their children's ids
  * @param {ListItem} listItem
  */
-const getAllChildIds = listItem => {
+const getAllChildIds = (listItem) => {
   let childIds = [];
 
   if (listItem.children) {
-    listItem.children.forEach(child => {
+    listItem.children.forEach((child) => {
       childIds.push(child.id);
 
       childIds = [...childIds, ...getAllChildIds(child)];
@@ -128,10 +155,12 @@ const getAllChildIds = listItem => {
 export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
   let newSelection = [];
 
-  if (currentSelection.filter(editId => editId === id).length > 0) {
-    newSelection = currentSelection.filter(selected => selected !== id && selected !== parentId);
+  if (currentSelection.filter((editId) => editId === id).length > 0) {
+    newSelection = currentSelection.filter(
+      (selected) => selected !== id && selected !== parentId
+    );
   } else {
-    list.forEach(editItem => {
+    list.forEach((editItem) => {
       if (editItem.id === id) {
         newSelection.push(id);
 
@@ -139,11 +168,16 @@ export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
       } else if (editItem.children) {
         newSelection = [
           ...newSelection,
-          ...handleEditModeSelect(editItem.children, currentSelection, id, parentId),
+          ...handleEditModeSelect(
+            editItem.children,
+            currentSelection,
+            id,
+            parentId
+          ),
         ];
       }
 
-      if (currentSelection.some(selectionId => selectionId === editItem.id)) {
+      if (currentSelection.some((selectionId) => selectionId === editItem.id)) {
         newSelection.push(editItem.id);
       }
     });

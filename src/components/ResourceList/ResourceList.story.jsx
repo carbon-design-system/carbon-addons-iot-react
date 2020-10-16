@@ -45,7 +45,7 @@ class ResourceListSimple extends Component {
         design={select('Resource list design', ['normal', 'inline'], 'normal')}
         data={resourceData}
         currentItemId={currentItemId}
-        onRowClick={itemId => this.setState({ currentItemId: itemId })}
+        onRowClick={(itemId) => this.setState({ currentItemId: itemId })}
       />
     );
   };
@@ -55,7 +55,7 @@ storiesOf('Watson IoT/ResourceList', module)
   .add('default', () => <ResourceListSimple />)
   .add('with extra content', () => (
     <ResourceListSimple
-      extraContent={resourceData.map(i => (
+      extraContent={resourceData.map((i) => (
         <div>
           <h5>{i.id}</h5>
           <Bee32 />

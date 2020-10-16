@@ -10,10 +10,16 @@ const { iotPrefix, prefix } = settings;
 describe('TableCellRenderer', () => {
   const cellText = 'This text is not actually measured';
 
-  const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
-  const originalScrollWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
+  const originalOffsetWidth = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    'offsetWidth'
+  );
+  const originalScrollWidth = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    'scrollWidth'
+  );
 
-  const setOffsetWidth = width => {
+  const setOffsetWidth = (width) => {
     Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
       writable: false,
       configurable: true,
@@ -21,7 +27,7 @@ describe('TableCellRenderer', () => {
     });
   };
 
-  const setScrollWidth = width => {
+  const setScrollWidth = (width) => {
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
       writable: false,
       configurable: true,
@@ -30,8 +36,16 @@ describe('TableCellRenderer', () => {
   };
 
   afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
-    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+    Object.defineProperty(
+      HTMLElement.prototype,
+      'offsetWidth',
+      originalOffsetWidth
+    );
+    Object.defineProperty(
+      HTMLElement.prototype,
+      'scrollWidth',
+      originalScrollWidth
+    );
   });
 
   it('truncates only for truncateCellText={true}', () => {
@@ -40,14 +54,18 @@ describe('TableCellRenderer', () => {
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(1);
 
     const wrapper2 = mount(
       <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+    expect(
+      wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(0);
   });
 
   it('does not truncat when wrapText={always}', () => {
@@ -56,7 +74,9 @@ describe('TableCellRenderer', () => {
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(0);
   });
 
   it('does not allow wrap when wrapText={never}', () => {
@@ -65,7 +85,9 @@ describe('TableCellRenderer', () => {
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)
+    ).toHaveLength(1);
   });
 
   it('allows wrap when wrapText={always}', () => {
@@ -74,7 +96,9 @@ describe('TableCellRenderer', () => {
         {cellText}
       </TableCellRenderer>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(0);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)
+    ).toHaveLength(0);
   });
 
   it('only truncates children that are strings, numbers or booleans', () => {
@@ -106,7 +130,9 @@ describe('TableCellRenderer', () => {
         </tbody>
       </table>
     );
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(3);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(3);
   });
 
   it('only shows tooltip if text is actually truncated', () => {
@@ -119,8 +145,12 @@ describe('TableCellRenderer', () => {
       </TableCellRenderer>
     );
     expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)
+    ).toHaveLength(1);
 
     setOffsetWidth(20);
     setScrollWidth(10);
@@ -130,8 +160,12 @@ describe('TableCellRenderer', () => {
       </TableCellRenderer>
     );
     expect(wrapper2.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper2.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(
+      wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(1);
+    expect(
+      wrapper2.find(`.${iotPrefix}--table__cell-text--no-wrap`)
+    ).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);
@@ -148,8 +182,12 @@ describe('TableCellRenderer', () => {
       </TableCellRenderer>
     );
     expect(wrapper.find(`.${prefix}--tooltip__label`)).toHaveLength(0);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
-    expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)
+    ).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)
+    ).toHaveLength(1);
 
     setOffsetWidth(0);
     setScrollWidth(0);

@@ -56,9 +56,15 @@ const AsyncTable = ({ fetchData, id }) => {
       let firstNameFilterValue;
       let lastNameFilterValue;
       if (state.view.filters) {
-        const firstNameFilter = state.view.filters.find(f => f.columnId === 'firstName');
-        firstNameFilterValue = firstNameFilter ? firstNameFilter.value : undefined;
-        const lastNameFilter = state.view.filters.find(f => f.columnId === 'lastName');
+        const firstNameFilter = state.view.filters.find(
+          (f) => f.columnId === 'firstName'
+        );
+        firstNameFilterValue = firstNameFilter
+          ? firstNameFilter.value
+          : undefined;
+        const lastNameFilter = state.view.filters.find(
+          (f) => f.columnId === 'lastName'
+        );
         lastNameFilterValue = lastNameFilter ? lastNameFilter.value : undefined;
       }
 
@@ -89,7 +95,9 @@ const AsyncTable = ({ fetchData, id }) => {
       // NOTE: (unless this is the first fetch, in which case we don't have totalItems
       // and definitely need to load some results)
       const requestedUpToCapped =
-        totalItems === undefined ? requestedUpTo : Math.min(requestedUpTo, totalItems);
+        totalItems === undefined
+          ? requestedUpTo
+          : Math.min(requestedUpTo, totalItems);
 
       // We have already loaded results in to memory up to this index
       const loadedUpTo = state.data.length;
@@ -109,7 +117,7 @@ const AsyncTable = ({ fetchData, id }) => {
           firstNameFilterValue,
           lastNameFilterValue,
           sortSpec
-        ).then(data => {
+        ).then((data) => {
           // map the results into a form suitable for the table data field
           const tableData = data.results.map((r, idx) => ({
             id: `${loadedUpTo + idx}`,
@@ -148,12 +156,12 @@ const AsyncTable = ({ fetchData, id }) => {
   // action is dispatched as the user interacts with the table's components
   const actions = {
     pagination: {
-      onChangePage: paginationValues => {
+      onChangePage: (paginationValues) => {
         dispatch(baseTableActions.tablePageChange(paginationValues));
       },
     },
     toolbar: {
-      onApplyFilter: filterValues => {
+      onApplyFilter: (filterValues) => {
         dispatch(baseTableActions.tableFilterApply(filterValues));
       },
       onToggleFilter: () => {
@@ -168,28 +176,28 @@ const AsyncTable = ({ fetchData, id }) => {
       onCancelBatchAction: () => {
         dispatch(baseTableActions.tableActionCancel());
       },
-      onApplyBatchAction: actionId => {
+      onApplyBatchAction: (actionId) => {
         dispatch(baseTableActions.tableActionApply(actionId));
       },
-      onApplySearch: string => {
+      onApplySearch: (string) => {
         dispatch(baseTableActions.tableSearchApply(string));
       },
     },
     table: {
-      onChangeSort: column => {
+      onChangeSort: (column) => {
         dispatch(baseTableActions.tableColumnSort(column, columns));
       },
       onRowSelected: (rowId, isSelected) => {
         dispatch(baseTableActions.tableRowSelect(rowId, isSelected));
       },
 
-      onSelectAll: isSelected => {
+      onSelectAll: (isSelected) => {
         dispatch(baseTableActions.tableRowSelectAll(isSelected));
       },
       onRowExpanded: (rowId, isExpanded) => {
         dispatch(baseTableActions.tableRowExpand(rowId, isExpanded));
       },
-      onChangeOrdering: ordering => {
+      onChangeOrdering: (ordering) => {
         dispatch(baseTableActions.tableColumnOrder(ordering));
       },
 

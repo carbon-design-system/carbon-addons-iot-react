@@ -98,8 +98,8 @@ const PageWizard = ({
   isClickable,
 }) => {
   const children = ch.length ? ch : [ch];
-  const steps = React.Children.map(children, step => step.props);
-  const currentStepIdx = steps.findIndex(i => i.id === currentStepId);
+  const steps = React.Children.map(children, (step) => step.props);
+  const currentStepIdx = steps.findIndex((i) => i.id === currentStepId);
 
   const hasPrev = currentStepIdx !== 0;
   const hasNext = currentStepIdx !== steps.length - 1;
@@ -130,31 +130,41 @@ const PageWizard = ({
    */
   const newItemsArray = () => {
     const array = [];
-    steps.forEach(({ id, label, secondaryLabel, description, subStep, disabled, invalid }) => {
-      if (!subStep) {
-        array.push({
-          ...(id && { id }),
-          ...(label && { label }),
-          ...(secondaryLabel && { secondaryLabel }),
-          ...(description && { description }),
-          ...(disabled && { disabled }),
-          ...(invalid && { invalid }),
-        });
-      } else {
-        const lastMainStep = array[array.length - 1];
-        if (!('children' in lastMainStep)) {
-          lastMainStep.children = [];
+    steps.forEach(
+      ({
+        id,
+        label,
+        secondaryLabel,
+        description,
+        subStep,
+        disabled,
+        invalid,
+      }) => {
+        if (!subStep) {
+          array.push({
+            ...(id && { id }),
+            ...(label && { label }),
+            ...(secondaryLabel && { secondaryLabel }),
+            ...(description && { description }),
+            ...(disabled && { disabled }),
+            ...(invalid && { invalid }),
+          });
+        } else {
+          const lastMainStep = array[array.length - 1];
+          if (!('children' in lastMainStep)) {
+            lastMainStep.children = [];
+          }
+          lastMainStep.children.push({
+            ...(id && { id }),
+            ...(label && { label }),
+            ...(secondaryLabel && { secondaryLabel }),
+            ...(description && { description }),
+            ...(disabled && { disabled }),
+            ...(invalid && { invalid }),
+          });
         }
-        lastMainStep.children.push({
-          ...(id && { id }),
-          ...(label && { label }),
-          ...(secondaryLabel && { secondaryLabel }),
-          ...(description && { description }),
-          ...(disabled && { disabled }),
-          ...(invalid && { invalid }),
-        });
       }
-    });
+    );
     return array;
   };
 
@@ -164,16 +174,14 @@ const PageWizard = ({
         isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : null,
         className,
         hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : null
-      )}
-    >
+      )}>
       {steps.length > 1 ? (
         <div
           className={
             isProgressIndicatorVertical
               ? `${iotPrefix}--page-wizard--progress--vertical`
               : `${iotPrefix}--page-wizard--progress--horizontal`
-          }
-        >
+          }>
           <ProgressIndicator
             items={newItemsArray()}
             currentItemId={currentStepId}
@@ -183,7 +191,9 @@ const PageWizard = ({
           />
         </div>
       ) : null}
-      <div className={`${iotPrefix}--page-wizard--content`}>{currentStepToRender}</div>
+      <div className={`${iotPrefix}--page-wizard--content`}>
+        {currentStepToRender}
+      </div>
     </div>
   );
 };

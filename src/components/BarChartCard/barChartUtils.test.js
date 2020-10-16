@@ -1,6 +1,9 @@
 /* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import {
+  BAR_CHART_LAYOUTS,
+  BAR_CHART_TYPES,
+} from '../../constants/LayoutConstants';
 
 import {
   mapValuesToAxes,
@@ -66,14 +69,24 @@ describe('barChartUtils', () => {
   it('mapValuesToAxes returns axes for non-timebased group charts ', () => {
     // check horizontal layout
     expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, 'city', null, BAR_CHART_TYPES.GROUPED)
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.HORIZONTAL,
+        'city',
+        null,
+        BAR_CHART_TYPES.GROUPED
+      )
     ).toEqual({
       bottomAxesMapsTo: 'value',
       leftAxesMapsTo: 'key',
     });
     // check vertical layout
     expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, 'city', null, BAR_CHART_TYPES.GROUPED)
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.VERTICAL,
+        'city',
+        null,
+        BAR_CHART_TYPES.GROUPED
+      )
     ).toEqual({
       bottomAxesMapsTo: 'key',
       leftAxesMapsTo: 'value',
@@ -83,14 +96,24 @@ describe('barChartUtils', () => {
   it('mapValuesToAxes returns axes for timebased group charts ', () => {
     // check horizontal layout
     expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, 'city', 'timestamp', BAR_CHART_TYPES.GROUPED)
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.HORIZONTAL,
+        'city',
+        'timestamp',
+        BAR_CHART_TYPES.GROUPED
+      )
     ).toEqual({
       bottomAxesMapsTo: 'value',
       leftAxesMapsTo: 'date',
     });
     // check vertical layout
     expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, 'city', 'timestamp', BAR_CHART_TYPES.GROUPED)
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.VERTICAL,
+        'city',
+        'timestamp',
+        BAR_CHART_TYPES.GROUPED
+      )
     ).toEqual({
       bottomAxesMapsTo: 'date',
       leftAxesMapsTo: 'value',
@@ -100,18 +123,28 @@ describe('barChartUtils', () => {
   it('mapValuesToAxes returns axes for non-timebased and non-group charts AKA simple', () => {
     // check horizontal layout
     expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, null, null, BAR_CHART_TYPES.SIMPLE)
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.HORIZONTAL,
+        null,
+        null,
+        BAR_CHART_TYPES.SIMPLE
+      )
     ).toEqual({
       bottomAxesMapsTo: 'value',
       leftAxesMapsTo: 'group',
     });
     // check vertical layout
-    expect(mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, null, null, BAR_CHART_TYPES.SIMPLE)).toEqual(
-      {
-        bottomAxesMapsTo: 'group',
-        leftAxesMapsTo: 'value',
-      }
-    );
+    expect(
+      mapValuesToAxes(
+        BAR_CHART_LAYOUTS.VERTICAL,
+        null,
+        null,
+        BAR_CHART_TYPES.SIMPLE
+      )
+    ).toEqual({
+      bottomAxesMapsTo: 'group',
+      leftAxesMapsTo: 'value',
+    });
   });
 
   it('formatChartData returns formatted data for group-based chart', () => {
@@ -125,7 +158,7 @@ describe('barChartUtils', () => {
     expect(
       formatChartData(
         series,
-        barChartData.quarters.filter(a => a.quarter === '2020-Q3'),
+        barChartData.quarters.filter((a) => a.quarter === '2020-Q3'),
         'city',
         null,
         BAR_CHART_TYPES.GROUPED
@@ -169,7 +202,7 @@ describe('barChartUtils', () => {
     expect(
       formatChartData(
         series,
-        barChartData.timestamps.filter(t => t.city === 'Amsterdam'),
+        barChartData.timestamps.filter((t) => t.city === 'Amsterdam'),
         null,
         'timestamp',
         BAR_CHART_TYPES.STACKED
@@ -236,7 +269,7 @@ describe('barChartUtils', () => {
     expect(
       formatChartData(
         series,
-        barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
+        barChartData.quarters.filter((q) => q.quarter === '2020-Q1'),
         'city',
         null,
         BAR_CHART_TYPES.SIMPLE
@@ -272,7 +305,7 @@ describe('barChartUtils', () => {
     expect(
       formatChartData(
         series,
-        barChartData.timestamps.filter(t => t.city === 'Amsterdam'),
+        barChartData.timestamps.filter((t) => t.city === 'Amsterdam'),
         null,
         'timestamp',
         BAR_CHART_TYPES.SIMPLE
@@ -320,12 +353,29 @@ describe('barChartUtils', () => {
       },
     ];
     // check horizontal layout
-    expect(formatChartData(series, nullData, 'city', null, BAR_CHART_TYPES.SIMPLE)).toEqual([
+    expect(
+      formatChartData(series, nullData, 'city', null, BAR_CHART_TYPES.SIMPLE)
+    ).toEqual([
       {
         group: 'New York',
         value: 100,
       },
     ]);
+  });
+
+  it('formatChartData returns empty array is series is empty', () => {
+    const series = [];
+    const emptyData = [];
+    // check horizontal layout
+    expect(
+      formatChartData(
+        series,
+        emptyData,
+        undefined,
+        null,
+        BAR_CHART_TYPES.SIMPLE
+      )
+    ).toEqual([]);
   });
 
   it('formatColors returns correct format if color is string', () => {
@@ -551,7 +601,7 @@ describe('barChartUtils', () => {
         'timestamp',
         null,
         BAR_CHART_TYPES.SIMPLE,
-        barChartData.timestamps.filter(t => t.city === 'Amsterdam'),
+        barChartData.timestamps.filter((t) => t.city === 'Amsterdam'),
         formattedTimebasedChartData
       )
     ).toEqual([
@@ -623,7 +673,7 @@ describe('barChartUtils', () => {
         null,
         'city',
         BAR_CHART_TYPES.GROUPED,
-        barChartData.quarters.filter(a => a.quarter === '2020-Q3'),
+        barChartData.quarters.filter((a) => a.quarter === '2020-Q3'),
         groupedFormattedData
       )
     ).toEqual([
@@ -687,7 +737,7 @@ describe('barChartUtils', () => {
         null,
         'city',
         BAR_CHART_TYPES.SIMPLE,
-        barChartData.quarters.filter(a => a.quarter === '2020-Q3'),
+        barChartData.quarters.filter((a) => a.quarter === '2020-Q3'),
         simpleFormattedData
       )
     ).toEqual([
@@ -732,7 +782,10 @@ describe('barChartUtils', () => {
   </li></ul>`;
 
     expect(
-      handleTooltip(simpleFormattedData, defaultTooltip, undefined).replace(/\s+/g, '')
+      handleTooltip(simpleFormattedData, defaultTooltip, undefined).replace(
+        /\s+/g,
+        ''
+      )
     ).toEqual(
       `<ul class="multi-tooltip"><li>
     <div class="datapoint-tooltip ">
@@ -784,7 +837,10 @@ describe('barChartUtils', () => {
   </li></ul>`;
 
     expect(
-      handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp').replace(/\s+/g, '')
+      handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp').replace(
+        /\s+/g,
+        ''
+      )
     ).toEqual(
       `<ul class="multi-tooltip"><li class="datapoint-tooltip">
             <p class="label">
