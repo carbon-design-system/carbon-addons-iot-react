@@ -1,5 +1,5 @@
 import {
-  SideNav as CarbonSideNavv,
+  SideNav as CarbonSideNav,
   SideNavItems,
   SideNavLink,
   SideNavMenu,

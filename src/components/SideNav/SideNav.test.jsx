@@ -196,4 +196,11 @@ describe('SideNav', () => {
     ).not.toEqual('button');
   });
 
-it('disabled item', () => {mockProps = {links: linksDisabled,};const wrapper = mount(<SideNav {...mockProps} />);// expect(wrapper.find('SideNavLink')).toHaveLength(2);});});
+  it('disabled item', () => {
+    mockProps = {
+      links: linksDisabled,
+    };
+    const wrapper = mount(<SideNav {...mockProps} />);
+    expect(wrapper.find('SideNavLink')).toHaveLength(2);
+  });
+});
