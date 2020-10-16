@@ -301,6 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <a
                   className="bx--side-nav__link"
+                  href="/?path=/story/watson-iot-sidenav--sidenav-component"
                   label="Link 2"
                   onClick={[Function]}
                   title="Link 2"

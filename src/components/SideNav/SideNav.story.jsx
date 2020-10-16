@@ -80,6 +80,7 @@ const links = [
         metaData: {
           label: 'Link 2',
           title: 'Link 2',
+          href: '/?path=/story/watson-iot-sidenav--sidenav-component',
           onClick: action('inner menu click'),
         },
         content: 'Link 2',
