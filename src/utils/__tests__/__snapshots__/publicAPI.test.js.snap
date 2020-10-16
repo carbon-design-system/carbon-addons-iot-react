@@ -16705,6 +16705,8 @@ Map {
       "className": undefined,
       "light": false,
       "name": "",
+      "onClick": [Function],
+      "onKeyDown": [Function],
       "selected": false,
       "size": "default",
     },
@@ -16733,11 +16735,9 @@ Map {
         "type": "oneOfType",
       },
       "onClick": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onKeyDown": Object {
-        "isRequired": true,
         "type": "func",
       },
       "renderIcon": Object {

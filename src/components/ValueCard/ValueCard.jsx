@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
 import { spacing02, spacing03, spacing05 } from '@carbon/layout';
@@ -323,7 +324,7 @@ const ValueCard = ({
             id={id}
             {...others}>
             <ContentWrapper layout={layout}>
-              {dataState ? (
+              {!isNil(dataState) ? (
                 <DataStateRenderer
                   dataState={dataState}
                   size={newSize}

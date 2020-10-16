@@ -119,17 +119,25 @@ const DashboardEditorHeader = ({
               name="fit-to-screen"
               text="Fit to screen"
               renderIcon={Maximize16}
+              index={0}
             />
             <IconSwitch
               name="xlarge"
               text="X-large View"
               renderIcon={Screen16}
+              index={1}
             />
-            <IconSwitch name="large" text="Large View" renderIcon={Laptop16} />
+            <IconSwitch
+              name="large"
+              text="Large View"
+              renderIcon={Laptop16}
+              index={2}
+            />
             <IconSwitch
               name="medium"
               text="Medium view"
               renderIcon={Tablet16}
+              index={3}
             />
           </ContentSwitcher>
         )}
