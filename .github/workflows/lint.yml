@@ -1,10 +1,10 @@
-name: Lint files
+name: Lint
 
 on: [push, pull_request]
 
 jobs:
   lint:
-    name: Lint files
+    name: '`yarn lint`'
     runs-on: ubuntu-latest
 
     steps:
