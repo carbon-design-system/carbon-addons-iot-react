@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelect } from 'downshift';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -18,7 +17,7 @@ const propTypes = {
 
 const defaultPropTypes = {
   hasIconOnly: false,
-  itemToString: item => (item ? item.text : ''),
+  itemToString: null,
   footer: null,
 };
 
@@ -34,7 +33,7 @@ const Dropdown = ({
   const MyDropDown = overrides?.dropdown?.component || CarbonDropDown;
 
   const onSelectionChange = changes => {
-    const { isOpen, item } = changes;
+    const { item } = changes;
 
     if (item) {
       if (item.customAction) {
@@ -59,18 +58,24 @@ const Dropdown = ({
 
             <div className={`${iotPrefix}--dropdown__selected-icon-label`}>
               {React.createElement(itemData.icon)}
-              <div
-                className={classnames(`${iotPrefix}--dropdown__selected-icon-label__content`, {
-                  [`${iotPrefix}--dropdown__selected-icon-label__content--open`]: false,
-                })}
-              >
+              <div className={`${iotPrefix}--dropdown__selected-icon-label__content`}>
                 {itemData.text}
               </div>
             </div>
           </>
         );
       }
-    : itemToString;
+    : itemData => {
+        return itemData.icon === null ? (
+          itemData.text
+        ) : (
+          <div className={`${iotPrefix}--dropdown__label`}>
+            {React.createElement(itemData.icon)}
+
+            <div className={`${iotPrefix}--dropdown__label__content`}>{itemData.text}</div>
+          </div>
+        );
+      };
 
   return (
     <MyDropDown
@@ -81,7 +86,7 @@ const Dropdown = ({
       actions={otherActions}
       onChange={onSelectionChange}
       {...other}
-      itemToString={itemToStringOverride}
+      itemToString={itemToString === null ? itemToStringOverride : itemToString}
     />
   );
 };

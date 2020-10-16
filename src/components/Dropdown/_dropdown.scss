@@ -2,6 +2,10 @@
 
 @import '../../globals/vars';
 
+.#{$prefix}--list-box__menu-item__option {
+  padding: 0;
+}
+
 .#{$iot-prefix}--dropdown__selection-buttons {
   // width: 170px;
 
@@ -66,16 +70,42 @@
   }
 }
 
-.#{$iot-prefix}--dropdown__selected-icon-label {
+.#{$iot-prefix}--dropdown__label {
   display: flex;
+  height: 100%;
 
   > svg {
     min-width: 16px;
     width: 16px;
+    height: 100%;
   }
 
   &__content {
-    margin: auto calc(#{$spacing-03} - 4px);
+    margin: auto 0;
+    margin-left: $spacing-03;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--open {
+      color: $active-ui;
+    }
+  }
+}
+
+.#{$iot-prefix}--dropdown__selected-icon-label {
+  display: flex;
+  height: 100%;
+
+  > svg {
+    min-width: 16px;
+    width: 16px;
+    height: 100%;
+  }
+
+  &__content {
+    // margin: auto calc(#{$spacing-03} - 4px);
+    margin: auto $spacing-03;
 
     overflow: hidden;
     text-overflow: ellipsis;
