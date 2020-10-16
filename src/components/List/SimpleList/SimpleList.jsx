@@ -91,7 +91,6 @@ const SimpleList = ({
   hasPagination,
   onSelect,
   title,
-  onSelect,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
