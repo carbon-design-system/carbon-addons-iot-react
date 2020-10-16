@@ -573,6 +573,11 @@ export const CardPropTypes = {
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
+  /** Optional event handlers */
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  /** Optionally adds tab index to card container */
+  tabIndex: PropTypes.number,
   /** For testing */
   testID: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
