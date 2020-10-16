@@ -27,12 +27,12 @@ function filterForErrors(result) {
 function filterDuplicates(results) {
   let filteredArray = [];
   let isUnique = true;
-  results.forEach(result => {
+  results.forEach((result) => {
     if (filteredArray.length == 0) {
       // if the filtered array is empty then it's automatically unique
       filteredArray.push(result);
     } else {
-      filteredArray.forEach(uniqueResult => {
+      filteredArray.forEach((uniqueResult) => {
         if (uniqueResult.source === result.source) {
           // each result comes from one source
           isUnique = false;
@@ -88,16 +88,24 @@ function createCustomMessage(text) {
   let message = '';
   if (text) {
     if (text.includes('color"')) {
-      const url = URL('https://www.carbondesignsystem.com/guidelines/color/usage');
+      const url = URL(
+        'https://www.carbondesignsystem.com/guidelines/color/usage'
+      );
       message = `\n\t${text}\n\t> Please refer to the Carbon documentation for proper color tokens: ${url}`;
     } else if (text.includes('"margin') || text.includes('"padding')) {
-      const url = URL('https://www.carbondesignsystem.com/guidelines/spacing#spacing-scale');
+      const url = URL(
+        'https://www.carbondesignsystem.com/guidelines/spacing#spacing-scale'
+      );
       message = `\n\t${text}\n\t> Please refer to the Carbon documentation for proper spacing values: ${url}`;
     } else if (text.includes('"font')) {
-      const url = URL('https://www.carbondesignsystem.com/guidelines/typography/productive');
+      const url = URL(
+        'https://www.carbondesignsystem.com/guidelines/typography/productive'
+      );
       message = `\n\t${text}\n\t> Please refer to the Carbon productive typography documentation for proper font values: ${url}`;
     } else if (text.includes('transition')) {
-      const url = URL('https://www.carbondesignsystem.com/guidelines/motion/overview');
+      const url = URL(
+        'https://www.carbondesignsystem.com/guidelines/motion/overview'
+      );
       message = `\n\t${text}\n\t> Please refer to the Carbon motion documentation for transitions: ${url}`;
     }
   }
@@ -114,9 +122,11 @@ function formatError(errors) {
   let errorMsg = '';
   errors.forEach((error, i) => {
     const number = NUMBER(`${i + 1}.`);
-    errorMsg += `${number} \t${generateErrorIcon(error.severity)} \t ${error.line}:${
-      error.column
-    } ${formatTabbing(error)} ${RULE(error.rule)}\n \t${createCustomMessage(error.text)}\n\n`;
+    errorMsg += `${number} \t${generateErrorIcon(error.severity)} \t ${
+      error.line
+    }:${error.column} ${formatTabbing(error)} ${RULE(
+      error.rule
+    )}\n \t${createCustomMessage(error.text)}\n\n`;
   });
 
   return errorMsg;
@@ -135,7 +145,7 @@ function formatter(results) {
     if (filesWithErrors.length > 0) {
       formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
     }
-    filesWithErrors.forEach(result => {
+    filesWithErrors.forEach((result) => {
       const errors = result.warnings;
       const errorMessage = formatError(errors);
       formattedMsg += chalk.bold('Source: ');

@@ -49,10 +49,11 @@ const defaultProps = {
 const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
-  ${props => (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
-  ${props => props.color && `color: ${props.color}`};
+  ${(props) =>
+    (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
+  ${(props) => props.color && `color: ${props.color}`};
   display: flex;
-  ${props => props.isMini && 'align-items: center;'}
+  ${(props) => props.isMini && 'align-items: center;'}
 `;
 
 /** Returns font size in rem */
@@ -71,17 +72,18 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
 
 /** Renders the actual attribute value */
 const AttributeValue = styled.span`
-  line-height: ${props => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
-  font-size: ${props => `${determineFontSize(props)}rem`};
+  line-height: ${(props) =>
+    props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem'};
+  font-size: ${(props) => `${determineFontSize(props)}rem`};
   padding-bottom: ${spacing02};
-  font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
-  ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
+  font-weight: ${(props) => (props.isMini ? 'normal' : 'lighter')};
+  ${(props) => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   /* autoprefixer: ignore next */
-  ${props =>
+  ${(props) =>
     props.allowedToWrap
       ? `white-space: nowrap; text-overflow: ellipsis;`
       : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
-  ${props => !props.hasWords && 'word-break: break-all;'}
+  ${(props) => !props.hasWords && 'word-break: break-all;'}
   overflow: hidden;
 `;
 
@@ -125,7 +127,7 @@ const ValueRenderer = ({
     renderValue = '--';
   }
 
-  const hasWordsCheck = string =>
+  const hasWordsCheck = (string) =>
     typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
   const hasWords = hasWordsCheck(renderValue);
 
@@ -142,8 +144,7 @@ const ValueRenderer = ({
       className={classnames({
         [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
         [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
-      })}
-    >
+      })}>
       <AttributeValue
         size={newSize}
         title={`${value} ${unit || ''}`}
@@ -152,8 +153,7 @@ const ValueRenderer = ({
         isMini={isMini}
         value={value}
         allowedToWrap={allowedToWrap}
-        hasWords={hasWords}
-      >
+        hasWords={hasWords}>
         {renderValue}
       </AttributeValue>
     </Attribute>

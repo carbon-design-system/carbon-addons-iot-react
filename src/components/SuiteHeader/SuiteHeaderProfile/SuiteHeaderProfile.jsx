@@ -1,10 +1,3 @@
-/*
- * Licensed Materials - Property of IBM
- * 5737-M66, 5900-AAA
- * (C) Copyright IBM Corp. 2020 All Rights Reserved.
- * US Government Users Restricted Rights - Use, duplication, or disclosure
- * restricted by GSA ADP Schedule Contract with IBM Corp.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,6 +5,7 @@ import { Button } from '../../../index';
 import { settings } from '../../../constants/Settings';
 
 const defaultProps = {
+  displayName: '',
   i18n: {
     profileTitle: 'Profile',
     profileButton: 'Manage profile',
@@ -20,9 +14,9 @@ const defaultProps = {
 };
 
 const propTypes = {
-  displayName: PropTypes.string.isRequired,
+  displayName: PropTypes.string,
   username: PropTypes.string.isRequired,
-  profileLink: PropTypes.string.isRequired,
+  onProfileClick: PropTypes.func.isRequired,
   onRequestLogout: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     profileTitle: PropTypes.string,
@@ -31,12 +25,18 @@ const propTypes = {
   }),
 };
 
-const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogout, i18n }) => {
+const SuiteHeaderProfile = ({
+  displayName,
+  username,
+  onProfileClick,
+  onRequestLogout,
+  i18n,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-profile`;
   const chipText = (displayName || '')
     .split(' ')
-    .map(i => i.charAt(0))
+    .map((i) => i.charAt(0))
     .join('');
   return (
     <div className={baseClassName}>
@@ -55,10 +55,7 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
           kind="secondary"
           size="small"
           data-testid="suite-header-profile--profile"
-          onClick={() => {
-            window.location.href = profileLink;
-          }}
-        >
+          onClick={onProfileClick}>
           {mergedI18N.profileButton}
         </Button>
       </div>
@@ -66,8 +63,7 @@ const SuiteHeaderProfile = ({ displayName, username, profileLink, onRequestLogou
         <Button
           kind="secondary"
           data-testid="suite-header-profile--logout"
-          onClick={onRequestLogout}
-        >
+          onClick={onRequestLogout}>
           {mergedI18N.logoutButton}
         </Button>
       </div>

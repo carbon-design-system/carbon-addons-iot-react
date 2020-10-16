@@ -9,7 +9,8 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
-  wrapText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+  wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+    .isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */
@@ -17,7 +18,9 @@ const propTypes = {
   renderDataFunction: PropTypes.func,
   columnId: PropTypes.string,
   rowId: PropTypes.string,
-  row: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])),
+  row: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool])
+  ),
 };
 
 const defaultProps = {
@@ -30,7 +33,8 @@ const defaultProps = {
   rowId: null,
 };
 
-const isElementTruncated = element => element.offsetWidth < element.scrollWidth;
+const isElementTruncated = (element) =>
+  element.offsetWidth < element.scrollWidth;
 
 const renderCustomCell = (renderDataFunction, args, className) => {
   const result = renderDataFunction(args);
@@ -56,40 +60,47 @@ const TableCellRenderer = ({
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
-    [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
+    [`${iotPrefix}--table__cell-text--truncate`]:
+      wrapText !== 'always' && truncateCellText,
     [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
   });
 
   const [useTooltip, setUseTooltip] = useState(false);
 
-  const withTooltip = element => {
+  const withTooltip = (element) => {
     return (
       <Tooltip
         showIcon={false}
         triggerText={element}
         triggerId="table-cell-tooltip-trigger"
-        tooltipId="table-cell-tooltip"
-      >
+        tooltipId="table-cell-tooltip">
         {element}
       </Tooltip>
     );
   };
 
-  useEffect(
-    () => {
-      const canBeTruncated =
-        typeof children === 'string' ||
-        typeof children === 'number' ||
-        typeof children === 'boolean';
-      if (canBeTruncated && truncateCellText && allowTooltip && mySpanRef && mySpanRef.current) {
-        setUseTooltip(isElementTruncated(mySpanRef.current));
-      }
-    },
-    [mySpanRef, children, wrapText, truncateCellText, allowTooltip]
-  );
+  useEffect(() => {
+    const canBeTruncated =
+      typeof children === 'string' ||
+      typeof children === 'number' ||
+      typeof children === 'boolean';
+    if (
+      canBeTruncated &&
+      truncateCellText &&
+      allowTooltip &&
+      mySpanRef &&
+      mySpanRef.current
+    ) {
+      setUseTooltip(isElementTruncated(mySpanRef.current));
+    }
+  }, [mySpanRef, children, wrapText, truncateCellText, allowTooltip]);
 
   const cellContent = renderDataFunction ? (
-    renderCustomCell(renderDataFunction, { value: children, columnId, rowId, row }, myClasses)
+    renderCustomCell(
+      renderDataFunction,
+      { value: children, columnId, rowId, row },
+      myClasses
+    )
   ) : typeof children === 'string' || typeof children === 'number' ? (
     <span
       className={myClasses}
@@ -98,8 +109,7 @@ const TableCellRenderer = ({
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children
       }
-      ref={mySpanRef}
-    >
+      ref={mySpanRef}>
       {typeof children === 'number' && locale
         ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
         : children}

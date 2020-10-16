@@ -15,7 +15,9 @@ addParameters({
     theme: theme,
     showRoots: true,
     storySort: (a, b) =>
-      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
+      a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 });
 
@@ -24,6 +26,6 @@ addDecorator(
     inline: false, // Global configuration for the info addon across all of your stories.
   })
 );
-addDecorator(story => <Container story={story} />);
+addDecorator((story) => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);

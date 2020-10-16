@@ -276,7 +276,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
       >
         ResizeObserver
       </a>
-       to detect changes to the container width. This library does not provide a
+       
+      to detect changes to the container width. This library does not provide a
        
       <a
         href="https://www.npmjs.com/package/resize-observer-polyfill"

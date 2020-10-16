@@ -412,7 +412,7 @@ Map {
         },
         "table": Object {
           "expandedIds": Array [],
-          "isSelectAllSelected": false,
+          "isSelectAllSelected": undefined,
           "loadingState": Object {
             "rowCount": 5,
           },
@@ -1022,6 +1022,7 @@ Map {
                   "always",
                   "never",
                   "auto",
+                  "alwaysTruncate",
                 ],
               ],
               "type": "oneOf",
@@ -1721,6 +1722,7 @@ Map {
                   "always",
                   "never",
                   "auto",
+                  "alwaysTruncate",
                 ],
               ],
               "isRequired": true,
@@ -2337,6 +2339,7 @@ Map {
             "always",
             "never",
             "auto",
+            "alwaysTruncate",
           ],
         ],
         "isRequired": true,
@@ -3264,6 +3267,7 @@ Map {
         "submitButtonLabel": "Submit",
       },
       "isClickable": false,
+      "onBack": null,
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -3311,6 +3315,9 @@ Map {
       },
       "isClickable": Object {
         "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
       },
       "onSubmit": Object {
         "isRequired": true,
@@ -4504,6 +4511,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -5177,6 +5185,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -5232,6 +5246,9 @@ Map {
         "type": "bool",
       },
       "size": [Function],
+      "tabIndex": Object {
+        "type": "number",
+      },
       "testID": Object {
         "type": "string",
       },
@@ -5484,26 +5501,32 @@ Map {
           "value": "YEARS",
         },
       ],
+      "light": false,
       "onApply": null,
       "onCancel": null,
       "presets": Array [
         Object {
+          "id": "item-01",
           "label": "Last 30 minutes",
           "offset": 30,
         },
         Object {
+          "id": "item-02",
           "label": "Last 1 hour",
           "offset": 60,
         },
         Object {
+          "id": "item-03",
           "label": "Last 6 hours",
           "offset": 360,
         },
         Object {
+          "id": "item-04",
           "label": "Last 12 hours",
           "offset": 720,
         },
         Object {
+          "id": "item-05",
           "label": "Last 24 hours",
           "offset": 1440,
         },
@@ -5543,6 +5566,9 @@ Map {
                   "timeRangeValue": Object {
                     "args": Array [
                       Object {
+                        "id": Object {
+                          "type": "string",
+                        },
                         "label": Object {
                           "isRequired": true,
                           "type": "string",
@@ -5749,6 +5775,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "onApply": Object {
         "type": "func",
@@ -6411,6 +6440,16 @@ Map {
     },
   },
   "SuiteHeader" => Object {
+    "ROUTE_TYPES": Object {
+      "ABOUT": "ABOUT",
+      "ADMIN": "ADMIN",
+      "APPLICATION": "APPLICATION",
+      "DOCUMENTATION": "DOCUMENTATION",
+      "LOGOUT": "LOGOUT",
+      "NAVIGATOR": "NAVIGATOR",
+      "PROFILE": "PROFILE",
+      "REFERRER": "REFERRER",
+    },
     "defaultProps": Object {
       "appName": null,
       "className": null,
@@ -6431,6 +6470,7 @@ Map {
         "requestEnhancement": "Request enhancement",
         "settingsIcon": "Settings",
         "support": "Support",
+        "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": [Function],
         "switcherLearnMoreLink": "Learn more",
@@ -6440,8 +6480,9 @@ Map {
         "whatsNew": "What's new",
       },
       "isAdminView": false,
+      "onRouteChange": [Function],
       "sideNavProps": null,
-      "surveyLink": null,
+      "surveyData": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -6550,6 +6591,9 @@ Map {
       },
       "isAdminView": Object {
         "type": "bool",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
       "routes": Object {
         "args": Array [
@@ -6667,8 +6711,20 @@ Map {
         "isRequired": true,
         "type": "string",
       },
-      "surveyLink": Object {
-        "type": "string",
+      "surveyData": Object {
+        "args": Array [
+          Object {
+            "privacyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "surveyLink": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "userDisplayName": Object {
         "isRequired": true,
@@ -6682,6 +6738,7 @@ Map {
   },
   "SuiteHeaderProfile" => Object {
     "defaultProps": Object {
+      "displayName": "",
       "i18n": Object {
         "logoutButton": "Log out",
         "profileButton": "Manage profile",
@@ -6690,7 +6747,6 @@ Map {
     },
     "propTypes": Object {
       "displayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "i18n": Object {
@@ -6709,13 +6765,13 @@ Map {
         ],
         "type": "shape",
       },
-      "onRequestLogout": Object {
+      "onProfileClick": Object {
         "isRequired": true,
         "type": "func",
       },
-      "profileLink": Object {
+      "onRequestLogout": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "func",
       },
       "username": Object {
         "isRequired": true,
@@ -6731,6 +6787,7 @@ Map {
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "onRouteChange": [Function],
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
@@ -6783,6 +6840,9 @@ Map {
       "noAccessLink": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
       },
     },
   },
@@ -6855,6 +6915,7 @@ Map {
       "requestEnhancement": "Request enhancement",
       "settingsIcon": "Settings",
       "support": "Support",
+      "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": [Function],
       "switcherLearnMoreLink": "Learn more",
@@ -8244,6 +8305,8 @@ Map {
       "isLazyLoading": false,
       "isLoading": false,
       "layout": "HORIZONTAL",
+      "onBlur": undefined,
+      "onFocus": undefined,
       "onMouseDown": undefined,
       "onMouseUp": undefined,
       "onScroll": undefined,
@@ -8259,6 +8322,7 @@ Map {
         "xs": 144,
       },
       "size": "MEDIUM",
+      "tabIndex": undefined,
       "testID": "Card",
       "timeRange": undefined,
       "title": undefined,
@@ -8879,6 +8943,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -8949,6 +9019,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -9618,6 +9691,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -9764,6 +9843,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -10611,6 +10693,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -10681,6 +10769,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -11469,6 +11560,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -11542,6 +11639,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -12231,6 +12331,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -12301,6 +12407,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -13100,6 +13209,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -13159,6 +13274,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -14007,6 +14125,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -14077,6 +14201,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -14815,6 +14942,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -14885,6 +15018,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -15738,6 +15874,25 @@ Map {
               ],
             },
           },
+          "emptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'No list items to show'",
+            },
+            "description": "content shown if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "union",
+              "value": Array [
+                Object {
+                  "name": "node",
+                },
+                Object {
+                  "name": "string",
+                },
+              ],
+            },
+          },
           "expandedIds": Object {
             "defaultValue": Object {
               "computed": false,
@@ -15860,8 +16015,12 @@ Map {
             },
           },
           "items": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
             "description": "data source of list items",
-            "required": true,
+            "required": false,
             "type": Object {
               "name": "arrayOf",
               "value": Object {
@@ -15947,7 +16106,9 @@ Map {
             "type": Object {
               "computed": true,
               "name": "shape",
-              "value": "import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';",
+              "value": "import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';",
             },
           },
           "search": Object {
@@ -16013,6 +16174,7 @@ Map {
         "buttons": Array [],
         "className": null,
         "editingStyle": null,
+        "emptyState": "No list items to show",
         "expandedIds": Array [],
         "handleSelect": [Function],
         "i18n": Object {
@@ -16025,6 +16187,7 @@ Map {
         "isLargeRow": false,
         "isLoading": false,
         "itemWillMove": [Function],
+        "items": Array [],
         "onItemMoved": [Function],
         "overrides": null,
         "pagination": null,
@@ -16055,6 +16218,19 @@ Map {
             ],
           ],
           "type": "oneOf",
+        },
+        "emptyState": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "node",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
         },
         "expandedIds": Object {
           "args": Array [
@@ -16149,7 +16325,6 @@ Map {
               "type": "shape",
             },
           ],
-          "isRequired": true,
           "type": "arrayOf",
         },
         "onItemMoved": Object {
@@ -16252,6 +16427,7 @@ Map {
     "defaultProps": Object {
       "buttons": Array [],
       "editingStyle": null,
+      "hasPagination": true,
       "hasSearch": false,
       "i18n": Object {
         "items": "%d items",
@@ -16262,6 +16438,7 @@ Map {
       "isLargeRow": false,
       "isLoading": false,
       "onListUpdated": [Function],
+      "onSelect": null,
       "pageSize": null,
     },
     "propTypes": Object {
@@ -16283,6 +16460,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasPagination": Object {
+        "type": "bool",
       },
       "hasSearch": Object {
         "type": "bool",
@@ -16358,6 +16538,9 @@ Map {
       "onListUpdated": Object {
         "type": "func",
       },
+      "onSelect": Object {
+        "type": "func",
+      },
       "pageSize": Object {
         "type": "string",
       },
@@ -16371,6 +16554,7 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "className": undefined,
+      "light": false,
       "name": "",
       "selected": false,
       "size": "default",
@@ -16382,6 +16566,9 @@ Map {
       "index": Object {
         "isRequired": true,
         "type": "number",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "name": Object {
         "args": Array [
@@ -16484,6 +16671,7 @@ Map {
       "items": Array [],
       "light": false,
       "loading": false,
+      "onBlur": null,
       "onInputChange": null,
       "shouldFilterItem": [Function],
       "type": "default",
@@ -16680,6 +16868,9 @@ Map {
       },
       "loading": Object {
         "type": "bool",
+      },
+      "onBlur": Object {
+        "type": "func",
       },
       "onChange": Object {
         "isRequired": true,

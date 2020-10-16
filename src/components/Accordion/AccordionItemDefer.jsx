@@ -5,13 +5,10 @@ const AccordionItemDefer = ({ children, ...props }) => {
   const { open } = props;
   const [openState, setOpenState] = useState(open);
   const [hasEverBeenOpened, setHasEverBeenOpened] = useState(open);
-  useEffect(
-    () => {
-      setOpenState(open);
-    },
-    [open]
-  );
-  const handleToggle = event => {
+  useEffect(() => {
+    setOpenState(open);
+  }, [open]);
+  const handleToggle = (event) => {
     if (props.onHeadingClick) {
       props.onHeadingClick(event);
     }
@@ -19,7 +16,10 @@ const AccordionItemDefer = ({ children, ...props }) => {
     setHasEverBeenOpened(true);
   };
   return (
-    <AccordionItem data-testid="accordion-item-deferred" {...props} onHeadingClick={handleToggle}>
+    <AccordionItem
+      data-testid="accordion-item-deferred"
+      {...props}
+      onHeadingClick={handleToggle}>
       {(openState && children) || (hasEverBeenOpened && children)}
     </AccordionItem>
   );

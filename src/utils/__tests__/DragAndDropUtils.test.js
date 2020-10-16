@@ -55,10 +55,22 @@ describe('componentUtilityFunctions', () => {
       DropLocation.Nested
     );
 
-    newList = moveItemsInList(newList, [newList[0].id], newList[1].id, DropLocation.Nested);
-    newList = moveItemsInList(newList, [newList[0].id], newList[1].id, DropLocation.Nested);
+    newList = moveItemsInList(
+      newList,
+      [newList[0].id],
+      newList[1].id,
+      DropLocation.Nested
+    );
+    newList = moveItemsInList(
+      newList,
+      [newList[0].id],
+      newList[1].id,
+      DropLocation.Nested
+    );
 
-    expect(newList[0].children[0].children[0].children[0].id).toEqual(itemToMove.id);
+    expect(newList[0].children[0].children[0].children[0].id).toEqual(
+      itemToMove.id
+    );
   });
 
   it('move multiple items to top of the list', () => {

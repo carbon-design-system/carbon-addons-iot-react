@@ -13,7 +13,7 @@ const sortOptions = [
 ];
 const selectedSortOption = 'Choose from options';
 
-const getTiles = num => {
+const getTiles = (num) => {
   const tiles = [];
   Array(num)
     .fill(0)
@@ -150,10 +150,10 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
             numRows={number('numRows', 2)}
             hasSort={boolean('hasSort', true)}
             sortOptions={sortOptions}
-            onSort={id => {
+            onSort={(id) => {
               if (id === 'A-Z') {
                 // eslint-disable-next-line func-names
-                tiles.sort(function(a, b) {
+                tiles.sort(function (a, b) {
                   const tileA = a.props.title.toUpperCase();
                   const tileB = b.props.title.toUpperCase();
 
@@ -161,7 +161,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
                 });
               } else if (id === 'Z-A') {
                 // eslint-disable-next-line func-names
-                tiles.sort(function(a, b) {
+                tiles.sort(function (a, b) {
                   const tileA = a.props.title.toUpperCase();
                   const tileB = b.props.title.toUpperCase();
 
@@ -172,10 +172,14 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
             }}
             selectedSortOption={selectedSortOption}
             hasSearch={boolean('hasSearch', true)}
-            onSearch={evt => {
+            onSearch={(evt) => {
               const searchTerm = evt.target.value;
-              const searchFilteredTiles = tiles.filter(tile => {
-                return tile.props.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
+              const searchFilteredTiles = tiles.filter((tile) => {
+                return (
+                  tile.props.title
+                    .toLowerCase()
+                    .search(searchTerm.toLowerCase()) !== -1
+                );
               });
               setTiles(searchFilteredTiles);
             }}
