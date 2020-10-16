@@ -108,8 +108,9 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
     }));
 
 const buttonsToRender = [
-  <Edit16 />,
+  <Edit16 key="basic-simplelist-edit" />,
   <Button
+    key="basic-simplelist-close"
     renderIcon={Close16}
     hasIconOnly
     kind="secondary"
@@ -117,7 +118,13 @@ const buttonsToRender = [
     onClick={() => {}}
     iconDescription="Close"
   />,
-  <Button renderIcon={Add16} hasIconOnly size="small" iconDescription="Add" />,
+  <Button
+    key="basic-simplelist-add"
+    renderIcon={Add16}
+    hasIconOnly
+    size="small"
+    iconDescription="Add"
+  />,
 ];
 
 storiesOf('Watson IoT Experimental/SimpleList', module)
