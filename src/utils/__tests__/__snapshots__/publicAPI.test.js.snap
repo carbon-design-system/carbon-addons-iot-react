@@ -16340,6 +16340,7 @@ Map {
     "defaultProps": Object {
       "buttons": Array [],
       "editingStyle": null,
+      "hasPagination": true,
       "hasSearch": false,
       "i18n": Object {
         "items": "%d items",
@@ -16350,6 +16351,7 @@ Map {
       "isLargeRow": false,
       "isLoading": false,
       "onListUpdated": [Function],
+      "onSelect": null,
       "pageSize": null,
     },
     "propTypes": Object {
@@ -16371,6 +16373,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hasPagination": Object {
+        "type": "bool",
       },
       "hasSearch": Object {
         "type": "bool",
@@ -16444,6 +16449,9 @@ Map {
         "type": "arrayOf",
       },
       "onListUpdated": Object {
+        "type": "func",
+      },
+      "onSelect": Object {
         "type": "func",
       },
       "pageSize": Object {
