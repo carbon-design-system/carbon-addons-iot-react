@@ -4511,6 +4511,7 @@ Map {
       "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
       "tooltipDateFormatPattern": "L HH:mm:ss",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
