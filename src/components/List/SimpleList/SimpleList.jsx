@@ -52,7 +52,7 @@ const propTypes = {
   /** callback function returned a modified list */
   onListUpdated: PropTypes.func,
   /** optionally renders SimplePagination at the bottom of the list */
-  showPagination: PropTypes.bool,
+  hasPagination: PropTypes.bool,
   /** Optional callback when a item is selected.
    * OnSelect(itemId, parentItemId)
    */
@@ -73,7 +73,7 @@ const defaultProps = {
   isFullHeight: false,
   isLoading: false,
   pageSize: null,
-  showPagination: true,
+  hasPagination: true,
   onSelect: null,
 };
 
@@ -88,7 +88,7 @@ const SimpleList = ({
   items,
   onListUpdated,
   pageSize,
-  showPagination,
+  hasPagination,
   onSelect,
   title,
 }) => {
@@ -225,7 +225,7 @@ const SimpleList = ({
       i18n={mergedI18n}
       isFullHeight={isFullHeight}
       items={pageSize != null ? itemsToShow : filteredItems}
-      pagination={showPagination ? pagination : null}
+      pagination={hasPagination ? pagination : null}
       selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
       handleSelect={handleSelect}
       isLargeRow={isLargeRow}

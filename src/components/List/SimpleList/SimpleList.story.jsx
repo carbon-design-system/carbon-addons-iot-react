@@ -445,13 +445,13 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           buttons={buttonsToRender}
           items={getListItems(5)}
           isLoading={boolean('isLoading', false)}
-          showPagination={false}
+          hasPagination={false}
         />
       </div>
     )),
     {
       info: {
-        text: `Optionally hide the pagination by passing 'showPagination: false'`,
+        text: `Optionally hide the pagination by passing 'hasPagination: false'`,
       },
     }
   );
