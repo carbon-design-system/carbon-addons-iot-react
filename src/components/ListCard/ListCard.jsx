@@ -9,6 +9,7 @@ import {
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
@@ -39,7 +40,13 @@ const ListCard = ({
   };
 
   return (
-    <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
+    <Card
+      id={id}
+      title={title}
+      size={size}
+      onScroll={handleScroll}
+      isEmpty={isEmpty(data)}
+      {...others}>
       <div
         className={classnames('list-card', className)}
         style={{
