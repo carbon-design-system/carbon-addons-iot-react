@@ -124,11 +124,11 @@ CardWrapper.propTypes = {
   onScroll: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  tabIndex: PropTypes.number
+  tabIndex: PropTypes.number,
 };
-CardWrapper.defaultProps = { 
-  id: undefined, 
-  style: undefined, 
+CardWrapper.defaultProps = {
+  id: undefined,
+  style: undefined,
   testID: 'Card',
   onMouseDown: undefined,
   onMouseUp: undefined,
@@ -136,8 +136,8 @@ CardWrapper.defaultProps = {
   onTouchStart: undefined,
   onScroll: undefined,
   onFocus: undefined,
-  onBlur: undefined, 
-  tabIndex: undefined 
+  onBlur: undefined,
+  tabIndex: undefined,
 };
 CardContent.propTypes = {
   children: PropTypes.node,
@@ -214,7 +214,7 @@ export const defaultProps = {
   onTouchStart: undefined,
   onScroll: undefined,
   onFocus: undefined,
-  onBlur: undefined, 
+  onBlur: undefined,
   tabIndex: undefined,
   testID: CardWrapper.defaultProps.testID,
 };
