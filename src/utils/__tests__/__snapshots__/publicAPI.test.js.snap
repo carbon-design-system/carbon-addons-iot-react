@@ -5185,6 +5185,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -5240,6 +5246,9 @@ Map {
         "type": "bool",
       },
       "size": [Function],
+      "tabIndex": Object {
+        "type": "number",
+      },
       "testID": Object {
         "type": "string",
       },
@@ -8296,6 +8305,8 @@ Map {
       "isLazyLoading": false,
       "isLoading": false,
       "layout": "HORIZONTAL",
+      "onBlur": undefined,
+      "onFocus": undefined,
       "onMouseDown": undefined,
       "onMouseUp": undefined,
       "onScroll": undefined,
@@ -8311,6 +8322,7 @@ Map {
         "xs": 144,
       },
       "size": "MEDIUM",
+      "tabIndex": undefined,
       "testID": "Card",
       "timeRange": undefined,
       "title": undefined,
@@ -8931,6 +8943,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -9001,6 +9019,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -9670,6 +9691,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -9816,6 +9843,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -10660,6 +10690,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -10730,6 +10766,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -11518,6 +11557,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -11591,6 +11636,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -12280,6 +12328,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -12350,6 +12404,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -13149,6 +13206,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -13208,6 +13271,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -14056,6 +14122,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -14126,6 +14198,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
@@ -14864,6 +14939,12 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -14934,6 +15015,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
       "testID": Object {
         "type": "string",
