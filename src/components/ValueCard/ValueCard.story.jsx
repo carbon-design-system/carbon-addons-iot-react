@@ -1277,8 +1277,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -1293,7 +1292,7 @@ storiesOf('Watson IoT/ValueCard', module)
           breakpoint="lg"
           size={size}
           values={{ occupancy: number('occupancy', 88) }}
-          customFormatter={formattedValue => {
+          customFormatter={(formattedValue) => {
             return text('Custom Value', formattedValue);
           }}
         />

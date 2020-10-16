@@ -131,7 +131,9 @@ const ValueRenderer = ({
     typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
   const hasWords = hasWordsCheck(renderValue);
 
-  renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
+  renderValue = isNil(customFormatter)
+    ? renderValue
+    : customFormatter(renderValue, value);
 
   return (
     <Attribute
