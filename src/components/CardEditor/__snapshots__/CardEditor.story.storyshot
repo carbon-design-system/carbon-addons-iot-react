@@ -810,6 +810,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--list-item--content"
                   >
                     <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Value / KPI"
+                        src="value-kpi.svg"
+                      />
+                    </div>
+                    <div
                       className="iot--list-item--content--values"
                     >
                       <div
@@ -817,9 +825,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <div
                           className="iot--list-item--content--values--value"
-                          title="BAR"
+                          title="Value / KPI"
                         >
-                          BAR
+                          Value / KPI
                         </div>
                       </div>
                     </div>
@@ -860,46 +868,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           title="Time series line"
                         >
                           Time series line
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--list-item-parent"
-                data-floating-menu-container={true}
-              >
-                <div
-                  className="iot--list-item iot--list-item__selectable"
-                  data_testid={null}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--list-item--content"
-                  >
-                    <div
-                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                    >
-                      <img
-                        alt="Value / KPI"
-                        src="value-kpi.svg"
-                      />
-                    </div>
-                    <div
-                      className="iot--list-item--content--values"
-                    >
-                      <div
-                        className="iot--list-item--content--values--main"
-                      >
-                        <div
-                          className="iot--list-item--content--values--value"
-                          title="Value / KPI"
-                        >
-                          Value / KPI
                         </div>
                       </div>
                     </div>
@@ -980,6 +948,126 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           title="Data table"
                         >
                           Data table
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Simple bar"
+                        src="simple-bar-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Simple bar"
+                        >
+                          Simple bar
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Grouped bar"
+                        src="bar-grouped-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Grouped bar"
+                        >
+                          Grouped bar
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Stacked bar"
+                        src="bar-stack-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Stacked bar"
+                        >
+                          Stacked bar
                         </div>
                       </div>
                     </div>

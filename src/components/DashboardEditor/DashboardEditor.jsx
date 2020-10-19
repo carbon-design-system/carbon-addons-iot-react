@@ -64,6 +64,7 @@ const propTypes = {
     openGalleryButton: PropTypes.string,
     closeGalleryButton: PropTypes.string,
     openJSONButton: PropTypes.string,
+    searchPlaceholderText: PropTypes.string,
   }),
 };
 
@@ -72,7 +73,7 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
-  supportedCardTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
+  supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
@@ -97,6 +98,7 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
+    searchPlaceholderText: 'Enter a value',
   },
 };
 
@@ -233,7 +235,7 @@ const DashboardEditor = ({
             })
           }
           onAddCard={addCard}
-          supportedTypes={supportedCardTypes}
+          supportedCardTypes={supportedCardTypes}
           i18n={mergedI18n}
         />
       </div>

@@ -20,10 +20,11 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
-  supportedTypes: PropTypes.arrayOf(PropTypes.string),
+  supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     openGalleryButton: PropTypes.string,
+    searchPlaceholderText: PropTypes.string,
   }),
 };
 
@@ -34,8 +35,9 @@ const defaultProps = {
     openGalleryButton: 'Add card',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
+    searchPlaceholderText: 'Enter a search',
   },
-  supportedTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
+  supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -45,7 +47,7 @@ const CardEditor = ({
   onShowGallery,
   onChange,
   onAddCard,
-  supportedTypes,
+  supportedCardTypes,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -71,7 +73,7 @@ const CardEditor = ({
         {showGallery ? (
           <CardGalleryList
             onAddCard={onAddCard}
-            supportedTypes={supportedTypes}
+            supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
           />
         ) : (

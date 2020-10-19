@@ -15,7 +15,7 @@ import alertTableImg from './alert-table.svg';
 import listImg from './list.svg';
 
 const propTypes = {
-  supportedTypes: PropTypes.arrayOf(PropTypes.string),
+  supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   onAddCard: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -34,7 +34,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  supportedTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
+  supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   i18n: {
     galleryHeader: 'Gallery',
     searchPlaceHolderText: 'Enter a search',
@@ -65,15 +65,15 @@ const iconTypeMap = {
   LIST: <img src={listImg} alt="List" />,
 };
 
-const CardGalleryList = ({ supportedTypes, onAddCard, i18n }) => {
-  const mergedI18n = { ...i18n, ...defaultProps.i18n };
+const CardGalleryList = ({ supportedCardTypes, onAddCard, i18n }) => {
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
   return (
     <SimpleList
       title={mergedI18n.galleryHeader}
       isFullHeight
       hasSearch
       hasPagination={false}
-      items={supportedTypes.map((cardType) => ({
+      items={supportedCardTypes.map((cardType) => ({
         id: cardType,
         content: {
           value: mergedI18n[`cardType_${cardType}`] || cardType,

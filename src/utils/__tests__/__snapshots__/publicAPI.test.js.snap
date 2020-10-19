@@ -7868,6 +7868,7 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a value",
       },
       "initialValue": Object {
         "cards": Array [],
@@ -7883,16 +7884,13 @@ Map {
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
+        "VALUE",
         "TIMESERIES",
+        "IMAGE",
+        "TABLE",
         "SIMPLE_BAR",
         "GROUPED_BAR",
         "STACKED_BAR",
-        "VALUE",
-        "IMAGE",
-        "TABLE",
-        "ALERT",
-        "LIST",
-        "CUSTOM",
       ],
       "title": null,
     },
@@ -7942,6 +7940,9 @@ Map {
               "type": "string",
             },
             "openJSONButton": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
               "type": "string",
             },
           },
@@ -8009,13 +8010,16 @@ Map {
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a search",
       },
-      "supportedTypes": Array [
-        "BAR",
-        "TIMESERIES",
+      "supportedCardTypes": Array [
         "VALUE",
+        "TIMESERIES",
         "IMAGE",
         "TABLE",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
       ],
     },
     "propTypes": Object {
@@ -8029,6 +8033,9 @@ Map {
               "type": "string",
             },
             "openGalleryButton": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
               "type": "string",
             },
           },
@@ -8047,7 +8054,7 @@ Map {
         "isRequired": true,
         "type": "func",
       },
-      "supportedTypes": Object {
+      "supportedCardTypes": Object {
         "args": Array [
           Object {
             "type": "string",
@@ -16594,7 +16601,6 @@ Map {
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
-      "showPagination": true,
     },
     "propTypes": Object {
       "buttons": Object {
@@ -16698,9 +16704,6 @@ Map {
       },
       "pageSize": Object {
         "type": "string",
-      },
-      "showPagination": Object {
-        "type": "bool",
       },
       "title": Object {
         "isRequired": true,
