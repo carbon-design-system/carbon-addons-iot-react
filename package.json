@@ -260,7 +260,7 @@
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-uglify": "^6.0.4",
     "sass-loader": "^7.1.0",
-    "semantic-release": "^16.0.0-beta.39",
+    "semantic-release": "^17.2.1",
     "storybook-addon-rtl": "^0.2.2",
     "storybook-readme": "^5.0.8",
     "style-loader": "^0.23.1",
