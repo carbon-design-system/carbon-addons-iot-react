@@ -586,4 +586,43 @@ describe('TableCard', () => {
     expect(screen.queryAllByText(/^Medium$/g)).toHaveLength(1);
     expect(screen.queryAllByText(/^Lowest$/g)).toHaveLength(5);
   });
+  it('can be resized without crashing', () => {
+    const { rerender } = render(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    expect(screen.getByText('Testing resize')).toBeInTheDocument();
+  });
 });
