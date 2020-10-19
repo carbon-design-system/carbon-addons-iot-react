@@ -7,7 +7,7 @@
 }
 
 .#{$iot-prefix}--dropdown__selection-buttons {
-  // width: 170px;
+  width: 175px;
 
   > .#{$prefix}--list-box__field {
     padding: 0 $spacing-09 0 $spacing-03;
@@ -73,6 +73,7 @@
 .#{$iot-prefix}--dropdown__label {
   display: flex;
   height: 100%;
+  padding: $spacing-04 0;
 
   > svg {
     min-width: 16px;
@@ -104,7 +105,6 @@
   }
 
   &__content {
-    // margin: auto calc(#{$spacing-03} - 4px);
     margin: auto $spacing-03;
 
     overflow: hidden;

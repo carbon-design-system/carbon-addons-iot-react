@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
@@ -20,7 +20,46 @@ export {
   default as DropdownStory,
 } from 'carbon-components-react/lib/components/Dropdown/Dropdown-story';
 
-const items = [
+export const items = [
+  {
+    id: 'option-0',
+    text: 'Option 0',
+  },
+  {
+    id: 'option-1',
+    text: 'Option 1',
+  },
+  {
+    id: 'option-2',
+    text: 'Option 2',
+  },
+  {
+    id: 'option-3',
+    text: 'Option 3',
+  },
+  {
+    id: 'option-4',
+    text: 'Option 4',
+  },
+  {
+    id: 'option-5',
+    text: 'Option 5',
+  },
+  {
+    id: 'option-6',
+    text: 'Option 6',
+  },
+  {
+    id: 'option-7',
+    text: 'Option 7',
+  },
+  {
+    id: 'option-8',
+    text: 'Option 8',
+  },
+];
+
+export const itemsWithIcons = [
   {
     id: 'option-0',
     icon: ChartColumnFloating32,
@@ -69,7 +108,6 @@ const items = [
 ];
 
 storiesOf('Watson IoT/Dropdown', module)
-  // .addDecorator(withKnobs)
   .add('default', () => {
     return React.createElement(() => {
       const [selectedViewId, setSelectedViewId] = useState(items[1].id);
@@ -77,6 +115,7 @@ storiesOf('Watson IoT/Dropdown', module)
       return (
         <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
           <Dropdown
+            id="dropdown-1"
             items={items}
             selectedViewId={selectedViewId}
             actions={{
@@ -86,9 +125,29 @@ storiesOf('Watson IoT/Dropdown', module)
               },
             }}
             label="Dropdown menu options"
+          />
+        </div>
+      );
+    });
+  })
+  .add('default with icons', () => {
+    return React.createElement(() => {
+      const [selectedViewId, setSelectedViewId] = useState(itemsWithIcons[1].id);
+
+      return (
+        <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
+          <Dropdown
+            id="dropdown-1"
+            items={itemsWithIcons}
+            selectedViewId={selectedViewId}
+            actions={{
+              onChangeView: viewItem => {
+                setSelectedViewId(viewItem.id);
+                action('onChangeView')(viewItem);
+              },
+            }}
+            label="Dropdown menu options"
             hasIconsOnly={boolean('has icons only', true)}
-            customFooter={<div>some footer</div>}
-            invalidText="woof"
           />
         </div>
       );
