@@ -21,13 +21,9 @@ cache:
 install:
   - yarn install
   - yarn list
-  - yarn build
 
 script:
-  - yarn format:check
-  - yarn lint
-  - travis_wait yarn test --maxWorkers=2 --ci --logHeapUsage --coverage && cat
-    ./coverage/lcov.info | yarn run coveralls && rm -rf ./coverage # report coveralls status
+  - yarn build
 
 after_success:
   - yarn publish-npm
