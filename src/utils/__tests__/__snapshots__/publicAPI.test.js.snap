@@ -10486,6 +10486,9 @@ Map {
         ],
         "type": "shape",
       },
+      "customFormatter": Object {
+        "type": "func",
+      },
       "dashboardBreakpoints": Object {
         "args": Array [
           Object {

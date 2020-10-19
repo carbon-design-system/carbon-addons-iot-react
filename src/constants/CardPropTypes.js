@@ -87,6 +87,11 @@ export const ValueCardPropTypes = {
       PropTypes.bool,
     ])
   ),
+  /**
+   * Value Card's formatting can be updated at runtime, customFormatter is provided the default formatted value and
+   * the original value and expects a value to be returned that will be rendered on the value card.
+   */
+  customFormatter: PropTypes.func,
 };
 
 export const TableCardPropTypes = {
