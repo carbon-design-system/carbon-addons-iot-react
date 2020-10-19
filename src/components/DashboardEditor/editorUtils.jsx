@@ -1,7 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import classNames from 'classnames';
 
 import {
   CARD_SIZES,
@@ -21,8 +20,6 @@ import {
   ListCard,
 } from '../../index';
 import sampleImage from '../CardEditor/CardGalleryList/image.svg';
-
-import { baseClassName } from './DashboardEditor';
 
 /**
  * Returns a duplicate card configuration
@@ -225,7 +222,6 @@ const renderListCard = (cardJson, commonProps) => (
 /**
  * Returns a Card component for preview in the dashboard
  * @param {Object} cardData, the JSON configuration of the card
- * @param {Boolean} isSelected, is the card in a selected state
  * @param {Function} onSelectCard, callback when card is selected for editing
  * @param {Function} onDuplicateCard, callback when card clone button is clicked
  * @param {Function} onRemoveCard, callback when card delete button is clicked
@@ -233,7 +229,6 @@ const renderListCard = (cardJson, commonProps) => (
  */
 export const getCardPreview = (
   cardData,
-  isSelected,
   onSelectCard,
   onDuplicateCard,
   onRemoveCard
@@ -241,13 +236,6 @@ export const getCardPreview = (
   const commonProps = {
     key: cardData.id,
     tooltip: cardData.description,
-    ...(isSelected
-      ? {
-          className: classNames({
-            [`${baseClassName}--preview__selected-card`]: isSelected,
-          }),
-        }
-      : {}),
     availableActions: { clone: true, delete: true },
     onCardAction: (id, actionId) => {
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
@@ -258,7 +246,8 @@ export const getCardPreview = (
       }
     },
     tabIndex: 0,
-    onClick: () => onSelectCard(),
+    onFocus: () => onSelectCard(cardData.id),
+    onBlur: () => onSelectCard(null),
   };
 
   if (!isCardJsonValid(cardData)) {

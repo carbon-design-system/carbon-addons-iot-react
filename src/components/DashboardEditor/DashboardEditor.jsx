@@ -164,6 +164,10 @@ const DashboardEditor = ({
       cards: dashboardJson.cards.filter((i) => i.id !== id),
     });
 
+  const onSelectCard = (id) => setSelectedCardId(id);
+  const onDuplicateCard = (id) => duplicateCard(id);
+  const onRemoveCard = (id) => removeCard(id);
+
   return (
     <div className={baseClassName}>
       <div className={`${baseClassName}--content`}>
@@ -195,23 +199,16 @@ const DashboardEditor = ({
               })
             }>
             {dashboardJson.cards.map((cardData) => {
-              const isSelected = selectedCardId === cardData.id;
-              const onSelectCard = () => setSelectedCardId(cardData.id);
-              const onDuplicateCard = (id) => duplicateCard(id);
-              const onRemoveCard = (id) => removeCard(id);
-
               // if function not defined, or it returns falsy, render default preview
               return (
                 renderCardPreview(
                   cardData,
-                  isSelected,
                   onSelectCard,
                   onDuplicateCard,
                   onRemoveCard
                 ) ??
                 getCardPreview(
                   cardData,
-                  isSelected,
                   onSelectCard,
                   onDuplicateCard,
                   onRemoveCard

@@ -55,12 +55,6 @@
   }
   &--preview {
     flex: 1;
-
-    &__selected-card {
-      border: dotted $spacing-01 $interactive-04;
-      box-sizing: content-box;
-      margin: -$spacing-01;
-    }
   }
   &--sidebar {
     height: 100%;
