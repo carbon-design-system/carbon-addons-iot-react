@@ -3,7 +3,7 @@ filter_secrets: false
 
 stages:
   - name: after_success
-    # require the branch name to be master (note for PRs this is the base branch name) or next
+    # require the branch name to be master or next (note for PRs this is the base branch name)
     if: branch = master OR branch = next
 
 before_install:
