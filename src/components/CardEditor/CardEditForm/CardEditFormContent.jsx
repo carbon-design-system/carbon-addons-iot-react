@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Code16 } from '@carbon/icons-react';
 
 import {
   CARD_TYPES,
@@ -9,12 +8,38 @@ import {
   ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab, Button, TextArea, TextInput, Dropdown } from '../../../index';
-import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
+import { TextArea, TextInput, Dropdown } from '../../../index';
+import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 
 import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
 
 const { iotPrefix } = settings;
+
+const propTypes = {
+  /** card data value */
+  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** card data errors */
+  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Callback function when form data changes */
+  onChange: PropTypes.func.isRequired,
+  i18n: PropTypes.shape({
+    openEditorButton: PropTypes.string,
+  }),
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
+};
 
 const defaultProps = {
   cardJson: {},
@@ -35,20 +60,28 @@ const defaultProps = {
     barChartType_STACKED: 'Stacked',
     barChartLayout_HORIZONTAL: 'Horizontal',
     barChartLayout_VERTICAL: 'Vertical',
-    // additional card type names can be provided using the convention of `cardType_TYPE`
+    cardTitle: 'Card title',
+    description: 'Description (Optional)',
+    size: 'Size',
+    selectASize: 'Select a size',
+    timeRange: 'Time range',
+    selectATimeRange: 'Select a time range',
   },
+  getValidDataItems: null,
+  getValidTimeRanges: null,
+  dataItems: [],
 };
 
-const propTypes = {
-  /** card data value */
-  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** card data errors */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Callback function when form data changes */
-  onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({
-    openEditorButton: PropTypes.string,
-  }),
+export const defaultTimeRangeOptions = {
+  last24Hours: 'Last 24 hrs',
+  last7Days: 'Last 7 days',
+  lastMonth: 'Last month',
+  lastQuarter: 'Last quarter',
+  lastYear: 'Last year',
+  thisWeek: 'This week',
+  thisMonth: 'This month',
+  thisQuarter: 'This quarter',
+  thisYear: 'This year',
 };
 
 /**
@@ -63,41 +96,14 @@ export const getCardSizeText = (size, i18n) => {
   return `${sizeName} ${sizeDimensions}`;
 };
 
-/**
- * Checks for JSON form errors
- * @param {Object} val card JSON text input
- * @param {Function} setError
- * @param {Function} onChange
- * @param {Function} setShowEditor
- */
-export const handleSubmit = (val, setError, onChange, setShowEditor) => {
-  try {
-    let error = false;
-    if (val === '') {
-      setError('JSON value must not be an empty string');
-      error = true;
-    } else {
-      const json = JSON.parse(val);
-      // Check for non-exception throwing cases (false, 1234, null)
-      if (json && typeof json === 'object') {
-        onChange(json);
-        setShowEditor(false);
-      }
-      setError(`${val.substring(0, 8)} is not valid JSON`);
-      error = true;
-    }
-    if (!error) {
-      setError(false);
-      return true;
-    }
-  } catch (e) {
-    setError(e.message);
-    return false;
-  }
-  return false;
-};
-
-const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
+const CardEditFormContent = ({
+  cardJson,
+  onChange,
+  i18n,
+  dataItems,
+  getValidDataItems,
+  getValidTimeRanges,
+}) => {
   const { title, description, size, type } = cardJson;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -108,7 +114,7 @@ const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
       <div className={`${baseClassName}--input`}>
         <TextInput
           id="title"
-          labelText="Card title"
+          labelText={mergedI18n.cardTitle}
           light
           onChange={evt => onChange({ ...cardJson, title: evt.target.value })}
           value={title}
@@ -117,7 +123,7 @@ const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
       <div className={`${baseClassName}--input`}>
         <TextArea
           id="description"
-          labelText="Description (Optional)"
+          labelText={mergedI18n.description}
           light
           onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
           value={description}
@@ -126,7 +132,7 @@ const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
       <div className={`${baseClassName}--input`}>
         <Dropdown
           id="size"
-          label="Select a size"
+          label={mergedI18n.selectASize}
           direction="bottom"
           itemToString={item => item.text}
           items={(ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)).map(cardSize => {
@@ -140,7 +146,7 @@ const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
           onChange={({ selectedItem }) => {
             onChange({ ...cardJson, size: selectedItem.id });
           }}
-          titleText="Size"
+          titleText={mergedI18n.size}
         />
       </div>
       {type === CARD_TYPES.TIMESERIES && (
@@ -148,19 +154,32 @@ const CardEditFormContent = ({ cardJson, onChange, i18n }) => {
           <div className={`${baseClassName}--input`}>
             <Dropdown
               id="timeRange"
-              label="Select a time range"
+              label={mergedI18n.selectATimeRange}
               direction="bottom"
               itemToString={item => item.text}
-              items={[]}
+              items={
+                getValidTimeRanges ||
+                Object.keys(defaultTimeRangeOptions).map(range => ({
+                  id: range,
+                  text: defaultTimeRangeOptions[range],
+                }))
+              }
               light
               //   selectedItem={{}}
               onChange={({ selectedItem }) => {
-                // onChange({ ...cardJson, size: selectedItem.id });
+                const range = timeRangeToJSON[selectedItem.id];
+                onChange({ ...cardJson, dataSource: { ...cardJson.dataSource, range } });
               }}
-              titleText="Time range"
+              titleText={mergedI18n.timeRange}
             />
           </div>
-          <DataSeriesFormItem cardJson={[cardJson]} dataItems={[]} onChange={onChange} />
+          <DataSeriesFormItem
+            cardJson={cardJson}
+            onChange={onChange}
+            dataItems={dataItems}
+            getValidDataItems={getValidDataItems}
+            i18n={mergedI18n}
+          />
         </>
       )}
     </>

@@ -7844,6 +7844,8 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7879,6 +7881,17 @@ Map {
       "title": null,
     },
     "propTypes": Object {
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
       "headerBreadcrumbs": Object {
         "args": Array [
           Object {
@@ -7961,10 +7974,13 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "cardJson": null,
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "i18n": Object {
+        "addCardButton": "Add card",
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
-        "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
       },
       "supportedTypes": Array [
@@ -7974,16 +7990,29 @@ Map {
         "IMAGE",
         "TABLE",
       ],
-      "value": null,
     },
     "propTypes": Object {
+      "cardJson": Object {
+        "type": "object",
+      },
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
       "i18n": Object {
         "args": Array [
           Object {
-            "galleryHeader": Object {
+            "addCardButton": Object {
               "type": "string",
             },
-            "openGalleryButton": Object {
+            "galleryHeader": Object {
               "type": "string",
             },
           },
@@ -8009,9 +8038,6 @@ Map {
           },
         ],
         "type": "arrayOf",
-      },
-      "value": Object {
-        "type": "object",
       },
     },
   },
@@ -10902,6 +10928,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
+      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -11689,6 +11716,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showLegend": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {

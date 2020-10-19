@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Apps16 } from '@carbon/icons-react';
+import isNil from 'lodash/isNil';
 
 import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
@@ -24,6 +25,15 @@ const propTypes = {
   /** Callback function when an image file is uploaded */
   // onAddImage: PropTypes.func.isRequired,
   supportedTypes: PropTypes.arrayOf(PropTypes.string),
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
@@ -40,6 +50,8 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
   },
   supportedTypes: ['BAR', 'TIMESERIES', 'VALUE', 'IMAGE', 'TABLE'],
+  getValidDataItems: null,
+  dataItems: [],
 };
 
 const CardEditor = ({
@@ -49,6 +61,8 @@ const CardEditor = ({
   onAddCard,
   // onAddImage,
   supportedTypes,
+  getValidDataItems,
+  dataItems,
   i18n,
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -56,7 +70,7 @@ const CardEditor = ({
   const baseClassName = `${iotPrefix}--card-editor`;
 
   // show the gallery if no card is being edited
-  const showGallery = cardJson === null || cardJson === undefined;
+  const showGallery = isNil(cardJson);
 
   return (
     <div className={baseClassName}>
@@ -81,7 +95,13 @@ const CardEditor = ({
             i18n={mergedI18N}
           />
         ) : (
-          <CardEditForm cardJson={cardJson} onChange={onChange} /* onAddImage={onAddImage} */ />
+          <CardEditForm
+            cardJson={cardJson}
+            onChange={onChange}
+            dataItems={dataItems}
+            getValidDataItems={getValidDataItems}
+            i18n={mergedI18N}
+          />
         )}
       </div>
     </div>

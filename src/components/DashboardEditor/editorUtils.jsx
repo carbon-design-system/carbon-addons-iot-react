@@ -73,16 +73,7 @@ export const getDefaultCard = type => {
       return {
         ...baseCardProps,
         content: {
-          series: [
-            {
-              label: 'Temperature',
-              dataSourceId: 'temperature',
-            },
-            {
-              label: 'Pressure',
-              dataSourceId: 'pressure',
-            },
-          ],
+          series: [],
           xLabel: 'Time',
           yLabel: 'Temperature (˚F)',
           includeZeroOnXaxis: true,
@@ -91,6 +82,7 @@ export const getDefaultCard = type => {
           addSpaceOnEdges: 1,
         },
         interval: 'day',
+        showLegend: true,
       };
     case CARD_TYPES.BAR:
       return {
@@ -176,6 +168,50 @@ export const getDefaultCard = type => {
 };
 
 /**
+ * maps a selected time range to what is expected in the dashboardJSON
+ */
+export const timeRangeToJSON = {
+  lastHour: { interval: 'hour', count: -1, type: 'rolling' },
+  last2Hours: { interval: 'hour', count: -2, type: 'rolling' },
+  last4Hours: { interval: 'hour', count: -4, type: 'rolling' },
+  last8Hours: { interval: 'hour', count: -8, type: 'rolling' },
+  last24Hours: { interval: 'day', count: -1, type: 'rolling' },
+  last7Days: { interval: 'week', count: -1, type: 'rolling' },
+  lastMonth: { interval: 'month', count: -1, type: 'rolling' },
+  lastQuarter: {
+    interval: 'quarter',
+    count: -1,
+    type: 'rolling',
+  },
+  lastYear: {
+    interval: 'year',
+    count: -1,
+    type: 'rolling',
+  },
+  this24Hours: { interval: 'day', count: -1, type: 'periodToDate' },
+  thisWeek: {
+    interval: 'week',
+    count: -1,
+    type: 'periodToDate',
+  },
+  thisMonth: {
+    interval: 'month',
+    count: -1,
+    type: 'periodToDate',
+  },
+  thisQuarter: {
+    interval: 'quarter',
+    count: -1,
+    type: 'periodToDate',
+  },
+  thisYear: {
+    interval: 'year',
+    count: -1,
+    type: 'periodToDate',
+  },
+};
+
+/**
  * determines if a card JSON is valid depending on its card type
  * @param {Object} cardJson
  * @returns {Boolean}
@@ -247,6 +283,9 @@ const renderTimeSeriesCard = (cardJson, commonProps) => (
     size={cardJson.size}
     content={cardJson?.content}
     isEditable
+    values={[]}
+    showLegend
+    {...cardJson}
     {...commonProps}
   />
 );

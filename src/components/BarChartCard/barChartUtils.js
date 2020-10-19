@@ -242,7 +242,7 @@ export const formatColors = (series, datasetNames) => {
   const colors = { identifier: 'group', scale: {} };
 
   // if color is an array, order doesn't matter so just map as many as possible
-  if (Array.isArray(series[0].color)) {
+  if (series[0] && Array.isArray(series[0].color)) {
     series[0].color.forEach((color, index) => {
       colors.scale[datasetNames[index]] = color;
     });

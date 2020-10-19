@@ -95,12 +95,15 @@ const sideNavLinks = [
   },
 ];
 
+const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
+
 storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
+        dataItems={mockDataItems}
         onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
@@ -154,6 +157,31 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
                   },
                 ],
               },
+            },
+            {
+              id: 'Timeseries',
+              title: 'Untitled',
+              size: 'MEDIUMWIDE',
+              type: 'TIMESERIES',
+              content: {
+                series: [
+                  {
+                    label: 'Temperature',
+                    dataSourceId: 'temperature',
+                  },
+                  {
+                    label: 'Pressure',
+                    dataSourceId: 'pressure',
+                  },
+                ],
+                xLabel: 'Time',
+                yLabel: 'Temperature (˚F)',
+                includeZeroOnXaxis: true,
+                includeZeroOnYaxis: true,
+                timeDataSourceId: 'timestamp',
+                addSpaceOnEdges: 1,
+              },
+              interval: 'day',
             },
           ],
           layouts: {},

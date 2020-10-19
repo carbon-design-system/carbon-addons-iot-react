@@ -102,6 +102,10 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  /** whether or not to show a legend at the bottom of the card
+   * if not explicitly stated, the card will show based on the length of the series
+   */
+  showLegend: PropTypes.bool,
 };
 
 /**
@@ -234,6 +238,7 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
+  showLegend,
   ...others
 }) => {
   const {
@@ -425,7 +430,6 @@ const TimeSeriesCard = ({
 
   // TODO: remove in next release
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
-
   return (
     <Card
       title={title}
@@ -482,7 +486,11 @@ const TimeSeriesCard = ({
                     scaleType: 'linear',
                   },
                 },
-                legend: { position: 'bottom', clickable: !isEditable, enabled: series.length > 1 },
+                legend: {
+                  position: 'bottom',
+                  clickable: !isEditable,
+                  enabled: showLegend ?? series.length > 1,
+                },
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: tooltipValue =>
@@ -582,6 +590,7 @@ TimeSeriesCard.defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  showLegend: null,
 };
 
 export default TimeSeriesCard;

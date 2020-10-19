@@ -16,10 +16,10 @@
     background-color: $ui-02;
   }
   .color-picker {
-    padding-top: $spacing-03;
     .color-picker-button {
-      width: $layout-03;
-      height: $layout-03;
+      // need to leave just enough room for the selected border
+      width: 1.95rem;
+      height: 1.95rem;
       border: solid $spacing-01 $ui-01;
     }
     .color-picker-button__selected {
@@ -41,6 +41,20 @@
   }
   &--input {
     padding-bottom: $spacing-05;
+    &--label {
+      font-size: 0.75;
+    }
+    &--toggle-field {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .#{$prefix}--form-item {
+        flex: 0;
+      }
+      .#{$prefix}--toggle-input__label .#{$prefix}--toggle__switch {
+        margin-top: 0;
+      }
+    }
   }
   &--input-inline {
     padding: 0 $spacing-05 $spacing-05;
@@ -61,5 +75,8 @@
     & > button {
       width: 100%;
     }
+  }
+  .#{$prefix}--modal-container--xs {
+    max-height: none;
   }
 }

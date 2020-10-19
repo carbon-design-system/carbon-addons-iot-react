@@ -30,6 +30,15 @@ const propTypes = {
   notification: PropTypes.node,
   /** if provided, renders edit button next to title linked to this callback */
   onEditTitle: PropTypes.func,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -67,6 +76,8 @@ const defaultProps = {
   notification: null,
   title: null,
   onEditTitle: null,
+  getValidDataItems: null,
+  dataItems: [],
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -92,6 +103,8 @@ const DashboardEditor = ({
   supportedCardTypes,
   renderHeader,
   renderCardPreview,
+  getValidDataItems,
+  dataItems,
   headerBreadcrumbs,
   notification,
   // onAddImage,
@@ -133,6 +146,8 @@ const DashboardEditor = ({
       ...dashboardJson,
       cards: dashboardJson.cards.filter(i => i.id !== id),
     });
+
+  const cardJson = dashboardJson.cards.find(i => i.id === selectedCardId);
 
   return (
     <div className={baseClassName}>
@@ -188,7 +203,7 @@ const DashboardEditor = ({
       </div>
       <div className={`${baseClassName}--sidebar`}>
         <CardEditor
-          value={dashboardJson.cards.find(i => i.id === selectedCardId)}
+          cardJson={cardJson}
           onShowGallery={() => setSelectedCardId(null)}
           onChange={cardData =>
             setDashboardJson({
@@ -196,6 +211,8 @@ const DashboardEditor = ({
               cards: dashboardJson.cards.map(card => (card.id === cardData.id ? cardData : card)),
             })
           }
+          getValidDataItems={getValidDataItems}
+          dataItems={dataItems}
           onAddCard={addCard}
           supportedTypes={supportedCardTypes}
           // onAddImage={onAddImage}
