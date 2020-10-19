@@ -210,11 +210,7 @@ const renderTableCard = (cardJson, commonProps) => (
 );
 
 const renderImageCard = (cardJson, commonProps) => (
-  <ImageCard
-    isEditable={cardJson?.content?.src === undefined}
-    {...cardJson}
-    {...commonProps}
-  />
+  <ImageCard isEditable {...cardJson} {...commonProps} />
 );
 
 /**
