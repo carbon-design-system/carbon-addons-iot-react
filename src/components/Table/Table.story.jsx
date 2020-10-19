@@ -1,4 +1,11 @@
-import React, { useState, useLayoutEffect, useRef, useMemo, useEffect, useCallback } from 'react';
+import React, {
+  useState,
+  useLayoutEffect,
+  useRef,
+  useMemo,
+  useEffect,
+  useCallback,
+} from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -8,7 +15,11 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
+import {
+  Add20,
+  TrashCan16,
+  SettingsAdjust16 as SettingsAdjust,
+} from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import assign from 'lodash/assign';
 import isEqual from 'lodash/isEqual';
@@ -22,7 +33,10 @@ import {
   FormGroup,
   Form,
 } from '../../index';
-import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import {
+  getSortedData,
+  csvDownloadHandler,
+} from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
@@ -63,19 +77,40 @@ const renderStatusIcon = ({ value: status }) => {
     default:
       return (
         <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
+          <circle
+            cx="5"
+            cy="5"
+            r="3"
+            stroke="none"
+            strokeWidth="1"
+            fill="green"
+          />
         </svg>
       );
     case STATUS.NOT_RUNNING:
       return (
         <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="gray" />
+          <circle
+            cx="5"
+            cy="5"
+            r="3"
+            stroke="none"
+            strokeWidth="1"
+            fill="gray"
+          />
         </svg>
       );
     case STATUS.BROKEN:
       return (
         <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+          <circle
+            cx="5"
+            cy="5"
+            r="3"
+            stroke="none"
+            strokeWidth="1"
+            fill="red"
+          />
         </svg>
       );
   }
@@ -83,15 +118,21 @@ const renderStatusIcon = ({ value: status }) => {
 // Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
 const customColumnSort = ({ data, columnId, direction }) => {
   // clone inputData because sort mutates the array
-  const sortedData = data.map(i => i);
+  const sortedData = data.map((i) => i);
   sortedData.sort((a, b) => {
     let compare = -1;
     // same status
     if (a.values[columnId] === b.values[columnId]) {
       compare = 0;
-    } else if (a.values[columnId] === STATUS.RUNNING && b.values[columnId] === STATUS.NOT_RUNNING) {
+    } else if (
+      a.values[columnId] === STATUS.RUNNING &&
+      b.values[columnId] === STATUS.NOT_RUNNING
+    ) {
       compare = -1;
-    } else if (a.values[columnId] === STATUS.NOT_RUNNING && b.values[columnId] === STATUS.RUNNING) {
+    } else if (
+      a.values[columnId] === STATUS.NOT_RUNNING &&
+      b.values[columnId] === STATUS.RUNNING
+    ) {
       compare = 1;
     } else if (b.values[columnId] === STATUS.BROKEN) {
       compare = 1;
@@ -188,7 +229,7 @@ export const tableColumnsWithAlignment = [
   },
 ];
 
-export const tableColumnsFixedWidth = tableColumns.map(i => ({
+export const tableColumnsFixedWidth = tableColumns.map((i) => ({
   ...i,
   width:
     i.id === 'string'
@@ -259,7 +300,7 @@ export const tableColumnsWithOverflowMenu = [
   },
 ];
 
-const defaultOrdering = tableColumns.map(c => ({
+const defaultOrdering = tableColumns.map((c) => ({
   columnId: c.id,
   isHidden: c.id === 'secretField',
 }));
@@ -276,10 +317,12 @@ const words = [
   'pinocchio',
   'scott',
 ];
-const getLetter = index =>
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
+const getLetter = (index) =>
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(
+    index % 62
+  );
 const getWord = (index, step = 1) => words[(step * index) % words.length];
-const getSentence = index =>
+const getSentence = (index) =>
   `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
 const getString = (index, length) =>
   Array(length)
@@ -287,7 +330,7 @@ const getString = (index, length) =>
     .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
     .join('');
 
-const getStatus = idx => {
+const getStatus = (idx) => {
   const modStatus = idx % 3;
   switch (modStatus) {
     case 0:
@@ -300,7 +343,7 @@ const getStatus = idx => {
   }
 };
 
-const getBoolean = index => {
+const getBoolean = (index) => {
   return index % 2 === 0;
 };
 
@@ -344,11 +387,13 @@ const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
     <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(tableData.find(i => i.id === rowId).values).map(([key, value]) => (
-        <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
-        </li>
-      ))}
+      {Object.entries(tableData.find((i) => i.id === rowId).values).map(
+        ([key, value]) => (
+          <li key={`${rowId}-${key}`}>
+            <b>{key}</b>: {value}
+          </li>
+        )
+      )}
     </ul>
   </div>
 );
@@ -448,9 +493,9 @@ export const initialState = {
         labelText: 'Text only sample action',
         isOverflow: true,
       },
-    ].filter(i => i),
+    ].filter((i) => i),
   })),
-  expandedData: tableData.map(data => ({
+  expandedData: tableData.map((data) => ({
     rowId: data.id,
     content: <RowExpansionContent rowId={data.id} />,
   })),
@@ -492,7 +537,9 @@ export const initialState = {
       })),
       expandedIds: [],
       rowActions: [],
-      singleRowEditButtons: <span>singleRowEditButtons implementation needed</span>,
+      singleRowEditButtons: (
+        <span>singleRowEditButtons implementation needed</span>
+      ),
     },
     toolbar: {
       activeBar: 'filter',
@@ -504,12 +551,14 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
-      rowEditBarButtons: <div>App implementation of rowEdit bar buttons expected</div>,
+      rowEditBarButtons: (
+        <div>App implementation of rowEdit bar buttons expected</div>
+      ),
     },
   },
 };
 
-export const StatefulTableWithNestedRowItems = props => {
+export const StatefulTableWithNestedRowItems = (props) => {
   const tableData = initialState.data.map((i, idx) => ({
     ...i,
     children:
@@ -524,7 +573,10 @@ export const StatefulTableWithNestedRowItems = props => {
                 getNewRow(idx, 'B-1', true),
                 {
                   ...getNewRow(idx, 'B-2'),
-                  children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                  children: [
+                    getNewRow(idx, 'B-2-A', true),
+                    getNewRow(idx, 'B-2-B', true),
+                  ],
                 },
                 getNewRow(idx, 'B-3', true),
               ],
@@ -546,7 +598,10 @@ export const StatefulTableWithNestedRowItems = props => {
       <StatefulTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumnsFixedWidth}
         data={tableData}
         options={{
@@ -581,7 +636,11 @@ storiesOf('Watson IoT/Table', module)
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
-            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowSelection: select(
+              'hasRowSelection',
+              ['multi', 'single'],
+              'multi'
+            ),
             hasRowExpansion: false,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
           }}
@@ -605,12 +664,19 @@ storiesOf('Watson IoT/Table', module)
         <StatefulTable
           id="table"
           {...initialState}
-          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          secondaryTitle={text(
+            'Secondary Title',
+            `Row count: ${initialState.data.length}`
+          )}
           columns={tableColumnsWithAlignment}
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
-            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowSelection: select(
+              'hasRowSelection',
+              ['multi', 'single'],
+              'multi'
+            ),
             hasRowExpansion: false,
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
@@ -633,7 +699,10 @@ storiesOf('Watson IoT/Table', module)
       <StatefulTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
         data={initialState.data.map((eachRow, index) => ({
           ...eachRow,
           isSelectable: index % 3 !== 0,
@@ -641,7 +710,11 @@ storiesOf('Watson IoT/Table', module)
         actions={actions}
         lightweight={boolean('lightweight', false)}
         options={{
-          hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+          hasRowSelection: select(
+            'hasRowSelection',
+            ['multi', 'single'],
+            'multi'
+          ),
           hasRowExpansion: false,
         }}
         view={{ table: { selectedIds: array('selectedIds', []) } }}
@@ -679,19 +752,22 @@ storiesOf('Watson IoT/Table', module)
                   triggerId="test-flyout-id"
                   transactional={boolean('Flyout Transactional', true)}
                   onApply={action('Flyout Menu Apply Clicked')}
-                  onCancel={action('Flyout Menu Cancel Clicked')}
-                >
+                  onCancel={action('Flyout Menu Cancel Clicked')}>
                   Example Flyout Content
                 </FlyoutMenu>
               ),
             },
           }}
-          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          secondaryTitle={text(
+            'Secondary Title',
+            `Row count: ${initialState.data.length}`
+          )}
           actions={{
             ...actions,
             toolbar: {
               ...actions.toolbar,
-              onDownloadCSV: filteredData => csvDownloadHandler(filteredData, 'my table data'),
+              onDownloadCSV: (filteredData) =>
+                csvDownloadHandler(filteredData, 'my table data'),
             },
           }}
           isSortable
@@ -699,7 +775,11 @@ storiesOf('Watson IoT/Table', module)
           options={{
             ...initialState.options,
             hasResize: true,
-            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            hasFilter: select(
+              'hasFilter',
+              ['onKeyPress', 'onEnterAndBlur'],
+              'onKeyPress'
+            ),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
             hasSingleRowEdit: true,
           }}
@@ -750,7 +830,10 @@ storiesOf('Watson IoT/Table', module)
         // and no default search value etc, i.e. a view all scenario.
         const defaultState = {
           ...initialState,
-          columns: initialState.columns.map(col => ({ ...col, width: '150px' })),
+          columns: initialState.columns.map((col) => ({
+            ...col,
+            width: '150px',
+          })),
           view: {
             ...initialState.view,
             filters: [],
@@ -813,7 +896,10 @@ storiesOf('Watson IoT/Table', module)
         };
 
         /** The "store" that holds all the existing views */
-        const [viewsStorage, setViewsStorage] = useState([viewExample, viewExample2]);
+        const [viewsStorage, setViewsStorage] = useState([
+          viewExample,
+          viewExample2,
+        ]);
         /** Tracks if the user has modified the view since it was selected */
         const [selectedViewEdited, setSelectedViewEdited] = useState(false);
         /** The props & metadata of the view currently selected */
@@ -825,20 +911,30 @@ storiesOf('Watson IoT/Table', module)
         /** Number of views per page in the TableManageViewModal */
         const manageViewsRowsPerPage = 10;
         /** Current page number in the TableManageViewModal */
-        const [manageViewsCurrentPageNumber, setManageViewsCurrentPageNumber] = useState(1);
+        const [
+          manageViewsCurrentPageNumber,
+          setManageViewsCurrentPageNumber,
+        ] = useState(1);
         /** Current filters in the TableManageViewModal. Can hold 'searchTerm' and 'showPublic' */
-        const [manageViewsCurrentFilters, setManageViewsCurrentFilters] = useState({
+        const [
+          manageViewsCurrentFilters,
+          setManageViewsCurrentFilters,
+        ] = useState({
           searchTerm: '',
           showPublic: true,
         });
         /** Flag needed to open and close the TableManageViewModal */
         const [manageViewsModalOpen, setManageViewsModalOpen] = useState(false);
         /** Collection of filtered views needed for the pagination in the TableManageViewModal */
-        const [manageViewsFilteredViews, setManageViewsFilteredViews] = useState(viewsStorage);
+        const [
+          manageViewsFilteredViews,
+          setManageViewsFilteredViews,
+        ] = useState(viewsStorage);
         /** Collection of views on the current page in the TableManageViewModal */
-        const [manageViewsCurrentPageItems, setManageViewsCurrentPageItems] = useState(
-          viewsStorage.slice(0, manageViewsRowsPerPage)
-        );
+        const [
+          manageViewsCurrentPageItems,
+          setManageViewsCurrentPageItems,
+        ] = useState(viewsStorage.slice(0, manageViewsRowsPerPage));
 
         // The seletable items to be presented by the ViewDropDown.
         const selectableViews = useMemo(
@@ -854,7 +950,10 @@ storiesOf('Watson IoT/Table', module)
             columns,
             view: {
               filters: view.filters,
-              table: { ordering: view.table.ordering, sort: view.table.sort || {} },
+              table: {
+                ordering: view.table.ordering,
+                sort: view.table.sort || {},
+              },
               toolbar: {
                 activeBar: view.toolbar.activeBar,
                 search: { ...view.toolbar.search },
@@ -867,12 +966,16 @@ storiesOf('Watson IoT/Table', module)
         // useRef is preferred over useState so that the value can be updated without causing a
         // rerender of the table.
         const currentUserViewRef = useRef({
-          props: { ...(selectedView ? selectedView.props : extractViewRefData(defaultState)) },
+          props: {
+            ...(selectedView
+              ? selectedView.props
+              : extractViewRefData(defaultState)),
+          },
         });
 
         // Callback from the StatefulTable when view, columns or search value have
         // been modified and we need to update our ref that holds the latest view config.
-        const onUserViewModified = newState => {
+        const onUserViewModified = (newState) => {
           const {
             view,
             columns,
@@ -890,7 +993,9 @@ storiesOf('Watson IoT/Table', module)
           currentUserViewRef.current = { props };
 
           if (!selectedView) {
-            setSelectedViewEdited(!isEqual(props, extractViewRefData(defaultState)));
+            setSelectedViewEdited(
+              !isEqual(props, extractViewRefData(defaultState))
+            );
           } else {
             setSelectedViewEdited(!isEqual(props, selectedView.props));
           }
@@ -916,25 +1021,30 @@ storiesOf('Watson IoT/Table', module)
           const applyFiltering = ({ searchTerm, showPublic }) => {
             const views = viewsStorage
               .filter(
-                view =>
+                (view) =>
                   searchTerm === '' ||
-                  view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                  view.title.toLowerCase().search(searchTerm.toLowerCase()) !==
+                    -1
               )
-              .filter(view => (showPublic ? view : !view.isPublic));
+              .filter((view) => (showPublic ? view : !view.isPublic));
 
             setManageViewsFilteredViews(views);
             showPage(1, views);
           };
 
-          const onDelete = viewId => {
+          const onDelete = (viewId) => {
             if (selectedView?.id === viewId) {
-              currentUserViewRef.current = { props: { ...extractViewRefData(defaultState) } };
+              currentUserViewRef.current = {
+                props: { ...extractViewRefData(defaultState) },
+              };
               setSelectedViewEdited(false);
               setSelectedView(undefined);
             }
 
-            const deleteIndex = viewsStorage.findIndex(view => view.id === viewId);
-            setViewsStorage(existingViews => {
+            const deleteIndex = viewsStorage.findIndex(
+              (view) => view.id === viewId
+            );
+            setViewsStorage((existingViews) => {
               const modifiedViews = [...existingViews];
               modifiedViews.splice(deleteIndex, 1);
               setManageViewsFilteredViews(modifiedViews);
@@ -946,19 +1056,27 @@ storiesOf('Watson IoT/Table', module)
           return (
             <TableManageViewsModal
               actions={{
-                onDisplayPublicChange: showPublic => {
-                  const newFilters = { ...manageViewsCurrentFilters, showPublic };
+                onDisplayPublicChange: (showPublic) => {
+                  const newFilters = {
+                    ...manageViewsCurrentFilters,
+                    showPublic,
+                  };
                   setManageViewsCurrentFilters(newFilters);
                   applyFiltering(newFilters);
                 },
                 onSearchChange: (searchTerm = '') => {
-                  const newFilters = { ...manageViewsCurrentFilters, searchTerm };
+                  const newFilters = {
+                    ...manageViewsCurrentFilters,
+                    searchTerm,
+                  };
                   setManageViewsCurrentFilters(newFilters);
                   applyFiltering(newFilters);
                 },
-                onEdit: viewId => {
+                onEdit: (viewId) => {
                   setManageViewsModalOpen(false);
-                  const viewToEdit = viewsStorage.find(view => view.id === viewId);
+                  const viewToEdit = viewsStorage.find(
+                    (view) => view.id === viewId
+                  );
                   setSelectedView(viewToEdit);
                   setViewToSave(viewToEdit);
                 },
@@ -973,9 +1091,12 @@ storiesOf('Watson IoT/Table', module)
               views={manageViewsCurrentPageItems}
               pagination={{
                 page: manageViewsCurrentPageNumber,
-                onPage: pageNumber => showPage(pageNumber, manageViewsFilteredViews),
-                maxPage: Math.ceil(manageViewsFilteredViews.length / manageViewsRowsPerPage),
-                pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+                onPage: (pageNumber) =>
+                  showPage(pageNumber, manageViewsFilteredViews),
+                maxPage: Math.ceil(
+                  manageViewsFilteredViews.length / manageViewsRowsPerPage
+                ),
+                pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
               }}
             />
           );
@@ -1004,10 +1125,12 @@ storiesOf('Watson IoT/Table', module)
                 },
                 onManageViews: () => {
                   setManageViewsModalOpen(true);
-                  setManageViewsCurrentPageItems(viewsStorage.slice(0, manageViewsRowsPerPage));
+                  setManageViewsCurrentPageItems(
+                    viewsStorage.slice(0, manageViewsRowsPerPage)
+                  );
                 },
                 onChangeView: ({ id }) => {
-                  const selected = viewsStorage.find(view => view.id === id);
+                  const selected = viewsStorage.find((view) => view.id === id);
                   setSelectedView(selected);
                   setSelectedViewEdited(false);
                   currentUserViewRef.current = selected?.props || {
@@ -1032,8 +1155,8 @@ storiesOf('Watson IoT/Table', module)
          * detailed documentation.
          */
         const renderSaveViewModal = () => {
-          const saveView = viewMetaData => {
-            setViewsStorage(existingViews => {
+          const saveView = (viewMetaData) => {
+            setViewsStorage((existingViews) => {
               const modifiedStorage = [];
               const saveNew = viewToSave.id === undefined;
               const { isDefault, ...metaDataToSave } = viewMetaData;
@@ -1050,9 +1173,14 @@ storiesOf('Watson IoT/Table', module)
                 modifiedStorage.push(...existingViews, newViewToStore);
                 setSelectedView(newViewToStore);
               } else {
-                const indexToUpdate = existingViews.findIndex(view => view.id === viewToSave.id);
+                const indexToUpdate = existingViews.findIndex(
+                  (view) => view.id === viewToSave.id
+                );
                 const viewsCopy = [...existingViews];
-                const modifiedViewToStore = { ...viewToSave, ...metaDataToSave };
+                const modifiedViewToStore = {
+                  ...viewToSave,
+                  ...metaDataToSave,
+                };
                 viewsCopy[indexToUpdate] = modifiedViewToStore;
                 setSelectedView(modifiedViewToStore);
                 modifiedStorage.push(...viewsCopy);
@@ -1071,7 +1199,7 @@ storiesOf('Watson IoT/Table', module)
           // Simple description example that can be replaced by any string or node.
           // See the TableSaveViewModal story for more examples.
           const getDescription = ({ table, filters, toolbar }) =>
-            `Columns: ${table.ordering.filter(col => !col.isHidden).length}, 
+            `Columns: ${table.ordering.filter((col) => !col.isHidden).length}, 
             Filters: ${filters?.length || 0}, 
             Search: ${toolbar?.search?.defaultValue}`;
 
@@ -1097,7 +1225,9 @@ storiesOf('Watson IoT/Table', module)
                   isPublic: viewToSave.isPublic,
                   isDefault: viewToSave.id === defaultViewId,
                 }}
-                i18n={{ modalTitle: viewToSave.id ? 'Update view' : 'Save new view' }}
+                i18n={{
+                  modalTitle: viewToSave.id ? 'Update view' : 'Save new view',
+                }}
               />
             )
           );
@@ -1107,24 +1237,21 @@ storiesOf('Watson IoT/Table', module)
         // explained below in order to get the desired result. This is written as a
         // more general function, but it can just as well be written as an explicit
         // object literal picking the right properties from the differentsources.
-        const mergedViewProp = useMemo(
-          () => {
-            const merged = assign(
-              {},
-              // The default state view contains properties that are not
-              // part of this Save View example, e.g. pagination, so we include
-              // the default state as a baseline view configuration.
-              defaultState.view,
-              // These are the properties specific for the currently selected view
-              selectedView?.props?.view,
-              // These are the properties of an unsaved modified view that already
-              // have to be rendered before they become part of the selected view.
-              viewToSave?.props?.view
-            );
-            return merged;
-          },
-          [defaultState, selectedView, viewToSave]
-        );
+        const mergedViewProp = useMemo(() => {
+          const merged = assign(
+            {},
+            // The default state view contains properties that are not
+            // part of this Save View example, e.g. pagination, so we include
+            // the default state as a baseline view configuration.
+            defaultState.view,
+            // These are the properties specific for the currently selected view
+            selectedView?.props?.view,
+            // These are the properties of an unsaved modified view that already
+            // have to be rendered before they become part of the selected view.
+            viewToSave?.props?.view
+          );
+          return merged;
+        }, [defaultState, selectedView, viewToSave]);
 
         return (
           <FullWidthWrapper>
@@ -1135,12 +1262,17 @@ storiesOf('Watson IoT/Table', module)
               id="table"
               {...defaultState}
               columns={
-                viewToSave?.props?.columns || selectedView?.props?.columns || defaultState.columns
+                viewToSave?.props?.columns ||
+                selectedView?.props?.columns ||
+                defaultState.columns
               }
               view={{
                 ...mergedViewProp,
                 // The TableViewDropdown should be inserted as customToolbarContent
-                toolbar: { ...mergedViewProp.toolbar, customToolbarContent: renderViewDropdown() },
+                toolbar: {
+                  ...mergedViewProp.toolbar,
+                  customToolbarContent: renderViewDropdown(),
+                },
               }}
               secondaryTitle="Table with user view management"
               actions={{
@@ -1152,8 +1284,16 @@ storiesOf('Watson IoT/Table', module)
               options={{
                 ...defaultState.options,
                 hasResize: true,
-                hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+                hasFilter: select(
+                  'hasFilter',
+                  ['onKeyPress', 'onEnterAndBlur'],
+                  'onKeyPress'
+                ),
+                wrapCellText: select(
+                  'wrapCellText',
+                  selectTextWrapping,
+                  'always'
+                ),
                 // Enables the behaviour in StatefulTable and Table required
                 // to fully implement Create and Save Views
                 hasUserViewManagement: true,
@@ -1183,7 +1323,10 @@ storiesOf('Watson IoT/Table', module)
         // and no default search value etc, i.e. a view all scenario.
         const baseState = {
           ...initialState,
-          columns: initialState.columns.map(col => ({ ...col, width: '150px' })),
+          columns: initialState.columns.map((col) => ({
+            ...col,
+            width: '150px',
+          })),
           view: {
             ...initialState.view,
             filters: [],
@@ -1246,7 +1389,10 @@ storiesOf('Watson IoT/Table', module)
         };
 
         /** The "store" that holds all the existing views */
-        const [viewsStorage, setViewsStorage] = useState([viewExample, viewExample2]);
+        const [viewsStorage, setViewsStorage] = useState([
+          viewExample,
+          viewExample2,
+        ]);
         /** Tracks if the user has modified the view since it was selected */
         const [selectedViewEdited, setSelectedViewEdited] = useState(false);
         /** The props & metadata of the view currently selected */
@@ -1258,24 +1404,38 @@ storiesOf('Watson IoT/Table', module)
         /** Number of views per page in the TableManageViewModal */
         const manageViewsRowsPerPage = 10;
         /** Current page number in the TableManageViewModal */
-        const [manageViewsCurrentPageNumber, setManageViewsCurrentPageNumber] = useState(1);
+        const [
+          manageViewsCurrentPageNumber,
+          setManageViewsCurrentPageNumber,
+        ] = useState(1);
         /** Current filters in the TableManageViewModal. Can hold 'searchTerm' and 'showPublic' */
-        const [manageViewsCurrentFilters, setManageViewsCurrentFilters] = useState({
+        const [
+          manageViewsCurrentFilters,
+          setManageViewsCurrentFilters,
+        ] = useState({
           searchTerm: '',
           showPublic: true,
         });
         /** Flag needed to open and close the TableManageViewModal */
         const [manageViewsModalOpen, setManageViewsModalOpen] = useState(false);
         /** Collection of filtered views needed for the pagination in the TableManageViewModal */
-        const [manageViewsFilteredViews, setManageViewsFilteredViews] = useState(viewsStorage);
+        const [
+          manageViewsFilteredViews,
+          setManageViewsFilteredViews,
+        ] = useState(viewsStorage);
         /** Collection of views on the current page in the TableManageViewModal */
-        const [manageViewsCurrentPageItems, setManageViewsCurrentPageItems] = useState(
-          viewsStorage.slice(0, manageViewsRowsPerPage)
-        );
+        const [
+          manageViewsCurrentPageItems,
+          setManageViewsCurrentPageItems,
+        ] = useState(viewsStorage.slice(0, manageViewsRowsPerPage));
 
         // This is the state of the current table.
         const [currentTableState, setCurrentTableState] = useState(
-          assign({}, baseState, viewsStorage.find(view => view.id === defaultViewId)?.props)
+          assign(
+            {},
+            baseState,
+            viewsStorage.find((view) => view.id === defaultViewId)?.props
+          )
         );
 
         // The seletable items to be presented by the ViewDropDown.
@@ -1292,12 +1452,17 @@ storiesOf('Watson IoT/Table', module)
               columns,
               view: {
                 filters: view.filters,
-                table: { ordering: view.table.ordering, sort: view.table.sort || {} },
+                table: {
+                  ordering: view.table.ordering,
+                  sort: view.table.sort || {},
+                },
                 toolbar: {
                   activeBar: view.toolbar.activeBar,
                   search: {
                     ...view.toolbar.search,
-                    defaultValue: currentTableState.view.toolbar?.search?.defaultValue || '',
+                    defaultValue:
+                      currentTableState.view.toolbar?.search?.defaultValue ||
+                      '',
                   },
                 },
               },
@@ -1308,14 +1473,18 @@ storiesOf('Watson IoT/Table', module)
 
         // This effect is needed to determine if the current view has been changed
         // so that this can be reflected in the TableViewDropdown.
-        useEffect(
-          () => {
-            const currentUserView = extractCurrentUserView(currentTableState);
-            const compareView = selectedView || extractCurrentUserView(baseState);
-            setSelectedViewEdited(!isEqual(currentUserView.props, compareView.props));
-          },
-          [baseState, currentTableState, extractCurrentUserView, selectedView]
-        );
+        useEffect(() => {
+          const currentUserView = extractCurrentUserView(currentTableState);
+          const compareView = selectedView || extractCurrentUserView(baseState);
+          setSelectedViewEdited(
+            !isEqual(currentUserView.props, compareView.props)
+          );
+        }, [
+          baseState,
+          currentTableState,
+          extractCurrentUserView,
+          selectedView,
+        ]);
 
         /**
          * The TableManageViewsModal is an external component that can be placed outside
@@ -1337,25 +1506,28 @@ storiesOf('Watson IoT/Table', module)
           const applyFiltering = ({ searchTerm, showPublic }) => {
             const views = viewsStorage
               .filter(
-                view =>
+                (view) =>
                   searchTerm === '' ||
-                  view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+                  view.title.toLowerCase().search(searchTerm.toLowerCase()) !==
+                    -1
               )
-              .filter(view => (showPublic ? view : !view.isPublic));
+              .filter((view) => (showPublic ? view : !view.isPublic));
 
             setManageViewsFilteredViews(views);
             showPage(1, views);
           };
 
-          const onDelete = viewId => {
+          const onDelete = (viewId) => {
             if (viewId === selectedView?.id) {
               setSelectedViewEdited(false);
               setSelectedView(undefined);
               setCurrentTableState(baseState);
             }
 
-            const deleteIndex = viewsStorage.findIndex(view => view.id === viewId);
-            setViewsStorage(existingViews => {
+            const deleteIndex = viewsStorage.findIndex(
+              (view) => view.id === viewId
+            );
+            setViewsStorage((existingViews) => {
               const modifiedViews = [...existingViews];
               modifiedViews.splice(deleteIndex, 1);
               setManageViewsFilteredViews(modifiedViews);
@@ -1367,19 +1539,27 @@ storiesOf('Watson IoT/Table', module)
           return (
             <TableManageViewsModal
               actions={{
-                onDisplayPublicChange: showPublic => {
-                  const newFilters = { ...manageViewsCurrentFilters, showPublic };
+                onDisplayPublicChange: (showPublic) => {
+                  const newFilters = {
+                    ...manageViewsCurrentFilters,
+                    showPublic,
+                  };
                   setManageViewsCurrentFilters(newFilters);
                   applyFiltering(newFilters);
                 },
                 onSearchChange: (searchTerm = '') => {
-                  const newFilters = { ...manageViewsCurrentFilters, searchTerm };
+                  const newFilters = {
+                    ...manageViewsCurrentFilters,
+                    searchTerm,
+                  };
                   setManageViewsCurrentFilters(newFilters);
                   applyFiltering(newFilters);
                 },
-                onEdit: viewId => {
+                onEdit: (viewId) => {
                   setManageViewsModalOpen(false);
-                  const viewToEdit = viewsStorage.find(view => view.id === viewId);
+                  const viewToEdit = viewsStorage.find(
+                    (view) => view.id === viewId
+                  );
                   setSelectedView(viewToEdit);
                   setViewToSave(viewToEdit);
                 },
@@ -1394,9 +1574,12 @@ storiesOf('Watson IoT/Table', module)
               views={manageViewsCurrentPageItems}
               pagination={{
                 page: manageViewsCurrentPageNumber,
-                onPage: pageNumber => showPage(pageNumber, manageViewsFilteredViews),
-                maxPage: Math.ceil(manageViewsFilteredViews.length / manageViewsRowsPerPage),
-                pageOfPagesText: pageNumber => `Page ${pageNumber}`,
+                onPage: (pageNumber) =>
+                  showPage(pageNumber, manageViewsFilteredViews),
+                maxPage: Math.ceil(
+                  manageViewsFilteredViews.length / manageViewsRowsPerPage
+                ),
+                pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
               }}
             />
           );
@@ -1424,11 +1607,17 @@ storiesOf('Watson IoT/Table', module)
                 },
                 onManageViews: () => {
                   setManageViewsModalOpen(true);
-                  setManageViewsCurrentPageItems(viewsStorage.slice(0, manageViewsRowsPerPage));
+                  setManageViewsCurrentPageItems(
+                    viewsStorage.slice(0, manageViewsRowsPerPage)
+                  );
                 },
                 onChangeView: ({ id }) => {
-                  const selectedView = viewsStorage.find(view => view.id === id);
-                  setCurrentTableState(assign({}, baseState, selectedView?.props));
+                  const selectedView = viewsStorage.find(
+                    (view) => view.id === id
+                  );
+                  setCurrentTableState(
+                    assign({}, baseState, selectedView?.props)
+                  );
                   setSelectedView(selectedView);
                   setSelectedViewEdited(false);
                 },
@@ -1450,8 +1639,8 @@ storiesOf('Watson IoT/Table', module)
          * detailed documentation.
          */
         const renderSaveViewModal = () => {
-          const saveView = viewMetaData => {
-            setViewsStorage(existingViews => {
+          const saveView = (viewMetaData) => {
+            setViewsStorage((existingViews) => {
               const modifiedStorage = [];
               const saveNew = viewToSave.id === undefined;
               const { isDefault, ...metaDataToSave } = viewMetaData;
@@ -1468,9 +1657,14 @@ storiesOf('Watson IoT/Table', module)
                 modifiedStorage.push(...existingViews, newViewToStore);
                 setSelectedView(newViewToStore);
               } else {
-                const indexToUpdate = existingViews.findIndex(view => view.id === viewToSave.id);
+                const indexToUpdate = existingViews.findIndex(
+                  (view) => view.id === viewToSave.id
+                );
                 const viewsCopy = [...existingViews];
-                const modifiedViewToStore = { ...viewToSave, ...metaDataToSave };
+                const modifiedViewToStore = {
+                  ...viewToSave,
+                  ...metaDataToSave,
+                };
                 viewsCopy[indexToUpdate] = modifiedViewToStore;
                 setSelectedView(modifiedViewToStore);
                 modifiedStorage.push(...viewsCopy);
@@ -1489,7 +1683,7 @@ storiesOf('Watson IoT/Table', module)
           // Simple description example that can be replaced by any string or node.
           // See the TableSaveViewModal story for more examples.
           const getDescription = ({ table, filters, toolbar }) =>
-            `Columns: ${table.ordering.filter(col => !col.isHidden).length}, 
+            `Columns: ${table.ordering.filter((col) => !col.isHidden).length}, 
             Filters: ${filters?.length || 0}, 
             Search: ${toolbar?.search?.defaultValue}`;
 
@@ -1515,7 +1709,9 @@ storiesOf('Watson IoT/Table', module)
                   isPublic: viewToSave.isPublic,
                   isDefault: viewToSave.id === defaultViewId,
                 }}
-                i18n={{ modalTitle: viewToSave.id ? 'Update view' : 'Save new view' }}
+                i18n={{
+                  modalTitle: viewToSave.id ? 'Update view' : 'Save new view',
+                }}
               />
             )
           );
@@ -1543,16 +1739,16 @@ storiesOf('Watson IoT/Table', module)
                 ...actions,
                 table: {
                   ...action.table,
-                  onColumnResize: columns => {
-                    setCurrentTableState(state => ({
+                  onColumnResize: (columns) => {
+                    setCurrentTableState((state) => ({
                       ...state,
                       columns,
                     }));
                   },
                   // Simplified sorting for this story. It does not update the data of the table
                   // and it ignores direction.
-                  onChangeSort: sortOnColumnId => {
-                    setCurrentTableState(state => ({
+                  onChangeSort: (sortOnColumnId) => {
+                    setCurrentTableState((state) => ({
                       ...state,
                       view: {
                         ...state.view,
@@ -1569,10 +1765,10 @@ storiesOf('Watson IoT/Table', module)
                 },
                 toolbar: {
                   ...actions.toolbar,
-                  onApplySearch: currentSearchValue => {
+                  onApplySearch: (currentSearchValue) => {
                     // Here you can use debounce and call the backend to properly filter
                     // your data. For this story we simply update the search defaultValue.
-                    setCurrentTableState(state => ({
+                    setCurrentTableState((state) => ({
                       ...state,
                       view: {
                         ...state.view,
@@ -1583,10 +1779,10 @@ storiesOf('Watson IoT/Table', module)
                       },
                     }));
                   },
-                  onApplyFilter: filters => {
+                  onApplyFilter: (filters) => {
                     // Simplified filtering for this story. It does not update the data of
                     // the table only the actual filters.
-                    setCurrentTableState(state => ({
+                    setCurrentTableState((state) => ({
                       ...state,
                       view: {
                         ...state.view,
@@ -1606,8 +1802,16 @@ storiesOf('Watson IoT/Table', module)
               options={{
                 ...baseState.options,
                 hasResize: true,
-                hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
-                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+                hasFilter: select(
+                  'hasFilter',
+                  ['onKeyPress', 'onEnterAndBlur'],
+                  'onKeyPress'
+                ),
+                wrapCellText: select(
+                  'wrapCellText',
+                  selectTextWrapping,
+                  'always'
+                ),
                 // Enables the behaviour in Table required
                 // to fully implement Create and Save Views
                 hasUserViewManagement: true,
@@ -1641,11 +1845,14 @@ storiesOf('Watson IoT/Table', module)
         <StatefulTable
           id="table"
           {...initialState}
-          columns={initialState.columns.map(column => {
+          columns={initialState.columns.map((column) => {
             if (column.filter) {
               return {
                 ...column,
-                filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+                filter: {
+                  ...column.filter,
+                  isMultiselect: !!column.filter?.options,
+                },
               };
             }
             return column;
@@ -1660,13 +1867,20 @@ storiesOf('Watson IoT/Table', module)
               activeBar: 'filter',
             },
           }}
-          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          secondaryTitle={text(
+            'Secondary Title',
+            `Row count: ${initialState.data.length}`
+          )}
           actions={actions}
           isSortable
           lightweight={boolean('lightweight', false)}
           options={{
             ...initialState.options,
-            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            hasFilter: select(
+              'hasFilter',
+              ['onKeyPress', 'onEnterAndBlur'],
+              'onKeyPress'
+            ),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
             hasSingleRowEdit: true,
           }}
@@ -1688,11 +1902,14 @@ storiesOf('Watson IoT/Table', module)
         <StatefulTable
           id="table"
           {...initialState}
-          columns={initialState.columns.map(column => {
+          columns={initialState.columns.map((column) => {
             if (column.filter) {
               return {
                 ...column,
-                filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+                filter: {
+                  ...column.filter,
+                  isMultiselect: !!column.filter?.options,
+                },
               };
             }
             return column;
@@ -1708,13 +1925,20 @@ storiesOf('Watson IoT/Table', module)
             },
             filters: [],
           }}
-          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          secondaryTitle={text(
+            'Secondary Title',
+            `Row count: ${initialState.data.length}`
+          )}
           actions={actions}
           isSortable
           lightweight={boolean('lightweight', false)}
           options={{
             ...initialState.options,
-            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            hasFilter: select(
+              'hasFilter',
+              ['onKeyPress', 'onEnterAndBlur'],
+              'onKeyPress'
+            ),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
             hasSingleRowEdit: true,
           }}
@@ -1792,7 +2016,10 @@ storiesOf('Watson IoT/Table', module)
           <StatefulTable
             id="table"
             {...initialState}
-            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+            secondaryTitle={text(
+              'Secondary Title',
+              `Row count: ${initialState.data.length}`
+            )}
             columns={tableColumns}
             data={tableData}
             options={{
@@ -1800,7 +2027,11 @@ storiesOf('Watson IoT/Table', module)
               hasRowNesting: {
                 hasSingleNestedHierarchy: true,
               },
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+              wrapCellText: select(
+                'wrapCellText',
+                selectTextWrapping,
+                'always'
+              ),
             }}
             actions={actions}
             lightweight={boolean('lightweight', false)}
@@ -1864,7 +2095,7 @@ storiesOf('Watson IoT/Table', module)
     () => {
       return React.createElement(() => {
         const [showRowEditBar, setShowRowEditBar] = useState(false);
-        const startingData = tableData.map(i => ({
+        const startingData = tableData.map((i) => ({
           ...i,
           rowActions: [
             {
@@ -1885,7 +2116,9 @@ storiesOf('Watson IoT/Table', module)
 
         const onDataChange = (e, columnId, rowId) => {
           const newValue = e.currentTarget ? e.currentTarget.value : e;
-          rowEditedData.find(row => row.id === rowId).values[columnId] = newValue;
+          rowEditedData.find((row) => row.id === rowId).values[
+            columnId
+          ] = newValue;
         };
 
         const onShowMultiRowEdit = () => {
@@ -1915,7 +2148,10 @@ storiesOf('Watson IoT/Table', module)
         const onApplyRowAction = (action, rowId) => {
           if (action === 'edit') {
             setRowEditedData(cloneDeep(currentData));
-            setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
+            setRowActionsState([
+              ...rowActionsState,
+              { rowId, isEditMode: true },
+            ]);
           }
         };
 
@@ -1928,8 +2164,7 @@ storiesOf('Watson IoT/Table', module)
               style={{ marginRight: spacing03 }}
               size="small"
               kind="tertiary"
-              onClick={onCancelRowEdit}
-            >
+              onClick={onCancelRowEdit}>
               Cancel
             </Button>
             <Button key="save" size="small" onClick={onSaveRowEdit}>
@@ -1950,12 +2185,12 @@ storiesOf('Watson IoT/Table', module)
               id={id}
               labelText=""
               hideLabel
-              onChange={e => onDataChange(e, columnId, rowId)}
+              onChange={(e) => onDataChange(e, columnId, rowId)}
             />
           ) : (
             <TextInput
               id={id}
-              onChange={e => onDataChange(e, columnId, rowId)}
+              onChange={(e) => onDataChange(e, columnId, rowId)}
               type="text"
               light
               defaultValue={value}
@@ -1980,8 +2215,7 @@ storiesOf('Watson IoT/Table', module)
                   kind="ghost"
                   onClick={onUndoRowEdit}
                   size="small"
-                  type="button"
-                >
+                  type="button">
                   Undo edits
                 </Button>
               </div>
@@ -2002,7 +2236,10 @@ storiesOf('Watson IoT/Table', module)
                   activeBar: showRowEditBar ? 'rowEdit' : undefined,
                   rowEditBarButtons: saveCancelButtons,
                 },
-                table: { rowActions: rowActionsState, singleRowEditButtons: saveCancelButtons },
+                table: {
+                  rowActions: rowActionsState,
+                  singleRowEditButtons: saveCancelButtons,
+                },
               }}
               data={currentData}
               actions={{
@@ -2015,7 +2252,7 @@ storiesOf('Watson IoT/Table', module)
                 hasRowActions: true,
                 hasPagination: true,
               }}
-              columns={tableColumns.map(i => ({ ...i, editDataFunction }))}
+              columns={tableColumns.map((i) => ({ ...i, editDataFunction }))}
             />
           </div>
         );
@@ -2142,12 +2379,19 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <StatefulTable
         id="table"
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
         style={{ maxWidth: '300px' }}
         columns={tableColumns.slice(0, 2)}
         data={tableData}
         actions={actions}
-        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+        options={{
+          hasSearch: true,
+          hasPagination: true,
+          hasRowSelection: 'single',
+        }}
       />
     ),
     {
@@ -2165,36 +2409,42 @@ storiesOf('Watson IoT/Table', module)
         return (
           <>
             <p>
-              Click the button below to demonstrate updating the pre-filled search (defaultValue)
-              via state/props
+              Click the button below to demonstrate updating the pre-filled
+              search (defaultValue) via state/props
             </p>
             <Button
               onClick={() => {
                 setDefaultValue(
-                  sampleDefaultValues[sampleDefaultValues.indexOf(defaultValue) + 1] ||
-                    sampleDefaultValues[0]
+                  sampleDefaultValues[
+                    sampleDefaultValues.indexOf(defaultValue) + 1
+                  ] || sampleDefaultValues[0]
                 );
               }}
-              style={{ marginBottom: '1rem' }}
-            >
+              style={{ marginBottom: '1rem' }}>
               Update defaultValue prop to new value
             </Button>
             <Button
               onClick={() => {
                 setDefaultValue('');
               }}
-              style={{ marginBottom: '1rem', marginLeft: '1rem' }}
-            >
+              style={{ marginBottom: '1rem', marginLeft: '1rem' }}>
               Reset defaultValue prop to empty string
             </Button>
             <StatefulTable
               id="table"
-              secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+              secondaryTitle={text(
+                'Secondary Title',
+                `Row count: ${initialState.data.length}`
+              )}
               style={{ maxWidth: '300px' }}
               columns={tableColumns.slice(0, 2)}
               data={tableData}
               actions={actions}
-              options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+              options={{
+                hasSearch: true,
+                hasPagination: true,
+                hasRowSelection: 'single',
+              }}
               view={{
                 toolbar: {
                   search: {
@@ -2214,13 +2464,21 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add('with multi select and batch actions', () => {
-    const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
-    const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+    const selectedTableType = select(
+      'Type of Table',
+      ['Table', 'StatefulTable'],
+      'StatefulTable'
+    );
+    const MyTable =
+      selectedTableType === 'StatefulTable' ? StatefulTable : Table;
 
     return (
       <MyTable
         id="table"
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
         columns={tableColumns}
         data={tableData.slice(0, 10)}
         actions={actions}
@@ -2243,13 +2501,22 @@ storiesOf('Watson IoT/Table', module)
           },
           table: {
             ordering: defaultOrdering,
-            isSelectAllSelected: select('isSelectAllSelected', [undefined, true, false], undefined),
+            isSelectAllSelected: select(
+              'isSelectAllSelected',
+              [undefined, true, false],
+              undefined
+            ),
             isSelectAllIndeterminate: select(
               'isSelectAllIndeterminate',
               [undefined, true, false],
               undefined
             ),
-            selectedIds: array('selectedIds', ['row-3', 'row-4', 'row-6', 'row-7']),
+            selectedIds: array('selectedIds', [
+              'row-3',
+              'row-4',
+              'row-6',
+              'row-7',
+            ]),
           },
         }}
       />
@@ -2284,7 +2551,11 @@ storiesOf('Watson IoT/Table', module)
                 getNewRow(idx, 'C'),
                 {
                   ...getNewRow(idx, 'D'),
-                  children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
+                  children: [
+                    getNewRow(idx, 'D-1'),
+                    getNewRow(idx, 'D-2'),
+                    getNewRow(idx, 'D-3'),
+                  ],
                 },
               ]
             : undefined,
@@ -2366,7 +2637,7 @@ storiesOf('Watson IoT/Table', module)
                     isOverflow: true,
                     isDelete: true,
                   },
-                ].filter(i => i),
+                ].filter((i) => i),
         }))}
         actions={actions}
         options={{
@@ -2394,7 +2665,10 @@ storiesOf('Watson IoT/Table', module)
               },
               {
                 rowId: 'row-3',
-                error: { title: 'Import failed', message: 'Contact your administrator' },
+                error: {
+                  title: 'Import failed',
+                  message: 'Contact your administrator',
+                },
               },
             ],
           },
@@ -2509,11 +2783,13 @@ storiesOf('Watson IoT/Table', module)
   .add(
     'with custom cell renderer',
     () => {
-      const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
+      const renderDataFunction = ({ value }) => (
+        <div style={{ color: 'red' }}>{value}</div>
+      );
       return (
         <Table
           id="table"
-          columns={tableColumns.map(i => ({
+          columns={tableColumns.map((i) => ({
             ...i,
             renderDataFunction,
           }))}
@@ -2571,7 +2847,8 @@ storiesOf('Watson IoT/Table', module)
           value: 'option-B',
         },
       ].reduce(
-        (acc, { columnId, value }) => acc && values[columnId].toString().includes(value),
+        (acc, { columnId, value }) =>
+          acc && values[columnId].toString().includes(value),
         true
       )
     );
@@ -2630,7 +2907,12 @@ storiesOf('Watson IoT/Table', module)
           ordering: defaultOrdering,
         },
       }}
-      i18n={{ columnSelectionConfig: text('i18n.columnSelectionConfig', '__Manage columns__') }}
+      i18n={{
+        columnSelectionConfig: text(
+          'i18n.columnSelectionConfig',
+          '__Manage columns__'
+        ),
+      }}
     />
   ))
   .add('with no results', () => (
@@ -2689,7 +2971,11 @@ storiesOf('Watson IoT/Table', module)
                 getNewRow(idx, 'C'),
                 {
                   ...getNewRow(idx, 'D'),
-                  children: [getNewRow(idx, 'D-1'), getNewRow(idx, 'D-2'), getNewRow(idx, 'D-3')],
+                  children: [
+                    getNewRow(idx, 'D-1'),
+                    getNewRow(idx, 'D-2'),
+                    getNewRow(idx, 'D-3'),
+                  ],
                 },
               ]
             : undefined,
@@ -2746,28 +3032,41 @@ storiesOf('Watson IoT/Table', module)
     />
   ))
   .add('with zebra striping', () => (
-    <Table id="table" useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
-  ))
-  .add('with resize and initial column widths on Simple Stateful with row selection & sort', () => (
-    <StatefulTable
+    <Table
       id="table"
-      {...initialState}
+      useZebraStyles
+      columns={tableColumns}
+      data={tableData}
       actions={actions}
-      lightweight={boolean('lightweight', false)}
-      columns={tableColumns.map((i, idx) => ({
-        width: idx % 2 === 0 ? '100px' : '200px',
-        isSortable: true,
-        ...i,
-      }))}
-      options={{
-        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
-        hasRowExpansion: false,
-        hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-      }}
-      view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
   ))
+  .add(
+    'with resize and initial column widths on Simple Stateful with row selection & sort',
+    () => (
+      <StatefulTable
+        id="table"
+        {...initialState}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        columns={tableColumns.map((i, idx) => ({
+          width: idx % 2 === 0 ? '100px' : '200px',
+          isSortable: true,
+          ...i,
+        }))}
+        options={{
+          hasRowSelection: select(
+            'hasRowSelection',
+            ['multi', 'single'],
+            'multi'
+          ),
+          hasRowExpansion: false,
+          hasResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        }}
+        view={{ table: { selectedIds: array('selectedIds', []) } }}
+      />
+    )
+  )
   .add(
     'with resize and initial column widths and hidden column',
     () => (
@@ -2834,19 +3133,28 @@ storiesOf('Watson IoT/Table', module)
     () => {
       const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
         const [colsToAddField, setColsToAddField] = useState('colX, colY');
-        const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
-        const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
+        const [colsToAddWidthField, setColsToAddWidthField] = useState(
+          '100px, 150px'
+        );
+        const [colsToDeleteField, setColsToDeleteField] = useState(
+          'select, status'
+        );
         const [isHidden, setIsHidden] = useState(false);
 
         return (
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              marginBottom: '2rem',
+            }}>
             <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
               <TextInput
                 labelText="Ids of one or more columns"
                 id="colsToAddInput"
                 value={colsToAddField}
                 type="text"
-                onChange={evt => setColsToAddField(evt.currentTarget.value)}
+                onChange={(evt) => setColsToAddField(evt.currentTarget.value)}
               />
               <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
                 <Checkbox
@@ -2861,12 +3169,15 @@ storiesOf('Watson IoT/Table', module)
                 id="colsToAddWidthInput"
                 value={colsToAddWidthField}
                 type="text"
-                onChange={evt => setColsToAddWidthField(evt.currentTarget.value)}
+                onChange={(evt) =>
+                  setColsToAddWidthField(evt.currentTarget.value)
+                }
               />
               <Button
                 style={{ marginTop: '1rem' }}
-                onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
-              >
+                onClick={() =>
+                  onAdd(colsToAddField, colsToAddWidthField, isHidden)
+                }>
                 Add
               </Button>
             </Form>
@@ -2887,13 +3198,14 @@ storiesOf('Watson IoT/Table', module)
                 id="removeColInput"
                 value={colsToDeleteField}
                 type="text"
-                onChange={evt => setColsToDeleteField(evt.currentTarget.value)}
+                onChange={(evt) =>
+                  setColsToDeleteField(evt.currentTarget.value)
+                }
               />
               <Button
                 style={{ marginTop: '1rem' }}
                 id="removeColInput"
-                onClick={() => onRemove(colsToDeleteField)}
-              >
+                onClick={() => onRemove(colsToDeleteField)}>
                 Remove
               </Button>
             </Form>
@@ -2902,7 +3214,9 @@ storiesOf('Watson IoT/Table', module)
       };
 
       return React.createElement(() => {
-        const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
+        const [myColumns, setMyColumns] = useState(
+          tableColumns.map(({ filter, ...rest }) => rest)
+        );
         const [myOrdering, setMyOrdering] = useState(defaultOrdering);
 
         const onAdd = (colIds, colWidths, isHidden) => {
@@ -2922,12 +3236,16 @@ storiesOf('Watson IoT/Table', module)
           setMyOrdering([...myOrdering, ...newOrdering]);
         };
 
-        const onRemove = colIds => {
+        const onRemove = (colIds) => {
           const colsToDelete = colIds.split(', ');
-          setMyColumns(myColumns.filter(col => !colsToDelete.includes(col.id)));
-          setMyOrdering(myOrdering.filter(col => !colsToDelete.includes(col.columnId)));
+          setMyColumns(
+            myColumns.filter((col) => !colsToDelete.includes(col.id))
+          );
+          setMyOrdering(
+            myOrdering.filter((col) => !colsToDelete.includes(col.columnId))
+          );
         };
-        const onColumnResize = cols => setMyColumns(cols);
+        const onColumnResize = (cols) => setMyColumns(cols);
 
         return (
           <>
@@ -2942,7 +3260,11 @@ storiesOf('Watson IoT/Table', module)
               options={{
                 hasColumnSelection: true,
                 hasResize: true,
-                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+                wrapCellText: select(
+                  'wrapCellText',
+                  selectTextWrapping,
+                  'always'
+                ),
               }}
               columns={myColumns}
               view={{
@@ -2952,7 +3274,10 @@ storiesOf('Watson IoT/Table', module)
                 },
               }}
               data={tableData}
-              actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+              actions={{
+                ...actions,
+                table: { ...actions.table, onColumnResize },
+              }}
             />
           </>
         );
@@ -2971,8 +3296,8 @@ storiesOf('Watson IoT/Table', module)
       <React.Fragment>
         <p>
           <strong>Note!</strong> <br />
-          For this configuration to work, the table must be wrapped in a container that has a width
-          defined in other than %. <br />
+          For this configuration to work, the table must be wrapped in a
+          container that has a width defined in other than %. <br />
           E.g. the FullWidthWrapper used by the storybook examples.
         </p>
         <FullWidthWrapper>
@@ -2981,7 +3306,11 @@ storiesOf('Watson IoT/Table', module)
             options={{
               hasResize: true,
               useAutoTableLayoutForResize: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+              wrapCellText: select(
+                'wrapCellText',
+                selectTextWrapping,
+                'always'
+              ),
             }}
             columns={tableColumns}
             data={tableData}
@@ -3179,7 +3508,10 @@ storiesOf('Watson IoT/Table', module)
   .add(
     'Filtered/Sorted/Paginated table with asynchronous data source',
     () => {
-      const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
+      const apiClient = new MockApiClient(
+        100,
+        number('Fetch Duration (ms)', 500)
+      );
       return <AsyncTable fetchData={apiClient.getData} />;
     },
     {
@@ -3204,7 +3536,9 @@ storiesOf('Watson IoT/Table', module)
         ],
         toolbar: {
           activeBar: 'filter',
-          customToolbarContent: <StyledCustomToolbarContent>my custom</StyledCustomToolbarContent>,
+          customToolbarContent: (
+            <StyledCustomToolbarContent>my custom</StyledCustomToolbarContent>
+          ),
         },
       }}
     />
@@ -3215,7 +3549,10 @@ storiesOf('Watson IoT/Table', module)
       <StatefulTable
         id="table"
         {...initialState}
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        secondaryTitle={text(
+          'Secondary Title',
+          `Row count: ${initialState.data.length}`
+        )}
         actions={actions}
         options={{
           hasRowActions: true,
@@ -3234,7 +3571,10 @@ storiesOf('Watson IoT/Table', module)
               },
               {
                 rowId: 'row-3',
-                error: { title: 'Import failed', message: 'Contact your administrator' },
+                error: {
+                  title: 'Import failed',
+                  message: 'Contact your administrator',
+                },
               },
             ],
           },
@@ -3247,41 +3587,66 @@ storiesOf('Watson IoT/Table', module)
           pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
           itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
           itemsRange: (min, max) => `__${min}–${max} items__`,
-          currentPage: page => `__page ${page}__`,
-          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          currentPage: (page) => `__page ${page}__`,
+          itemsRangeWithTotal: (min, max, total) =>
+            `__${min}–${max} of ${total} items__`,
           pageRange: (current, total) => `__${current} of ${total} pages__`,
           /** table body */
           overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
-          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
-          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          clickToExpandAria: text(
+            'i18n.clickToExpandAria',
+            '__Click to expand content__'
+          ),
+          clickToCollapseAria: text(
+            'i18n.clickToCollapseAria',
+            '__Click to collapse content__'
+          ),
           selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
-          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          clearAllFilters: text(
+            'i18n.clearAllFilters',
+            '__Clear all filters__'
+          ),
           searchLabel: text('i18n.searchLabel', '__Search__'),
           searchPlaceholder: text('i18n.searchPlaceholder', '__Search__'),
-          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
+          columnSelectionButtonAria: text(
+            'i18n.columnSelectionButtonAria',
+            '__Column Selection__'
+          ),
           filterButtonAria: text('i18n.filterButtonAria', '__Filters__'),
           editButtonAria: text('i18n.editButtonAria', '__Edit rows__'),
           clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
           filterAria: text('i18n.filterAria', '__Filter__'),
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          clearSelectionAria: text(
+            'i18n.clearSelectionAria',
+            '__Clear selection__'
+          ),
           batchCancel: text('i18n.batchCancel', '__Cancel__'),
           itemsSelected: text('i18n.itemsSelected', '__items selected__'),
           itemSelected: text('i18n.itemSelected', '__item selected__'),
           filterNone: text('i18n.filterNone', '__filterNone__'),
           filterAscending: text('i18n.filterAscending', '__filterAscending__'),
-          filterDescending: text('i18n.filterDescending', '__filterDescending__'),
+          filterDescending: text(
+            'i18n.filterDescending',
+            '__filterDescending__'
+          ),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(
             'i18n.emptyMessageWithFilters',
             '__No results match the current filters__'
           ),
-          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          emptyButtonLabel: text(
+            'i18n.emptyButtonLabel',
+            '__Create some data__'
+          ),
+          emptyButtonLabelWithFilters: text(
+            'i18n.emptyButtonLabel',
+            '__Clear all filters__'
+          ),
           inProgressText: text('i18n.inProgressText', '__In Progress__'),
           actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
           learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
@@ -3361,14 +3726,19 @@ storiesOf('Watson IoT/Table', module)
             id="table-tooltip"
             triggerId="table-tooltip-trigger"
             triggerText=""
-            menuOffset={menuBody => {
-              const container = menuBody.closest('[data-floating-menu-container]');
+            menuOffset={(menuBody) => {
+              const container = menuBody.closest(
+                '[data-floating-menu-container]'
+              );
               return {
-                top: -container.getBoundingClientRect().y - window.pageYOffset + 4,
-                left: -container.getBoundingClientRect().x - window.pageXOffset + 10,
+                top:
+                  -container.getBoundingClientRect().y - window.pageYOffset + 4,
+                left:
+                  -container.getBoundingClientRect().x -
+                  window.pageXOffset +
+                  10,
               };
-            }}
-          >
+            }}>
             <p>This scroll with the table body</p>
           </Tooltip>
         </div>
@@ -3377,7 +3747,7 @@ storiesOf('Watson IoT/Table', module)
         <div>
           <Table
             id="table"
-            columns={tableColumns.map(i => ({
+            columns={tableColumns.map((i) => ({
               ...i,
               renderDataFunction,
             }))}
@@ -3421,7 +3791,11 @@ storiesOf('Watson IoT/Table', module)
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
-            hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+            hasRowSelection: select(
+              'hasRowSelection',
+              ['multi', 'single'],
+              'multi'
+            ),
             hasRowExpansion: false,
             hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),

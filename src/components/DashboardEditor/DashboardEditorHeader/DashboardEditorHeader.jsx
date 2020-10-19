@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TrashCan16, DocumentImport16, DocumentExport16 } from '@carbon/icons-react';
+import {
+  TrashCan16,
+  DocumentImport16,
+  DocumentExport16,
+} from '@carbon/icons-react';
 import { FileUploaderButton, TooltipIcon } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
@@ -31,7 +35,7 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
-  /** i18n */
+  /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
@@ -78,27 +82,26 @@ const DashboardEditorHeader = ({
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
-      <div className={`${baseClassName}--top`}>
-        {/* <span className="last-updated">Last updated: XYZ</span> */}
-      </div>
+      <div className={`${baseClassName}--top`} />
       <div className={`${baseClassName}--bottom`}>
-        {// FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
-        onImport && (
-          <TooltipIcon
-            align="center"
-            direction="bottom"
-            tooltipText={i18n.headerImportButton}
-            className={`${baseClassName}--bottom__import`}
-          >
-            <FileUploaderButton
-              buttonKind="ghost"
-              size="field"
-              labelText={<DocumentImport16 fill="#161616" />}
-              onChange={onImport}
-              disableLabelChanges
-            />
-          </TooltipIcon>
-        )}
+        {
+          // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
+          onImport && (
+            <TooltipIcon
+              align="center"
+              direction="bottom"
+              tooltipText={i18n.headerImportButton}
+              className={`${baseClassName}--bottom__import`}>
+              <FileUploaderButton
+                buttonKind="ghost"
+                size="field"
+                labelText={<DocumentImport16 fill="#161616" />}
+                onChange={onImport}
+                disableLabelChanges
+              />
+            </TooltipIcon>
+          )
+        }
         {onExport && (
           <Button
             kind="ghost"

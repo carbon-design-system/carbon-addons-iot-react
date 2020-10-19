@@ -46,7 +46,7 @@ const ProgressStep = ({
     }
   };
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (matches(e, [keys.Enter, keys.Space])) {
       handleClick();
     }
@@ -122,7 +122,9 @@ const ProgressStep = ({
 
   const StepSecondaryLabel = () => {
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={`${iotPrefix}--progress-text-label--optional`}>{secondaryLabel}</p>
+      <p className={`${iotPrefix}--progress-text-label--optional`}>
+        {secondaryLabel}
+      </p>
     ) : null;
   };
 
@@ -153,8 +155,7 @@ const ProgressStep = ({
           onClick={accessible ? handleClick : null}
           onKeyDown={accessible ? handleKeyDown : null}
           data-testid={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
-          tabIndex={current || disabled ? -1 : 0}
-        >
+          tabIndex={current || disabled ? -1 : 0}>
           <StepLine />
           <StepIcon />
           <div className={textClasses}>
@@ -169,8 +170,10 @@ const ProgressStep = ({
   const classes = classnames({
     [`${iotPrefix}--progress-step`]: true,
     [`${iotPrefix}--progress-step--current`]: current && !disabled,
-    [`${iotPrefix}--progress-step--complete`]: complete && !disabled && !invalid,
-    [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--complete`]:
+      complete && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--incomplete`]:
+      incomplete && !current && !disabled && !invalid,
     [`${iotPrefix}--progress-step--disabled`]: disabled,
     [`${iotPrefix}--progress-step--invalid`]: invalid,
   });
@@ -240,7 +243,7 @@ const ProgressIndicator = ({
     let step = 1;
     let newVal;
 
-    itemsList.forEach(item => {
+    itemsList.forEach((item) => {
       newVal = Object.assign({}, item);
       if (item.children) {
         delete newVal.children;
@@ -266,13 +269,13 @@ const ProgressIndicator = ({
   const getCurrentIndex = () => {
     let idx = 0;
     if (currentStep) {
-      const index = newItems.findIndex(item => item.id === currentStep);
+      const index = newItems.findIndex((item) => item.id === currentStep);
       idx = index > -1 ? index : 0;
     }
     return idx;
   };
 
-  const handleChange = step => {
+  const handleChange = (step) => {
     if (step !== currentStep) {
       if (onClickItem) {
         onClickItem(step);
@@ -291,10 +294,21 @@ const ProgressIndicator = ({
   });
 
   return newItems.length > 1 ? (
-    <ul className={classes} data-testid={`${iotPrefix}--progress-indicator-testid`}>
+    <ul
+      className={classes}
+      data-testid={`${iotPrefix}--progress-indicator-testid`}>
       {newItems.map(
         (
-          { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
+          {
+            id,
+            label,
+            secondaryLabel,
+            description,
+            disabled,
+            invalid,
+            stepNumber,
+            level,
+          },
           index
         ) => (
           <ProgressStep

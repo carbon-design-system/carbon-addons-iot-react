@@ -1,4 +1,8 @@
-import { tileCatalogReducer, TILE_ACTIONS, determineInitialState } from './tileCatalogReducer';
+import {
+  tileCatalogReducer,
+  TILE_ACTIONS,
+  determineInitialState,
+} from './tileCatalogReducer';
 
 const longDescription = 'testDescription';
 const tileRenderFunction = jest.fn();
@@ -122,7 +126,10 @@ describe('determineInitialState', () => {
     expect(initialState.selectedTileId).toEqual(tiles[0].id);
   });
   it('setting from pagination', () => {
-    const initialState = determineInitialState({ tiles, pagination: { pageSize: 5, page: 2 } });
+    const initialState = determineInitialState({
+      tiles,
+      pagination: { pageSize: 5, page: 2 },
+    });
     expect(initialState.pageSize).toEqual(5);
     expect(initialState.page).toEqual(2);
     expect(initialState.startingIndex).toEqual(5);
@@ -130,7 +137,10 @@ describe('determineInitialState', () => {
     expect(initialState.selectedTileId).toEqual(tiles[5].id);
   });
   it('setting search', () => {
-    const initialState = determineInitialState({ tiles, search: { value: 'Tile6' } });
+    const initialState = determineInitialState({
+      tiles,
+      search: { value: 'Tile6' },
+    });
     expect(initialState.filteredTiles).toHaveLength(1);
     expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[5].id);

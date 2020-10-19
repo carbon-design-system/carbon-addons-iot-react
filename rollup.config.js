@@ -9,6 +9,7 @@ import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
 import builtins from 'rollup-plugin-node-builtins';
+import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
 
@@ -17,10 +18,12 @@ const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
 const extensions = ['.mjs', '.js', '.jsx', '.json'];
 
-const external = id => {
+const external = (id) => {
   return (
-    Object.keys(packageJson.peerDependencies).some(element => id === element) ||
-    Object.keys(packageJson.dependencies).some(element => id === element) ||
+    Object.keys(packageJson.peerDependencies).some(
+      (element) => id === element
+    ) ||
+    Object.keys(packageJson.dependencies).some((element) => id === element) ||
     id.includes('lodash/') ||
     id.includes('core-js/') ||
     id.includes('moment/') ||
@@ -70,6 +73,7 @@ const plugins = [
     // generate a named export for every property of the JSON object
     namedExports: true, // Default: true
   }),
+  svgr(),
 ];
 
 export default [
@@ -214,7 +218,10 @@ export default [
 
           // Sass components
           {
-            src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
+            src: [
+              'src/components/**/*.scss',
+              '!src/components/**/*.story.scss',
+            ],
             dest: ['lib/scss', 'scss'],
           },
           // react-resizable
@@ -233,6 +240,7 @@ export default [
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
+      svgr(),
       ...prodSettings,
     ],
   },

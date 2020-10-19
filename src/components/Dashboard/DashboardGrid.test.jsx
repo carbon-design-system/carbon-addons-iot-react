@@ -35,7 +35,10 @@ describe('DashboardGrid', () => {
     // handle old layouts with bogus cards
     const emptyLayouts = findLayoutOrGenerate(
       {
-        max: [{ i: 'boguscard', x: 0, y: 0 }, { i: 'mycard', x: 0, y: 0 }],
+        max: [
+          { i: 'boguscard', x: 0, y: 0 },
+          { i: 'mycard', x: 0, y: 0 },
+        ],
         xl: [{ i: 'boguscard', x: 0, y: 0 }],
         lg: [{ i: 'boguscard', x: 0, y: 0 }],
         md: [{ i: 'boguscard', x: 0, y: 0 }],

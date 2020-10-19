@@ -97,7 +97,10 @@ const defaultProps = {
 
 const doesGalleryItemMatch = (galleryItem, searchString) => {
   const searchRegexp = new RegExp(escapeRegExp(searchString) || '', 'i');
-  return searchRegexp.test(galleryItem.title) || searchRegexp.test(galleryItem.description);
+  return (
+    searchRegexp.test(galleryItem.title) ||
+    searchRegexp.test(galleryItem.description)
+  );
 };
 
 const StatefulTileGallery = ({
@@ -128,7 +131,7 @@ const StatefulTileGallery = ({
           {hasSearch ? (
             <TileGallerySearch
               searchValue={search}
-              onChange={event => setSearch(get(event, 'currentTarget.value'))}
+              onChange={(event) => setSearch(get(event, 'currentTarget.value'))}
               width="305px"
               i18n={{
                 iconDescription: i18n.searchIconDescription,
@@ -139,13 +142,16 @@ const StatefulTileGallery = ({
           ) : null}
           {hasSwitcher ? (
             <TileGalleryViewSwitcher
-              onChange={event => setThumbnails(get(event, 'name') !== 'list')}
+              onChange={(event) => setThumbnails(get(event, 'name') !== 'list')}
               selectedIndex={thumbnails ? 1 : 0}
               i18n={i18n}
             />
           ) : null}
           {hasButton ? (
-            <Button disabled={isButtonDisabled} className={buttonClassName} kind={buttonKind}>
+            <Button
+              disabled={isButtonDisabled}
+              className={buttonClassName}
+              kind={buttonKind}>
               {buttonText}
             </Button>
           ) : null}
@@ -153,13 +159,16 @@ const StatefulTileGallery = ({
       }
       content={
         <TileGallery>
-          {galleryData.map(item => {
-            const items = item.galleryItems.filter(galleryItem =>
+          {galleryData.map((item) => {
+            const items = item.galleryItems.filter((galleryItem) =>
               doesGalleryItemMatch(galleryItem, search)
             );
             return (
-              <TileGallerySection key={item.id} title={item.sectionTitle} i18n={i18n}>
-                {items.map(galleryItem => {
+              <TileGallerySection
+                key={item.id}
+                title={item.sectionTitle}
+                i18n={i18n}>
+                {items.map((galleryItem) => {
                   return (
                     <TileGalleryItem
                       key={`item-${galleryItem.title}-${Math.random()}`}

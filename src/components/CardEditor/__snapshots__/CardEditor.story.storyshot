@@ -25,6 +25,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         className="iot--card-editor"
       >
         <div
+          className="iot--card-editor--header"
+        >
+          <button
+            className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Add card
+            <svg
+              aria-hidden={true}
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
           className="iot--card-editor--content"
         >
           <div
@@ -36,8 +64,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="iot--list-header"
               >
-                <div
-                  className="iot--list-header--title"
+                <a
+                  className="bx--tabs-trigger-text"
+                  href="#"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Content
+                </a>
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   Gallery
                 </div>
@@ -91,23 +134,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     onClick={[Function]}
                     type="button"
                   >
-                    <svg
-                      aria-hidden={true}
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+                    Content
+                  </a>
+                </li>
+              </ul>
             </div>
             <div
               className="iot--list--content__full-height iot--list--content"
@@ -386,6 +416,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--card-editor"
         >
           <div
+            className="iot--card-editor--header"
+          >
+            <button
+              className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Add card
+              <svg
+                aria-hidden={true}
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
             className="iot--card-editor--content"
           >
             <div
@@ -397,8 +455,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header"
                 >
-                  <div
-                    className="iot--list-header--title"
+                  <a
+                    className="bx--tabs-trigger-text"
+                    href="#"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    Content
+                  </a>
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     Gallery
                   </div>
@@ -452,23 +525,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       onClick={[Function]}
                       type="button"
                     >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+                      Content
+                    </a>
+                  </li>
+                </ul>
               </div>
               <div
                 className="iot--list--content__full-height iot--list--content"
@@ -837,8 +897,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="iot--list-item--content--icon iot--list-item--content--icon__left"
                     >
                       <img
-                        alt="Simple bar"
-                        src="simple-bar-graph.svg"
+                        alt="Value / KPI"
+                        src="value-kpi.svg"
                       />
                     </div>
                     <div
@@ -849,9 +909,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <div
                           className="iot--list-item--content--values--value"
-                          title="Simple bar"
+                          title="Value / KPI"
                         >
-                          Simple bar
+                          Value / KPI
                         </div>
                       </div>
                     </div>
@@ -892,46 +952,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           title="Time series line"
                         >
                           Time series line
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--list-item-parent"
-                data-floating-menu-container={true}
-              >
-                <div
-                  className="iot--list-item iot--list-item__selectable"
-                  data_testid={null}
-                  onClick={[Function]}
-                  onKeyPress={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div
-                    className="iot--list-item--content"
-                  >
-                    <div
-                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                    >
-                      <img
-                        alt="Value / KPI"
-                        src="value-kpi.svg"
-                      />
-                    </div>
-                    <div
-                      className="iot--list-item--content--values"
-                    >
-                      <div
-                        className="iot--list-item--content--values--main"
-                      >
-                        <div
-                          className="iot--list-item--content--values--value"
-                          title="Value / KPI"
-                        >
-                          Value / KPI
                         </div>
                       </div>
                     </div>
@@ -1012,6 +1032,126 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           title="Data table"
                         >
                           Data table
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Simple bar"
+                        src="simple-bar-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Simple bar"
+                        >
+                          Simple bar
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Grouped bar"
+                        src="bar-grouped-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Grouped bar"
+                        >
+                          Grouped bar
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Stacked bar"
+                        src="bar-stack-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Stacked bar"
+                        >
+                          Stacked bar
                         </div>
                       </div>
                     </div>

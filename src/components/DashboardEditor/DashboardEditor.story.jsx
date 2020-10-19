@@ -2,98 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, object, array } from '@storybook/addon-knobs';
-import { Switcher24 } from '@carbon/icons-react';
-import Chip from '@carbon/icons-react/lib/chip/24';
-import Dashboard from '@carbon/icons-react/lib/dashboard/24';
-import Group from '@carbon/icons-react/lib/group/24';
 
-import { SuiteHeader, Card, Link, InlineNotification } from '../../index';
+import { Card, Link, InlineNotification } from '../../index';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
-
-const sideNavLinks = [
-  {
-    icon: Switcher24,
-    isEnabled: true,
-    metaData: {
-      tabIndex: 0,
-      label: 'Boards',
-      element: ({ children, ...rest }) => <div {...rest}>{children}</div>,
-      // isActive: true,
-    },
-    linkContent: 'Boards',
-    childContent: [
-      {
-        metaData: {
-          label: 'Yet another link',
-          title: 'Yet another link',
-          element: 'button',
-        },
-        content: 'Yet another link',
-      },
-    ],
-  },
-  {
-    isEnabled: true,
-    icon: Chip,
-    metaData: {
-      label: 'Devices',
-      href: 'https://google.com',
-      element: 'a',
-      target: '_blank',
-    },
-    linkContent: 'Devices',
-  },
-  {
-    isEnabled: true,
-    icon: Dashboard,
-    metaData: {
-      label: 'Dashboards',
-      href: 'https://google.com',
-      element: 'a',
-      target: '_blank',
-    },
-    linkContent: 'Dashboards',
-    childContent: [
-      {
-        metaData: {
-          label: 'Link 1',
-          title: 'Link 1',
-          element: 'button',
-        },
-        content: 'Link 1',
-      },
-      {
-        metaData: {
-          label: 'Link 2',
-          title: 'Link 2',
-        },
-        content: 'Link 2',
-      },
-    ],
-  },
-  {
-    isEnabled: true,
-    icon: Group,
-    metaData: {
-      label: 'Members',
-      element: 'button',
-    },
-    linkContent: 'Members',
-    childContent: [
-      {
-        metaData: {
-          label: 'Yet another link',
-          title: 'Yet another link',
-          element: 'button',
-        },
-        content: 'Link 3',
-        isActive: true,
-      },
-    ],
-  },
-];
 
 const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
 
@@ -112,11 +25,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -193,12 +109,13 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'CUSTOM',
-          'OTHER',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -214,7 +131,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
-        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
@@ -222,11 +138,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
-          'OTHER',
+          'CUSTOM',
         ])}
         headerBreadcrumbs={[
           <Link href="www.ibm.com">Dashboard library</Link>,
@@ -254,64 +173,6 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
             />
           </>
         }
-      />
-    </div>
-  ))
-  .add('wrapped in SuiteHeader', () => (
-    <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName="Admin User"
-        username="adminuser"
-        routes={{
-          profile: 'https://www.ibm.com',
-          navigator: 'https://www.ibm.com',
-          admin: 'https://www.ibm.com',
-          logout: 'https://www.ibm.com',
-          whatsNew: 'https://www.ibm.com',
-          gettingStarted: 'https://www.ibm.com',
-          documentation: 'https://www.ibm.com',
-          requestEnhancement: 'https://www.ibm.com',
-          support: 'https://www.ibm.com',
-          about: 'https://www.ibm.com',
-        }}
-        applications={[
-          {
-            id: 'monitor',
-            name: 'Monitor',
-            href: 'https://www.ibm.com',
-          },
-          {
-            id: 'health',
-            name: 'Health',
-            href: 'https://www.ibm.com',
-            isExternal: true,
-          },
-        ]}
-        sideNavProps={{
-          links: sideNavLinks,
-        }}
-      />
-      <DashboardEditor
-        title={text('title', 'My dashboard')}
-        onEditTitle={action('onEditTitle')}
-        onImport={action('onImport')}
-        onExport={action('onExport')}
-        onDelete={action('onDelete')}
-        onCancel={action('onCancel')}
-        onSubmit={action('onSubmit')}
-        supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
-          'TIMESERIES',
-          'VALUE',
-          'TABLE',
-          'OTHER',
-        ])}
-        headerBreadcrumbs={[
-          <Link href="www.ibm.com">Dashboard library</Link>,
-          <Link href="www.ibm.com">Favorites</Link>,
-        ]}
       />
     </div>
   ))
@@ -363,12 +224,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
         supportedCardTypes={array('supportedCardTypes', [
-          'BAR',
           'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
           'VALUE',
+          'IMAGE',
           'TABLE',
           'CUSTOM',
-          'OTHER',
         ])}
         i18n={{
           cardType_CUSTOM: 'Custom',
@@ -377,7 +240,13 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
           <Link href="www.ibm.com">Dashboard library</Link>,
           <Link href="www.ibm.com">Favorites</Link>,
         ]}
-        renderCardPreview={(cardJson, isSelected, onSelectCard, onDuplicateCard, onRemoveCard) => {
+        renderCardPreview={(
+          cardJson,
+          isSelected,
+          onSelectCard,
+          onDuplicateCard,
+          onRemoveCard
+        ) => {
           const commonProps = isSelected
             ? { className: 'selected-card' }
             : {
@@ -401,17 +270,14 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
               size={cardJson.size}
               title={cardJson.title}
               isEditable
-              {...commonProps}
-            >
+              {...commonProps}>
               <div style={{ padding: '1rem' }}>
-                This content is rendered by the renderCardPreview function. The &quot;value&quot;
-                property on the card will be rendered here:
+                This content is rendered by the renderCardPreview function. The
+                &quot;value&quot; property on the card will be rendered here:
                 <h3>{cardJson.value}</h3>
               </div>
             </Card>
-          ) : (
-            undefined
-          );
+          ) : undefined;
         }}
       />
     </div>

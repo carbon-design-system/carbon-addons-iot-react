@@ -44,7 +44,15 @@ beforeEach(() => {
       'any',
     ];
 
-    const complex = ['arrayOf', 'instanceOf', 'objectOf', 'oneOf', 'oneOfType', 'shape', 'exact'];
+    const complex = [
+      'arrayOf',
+      'instanceOf',
+      'objectOf',
+      'oneOf',
+      'oneOfType',
+      'shape',
+      'exact',
+    ];
 
     // We want to remap primitive prop types like PropTypes.string with a getter
     // function. This getter function should return the type of the prop type
@@ -78,7 +86,7 @@ beforeEach(() => {
     // eslint-disable-next-line no-restricted-syntax
     for (const type of complex) {
       // eslint-disable-next-line func-names
-      PropTypes[type] = function(...args) {
+      PropTypes[type] = function (...args) {
         const value = {
           type,
           args,
@@ -111,7 +119,7 @@ test('Public API should only change with a semver change', () => {
   function mapComponentToAPI(Component) {
     const api = {};
 
-    Object.keys(Component).forEach(key => {
+    Object.keys(Component).forEach((key) => {
       // There are a couple of properties on components that we don't believe
       // are part of our API, such `_` prefixed variables, or capture details
       // that are internal to a library-specific piece of functionality. For
@@ -151,7 +159,7 @@ test('Public API should only change with a semver change', () => {
   const CarbonAddonsIoTReact = require('../../index');
   const PublicAPI = new Map();
 
-  Object.keys(CarbonAddonsIoTReact).forEach(name => {
+  Object.keys(CarbonAddonsIoTReact).forEach((name) => {
     const Component = CarbonAddonsIoTReact[name];
     PublicAPI.set(name, mapComponentToAPI(Component));
   });

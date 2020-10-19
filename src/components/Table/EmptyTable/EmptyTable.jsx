@@ -30,7 +30,12 @@ const EmptyTable = ({
   isFiltered,
   emptyState,
   onEmptyStateAction,
-  emptyState: { messageWithFilters, message, buttonLabel, buttonLabelWithFilters },
+  emptyState: {
+    messageWithFilters,
+    message,
+    buttonLabel,
+    buttonLabelWithFilters,
+  },
 }) => (
   <TableBody id={id}>
     <TableRow className={`${iotPrefix}--empty-table--table-row`}>
@@ -40,7 +45,9 @@ const EmptyTable = ({
         ) : (
           <div className="empty-table-cell--default">
             <Bee32 />
-            <p>{isFiltered && messageWithFilters ? messageWithFilters : message}</p>
+            <p>
+              {isFiltered && messageWithFilters ? messageWithFilters : message}
+            </p>
             {onEmptyStateAction ? (
               <Button onClick={onEmptyStateAction}>
                 {isFiltered ? buttonLabelWithFilters : buttonLabel}

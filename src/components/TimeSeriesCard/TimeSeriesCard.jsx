@@ -31,7 +31,11 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
-import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
+import {
+  generateSampleValues,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
 
@@ -88,14 +92,29 @@ const TimeSeriesCardPropTypes = {
     })
   ),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.number,
+      PropTypes.bool,
+    ])
   ),
   /** Interval for time series configuration used for formatting the x-axis */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+  interval: PropTypes.oneOf([
+    'minute',
+    'hour',
+    'day',
+    'week',
+    'quarter',
+    'month',
+    'year',
+  ]),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp
    */
-  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  domainRange: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.object])
+  ),
   /** Region for value and text formatting */
   locale: PropTypes.string,
   /** Show timestamp in browser local time or GMT */
@@ -119,24 +138,31 @@ const TimeSeriesCardPropTypes = {
  *
  * @returns {object} with a labels array and a datasets array
  */
-export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+export const formatChartData = (
+  timeDataSourceId = 'timestamp',
+  series,
+  values
+) => {
   // Generate a set of unique timestamps for the values
-  const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
+  const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
   const data = [];
 
   // Series is the different groups of datasets
   series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
-    timestamps.forEach(timestamp => {
+    timestamps.forEach((timestamp) => {
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
       if (!isEmpty(filteredData)) {
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
-          .filter(dataItem => {
+          .filter((dataItem) => {
             // only allow valid timestamp matches
-            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            return (
+              !isNil(dataItem[timeDataSourceId]) &&
+              dataItem[timeDataSourceId] === timestamp
+            );
           })
-          .forEach(dataItem => {
+          .forEach((dataItem) => {
             // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
             if (dataItem[dataSourceId]) {
               data.push({
@@ -175,8 +201,12 @@ export const handleTooltip = (
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
-  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+  const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
+    : dataOrHoveredElement;
+  const timeStamp = Array.isArray(data)
+    ? data[0]?.date?.getTime()
+    : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
                         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
@@ -189,12 +219,8 @@ export const handleTooltip = (
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
     ? matchingAlertRanges
         .map(
-          matchingAlertRange =>
-            `<li class='datapoint-tooltip'><a style="background-color:${
-              matchingAlertRange.color
-            }" class="tooltip-color"></a><p class='label'>${alertDetected} ${
-              matchingAlertRange.details
-            }</p></li>`
+          (matchingAlertRange) =>
+            `<li class='datapoint-tooltip'><a style="background-color:${matchingAlertRange.color}" class="tooltip-color"></a><p class='label'>${alertDetected} ${matchingAlertRange.details}</p></li>`
         )
         .join('')
     : '';
@@ -212,10 +238,10 @@ export const handleTooltip = (
  * @param {Array} series an array of dataset group classifications
  * @returns {Object} colors - formatted
  */
-export const formatColors = series => {
+export const formatColors = (series) => {
   const colors = { identifier: 'group', scale: {} };
   if (Array.isArray(series)) {
-    series.forEach(dataset => {
+    series.forEach((dataset) => {
       colors.scale[dataset.label] = dataset.color;
     });
   } else {
@@ -273,7 +299,9 @@ const TimeSeriesCard = ({
     () =>
       values
         ? values.sort((left, right) =>
-            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+            moment
+              .utc(left[timeDataSourceId])
+              .diff(moment.utc(right[timeDataSourceId]))
           )
         : [],
     [values, timeDataSourceId]
@@ -282,24 +310,21 @@ const TimeSeriesCard = ({
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
-  const maxTicksPerSize = useMemo(
-    () => {
-      switch (newSize) {
-        case CARD_SIZES.MEDIUMTHIN:
-          return 2;
-        case CARD_SIZES.MEDIUM:
-          return 4;
-        case CARD_SIZES.MEDIUMWIDE:
-        case CARD_SIZES.LARGE:
-          return 6;
-        case CARD_SIZES.LARGEWIDE:
-          return 14;
-        default:
-          return 10;
-      }
-    },
-    [newSize]
-  );
+  const maxTicksPerSize = useMemo(() => {
+    switch (newSize) {
+      case CARD_SIZES.MEDIUMTHIN:
+        return 2;
+      case CARD_SIZES.MEDIUM:
+        return 4;
+      case CARD_SIZES.MEDIUMWIDE:
+      case CARD_SIZES.LARGE:
+        return 6;
+      case CARD_SIZES.LARGEWIDE:
+        return 14;
+      default:
+        return 10;
+    }
+  }, [newSize]);
 
   const formatTick = useCallback(
     /** *
@@ -327,10 +352,17 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = formatColors(series);
 
-  const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
+  const handleStrokeColor = (
+    datasetLabel,
+    label,
+    data,
+    originalStrokeColor
+  ) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+      return matchingAlertRange?.length > 0
+        ? matchingAlertRange[0].color
+        : originalStrokeColor;
     }
     return originalStrokeColor;
   };
@@ -340,7 +372,9 @@ const TimeSeriesCard = ({
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
+      return matchingAlertRange?.length > 0
+        ? matchingAlertRange[0].color
+        : defaultFillColor;
     }
 
     return defaultFillColor;
@@ -356,80 +390,79 @@ const TimeSeriesCard = ({
   };
 
   /** This is needed to update the chart when the lines and values change */
-  useDeepCompareEffect(
-    () => {
-      if (chartRef && chartRef.chart) {
-        const chartData = formatChartData(timeDataSourceId, series, valueSort);
-        chartRef.chart.model.setData(chartData);
-      }
-    },
-    [valueSort, series, timeDataSourceId]
-  );
+  useDeepCompareEffect(() => {
+    if (chartRef && chartRef.chart) {
+      const chartData = formatChartData(timeDataSourceId, series, valueSort);
+      chartRef.chart.model.setData(chartData);
+    }
+  }, [valueSort, series, timeDataSourceId]);
 
   /** This caches the chart value */
-  const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
-    timeDataSourceId,
-    series,
-    valueSort,
-  ]);
+  const chartData = useMemo(
+    () => formatChartData(timeDataSourceId, series, valueSort),
+    [timeDataSourceId, series, valueSort]
+  );
 
   const isChartDataEmpty = isEmpty(chartData);
 
-  const { tableData, columnNames } = useMemo(
-    () => {
-      let maxColumnNames = [];
+  const { tableData, columnNames } = useMemo(() => {
+    let maxColumnNames = [];
 
-      const tableValues = valueSort.map((value, index) => {
-        const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
-        maxColumnNames =
-          currentValueColumns.length > maxColumnNames.length ? currentValueColumns : maxColumnNames;
-        return {
-          id: `dataindex-${index}`,
-          values: {
-            ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-            [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
-          },
-          isSelectable: false,
-        };
-      });
-      return { tableData: tableValues, columnNames: maxColumnNames };
-    },
-    [timeDataSourceId, valueSort]
-  );
+    const tableValues = valueSort.map((value, index) => {
+      const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
+      maxColumnNames =
+        currentValueColumns.length > maxColumnNames.length
+          ? currentValueColumns
+          : maxColumnNames;
+      return {
+        id: `dataindex-${index}`,
+        values: {
+          ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
+          [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
+        },
+        isSelectable: false,
+      };
+    });
+    return { tableData: tableValues, columnNames: maxColumnNames };
+  }, [timeDataSourceId, valueSort]);
 
   // In expanded mode we show the data underneath the linechart in a table so need to build the columns
-  const tableColumns = useMemo(
-    () => {
-      // First column is timestamp
-      const columns = [
-        {
-          id: timeDataSourceId,
-          name: capitalize(timeDataSourceId),
+  const tableColumns = useMemo(() => {
+    // First column is timestamp
+    const columns = [
+      {
+        id: timeDataSourceId,
+        name: capitalize(timeDataSourceId),
+        isSortable: true,
+        type: 'TIMESTAMP',
+      },
+    ];
+    // then the rest in series order
+    return columns.concat(
+      columnNames.map((columnName) => {
+        const matchingDataSource = Array.isArray(series)
+          ? series.find((d) => d.dataSourceId === columnName)
+          : series;
+        return {
+          id: columnName,
+          // use the label if one exists as it will be the user-defined, readable name
+          name: matchingDataSource ? matchingDataSource.label : columnName,
           isSortable: true,
-          type: 'TIMESTAMP',
-        },
-      ];
-      // then the rest in series order
-      return columns.concat(
-        columnNames.map(columnName => {
-          const matchingDataSource = Array.isArray(series)
-            ? series.find(d => d.dataSourceId === columnName)
-            : series;
-          return {
-            id: columnName,
-            // use the label if one exists as it will be the user-defined, readable name
-            name: matchingDataSource ? matchingDataSource.label : columnName,
-            isSortable: true,
-            filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
-          };
-        })
-      );
-    },
-    [columnNames, i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]
-  );
+          filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+        };
+      })
+    );
+  }, [
+    columnNames,
+    i18n.defaultFilterStringPlaceholdText,
+    series,
+    timeDataSourceId,
+  ]);
 
   // TODO: remove in next release
-  const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
+  const ChartComponent =
+    chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
+
   return (
     <Card
       title={title}
@@ -440,8 +473,7 @@ const TimeSeriesCard = ({
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
-      isLoading={isLoading}
-    >
+      isLoading={isLoading}>
       {!isChartDataEmpty ? (
         <>
           <div
@@ -450,10 +482,9 @@ const TimeSeriesCard = ({
               [`${iotPrefix}--time-series-card--wrapper__lots-of-points`]:
                 valueSort && valueSort.length > 50,
               [`${iotPrefix}--time-series-card--wrapper__editable`]: isEditable,
-            })}
-          >
+            })}>
             <ChartComponent
-              ref={el => {
+              ref={(el) => {
                 chartRef = el;
               }}
               data={chartData}
@@ -476,12 +507,14 @@ const TimeSeriesCard = ({
                     title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
                     mapsTo: 'value',
                     ticks: {
-                      formatter: axisValue => chartValueFormatter(axisValue, newSize, null, locale),
+                      formatter: (axisValue) =>
+                        chartValueFormatter(axisValue, newSize, null, locale),
                     },
                     ...(chartType !== TIME_SERIES_TYPES.BAR
-                      ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
+                      ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
                       : {}),
-                    stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
+                    stacked:
+                      chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
                     includeZero: includeZeroOnYaxis,
                     scaleType: 'linear',
                   },
@@ -493,7 +526,7 @@ const TimeSeriesCard = ({
                 },
                 containerResizable: true,
                 tooltip: {
-                  valueFormatter: tooltipValue =>
+                  valueFormatter: (tooltipValue) =>
                     chartValueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
                     handleTooltip(
@@ -508,7 +541,8 @@ const TimeSeriesCard = ({
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
-                ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+                ...(zoomBar?.enabled &&
+                (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                   ? {
                       zoomBar: {
                         // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
@@ -521,7 +555,9 @@ const TimeSeriesCard = ({
                     }
                   : {}),
                 timeScale: {
-                  addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
+                  addSpaceOnEdges: !isNil(addSpaceOnEdges)
+                    ? addSpaceOnEdges
+                    : 1,
                 },
               }}
               width="100%"
@@ -541,7 +577,8 @@ const TimeSeriesCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
+                  onDownloadCSV: (filteredData) =>
+                    csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{

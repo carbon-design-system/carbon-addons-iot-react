@@ -4,7 +4,10 @@ import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
-import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  ImageCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
@@ -40,6 +43,7 @@ const ImageCard = ({
   values,
   size,
   onCardAction,
+  availableActions,
   isEditable,
   isExpanded,
   error,
@@ -63,7 +67,7 @@ const ImageCard = ({
     CARD_SIZES.LARGEWIDE,
   ];
   const supportedSize = supportedSizes.includes(newSize);
-  const availableActions = { expand: supportedSize };
+  const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
   const isCardLoading = isNil(src) && !isEditable && !error;
 
@@ -72,13 +76,13 @@ const ImageCard = ({
       title={title}
       size={newSize}
       onCardAction={onCardAction}
-      availableActions={availableActions}
+      availableActions={mergedAvailableActions}
       isLoading={isCardLoading} // only show the spinner if we don't have an image
       isExpanded={isExpanded}
+      isEditable={isEditable}
       {...others}
       error={error}
-      i18n={otherLabels}
-    >
+      i18n={otherLabels}>
       {!isCardLoading
         ? (
             // Get width and height from parent card

@@ -15,8 +15,6 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** card data value */
   cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** card data errors */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
@@ -37,6 +35,7 @@ const defaultProps = {
   cardJson: {},
   i18n: {
     openEditorButton: 'Open JSON editor',
+    contentTabLabel: 'Content',
     cardSize_SMALL: 'Small',
     cardSize_SMALLWIDE: 'Small wide',
     cardSize_MEDIUM: 'Medium',
@@ -115,7 +114,9 @@ const CardEditForm = ({ cardJson, onChange, i18n, dataItems, getValidDataItems }
     <>
       {showEditor ? (
         <CardCodeEditor
-          onSubmit={(val, setError) => handleSubmit(val, setError, onChange, setShowEditor)}
+          onSubmit={(val, setError) =>
+            handleSubmit(val, setError, onChange, setShowEditor)
+          }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
           i18n={{
@@ -157,8 +158,7 @@ const CardEditForm = ({ cardJson, onChange, i18n, dataItems, getValidDataItems }
             onClick={() => {
               setModalData(JSON.stringify(cardJson, null, 4));
               setShowEditor(true);
-            }}
-          >
+            }}>
             {mergedI18n.openEditorButton}
           </Button>
         </div>

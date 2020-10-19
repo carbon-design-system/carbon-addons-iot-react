@@ -28,7 +28,14 @@ const propTypes = {
   }),
 };
 
-const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLogout, i18n }) => {
+const SuiteHeaderLogoutModal = ({
+  suiteName,
+  displayName,
+  isOpen,
+  onClose,
+  onLogout,
+  i18n,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   return (
     <Modal
@@ -38,8 +45,7 @@ const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLog
       secondaryButtonText={mergedI18N.secondaryButton}
       onSecondarySubmit={onClose}
       onRequestSubmit={onLogout}
-      onRequestClose={onClose}
-    >
+      onRequestClose={onClose}>
       {mergedI18N.body(suiteName, displayName)}
     </Modal>
   );
