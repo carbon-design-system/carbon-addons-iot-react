@@ -263,6 +263,7 @@ const ValueCard = ({
   dataState,
   id,
   locale,
+  customFormatter,
   ...others
 }) => {
   const availableActions = {
@@ -384,6 +385,7 @@ const ValueCard = ({
                                 ),
                           }
                         }
+                        customFormatter={customFormatter}
                       />
                       {isMini && <Spacer />}
                       <AttributeLabel
