@@ -65,6 +65,16 @@ project:
 import { AddCard } from 'carbon-addons-iot-react';
 ```
 
+Prerelease versions are available on `carbon-addons-iot-react@next`. The semver
+range in your project's `package.json` can be modified to follow the `next`
+channel:
+
+```
+"dependencies": {
+  "carbon-addons-iot-react": "next",
+}
+```
+
 ## 🚀 Quick Start
 
 If you'd like to test drive everything here, run the following command to create

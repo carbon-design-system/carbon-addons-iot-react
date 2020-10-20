@@ -23,6 +23,16 @@ As a result, whenever you see a `minor` or `patch` update for a package from
 `carbon-addons-iot-react` you should feel confident that you can update without
 anything breaking in your project.
 
+Prerelease versions are available on `carbon-addons-iot-react@next`. The semver
+range in your project's `package.json` can be modified to follow the `next`
+channel:
+
+```
+"dependencies": {
+  "carbon-addons-iot-react": "next",
+}
+```
+
 **Note:** If you ever bring in an update and it does break something in your
 project, please
 [create an issue](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/new?assignees=&labels=%3Abug%3A++Bug&template=bug-report.md&title=%5BComponentName%5D+bug_title)
