@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Link } from '../..';
 
@@ -121,7 +121,7 @@ describe('DashboardEditor', () => {
     // then find the card title that was created
     expect(screen.getAllByTitle('Untitled')).toHaveLength(1);
     // re-open the gallery by clicking open gallery
-    const openGalleryBtn = screen.getByText('Open gallery');
+    let openGalleryBtn = screen.getByText('Open gallery');
     expect(openGalleryBtn).toBeInTheDocument();
     fireEvent.click(openGalleryBtn);
     // now find and click Time series
@@ -130,6 +130,35 @@ describe('DashboardEditor', () => {
     fireEvent.click(timeSeriesBtn);
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(2);
+    openGalleryBtn = screen.getByText('Open gallery');
+    expect(openGalleryBtn).toBeInTheDocument();
+    fireEvent.click(openGalleryBtn);
+    // now find and click Grouped bar
+    const groupedBarBtn = screen.getByTitle('Grouped bar');
+    expect(groupedBarBtn).toBeInTheDocument();
+    fireEvent.click(groupedBarBtn);
+    // then find the card title that was created, but these will have the same names so check the length
+    expect(screen.getAllByTitle('Untitled')).toHaveLength(3);
+    // re-open the gallery by clicking open gallery
+    openGalleryBtn = screen.getByText('Open gallery');
+    expect(openGalleryBtn).toBeInTheDocument();
+    fireEvent.click(openGalleryBtn);
+    // now find and click Stacked bar
+    const stackedBarBtn = screen.getByTitle('Stacked bar');
+    expect(stackedBarBtn).toBeInTheDocument();
+    fireEvent.click(stackedBarBtn);
+    // then find the card title that was created, but these will have the same names so check the length
+    expect(screen.getAllByTitle('Untitled')).toHaveLength(4);
+    // // re-open the gallery by clicking open gallery
+    openGalleryBtn = screen.getByText('Open gallery');
+    expect(openGalleryBtn).toBeInTheDocument();
+    fireEvent.click(openGalleryBtn);
+    // now find and click Image
+    const imageBtn = screen.getByTitle('Image');
+    expect(imageBtn).toBeInTheDocument();
+    fireEvent.click(imageBtn);
+    // then find the card title that was created, but these will have the same names so check the length
+    expect(screen.getAllByTitle('Untitled')).toHaveLength(5);
   });
 
   it('selecting submit should fire onSubmit', () => {

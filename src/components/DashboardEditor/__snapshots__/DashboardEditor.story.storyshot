@@ -355,7 +355,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
@@ -550,7 +549,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
-          &gt;
           <div
             className="iot--card-editor"
           >
@@ -1045,7 +1043,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
-          &gt;
           <div
             className="iot--card-editor"
           >
@@ -1741,7 +1738,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
-          &gt;
           <div
             className="iot--card-editor"
           >
@@ -2467,7 +2463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
-                  onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
@@ -2593,7 +2588,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onBlur={[Function]}
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
@@ -2788,7 +2782,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
-          &gt;
           <div
             className="iot--card-editor"
           >
@@ -3698,7 +3691,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
-          &gt;
           <div
             className="iot--card-editor"
           >
