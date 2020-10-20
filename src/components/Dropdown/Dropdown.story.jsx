@@ -147,7 +147,7 @@ storiesOf('Watson IoT/Dropdown', module)
       );
     });
   })
-  .add('default with icons', () => {
+  .add('with icons and labels', () => {
     return React.createElement(() => {
       const [selectedViewId, setSelectedViewId] = useState(itemsWithIcons[1].id);
 
@@ -163,7 +163,28 @@ storiesOf('Watson IoT/Dropdown', module)
                 action('onChangeView')(viewItem);
               },
             }}
-            hasIconsOnly={boolean('has icons only', true)}
+          />
+        </div>
+      );
+    });
+  })
+  .add('with icons only', () => {
+    return React.createElement(() => {
+      const [selectedViewId, setSelectedViewId] = useState(itemsWithIcons[1].id);
+
+      return (
+        <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
+          <Dropdown
+            {...props()}
+            items={itemsWithIcons}
+            selectedViewId={selectedViewId}
+            actions={{
+              onChangeView: viewItem => {
+                setSelectedViewId(viewItem.id);
+                action('onChangeView')(viewItem);
+              },
+            }}
+            hasIconsOnly
           />
         </div>
       );
