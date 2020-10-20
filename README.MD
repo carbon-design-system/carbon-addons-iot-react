@@ -25,6 +25,9 @@
   <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
     <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="Current npm version release" />
   </a>
+  <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
+    <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/next" alt="Next npm version release" />
+  </a>
   <a href="https://coveralls.io/github/carbon-design-system/carbon-addons-iot-react?branch=master">
     <img src="https://coveralls.io/repos/github/carbon-design-system/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
   </a>
@@ -60,6 +63,16 @@ project:
 
 ```js
 import { AddCard } from 'carbon-addons-iot-react';
+```
+
+Prerelease versions are available on `carbon-addons-iot-react@next`. The semver
+range in your project's `package.json` can be modified to follow the `next`
+channel:
+
+```
+"dependencies": {
+  "carbon-addons-iot-react": "next",
+}
 ```
 
 ## 🚀 Quick Start
