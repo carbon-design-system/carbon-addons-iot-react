@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
+import isEmpty from 'lodash/isEmpty';
 
 import {
   CARD_SIZES,
@@ -19,6 +20,21 @@ import {
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
 
 const { iotPrefix } = settings;
+
+const propTypes = {
+  /** card data value */
+  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** Callback function when form data changes */
+  onChange: PropTypes.func.isRequired,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardJson)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
+  onValidateCardJson: PropTypes.func,
+  i18n: PropTypes.shape({
+    openEditorButton: PropTypes.string,
+  }),
+};
 
 const defaultProps = {
   cardJson: {},
@@ -42,16 +58,7 @@ const defaultProps = {
     barChartLayout_VERTICAL: 'Vertical',
     // additional card type names can be provided using the convention of `cardType_TYPE`
   },
-};
-
-const propTypes = {
-  /** card data value */
-  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** Callback function when form data changes */
-  onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({
-    openEditorButton: PropTypes.string,
-  }),
+  onValidateCardJson: null,
 };
 
 /**
@@ -67,40 +74,58 @@ export const getCardSizeText = (size, i18n) => {
 };
 
 /**
+ * Returns errors of basic JSON syntax
+ * Must not be empty string, Must be valid JSON
+ * @param {Object} card JSON currently being edited
+ * @returns {Array<string>} error strings
+ */
+export const basicCardValidation = (card) => {
+  const errors = [];
+  try {
+    JSON.parse(card);
+  } catch (e) {
+    errors.push(e.message);
+  }
+  return errors;
+};
+
+/**
  * Checks for JSON form errors
- * @param {Object} val card JSON text input
+ * @param {Object} card JSON text input
  * @param {Function} setError
+ * @param {Function} onValidateCardJson
  * @param {Function} onChange
  * @param {Function} setShowEditor
  */
-export const handleSubmit = (val, setError, onChange, setShowEditor) => {
-  try {
-    let error = false;
-    if (val === '') {
-      setError('JSON value must not be an empty string');
-      error = true;
-    } else {
-      const json = JSON.parse(val);
-      // Check for non-exception throwing cases (false, 1234, null)
-      if (json && typeof json === 'object') {
-        onChange(json);
-        setShowEditor(false);
-      }
-      setError(`${val.substring(0, 8)} is not valid JSON`);
-      error = true;
-    }
-    if (!error) {
-      setError(false);
-      return true;
-    }
-  } catch (e) {
-    setError(e.message);
-    return false;
+export const handleSubmit = (
+  card,
+  setError,
+  onValidateCardJson,
+  onChange,
+  setShowEditor
+) => {
+  // first validate basic JSON syntax
+  const basicErrors = basicCardValidation(card);
+  // second validate the consumer's custom function if provided
+  let customValidationErrors = [];
+  if (onValidateCardJson) {
+    customValidationErrors = onValidateCardJson(card);
   }
+
+  const allErrors = basicErrors.concat(customValidationErrors);
+  console.log(isEmpty(allErrors));
+  // then submit
+  if (isEmpty(allErrors)) {
+    onChange(JSON.parse(card));
+    setShowEditor(false);
+    return true;
+  }
+
+  setError(allErrors.join(' '));
   return false;
 };
 
-const CardEditForm = ({ cardJson, onChange, i18n }) => {
+const CardEditForm = ({ cardJson, onChange, onValidateCardJson, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
@@ -162,8 +187,14 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
     <>
       {showEditor ? (
         <CardCodeEditor
-          onSubmit={(val, setError) =>
-            handleSubmit(val, setError, onChange, setShowEditor)
+          onSubmit={(card, setError) =>
+            handleSubmit(
+              card,
+              setError,
+              onValidateCardJson,
+              onChange,
+              setShowEditor
+            )
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
@@ -179,7 +210,7 @@ const CardEditForm = ({ cardJson, onChange, i18n }) => {
       ) : null}
       <div className={baseClassName}>
         <Tabs>
-          <Tab label={i18n.contentTabLabel}>
+          <Tab label={mergedI18n.contentTabLabel}>
             <div className={`${baseClassName}--content`}>{commonFormItems}</div>
           </Tab>
         </Tabs>

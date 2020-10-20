@@ -7881,6 +7881,7 @@ Map {
       "onExport": null,
       "onImport": null,
       "onSubmit": null,
+      "onValidateCardJson": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
@@ -7983,6 +7984,9 @@ Map {
       "onSubmit": Object {
         "type": "func",
       },
+      "onValidateCardJson": Object {
+        "type": "func",
+      },
       "renderCardPreview": Object {
         "type": "func",
       },
@@ -8012,6 +8016,7 @@ Map {
         "openJSONButton": "Open JSON editor",
         "searchPlaceholderText": "Enter a search",
       },
+      "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -8052,6 +8057,9 @@ Map {
       },
       "onShowGallery": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onValidateCardJson": Object {
         "type": "func",
       },
       "supportedCardTypes": Object {

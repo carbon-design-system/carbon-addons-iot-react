@@ -20,6 +20,11 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Callback function when card is added from list */
   onAddCard: PropTypes.func.isRequired,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardJson)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
+  onValidateCardJson: PropTypes.func,
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -38,6 +43,7 @@ const defaultProps = {
     searchPlaceholderText: 'Enter a search',
   },
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  onValidateCardJson: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -47,6 +53,7 @@ const CardEditor = ({
   onShowGallery,
   onChange,
   onAddCard,
+  onValidateCardJson,
   supportedCardTypes,
   i18n,
 }) => {
@@ -77,7 +84,12 @@ const CardEditor = ({
             i18n={mergedI18n}
           />
         ) : (
-          <CardEditForm cardJson={cardJson} onChange={onChange} />
+          <CardEditForm
+            cardJson={cardJson}
+            onChange={onChange}
+            onValidateCardJson={onValidateCardJson}
+            i18n={mergedI18n}
+          />
         )}
       </div>
     </div>

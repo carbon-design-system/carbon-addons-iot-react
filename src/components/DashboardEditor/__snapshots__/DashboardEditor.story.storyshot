@@ -550,6 +550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
+          &gt;
           <div
             className="iot--card-editor"
           >
@@ -1044,6 +1045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
+          &gt;
           <div
             className="iot--card-editor"
           >
@@ -1739,6 +1741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
+          &gt;
           <div
             className="iot--card-editor"
           >
@@ -2785,6 +2788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
+          &gt;
           <div
             className="iot--card-editor"
           >
@@ -3694,6 +3698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--dashboard-editor--sidebar"
         >
+          &gt;
           <div
             className="iot--card-editor"
           >
