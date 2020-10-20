@@ -102,15 +102,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
       />
       <nav
         aria-label="Side navigation"
-        className="bx--side-nav__navigation bx--side-nav bx--side-nav--ux"
+        className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
         onBlur={[Function]}
         onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <ul
           className="bx--side-nav__items"
         >
           <li
-            className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+            className="bx--side-nav__item bx--side-nav__item--icon"
             onKeyDown={[Function]}
           >
             <button
@@ -183,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             </ul>
           </li>
           <li
-            className="bx--side-nav__item bx--side-nav__item--large"
+            className="bx--side-nav__item"
           >
             <a
               aria-label="Devices"
@@ -221,7 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             </a>
           </li>
           <li
-            className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+            className="bx--side-nav__item bx--side-nav__item--icon"
             onKeyDown={[Function]}
           >
             <button
@@ -299,6 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               >
                 <a
                   className="bx--side-nav__link"
+                  href="/?path=/story/watson-iot-sidenav--sidenav-component"
                   label="Link 2"
                   onClick={[Function]}
                   title="Link 2"
@@ -313,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             </ul>
           </li>
           <li
-            className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
+            className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
             onKeyDown={[Function]}
           >
             <button
