@@ -63,6 +63,7 @@ export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderDat
 export Dashboard from './components/Dashboard/Dashboard';
 export DashboardHeader from './components/Dashboard/DashboardHeader';
 export DashboardGrid from './components/Dashboard/DashboardGrid';
+export DashboardEditor from './components/DashboardEditor/DashboardEditor';
 export CardEditor from './components/CardEditor/CardEditor';
 export Card from './components/Card/Card';
 export PieChartCard from './components/PieChartCard/PieChartCard';

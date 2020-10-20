@@ -43,6 +43,7 @@ const ImageCard = ({
   values,
   size,
   onCardAction,
+  availableActions,
   isEditable,
   isExpanded,
   error,
@@ -66,7 +67,7 @@ const ImageCard = ({
     CARD_SIZES.LARGEWIDE,
   ];
   const supportedSize = supportedSizes.includes(newSize);
-  const availableActions = { expand: supportedSize };
+  const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
   const isCardLoading = isNil(src) && !isEditable && !error;
 
@@ -75,9 +76,10 @@ const ImageCard = ({
       title={title}
       size={newSize}
       onCardAction={onCardAction}
-      availableActions={availableActions}
+      availableActions={mergedAvailableActions}
       isLoading={isCardLoading} // only show the spinner if we don't have an image
       isExpanded={isExpanded}
+      isEditable={isEditable}
       {...others}
       error={error}
       i18n={otherLabels}>

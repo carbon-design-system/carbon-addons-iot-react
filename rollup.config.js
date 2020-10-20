@@ -9,6 +9,7 @@ import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
 import builtins from 'rollup-plugin-node-builtins';
+import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
 
@@ -72,6 +73,7 @@ const plugins = [
     // generate a named export for every property of the JSON object
     namedExports: true, // Default: true
   }),
+  svgr(),
 ];
 
 export default [
@@ -238,6 +240,7 @@ export default [
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
+      svgr(),
       ...prodSettings,
     ],
   },
