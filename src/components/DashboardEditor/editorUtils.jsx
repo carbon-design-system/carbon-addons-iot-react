@@ -69,7 +69,8 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
+          yLabel: 'Temperature',
+          unit: '˚F',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -233,7 +234,13 @@ const renderValueCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderTimeSeriesCard = (cardJson, commonProps) => (
-  <TimeSeriesCard isEditable  values={[]}    showLegend {...cardJson} {...commonProps} />
+  <TimeSeriesCard
+    isEditable
+    values={[]}
+    showLegend
+    {...cardJson}
+    {...commonProps}
+  />
 );
 
 /**
@@ -295,7 +302,6 @@ export const getCardPreview = (
     },
     tabIndex: 0,
     onFocus: () => onSelectCard(cardData.id),
-    onBlur: () => onSelectCard(null),
   };
 
   if (!isCardJsonValid(cardData)) {

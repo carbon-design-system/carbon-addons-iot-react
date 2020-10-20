@@ -103,7 +103,13 @@ export const handleSubmit = (val, setError, onChange, setShowEditor) => {
   return false;
 };
 
-const CardEditForm = ({ cardJson, onChange, i18n, dataItems, getValidDataItems }) => {
+const CardEditForm = ({
+  cardJson,
+  onChange,
+  i18n,
+  dataItems,
+  getValidDataItems,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();

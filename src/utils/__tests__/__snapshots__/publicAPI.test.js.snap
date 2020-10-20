@@ -8018,6 +8018,8 @@ Map {
   "CardEditor" => Object {
     "defaultProps": Object {
       "cardJson": null,
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "i18n": Object {
         "addCardButton": "Add card",
         "closeGalleryButton": "Back",
@@ -8039,6 +8041,17 @@ Map {
     "propTypes": Object {
       "cardJson": Object {
         "type": "object",
+      },
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
       },
       "i18n": Object {
         "args": Array [

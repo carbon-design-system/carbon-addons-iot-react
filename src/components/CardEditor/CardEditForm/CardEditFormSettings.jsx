@@ -46,8 +46,11 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           id="x-axis-label"
           labelText={mergedI18n.xAxisLabel}
           light
-          onChange={evt =>
-            onChange({ ...cardJson, content: { ...cardJson.content, xLabel: evt.target.value } })
+          onChange={(evt) =>
+            onChange({
+              ...cardJson,
+              content: { ...cardJson.content, xLabel: evt.target.value },
+            })
           }
           value={content?.xLabel}
         />
@@ -57,8 +60,11 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           id="y-axis-label"
           labelText={mergedI18n.yAxisLabel}
           light
-          onChange={evt =>
-            onChange({ ...cardJson, content: { ...cardJson.content, yLabel: evt.target.value } })
+          onChange={(evt) =>
+            onChange({
+              ...cardJson,
+              content: { ...cardJson.content, yLabel: evt.target.value },
+            })
           }
           value={content?.yLabel}
         />
@@ -68,8 +74,11 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           id="unit-selection"
           labelText={mergedI18n.unitLabel}
           light
-          onChange={evt =>
-            onChange({ ...cardJson, content: { ...cardJson.content, unit: evt.target.value } })
+          onChange={(evt) =>
+            onChange({
+              ...cardJson,
+              content: { ...cardJson.content, unit: evt.target.value },
+            })
           }
           value={content?.unit}
         />

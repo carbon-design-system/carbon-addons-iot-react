@@ -18,7 +18,13 @@ import {
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
-import { ComposedModal, Button, List, TextInput, MultiSelect } from '../../../../index';
+import {
+  ComposedModal,
+  Button,
+  List,
+  TextInput,
+  MultiSelect,
+} from '../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -74,7 +80,7 @@ export const formatSeries = (selectedItems, cardJson) => {
   const cardSeries = cardJson.content.series;
   const series = selectedItems.map(({ id }, i) => {
     const color =
-      cardSeries.find(dataItem => dataItem.label === id)?.color ??
+      cardSeries.find((dataItem) => dataItem.label === id)?.color ??
       DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
       dataSourceId: id.toLowerCase(),
@@ -85,7 +91,13 @@ export const formatSeries = (selectedItems, cardJson) => {
   return series;
 };
 
-const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onChange, i18n }) => {
+const DataSeriesFormItem = ({
+  cardJson = {},
+  dataItems,
+  getValidDataItems,
+  onChange,
+  i18n,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [showEditor, setShowEditor] = useState(false);
@@ -93,7 +105,9 @@ const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onCha
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const validDataItems = getValidDataItems ? getValidDataItems(cardJson, 'timeRange') : dataItems;
+  const validDataItems = getValidDataItems
+    ? getValidDataItems(cardJson, 'timeRange')
+    : dataItems;
 
   return (
     <>
@@ -106,28 +120,32 @@ const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onCha
           onSubmit={() => {
             const updatedSeries = [...cardJson.content.series];
             const editDataItemIndex = updatedSeries.findIndex(
-              dataItem => dataItem.dataSourceId === editDataItem.dataSourceId
+              (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
             );
             updatedSeries[editDataItemIndex] = editDataItem;
-            onChange({ ...cardJson, content: { ...cardJson.content, series: updatedSeries } });
+            onChange({
+              ...cardJson,
+              content: { ...cardJson.content, series: updatedSeries },
+            });
             setShowEditor(false);
             setEditDataItem(null);
           }}
           onClose={() => {
             setShowEditor(false);
             setEditDataItem(null);
-          }}
-        >
+          }}>
           <span className="bx--label" style={{ fontSize: '0.75rem' }}>
             {mergedI18n.dataItemEditorDataItemTitle}
           </span>
-          <div className={`${baseClassName}--input`}>{editDataItem.label}</div>
+          <div className={`${baseClassName}--input`}>
+            {editDataItem.dataSourceId}
+          </div>
           <div className={`${baseClassName}--input`}>
             <TextInput
               id="seriesLabel"
               labelText={mergedI18n.dataItemEditorDataItemLabel}
               light
-              onChange={evt =>
+              onChange={(evt) =>
                 setEditDataItem({
                   ...editDataItem,
                   label: evt.target.value,
@@ -141,12 +159,13 @@ const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onCha
               {mergedI18n.dataItemEditorLegendColor}
             </span>
             <div className="color-picker">
-              {DATAITEM_COLORS_OPTIONS.map(color => (
+              {DATAITEM_COLORS_OPTIONS.map((color) => (
                 <button
                   type="button"
                   style={{ backgroundColor: color }}
                   className={classnames('color-picker-button', {
-                    'color-picker-button__selected': color === editDataItem.color,
+                    'color-picker-button__selected':
+                      color === editDataItem.color,
                   })}
                   onClick={() => setEditDataItem({ ...editDataItem, color })}
                 />
@@ -155,14 +174,16 @@ const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onCha
           </div>
         </ComposedModal>
       ) : null}
-      <div className={`${baseClassName}--form-section`}>{mergedI18n.dataSeriesTitle}</div>
+      <div className={`${baseClassName}--form-section`}>
+        {mergedI18n.dataSeriesTitle}
+      </div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
           id="dataSourceIds"
           label={mergedI18n.selectDataItems}
           direction="bottom"
-          itemToString={item => item.text}
-          items={validDataItems.map(dataItem => ({
+          itemToString={(item) => item.text}
+          items={validDataItems.map((dataItem) => ({
             id: dataItem,
             text: dataItem,
           }))}
@@ -175,11 +196,20 @@ const DataSeriesFormItem = ({ cardJson = {}, dataItems, getValidDataItems, onCha
         />
       </div>
       <List
-        items={cardJson.content.series.map(series => ({
+        emptyState={<div />}
+        items={cardJson.content.series.map((series) => ({
           id: series.dataSourceId,
           content: {
             value: series.label,
-            icon: <div style={{ width: '1rem', height: '1rem', backgroundColor: series.color }} />,
+            icon: (
+              <div
+                style={{
+                  width: '1rem',
+                  height: '1rem',
+                  backgroundColor: series.color,
+                }}
+              />
+            ),
             rowActions: [
               <Button
                 renderIcon={Edit16}

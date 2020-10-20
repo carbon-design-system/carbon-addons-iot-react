@@ -116,7 +116,7 @@ const CardEditFormContent = ({
           id="title"
           labelText={mergedI18n.cardTitle}
           light
-          onChange={evt => onChange({ ...cardJson, title: evt.target.value })}
+          onChange={(evt) => onChange({ ...cardJson, title: evt.target.value })}
           value={title}
         />
       </div>
@@ -125,7 +125,9 @@ const CardEditFormContent = ({
           id="description"
           labelText={mergedI18n.description}
           light
-          onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
+          onChange={(evt) =>
+            onChange({ ...cardJson, description: evt.target.value })
+          }
           value={description}
         />
       </div>
@@ -134,8 +136,10 @@ const CardEditFormContent = ({
           id="size"
           label={mergedI18n.selectASize}
           direction="bottom"
-          itemToString={item => item.text}
-          items={(ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)).map(cardSize => {
+          itemToString={(item) => item.text}
+          items={(
+            ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)
+          ).map((cardSize) => {
             return {
               id: cardSize,
               text: getCardSizeText(cardSize, mergedI18n),
@@ -156,19 +160,21 @@ const CardEditFormContent = ({
               id="timeRange"
               label={mergedI18n.selectATimeRange}
               direction="bottom"
-              itemToString={item => item.text}
+              itemToString={(item) => item.text}
               items={
                 getValidTimeRanges ||
-                Object.keys(defaultTimeRangeOptions).map(range => ({
+                Object.keys(defaultTimeRangeOptions).map((range) => ({
                   id: range,
                   text: defaultTimeRangeOptions[range],
                 }))
               }
               light
-              //   selectedItem={{}}
               onChange={({ selectedItem }) => {
                 const range = timeRangeToJSON[selectedItem.id];
-                onChange({ ...cardJson, dataSource: { ...cardJson.dataSource, range } });
+                onChange({
+                  ...cardJson,
+                  dataSource: { ...cardJson.dataSource, range },
+                });
               }}
               titleText={mergedI18n.timeRange}
             />

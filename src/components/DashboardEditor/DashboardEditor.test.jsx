@@ -59,7 +59,7 @@ describe('DashboardEditor', () => {
     fireEvent.click(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
-    const openGalleryBtn = screen.getByText('Open gallery');
+    const openGalleryBtn = screen.getByText('Add card');
     expect(openGalleryBtn).toBeInTheDocument();
     const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();

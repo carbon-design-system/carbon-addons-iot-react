@@ -180,8 +180,8 @@ const DashboardEditor = ({
   const onSelectCard = (id) => setSelectedCardId(id);
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
-  
-  const cardJson = dashboardJson.cards.find(i => i.id === selectedCardId);
+
+  const cardJson = dashboardJson.cards.find((i) => i.id === selectedCardId);
 
   return (
     <div className={baseClassName}>
