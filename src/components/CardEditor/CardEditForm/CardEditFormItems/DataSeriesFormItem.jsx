@@ -183,10 +183,14 @@ const DataSeriesFormItem = ({
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}
-          items={validDataItems.map((dataItem) => ({
-            id: dataItem,
-            text: dataItem,
-          }))}
+          items={
+            validDataItems
+              ? validDataItems.map((dataItem) => ({
+                  id: dataItem,
+                  text: dataItem,
+                }))
+              : []
+          }
           light
           onChange={({ selectedItems }) => {
             const series = formatSeries(selectedItems, cardJson);
