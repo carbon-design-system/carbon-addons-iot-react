@@ -4,6 +4,7 @@
   display: flex;
   background: $ui-01;
   flex-direction: column;
+  border-left: 1px solid $ui-03;
   &--header {
     flex: 0 0 3rem;
     display: flex;
@@ -23,5 +24,9 @@
   &--content {
     flex: 1;
     height: 100%;
+
+    .#{$iot-prefix}--list-item {
+      height: $spacing-09;
+    }
   }
 }

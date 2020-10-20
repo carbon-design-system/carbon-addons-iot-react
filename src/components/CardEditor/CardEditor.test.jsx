@@ -21,13 +21,13 @@ describe('CardEditor', () => {
   it('fires onAddCard when user clicks on item in list', () => {
     render(
       <CardEditor
-        supportedTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
       />
     );
-    const addTableCardBtn = screen.getByTestId('card-gallery-list-TABLE-add');
+    const addTableCardBtn = screen.getByTitle('Data table');
     userEvent.click(addTableCardBtn);
     expect(actions.onAddCard).toHaveBeenCalledTimes(1);
   });
@@ -35,7 +35,7 @@ describe('CardEditor', () => {
   it('fires onChange when user edits title in form', () => {
     render(
       <CardEditor
-        value={defaultCard}
+        cardJson={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
@@ -49,21 +49,37 @@ describe('CardEditor', () => {
     });
     actions.onChange.mockReset();
     userEvent.click(
-      screen.getByRole('button', {
-        name: `Card size ${defaultCard.size} Open menu`,
-      })
+      screen.getByRole('button', { name: `Size Small (4x1) Open menu` })
     );
-    userEvent.click(screen.getByText('MEDIUMWIDE'));
+    userEvent.click(screen.getByText('Medium wide (8x2)'));
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,
       size: 'MEDIUMWIDE',
     });
   });
 
+  it('fires onChange when user edits description in form', () => {
+    render(
+      <CardEditor
+        cardJson={defaultCard}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
+    );
+    userEvent.type(screen.getByLabelText('Description (Optional)'), 'z');
+    userEvent.tab();
+    expect(actions.onChange).toHaveBeenCalledWith({
+      ...defaultCard,
+      description: `z`,
+    });
+    actions.onChange.mockReset();
+  });
+
   it('fires onShowGallery when user clicks button', () => {
     render(
       <CardEditor
-        value={defaultCard}
+        cardJson={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
@@ -80,7 +96,7 @@ describe('CardEditor', () => {
   it('opens and closes JSON code modal through button clicks', () => {
     render(
       <CardEditor
-        value={defaultCard}
+        cardJson={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
@@ -91,7 +107,7 @@ describe('CardEditor', () => {
     });
     expect(openEditorBtn).toBeTruthy();
     userEvent.click(openEditorBtn);
-    expect(screen.getByRole('dialog', { name: 'Edit JSON' })).toBeTruthy();
+    expect(screen.getByText('Edit card JSON configuration')).toBeTruthy();
     userEvent.click(screen.getByRole('button', { name: 'Close' }));
     userEvent.click(openEditorBtn);
     userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
