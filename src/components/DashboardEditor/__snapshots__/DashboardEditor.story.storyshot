@@ -352,7 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
                 <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
                   onFocus={[Function]}
@@ -2460,7 +2460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
                   onFocus={[Function]}
@@ -2585,7 +2585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
                 <div
-                  className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
                   onFocus={[Function]}

@@ -55,6 +55,11 @@
   }
   &--preview {
     flex: 1;
+
+    &__card:focus {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+    }
   }
   &--sidebar {
     height: 100%;
