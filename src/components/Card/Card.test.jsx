@@ -205,16 +205,6 @@ describe('Card', () => {
       />
     );
     fireEvent.click(screen.getByTitle('Open and close list of options'));
-    // Click on the first overflow menu item
-    const firstMenuItem = await screen.findByText('Edit card');
-    fireEvent.click(firstMenuItem);
-    expect(mockOnCardAction).toHaveBeenCalledWith(
-      cardProps.id,
-      CARD_ACTIONS.EDIT_CARD
-    );
-    mockOnCardAction.mockClear();
-    // Reopen menu
-    fireEvent.click(screen.getByTitle('Open and close list of options'));
     const secondElement = await screen.findByText('Clone card');
     fireEvent.click(secondElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(

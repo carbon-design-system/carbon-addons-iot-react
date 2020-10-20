@@ -82,7 +82,10 @@ export const getCardSizeText = (size, i18n) => {
 export const basicCardValidation = (card) => {
   const errors = [];
   try {
-    JSON.parse(card);
+    const json = JSON.parse(card);
+    if (!json || typeof json !== 'object') {
+      errors.push(`${card.substring(0, 8)} is not valid JSON`);
+    }
   } catch (e) {
     errors.push(e.message);
   }
@@ -111,9 +114,7 @@ export const handleSubmit = (
   if (onValidateCardJson) {
     customValidationErrors = onValidateCardJson(card);
   }
-
   const allErrors = basicErrors.concat(customValidationErrors);
-  console.log(isEmpty(allErrors));
   // then submit
   if (isEmpty(allErrors)) {
     onChange(JSON.parse(card));
@@ -121,7 +122,7 @@ export const handleSubmit = (
     return true;
   }
 
-  setError(allErrors.join(' '));
+  setError(allErrors.join('. '));
   return false;
 };
 

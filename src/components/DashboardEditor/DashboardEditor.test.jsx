@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 import { Link } from '../..';
 
@@ -43,7 +43,7 @@ describe('DashboardEditor', () => {
     onSubmit: mockOnSubmit,
   };
 
-  it('selecting edit card should select the card', () => {
+  it('selecting card should select the card and close gallery', () => {
     render(
       <DashboardEditor
         {...commonProps}
@@ -56,9 +56,10 @@ describe('DashboardEditor', () => {
     // first find and click the the card
     const cardTitle = screen.getByTitle(mockValueCard.title);
     expect(cardTitle).toBeInTheDocument();
-    fireEvent.click(cardTitle);
+    fireEvent.focus(cardTitle);
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
+
     const openGalleryBtn = screen.getByText('Open gallery');
     expect(openGalleryBtn).toBeInTheDocument();
     const cardSizeFormInput = screen.getByText('Medium (4x2)');

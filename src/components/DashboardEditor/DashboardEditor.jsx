@@ -246,7 +246,6 @@ const DashboardEditor = ({
               lowContrast
             />
           }>
-          >
           <CardEditor
             cardJson={dashboardJson.cards.find(
               (card) => card.id === selectedCardId

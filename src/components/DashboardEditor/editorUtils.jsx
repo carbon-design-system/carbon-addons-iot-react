@@ -247,7 +247,6 @@ export const getCardPreview = (
     },
     tabIndex: 0,
     onFocus: () => onSelectCard(cardData.id),
-    onBlur: () => onSelectCard(null),
   };
 
   if (!isCardJsonValid(cardData)) {
