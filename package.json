@@ -113,7 +113,15 @@
     ]
   },
   "release": {
-    "branches": "['+([0-9])?(.{+([0-9]),x}).x', 'master', {name: 'next', channel: 'next', prerelease: 'next'}, 'next-major', {name: 'beta', prerelease: true}"
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+        "name": "next",
+        "channel": "next",
+        "prerelease": "next"
+      }
+    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
