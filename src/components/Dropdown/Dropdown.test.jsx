@@ -139,6 +139,6 @@ describe('Dropdown', () => {
 
     fireEvent.click(screen.getByText(label));
 
-    expect(screen.getAllByText('test').length).toEqual(9);
+    expect(screen.getAllByText('test').length).toEqual(itemsWithIcons.length);
   });
 });

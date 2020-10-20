@@ -25,10 +25,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
         footer={null}
         hasIconOnly={false}
       >
-        
+        <label
+          className="bx--label"
+          htmlFor="downshift-7-toggle-button"
+          id="downshift-7-label"
+        >
+          Dropdown label
+        </label>
         <div
+          aria-label="Dropdown"
           className="bx--dropdown bx--list-box"
-          id="dropdown-1"
+          id="carbon-dropdown-example"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
@@ -84,6 +91,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
             tabIndex={-1}
           />
         </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text.
+        </div>
       </div>
     </div>
   </div>
@@ -138,10 +150,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
         footer={null}
         hasIconOnly={false}
       >
-        
+        <label
+          className="bx--label"
+          htmlFor="downshift-8-toggle-button"
+          id="downshift-8-label"
+        >
+          Dropdown label
+        </label>
         <div
+          aria-label="Dropdown"
           className="bx--dropdown iot--dropdown__selection-buttons bx--list-box"
-          id="dropdown-1"
+          id="carbon-dropdown-example"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
@@ -196,6 +215,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
             role="listbox"
             tabIndex={-1}
           />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text.
         </div>
       </div>
     </div>

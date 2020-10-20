@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import {
   ChartColumnFloating32,
   ChartLineData32,
@@ -107,6 +107,24 @@ export const itemsWithIcons = [
   },
 ];
 
+const directions = {
+  'Bottom (default)': 'bottom',
+  'Top ': 'top',
+};
+
+const props = () => ({
+  id: text('Dropdown ID (id)', 'carbon-dropdown-example'),
+  direction: select('Dropdown direction (direction)', directions, 'bottom'),
+  label: text('Label (label)', 'Dropdown menu options'),
+  ariaLabel: text('Aria Label (ariaLabel)', 'Dropdown'),
+  disabled: boolean('Disabled (disabled)', false),
+  light: boolean('Light variant (light)', false),
+  titleText: text('Title (titleText)', 'Dropdown label'),
+  helperText: text('Helper text (helperText)', 'This is some helper text.'),
+  invalid: boolean('Show form validation UI (invalid)', false),
+  invalidText: text('Form validation UI content (invalidText)', 'A valid value is required'),
+});
+
 storiesOf('Watson IoT/Dropdown', module)
   .add('default', () => {
     return React.createElement(() => {
@@ -115,7 +133,7 @@ storiesOf('Watson IoT/Dropdown', module)
       return (
         <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
           <Dropdown
-            id="dropdown-1"
+            {...props()}
             items={items}
             selectedViewId={selectedViewId}
             actions={{
@@ -124,7 +142,6 @@ storiesOf('Watson IoT/Dropdown', module)
                 action('onChangeView')(viewItem);
               },
             }}
-            label="Dropdown menu options"
           />
         </div>
       );
@@ -137,7 +154,7 @@ storiesOf('Watson IoT/Dropdown', module)
       return (
         <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
           <Dropdown
-            id="dropdown-1"
+            {...props()}
             items={itemsWithIcons}
             selectedViewId={selectedViewId}
             actions={{
@@ -146,7 +163,6 @@ storiesOf('Watson IoT/Dropdown', module)
                 action('onChangeView')(viewItem);
               },
             }}
-            label="Dropdown menu options"
             hasIconsOnly={boolean('has icons only', true)}
           />
         </div>
