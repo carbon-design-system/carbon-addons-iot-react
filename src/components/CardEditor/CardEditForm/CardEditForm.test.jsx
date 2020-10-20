@@ -8,6 +8,7 @@ import { getCardSizeText, handleSubmit } from './CardEditForm';
 const mockSetError = jest.fn();
 const mockOnChange = jest.fn();
 const mockSetShowEditor = jest.fn();
+const mockOnValidateCardJson = jest.fn().mockImplementation(() => []);
 afterEach(() => {
   jest.clearAllMocks();
 });
@@ -55,18 +56,34 @@ describe('CardEditForm', () => {
   // meaning we can't fire user events on the form
   describe('handleSubmit', () => {
     it('should throw error if JSON is empty', () => {
-      handleSubmit('', mockSetError, mockOnChange, mockSetShowEditor);
-      expect(mockSetError).toBeCalledWith(
-        'JSON value must not be an empty string'
+      handleSubmit(
+        '',
+        mockSetError,
+        mockOnValidateCardJson,
+        mockOnChange,
+        mockSetShowEditor
       );
+      expect(mockSetError).toBeCalledWith('Unexpected end of JSON input');
     });
     it('should call onChange and setShowEditor if JSON is valid', () => {
-      handleSubmit('{}', mockSetError, mockOnChange, mockSetShowEditor);
+      handleSubmit(
+        '{}',
+        mockSetError,
+        mockOnValidateCardJson,
+        mockOnChange,
+        mockSetShowEditor
+      );
       expect(mockOnChange).toBeCalledWith({});
       expect(mockSetShowEditor).toBeCalledWith(false);
     });
     it('should throw error if JSON is not valid', () => {
-      handleSubmit('1234', mockSetError, mockOnChange, mockSetShowEditor);
+      handleSubmit(
+        '1234',
+        mockSetError,
+        mockOnValidateCardJson,
+        mockOnChange,
+        mockSetShowEditor
+      );
       expect(mockSetError).toBeCalledWith('1234 is not valid JSON');
     });
   });

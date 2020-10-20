@@ -32,6 +32,11 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: PropTypes.arrayOf(PropTypes.string),
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardJson)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
+  onValidateCardJson: PropTypes.func,
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
@@ -53,6 +58,7 @@ const defaultProps = {
   getValidDataItems: null,
   dataItems: [],
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  onValidateCardJson: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -62,9 +68,9 @@ const CardEditor = ({
   onShowGallery,
   onChange,
   onAddCard,
-  // onAddImage,
   getValidDataItems,
   dataItems,
+  onValidateCardJson,
   supportedCardTypes,
   i18n,
 }) => {
@@ -100,6 +106,7 @@ const CardEditor = ({
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}
+            onValidateCardJson={onValidateCardJson}
             i18n={mergedI18n}
           />
         )}

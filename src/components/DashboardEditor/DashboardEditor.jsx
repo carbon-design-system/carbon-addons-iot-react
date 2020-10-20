@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { InlineNotification } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor } from '../../index';
+import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -59,6 +60,11 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardJson)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
+  onValidateCardJson: PropTypes.func,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -96,6 +102,7 @@ const defaultProps = {
   onExport: null,
   onCancel: null,
   onSubmit: null,
+  onValidateCardJson: null,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -131,6 +138,7 @@ const DashboardEditor = ({
   onDelete,
   onCancel,
   onSubmit,
+  onValidateCardJson,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -204,54 +212,77 @@ const DashboardEditor = ({
         )}
         {notification}
         <div className={`${baseClassName}--preview`}>
-          <DashboardGrid
-            isEditable
-            onBreakpointChange={() => {}}
-            onLayoutChange={(newLayout, newLayouts) =>
-              setDashboardJson({
-                ...dashboardJson,
-                layouts: newLayouts,
-              })
+          <ErrorBoundary
+            fallback={
+              <InlineNotification
+                title="Dashboard editor error"
+                subtitle="Something went wrong. Please refresh the page."
+                kind="error"
+                lowContrast
+              />
             }>
-            {dashboardJson.cards.map((cardData) => {
-              // if function not defined, or it returns falsy, render default preview
-              return (
-                renderCardPreview(
-                  cardData,
-                  onSelectCard,
-                  onDuplicateCard,
-                  onRemoveCard
-                ) ??
-                getCardPreview(
-                  cardData,
-                  onSelectCard,
-                  onDuplicateCard,
-                  onRemoveCard
-                )
-              );
-            })}
-          </DashboardGrid>
+            <DashboardGrid
+              isEditable
+              onBreakpointChange={() => {}}
+              onLayoutChange={(newLayout, newLayouts) =>
+                setDashboardJson({
+                  ...dashboardJson,
+                  layouts: newLayouts,
+                })
+              }>
+              {dashboardJson.cards.map((cardData) => {
+                // if function not defined, or it returns falsy, render default preview
+                return (
+                  renderCardPreview(
+                    cardData,
+                    onSelectCard,
+                    onDuplicateCard,
+                    onRemoveCard
+                  ) ??
+                  getCardPreview(
+                    cardData,
+                    onSelectCard,
+                    onDuplicateCard,
+                    onRemoveCard
+                  )
+                );
+              })}
+            </DashboardGrid>
+          </ErrorBoundary>
         </div>
       </div>
       <div className={`${baseClassName}--sidebar`}>
-        <CardEditor
-          cardJson={cardJson}
-          onShowGallery={() => setSelectedCardId(null)}
-          onChange={(cardData) =>
-            // TODO: this is really inefficient
-            setDashboardJson({
-              ...dashboardJson,
-              cards: dashboardJson.cards.map((card) =>
-                card.id === cardData.id ? cardData : card
-              ),
-            })
-          }
-          getValidDataItems={getValidDataItems}
-          dataItems={dataItems}
-          onAddCard={addCard}
-          supportedCardTypes={supportedCardTypes}
-          i18n={mergedI18n}
-        />
+        <ErrorBoundary
+          fallback={
+            <InlineNotification
+              title="Dashboard editor error"
+              subtitle="Something went wrong. Please refresh the page."
+              kind="error"
+              lowContrast
+            />
+          }>
+          <CardEditor
+            cardJson={dashboardJson.cards.find(
+              (card) => card.id === selectedCardId
+            )}
+            onShowGallery={() => setSelectedCardId(null)}
+            onChange={(cardData) =>
+              // TODO: this is really inefficient
+              setDashboardJson({
+                ...dashboardJson,
+                cards: dashboardJson.cards.map((card) =>
+                  card.id === cardData.id ? cardData : card
+                ),
+              })
+            }
+            getValidDataItems={getValidDataItems}
+            dataItems={dataItems}
+            onAddCard={addCard}
+            onValidateCardJson={onValidateCardJson}
+            supportedCardTypes={supportedCardTypes}
+            i18n={mergedI18n}
+          />
+        </ErrorBoundary>
       </div>
     </div>
   );

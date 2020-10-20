@@ -1,4 +1,4 @@
-import { CARD_TYPES } from '../..';
+import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
 
 import {
   getDuplicateCard,
@@ -60,32 +60,44 @@ describe('editorUtils', () => {
       defaultCardTitle: 'Untitled',
     };
     it('should return ValueCard', () => {
-      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).type).toEqual(
-        CARD_TYPES.VALUE
-      );
-      expect(getDefaultCard(CARD_TYPES.VALUE, i18n).content).toBeDefined();
+      const defaultCard = getDefaultCard(CARD_TYPES.VALUE, i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.VALUE);
+      expect(defaultCard.content).toBeDefined();
     });
     it('should return TimeSeriesCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).type).toEqual(
-        CARD_TYPES.TIMESERIES
-      );
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
+      const defaultCard = getDefaultCard(CARD_TYPES.TIMESERIES, i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.TIMESERIES);
+      expect(defaultCard.content).toBeDefined();
     });
-    it('should return BarChartCard', () => {
-      expect(getDefaultCard(CARD_TYPES.BAR, i18n).type).toEqual(CARD_TYPES.BAR);
-      expect(getDefaultCard(CARD_TYPES.TIMESERIES, i18n).content).toBeDefined();
+    it('should return simple BarChartCard', () => {
+      const defaultCard = getDefaultCard('SIMPLE_BAR', i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.BAR);
+      expect(defaultCard.content.type).toEqual(BAR_CHART_TYPES.SIMPLE);
+    });
+    it('should return grouped BarChartCard', () => {
+      const defaultCard = getDefaultCard('GROUPED_BAR', i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.BAR);
+      expect(defaultCard.content.type).toEqual(BAR_CHART_TYPES.GROUPED);
+    });
+    it('should return stacked BarChartCard', () => {
+      const defaultCard = getDefaultCard('STACKED_BAR', i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.BAR);
+      expect(defaultCard.content.type).toEqual(BAR_CHART_TYPES.STACKED);
     });
     it('should return TableCard', () => {
-      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).type).toEqual(
-        CARD_TYPES.TABLE
-      );
-      expect(getDefaultCard(CARD_TYPES.TABLE, i18n).content).toBeDefined();
+      const defaultCard = getDefaultCard(CARD_TYPES.TABLE, i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.TABLE);
+      expect(defaultCard.content).toBeDefined();
+    });
+    it('should return ImageCard', () => {
+      const defaultCard = getDefaultCard(CARD_TYPES.IMAGE, i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.IMAGE);
+      expect(defaultCard.content).toBeDefined();
     });
     it('should return CustomCard', () => {
-      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).type).toEqual(
-        CARD_TYPES.CUSTOM
-      );
-      expect(getDefaultCard(CARD_TYPES.CUSTOM, i18n).content).toBeUndefined();
+      const defaultCard = getDefaultCard(CARD_TYPES.CUSTOM, i18n);
+      expect(defaultCard.type).toEqual(CARD_TYPES.CUSTOM);
+      expect(defaultCard.content).toBeUndefined();
     });
   });
 
