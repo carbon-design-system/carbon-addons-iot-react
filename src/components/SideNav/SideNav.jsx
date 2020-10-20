@@ -113,8 +113,7 @@ const SideNav = ({
             renderIcon={link.icon}
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
-            title={link.linkContent}
-            large>
+            title={link.linkContent}>
             {children}
           </SideNavMenu>
         );
@@ -127,8 +126,7 @@ const SideNav = ({
           href={link.metaData.href}
           renderIcon={link.icon}
           isActive={link.isActive}
-          {...link.metaData}
-          large>
+          {...link.metaData}>
           {link.linkContent}
         </SideNavLink>
       );
@@ -140,13 +138,15 @@ const SideNav = ({
 
   return (
     <CarbonSideNav
-      className={classnames({
+      className={classnames(`${iotPrefix}--side-nav`, {
         [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
         [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
       })}
+      expanded={isSideNavExpanded}
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}
+      isRail
       {...props} // spreading here as base component does not pass to DOM element.
     >
       {/* {switcherProps && <SideNavSwitcher {...switcherProps} />} */}
