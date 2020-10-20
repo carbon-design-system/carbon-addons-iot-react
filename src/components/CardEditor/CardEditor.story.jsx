@@ -119,7 +119,6 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
             timeDataSourceId: 'timestamp',
           },
           interval: 'day',
-          // showLegend: true,
         })}
         errors={{}}
         onShowGallery={action('onShowGallery')}
