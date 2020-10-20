@@ -558,15 +558,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
     />
     <nav
       aria-label="Side navigation"
-      className="bx--side-nav__navigation bx--side-nav bx--side-nav--ux"
+      className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
       onBlur={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <ul
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
@@ -638,7 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--large"
+          className="bx--side-nav__item"
         >
           <a
             aria-label="Devices"
@@ -676,7 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
@@ -766,7 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
