@@ -29,8 +29,30 @@ import {
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /* value */
-  cardJson: PropTypes.arrayOf(PropTypes.shape({})),
+  /* card value */
+  cardJson: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    size: PropTypes.string,
+    type: PropTypes.string,
+    content: PropTypes.shape({
+      series: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          dataSourceId: PropTypes.string,
+          color: PropTypes.string,
+        })
+      ),
+      xLabel: PropTypes.string,
+      yLabel: PropTypes.string,
+      unit: PropTypes.string,
+      includeZeroOnXaxis: PropTypes.bool,
+      includeZeroOnYaxis: PropTypes.bool,
+      timeDataSourceId: PropTypes.string,
+    }),
+    interval: PropTypes.string,
+    showLegend: PropTypes.bool,
+  }),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({}),
@@ -43,6 +65,8 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: PropTypes.arrayOf(PropTypes.string),
+  setSelectedDataItems: PropTypes.func.isRequired,
+  selectedTimeRange: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -76,6 +100,11 @@ const DATAITEM_COLORS_OPTIONS = [
   cyan90,
 ];
 
+/**
+ * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
+ * @param {array} selectedItems
+ * @param {object} cardJson
+ */
 export const formatSeries = (selectedItems, cardJson) => {
   const cardSeries = cardJson.content.series;
   const series = selectedItems.map(({ id }, i) => {
@@ -96,6 +125,8 @@ const DataSeriesFormItem = ({
   dataItems,
   getValidDataItems,
   onChange,
+  setSelectedDataItems,
+  selectedTimeRange,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -106,7 +137,7 @@ const DataSeriesFormItem = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validDataItems = getValidDataItems
-    ? getValidDataItems(cardJson, 'timeRange')
+    ? getValidDataItems(cardJson, selectedTimeRange)
     : dataItems;
 
   return (
@@ -134,7 +165,7 @@ const DataSeriesFormItem = ({
             setShowEditor(false);
             setEditDataItem(null);
           }}>
-          <span className="bx--label" style={{ fontSize: '0.75rem' }}>
+          <span className={`bx--label ${baseClassName}--input-label`}>
             {mergedI18n.dataItemEditorDataItemTitle}
           </span>
           <div className={`${baseClassName}--input`}>
@@ -194,13 +225,16 @@ const DataSeriesFormItem = ({
           light
           onChange={({ selectedItems }) => {
             const series = formatSeries(selectedItems, cardJson);
+            setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange({ ...cardJson, content: { ...cardJson.content, series } });
           }}
           titleText={mergedI18n.dataItem}
         />
       </div>
       <List
+        // need to force an empty "empty state"
         emptyState={<div />}
+        title=""
         items={cardJson.content.series.map((series) => ({
           id: series.dataSourceId,
           content: {
@@ -216,6 +250,7 @@ const DataSeriesFormItem = ({
             ),
             rowActions: [
               <Button
+                key={`data-item-${series.dataSourceId}`}
                 renderIcon={Edit16}
                 hasIconOnly
                 kind="ghost"

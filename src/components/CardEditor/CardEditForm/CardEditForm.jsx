@@ -20,6 +20,23 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     openEditorButton: PropTypes.string,
+    contentTabLabel: PropTypes.string,
+    settingsTabLabel: PropTypes.string,
+    cardSize_SMALL: PropTypes.string,
+    cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_MEDIUM: PropTypes.string,
+    cardSize_MEDIUMTHIN: PropTypes.string,
+    cardSize_MEDIUMWIDE: PropTypes.string,
+    cardSize_LARGE: PropTypes.string,
+    cardSize_LARGETHIN: PropTypes.string,
+    cardSize_LARGEWIDE: PropTypes.string,
+    chartType_BAR: PropTypes.string,
+    chartType_LINE: PropTypes.string,
+    barChartType_SIMPLE: PropTypes.string,
+    barChartType_GROUPED: PropTypes.string,
+    barChartType_STACKED: PropTypes.string,
+    barChartLayout_HORIZONTAL: PropTypes.string,
+    barChartLayout_VERTICAL: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card

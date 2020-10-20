@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -17,13 +17,54 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
-  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** card data errors */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cardJson: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    size: PropTypes.string,
+    type: PropTypes.string,
+    content: PropTypes.shape({
+      series: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          dataSourceId: PropTypes.string,
+          color: PropTypes.string,
+        })
+      ),
+      xLabel: PropTypes.string,
+      yLabel: PropTypes.string,
+      unit: PropTypes.string,
+      includeZeroOnXaxis: PropTypes.bool,
+      includeZeroOnYaxis: PropTypes.bool,
+      timeDataSourceId: PropTypes.string,
+    }),
+    interval: PropTypes.string,
+    showLegend: PropTypes.bool,
+  }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     openEditorButton: PropTypes.string,
+    cardSize_SMALL: PropTypes.string,
+    cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_MEDIUM: PropTypes.string,
+    cardSize_MEDIUMTHIN: PropTypes.string,
+    cardSize_MEDIUMWIDE: PropTypes.string,
+    cardSize_LARGE: PropTypes.string,
+    cardSize_LARGETHIN: PropTypes.string,
+    cardSize_LARGEWIDE: PropTypes.string,
+    chartType_BAR: PropTypes.string,
+    chartType_LINE: PropTypes.string,
+    barChartType_SIMPLE: PropTypes.string,
+    barChartType_GROUPED: PropTypes.string,
+    barChartType_STACKED: PropTypes.string,
+    barChartLayout_HORIZONTAL: PropTypes.string,
+    barChartLayout_VERTICAL: PropTypes.string,
+    cardTitle: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.string,
+    selectASize: PropTypes.string,
+    timeRange: PropTypes.string,
+    selectATimeRange: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
@@ -106,8 +147,14 @@ const CardEditFormContent = ({
 }) => {
   const { title, description, size, type } = cardJson;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const [selectedDataItems, setSelectedDataItems] = useState([]);
+  const [selectedTimeRange, setSelectedTimeRange] = useState('');
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  const validTimeRanges = getValidTimeRanges
+    ? getValidTimeRanges(cardJson, selectedDataItems)
+    : Object.keys(defaultTimeRangeOptions);
 
   return (
     <>
@@ -162,15 +209,17 @@ const CardEditFormContent = ({
               direction="bottom"
               itemToString={(item) => item.text}
               items={
-                getValidTimeRanges ||
-                Object.keys(defaultTimeRangeOptions).map((range) => ({
-                  id: range,
-                  text: defaultTimeRangeOptions[range],
-                }))
+                validTimeRanges
+                  ? validTimeRanges.map((range) => ({
+                      id: range,
+                      text: defaultTimeRangeOptions[range],
+                    }))
+                  : []
               }
               light
               onChange={({ selectedItem }) => {
                 const range = timeRangeToJSON[selectedItem.id];
+                setSelectedTimeRange(selectedItem.id);
                 onChange({
                   ...cardJson,
                   dataSource: { ...cardJson.dataSource, range },
@@ -183,6 +232,8 @@ const CardEditFormContent = ({
             cardJson={cardJson}
             onChange={onChange}
             dataItems={dataItems}
+            setSelectedDataItems={setSelectedDataItems}
+            selectedTimeRange={selectedTimeRange}
             getValidDataItems={getValidDataItems}
             i18n={mergedI18n}
           />

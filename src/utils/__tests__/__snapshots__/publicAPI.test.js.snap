@@ -8045,7 +8045,75 @@ Map {
     },
     "propTypes": Object {
       "cardJson": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "content": Object {
+              "args": Array [
+                Object {
+                  "includeZeroOnXaxis": Object {
+                    "type": "bool",
+                  },
+                  "includeZeroOnYaxis": Object {
+                    "type": "bool",
+                  },
+                  "series": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
+                            },
+                            "dataSourceId": Object {
+                              "type": "string",
+                            },
+                            "label": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "unit": Object {
+                    "type": "string",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "interval": Object {
+              "type": "string",
+            },
+            "showLegend": Object {
+              "type": "bool",
+            },
+            "size": Object {
+              "type": "string",
+            },
+            "title": Object {
+              "type": "string",
+            },
+            "type": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "dataItems": Object {
         "args": Array [

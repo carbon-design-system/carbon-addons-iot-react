@@ -8,9 +8,29 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
-  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  /** card data errors */
-  // errors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cardJson: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    size: PropTypes.string,
+    type: PropTypes.string,
+    content: PropTypes.shape({
+      series: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          dataSourceId: PropTypes.string,
+          color: PropTypes.string,
+        })
+      ),
+      xLabel: PropTypes.string,
+      yLabel: PropTypes.string,
+      unit: PropTypes.string,
+      includeZeroOnXaxis: PropTypes.bool,
+      includeZeroOnYaxis: PropTypes.bool,
+      timeDataSourceId: PropTypes.string,
+    }),
+    interval: PropTypes.string,
+    showLegend: PropTypes.bool,
+  }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({

@@ -36,6 +36,7 @@ const dataItems = ['Temperature', 'Pressure'];
 
 const mockOnChange = jest.fn();
 const mockGetValidDataItems = jest.fn();
+const mockSetSelectedDataItems = jest.fn();
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -80,6 +81,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
@@ -92,18 +94,24 @@ describe('DataSeriesFormItem', () => {
           cardJson={cardJson}
           onChange={mockOnChange}
           dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
       const dataItemsDropdown = screen.getByText('Select data items');
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
+      // click on a data item
       const pressureDataItem = await screen.findAllByText('Pressure');
       expect(pressureDataItem[0]).toBeInTheDocument();
       fireEvent.click(pressureDataItem[0]);
+      // assert that onChange was called
       expect(mockOnChange).toHaveBeenCalled();
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+      // click the edit icon on the data item
       const editButton = screen.getAllByText('Edit');
       expect(editButton[0]).toBeInTheDocument();
       fireEvent.click(editButton[0]);
+      // the legend color picker is only present on the edit data item modal
       const legendColorPicker = screen.getByText('Legend color');
       expect(legendColorPicker).toBeInTheDocument();
       userEvent.type(
@@ -111,6 +119,7 @@ describe('DataSeriesFormItem', () => {
         'changed label'
       );
       expect(mockOnChange).toHaveBeenCalled();
+      // submit the changes
       const submitButton = screen.getByText('Save');
       fireEvent.click(submitButton);
       expect(mockOnChange).toHaveBeenCalled();
