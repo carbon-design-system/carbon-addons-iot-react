@@ -144,6 +144,7 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
     emptyState,
   } = props;
+  const mergedI18n = { ...defaultProps.i18n, i18n };
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {
@@ -200,7 +201,7 @@ const List = forwardRef((props, ref) => {
           isLargeRow={isLargeRow}
           isCategory={isCategory}
           isSelectable={editingStyle === null && isSelectable}
-          i18n={i18n}
+          i18n={mergedI18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
         />
@@ -256,7 +257,7 @@ const List = forwardRef((props, ref) => {
         title={title}
         buttons={buttons}
         search={search}
-        i18n={i18n}
+        i18n={mergedI18n}
         isLoading={isLoading}
         {...overrides?.header?.props}
       />

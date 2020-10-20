@@ -324,14 +324,13 @@ const ValueCard = ({
             id={id}
             {...others}>
             <ContentWrapper layout={layout}>
-              {dataState && (
+              {dataState ? (
                 <DataStateRenderer
                   dataState={dataState}
                   size={newSize}
                   id={id}
                 />
-              )}
-              {!dataState &&
+              ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment
                     key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
@@ -413,7 +412,8 @@ const ValueCard = ({
                       </AttributeWrapper>
                     ) : null}
                   </React.Fragment>
-                ))}
+                ))
+              )}
             </ContentWrapper>
           </Card>
         );
@@ -427,6 +427,8 @@ ValueCard.propTypes = { ...CardPropTypes, ...ValueCardPropTypes };
 ValueCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   locale: 'en',
+  dataState: null,
+  values: null,
 };
 
 export default ValueCard;

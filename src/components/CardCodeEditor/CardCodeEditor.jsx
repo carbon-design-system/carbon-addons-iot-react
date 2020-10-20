@@ -16,11 +16,10 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
-  ...ComposedModal.propTypes,
+  ...ComposedModal.propTypes, // eslint-disable-line react/forbid-foreign-prop-types
   /*
    * On submit callback. It's called with editor value, and a callback to set an error messages
-   * onSumbit(value, setError)
+   * onSubmit(value, setError)
    */
   onSubmit: PropTypes.func.isRequired,
   /** Callback called when modal close icon or cancel button is pressed */

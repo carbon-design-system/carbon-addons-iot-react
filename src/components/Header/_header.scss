@@ -11,8 +11,8 @@
     display: block;
   }
 
-  &__name {
-    font-size: $spacing-01;
+  & .#{$prefix}--header__name {
+    padding-left: $spacing-03;
   }
 
   &__menu-title[role='menuitem'][aria-expanded='true'] + &__menu {
