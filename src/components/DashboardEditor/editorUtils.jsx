@@ -21,6 +21,8 @@ import {
 } from '../../index';
 import sampleImage from '../CardEditor/CardGalleryList/image.svg';
 
+import { baseClassName } from './DashboardEditor';
+
 /**
  * Returns a duplicate card configuration
  * @param {Object} cardData, card JSON configuration
@@ -302,6 +304,7 @@ export const getCardPreview = (
     },
     tabIndex: 0,
     onFocus: () => onSelectCard(cardData.id),
+    className: `${baseClassName}--preview__card`,
   };
 
   if (!isCardJsonValid(cardData)) {
