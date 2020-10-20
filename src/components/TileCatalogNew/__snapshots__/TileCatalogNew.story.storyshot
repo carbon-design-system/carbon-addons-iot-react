@@ -39,16 +39,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="32-search"
+                  aria-labelledby="37-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -62,8 +64,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="32"
-                    id="32-search"
+                    htmlFor="37"
+                    id="37-search"
                   >
                     Filter table
                   </label>
@@ -71,7 +73,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="32"
+                    id="37"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -87,6 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -129,6 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -404,16 +408,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="33-search"
+                  aria-labelledby="38-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -427,8 +433,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="33"
-                    id="33-search"
+                    htmlFor="38"
+                    id="38-search"
                   >
                     Filter table
                   </label>
@@ -436,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="33"
+                    id="38"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -452,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -494,6 +501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -676,16 +684,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="35-search"
+                  aria-labelledby="40-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -699,8 +709,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="35"
-                    id="35-search"
+                    htmlFor="40"
+                    id="40-search"
                   >
                     Filter table
                   </label>
@@ -708,7 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="35"
+                    id="40"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -724,6 +734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -766,6 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -787,6 +799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <svg
                 aria-hidden={true}
+                fill="currentColor"
                 focusable="false"
                 height={32}
                 preserveAspectRatio="xMidYMid meet"
@@ -875,16 +888,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="34-search"
+                  aria-labelledby="39-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -898,8 +913,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="34"
-                    id="34-search"
+                    htmlFor="39"
+                    id="39-search"
                   >
                     Filter table
                   </label>
@@ -907,7 +922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="34"
+                    id="39"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -923,6 +938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -965,6 +981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -1099,16 +1116,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="38-search"
+                  aria-labelledby="43-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1122,8 +1141,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="38"
-                    id="38-search"
+                    htmlFor="43"
+                    id="43-search"
                   >
                     Filter table
                   </label>
@@ -1131,7 +1150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="38"
+                    id="43"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -1147,6 +1166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -1214,6 +1234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -1577,16 +1598,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="36-search"
+                  aria-labelledby="41-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -1600,8 +1623,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="36"
-                    id="36-search"
+                    htmlFor="41"
+                    id="41-search"
                   >
                     Filter table
                   </label>
@@ -1609,7 +1632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="36"
+                    id="41"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -1625,6 +1648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -1667,6 +1691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -2176,16 +2201,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
+                onKeyDown={[Function]}
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="37-search"
+                  aria-labelledby="42-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
                   <svg
                     aria-hidden={true}
                     className="bx--search-magnifier"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -2199,8 +2226,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="37"
-                    id="37-search"
+                    htmlFor="42"
+                    id="42-search"
                   >
                     Filter table
                   </label>
@@ -2208,7 +2235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="37"
+                    id="42"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -2224,6 +2251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <svg
                       aria-hidden={true}
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
@@ -2637,6 +2665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <svg
                         aria-hidden={true}
                         className="bx--select__arrow"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"

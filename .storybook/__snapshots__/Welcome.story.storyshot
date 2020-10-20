@@ -658,7 +658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundary
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -670,7 +672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ErrorBoundaryContext
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -766,7 +770,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    FluidForm
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -820,7 +826,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Grid
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -832,7 +840,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Row
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -844,7 +854,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Column
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -1108,7 +1120,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PaginationNav
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -1946,7 +1960,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PaginationSkeleton
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2154,7 +2170,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PageSelector
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2166,7 +2184,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Unstable_Pagination
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"

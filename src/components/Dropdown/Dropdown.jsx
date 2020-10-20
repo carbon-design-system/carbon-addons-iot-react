@@ -32,13 +32,13 @@ const Dropdown = ({
 }) => {
   const MyDropDown = overrides?.dropdown?.component || CarbonDropDown;
 
-  const onSelectionChange = changes => {
+  const onSelectionChange = (changes) => {
     const { selectedItem } = changes;
 
     onChangeView(selectedItem);
   };
 
-  const renderButtonsOnly = itemData => {
+  const renderButtonsOnly = (itemData) => {
     return (
       <>
         <Button
@@ -52,7 +52,8 @@ const Dropdown = ({
 
         <div className={`${iotPrefix}--dropdown__selected-icon-label`}>
           {React.createElement(itemData.icon)}
-          <div className={`${iotPrefix}--dropdown__selected-icon-label__content`}>
+          <div
+            className={`${iotPrefix}--dropdown__selected-icon-label__content`}>
             {itemData.text}
           </div>
         </div>
@@ -60,20 +61,22 @@ const Dropdown = ({
     );
   };
 
-  const renderLabel = item => {
+  const renderLabel = (item) => {
     return (
       <>
         <div className={`${iotPrefix}--dropdown__label`}>
           {item?.icon !== undefined ? React.createElement(item?.icon) : null}
-          <div className={`${iotPrefix}--dropdown__label__content`}>{item ? item.text : ''}</div>
+          <div className={`${iotPrefix}--dropdown__label__content`}>
+            {item ? item.text : ''}
+          </div>
         </div>
       </>
     );
   };
 
   const itemToStringOverride = hasIconsOnly
-    ? item => renderButtonsOnly(item)
-    : item => renderLabel(item);
+    ? (item) => renderButtonsOnly(item)
+    : (item) => renderLabel(item);
 
   return (
     <MyDropDown

@@ -13,7 +13,10 @@ const commonTableHeadProps = {
     { id: 'col2', name: 'Column 2', isSortable: false },
   ],
   /** Ordering list */
-  ordering: [{ columnId: 'col1', isHidden: false }, { columnId: 'col2', isHidden: false }],
+  ordering: [
+    { columnId: 'col1', isHidden: false },
+    { columnId: 'col2', isHidden: false },
+  ],
   options: {
     hasRowSelection: false,
     hasRowExpansion: false,
@@ -30,19 +33,21 @@ let backend;
 
 describe('TableHead', () => {
   beforeEach(() => {
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, commonTableHeadProps);
+    const Wrapped = wrapInTestContext(
+      UnconnectedColumnHeaderRow,
+      commonTableHeadProps
+    );
 
     wrapper = mount(<Wrapped />);
-    backend = wrapper
-      .instance()
-      .getManager()
-      .getBackend();
+    backend = wrapper.instance().getManager().getBackend();
   });
   it('can reorder columns', () => {
     const dragSource = wrapper
       .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
       .instance();
-    const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col2']").instance();
+    const dropTarget = wrapper
+      .find("DropTarget(ColumnHeaderSelect)[columnId='col2']")
+      .instance();
     backend.simulateBeginDrag([dragSource.getHandlerId()]);
     backend.simulateHover([dropTarget.getHandlerId()]);
     backend.simulateDrop();
@@ -52,7 +57,9 @@ describe('TableHead', () => {
     const dragSource = wrapper
       .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
       .instance();
-    const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col1']").instance();
+    const dropTarget = wrapper
+      .find("DropTarget(ColumnHeaderSelect)[columnId='col1']")
+      .instance();
     backend.simulateBeginDrag([dragSource.getHandlerId()]);
     backend.simulateHover([dropTarget.getHandlerId()]);
     backend.simulateDrop();
@@ -75,7 +82,10 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
+    const Wrapped = wrapInTestContext(
+      UnconnectedColumnHeaderRow,
+      tableHeadProps
+    );
     render(<Wrapped />);
 
     expect(screen.getByText('Column 1').textContent).toContain('Column 1');
@@ -88,7 +98,10 @@ describe('ColumnHeaderRow', () => {
       ordering: [],
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
+    const Wrapped = wrapInTestContext(
+      UnconnectedColumnHeaderRow,
+      tableHeadProps
+    );
     const renderedElement = render(<Wrapped />);
 
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
@@ -100,7 +113,10 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
+    const Wrapped = wrapInTestContext(
+      UnconnectedColumnHeaderRow,
+      tableHeadProps
+    );
     const renderedElement = render(<Wrapped />);
 
     expect(renderedElement.container.innerHTML).toContain('Column 1');
@@ -120,20 +136,17 @@ describe('ColumnHeaderRow', () => {
       columnSelectionConfigText: 'button_text',
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
+    const Wrapped = wrapInTestContext(
+      UnconnectedColumnHeaderRow,
+      tableHeadProps
+    );
     const renderedElement = mount(<Wrapped />);
 
-    expect(
-      renderedElement
-        .find('.column-header__btn')
-        .last()
-        .text()
-    ).toContain('button_text');
+    expect(renderedElement.find('.column-header__btn').last().text()).toContain(
+      'button_text'
+    );
 
-    renderedElement
-      .find('.column-header__btn')
-      .last()
-      .simulate('click');
+    renderedElement.find('.column-header__btn').last().simulate('click');
 
     expect(onColumnSelectionConfig).toHaveBeenCalledTimes(1);
   });

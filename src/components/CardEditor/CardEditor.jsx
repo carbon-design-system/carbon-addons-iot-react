@@ -40,7 +40,14 @@ const propTypes = {
   }),
 };
 
-const CardEditor = ({ value, onShowGallery, onChange, onAddCard, supportedTypes, i18n }) => {
+const CardEditor = ({
+  value,
+  onShowGallery,
+  onChange,
+  onAddCard,
+  supportedTypes,
+  i18n,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-editor`;
@@ -57,8 +64,7 @@ const CardEditor = ({ value, onShowGallery, onChange, onAddCard, supportedTypes,
             kind="ghost"
             size="small"
             renderIcon={Apps16}
-            onClick={onShowGallery}
-          >
+            onClick={onShowGallery}>
             {mergedI18N.openGalleryButton}
           </Button>
         </div>

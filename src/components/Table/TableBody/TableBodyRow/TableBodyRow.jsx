@@ -57,7 +57,8 @@ const propTypes = {
       }),
     ]),
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
+      .isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
 
@@ -69,7 +70,9 @@ const propTypes = {
   totalColumns: PropTypes.number.isRequired,
 
   /** contents of the row each object value is a renderable node keyed by column id */
-  values: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])).isRequired,
+  values: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.node, PropTypes.bool])
+  ).isRequired,
 
   /** is the row currently selected */
   isSelected: PropTypes.bool,
@@ -133,15 +136,16 @@ const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
   <TableRow {...others} />
 ))`
   &&& {
-    ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
+    ${(props) =>
+      props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``}
     :hover {
       td {
-        ${props =>
+        ${(props) =>
           props.isSelectable === false && !props.isEditMode
             ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
             : ``} /* turn off hover states if the row is set not selectable */
       }
-      ${props =>
+      ${(props) =>
         props.isSelectable === false && !props.isEditMode
           ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
           : ``} /* turn off hover states if the row is set not selectable */
@@ -177,7 +181,18 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
   <TableExpandRow {...props} />
 ))`
   &&& {
-    ${props =>
+    ${// if single nested hierarchy AND there are children rows (meaning this is a parent),
+    // bolden all cells of this row
+    (props) =>
+      props['data-row-nesting'] &&
+      props['data-row-nesting'].hasSingleNestedHierarchy &&
+      props['data-child-count'] > 0
+        ? `td {
+        font-weight: bold
+      }`
+        : ``}
+
+    ${(props) =>
       props['data-child-count'] === 0 && props['data-row-nesting']
         ? `
     td > button.bx--table-expand__button {
@@ -190,7 +205,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
       left: ${props['data-nesting-offset']}px;
     }
     `}
-    ${props =>
+    ${(props) =>
       props['data-nesting-offset'] > 0
         ? `
       td.bx--table-expand {
@@ -216,7 +231,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
       }
     }
 
-    ${props =>
+    ${(props) =>
       props.hasRowSelection === 'single' && props.isSelected
         ? `
         background: ${COLORS.lightBlue};
@@ -245,7 +260,17 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
 ))`
   &&& {
     cursor: pointer;
-    ${props =>
+
+    ${// if single nested hierarchy, bolden all cells of this row
+    (props) =>
+      props['data-row-nesting'] &&
+      props['data-row-nesting'].hasSingleNestedHierarchy
+        ? `td {
+        font-weight: bold
+      }`
+        : ``}
+
+    ${(props) =>
       props['data-row-nesting']
         ? `
 
@@ -265,7 +290,7 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
         `
         : ``}
 
-    ${props =>
+    ${(props) =>
       props.hasRowSelection === 'single' && props.isSelected
         ? `
         background: ${COLORS.lightBlue};
@@ -289,13 +314,16 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
   }
 `;
 
-const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <TableRow {...props} />)`
+const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => (
+  <TableRow {...props} />
+))`
   &&& {
     td {
       background-color: inherit;
       border-left: 4px solid ${COLORS.blue};
       border-width: 0 0 0 4px;
       padding: 0;
+      font-weight: bold;
     }
 
     :hover {
@@ -308,7 +336,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
       }
     }
 
-    ${props =>
+    ${(props) =>
       props.hasRowSelection === 'single' && props.isSelected
         ? `
         background: ${COLORS.lightBlue};
@@ -334,7 +362,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 
 const StyledNestedSpan = styled.span`
   position: relative;
-  left: ${props => props.nestingOffset}px;
+  left: ${(props) => props.nestingOffset}px;
   display: block;
 `;
 
@@ -355,7 +383,13 @@ const TableBodyRow = ({
     wrapCellText,
     truncateCellText,
   },
-  tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
+  tableActions: {
+    onRowSelected,
+    onRowExpanded,
+    onRowClicked,
+    onApplyRowAction,
+    onClearRowError,
+  },
   isExpanded,
   isSelected,
   selectRowAria,
@@ -392,9 +426,10 @@ const TableBodyRow = ({
       <TableCell
         className={`${prefix}--checkbox-table-cell`}
         key={`${id}-row-selection-cell`}
-        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
-        onClick={e => e.stopPropagation()}
-      >
+        onChange={
+          isSelectable !== false ? () => onRowSelected(id, !isSelected) : null
+        }
+        onClick={(e) => e.stopPropagation()}>
         {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
       https://github.com/IBM/carbon-components-react/issues/1247
       Also move onClick logic above into TableSelectRow
@@ -411,19 +446,23 @@ const TableBodyRow = ({
       </TableCell>
     ) : null;
 
-  const firstVisibleColIndex = ordering.findIndex(col => !col.isHidden);
+  const firstVisibleColIndex = ordering.findIndex((col) => !col.isHidden);
   const tableCells = (
     <>
       {rowSelectionCell}
       {ordering.map((col, idx) => {
-        const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
+        const matchingColumnMeta =
+          columns && columns.find((column) => column.id === col.columnId);
         // initialColumnWidth for the table body cells is needed for tables that have fixed column widths
         // and table-layout:auto combination so that cell content can be truncated
-        const initialColumnWidth = matchingColumnMeta && matchingColumnMeta.width;
+        const initialColumnWidth =
+          matchingColumnMeta && matchingColumnMeta.width;
         // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         const align =
-          matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
+          matchingColumnMeta && matchingColumnMeta.align
+            ? matchingColumnMeta.align
+            : 'start';
         return !col.isHidden ? (
           <TableCell
             id={`cell-${tableId}-${id}-${col.columnId}`}
@@ -435,8 +474,7 @@ const TableBodyRow = ({
             className={classnames(`data-table-${align}`, {
               [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
             })}
-            width={initialColumnWidth}
-          >
+            width={initialColumnWidth}>
             <StyledNestedSpan nestingOffset={offset}>
               {col.editDataFunction && isEditMode ? (
                 col.editDataFunction({
@@ -453,8 +491,7 @@ const TableBodyRow = ({
                   renderDataFunction={col.renderDataFunction}
                   columnId={col.columnId}
                   rowId={id}
-                  row={values}
-                >
+                  row={values}>
                   {values[col.columnId]}
                 </TableCellRenderer>
               )}
@@ -483,9 +520,7 @@ const TableBodyRow = ({
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${tableId}-${id}-row-actions-cell`} />
-      ) : (
-        undefined
-      )}
+      ) : undefined}
     </>
   );
   return hasRowExpansion || hasRowNesting ? (
@@ -499,7 +534,9 @@ const TableBodyRow = ({
           hasRowSelection={hasRowSelection}
           data-row-nesting={hasRowNesting}
           data-nesting-offset={nestingOffset}
-          onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
+          onExpand={(evt) =>
+            stopPropagationAndCallback(evt, onRowExpanded, id, false)
+          }
           onClick={() => {
             if (shouldExpandOnRowClick) {
               onRowExpanded(id, false);
@@ -510,12 +547,12 @@ const TableBodyRow = ({
             if (isSelectable !== false) {
               onRowClicked(id);
             }
-          }}
-        >
+          }}>
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
-          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
+          <StyledExpansionTableRow
+            className={`${iotPrefix}--expanded-tablerow`}>
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </StyledExpansionTableRow>
         )}
@@ -532,7 +569,9 @@ const TableBodyRow = ({
         isExpanded={false}
         isSelected={isSelected}
         hasRowSelection={hasRowSelection}
-        onExpand={evt => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
+        onExpand={(evt) =>
+          stopPropagationAndCallback(evt, onRowExpanded, id, true)
+        }
         onClick={() => {
           if (shouldExpandOnRowClick) {
             onRowExpanded(id, true);
@@ -543,8 +582,7 @@ const TableBodyRow = ({
           if (isSelectable !== false) {
             onRowClicked(id);
           }
-        }}
-      >
+        }}>
         {tableCells}
       </StyledTableExpandRow>
     )
@@ -556,8 +594,7 @@ const TableBodyRow = ({
           onRowClicked(id);
           onRowSelected(id, true);
         }
-      }}
-    >
+      }}>
       {tableCells}
     </StyledSingleSelectedTableRow>
   ) : (
@@ -573,8 +610,7 @@ const TableBodyRow = ({
           }
           onRowClicked(id);
         }
-      }}
-    >
+      }}>
       {tableCells}
     </StyledTableRow>
   );

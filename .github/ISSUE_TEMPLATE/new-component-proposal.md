@@ -2,7 +2,10 @@
 name: New component proposal ✨
 about: Nominate a new component to be added to the library
 title: '[Component Proposal] New_ComponentName'
-labels: 'type: enhancement :bulb:, type: discussion :speech_balloon:, type: contribution :gift:, status: needs triage :mag:, status: needs priority :inbox_tray:'
+labels:
+  'type: enhancement :bulb:, type: discussion :speech_balloon:, type:
+  contribution :gift:, status: needs triage :mag:, status: needs priority
+  :inbox_tray:'
 assignees: ''
 ---
 
@@ -13,11 +16,12 @@ assignees: ''
 
 ### Summary
 
-Describe in detail the component you would like developed.
-Include what offering/product you plan to utilize this new component in.
+Describe in detail the component you would like developed. Include what
+offering/product you plan to utilize this new component in.
 
-**Additional context**
-Add any other context about the component here [e.g. screenshots, code, InVision prototype, Box notes containing details necessary for implementation]
+**Additional context** Add any other context about the component here [e.g.
+screenshots, code, InVision prototype, Box notes containing details necessary
+for implementation]
 
 ### Specific timeline issues / requests
 
@@ -31,10 +35,12 @@ date, the better!_
 ### You will consider this component complete when...
 
 - [ ] It's available as an export of this library
-- [ ] Additional criteria you may have [e.g. Fully responsive, Accessible to WCAG 2.0, etc.]
+- [ ] Additional criteria you may have [e.g. Fully responsive, Accessible to
+      WCAG 2.0, etc.]
 
 ### Available extra resources
 
 What resources do you have to assist this effort?
 
-_Carbon add-ons for Watson IoT is a collaborative system. We encourage teams to build components and submit them for integration._
+_Carbon add-ons for Watson IoT is a collaborative system. We encourage teams to
+build components and submit them for integration._

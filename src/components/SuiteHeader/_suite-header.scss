@@ -59,10 +59,17 @@
   right: 0;
   max-width: rem(425px);
   width: auto;
+  z-index: z('overlay');
 
   .#{$prefix}--toast-notification__title {
     margin-top: $spacing-04;
   }
+}
+
+.#{$iot-prefix}--suite-header-survey-policy-link {
+  margin: auto;
+  width: 50%;
+  padding-top: $spacing-04;
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {

@@ -42,9 +42,9 @@ const TagWrapper = React.forwardRef(({ children, ...props }, ref) => {
 const StatefulFilterTags = ({ tags }) => {
   const index = useRef(0);
   const [renderedTags, setRenderedTags] = useState(tags);
-  const handleOnClose = id => {
-    setRenderedTags(renderedTags.filter(x => x.id !== id));
-    tags.filter(x => x.id === id)[0].onClose();
+  const handleOnClose = (id) => {
+    setRenderedTags(renderedTags.filter((x) => x.id !== id));
+    tags.filter((x) => x.id === id)[0].onClose();
   };
   const handleOnClick = () => {
     const newTag = {
@@ -61,15 +61,14 @@ const StatefulFilterTags = ({ tags }) => {
     <div style={{ display: 'flex' }}>
       <Button onClick={() => handleOnClick()}>Add tag</Button>
       <FilterTags>
-        {renderedTags.map(tag => (
+        {renderedTags.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
             style={{ marginRight: '1rem' }}
-            onClose={() => handleOnClose(tag.id)}
-          >
+            onClose={() => handleOnClose(tag.id)}>
             {tag.text}
           </Tag>
         ))}
@@ -89,14 +88,13 @@ storiesOf('Watson IoT Experimental/FilterTags', module)
     'With hasOverflow set to false',
     () => (
       <FilterTags hasOverflow={false}>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -113,14 +111,13 @@ storiesOf('Watson IoT Experimental/FilterTags', module)
     'With tagContainer prop',
     () => (
       <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
-        {tagData.map(tag => (
+        {tagData.map((tag) => (
           <Tag
             key={`tag-${tag.id}`}
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}

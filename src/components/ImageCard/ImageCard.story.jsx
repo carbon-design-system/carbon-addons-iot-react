@@ -52,7 +52,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           id="image-hotspots"
@@ -68,7 +72,13 @@ storiesOf('Watson IoT/ImageCard', module)
                   title: 'My Device',
                   description: 'Description',
                   values: { deviceid: '73000', temperature: 35.05 },
-                  attributes: [{ dataSourceId: 'temperature', label: 'Temp', precision: 2 }],
+                  attributes: [
+                    {
+                      dataSourceId: 'temperature',
+                      label: 'Temp',
+                      precision: 2,
+                    },
+                  ],
                 },
               },
             ],
@@ -83,7 +93,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('custom renderIconByName', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           id="image-hotspots"
@@ -112,7 +126,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('isEditable', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           isEditable
@@ -129,7 +147,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('hotspots are loading', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}
@@ -146,7 +168,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('error', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}
@@ -164,7 +190,11 @@ storiesOf('Watson IoT/ImageCard', module)
   .add('error loading image', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing06,
+        }}>
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}

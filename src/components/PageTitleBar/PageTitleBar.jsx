@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Tooltip,
+  SkeletonText,
+  Tabs,
+} from 'carbon-components-react';
 
 import deprecate from '../../internal/deprecate';
 import Button from '../Button';
@@ -54,7 +60,10 @@ const defaultProps = {
   collapsed: false,
   editable: false,
   onEdit: null,
-  i18n: { editIconDescription: 'Edit page title', tooltipIconDescription: 'More information' },
+  i18n: {
+    editIconDescription: 'Edit page title',
+    tooltipIconDescription: 'More information',
+  },
   isLoading: false,
   tabs: undefined,
   content: undefined,
@@ -75,21 +84,22 @@ const PageTitleBar = ({
   tabs,
   content,
 }) => {
-  //
   const titleBarContent = content || tabs;
   return (
     <div className={classnames(className, 'page-title-bar')}>
       {isLoading ? (
         <SkeletonText className="page-title-bar-loading" heading width="30%" />
       ) : (
-        <Fragment>
+        <>
           <div className="page-title-bar-header">
-            <div>
+            <div className="page-title-bar-header-left">
               {breadcrumb ? (
                 <div className="page-title-bar-breadcrumb">
                   <Breadcrumb>
                     {breadcrumb.map((crumb, index) => (
-                      <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+                      <BreadcrumbItem key={`breadcrumb-${index}`}>
+                        {crumb}
+                      </BreadcrumbItem>
                     ))}
                   </Breadcrumb>
                 </div>
@@ -104,16 +114,19 @@ const PageTitleBar = ({
                       triggerId="tooltip"
                       tooltipId="tooltip"
                       renderIcon={Information20}
-                      iconDescription={tooltipIconDescription}
-                    >
-                      {typeof description === 'string' ? <p>{description}</p> : description}
+                      iconDescription={tooltipIconDescription}>
+                      {typeof description === 'string' ? (
+                        <p>{description}</p>
+                      ) : (
+                        description
+                      )}
                     </Tooltip>
                   ) : null}
                   {editable ? (
                     <Button
                       className="page-title-bar-title--edit"
                       kind="ghost"
-                      size="small"
+                      size="field"
                       hasIconOnly
                       renderIcon={Edit20}
                       iconDescription={editIconDescription}
@@ -129,14 +142,15 @@ const PageTitleBar = ({
               ) : null}
             </div>
             {extraContent || rightContent ? (
-              <Fragment>
-                <div style={{ flex: 1 }} />
-                <div>{extraContent || rightContent}</div>
-              </Fragment>
+              <div className="page-title-bar-header-right">
+                {extraContent || rightContent}
+              </div>
             ) : null}
           </div>
-          {titleBarContent ? <div className="page-title-bar-content">{titleBarContent}</div> : null}
-        </Fragment>
+          {titleBarContent ? (
+            <div className="page-title-bar-content">{titleBarContent}</div>
+          ) : null}
+        </>
       )}
     </div>
   );

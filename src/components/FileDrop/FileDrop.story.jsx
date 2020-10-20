@@ -26,9 +26,15 @@ storiesOf('Watson IoT/FileDrop', module)
     />
   ))
   .add('Browse only one', () => (
-    <FileDrop {...FileDropProps} description="Only one file can be uploaded" multiple={false} />
+    <FileDrop
+      {...FileDropProps}
+      description="Only one file can be uploaded"
+      multiple={false}
+    />
   ))
-  .add('Drag and drop', () => <FileDrop {...FileDropProps} kind="drag-and-drop" />)
+  .add('Drag and drop', () => (
+    <FileDrop {...FileDropProps} kind="drag-and-drop" />
+  ))
   .add('Drag only one file', () => (
     <FileDrop
       {...FileDropProps}

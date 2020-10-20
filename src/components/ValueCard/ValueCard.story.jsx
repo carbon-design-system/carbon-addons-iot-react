@@ -19,8 +19,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -46,8 +45,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -79,8 +77,7 @@ storiesOf('Watson IoT/ValueCard', module)
           style={{
             width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
             margin: spacing05 + 4,
-          }}
-        >
+          }}>
           <ValueCard
             title={text('title', 'Title variable is {not-working}')}
             id="facilitycard"
@@ -121,8 +118,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -146,7 +142,8 @@ storiesOf('Watson IoT/ValueCard', module)
     () => {
       const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
       return (
-        <div style={{ width: text('cardWidth', '120px'), margin: spacing05 + 4 }}>
+        <div
+          style={{ width: text('cardWidth', '120px'), margin: spacing05 + 4 }}>
           <ValueCard
             title={text('title', 'Occupancy')}
             id="facilitycard"
@@ -161,7 +158,10 @@ storiesOf('Watson IoT/ValueCard', module)
             breakpoint="lg"
             size={size}
             values={{
-              occupancy: text('occupancy', 'Really really busy loong long long long'),
+              occupancy: text(
+                'occupancy',
+                'Really really busy loong long long long'
+              ),
             }}
           />
         </div>
@@ -183,8 +183,7 @@ storiesOf('Watson IoT/ValueCard', module)
           style={{
             width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
             margin: spacing05 + 4,
-          }}
-        >
+          }}>
           <ValueCard
             title="Tagpath"
             id="facilitycard"
@@ -222,8 +221,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Foot Traffic')}
           id="facilitycard"
@@ -253,13 +251,20 @@ storiesOf('Watson IoT/ValueCard', module)
             attributes: object('attributes', [
               {
                 dataSourceId: 'footTraffic',
-                secondaryValue: { dataSourceId: 'trend', trend: 'down', color: 'red' },
+                secondaryValue: {
+                  dataSourceId: 'trend',
+                  trend: 'down',
+                  color: 'red',
+                },
               },
             ]),
           }}
           breakpoint="lg"
           size={size}
-          values={{ footTraffic: number('footTraffic', 13572), trend: text('trend', '22%') }}
+          values={{
+            footTraffic: number('footTraffic', 13572),
+            trend: text('trend', '22%'),
+          }}
         />
       </div>
     );
@@ -275,7 +280,11 @@ storiesOf('Watson IoT/ValueCard', module)
             attributes: object('attributes', [
               {
                 dataSourceId: 'alerts',
-                secondaryValue: { dataSourceId: 'trend', trend: 'up', color: 'green' },
+                secondaryValue: {
+                  dataSourceId: 'trend',
+                  trend: 'up',
+                  color: 'green',
+                },
               },
             ]),
           }}
@@ -289,7 +298,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('small / thresholds (number, no icon)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -327,7 +340,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('small / thresholds (number, icon)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${number('cardWidth', 300)}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${number('cardWidth', 300)}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -356,7 +373,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('small / thresholds (number, custom renderIconByName)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -398,7 +419,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('smallwide / thresholds (string)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Status')}
           id="facilitycard"
@@ -433,7 +458,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('smallwide / vertical 2', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${getCardMinSize('lg', size).x}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Status')}
           id="facilitycard"
@@ -451,7 +480,10 @@ storiesOf('Watson IoT/ValueCard', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ status: text('status', 'Good'), comfortLevel: text('comfortLevel', 'Healthy') }}
+          values={{
+            status: text('status', 'Good'),
+            comfortLevel: text('comfortLevel', 'Healthy'),
+          }}
         />
       </div>
     );
@@ -459,7 +491,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('smallwide / horizontal 2', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
-      <div style={{ width: `${number('cardWidth', 300)}px`, margin: spacing05 + 4 }}>
+      <div
+        style={{
+          width: `${number('cardWidth', 300)}px`,
+          margin: spacing05 + 4,
+        }}>
         <ValueCard
           title={text('title', 'Status')}
           id="facilitycard"
@@ -493,14 +529,17 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
             ]),
           }}
           breakpoint="lg"
@@ -517,14 +556,17 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -552,14 +594,17 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -668,7 +713,11 @@ storiesOf('Watson IoT/ValueCard', module)
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -696,7 +745,11 @@ storiesOf('Watson IoT/ValueCard', module)
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -726,7 +779,11 @@ storiesOf('Watson IoT/ValueCard', module)
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -760,7 +817,11 @@ storiesOf('Watson IoT/ValueCard', module)
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -798,7 +859,11 @@ storiesOf('Watson IoT/ValueCard', module)
           id="facilitycard"
           content={{
             attributes: object('attributes', [
-              { label: 'Comfort Level', dataSourceId: 'comfortLevel', unit: '%' },
+              {
+                label: 'Comfort Level',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+              },
               {
                 label: 'Average Temperature',
                 dataSourceId: 'averageTemp',
@@ -826,12 +891,15 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Uncomfortable?')}
           id="facilitycard"
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           breakpoint="lg"
           size={size}
           values={{ monthlySummary: boolean('monthlySummary', false) }}
@@ -846,8 +914,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -860,18 +927,24 @@ storiesOf('Watson IoT/ValueCard', module)
   })
   .add('data state - no data - medium - scroll page', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    const width = text('cardWidth', `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`);
+    const width = text(
+      'cardWidth',
+      `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`
+    );
 
     const myDataState = {
-      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
+      type: select(
+        'dataState : Type',
+        Object.keys(CARD_DATA_STATE),
+        CARD_DATA_STATE.NO_DATA
+      ),
       ...getDataStateProp(),
       learnMoreElement: (
         <button
           type="button"
           onClick={() => {
             console.info('Learning more is great');
-          }}
-        >
+          }}>
           Learn more
         </button>
       ),
@@ -882,7 +955,11 @@ storiesOf('Watson IoT/ValueCard', module)
         <ValueCard
           style={{ width }}
           title={text('title', 'Health score')}
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           dataState={myDataState}
           breakpoint="lg"
           size={size}
@@ -896,7 +973,11 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('data state - no data - custom icon - large', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     const myDataState = {
-      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
+      type: select(
+        'dataState : Type',
+        Object.keys(CARD_DATA_STATE),
+        CARD_DATA_STATE.NO_DATA
+      ),
       ...getDataStateProp(),
       icon: (
         <Bee16 style={{ fill: 'orange' }}>
@@ -910,11 +991,14 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Health score')}
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           dataState={myDataState}
           breakpoint="lg"
           size={size}
@@ -927,7 +1011,11 @@ storiesOf('Watson IoT/ValueCard', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const myDataState = {
       ...getDataStateProp(),
-      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.ERROR),
+      type: select(
+        'dataState : Type',
+        Object.keys(CARD_DATA_STATE),
+        CARD_DATA_STATE.ERROR
+      ),
     };
 
     return (
@@ -935,11 +1023,14 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Health score')}
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           dataState={myDataState}
           breakpoint="lg"
           size={size}
@@ -960,16 +1051,20 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('sm', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Health score')}
           id="myStoryId"
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           dataState={{
             type: dataStateType,
             label: 'No data available',
-            description: 'There is no available data for this score at this time',
+            description:
+              'There is no available data for this score at this time',
             extraTooltipText:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  ',
             learnMoreURL: 'http://www.ibm.com',
@@ -993,16 +1088,20 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('sm', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Health score')}
           id="myStoryId"
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          content={{
+            attributes: [
+              { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+            ],
+          }}
           dataState={{
             type: dataStateType,
             label: 'No data available',
-            description: 'There is no available data for this score at this time',
+            description:
+              'There is no available data for this score at this time',
             extraTooltipText:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  ',
             learnMoreURL: 'http://www.ibm.com',
@@ -1022,8 +1121,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Really long card title?')}
           id="facilitycard"
@@ -1038,7 +1136,9 @@ storiesOf('Watson IoT/ValueCard', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ monthlySummary: number('monthlySummary', 20000000000000000) }}
+          values={{
+            monthlySummary: number('monthlySummary', 20000000000000000),
+          }}
         />
       </div>
     );
@@ -1050,8 +1150,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Really really really long card title?')}
           id="facilitycard"
@@ -1086,8 +1185,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Really really really long card title?')}
           id="facilitycard"
@@ -1152,8 +1250,7 @@ storiesOf('Watson IoT/ValueCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}
-      >
+        }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -1169,6 +1266,35 @@ storiesOf('Watson IoT/ValueCard', module)
           size={size}
           locale={select('locale', ['de', 'fr', 'en'], 'fr')}
           values={{ occupancy: number('occupancy', 0.05) }}
+        />
+      </div>
+    );
+  })
+  .add('small / with custom formatter', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}>
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ occupancy: number('occupancy', 88) }}
+          customFormatter={(formattedValue) => {
+            return text('Custom Value', formattedValue);
+          }}
         />
       </div>
     );

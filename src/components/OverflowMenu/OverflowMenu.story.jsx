@@ -37,7 +37,10 @@ const props = {
   menuItem: () => ({
     className: 'some-class',
     disabled: boolean('Disabled (disabled)', false),
-    requireTitle: boolean('Use hover over text for menu item (requireTitle)', false),
+    requireTitle: boolean(
+      'Use hover over text for menu item (requireTitle)',
+      false
+    ),
     onClick: action('onClick'),
   }),
 };
@@ -53,7 +56,12 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
       />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 3" />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 4" />
-      <OverflowMenuItem {...overflowMenuItemProps} itemText="Danger option" hasDivider isDelete />
+      <OverflowMenuItem
+        {...overflowMenuItemProps}
+        itemText="Danger option"
+        hasDivider
+        isDelete
+      />
     </OverflowMenu>
   </>
 );

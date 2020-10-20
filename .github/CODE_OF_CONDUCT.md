@@ -66,11 +66,12 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting maintainers taylorjones@us.ibm.com and rdconner@us.ibm.com. All complaints
-will be reviewed and investigated and will result in a response that is deemed
-necessary and appropriate to the circumstances. The project team is obligated to
-maintain confidentiality with regard to the reporter of an incident. Further
-details of specific enforcement policies may be posted separately.
+reported by contacting maintainers taylorjones@us.ibm.com and
+rdconner@us.ibm.com. All complaints will be reviewed and investigated and will
+result in a response that is deemed necessary and appropriate to the
+circumstances. The project team is obligated to maintain confidentiality with
+regard to the reporter of an incident. Further details of specific enforcement
+policies may be posted separately.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good
 faith may face temporary or permanent repercussions as determined by other
@@ -81,25 +82,28 @@ members of the project's leadership.
 1.  Please, no `@here` or `@channel` unless it is a bug that is **breaking
     production code.** We have communities in many different time zones, and we
     would hate to disrupt someone not at the office.
-2.  There's no need to notify the team that you have made an issue in
-    the GitHub repository. We check these several times a day, so we
-    promise we'll address your issue as soon as we can.
+2.  There's no need to notify the team that you have made an issue in the GitHub
+    repository. We check these several times a day, so we promise we'll address
+    your issue as soon as we can.
 3.  Reserve direct messages for sensitive discussions, such as privacy, legal,
     or HR reasons. Otherwise, we encourage posting in public channels so people
     with the same questions can benefit.
 4.  If you have a pressing bug fix, it is best to make a PR directly to get your
     issues addressed.
-5.  `#iot-pal-components`: This channel is for questions about `carbon-addons-iot-react` components
-    only. It is not the place to ask general coding questions. Instead, use a
-    dev community like [StackOverflow](https://stackoverflow.com/).
-6.  `#iot-pal`: Please post any design questions with an in-context
-    screen shot (i.e. screen shot of the whole UI you are designing) with
-    background as to what you are trying to accomplish in this flow. We welcome
-    in-progress work to get community design feedback as well.
+5.  `#iot-pal-components`: This channel is for questions about
+    `carbon-addons-iot-react` components only. It is not the place to ask
+    general coding questions. Instead, use a dev community like
+    [StackOverflow](https://stackoverflow.com/).
+6.  `#iot-pal`: Please post any design questions with an in-context screen shot
+    (i.e. screen shot of the whole UI you are designing) with background as to
+    what you are trying to accomplish in this flow. We welcome in-progress work
+    to get community design feedback as well.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Carbon Design System code of conduct](https://github.com/carbon-design-system/carbon/blob/master/.github/CODE_OF_CONDUCT.md), which is adapted from the
+This Code of Conduct is adapted from the
+[Carbon Design System code of conduct](https://github.com/carbon-design-system/carbon/blob/master/.github/CODE_OF_CONDUCT.md),
+which is adapted from the
 [Contributor Covenant](https://www.contributor-covenant.org), version 1.4,
 available
 [here](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).

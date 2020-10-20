@@ -85,7 +85,8 @@ const defaultProps = {
     closeIconDescription: 'Close',
     defaultLabelText: 'default',
     deleteIconText: 'delete',
-    deleteWarningTextTemplate: label => `You are about to delete view ${label}.`,
+    deleteWarningTextTemplate: (label) =>
+      `You are about to delete view ${label}.`,
     deleteWarningCancel: 'Cancel',
     deleteWarningConfirm: 'Delete',
     editIconText: 'edit',
@@ -143,18 +144,19 @@ const TableManageViewsModal = ({
   const MyMainModal = overrides?.mainModal?.component || ComposedModal;
   const MySearch = overrides?.search?.component || Search;
   const MyPublicCheckbox = overrides?.publicCheckbox?.component || Checkbox;
-  const MyTableManageViewsList = overrides?.tableManageViewsList?.component || TableManageViewsList;
+  const MyTableManageViewsList =
+    overrides?.tableManageViewsList?.component || TableManageViewsList;
   const MyWarningModal = overrides?.warningModal?.component || Modal;
 
   const [showDeleteWarning, setShowDeleteWarning] = useState(false);
   const [viewIdToDelete, setViewIdToDelete] = useState(null);
 
   const getDeleteWarningText = () => {
-    const viewTitle = views.find(view => view.id === viewIdToDelete).title;
+    const viewTitle = views.find((view) => view.id === viewIdToDelete).title;
     return deleteWarningTextTemplate(viewTitle);
   };
 
-  const onShowWarning = id => {
+  const onShowWarning = (id) => {
     setViewIdToDelete(id);
     setShowDeleteWarning(true);
   };
@@ -174,8 +176,7 @@ const TableManageViewsModal = ({
         open={open}
         passiveModal
         selectorPrimaryFocus={`#${primaryInputId}`}
-        {...overrides?.mainModal?.props}
-      >
+        {...overrides?.mainModal?.props}>
         <div className={`${iotPrefix}--manage-views-modal__filter-container`}>
           <MySearch
             className={`${iotPrefix}--manage-views-modal__search`}
@@ -184,7 +185,7 @@ const TableManageViewsModal = ({
             id={primaryInputId}
             name="searchValue"
             labelText={searchIconLabelText}
-            onChange={evt => onSearchChange(evt?.target?.value)}
+            onChange={(evt) => onSearchChange(evt?.target?.value)}
             placeHolderText={searchPlaceholderText}
             size="lg"
             type="text"
@@ -197,7 +198,7 @@ const TableManageViewsModal = ({
             id="manage-views-modal-public-checkbox-label"
             labelText={publicCheckboxLabelText}
             wrapperClassName={`${iotPrefix}--manage-views-modal__public-checkbox`}
-            onChange={isPublic => onDisplayPublicChange(isPublic)}
+            onChange={(isPublic) => onDisplayPublicChange(isPublic)}
             {...overrides?.publicCheckbox?.props}
           />
         </div>

@@ -4,7 +4,9 @@ import { action } from '@storybook/addon-actions';
 import { Button } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+import DeprecationNotice, {
+  deprecatedStoryTitle,
+} from '../../internal/DeprecationNotice';
 
 import Hero from './Hero';
 
@@ -15,7 +17,11 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
+const breadcrumb = [
+  <a href="/">Home</a>,
+  <a href="/">Type</a>,
+  <span>Instance</span>,
+];
 
 const tooltip = {
   message:
@@ -25,9 +31,12 @@ const tooltip = {
 };
 
 storiesOf('Watson IoT/Hero (Deprecated)', module)
-  .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
+  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice deprecatedComponentName="Hero" replacementComponentName="PageTitleBar" />
+    <DeprecationNotice
+      deprecatedComponentName="Hero"
+      replacementComponentName="PageTitleBar"
+    />
   ))
   .add('normal', () => <Hero title="Explore" />)
   .add('with description', () => (
@@ -50,16 +59,28 @@ storiesOf('Watson IoT/Hero (Deprecated)', module)
     <Hero
       {...commonPageHeroProps}
       breadcrumb={breadcrumb}
-      rightContentBreadcrumb={<div style={{ textAlign: 'right' }}>breadcrumb Right Content</div>}
+      rightContentBreadcrumb={
+        <div style={{ textAlign: 'right' }}>breadcrumb Right Content</div>
+      }
     />
   ))
-  .add('with breadcrumb', () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />)
+  .add('with breadcrumb', () => (
+    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />
+  ))
   .add('with tooltip', () => (
     <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={tooltip} />
   ))
   .add('with tooltip (no link)', () => (
-    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
+    <Hero
+      {...commonPageHeroProps}
+      breadcrumb={breadcrumb}
+      tooltip={{ message: tooltip.message }}
+    />
   ))
   .add('with close button', () => (
-    <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} onClose={action('close')} />
+    <Hero
+      {...commonPageHeroProps}
+      breadcrumb={breadcrumb}
+      onClose={action('close')}
+    />
   ));

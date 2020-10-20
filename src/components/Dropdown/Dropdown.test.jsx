@@ -63,9 +63,13 @@ describe('Dropdown', () => {
 
     fireEvent.click(renderedLabel);
 
-    expect(screen.queryByTestId(`dropdown-button__${itemsWithIcons[3].id}`)).toBeDefined();
+    expect(
+      screen.queryByTestId(`dropdown-button__${itemsWithIcons[3].id}`)
+    ).toBeDefined();
 
-    expect(screen.queryByTestId(`dropdown-button__${itemsWithIcons[5].id}`)).toBeDefined();
+    expect(
+      screen.queryByTestId(`dropdown-button__${itemsWithIcons[5].id}`)
+    ).toBeDefined();
   });
 
   it('Renders icon labels', () => {
@@ -86,10 +90,14 @@ describe('Dropdown', () => {
 
     fireEvent.click(renderedLabel);
 
-    expect(screen.queryByTestId(`dropdown-button__${itemsWithIcons[3].id}`)).toBeNull();
+    expect(
+      screen.queryByTestId(`dropdown-button__${itemsWithIcons[3].id}`)
+    ).toBeNull();
     expect(screen.queryByTestId(itemsWithIcons[3].text)).toBeDefined();
 
-    expect(screen.queryByTestId(`dropdown-button__${itemsWithIcons[5].id}`)).toBeNull();
+    expect(
+      screen.queryByTestId(`dropdown-button__${itemsWithIcons[5].id}`)
+    ).toBeNull();
     expect(screen.queryByTestId(itemsWithIcons[5].text)).toBeDefined();
   });
 
@@ -105,7 +113,7 @@ describe('Dropdown', () => {
         label={label}
         hasIconsOnly
         actions={{
-          onChangeView: item => {
+          onChangeView: (item) => {
             console.log('here i am yo');
             selectedItem = item;
           },

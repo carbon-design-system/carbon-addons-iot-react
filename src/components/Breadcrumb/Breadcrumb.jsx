@@ -44,11 +44,13 @@ const defaultProps = {
 };
 
 const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
-  const childrenItems = Children.map(children, child => child);
+  const childrenItems = Children.map(children, (child) => child);
   const breakingWidth = useRef([]);
 
   const [overflowItems, setOverflowItems] = useState([]);
-  const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
+  const [afterOverflowItems, setAfterOverflowItems] = useState(
+    childrenItems.slice(1)
+  );
   const [prevChildren, setPrevChildren] = useState([]);
 
   const breadcrumbRef = useResize(useRef(null));
@@ -68,7 +70,9 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
     () => {
       if (hasOverflow && breadcrumbRef && breadcrumbRef.current) {
         // The visible list is overflowing
-        if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
+        if (
+          breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth
+        ) {
           // Record the width of the list
           breakingWidth.current.push(breadcrumbRef.current.scrollWidth);
           if (afterOverflowItems.length > 1) {
@@ -89,8 +93,14 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
           breakingWidth.current.pop();
         }
       }
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [breadcrumbRef?.current?.clientWidth, breadcrumbRef?.current?.scrollWidth, prevChildren]
+    },
+    /* eslint-disable react-hooks/exhaustive-deps */
+    [
+      breadcrumbRef?.current?.clientWidth,
+      breadcrumbRef?.current?.scrollWidth,
+      prevChildren,
+    ]
+    /* eslint-enable react-hooks/exhaustive-deps */
   );
 
   return (
@@ -99,8 +109,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
       ref={breadcrumbRef}
-      data-testid="overflow"
-    >
+      data-testid="overflow">
       {breadcrumbRef && hasOverflow ? (
         <CarbonBreadcrumb className={className} {...other}>
           {childrenItems[0]}
@@ -108,8 +117,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
             <span className="breadcrumb--overflow">
               <OverflowMenu
                 renderIcon={OverflowMenuHorizontal20}
-                menuOptionsClass="breadcrumb--overflow-items"
-              >
+                menuOptionsClass="breadcrumb--overflow-items">
                 {overflowItems.map((child, i) => (
                   <OverflowMenuItem
                     {...child.props}

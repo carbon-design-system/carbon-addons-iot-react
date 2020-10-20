@@ -55,7 +55,9 @@ describe('StatefulTileCatalog', () => {
     expect(wrapper.find('input[type="radio"]')).toHaveLength(2);
   });
   it('selectedTileId', () => {
-    const wrapper = mount(<StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />);
+    const wrapper = mount(
+      <StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />
+    );
     wrapper.update();
     const selectedTile = wrapper.find('input[checked=true]');
     expect(selectedTile).toHaveLength(1);
@@ -79,12 +81,7 @@ describe('StatefulTileCatalog', () => {
     );
 
     // The new first tile should be selected
-    expect(
-      wrapper
-        .find('RadioTile')
-        .at(0)
-        .prop('checked')
-    ).toEqual(true);
+    expect(wrapper.find('RadioTile').at(0).prop('checked')).toEqual(true);
 
     // On page 1
     expect(wrapper.text()).toContain('Page 1');
@@ -104,12 +101,7 @@ describe('StatefulTileCatalog', () => {
     expect(mockOnSelection).toHaveBeenCalledTimes(1);
 
     // The new first tile should be selected
-    expect(
-      wrapper
-        .find('RadioTile')
-        .at(0)
-        .prop('checked')
-    ).toEqual(true);
+    expect(wrapper.find('RadioTile').at(0).prop('checked')).toEqual(true);
   });
 
   it('tiles prop change should not select if isSelectedByDefault false', () => {
@@ -121,12 +113,7 @@ describe('StatefulTileCatalog', () => {
       />
     );
     // The new first tile should not be selected
-    expect(
-      wrapper
-        .find('RadioTile')
-        .at(0)
-        .prop('checked')
-    ).toEqual(false);
+    expect(wrapper.find('RadioTile').at(0).prop('checked')).toEqual(false);
     const newTiles = commonTileProps.tiles.slice(1, 5);
     // Back to Page 1
     mockOnSelection.mockClear();

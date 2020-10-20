@@ -15,7 +15,10 @@ const fixture = {
           permissions: { workspaceAdmin: true },
           url: 'https://api.myenv.mydomain.com/workspaces/mockedworkspace',
           applications: {
-            monitor: { role: 'ADMIN', href: 'https://mockedworkspace.monitor.mydomain.com/' },
+            monitor: {
+              role: 'ADMIN',
+              href: 'https://mockedworkspace.monitor.mydomain.com/',
+            },
             iot: {
               role: 'ADMIN',
               href: 'https://mockedworkspace.iot.mydomain.com/ibmssologin',
@@ -26,16 +29,29 @@ const fixture = {
             },
             predict: {
               role: 'ADMIN',
-              href: 'https://mockedworkspace.health.mydomain.com/maximo',
+              href: 'https://mockedworkspace.predict.mydomain.com',
+            },
+            visualinspection: {
+              role: 'ADMIN',
+              href: 'https://mockedworkspace.visualinspection.mydomain.com',
             },
           },
         },
       },
       applications: {
         iot: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
-        monitor: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
-        health: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
-        predict: { sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' } },
+        monitor: {
+          sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' },
+        },
+        health: {
+          sync: { state: 'PENDING', timestamp: '2020-08-24T17:03:41Z' },
+        },
+        predict: {
+          sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' },
+        },
+        visualinspection: {
+          sync: { state: 'SUCCESS', timestamp: '2020-08-24T17:03:41Z' },
+        },
       },
     },
     workspaces: [
@@ -43,7 +59,10 @@ const fixture = {
         id: 'mockedworkspace',
         name: 'Mocked Workspace',
         added: { id: 'mas-superuser', timestamp: '2020-08-24T11:56:12-05:00' },
-        updated: { id: 'mas-superuser', timestamp: '2020-08-24T11:56:12-05:00' },
+        updated: {
+          id: 'mas-superuser',
+          timestamp: '2020-08-24T11:56:12-05:00',
+        },
         sync: { status: 'SUCCESS', timestamp: '2020-08-24T11:56:12-05:00' },
         config: {},
       },
@@ -52,6 +71,7 @@ const fixture = {
   '/applications': [
     {
       id: 'iot',
+      name: 'IoT',
       category: 'tool',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -159,7 +179,11 @@ const fixture = {
             { id: 'slack', required: false, scope: 'SYSTEM' },
           ],
           integratesWith: [
-            { appId: 'monitor', required: false, supportedReleases: ['8.0', '8.1'] },
+            {
+              appId: 'monitor',
+              required: false,
+              supportedReleases: ['8.0', '8.1'],
+            },
           ],
           versions: ['8.0.0', '8.0.1-pre.fvt', '8.0.1'],
           release: '8.0',
@@ -173,7 +197,11 @@ const fixture = {
             { id: 'slack', required: false, scope: 'system' },
           ],
           integratesWith: [
-            { appId: 'monitor', required: false, supportedReleases: ['8.0', '8.1'] },
+            {
+              appId: 'monitor',
+              required: false,
+              supportedReleases: ['8.0', '8.1'],
+            },
           ],
           versions: ['8.1.0-pre.dev81', '8.1.0'],
           release: '8.1',
@@ -182,6 +210,7 @@ const fixture = {
     },
     {
       id: 'monitor',
+      name: 'Monitor',
       category: 'application',
       deployed: true,
       deployedVersion: '8.1.0',
@@ -201,7 +230,9 @@ const fixture = {
             { id: 'jdbc', required: true, scope: 'system' },
             { id: 'slack', required: false, scope: 'system' },
           ],
-          integratesWith: [{ appId: 'iot', required: true, supportedReleases: ['8.0', '8.1'] }],
+          integratesWith: [
+            { appId: 'iot', required: true, supportedReleases: ['8.0', '8.1'] },
+          ],
           versions: ['8.0.0-pre.fvt', '8.0.0'],
           release: '8.0',
         },
@@ -210,7 +241,9 @@ const fixture = {
             { id: 'jdbc', required: true, scope: 'SYSTEM' },
             { id: 'slack', required: false, scope: 'SYSTEM' },
           ],
-          integratesWith: [{ appId: 'iot', required: true, supportedReleases: ['8.0', '8.1'] }],
+          integratesWith: [
+            { appId: 'iot', required: true, supportedReleases: ['8.0', '8.1'] },
+          ],
           versions: ['8.1.0-pre.dev81', '8.1.0'],
           release: '8.1',
         },
@@ -218,6 +251,7 @@ const fixture = {
     },
     {
       id: 'health',
+      name: 'Health',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -238,16 +272,26 @@ const fixture = {
             { id: 'slack', required: false, scope: 'system' },
           ],
           integratesWith: [
-            { appId: 'monitor', required: false, supportedReleases: ['8.0', '8.1'] },
+            {
+              appId: 'monitor',
+              required: false,
+              supportedReleases: ['8.0', '8.1'],
+            },
             { appId: 'predict', required: false, supportedReleases: ['8.0'] },
           ],
-          versions: ['8.0.0-pre.stable', '8.0.0-pre.dev', '8.0.0-pre.fvt', '8.0.0'],
+          versions: [
+            '8.0.0-pre.stable',
+            '8.0.0-pre.dev',
+            '8.0.0-pre.fvt',
+            '8.0.0',
+          ],
           release: '8.0',
         },
       ],
     },
     {
       id: 'predict',
+      name: 'Predict',
       category: 'application',
       deployed: true,
       deployedVersion: '8.0.0',
@@ -269,12 +313,34 @@ const fixture = {
           ],
           integratesWith: [
             { appId: 'health', required: true, supportedReleases: ['8.0'] },
-            { appId: 'monitor', required: true, supportedReleases: ['8.0', '8.1'] },
+            {
+              appId: 'monitor',
+              required: true,
+              supportedReleases: ['8.0', '8.1'],
+            },
           ],
           versions: ['8.0.0-pre.stable', '8.0.0-pre.fvt', '8.0.0'],
           release: '8.0',
         },
       ],
+    },
+    {
+      id: 'visualinspection',
+      name: 'Visual Inspection',
+      category: 'application',
+      deployed: true,
+      deployedVersion: '8.0.0',
+      deployedSpec: { test: { foo: 'bar' } },
+      components: [
+        {
+          name: 'visualinspection',
+          version: '8.0.0',
+          state: 'DEPLOYED',
+          timestamp: '2020-08-24T12:03:08-05:00',
+        },
+      ],
+      entitlement: 'PREMIUM',
+      supportedReleases: [],
     },
   ],
   '/config/eam': {
@@ -319,9 +385,11 @@ const fixture = {
     support: 'Support',
     surveyText: 'Click here to help us improve the product',
     surveyTitle: 'Enjoying {solutionName}?',
+    surveyPrivacyPolicy: 'Privacy Policy',
     switcherLearnMoreLink: 'Learn more',
     switcherNavigatorLink: 'All applications',
-    switcherRequestAccess: 'Contact your administrator to request application access',
+    switcherRequestAccess:
+      'Contact your administrator to request application access',
     userIcon: 'User',
     whatsNew: "What's new",
   },

@@ -1,10 +1,3 @@
-/*
- * Licensed Materials - Property of IBM
- * 5737-M66, 5900-AAA
- * (C) Copyright IBM Corp. 2020 All Rights Reserved.
- * US Government Users Restricted Rights - Use, duplication, or disclosure
- * restricted by GSA ADP Schedule Contract with IBM Corp.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -35,7 +28,14 @@ const propTypes = {
   }),
 };
 
-const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLogout, i18n }) => {
+const SuiteHeaderLogoutModal = ({
+  suiteName,
+  displayName,
+  isOpen,
+  onClose,
+  onLogout,
+  i18n,
+}) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   return (
     <Modal
@@ -45,8 +45,7 @@ const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLog
       secondaryButtonText={mergedI18N.secondaryButton}
       onSecondarySubmit={onClose}
       onRequestSubmit={onLogout}
-      onRequestClose={onClose}
-    >
+      onRequestClose={onClose}>
       {mergedI18N.body(suiteName, displayName)}
     </Modal>
   );
