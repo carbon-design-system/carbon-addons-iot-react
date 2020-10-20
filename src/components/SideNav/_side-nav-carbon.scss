@@ -11,28 +11,29 @@
 // Disable for file since this is from Carbon
 
 /* stylelint-disable */
+$small-screen-breakpoint: 65.99em;
 
 .#{$iot-prefix}--side-nav {
   ///////////////////////////////////////
-  // Added her to allow for collapse sidenav
+  // Added here to allow for collapse sidenav
   // with isRail property functionality
   ///////////////////////////////////////
-  @media (max-width: 65.99em) {
+  @media (max-width: $small-screen-breakpoint) {
     width: 0;
   }
 
   ///////////////////////////////////////
-  // Added her to allow for collapse sidenav
+  // Added here to allow for collapse sidenav
   // with isRail property functionality
   ///////////////////////////////////////
   &.#{$iot-prefix}--side-nav--expanded {
-    @media (max-width: 65.99em) {
+    @media (max-width: $small-screen-breakpoint) {
       width: 16rem;
     }
   }
 
   ///////////////////////////////////////
-  // Added her to align the button with the
+  // Added here to align the button with the
   // regular Carbon anchor tag
   ///////////////////////////////////////
   button.#{$prefix}--side-nav__link {
@@ -48,7 +49,6 @@
   .#{$prefix}--side-nav__menu
     .#{$prefix}--side-nav__link:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
     color: $ibm-color__gray-100;
-    // TODO: sync color
     background-color: $shell-side-nav-bg-04;
   }
 

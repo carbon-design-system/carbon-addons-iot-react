@@ -31,7 +31,9 @@ $hoverBgColor: #2c2c2c;
 
   .#{$prefix}--side-nav__submenu:hover,
   .#{$prefix}--side-nav__submenu:hover + .#{$prefix}--side-nav__menu,
-  .#{$prefix}--side-nav__item:hover,
+  [aria-expanded='true'].#{$prefix}--side-nav__submenu,
+  [aria-expanded='true'].#{$prefix}--side-nav__submenu
+    + .#{$prefix}--side-nav__menu,
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
     background-color: $hoverBgColor;
