@@ -39,7 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-4"
+            id="bx--modal-header__heading--modal-2"
           >
             Do you wish to log out?
           </h3>
@@ -69,9 +69,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-4"
+          aria-labelledby="bx--modal-header__heading--modal-2"
           className="bx--modal-content"
-          id="bx--modal-body--modal-4"
+          id="bx--modal-body--modal-2"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
@@ -558,15 +558,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
     />
     <nav
       aria-label="Side navigation"
-      className="bx--side-nav__navigation bx--side-nav bx--side-nav--ux"
+      className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
       onBlur={[Function]}
       onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
       <ul
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
@@ -638,7 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--large"
+          className="bx--side-nav__item"
         >
           <a
             aria-label="Devices"
@@ -676,7 +678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
@@ -766,7 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </ul>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon"
           onKeyDown={[Function]}
         >
           <button
@@ -994,7 +996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-5"
+            id="bx--modal-header__heading--modal-3"
           >
             Do you wish to log out?
           </h3>
@@ -1024,9 +1026,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-5"
+          aria-labelledby="bx--modal-header__heading--modal-3"
           className="bx--modal-content"
-          id="bx--modal-body--modal-5"
+          id="bx--modal-body--modal-3"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
@@ -1552,7 +1554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           
           <h3
             className="bx--modal-header__heading"
-            id="bx--modal-header__heading--modal-3"
+            id="bx--modal-header__heading--modal-1"
           >
             Do you wish to log out?
           </h3>
@@ -1582,9 +1584,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           </button>
         </div>
         <div
-          aria-labelledby="bx--modal-header__heading--modal-3"
+          aria-labelledby="bx--modal-header__heading--modal-1"
           className="bx--modal-content"
-          id="bx--modal-body--modal-3"
+          id="bx--modal-body--modal-1"
         >
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>

@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             tabIndex={0}
             type="button"
           >
-            Open gallery
+            Add card
             <svg
               aria-hidden={true}
               className="bx--btn__icon"
@@ -59,74 +59,121 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-edit-form"
           >
             <div
-              className="bx--modal bx--modal-tall temp-json-editor"
-              onBlur={[Function]}
-              onClose={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="presentation"
+              className="bx--tabs"
+              role="navigation"
+              selected={0}
             >
-              <span
-                className="bx--visually-hidden"
-                role="link"
-                tabIndex="0"
-              >
-                Focus sentinel
-              </span>
               <div
-                aria-label="Edit JSON"
-                aria-modal="true"
-                className="bx--modal-container"
-                role="dialog"
-                tabIndex="-1"
+                aria-label="listbox"
+                className="bx--tabs-trigger"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <a
+                  className="bx--tabs-trigger-text"
+                  href="#"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Content
+                </a>
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                  <title>
+                    show menu options
+                  </title>
+                </svg>
+              </div>
+              <ul
+                className="bx--tabs__nav bx--tabs__nav--hidden"
+                role="tablist"
+              >
+                <li
+                  aria-controls="undefined__panel"
+                  aria-selected={true}
+                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <a
+                    className="bx--tabs__nav-link"
+                    href="#"
+                    tabIndex={0}
+                  >
+                    Content
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              aria-hidden={false}
+              className="bx--tab-content"
+              hidden={false}
+              role="tabpanel"
+              selected={true}
+            >
+              <div
+                className="iot--card-edit-form--content"
               >
                 <div
-                  className="bx--modal-header"
+                  className="iot--card-edit-form--input"
                 >
-                  
-                  <h3
-                    className="bx--modal-header__heading"
-                    id="bx--modal-header__heading--modal-1"
+                  <div
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                   >
-                    Edit JSON
-                  </h3>
-                  <button
-                    aria-label="Close"
-                    className="bx--modal-close"
-                    onClick={[Function]}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-label="Close"
-                      className="bx--modal-close__icon"
-                      fill="currentColor"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <label
+                      className="bx--label"
+                      htmlFor="title"
                     >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                      />
-                    </svg>
-                  </button>
+                      Card title
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="title"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                          value="Calculated"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div
-                  aria-labelledby="bx--modal-header__heading--modal-1"
-                  className="bx--modal-content"
-                  id="bx--modal-body--modal-1"
+                  className="iot--card-edit-form--input"
                 >
                   <div
                     className="bx--form-item"
                   >
                     <label
                       className="bx--label"
+                      htmlFor="description"
                     >
-                      Card data
+                      Description (Optional)
                     </label>
                     <div
                       className="bx--text-area__wrapper"
@@ -135,154 +182,89 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <textarea
                         aria-describedby={null}
                         aria-invalid={null}
-                        className="bx--text-area"
+                        className="bx--text-area bx--text-area--light"
                         cols={50}
                         disabled={false}
+                        id="description"
                         onChange={[Function]}
                         onClick={[Function]}
                         placeholder=""
-                        rows={8}
+                        rows={4}
                       />
                     </div>
                   </div>
                 </div>
                 <div
-                  className="bx--modal-footer"
+                  className="iot--card-edit-form--input"
                 >
-                  <button
-                    className="bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Save
-                  </button>
-                </div>
-              </div>
-              <span
-                className="bx--visually-hidden"
-                role="link"
-                tabIndex="0"
-              >
-                Focus sentinel
-              </span>
-            </div>
-            <div
-              className="iot--card-edit-form--content"
-            >
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="title"
-                  >
-                    Card title
-                  </label>
                   <div
-                    className="bx--text-input__field-outer-wrapper"
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
                   >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
+                    <label
+                      className="bx--label"
+                      htmlFor="downshift-0-toggle-button"
+                      id="downshift-0-label"
                     >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="title"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                        value="Calculated"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--dropdown__wrapper bx--list-box__wrapper"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="downshift-0-toggle-button"
-                    id="downshift-0-label"
-                  >
-                    Card size
-                  </label>
-                  <div
-                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                    id="size"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                  >
-                    <button
-                      aria-disabled={false}
-                      aria-expanded={false}
-                      aria-haspopup="listbox"
-                      aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                      className="bx--list-box__field"
-                      disabled={false}
-                      id="downshift-0-toggle-button"
+                      Size
+                    </label>
+                    <div
+                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="size"
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      type="button"
                     >
-                      <span
-                        className="bx--list-box__label"
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-0-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
                       >
-                        MEDIUMTHIN
-                      </span>
-                      <div
-                        className="bx--list-box__menu-icon"
-                      >
-                        <svg
-                          aria-label="Open menu"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          name="chevron--down"
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          className="bx--list-box__label"
                         >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                          <title>
-                            Open menu
-                          </title>
-                        </svg>
-                      </div>
-                    </button>
-                    <div
-                      aria-labelledby="downshift-0-label"
-                      className="bx--list-box__menu"
-                      id="downshift-0-menu"
-                      onBlur={[Function]}
-                      onKeyDown={[Function]}
-                      onMouseLeave={[Function]}
-                      role="listbox"
-                      tabIndex={-1}
-                    />
+                          Medium thin (4x2)
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-0-label"
+                        className="bx--list-box__menu"
+                        id="downshift-0-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -401,7 +383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               tabIndex={0}
               type="button"
             >
-              Open gallery
+              Add card
               <svg
                 aria-hidden={true}
                 className="bx--btn__icon"
@@ -426,74 +408,121 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--card-edit-form"
             >
               <div
-                className="bx--modal bx--modal-tall temp-json-editor"
-                onBlur={[Function]}
-                onClose={[Function]}
-                onKeyDown={[Function]}
-                onMouseDown={[Function]}
-                role="presentation"
+                className="bx--tabs"
+                role="navigation"
+                selected={0}
               >
-                <span
-                  className="bx--visually-hidden"
-                  role="link"
-                  tabIndex="0"
-                >
-                  Focus sentinel
-                </span>
                 <div
-                  aria-label="Edit JSON"
-                  aria-modal="true"
-                  className="bx--modal-container"
-                  role="dialog"
-                  tabIndex="-1"
+                  aria-label="listbox"
+                  className="bx--tabs-trigger"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="listbox"
+                  tabIndex={0}
+                >
+                  <a
+                    className="bx--tabs-trigger-text"
+                    href="#"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                  >
+                    Content
+                  </a>
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                    <title>
+                      show menu options
+                    </title>
+                  </svg>
+                </div>
+                <ul
+                  className="bx--tabs__nav bx--tabs__nav--hidden"
+                  role="tablist"
+                >
+                  <li
+                    aria-controls="undefined__panel"
+                    aria-selected={true}
+                    className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="tab"
+                    tabIndex={-1}
+                  >
+                    <a
+                      className="bx--tabs__nav-link"
+                      href="#"
+                      tabIndex={0}
+                    >
+                      Content
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                aria-hidden={false}
+                className="bx--tab-content"
+                hidden={false}
+                role="tabpanel"
+                selected={true}
+              >
+                <div
+                  className="iot--card-edit-form--content"
                 >
                   <div
-                    className="bx--modal-header"
+                    className="iot--card-edit-form--input"
                   >
-                    
-                    <h3
-                      className="bx--modal-header__heading"
-                      id="bx--modal-header__heading--modal-2"
+                    <div
+                      className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                     >
-                      Edit JSON
-                    </h3>
-                    <button
-                      aria-label="Close"
-                      className="bx--modal-close"
-                      onClick={[Function]}
-                      title="Close"
-                      type="button"
-                    >
-                      <svg
-                        aria-label="Close"
-                        className="bx--modal-close__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <label
+                        className="bx--label"
+                        htmlFor="title"
                       >
-                        <path
-                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                        />
-                      </svg>
-                    </button>
+                        Card title
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                          data-warn={null}
+                        >
+                          <input
+                            className="bx--text-input bx--text__input bx--text-input--light"
+                            disabled={false}
+                            id="title"
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="text"
+                            value="New card"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    aria-labelledby="bx--modal-header__heading--modal-2"
-                    className="bx--modal-content"
-                    id="bx--modal-body--modal-2"
+                    className="iot--card-edit-form--input"
                   >
                     <div
                       className="bx--form-item"
                     >
                       <label
                         className="bx--label"
+                        htmlFor="description"
                       >
-                        Card data
+                        Description (Optional)
                       </label>
                       <div
                         className="bx--text-area__wrapper"
@@ -502,154 +531,89 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <textarea
                           aria-describedby={null}
                           aria-invalid={null}
-                          className="bx--text-area"
+                          className="bx--text-area bx--text-area--light"
                           cols={50}
                           disabled={false}
+                          id="description"
                           onChange={[Function]}
                           onClick={[Function]}
                           placeholder=""
-                          rows={8}
+                          rows={4}
                         />
                       </div>
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer"
+                    className="iot--card-edit-form--input"
                   >
-                    <button
-                      className="bx--btn bx--btn--secondary"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      className="bx--btn bx--btn--primary"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      Save
-                    </button>
-                  </div>
-                </div>
-                <span
-                  className="bx--visually-hidden"
-                  role="link"
-                  tabIndex="0"
-                >
-                  Focus sentinel
-                </span>
-              </div>
-              <div
-                className="iot--card-edit-form--content"
-              >
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="title"
-                    >
-                      Card title
-                    </label>
                     <div
-                      className="bx--text-input__field-outer-wrapper"
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
                     >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                        data-warn={null}
+                      <label
+                        className="bx--label"
+                        htmlFor="downshift-1-toggle-button"
+                        id="downshift-1-label"
                       >
-                        <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
-                          disabled={false}
-                          id="title"
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="text"
-                          value="New card"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--dropdown__wrapper bx--list-box__wrapper"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="downshift-1-toggle-button"
-                      id="downshift-1-label"
-                    >
-                      Card size
-                    </label>
-                    <div
-                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                      id="size"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                    >
-                      <button
-                        aria-disabled={false}
-                        aria-expanded={false}
-                        aria-haspopup="listbox"
-                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                        className="bx--list-box__field"
-                        disabled={false}
-                        id="downshift-1-toggle-button"
+                        Size
+                      </label>
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="size"
                         onClick={[Function]}
                         onKeyDown={[Function]}
-                        type="button"
                       >
-                        <span
-                          className="bx--list-box__label"
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-1-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
                         >
-                          SMALL
-                        </span>
-                        <div
-                          className="bx--list-box__menu-icon"
-                        >
-                          <svg
-                            aria-label="Open menu"
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            name="chevron--down"
-                            preserveAspectRatio="xMidYMid meet"
-                            role="img"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            className="bx--list-box__label"
                           >
-                            <path
-                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                            />
-                            <title>
-                              Open menu
-                            </title>
-                          </svg>
-                        </div>
-                      </button>
-                      <div
-                        aria-labelledby="downshift-1-label"
-                        className="bx--list-box__menu"
-                        id="downshift-1-menu"
-                        onBlur={[Function]}
-                        onKeyDown={[Function]}
-                        onMouseLeave={[Function]}
-                        role="listbox"
-                        tabIndex={-1}
-                      />
+                            Small (4x1)
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-1-label"
+                          className="bx--list-box__menu"
+                          id="downshift-1-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -763,6 +727,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--list-header--btn-container"
                 />
               </div>
+              <div
+                className="iot--list-header--search"
+              >
+                <div
+                  aria-labelledby="iot--list-header--search-search"
+                  className="bx--search bx--search--sm"
+                  role="search"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--list-header--search"
+                    id="iot--list-header--search-search"
+                  >
+                    Enter a value
+                  </label>
+                  <input
+                    autoComplete="off"
+                    className="bx--search-input"
+                    id="iot--list-header--search"
+                    onChange={[Function]}
+                    placeholder="Enter a value"
+                    role="searchbox"
+                    type="text"
+                    value=""
+                  />
+                  <button
+                    aria-label="Clear search input"
+                    className="bx--search-close bx--search-close--hidden"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
             <div
               className="iot--list--content__full-height iot--list--content"
@@ -772,7 +799,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-floating-menu-container={true}
               >
                 <div
-                  className="iot--list-item"
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div
                     className="iot--list-item--content"
@@ -780,20 +812,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="iot--list-item--content--icon iot--list-item--content--icon__left"
                     >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M27,28V6H19V28H15V14H7V28H4V2H2V28a2,2,0,0,0,2,2H30V28ZM13,28H9V16h4Zm12,0H21V8h4Z"
-                        />
-                      </svg>
+                      <img
+                        alt="Value / KPI"
+                        src="value-kpi.svg"
+                      />
                     </div>
                     <div
                       className="iot--list-item--content--values"
@@ -802,45 +824,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--values--main"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                          title="Simple bar"
+                          className="iot--list-item--content--values--value"
+                          title="Value / KPI"
                         >
-                          Simple bar
-                        </div>
-                        <div
-                          className="iot--list-item--content--row-actions"
-                        >
-                          <button
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                            data-testid="card-gallery-list-BAR-add"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <span
-                              className="bx--assistive-text"
-                            >
-                              Add
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="Add"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                              />
-                            </svg>
-                          </button>
+                          Value / KPI
                         </div>
                       </div>
                     </div>
@@ -852,7 +839,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-floating-menu-container={true}
               >
                 <div
-                  className="iot--list-item"
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div
                     className="iot--list-item--content"
@@ -860,20 +852,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="iot--list-item--content--icon iot--list-item--content--icon__left"
                     >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.67,28l6.39-12,7.3,6.49a2,2,0,0,0,1.7.47,2,2,0,0,0,1.42-1.07L27,10.9,25.18,10,19.69,21l-7.3-6.49A2,2,0,0,0,10.71,14a2,2,0,0,0-1.42,1L4,25V2H2V28a2,2,0,0,0,2,2H30V28Z"
-                        />
-                      </svg>
+                      <img
+                        alt="Time series"
+                        src="line-graph.svg"
+                      />
                     </div>
                     <div
                       className="iot--list-item--content--values"
@@ -882,46 +864,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--values--main"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                          className="iot--list-item--content--values--value"
                           title="Time series line"
                         >
                           Time series line
                         </div>
-                        <div
-                          className="iot--list-item--content--row-actions"
-                        >
-                          <button
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                            data-testid="card-gallery-list-TIMESERIES-add"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <span
-                              className="bx--assistive-text"
-                            >
-                              Add
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="Add"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -932,7 +879,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-floating-menu-container={true}
               >
                 <div
-                  className="iot--list-item"
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div
                     className="iot--list-item--content"
@@ -940,20 +892,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="iot--list-item--content--icon iot--list-item--content--icon__left"
                     >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.6667 27.5027L2 22.4484l1.3311-1.4927 5.6411 5.0316 7.6906-7.4449a1.9282 1.9282 0 012.6736-.0084L22.96 21.9983l5.5791-5.9735L30 17.3905l-5.5812 5.9758a1.996 1.996 0 01-2.8379.08l-3.5765-3.4191-7.666 7.4206A1.9629 1.9629 0 017.6667 27.5027zM30 11L26 11 28 8 30 11zM22 4H18V6h4V8H19v2h3v2H18v2h4a2.0027 2.0027 0 002-2V6A2.0023 2.0023 0 0022 4zM16 14H10V10a2.002 2.002 0 012-2h2V6H10V4h4a2.0023 2.0023 0 012 2V8a2.0023 2.0023 0 01-2 2H12v2h4zM6 12L6 4 4 4 4 5 2 5 2 7 4 7 4 12 2 12 2 14 8 14 8 12 6 12z"
-                        />
-                      </svg>
+                      <img
+                        alt="Image card"
+                        src="image.svg"
+                      />
                     </div>
                     <div
                       className="iot--list-item--content--values"
@@ -962,128 +904,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--values--main"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                          title="Value/KPI"
-                        >
-                          Value/KPI
-                        </div>
-                        <div
-                          className="iot--list-item--content--row-actions"
-                        >
-                          <button
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                            data-testid="card-gallery-list-VALUE-add"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <span
-                              className="bx--assistive-text"
-                            >
-                              Add
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="Add"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--list-item-parent"
-                data-floating-menu-container={true}
-              >
-                <div
-                  className="iot--list-item"
-                >
-                  <div
-                    className="iot--list-item--content"
-                  >
-                    <div
-                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
-                        />
-                        <path
-                          d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className="iot--list-item--content--values"
-                    >
-                      <div
-                        className="iot--list-item--content--values--main"
-                      >
-                        <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                          className="iot--list-item--content--values--value"
                           title="Image"
                         >
                           Image
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Table"
+                        src="data-table.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
                         <div
-                          className="iot--list-item--content--row-actions"
+                          className="iot--list-item--content--values--value"
+                          title="Data table"
                         >
-                          <button
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                            data-testid="card-gallery-list-IMAGE-add"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <span
-                              className="bx--assistive-text"
-                            >
-                              Add
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="Add"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                              />
-                            </svg>
-                          </button>
+                          Data table
                         </div>
                       </div>
                     </div>
@@ -1095,7 +959,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 data-floating-menu-container={true}
               >
                 <div
-                  className="iot--list-item"
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div
                     className="iot--list-item--content"
@@ -1103,20 +972,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <div
                       className="iot--list-item--content--icon iot--list-item--content--icon__left"
                     >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M29,5a2,2,0,0,0-2-2H5A2,2,0,0,0,3,5V27a2,2,0,0,0,2,2H27a2,2,0,0,0,2-2ZM27,5V9H5V5Zm0,22H5V23H27Zm0-6H5V17H27Zm0-6H5V11H27Z"
-                        />
-                      </svg>
+                      <img
+                        alt="Simple bar"
+                        src="simple-bar-graph.svg"
+                      />
                     </div>
                     <div
                       className="iot--list-item--content--values"
@@ -1125,45 +984,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content--values--main"
                       >
                         <div
-                          className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                          title="Data table"
+                          className="iot--list-item--content--values--value"
+                          title="Simple bar"
                         >
-                          Data table
+                          Simple bar
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Grouped bar"
+                        src="bar-grouped-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
                         <div
-                          className="iot--list-item--content--row-actions"
+                          className="iot--list-item--content--values--value"
+                          title="Grouped bar"
                         >
-                          <button
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
-                            data-testid="card-gallery-list-TABLE-add"
-                            disabled={false}
-                            onClick={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <span
-                              className="bx--assistive-text"
-                            >
-                              Add
-                            </span>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="Add"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
-                              />
-                            </svg>
-                          </button>
+                          Grouped bar
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
+              >
+                <div
+                  className="iot--list-item iot--list-item__selectable"
+                  data_testid={null}
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div
+                    className="iot--list-item--content"
+                  >
+                    <div
+                      className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                    >
+                      <img
+                        alt="Stacked bar"
+                        src="bar-stack-graph.svg"
+                      />
+                    </div>
+                    <div
+                      className="iot--list-item--content--values"
+                    >
+                      <div
+                        className="iot--list-item--content--values--main"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Stacked bar"
+                        >
+                          Stacked bar
                         </div>
                       </div>
                     </div>

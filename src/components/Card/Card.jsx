@@ -124,6 +124,7 @@ CardWrapper.propTypes = {
   onScroll: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  /** Optionally sets a keyboard tab index for the container */
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {

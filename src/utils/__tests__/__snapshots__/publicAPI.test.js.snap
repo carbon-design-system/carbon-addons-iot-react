@@ -7852,18 +7852,185 @@ Map {
       },
     },
   },
+  "DashboardEditor" => Object {
+    "defaultProps": Object {
+      "headerBreadcrumbs": null,
+      "i18n": Object {
+        "closeGalleryButton": "Back",
+        "defaultCardTitle": "Untitled",
+        "galleryHeader": "Gallery",
+        "headerCancelButton": "Cancel",
+        "headerDeleteButton": "Delete",
+        "headerEditTitleButton": "Edit title",
+        "headerExportButton": "Export",
+        "headerImportButton": "Import",
+        "headerSubmitButton": "Save and close",
+        "noDataLabel": "No data source is defined",
+        "openGalleryButton": "Open gallery",
+        "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a value",
+      },
+      "initialValue": Object {
+        "cards": Array [],
+        "layouts": Object {},
+      },
+      "notification": null,
+      "onCancel": null,
+      "onDelete": null,
+      "onEditTitle": null,
+      "onExport": null,
+      "onImport": null,
+      "onSubmit": null,
+      "onValidateCardJson": null,
+      "renderCardPreview": [Function],
+      "renderHeader": null,
+      "supportedCardTypes": Array [
+        "VALUE",
+        "TIMESERIES",
+        "IMAGE",
+        "TABLE",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
+      ],
+      "title": null,
+    },
+    "propTypes": Object {
+      "headerBreadcrumbs": Object {
+        "args": Array [
+          Object {
+            "type": "element",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeGalleryButton": Object {
+              "type": "string",
+            },
+            "defaultCardTitle": Object {
+              "type": "string",
+            },
+            "galleryHeader": Object {
+              "type": "string",
+            },
+            "headerCancelButton": Object {
+              "type": "string",
+            },
+            "headerDeleteButton": Object {
+              "type": "string",
+            },
+            "headerEditTitleButton": Object {
+              "type": "string",
+            },
+            "headerExportButton": Object {
+              "type": "string",
+            },
+            "headerImportButton": Object {
+              "type": "string",
+            },
+            "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "openGalleryButton": Object {
+              "type": "string",
+            },
+            "openJSONButton": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialValue": Object {
+        "args": Array [
+          Object {
+            "cards": Object {
+              "type": "array",
+            },
+            "layouts": Object {
+              "type": "object",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "notification": Object {
+        "type": "node",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "onDelete": Object {
+        "type": "func",
+      },
+      "onEditTitle": Object {
+        "type": "func",
+      },
+      "onExport": Object {
+        "type": "func",
+      },
+      "onImport": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "type": "func",
+      },
+      "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "renderCardPreview": Object {
+        "type": "func",
+      },
+      "renderHeader": Object {
+        "type": "func",
+      },
+      "supportedCardTypes": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "cardJson": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
-        "openGalleryButton": "Open gallery",
+        "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a search",
       },
-      "supportedTypes": undefined,
-      "value": null,
+      "onValidateCardJson": null,
+      "supportedCardTypes": Array [
+        "VALUE",
+        "TIMESERIES",
+        "IMAGE",
+        "TABLE",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
+      ],
     },
     "propTypes": Object {
+      "cardJson": Object {
+        "type": "object",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -7871,6 +8038,9 @@ Map {
               "type": "string",
             },
             "openGalleryButton": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
               "type": "string",
             },
           },
@@ -7889,16 +8059,16 @@ Map {
         "isRequired": true,
         "type": "func",
       },
-      "supportedTypes": Object {
+      "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "supportedCardTypes": Object {
         "args": Array [
           Object {
             "type": "string",
           },
         ],
         "type": "arrayOf",
-      },
-      "value": Object {
-        "type": "object",
       },
     },
   },
@@ -9897,8 +10067,10 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "dataState": null,
       "locale": "en",
       "size": "MEDIUM",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
