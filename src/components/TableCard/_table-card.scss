@@ -1,6 +1,6 @@
 @import '../../globals/vars';
 
-.#{$iot-prefix}--table-card--overflow-menu & {
+.#{$iot-prefix}--table-card--overflow-menu {
   margin-left: $spacing-03;
   opacity: 1;
   overflow-y: hidden;
