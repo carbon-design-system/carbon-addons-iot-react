@@ -25,5 +25,4 @@ install:
 script:
   - yarn build
 
-after_success:
-  - yarn publish-npm
+after_success: bash ./scripts/relese.sh
