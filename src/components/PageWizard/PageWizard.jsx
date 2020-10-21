@@ -52,6 +52,8 @@ export const PageWizardPropTypes = {
   isProgressIndicatorVertical: PropTypes.bool,
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
+  /** Content to render after footer buttons (on right side, in LTR) */
+  afterFooterContent: PropTypes.node,
   /** Make the ProgressIndicator clickable */
   isClickable: PropTypes.bool,
 };
@@ -75,6 +77,7 @@ export const defaultProps = {
   onBack: null,
   setStep: null,
   beforeFooterContent: null,
+  afterFooterContent: null,
   isClickable: false,
 };
 
@@ -95,6 +98,7 @@ const PageWizard = ({
   onClearError,
   isProgressIndicatorVertical,
   beforeFooterContent,
+  afterFooterContent,
   isClickable,
 }) => {
   const children = ch.length ? ch : [ch];
@@ -119,6 +123,7 @@ const PageWizard = ({
     hasStickyFooter,
     onClearError,
     beforeFooterContent,
+    afterFooterContent,
   });
 
   /**

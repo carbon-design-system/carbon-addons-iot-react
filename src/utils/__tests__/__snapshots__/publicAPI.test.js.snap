@@ -15214,6 +15214,7 @@ Map {
   },
   "PageWizard" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "currentStepId": null,
@@ -15235,6 +15236,9 @@ Map {
       "setStep": null,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
@@ -15324,6 +15328,7 @@ Map {
   },
   "PageWizardStep" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "error": null,
@@ -15347,6 +15352,9 @@ Map {
       "sendingData": false,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
@@ -15520,6 +15528,7 @@ Map {
   },
   "StatefulPageWizard" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "currentStepId": null,
@@ -15540,6 +15549,9 @@ Map {
       "setStep": null,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
