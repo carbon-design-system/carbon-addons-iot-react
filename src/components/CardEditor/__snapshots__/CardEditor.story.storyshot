@@ -385,6 +385,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="decimal-precision"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               className="iot--card-edit-form--footer"
@@ -1149,6 +1181,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="decimal-precision"
+                  >
+                    Decimal precision
+                  </label>
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="decimal-precision"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               className="iot--card-edit-form--footer"
@@ -1607,6 +1671,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
                           id="unit-selection"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <div
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  >
+                    <label
+                      className="bx--label"
+                      htmlFor="decimal-precision"
+                    >
+                      Decimal precision
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="decimal-precision"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"

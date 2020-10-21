@@ -149,43 +149,65 @@ export const getDefaultCard = (type, i18n) => {
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
-  lastHour: { interval: 'hour', count: -1, type: 'rolling' },
-  last2Hours: { interval: 'hour', count: -2, type: 'rolling' },
-  last4Hours: { interval: 'hour', count: -4, type: 'rolling' },
-  last8Hours: { interval: 'hour', count: -8, type: 'rolling' },
-  last24Hours: { interval: 'day', count: -1, type: 'rolling' },
-  last7Days: { interval: 'week', count: -1, type: 'rolling' },
-  lastMonth: { interval: 'month', count: -1, type: 'rolling' },
+  last24Hours: {
+    range: { interval: 'day', count: -1, type: 'rolling' },
+    interval: 'hour',
+  },
+  last7Days: {
+    range: { interval: 'week', count: -1, type: 'rolling' },
+    interval: 'day',
+  },
+  lastMonth: {
+    range: { interval: 'month', count: -1, type: 'rolling' },
+    interval: 'week',
+  },
   lastQuarter: {
-    interval: 'quarter',
-    count: -1,
-    type: 'rolling',
+    range: {
+      interval: 'quarter',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'month',
   },
   lastYear: {
-    interval: 'year',
-    count: -1,
-    type: 'rolling',
+    range: {
+      interval: 'year',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'month',
   },
-  this24Hours: { interval: 'day', count: -1, type: 'periodToDate' },
   thisWeek: {
-    interval: 'week',
-    count: -1,
-    type: 'periodToDate',
+    range: {
+      interval: 'week',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'day',
   },
   thisMonth: {
-    interval: 'month',
-    count: -1,
-    type: 'periodToDate',
+    range: {
+      interval: 'month',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'week',
   },
   thisQuarter: {
-    interval: 'quarter',
-    count: -1,
-    type: 'periodToDate',
+    range: {
+      interval: 'quarter',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'month',
   },
   thisYear: {
-    interval: 'year',
-    count: -1,
-    type: 'periodToDate',
+    range: {
+      interval: 'year',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'month',
   },
 };
 
@@ -240,6 +262,7 @@ const renderTimeSeriesCard = (cardJson, commonProps) => (
     isEditable
     values={[]}
     showLegend
+    timeRange={cardJson?.dataSource?.range}
     {...cardJson}
     {...commonProps}
   />

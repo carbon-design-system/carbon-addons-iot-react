@@ -9,7 +9,6 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
-import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import cheerio from 'cheerio';
@@ -182,8 +181,6 @@ export const formatChartData = (
   return data;
 };
 
-const memoizedGenerateSampleValues = memoize(generateSampleValues);
-
 /**
  * Extends default tooltip with the additional date information, and optionally alert information
  * @param {object} data data object for this particular datapoint should have a date field containing the timestamp
@@ -261,6 +258,7 @@ const TimeSeriesCard = ({
   i18n: { alertDetected, noDataLabel },
   i18n,
   isExpanded,
+  timeRange,
   isLazyLoading,
   isLoading,
   domainRange,
@@ -290,9 +288,13 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   moment.locale(locale);
 
-  const values = isEditable
-    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
-    : valuesProp;
+  const sampleValues = useMemo(
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [series, interval, timeRange]
+  );
+
+  const values = isEditable ? sampleValues : valuesProp;
 
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
@@ -468,6 +470,7 @@ const TimeSeriesCard = ({
       title={title}
       size={newSize}
       i18n={i18n}
+      timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
@@ -493,7 +496,7 @@ const TimeSeriesCard = ({
                 accessibility: false,
                 axes: {
                   bottom: {
-                    title: xLabel,
+                    title: xLabel || ' ',
                     mapsTo: 'date',
                     scaleType: 'time',
                     ticks: {

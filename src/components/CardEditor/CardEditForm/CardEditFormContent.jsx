@@ -218,10 +218,11 @@ const CardEditFormContent = ({
               }
               light
               onChange={({ selectedItem }) => {
-                const range = timeRangeToJSON[selectedItem.id];
+                const { range, interval } = timeRangeToJSON[selectedItem.id];
                 setSelectedTimeRange(selectedItem.id);
                 onChange({
                   ...cardJson,
+                  interval,
                   dataSource: { ...cardJson.dataSource, range },
                 });
               }}

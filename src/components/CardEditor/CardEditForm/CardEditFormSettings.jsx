@@ -103,19 +103,25 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           value={content?.unit}
         />
       </div>
-      {/* 
-
-      TODO: support "decimal precision" and legend toggling in future iteration
-
       <div className={`${baseClassName}--input`}>
         <TextInput
           id="decimal-precision"
           labelText={mergedI18n.decimalPrecisionLabel}
           light
-          onChange={evt => onChange({ ...cardJson, description: evt.target.value })}
-          value={description}
+          onChange={(evt) =>
+            onChange({
+              ...cardJson,
+              content: {
+                ...cardJson.content,
+                decimalPrecision: evt.target.value,
+              },
+            })
+          }
+          value={content?.decimalPrecision}
         />
       </div>
+      {/* 
+      TODO: support and legend toggling in future iteration
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.showLegend}</span>
@@ -125,6 +131,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
             defaultToggled
             labelA=""
             labelB=""
+            // This is not supported by Carbon yet. Issue open here: https://github.com/carbon-design-system/carbon-charts/issues/846
             onToggle={showLegend => onChange({ ...cardJson, showLegend })}
           />
         </div>
