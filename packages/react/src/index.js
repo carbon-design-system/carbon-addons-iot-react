@@ -6,7 +6,10 @@ sizeMe.noPlaceholders = true;
 // Components
 export AddCard from './components/AddCard';
 export Button from './components/Button';
-export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export Breadcrumb, {
+  BreadcrumbItem,
+  BreadcrumbSkeleton,
+} from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
 export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export Table from './components/Table';
@@ -62,10 +65,13 @@ export DashboardHeader from './components/Dashboard/DashboardHeader';
 export DashboardGrid from './components/Dashboard/DashboardGrid';
 export CardEditor from './components/CardEditor/CardEditor';
 export Card from './components/Card/Card';
+export PieChartCard from './components/PieChartCard/PieChartCard';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
-export TableCard, { findMatchingThresholds } from './components/TableCard/TableCard';
+export TableCard, {
+  findMatchingThresholds,
+} from './components/TableCard/TableCard';
 export GaugeCard from './components/GaugeCard/GaugeCard';
 export {
   CARD_TYPES,
@@ -94,7 +100,9 @@ export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 export List from './components/List/List';
 export SimpleList from './components/List/SimpleList/SimpleList';
-export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
+export IconSwitch, {
+  ICON_SWITCH_SIZES,
+} from './components/IconSwitch/IconSwitch';
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
@@ -140,6 +148,8 @@ export {
   DatePicker,
   DatePickerInput,
   Dropdown,
+  ErrorBoundary,
+  ErrorBoundaryContext,
   Filename,
   FileUploader,
   FileUploaderButton,
@@ -149,6 +159,10 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
+  FluidForm,
+  Grid,
+  Row,
+  Column,
   Icon,
   InlineLoading,
   Link,
@@ -166,7 +180,11 @@ export {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
+  PageSelector,
+  Unstable_Pagination, // eslint-disable-line camelcase
   Pagination,
+  PaginationNav,
+  PaginationSkeleton,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,

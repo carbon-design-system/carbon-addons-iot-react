@@ -1,4 +1,5 @@
-> Copied from https://github.com/carbon-design-system/carbon/blob/v10.7.3/packages/react/src/components/MultiSelect/README.md
+> Copied from
+> https://github.com/carbon-design-system/carbon/blob/v10.7.3/packages/react/src/components/MultiSelect/README.md
 
 # `MultiSelect`
 
@@ -21,8 +22,8 @@ your terminal with [npm](https://www.npmjs.com/):
 npm i carbon-components carbon-components-react --save
 ```
 
-If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following command
-instead:
+If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following
+command instead:
 
 ```bash
 yarn add carbon-components-react carbon-components
@@ -45,9 +46,15 @@ You can then create the `MultiSelect` by the following:
   invalid={false}
   invalidText="Invalid Selection"
   onChange={onChange}
-  items={[{ id: 'item-1', text: 'Item 1' }, { id: 'item-2', text: 'Item 2' }]}
+  items={[
+    { id: 'item-1', text: 'Item 1' },
+    { id: 'item-2', text: 'Item 2' },
+  ]}
   itemToString={itemToString}
-  initialSelectedItems={[{ id: 'item-1', text: 'Item 1' }, { id: 'item-2', text: 'Item 2' }]}
+  initialSelectedItems={[
+    { id: 'item-1', text: 'Item 1' },
+    { id: 'item-2', text: 'Item 2' },
+  ]}
   translateWithId={translateWithId}
 />
 ```
@@ -70,7 +77,10 @@ would look like the following:
     { id: 'item-2', text: 'Item 2', label: 'Item 2' },
   ]}
   itemToString={itemToString}
-  initialSelectedItems={[{ id: 'item-1', text: 'Item 1' }, { id: 'item-2', text: 'Item 2' }]}
+  initialSelectedItems={[
+    { id: 'item-1', text: 'Item 1' },
+    { id: 'item-2', text: 'Item 2' },
+  ]}
   translateWithId={translateWithId}
 />
 ```
@@ -90,9 +100,15 @@ the list. For instance you can use:
   invalid={false}
   invalidText="Invalid Selection"
   onChange={onChange}
-  items={[{ id: 'item-1', text: 'Item 1' }, { id: 'item-2', text: 'Item 2' }]}
-  initialSelectedItems={[{ id: 'item-1', text: 'Item 1' }, { id: 'item-2', text: 'Item 2' }]}
+  items={[
+    { id: 'item-1', text: 'Item 1' },
+    { id: 'item-2', text: 'Item 2' },
+  ]}
+  initialSelectedItems={[
+    { id: 'item-1', text: 'Item 1' },
+    { id: 'item-2', text: 'Item 2' },
+  ]}
   translateWithId={translateWithId}
-  itemToString={item => (item ? item.text : '')}
+  itemToString={(item) => (item ? item.text : '')}
 />
 ```

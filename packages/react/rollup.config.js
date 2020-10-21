@@ -17,10 +17,12 @@ const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
 const extensions = ['.mjs', '.js', '.jsx', '.json'];
 
-const external = id => {
+const external = (id) => {
   return (
-    Object.keys(packageJson.peerDependencies).some(element => id === element) ||
-    Object.keys(packageJson.dependencies).some(element => id === element) ||
+    Object.keys(packageJson.peerDependencies).some(
+      (element) => id === element
+    ) ||
+    Object.keys(packageJson.dependencies).some((element) => id === element) ||
     id.includes('lodash/') ||
     id.includes('core-js/') ||
     id.includes('moment/') ||
@@ -214,7 +216,10 @@ export default [
 
           // Sass components
           {
-            src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
+            src: [
+              'src/components/**/*.scss',
+              '!src/components/**/*.story.scss',
+            ],
             dest: ['lib/scss', 'scss'],
           },
           // react-resizable

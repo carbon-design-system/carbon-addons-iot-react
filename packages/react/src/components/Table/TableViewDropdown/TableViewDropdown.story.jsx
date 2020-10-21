@@ -29,7 +29,10 @@ storiesOf('Watson IoT/Table/TableViewDropdown', module).add(
       const [selectedViewId, setSelectedViewId] = useState(undefined);
 
       return (
-        <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
+        <div
+          style={{
+            width: select('wrapper width', ['300px', '100px'], '300px'),
+          }}>
           <TableViewDropdown
             selectedViewId={selectedViewId}
             activeViewEdited={boolean('activeViewEdited', true)}
@@ -38,7 +41,7 @@ storiesOf('Watson IoT/Table/TableViewDropdown', module).add(
               onSaveAsNewView: action('onSaveAsNewView'),
               onSaveChanges: action('onSaveChanges'),
               onManageViews: action('onManageViews'),
-              onChangeView: viewItem => {
+              onChangeView: (viewItem) => {
                 setSelectedViewId(viewItem.id);
                 action('onChangeView')(viewItem);
               },

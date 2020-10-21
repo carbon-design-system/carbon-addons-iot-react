@@ -6,7 +6,10 @@ import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
-import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  BarChartCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   BAR_CHART_TYPES,
@@ -15,7 +18,11 @@ import {
 } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
-import { chartValueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import {
+  chartValueFormatter,
+  handleCardVariables,
+  increaseSmallCardSize,
+} from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -68,20 +75,27 @@ const BarChartCard = ({
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
 
-  // Charts render incorrectly if size is too small, so change their size to MEDIUM
-  let size = sizeProp;
-  if (sizeProp === CARD_SIZES.SMALL) {
-    size = CARD_SIZES.MEDIUM;
-  } else if (sizeProp === CARD_SIZES.SMALLWIDE) {
-    size = CARD_SIZES.MEDIUMWIDE;
-  }
+  const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
 
   // If editable, show sample presentation data
-  const values = isEditable
-    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval, categoryDataSourceId)
-    : valuesProp;
+  // If there is no series defined, there is no datasets to make sample data from
+  const values =
+    isEditable && !isEmpty(series)
+      ? memoizedGenerateSampleValues(
+          series,
+          timeDataSourceId,
+          interval,
+          categoryDataSourceId
+        )
+      : valuesProp;
 
-  const chartData = formatChartData(series, values, categoryDataSourceId, timeDataSourceId, type);
+  const chartData = formatChartData(
+    series,
+    values,
+    categoryDataSourceId,
+    timeDataSourceId,
+    type
+  );
 
   const isAllValuesEmpty = isEmpty(chartData);
 
@@ -94,11 +108,20 @@ const BarChartCard = ({
 
   const scaleType = timeDataSourceId ? 'time' : 'labels';
 
-  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
+  const axes = mapValuesToAxes(
+    layout,
+    categoryDataSourceId,
+    timeDataSourceId,
+    type
+  );
 
   // Set the colors for each dataset
-  const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
-  const colors = formatColors(series, uniqueDatasets, isEditable);
+  const uniqueDatasets = [
+    ...new Set(chartData.map((dataset) => dataset.group)),
+  ];
+  const colors = !isAllValuesEmpty
+    ? formatColors(series, uniqueDatasets, isEditable)
+    : null;
 
   let tableColumns = [];
   let tableData = [];
@@ -115,14 +138,20 @@ const BarChartCard = ({
     );
 
     tableData = tableData.concat(
-      formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
+      formatTableData(
+        timeDataSourceId,
+        categoryDataSourceId,
+        type,
+        values,
+        chartData
+      )
     );
   }
 
   return (
     <Card
       title={title}
-      className={`${iotPrefix}--bar-chart-card`}
+      className={classnames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
       i18n={i18n}
       isExpanded={isExpanded}
@@ -130,19 +159,13 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
-      {...others}
-    >
+      {...others}>
       {!isAllValuesEmpty ? (
         <div
-          className={classnames(
-            `${iotPrefix}--bar-chart-container`,
-            {
-              [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
-              [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
-            },
-            className
-          )}
-        >
+          className={classnames(`${iotPrefix}--bar-chart-container`, {
+            [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
+            [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
+          })}>
           <ChartComponent
             data={chartData}
             options={{
@@ -151,9 +174,14 @@ const BarChartCard = ({
               axes: {
                 bottom: {
                   title: `${xLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED &&
                     layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
@@ -165,25 +193,42 @@ const BarChartCard = ({
                 },
                 left: {
                   title: `${yLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.VERTICAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+                    type === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+                  ...(domainRange &&
+                  layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+                  timeDataSourceId
                     ? { domain: domainRange }
                     : {}),
                 },
               },
-              legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
+              legend: {
+                position: 'bottom',
+                enabled: chartData.length > 1,
+                clickable: !isEditable,
+              },
               containerResizable: true,
               color: colors,
               tooltip: {
-                valueFormatter: tooltipValue =>
+                valueFormatter: (tooltipValue) =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) =>
-                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+                  handleTooltip(
+                    ...args,
+                    timeDataSourceId,
+                    showTimeInGMT,
+                    tooltipDateFormatPattern
+                  ),
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -191,7 +236,7 @@ const BarChartCard = ({
               (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                 ? {
                     zoomBar: {
-                      // [zoomBar.axes]: {    TODO: the top axes is the only one support at the moment so default to top
+                      // [zoomBar.axes]: {    TODO: the top axes is the only one supported at the moment so default to top
                       top: {
                         enabled: zoomBar.enabled,
                         initialZoomDomain: zoomBar.initialZoomDomain,
@@ -217,7 +262,8 @@ const BarChartCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
+                  onDownloadCSV: (filteredData) =>
+                    csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{
@@ -263,6 +309,7 @@ BarChartCard.defaultProps = {
   locale: 'en',
   showTimeInGMT: false,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  values: null,
 };
 
 export default BarChartCard;

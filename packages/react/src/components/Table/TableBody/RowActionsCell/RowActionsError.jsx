@@ -49,8 +49,7 @@ const RowActionsError = ({
         tooltipId="tooltip"
         renderIcon={React.forwardRef((props, ref) => (
           <WarningAlt16 ref={ref} />
-        ))}
-      >
+        ))}>
         <div className={`${iotPrefix}--row-actions-error--tooltip`}>
           <p className={`${iotPrefix}--row-actions-error--title`}>{title}</p>
           {message}
@@ -64,18 +63,19 @@ const RowActionsError = ({
             )}
             {onClearError ? (
               <Button
-                onClick={evt => {
+                onClick={(evt) => {
                   onClearError(evt);
                   evt.stopPropagation();
-                }}
-              >
+                }}>
                 {dismissText}
               </Button>
             ) : null}
           </div>
         </div>
       </Tooltip>
-      <span className={`${iotPrefix}--row-actions-error--span`}>{actionFailedText}</span>
+      <span className={`${iotPrefix}--row-actions-error--span`}>
+        {actionFailedText}
+      </span>
     </Fragment>
   ) : null;
 };

@@ -5,6 +5,8 @@
 
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
 import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
@@ -32,7 +34,8 @@ export const items = [
   },
   {
     id: 'option-4',
-    text: 'An example option that is really long to show what should be done to handle long text',
+    text:
+      'An example option that is really long to show what should be done to handle long text',
   },
 ];
 
@@ -55,31 +58,66 @@ const props = () => ({
   onChange: action('fired onChange'),
 });
 
-const itemToElement = item => {
+const itemToElement = (item) => {
   const itemAsArray = item.text.split(' ');
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
+      <span style={{ color: 'blue' }}>
+        {' '}
+        {itemAsArray.splice(1, itemAsArray.length).join(' ')}
+      </span>
     </div>
   );
 };
 
-const ControlledComboBoxApp = props => {
-  const [selectedItem, setSelectedItem] = useState(items[0]);
+const ControlledComboBoxApp = ({ onBlur, ...props }) => {
   let uid = items.length;
+  // start the local state from items
+  const [localStateItems, setLocalStateItems] = useState(items);
+  const [selectedItem, setSelectedItem] = useState(localStateItems[0]);
+
+  const itemToString = (item) => (item ? item.text : '');
+
+  const handleBlur = (inputValue) => {
+    if (
+      !isEmpty(inputValue) &&
+      !isEqual(inputValue, selectedItem) &&
+      items.every((item) => !isEqual(item, inputValue)) // only actually trigger this if this is a new item
+    ) {
+      setSelectedItem(inputValue);
+      // Trigger normal onChange to update the form
+      props.onChange(inputValue);
+      setLocalStateItems(
+        // add the item to the end of the original list
+        [...items, inputValue]
+      );
+    }
+  };
   return (
     <>
       <ComboBox
         {...props}
-        items={items}
-        itemToString={item => (item ? item.text : '')}
-        onChange={changeSelection => {
-          if (changeSelection) {
-            setSelectedItem(changeSelection.selectedItem);
+        key={JSON.stringify(localStateItems.slice(-1))} // for onBlur support regenerate to reset the local cached state if the last item changes
+        onBlur={onBlur ? handleBlur : undefined} // if onBlur is true then attach our custom handler
+        items={localStateItems}
+        itemToString={itemToString}
+        onChange={(changedItem) => {
+          if (changedItem) {
+            setSelectedItem(
+              localStateItems.find((item) => isEqual(item, changedItem))
+            ); // because combobox is stupid I have to find the exact same one https://github.com/carbon-design-system/carbon/issues/7055
+            if (
+              // if the selected item is one of the original items and we're blurring, remove it from list
+              !isEqual(items, localStateItems) &&
+              onBlur &&
+              items.find((item) => isEqual(item, changedItem))
+            ) {
+              setLocalStateItems(items);
+            }
           }
         }}
-        initialSelectedItem={items[0]}
+        initialSelectedItem={selectedItem}
         selectedItem={selectedItem}
       />
       <Button
@@ -90,15 +128,16 @@ const ControlledComboBoxApp = props => {
             text: `Option ${uid}`,
           });
           setSelectedItem(items[items.length - 1]);
-        }}
-      >
+        }}>
         Add new item
       </Button>
     </>
   );
 };
 
-const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
+const Wrapper = ({ children }) => (
+  <div style={{ width: 300, padding: '1rem' }}>{children}</div>
+);
 
 storiesOf('Watson IoT Experimental/ComboBox', module)
   .addDecorator(withKnobs)
@@ -106,7 +145,11 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     'Default',
     () => (
       <Wrapper>
-        <ComboBox items={items} itemToString={item => (item ? item.text : '')} {...props()} />
+        <ComboBox
+          items={items}
+          itemToString={(item) => (item ? item.text : '')}
+          {...props()}
+        />
       </Wrapper>
     ),
     {
@@ -123,7 +166,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
         <ComboBox
           {...props()}
           items={items}
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
           itemToElement={itemToElement}
         />
       </Wrapper>
@@ -135,13 +178,17 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
       },
     }
   )
-  .add('application-level control for selection', () => <ControlledComboBoxApp {...props()} />, {
-    info: {
-      text: `Controlled ComboBox example application`,
-      propTables: [ComboBox],
-      propTablesExclude: [ControlledComboBoxApp],
-    },
-  })
+  .add(
+    'application-level control for selection',
+    () => <ControlledComboBoxApp {...props()} />,
+    {
+      info: {
+        text: `Controlled ComboBox example application`,
+        propTables: [ComboBox],
+        propTablesExclude: [ControlledComboBoxApp],
+      },
+    }
+  )
   .add(
     'Experimental multi-value tags',
     () => (
@@ -150,7 +197,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
           {...props()}
           items={items}
           hasMultiValue
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
         />
       </Wrapper>
     ),
@@ -169,11 +216,31 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
         <ComboBox
           {...props()}
           items={items}
-          itemToString={item => (item ? item.text : '')}
+          itemToString={(item) => (item ? item.text : '')}
           addToList
         />
       </Wrapper>
     ),
+    {
+      info: {
+        text:
+          'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+        propTablesExclude: [Wrapper],
+      },
+    }
+  )
+  .add(
+    'Custom onBlur function automatically adds item to the list',
+    () => {
+      return (
+        <Wrapper>
+          <ControlledComboBoxApp
+            {...props()}
+            onBlur={boolean('onBlur', true)}
+          />
+        </Wrapper>
+      );
+    },
     {
       info: {
         text:

@@ -49,7 +49,9 @@ describe('CardEditor', () => {
     });
     actions.onChange.mockReset();
     userEvent.click(
-      screen.getByRole('button', { name: `Card size ${defaultCard.size} Open menu` })
+      screen.getByRole('button', {
+        name: `Card size ${defaultCard.size} Open menu`,
+      })
     );
     userEvent.click(screen.getByText('MEDIUMWIDE'));
     expect(actions.onChange).toHaveBeenCalledWith({

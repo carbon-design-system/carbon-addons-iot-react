@@ -25,20 +25,22 @@ import {
  * @param {Array<string | number>} data from table cells
  * @return {string} generated csv
  */
-export const generateCsv = data => {
+export const generateCsv = (data) => {
   let csv = '';
   // get all headers available and merge it
   let columnHeaders = [];
-  data.forEach(item => {
+  data.forEach((item) => {
     columnHeaders = [...columnHeaders, ...Object.keys(item.values)];
   });
   columnHeaders = [...new Set(columnHeaders)];
   csv += `${columnHeaders.join(',')}\n`;
-  data.forEach(item => {
-    columnHeaders.forEach(arrayHeader => {
+  data.forEach((item) => {
+    columnHeaders.forEach((arrayHeader) => {
       // if item is of arrayHeader, add value to csv
       // isNil will also correct the cases in which the value is 0 or false
-      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
+      csv += `${
+        !isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''
+      },`;
     });
     csv += `\n`;
   });
@@ -112,11 +114,17 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = name => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
+export const defaultFunction = (name) => () =>
+  console.info(`${name} not implemented`); // eslint-disable-line no-console
 
-export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
+export const getSortedData = (
+  inputData,
+  columnId,
+  direction,
+  isTimestampColumn
+) => {
   // clone inputData because sort mutates the array
-  const sortedData = inputData.map(i => i);
+  const sortedData = inputData.map((i) => i);
 
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
@@ -167,7 +175,7 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
 // Dashboard layout
 const gridHeight = 200;
 
-export const printGrid = grid => {
+export const printGrid = (grid) => {
   let result = '';
   for (let j = 0; j < gridHeight; j += 1) {
     for (let i = 0; i < grid.length; i += 1) {
@@ -205,7 +213,12 @@ export const canFit = (x, y, w, h, grid) => {
  * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
  * returns
  */
-export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
+export const getLayout = (
+  layoutName,
+  cards,
+  dashboardColumns,
+  cardDimensions
+) => {
   let currX = 0;
   let currY = 0;
   const grid = Array(dashboardColumns[layoutName])
@@ -245,7 +258,7 @@ export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) =
       currX += w;
       return cardLayout;
     })
-    .filter(i => i !== null);
+    .filter((i) => i !== null);
   // printGrid(grid);
   return layout;
 };
@@ -263,7 +276,8 @@ export const getCardMinSize = (
   dashboardColumns = DASHBOARD_COLUMNS
 ) => {
   const totalCol = dashboardColumns[breakpoint];
-  const columnWidth = (dashboardBreakpoints[breakpoint] - (totalCol - 1) * GUTTER) / totalCol;
+  const columnWidth =
+    (dashboardBreakpoints[breakpoint] - (totalCol - 1) * GUTTER) / totalCol;
   const cardColumns = cardDimensions[size][breakpoint].w;
   const cardRows = cardDimensions[size][breakpoint].h;
 
@@ -281,23 +295,28 @@ export const getCardMinSize = (
  * @returns {Boolean} found or not
  */
 export const caseInsensitiveSearch = (keys, searchTerm) => {
-  return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
+  return keys.some((key) =>
+    key.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 };
 
 const data = '[Dd][Aa][Tt][Aa]';
 const aria = '[Aa][Rr][Ii][Aa]';
-const attributes = [...reactAttributes, ...htmlAttributes, ...svgAttributes, ...eventHandlers].join(
-  '|'
-);
+const attributes = [
+  ...reactAttributes,
+  ...htmlAttributes,
+  ...svgAttributes,
+  ...eventHandlers,
+].join('|');
 const validAttributes = RegExp(`^((${attributes})|((${data}|${aria}|x)-.*))$`);
 /**
  * Filter out props that are not valid HTML or react library props like 'ref'.
  * See HTMLAttributes.js for more info
  * @param {object} props the props (attributes) to filter
  */
-export const filterValidAttributes = props =>
+export const filterValidAttributes = (props) =>
   Object.keys(props)
-    .filter(prop => validAttributes.test(prop))
+    .filter((prop) => validAttributes.test(prop))
     .reduce((filteredProps, propName) => {
       // eslint-disable-next-line no-param-reassign
       filteredProps[propName] = props[propName];
@@ -309,7 +328,7 @@ export const filterValidAttributes = props =>
  * @param {Array<string>} api the API to be tested
  * @returns {Boolean} return true if browser has support
  */
-export const browserSupports = api => {
+export const browserSupports = (api) => {
   switch (api) {
     case 'ResizeObserver':
       return typeof ResizeObserver !== 'undefined';
@@ -317,4 +336,13 @@ export const browserSupports = api => {
       // There is no assigned value by default, so return undefined
       return undefined;
   }
+};
+
+/**
+ * Helper function for using the overrides props as object or a function that returns an object
+ * @param {Object | Function} props the props that should override existing props
+ * @param {Object} originalProps the original props, can be used as input for creating new props
+ */
+export const getOverrides = (props, originalProps) => {
+  return typeof props === 'function' ? props(originalProps) : props;
 };

@@ -27,12 +27,15 @@ describe('stateful table with real reducer', () => {
   it('verify stateful table can support loading state', () => {
     const statefulTable = mount(
       <StatefulTable
-        {...merge({}, initialState, { view: { table: { loadingState: { isLoading: true } } } })}
+        {...merge({}, initialState, {
+          view: { table: { loadingState: { isLoading: true } } },
+        })}
         actions={mockActions}
       />
     );
     expect(statefulTable.find(TableSkeletonWithHeaders)).toHaveLength(1);
   });
+
   it('stateful table verify page change', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -48,9 +51,12 @@ describe('stateful table with real reducer', () => {
         actions={mockActions}
       />
     );
-    statefulTable.find('button.bx--pagination__button--forward').simulate('click');
+    statefulTable
+      .find('button.bx--pagination__button--forward')
+      .simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
+
   it('should show singleRowEditButtons when choosing to edit a row', () => {
     const statefulTable = mount(
       <StatefulTable
@@ -58,7 +64,9 @@ describe('stateful table with real reducer', () => {
           view: {
             table: {
               rowActions: [],
-              singleRowEditButtons: <div data-testid="myButtons">myButtons</div>,
+              singleRowEditButtons: (
+                <div data-testid="myButtons">myButtons</div>
+              ),
             },
           },
         })}
@@ -85,7 +93,9 @@ describe('stateful table with real reducer', () => {
 
   it('render nestedRows', () => {
     const tableId = 'tableId';
-    render(<StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />);
+    render(
+      <StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />
+    );
 
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
 
@@ -98,20 +108,26 @@ describe('stateful table with real reducer', () => {
 
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
 
-    fireEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
+    fireEvent.click(
+      screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`)
+    );
     fireEvent.click(screen.getByText('Add'));
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
+
   it('multiselect should filter properly with pre-selected filter', async () => {
     render(
       <StatefulTable
         {...initialState}
-        columns={initialState.columns.map(column => {
+        columns={initialState.columns.map((column) => {
           if (column.filter) {
             return {
               ...column,
-              filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+              filter: {
+                ...column.filter,
+                isMultiselect: !!column.filter?.options,
+              },
             };
           }
           return column;
@@ -197,11 +213,14 @@ describe('stateful table with real reducer', () => {
     render(
       <StatefulTable
         {...initialState}
-        columns={initialState.columns.map(column => {
+        columns={initialState.columns.map((column) => {
           if (column.filter) {
             return {
               ...column,
-              filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+              filter: {
+                ...column.filter,
+                isMultiselect: !!column.filter?.options,
+              },
             };
           }
           return column;
@@ -279,7 +298,11 @@ describe('stateful table with real reducer', () => {
         <StatefulTable
           id={tableId}
           {...merge({}, initialState, {
-            view: { toolbar: { customToolbarContent: <TestComp myMessage={message} /> } },
+            view: {
+              toolbar: {
+                customToolbarContent: <TestComp myMessage={message} />,
+              },
+            },
           })}
           actions={mockActions}
         />
@@ -297,19 +320,24 @@ describe('stateful table with real reducer', () => {
     let viewProps;
     const onUserViewModified = jest
       .fn()
-      .mockImplementation(({ view, columns, state: { currentSearchValue } }) => {
-        viewProps = {
-          columns,
-          view: {
-            filters: view.filters,
-            table: { ordering: view.table.ordering, sort: view.table.sort },
-            toolbar: {
-              activeBar: view.toolbar.activeBar,
-              search: { ...view.toolbar.search, defaultValue: currentSearchValue },
+      .mockImplementation(
+        ({ view, columns, state: { currentSearchValue } }) => {
+          viewProps = {
+            columns,
+            view: {
+              filters: view.filters,
+              table: { ordering: view.table.ordering, sort: view.table.sort },
+              toolbar: {
+                activeBar: view.toolbar.activeBar,
+                search: {
+                  ...view.toolbar.search,
+                  defaultValue: currentSearchValue,
+                },
+              },
             },
-          },
-        };
-      });
+          };
+        }
+      );
 
     render(
       <StatefulTable
@@ -331,7 +359,10 @@ describe('stateful table with real reducer', () => {
         table: { ordering: initialState.view.table.ordering, sort: {} },
         toolbar: {
           activeBar: initialState.view.toolbar.activeBar,
-          search: { ...initialState.view.toolbar.search, defaultValue: 'Initial search' },
+          search: {
+            ...initialState.view.toolbar.search,
+            defaultValue: 'Initial search',
+          },
         },
       },
     });
@@ -346,9 +377,32 @@ describe('stateful table with real reducer', () => {
         table: { ordering: initialState.view.table.ordering, sort: {} },
         toolbar: {
           activeBar: initialState.view.toolbar.activeBar,
-          search: { ...initialState.view.toolbar.search, defaultValue: 'testval1' },
+          search: {
+            ...initialState.view.toolbar.search,
+            defaultValue: 'testval1',
+          },
         },
       },
     });
+  });
+
+  it('stateful table total items can be set independently', () => {
+    const totalItems = 500;
+    render(
+      <StatefulTable
+        {...merge(
+          {},
+          { ...pick(initialState, 'data', 'options', 'columns') },
+          {
+            view: {
+              pagination: { totalItems },
+            },
+          }
+        )}
+      />
+    );
+
+    expect(initialState.data.length).toEqual(100);
+    expect(screen.queryByText('1–10 of 500 items')).toBeTruthy();
   });
 });

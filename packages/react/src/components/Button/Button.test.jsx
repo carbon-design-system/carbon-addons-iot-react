@@ -32,38 +32,70 @@ describe('Button', () => {
     expect(notLoadingWrapper.find(Loading)).toHaveLength(0);
   });
   it('should render when kind icon-selection', () => {
-    render(<Button {...commonProps} {...iconSelectionCommonProps} hasIconOnly />);
+    render(
+      <Button {...commonProps} {...iconSelectionCommonProps} hasIconOnly />
+    );
     expect(screen.getByRole('button')).toBeTruthy();
   });
   it('should render as hasIconOnly when kind icon-selection', () => {
     render(<Button {...commonProps} {...iconSelectionCommonProps} />);
     expect(screen.getByRole('button')).toBeTruthy();
-    expect(screen.getByRole('button').classList.contains(`${prefix}--btn--icon-only`)).toBe(true);
+    expect(
+      screen.getByRole('button').classList.contains(`${prefix}--btn--icon-only`)
+    ).toBe(true);
   });
   it('should render when kind icon-selection recommended', () => {
-    render(<Button {...commonProps} {...iconSelectionCommonProps} recommended hasIconOnly />);
+    render(
+      <Button
+        {...commonProps}
+        {...iconSelectionCommonProps}
+        recommended
+        hasIconOnly
+      />
+    );
     expect(screen.getByRole('button')).toBeTruthy();
     expect(
-      screen.getByRole('button').classList.contains(`${iotPrefix}--btn-icon-selection--recommended`)
+      screen
+        .getByRole('button')
+        .classList.contains(`${iotPrefix}--btn-icon-selection--recommended`)
     ).toBe(true);
   });
   it('should render when kind icon-selection recommended selected', () => {
     render(
-      <Button {...commonProps} {...iconSelectionCommonProps} recommended hasIconOnly selected />
+      <Button
+        {...commonProps}
+        {...iconSelectionCommonProps}
+        recommended
+        hasIconOnly
+        selected
+      />
     );
     expect(screen.getByRole('button')).toBeTruthy();
     expect(
-      screen.getByRole('button').classList.contains(`${iotPrefix}--btn-icon-selection--recommended`)
+      screen
+        .getByRole('button')
+        .classList.contains(`${iotPrefix}--btn-icon-selection--recommended`)
     ).toBe(true);
     expect(
-      screen.getByRole('button').classList.contains(`${iotPrefix}--btn-icon-selection--selected`)
+      screen
+        .getByRole('button')
+        .classList.contains(`${iotPrefix}--btn-icon-selection--selected`)
     ).toBe(true);
   });
   it('should render when kind icon-selection selected', () => {
-    render(<Button {...commonProps} {...iconSelectionCommonProps} hasIconOnly selected />);
+    render(
+      <Button
+        {...commonProps}
+        {...iconSelectionCommonProps}
+        hasIconOnly
+        selected
+      />
+    );
     expect(screen.getByRole('button')).toBeTruthy();
     expect(
-      screen.getByRole('button').classList.contains(`${iotPrefix}--btn-icon-selection--selected`)
+      screen
+        .getByRole('button')
+        .classList.contains(`${iotPrefix}--btn-icon-selection--selected`)
     ).toBe(true);
   });
 });

@@ -181,6 +181,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/CardEditor/card-editor';
 @import 'components/CardEditor/CardEditForm/card-edit-form';
 @import 'components/ComposedModal/composed-modal';
+@import 'components/CardCodeEditor/card-code-editor';
 @import 'components/Dashboard/dashboard';
 @import 'components/DateTimePicker/date-time-picker';
 @import 'components/GaugeCard/gauge-card';
@@ -193,6 +194,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/List/ListHeader/list-header';
 @import 'components/PageTitleBar/page-title-bar';
 @import 'components/PageWizard/page-wizard';
+@import 'components/PieChartCard/pie-chart-card';
 @import 'components/ProgressIndicator/progress-indicator';
 @import 'components/SideNav/side-nav';
 @import 'components/SimplePagination/simple-pagination';

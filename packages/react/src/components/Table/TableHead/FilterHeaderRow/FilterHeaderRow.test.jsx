@@ -30,7 +30,10 @@ describe('FilterHeaderRow', () => {
       />
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
-    expect(wrapper.state()).toEqual({ filterValues: { col1: 'mytext' }, prevPropsFilters: [] });
+    expect(wrapper.state()).toEqual({
+      filterValues: { col1: 'mytext' },
+      prevPropsFilters: [],
+    });
   });
 
   it('each column is marked with data-column', () => {
@@ -55,7 +58,10 @@ describe('FilterHeaderRow', () => {
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
     wrapper.find('[title="Clear filter"]').simulate('click');
-    expect(wrapper.state()).toEqual({ filterValues: { col1: '' }, prevPropsFilters: [] });
+    expect(wrapper.state()).toEqual({
+      filterValues: { col1: '' },
+      prevPropsFilters: [],
+    });
   });
 
   it('filter input is hidden when isFilterable is false', () => {
@@ -75,16 +81,23 @@ describe('FilterHeaderRow', () => {
         {...commonFilterProps}
         isDisabled="true"
         ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
-        columns={[{ id: 'col1' }, { id: 'col2', options: [{ id: 'opt1', text: 'option1' }] }]}
+        columns={[
+          { id: 'col1' },
+          { id: 'col2', options: [{ id: 'opt1', text: 'option1' }] },
+        ]}
         filters={[{ columnId: 'col1', value: 'myVal' }]}
       />
     );
 
     expect(wrapper.find(ComboBox).props().disabled).toEqual('true');
     expect(wrapper.find(TextInput).props().disabled).toEqual('true');
-    expect(wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)).toHaveLength(1);
+    expect(
+      wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)
+    ).toHaveLength(1);
 
-    wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`).simulate('click');
+    wrapper
+      .find(`.${iotPrefix}--clear-filters-button--disabled`)
+      .simulate('click');
     expect(wrapper.state().filterValues.col1).toEqual('myVal');
   });
 });

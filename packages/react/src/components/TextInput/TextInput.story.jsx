@@ -45,7 +45,10 @@ const props = {
   TextInputProps: () => ({
     className: 'some-class',
     id: 'test2',
-    defaultValue: text('Default value (defaultValue)', 'This is not a default value'),
+    defaultValue: text(
+      'Default value (defaultValue)',
+      'This is not a default value'
+    ),
     size: select('Field size (size)', sizes, undefined) || undefined,
     labelText: text('Label text (labelText)', 'Text Input label'),
     placeholder: text('Placeholder text (placeholder)', 'Placeholder text'),
@@ -53,7 +56,10 @@ const props = {
     disabled: boolean('Disabled (disabled)', false),
     hideLabel: boolean('No label (hideLabel)', false),
     invalid: boolean('Show form validation UI (invalid)', false),
-    invalidText: text('Form validation UI content (invalidText)', 'A valid value is required'),
+    invalidText: text(
+      'Form validation UI content (invalidText)',
+      'A valid value is required'
+    ),
     helperText: text('Helper text (helperText)', 'Optional helper text.'),
     onClick: action('onClick'),
     onChange: action('onChange'),
@@ -107,7 +113,10 @@ storiesOf('TextInput', module)
     'Toggle password visibility',
     () => {
       return (
-        <TextInput.PasswordInput {...props.TextInputProps()} {...props.PasswordInputProps()} />
+        <TextInput.PasswordInput
+          {...props.TextInputProps()}
+          {...props.PasswordInputProps()}
+        />
       );
     },
     {
@@ -129,7 +138,10 @@ storiesOf('TextInput', module)
       };
 
       return (
-        <ControlledPasswordInputApp {...props.TextInputProps()} {...props.PasswordInputProps()} />
+        <ControlledPasswordInputApp
+          {...props.TextInputProps()}
+          {...props.PasswordInputProps()}
+        />
       );
     },
     {

@@ -30,36 +30,46 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         buttons={[addButton]}
         isFullHeight
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-              id: `${team}_${player}`,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-              id: `${team}_${player}`,
+              children: Object.keys(
+                sampleHierarchy.MLB['American League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  secondaryValue:
+                    sampleHierarchy.MLB['American League'][team][player],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
+              children: Object.keys(
+                sampleHierarchy.MLB['National League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  secondaryValue:
+                    sampleHierarchy.MLB['National League'][team][player],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
@@ -71,36 +81,47 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
     <div style={{ width: 400, height: 400 }}>
       <HierarchyList
         title={text('Title', 'MLB Expanded List')}
-        defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
+        defaultSelectedId={text(
+          'Default Selected Id',
+          'New York Mets_Pete Alonso'
+        )}
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-              id: `${team}_${player}`,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-              id: `${team}_${player}`,
+              children: Object.keys(
+                sampleHierarchy.MLB['American League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
+              children: Object.keys(
+                sampleHierarchy.MLB['National League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
@@ -113,62 +134,70 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
       <HierarchyList
         title={text('Title', 'MLB Expanded List')}
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-              id: `${team}_${player}`,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                rowActions: [
-                  <OverflowMenu title="data-item-menu" flipped>
-                    <OverflowMenuItem
-                      itemText="Configure"
-                      onClick={() => console.log('Configure')}
-                    />
-                    <OverflowMenuItem
-                      itemText="Delete"
-                      onClick={() => console.log('Delete')}
-                      isDelete
-                      hasDivider
-                    />
-                  </OverflowMenu>,
-                ],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-              id: `${team}_${player}`,
+              children: Object.keys(
+                sampleHierarchy.MLB['American League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  rowActions: [
+                    <OverflowMenu title="data-item-menu" flipped>
+                      <OverflowMenuItem
+                        itemText="Configure"
+                        onClick={() => console.log('Configure')}
+                      />
+                      <OverflowMenuItem
+                        itemText="Delete"
+                        onClick={() => console.log('Delete')}
+                        isDelete
+                        hasDivider
+                      />
+                    </OverflowMenu>,
+                  ],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
-                rowActions: [
-                  <OverflowMenu title="data-item-menu" flipped>
-                    <OverflowMenuItem
-                      itemText="Configure"
-                      onClick={() => console.log('Configure')}
-                    />
-                    <OverflowMenuItem
-                      itemText="Delete"
-                      onClick={() => console.log('Delete')}
-                      isDelete
-                      hasDivider
-                    />
-                  </OverflowMenu>,
-                ],
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
+              children: Object.keys(
+                sampleHierarchy.MLB['National League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                  rowActions: [
+                    <OverflowMenu title="data-item-menu" flipped>
+                      <OverflowMenuItem
+                        itemText="Configure"
+                        onClick={() => console.log('Configure')}
+                      />
+                      <OverflowMenuItem
+                        itemText="Delete"
+                        onClick={() => console.log('Delete')}
+                        isDelete
+                        hasDivider
+                      />
+                    </OverflowMenu>,
+                  ],
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
@@ -179,13 +208,15 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
   .add('With Nested Reorder', () => {
     const HierarchyListWithReorder = () => {
       const [items, setItems] = useState([
-        ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+        ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
           id: team,
           isCategory: true,
           content: {
             value: team,
           },
-          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
+          children: Object.keys(
+            sampleHierarchy.MLB['American League'][team]
+          ).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
@@ -193,13 +224,15 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
             isSelectable: true,
           })),
         })),
-        ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
+        ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
           id: team,
           isCategory: true,
           content: {
             value: team,
           },
-          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
+          children: Object.keys(
+            sampleHierarchy.MLB['National League'][team]
+          ).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
@@ -215,7 +248,10 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         <div style={{ width: 400, height: 400 }}>
           <HierarchyList
             title={text('Title', 'MLB Expanded List')}
-            defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
+            defaultSelectedId={text(
+              'Default Selected Id',
+              'New York Mets_Pete Alonso'
+            )}
             items={items}
             editingStyle={select(
               'Editing Style',
@@ -224,7 +260,7 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
             )}
             pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
             isLoading={boolean('isLoading', false)}
-            onListUpdated={updatedItems => {
+            onListUpdated={(updatedItems) => {
               setItems(updatedItems);
             }}
             itemWillMove={() => {
@@ -242,39 +278,120 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
       <HierarchyList
         title={text('Title', 'MLB Expanded List')}
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-              id: `${team}_${player}`,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
-            id: team,
-            isCategory: true,
-            content: {
-              value: team,
-            },
-            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-              id: `${team}_${player}`,
+              children: Object.keys(
+                sampleHierarchy.MLB['American League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map(
+            (team) => ({
+              id: team,
+              isCategory: true,
               content: {
-                value: player,
+                value: team,
               },
-              isSelectable: true,
-            })),
-          })),
+              children: Object.keys(
+                sampleHierarchy.MLB['National League'][team]
+              ).map((player) => ({
+                id: `${team}_${player}`,
+                content: {
+                  value: player,
+                },
+                isSelectable: true,
+              })),
+            })
+          ),
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
         isLoading={boolean('isLoading', false)}
         defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
+      />
+    </div>
+  ))
+  .add('with mixed hierarchies', () => (
+    <div style={{ width: 400 }}>
+      <HierarchyList
+        title={text('Title', 'Items with mixed nested hierarchies')}
+        items={[
+          {
+            id: 'Tasks',
+            isCategory: true,
+            content: {
+              value: 'Tasks',
+            },
+            children: [
+              {
+                id: 'Task 1',
+                content: {
+                  value: 'Task 1',
+                },
+                isSelectable: true,
+              },
+            ],
+          },
+          {
+            id: 'My Reports',
+            content: {
+              value: 'My Reports',
+            },
+            isSelectable: true,
+          },
+          {
+            id: 'Requests',
+            isCategory: true,
+            content: {
+              value: 'Requests',
+            },
+            children: [
+              {
+                id: 'Request 1',
+                content: {
+                  value: 'Request 1',
+                },
+                isSelectable: true,
+              },
+              {
+                id: 'Request 2',
+                isCategory: true,
+                content: {
+                  value: 'Request 2',
+                },
+                children: [
+                  {
+                    id: 'Request 2 details',
+                    content: {
+                      value: 'Request 2 details',
+                    },
+                  },
+                ],
+              },
+              {
+                id: 'Request 3',
+                content: {
+                  value: 'Request 3',
+                },
+                isSelectable: true,
+              },
+            ],
+          },
+        ]}
+        hasSearch
+        pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ));

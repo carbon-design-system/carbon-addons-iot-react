@@ -57,7 +57,10 @@ class WizardHeader extends Component {
     } = this.props;
 
     const closeButton = (
-      <Button className="bx--modal-close" title={closeButtonTitle} type="button">
+      <Button
+        className="bx--modal-close"
+        title={closeButtonTitle}
+        type="button">
         <Close20 onClick={onClose} />
       </Button>
     );
@@ -73,7 +76,7 @@ class WizardHeader extends Component {
         <ProgressIndicator
           className="wizard-inline-progress-indicator"
           currentItemId={currentItemId}
-          items={items.map(item => ({ id: item.id, label: item.name }))}
+          items={items.map((item) => ({ id: item.id, label: item.name }))}
           showLabels={showLabels}
           onClickItem={setItem}
           stepWidth={stepWidth}

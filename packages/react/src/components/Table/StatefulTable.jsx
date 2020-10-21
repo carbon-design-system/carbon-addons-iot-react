@@ -38,32 +38,20 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     options,
     view: {
       toolbar: { customToolbarContent },
+      pagination: { totalItems },
     },
     view: initialState,
     actions: callbackActions,
     lightweight,
   } = merge({}, defaultProps({ data: initialData, ...other }), other);
+
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
     view: initialState,
     columns: initialColumns,
   });
+
   const isLoading = get(initialState, 'table.loadingState.isLoading');
-  // Need to initially sort and filter the tables data, but preserve the selectedId
-  useDeepCompareEffect(
-    () => {
-      dispatch(
-        tableRegister({
-          data: initialData,
-          isLoading,
-          view: initialState,
-          totalItems: initialData.length,
-          hasUserViewManagement,
-        })
-      );
-    },
-    [initialData, isLoading, initialState]
-  );
 
   const {
     view,
@@ -72,10 +60,24 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   } = state;
 
+  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
+
+  // Need to initially sort and filter the tables data, but preserve the selectedId
+  useDeepCompareEffect(() => {
+    dispatch(
+      tableRegister({
+        data: initialData,
+        isLoading,
+        view: initialState,
+        totalItems: pagination.totalItems || initialData.length,
+        hasUserViewManagement,
+      })
+    );
+  }, [initialData, isLoading, initialState]);
+
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
 
-  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
   const { onChangePage } = pagination || {};
   const {
     onApplyFilter,
@@ -107,7 +109,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     for (let idx = 0; idx < data.length; idx += 1) {
       const element = data[idx];
       if (element.id === rowId) {
-        item = element.rowActions.find(action => action.id === actionId);
+        item = element.rowActions.find((action) => action.id === actionId);
         if (item) {
           break;
         }
@@ -131,13 +133,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
     pagination: {
-      onChangePage: paginationValues => {
+      onChangePage: (paginationValues) => {
         dispatch(tablePageChange(paginationValues));
         callbackParent(onChangePage, paginationValues);
       },
     },
     toolbar: {
-      onApplyFilter: filterValues => {
+      onApplyFilter: (filterValues) => {
         dispatch(tableFilterApply(filterValues));
         callbackParent(onApplyFilter, filterValues);
       },
@@ -161,18 +163,18 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableActionCancel());
         callbackParent(onCancelBatchAction);
       },
-      onApplyBatchAction: id => {
+      onApplyBatchAction: (id) => {
         dispatch(tableActionApply(id));
         callbackParent(onApplyBatchAction, id, selectedIds);
       },
-      onApplySearch: string => {
+      onApplySearch: (string) => {
         dispatch(tableSearchApply(string));
         callbackParent(onApplySearch, string);
       },
       onDownloadCSV,
     },
     table: {
-      onChangeSort: column => {
+      onChangeSort: (column) => {
         const sortDirection = sort ? sort.direction : undefined;
         dispatch(tableColumnSort(column, columns));
         callbackParent(onChangeSort, column, sortDirection);
@@ -181,11 +183,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowSelect(rowId, isSelected, options.hasRowSelection));
         callbackParent(onRowSelected, rowId, isSelected);
       },
-      onRowClicked: rowId => {
+      onRowClicked: (rowId) => {
         // This action doesn't update our table state, it's up to the user
         callbackParent(onRowClicked, rowId);
       },
-      onSelectAll: isSelected => {
+      onSelectAll: (isSelected) => {
         dispatch(tableRowSelectAll(isSelected));
         callbackParent(onSelectAll, isSelected);
       },
@@ -207,7 +209,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           dispatch(tableRowActionError(rowId, error));
         }
       },
-      onClearRowError: rowId => {
+      onClearRowError: (rowId) => {
         dispatch(tableRowActionComplete(rowId));
         callbackParent(onClearRowError, rowId);
       },
@@ -216,25 +218,33 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
             // This action doesn't update our table state, it's up to the user
             callbackParent(onEmptyStateAction)
         : null,
-      onChangeOrdering: ordering => {
+      onChangeOrdering: (ordering) => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);
       },
-      onColumnResize: resizedColumns => {
+      onColumnResize: (resizedColumns) => {
         // For backwards compatability we only update the state when hasUserViewManagement is active
         if (hasUserViewManagement) {
           dispatch(tableColumnResize(resizedColumns));
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: id => {
+      onOverflowItemClicked: (id) => {
         callbackParent(onOverflowItemClicked, id);
       },
     },
-    onUserViewModified: viewConfiguration => {
+    onUserViewModified: (viewConfiguration) => {
       callbackParent(onUserViewModified, viewConfiguration);
     },
   };
+
+  const filteredCount = filteredData?.length || 0;
+  const currentlyLoadedDataCount = state.data?.length || 0;
+
+  const filteredTotalItems =
+    filteredCount && filteredCount !== currentlyLoadedDataCount
+      ? filteredCount
+      : totalItems || currentlyLoadedDataCount;
 
   return filteredData ? (
     <Table
@@ -256,7 +266,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         },
         pagination: {
           ...view.pagination,
-          totalItems: filteredData.length,
+          totalItems: filteredTotalItems,
         },
       }}
       actions={actions}

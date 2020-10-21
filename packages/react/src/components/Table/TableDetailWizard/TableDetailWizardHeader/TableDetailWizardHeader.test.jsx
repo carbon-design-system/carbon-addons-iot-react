@@ -8,7 +8,10 @@ describe('TableDetailWizardHeader', () => {
     const onClose = jest.fn();
 
     const wrapper = mount(
-      <TableDetailWizardHeader title="Create Physical Interface" onClose={onClose} />
+      <TableDetailWizardHeader
+        title="Create Physical Interface"
+        onClose={onClose}
+      />
     );
     wrapper.find('button[onClick]').simulate('click');
     expect(onClose.mock.calls).toHaveLength(1);

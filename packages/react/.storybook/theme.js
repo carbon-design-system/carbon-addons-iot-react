@@ -2,7 +2,16 @@ import { create } from '@storybook/theming';
 import { g10 } from '@carbon/themes';
 import { name, homepage } from '../package.json';
 
-const { field01, interactive01, text01, text04, ui01, ui03, ui04, uiBackground } = g10;
+const {
+  field01,
+  interactive01,
+  text01,
+  text04,
+  ui01,
+  ui03,
+  ui04,
+  uiBackground,
+} = g10;
 
 export default create({
   base: 'light',

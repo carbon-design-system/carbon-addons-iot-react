@@ -12,6 +12,7 @@ import {
   getCardVariables,
   replaceVariables,
   chartValueFormatter,
+  increaseSmallCardSize,
 } from '../cardUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -924,7 +925,12 @@ describe('cardUtilityFunctions', () => {
         groupBy: ['deviceid'],
       },
     };
-    expect(getCardVariables(tableCardWithVariables)).toEqual(['minimum', 'url', 'high', 'large']);
+    expect(getCardVariables(tableCardWithVariables)).toEqual([
+      'minimum',
+      'url',
+      'high',
+      'large',
+    ]);
   });
   it('getCardVariables returns variables for a TimeSeriesCard', () => {
     const timeSeriesCardWithVariables = {
@@ -1066,7 +1072,10 @@ describe('cardUtilityFunctions', () => {
   it('replaceVariables', () => {
     const card = {
       title: 'my {number_variable} {string_variable}',
-      thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
+      thresholds: [
+        { value: '{number_variable}' },
+        { value: '{string_variable}' },
+      ],
     };
     const updatedCard = replaceVariables(
       ['number_variable', 'string_variable'],
@@ -1080,7 +1089,10 @@ describe('cardUtilityFunctions', () => {
   it('replaceVariables handles nodes correctly', () => {
     const card = {
       title: <p>my default</p>,
-      thresholds: [{ value: '{number_variable}' }, { value: '{string_variable}' }],
+      thresholds: [
+        { value: '{number_variable}' },
+        { value: '{string_variable}' },
+      ],
     };
     const updatedCard = replaceVariables(
       ['number_variable', 'string_variable'],
@@ -1093,17 +1105,77 @@ describe('cardUtilityFunctions', () => {
   });
   it('chartValueFormatter', () => {
     // Small should get 3 precision
-    expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
+    expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual(
+      '0.235'
+    );
     // default precision
     expect(chartValueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
     // With units
-    expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
-      '0.235 writes per second'
-    );
+    expect(
+      chartValueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')
+    ).toEqual('0.235 writes per second');
 
     // Large numbers!
     expect(chartValueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('1,500');
     // nil
     expect(chartValueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
+  });
+  describe('Card sizes', () => {
+    const consoleSpy = jest
+      .spyOn(global.console, 'error')
+      .mockImplementation(() => {});
+    let originalDev;
+
+    beforeAll(() => {
+      originalDev = global.__DEV__;
+    });
+
+    afterAll(() => {
+      global.__DEV__ = originalDev;
+      consoleSpy.mockRestore();
+    });
+
+    it('increaseSmallCardSize and gives warning in DEV mode', () => {
+      global.__DEV__ = false;
+      expect(increaseSmallCardSize(CARD_SIZES.SMALL, 'testComponent')).toEqual(
+        CARD_SIZES.MEDIUM
+      );
+      expect(
+        increaseSmallCardSize(CARD_SIZES.SMALLWIDE, 'testComponent')
+      ).toEqual(CARD_SIZES.MEDIUMWIDE);
+
+      expect(consoleSpy).not.toHaveBeenCalled();
+
+      global.__DEV__ = true;
+      expect(increaseSmallCardSize(CARD_SIZES.SMALL, 'testComponent')).toEqual(
+        CARD_SIZES.MEDIUM
+      );
+      expect(
+        increaseSmallCardSize(CARD_SIZES.SMALLWIDE, 'testComponent')
+      ).toEqual(CARD_SIZES.MEDIUMWIDE);
+      expect(consoleSpy).toHaveBeenCalledWith(
+        `Warning: testComponent does not support card size ${CARD_SIZES.SMALL}`
+      );
+      expect(consoleSpy).toHaveBeenCalledWith(
+        `Warning: testComponent does not support card size ${CARD_SIZES.SMALLWIDE}`
+      );
+
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUM)).toEqual(
+        CARD_SIZES.MEDIUM
+      );
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUMTHIN)).toEqual(
+        CARD_SIZES.MEDIUMTHIN
+      );
+      expect(increaseSmallCardSize(CARD_SIZES.MEDIUMWIDE)).toEqual(
+        CARD_SIZES.MEDIUMWIDE
+      );
+      expect(increaseSmallCardSize(CARD_SIZES.LARGE)).toEqual(CARD_SIZES.LARGE);
+      expect(increaseSmallCardSize(CARD_SIZES.LARGETHIN)).toEqual(
+        CARD_SIZES.LARGETHIN
+      );
+      expect(increaseSmallCardSize(CARD_SIZES.LARGEWIDE)).toEqual(
+        CARD_SIZES.LARGEWIDE
+      );
+    });
   });
 });
