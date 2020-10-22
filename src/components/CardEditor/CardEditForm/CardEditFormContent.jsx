@@ -145,7 +145,7 @@ const CardEditFormContent = ({
   getValidDataItems,
   getValidTimeRanges,
 }) => {
-  const { title, description, size, type } = cardJson;
+  const { title, description, size, type, id } = cardJson;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState('');
@@ -160,7 +160,7 @@ const CardEditFormContent = ({
     <>
       <div className={`${baseClassName}--input`}>
         <TextInput
-          id="title"
+          id={`${id}_title`}
           labelText={mergedI18n.cardTitle}
           light
           onChange={(evt) => onChange({ ...cardJson, title: evt.target.value })}
@@ -169,7 +169,7 @@ const CardEditFormContent = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <TextArea
-          id="description"
+          id={`${id}_description`}
           labelText={mergedI18n.description}
           light
           onChange={(evt) =>
@@ -180,7 +180,7 @@ const CardEditFormContent = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <Dropdown
-          id="size"
+          id={`${id}_size`}
           label={mergedI18n.selectASize}
           direction="bottom"
           itemToString={(item) => item.text}
@@ -204,7 +204,7 @@ const CardEditFormContent = ({
         <>
           <div className={`${baseClassName}--input`}>
             <Dropdown
-              id="timeRange"
+              id={`${id}_time_range`}
               label={mergedI18n.selectATimeRange}
               direction="bottom"
               itemToString={(item) => item.text}

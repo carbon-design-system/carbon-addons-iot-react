@@ -152,7 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="title"
+                    htmlFor="calculated_title"
                   >
                     Card title
                   </label>
@@ -167,7 +167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="title"
+                        id="calculated_title"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="description"
+                    htmlFor="calculated_description"
                   >
                     Description (Optional)
                   </label>
@@ -199,7 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--text-area bx--text-area--light"
                       cols={50}
                       disabled={false}
-                      id="description"
+                      id="calculated_description"
                       onChange={[Function]}
                       onClick={[Function]}
                       placeholder=""
@@ -223,7 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                    id="size"
+                    id="calculated_size"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -297,7 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="x-axis-label"
+                    htmlFor="calculated_title"
                   >
                     X-axis label
                   </label>
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="x-axis-label"
+                        id="calculated_title"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -329,7 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="y-axis-label"
+                    htmlFor="calculated_y-axis-label"
                   >
                     Y-axis label
                   </label>
@@ -344,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="y-axis-label"
+                        id="calculated_y-axis-label"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -361,7 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="unit-selection"
+                    htmlFor="calculated_unit-selection"
                   >
                     Unit
                   </label>
@@ -376,7 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="unit-selection"
+                        id="calculated_unit-selection"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -393,7 +393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="decimal-precision"
+                    htmlFor="calculated_decimal-precision"
                   >
                     Decimal precision
                   </label>
@@ -408,7 +408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="decimal-precision"
+                        id="calculated_decimal-precision"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -633,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="title"
+                    htmlFor="timeseries_title"
                   >
                     Card title
                   </label>
@@ -648,7 +648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="title"
+                        id="timeseries_title"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -666,7 +666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="description"
+                    htmlFor="timeseries_description"
                   >
                     Description (Optional)
                   </label>
@@ -680,7 +680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--text-area bx--text-area--light"
                       cols={50}
                       disabled={false}
-                      id="description"
+                      id="timeseries_description"
                       onChange={[Function]}
                       onClick={[Function]}
                       placeholder=""
@@ -704,7 +704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                    id="size"
+                    id="timeseries_size"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -777,7 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <div
                     className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                    id="timeRange"
+                    id="timeseries_time_range"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -855,7 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <div
                     className="bx--multi-select bx--list-box bx--list-box--light"
-                    id="dataSourceIds"
+                    id="timeseries_dataSourceIds"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -1090,7 +1090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="x-axis-label"
+                    htmlFor="timeseries_title"
                   >
                     X-axis label
                   </label>
@@ -1105,7 +1105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="x-axis-label"
+                        id="timeseries_title"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -1123,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="y-axis-label"
+                    htmlFor="timeseries_y-axis-label"
                   >
                     Y-axis label
                   </label>
@@ -1138,7 +1138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="y-axis-label"
+                        id="timeseries_y-axis-label"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -1156,7 +1156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="unit-selection"
+                    htmlFor="timeseries_unit-selection"
                   >
                     Unit
                   </label>
@@ -1171,7 +1171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="unit-selection"
+                        id="timeseries_unit-selection"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -1189,7 +1189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <label
                     className="bx--label"
-                    htmlFor="decimal-precision"
+                    htmlFor="timeseries_decimal-precision"
                   >
                     Decimal precision
                   </label>
@@ -1204,7 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--text-input bx--text__input bx--text-input--light"
                         disabled={false}
-                        id="decimal-precision"
+                        id="timeseries_decimal-precision"
                         onChange={[Function]}
                         onClick={[Function]}
                         type="text"
@@ -1446,7 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="title"
+                      htmlFor="card-1_title"
                     >
                       Card title
                     </label>
@@ -1461,7 +1461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
-                          id="title"
+                          id="card-1_title"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"
@@ -1479,7 +1479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="description"
+                      htmlFor="card-1_description"
                     >
                       Description (Optional)
                     </label>
@@ -1493,7 +1493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--text-area bx--text-area--light"
                         cols={50}
                         disabled={false}
-                        id="description"
+                        id="card-1_description"
                         onChange={[Function]}
                         onClick={[Function]}
                         placeholder=""
@@ -1517,7 +1517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </label>
                     <div
                       className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
-                      id="size"
+                      id="card-1_size"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                     >
@@ -1591,7 +1591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="x-axis-label"
+                      htmlFor="card-1_title"
                     >
                       X-axis label
                     </label>
@@ -1606,7 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
-                          id="x-axis-label"
+                          id="card-1_title"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"
@@ -1623,7 +1623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="y-axis-label"
+                      htmlFor="card-1_y-axis-label"
                     >
                       Y-axis label
                     </label>
@@ -1638,7 +1638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
-                          id="y-axis-label"
+                          id="card-1_y-axis-label"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"
@@ -1655,7 +1655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="unit-selection"
+                      htmlFor="card-1_unit-selection"
                     >
                       Unit
                     </label>
@@ -1670,7 +1670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
-                          id="unit-selection"
+                          id="card-1_unit-selection"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"
@@ -1687,7 +1687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="decimal-precision"
+                      htmlFor="card-1_decimal-precision"
                     >
                       Decimal precision
                     </label>
@@ -1702,7 +1702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <input
                           className="bx--text-input bx--text__input bx--text-input--light"
                           disabled={false}
-                          id="decimal-precision"
+                          id="card-1_decimal-precision"
                           onChange={[Function]}
                           onClick={[Function]}
                           type="text"

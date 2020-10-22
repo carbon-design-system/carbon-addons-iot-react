@@ -210,7 +210,7 @@ const DataSeriesFormItem = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
-          id="dataSourceIds"
+          id={`${cardJson.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}

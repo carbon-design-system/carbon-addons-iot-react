@@ -55,7 +55,7 @@ const defaultProps = {
 
 const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content } = cardJson;
+  const { content, id } = cardJson;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -63,7 +63,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
     <>
       <div className={`${baseClassName}--input`}>
         <TextInput
-          id="x-axis-label"
+          id={`${id}_title`}
           labelText={mergedI18n.xAxisLabel}
           light
           onChange={(evt) =>
@@ -77,7 +77,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
       </div>
       <div className={`${baseClassName}--input`}>
         <TextInput
-          id="y-axis-label"
+          id={`${id}_y-axis-label`}
           labelText={mergedI18n.yAxisLabel}
           light
           onChange={(evt) =>
@@ -91,7 +91,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
       </div>
       <div className={`${baseClassName}--input`}>
         <TextInput
-          id="unit-selection"
+          id={`${id}_unit-selection`}
           labelText={mergedI18n.unitLabel}
           light
           onChange={(evt) =>
@@ -105,7 +105,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
       </div>
       <div className={`${baseClassName}--input`}>
         <TextInput
-          id="decimal-precision"
+          id={`${id}_decimal-precision`}
           labelText={mergedI18n.decimalPrecisionLabel}
           light
           onChange={(evt) =>
