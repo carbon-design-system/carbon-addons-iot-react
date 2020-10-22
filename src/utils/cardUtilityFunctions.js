@@ -431,8 +431,8 @@ export const increaseSmallCardSize = (size, cardName) => {
 const resizeHandleId = 'resizableHandle';
 
 /**
- * Simple helper function to extract the resizeHandles from the react children 
- * @param {} children the react children data structure containing the resizeHandles 
+ * Simple helper function to extract the resizeHandles from the react children
+ * @param {} children the react children data structure containing the resizeHandles
  */
 export const getResizeHandles = (children) =>
   React.Children.toArray(children).filter((child) =>
@@ -441,14 +441,14 @@ export const getResizeHandles = (children) =>
 
 /**
  * Custom hook that manages the isResizable state. It does that by wrapping
- * the onStart/onStop callbacks found in the resizeHandles. The resizeHandles 
+ * the onStart/onStop callbacks found in the resizeHandles. The resizeHandles
  * are created by the external library react-grid-layout.
- * 
- * The hook returns an object with both the modified resizeHandles and 
+ *
+ * The hook returns an object with both the modified resizeHandles and
  * the isResizing state.
- * 
+ *
  * @param {array} wrappingCardResizeHandles resizeHandles optionally passed down by wrapping card
- * @param {} children the react children data structure containing the resizeHandles 
+ * @param {} children the react children data structure containing the resizeHandles
  * @param {boolean} isResizable true if the component using the hook should be resizable
  */
 export const useCardResizing = (
