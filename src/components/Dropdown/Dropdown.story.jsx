@@ -14,50 +14,9 @@ import {
   Diagram32,
 } from '@carbon/icons-react';
 
-import Dropdown from './Dropdown';
-
-export { default as DropdownStory } from 'carbon-components-react/lib/components/Dropdown/Dropdown-story';
+import DropdownWithIcon from './DropdownWithIcon';
 
 export const items = [
-  {
-    id: 'option-0',
-    text: 'Option 0',
-  },
-  {
-    id: 'option-1',
-    text: 'Option 1',
-  },
-  {
-    id: 'option-2',
-    text: 'Option 2',
-  },
-  {
-    id: 'option-3',
-    text: 'Option 3',
-  },
-  {
-    id: 'option-4',
-    text: 'Option 4',
-  },
-  {
-    id: 'option-5',
-    text: 'Option 5',
-  },
-  {
-    id: 'option-6',
-    text: 'Option 6',
-  },
-  {
-    id: 'option-7',
-    text: 'Option 7',
-  },
-  {
-    id: 'option-8',
-    text: 'Option 8',
-  },
-];
-
-export const itemsWithIcons = [
   {
     id: 'option-0',
     icon: ChartColumnFloating32,
@@ -105,6 +64,8 @@ export const itemsWithIcons = [
   },
 ];
 
+export { default as DropdownStory } from 'carbon-components-react/lib/components/Dropdown/Dropdown-story';
+
 const directions = {
   'Bottom (default)': 'bottom',
   'Top ': 'top',
@@ -127,44 +88,29 @@ const props = () => ({
 });
 
 storiesOf('Watson IoT/Dropdown', module)
-  .add('default', () => {
+  .add('with icons and labels', () => {
     return React.createElement(() => {
       const [selectedViewId, setSelectedViewId] = useState(items[1].id);
 
-      return (
-        <div
-          style={{
-            width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
-          <Dropdown
-            {...props()}
-            items={items}
-            selectedViewId={selectedViewId}
-            actions={{
-              onChangeView: (viewItem) => {
-                setSelectedViewId(viewItem.id);
-                action('onChangeView')(viewItem);
-              },
-            }}
-          />
-        </div>
-      );
-    });
-  })
-  .add('with icons and labels', () => {
-    return React.createElement(() => {
-      const [selectedViewId, setSelectedViewId] = useState(
-        itemsWithIcons[1].id
-      );
+      const renderFooter = (item) => {
+        return <div>{item.title}</div>;
+      };
+
+      const itemsWithFooter = items.map((item) => {
+        return {
+          ...item,
+          footer: renderFooter(item),
+        };
+      });
 
       return (
         <div
           style={{
             width: select('wrapper width', ['300px', '100px'], '300px'),
           }}>
-          <Dropdown
+          <DropdownWithIcon
             {...props()}
-            items={itemsWithIcons}
+            items={itemsWithFooter}
             selectedViewId={selectedViewId}
             actions={{
               onChangeView: (viewItem) => {
@@ -172,33 +118,6 @@ storiesOf('Watson IoT/Dropdown', module)
                 action('onChangeView')(viewItem);
               },
             }}
-          />
-        </div>
-      );
-    });
-  })
-  .add('with icons only', () => {
-    return React.createElement(() => {
-      const [selectedViewId, setSelectedViewId] = useState(
-        itemsWithIcons[1].id
-      );
-
-      return (
-        <div
-          style={{
-            width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
-          <Dropdown
-            {...props()}
-            items={itemsWithIcons}
-            selectedViewId={selectedViewId}
-            actions={{
-              onChangeView: (viewItem) => {
-                setSelectedViewId(viewItem.id);
-                action('onChangeView')(viewItem);
-              },
-            }}
-            hasIconsOnly
           />
         </div>
       );

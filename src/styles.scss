@@ -186,7 +186,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/DateTimePicker/date-time-picker';
 @import 'components/GaugeCard/gauge-card';
 @import 'components/Header/header';
-@import 'components/SuiteHeader/suite-header';
+@import 'components/IconDropdown/icon-dropdown';
 @import 'components/IconSwitch/icon-switch';
 @import 'components/ListCard/listCard';
 @import 'components/List/list';
@@ -198,6 +198,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ProgressIndicator/progress-indicator';
 @import 'components/SideNav/side-nav';
 @import 'components/SimplePagination/simple-pagination';
+@import 'components/SuiteHeader/suite-header';
 @import 'components/Table/TableToolbar/table-toolbar';
 @import 'components/Table/pagination';
 @import 'components/Table/TableBody/RowActionsCell/row-actions-cell';

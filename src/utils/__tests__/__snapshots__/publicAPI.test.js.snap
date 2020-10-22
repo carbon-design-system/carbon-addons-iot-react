@@ -6002,6 +6002,59 @@ Map {
       },
     },
   },
+  "IconDropdown" => Object {
+    "defaultProps": Object {
+      "footer": null,
+      "hasIconOnly": false,
+      "itemToString": null,
+    },
+    "propTypes": Object {
+      "footer": Object {
+        "type": "node",
+      },
+      "hasIconsOnly": Object {
+        "type": "bool",
+      },
+      "itemToString": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "icon": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "func",
+                      },
+                      Object {
+                        "type": "object",
+                      },
+                    ],
+                  ],
+                  "isRequired": true,
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "text": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
