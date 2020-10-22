@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 import { childrenPropType } from '../PageWizard';
@@ -41,6 +42,8 @@ const PageWizardStepPropTypes = {
   onSubmit: PropTypes.func,
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
+  /** Content to render after footer buttons (on right side, in LTR) */
+  afterFooterContent: PropTypes.node,
 };
 
 const PageWizardStepDefaultProps = {
@@ -63,6 +66,7 @@ const PageWizardStepDefaultProps = {
   onNext: null,
   onBack: null,
   beforeFooterContent: null,
+  afterFooterContent: null,
   onSubmit: null,
   onClose: null,
 };
@@ -84,6 +88,7 @@ const PageWizardStep = ({
   sendingData,
   onSubmit,
   beforeFooterContent,
+  afterFooterContent,
 }) => (
   <div className={`${iotPrefix}--page-wizard--step`} id={id}>
     {error ? (
@@ -98,11 +103,11 @@ const PageWizardStep = ({
     ) : null}
     {children}
     <div
-      className={
-        hasStickyFooter
-          ? `${iotPrefix}--page-wizard--content--actions--sticky`
-          : `${iotPrefix}--page-wizard--content--actions`
-      }>
+      className={classnames({
+        [`${iotPrefix}--page-wizard--content--actions--sticky`]: hasStickyFooter,
+        [`${iotPrefix}--page-wizard--content--actions`]: !hasStickyFooter,
+        [`${iotPrefix}--page-wizard--content--after-footer`]: !!afterFooterContent,
+      })}>
       {beforeFooterContent}
       {!hasPrev ? (
         <Button onClick={onClose} kind="secondary">
@@ -131,6 +136,12 @@ const PageWizardStep = ({
           loading={sendingData}>
           {i18n.submit}
         </Button>
+      )}
+      {afterFooterContent && (
+        <div
+          className={`${iotPrefix}--page-wizard--content--after-footer--content`}>
+          {afterFooterContent}
+        </div>
       )}
     </div>
   </div>
