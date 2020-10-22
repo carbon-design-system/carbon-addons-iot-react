@@ -7886,6 +7886,7 @@ Map {
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
+      "submitDisabled": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -8005,6 +8006,9 @@ Map {
       },
       "renderHeader": Object {
         "type": "func",
+      },
+      "submitDisabled": Object {
+        "type": "bool",
       },
       "supportedCardTypes": Object {
         "args": Array [

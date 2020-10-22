@@ -1,7 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, object, array } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  boolean,
+  text,
+  object,
+  array,
+} from '@storybook/addon-knobs';
 
 import { Card, Link, InlineNotification } from '../../index';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
@@ -24,6 +30,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
+        submitDisabled={boolean('submitDisabled', false)}
         supportedCardTypes={array('supportedCardTypes', [
           'TIMESERIES',
           'SIMPLE_BAR',
