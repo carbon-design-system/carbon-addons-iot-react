@@ -32,6 +32,7 @@ const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = ({
+  isSelected,
   children,
   dimensions,
   id,
@@ -51,6 +52,20 @@ const CardWrapper = ({
   ...others
 }) => {
   const validOthers = filterValidAttributes(others);
+  const [isCardSelected, setIsCardSelected] = useState(false);
+  useEffect(() => {
+    setIsCardSelected(isSelected);
+  }, [isSelected, setIsCardSelected]);
+
+  const handleSelection = (e) => {
+    console.log({ e });
+    if (
+      (e.type === 'click' && isSelected && isSelected(e)) ||
+      e.key === 'Enter'
+    ) {
+      setIsCardSelected(!isCardSelected);
+    }
+  };
   return (
     <div
       role="presentation"
@@ -64,8 +79,12 @@ const CardWrapper = ({
       onScroll={onScroll}
       onFocus={onFocus}
       onBlur={onBlur}
+      onKeyPress={handleSelection}
+      onClick={handleSelection}
       tabIndex={tabIndex}
-      className={classnames(className, `${iotPrefix}--card--wrapper`)}
+      className={classnames(className, `${iotPrefix}--card--wrapper`, {
+        [`${iotPrefix}--card--wrapper__selected`]: isCardSelected,
+      })}
       {...validOthers}>
       {children}
     </div>
@@ -111,6 +130,10 @@ const EmptyMessageWrapper = (props) => {
 };
 
 CardWrapper.propTypes = {
+  /**
+   * Is given the event as argument. Should return true or false if event should trigger selection
+   */
+  isSelected: PropTypes.func,
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
     .isRequired,
@@ -128,6 +151,7 @@ CardWrapper.propTypes = {
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {
+  isSelected: null,
   id: undefined,
   style: undefined,
   testID: 'Card',
