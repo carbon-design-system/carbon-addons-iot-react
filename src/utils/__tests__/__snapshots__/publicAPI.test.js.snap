@@ -7854,6 +7854,8 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7884,6 +7886,7 @@ Map {
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
+      "submitDisabled": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -7896,6 +7899,17 @@ Map {
       "title": null,
     },
     "propTypes": Object {
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
       "headerBreadcrumbs": Object {
         "args": Array [
           Object {
@@ -7993,6 +8007,9 @@ Map {
       "renderHeader": Object {
         "type": "func",
       },
+      "submitDisabled": Object {
+        "type": "bool",
+      },
       "supportedCardTypes": Object {
         "args": Array [
           Object {
@@ -8009,7 +8026,10 @@ Map {
   "CardEditor" => Object {
     "defaultProps": Object {
       "cardJson": null,
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "i18n": Object {
+        "addCardButton": "Add card",
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
@@ -8029,15 +8049,94 @@ Map {
     },
     "propTypes": Object {
       "cardJson": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "content": Object {
+              "args": Array [
+                Object {
+                  "includeZeroOnXaxis": Object {
+                    "type": "bool",
+                  },
+                  "includeZeroOnYaxis": Object {
+                    "type": "bool",
+                  },
+                  "series": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
+                            },
+                            "dataSourceId": Object {
+                              "type": "string",
+                            },
+                            "label": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "unit": Object {
+                    "type": "string",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "interval": Object {
+              "type": "string",
+            },
+            "showLegend": Object {
+              "type": "bool",
+            },
+            "size": Object {
+              "type": "string",
+            },
+            "title": Object {
+              "type": "string",
+            },
+            "type": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
       },
       "i18n": Object {
         "args": Array [
           Object {
-            "galleryHeader": Object {
+            "addCardButton": Object {
               "type": "string",
             },
-            "openGalleryButton": Object {
+            "galleryHeader": Object {
               "type": "string",
             },
             "searchPlaceholderText": Object {
@@ -10994,6 +11093,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
+      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -11787,6 +11887,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showLegend": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
