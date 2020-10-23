@@ -166,8 +166,6 @@ export const findLayoutOrGenerate = (layouts, cards) => {
             updatedLayout.push({
               ...cardFromLayout,
               ...CARD_DIMENSIONS[matchingCard.size][layoutName],
-              // Let thet card isResizable prop automatically set the layout prop accordingly
-              isResizable: matchingCard.isResizable,
             });
           return updatedLayout;
         }, []);
@@ -177,9 +175,14 @@ export const findLayoutOrGenerate = (layouts, cards) => {
       layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
     }
 
+    const layoutWithResizableItems = layout.map((cardFromLayout) => {
+      const matchingCard = find(cards, { id: cardFromLayout.i });
+      return { ...cardFromLayout, isResizable: matchingCard.isResizable };
+    });
+
     return {
       ...acc,
-      [layoutName]: layout,
+      [layoutName]: layoutWithResizableItems,
     };
   }, {});
 };

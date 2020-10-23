@@ -5247,9 +5247,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showContentDuringResize": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
         "type": "bool",
@@ -9198,9 +9195,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showContentDuringResize": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "size": Object {
         "args": Array [
@@ -10030,9 +10024,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showContentDuringResize": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -10968,9 +10959,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showContentDuringResize": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "size": Object {
         "args": Array [
@@ -11844,9 +11832,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showContentDuringResize": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
         "type": "bool",
@@ -12623,9 +12608,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showContentDuringResize": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -13510,9 +13492,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showContentDuringResize": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {
@@ -14436,9 +14415,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showContentDuringResize": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "size": Object {
         "args": Array [
@@ -15261,9 +15237,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showContentDuringResize": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "size": Object {

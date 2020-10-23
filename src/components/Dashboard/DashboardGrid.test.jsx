@@ -79,7 +79,7 @@ describe('DashboardGrid', () => {
 
   describe('resizing', () => {
     const BREAKPOINT = 'lg';
-    const layouts = {
+    const getLayouts = () => ({
       [BREAKPOINT]: [
         { i: 'card', x: 0, y: 0, w: 4, h: 1 },
         { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
@@ -91,7 +91,7 @@ describe('DashboardGrid', () => {
         { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
         { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
       ],
-    };
+    });
 
     const callbackMocks = {
       onBreakpointChange: jest.fn(),
@@ -220,20 +220,23 @@ describe('DashboardGrid', () => {
     it('adds resize handles for all cards with isResizable: true', () => {
       const resizeHandleClass = 'react-resizable-handle';
       const expectToBeResizable = (testId, resizeHandleIndex = 2) => {
-        expect(
-          screen.getByTestId(testId).childNodes[resizeHandleIndex]
-        ).toHaveClass(resizeHandleClass);
+        const resizeHandle = screen.getByTestId(testId).childNodes[
+          resizeHandleIndex
+        ];
+        expect(resizeHandle).toHaveClass(resizeHandleClass);
+        expect(resizeHandle).toBeVisible();
       };
 
-      render(
+      const { rerender } = render(
         <DashboardGrid
           {...callbackMocks}
-          layouts={layouts}
+          layouts={getLayouts()}
           breakpoint={BREAKPOINT}>
           {getCards({ isResizable: true })}
         </DashboardGrid>
       );
 
+      // We test all cards
       expectToBeResizable('test-card');
       expectToBeResizable('test-valueCard');
       expectToBeResizable('test-gaugeCard');
@@ -243,6 +246,34 @@ describe('DashboardGrid', () => {
       expectToBeResizable('test-timeSeriesCard');
       expectToBeResizable('test-listCard');
       expectToBeResizable('test-barChartCard');
+
+      const emptyLayouts = {};
+      rerender(
+        <DashboardGrid
+          {...callbackMocks}
+          layouts={emptyLayouts}
+          breakpoint={BREAKPOINT}>
+          {getCards({ isResizable: true })}
+        </DashboardGrid>
+      );
+      expectToBeResizable('test-card'); // base card
+      expectToBeResizable('test-valueCard'); // card wrapping base card
+      expectToBeResizable('test-imageCard'); // card wrapping base card with children as a function
+
+      const layoutwithMissingCards = {
+        [BREAKPOINT]: [{ i: 'nonExistingCard', x: 0, y: 0, w: 4, h: 1 }],
+      };
+      rerender(
+        <DashboardGrid
+          {...callbackMocks}
+          layouts={layoutwithMissingCards}
+          breakpoint={BREAKPOINT}>
+          {getCards({ isResizable: true })}
+        </DashboardGrid>
+      );
+      expectToBeResizable('test-card');
+      expectToBeResizable('test-valueCard');
+      expectToBeResizable('test-imageCard');
     });
 
     it('prevents resize handles for all cards with isResizable: false', () => {
@@ -258,10 +289,10 @@ describe('DashboardGrid', () => {
         }
       };
 
-      render(
+      const { rerender } = render(
         <DashboardGrid
           {...callbackMocks}
-          layouts={layouts}
+          layouts={getLayouts()}
           breakpoint={BREAKPOINT}>
           {getCards({ isResizable: false })}
         </DashboardGrid>
@@ -276,6 +307,34 @@ describe('DashboardGrid', () => {
       expectNotToBeResizable('test-timeSeriesCard');
       expectNotToBeResizable('test-listCard');
       expectNotToBeResizable('test-barChartCard');
+
+      const emptyLayouts = {};
+      rerender(
+        <DashboardGrid
+          {...callbackMocks}
+          layouts={emptyLayouts}
+          breakpoint={BREAKPOINT}>
+          {getCards({ isResizable: false })}
+        </DashboardGrid>
+      );
+      expectNotToBeResizable('test-card'); // base card
+      expectNotToBeResizable('test-valueCard'); // card wrapping base card
+      expectNotToBeResizable('test-imageCard'); // card wrapping base card with children as a function
+
+      const layoutwithMissingCards = {
+        [BREAKPOINT]: [{ i: 'nonExistingCard', x: 0, y: 0, w: 4, h: 1 }],
+      };
+      rerender(
+        <DashboardGrid
+          {...callbackMocks}
+          layouts={layoutwithMissingCards}
+          breakpoint={BREAKPOINT}>
+          {getCards({ isResizable: false })}
+        </DashboardGrid>
+      );
+      expectNotToBeResizable('test-card');
+      expectNotToBeResizable('test-valueCard');
+      expectNotToBeResizable('test-imageCard');
     });
 
     it('it matches dimensions (height first) to closest larger or equally large card size', () => {
