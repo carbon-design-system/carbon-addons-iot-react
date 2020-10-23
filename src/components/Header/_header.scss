@@ -8,7 +8,9 @@
   }
 
   &__menu-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   & .#{$prefix}--header__name {
@@ -40,7 +42,10 @@
 }
 
 .#{$prefix}--header-action-btn {
+  align-items: center;
+  display: inline-flex;
   height: 3rem;
+  justify-content: center;
   width: 3rem;
   padding: 0;
 
