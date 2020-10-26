@@ -35,6 +35,15 @@ const propTypes = {
   notification: PropTypes.node,
   /** if provided, renders edit button next to title linked to this callback */
   onEditTitle: PropTypes.func,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -51,6 +60,8 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
+  /** Whether to disable the submit button */
+  submitDisabled: PropTypes.bool,
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardJson)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -86,11 +97,14 @@ const defaultProps = {
   notification: null,
   title: null,
   onEditTitle: null,
+  getValidDataItems: null,
+  dataItems: [],
   onDelete: null,
   onImport: null,
   onExport: null,
   onCancel: null,
   onSubmit: null,
+  submitDisabled: false,
   onValidateCardJson: null,
   i18n: {
     headerEditTitleButton: 'Edit title',
@@ -117,6 +131,8 @@ const DashboardEditor = ({
   supportedCardTypes,
   renderHeader,
   renderCardPreview,
+  getValidDataItems,
+  dataItems,
   headerBreadcrumbs,
   notification,
   onEditTitle,
@@ -125,6 +141,7 @@ const DashboardEditor = ({
   onDelete,
   onCancel,
   onSubmit,
+  submitDisabled,
   onValidateCardJson,
   i18n,
 }) => {
@@ -191,6 +208,7 @@ const DashboardEditor = ({
             onDelete={onDelete}
             onCancel={onCancel}
             onSubmit={onSubmit}
+            submitDisabled={submitDisabled}
             i18n={mergedI18n}
             dashboardJson={dashboardJson}
           />
@@ -260,6 +278,8 @@ const DashboardEditor = ({
                 ),
               })
             }
+            getValidDataItems={getValidDataItems}
+            dataItems={dataItems}
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
             supportedCardTypes={supportedCardTypes}
