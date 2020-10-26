@@ -9,7 +9,6 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
-import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
@@ -123,6 +122,10 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  /** whether or not to show a legend at the bottom of the card
+   * if not explicitly stated, the card will show based on the length of the series
+   */
+  showLegend: PropTypes.bool,
 };
 
 /**
@@ -179,8 +182,6 @@ export const formatChartData = (
 
   return data;
 };
-
-const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 /**
  * Extends default tooltip with the additional date information, and optionally alert information
@@ -276,9 +277,11 @@ const TimeSeriesCard = ({
   i18n: { alertDetected, noDataLabel },
   i18n,
   isExpanded,
+  timeRange,
   isLazyLoading,
   isLoading,
   domainRange,
+  showLegend,
   ...others
 }) => {
   const {
@@ -304,9 +307,13 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   moment.locale(locale);
 
-  const values = isEditable
-    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
-    : valuesProp;
+  const sampleValues = useMemo(
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [series, interval, timeRange]
+  );
+
+  const values = isEditable ? sampleValues : valuesProp;
 
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
@@ -482,6 +489,7 @@ const TimeSeriesCard = ({
       title={title}
       size={newSize}
       i18n={i18n}
+      timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
@@ -507,7 +515,7 @@ const TimeSeriesCard = ({
                 accessibility: false,
                 axes: {
                   bottom: {
-                    title: xLabel,
+                    title: xLabel || ' ',
                     mapsTo: 'date',
                     scaleType: 'time',
                     ticks: {
@@ -536,7 +544,7 @@ const TimeSeriesCard = ({
                 legend: {
                   position: 'bottom',
                   clickable: !isEditable,
-                  enabled: series.length > 1,
+                  enabled: showLegend ?? series.length > 1,
                 },
                 containerResizable: true,
                 tooltip: {
@@ -641,6 +649,7 @@ TimeSeriesCard.defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  showLegend: null,
 };
 
 export default TimeSeriesCard;

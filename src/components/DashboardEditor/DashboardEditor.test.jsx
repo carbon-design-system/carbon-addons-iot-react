@@ -60,8 +60,8 @@ describe('DashboardEditor', () => {
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
 
-    const openGalleryBtn = screen.getByText('Open gallery');
-    expect(openGalleryBtn).toBeInTheDocument();
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
     const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
@@ -121,18 +121,18 @@ describe('DashboardEditor', () => {
     // then find the card title that was created
     expect(screen.getAllByTitle('Untitled')).toHaveLength(1);
     // re-open the gallery by clicking open gallery
-    let openGalleryBtn = screen.getByText('Open gallery');
-    expect(openGalleryBtn).toBeInTheDocument();
-    fireEvent.click(openGalleryBtn);
+    let addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    fireEvent.click(addCardBtn);
     // now find and click Time series
     const timeSeriesBtn = screen.getByTitle('Time series line');
     expect(timeSeriesBtn).toBeInTheDocument();
     fireEvent.click(timeSeriesBtn);
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(2);
-    openGalleryBtn = screen.getByText('Open gallery');
-    expect(openGalleryBtn).toBeInTheDocument();
-    fireEvent.click(openGalleryBtn);
+    addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    fireEvent.click(addCardBtn);
     // now find and click Grouped bar
     const groupedBarBtn = screen.getByTitle('Grouped bar');
     expect(groupedBarBtn).toBeInTheDocument();
@@ -140,9 +140,9 @@ describe('DashboardEditor', () => {
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(3);
     // re-open the gallery by clicking open gallery
-    openGalleryBtn = screen.getByText('Open gallery');
-    expect(openGalleryBtn).toBeInTheDocument();
-    fireEvent.click(openGalleryBtn);
+    addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    fireEvent.click(addCardBtn);
     // now find and click Stacked bar
     const stackedBarBtn = screen.getByTitle('Stacked bar');
     expect(stackedBarBtn).toBeInTheDocument();
@@ -150,9 +150,9 @@ describe('DashboardEditor', () => {
     // then find the card title that was created, but these will have the same names so check the length
     expect(screen.getAllByTitle('Untitled')).toHaveLength(4);
     // // re-open the gallery by clicking open gallery
-    openGalleryBtn = screen.getByText('Open gallery');
-    expect(openGalleryBtn).toBeInTheDocument();
-    fireEvent.click(openGalleryBtn);
+    addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    fireEvent.click(addCardBtn);
     // now find and click Image
     const imageBtn = screen.getByTitle('Image');
     expect(imageBtn).toBeInTheDocument();

@@ -31,7 +31,7 @@ const HeaderProps = {
   tenant: 'TenantId: Acme',
   url: 'http://localhost:8989',
   className: 'custom-class-name',
-  appName: 'Watson IoT Platform ',
+  appName: 'Application Name',
   skipto: 'skip',
   actionItems: [
     {
@@ -112,7 +112,7 @@ const HeaderMenuProps = {
   tenant: 'TenantId: Acme',
   url: 'http://localhost:8989',
   className: 'custom-class-name',
-  appName: 'Watson IoT Platform ',
+  appName: 'Application Name',
   skipto: 'skip',
   actionItems: [
     {
