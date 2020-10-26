@@ -360,7 +360,7 @@ export const handleTooltip = (
       .replaceWith(parsedDateLabel.querySelector('li'));
   }
 
-  return parsedTooltip.querySelector('ul').outerHTML;
+  return parsedTooltip.innerHTML;
 };
 
 /**

@@ -242,10 +242,10 @@ export const handleTooltip = (
 
   // Append all the matching alert labels
   matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
-    defaultTooltipDOM.append(label);
+    defaultTooltipDOM.querySelector('ul').append(label);
   });
 
-  return defaultTooltipDOM.querySelector('ul').outerHTML;
+  return defaultTooltipDOM.innerHTML;
 };
 
 /**
