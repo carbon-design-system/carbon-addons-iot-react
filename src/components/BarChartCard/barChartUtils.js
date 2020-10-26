@@ -2,13 +2,13 @@ import moment from 'moment';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
-import cheerio from 'cheerio';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
 import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
+import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
 /**
  * Generate fake, sample values for isEditable preview state
@@ -335,7 +335,7 @@ export const handleTooltip = (
     : dataOrHoveredElement;
   const typedData = Array.isArray(data) ? data[0] : data;
 
-  const parsedTooltip = cheerio.load(defaultTooltip);
+  const [parsedTooltip] = convertStringsToDOMElement([defaultTooltip]);
 
   // If theres a time attribute, add an extra list item with the formatted date
   if (timeDataSourceId) {
@@ -351,12 +351,16 @@ export const handleTooltip = (
           </li>`
       : '';
 
+    const [parsedDateLabel] = convertStringsToDOMElement([dateLabel]);
+
     // First remove carbon charts default Date tooltip
-    // the first <li> will always be carbon chart's Dates row in this case
-    parsedTooltip('li:first-child').replaceWith(dateLabel);
+    // the first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+    parsedTooltip
+      .querySelector('li:first-child')
+      .replaceWith(parsedDateLabel.querySelector('li'));
   }
 
-  return parsedTooltip.html('ul');
+  return parsedTooltip.querySelector('ul').outerHTML;
 };
 
 /**

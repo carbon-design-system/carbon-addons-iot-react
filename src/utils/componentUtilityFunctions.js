@@ -346,3 +346,17 @@ export const browserSupports = (api) => {
 export const getOverrides = (props, originalProps) => {
   return typeof props === 'function' ? props(originalProps) : props;
 };
+
+/**
+ * Converts strings to DOM Elements, individually returned within a <body> node.
+ * @param {Array} strings
+ * @returns {Array} DOM Elements
+ */
+export const convertStringsToDOMElement = (strings = []) => {
+  const domparser = new DOMParser();
+  const mimetype = 'text/html';
+
+  return strings.map((string) => {
+    return domparser.parseFromString(string, mimetype).querySelector('body');
+  });
+};
