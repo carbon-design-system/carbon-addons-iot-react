@@ -34,8 +34,7 @@ export const items = [
   },
   {
     id: 'option-4',
-    text:
-      'An example option that is really long to show what should be done to handle long text',
+    text: 'An example option that is really long to show what should be done to handle long text',
   },
 ];
 
@@ -63,10 +62,7 @@ const itemToElement = (item) => {
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}>
-        {' '}
-        {itemAsArray.splice(1, itemAsArray.length).join(' ')}
-      </span>
+      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
     </div>
   );
 };
@@ -104,9 +100,7 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
         itemToString={itemToString}
         onChange={(changedItem) => {
           if (changedItem) {
-            setSelectedItem(
-              localStateItems.find((item) => isEqual(item, changedItem))
-            ); // because combobox is stupid I have to find the exact same one https://github.com/carbon-design-system/carbon/issues/7055
+            setSelectedItem(localStateItems.find((item) => isEqual(item, changedItem))); // because combobox is stupid I have to find the exact same one https://github.com/carbon-design-system/carbon/issues/7055
             if (
               // if the selected item is one of the original items and we're blurring, remove it from list
               !isEqual(items, localStateItems) &&
@@ -128,16 +122,15 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
             text: `Option ${uid}`,
           });
           setSelectedItem(items[items.length - 1]);
-        }}>
+        }}
+      >
         Add new item
       </Button>
     </>
   );
 };
 
-const Wrapper = ({ children }) => (
-  <div style={{ width: 300, padding: '1rem' }}>{children}</div>
-);
+const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
 storiesOf('Watson IoT Experimental/ComboBox', module)
   .addDecorator(withKnobs)
@@ -145,11 +138,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     'Default',
     () => (
       <Wrapper>
-        <ComboBox
-          items={items}
-          itemToString={(item) => (item ? item.text : '')}
-          {...props()}
-        />
+        <ComboBox items={items} itemToString={(item) => (item ? item.text : '')} {...props()} />
       </Wrapper>
     ),
     {
@@ -178,17 +167,13 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
       },
     }
   )
-  .add(
-    'application-level control for selection',
-    () => <ControlledComboBoxApp {...props()} />,
-    {
-      info: {
-        text: `Controlled ComboBox example application`,
-        propTables: [ComboBox],
-        propTablesExclude: [ControlledComboBoxApp],
-      },
-    }
-  )
+  .add('application-level control for selection', () => <ControlledComboBoxApp {...props()} />, {
+    info: {
+      text: `Controlled ComboBox example application`,
+      propTables: [ComboBox],
+      propTablesExclude: [ControlledComboBoxApp],
+    },
+  })
   .add(
     'Experimental multi-value tags',
     () => (
@@ -234,10 +219,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     () => {
       return (
         <Wrapper>
-          <ControlledComboBoxApp
-            {...props()}
-            onBlur={boolean('onBlur', true)}
-          />
+          <ControlledComboBoxApp {...props()} onBlur={boolean('onBlur', true)} />
         </Wrapper>
       );
     },

@@ -18,13 +18,7 @@ const { prefix, iotPrefix } = settings;
 describe('IconSwitch', () => {
   describe('component rendering', () => {
     const buttonWrapper = mount(
-      <IconSwitch
-        name="blah"
-        size="default"
-        renderIcon={List16}
-        text="test"
-        index={0}
-      />
+      <IconSwitch name="blah" size="default" renderIcon={List16} text="test" index={0} />
     );
 
     it('should have the expected text', () => {
@@ -43,18 +37,14 @@ describe('IconSwitch', () => {
 
     it('should have unselected class', () => {
       const unselectedClass = `${iotPrefix}--icon-switch--unselected`;
-      expect(buttonWrapper.find('button').hasClass(unselectedClass)).toEqual(
-        true
-      );
+      expect(buttonWrapper.find('button').hasClass(unselectedClass)).toEqual(true);
     });
 
     it('should NOT have unselected class when selected is set to true', () => {
       const unselectedClass = `${iotPrefix}--icon-switch--unselected`;
       const selected = true;
       buttonWrapper.setProps({ selected });
-      expect(buttonWrapper.find('button').hasClass(unselectedClass)).toEqual(
-        false
-      );
+      expect(buttonWrapper.find('button').hasClass(unselectedClass)).toEqual(false);
     });
   });
 

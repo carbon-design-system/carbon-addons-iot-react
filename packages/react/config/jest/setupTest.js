@@ -16,12 +16,11 @@ async function toBeAccessible(node, label) {
     return {
       pass: true,
     };
-  } 
-    return {
-      pass: false,
-      message: () => aChecker.stringifyResults(results.report),
-    };
-  
+  }
+  return {
+    pass: false,
+    message: () => aChecker.stringifyResults(results.report),
+  };
 }
 
 expect.extend({ toBeAccessible });

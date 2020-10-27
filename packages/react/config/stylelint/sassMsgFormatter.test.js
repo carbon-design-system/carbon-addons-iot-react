@@ -56,16 +56,12 @@ describe('sassMsgFormatter', () => {
     expect(formatter.filterForErrors({ errored: null })).toBeFalsy();
   });
   it('filters duplicates', () => {
-    expect(formatter.filterDuplicates([exampleOne, exampleOne])).toMatchObject([
-      exampleOne,
-    ]);
+    expect(formatter.filterDuplicates([exampleOne, exampleOne])).toMatchObject([exampleOne]);
     expect(formatter.filterDuplicates([exampleOne, exampleTwo])).toMatchObject([
       exampleOne,
       exampleTwo,
     ]);
-    expect(
-      formatter.filterDuplicates([exampleOne, exampleThree])
-    ).toMatchObject([exampleOne]);
+    expect(formatter.filterDuplicates([exampleOne, exampleThree])).toMatchObject([exampleOne]);
   });
   it('generates error icons', () => {
     // expect(generateErrorIcon('error')).toEqual(ERROR('ERROR'));
@@ -89,12 +85,8 @@ describe('sassMsgFormatter', () => {
     expect(createCustomMessage(null)).toHaveLength(0);
   });
   it('formats errors', () => {
-    expect(formatter.formatError(exampleOne.warnings)).toContain(
-      ERROR('ERROR')
-    );
-    expect(formatter.formatError(exampleTwo.warnings)).toContain(
-      ERROR('ERROR')
-    );
+    expect(formatter.formatError(exampleOne.warnings)).toContain(ERROR('ERROR'));
+    expect(formatter.formatError(exampleTwo.warnings)).toContain(ERROR('ERROR'));
     expect(
       formatError([
         {
@@ -108,11 +100,7 @@ describe('sassMsgFormatter', () => {
     ).toContain(WARNING('warning'));
   });
   it('formats message', () => {
-    const resultsTest = [
-      exampleOne,
-      exampleTwo,
-      { errored: false, warnings: undefined },
-    ];
+    const resultsTest = [exampleOne, exampleTwo, { errored: false, warnings: undefined }];
     expect(resultsTest.filter(formatter.filterForErrors)).toHaveLength(2);
     expect(formatter(resultsTest)).toContain(TITLE('\n!! WARNINGS !!\n\n'));
     expect(formatter(resultsTest)).toContain(formatError(exampleOne.warnings));

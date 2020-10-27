@@ -7,22 +7,13 @@ import { spacing05 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import {
-  tableColumns,
-  tableData,
-  actions1,
-  actions2,
-} from '../../utils/sample';
+import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample';
 
 import TableCard from './TableCard';
 
 storiesOf('Watson IoT/TableCard', module)
   .add('table with multiple actions', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableDataWithActions = tableData.map((item) => {
       return {
@@ -35,7 +26,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -44,9 +36,7 @@ storiesOf('Watson IoT/TableCard', module)
             columns: tableColumns,
           }}
           values={tableDataWithActions}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
@@ -55,11 +45,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'With links',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
       const cardVariables = object('Dynamic link variable', {
         assetId: '11112',
       });
@@ -87,7 +73,8 @@ storiesOf('Watson IoT/TableCard', module)
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title={text('title', 'Open Alerts {assetId}')}
             id="table-list"
@@ -96,9 +83,7 @@ storiesOf('Watson IoT/TableCard', module)
               columns: tableLinkColumns,
             }}
             values={tableLinkData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
             cardVariables={cardVariables}
           />
@@ -122,11 +107,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'With row specific link variables',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGEWIDE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
       const tableLinkColumns = [
         ...tableColumns,
@@ -183,7 +164,8 @@ storiesOf('Watson IoT/TableCard', module)
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title={text('title', 'Asset Open Alerts')}
             id="table-list"
@@ -193,9 +175,7 @@ storiesOf('Watson IoT/TableCard', module)
               thresholds,
             }}
             values={tableLinkData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
           />
         </div>
@@ -211,11 +191,7 @@ storiesOf('Watson IoT/TableCard', module)
     }
   )
   .add('table with single actions', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableDataWithActions = tableData.map((item) => {
       return {
@@ -228,7 +204,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -237,20 +214,14 @@ storiesOf('Watson IoT/TableCard', module)
             columns: tableColumns,
           }}
           values={tableDataWithActions}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('table with thresholds, precision and expanded rows', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGEWIDE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       {
@@ -260,10 +231,7 @@ storiesOf('Watson IoT/TableCard', module)
         severity: 1,
         icon: 'bee',
         color: 'black',
-        label: text(
-          'Custom Pressure Severity Header',
-          'Custom Pressure Severity Header'
-        ),
+        label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
         showSeverityLabel: boolean('Show Pressure Threshold Label', true),
         severityLabel: text('Custom Pressure Critical Label', ''),
       },
@@ -304,7 +272,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -332,9 +301,7 @@ storiesOf('Watson IoT/TableCard', module)
             ],
           }}
           values={tableData}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
           renderIconByName={(name, props = {}) =>
             name === 'bee' ? (
@@ -352,11 +319,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'With dynamic variables',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGEWIDE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
       const cardVariables = object('Dynamic link variable', {
         assetId: '11112',
         devicePressureThreshold: 1,
@@ -395,7 +358,8 @@ storiesOf('Watson IoT/TableCard', module)
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title={text('title', 'Asset {assetId} Open Alerts')}
             id="table-list"
@@ -405,9 +369,7 @@ storiesOf('Watson IoT/TableCard', module)
               thresholds,
             }}
             values={tableLinkData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
             cardVariables={cardVariables}
           />
@@ -430,11 +392,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'table with thresholds',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGEWIDE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
       const thresholds = [
         // this threshold is applied to the whole row, not a particular attribute
@@ -468,10 +426,7 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: text(
-            'Custom Pressure Severity Header',
-            'Custom Pressure Severity Header'
-          ),
+          label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
           showSeverityLabel: boolean('Show Pressure Threshold Label', true),
           severityLabel: text('Custom Pressure Critical Label', ''),
         },
@@ -488,9 +443,7 @@ storiesOf('Watson IoT/TableCard', module)
               thresholds,
             }}
             values={tableData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
           />
         </div>
@@ -519,11 +472,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'table with thresholds only with icon',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGEWIDE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
       const thresholds = [
         // this threshold is applied to the whole row, not a particular attribute
@@ -568,7 +517,8 @@ storiesOf('Watson IoT/TableCard', module)
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title={text('title', 'Open Alerts')}
             id="table-list"
@@ -578,9 +528,7 @@ storiesOf('Watson IoT/TableCard', module)
               thresholds,
             }}
             values={tableData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
           />
         </div>
@@ -595,17 +543,14 @@ storiesOf('Watson IoT/TableCard', module)
     }
   )
   .add('with matching thresholds', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -634,20 +579,14 @@ storiesOf('Watson IoT/TableCard', module)
             ],
           }}
           values={tableData.map((i) => ({ id: i.id, values: i.values }))}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('table with custom column sort', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGEWIDE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const tableCustomColumns = tableColumns.map((item) =>
       item.dataSourceId === 'count' ? { ...item, sort: 'DESC' } : item
@@ -658,7 +597,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -667,25 +607,17 @@ storiesOf('Watson IoT/TableCard', module)
             columns: tableCustomColumns,
           }}
           values={tableData}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('table with fixed column size', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableCustomColumns = tableColumns.map((item, index) =>
-      index === 0
-        ? { ...item, width: 250, name: 'Alert with long string name' }
-        : item
+      index === 0 ? { ...item, width: 250, name: 'Alert with long string name' } : item
     );
 
     return (
@@ -693,7 +625,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -702,27 +635,22 @@ storiesOf('Watson IoT/TableCard', module)
             columns: tableCustomColumns,
           }}
           values={tableData}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('table with row expansion', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -741,9 +669,7 @@ storiesOf('Watson IoT/TableCard', module)
             ],
           }}
           values={tableData}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
@@ -752,18 +678,15 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'table with row expansion and link variables',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
       return (
         <div
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title="Open Alerts"
             id="table-list"
@@ -788,9 +711,7 @@ storiesOf('Watson IoT/TableCard', module)
             cardVariables={object('Dynamic link variable', {
               variable: 'variable-value',
             })}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
           />
         </div>
@@ -811,18 +732,15 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'table with row expansion and row specific link variables',
     () => {
-      const size = select(
-        'size',
-        [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-        CARD_SIZES.LARGE
-      );
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
       return (
         <div
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TableCard
             title="Open Alerts"
             id="table-list"
@@ -844,9 +762,7 @@ storiesOf('Watson IoT/TableCard', module)
               ],
             }}
             values={tableData}
-            onCardAction={(id, type, payload) =>
-              action('onCardAction', id, type, payload)
-            }
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
           />
         </div>
@@ -865,18 +781,15 @@ storiesOf('Watson IoT/TableCard', module)
     }
   )
   .add('no row actions', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -885,27 +798,22 @@ storiesOf('Watson IoT/TableCard', module)
             columns: tableColumns,
           }}
           values={tableData.map((i) => ({ id: i.id, values: i.values }))}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('empty table', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -913,27 +821,22 @@ storiesOf('Watson IoT/TableCard', module)
           content={{
             columns: tableColumns,
           }}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('editable', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -943,27 +846,22 @@ storiesOf('Watson IoT/TableCard', module)
           }}
           isEditable
           availableActions={{ edit: true, clone: true, delete: true }}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
     );
   })
   .add('editable with expanded rows', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -974,9 +872,7 @@ storiesOf('Watson IoT/TableCard', module)
           }}
           isEditable
           availableActions={{ edit: true, clone: true, delete: true }}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
         />
       </div>
@@ -984,11 +880,7 @@ storiesOf('Watson IoT/TableCard', module)
   })
 
   .add('i18n', () => {
-    const size = select(
-      'size',
-      [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
-      CARD_SIZES.LARGEWIDE
-    );
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       // this threshold is applied to the whole row, not a particular attribute
@@ -1023,7 +915,8 @@ storiesOf('Watson IoT/TableCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -1031,25 +924,18 @@ storiesOf('Watson IoT/TableCard', module)
           locale={select('locale', ['fr', 'en'], 'fr')}
           content={{
             columns: tableColumns.map((item) =>
-              item.dataSourceId === 'count'
-                ? { ...item, precision: 3 }
-                : { ...item }
+              item.dataSourceId === 'count' ? { ...item, precision: 3 } : { ...item }
             ),
             thresholds,
           }}
           values={tableData}
-          onCardAction={(id, type, payload) =>
-            action('onCardAction', id, type, payload)
-          }
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
           i18n={{
             criticalLabel: text('criticalLabel', 'Critical'),
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
-            selectSeverityPlaceholder: text(
-              'selectSeverityPlaceholder',
-              'Select a severity'
-            ),
+            selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
             severityLabel: text('severityLabel', '__Severity__'),
 
             // table i18n
@@ -1060,64 +946,36 @@ storiesOf('Watson IoT/TableCard', module)
               'Type and hit enter to apply'
             ),
             /** pagination */
-            pageBackwardAria: text(
-              'i18n.pageBackwardAria',
-              '__Previous page__'
-            ),
+            pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
             pageForwardAria: text('i18n.pageForwardAria', '__Next page__'),
             pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
             itemsRange: (min, max) => `__${min}–${max} items__`,
             currentPage: (page) => `__page ${page}__`,
-            itemsRangeWithTotal: (min, max, total) =>
-              `__${min}–${max} of ${total} items__`,
+            itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
             pageRange: (current, total) => `__${current} of ${total} pages__`,
             /** table body */
-            clickToExpandAria: text(
-              'i18n.clickToExpandAria',
-              '__Click to expand content__'
-            ),
-            clickToCollapseAria: text(
-              'i18n.clickToCollapseAria',
-              '__Click to collapse content__'
-            ),
+            clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+            clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
             /** toolbar */
-            clearAllFilters: text(
-              'i18n.clearAllFilters',
-              '__Clear all filters__'
-            ),
+            clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
             clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
             filterAria: text('i18n.filterAria', '__Filter__'),
             openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
             closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-            clearSelectionAria: text(
-              'i18n.clearSelectionAria',
-              '__Clear selection__'
-            ),
+            clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
             /** empty state */
             emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
             emptyMessageWithFilters: text(
               'i18n.emptyMessageWithFilters',
               '__No results match the current filters__'
             ),
-            emptyButtonLabel: text(
-              'i18n.emptyButtonLabel',
-              '__Create some data__'
-            ),
-            emptyButtonLabelWithFilters: text(
-              'i18n.emptyButtonLabel',
-              '__Clear all filters__'
-            ),
+            emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
+            emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
             inProgressText: text('i18n.inProgressText', '__In Progress__'),
-            actionFailedText: text(
-              'i18n.actionFailedText',
-              '__Action Failed__'
-            ),
+            actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
             learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
             dismissText: text('i18n.dismissText', '__Dismiss__'),
-            downloadIconDescription: text(
-              'downloadIconDescription',
-              'Download table content'
-            ),
+            downloadIconDescription: text('downloadIconDescription', 'Download table content'),
           }}
         />
       </div>

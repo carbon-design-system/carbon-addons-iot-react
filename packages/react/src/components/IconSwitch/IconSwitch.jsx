@@ -133,8 +133,7 @@ IconSwitch.propTypes = {
    * Define the icon render to be rendered.
    * Can be a React component class
    */
-  renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
-    .isRequired,
+  renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
 
   /**
    *  Light version

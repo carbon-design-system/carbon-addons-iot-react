@@ -16,10 +16,7 @@ import ListCard from '../ListCard/ListCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
-import {
-  determineCardRange,
-  compareGrains,
-} from '../../utils/cardUtilityFunctions';
+import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
 /**
  *
@@ -49,10 +46,7 @@ export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
     );
     setCard({
       ...cardWithData,
-      timeGrain:
-        compareGrains(timeGrain, card.timeGrain) < 1
-          ? card.timeGrain
-          : timeGrain,
+      timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
       isLoading: false,
     });
   }
@@ -102,10 +96,7 @@ const CardRenderer = React.memo(
     const [isExpanded, setIsExpanded] = useState();
 
     // Allow the i18n to change between renders
-    const cachedI18N = useMemo(() => ({ ...i18n, ...card.i18n }), [
-      i18n,
-      card.i18n,
-    ]);
+    const cachedI18N = useMemo(() => ({ ...i18n, ...card.i18n }), [i18n, card.i18n]);
 
     // If the dashboard has triggered a bulk load, refetch the data
     useEffect(
@@ -113,11 +104,7 @@ const CardRenderer = React.memo(
         const setupAndLoadCard = async () => {
           let updatedCard = card;
           // Image cards require extra setup before loading data
-          if (
-            onSetupCard &&
-            card.type === CARD_TYPES.IMAGE &&
-            !card.content.src
-          ) {
+          if (onSetupCard && card.type === CARD_TYPES.IMAGE && !card.content.src) {
             updatedCard = await onSetupCard(card);
             setCard(updatedCard);
           }
@@ -171,9 +158,7 @@ const CardRenderer = React.memo(
               },
               // Use the maximum selected grain betweeen the dashboard and the current range
               timeGrain:
-                compareGrains(timeGrain, range.timeGrain) < 1
-                  ? range.timeGrain
-                  : timeGrain,
+                compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
             },
           };
           // Then trigger a load of the card data
@@ -194,12 +179,7 @@ const CardRenderer = React.memo(
         }
       },
       /* eslint-disable react-hooks/exhaustive-deps */
-      [
-        card,
-        onFetchData,
-        originalDataSource && originalDataSource.range,
-        timeGrain,
-      ]
+      [card, onFetchData, originalDataSource && originalDataSource.range, timeGrain]
       /* eslint-enable react-hooks/exhaustive-deps */
     );
 
@@ -228,17 +208,11 @@ const CardRenderer = React.memo(
     ) : type === CARD_TYPES.BAR ? (
       <BarChartCard {...commonCardProps} />
     ) : type === CARD_TYPES.LIST ? (
-      <ListCard
-        {...commonCardProps}
-        data={card.content.data}
-        loadData={card.content.loadData}
-      />
+      <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
     ) : type === CARD_TYPES.GAUGE ? (
       <GaugeCard {...commonCardProps} />
     ) : type === CARD_TYPES.CUSTOM ? (
-      <Card
-        hideHeader={isNil(card.title)}
-        {...omit(commonCardProps, 'content')}>
+      <Card hideHeader={isNil(card.title)} {...omit(commonCardProps, 'content')}>
         {card.content}
       </Card>
     ) : null;

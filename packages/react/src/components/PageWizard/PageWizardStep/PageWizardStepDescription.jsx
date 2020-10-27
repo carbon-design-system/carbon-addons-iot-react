@@ -6,9 +6,7 @@ import { childrenPropType } from '../PageWizard';
 const { iotPrefix } = settings;
 
 const PageWizardStepDescription = ({ children }) => (
-  <div className={`${iotPrefix}--page-wizard--step--description`}>
-    {children}
-  </div>
+  <div className={`${iotPrefix}--page-wizard--step--description`}>{children}</div>
 );
 
 PageWizardStepDescription.propTypes = { children: childrenPropType };

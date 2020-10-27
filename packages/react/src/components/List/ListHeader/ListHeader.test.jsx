@@ -31,11 +31,7 @@ describe('ListHeader', () => {
 
     render(<ListHeader i18n={i18nTest} search={searchProp} />);
 
-    expect(
-      screen.getByText(i18nTest.searchPlaceHolderText)
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByText(i18nDefault.searchPlaceHolderText)
-    ).not.toBeInTheDocument();
+    expect(screen.getByText(i18nTest.searchPlaceHolderText)).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.searchPlaceHolderText)).not.toBeInTheDocument();
   });
 });

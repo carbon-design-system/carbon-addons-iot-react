@@ -1,10 +1,6 @@
 import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
 
-import {
-  getDuplicateCard,
-  getDefaultCard,
-  isCardJsonValid,
-} from './editorUtils';
+import { getDuplicateCard, getDefaultCard, isCardJsonValid } from './editorUtils';
 
 describe('editorUtils', () => {
   const mockValueCard = {
@@ -104,32 +100,22 @@ describe('editorUtils', () => {
   describe('isCardJsonValid', () => {
     it('ValueCard', () => {
       expect(isCardJsonValid(mockValueCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(
-        false
-      );
+      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(false);
     });
     it('TimeSeriesCard', () => {
       expect(isCardJsonValid(mockTimeSeriesCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(
-        false
-      );
+      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(false);
     });
     it('BarChartCard', () => {
       expect(isCardJsonValid(mockBarChartCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(
-        false
-      );
+      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(false);
     });
     it('TableCard', () => {
       expect(isCardJsonValid(mockTableCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(
-        false
-      );
+      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(false);
     });
     it('CustomCard', () => {
-      expect(
-        isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })
-      ).toEqual(true);
+      expect(isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })).toEqual(true);
     });
   });
 });

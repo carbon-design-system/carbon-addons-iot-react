@@ -84,15 +84,12 @@ const StructuredList = ({
       <StructuredListWrapperStyled
         {...StructuredListWrapperProps}
         selection
-        isFixedWidth={isFixedWidth}>
+        isFixedWidth={isFixedWidth}
+      >
         <StructuredListHead className={StructuredListHeadClassName}>
           <StructuredListRow head>
             {columns.map(({ id, title, width = undefined }) => (
-              <StyledStructuredListCell
-                key={`${id}-column`}
-                title={title}
-                width={width}
-                head>
+              <StyledStructuredListCell key={`${id}-column`} title={title} width={width} head>
                 {title}
               </StyledStructuredListCell>
             ))}
@@ -100,9 +97,7 @@ const StructuredList = ({
         </StructuredListHead>
         <StructuredListBody>
           {data.map((item) => (
-            <StructuredListRow
-              key={`${item.id}-row`}
-              onClick={() => onRowClick(item.id)}>
+            <StructuredListRow key={`${item.id}-row`} onClick={() => onRowClick(item.id)}>
               {columns.map((col) => (
                 <StyledStructuredListCell
                   key={`${col.id}-item`}
@@ -114,7 +109,8 @@ const StructuredList = ({
                       : null
                   }
                   width={col.width}
-                  style={design === 'normal' ? { lineHeight: '16px' } : {}}>
+                  style={design === 'normal' ? { lineHeight: '16px' } : {}}
+                >
                   {col.renderDataFunction
                     ? col.renderDataFunction({
                         // Call the column renderer if it's provided

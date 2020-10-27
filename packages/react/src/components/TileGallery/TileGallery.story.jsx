@@ -25,9 +25,7 @@ import {
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 const overflowComponent = (
-  <OverflowMenu
-    onClick={(evt) => evt.preventDefault()}
-    style={{ height: spacing07 }}>
+  <OverflowMenu onClick={(evt) => evt.preventDefault()} style={{ height: spacing07 }}>
     <OverflowMenuItem itemText="Edit" onClick={action('Edit')} />
     <OverflowMenuItem itemText="Share" onClick={action('Share')} />
     <OverflowMenuItem itemText="Move" onClick={action('Move')} />
@@ -38,19 +36,14 @@ const overflowComponent = (
 export const content = (
   <Fragment>
     <TileGallerySection
-      title={select(
-        'Select with/without section',
-        { Title: 'Section 1', None: null },
-        'Title'
-      )}>
+      title={select('Select with/without section', { Title: 'Section 1', None: null }, 'Title')}
+    >
       <TileGalleryItem
         title="Card title"
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={
-          <Rocket32 fill="black" description="Icon" width={50} height={50} />
-        }
+        thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -59,9 +52,7 @@ export const content = (
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={
-          <Activity32 fill="black" description="Icon" width={50} height={50} />
-        }
+        thumbnail={<Activity32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -70,9 +61,7 @@ export const content = (
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={
-          <Light32 fill="black" description="Icon" width={50} height={50} />
-        }
+        thumbnail={<Light32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -83,9 +72,7 @@ export const content = (
         description="card description"
         moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
         mode="grid"
-        thumbnail={
-          <Light32 fill="black" description="Icon" width={50} height={50} />
-        }
+        thumbnail={<Light32 fill="black" description="Icon" width={50} height={50} />}
         icon={<CheckmarkFilled16 fill={green40} onClick={action('clicked')} />}
         afterContent={overflowComponent}
       />
@@ -180,12 +167,8 @@ storiesOf('Watson IoT Experimental/TileGallery', module)
       description="card description"
       moreInfoLink="https://www.ibm.com/br-pt/cloud/internet-of-things?mhsrc=ibmsearch_a&mhq=iot"
       mode="grid"
-      thumbnail={
-        <Rocket32 fill="black" description="Icon" width={50} height={50} />
-      }
-      icon={
-        <CheckmarkFilled16 fill={green40} onClick={action('Icon Clicked')} />
-      }
+      thumbnail={<Rocket32 fill="black" description="Icon" width={50} height={50} />}
+      icon={<CheckmarkFilled16 fill={green40} onClick={action('Icon Clicked')} />}
       afterContent={overflowComponent}
       onClick={action('Card Clicked')}
       className="not-active"
@@ -194,9 +177,7 @@ storiesOf('Watson IoT Experimental/TileGallery', module)
   .add('TileGalleryItem - List', () => (
     <TileGalleryItem
       title="Test"
-      description={
-        <div style={{ backgroundColor: 'black' }}>The first one</div>
-      }
+      description={<div style={{ backgroundColor: 'black' }}>The first one</div>}
       mode="list"
       icon={<StarFilled16 fill="black" onClick={action('Icon clicked')} />}
       afterContent={overflowComponent}
@@ -227,22 +208,14 @@ storiesOf('Watson IoT Experimental/TileGallery', module)
                 <OverflowMenu
                   onClick={(evt) => evt.preventDefault()}
                   style={{ height: spacing07 }}
-                  iconDescription={text(
-                    'icon description',
-                    '__icon description__'
-                  )}>
-                  <OverflowMenuItem
-                    itemText={text('Edit', '__Edit__')}
-                    onClick={action('Edit')}
-                  />
+                  iconDescription={text('icon description', '__icon description__')}
+                >
+                  <OverflowMenuItem itemText={text('Edit', '__Edit__')} onClick={action('Edit')} />
                   <OverflowMenuItem
                     itemText={text('Share', '__Share__')}
                     onClick={action('Share')}
                   />
-                  <OverflowMenuItem
-                    itemText={text('Move', '__Move__')}
-                    onClick={action('Move')}
-                  />
+                  <OverflowMenuItem itemText={text('Move', '__Move__')} onClick={action('Move')} />
                   <OverflowMenuItem
                     itemText={text('Delete', '__Delete__')}
                     onClick={action('Deleted')}
@@ -256,24 +229,12 @@ storiesOf('Watson IoT Experimental/TileGallery', module)
         },
       ]}
       i18n={{
-        searchIconDescription: text(
-          'i18n.searchIconDescription',
-          '__Search Icon Description__'
-        ),
-        searchPlaceHolderText: text(
-          'i18n.searchPlaceHolderText',
-          '__Search Placeholder__'
-        ),
-        searchCloseButtonText: text(
-          'i18n.searchCloseButtonText',
-          '__Search Close Button__'
-        ),
+        searchIconDescription: text('i18n.searchIconDescription', '__Search Icon Description__'),
+        searchPlaceHolderText: text('i18n.searchPlaceHolderText', '__Search Placeholder__'),
+        searchCloseButtonText: text('i18n.searchCloseButtonText', '__Search Close Button__'),
         listText: text('i18n.listText', '__ListText__'),
         gridText: text('i18n.gridText', '__GridText__'),
-        descriptionMoreInfo: text(
-          'i18n.descriptionMoreInfo',
-          '__DescriptionMoreInfo__'
-        ),
+        descriptionMoreInfo: text('i18n.descriptionMoreInfo', '__DescriptionMoreInfo__'),
       }}
     />
   ));

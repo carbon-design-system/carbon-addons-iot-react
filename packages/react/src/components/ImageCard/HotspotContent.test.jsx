@@ -131,9 +131,7 @@ describe('HotspotContent', () => {
             dataSourceId: 'temperature',
             label: 'Temp',
             precision: 2,
-            thresholds: [
-              { comparison: '>', value: 0.05, icon: 'Warning', color: red60 },
-            ],
+            thresholds: [{ comparison: '>', value: 0.05, icon: 'Warning', color: red60 }],
           },
         ]}
         locale="fr"
@@ -194,9 +192,6 @@ describe('HotspotContent', () => {
       />
     );
     // custom render icon should be called
-    expect(mockRenderIconByName).toHaveBeenCalledWith(
-      'Warning',
-      expect.anything()
-    );
+    expect(mockRenderIconByName).toHaveBeenCalledWith('Warning', expect.anything());
   });
 });

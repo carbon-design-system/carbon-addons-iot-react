@@ -119,11 +119,9 @@ const TableViewDropdown = ({
     selectedViewEdited,
   ]);
 
-  const mySelectedItem =
-    allItems.find((item) => item.id === selectedViewId) || viewAllItem;
+  const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
-  const MyTableViewDropDownItem =
-    overrides?.dropdownItem?.component || TableViewDropdownItem;
+  const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
 
   const onSelectionChange = (change) => {
     const item = change.selectedItem;
@@ -140,9 +138,7 @@ const TableViewDropdown = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         return (
-          <div
-            className={`${iotPrefix}--view-dropdown__container`}
-            style={style}>
+          <div className={`${iotPrefix}--view-dropdown__container`} style={style}>
             <MyDropDown
               label={i18n.tableViewMenu}
               data-testid={testID}

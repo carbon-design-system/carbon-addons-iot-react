@@ -38,16 +38,12 @@ html[dir='rtl'] {
     transform: rotate(180deg);
   }
 
-  .#{$prefix}--pagination
-    .#{$prefix}--select__item-count
-    .#{$prefix}--select-input {
+  .#{$prefix}--pagination .#{$prefix}--select__item-count .#{$prefix}--select-input {
     border-left: 0.0625rem solid $ui-03;
     border-right: none;
   }
 
-  .#{$prefix}--pagination
-    .#{$prefix}--select__page-number
-    .#{$prefix}--select-input {
+  .#{$prefix}--pagination .#{$prefix}--select__page-number .#{$prefix}--select-input {
     border-left: none;
     border-right: 0.0625rem solid $ui-03;
   }

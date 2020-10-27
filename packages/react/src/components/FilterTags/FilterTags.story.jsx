@@ -68,7 +68,8 @@ const StatefulFilterTags = ({ tags }) => {
             type={tag.type}
             title="Clear Filter"
             style={{ marginRight: '1rem' }}
-            onClose={() => handleOnClose(tag.id)}>
+            onClose={() => handleOnClose(tag.id)}
+          >
             {tag.text}
           </Tag>
         ))}
@@ -94,7 +95,8 @@ storiesOf('Watson IoT Experimental/FilterTags', module)
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}>
+            style={{ marginRight: '1rem' }}
+          >
             {tag.text}
           </Tag>
         ))}
@@ -117,7 +119,8 @@ storiesOf('Watson IoT Experimental/FilterTags', module)
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}>
+            style={{ marginRight: '1rem' }}
+          >
             {tag.text}
           </Tag>
         ))}

@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Select,
-  SelectItem,
-  DataTable,
-  SkeletonText,
-  Tile,
-} from 'carbon-components-react';
+import { Select, SelectItem, DataTable, SkeletonText, Tile } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
@@ -96,8 +90,7 @@ const TileCatalogNew = ({
 
   // determine how many tiles to render per page
   const isInCurrentPageRange = (i) =>
-    i < numColumns * numRows * currentPage &&
-    i >= numColumns * numRows * (currentPage - 1);
+    i < numColumns * numRows * currentPage && i >= numColumns * numRows * (currentPage - 1);
 
   const renderGrid = () => (
     <div
@@ -108,7 +101,8 @@ const TileCatalogNew = ({
             `repeat(auto-fill, minmax(${minTileWidth}, 1fr))`
           : // if the user specifies numColumns we will render exactly that number
             `repeat(${numColumns}, 1fr)`,
-      }}>
+      }}
+    >
       {tiles.map((tile, i) =>
         isLoading ? (
           i < 4 ? ( // limit the amount of SkeletonText to render
@@ -124,9 +118,7 @@ const TileCatalogNew = ({
   // only render pagination if there is no minTileWidth and there are more tiles than can fit in
   // the bounds of our specified number of rows and columns
   const hasPagination =
-    !minTileWidth && !isLoading
-      ? Math.ceil(tiles.length / (numRows * numColumns)) > 1
-      : null;
+    !minTileWidth && !isLoading ? Math.ceil(tiles.length / (numRows * numColumns)) > 1 : null;
 
   return (
     <div className={className}>
@@ -142,8 +134,7 @@ const TileCatalogNew = ({
           ) : null} */}
           <div className={`${iotPrefix}--tile-catalog--tile-canvas--header`}>
             {title ? (
-              <div
-                className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}>
+              <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}>
                 {title}
               </div>
             ) : null}
@@ -154,29 +145,23 @@ const TileCatalogNew = ({
                 className={`${iotPrefix}--tile-catalog--tile-canvas--header--search`}
               />
             ) : null}
-            <div
-              className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
+            <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
               {hasSort ? (
                 <Select
                   id={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}
                   onChange={(evt) => onSort(evt.target.value)}
                   defaultValue={selectedSortOption}
-                  labelText="">
+                  labelText=""
+                >
                   {sortOptions.map((option) => (
-                    <SelectItem
-                      key={option.id}
-                      text={option.text}
-                      value={option.id}
-                    />
+                    <SelectItem key={option.id} text={option.text} value={option.id} />
                   ))}
                 </Select>
               ) : null}
             </div>
           </div>
           {tiles.length > 0 && !error ? (
-            <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>
-              {renderGrid()}
-            </div>
+            <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
           ) : (
             <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
               <>

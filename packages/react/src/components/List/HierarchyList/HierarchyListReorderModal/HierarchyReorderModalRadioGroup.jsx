@@ -53,7 +53,8 @@ const HierarchyReorderModalRadioGroup = ({
       .map((item) => (
         <div
           className={`${iotPrefix}--hierarchy-list-bulk-modal--list-item`}
-          key={`${item.id}-bulk-reorder-list-item-${item.content.value}`}>
+          key={`${item.id}-bulk-reorder-list-item-${item.content.value}`}
+        >
           <RadioButton
             className={`${iotPrefix}--hierarchy-list-bulk-modal--radio`}
             name={item.id}
@@ -73,11 +74,9 @@ const HierarchyReorderModalRadioGroup = ({
             className={`${iotPrefix}--hierarchy-list-bulk-modal--list-item-button`}
             tabIndex={0}
             onClick={() => handleLineItemClicked(item)}
-            onKeyPress={({ key }) =>
-              key === 'Enter' && handleLineItemClicked(item)
-            }>
-            <div
-              className={`${iotPrefix}--hierarchy-list-bulk-modal--list-item-value`}>
+            onKeyPress={({ key }) => key === 'Enter' && handleLineItemClicked(item)}
+          >
+            <div className={`${iotPrefix}--hierarchy-list-bulk-modal--list-item-value`}>
               {item.content.value}
             </div>
           </div>

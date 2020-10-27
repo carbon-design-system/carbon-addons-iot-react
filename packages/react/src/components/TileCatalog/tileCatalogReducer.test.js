@@ -1,8 +1,4 @@
-import {
-  tileCatalogReducer,
-  TILE_ACTIONS,
-  determineInitialState,
-} from './tileCatalogReducer';
+import { tileCatalogReducer, TILE_ACTIONS, determineInitialState } from './tileCatalogReducer';
 
 const longDescription = 'testDescription';
 const tileRenderFunction = jest.fn();

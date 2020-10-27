@@ -28,15 +28,7 @@ const defaultProps = {
 /**
  * This renders the minimap component with the appropriate styles. No local state, only a dumb render component
  */
-const Minimap = ({
-  src,
-  width,
-  height,
-  guideWidth,
-  guideHeight,
-  offsetX,
-  offsetY,
-}) => {
+const Minimap = ({ src, width, height, guideWidth, guideHeight, offsetX, offsetY }) => {
   const minimapStyle = {
     width,
     height,
@@ -63,12 +55,7 @@ const Minimap = ({
   return (
     <div style={minimapStyle}>
       {src && (
-        <img
-          src={src}
-          alt="Minimap"
-          width={minimapStyle.width}
-          height={minimapStyle.height}
-        />
+        <img src={src} alt="Minimap" width={minimapStyle.width} height={minimapStyle.height} />
       )}
       <div style={guideStyle} />
     </div>

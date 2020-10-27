@@ -38,9 +38,7 @@ export const generateCsv = (data) => {
     columnHeaders.forEach((arrayHeader) => {
       // if item is of arrayHeader, add value to csv
       // isNil will also correct the cases in which the value is 0 or false
-      csv += `${
-        !isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''
-      },`;
+      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
     });
     csv += `\n`;
   });
@@ -114,15 +112,9 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = (name) => () =>
-  console.info(`${name} not implemented`); // eslint-disable-line no-console
+export const defaultFunction = (name) => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
 
-export const getSortedData = (
-  inputData,
-  columnId,
-  direction,
-  isTimestampColumn
-) => {
+export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
   // clone inputData because sort mutates the array
   const sortedData = inputData.map((i) => i);
 
@@ -213,12 +205,7 @@ export const canFit = (x, y, w, h, grid) => {
  * @param {*} cardDimensions double object of card height and width keyed by card size and layout (see CARD_DIMENSIONS)
  * returns
  */
-export const getLayout = (
-  layoutName,
-  cards,
-  dashboardColumns,
-  cardDimensions
-) => {
+export const getLayout = (layoutName, cards, dashboardColumns, cardDimensions) => {
   let currX = 0;
   let currY = 0;
   const grid = Array(dashboardColumns[layoutName])
@@ -276,8 +263,7 @@ export const getCardMinSize = (
   dashboardColumns = DASHBOARD_COLUMNS
 ) => {
   const totalCol = dashboardColumns[breakpoint];
-  const columnWidth =
-    (dashboardBreakpoints[breakpoint] - (totalCol - 1) * GUTTER) / totalCol;
+  const columnWidth = (dashboardBreakpoints[breakpoint] - (totalCol - 1) * GUTTER) / totalCol;
   const cardColumns = cardDimensions[size][breakpoint].w;
   const cardRows = cardDimensions[size][breakpoint].h;
 
@@ -295,19 +281,14 @@ export const getCardMinSize = (
  * @returns {Boolean} found or not
  */
 export const caseInsensitiveSearch = (keys, searchTerm) => {
-  return keys.some((key) =>
-    key.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  return keys.some((key) => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
 
 const data = '[Dd][Aa][Tt][Aa]';
 const aria = '[Aa][Rr][Ii][Aa]';
-const attributes = [
-  ...reactAttributes,
-  ...htmlAttributes,
-  ...svgAttributes,
-  ...eventHandlers,
-].join('|');
+const attributes = [...reactAttributes, ...htmlAttributes, ...svgAttributes, ...eventHandlers].join(
+  '|'
+);
 const validAttributes = RegExp(`^((${attributes})|((${data}|${aria}|x)-.*))$`);
 /**
  * Filter out props that are not valid HTML or react library props like 'ref'.

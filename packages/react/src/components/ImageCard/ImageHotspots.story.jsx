@@ -115,22 +115,19 @@ storiesOf('Watson IoT/ImageHotspots', module)
     );
   })
 
-  .add(
-    'image smaller than card, minimap and zoomcontrols should be hidden',
-    () => {
-      return (
-        <div style={{ width: '560px', height: '560px' }}>
-          <ImageHotspots
-            src={text('Image', smallerImage)}
-            height={560}
-            width={560}
-            alt={text('Alternate text', 'Sample image')}
-            hideZoomControls={boolean('Hide zoom controls', false)}
-            hotspots={object('Hotspots', hotspots)}
-            hideHotspots={boolean('Hide hotspots', false)}
-            hideMinimap={boolean('Hide Minimap', false)}
-          />
-        </div>
-      );
-    }
-  );
+  .add('image smaller than card, minimap and zoomcontrols should be hidden', () => {
+    return (
+      <div style={{ width: '560px', height: '560px' }}>
+        <ImageHotspots
+          src={text('Image', smallerImage)}
+          height={560}
+          width={560}
+          alt={text('Alternate text', 'Sample image')}
+          hideZoomControls={boolean('Hide zoom controls', false)}
+          hotspots={object('Hotspots', hotspots)}
+          hideHotspots={boolean('Hide hotspots', false)}
+          hideMinimap={boolean('Hide Minimap', false)}
+        />
+      </div>
+    );
+  });

@@ -16,10 +16,7 @@ const defaultProps = {
   replacementComponentName: '',
 };
 
-const DeprecationNotice = ({
-  deprecatedComponentName,
-  replacementComponentName,
-}) => (
+const DeprecationNotice = ({ deprecatedComponentName, replacementComponentName }) => (
   <ToastNotification
     caption={
       replacementComponentName

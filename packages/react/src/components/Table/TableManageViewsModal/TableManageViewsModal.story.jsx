@@ -35,16 +35,11 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
         });
         const [isOpen, setIsOpen] = useState(true);
         const [filteredViews, setFilteredViews] = useState(demoViews);
-        const [viewsToShow, setViewsToShow] = useState(
-          demoViews.slice(0, rowPerPage)
-        );
+        const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
 
         const showPage = (pageNumber, views) => {
           const rowUpperLimit = pageNumber * rowPerPage;
-          const currentItemsOnPage = views.slice(
-            rowUpperLimit - rowPerPage,
-            rowUpperLimit
-          );
+          const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
           setCurrentPageNumber(pageNumber);
           setViewsToShow(currentItemsOnPage);
         };
@@ -243,41 +238,23 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
         />
       );
 
-      const getCustomRowActions = ({
-        id,
-        isEditable,
-        isDeleteable,
-        isClonable,
-      }) => {
+      const getCustomRowActions = ({ id, isEditable, isDeleteable, isClonable }) => {
         const rowActions = [];
         if (isEditable) {
-          rowActions.push(
-            renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit')
-          );
+          rowActions.push(renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit'));
         }
         if (isDeleteable) {
-          rowActions.push(
-            renderButton(
-              id,
-              action('onDelete'),
-              TrashCan16,
-              'deleteKey',
-              'Delete'
-            )
-          );
+          rowActions.push(renderButton(id, action('onDelete'), TrashCan16, 'deleteKey', 'Delete'));
         }
         if (isClonable) {
-          rowActions.push(
-            renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy')
-          );
+          rowActions.push(renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy'));
         }
         return rowActions;
       };
 
       const getCustomRowTitle = ({ title }) => title;
 
-      const getCustomRowDescription = ({ description }) =>
-        `PREFIXED - ${description}`;
+      const getCustomRowDescription = ({ description }) => `PREFIXED - ${description}`;
 
       const getRowTags = ({ id, isPublic }, { i18n: { defaultLabelText } }) => {
         const tags =

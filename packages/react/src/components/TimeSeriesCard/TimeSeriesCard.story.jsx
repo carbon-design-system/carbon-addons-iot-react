@@ -30,7 +30,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -56,10 +57,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           size={size}
           showTimeInGMT={boolean('showTimeInGMT', false)}
           onCardAction={action('onCardAction')}
-          tooltipDateFormatPattern={text(
-            'tooltipDateFormatPattern',
-            'L HH:mm:ss'
-          )}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
@@ -78,7 +76,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           style={{
             width: `${getCardMinSize('lg', size).x}px`,
             margin: spacing05 + 4,
-          }}>
+          }}
+        >
           <TimeSeriesCard
             {...commonProps}
             title={text('title', 'Temperature {not-working}')}
@@ -101,21 +100,13 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               timeDataSourceId: 'timestamp',
               addSpaceOnEdges: 1,
             })}
-            values={getIntervalChartData(
-              interval,
-              1,
-              { min: 10, max: 100 },
-              100
-            )}
+            values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
             interval={interval}
             showTimeInGMT={boolean('showTimeInGMT', false)}
             breakpoint="lg"
             size={size}
             onCardAction={action('onCardAction')}
-            tooltipDateFormatPattern={text(
-              'tooltipDateFormatPattern',
-              'L HH:mm:ss'
-            )}
+            tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
           />
         </div>
       );
@@ -138,7 +129,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -162,10 +154,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
-          tooltipDateFormatPattern={text(
-            'tooltipDateFormatPattern',
-            'L HH:mm:ss'
-          )}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
@@ -226,13 +215,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'month',
-            6,
-            { min: 10, max: 100 },
-            100,
-            1569945252000
-          )}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
           breakpoint="lg"
           size={size}
@@ -276,13 +259,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'month',
-            6,
-            { min: 10, max: 100 },
-            100,
-            1569945252000
-          )}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
           breakpoint="lg"
           size={size}
@@ -337,7 +314,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -369,20 +347,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            interval,
-            12,
-            { min: 10, max: 100 },
-            100
-          )}
+          values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
           interval={interval}
           showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           size={size}
-          tooltipDateFormatPattern={text(
-            'tooltipDateFormatPattern',
-            'L HH:mm:ss'
-          )}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
@@ -415,12 +385,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             },
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'minute',
-            15,
-            { min: 4700000, max: 4800000 },
-            100
-          )}
+          values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
           interval="minute"
           breakpoint="lg"
           size={size}
@@ -618,7 +583,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -644,12 +610,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            interval,
-            12,
-            { min: 10, max: 100 },
-            100
-          )}
+          values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
           interval={interval}
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
@@ -666,7 +627,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -782,7 +744,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -815,7 +778,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -849,13 +813,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             ],
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'day',
-            100,
-            { min: 10, max: 100 },
-            100,
-            1572824320000
-          )}
+          values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
@@ -872,7 +830,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -909,7 +868,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -929,13 +889,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'day',
-            100,
-            { min: 10, max: 100 },
-            100,
-            1572824320000
-          )}
+          values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
@@ -952,7 +906,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -983,11 +938,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          interval={select(
-            'interval',
-            ['hour', 'day', 'week', 'month', 'year'],
-            'hour'
-          )}
+          interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
           size={size}
@@ -1113,7 +1064,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Temperature')}
@@ -1148,21 +1100,19 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
           })}
-          values={getIntervalChartData(
-            'day',
-            12,
-            { min: 10, max: 100 },
-            100
-          ).reduce((acc, dataPoint) => {
-            // make "two devices worth of data" so that we can filter
-            acc.push(dataPoint);
-            acc.push({
-              ...dataPoint,
-              temperature: dataPoint.temperature / 2,
-              ENTITY_ID: 'Sensor2-3',
-            });
-            return acc;
-          }, [])}
+          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
+            (acc, dataPoint) => {
+              // make "two devices worth of data" so that we can filter
+              acc.push(dataPoint);
+              acc.push({
+                ...dataPoint,
+                temperature: dataPoint.temperature / 2,
+                ENTITY_ID: 'Sensor2-3',
+              });
+              return acc;
+            },
+            []
+          )}
           interval="day"
           showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
@@ -1179,7 +1129,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing05 + 4,
-        }}>
+        }}
+      >
         <TimeSeriesCard
           {...commonProps}
           title={text('title', 'Pressure')}
@@ -1202,12 +1153,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             addSpaceOnEdges: 1,
           })}
           locale={select('locale', ['fr', 'en'], 'fr')}
-          values={getIntervalChartData(
-            'day',
-            12,
-            { min: 10, max: 100000 },
-            100
-          )}
+          values={getIntervalChartData('day', 12, { min: 10, max: 100000 }, 100)}
           interval="day"
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}

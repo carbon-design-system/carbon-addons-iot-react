@@ -10,9 +10,7 @@ import warning from 'warning';
 export const MIN_COLUMN_WIDTH = 62;
 
 function isColumnVisible(ordering, columnId) {
-  const orderedColumn = ordering.find(
-    (orderedCol) => orderedCol.columnId === columnId
-  );
+  const orderedColumn = ordering.find((orderedCol) => orderedCol.columnId === columnId);
   return orderedColumn && !orderedColumn.isHidden;
 }
 
@@ -27,10 +25,7 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
       ? columnWidths.find((col) => col.id === orderedColumn.columnId)
       : columnWidths[orderedColumn.columnId];
     newColumnWidths[orderedColumn.columnId] = {
-      width:
-        current && current.width !== undefined
-          ? parseInt(current.width, 10)
-          : undefined,
+      width: current && current.width !== undefined ? parseInt(current.width, 10) : undefined,
       id: orderedColumn.columnId,
     };
   });
@@ -44,9 +39,7 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
 function getVisibleColumns(currentColumnWidths, ordering, excludeIDs) {
   return Object.values(currentColumnWidths).filter(
     (col) =>
-      col.width !== undefined &&
-      !excludeIDs.includes(col.id) &&
-      isColumnVisible(ordering, col.id)
+      col.width !== undefined && !excludeIDs.includes(col.id) && isColumnVisible(ordering, col.id)
   );
 }
 
@@ -71,13 +64,9 @@ function getAverageVisibleColumnWidth(visibleColumns) {
 function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
   const availableWidth = getTotalWidth(shrinkableColumns);
   const shrunkenColumns = shrinkableColumns.map((col) => {
-    const preferredShrinkWidth =
-      (col.width / availableWidth) * widthOfColumnToShow;
+    const preferredShrinkWidth = (col.width / availableWidth) * widthOfColumnToShow;
     const preferredNewWidth = col.width - preferredShrinkWidth;
-    const newWidth =
-      preferredNewWidth >= MIN_COLUMN_WIDTH
-        ? preferredNewWidth
-        : MIN_COLUMN_WIDTH;
+    const newWidth = preferredNewWidth >= MIN_COLUMN_WIDTH ? preferredNewWidth : MIN_COLUMN_WIDTH;
     return { id: col.id, width: Math.round(newWidth) };
   });
   return shrunkenColumns;
@@ -113,10 +102,7 @@ export const checkColumnWidthFormat = (columns) => {
  */
 export const getIDsOfRemovedColumns = (ordering, currentColumnWidths) => {
   return Object.values(currentColumnWidths)
-    .filter(
-      (currCol) =>
-        !ordering.find((orderCol) => orderCol.columnId === currCol.id)
-    )
+    .filter((currCol) => !ordering.find((orderCol) => orderCol.columnId === currCol.id))
     .map((col) => col.id);
 };
 
@@ -151,33 +137,16 @@ export const visibleColumnsHaveWidth = (ordering, columns) => {
  * @param {array} colToShowIDs array of IDs of the columns to be shown/added
  * @param {array} columns The table column props
  */
-export const calculateWidthOnShow = (
-  currentColumnWidths,
-  ordering,
-  colToShowIDs,
-  columns
-) => {
-  const visibleColumns = getVisibleColumns(
-    currentColumnWidths,
-    ordering,
-    colToShowIDs
-  );
+export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs, columns) => {
+  const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowIDs);
   const newColumnsToShow = colToShowIDs.reduce((accumulator, colToShowId) => {
     const widthOfColumnToShow =
       getExistingColumnWidth(currentColumnWidths, columns, colToShowId) ||
       getAverageVisibleColumnWidth(visibleColumns);
-    return [
-      ...accumulator,
-      { id: colToShowId, width: Math.round(widthOfColumnToShow) },
-    ];
+    return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
   }, []);
-  const totalWidthNeeded = newColumnsToShow.reduce(
-    (acc, col) => acc + col.width,
-    0
-  );
-  const shrinkableColumns = visibleColumns.filter(
-    (col) => col.width > MIN_COLUMN_WIDTH
-  );
+  const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
+  const shrinkableColumns = visibleColumns.filter((col) => col.width > MIN_COLUMN_WIDTH);
 
   const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
   adjustedCols.push(...newColumnsToShow);
@@ -191,16 +160,10 @@ export const calculateWidthOnShow = (
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
  * @param {array} colToHideIDs Array with the IDs of one or more columns being hidden/deleted
  */
-export const calculateWidthOnHide = (
-  currentColumnWidths,
-  ordering,
-  colToHideIDs
-) => {
+export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs) => {
   const columnsToHide = colToHideIDs.map((hideId) => {
     const col = currentColumnWidths[hideId];
-    return Number.isNaN(parseInt(col.width, 10))
-      ? { width: 0, id: hideId }
-      : col;
+    return Number.isNaN(parseInt(col.width, 10)) ? { width: 0, id: hideId } : col;
   });
 
   const widthToDistribute = getTotalWidth(columnsToHide);
@@ -211,8 +174,7 @@ export const calculateWidthOnHide = (
 
   const availableWidth = getTotalWidth(visibleCols);
   const adjustedCols = visibleCols.map((col) => {
-    const newWidth =
-      col.width + (col.width / availableWidth) * widthToDistribute;
+    const newWidth = col.width + (col.width / availableWidth) * widthToDistribute;
     return { id: col.id, width: Math.round(newWidth) };
   });
 
@@ -230,9 +192,7 @@ export const calculateWidthOnHide = (
 export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
   const visibleCols = ordering.filter((col) => !col.isHidden);
   const lastIndex = visibleCols.length - 1;
-  const lastColumn = columns.find(
-    (col) => col.id === visibleCols[lastIndex].columnId
-  );
+  const lastColumn = columns.find((col) => col.id === visibleCols[lastIndex].columnId);
   const fixedWidth = lastColumn.width ? parseInt(lastColumn.width, 10) : 0;
   const measuredWidth = measuredWidths[lastIndex].width;
 
@@ -250,11 +210,7 @@ export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
  * @param {object} currentColumnWidths map or object array of the current column IDs and widths
  * @param {array} adjustedCols contains objects with ID and modified width
  */
-export const createNewWidthsMap = (
-  ordering,
-  currentColumnWidths,
-  adjustedCols = []
-) => {
+export const createNewWidthsMap = (ordering, currentColumnWidths, adjustedCols = []) => {
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
 

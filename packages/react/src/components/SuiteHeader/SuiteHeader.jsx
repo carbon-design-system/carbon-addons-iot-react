@@ -130,9 +130,7 @@ const SuiteHeader = ({
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showToast, setShowToast] = useState(
-    surveyData !== null && surveyData !== undefined
-  );
+  const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
 
   // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
   // not only at mount time
@@ -154,8 +152,7 @@ const SuiteHeader = ({
               <Link target="_blank" href={surveyData.surveyLink}>
                 {mergedI18N.surveyText}
               </Link>
-              <div
-                className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
+              <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link target="_blank" href={surveyData.privacyLink}>
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
@@ -216,10 +213,7 @@ const SuiteHeader = ({
                 routes.admin !== null
                   ? {
                       label: mergedI18N.administrationIcon,
-                      className: [
-                        'admin-icon',
-                        isAdminView ? 'admin-icon__selected' : null,
-                      ]
+                      className: ['admin-icon', isAdminView ? 'admin-icon__selected' : null]
                         .filter((i) => i)
                         .join(' '),
                       btnContent: (
@@ -236,10 +230,7 @@ const SuiteHeader = ({
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
                           // Only use referrer URL if it is not the login screen.
-                          if (
-                            document.referrer !== '' &&
-                            document.referrer.indexOf('auth') < 0
-                          ) {
+                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
                             href = document.referrer;
                             routeType = ROUTE_TYPES.REFERRER;
                           } else {
@@ -294,10 +285,7 @@ const SuiteHeader = ({
                         href: 'javascript:void(0)',
                         title: mergedI18N.about,
                         onClick: async () => {
-                          const result = await onRouteChange(
-                            ROUTE_TYPES.ABOUT,
-                            routes.about
-                          );
+                          const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
                           if (result) {
                             window.location.href = routes.about;
                           }
@@ -327,10 +315,7 @@ const SuiteHeader = ({
                           displayName={userDisplayName}
                           username={username}
                           onProfileClick={async () => {
-                            const result = await onRouteChange(
-                              ROUTE_TYPES.PROFILE,
-                              routes.profile
-                            );
+                            const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
                             if (result) {
                               window.location.href = routes.profile;
                             }
@@ -350,10 +335,7 @@ const SuiteHeader = ({
               {...otherHeaderProps}
             />
             {sideNavProps ? (
-              <SideNav
-                {...sideNavProps}
-                isSideNavExpanded={isSideNavExpanded}
-              />
+              <SideNav {...sideNavProps} isSideNavExpanded={isSideNavExpanded} />
             ) : null}
           </>
         )}

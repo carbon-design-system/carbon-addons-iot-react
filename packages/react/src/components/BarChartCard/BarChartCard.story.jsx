@@ -3,11 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 
-import {
-  CARD_SIZES,
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { barChartData } from '../../utils/barChartDataSample';
 
@@ -379,11 +375,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              view: select(
-                'view',
-                ['slider_view', 'graph_view'],
-                'slider_view'
-              ),
+              view: select('view', ['slider_view', 'graph_view'], 'slider_view'),
             },
           })}
           values={barChartData.timestamps}
@@ -420,9 +412,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.VERTICAL,
             type: BAR_CHART_TYPES.SIMPLE,
           })}
-          values={barChartData.quarters.filter(
-            (a) => a.quarter === 'NOT_VALID'
-          )}
+          values={barChartData.quarters.filter((a) => a.quarter === 'NOT_VALID')}
           size={size}
           onCardAction={action('onCardAction')}
           availableActions={{ expand: true, range: true }}

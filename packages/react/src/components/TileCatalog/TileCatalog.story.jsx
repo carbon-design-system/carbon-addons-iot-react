@@ -12,9 +12,7 @@ import CatalogContent from './CatalogContent';
 const longDescription =
   'Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile';
 
-const tileRenderFunction = ({ values }) => (
-  <CatalogContent {...values} icon={<Add />} />
-);
+const tileRenderFunction = ({ values }) => <CatalogContent {...values} icon={<Add />} />;
 
 export const commonTileCatalogProps = {
   title: 'My Tile Catalog',
@@ -95,16 +93,10 @@ storiesOf('Watson IoT/TileCatalog', module)
       )}
     />
   ))
-  .add('loading', () => (
-    <StatefulTileCatalog {...commonTileCatalogProps} isLoading />
-  ))
+  .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
   .add('error', () => (
     <FullWidthWrapper>
-      <StatefulTileCatalog
-        {...commonTileCatalogProps}
-        tiles={[]}
-        error="In error state"
-      />
+      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
     </FullWidthWrapper>
   ))
   .add('async loaded wait one second', () => {
@@ -118,18 +110,11 @@ storiesOf('Watson IoT/TileCatalog', module)
         }, 1000);
       }, []);
       return (
-        <StatefulTileCatalog
-          {...commonTileCatalogProps}
-          isLoading={isLoading}
-          tiles={tilesProp}
-        />
+        <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
       );
     };
     return <Container />;
   })
   .add('isSelectedByDefault false', () => (
-    <StatefulTileCatalog
-      {...commonTileCatalogProps}
-      isSelectedByDefault={false}
-    />
+    <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
   ));

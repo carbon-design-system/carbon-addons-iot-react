@@ -109,7 +109,8 @@ const CardCodeEditor = ({
       onSubmit={handleOnSubmit}
       onClose={onClose}
       iconDescription={i18n.modalIconDescription}
-      {...composedModalProps}>
+      {...composedModalProps}
+    >
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly

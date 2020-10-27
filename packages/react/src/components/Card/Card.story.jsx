@@ -11,10 +11,7 @@ import Table from '../Table/Table';
 import Card from './Card';
 
 export const getDataStateProp = () => ({
-  label: text(
-    'dataState : Label',
-    'No data available for this score at this time'
-  ),
+  label: text('dataState : Label', 'No data available for this score at this time'),
   description: text(
     'dataState : Description',
     'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
@@ -94,8 +91,7 @@ storiesOf('Watson IoT/Card', module)
           // eslint-disable-next-line react/no-children-prop
           children={(childSize) => (
             <p>
-              Content width is {childSize.width} and height is{' '}
-              {childSize.height}
+              Content width is {childSize.width} and height is {childSize.height}
             </p>
           )}
         />
@@ -265,7 +261,8 @@ storiesOf('Watson IoT/Card', module)
           style={{
             width: `${getCardMinSize('lg', CARD_SIZES[i]).x}px`,
             margin: 20,
-          }}>
+          }}
+        >
           <Card
             title={text('title', 'Card Title')}
             id={`facilitycard-size-gallery-${i}`}

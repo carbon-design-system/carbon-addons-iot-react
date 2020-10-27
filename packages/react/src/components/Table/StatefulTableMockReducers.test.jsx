@@ -23,18 +23,12 @@ describe('StatefulTable tests with Mock reducer', () => {
     jest.resetModules();
   });
   it('check renders nested table', () => {
-    const statefulTable = mount(
-      <StatefulTable {...initialState} actions={mockActions} />
-    );
+    const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     expect(statefulTable.find(Table)).toHaveLength(1);
   });
   it('check renders nested table passthrough props', () => {
     const statefulTable = mount(
-      <StatefulTable
-        {...initialState}
-        actions={mockActions}
-        className="custom-class"
-      />
+      <StatefulTable {...initialState} actions={mockActions} className="custom-class" />
     );
     expect(statefulTable.find(Table).prop('className')).toEqual('custom-class');
   });
@@ -72,9 +66,7 @@ describe('StatefulTable tests with Mock reducer', () => {
     });
   });
   it('check callbacks are propagated up!', () => {
-    const statefulTable = mount(
-      <StatefulTable {...initialState} actions={mockActions} />
-    );
+    const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     const tableProps = statefulTable.find(Table).props();
     Object.keys(tableProps.actions).forEach((actionType) =>
       Object.values(tableProps.actions[actionType]).forEach(

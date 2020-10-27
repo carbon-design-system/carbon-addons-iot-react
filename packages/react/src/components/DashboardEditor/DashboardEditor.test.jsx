@@ -44,12 +44,7 @@ describe('DashboardEditor', () => {
   };
 
   it('selecting card should select the card and close gallery', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -67,18 +62,11 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting clone card should duplicate card', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle(
-      'Open and close list of options'
-    );
+    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -90,18 +78,11 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting remove card should remove card', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle(
-      'Open and close list of options'
-    );
+    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option

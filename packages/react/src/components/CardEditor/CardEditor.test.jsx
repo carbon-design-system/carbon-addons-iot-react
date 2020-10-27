@@ -41,19 +41,14 @@ describe('CardEditor', () => {
         onAddCard={actions.onAddCard}
       />
     );
-    userEvent.type(
-      screen.getByRole('textbox', { name: 'Card title X-axis label' }),
-      'z'
-    );
+    userEvent.type(screen.getByRole('textbox', { name: 'Card title X-axis label' }), 'z');
     userEvent.tab();
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,
       title: `${defaultCard.title}z`,
     });
     actions.onChange.mockReset();
-    userEvent.click(
-      screen.getByRole('button', { name: `Size Small (4x1) Open menu` })
-    );
+    userEvent.click(screen.getByRole('button', { name: `Size Small (4x1) Open menu` }));
     userEvent.click(screen.getByText('Medium wide (8x2)'));
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,

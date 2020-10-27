@@ -36,8 +36,7 @@ const getColumnDragBounds = (myColumn, siblingColumn, paddingExtra) => {
 };
 
 const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
-  const myColumnNewWidth =
-    document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
+  const myColumnNewWidth = document.dir === 'rtl' ? myColumn.width - dropXPos : dropXPos;
   const newAffectedSiblingColumnWidth =
     document.dir === 'rtl'
       ? affectedSiblingColumn.width + dropXPos
@@ -50,9 +49,7 @@ const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
 };
 
 const findNextVisibleSibling = (ordering, myColIndex, currentColumnWidths) => {
-  const nextColIndex = ordering.findIndex(
-    (col, i) => i > myColIndex && !col.isHidden
-  );
+  const nextColIndex = ordering.findIndex((col, i) => i > myColIndex && !col.isHidden);
   const nextColId = ordering[nextColIndex].columnId;
   return currentColumnWidths[nextColId];
 };
@@ -68,11 +65,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const setAffectedColumns = () => {
     const myCol = currentColumnWidths[columnId];
     const myColIndex = ordering.findIndex((col) => col.columnId === columnId);
-    const siblingColumn = findNextVisibleSibling(
-      ordering,
-      myColIndex,
-      currentColumnWidths
-    );
+    const siblingColumn = findNextVisibleSibling(ordering, myColIndex, currentColumnWidths);
     setMyColumn(myCol);
     setAffectedSiblingColumn(siblingColumn);
   };
@@ -88,11 +81,7 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const onMouseMove = (e) => {
     if (columnIsBeingResized) {
       const mousePosition = e.clientX + startX;
-      const bounds = getColumnDragBounds(
-        myColumn,
-        affectedSiblingColumn,
-        paddingExtra
-      );
+      const bounds = getColumnDragBounds(myColumn, affectedSiblingColumn, paddingExtra);
       if (mousePosition > bounds.left && mousePosition < bounds.right) {
         setLeftPosition(mousePosition);
       }
@@ -101,13 +90,8 @@ const ColumnResize = React.forwardRef((props, ref) => {
 
   const onMouseUp = () => {
     if (columnIsBeingResized) {
-      const resizePosition =
-        leftPosition + (document.dir === 'rtl' ? 0 : dragHandleWidth);
-      const colWidths = getUpdatedColumnWidths(
-        resizePosition,
-        myColumn,
-        affectedSiblingColumn
-      );
+      const resizePosition = leftPosition + (document.dir === 'rtl' ? 0 : dragHandleWidth);
+      const colWidths = getUpdatedColumnWidths(resizePosition, myColumn, affectedSiblingColumn);
       props.onResize(colWidths);
       setColumnIsBeingResized(false);
       setLeftPosition(0);

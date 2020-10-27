@@ -70,9 +70,7 @@ describe('TableHead', () => {
       `${iotPrefix}--table-header-row-action-column`
     );
 
-    expect(
-      lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML
-    ).toEqual('');
+    expect(lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML).toEqual('');
   });
 
   it('make sure data-column is set for width', () => {
@@ -174,9 +172,7 @@ describe('TableHead', () => {
     });
     // sync enzyme component tree with the updated dom
     wrapper.update();
-    const tableHeaderResizeHandles = wrapper.find(
-      `div.${iotPrefix}--column-resize-handle`
-    );
+    const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
     tableHeaderResizeHandles.first().simulate('mouseDown');
     tableHeaderResizeHandles.first().simulate('mouseMove');
     tableHeaderResizeHandles.first().simulate('mouseUp');
@@ -186,9 +182,7 @@ describe('TableHead', () => {
   it('fixed column widths for non-resizable columns', () => {
     const myProps = {
       ...commonTableHeadProps,
-      columns: [
-        { id: 'col1', name: 'Column 1', width: '101px', isSortable: false },
-      ],
+      columns: [{ id: 'col1', name: 'Column 1', width: '101px', isSortable: false }],
       tableState: {
         ...commonTableHeadProps.tableState,
         ordering: [{ columnId: 'col1', isHidden: false }],
@@ -211,8 +205,7 @@ describe('TableHead', () => {
     let columns;
     let myActions;
     let myProps;
-    const originalGetBoundingClientRect =
-      Element.prototype.getBoundingClientRect;
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
     const mockGetBoundingClientRect = jest.fn();
 
     beforeAll(() => {
@@ -257,9 +250,7 @@ describe('TableHead', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
-      const onColumnToggleFunc = wrapper
-        .find('ColumnHeaderRow')
-        .prop('onColumnToggle');
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
       const orderingAfterTogleHide = [
         { columnId: 'col1', isHidden: true },
         { columnId: 'col2', isHidden: false },
@@ -276,9 +267,7 @@ describe('TableHead', () => {
         { id: 'col2', name: 'Column 2', width: '150px' },
         { id: 'col3', name: 'Column 3', width: '150px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(
-        orderingAfterTogleHide
-      );
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleHide);
     });
 
     it('toggle show column correctly updates the column widths of visible columns', () => {
@@ -303,9 +292,7 @@ describe('TableHead', () => {
           ]}
         />
       );
-      const onColumnToggleFunc = wrapper
-        .find('ColumnHeaderRow')
-        .prop('onColumnToggle');
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
       const orderingAfterTogleShow = [
         { columnId: 'col1', isHidden: false },
@@ -322,9 +309,7 @@ describe('TableHead', () => {
         { id: 'col2', name: 'Column 2', width: '100px' },
         { id: 'col3', name: 'Column 3', width: '100px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(
-        orderingAfterTogleShow
-      );
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
     it('toggle show column does not allow columns to shrink below MIN WIDTH', () => {
@@ -340,9 +325,7 @@ describe('TableHead', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
-      const onColumnToggleFunc = wrapper
-        .find('ColumnHeaderRow')
-        .prop('onColumnToggle');
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
       const orderingAfterTogleShow = [
         { columnId: 'col1', isHidden: false },
@@ -359,9 +342,7 @@ describe('TableHead', () => {
         { id: 'col2', name: 'Column 2', width: `${MIN_COLUMN_WIDTH}px` },
         { id: 'col3', name: 'Column 3', width: `${MIN_COLUMN_WIDTH}px` },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(
-        orderingAfterTogleShow
-      );
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
     it('toggle show column without initial width correctly updates the column widths of visible columns', () => {
@@ -382,9 +363,7 @@ describe('TableHead', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
-      const onColumnToggleFunc = wrapper
-        .find('ColumnHeaderRow')
-        .prop('onColumnToggle');
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
 
       const orderingAfterTogleShow = [
         { columnId: 'col1', isHidden: false },
@@ -400,9 +379,7 @@ describe('TableHead', () => {
         { id: 'col2', name: 'Column 2', width: '100px' },
         { id: 'col3', name: 'Column 3', width: '200px' },
       ]);
-      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(
-        orderingAfterTogleShow
-      );
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
     it('the last visible column should never have a resize handle', () => {
@@ -417,21 +394,13 @@ describe('TableHead', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
-      const resizeHandles = wrapper.find(
-        `div.${iotPrefix}--column-resize-handle`
-      );
+      const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
       expect(resizeHandles).toHaveLength(2);
-      const lastTableHeader = wrapper
-        .find(`.${iotPrefix}--table-header-resize`)
-        .last();
-      expect(
-        lastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)
-      ).toHaveLength(0);
+      const lastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(lastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
 
       // Hide the last column (use shortcut via props)
-      const orderingAfterToggleHide = cloneDeep(
-        myProps.tableState.ordering
-      ).map((col) =>
+      const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map((col) =>
         col.columnId === 'col3' ? { ...col, isHidden: true } : col
       );
       wrapper.setProps({
@@ -442,17 +411,11 @@ describe('TableHead', () => {
         },
       });
       wrapper.update();
-      const updatedResizeHandles = wrapper.find(
-        `div.${iotPrefix}--column-resize-handle`
-      );
+      const updatedResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
       expect(updatedResizeHandles).toHaveLength(1);
 
-      const modLastTableHeader = wrapper
-        .find(`.${iotPrefix}--table-header-resize`)
-        .last();
-      expect(
-        modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)
-      ).toHaveLength(0);
+      const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
     });
 
     it('should update the column widths when column prop changes and all column prop have widths defined', () => {
@@ -700,10 +663,7 @@ describe('TableHead', () => {
         ...myProps.tableState.ordering,
         { columnId: 'col4', isHidden: true },
       ];
-      myProps.columns = [
-        ...myProps.columns,
-        { id: 'col4', name: 'Column 4', width: '100px' },
-      ];
+      myProps.columns = [...myProps.columns, { id: 'col4', name: 'Column 4', width: '100px' }];
 
       rerender(<TableHead {...myProps} />);
 

@@ -188,8 +188,7 @@ const WizardInline = ({
     );
   }
 
-  const currentItemObj =
-    items.find(({ id }) => currentItemId === id) || items[0];
+  const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;

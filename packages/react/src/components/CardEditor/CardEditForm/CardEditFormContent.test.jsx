@@ -48,10 +48,7 @@ describe('CardEditFormContent', () => {
           getValidTimeRanges={mockGetValidTimeRanges}
         />
       );
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'Card title' }),
-        'changed title'
-      );
+      userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'changed title');
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockGetValidTimeRanges).toHaveBeenCalled();
     });

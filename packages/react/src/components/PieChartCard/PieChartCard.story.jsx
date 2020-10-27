@@ -51,11 +51,7 @@ const chartDataExample = [
 storiesOf('Watson IoT/PieChartCard', module)
   .add('basic', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.MEDIUM);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
+    const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'category');
     const chartData = object('chartData', chartDataExample);
 
     return (
@@ -64,11 +60,7 @@ storiesOf('Watson IoT/PieChartCard', module)
           availableActions={{ expand: true }}
           content={{
             groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
+            legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
           }}
           id="basicCardStory"
           isLoading={boolean('isLoading', false)}
@@ -85,11 +77,7 @@ storiesOf('Watson IoT/PieChartCard', module)
   })
   .add('with CardVariables', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'group'
-    );
+    const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'group');
     const chartDataExampleWithVars = chartDataExample.map((data) => ({
       ...data,
       group: `{var1} ${data.group}`,
@@ -104,11 +92,7 @@ storiesOf('Watson IoT/PieChartCard', module)
           cardVariables={cardVariables}
           content={{
             groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
+            legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
           }}
           id="basicCardStory"
           isLoading={boolean('isLoading', false)}
@@ -125,11 +109,7 @@ storiesOf('Watson IoT/PieChartCard', module)
   })
   .add('custom colors', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
+    const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'category');
     const chartData = object('chartData', chartDataExample);
     const colorsMap = object('colors', {
       A: 'red',
@@ -146,11 +126,7 @@ storiesOf('Watson IoT/PieChartCard', module)
           content={{
             colors: colorsMap,
             groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
+            legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
           }}
           id="basicCardStory"
           isLoading={boolean('isLoading', false)}
@@ -167,11 +143,7 @@ storiesOf('Watson IoT/PieChartCard', module)
   })
   .add('custom labels', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
+    const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'category');
     const chartData = object('chartData', chartDataExample);
 
     return (
@@ -183,11 +155,7 @@ storiesOf('Watson IoT/PieChartCard', module)
             labelsFormatter: (wrapper) => {
               return `${wrapper.data[groupDataSourceId]} (${wrapper.value})`;
             },
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
+            legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
           }}
           id="basicCardStory"
           isLoading={boolean('isLoading', false)}
@@ -204,11 +172,7 @@ storiesOf('Watson IoT/PieChartCard', module)
   })
   .add('custom tooltip', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
+    const groupDataSourceId = select('groupDataSourceId', ['category', 'group'], 'category');
     const chartData = object('chartData', chartDataExample);
 
     return (
@@ -217,16 +181,10 @@ storiesOf('Watson IoT/PieChartCard', module)
           availableActions={{ expand: true }}
           content={{
             customTooltip: ([pieData] = [], html) => {
-              return pieData
-                ? `label: ${pieData.label} - Value: ${pieData.value}`
-                : html;
+              return pieData ? `label: ${pieData.label} - Value: ${pieData.value}` : html;
             },
             groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
+            legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
           }}
           id="basicCardStory"
           isLoading={boolean('isLoading', false)}
@@ -272,7 +230,8 @@ storiesOf('Watson IoT/PieChartCard', module)
         style={{
           width: `${getCardMinSize('lg', CARD_SIZES.LARGE).x}px`,
           margin: 20,
-        }}>
+        }}
+      >
         <PieChartCard
           availableActions={{ expand: true }}
           content={{ legendPosition: 'bottom' }}
@@ -306,7 +265,8 @@ storiesOf('Watson IoT/PieChartCard', module)
                       transactional
                       onApply={action('FlyoutMenuApply')}
                       onCancel={action('FlyoutMenuCancel')}
-                      iconDescription="">
+                      iconDescription=""
+                    >
                       Example Flyout Content
                     </FlyoutMenu>
                   ),

@@ -1,5 +1,3 @@
-
-
 // This is a custom Jest transformer turning style imports into empty objects.
 // https://jestjs.io/docs/en/webpack
 module.exports = {

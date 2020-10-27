@@ -56,7 +56,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           id="image-hotspots"
@@ -97,7 +98,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           id="image-hotspots"
@@ -130,7 +132,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           isEditable
@@ -151,7 +154,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}
@@ -172,7 +176,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}
@@ -194,7 +199,8 @@ storiesOf('Watson IoT/ImageCard', module)
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}>
+        }}
+      >
         <ImageCard
           title={text('title', 'Image')}
           isLoading={boolean('isLoading', true)}

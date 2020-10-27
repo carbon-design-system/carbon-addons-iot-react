@@ -307,12 +307,7 @@ const renderListCard = (cardJson, commonProps) => (
  * @param {Function} onRemoveCard, callback when card delete button is clicked
  * @returns {Node}
  */
-export const getCardPreview = (
-  cardData,
-  onSelectCard,
-  onDuplicateCard,
-  onRemoveCard
-) => {
+export const getCardPreview = (cardData, onSelectCard, onDuplicateCard, onRemoveCard) => {
   const commonProps = {
     key: cardData.id,
     tooltip: cardData.description,

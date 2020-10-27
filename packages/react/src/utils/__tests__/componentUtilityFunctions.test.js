@@ -42,35 +42,17 @@ const mockCsvData = [
 
 describe('componentUtilityFunctions', () => {
   it('getSortedData', () => {
-    expect(getSortedData(mockData, 'string', 'DESC')[0].values.string).toEqual(
-      'string3'
-    );
-    expect(getSortedData(mockData, 'string', 'ASC')[0].values.string).toEqual(
-      'string'
-    );
-    expect(getSortedData(mockData, 'number', 'DESC')[0].values.number).toEqual(
-      100
-    );
-    expect(getSortedData(mockData, 'number', 'DESC')[1].values.number).toEqual(
-      20
-    );
-    expect(getSortedData(mockData, 'number', 'DESC')[2].values.number).toEqual(
-      10
-    );
-    expect(getSortedData(mockData, 'number', 'ASC')[0].values.number).toEqual(
-      10
-    );
-    expect(getSortedData(mockData, 'number', 'ASC')[1].values.number).toEqual(
-      20
-    );
-    expect(getSortedData(mockData, 'number', 'ASC')[2].values.number).toEqual(
-      100
-    );
+    expect(getSortedData(mockData, 'string', 'DESC')[0].values.string).toEqual('string3');
+    expect(getSortedData(mockData, 'string', 'ASC')[0].values.string).toEqual('string');
+    expect(getSortedData(mockData, 'number', 'DESC')[0].values.number).toEqual(100);
+    expect(getSortedData(mockData, 'number', 'DESC')[1].values.number).toEqual(20);
+    expect(getSortedData(mockData, 'number', 'DESC')[2].values.number).toEqual(10);
+    expect(getSortedData(mockData, 'number', 'ASC')[0].values.number).toEqual(10);
+    expect(getSortedData(mockData, 'number', 'ASC')[1].values.number).toEqual(20);
+    expect(getSortedData(mockData, 'number', 'ASC')[2].values.number).toEqual(100);
     expect(getSortedData(mockData, 'null', 'ASC')[0].values.null).toEqual(1);
     expect(getSortedData(mockData, 'null', 'ASC')[1].values.null).toEqual(3);
-    expect(
-      getSortedData(mockData, 'null', 'ASC')[2].values.null
-    ).toBeUndefined();
+    expect(getSortedData(mockData, 'null', 'ASC')[2].values.null).toBeUndefined();
   });
   it('canFit', () => {
     expect(
@@ -92,9 +74,7 @@ describe('componentUtilityFunctions', () => {
   });
   it('filterValidAttributes allow HTML attributes, event handlers, react lib', () => {
     // HTML
-    expect(
-      filterValidAttributes({ alt: 'my alt text', draggable: 'true' })
-    ).toEqual({
+    expect(filterValidAttributes({ alt: 'my alt text', draggable: 'true' })).toEqual({
       alt: 'my alt text',
       draggable: 'true',
     });
@@ -109,16 +89,12 @@ describe('componentUtilityFunctions', () => {
       autoFocus: 'f',
     });
     // Aria- & data- attributes
-    expect(
-      filterValidAttributes({ 'aria-x': 'test', 'data-x': 'test2' })
-    ).toEqual({
+    expect(filterValidAttributes({ 'aria-x': 'test', 'data-x': 'test2' })).toEqual({
       'aria-x': 'test',
       'data-x': 'test2',
     });
     // Other props
-    expect(
-      filterValidAttributes({ myProp: 'test', someProp: 'test2' })
-    ).toEqual({});
+    expect(filterValidAttributes({ myProp: 'test', someProp: 'test2' })).toEqual({});
   });
   it('csv should display 0 value', () => {
     const csv = generateCsv(mockCsvData);

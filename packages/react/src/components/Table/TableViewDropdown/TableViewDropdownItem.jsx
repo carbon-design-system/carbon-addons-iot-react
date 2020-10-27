@@ -40,7 +40,8 @@ const TableViewDropdownItem = ({
       title={`${text}${showEdited ? editedPostfix : ''}`}
       className={classNames(`${iotPrefix}--view-dropdown__item`, {
         [`${iotPrefix}--view-dropdown__item-link`]: customAction,
-      })}>
+      })}
+    >
       {isSelected && !isCompact ? (
         <span className={`${iotPrefix}--view-dropdown__button-prefix`}>
           <View20 />
@@ -50,9 +51,7 @@ const TableViewDropdownItem = ({
       <span>
         {text}
         {showEdited ? (
-          <span className={`${iotPrefix}--view-dropdown__edited-text`}>
-            {editedPostfix}
-          </span>
+          <span className={`${iotPrefix}--view-dropdown__edited-text`}>{editedPostfix}</span>
         ) : null}
       </span>
       {Icon && !isCompact ? (

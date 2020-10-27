@@ -108,7 +108,8 @@ const CardEditor = ({
             kind="ghost"
             size="small"
             renderIcon={Apps16}
-            onClick={onShowGallery}>
+            onClick={onShowGallery}
+          >
             {mergedI18n.addCardButton}
           </Button>
         </div>

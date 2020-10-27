@@ -79,13 +79,7 @@ const defaultProps = {
 /**
  * Side Navigation. part of UI shell
  */
-const SideNav = ({
-  links,
-  defaultExpanded,
-  isSideNavExpanded,
-  i18n,
-  ...props
-}) => {
+const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
   const nav = links
     .map((link) => {
       const enabled = link.isEnabled ? link.isEnabled : false;
@@ -102,7 +96,8 @@ const SideNav = ({
             <SideNavMenuItem
               key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
               isActive={childlink.isActive}
-              {...childlink.metaData}>
+              {...childlink.metaData}
+            >
               {childlink.content}
             </SideNavMenuItem>
           );
@@ -113,7 +108,8 @@ const SideNav = ({
             renderIcon={link.icon}
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
-            title={link.linkContent}>
+            title={link.linkContent}
+          >
             {children}
           </SideNavMenu>
         );
@@ -126,7 +122,8 @@ const SideNav = ({
           href={link.metaData.href}
           renderIcon={link.icon}
           isActive={link.isActive}
-          {...link.metaData}>
+          {...link.metaData}
+        >
           {link.linkContent}
         </SideNavLink>
       );

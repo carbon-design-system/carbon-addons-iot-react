@@ -55,57 +55,49 @@ $shadow: 0.4rem;
     }
 
     // Box shadow cover with all its various positons
-    &.#{$iot-prefix}--flyout-menu--body__open
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__open .#{$prefix}--tooltip__content::after {
       content: '';
       position: absolute;
       top: -$shadow-plus-padding;
       left: -1rem;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__bottom-end
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__bottom-end .#{$prefix}--tooltip__content::after {
       left: unset;
       right: -1rem;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__top-start
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__top-start .#{$prefix}--tooltip__content::after {
       top: unset;
       bottom: -$shadow-plus-padding;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__top-end
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--tooltip__content::after {
       bottom: -$shadow-plus-padding;
       left: unset;
       right: -1rem;
       top: unset;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-start
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__left-start .#{$prefix}--tooltip__content::after {
       left: unset;
       right: -$shadow-plus-padding;
       top: -1rem;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__left-end
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__left-end .#{$prefix}--tooltip__content::after {
       left: unset;
       right: -$shadow-plus-padding;
       bottom: -1rem;
       top: unset;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__right-start
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__right-start .#{$prefix}--tooltip__content::after {
       top: -1rem;
       left: -$shadow-plus-padding;
     }
 
-    &.#{$iot-prefix}--flyout-menu--body__right-end
-      .#{$prefix}--tooltip__content::after {
+    &.#{$iot-prefix}--flyout-menu--body__right-end .#{$prefix}--tooltip__content::after {
       top: unset;
       bottom: -1rem;
       left: -$shadow-plus-padding;
@@ -275,8 +267,7 @@ $shadow: 0.4rem;
     background-color: $hover-ui;
   }
 
-  .#{$iot-prefix}--flyout-menu__light.#{$iot-prefix}--flyout-menu__open
-    &:hover {
+  .#{$iot-prefix}--flyout-menu__light.#{$iot-prefix}--flyout-menu__open &:hover {
     background-color: $ui-02;
   }
 

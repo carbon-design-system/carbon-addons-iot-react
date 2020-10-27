@@ -18,16 +18,10 @@ describe('TileGallery', () => {
   it('TileGalleryItem mode list with node description', () => {
     const descriptionNode = <div>Test node</div>;
     const wrapper = mount(
-      <TileGalleryItem
-        title="title"
-        mode="list"
-        description={descriptionNode}
-      />
+      <TileGalleryItem title="title" mode="list" description={descriptionNode} />
     );
 
-    expect(
-      wrapper.find('div.description-card').contains(descriptionNode)
-    ).toEqual(true);
+    expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
   it('TileGalleryItem mode card', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" />);
@@ -38,16 +32,10 @@ describe('TileGallery', () => {
     const descriptionNode = <div>Test node</div>;
 
     const wrapper = mount(
-      <TileGalleryItem
-        title="title"
-        mode="grid"
-        description={descriptionNode}
-      />
+      <TileGalleryItem title="title" mode="grid" description={descriptionNode} />
     );
 
-    expect(
-      wrapper.find('div.description-card').contains(descriptionNode)
-    ).toEqual(true);
+    expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
   it('TileGalleryItem afterContent', () => {
     const wrapper = shallow(
@@ -68,9 +56,7 @@ describe('TileGallery', () => {
   it('TileGalleryItem - simulate onClick', () => {
     const onClick = jest.fn();
 
-    const wrapper = mount(
-      <TileGalleryItem title="title" mode="grid" onClick={onClick} />
-    );
+    const wrapper = mount(<TileGalleryItem title="title" mode="grid" onClick={onClick} />);
 
     wrapper.simulate('click', { target: {} });
 
@@ -113,9 +99,7 @@ describe('TileGallery', () => {
 
     const wrapper = mount(<TileGallerySearch onChange={onChange} />);
 
-    wrapper
-      .find('input.bx--search-input')
-      .simulate('change', { target: { value: 'foo' } });
+    wrapper.find('input.bx--search-input').simulate('change', { target: { value: 'foo' } });
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });
@@ -169,18 +153,14 @@ describe('TileGallery', () => {
     // expect(wrapper.find('input.bx--search-input').props().value).toEqual(searchValue);
 
     // Test default mode
-    expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual(
-      'grid'
-    );
+    expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('grid');
 
     // Change Tile Item mode
     wrapper.find('button.bx--content-switcher-btn').first().simulate('click');
     // console.log(`component::: ${noExtraWrapper.find('TileGallerySearch').debug()}`);
 
     // test have changes mode prop
-    expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual(
-      'list'
-    );
+    expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('list');
 
     // validation on component with search/switcher/button
     expect(noExtraWrapper.find('TileGallerySearch')).toHaveLength(0);

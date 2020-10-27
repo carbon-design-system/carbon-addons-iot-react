@@ -18,13 +18,7 @@ import {
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
-import {
-  ComposedModal,
-  Button,
-  List,
-  TextInput,
-  MultiSelect,
-} from '../../../../index';
+import { ComposedModal, Button, List, TextInput, MultiSelect } from '../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -164,13 +158,12 @@ const DataSeriesFormItem = ({
           onClose={() => {
             setShowEditor(false);
             setEditDataItem(null);
-          }}>
+          }}
+        >
           <span className={`bx--label ${baseClassName}--input-label`}>
             {mergedI18n.dataItemEditorDataItemTitle}
           </span>
-          <div className={`${baseClassName}--input`}>
-            {editDataItem.dataSourceId}
-          </div>
+          <div className={`${baseClassName}--input`}>{editDataItem.dataSourceId}</div>
           <div className={`${baseClassName}--input`}>
             <TextInput
               id="seriesLabel"
@@ -195,8 +188,7 @@ const DataSeriesFormItem = ({
                   type="button"
                   style={{ backgroundColor: color }}
                   className={classnames('color-picker-button', {
-                    'color-picker-button__selected':
-                      color === editDataItem.color,
+                    'color-picker-button__selected': color === editDataItem.color,
                   })}
                   onClick={() => setEditDataItem({ ...editDataItem, color })}
                 />
@@ -205,9 +197,7 @@ const DataSeriesFormItem = ({
           </div>
         </ComposedModal>
       ) : null}
-      <div className={`${baseClassName}--form-section`}>
-        {mergedI18n.dataSeriesTitle}
-      </div>
+      <div className={`${baseClassName}--form-section`}>{mergedI18n.dataSeriesTitle}</div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
           id={`${cardJson.id}_dataSourceIds`}

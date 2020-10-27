@@ -172,9 +172,7 @@ const CardEditFormContent = ({
           id={`${id}_description`}
           labelText={mergedI18n.description}
           light
-          onChange={(evt) =>
-            onChange({ ...cardJson, description: evt.target.value })
-          }
+          onChange={(evt) => onChange({ ...cardJson, description: evt.target.value })}
           value={description}
         />
       </div>
@@ -184,9 +182,7 @@ const CardEditFormContent = ({
           label={mergedI18n.selectASize}
           direction="bottom"
           itemToString={(item) => item.text}
-          items={(
-            ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)
-          ).map((cardSize) => {
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)).map((cardSize) => {
             return {
               id: cardSize,
               text: getCardSizeText(cardSize, mergedI18n),

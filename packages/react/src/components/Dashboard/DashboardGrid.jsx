@@ -22,8 +22,7 @@ const StyledGridLayout = styled(GridLayout)`
   &&& {
     position: relative;
     .react-grid-item.cssTransforms {
-      transition-property: ${(props) =>
-        props.shouldAnimate ? 'transform' : 'none'};
+      transition-property: ${(props) => (props.shouldAnimate ? 'transform' : 'none')};
     }
 
     .react-resizable-hide .react-resizable-handle {
@@ -86,12 +85,7 @@ export const findLayoutOrGenerate = (layouts, cards) => {
     if (layout) {
       // If you find a card that's missing from the current layout, you need to regenerate the layout
       if (cards.some((card) => !some(layouts[layoutName], { i: card.id }))) {
-        layout = getLayout(
-          layoutName,
-          cards,
-          DASHBOARD_COLUMNS,
-          CARD_DIMENSIONS
-        );
+        layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
       } else {
         // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
         layout = layout.reduce((updatedLayout, cardFromLayout) => {
@@ -144,10 +138,9 @@ const DashboardGrid = ({
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
-  const childrenArray = useMemo(
-    () => (Array.isArray(children) ? children : [children]),
-    [children]
-  );
+  const childrenArray = useMemo(() => (Array.isArray(children) ? children : [children]), [
+    children,
+  ]);
   const generatedLayouts = useMemo(
     () =>
       findLayoutOrGenerate(
@@ -159,8 +152,7 @@ const DashboardGrid = ({
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
   const handleLayoutChange = useCallback(
-    (layout, allLayouts) =>
-      onLayoutChange && onLayoutChange(layout, allLayouts),
+    (layout, allLayouts) => onLayoutChange && onLayoutChange(layout, allLayouts),
     [onLayoutChange]
   );
 
@@ -201,7 +193,8 @@ const DashboardGrid = ({
         onBreakpointChange={onBreakpointChange}
         isResizable={false}
         isDraggable={isEditable}
-        {...others}>
+        {...others}
+      >
         {cards}
       </StyledGridLayout>
     </div>

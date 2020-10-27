@@ -88,24 +88,16 @@ function createCustomMessage(text) {
   let message = '';
   if (text) {
     if (text.includes('color"')) {
-      const url = URL(
-        'https://www.carbondesignsystem.com/guidelines/color/usage'
-      );
+      const url = URL('https://www.carbondesignsystem.com/guidelines/color/usage');
       message = `\n\t${text}\n\t> Please refer to the Carbon documentation for proper color tokens: ${url}`;
     } else if (text.includes('"margin') || text.includes('"padding')) {
-      const url = URL(
-        'https://www.carbondesignsystem.com/guidelines/spacing#spacing-scale'
-      );
+      const url = URL('https://www.carbondesignsystem.com/guidelines/spacing#spacing-scale');
       message = `\n\t${text}\n\t> Please refer to the Carbon documentation for proper spacing values: ${url}`;
     } else if (text.includes('"font')) {
-      const url = URL(
-        'https://www.carbondesignsystem.com/guidelines/typography/productive'
-      );
+      const url = URL('https://www.carbondesignsystem.com/guidelines/typography/productive');
       message = `\n\t${text}\n\t> Please refer to the Carbon productive typography documentation for proper font values: ${url}`;
     } else if (text.includes('transition')) {
-      const url = URL(
-        'https://www.carbondesignsystem.com/guidelines/motion/overview'
-      );
+      const url = URL('https://www.carbondesignsystem.com/guidelines/motion/overview');
       message = `\n\t${text}\n\t> Please refer to the Carbon motion documentation for transitions: ${url}`;
     }
   }
@@ -122,11 +114,9 @@ function formatError(errors) {
   let errorMsg = '';
   errors.forEach((error, i) => {
     const number = NUMBER(`${i + 1}.`);
-    errorMsg += `${number} \t${generateErrorIcon(error.severity)} \t ${
-      error.line
-    }:${error.column} ${formatTabbing(error)} ${RULE(
-      error.rule
-    )}\n \t${createCustomMessage(error.text)}\n\n`;
+    errorMsg += `${number} \t${generateErrorIcon(error.severity)} \t ${error.line}:${
+      error.column
+    } ${formatTabbing(error)} ${RULE(error.rule)}\n \t${createCustomMessage(error.text)}\n\n`;
   });
 
   return errorMsg;

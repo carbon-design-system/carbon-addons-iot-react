@@ -64,8 +64,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael Conforto is a super duper long name that will get cut off':
-          'RF',
+        'Michael Conforto is a super duper long name that will get cut off': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',
@@ -88,13 +87,7 @@ export const sampleHierarchy = {
   },
 };
 
-const buildHierarchy = (
-  obj,
-  renderRowActions,
-  renderIcon,
-  prefix = '',
-  level = 0
-) => {
+const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 0) => {
   return Object.keys(obj).map((key) => ({
     id: `${prefix}${key}`,
     content: {
@@ -105,13 +98,7 @@ const buildHierarchy = (
     },
     children:
       typeof obj[key] === 'object'
-        ? buildHierarchy(
-            obj[key],
-            renderRowActions,
-            renderIcon,
-            `${prefix}${key}_`,
-            level + 1
-          )
+        ? buildHierarchy(obj[key], renderRowActions, renderIcon, `${prefix}${key}_`, level + 1)
         : null,
   }));
 };
@@ -132,12 +119,12 @@ storiesOf('Watson IoT Experimental/List', module)
     <div style={{ width: 400 }}>
       <List
         title={text('title', 'NY Yankees')}
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key]) => ({
-          id: key,
-          content: { value: key },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: { value: key },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>
@@ -146,15 +133,15 @@ storiesOf('Watson IoT Experimental/List', module)
     <div style={{ width: 400 }}>
       <List
         title={text('title', 'NY Yankees')}
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key, value]) => ({
-          id: key,
-          content: {
-            value: key,
-            secondaryValue: value,
-          },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key, value]) => ({
+            id: key,
+            content: {
+              value: key,
+              secondaryValue: value,
+            },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>
@@ -164,16 +151,16 @@ storiesOf('Watson IoT Experimental/List', module)
       <List
         title={text('title', 'NY Yankees')}
         isLargeRow
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key, value]) => ({
-          id: key,
-          content: {
-            value: key,
-            secondaryValue: value,
-            icon: <Star16 />,
-          },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key, value]) => ({
+            id: key,
+            content: {
+              value: key,
+              secondaryValue: value,
+              icon: <Star16 />,
+            },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>
@@ -182,27 +169,27 @@ storiesOf('Watson IoT Experimental/List', module)
     <div style={{ width: 400 }}>
       <List
         title={text('title', 'NY Yankees')}
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key, value]) => ({
-          id: key,
-          content: {
-            value: key,
-            secondaryValue: value,
-            rowActions: [
-              <Button
-                key={`${key}-list-item-button-${value}`}
-                style={{ color: 'black' }}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => action('row action clicked')}
-                iconDescription="Edit"
-              />,
-            ],
-          },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key, value]) => ({
+            id: key,
+            content: {
+              value: key,
+              secondaryValue: value,
+              rowActions: [
+                <Button
+                  key={`${key}-list-item-button-${value}`}
+                  style={{ color: 'black' }}
+                  renderIcon={Edit16}
+                  hasIconOnly
+                  kind="ghost"
+                  size="small"
+                  onClick={() => action('row action clicked')}
+                  iconDescription="Edit"
+                />,
+              ],
+            },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>
@@ -211,22 +198,22 @@ storiesOf('Watson IoT Experimental/List', module)
     <div style={{ width: 400 }}>
       <List
         title={text('title', 'NY Yankees')}
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key, value]) => ({
-          id: key,
-          content: {
-            value: key,
-            secondaryValue: value,
-            rowActions: [
-              <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
-                <OverflowMenuItem itemText="Edit" />
-                <OverflowMenuItem itemText="Add" />
-                <OverflowMenuItem itemText="Delete" hasDivider isDelete />
-              </OverflowMenu>,
-            ],
-          },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key, value]) => ({
+            id: key,
+            content: {
+              value: key,
+              secondaryValue: value,
+              rowActions: [
+                <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
+                  <OverflowMenuItem itemText="Edit" />
+                  <OverflowMenuItem itemText="Add" />
+                  <OverflowMenuItem itemText="Delete" hasDivider isDelete />
+                </OverflowMenu>,
+              ],
+            },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>
@@ -255,9 +242,7 @@ storiesOf('Watson IoT Experimental/List', module)
                 ]
               : level === 2
               ? [
-                  <OverflowMenu
-                    flipped
-                    key={`${key}-list-item-button-${level}`}>
+                  <OverflowMenu flipped key={`${key}-list-item-button-${level}`}>
                     <OverflowMenuItem itemText="Edit" />
                     <OverflowMenuItem itemText="Add" />
                     <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -283,44 +268,34 @@ storiesOf('Watson IoT Experimental/List', module)
         title="Major League Baseball"
         buttons={[headerButton]}
         items={[
-          ...Object.keys(sampleHierarchy.MLB['American League']).map(
-            (team) => ({
-              id: team,
-              isCategory: true,
+          ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+            id: team,
+            isCategory: true,
+            content: {
+              value: team,
+            },
+            children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+              id: `${team}_${player}`,
               content: {
-                value: team,
+                value: player,
+                secondaryValue: sampleHierarchy.MLB['American League'][team][player],
               },
-              children: Object.keys(
-                sampleHierarchy.MLB['American League'][team]
-              ).map((player) => ({
-                id: `${team}_${player}`,
-                content: {
-                  value: player,
-                  secondaryValue:
-                    sampleHierarchy.MLB['American League'][team][player],
-                },
-              })),
-            })
-          ),
-          ...Object.keys(sampleHierarchy.MLB['National League']).map(
-            (team) => ({
-              id: team,
-              isCategory: true,
+            })),
+          })),
+          ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+            id: team,
+            isCategory: true,
+            content: {
+              value: team,
+            },
+            children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+              id: `${team}_${player}`,
               content: {
-                value: team,
+                value: player,
+                secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               },
-              children: Object.keys(
-                sampleHierarchy.MLB['National League'][team]
-              ).map((player) => ({
-                id: `${team}_${player}`,
-                content: {
-                  value: player,
-                  secondaryValue:
-                    sampleHierarchy.MLB['National League'][team][player],
-                },
-              })),
-            })
-          ),
+            })),
+          })),
         ]}
         expandedIds={['New York Yankees', 'Atlanta Braves']}
         isLoading={boolean('isLoading', false)}
@@ -381,18 +356,14 @@ storiesOf('Watson IoT Experimental/List', module)
             deselectedNestedIds.push(id);
           }
           deselectedNestedIds.forEach((deselectedId) => {
-            tempSelectedIds = tempSelectedIds.filter(
-              (id) => id !== deselectedId
-            );
+            tempSelectedIds = tempSelectedIds.filter((id) => id !== deselectedId);
           });
           setSelectedIds(tempSelectedIds);
         }
       };
 
       const checkSelectedChildren = (items, parent) =>
-        someDeep(items, (value, key) =>
-          selectedIds.some((id) => `${parent}-${key}` === id)
-        );
+        someDeep(items, (value, key) => selectedIds.some((id) => `${parent}-${key}` === id));
 
       const nestedItems = [
         ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
@@ -411,23 +382,17 @@ storiesOf('Watson IoT Experimental/List', module)
                 indeterminate={
                   selectedIds.some((id) => team === id)
                     ? false
-                    : checkSelectedChildren(
-                        sampleHierarchy.MLB['American League'][team],
-                        team
-                      )
+                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team], team)
                 }
               />
             ),
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['American League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
             id: `${team}-${player}`,
             isSelectable: true,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['American League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
               icon: (
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
@@ -458,23 +423,17 @@ storiesOf('Watson IoT Experimental/List', module)
                 indeterminate={
                   selectedIds.some((id) => team === id)
                     ? false
-                    : checkSelectedChildren(
-                        sampleHierarchy.MLB['National League'][team],
-                        team
-                      )
+                    : checkSelectedChildren(sampleHierarchy.MLB['National League'][team], team)
                 }
               />
             ),
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['National League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
             id: `${team}-${player}`,
             isSelectable: true,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['National League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               icon: (
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
@@ -519,19 +478,19 @@ storiesOf('Watson IoT Experimental/List', module)
     <div style={{ width: 400 }}>
       <List
         title={text('title', 'NY Yankees')}
-        items={Object.entries(
-          sampleHierarchy.MLB['American League']['New York Yankees']
-        ).map(([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        }))}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: {
+              value: key,
+              tags: [
+                <Tag type="blue" title="descriptor" key="tag1">
+                  default
+                </Tag>,
+              ],
+            },
+          })
+        )}
         isLoading={boolean('isLoading', false)}
       />
     </div>

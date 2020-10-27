@@ -28,8 +28,7 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   z-index: 2;
 }
 
-.#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active)
-  ~ .#{$prefix}--toolbar-content {
+.#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {
   // The carbon clip-path is hiding the menus for Dropdowns placed in the toolbar,
   // but the clip-path is only needed when batch actions are active.
   clip-path: unset;

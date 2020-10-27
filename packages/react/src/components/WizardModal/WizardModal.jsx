@@ -159,13 +159,10 @@ class WizardModal extends Component {
         footerLeftContent={leftContent}
         cancelLabel={cancelButtonLabel || defaultFooterProps.cancelButtonLabel}
         nextLabel={nextButtonLabel || defaultFooterProps.nextButtonLabel}
-        backLabel={
-          previousButtonLabel || defaultFooterProps.previousButtonLabel
-        }
+        backLabel={previousButtonLabel || defaultFooterProps.previousButtonLabel}
         submitLabel={submitButtonLabel || defaultFooterProps.submitButtonLabel}
         sendingData={
-          (typeof sendingData === 'boolean' && sendingData) ||
-          typeof sendingData === 'string'
+          (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
         }
         className={`${iotPrefix}--wizard-modal__footer`}
       />
@@ -173,13 +170,7 @@ class WizardModal extends Component {
   };
 
   render() {
-    const {
-      steps,
-      className,
-      currentStepIndex,
-      isClickable,
-      ...other
-    } = this.props;
+    const { steps, className, currentStepIndex, isClickable, ...other } = this.props;
     // Transform object to be what Progress Indicator expects
     const items = steps.map((step, index) => ({
       id: index,
@@ -190,18 +181,15 @@ class WizardModal extends Component {
       <ComposedModal
         {...other}
         className={classnames(`${iotPrefix}--wizard-modal`, className)}
-        footer={this.renderFooter()}>
+        footer={this.renderFooter()}
+      >
         <ProgressIndicator
           items={items}
-          currentItemId={
-            !isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null
-          }
+          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
           onClickItem={this.handleClick}
           isClickable={isClickable}
         />
-        <div className={`${iotPrefix}--wizard-modal__content`}>
-          {steps[stepIndex].content}
-        </div>
+        <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
       </ComposedModal>
     );
   }

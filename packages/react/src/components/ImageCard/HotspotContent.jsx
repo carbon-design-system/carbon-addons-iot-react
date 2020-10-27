@@ -79,11 +79,7 @@ const HotspotContent = ({
     ) : React.isValidElement(title) ? (
       title
     ) : null}
-    {description && (
-      <p className={`${iotPrefix}--hotspot-content-description`}>
-        {description}
-      </p>
-    )}
+    {description && <p className={`${iotPrefix}--hotspot-content-description`}>{description}</p>}
     {attributes.map(({ thresholds, dataSourceId, label, unit, precision }) => {
       // look for attribute specific thresholds first
       let attributeThresholdMatch = null;
@@ -93,10 +89,7 @@ const HotspotContent = ({
           values,
           dataSourceId
         );
-        if (
-          matchingAttributeThresholds &&
-          !isEmpty(matchingAttributeThresholds)
-        ) {
+        if (matchingAttributeThresholds && !isEmpty(matchingAttributeThresholds)) {
           [attributeThresholdMatch] = matchingAttributeThresholds;
         }
       }
@@ -107,15 +100,11 @@ const HotspotContent = ({
           : null);
       const value = isNil(values[dataSourceId]) ? '--' : values[dataSourceId];
       const thresholdIcon =
-        thresholdMatch &&
-        thresholdMatch.dataSourceId === dataSourceId &&
-        thresholdMatch.icon ? (
+        thresholdMatch && thresholdMatch.dataSourceId === dataSourceId && thresholdMatch.icon ? (
           <CardIcon
             icon={thresholdMatch.icon}
             color={thresholdMatch.color}
-            title={`${thresholdMatch.dataSourceId} ${
-              thresholdMatch.comparison
-            } ${
+            title={`${thresholdMatch.dataSourceId} ${thresholdMatch.comparison} ${
               typeof thresholdMatch.value === 'number'
                 ? formatNumberWithPrecision(thresholdMatch.value, null, locale)
                 : thresholdMatch.value
@@ -128,23 +117,21 @@ const HotspotContent = ({
       return (
         <div
           key={`attribute-${dataSourceId}`}
-          className={`${iotPrefix}--hotspot-content-attribute`}>
+          className={`${iotPrefix}--hotspot-content-attribute`}
+        >
           <div className={`${iotPrefix}--hotspot-content-label-section`}>
-            <span className={`${iotPrefix}--hotspot-content-label`}>
-              {label}:
-            </span>
+            <span className={`${iotPrefix}--hotspot-content-label`}>{label}:</span>
           </div>
           <div className={`${iotPrefix}--hotspot-content-threshold-section`}>
             {thresholdIcon}
             <span
               style={{
                 '--threshold-color':
-                  !thresholdIcon && thresholdMatch
-                    ? thresholdMatch.color
-                    : 'inherit ',
+                  !thresholdIcon && thresholdMatch ? thresholdMatch.color : 'inherit ',
                 '--threshold-padding': thresholdIcon ? '0.25rem' : '0rem',
               }}
-              className={`${iotPrefix}--hotspot-content-threshold`}>
+              className={`${iotPrefix}--hotspot-content-threshold`}
+            >
               {typeof value === 'number'
                 ? formatNumberWithPrecision(
                     value,
@@ -159,9 +146,7 @@ const HotspotContent = ({
                   )
                 : value}
               {unit && value !== '--' && (
-                <span className={`${iotPrefix}--hotspot-content-unit`}>
-                  {unit}
-                </span>
+                <span className={`${iotPrefix}--hotspot-content-unit`}>{unit}</span>
               )}
             </span>
           </div>

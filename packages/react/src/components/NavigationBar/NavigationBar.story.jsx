@@ -41,8 +41,8 @@ const StatefulNavigationBar = () => {
   return (
     <Fragment>
       <StyledDirections>
-        To interact with the workarea, click the New Entity Type button. To
-        close the workarea, click the Cancel button or finish the flow.
+        To interact with the workarea, click the New Entity Type button. To close the workarea,
+        click the Cancel button or finish the flow.
       </StyledDirections>
       <NavigationBar
         {...navBarProps}
@@ -58,9 +58,7 @@ const StatefulNavigationBar = () => {
             </PageWorkArea>
           ) : null
         }
-        actions={[
-          { id: 'button1', children: 'New Entity Type', onClick: handleNew },
-        ]}
+        actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
       />
     </Fragment>
   );
@@ -68,9 +66,7 @@ const StatefulNavigationBar = () => {
 
 storiesOf('Watson IoT/NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
-  .add('start with tab 2 selected', () => (
-    <NavigationBar {...navBarProps} selected={1} />
-  ))
+  .add('start with tab 2 selected', () => <NavigationBar {...navBarProps} selected={1} />)
   .add('with actions', () => (
     <NavigationBar
       {...navBarProps}

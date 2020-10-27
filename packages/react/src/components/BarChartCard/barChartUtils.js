@@ -5,10 +5,7 @@ import capitalize from 'lodash/capitalize';
 import cheerio from 'cheerio';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
-import {
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 
 /**
  * Generate fake, sample values for isEditable preview state
@@ -97,13 +94,7 @@ export const generateSampleValues = (
  *
  * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
-export const formatChartData = (
-  series,
-  values,
-  categoryDataSourceId,
-  timeDataSourceId,
-  type
-) => {
+export const formatChartData = (series, values, categoryDataSourceId, timeDataSourceId, type) => {
   const data = [];
   if (!isNil(values) || !isEmpty(series)) {
     // grouped or stacked
@@ -112,16 +103,12 @@ export const formatChartData = (
       let groupedData;
       // Get the unique values for each x-label grouping
       if (timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED) {
-        uniqueDatasetNames = [
-          ...new Set(values.map((val) => val[timeDataSourceId])),
-        ];
+        uniqueDatasetNames = [...new Set(values.map((val) => val[timeDataSourceId]))];
         groupedData = uniqueDatasetNames.map((name) =>
           values.filter((val) => val[timeDataSourceId] === name)
         );
       } else {
-        uniqueDatasetNames = [
-          ...new Set(values.map((val) => val[categoryDataSourceId])),
-        ];
+        uniqueDatasetNames = [...new Set(values.map((val) => val[categoryDataSourceId]))];
         groupedData = uniqueDatasetNames.map((group) =>
           values.filter((val) => val[categoryDataSourceId] === group)
         );
@@ -134,9 +121,7 @@ export const formatChartData = (
             if (!isNil(value[dataset.dataSourceId])) {
               data.push({
                 // if there's a dataset label, use it
-                group: dataset.label
-                  ? dataset.label
-                  : value[categoryDataSourceId], // bar this data belongs to
+                group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
                 value: value[dataset.dataSourceId],
                 // grouped charts can't be time-based
                 ...(timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
@@ -152,9 +137,7 @@ export const formatChartData = (
       });
     } // single bars and not time-based
     else if (categoryDataSourceId) {
-      const uniqueDatasetNames = [
-        ...new Set(values.map((val) => val[categoryDataSourceId])),
-      ];
+      const uniqueDatasetNames = [...new Set(values.map((val) => val[categoryDataSourceId]))];
       const labeledData = uniqueDatasetNames.map((name) =>
         values.filter((val) => val[categoryDataSourceId] === name)
       );
@@ -172,9 +155,7 @@ export const formatChartData = (
       });
     } // single bars and time-based
     else {
-      const uniqueDatasetNames = [
-        ...new Set(values.map((val) => val[timeDataSourceId])),
-      ];
+      const uniqueDatasetNames = [...new Set(values.map((val) => val[timeDataSourceId]))];
       const labeledData = uniqueDatasetNames.map((name) =>
         values.filter((val) => val[timeDataSourceId] === name)
       );
@@ -210,12 +191,7 @@ export const formatChartData = (
  *
  * @returns {object} { bottomAxesMapsTo: string, leftAxesMapsTo: string }
  */
-export const mapValuesToAxes = (
-  layout,
-  categoryDataSourceId,
-  timeDataSourceId,
-  type
-) => {
+export const mapValuesToAxes = (layout, categoryDataSourceId, timeDataSourceId, type) => {
   // Determine which values the axes map to
   let bottomAxesMapsTo;
   let leftAxesMapsTo;
@@ -292,8 +268,7 @@ export const formatColors = (series, datasetNames) => {
   datasetNames.forEach((dataset, index) => {
     // if the colors aren't set, give them a default color
     if (!colors.scale[dataset]) {
-      colors.scale[dataset] =
-        DEFAULT_CHART_COLORS[index % DEFAULT_CHART_COLORS.length][scale];
+      colors.scale[dataset] = DEFAULT_CHART_COLORS[index % DEFAULT_CHART_COLORS.length][scale];
 
       // Change the scale on each iteration through the colors
       if (index === 0) {
@@ -430,17 +405,13 @@ export const formatTableData = (
   const tableData = [];
   if (timeDataSourceId) {
     // First get all of the unique timestamps
-    const uniqueTimestamps = [
-      ...new Set(values.map((val) => val[timeDataSourceId])),
-    ];
+    const uniqueTimestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
     // For each unique timestamp, get the unique value for each dataset group
     // Each table row will consist of 1 timestamp and the corresponding values
     // of each dataset group for that timestamp
     uniqueTimestamps.forEach((timestamp, index) => {
       const barTimeValue = {};
-      const filteredData = chartData.filter(
-        (data) => data.date?.valueOf() === timestamp
-      );
+      const filteredData = chartData.filter((data) => data.date?.valueOf() === timestamp);
       filteredData.forEach((val) => {
         barTimeValue[val.group] = val.value;
       });
@@ -471,9 +442,7 @@ export const formatTableData = (
   } // Format the tableData for grouped and stacked charts that are NOT time-based
   else {
     // First get all of the unique keys
-    const uniqueKeys = [
-      ...new Set(values.map((val) => val[categoryDataSourceId])),
-    ];
+    const uniqueKeys = [...new Set(values.map((val) => val[categoryDataSourceId]))];
     // For each unique key, get the unique value for each dataset group
     // Each table row will consist of 1 key and the corresponding values
     // of each dataset group for that key

@@ -4,11 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
-import {
-  Button,
-  OverflowMenu,
-  OverflowMenuItem,
-} from 'carbon-components-react';
+import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -74,9 +70,7 @@ const getFatRowListItems = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${
-          idx + 100
-        }`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions: [],
       },
     }));
@@ -88,9 +82,7 @@ const getFatRowListItemsWithActions = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${
-          idx + 100
-        }`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions,
       },
     }));
@@ -102,9 +94,7 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${
-          idx + 100
-        }`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions: rowActionsOverFlowMenu,
       },
     }));
@@ -157,7 +147,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 500,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -182,7 +173,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 500,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -206,7 +198,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 500,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -231,7 +224,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 500,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -256,7 +250,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 500,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -280,7 +275,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 600,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -306,7 +302,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 600,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -331,7 +328,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 600,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -357,7 +355,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 600,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -383,7 +382,8 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           height: 600,
           background: '#fee',
           padding: spacing03,
-        }}>
+        }}
+      >
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch

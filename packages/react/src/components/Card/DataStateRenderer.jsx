@@ -4,15 +4,8 @@ import { Tooltip } from 'carbon-components-react';
 import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
-import {
-  ValueCardPropTypes,
-  CardPropTypes,
-} from '../../constants/CardPropTypes';
-import {
-  CARD_SIZES,
-  CARD_CONTENT_PADDING,
-  CARD_DATA_STATE,
-} from '../../constants/LayoutConstants';
+import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import { CARD_SIZES, CARD_CONTENT_PADDING, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 const dsPrefix = `${iotPrefix}--data-state`;
@@ -20,12 +13,7 @@ const dsPrefix = `${iotPrefix}--data-state`;
 // Testing the tooltip content outside carbon proved difficult.
 // So this is exposed for testing purpose.
 export const TooltipContent = ({ tooltipContent }) => {
-  const {
-    label,
-    description,
-    extraTooltipText,
-    learnMoreElement,
-  } = tooltipContent;
+  const { label, description, extraTooltipText, learnMoreElement } = tooltipContent;
 
   return (
     <span className={`${dsPrefix}-tooltip`}>
@@ -51,7 +39,8 @@ const DataStateRenderer = ({ dataState, size, id }) => {
         triggerId={triggerId}
         tooltipId={`${triggerId}-tooltip`}
         id={`${triggerId}-tooltip`} // https://github.com/carbon-design-system/carbon/pull/6744
-        direction={tooltipDirection || 'bottom'}>
+        direction={tooltipDirection || 'bottom'}
+      >
         <TooltipContent tooltipContent={dataState} />
       </Tooltip>
     );
@@ -64,9 +53,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
       if (type === CARD_DATA_STATE.ERROR) {
         icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
       } else if (type === CARD_DATA_STATE.NO_DATA) {
-        icon = (
-          <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />
-        );
+        icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
       }
     }
 
@@ -79,10 +66,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     return (
       <React.Fragment>
         {renderDataStateGridIcon()}
-        {withTooltip(
-          <span className={labelClass}>{label}</span>,
-          `${labelClass}-${id}`
-        )}
+        {withTooltip(<span className={labelClass}>{label}</span>, `${labelClass}-${id}`)}
         {withTooltip(
           <p className={descriptionClass}>{description}</p>,
           `${descriptionClass}-${id}`
@@ -94,7 +78,8 @@ const DataStateRenderer = ({ dataState, size, id }) => {
   return (
     <div
       className={`${dsPrefix}-container`}
-      style={{ '--container-padding': `${CARD_CONTENT_PADDING}px` }}>
+      style={{ '--container-padding': `${CARD_CONTENT_PADDING}px` }}
+    >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
         {size === CARD_SIZES.SMALL ||

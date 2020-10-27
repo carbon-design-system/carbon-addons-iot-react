@@ -19,9 +19,7 @@ describe('CardEditor', () => {
     const save = screen.queryByText('Save');
     userEvent.click(save);
     await waitFor(() => expect(screen.queryByRole('alert')).toBeTruthy());
-    userEvent.click(
-      container.querySelector('.bx--inline-notification__close-button')
-    );
+    userEvent.click(container.querySelector('.bx--inline-notification__close-button'));
     await waitFor(() => expect(screen.queryByRole('alert')).toBeFalsy());
   });
 
@@ -38,9 +36,7 @@ describe('CardEditor', () => {
     const expand = screen.queryByText('Expand');
     userEvent.click(expand);
     await waitFor(() =>
-      expect(
-        container.querySelector('.iot--editor__expanded')
-      ).toBeInTheDocument()
+      expect(container.querySelector('.iot--editor__expanded')).toBeInTheDocument()
     );
   });
 

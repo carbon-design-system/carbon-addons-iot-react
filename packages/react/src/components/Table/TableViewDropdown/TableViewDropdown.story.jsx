@@ -32,7 +32,8 @@ storiesOf('Watson IoT/Table/TableViewDropdown', module).add(
         <div
           style={{
             width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
+          }}
+        >
           <TableViewDropdown
             selectedViewId={selectedViewId}
             activeViewEdited={boolean('activeViewEdited', true)}

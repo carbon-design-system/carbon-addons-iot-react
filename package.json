@@ -24,6 +24,7 @@
     "test": "lerna run --stream test",
     "start": "lerna run --stream start",
     "clean": "lerna run --stream clean",
+    "format": "lerna run --stream format",
     "format:check": "lerna run --stream format:check"
   },
   "husky": {

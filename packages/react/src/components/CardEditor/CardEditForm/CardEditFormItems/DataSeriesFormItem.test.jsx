@@ -65,9 +65,7 @@ describe('DataSeriesFormItem', () => {
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(
-        formatSeries(selectedItems, cardJsonWithoutColorDefinition)
-      ).toEqual([
+      expect(formatSeries(selectedItems, cardJsonWithoutColorDefinition)).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
@@ -114,10 +112,7 @@ describe('DataSeriesFormItem', () => {
       // the legend color picker is only present on the edit data item modal
       const legendColorPicker = screen.getByText('Legend color');
       expect(legendColorPicker).toBeInTheDocument();
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'Label' }),
-        'changed label'
-      );
+      userEvent.type(screen.getByRole('textbox', { name: 'Label' }), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();
       // submit the changes
       const submitButton = screen.getByText('Save');

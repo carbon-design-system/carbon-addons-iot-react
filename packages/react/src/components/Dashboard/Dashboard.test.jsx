@@ -3,11 +3,7 @@ import React from 'react';
 import { Add20 } from '@carbon/icons-react';
 import { render, waitFor } from '@testing-library/react';
 
-import {
-  CARD_SIZES,
-  CARD_TYPES,
-  COLORS,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
 import imageFile from '../ImageCard/landscape.jpg';
 
@@ -33,8 +29,7 @@ const cardValues = [
   },
   {
     title: 'Alerts (Section 2)',
-    tooltip:
-      'This view showcases the variety of alert severities present in your context.',
+    tooltip: 'This view showcases the variety of alert severities present in your context.',
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,
@@ -164,9 +159,7 @@ describe('Dashboard', () => {
   it('verify onFetchData is called by each card if loading changes to true', () => {
     return new Promise(async (done, reject) => {
       try {
-        const mockOnFetchData = jest
-          .fn()
-          .mockImplementation((card) => Promise.resolve(card));
+        const mockOnFetchData = jest.fn().mockImplementation((card) => Promise.resolve(card));
 
         const mockOnSetRefresh = jest.fn().mockImplementation((refreshDate) => {
           if (refreshDate) {

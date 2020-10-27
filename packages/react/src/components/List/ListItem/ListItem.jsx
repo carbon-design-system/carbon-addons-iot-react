@@ -133,7 +133,8 @@ const ListItem = ({
         className={`${iotPrefix}--list-item--expand-icon`}
         onClick={handleExpansionClick}
         data-testid="expand-icon"
-        onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}>
+        onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
+      >
         {expanded ? (
           <ChevronUp16 aria-label={i18n.expand} />
         ) : (
@@ -145,16 +146,15 @@ const ListItem = ({
   const renderIcon = () =>
     icon ? (
       <div
-        className={`${iotPrefix}--list-item--content--icon ${iotPrefix}--list-item--content--icon__${iconPosition}`}>
+        className={`${iotPrefix}--list-item--content--icon ${iotPrefix}--list-item--content--icon__${iconPosition}`}
+      >
         {icon}
       </div>
     ) : null;
 
   const renderRowActions = () =>
     rowActions && rowActions.length > 0 ? (
-      <div className={`${iotPrefix}--list-item--content--row-actions`}>
-        {rowActions}
-      </div>
+      <div className={`${iotPrefix}--list-item--content--row-actions`}>{rowActions}</div>
     ) : null;
 
   const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
@@ -195,7 +195,8 @@ const ListItem = ({
         onItemMoved,
         itemWillMove,
         disabled,
-      }}>
+      }}
+    >
       {renderDragPreview()}
       {dragIcon()}
       {renderNestingOffset()}
@@ -204,33 +205,33 @@ const ListItem = ({
         className={classnames(
           `${iotPrefix}--list-item--content`,
           {
-            [`${iotPrefix}--list-item--content__selected`]:
-              !editingStyle && selected,
+            [`${iotPrefix}--list-item--content__selected`]: !editingStyle && selected,
           },
           { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
-        ref={selectedItemRef}>
+        ref={selectedItemRef}
+      >
         {renderIcon()}
         <div
           className={classnames(`${iotPrefix}--list-item--content--values`, {
             [`${iotPrefix}--list-item--content--values__large`]: isLargeRow,
-          })}>
+          })}
+        >
           {isLargeRow ? (
             <>
               <div
-                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}>
+                className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
+              >
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    {
-                      [`${iotPrefix}--list-item--category`]: isCategory,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
-                    }
-                  )}
-                  title={value}>
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
                 {renderTags()}
@@ -248,7 +249,8 @@ const ListItem = ({
                       ),
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
-                  )}>
+                  )}
+                >
                   {secondaryValue}
                 </div>
               ) : null}
@@ -257,31 +259,27 @@ const ListItem = ({
             <>
               <div className={`${iotPrefix}--list-item--content--values--main`}>
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    {
-                      [`${iotPrefix}--list-item--category`]: isCategory,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
-                    }
-                  )}
-                  title={value}>
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={classnames(
-                      `${iotPrefix}--list-item--content--values--value`,
-                      {
-                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                          rowActions
-                        ),
-                        [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      }
-                    )}>
+                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                        rowActions
+                      ),
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    })}
+                  >
                     {secondaryValue}
                   </div>
                 ) : null}

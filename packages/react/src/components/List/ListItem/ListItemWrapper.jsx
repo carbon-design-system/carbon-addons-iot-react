@@ -33,9 +33,7 @@ const ListItemWrapper = ({
           `${iotPrefix}--list-item`,
           `${iotPrefix}--list-item__selectable`,
           {
-            [`${iotPrefix}--list-item__selected`]: editingStyle
-              ? false
-              : selected,
+            [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected,
           },
           { [`${iotPrefix}--list-item__large`]: isLargeRow },
           { [`${iotPrefix}--list-item-editable`]: editingStyle }
@@ -44,7 +42,8 @@ const ListItemWrapper = ({
         onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
         onClick={() => {
           onSelect(id);
-        }}>
+        }}
+      >
         {children}
       </div>
     ) : (
@@ -52,37 +51,33 @@ const ListItemWrapper = ({
         className={classnames(`${iotPrefix}--list-item`, {
           [`${iotPrefix}--list-item__large`]: isLargeRow,
           [`${iotPrefix}--list-item-editable`]: editingStyle,
-        })}>
+        })}
+      >
         {children}
       </div>
     );
 
   if (editingStyle) {
     const canNest =
-      editingStyle === EditingStyle.SingleNesting ||
-      editingStyle === EditingStyle.MultipleNesting;
+      editingStyle === EditingStyle.SingleNesting || editingStyle === EditingStyle.MultipleNesting;
 
     return (
       <div
         role="listitem"
-        className={classnames(
-          `${iotPrefix}--list-item-editable--drag-container`,
-          {
-            [`${iotPrefix}--list-item-editable-dragging`]: isDragging,
-          }
-        )}
+        className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
+          [`${iotPrefix}--list-item-editable-dragging`]: isDragging,
+        })}
         ref={(instance) => {
           if (connectDragSource) {
             connectDragSource(instance);
           }
-        }}>
+        }}
+      >
         <div
-          className={classnames(
-            `${iotPrefix}--list-item-editable--drop-targets`,
-            {
-              [`${iotPrefix}--list-item__large`]: isLargeRow,
-            }
-          )}>
+          className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
+            [`${iotPrefix}--list-item__large`]: isLargeRow,
+          })}
+        >
           {
             // Renders Nested location only if nesting is allowed
 

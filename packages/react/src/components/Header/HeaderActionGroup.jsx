@@ -6,8 +6,7 @@ import HeaderAction from './HeaderAction/HeaderAction';
 import { HeaderActionItemPropTypes } from './Header';
 
 const propTypes = {
-  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes))
-    .isRequired,
+  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)).isRequired,
 };
 
 /**
@@ -21,11 +20,7 @@ const HeaderActionGroup = ({ actionItems }) => {
     <>
       <HeaderGlobalBar>
         {actionItems.map((item, i) => (
-          <HeaderAction
-            item={item}
-            index={i}
-            key={`header-action-item-${item.label}-${i}`}
-          />
+          <HeaderAction item={item} index={i} key={`header-action-item-${item.label}-${i}`} />
         ))}
       </HeaderGlobalBar>
     </>

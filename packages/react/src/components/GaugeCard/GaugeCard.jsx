@@ -3,10 +3,7 @@ import classnames from 'classnames';
 import { gray20, yellow } from '@carbon/colors';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
-import {
-  CardPropTypes,
-  GaugeCardPropTypes,
-} from '../../constants/CardPropTypes';
+import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import DataStateRenderer from '../Card/DataStateRenderer';
 import { settings } from '../../constants/Settings';
@@ -91,19 +88,15 @@ const GaugeCard = ({
       size={size}
       {...others}
       tooltip={tooltip}
-      isLoading={isLoading}>
-      <div
-        className={classnames(`${iotPrefix}--gauge-container`, className)}
-        style={myStyles}>
-        {dataState && (
-          <DataStateRenderer dataState={dataState} size={size} id={id} />
-        )}
+      isLoading={isLoading}
+    >
+      <div className={classnames(`${iotPrefix}--gauge-container`, className)} style={myStyles}>
+        {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
         {!dataState &&
           gauges.map((gauge, i) => {
             const { color } = getColor(gauge, values[gauge.dataSourceId]);
             const valueLength =
-              values[gauge.dataSourceId] &&
-              values[gauge.dataSourceId].toString().length;
+              values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
             return (
               <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
                 <svg
@@ -119,12 +112,12 @@ const GaugeCard = ({
                     '--gauge-max-value': gauge.maximumValue,
                     '--gauge-colors': color,
                     '--gauge-bg': gauge.backgroundColor,
-                    '--stroke-dash':
-                      getStrokeDash(values[gauge.dataSourceId]) || 0,
+                    '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
                     '--stroke-dash-array': circum,
                     '--gauge-size': `${gaugeSize}px`,
                     '--gauge-trend-color': gauge.trend.color,
-                  }}>
+                  }}
+                >
                   <circle
                     className={`${iotPrefix}--gauge-bg`}
                     cx={gaugeSize / 2}
@@ -148,7 +141,8 @@ const GaugeCard = ({
                     )}
                     x={gaugeSize / 2}
                     y="33"
-                    textAnchor="middle">
+                    textAnchor="middle"
+                  >
                     <tspan>{values[gauge.dataSourceId]}</tspan>
                     <tspan>{gauge.units}</tspan>
                   </text>
@@ -157,12 +151,11 @@ const GaugeCard = ({
                 {values[gauge.trend.dataSourceId] && (
                   <div
                     className={classnames(`${iotPrefix}--gauge-trend`, {
-                      [`${iotPrefix}--gauge-trend__up`]:
-                        gauge.trend.trend === 'up',
-                      [`${iotPrefix}--gauge-trend__down`]:
-                        gauge.trend.trend === 'down',
+                      [`${iotPrefix}--gauge-trend__up`]: gauge.trend.trend === 'up',
+                      [`${iotPrefix}--gauge-trend__down`]: gauge.trend.trend === 'down',
                     })}
-                    key={`${gauge.trend.dataSourceId}-${i}`}>
+                    key={`${gauge.trend.dataSourceId}-${i}`}
+                  >
                     <p style={{ '--gauge-trend-color': gauge.trend.color }}>
                       {values[gauge.trend.dataSourceId]}
                     </p>

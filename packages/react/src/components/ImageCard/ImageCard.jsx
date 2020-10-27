@@ -4,10 +4,7 @@ import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
-import {
-  ImageCardPropTypes,
-  CardPropTypes,
-} from '../../constants/CardPropTypes';
+import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
@@ -82,7 +79,8 @@ const ImageCard = ({
       isEditable={isEditable}
       {...others}
       error={error}
-      i18n={otherLabels}>
+      i18n={otherLabels}
+    >
       {!isCardLoading
         ? (
             // Get width and height from parent card

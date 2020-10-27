@@ -22,23 +22,16 @@ describe('SuiteHeaderProfile', () => {
         onRequestLogout={mockOnRequestLogout}
       />
     );
-    const logoutButton = wrapper
-      .find('[data-testid="suite-header-profile--logout"]')
-      .first();
+    const logoutButton = wrapper.find('[data-testid="suite-header-profile--logout"]').first();
     logoutButton.simulate('click');
     expect(mockOnRequestLogout).toHaveBeenCalled();
   });
   it('clicks profile link', () => {
     const mockOnProfileClick = jest.fn();
     const wrapper = mount(
-      <SuiteHeaderProfile
-        {...commonProps}
-        onProfileClick={mockOnProfileClick}
-      />
+      <SuiteHeaderProfile {...commonProps} onProfileClick={mockOnProfileClick} />
     );
-    const profileButton = wrapper
-      .find('[data-testid="suite-header-profile--profile"]')
-      .first();
+    const profileButton = wrapper.find('[data-testid="suite-header-profile--profile"]').first();
     profileButton.simulate('click');
     expect(mockOnProfileClick).toHaveBeenCalled();
   });

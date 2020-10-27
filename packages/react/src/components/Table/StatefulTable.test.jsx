@@ -51,9 +51,7 @@ describe('stateful table with real reducer', () => {
         actions={mockActions}
       />
     );
-    statefulTable
-      .find('button.bx--pagination__button--forward')
-      .simulate('click');
+    statefulTable.find('button.bx--pagination__button--forward').simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
 
@@ -64,9 +62,7 @@ describe('stateful table with real reducer', () => {
           view: {
             table: {
               rowActions: [],
-              singleRowEditButtons: (
-                <div data-testid="myButtons">myButtons</div>
-              ),
+              singleRowEditButtons: <div data-testid="myButtons">myButtons</div>,
             },
           },
         })}
@@ -93,9 +89,7 @@ describe('stateful table with real reducer', () => {
 
   it('render nestedRows', () => {
     const tableId = 'tableId';
-    render(
-      <StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />
-    );
+    render(<StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />);
 
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
 
@@ -108,9 +102,7 @@ describe('stateful table with real reducer', () => {
 
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
 
-    fireEvent.click(
-      screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`)
-    );
+    fireEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
     fireEvent.click(screen.getByText('Add'));
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
@@ -320,24 +312,22 @@ describe('stateful table with real reducer', () => {
     let viewProps;
     const onUserViewModified = jest
       .fn()
-      .mockImplementation(
-        ({ view, columns, state: { currentSearchValue } }) => {
-          viewProps = {
-            columns,
-            view: {
-              filters: view.filters,
-              table: { ordering: view.table.ordering, sort: view.table.sort },
-              toolbar: {
-                activeBar: view.toolbar.activeBar,
-                search: {
-                  ...view.toolbar.search,
-                  defaultValue: currentSearchValue,
-                },
+      .mockImplementation(({ view, columns, state: { currentSearchValue } }) => {
+        viewProps = {
+          columns,
+          view: {
+            filters: view.filters,
+            table: { ordering: view.table.ordering, sort: view.table.sort },
+            toolbar: {
+              activeBar: view.toolbar.activeBar,
+              search: {
+                ...view.toolbar.search,
+                defaultValue: currentSearchValue,
               },
             },
-          };
-        }
-      );
+          },
+        };
+      });
 
     render(
       <StatefulTable

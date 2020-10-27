@@ -178,36 +178,14 @@ describe('ImageHotspots', () => {
     const mockSetImage = jest.fn();
     const mockSetMinimap = jest.fn();
     const mockSetOptions = jest.fn();
-    zoom(
-      10,
-      10,
-      {},
-      image,
-      mockSetImage,
-      minimap,
-      mockSetMinimap,
-      {},
-      mockSetOptions
-    );
+    zoom(10, 10, {}, image, mockSetImage, minimap, mockSetMinimap, {}, mockSetOptions);
     // Since we're already at max zoom, the component shouldn't be updated at all
     expect(mockSetImage).not.toHaveBeenCalled();
     expect(mockSetMinimap).not.toHaveBeenCalled();
     expect(mockSetOptions).not.toHaveBeenCalled();
     // Reset the zoom level to 1 (i.e. fit to view)
-    zoom(
-      1,
-      10,
-      {},
-      image,
-      mockSetImage,
-      minimap,
-      mockSetMinimap,
-      {},
-      mockSetOptions
-    );
-    expect(mockSetImage).toHaveBeenCalledWith(
-      expect.objectContaining({ scale: 1, offsetX: 0 })
-    );
+    zoom(1, 10, {}, image, mockSetImage, minimap, mockSetMinimap, {}, mockSetOptions);
+    expect(mockSetImage).toHaveBeenCalledWith(expect.objectContaining({ scale: 1, offsetX: 0 }));
     expect(mockSetMinimap).toHaveBeenCalledWith(
       expect.objectContaining({
         width: 10,
@@ -218,28 +196,14 @@ describe('ImageHotspots', () => {
         guideWidth: 10,
       })
     );
-    expect(mockSetOptions).toHaveBeenCalledWith(
-      expect.objectContaining({ draggable: false })
-    );
+    expect(mockSetOptions).toHaveBeenCalledWith(expect.objectContaining({ draggable: false }));
 
     // Finally a real zoom request, we've waited long enough
-    zoom(
-      2,
-      10,
-      {},
-      image,
-      mockSetImage,
-      {},
-      mockSetMinimap,
-      {},
-      mockSetOptions
-    );
+    zoom(2, 10, {}, image, mockSetImage, {}, mockSetMinimap, {}, mockSetOptions);
     // TODO: perform assertions on the image/minimap positioning calculations at zoom time
     expect(mockSetImage).toHaveBeenCalled();
     expect(mockSetMinimap).toHaveBeenCalled();
-    expect(mockSetOptions).toHaveBeenCalledWith(
-      expect.objectContaining({ draggable: true })
-    );
+    expect(mockSetOptions).toHaveBeenCalledWith(expect.objectContaining({ draggable: true }));
   });
   it('i18n string tests', () => {
     const i18nTest = {

@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import DeprecationNotice, {
-  deprecatedStoryTitle,
-} from '../../internal/DeprecationNotice';
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 
 import PageHero from './PageHero';
 
@@ -20,10 +18,7 @@ const commonPageHeroProps = {
 storiesOf('Watson IoT/PageHero (Deprecated)', module)
   .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice
-      deprecatedComponentName="PageHero"
-      replacementComponentName="Hero"
-    />
+    <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />
   ))
   .add('normal', () => <PageHero {...commonPageHeroProps} />)
   .add('normal with content switcher', () => (
@@ -45,9 +40,7 @@ storiesOf('Watson IoT/PageHero (Deprecated)', module)
       }}
     />
   ))
-  .add('with section', () => (
-    <PageHero {...commonPageHeroProps} section="Explore" />
-  ))
+  .add('with section', () => <PageHero {...commonPageHeroProps} section="Explore" />)
   .add('has breadcrumb', () => (
     <PageHero {...commonPageHeroProps} crumb={<div>breadcrumb/mybread</div>} />
   ))

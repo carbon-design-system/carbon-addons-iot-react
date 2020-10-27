@@ -27,7 +27,8 @@ const CardEditorInteractive = () => {
           position: 'absolute',
           right: 0,
           height: 'calc(100vh - 6rem)',
-        }}>
+        }}
+      >
         <CardEditor
           cardJson={data}
           onShowGallery={() => setData(null)}
@@ -45,8 +46,7 @@ const CardEditorInteractive = () => {
 storiesOf('Watson IoT Experimental/CardEditor', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <div
-      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
       <CardEditor
         cardJson={object('cardJson', {
           content: {
@@ -90,8 +90,7 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
     </div>
   ))
   .add('for TimeSeries', () => (
-    <div
-      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
       <CardEditor
         cardJson={object('cardJson', {
           id: 'timeseries',
@@ -129,8 +128,7 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
     </div>
   ))
   .add('with no card defined (gallery view)', () => (
-    <div
-      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
       <CardEditor
         onShowGallery={action('onShowGallery')}
         onChange={action('onChange')}

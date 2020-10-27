@@ -5,10 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
-import {
-  BAR_CHART_LAYOUTS,
-  BAR_CHART_TYPES,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
 

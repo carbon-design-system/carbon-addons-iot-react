@@ -4,10 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import find from 'lodash/find';
 
-import {
-  getSortedData,
-  caseInsensitiveSearch,
-} from '../../utils/componentUtilityFunctions';
+import { getSortedData, caseInsensitiveSearch } from '../../utils/componentUtilityFunctions';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -104,10 +101,7 @@ export const searchData = (data, searchString) =>
             typeof value === 'boolean'
           ) {
             if (!isNil(value)) {
-              return caseInsensitiveSearch(
-                [value.toString()],
-                searchString.toString()
-              );
+              return caseInsensitiveSearch([value.toString()], searchString.toString());
             }
           }
         })
@@ -121,27 +115,16 @@ export const getCustomColumnSort = (columns, columnId) => {
 };
 
 // little utility to both sort and filter
-export const filterSearchAndSort = (
-  data,
-  sort = {},
-  search = {},
-  filters = [],
-  columns
-) => {
+export const filterSearchAndSort = (data, sort = {}, search = {}, filters = [], columns) => {
   const { columnId, direction } = sort;
 
   const { value: searchValue } = search;
   const filteredData = filterData(data, filters, columns);
   const searchedData =
-    searchValue && searchValue !== ''
-      ? searchData(filteredData, searchValue)
-      : filteredData;
+    searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
   return !isEmpty(sort)
     ? getCustomColumnSort(columns, columnId)
-      ? getCustomColumnSort(
-          columns,
-          columnId
-        )({ data: searchedData, columnId, direction })
+      ? getCustomColumnSort(columns, columnId)({ data: searchedData, columnId, direction })
       : getSortedData(searchedData, columnId, direction)
     : searchedData;
 };
@@ -234,16 +217,12 @@ export const tableReducer = (state = {}, action) => {
         return baseTableReducer(
           update(state, {
             data: {
-              $set: state.data.filter(
-                (i) => !state.view.table.selectedIds.includes(i.id)
-              ),
+              $set: state.data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
             },
             view: {
               table: {
                 filteredData: {
-                  $set: data.filter(
-                    (i) => !state.view.table.selectedIds.includes(i.id)
-                  ),
+                  $set: data.filter((i) => !state.view.table.selectedIds.includes(i.id)),
                 },
               },
             },
@@ -260,26 +239,17 @@ export const tableReducer = (state = {}, action) => {
       const sorts = ['NONE', 'ASC', 'DESC'];
       const currentSort = get(state, 'view.table.sort');
       const currentSortDir =
-        currentSort && currentSort.columnId === columnId
-          ? currentSort.direction
-          : 'NONE';
+        currentSort && currentSort.columnId === columnId ? currentSort.direction : 'NONE';
 
-      const nextSortDir =
-        sorts[
-          (sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length
-        ];
+      const nextSortDir = sorts[(sorts.findIndex((i) => i === currentSortDir) + 1) % sorts.length];
 
       // validate if there is any column of timestamp type
       const isTimestampColumn =
         action.columns &&
-        action.columns.filter(
-          (column) => column.id === columnId && column.type === 'TIMESTAMP'
-        ).length > 0;
+        action.columns.filter((column) => column.id === columnId && column.type === 'TIMESTAMP')
+          .length > 0;
 
-      const customColumnSort = getCustomColumnSort(
-        get(state, 'columns'),
-        columnId
-      );
+      const customColumnSort = getCustomColumnSort(get(state, 'columns'), columnId);
 
       return baseTableReducer(
         update(state, {
@@ -324,8 +294,7 @@ export const tableReducer = (state = {}, action) => {
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
-        get(view, 'toolbar.search.defaultValue') ||
-        get(view, 'toolbar.search.value');
+        get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
       // update the column ordering if I'm passed new columns
       // but only if hasUserViewManagement is not active.
       const ordering = hasUserViewManagement

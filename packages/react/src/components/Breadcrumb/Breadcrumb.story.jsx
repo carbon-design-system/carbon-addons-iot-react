@@ -25,19 +25,12 @@ const props = () => ({
 const PolyfillWarning = () => (
   <p style={{ marginTop: layout05 }}>
     Note: `hasOverflow` utilizes a{' '}
-    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">
-      ResizeObserver
-    </a>{' '}
-    to detect changes to the container width. This library does not provide a{' '}
-    <a href="https://www.npmjs.com/package/resize-observer-polyfill">
-      polyfill
-    </a>
-    , it will likely need to be added to your application due to{' '}
-    <a href="https://caniuse.com/#feat=resizeobserver">
-      current browser support
-    </a>
-    . This story will not demonstrate the `hasOverflow` functionality in
-    browsers without support for ResizeObserver.
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">ResizeObserver</a> to
+    detect changes to the container width. This library does not provide a{' '}
+    <a href="https://www.npmjs.com/package/resize-observer-polyfill">polyfill</a>, it will likely
+    need to be added to your application due to{' '}
+    <a href="https://caniuse.com/#feat=resizeobserver">current browser support</a>. This story will
+    not demonstrate the `hasOverflow` functionality in browsers without support for ResizeObserver.
   </p>
 );
 
@@ -50,9 +43,7 @@ storiesOf('Watson IoT/Breadcrumb', module)
         <Breadcrumb {...props()}>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">
-            {text('Breadcrumb 3 text', 'Breadcrumb 3')}
-          </BreadcrumbItem>
+          <BreadcrumbItem href="#">{text('Breadcrumb 3 text', 'Breadcrumb 3')}</BreadcrumbItem>
         </Breadcrumb>
       );
     },
@@ -98,8 +89,7 @@ storiesOf('Watson IoT/Breadcrumb', module)
     () => {
       return (
         <>
-          <div
-            style={{ width: '50vw', border: '1px solid', padding: spacing05 }}>
+          <div style={{ width: '50vw', border: '1px solid', padding: spacing05 }}>
             <Breadcrumb hasOverflow {...props()}>
               <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
                 1 Homexxxxxxxxxxxxxxxxxxxxxx
@@ -110,21 +100,21 @@ storiesOf('Watson IoT/Breadcrumb', module)
                   e.preventDefault();
                   console.log('clicked');
                 }}
-                title="2 Devices">
+                title="2 Devices"
+              >
                 2 Devices
               </BreadcrumbItem>
               <BreadcrumbItem href="#" title="3 A really long page name">
                 3 A really long page name
               </BreadcrumbItem>
-              <BreadcrumbItem
-                href="#"
-                title={text('Breadcrumb 4 text', '4 Another page')}>
+              <BreadcrumbItem href="#" title={text('Breadcrumb 4 text', '4 Another page')}>
                 {text('Breadcrumb 4 text', '4 Another page')}
               </BreadcrumbItem>
               <BreadcrumbItem
                 href="#"
                 isCurrentPage
-                title={text('Breadcrumb 5 text', '5th level page')}>
+                title={text('Breadcrumb 5 text', '5th level page')}
+              >
                 {text('Breadcrumb 5 text', '5th level page')}
               </BreadcrumbItem>
             </Breadcrumb>

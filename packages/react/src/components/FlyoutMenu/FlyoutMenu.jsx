@@ -51,9 +51,7 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
     ? tooltipContentRef.current.getBoundingClientRect().height
     : 0;
 
-  const buttonWidth = buttonRef.current
-    ? buttonRef.current.getBoundingClientRect().width
-    : 0;
+  const buttonWidth = buttonRef.current ? buttonRef.current.getBoundingClientRect().width : 0;
 
   let rtlOffset = buttonWidth;
 
@@ -65,12 +63,7 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
 
     // off
     case FlyoutMenuDirection.LeftEnd:
-      topOffset =
-        -tooltipHeight / 2 +
-        caretHeight +
-        caretWidth -
-        borderWidth -
-        (48 - buttonWidth);
+      topOffset = -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
       rtlOffset = 0;
       break;
     case FlyoutMenuDirection.RightStart:
@@ -80,8 +73,7 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
 
     // off
     case FlyoutMenuDirection.RightEnd:
-      topOffset =
-        caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
+      topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
       rtlOffset = -rtlOffset;
       break;
     case FlyoutMenuDirection.TopStart:
@@ -127,7 +119,8 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
           onCancel();
         }
       }}
-      aria-label={i18n.cancelButtonText}>
+      aria-label={i18n.cancelButtonText}
+    >
       {i18n.cancelButtonText}
     </Button>
     <Button
@@ -139,7 +132,8 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
         if (onApply) {
           onApply();
         }
-      }}>
+      }}
+    >
       {i18n.applyButtonText}
     </Button>
   </>
@@ -175,12 +169,7 @@ const FlyoutMenu = ({
   const Footer = CustomFooter ? (
     <CustomFooter setIsOpen={setIsOpen} isOpen={isOpen} />
   ) : (
-    <DefaultFooter
-      setIsOpen={setIsOpen}
-      onCancel={onCancel}
-      onApply={onApply}
-      i18n={i18n}
-    />
+    <DefaultFooter setIsOpen={setIsOpen} onCancel={onCancel} onApply={onApply} i18n={i18n} />
   );
   return (
     <div
@@ -192,7 +181,8 @@ const FlyoutMenu = ({
           [`${iotPrefix}--flyout-menu__light`]: light,
           [`${iotPrefix}--flyout-menu__open`]: isOpen,
         }
-      )}>
+      )}
+    >
       <Button
         aria-label={iconDescription}
         iconDescription={iconDescription}
@@ -217,8 +207,7 @@ const FlyoutMenu = ({
               {
                 [`${iotPrefix}--flyout-menu--body__light`]: light,
                 [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
-                [`${iotPrefix}--flyout-menu--body__${buttonSize}`]:
-                  buttonSize !== 'default',
+                [`${iotPrefix}--flyout-menu--body__${buttonSize}`]: buttonSize !== 'default',
               }
             )}
             iconDescription={iconDescription}
@@ -226,21 +215,18 @@ const FlyoutMenu = ({
             showIcon={false}
             open={isOpen}
             direction={tooltipDirection}
-            menuOffset={() =>
-              getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)
-            }
+            menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
             tooltipId={tooltipId}
             id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
             triggerId={triggerId}
-            tabIndex={tabIndex}>
+            tabIndex={tabIndex}
+          >
             <div ref={tooltipContentRef}>
               <div style={{ overflow: 'scroll' }} tabIndex={-1} />
               {children}
 
               {!passive && (
-                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>
-                  {Footer}
-                </div>
+                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
               )}
             </div>
           </Tooltip>

@@ -7,11 +7,7 @@ import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
-import {
-  getDefaultCard,
-  getDuplicateCard,
-  getCardPreview,
-} from './editorUtils';
+import { getDefaultCard, getDuplicateCard, getCardPreview } from './editorUtils';
 
 const { iotPrefix } = settings;
 
@@ -169,9 +165,7 @@ const DashboardEditor = ({
    * @param {string} id
    */
   const duplicateCard = (id) => {
-    const cardData = getDuplicateCard(
-      dashboardJson.cards.find((i) => i.id === id)
-    );
+    const cardData = getDuplicateCard(dashboardJson.cards.find((i) => i.id === id));
     setDashboardJson({
       ...dashboardJson,
       cards: [...dashboardJson.cards, cardData],
@@ -223,7 +217,8 @@ const DashboardEditor = ({
                 kind="error"
                 lowContrast
               />
-            }>
+            }
+          >
             <DashboardGrid
               isEditable
               onBreakpointChange={() => {}}
@@ -232,22 +227,13 @@ const DashboardEditor = ({
                   ...dashboardJson,
                   layouts: newLayouts,
                 })
-              }>
+              }
+            >
               {dashboardJson.cards.map((cardData) => {
                 // if function not defined, or it returns falsy, render default preview
                 return (
-                  renderCardPreview(
-                    cardData,
-                    onSelectCard,
-                    onDuplicateCard,
-                    onRemoveCard
-                  ) ??
-                  getCardPreview(
-                    cardData,
-                    onSelectCard,
-                    onDuplicateCard,
-                    onRemoveCard
-                  )
+                  renderCardPreview(cardData, onSelectCard, onDuplicateCard, onRemoveCard) ??
+                  getCardPreview(cardData, onSelectCard, onDuplicateCard, onRemoveCard)
                 );
               })}
             </DashboardGrid>
@@ -263,11 +249,10 @@ const DashboardEditor = ({
               kind="error"
               lowContrast
             />
-          }>
+          }
+        >
           <CardEditor
-            cardJson={dashboardJson.cards.find(
-              (card) => card.id === selectedCardId
-            )}
+            cardJson={dashboardJson.cards.find((card) => card.id === selectedCardId)}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={(cardData) =>
               // TODO: this is really inefficient

@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  TrashCan16,
-  DocumentImport16,
-  DocumentExport16,
-} from '@carbon/icons-react';
+import { TrashCan16, DocumentImport16, DocumentExport16 } from '@carbon/icons-react';
 import { FileUploaderButton, TooltipIcon } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
@@ -95,7 +91,8 @@ const DashboardEditorHeader = ({
               align="center"
               direction="bottom"
               tooltipText={i18n.headerImportButton}
-              className={`${baseClassName}--bottom__import`}>
+              className={`${baseClassName}--bottom__import`}
+            >
               <FileUploaderButton
                 buttonKind="ghost"
                 size="field"
@@ -136,10 +133,7 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button
-            size="field"
-            disabled={submitDisabled}
-            onClick={() => onSubmit(dashboardJson)}>
+          <Button size="field" disabled={submitDisabled} onClick={() => onSubmit(dashboardJson)}>
             {i18n.headerSubmitButton}
           </Button>
         )}
