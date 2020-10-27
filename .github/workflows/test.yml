@@ -20,7 +20,7 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Run tests, collect coverage
-        run: yarn test --maxWorkers=2 --ci --logHeapUsage --coverage
+        run: yarn test -- --maxWorkers=2 --ci --logHeapUsage --coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
