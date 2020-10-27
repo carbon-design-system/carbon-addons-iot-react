@@ -96,8 +96,7 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           <FullWidthWrapper>
             <DashboardGrid
               {...commonGridProps}
-              isEditable={boolean('isEditable', true)}
-              isResizable={boolean('isResizable', true)}>
+              isEditable={boolean('isEditable', true)}>
               {Cards}
             </DashboardGrid>
           </FullWidthWrapper>
@@ -328,7 +327,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
       return React.createElement(() => {
         const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
         const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-        const isEditable = boolean('isEditable', true);
         const isResizable = boolean('isResizable', true);
         const layouts = {
           max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
@@ -348,7 +346,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                 {...commonGridProps}
                 layouts={layouts}
                 breakpoint={currentBreakpoint}
-                isEditable={isEditable}
                 onBreakpointChange={(newBreakpoint) =>
                   setCurrentBreakpoint(newBreakpoint)
                 }
@@ -362,7 +359,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                   <Card
                     title={`Card - ${currentSize}`}
                     id="card"
-                    isEditable={isEditable}
                     isResizable={isResizable}
                     key="card"
                     size={currentSize}
@@ -385,7 +381,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
         ~~~js
         const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
         const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-        const isEditable = boolean('isEditable', true);
         const isResizable = boolean('isResizable', false);
         const layouts = {
           max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
@@ -404,7 +399,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
               <DashboardGrid
                 layouts={layouts}
                 breakpoint={currentBreakpoint}
-                isEditable={isEditable}
                 onBreakpointChange={(newBreakpoint) =>
                   setCurrentBreakpoint(newBreakpoint)
                 }
@@ -416,7 +410,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                 <Card
                   title={'Card -' + currentSize}
                   id="card"
-                  isEditable={isEditable}
                   isResizable={isResizable}
                   key="card"
                   size={currentSize}></Card>
@@ -596,14 +589,12 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           barChartCard: CARD_SIZES.LARGEWIDE,
         });
         const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-        const isEditable = boolean('isEditable', true);
         const isResizable = boolean('isResizable', true);
 
         const CARDS_ALL_SIZES = [
           <Card
             title={`Card - ${currentSizes.card}`}
             id="card"
-            isEditable={isEditable}
             isResizable={isResizable}
             key="card"
             size={currentSizes.card}
@@ -617,7 +608,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
             id="valueCard"
             key="valueCard"
             size={currentSizes.valueCard}
-            isEditable={isEditable}
             isResizable={isResizable}
             content={{
               attributes: [
@@ -637,7 +627,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           <GaugeCard
             id="gaugeCard"
             key="gaugeCard"
-            isEditable={isEditable}
             isResizable={isResizable}
             size={currentSizes.gaugeCard}
             title={`GaugeCard - ${currentSizes.gaugeCard}`}
@@ -657,7 +646,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
             key="pieChartCard"
             id="pieChartCard"
             size={currentSizes.pieChartCard}
-            isEditable={isEditable}
             isResizable={isResizable}
             values={pieChartCardValues}
           />,
@@ -671,13 +659,11 @@ storiesOf('Watson IoT/Dashboard Grid', module)
             values={tableData}
             onCardAction={() => {}}
             size={currentSizes.tableCard}
-            isEditable={isEditable}
             isResizable={isResizable}
           />,
           <ImageCard
             title={`ImageCard - ${currentSizes.imageCard}`}
             id="imageCard"
-            isEditable={isEditable}
             isResizable={isResizable}
             key="imageCard"
             size={currentSizes.imageCard}
@@ -690,7 +676,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           />,
           <TimeSeriesCard
             id="timeSeriesCard"
-            isEditable={isEditable}
             isResizable={isResizable}
             size={currentSizes.timeSeriesCard}
             title={`TimeSeriesCard - ${currentSizes.timeSeriesCard}`}
@@ -702,7 +687,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           />,
           <ListCard
             id="listCard"
-            isEditable={isEditable}
             isResizable={isResizable}
             key="listCard"
             title={`ListCard - ${currentSizes.listCard}`}
@@ -715,7 +699,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
             id="barChartCard"
             key="barChartCard"
             size={currentSizes.barChartCard}
-            isEditable={isEditable}
             isResizable={isResizable}
             title={`BarChartCard - ${currentSizes.barChartCard}`}
             content={{
@@ -845,7 +828,6 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                 {...commonGridProps}
                 layouts={minWidthLayouts}
                 breakpoint={currentBreakpoint}
-                isEditable={isEditable}
                 onBreakpointChange={(newBreakpoint) => {
                   action('onBreakpointChange')(newBreakpoint);
                   setCurrentBreakpoint(newBreakpoint);

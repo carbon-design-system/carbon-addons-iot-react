@@ -20,9 +20,9 @@ module.exports = {
       lines: 80,
     },
     './src/components/Dashboard/DashboardGrid.jsx': {
-      statements: 74,
+      statements: 73,
       branches: 61,
-      lines: 74,
+      lines: 73,
     },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved

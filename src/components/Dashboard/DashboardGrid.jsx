@@ -222,7 +222,7 @@ const DashboardGrid = ({
   onLayoutChange,
   onBreakpointChange,
   onCardSizeChange,
-  onResizeStop: onResizeStopCallback, // TODO: remove?
+  onResizeStop: onResizeStopCallback,
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
@@ -272,8 +272,21 @@ const DashboardGrid = ({
   );
 
   const onCardResize = (...params) => {
-    const [, , layoutItem, placeholder] = params;
-    const matchedSize = getMatchingCardSize(layoutItem, breakpointSizes);
+    const [, oldLayoutItem, layoutItem, placeholder] = params;
+    const rowsJumped = layoutItem.y - oldLayoutItem.y;
+    const colsJumped = layoutItem.x - oldLayoutItem.x;
+
+    const jumpAdjustedlayoutItem = {
+      ...layoutItem,
+      h: layoutItem.h + rowsJumped,
+      w: layoutItem.w + colsJumped,
+    };
+
+    const matchedSize = getMatchingCardSize(
+      jumpAdjustedlayoutItem,
+      breakpointSizes
+    );
+
     const renderedCardSizeName = cards.find(
       (card) => card.props.id === layoutItem.i
     ).props.size;

@@ -583,7 +583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="card"
             onMouseDown={[Function]}
@@ -616,55 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </span>
               <div
                 className="iot--card--toolbar"
-              >
-                <button
-                  aria-expanded={false}
-                  aria-haspopup={true}
-                  aria-label="Menu"
-                  className="bx--overflow-menu"
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  tabIndex={0}
-                  title="Open and close list of options"
-                  type="button"
-                >
-                  <svg
-                    aria-label="open and close list of options"
-                    className="bx--overflow-menu__icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="16"
-                      cy="8"
-                      r="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="24"
-                      r="2"
-                    />
-                    <title>
-                      open and close list of options
-                    </title>
-                  </svg>
-                </button>
-              </div>
+              />
             </div>
             <div
               className="iot--card--content"
@@ -704,7 +656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="valueCard"
             onMouseDown={[Function]}
@@ -761,16 +713,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kmAyHP"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                         size="SMALLWIDE"
-                        title="-- %"
-                        value="--"
+                        title="88 %"
+                        value={88}
                       >
-                        --
+                        88
                       </span>
                     </div>
                     <span
-                      className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                      className="iot--value-card__attribute-unit"
                       style={
                         Object {
                           "--default-font-size": "1.25rem",
@@ -892,7 +844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="iot--gauge-container react-grid-item react-draggable react-resizable"
+                className="iot--gauge-container react-grid-item react-resizable"
                 style={
                   Object {
                     "paddingBottom": 0,
@@ -904,7 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <svg
                   aria-labelledby="gauge-label"
-                  className="iot--gauge react-grid-item react-draggable react-resizable"
+                  className="iot--gauge react-grid-item react-resizable"
                   percent="0"
                   style={
                     Object {
@@ -975,7 +927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="pieChartCard"
             onMouseDown={[Function]}
@@ -1049,7 +1001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="tableCard"
             onMouseDown={[Function]}
@@ -1157,7 +1109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           aria-hidden={true}
                           autoComplete="off"
                           className="bx--search-input"
-                          disabled={true}
                           id="table-for-card-tableCard-toolbar-search"
                           onChange={[Function]}
                           placeholder="Search"
@@ -1190,9 +1141,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <button
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="download-button"
-                      disabled={true}
+                      disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
                       title="Download table content"
@@ -1220,9 +1171,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </svg>
                     </button>
                     <button
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--disabled"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                       data-testid="filter-button"
-                      disabled={true}
+                      disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
                       title="Filters"
@@ -1248,7 +1199,82 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     </button>
                     <div
                       className="iot--card--toolbar"
-                    />
+                    >
+                      <div
+                        className="iot--card--toolbar-date-range-wrapper"
+                      >
+                        <button
+                          aria-expanded={false}
+                          aria-haspopup={true}
+                          aria-label="Menu"
+                          className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                          onClick={[Function]}
+                          onClose={[Function]}
+                          onKeyDown={[Function]}
+                          open={false}
+                          tabIndex={0}
+                          title="Select time range"
+                          type="button"
+                        >
+                          <svg
+                            aria-label="Select time range"
+                            className="bx--overflow-menu__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                            />
+                            <path
+                              d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                            />
+                            <path
+                              d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                            />
+                            <title>
+                              Select time range
+                            </title>
+                          </svg>
+                        </button>
+                      </div>
+                      <button
+                        className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="Expand to fullscreen"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Expand to fullscreen"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                          />
+                          <path
+                            d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </section>
                 <div
@@ -1479,7 +1505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-live="polite"
                       >
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1487,7 +1513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-0-alert"
+                            id="cell-table-for-card-tableCard-row-10-alert"
                             offset={0}
                             width=""
                           >
@@ -1496,9 +1522,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI010 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI010 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -1507,7 +1533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-0-hour"
+                            id="cell-table-for-card-tableCard-row-10-hour"
                             offset={0}
                             width=""
                           >
@@ -1516,9 +1542,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1527,7 +1553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-0-pressure"
+                            id="cell-table-for-card-tableCard-row-10-pressure"
                             offset={0}
                             width=""
                           >
@@ -1536,15 +1562,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="0"
                               >
-                                --
+                                0
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1552,7 +1578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-1-alert"
+                            id="cell-table-for-card-tableCard-row-11-alert"
                             offset={0}
                             width=""
                           >
@@ -1561,9 +1587,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI010 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI010 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -1572,7 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-1-hour"
+                            id="cell-table-for-card-tableCard-row-11-hour"
                             offset={0}
                             width=""
                           >
@@ -1581,9 +1607,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1592,7 +1618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-1-pressure"
+                            id="cell-table-for-card-tableCard-row-11-pressure"
                             offset={0}
                             width=""
                           >
@@ -1601,15 +1627,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="1"
                               >
-                                --
+                                1
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1617,7 +1643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-2-alert"
+                            id="cell-table-for-card-tableCard-row-1-alert"
                             offset={0}
                             width=""
                           >
@@ -1626,9 +1652,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI005 Asset failure"
                               >
-                                --
+                                AHI005 Asset failure
                               </span>
                             </span>
                           </td>
@@ -1637,7 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-2-hour"
+                            id="cell-table-for-card-tableCard-row-1-hour"
                             offset={0}
                             width=""
                           >
@@ -1646,9 +1672,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1657,7 +1683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-2-pressure"
+                            id="cell-table-for-card-tableCard-row-1-pressure"
                             offset={0}
                             width=""
                           >
@@ -1666,15 +1692,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="0"
                               >
-                                --
+                                0
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1682,7 +1708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-3-alert"
+                            id="cell-table-for-card-tableCard-row-2-alert"
                             offset={0}
                             width=""
                           >
@@ -1691,9 +1717,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI003 process need to optimize adjust X variables"
                               >
-                                --
+                                AHI003 process need to optimize adjust X variables
                               </span>
                             </span>
                           </td>
@@ -1702,7 +1728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-3-hour"
+                            id="cell-table-for-card-tableCard-row-2-hour"
                             offset={0}
                             width=""
                           >
@@ -1711,9 +1737,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1722,7 +1748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-3-pressure"
+                            id="cell-table-for-card-tableCard-row-2-pressure"
                             offset={0}
                             width=""
                           >
@@ -1731,15 +1757,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="2"
                               >
-                                --
+                                2
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1747,7 +1773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-4-alert"
+                            id="cell-table-for-card-tableCard-row-6-alert"
                             offset={0}
                             width=""
                           >
@@ -1756,9 +1782,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize."
                               >
-                                --
+                                AHI001 proccess need to optimize.
                               </span>
                             </span>
                           </td>
@@ -1767,7 +1793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-4-hour"
+                            id="cell-table-for-card-tableCard-row-6-hour"
                             offset={0}
                             width=""
                           >
@@ -1776,9 +1802,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1787,7 +1813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-4-pressure"
+                            id="cell-table-for-card-tableCard-row-6-pressure"
                             offset={0}
                             width=""
                           >
@@ -1796,15 +1822,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="68"
                               >
-                                --
+                                68
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1812,7 +1838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-5-alert"
+                            id="cell-table-for-card-tableCard-row-3-alert"
                             offset={0}
                             width=""
                           >
@@ -1821,9 +1847,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI001 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -1832,7 +1858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-5-hour"
+                            id="cell-table-for-card-tableCard-row-3-hour"
                             offset={0}
                             width=""
                           >
@@ -1841,9 +1867,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1852,7 +1878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-5-pressure"
+                            id="cell-table-for-card-tableCard-row-3-pressure"
                             offset={0}
                             width=""
                           >
@@ -1861,15 +1887,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="10"
                               >
-                                --
+                                10
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1877,7 +1903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-6-alert"
+                            id="cell-table-for-card-tableCard-row-4-alert"
                             offset={0}
                             width=""
                           >
@@ -1886,9 +1912,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI001 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -1897,7 +1923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-6-hour"
+                            id="cell-table-for-card-tableCard-row-4-hour"
                             offset={0}
                             width=""
                           >
@@ -1906,9 +1932,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1917,7 +1943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-6-pressure"
+                            id="cell-table-for-card-tableCard-row-4-pressure"
                             offset={0}
                             width=""
                           >
@@ -1926,15 +1952,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="0"
                               >
-                                --
+                                0
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -1942,7 +1968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-7-alert"
+                            id="cell-table-for-card-tableCard-row-8-alert"
                             offset={0}
                             width=""
                           >
@@ -1951,9 +1977,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI001 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -1962,7 +1988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-7-hour"
+                            id="cell-table-for-card-tableCard-row-8-hour"
                             offset={0}
                             width=""
                           >
@@ -1971,9 +1997,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -1982,7 +2008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-7-pressure"
+                            id="cell-table-for-card-tableCard-row-8-pressure"
                             offset={0}
                             width=""
                           >
@@ -1991,15 +2017,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="0"
                               >
-                                --
+                                0
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -2007,7 +2033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-8-alert"
+                            id="cell-table-for-card-tableCard-row-9-alert"
                             offset={0}
                             width=""
                           >
@@ -2016,9 +2042,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize adjust Y variables"
                               >
-                                --
+                                AHI001 proccess need to optimize adjust Y variables
                               </span>
                             </span>
                           </td>
@@ -2027,7 +2053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-8-hour"
+                            id="cell-table-for-card-tableCard-row-9-hour"
                             offset={0}
                             width=""
                           >
@@ -2036,9 +2062,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -2047,7 +2073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-8-pressure"
+                            id="cell-table-for-card-tableCard-row-9-pressure"
                             offset={0}
                             width=""
                           >
@@ -2056,15 +2082,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="0"
                               >
-                                --
+                                0
                               </span>
                             </span>
                           </td>
                         </tr>
                         <tr
-                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                          className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
                           onClick={[Function]}
                         >
                           <td
@@ -2072,7 +2098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="alert"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-9-alert"
+                            id="cell-table-for-card-tableCard-row-5-alert"
                             offset={0}
                             width=""
                           >
@@ -2081,9 +2107,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="AHI001 proccess need to optimize"
                               >
-                                --
+                                AHI001 proccess need to optimize
                               </span>
                             </span>
                           </td>
@@ -2092,7 +2118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="hour"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-9-hour"
+                            id="cell-table-for-card-tableCard-row-5-hour"
                             offset={0}
                             width=""
                           >
@@ -2101,9 +2127,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="hh:mm:ss"
+                                title="10/28/2018 07:34"
                               >
-                                hh:mm:ss
+                                10/28/2018 07:34
                               </span>
                             </span>
                           </td>
@@ -2112,7 +2138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="data-table-start"
                             data-column="pressure"
                             data-offset={0}
-                            id="cell-table-for-card-tableCard-sample-values-tableCard-9-pressure"
+                            id="cell-table-for-card-tableCard-row-5-pressure"
                             offset={0}
                             width=""
                           >
@@ -2121,9 +2147,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <span
                                 className=""
-                                title="--"
+                                title="10"
                               >
-                                --
+                                10
                               </span>
                             </span>
                           </td>
@@ -2216,7 +2242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <span
                       className="bx--pagination__text bx--pagination__items-count"
                     >
-                      1–10 of 10 items
+                      1–10 of 11 items
                     </span>
                   </div>
                   <div
@@ -2232,7 +2258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="bx--label bx--visually-hidden"
                           htmlFor="bx-pagination-select-3-right"
                         >
-                          Page number, of 1 pages
+                          Page number, of 2 pages
                         </label>
                         <div
                           className="bx--select-input--inline__wrapper"
@@ -2254,6 +2280,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 value={1}
                               >
                                 1
+                              </option>
+                              <option
+                                className="bx--select-option"
+                                disabled={false}
+                                hidden={false}
+                                value={2}
+                              >
+                                2
                               </option>
                             </select>
                             <svg
@@ -2278,7 +2312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <span
                       className="bx--pagination__text"
                     >
-                      1 of 1 pages
+                      1 of 2 pages
                     </span>
                     <div
                       className="bx--pagination__control-buttons"
@@ -2314,8 +2348,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </svg>
                       </button>
                       <button
-                        className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
-                        disabled={true}
+                        className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
+                        disabled={false}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -2362,7 +2396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="imageCard"
             onMouseDown={[Function]}
@@ -2395,7 +2429,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </span>
               <div
                 className="iot--card--toolbar"
-              />
+              >
+                <button
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Expand to fullscreen"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Expand to fullscreen"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                    />
+                    <path
+                      d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
             <div
               className="iot--card--content"
@@ -2409,25 +2473,126 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
               >
                 <div
-                  className="ImageCard__EmptyDiv-sc-1p2j9dm-1 dkLZTG"
+                  onBlur={[Function]}
+                  onMouseOut={[Function]}
+                  style={
+                    Object {
+                      "background": "#eee",
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "position": "relative",
+                      "textAlign": "center",
+                      "width": "100%",
+                    }
+                  }
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="gray"
-                    focusable="false"
-                    height={250}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={250}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <img
+                    alt="Sample image"
+                    onLoad={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
+                    onMouseUp={[Function]}
+                    src="static/media/landscape.013ce39d.jpg"
+                    style={
+                      Object {
+                        "left": undefined,
+                        "position": "relative",
+                        "top": undefined,
+                      }
+                    }
+                  />
+                  <div
+                    style={
+                      Object {
+                        "left": undefined,
+                        "margin": "auto",
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                        "right": "auto",
+                        "top": undefined,
+                      }
+                    }
                   >
-                    <path
-                      d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
-                    />
-                    <path
-                      d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
-                    />
-                  </svg>
+                    <div
+                      className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                    >
+                      <div
+                        aria-describedby={null}
+                        aria-labelledby="hotspot-35-65"
+                        className="bx--tooltip__label"
+                        id="hotspot-35-65"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-label=""
+                          fill="purple"
+                          focusable="false"
+                          height={25}
+                          preserveAspectRatio="xMidYMid meet"
+                          title=""
+                          viewBox="0 0 16 16"
+                          width={25}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.3 9.3L8.5 13.1 8.5 1 7.5 1 7.5 13.1 3.7 9.3 3 10 8 15 13 10z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "bottom": 10,
+                        "pointerEvents": "auto",
+                        "position": "absolute",
+                        "right": 10,
+                      }
+                    }
+                  >
+                    <button
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "background": "#fff",
+                          "border": "none",
+                          "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                          "height": "25px",
+                          "width": "25px",
+                        }
+                      }
+                      title="Zoom in"
+                      type="button"
+                    >
+                      +
+                    </button>
+                    <br />
+                    <button
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "background": "#fff",
+                          "border": "none",
+                          "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                          "height": "25px",
+                          "width": "25px",
+                        }
+                      }
+                      title="Zoom out"
+                      type="button"
+                    >
+                      -
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2445,7 +2610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="timeSeriesCard"
             onMouseDown={[Function]}
@@ -2486,7 +2651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
+                className="iot--time-series-card--wrapper"
               >
                 <div
                   className="chart-holder"
@@ -2549,7 +2714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="list-card react-grid-item react-draggable react-resizable"
+                className="list-card react-grid-item react-resizable"
                 style={
                   Object {
                     "paddingBottom": 0,
@@ -2739,7 +2904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--bar-chart-card iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--bar-chart-card iot--card--wrapper"
             data-testid="Card"
             id="barChartCard"
             onMouseDown={[Function]}
@@ -2780,7 +2945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="iot--bar-chart-container iot--bar-chart-container--editable"
+                className="iot--bar-chart-container"
               >
                 <div
                   className="chart-holder"
@@ -3368,7 +3533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -3428,7 +3593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -3488,7 +3653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
@@ -3617,7 +3782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="card"
             onMouseDown={[Function]}
