@@ -36,12 +36,12 @@
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
     "test": "yarn test:engines && yarn test:a11y && yarn test:base",
-    "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
-    "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
-    "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
-    "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --clearCache",
-    "test:engines": "check-node-version --node $(cat .nvmrc) --yarn 1.x"
+    "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
+    "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
+    "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
+    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
+    "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --clearCache",
+    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
