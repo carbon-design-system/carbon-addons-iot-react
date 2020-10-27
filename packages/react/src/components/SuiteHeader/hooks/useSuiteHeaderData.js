@@ -196,58 +196,6 @@ const useSuiteHeaderData = ({
     applications: [],
   });
 
-<<<<<<< HEAD:packages/react/src/components/SuiteHeader/hooks/useSuiteHeaderData.js
-  const refreshData = useCallback(
-    async () => {
-      const api = (method, path, body, headers) =>
-        fetchApi(method, `${baseApiUrl}${path}`, body, headers, isTest ? testApiData[path] : null);
-
-      try {
-        setIsLoading(true);
-        const profileData = await api('GET', '/profile');
-        const appsData = await api('GET', '/applications');
-        const eamData = await api('GET', '/config/eam');
-        const i18nData = await api('GET', `/i18n/header/${isTest ? 'en' : lang}`);
-
-        // Routes
-        const [routes, applications] = calculateRoutes(
-          domain,
-          profileData.user,
-          profileData.workspaces,
-          appsData
-        );
-
-        // NPS
-        const showSurvey = surveyConfig?.id
-          ? await calculateSurveyStatus(profileData.user.username, surveyConfig, api)
-          : false;
-
-        // i18n
-        const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
-
-        setData({
-          username: profileData.user.username,
-          userDisplayName: profileData.user.displayName,
-          email: profileData.user.email,
-          routes,
-          applications: [
-            ...(eamData?.url
-              ? [{ id: 'eam', name: 'Manage', href: eamData.url, isExternal: true }]
-              : []),
-            ...applications,
-          ],
-          i18n,
-          showSurvey,
-        });
-        setIsLoading(false);
-      } catch (err) {
-        setError(err);
-        setIsLoading(false);
-      }
-    },
-    [fetchApi, baseApiUrl, isTest, lang, calculateRoutes, domain, surveyConfig, calculateSurveyStatus, calculateI18N]
-  );
-=======
   const refreshData = useCallback(async () => {
     const api = (method, path, body, headers) =>
       fetchApi(
@@ -257,7 +205,6 @@ const useSuiteHeaderData = ({
         headers,
         isTest ? testApiData[path] : null
       );
->>>>>>> d8c77336b94a0a49ba9ad357c5e0d078d3218ece:src/components/SuiteHeader/hooks/useSuiteHeaderData.js
 
     try {
       setIsLoading(true);
@@ -277,10 +224,10 @@ const useSuiteHeaderData = ({
       // Survey
       const showSurvey = surveyConfig?.id
         ? await calculateSurveyStatus(
-            profileData.user.username,
-            surveyConfig,
-            api
-          )
+          profileData.user.username,
+          surveyConfig,
+          api
+        )
         : false;
 
       // i18n
@@ -294,13 +241,13 @@ const useSuiteHeaderData = ({
         applications: [
           ...(eamData?.url
             ? [
-                {
-                  id: 'eam',
-                  name: 'Manage',
-                  href: eamData.url,
-                  isExternal: true,
-                },
-              ]
+              {
+                id: 'eam',
+                name: 'Manage',
+                href: eamData.url,
+                isExternal: true,
+              },
+            ]
             : []),
           ...applications,
         ],
