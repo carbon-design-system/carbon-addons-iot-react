@@ -40,7 +40,7 @@
     "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
     "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
+    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js src/components/Header/Header.test.jsx src/components/Header/HeaderAction/HeaderActionMenu.test.jsx --updateSnapshot",
     "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --clearCache",
     "test:engines": "check-node-version --node $(cat .nvmrc) --yarn 1.x"
   },
@@ -139,7 +139,7 @@
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
     "react-grid-layout": "^0.18.3",
-    "react-sizeme": "^2.6.3",
+    "react-sizeme": "^2.6.12",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
     "rollup-plugin-auto-external": "^2.0.0",

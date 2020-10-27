@@ -39,8 +39,8 @@ class ResizeObserver {
 window.ResizeObserver = ResizeObserver;
 
 // Needed so that any component that uses sizeme can be jest tested
+// https://github.com/ctrlplusb/react-sizeme/issues/150#issuecomment-482247078
 import sizeMe from 'react-sizeme';
-
 sizeMe.noPlaceholders = true;
 
 // Force the timezone to be the same everywhere

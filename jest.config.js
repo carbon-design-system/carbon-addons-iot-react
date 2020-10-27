@@ -13,7 +13,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|Pagination).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -63,7 +63,7 @@ module.exports = {
       lines: 51,
       functions: 66,
     },
-    './src/components/ValueCard/Attribute.jsx': { branches: 64, functions: 66 },
+    './src/components/ValueCard/Attribute.jsx': { branches: 61, functions: 66 },
     './src/components/ValueCard/UnitRenderer.jsx': {
       statements: 70,
       branches: 8,
@@ -102,6 +102,7 @@ module.exports = {
       branches: 76,
     },
     './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
+    './src/components/Table/Pagination.jsx': { branches: 66 },
   },
   globals: {
     __DEV__: false,

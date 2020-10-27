@@ -41,9 +41,12 @@ describe('Card', () => {
     );
     expect(childRenderInTitleCard).toHaveBeenCalledWith(
       {
-        width: 0,
-        height: -CARD_TITLE_HEIGHT,
-        position: null,
+        // react-sizeme can not measure the jsdom, so it returns undefined in the test environment.
+        // Rather than mocking the module and providing stub values, this should be more properly tested via e2e tests:
+        // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1203
+        width: undefined,
+        height: NaN, // Inside Card.jsx the CARD_TITLE_HEIGHT is subtracted from the height. undefined - CARD_TITLE_HEIGHT = NaN
+        position: undefined,
       },
       expect.anything()
     );
@@ -53,9 +56,11 @@ describe('Card', () => {
     mount(<Card size={CARD_SIZES.MEDIUM}>{childRenderInNoTitleCard}</Card>);
     expect(childRenderInNoTitleCard).toHaveBeenCalledWith(
       {
-        width: 0,
-        height: 0,
-        position: null,
+        // react-sizeme can not measure the jsdom, so it returns undefined in the test environment.
+        // Rather than mocking the module and providing stub values, this should be more properly tested via e2e tests:
+        // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1203
+        width: undefined,
+        height: undefined,
       },
       expect.anything()
     );
