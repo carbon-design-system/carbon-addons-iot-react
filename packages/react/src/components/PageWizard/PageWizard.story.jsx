@@ -11,6 +11,7 @@ import {
   Link,
   TextInput,
 } from 'carbon-components-react';
+import { InformationFilled20 } from '@carbon/icons-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
@@ -468,6 +469,20 @@ storiesOf('Watson IoT/PageWizard', module)
               <Button kind="tertiary">Save and close</Button>
             }
             isClickable
+            afterFooterContent={
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  fontWeight: 600,
+                  fontSize: '1rem',
+                  lineHeight: '1.375rem',
+                  letterSpacing: 0,
+                }}>
+                <InformationFilled20 style={{ marginRight: '0.5rem' }} />
+                {text('Additional footer content', 'Additional footer content')}
+              </div>
+            }
           />
         }
       />

@@ -7852,25 +7852,294 @@ Map {
       },
     },
   },
-  "CardEditor" => Object {
+  "DashboardEditor" => Object {
     "defaultProps": Object {
+      "dataItems": Array [],
+      "getValidDataItems": null,
+      "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
+        "defaultCardTitle": "Untitled",
         "galleryHeader": "Gallery",
+        "headerCancelButton": "Cancel",
+        "headerDeleteButton": "Delete",
+        "headerEditTitleButton": "Edit title",
+        "headerExportButton": "Export",
+        "headerImportButton": "Import",
+        "headerSubmitButton": "Save and close",
+        "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a value",
       },
-      "supportedTypes": undefined,
-      "value": null,
+      "initialValue": Object {
+        "cards": Array [],
+        "layouts": Object {},
+      },
+      "notification": null,
+      "onCancel": null,
+      "onDelete": null,
+      "onEditTitle": null,
+      "onExport": null,
+      "onImport": null,
+      "onSubmit": null,
+      "onValidateCardJson": null,
+      "renderCardPreview": [Function],
+      "renderHeader": null,
+      "submitDisabled": false,
+      "supportedCardTypes": Array [
+        "VALUE",
+        "TIMESERIES",
+        "IMAGE",
+        "TABLE",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
+      ],
+      "title": null,
     },
     "propTypes": Object {
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
+      "headerBreadcrumbs": Object {
+        "args": Array [
+          Object {
+            "type": "element",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "i18n": Object {
         "args": Array [
           Object {
+            "closeGalleryButton": Object {
+              "type": "string",
+            },
+            "defaultCardTitle": Object {
+              "type": "string",
+            },
             "galleryHeader": Object {
               "type": "string",
             },
+            "headerCancelButton": Object {
+              "type": "string",
+            },
+            "headerDeleteButton": Object {
+              "type": "string",
+            },
+            "headerEditTitleButton": Object {
+              "type": "string",
+            },
+            "headerExportButton": Object {
+              "type": "string",
+            },
+            "headerImportButton": Object {
+              "type": "string",
+            },
+            "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
             "openGalleryButton": Object {
+              "type": "string",
+            },
+            "openJSONButton": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialValue": Object {
+        "args": Array [
+          Object {
+            "cards": Object {
+              "type": "array",
+            },
+            "layouts": Object {
+              "type": "object",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "notification": Object {
+        "type": "node",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "onDelete": Object {
+        "type": "func",
+      },
+      "onEditTitle": Object {
+        "type": "func",
+      },
+      "onExport": Object {
+        "type": "func",
+      },
+      "onImport": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "type": "func",
+      },
+      "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "renderCardPreview": Object {
+        "type": "func",
+      },
+      "renderHeader": Object {
+        "type": "func",
+      },
+      "submitDisabled": Object {
+        "type": "bool",
+      },
+      "supportedCardTypes": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
+  "CardEditor" => Object {
+    "defaultProps": Object {
+      "cardJson": null,
+      "dataItems": Array [],
+      "getValidDataItems": null,
+      "i18n": Object {
+        "addCardButton": "Add card",
+        "closeGalleryButton": "Back",
+        "galleryHeader": "Gallery",
+        "openGalleryButton": "Add card",
+        "openJSONButton": "Open JSON editor",
+        "searchPlaceholderText": "Enter a search",
+      },
+      "onValidateCardJson": null,
+      "supportedCardTypes": Array [
+        "VALUE",
+        "TIMESERIES",
+        "IMAGE",
+        "TABLE",
+        "SIMPLE_BAR",
+        "GROUPED_BAR",
+        "STACKED_BAR",
+      ],
+    },
+    "propTypes": Object {
+      "cardJson": Object {
+        "args": Array [
+          Object {
+            "content": Object {
+              "args": Array [
+                Object {
+                  "includeZeroOnXaxis": Object {
+                    "type": "bool",
+                  },
+                  "includeZeroOnYaxis": Object {
+                    "type": "bool",
+                  },
+                  "series": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
+                            },
+                            "dataSourceId": Object {
+                              "type": "string",
+                            },
+                            "label": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "unit": Object {
+                    "type": "string",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "interval": Object {
+              "type": "string",
+            },
+            "showLegend": Object {
+              "type": "bool",
+            },
+            "size": Object {
+              "type": "string",
+            },
+            "title": Object {
+              "type": "string",
+            },
+            "type": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "addCardButton": Object {
+              "type": "string",
+            },
+            "galleryHeader": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
               "type": "string",
             },
           },
@@ -7889,16 +8158,16 @@ Map {
         "isRequired": true,
         "type": "func",
       },
-      "supportedTypes": Object {
+      "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "supportedCardTypes": Object {
         "args": Array [
           Object {
             "type": "string",
           },
         ],
         "type": "arrayOf",
-      },
-      "value": Object {
-        "type": "object",
       },
     },
   },
@@ -9897,8 +10166,10 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "dataState": null,
       "locale": "en",
       "size": "MEDIUM",
+      "values": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -10822,6 +11093,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
+      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -11615,6 +11887,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showLegend": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
@@ -15042,6 +15317,7 @@ Map {
   },
   "PageWizard" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "currentStepId": null,
@@ -15063,6 +15339,9 @@ Map {
       "setStep": null,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
@@ -15152,6 +15431,7 @@ Map {
   },
   "PageWizardStep" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "error": null,
@@ -15175,6 +15455,9 @@ Map {
       "sendingData": false,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
@@ -15348,6 +15631,7 @@ Map {
   },
   "StatefulPageWizard" => Object {
     "defaultProps": Object {
+      "afterFooterContent": null,
       "beforeFooterContent": null,
       "children": Array [],
       "currentStepId": null,
@@ -15368,6 +15652,9 @@ Map {
       "setStep": null,
     },
     "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
       "beforeFooterContent": Object {
         "type": "node",
       },
