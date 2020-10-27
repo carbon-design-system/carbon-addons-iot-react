@@ -10,12 +10,16 @@ fi
 if [[ $TRAVIS_BRANCH == "master" ]]; then
   # graduate the relase with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
+  # publish the packages that were just versioned
   lerna publish from-package --dist-tag next --yes
+  # push changes back to next so we can start work on the next release
+  git push origin next
 fi
 
 if [[ $TRAVIS_BRANCH == "next" ]]; then
   # publish a prerelease to the next dist-tag with the next preid
   lerna version --conventional-commits --conventional-prerelease --preid next --create-release github --yes
+  # publish the packages that were just versioned
   lerna publish from-package --dist-tag latest --yes
 fi
 
