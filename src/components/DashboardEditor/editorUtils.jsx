@@ -19,7 +19,7 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
-import sampleImage from '../CardEditor/CardGalleryList/image.svg';
+import { ImageIcon } from '../../icons/components';
 
 import { baseClassName } from './DashboardEditor';
 
@@ -132,7 +132,7 @@ export const getDefaultCard = (type, i18n) => {
         ...baseCardProps,
         content: {
           alt: 'Sample image',
-          src: sampleImage,
+          src: ImageIcon,
           hideMinimap: true,
           hideHotspots: false,
           hideZoomControls: false,
