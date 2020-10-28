@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-function SvgDashboard(props) {
+function SvgDashboardIcon(props) {
   return (
     <svg viewBox="0 0 170.76 146.75" {...props}>
       <defs>
         <linearGradient
-          id="dashboard_svg__a"
+          id="dashboard-icon_svg__a"
           x1={84.96}
           x2={84.96}
           y1={138.9}
@@ -16,7 +16,7 @@ function SvgDashboard(props) {
         </linearGradient>
       </defs>
       <path
-        fill="url(#dashboard_svg__a)"
+        fill="url(#dashboard-icon_svg__a)"
         d="M84.68 41.57l-84.72 49 85.28 49 84.72-49.01-85.28-48.99z"
       />
       <path
@@ -71,4 +71,4 @@ function SvgDashboard(props) {
   );
 }
 
-export default SvgDashboard;
+export default SvgDashboardIcon;

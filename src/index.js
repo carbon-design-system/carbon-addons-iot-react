@@ -306,4 +306,4 @@ export {
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
 
-export * as Icons from './icons/components';
+export * from './icons/components';

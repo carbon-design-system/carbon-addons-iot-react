@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-function SvgDataScientistIllustration(props) {
+function SvgDataScientistIcon(props) {
   return (
     <svg viewBox="0 0 170.76 146.75" {...props}>
       <defs>
         <linearGradient
-          id="data-scientist-illustration_svg__a"
+          id="data-scientist-icon_svg__a"
           x1={-143.46}
           x2={-143.14}
           y1={4805.53}
@@ -17,25 +17,25 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__c"
+          id="data-scientist-icon_svg__c"
           x1={-141.77}
           x2={-141.23}
           y1={4806.28}
           y2={4806.28}
           gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
-          xlinkHref="#data-scientist-illustration_svg__a"
+          xlinkHref="#data-scientist-icon_svg__a"
         />
         <linearGradient
-          id="data-scientist-illustration_svg__f"
+          id="data-scientist-icon_svg__f"
           x1={1094.71}
           x2={1095.26}
           y1={5933.73}
           y2={5933.73}
           gradientTransform="matrix(0 -9.62 9.62 0 -56968.54 10565.32)"
-          xlinkHref="#data-scientist-illustration_svg__a"
+          xlinkHref="#data-scientist-icon_svg__a"
         />
         <linearGradient
-          id="data-scientist-illustration_svg__b"
+          id="data-scientist-icon_svg__b"
           x1={12751.73}
           x2={12750.76}
           y1={42.02}
@@ -46,7 +46,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={0.73} stopColor="#171717" stopOpacity={0} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__e"
+          id="data-scientist-icon_svg__e"
           x1={-3262.79}
           x2={-3262.33}
           y1={1608.24}
@@ -65,7 +65,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#b9bfc7" stopOpacity={0} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__g"
+          id="data-scientist-icon_svg__g"
           x1={85.42}
           x2={85.42}
           y1={139.12}
@@ -75,25 +75,25 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#bb8eff" />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__l"
+          id="data-scientist-icon_svg__l"
           x1={-143.47}
           x2={-143.1}
           y1={4805.59}
           y2={4805.36}
           gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
-          xlinkHref="#data-scientist-illustration_svg__b"
+          xlinkHref="#data-scientist-icon_svg__b"
         />
         <linearGradient
-          id="data-scientist-illustration_svg__n"
+          id="data-scientist-icon_svg__n"
           x1={-141.79}
           x2={-141.16}
           y1={4806.38}
           y2={4805.99}
           gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
-          xlinkHref="#data-scientist-illustration_svg__b"
+          xlinkHref="#data-scientist-icon_svg__b"
         />
         <linearGradient
-          id="data-scientist-illustration_svg__o"
+          id="data-scientist-icon_svg__o"
           x1={12749.65}
           x2={12755.31}
           y1={37.47}
@@ -111,7 +111,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={0.8} stopColor="#0530ad" stopOpacity={0} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__s"
+          id="data-scientist-icon_svg__s"
           x1={1094.69}
           x2={1095.32}
           y1={5933.84}
@@ -130,7 +130,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#0f6fff" stopOpacity={0} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__u"
+          id="data-scientist-icon_svg__u"
           x1={-2637.72}
           x2={-2656}
           y1={74.55}
@@ -142,7 +142,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#b9bfc7" stopOpacity={0} />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__v"
+          id="data-scientist-icon_svg__v"
           x1={-2655.26}
           x2={-2657.15}
           y1={49.06}
@@ -158,7 +158,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#0530ad" />
         </linearGradient>
         <linearGradient
-          id="data-scientist-illustration_svg__w"
+          id="data-scientist-icon_svg__w"
           x1={-2661.83}
           x2={-2660.08}
           y1={47.76}
@@ -174,7 +174,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#0530ad" />
         </linearGradient>
         <radialGradient
-          id="data-scientist-illustration_svg__d"
+          id="data-scientist-icon_svg__d"
           cx={-2663.42}
           cy={53.56}
           r={6.74}
@@ -186,7 +186,7 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#b9bfc7" />
         </radialGradient>
         <radialGradient
-          id="data-scientist-illustration_svg__h"
+          id="data-scientist-icon_svg__h"
           cx={-2655.87}
           cy={70.73}
           r={20.6}
@@ -197,73 +197,73 @@ function SvgDataScientistIllustration(props) {
           <stop offset={1} stopColor="#b9bfc7" />
         </radialGradient>
         <radialGradient
-          id="data-scientist-illustration_svg__p"
+          id="data-scientist-icon_svg__p"
           cx={-2644.06}
           cy={60.05}
           r={5.83}
-          xlinkHref="#data-scientist-illustration_svg__d"
+          xlinkHref="#data-scientist-icon_svg__d"
         />
         <radialGradient
-          id="data-scientist-illustration_svg__t"
+          id="data-scientist-icon_svg__t"
           cx={-2647.22}
           cy={59.91}
           r={6.78}
-          xlinkHref="#data-scientist-illustration_svg__d"
+          xlinkHref="#data-scientist-icon_svg__d"
         />
-        <clipPath id="data-scientist-illustration_svg__i">
+        <clipPath id="data-scientist-icon_svg__i">
           <path
             fill="none"
             d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
           />
         </clipPath>
-        <clipPath id="data-scientist-illustration_svg__j">
+        <clipPath id="data-scientist-icon_svg__j">
           <path
-            fill="url(#data-scientist-illustration_svg__b)"
+            fill="url(#data-scientist-icon_svg__b)"
             d="M104 45.28v-3.7l4.65 2.72-2 3.43c-1.55-.33-2.67-1.3-2.67-2.45"
           />
         </clipPath>
-        <clipPath id="data-scientist-illustration_svg__q">
+        <clipPath id="data-scientist-icon_svg__q">
           <path
-            fill="url(#data-scientist-illustration_svg__e)"
+            fill="url(#data-scientist-icon_svg__e)"
             opacity={0.7}
             d="M97.01 62.16l1.41 3.21 1.99-10.03-1.02-2.06-2.38 8.88z"
           />
         </clipPath>
         <mask
-          id="data-scientist-illustration_svg__k"
+          id="data-scientist-icon_svg__k"
           width={6.35}
           height={6.35}
           x={103.38}
           y={41.28}
           maskUnits="userSpaceOnUse">
           <path
-            fill="url(#data-scientist-illustration_svg__a)"
+            fill="url(#data-scientist-icon_svg__a)"
             transform="rotate(-47.95 106.56 44.465)"
             d="M104.29 42.23h4.53v4.46h-4.53z"
           />
         </mask>
         <mask
-          id="data-scientist-illustration_svg__m"
+          id="data-scientist-icon_svg__m"
           width={10.76}
           height={10.77}
           x={84.58}
           y={46.78}
           maskUnits="userSpaceOnUse">
           <path
-            fill="url(#data-scientist-illustration_svg__c)"
+            fill="url(#data-scientist-icon_svg__c)"
             transform="rotate(-47.95 89.952 52.163)"
             d="M86.12 48.38h7.68v7.57h-7.68z"
           />
         </mask>
         <mask
-          id="data-scientist-illustration_svg__r"
+          id="data-scientist-icon_svg__r"
           width={9.56}
           height={9.63}
           x={94.09}
           y={32.83}
           maskUnits="userSpaceOnUse">
           <path
-            fill="url(#data-scientist-illustration_svg__f)"
+            fill="url(#data-scientist-icon_svg__f)"
             transform="rotate(-17.95 98.86 37.646)"
             d="M95.09 33.81h7.57v7.68h-7.57z"
           />
@@ -274,7 +274,7 @@ function SvgDataScientistIllustration(props) {
           isolation: 'isolate',
         }}>
         <path
-          fill="url(#data-scientist-illustration_svg__g)"
+          fill="url(#data-scientist-icon_svg__g)"
           d="M85.15 41.78l-84.73 49 85.28 49 84.73-49-85.28-49z"
         />
         <path
@@ -310,13 +310,13 @@ function SvgDataScientistIllustration(props) {
           d="M110.32 102c-.92-.52-3.5-1.24-4 1.12a2.66 2.66 0 00.33 2.1l.79.94c1 .32 4.24 2.65 5.73 3.59a2.12 2.12 0 001.09.31h2.17a1.87 1.87 0 001.25-1.44l.23-3.07-4.34-.81-1.64-2.41a4.69 4.69 0 01-1.61-.33z"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__d)"
+          fill="url(#data-scientist-icon_svg__d)"
           stroke="#b9bfc7"
           strokeMiterlimit={10}
           d="M119.89 44.76a1.35 1.35 0 00-.76-.12 3.06 3.06 0 00-.68.25s.08.06.1 0-.25 0-.34.08a4 4 0 00-1.6 1.86 6.58 6.58 0 00-.4 1.15c-.5 2.48-.67 6-1 8.81a10.11 10.11 0 00-.25 2c.24 2.38 1.18 3.3 2.17 3.57a2.5 2.5 0 003-1.92v0c.09-.36.25-.91.31-1.27.2-1.14.37-2.28.52-3.43a43.94 43.94 0 00.57-6.58c0-1.58 0-3.69-1.71-4.42"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__h)"
+          fill="url(#data-scientist-icon_svg__h)"
           stroke="#b9bfc7"
           strokeMiterlimit={10}
           d="M101.07 53c.47-1.1 5.24-5.73 7.1-7.32 1.45-1.52 4.4-1.74 6.61-1.23h.79c1.64.14 3.55-.1 4.06.42l.06.13c.13.32.26.65.37 1 1 3.05.33 5.71-.8 8.75a37.28 37.28 0 00-1.26 5.4c-.12 1.19-.61 3.51-.63 4.76 0 0 5.22 21.28 5.46 26.26.17 3.44-14.36 6.08-14.36 6.08s-8.88-1.15-9.64-3.33 3.31-26.52 3.31-26.52l-1-14.52"
@@ -325,22 +325,22 @@ function SvgDataScientistIllustration(props) {
           fill="#f3f3f3"
           d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z"
         />
-        <g clipPath="url(#data-scientist-illustration_svg__i)">
+        <g clipPath="url(#data-scientist-icon_svg__i)">
           <path
-            fill="url(#data-scientist-illustration_svg__b)"
+            fill="url(#data-scientist-icon_svg__b)"
             d="M104 45.28v-3.7l4.65 2.72-2 3.43c-1.55-.33-2.67-1.3-2.67-2.45"
           />
-          <g clipPath="url(#data-scientist-illustration_svg__j)">
-            <g mask="url(#data-scientist-illustration_svg__k)">
+          <g clipPath="url(#data-scientist-icon_svg__j)">
+            <g mask="url(#data-scientist-icon_svg__k)">
               <path
-                fill="url(#data-scientist-illustration_svg__l)"
+                fill="url(#data-scientist-icon_svg__l)"
                 transform="rotate(-47.95 106.56 44.465)"
                 d="M104.29 42.23h4.53v4.46h-4.53z"
               />
             </g>
-            <g mask="url(#data-scientist-illustration_svg__m)">
+            <g mask="url(#data-scientist-icon_svg__m)">
               <path
-                fill="url(#data-scientist-illustration_svg__n)"
+                fill="url(#data-scientist-icon_svg__n)"
                 transform="rotate(-47.95 89.952 52.163)"
                 d="M86.12 48.38h7.68v7.57h-7.68z"
               />
@@ -368,42 +368,42 @@ function SvgDataScientistIllustration(props) {
           d="M107.24 42.46c1 .47 1.84-.91 1.68-2.16-.13-1.06-.86-.84-1.39-.52a1.43 1.43 0 00-.69 1l-.43 2.39z"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__o)"
+          fill="url(#data-scientist-icon_svg__o)"
           d="M107.76 34.46s-2.75 1-3.23 3.21a4.8 4.8 0 00.4 2.82s4.55-1.29 5.11-2.44-2.28-3.59-2.28-3.59z"
           opacity={0.3}
         />
         <path
-          fill="url(#data-scientist-illustration_svg__p)"
+          fill="url(#data-scientist-icon_svg__p)"
           stroke="#b9bfc7"
           strokeMiterlimit={10}
           d="M103.45 62.87c-.44-.8-1.24-2.59-2-4.47-.13-.32-.26-.63-.4-.94-.59-1.4-1.15-2.75-1.54-3.7 0-.09-.07-.17-.11-.25s0 0 0 0a.14.14 0 010-.06l-.47-.16-.27-.1a4.11 4.11 0 01-2.42 1.38 3 3 0 01-1.24.07c-.15 0-.34-.12-.24 0a3.67 3.67 0 00-.29 1.28 3.3 3.3 0 01.2.58l.29.76c.24.65.51 1.35.8 2.08.71 1.8 1.52 3.74 2.2 5.23.06.12.12.24.17.36a6.16 6.16 0 001.16 2.08"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__e)"
+          fill="url(#data-scientist-icon_svg__e)"
           opacity={0.7}
           d="M97.01 62.16l1.41 3.21 1.99-10.03-1.02-2.06-2.38 8.88z"
         />
         <g
-          mask="url(#data-scientist-illustration_svg__r)"
-          clipPath="url(#data-scientist-illustration_svg__q)">
+          mask="url(#data-scientist-icon_svg__r)"
+          clipPath="url(#data-scientist-icon_svg__q)">
           <path
-            fill="url(#data-scientist-illustration_svg__s)"
+            fill="url(#data-scientist-icon_svg__s)"
             transform="rotate(-18.2 98.109 37.727)"
             d="M95.09 33.81h7.57v7.68h-7.57z"
           />
         </g>
         <path
-          fill="url(#data-scientist-illustration_svg__t)"
+          fill="url(#data-scientist-icon_svg__t)"
           stroke="#b9bfc7"
           strokeMiterlimit={10}
           d="M104.3 51.22a1.42 1.42 0 00-.75-.17 3.31 3.31 0 00-.7.2l-.24.11a4.09 4.09 0 00-1.73 1.74 8 8 0 00-.48 1.12c-.67 2.44-1.09 6-1.58 8.73a10.62 10.62 0 00-.39 2c.08 2.4.94 3.38 1.91 3.72a2.5 2.5 0 003.16-1.71v0c.12-.35.32-.89.4-1.24.28-1.13.53-2.25.76-3.39a42.31 42.31 0 001-6.52c.08-1.58.28-3.69-1.39-4.53"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__u)"
+          fill="url(#data-scientist-icon_svg__u)"
           d="M105.86 55.33l4.9 13.39-2.34 28.53s-8.9-1.16-9.64-3.33 3-25.13 3-25.13c.95-.42 2.33.45 4.08-13.46z"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__v)"
+          fill="url(#data-scientist-icon_svg__v)"
           d="M111.43 42.32c.81.86-.22 8.15.12 9 .67 1.67 3.07 3.52 3.7 5.21.2.53.75-.73.75-.73l-3.23-5.37-.31-3.26.14-3.71s.24-2.95-.38-3.69a4.27 4.27 0 00-.79-.52s-1.28 1.75 0 3.07z"
           opacity={0.2}
         />
@@ -412,7 +412,7 @@ function SvgDataScientistIllustration(props) {
           d="M114.07 40.85c.68 3.52 2.05 3.86 3.29 5.08s.87 4.78.87 4.78a3.31 3.31 0 01.33 3.62 17 17 0 01-2.72 2.25 8.07 8.07 0 00-2.12-3.64 4.84 4.84 0 01-1.72-3.55s.59-6.37-.35-8.62.37-1.45.71-1.46l1.68 1.54"
         />
         <path
-          fill="url(#data-scientist-illustration_svg__w)"
+          fill="url(#data-scientist-icon_svg__w)"
           d="M118.06 52.62c-.45-1.74-2.69-2.47-3.36-4.14-.34-.83 0-3.49-1.2-3.74"
           opacity={0.3}
         />
@@ -425,4 +425,4 @@ function SvgDataScientistIllustration(props) {
   );
 }
 
-export default SvgDataScientistIllustration;
+export default SvgDataScientistIcon;

@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-function SvgComputerChip(props) {
+function SvgComputerChipIcon(props) {
   return (
     <svg viewBox="0 0 170.76 146.75" {...props}>
       <defs>
         <linearGradient
-          id="computer-chip_svg__a"
+          id="computer-chip-icon_svg__a"
           x1={85.02}
           x2={85.02}
           y1={138.57}
@@ -15,7 +15,7 @@ function SvgComputerChip(props) {
           <stop offset={1} stopColor="#bb8eff" />
         </linearGradient>
         <linearGradient
-          id="computer-chip_svg__b"
+          id="computer-chip-icon_svg__b"
           x1={460.66}
           x2={461.66}
           y1={1323.44}
@@ -28,7 +28,7 @@ function SvgComputerChip(props) {
           <stop offset={1} stopColor="#373d42" />
         </linearGradient>
         <linearGradient
-          id="computer-chip_svg__c"
+          id="computer-chip-icon_svg__c"
           x1={488.34}
           x2={489.34}
           y1={1323.51}
@@ -41,7 +41,7 @@ function SvgComputerChip(props) {
           <stop offset={1} stopColor="#373d42" />
         </linearGradient>
         <radialGradient
-          id="computer-chip_svg__d"
+          id="computer-chip-icon_svg__d"
           cx={491.44}
           cy={1331.47}
           r={1}
@@ -55,7 +55,7 @@ function SvgComputerChip(props) {
         </radialGradient>
       </defs>
       <path
-        fill="url(#computer-chip_svg__a)"
+        fill="url(#computer-chip-icon_svg__a)"
         d="M84.75 41.24l-84.73 49 85.28 49 84.72-49-85.27-49z"
       />
       <path
@@ -191,15 +191,15 @@ function SvgComputerChip(props) {
         d="M116.64 72.53l2.39 2.5-2.94-1.95-2.56 1.95h-.35l3.46-2.5z"
       />
       <path
-        fill="url(#computer-chip_svg__b)"
+        fill="url(#computer-chip-icon_svg__b)"
         d="M39.55 84.5v6.55l45.3 26.07.01-6.61-45.29-26"
       />
       <path
-        fill="url(#computer-chip_svg__c)"
+        fill="url(#computer-chip-icon_svg__c)"
         d="M84.86 110.51l-.01 6.61 45.17-26.08V84.5l-45.16 26.01z"
       />
       <path
-        fill="url(#computer-chip_svg__d)"
+        fill="url(#computer-chip-icon_svg__d)"
         d="M130.02 84.5L85.1 58.33 39.57 84.51l45.29 26 45.16-26.01z"
       />
       <path fill="#05030d" d="M81.06 103.13l.01.01h.02l-.03-.01" />
@@ -323,4 +323,4 @@ function SvgComputerChip(props) {
   );
 }
 
-export default SvgComputerChip;
+export default SvgComputerChipIcon;

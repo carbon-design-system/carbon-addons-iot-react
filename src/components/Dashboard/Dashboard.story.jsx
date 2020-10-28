@@ -24,9 +24,9 @@ import {
 } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 import {
-  Dashboard as DashboardIcon,
-  DataScientistIllustration,
-  ComputerChip,
+  DashboardIcon,
+  DataScientistIcon,
+  ComputerChipIcon,
 } from '../../icons/components';
 
 import Dashboard from './Dashboard';
@@ -1407,7 +1407,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           width: '100%',
                           padding: '0 36px 16px 0',
                         }}>
-                        <ComputerChip width="50%" />
+                        <ComputerChipIcon width="50%" />
                       </div>
                     </div>
                   </ClickableTile>
@@ -1432,7 +1432,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                         width: '100%',
                         padding: '0 36px 16px 0',
                       }}>
-                      <DataScientistIllustration width="50%" />
+                      <DataScientistIcon width="50%" />
                     </div>
                   </div>
                 ),
