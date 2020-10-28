@@ -8,7 +8,6 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
@@ -34,10 +33,7 @@ const props = {
   menuItem: () => ({
     className: 'some-class',
     disabled: boolean('Disabled (disabled)', false),
-    requireTitle: boolean(
-      'Use hover over text for menu item (requireTitle)',
-      false
-    ),
+    requireTitle: boolean('Use hover over text for menu item (requireTitle)', false),
     onClick: action('onClick'),
   }),
 };
@@ -53,75 +49,72 @@ const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
       />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 3" />
       <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 4" />
-      <OverflowMenuItem
-        {...overflowMenuItemProps}
-        itemText="Danger option"
-        hasDivider
-        isDelete
-      />
+      <OverflowMenuItem {...overflowMenuItemProps} itemText="Danger option" hasDivider isDelete />
     </OverflowMenu>
   </>
 );
 
-storiesOf('OverflowMenu', module)
-  .addDecorator(withKnobs)
-  .add(
-    'basic',
-    () => (
-      <OverflowMenuExample
-        overflowMenuProps={props.menu()}
-        overflowMenuItemProps={props.menuItem()}
-      />
-    ),
-    {
-      info: {
-        text: `
-            Overflow Menu is used when additional options are available to the user and there is a space constraint.
-            Create Overflow Menu Item components for each option on the menu.
-          `,
-      },
-    }
-  )
-  .add(
-    'with links',
-    () => (
-      <OverflowMenuExample
-        overflowMenuProps={props.menu()}
-        overflowMenuItemProps={{
-          ...props.menuItem(),
-          href: 'https://www.ibm.com',
-        }}
-      />
-    ),
-    {
-      info: {
-        text: `
-            Overflow Menu is used when additional options are available to the user and there is a space constraint.
-            Create Overflow Menu Item components for each option on the menu.
+export default {
+  title: 'OverflowMenu',
+  decorators: [withKnobs],
+};
 
-            When given \`href\` props, menu items render as <a> tags to facilitate usability.
-          `,
-      },
-    }
-  )
-  .add(
-    'custom trigger',
-    () => (
-      <OverflowMenuExample
-        overflowMenuProps={{
-          ...props.menu(),
-          ariaLabel: null,
-          style: { width: 'auto' },
-          renderIcon: () => <div style={{ padding: '0 1rem' }}>Menu</div>,
-        }}
-        overflowMenuItemProps={props.menuItem()}
-      />
-    ),
-    {
-      info: {
-        text: `
-            Sometimes you just want to render something other than an icon
-          `,
-      },
-    }
-  );
+export const Basic = () => (
+  <OverflowMenuExample overflowMenuProps={props.menu()} overflowMenuItemProps={props.menuItem()} />
+);
+
+Basic.storyName = 'basic';
+
+Basic.parameters = {
+  info: {
+    text: `
+        Overflow Menu is used when additional options are available to the user and there is a space constraint.
+        Create Overflow Menu Item components for each option on the menu.
+      `,
+  },
+};
+
+export const WithLinks = () => (
+  <OverflowMenuExample
+    overflowMenuProps={props.menu()}
+    overflowMenuItemProps={{
+      ...props.menuItem(),
+      href: 'https://www.ibm.com',
+    }}
+  />
+);
+
+WithLinks.storyName = 'with links';
+
+WithLinks.parameters = {
+  info: {
+    text: `
+        Overflow Menu is used when additional options are available to the user and there is a space constraint.
+        Create Overflow Menu Item components for each option on the menu.
+
+        When given \`href\` props, menu items render as <a> tags to facilitate usability.
+      `,
+  },
+};
+
+export const CustomTrigger = () => (
+  <OverflowMenuExample
+    overflowMenuProps={{
+      ...props.menu(),
+      ariaLabel: null,
+      style: { width: 'auto' },
+      renderIcon: () => <div style={{ padding: '0 1rem' }}>Menu</div>,
+    }}
+    overflowMenuItemProps={props.menuItem()}
+  />
+);
+
+CustomTrigger.storyName = 'custom trigger';
+
+CustomTrigger.parameters = {
+  info: {
+    text: `
+        Sometimes you just want to render something other than an icon
+      `,
+  },
+};

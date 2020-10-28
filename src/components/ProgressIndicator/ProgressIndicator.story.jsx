@@ -1,7 +1,6 @@
 /* Used dependencies */
 import React from 'react';
 import { boolean, number, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { ProgressIndicatorSkeleton } from 'carbon-components-react';
 
@@ -44,64 +43,82 @@ const items = [
   { id: 'step5', label: 'Fifth Step' },
 ];
 
-/* Adds the stories */
-storiesOf('Watson IoT/ProgressIndicator', module)
-  .add('stateful', () => (
-    <ProgressIndicator
-      items={items}
-      currentItemId="step2_substep2"
-      stepWidth={number('stepWidth', 6)}
-      showLabels={boolean('showlabels', true)}
-      isVerticalMode={boolean('isVerticalMode', false)}
-      isClickable={boolean('isClickable', true)}
-    />
-  ))
-  .add('presentation', () => (
-    <ProgressIndicator
-      items={items}
-      currentItemId={select(
-        'id',
-        items.map((item) => item.id),
-        items[0].id
-      )}
-      onClickItem={action('onClickItem')}
-      stepWidth={number('stepWidth', 6)}
-      showLabels={boolean('showlabels', true)}
-      isVerticalMode={boolean('isVerticalMode', false)}
-      isClickable={boolean('isClickable', true)}
-    />
-  ))
-  .add('presentation vertical', () => (
-    <ProgressIndicator
-      items={items}
-      currentItemId={select(
-        'id',
-        items.map((item) => item.id),
-        items[1].id
-      )}
-      showLabels={boolean('showlabels', true)}
-      isClickable={boolean('isClickable', true)}
-      isVerticalMode={boolean('isVerticalMode', true)}
-    />
-  ))
-  .add('hideLabels and default stepWidth', () => (
-    <ProgressIndicator
-      items={items}
-      currentItemId={select(
-        'id',
-        items.map((item) => item.id),
-        items[1].id
-      )}
-      onClickItem={action('onClickItem')}
-      showLabels={boolean('showlabels', false)}
-      isVerticalMode={boolean('isVerticalMode', false)}
-      isClickable={boolean('isClickable', true)}
-    />
-  ))
-  .add('skeleton', () => <ProgressIndicatorSkeleton />, {
-    info: {
-      text: `
+export default {
+  title: 'Watson IoT/ProgressIndicator',
+};
+
+export const Stateful = () => (
+  <ProgressIndicator
+    items={items}
+    currentItemId="step2_substep2"
+    stepWidth={number('stepWidth', 6)}
+    showLabels={boolean('showlabels', true)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+Stateful.storyName = 'stateful';
+
+export const Presentation = () => (
+  <ProgressIndicator
+    items={items}
+    currentItemId={select(
+      'id',
+      items.map((item) => item.id),
+      items[0].id
+    )}
+    onClickItem={action('onClickItem')}
+    stepWidth={number('stepWidth', 6)}
+    showLabels={boolean('showlabels', true)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+Presentation.storyName = 'presentation';
+
+export const PresentationVertical = () => (
+  <ProgressIndicator
+    items={items}
+    currentItemId={select(
+      'id',
+      items.map((item) => item.id),
+      items[1].id
+    )}
+    showLabels={boolean('showlabels', true)}
+    isClickable={boolean('isClickable', true)}
+    isVerticalMode={boolean('isVerticalMode', true)}
+  />
+);
+
+PresentationVertical.storyName = 'presentation vertical';
+
+export const HideLabelsAndDefaultStepWidth = () => (
+  <ProgressIndicator
+    items={items}
+    currentItemId={select(
+      'id',
+      items.map((item) => item.id),
+      items[1].id
+    )}
+    onClickItem={action('onClickItem')}
+    showLabels={boolean('showlabels', false)}
+    isVerticalMode={boolean('isVerticalMode', false)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+HideLabelsAndDefaultStepWidth.storyName = 'hideLabels and default stepWidth';
+
+export const Skeleton = () => <ProgressIndicatorSkeleton />;
+
+Skeleton.storyName = 'skeleton';
+
+Skeleton.parameters = {
+  info: {
+    text: `
             Placeholder skeleton state to use when content is loading.
         `,
-    },
-  });
+  },
+};

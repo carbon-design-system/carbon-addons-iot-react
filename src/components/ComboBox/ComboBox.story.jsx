@@ -4,7 +4,6 @@
 // TODO: https://github.com/carbon-design-system/carbon/issues/5067
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
@@ -32,8 +31,7 @@ export const items = [
   },
   {
     id: 'option-4',
-    text:
-      'An example option that is really long to show what should be done to handle long text',
+    text: 'An example option that is really long to show what should be done to handle long text',
   },
 ];
 
@@ -61,10 +59,7 @@ const itemToElement = (item) => {
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}>
-        {' '}
-        {itemAsArray.splice(1, itemAsArray.length).join(' ')}
-      </span>
+      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
     </div>
   );
 };
@@ -94,104 +89,105 @@ const ControlledComboBoxApp = (props) => {
             text: `Option ${uid}`,
           });
           setSelectedItem(items[items.length - 1]);
-        }}>
+        }}
+      >
         Add new item
       </Button>
     </>
   );
 };
 
-const Wrapper = ({ children }) => (
-  <div style={{ width: 300, padding: '1rem' }}>{children}</div>
+const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
+
+export default {
+  title: 'Watson IoT Experimental/ComboBox',
+  decorators: [withKnobs],
+  excludeStories: ['items'],
+};
+
+export const Default = () => (
+  <Wrapper>
+    <ComboBox items={items} itemToString={(item) => (item ? item.text : '')} {...props()} />
+  </Wrapper>
 );
 
-storiesOf('Watson IoT Experimental/ComboBox', module)
-  .addDecorator(withKnobs)
-  .add(
-    'Default',
-    () => (
-      <Wrapper>
-        <ComboBox
-          items={items}
-          itemToString={(item) => (item ? item.text : '')}
-          {...props()}
-        />
-      </Wrapper>
-    ),
-    {
-      info: {
-        text: 'ComboBox',
-        propTablesExclude: [Wrapper],
-      },
-    }
-  )
-  .add(
-    'Items as components',
-    () => (
-      <Wrapper>
-        <ComboBox
-          {...props()}
-          items={items}
-          itemToString={(item) => (item ? item.text : '')}
-          itemToElement={itemToElement}
-        />
-      </Wrapper>
-    ),
-    {
-      info: {
-        text: 'ComboBox',
-        propTablesExclude: [Wrapper],
-      },
-    }
-  )
-  .add(
-    'application-level control for selection',
-    () => <ControlledComboBoxApp {...props()} />,
-    {
-      info: {
-        text: `Controlled ComboBox example application`,
-        propTables: [ComboBox],
-        propTablesExclude: [ControlledComboBoxApp],
-      },
-    }
-  )
-  .add(
-    'Experimental multi-value tags',
-    () => (
-      <Wrapper>
-        <ComboBox
-          {...props()}
-          items={items}
-          hasMultiValue
-          itemToString={(item) => (item ? item.text : '')}
-        />
-      </Wrapper>
-    ),
-    {
-      info: {
-        text:
-          'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
-        propTablesExclude: [Wrapper],
-      },
-    }
-  )
-  .add(
-    'Experimental add new items to list',
-    () => (
-      <Wrapper>
-        <ComboBox
-          {...props()}
-          items={items}
-          itemToString={(item) => (item ? item.text : '')}
-          addToList
-        />
-      </Wrapper>
-    ),
-    {
-      info: {
-        text:
-          'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
-        propTablesExclude: [Wrapper],
-      },
-    }
-  );
+Default.parameters = {
+  info: {
+    text: 'ComboBox',
+    propTablesExclude: [Wrapper],
+  },
+};
+
+export const ItemsAsComponents = () => (
+  <Wrapper>
+    <ComboBox
+      {...props()}
+      items={items}
+      itemToString={(item) => (item ? item.text : '')}
+      itemToElement={itemToElement}
+    />
+  </Wrapper>
+);
+
+ItemsAsComponents.storyName = 'Items as components';
+
+ItemsAsComponents.parameters = {
+  info: {
+    text: 'ComboBox',
+    propTablesExclude: [Wrapper],
+  },
+};
+
+export const ApplicationLevelControlForSelection = () => <ControlledComboBoxApp {...props()} />;
+
+ApplicationLevelControlForSelection.storyName = 'application-level control for selection';
+
+ApplicationLevelControlForSelection.parameters = {
+  info: {
+    text: `Controlled ComboBox example application`,
+    propTables: [ComboBox],
+    propTablesExclude: [ControlledComboBoxApp],
+  },
+};
+
+export const ExperimentalMultiValueTags = () => (
+  <Wrapper>
+    <ComboBox
+      {...props()}
+      items={items}
+      hasMultiValue
+      itemToString={(item) => (item ? item.text : '')}
+    />
+  </Wrapper>
+);
+
+ExperimentalMultiValueTags.storyName = 'Experimental multi-value tags';
+
+ExperimentalMultiValueTags.parameters = {
+  info: {
+    text:
+      'This variation of the ComboBox is experimental. By setting `hasMultiValue` to true, when an item is selected it will create a persistent tag above the ComboBox. If the entered text does not match an item in the list, it will be added to the list.',
+    propTablesExclude: [Wrapper],
+  },
+};
+
+export const ExperimentalAddNewItemsToList = () => (
+  <Wrapper>
+    <ComboBox
+      {...props()}
+      items={items}
+      itemToString={(item) => (item ? item.text : '')}
+      addToList
+    />
+  </Wrapper>
+);
+
+ExperimentalAddNewItemsToList.storyName = 'Experimental add new items to list';
+
+ExperimentalAddNewItemsToList.parameters = {
+  info: {
+    text:
+      'This variation of the ComboBox is experimental. By setting `addToList` to true, if an entered item is not part of the list options, it will be added to the list upon hitting enter.',
+    propTablesExclude: [Wrapper],
+  },
+};

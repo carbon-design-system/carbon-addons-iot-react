@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text, object, boolean } from '@storybook/addon-knobs';
 import { spacing03 } from '@carbon/layout';
 
@@ -42,95 +41,105 @@ const componentDescription =
   'When the minimap is enabled, it will only appear when the image is being dragged ' +
   '/ panned, in which it will follow the overlaying panned position.';
 
-storiesOf('Watson IoT/ImageHotspots', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/ImageHotspots',
+
+  parameters: {
     info: componentDescription,
-  })
+  },
+};
 
-  .add('landscape image & landscape container', () => {
-    return (
-      <div style={{ width: '450px', height: '300px' }}>
-        <ImageHotspots
-          src={text('Image', landscape)}
-          alt={text('Alternate text', 'Sample image')}
-          height={300}
-          width={450}
-          hideZoomControls={boolean('Hide zoom controls', false)}
-          hotspots={object('Hotspots', hotspots)}
-          hideHotspots={boolean('Hide hotspots', false)}
-          hideMinimap={boolean('Hide Minimap', false)}
-        />
-      </div>
-    );
-  })
-
-  .add('landscape image & portrait container', () => {
-    return (
-      <div style={{ width: '250px', height: '300px' }}>
-        <ImageHotspots
-          src={text('Image', landscape)}
-          alt={text('Alternate text', 'Sample image')}
-          height={250}
-          width={300}
-          hideZoomControls={boolean('Hide zoom controls', false)}
-          hotspots={object('Hotspots', hotspots)}
-          hideHotspots={boolean('Hide hotspots', false)}
-          hideMinimap={boolean('Hide Minimap', false)}
-        />
-      </div>
-    );
-  })
-
-  .add('portrait image & landscape container', () => {
-    return (
-      <div style={{ width: '450px', height: '300px' }}>
-        <ImageHotspots
-          src={text('Image', portrait)}
-          height={300}
-          width={450}
-          alt={text('Alternate text', 'Sample image')}
-          hideZoomControls={boolean('Hide zoom controls', false)}
-          hotspots={object('Hotspots', hotspots)}
-          hideHotspots={boolean('Hide hotspots', false)}
-          hideMinimap={boolean('Hide Minimap', false)}
-        />
-      </div>
-    );
-  })
-
-  .add('portrait image & portrait container', () => {
-    return (
-      <div style={{ width: '225px', height: '300px' }}>
-        <ImageHotspots
-          src={text('Image', portrait)}
-          height={300}
-          width={225}
-          alt={text('Alternate text', 'Sample image')}
-          hideZoomControls={boolean('Hide zoom controls', false)}
-          hotspots={object('Hotspots', hotspots)}
-          hideHotspots={boolean('Hide hotspots', false)}
-          hideMinimap={boolean('Hide Minimap', false)}
-        />
-      </div>
-    );
-  })
-
-  .add(
-    'image smaller than card, minimap and zoomcontrols should be hidden',
-    () => {
-      return (
-        <div style={{ width: '560px', height: '560px' }}>
-          <ImageHotspots
-            src={text('Image', smallerImage)}
-            height={560}
-            width={560}
-            alt={text('Alternate text', 'Sample image')}
-            hideZoomControls={boolean('Hide zoom controls', false)}
-            hotspots={object('Hotspots', hotspots)}
-            hideHotspots={boolean('Hide hotspots', false)}
-            hideMinimap={boolean('Hide Minimap', false)}
-          />
-        </div>
-      );
-    }
+export const LandscapeImageLandscapeContainer = () => {
+  return (
+    <div style={{ width: '450px', height: '300px' }}>
+      <ImageHotspots
+        src={text('Image', landscape)}
+        alt={text('Alternate text', 'Sample image')}
+        height={300}
+        width={450}
+        hideZoomControls={boolean('Hide zoom controls', false)}
+        hotspots={object('Hotspots', hotspots)}
+        hideHotspots={boolean('Hide hotspots', false)}
+        hideMinimap={boolean('Hide Minimap', false)}
+      />
+    </div>
   );
+};
+
+LandscapeImageLandscapeContainer.storyName = 'landscape image & landscape container';
+
+export const LandscapeImagePortraitContainer = () => {
+  return (
+    <div style={{ width: '250px', height: '300px' }}>
+      <ImageHotspots
+        src={text('Image', landscape)}
+        alt={text('Alternate text', 'Sample image')}
+        height={250}
+        width={300}
+        hideZoomControls={boolean('Hide zoom controls', false)}
+        hotspots={object('Hotspots', hotspots)}
+        hideHotspots={boolean('Hide hotspots', false)}
+        hideMinimap={boolean('Hide Minimap', false)}
+      />
+    </div>
+  );
+};
+
+LandscapeImagePortraitContainer.storyName = 'landscape image & portrait container';
+
+export const PortraitImageLandscapeContainer = () => {
+  return (
+    <div style={{ width: '450px', height: '300px' }}>
+      <ImageHotspots
+        src={text('Image', portrait)}
+        height={300}
+        width={450}
+        alt={text('Alternate text', 'Sample image')}
+        hideZoomControls={boolean('Hide zoom controls', false)}
+        hotspots={object('Hotspots', hotspots)}
+        hideHotspots={boolean('Hide hotspots', false)}
+        hideMinimap={boolean('Hide Minimap', false)}
+      />
+    </div>
+  );
+};
+
+PortraitImageLandscapeContainer.storyName = 'portrait image & landscape container';
+
+export const PortraitImagePortraitContainer = () => {
+  return (
+    <div style={{ width: '225px', height: '300px' }}>
+      <ImageHotspots
+        src={text('Image', portrait)}
+        height={300}
+        width={225}
+        alt={text('Alternate text', 'Sample image')}
+        hideZoomControls={boolean('Hide zoom controls', false)}
+        hotspots={object('Hotspots', hotspots)}
+        hideHotspots={boolean('Hide hotspots', false)}
+        hideMinimap={boolean('Hide Minimap', false)}
+      />
+    </div>
+  );
+};
+
+PortraitImagePortraitContainer.storyName = 'portrait image & portrait container';
+
+export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
+  return (
+    <div style={{ width: '560px', height: '560px' }}>
+      <ImageHotspots
+        src={text('Image', smallerImage)}
+        height={560}
+        width={560}
+        alt={text('Alternate text', 'Sample image')}
+        hideZoomControls={boolean('Hide zoom controls', false)}
+        hotspots={object('Hotspots', hotspots)}
+        hideHotspots={boolean('Hide hotspots', false)}
+        hideMinimap={boolean('Hide Minimap', false)}
+      />
+    </div>
+  );
+};
+
+ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.storyName = 'image smaller than card, minimap and zoomcontrols should be hidden';

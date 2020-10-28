@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
@@ -27,7 +26,8 @@ const CardEditorInteractive = () => {
           position: 'absolute',
           right: 0,
           height: 'calc(100vh - 6rem)',
-        }}>
+        }}
+      >
         <CardEditor
           value={data}
           onShowGallery={() => setData(null)}
@@ -42,61 +42,70 @@ const CardEditorInteractive = () => {
   );
 };
 
-storiesOf('Watson IoT Experimental/CardEditor', module)
-  .addDecorator(withKnobs)
-  .add('default', () => (
-    <div
-      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
-      <CardEditor
-        value={object('value', {
-          content: {
-            attributes: [
-              {
-                dataSourceId: 'discharge_flow_rate',
-                label: 'Discharge flow',
-                precision: 3,
-              },
-              {
-                dataSourceId: 'discharge_perc',
-                label: 'Max Discharge %',
-                precision: 3,
-              },
-            ],
-          },
-          dataSource: {
-            attributes: [
-              {
-                aggregator: 'mean',
-                attribute: 'discharge_flow_rate',
-                id: 'discharge_flow_rate',
-              },
-              {
-                aggregator: 'max',
-                attribute: 'discharge_perc',
-                id: 'discharge_perc',
-              },
-            ],
-          },
-          id: 'calculated',
-          size: 'MEDIUMTHIN',
-          title: 'Calculated',
-          type: 'VALUE',
-        })}
-        errors={{}}
-        onShowGallery={action('onShowGallery')}
-        onChange={action('onChange')}
-        onAddCard={action('onAddCard')}
-      />
-    </div>
-  ))
-  .add('with no card defined (gallery view)', () => (
-    <div
-      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
-      <CardEditor
-        onShowGallery={action('onShowGallery')}
-        onChange={action('onChange')}
-        onAddCard={action('onAddCard')}
-      />
-    </div>
-  ))
-  .add('interactive', () => <CardEditorInteractive />);
+export default {
+  title: 'Watson IoT Experimental/CardEditor',
+  decorators: [withKnobs],
+};
+
+export const Default = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      value={object('value', {
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'discharge_flow_rate',
+              label: 'Discharge flow',
+              precision: 3,
+            },
+            {
+              dataSourceId: 'discharge_perc',
+              label: 'Max Discharge %',
+              precision: 3,
+            },
+          ],
+        },
+        dataSource: {
+          attributes: [
+            {
+              aggregator: 'mean',
+              attribute: 'discharge_flow_rate',
+              id: 'discharge_flow_rate',
+            },
+            {
+              aggregator: 'max',
+              attribute: 'discharge_perc',
+              id: 'discharge_perc',
+            },
+          ],
+        },
+        id: 'calculated',
+        size: 'MEDIUMTHIN',
+        title: 'Calculated',
+        type: 'VALUE',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+Default.storyName = 'default';
+
+export const WithNoCardDefinedGalleryView = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+WithNoCardDefinedGalleryView.storyName = 'with no card defined (gallery view)';
+
+export const Interactive = () => <CardEditorInteractive />;
+
+Interactive.storyName = 'interactive';

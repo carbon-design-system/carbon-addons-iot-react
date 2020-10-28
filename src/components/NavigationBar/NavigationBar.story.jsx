@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
@@ -41,8 +40,8 @@ const StatefulNavigationBar = () => {
   return (
     <Fragment>
       <StyledDirections>
-        To interact with the workarea, click the New Entity Type button. To
-        close the workarea, click the Cancel button or finish the flow.
+        To interact with the workarea, click the New Entity Type button. To close the workarea,
+        click the Cancel button or finish the flow.
       </StyledDirections>
       <NavigationBar
         {...navBarProps}
@@ -58,35 +57,45 @@ const StatefulNavigationBar = () => {
             </PageWorkArea>
           ) : null
         }
-        actions={[
-          { id: 'button1', children: 'New Entity Type', onClick: handleNew },
-        ]}
+        actions={[{ id: 'button1', children: 'New Entity Type', onClick: handleNew }]}
       />
     </Fragment>
   );
 };
 
-storiesOf('Watson IoT/NavigationBar', module)
-  .add('normal', () => <NavigationBar {...navBarProps} />)
-  .add('start with tab 2 selected', () => (
-    <NavigationBar {...navBarProps} selected={1} />
-  ))
-  .add('with actions', () => (
-    <NavigationBar
-      {...navBarProps}
-      actions={[
-        {
-          id: 'button1',
-          children: 'New Entity Type',
-          onClick: action('button1'),
-        },
-        {
-          id: 'button2',
-          children: 'Button 2',
-          kind: 'secondary',
-          onClick: action('button2'),
-        },
-      ]}
-    />
-  ))
-  .add('example with workArea', () => <StatefulNavigationBar />);
+export default {
+  title: 'Watson IoT/NavigationBar',
+};
+
+export const Normal = () => <NavigationBar {...navBarProps} />;
+
+Normal.storyName = 'normal';
+
+export const StartWithTab2Selected = () => <NavigationBar {...navBarProps} selected={1} />;
+
+StartWithTab2Selected.storyName = 'start with tab 2 selected';
+
+export const WithActions = () => (
+  <NavigationBar
+    {...navBarProps}
+    actions={[
+      {
+        id: 'button1',
+        children: 'New Entity Type',
+        onClick: action('button1'),
+      },
+      {
+        id: 'button2',
+        children: 'Button 2',
+        kind: 'secondary',
+        onClick: action('button2'),
+      },
+    ]}
+  />
+);
+
+WithActions.storyName = 'with actions';
+
+export const ExampleWithWorkArea = () => <StatefulNavigationBar />;
+
+ExampleWithWorkArea.storyName = 'example with workArea';

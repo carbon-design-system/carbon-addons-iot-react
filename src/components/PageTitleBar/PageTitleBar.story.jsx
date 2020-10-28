@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24, TrashCan24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
@@ -12,17 +11,13 @@ import PageTitleBar from './PageTitleBar';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
-  description:
-    'Descriptive text about this page and what the user can or should do on it',
+  description: 'Descriptive text about this page and what the user can or should do on it',
   extraContent: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <span style={{ marginRight: spacing05 }}>
         <b>Last updated:</b> yesterday
       </span>
-      <Button
-        className="some-right-content"
-        renderIcon={Add24}
-        onClick={action('click')}>
+      <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
         Take an action
       </Button>
     </div>
@@ -37,16 +32,15 @@ export const pageTitleBarBreadcrumb = [
 
 export const PageTitleBarNodeTooltip = () => (
   <div>
-    <p>
-      Descriptive text about this page and what the user can or should do on it{' '}
-    </p>
+    <p>Descriptive text about this page and what the user can or should do on it </p>
     <div
       style={{
         display: 'flex',
         'align-items': 'center',
         'justify-content': 'space-between',
         'padding-top': spacing05,
-      }}>
+      }}
+    >
       <a href="/">Link one</a>
       <Button renderIcon={Add24} onClick={action('click')}>
         Take an action
@@ -55,120 +49,145 @@ export const PageTitleBarNodeTooltip = () => (
   </div>
 );
 
-storiesOf('Watson IoT/PageTitleBar', module)
-  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
-  .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
-  .add('with breadcrumb', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      breadcrumb={pageTitleBarBreadcrumb}
-    />
-  ))
-  .add('with description', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-    />
-  ))
-  .add('with tooltip description with node', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={<PageTitleBarNodeTooltip />}
-      breadcrumb={pageTitleBarBreadcrumb}
-      collapsed
-    />
-  ))
-  .add('with content', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      breadcrumb={pageTitleBarBreadcrumb}
-      content={
-        <Tabs>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
-        </Tabs>
-      }
-    />
-  ))
-  .add('with editable title bar', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      editable
-      onEdit={action('edit')}
-    />
-  ))
-  .add('with rich content', () => (
-    <PageTitleBar {...commonPageTitleBarProps} collapsed />
-  ))
-  .add('with everything', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      breadcrumb={pageTitleBarBreadcrumb}
-      extraContent={
-        <div>
-          <div
-            className="top"
-            style={{
-              marginBottom: '8px',
-              display: 'flex',
-              flexDirection: 'row-reverse',
-            }}>
-            <span>Last updated: yesterday</span>
-          </div>
-          <div className="bottom">
-            <Button
-              renderIcon={Add24}
-              onClick={action('click')}
-              size="field"
-              hasIconOnly
-              iconDescription="Add"
-              kind="ghost"
-              tooltipPosition="bottom"
-              tooltipAlignment="center"
-            />
-            <Button
-              renderIcon={TrashCan24}
-              onClick={action('click')}
-              size="field"
-              hasIconOnly
-              iconDescription="Remove"
-              kind="ghost"
-              tooltipPosition="bottom"
-              tooltipAlignment="center"
-            />
-            <Button onClick={action('click')} size="field">
-              Take an action
-            </Button>
-          </div>
+export default {
+  title: 'Watson IoT/PageTitleBar',
+  decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
+
+  excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
+};
+
+export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
+
+Base.storyName = 'base';
+
+export const WithBreadcrumb = () => (
+  <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
+);
+
+WithBreadcrumb.storyName = 'with breadcrumb';
+
+export const WithDescription = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+  />
+);
+
+WithDescription.storyName = 'with description';
+
+export const WithTooltipDescriptionWithNode = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={<PageTitleBarNodeTooltip />}
+    breadcrumb={pageTitleBarBreadcrumb}
+    collapsed
+  />
+);
+
+WithTooltipDescriptionWithNode.storyName = 'with tooltip description with node';
+
+export const WithContent = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+  />
+);
+
+WithContent.storyName = 'with content';
+
+export const WithEditableTitleBar = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    editable
+    onEdit={action('edit')}
+  />
+);
+
+WithEditableTitleBar.storyName = 'with editable title bar';
+
+export const WithRichContent = () => <PageTitleBar {...commonPageTitleBarProps} collapsed />;
+
+WithRichContent.storyName = 'with rich content';
+
+export const WithEverything = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    extraContent={
+      <div>
+        <div
+          className="top"
+          style={{
+            marginBottom: '8px',
+            display: 'flex',
+            flexDirection: 'row-reverse',
+          }}
+        >
+          <span>Last updated: yesterday</span>
         </div>
-      }
-      editable
-      content={
-        <Tabs>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
-        </Tabs>
-      }
-      onEdit={action('edit')}
-    />
-  ))
-  .add('isLoading', () => (
-    <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
-  ));
+        <div className="bottom">
+          <Button
+            renderIcon={Add24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Add"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button
+            renderIcon={TrashCan24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Remove"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button onClick={action('click')} size="field">
+            Take an action
+          </Button>
+        </div>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithEverything.storyName = 'with everything';
+
+export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;
+
+IsLoading.storyName = 'isLoading';

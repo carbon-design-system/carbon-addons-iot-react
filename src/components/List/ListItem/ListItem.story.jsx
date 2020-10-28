@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
@@ -23,202 +22,22 @@ const dndProps = {
   itemWillMove: identity,
 };
 
-storiesOf('Watson IoT Experimental/ListItem', module)
-  .add('basic w/ knobs', () => {
-    const value = text('value', 'List Item');
-    const secondaryValue = text('secondaryValue', undefined);
-    const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
-    const iconComponent =
-      iconName === 'Star16'
-        ? Star16
-        : iconName === 'StarFilled16'
-        ? StarFilled16
-        : null;
-    const rowActionSet = select(
-      'row action example',
-      ['none', 'single', 'multi'],
-      'none'
-    );
-    const tagsConfig = select(
-      'tags example',
-      ['none', 'single', 'multi'],
-      'none'
-    );
+export default {
+  title: 'Watson IoT Experimental/ListItem',
+};
 
-    const rowActionComponent =
-      rowActionSet === 'single'
-        ? [
-            <Button
-              key="list-item-edit"
-              style={{ color: 'black' }}
-              renderIcon={Edit16}
-              hasIconOnly
-              kind="ghost"
-              size="small"
-              onClick={() => action('row action clicked')}
-              iconDescription="Edit"
-            />,
-          ]
-        : rowActionSet === 'multi'
-        ? [
-            <OverflowMenu flipped>
-              <OverflowMenuItem itemText="Edit" />
-              <OverflowMenuItem itemText="Add" />
-              <OverflowMenuItem itemText="Delete" hasDivider isDelete />
-            </OverflowMenu>,
-          ]
-        : [];
-    const tagsData =
-      tagsConfig === 'single'
-        ? [
-            <Tag type="blue" title="descriptor" key="tag1">
-              default
-            </Tag>,
-          ]
-        : tagsConfig === 'multi'
-        ? [
-            <Tag type="blue" title="descriptor" key="tag1">
-              default
-            </Tag>,
-            <Tag type="red" disabled key="tag2">
-              disabled tag
-            </Tag>,
-          ]
-        : undefined;
-    return (
-      <div style={{ width: 400 }}>
-        <ListItem
-          {...dndProps}
-          id="list-item"
-          value={value}
-          secondaryValue={secondaryValue}
-          icon={iconComponent ? React.createElement(iconComponent) : null}
-          iconPosition={select('iconPosition', ['left', 'right'], 'right')}
-          isSelectable={boolean('isSelectable', false)}
-          selected={boolean('selected', false)}
-          onSelect={action('onSelect')}
-          isExpandable={boolean('isExpandable', false)}
-          expanded={boolean('expanded', false)}
-          onExpand={action('onExpand')}
-          isCategory={boolean('isCategory', false)}
-          isLargeRow={boolean('isLargeRow', false)}
-          nestingLevel={select(
-            'nestingLevel',
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            0
-          )}
-          rowActions={rowActionComponent}
-          tags={tagsData}
-        />
-      </div>
-    );
-  })
-  .add('with value', () => (
-    <div style={{ width: 400 }}>
-      <ListItem {...dndProps} id="list-item" value="List Item" />
-    </div>
-  ))
-  .add('with secondaryValue', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item"
-        secondaryValue="Secondary Value"
-      />
-    </div>
-  ))
-  .add('testing secondaryValue overflow', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item this could be a really long value that can't quite fit"
-        secondaryValue="Secondary Value could also be a really, extraordinarily long value"
-        isLargeRow={boolean('isLargeRow', true)}
-      />
-    </div>
-  ))
-  .add('with icon', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item"
-        icon={<Star16 />}
-        iconPosition={select('iconPosition', ['left', 'right'])}
-      />
-    </div>
-  ))
-  .add('with isSelectable', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="Selectable List Item"
-        secondaryValue={text('secondaryValue', '')}
-        isSelectable
-        onSelect={action('onSelect')}
-        isLargeRow={boolean('isLargeRow', false)}
-      />
-    </div>
-  ))
-  .add('with isLargeRow', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item"
-        secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item"
-        isLargeRow={boolean('isLargeRow', true)}
-      />
-    </div>
-  ))
-  .add('testing isLargeRow overflow', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item this could be a reaaaaaaaaaaally really long value"
-        secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
-        isLargeRow={boolean('isLargeRow', true)}
-      />
-    </div>
-  ))
-  .add('with isExpandable', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="Expandable List Item"
-        secondaryValue={text('secondaryValue', '')}
-        isExpandable
-        onExpand={action('onExpand')}
-        isLargeRow={boolean('isLargeRow', false)}
-      />
-    </div>
-  ))
-  .add('with isCategory', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value="List Item"
-        secondaryValue={text('secondaryValue', '')}
-        isExpandable
-        onExpand={action('onExpand')}
-        isCategory
-      />
-    </div>
-  ))
-  .add('with single row action', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value={text('value', 'List Item')}
-        secondaryValue={text('secondaryValue', 'Secondary Value')}
-        rowActions={[
+export const BasicWKnobs = () => {
+  const value = text('value', 'List Item');
+  const secondaryValue = text('secondaryValue', undefined);
+  const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
+  const iconComponent =
+    iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
+  const rowActionSet = select('row action example', ['none', 'single', 'multi'], 'none');
+  const tagsConfig = select('tags example', ['none', 'single', 'multi'], 'none');
+
+  const rowActionComponent =
+    rowActionSet === 'single'
+      ? [
           <Button
             key="list-item-edit"
             style={{ color: 'black' }}
@@ -229,82 +48,276 @@ storiesOf('Watson IoT Experimental/ListItem', module)
             onClick={() => action('row action clicked')}
             iconDescription="Edit"
           />,
-        ]}
-      />
-    </div>
-  ))
-  .add('with disabled', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value={text('value', 'List Item')}
-        secondaryValue={text('secondaryValue', 'Secondary Value')}
-        disabled={boolean('disabled', true)}
-        isSelectable={boolean('isSelectable', true)}
-        rowActions={[
-          <Button
-            key="list-item-edit"
-            style={{ color: 'black' }}
-            renderIcon={Edit16}
-            hasIconOnly
-            disabled={boolean('action disabled', true)}
-            kind="ghost"
-            size="small"
-            onClick={() => action('row action clicked')}
-            iconDescription="Edit"
-          />,
-        ]}
-      />
-    </div>
-  ))
-  .add('with OverflowMenu row actions', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value={text('value', 'List Item')}
-        isExpandable={boolean('isExpandable', true)}
-        onExpand={action('onExpand')}
-        rowActions={[
-          <OverflowMenu key="ListItem-action-overflow-menu" flipped>
-            <OverflowMenuItem
-              key="ListItem-action-overflow-Edit"
-              itemText="Edit"
-            />
-            <OverflowMenuItem
-              key="ListItem-action-overflow-Add"
-              itemText="Add"
-            />
-            <OverflowMenuItem
-              key="ListItem-action-overflow-Delete"
-              itemText="Delete"
-            />
-            <OverflowMenuItem
-              key="ListItem-action-overflow-Danger"
-              itemText="Danger option"
-              hasDivider
-              isDelete
-            />
+        ]
+      : rowActionSet === 'multi'
+      ? [
+          <OverflowMenu flipped>
+            <OverflowMenuItem itemText="Edit" />
+            <OverflowMenuItem itemText="Add" />
+            <OverflowMenuItem itemText="Delete" hasDivider isDelete />
           </OverflowMenu>,
-        ]}
-      />
-    </div>
-  ))
-  .add('with Tags', () => (
-    <div style={{ width: 400 }}>
-      <ListItem
-        {...dndProps}
-        id="list-item"
-        value={text('value', 'List Item')}
-        tags={[
+        ]
+      : [];
+  const tagsData =
+    tagsConfig === 'single'
+      ? [
+          <Tag type="blue" title="descriptor" key="tag1">
+            default
+          </Tag>,
+        ]
+      : tagsConfig === 'multi'
+      ? [
           <Tag type="blue" title="descriptor" key="tag1">
             default
           </Tag>,
           <Tag type="red" disabled key="tag2">
             disabled tag
           </Tag>,
-        ]}
+        ]
+      : undefined;
+  return (
+    <div style={{ width: 400 }}>
+      <ListItem
+        {...dndProps}
+        id="list-item"
+        value={value}
+        secondaryValue={secondaryValue}
+        icon={iconComponent ? React.createElement(iconComponent) : null}
+        iconPosition={select('iconPosition', ['left', 'right'], 'right')}
+        isSelectable={boolean('isSelectable', false)}
+        selected={boolean('selected', false)}
+        onSelect={action('onSelect')}
+        isExpandable={boolean('isExpandable', false)}
+        expanded={boolean('expanded', false)}
+        onExpand={action('onExpand')}
+        isCategory={boolean('isCategory', false)}
+        isLargeRow={boolean('isLargeRow', false)}
+        nestingLevel={select('nestingLevel', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 0)}
+        rowActions={rowActionComponent}
+        tags={tagsData}
       />
     </div>
-  ));
+  );
+};
+
+BasicWKnobs.storyName = 'basic w/ knobs';
+
+export const WithValue = () => (
+  <div style={{ width: 400 }}>
+    <ListItem {...dndProps} id="list-item" value="List Item" />
+  </div>
+);
+
+WithValue.storyName = 'with value';
+
+export const WithSecondaryValue = () => (
+  <div style={{ width: 400 }}>
+    <ListItem {...dndProps} id="list-item" value="List Item" secondaryValue="Secondary Value" />
+  </div>
+);
+
+WithSecondaryValue.storyName = 'with secondaryValue';
+
+export const TestingSecondaryValueOverflow = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="List Item this could be a really long value that can't quite fit"
+      secondaryValue="Secondary Value could also be a really, extraordinarily long value"
+      isLargeRow={boolean('isLargeRow', true)}
+    />
+  </div>
+);
+
+TestingSecondaryValueOverflow.storyName = 'testing secondaryValue overflow';
+
+export const WithIcon = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="List Item"
+      icon={<Star16 />}
+      iconPosition={select('iconPosition', ['left', 'right'])}
+    />
+  </div>
+);
+
+WithIcon.storyName = 'with icon';
+
+export const WithIsSelectable = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="Selectable List Item"
+      secondaryValue={text('secondaryValue', '')}
+      isSelectable
+      onSelect={action('onSelect')}
+      isLargeRow={boolean('isLargeRow', false)}
+    />
+  </div>
+);
+
+WithIsSelectable.storyName = 'with isSelectable';
+
+export const WithIsLargeRow = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="List Item"
+      secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item"
+      isLargeRow={boolean('isLargeRow', true)}
+    />
+  </div>
+);
+
+WithIsLargeRow.storyName = 'with isLargeRow';
+
+export const TestingIsLargeRowOverflow = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="List Item this could be a reaaaaaaaaaaally really long value"
+      secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
+      isLargeRow={boolean('isLargeRow', true)}
+    />
+  </div>
+);
+
+TestingIsLargeRowOverflow.storyName = 'testing isLargeRow overflow';
+
+export const WithIsExpandable = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="Expandable List Item"
+      secondaryValue={text('secondaryValue', '')}
+      isExpandable
+      onExpand={action('onExpand')}
+      isLargeRow={boolean('isLargeRow', false)}
+    />
+  </div>
+);
+
+WithIsExpandable.storyName = 'with isExpandable';
+
+export const WithIsCategory = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value="List Item"
+      secondaryValue={text('secondaryValue', '')}
+      isExpandable
+      onExpand={action('onExpand')}
+      isCategory
+    />
+  </div>
+);
+
+WithIsCategory.storyName = 'with isCategory';
+
+export const WithSingleRowAction = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      secondaryValue={text('secondaryValue', 'Secondary Value')}
+      rowActions={[
+        <Button
+          key="list-item-edit"
+          style={{ color: 'black' }}
+          renderIcon={Edit16}
+          hasIconOnly
+          kind="ghost"
+          size="small"
+          onClick={() => action('row action clicked')}
+          iconDescription="Edit"
+        />,
+      ]}
+    />
+  </div>
+);
+
+WithSingleRowAction.storyName = 'with single row action';
+
+export const WithDisabled = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      secondaryValue={text('secondaryValue', 'Secondary Value')}
+      disabled={boolean('disabled', true)}
+      isSelectable={boolean('isSelectable', true)}
+      rowActions={[
+        <Button
+          key="list-item-edit"
+          style={{ color: 'black' }}
+          renderIcon={Edit16}
+          hasIconOnly
+          disabled={boolean('action disabled', true)}
+          kind="ghost"
+          size="small"
+          onClick={() => action('row action clicked')}
+          iconDescription="Edit"
+        />,
+      ]}
+    />
+  </div>
+);
+
+WithDisabled.storyName = 'with disabled';
+
+export const WithOverflowMenuRowActions = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      isExpandable={boolean('isExpandable', true)}
+      onExpand={action('onExpand')}
+      rowActions={[
+        <OverflowMenu key="ListItem-action-overflow-menu" flipped>
+          <OverflowMenuItem key="ListItem-action-overflow-Edit" itemText="Edit" />
+          <OverflowMenuItem key="ListItem-action-overflow-Add" itemText="Add" />
+          <OverflowMenuItem key="ListItem-action-overflow-Delete" itemText="Delete" />
+          <OverflowMenuItem
+            key="ListItem-action-overflow-Danger"
+            itemText="Danger option"
+            hasDivider
+            isDelete
+          />
+        </OverflowMenu>,
+      ]}
+    />
+  </div>
+);
+
+WithOverflowMenuRowActions.storyName = 'with OverflowMenu row actions';
+
+export const WithTags = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      tags={[
+        <Tag type="blue" title="descriptor" key="tag1">
+          default
+        </Tag>,
+        <Tag type="red" disabled key="tag2">
+          disabled tag
+        </Tag>,
+      ]}
+    />
+  </div>
+);
+
+WithTags.storyName = 'with Tags';

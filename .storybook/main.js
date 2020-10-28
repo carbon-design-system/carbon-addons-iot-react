@@ -2,14 +2,15 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  stories: ['./Welcome.story.jsx', '../**/*.story.jsx'],
+  stories: ['./Welcome.story.jsx', '../**/*.story.@(jsx|mdx)'],
   addons: [
     '@storybook/addon-knobs',
-    '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
+    '@storybook/addon-docs',
     '@storybook/addon-controls',
+    '@storybook/addon-actions',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

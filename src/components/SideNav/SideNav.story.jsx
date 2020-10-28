@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
@@ -19,9 +18,7 @@ const { iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
-const RouterComponent = ({ children, ...rest }) => (
-  <div {...rest}>{children}</div>
-);
+const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 const links = [
   {
@@ -140,41 +137,13 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Watson IoT/SideNav', module).add(
-  'SideNav component',
-  () => (
-    <FullWidthWrapper withPadding={false}>
-      <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-          <>
-            <Header
-              {...HeaderProps}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-            />
-            <SideNav
-              links={links}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-              switcherProps={switcherProps}
-            />
-            <div className={`${iotPrefix}--main-content`}>
-              <PageTitleBar title="Title" description="Description" />
-            </div>
-          </>
-        )}
-      />
-    </FullWidthWrapper>
-  ),
-  {
-    info: {
-      text: `
-      When implementing the Header and SideNav components you must utilized the HeaderContainer component
+export default {
+  title: 'Watson IoT/SideNav',
+};
 
-      <br/>
-
-      ~~~js
-      <HeaderContainer
+export const SideNavComponent = () => (
+  <FullWidthWrapper withPadding={false}>
+    <HeaderContainer
       render={({ isSideNavExpanded, onClickSideNavExpand }) => (
         <>
           <Header
@@ -186,42 +155,74 @@ storiesOf('Watson IoT/SideNav', module).add(
             links={links}
             isSideNavExpanded={isSideNavExpanded}
             onClickSideNavExpand={onClickSideNavExpand}
+            switcherProps={switcherProps}
           />
+          <div className={`${iotPrefix}--main-content`}>
+            <PageTitleBar title="Title" description="Description" />
+          </div>
         </>
       )}
     />
-
-      ~~~
-
-      <br/>
-
-      If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
-
-      <br/>
-
-      ~~~scss
-      .iot--main-content {
-        width: calc(100% - 3rem);
-        transform: translateX(3rem);
-        transition: all .2s ease-in;
-      }
-
-      .iot--side-nav--expanded + .iot--main-content {
-        width: calc(100% - 16rem);
-        transform: translateX(16rem);
-      }
-
-      html[dir='rtl'] {
-        .iot--main-content,
-        .iot--side-nav--expanded + .iot--main-content {
-          transform: translateX(0);
-        }
-
-      }
-
-      ~~~
-
-      `,
-    },
-  }
+  </FullWidthWrapper>
 );
+
+SideNavComponent.storyName = 'SideNav component';
+
+SideNavComponent.parameters = {
+  info: {
+    text: `
+    When implementing the Header and SideNav components you must utilized the HeaderContainer component
+
+    <br/>
+
+    ~~~js
+    <HeaderContainer
+    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+      <>
+        <Header
+          {...HeaderProps}
+          isSideNavExpanded={isSideNavExpanded}
+          onClickSideNavExpand={onClickSideNavExpand}
+        />
+        <SideNav
+          links={links}
+          isSideNavExpanded={isSideNavExpanded}
+          onClickSideNavExpand={onClickSideNavExpand}
+        />
+      </>
+    )}
+  />
+
+    ~~~
+
+    <br/>
+
+    If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
+
+    <br/>
+
+    ~~~scss
+    .iot--main-content {
+      width: calc(100% - 3rem);
+      transform: translateX(3rem);
+      transition: all .2s ease-in;
+    }
+
+    .iot--side-nav--expanded + .iot--main-content {
+      width: calc(100% - 16rem);
+      transform: translateX(16rem);
+    }
+
+    html[dir='rtl'] {
+      .iot--main-content,
+      .iot--side-nav--expanded + .iot--main-content {
+        transform: translateX(0);
+      }
+
+    }
+
+    ~~~
+
+    `,
+  },
+};

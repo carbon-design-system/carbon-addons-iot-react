@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
@@ -93,89 +92,20 @@ const sideNavLinks = [
   },
 ];
 
-/* Sample of SuiteHeader usage with data hook
-const HeaderWithHook = () => {
-  const [data, isLoading, error, refreshData] = useSuiteHeaderData({
-    // baseApiUrl: 'http://localhost:3001/internal',
-    domain: 'mydomain.com',
-    isTest: true,
-    surveyConfig: {
-      id: 'suite',
-      delayIntervalDays: 30,
-      frequencyDays: 90,
-    },
-    lang: 'en',
-  });
-  const surveyData = data.showSurvey
-    ? {
-        surveyLink: 'https://www.ibm.com',
-        privacyLink: 'https://www.ibm.com',
-      }
-    : null;
+export default {
+  title: 'Watson IoT/SuiteHeader',
+};
+
+export const Default = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
-      suiteName="Application Suite"
-      appName="Application Name"
-      userDisplayName={data.userDisplayName}
-      username={data.username}
-      routes={data.routes}
-      applications={data.applications}
-      sideNavProps={{
-        links: sideNavLinks,
-      }}
-      i18n={data.i18n}
-      surveyData={surveyData}
-    />
-  );
-};
-*/
-
-storiesOf('Watson IoT/SuiteHeader', module)
-  .add('default', () => {
-    const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
-    return (
-      <SuiteHeader
-        suiteName={text('suiteName', 'Application Suite')}
-        appName={text('appName', 'Application Name')}
-        userDisplayName={text('userDisplayName', 'Admin User')}
-        username={text('username', 'adminuser')}
-        isAdminView={boolean('isAdminView', false)}
-        routes={object('routes', {
-          profile: 'https://www.ibm.com',
-          navigator: 'https://www.ibm.com',
-          admin: 'https://www.ibm.com',
-          logout: 'https://www.ibm.com',
-          whatsNew: 'https://www.ibm.com',
-          gettingStarted: 'https://www.ibm.com',
-          documentation: 'https://www.ibm.com',
-          requestEnhancement: 'https://www.ibm.com',
-          support: 'https://www.ibm.com',
-          about: 'https://www.ibm.com',
-        })}
-        i18n={SuiteHeaderI18N[language]}
-        applications={object('applications', [
-          {
-            id: 'monitor',
-            name: 'Monitor',
-            href: 'https://www.ibm.com',
-          },
-          {
-            id: 'health',
-            name: 'Health',
-            href: 'https://www.ibm.com',
-            isExternal: true,
-          },
-        ])}
-      />
-    );
-  })
-  .add('Header with side nav', () => (
-    <SuiteHeader
-      suiteName="Application Suite"
-      appName="Application Name"
-      userDisplayName="Admin User"
-      username="adminuser"
-      routes={{
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView={boolean('isAdminView', false)}
+      routes={object('routes', {
         profile: 'https://www.ibm.com',
         navigator: 'https://www.ibm.com',
         admin: 'https://www.ibm.com',
@@ -186,8 +116,9 @@ storiesOf('Watson IoT/SuiteHeader', module)
         requestEnhancement: 'https://www.ibm.com',
         support: 'https://www.ibm.com',
         about: 'https://www.ibm.com',
-      }}
-      applications={[
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      applications={object('applications', [
         {
           id: 'monitor',
           name: 'Monitor',
@@ -199,52 +130,93 @@ storiesOf('Watson IoT/SuiteHeader', module)
           href: 'https://www.ibm.com',
           isExternal: true,
         },
-      ]}
-      sideNavProps={{
-        links: sideNavLinks,
-      }}
+      ])}
     />
-  ))
-  .add('Header with survey notification', () => {
-    const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
-    return (
-      <SuiteHeader
-        suiteName={text('suiteName', 'Application Suite')}
-        appName={text('appName', 'Application Name')}
-        userDisplayName={text('userDisplayName', 'Admin User')}
-        username={text('username', 'adminuser')}
-        isAdminView={boolean('isAdminView', false)}
-        routes={object('routes', {
-          profile: 'https://www.ibm.com',
-          navigator: 'https://www.ibm.com',
-          admin: 'https://www.ibm.com',
-          logout: 'https://www.ibm.com',
-          whatsNew: 'https://www.ibm.com',
-          gettingStarted: 'https://www.ibm.com',
-          documentation: 'https://www.ibm.com',
-          requestEnhancement: 'https://www.ibm.com',
-          support: 'https://www.ibm.com',
-          about: 'https://www.ibm.com',
-        })}
-        i18n={SuiteHeaderI18N[language]}
-        applications={object('applications', [
-          {
-            id: 'monitor',
-            name: 'Monitor',
-            href: 'https://www.ibm.com',
-          },
-          {
-            id: 'health',
-            name: 'Health',
-            href: 'https://www.ibm.com',
-            isExternal: true,
-          },
-        ])}
-        surveyData={object('survey', {
-          surveyLink: 'https://www.ibm.com',
-          privacyLink: 'https://www.ibm.com',
-        })}
-      />
-    );
-  });
-// .add('Header with data hook', () => <HeaderWithHook />);
+  );
+};
+
+Default.storyName = 'default';
+
+export const HeaderWithSideNav = () => (
+  <SuiteHeader
+    suiteName="Application Suite"
+    appName="Application Name"
+    userDisplayName="Admin User"
+    username="adminuser"
+    routes={{
+      profile: 'https://www.ibm.com',
+      navigator: 'https://www.ibm.com',
+      admin: 'https://www.ibm.com',
+      logout: 'https://www.ibm.com',
+      whatsNew: 'https://www.ibm.com',
+      gettingStarted: 'https://www.ibm.com',
+      documentation: 'https://www.ibm.com',
+      requestEnhancement: 'https://www.ibm.com',
+      support: 'https://www.ibm.com',
+      about: 'https://www.ibm.com',
+    }}
+    applications={[
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com',
+      },
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com',
+        isExternal: true,
+      },
+    ]}
+    sideNavProps={{
+      links: sideNavLinks,
+    }}
+  />
+);
+
+HeaderWithSideNav.storyName = 'Header with side nav';
+
+export const HeaderWithSurveyNotification = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView={boolean('isAdminView', false)}
+      routes={object('routes', {
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      applications={object('applications', [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+      surveyData={object('survey', {
+        surveyLink: 'https://www.ibm.com',
+        privacyLink: 'https://www.ibm.com',
+      })}
+    />
+  );
+};
+
+HeaderWithSurveyNotification.storyName = 'Header with survey notification';

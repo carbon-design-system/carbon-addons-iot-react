@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import omit from 'lodash/omit';
@@ -48,164 +47,190 @@ const values = {
   ],
 };
 
-storiesOf('Watson IoT/ImageCard', module)
-  .add('basic', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          id="image-hotspots"
-          content={object('content', content)}
-          values={object('values', {
-            hotspots: [
-              {
-                x: 35,
-                y: 65,
-                icon: 'arrowDown',
-                color: 'purple',
-                content: {
-                  title: 'My Device',
-                  description: 'Description',
-                  values: { deviceid: '73000', temperature: 35.05 },
-                  attributes: [
-                    {
-                      dataSourceId: 'temperature',
-                      label: 'Temp',
-                      precision: 2,
-                    },
-                  ],
-                },
+export default {
+  title: 'Watson IoT/ImageCard',
+};
+
+export const Basic = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        id="image-hotspots"
+        content={object('content', content)}
+        values={object('values', {
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'arrowDown',
+              color: 'purple',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                values: { deviceid: '73000', temperature: 35.05 },
+                attributes: [
+                  {
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
               },
-            ],
-          })}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('custom renderIconByName', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          id="image-hotspots"
-          content={object('content', content)}
-          values={object('values', values)}
-          breakpoint="lg"
-          size={size}
-          renderIconByName={(name, props = {}) =>
-            name === 'arrowDown' ? (
-              <Bee16 {...props}>
-                <title>{props.title}</title>
-              </Bee16>
-            ) : name === 'arrowUp' ? (
-              <Checkmark16 {...props}>
-                <title>{props.title}</title>
-              </Checkmark16>
-            ) : (
-              <span>Unknown</span>
-            )
-          }
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('isEditable', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          isEditable
-          id="image-hotspots"
-          content={object('content', omit(content, ['src']))}
-          values={object('values', values)}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('hotspots are loading', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          isLoading={boolean('isLoading', true)}
-          id="image-hotspots"
-          content={object('content', content)}
-          values={object('values', values)}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('error', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          isLoading={boolean('isLoading', true)}
-          id="image-hotspots"
-          content={object('content', content)}
-          values={object('values', values)}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-          error={text('error', 'API threw Nullpointer')}
-        />
-      </div>
-    );
-  })
-  .add('error loading image', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}>
-        <ImageCard
-          title={text('title', 'Image')}
-          isLoading={boolean('isLoading', true)}
-          id="image-hotspots"
-          content={object('content', omit(content, ['src']))}
-          values={object('values', values)}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-          error={text('error', `Error no image found called ImageID`)}
-        />
-      </div>
-    );
-  });
+            },
+          ],
+        })}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+Basic.storyName = 'basic';
+
+export const CustomRenderIconByName = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        id="image-hotspots"
+        content={object('content', content)}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        renderIconByName={(name, props = {}) =>
+          name === 'arrowDown' ? (
+            <Bee16 {...props}>
+              <title>{props.title}</title>
+            </Bee16>
+          ) : name === 'arrowUp' ? (
+            <Checkmark16 {...props}>
+              <title>{props.title}</title>
+            </Checkmark16>
+          ) : (
+            <span>Unknown</span>
+          )
+        }
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+CustomRenderIconByName.storyName = 'custom renderIconByName';
+
+export const IsEditable = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        isEditable
+        id="image-hotspots"
+        content={object('content', omit(content, ['src']))}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+IsEditable.storyName = 'isEditable';
+
+export const HotspotsAreLoading = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        isLoading={boolean('isLoading', true)}
+        id="image-hotspots"
+        content={object('content', content)}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+HotspotsAreLoading.storyName = 'hotspots are loading';
+
+export const Error = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        isLoading={boolean('isLoading', true)}
+        id="image-hotspots"
+        content={object('content', content)}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+        error={text('error', 'API threw Nullpointer')}
+      />
+    </div>
+  );
+};
+
+Error.storyName = 'error';
+
+export const ErrorLoadingImage = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}
+    >
+      <ImageCard
+        title={text('title', 'Image')}
+        isLoading={boolean('isLoading', true)}
+        id="image-hotspots"
+        content={object('content', omit(content, ['src']))}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+        error={text('error', `Error no image found called ImageID`)}
+      />
+    </div>
+  );
+};
+
+ErrorLoadingImage.storyName = 'error loading image';

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Button } from 'carbon-components-react';
@@ -22,29 +21,123 @@ const demoViews = Array(100)
     isPublic: !!(index % 2),
   }));
 
-storiesOf('Watson IoT/Table/TableManageViewsModal', module)
-  .add(
-    'With callbacks implemented',
-    () => {
+export default {
+  title: 'Watson IoT/Table/TableManageViewsModal',
+};
+
+export const WithCallbacksImplemented = () => {
+  return React.createElement(() => {
+    const rowPerPage = 10;
+    const [currentPageNumber, setCurrentPageNumber] = useState(1);
+    const [currentFilters, setCurrentFilters] = useState({
+      searchTerm: '',
+      showPublic: true,
+    });
+    const [isOpen, setIsOpen] = useState(true);
+    const [filteredViews, setFilteredViews] = useState(demoViews);
+    const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
+
+    const showPage = (pageNumber, views) => {
+      const rowUpperLimit = pageNumber * rowPerPage;
+      const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+      setCurrentPageNumber(pageNumber);
+      setViewsToShow(currentItemsOnPage);
+    };
+
+    const applyFiltering = ({ searchTerm, showPublic }) => {
+      const views = demoViews
+        .filter(
+          (view) =>
+            searchTerm === '' || view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+        )
+        .filter((view) => (showPublic ? view : !view.isPublic));
+
+      setFilteredViews(views);
+      showPage(1, views);
+    };
+
+    const onDelete = (viewId) => {
+      const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
+      demoViews.splice(deleteIndex, 1);
+      setFilteredViews(demoViews);
+      showPage(1, demoViews);
+    };
+
+    const onClose = () => {
+      setIsOpen(false);
+    };
+
+    const onEdit = (viewId) => {
+      /* eslint-disable-next-line no-alert */
+      alert(
+        `EDIT ${viewId} \nThis action should close this modal and open TableSaveViewModal with the data of this view prefilled.`
+      );
+    };
+
+    const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
+
+    const onSearchChange = (val) => {
+      const searchTerm = val === undefined ? '' : val;
+      const newFilters = { ...currentFilters, searchTerm };
+      setCurrentFilters(newFilters);
+      applyFiltering(newFilters);
+    };
+
+    const onDisplayPublicChange = (showPublic) => {
+      const newFilters = { ...currentFilters, showPublic };
+      setCurrentFilters(newFilters);
+      applyFiltering(newFilters);
+    };
+
+    const pagination = {
+      page: currentPageNumber,
+      onPage,
+      maxPage: Math.ceil(filteredViews.length / rowPerPage),
+      pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+    };
+
+    return (
+      <TableManageViewsModal
+        actions={{
+          onDisplayPublicChange,
+          onSearchChange,
+          onEdit,
+          onDelete,
+          onClearError: action('onClearError'),
+          onClose,
+        }}
+        defaultViewId="id1"
+        error={select('error', [undefined, 'My error msg'], undefined)}
+        isLoading={boolean('isLoading', false)}
+        open={isOpen}
+        views={viewsToShow}
+        pagination={pagination}
+      />
+    );
+  });
+};
+
+WithCallbacksImplemented.storyName = 'With callbacks implemented';
+
+WithCallbacksImplemented.parameters = {
+  info: {
+    text: `
+      This TableManageViewsModal story demonstrates a fully implemented example with data
+      and actions working properly in the default configuration. The avaiability of 
+      'Delete' and 'Edit' actions are determined by the respective views data properties.
+
+      ~~~js
       return React.createElement(() => {
         const rowPerPage = 10;
         const [currentPageNumber, setCurrentPageNumber] = useState(1);
-        const [currentFilters, setCurrentFilters] = useState({
-          searchTerm: '',
-          showPublic: true,
-        });
+        const [currentFilters, setCurrentFilters] = useState({ searchTerm: '', showPublic: true });
         const [isOpen, setIsOpen] = useState(true);
         const [filteredViews, setFilteredViews] = useState(demoViews);
-        const [viewsToShow, setViewsToShow] = useState(
-          demoViews.slice(0, rowPerPage)
-        );
+        const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
 
         const showPage = (pageNumber, views) => {
           const rowUpperLimit = pageNumber * rowPerPage;
-          const currentItemsOnPage = views.slice(
-            rowUpperLimit - rowPerPage,
-            rowUpperLimit
-          );
+          const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
           setCurrentPageNumber(pageNumber);
           setViewsToShow(currentItemsOnPage);
         };
@@ -52,18 +145,18 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
         const applyFiltering = ({ searchTerm, showPublic }) => {
           const views = demoViews
             .filter(
-              (view) =>
+              view =>
                 searchTerm === '' ||
                 view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
             )
-            .filter((view) => (showPublic ? view : !view.isPublic));
+            .filter(view => (showPublic ? view : !view.isPublic));
 
           setFilteredViews(views);
           showPage(1, views);
         };
 
-        const onDelete = (viewId) => {
-          const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
+        const onDelete = viewId => {
+          const deleteIndex = demoViews.findIndex(view => view.id === viewId);
           demoViews.splice(deleteIndex, 1);
           setFilteredViews(demoViews);
           showPage(1, demoViews);
@@ -73,23 +166,23 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
           setIsOpen(false);
         };
 
-        const onEdit = (viewId) => {
+        const onEdit = viewId => {
           /* eslint-disable-next-line no-alert */
           alert(
-            `EDIT ${viewId} \nThis action should close this modal and open TableSaveViewModal with the data of this view prefilled.`
+            'This action should close this modal and open TableSaveViewModal with the data of this view prefilled.'
           );
         };
 
-        const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
+        const onPage = pageNumber => showPage(pageNumber, filteredViews);
 
-        const onSearchChange = (val) => {
+        const onSearchChange = val => {
           const searchTerm = val === undefined ? '' : val;
           const newFilters = { ...currentFilters, searchTerm };
           setCurrentFilters(newFilters);
           applyFiltering(newFilters);
         };
 
-        const onDisplayPublicChange = (showPublic) => {
+        const onDisplayPublicChange = showPublic => {
           const newFilters = { ...currentFilters, showPublic };
           setCurrentFilters(newFilters);
           applyFiltering(newFilters);
@@ -99,7 +192,7 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
           page: currentPageNumber,
           onPage,
           maxPage: Math.ceil(filteredViews.length / rowPerPage),
-          pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+          pageOfPagesText: pageNumber => 'Page ' + pageNumber,
         };
 
         return (
@@ -120,227 +213,113 @@ storiesOf('Watson IoT/Table/TableManageViewsModal', module)
             pagination={pagination}
           />
         );
-      });
-    },
-    {
-      info: {
-        text: `
-          This TableManageViewsModal story demonstrates a fully implemented example with data
-          and actions working properly in the default configuration. The avaiability of 
-          'Delete' and 'Edit' actions are determined by the respective views data properties.
+      });          
+      ~~~             
+      `,
+    propTables: [TableManageViewsModal],
+  },
+};
 
-          ~~~js
-          return React.createElement(() => {
-            const rowPerPage = 10;
-            const [currentPageNumber, setCurrentPageNumber] = useState(1);
-            const [currentFilters, setCurrentFilters] = useState({ searchTerm: '', showPublic: true });
-            const [isOpen, setIsOpen] = useState(true);
-            const [filteredViews, setFilteredViews] = useState(demoViews);
-            const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
-    
-            const showPage = (pageNumber, views) => {
-              const rowUpperLimit = pageNumber * rowPerPage;
-              const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
-              setCurrentPageNumber(pageNumber);
-              setViewsToShow(currentItemsOnPage);
-            };
-    
-            const applyFiltering = ({ searchTerm, showPublic }) => {
-              const views = demoViews
-                .filter(
-                  view =>
-                    searchTerm === '' ||
-                    view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-                )
-                .filter(view => (showPublic ? view : !view.isPublic));
-    
-              setFilteredViews(views);
-              showPage(1, views);
-            };
-    
-            const onDelete = viewId => {
-              const deleteIndex = demoViews.findIndex(view => view.id === viewId);
-              demoViews.splice(deleteIndex, 1);
-              setFilteredViews(demoViews);
-              showPage(1, demoViews);
-            };
-    
-            const onClose = () => {
-              setIsOpen(false);
-            };
-    
-            const onEdit = viewId => {
-              /* eslint-disable-next-line no-alert */
-              alert(
-                'This action should close this modal and open TableSaveViewModal with the data of this view prefilled.'
-              );
-            };
-    
-            const onPage = pageNumber => showPage(pageNumber, filteredViews);
-    
-            const onSearchChange = val => {
-              const searchTerm = val === undefined ? '' : val;
-              const newFilters = { ...currentFilters, searchTerm };
-              setCurrentFilters(newFilters);
-              applyFiltering(newFilters);
-            };
-    
-            const onDisplayPublicChange = showPublic => {
-              const newFilters = { ...currentFilters, showPublic };
-              setCurrentFilters(newFilters);
-              applyFiltering(newFilters);
-            };
-    
-            const pagination = {
-              page: currentPageNumber,
-              onPage,
-              maxPage: Math.ceil(filteredViews.length / rowPerPage),
-              pageOfPagesText: pageNumber => 'Page ' + pageNumber,
-            };
-    
-            return (
-              <TableManageViewsModal
-                actions={{
-                  onDisplayPublicChange,
-                  onSearchChange,
-                  onEdit,
-                  onDelete,
-                  onClearError: action('onClearError'),
-                  onClose,
-                }}
-                defaultViewId="id1"
-                error={select('error', [undefined, 'My error msg'], undefined)}
-                isLoading={boolean('isLoading', false)}
-                open={isOpen}
-                views={viewsToShow}
-                pagination={pagination}
-              />
-            );
-          });          
-          ~~~             
-          `,
-        propTables: [TableManageViewsModal],
-      },
+export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
+  const defaultViewId = 'id1';
+  const myViews = demoViews.map((view) => ({ ...view, isClonable: true }));
+  const renderButton = (id, onClick, icon, key, iconText) => (
+    <Button
+      key={key}
+      data-testid={key}
+      hasIconOnly
+      iconDescription={iconText}
+      kind="ghost"
+      onClick={() => onClick(id)}
+      renderIcon={icon}
+      size="small"
+      tooltipAlignment="center"
+      tooltipPosition="left"
+    />
+  );
+
+  const getCustomRowActions = ({ id, isEditable, isDeleteable, isClonable }) => {
+    const rowActions = [];
+    if (isEditable) {
+      rowActions.push(renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit'));
     }
-  )
-  .add(
-    'with custom row actions, custom rendering and no Pagination',
-    () => {
-      const defaultViewId = 'id1';
-      const myViews = demoViews.map((view) => ({ ...view, isClonable: true }));
-      const renderButton = (id, onClick, icon, key, iconText) => (
-        <Button
-          key={key}
-          data-testid={key}
-          hasIconOnly
-          iconDescription={iconText}
-          kind="ghost"
-          onClick={() => onClick(id)}
-          renderIcon={icon}
-          size="small"
-          tooltipAlignment="center"
-          tooltipPosition="left"
-        />
-      );
+    if (isDeleteable) {
+      rowActions.push(renderButton(id, action('onDelete'), TrashCan16, 'deleteKey', 'Delete'));
+    }
+    if (isClonable) {
+      rowActions.push(renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy'));
+    }
+    return rowActions;
+  };
 
-      const getCustomRowActions = ({
-        id,
-        isEditable,
-        isDeleteable,
-        isClonable,
-      }) => {
-        const rowActions = [];
-        if (isEditable) {
-          rowActions.push(
-            renderButton(id, action('onEdit'), Edit16, 'editItemKey', 'Edit')
-          );
-        }
-        if (isDeleteable) {
-          rowActions.push(
-            renderButton(
-              id,
-              action('onDelete'),
-              TrashCan16,
-              'deleteKey',
-              'Delete'
-            )
-          );
-        }
-        if (isClonable) {
-          rowActions.push(
-            renderButton(id, action('onClone'), Copy16, 'copyKey', 'Copy')
-          );
-        }
-        return rowActions;
-      };
+  const getCustomRowTitle = ({ title }) => title;
 
-      const getCustomRowTitle = ({ title }) => title;
+  const getCustomRowDescription = ({ description }) => `PREFIXED - ${description}`;
 
-      const getCustomRowDescription = ({ description }) =>
-        `PREFIXED - ${description}`;
+  const getRowTags = ({ id, isPublic }, { i18n: { defaultLabelText } }) => {
+    const tags =
+      id === defaultViewId
+        ? [
+            <Tag type="blue" key="defaultTag">
+              {defaultLabelText}
+            </Tag>,
+          ]
+        : [];
+    tags.push(
+      isPublic ? (
+        <Tag type="red" key="publicTag">
+          public
+        </Tag>
+      ) : (
+        <Tag type="green" key="privateTag">
+          private
+        </Tag>
+      )
+    );
+    return tags;
+  };
 
-      const getRowTags = ({ id, isPublic }, { i18n: { defaultLabelText } }) => {
-        const tags =
-          id === defaultViewId
-            ? [
-                <Tag type="blue" key="defaultTag">
-                  {defaultLabelText}
-                </Tag>,
-              ]
-            : [];
-        tags.push(
-          isPublic ? (
-            <Tag type="red" key="publicTag">
-              public
-            </Tag>
-          ) : (
-            <Tag type="green" key="privateTag">
-              private
-            </Tag>
-          )
-        );
-        return tags;
-      };
-
-      return (
-        <TableManageViewsModal
-          actions={{
-            onDisplayPublicChange: action('onDisplayPublicChange'),
-            onSearchChange: action('onSearchChange'),
-            onClearError: action('onClearError'),
-            onClose: action('onClose'),
-          }}
-          error={select('error', [undefined, 'My error msg'], undefined)}
-          isLoading={boolean('isLoading', false)}
-          open={boolean('open', true)}
-          views={myViews}
-          overrides={{
-            tableManageViewsList: {
-              props: {
-                rowActionsRenderer: getCustomRowActions,
-                rowDescriptionInterpolation: getCustomRowDescription,
-                rowTagsRenderer: getRowTags,
-                rowTitleInterpolation: getCustomRowTitle,
-                overrides: {
-                  list: {
-                    props: {
-                      isLargeRow: false,
-                    },
-                  },
+  return (
+    <TableManageViewsModal
+      actions={{
+        onDisplayPublicChange: action('onDisplayPublicChange'),
+        onSearchChange: action('onSearchChange'),
+        onClearError: action('onClearError'),
+        onClose: action('onClose'),
+      }}
+      error={select('error', [undefined, 'My error msg'], undefined)}
+      isLoading={boolean('isLoading', false)}
+      open={boolean('open', true)}
+      views={myViews}
+      overrides={{
+        tableManageViewsList: {
+          props: {
+            rowActionsRenderer: getCustomRowActions,
+            rowDescriptionInterpolation: getCustomRowDescription,
+            rowTagsRenderer: getRowTags,
+            rowTitleInterpolation: getCustomRowTitle,
+            overrides: {
+              list: {
+                props: {
+                  isLargeRow: false,
                 },
               },
             },
-          }}
-        />
-      );
-    },
-    {
-      info: {
-        text: `
-        This TableManageViewsModal story demonstrates how the component and subcomponents can
-        be customized using the 'overrides pattern'. Here we override the rendering props 
-        for the internal TableManageViewsList to get different row actions and modify the row
-        rendering in general. We also override the internal component List to make the rows small.`,
-      },
-    }
+          },
+        },
+      }}
+    />
   );
+};
+
+WithCustomRowActionsCustomRenderingAndNoPagination.storyName = 'with custom row actions, custom rendering and no Pagination';
+
+WithCustomRowActionsCustomRenderingAndNoPagination.parameters = {
+  info: {
+    text: `
+    This TableManageViewsModal story demonstrates how the component and subcomponents can
+    be customized using the 'overrides pattern'. Here we override the rendering props 
+    for the internal TableManageViewsList to get different row actions and modify the row
+    rendering in general. We also override the internal component List to make the rows small.`,
+  },
+};

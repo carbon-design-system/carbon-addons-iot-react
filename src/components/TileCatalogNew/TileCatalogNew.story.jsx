@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { number, boolean, text } from '@storybook/addon-knobs';
 
@@ -30,163 +29,177 @@ const getTiles = (num) => {
   return tiles;
 };
 
-storiesOf('Watson IoT Experimental/TileCatalogNew', module)
-  .add('Base with col / row specified', () => {
-    const numOfTiles = number('number of tiles', 7);
-    return (
-      <div style={{ width: '60rem' }}>
-        <TileCatalogNew
-          title="Product name"
-          tiles={getTiles(numOfTiles)}
-          numColumns={number('numColumns', 2)}
-          numRows={number('numRows', 2)}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-        />
-      </div>
-    );
-  })
-  .add('Dynamic resize with tile width specification', () => {
-    const numOfTiles = number('number of tiles', 5);
-    return (
-      <div>
-        <TileCatalogNew
-          title="Product name"
-          tiles={getTiles(numOfTiles)}
-          minTileWidth={text('minTileWidth', '15rem')}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-        />
-      </div>
-    );
-  })
-  .add('Loading', () => {
-    const numOfTiles = number('number of tiles', 4);
-    return (
-      <div style={{ width: '60rem' }}>
-        <TileCatalogNew
-          title="Product name"
-          tiles={getTiles(numOfTiles)}
-          numColumns={number('numColumns', 2)}
-          numRows={number('numRows', 2)}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-          isLoading
-        />
-      </div>
-    );
-  })
-  .add('Error', () => {
-    return (
-      // Not passing in any tiles triggers an error
-      <div style={{ width: '60rem' }}>
-        <TileCatalogNew
-          title="Product name"
-          numColumns={number('numColumns', 2)}
-          numRows={number('numRows', 2)}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-        />
-      </div>
-    );
-  })
-  .add('With OverflowMenu in Pagination', () => {
-    const numOfTiles = number('number of tiles', 100);
-    return (
-      <div style={{ width: '60rem' }}>
-        <TileCatalogNew
-          title="Product name"
-          tiles={getTiles(numOfTiles)}
-          numColumns={number('numColumns', 4)}
-          numRows={number('numRows', 2)}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-        />
-      </div>
-    );
-  })
-  .add('With Search', () => (
+export default {
+  title: 'Watson IoT Experimental/TileCatalogNew',
+};
+
+export const BaseWithColRowSpecified = () => {
+  const numOfTiles = number('number of tiles', 7);
+  return (
     <div style={{ width: '60rem' }}>
       <TileCatalogNew
         title="Product name"
-        tiles={getTiles(20)}
+        tiles={getTiles(numOfTiles)}
+        numColumns={number('numColumns', 2)}
+        numRows={number('numRows', 2)}
+        hasSearch={boolean('hasSearch', true)}
+        hasSort={boolean('hasSort', true)}
+      />
+    </div>
+  );
+};
+
+BaseWithColRowSpecified.storyName = 'Base with col / row specified';
+
+export const DynamicResizeWithTileWidthSpecification = () => {
+  const numOfTiles = number('number of tiles', 5);
+  return (
+    <div>
+      <TileCatalogNew
+        title="Product name"
+        tiles={getTiles(numOfTiles)}
+        minTileWidth={text('minTileWidth', '15rem')}
+        hasSearch={boolean('hasSearch', true)}
+        hasSort={boolean('hasSort', true)}
+      />
+    </div>
+  );
+};
+
+DynamicResizeWithTileWidthSpecification.storyName = 'Dynamic resize with tile width specification';
+
+export const Loading = () => {
+  const numOfTiles = number('number of tiles', 4);
+  return (
+    <div style={{ width: '60rem' }}>
+      <TileCatalogNew
+        title="Product name"
+        tiles={getTiles(numOfTiles)}
+        numColumns={number('numColumns', 2)}
+        numRows={number('numRows', 2)}
+        hasSearch={boolean('hasSearch', true)}
+        hasSort={boolean('hasSort', true)}
+        isLoading
+      />
+    </div>
+  );
+};
+
+export const Error = () => {
+  return (
+    // Not passing in any tiles triggers an error
+    <div style={{ width: '60rem' }}>
+      <TileCatalogNew
+        title="Product name"
+        numColumns={number('numColumns', 2)}
+        numRows={number('numRows', 2)}
+        hasSearch={boolean('hasSearch', true)}
+        hasSort={boolean('hasSort', true)}
+      />
+    </div>
+  );
+};
+
+export const WithOverflowMenuInPagination = () => {
+  const numOfTiles = number('number of tiles', 100);
+  return (
+    <div style={{ width: '60rem' }}>
+      <TileCatalogNew
+        title="Product name"
+        tiles={getTiles(numOfTiles)}
         numColumns={number('numColumns', 4)}
         numRows={number('numRows', 2)}
         hasSearch={boolean('hasSearch', true)}
-        onSearch={action('search', () => {})}
-      />
-    </div>
-  ))
-  .add('With Sort', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalogNew
-        title="Product name"
-        tiles={getTiles(8)}
-        numColumns={number('numColumns', 4)}
-        numRows={number('numRows', 2)}
         hasSort={boolean('hasSort', true)}
-        sortOptions={sortOptions}
-        onSort={action('sort', () => {})}
-        selectedSortOption={selectedSortOption}
       />
     </div>
-  ))
-  .add('StatefulTileCatalog', () => {
-    const StatefulTileCatalog = () => {
-      const [tiles, setTiles] = useState(getTiles(20));
-      const sortOptions = [
-        { text: 'Choose from options', id: 'Choose from options' },
-        { text: 'A-Z', id: 'A-Z' },
-        { text: 'Z-A', id: 'Z-A' },
-      ];
-      const selectedSortOption = 'Choose from options';
+  );
+};
 
-      return (
-        <div style={{ width: '60rem' }}>
-          <TileCatalogNew
-            title="Product name"
-            tiles={tiles}
-            numColumns={number('numColumns', 4)}
-            numRows={number('numRows', 2)}
-            hasSort={boolean('hasSort', true)}
-            sortOptions={sortOptions}
-            onSort={(id) => {
-              if (id === 'A-Z') {
-                // eslint-disable-next-line func-names
-                tiles.sort(function (a, b) {
-                  const tileA = a.props.title.toUpperCase();
-                  const tileB = b.props.title.toUpperCase();
+WithOverflowMenuInPagination.storyName = 'With OverflowMenu in Pagination';
 
-                  return tileA - tileB;
-                });
-              } else if (id === 'Z-A') {
-                // eslint-disable-next-line func-names
-                tiles.sort(function (a, b) {
-                  const tileA = a.props.title.toUpperCase();
-                  const tileB = b.props.title.toUpperCase();
+export const WithSearch = () => (
+  <div style={{ width: '60rem' }}>
+    <TileCatalogNew
+      title="Product name"
+      tiles={getTiles(20)}
+      numColumns={number('numColumns', 4)}
+      numRows={number('numRows', 2)}
+      hasSearch={boolean('hasSearch', true)}
+      onSearch={action('search', () => {})}
+    />
+  </div>
+);
 
-                  return tileB - tileA;
-                });
-              }
-              setTiles([...tiles]);
-            }}
-            selectedSortOption={selectedSortOption}
-            hasSearch={boolean('hasSearch', true)}
-            onSearch={(evt) => {
-              const searchTerm = evt.target.value;
-              const searchFilteredTiles = tiles.filter((tile) => {
-                return (
-                  tile.props.title
-                    .toLowerCase()
-                    .search(searchTerm.toLowerCase()) !== -1
-                );
+export const WithSort = () => (
+  <div style={{ width: '60rem' }}>
+    <TileCatalogNew
+      title="Product name"
+      tiles={getTiles(8)}
+      numColumns={number('numColumns', 4)}
+      numRows={number('numRows', 2)}
+      hasSort={boolean('hasSort', true)}
+      sortOptions={sortOptions}
+      onSort={action('sort', () => {})}
+      selectedSortOption={selectedSortOption}
+    />
+  </div>
+);
+
+export const _StatefulTileCatalog = () => {
+  const StatefulTileCatalog = () => {
+    const [tiles, setTiles] = useState(getTiles(20));
+    const sortOptions = [
+      { text: 'Choose from options', id: 'Choose from options' },
+      { text: 'A-Z', id: 'A-Z' },
+      { text: 'Z-A', id: 'Z-A' },
+    ];
+    const selectedSortOption = 'Choose from options';
+
+    return (
+      <div style={{ width: '60rem' }}>
+        <TileCatalogNew
+          title="Product name"
+          tiles={tiles}
+          numColumns={number('numColumns', 4)}
+          numRows={number('numRows', 2)}
+          hasSort={boolean('hasSort', true)}
+          sortOptions={sortOptions}
+          onSort={(id) => {
+            if (id === 'A-Z') {
+              // eslint-disable-next-line func-names
+              tiles.sort(function (a, b) {
+                const tileA = a.props.title.toUpperCase();
+                const tileB = b.props.title.toUpperCase();
+
+                return tileA - tileB;
               });
-              setTiles(searchFilteredTiles);
-            }}
-          />
-        </div>
-      );
-    };
+            } else if (id === 'Z-A') {
+              // eslint-disable-next-line func-names
+              tiles.sort(function (a, b) {
+                const tileA = a.props.title.toUpperCase();
+                const tileB = b.props.title.toUpperCase();
 
-    return <StatefulTileCatalog />;
-  });
+                return tileB - tileA;
+              });
+            }
+            setTiles([...tiles]);
+          }}
+          selectedSortOption={selectedSortOption}
+          hasSearch={boolean('hasSearch', true)}
+          onSearch={(evt) => {
+            const searchTerm = evt.target.value;
+            const searchFilteredTiles = tiles.filter((tile) => {
+              return tile.props.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
+            });
+            setTiles(searchFilteredTiles);
+          }}
+        />
+      </div>
+    );
+  };
+
+  return <StatefulTileCatalog />;
+};
+
+_StatefulTileCatalog.storyName = 'StatefulTileCatalog';

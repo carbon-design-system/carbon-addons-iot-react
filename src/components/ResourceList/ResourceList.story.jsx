@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/react';
 import { Bee32, Edit16 } from '@carbon/icons-react';
 
 import ResourceList from './ResourceList';
@@ -51,26 +50,37 @@ class ResourceListSimple extends Component {
   };
 }
 
-storiesOf('Watson IoT/ResourceList', module)
-  .add('default', () => <ResourceListSimple />)
-  .add('with extra content', () => (
-    <ResourceListSimple
-      extraContent={resourceData.map((i) => (
-        <div>
-          <h5>{i.id}</h5>
-          <Bee32 />
-        </div>
-      ))}
-    />
-  ))
-  .add('with action', () => (
-    <ResourceList
-      design={select('Resource list design', ['normal', 'inline'], 'normal')}
-      data={resourceData}
-      customAction={{
-        onClick: action('customAction.onClick'),
-        label: 'Configure',
-        icon: Edit16,
-      }}
-    />
-  ));
+export default {
+  title: 'Watson IoT/ResourceList',
+};
+
+export const Default = () => <ResourceListSimple />;
+
+Default.storyName = 'default';
+
+export const WithExtraContent = () => (
+  <ResourceListSimple
+    extraContent={resourceData.map((i) => (
+      <div>
+        <h5>{i.id}</h5>
+        <Bee32 />
+      </div>
+    ))}
+  />
+);
+
+WithExtraContent.storyName = 'with extra content';
+
+export const WithAction = () => (
+  <ResourceList
+    design={select('Resource list design', ['normal', 'inline'], 'normal')}
+    data={resourceData}
+    customAction={{
+      onClick: action('customAction.onClick'),
+      label: 'Configure',
+      icon: Edit16,
+    }}
+  />
+);
+
+WithAction.storyName = 'with action';

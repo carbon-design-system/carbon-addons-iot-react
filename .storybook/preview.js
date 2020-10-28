@@ -1,5 +1,6 @@
 import React from 'react';
 import { initializeRTL } from 'storybook-addon-rtl';
+import theme from './theme';
 
 initializeRTL();
 
@@ -13,6 +14,9 @@ export const parameters = {
         : storyId[1].id.localeCompare(storeItem[1].id, undefined, {
             numeric: true,
           }),
+  },
+  docs: {
+    theme: theme,
   },
 };
 

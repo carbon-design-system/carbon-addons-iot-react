@@ -118,6 +118,7 @@ module.exports = {
   transform: {
     '^.+\\.story\\.jsx?$': '@storybook/addon-storyshots/injectFileName',
     '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
     '^.+\\.s?css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
   },

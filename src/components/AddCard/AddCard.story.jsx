@@ -1,14 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import AddCard from './AddCard';
 
-const AddCardProps = {
-  onClick: action('clicked'),
-  title: 'Click me',
+export default {
+  title: 'Watson IoT/AddCard',
+  component: AddCard,
+  parameters: {
+    actions: { argTypesRegex: '^on.*' },
+    knobs: {
+      disabled: true,
+    },
+  },
 };
 
-storiesOf('Watson IoT/AddCard', module).add('handles click', () => (
-  <AddCard {...AddCardProps} />
-));
+export const HandlesClick = (args) => <AddCard {...args} />;
+
+HandlesClick.args = {
+  title: 'Click me',
+};

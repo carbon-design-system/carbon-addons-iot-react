@@ -1,16 +1,8 @@
 /* Used dependencies */
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
-import {
-  Button,
-  Form,
-  FormGroup,
-  FormItem,
-  Link,
-  TextInput,
-} from 'carbon-components-react';
+import { Button, Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
@@ -32,13 +24,13 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
     <PageWizardStepDescription>
-      You can create summaries lorem ipsum dolor sit amet, consectetur
-      adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum
-      bibendum est. <a href="www.ibm.com">An embedded link</a> is good to have
-      sometimes.
+      You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.{' '}
+      <a href="www.ibm.com">An embedded link</a> is good to have sometimes.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A table could go here</h1>
@@ -48,14 +40,12 @@ export const content = [
     <PageWizardStepExtraContent>
       <h4>What are time grains?</h4>
       <p>
-        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis
-        blandit tellus ultricies justo sagittis, tempus ornare purus tristique.
-        Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula.
-        Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
-        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed
-        vel ultrices libero, eu malesuada quam.
+        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio,
+        rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo
+        sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt,
+        feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
+        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+        eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
       </p>
     </PageWizardStepExtraContent>
   </PageWizardStep>,
@@ -66,11 +56,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
-      You can add content lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      You can add content lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A graph could go here</h1>
@@ -80,25 +71,21 @@ export const content = [
     <PageWizardStepExtraContent>
       <h4>What are time grains?</h4>
       <p>
-        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis
-        blandit tellus ultricies justo sagittis, tempus ornare purus tristique.
-        Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula.
-        Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
-        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed
-        vel ultrices libero, eu malesuada quam.
+        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio,
+        rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo
+        sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt,
+        feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
+        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+        eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
       </p>
       <h4>Some more help text?</h4>
       <p>
-        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis
-        blandit tellus ultricies justo sagittis, tempus ornare purus tristique.
-        Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula.
-        Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
-        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed
-        vel ultrices libero, eu malesuada quam.
+        Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio,
+        rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo
+        sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt,
+        feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at
+        posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+        eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
       </p>
     </PageWizardStepExtraContent>
   </PageWizardStep>,
@@ -110,11 +97,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -131,11 +119,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -152,11 +141,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -174,11 +164,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -195,11 +186,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -215,11 +207,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -234,11 +227,12 @@ export const content = [
     onClose={action('closed', () => {})}
     onSubmit={action('submit', () => {})}
     onNext={action('next', () => {})}
-    onBack={action('back', () => {})}>
+    onBack={action('back', () => {})}
+  >
     <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
     <PageWizardStepDescription>
-      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
     </PageWizardStepDescription>
     <PageWizardStepContent>
       <h1>A dashboard could go here.</h1>
@@ -263,7 +257,8 @@ export const StepValidationWizard = ({ ...props }) => {
       onBack={action('back', () => {})}
       setStep={() => {}}
       error={error}
-      isClickable>
+      isClickable
+    >
       <PageWizardStep
         id="step1"
         key="step1"
@@ -280,11 +275,12 @@ export const StepValidationWizard = ({ ...props }) => {
         onClose={action('closed', () => {})}
         onSubmit={action('submit', () => {})}
         onNext={action('next', () => {})}
-        onBack={action('back', () => {})}>
+        onBack={action('back', () => {})}
+      >
         <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
         <PageWizardStepDescription>
-          Make sure you do not try to go to the next step with an empty input!
-          Bad things will happen.
+          Make sure you do not try to go to the next step with an empty input! Bad things will
+          happen.
         </PageWizardStepDescription>
         <PageWizardStepContent>
           <Form>
@@ -316,186 +312,201 @@ export const StepValidationWizard = ({ ...props }) => {
   );
 };
 
-storiesOf('Watson IoT/PageWizard', module)
-  .add('stateful example', () => (
-    <div>
-      <StatefulPageWizard
-        currentStepId="step1"
-        onClose={action('closed', () => {})}
-        onSubmit={action('submit', () => {})}
-        onClearError={action('Clear error', () => {})}
-        onNext={action('next', () => {})}
-        onBack={action('back', () => {})}
-        setStep={action('step clicked', () => {})}
-        isClickable>
-        {content}
-      </StatefulPageWizard>
-    </div>
-  ))
-  .add('stateful example w/ validation in PageTitleBar', () => (
-    <div>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        content={<StepValidationWizard />}
-      />
-    </div>
-  ))
-  .add('wrapped in PageTitleBar', () => (
-    <div>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        content={
-          <PageWizard
-            currentStepId="step1"
-            onClose={action('closed', () => {})}
-            onSubmit={action('submit', () => {})}
-            onClearError={action('Clear error', () => {})}
-            onNext={action('next', () => {})}
-            onBack={action('back', () => {})}
-            setStep={action('step clicked', () => {})}
-            isProgressIndicatorVertical={boolean(
-              'Toggle Progress Indicator Alignment',
-              true
-            )}>
-            {content}
-          </PageWizard>
-        }
-      />
-    </div>
-  ))
-  .add('With Horizontal ProgressIndicator', () => (
-    <div>
-      <PageWizard
-        currentStepId="step1"
-        onClose={action('closed', () => {})}
-        onSubmit={action('submit', () => {})}
-        onNext={action('next', () => {})}
-        onBack={action('back', () => {})}
-        setStep={action('step clicked', () => {})}
-        onClearError={action('Clear error', () => {})}
-        isProgressIndicatorVertical={boolean(
-          'Toggle Progress Indicator Alignment',
-          false
-        )}
-        isClickable>
-        {content}
-      </PageWizard>
-    </div>
-  ))
-  .add('only one step, in PageTitleBar', () => (
-    <div>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        content={
-          <PageWizard
-            currentStepId="step1"
-            onClose={action('closed', () => {})}
-            onSubmit={action('submit', () => {})}
-            onNext={action('next', () => {})}
-            onBack={action('back', () => {})}
-            onClearError={() => {}}
-            setStep={action('step clicked', () => {})}
-            sendingData={boolean('sendingData', false)}
-            hasStickyFooter={boolean('hasStickyFooter', false)}>
-            {[content[0]]}
-          </PageWizard>
-        }
-      />
-    </div>
-  ))
-  .add(
-    'With Sticky Footer: stateful example w/ validation in PageTitleBar',
-    () => (
-      <div>
-        <PageTitleBar
-          title="A cool PageWizard!"
-          description="The description from the PageTitleBar"
-          breadcrumb={[
-            <Link to="www.ibm.com">Home</Link>,
-            <Link to="www.ibm.com">Something</Link>,
-            <Link to="www.ibm.com">Something Else</Link>,
-          ]}
-          content={
-            <StepValidationWizard
-              hasStickyFooter={boolean('hasStickyFooter', true)}
-              isProgressIndicatorVertical={boolean(
-                'Toggle Progress Indicator Alignment',
-                true
-              )}
-              isClickable
-            />
-          }
+export default {
+  title: 'Watson IoT/PageWizard',
+  excludeStories: ['content', 'StepValidationWizard', 'StepValidation'],
+};
+
+export const StatefulExample = () => (
+  <div>
+    <StatefulPageWizard
+      currentStepId="step1"
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onClearError={action('Clear error', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
+      setStep={action('step clicked', () => {})}
+      isClickable
+    >
+      {content}
+    </StatefulPageWizard>
+  </div>
+);
+
+StatefulExample.storyName = 'stateful example';
+
+export const StatefulExampleWValidationInPageTitleBar = () => (
+  <div>
+    <PageTitleBar
+      title="A cool PageWizard!"
+      description="The description from the PageTitleBar"
+      breadcrumb={[
+        <Link to="www.ibm.com">Home</Link>,
+        <Link to="www.ibm.com">Something</Link>,
+        <Link to="www.ibm.com">Something Else</Link>,
+      ]}
+      content={<StepValidationWizard />}
+    />
+  </div>
+);
+
+StatefulExampleWValidationInPageTitleBar.storyName = 'stateful example w/ validation in PageTitleBar';
+
+export const WrappedInPageTitleBar = () => (
+  <div>
+    <PageTitleBar
+      title="A cool PageWizard!"
+      description="The description from the PageTitleBar"
+      breadcrumb={[
+        <Link to="www.ibm.com">Home</Link>,
+        <Link to="www.ibm.com">Something</Link>,
+        <Link to="www.ibm.com">Something Else</Link>,
+      ]}
+      content={
+        <PageWizard
+          currentStepId="step1"
+          onClose={action('closed', () => {})}
+          onSubmit={action('submit', () => {})}
+          onClearError={action('Clear error', () => {})}
+          onNext={action('next', () => {})}
+          onBack={action('back', () => {})}
+          setStep={action('step clicked', () => {})}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+        >
+          {content}
+        </PageWizard>
+      }
+    />
+  </div>
+);
+
+WrappedInPageTitleBar.storyName = 'wrapped in PageTitleBar';
+
+export const WithHorizontalProgressIndicator = () => (
+  <div>
+    <PageWizard
+      currentStepId="step1"
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
+      setStep={action('step clicked', () => {})}
+      onClearError={action('Clear error', () => {})}
+      isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+      isClickable
+    >
+      {content}
+    </PageWizard>
+  </div>
+);
+
+WithHorizontalProgressIndicator.storyName = 'With Horizontal ProgressIndicator';
+
+export const OnlyOneStepInPageTitleBar = () => (
+  <div>
+    <PageTitleBar
+      title="A cool PageWizard!"
+      description="The description from the PageTitleBar"
+      breadcrumb={[
+        <Link to="www.ibm.com">Home</Link>,
+        <Link to="www.ibm.com">Something</Link>,
+        <Link to="www.ibm.com">Something Else</Link>,
+      ]}
+      content={
+        <PageWizard
+          currentStepId="step1"
+          onClose={action('closed', () => {})}
+          onSubmit={action('submit', () => {})}
+          onNext={action('next', () => {})}
+          onBack={action('back', () => {})}
+          onClearError={() => {}}
+          setStep={action('step clicked', () => {})}
+          sendingData={boolean('sendingData', false)}
+          hasStickyFooter={boolean('hasStickyFooter', false)}
+        >
+          {[content[0]]}
+        </PageWizard>
+      }
+    />
+  </div>
+);
+
+OnlyOneStepInPageTitleBar.storyName = 'only one step, in PageTitleBar';
+
+export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
+  <div>
+    <PageTitleBar
+      title="A cool PageWizard!"
+      description="The description from the PageTitleBar"
+      breadcrumb={[
+        <Link to="www.ibm.com">Home</Link>,
+        <Link to="www.ibm.com">Something</Link>,
+        <Link to="www.ibm.com">Something Else</Link>,
+      ]}
+      content={
+        <StepValidationWizard
+          hasStickyFooter={boolean('hasStickyFooter', true)}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+          isClickable
         />
-      </div>
-    )
-  )
-  .add('With additional footer content', () => (
-    <div>
-      <PageTitleBar
-        title="A cool PageWizard!"
-        description="The description from the PageTitleBar"
-        breadcrumb={[
-          <Link to="www.ibm.com">Home</Link>,
-          <Link to="www.ibm.com">Something</Link>,
-          <Link to="www.ibm.com">Something Else</Link>,
-        ]}
-        content={
-          <StepValidationWizard
-            hasStickyFooter={boolean('hasStickyFooter', true)}
-            isProgressIndicatorVertical={boolean(
-              'Toggle Progress Indicator Alignment',
-              true
-            )}
-            beforeFooterContent={
-              <Button kind="tertiary">Save and close</Button>
-            }
-            isClickable
-          />
-        }
-      />
-    </div>
-  ))
-  .add('w/ i18n', () => (
-    <div>
-      <PageWizard
-        currentStepId="step1"
-        onClose={action('closed', () => {})}
-        onSubmit={action('submit', () => {})}
-        onNext={action('next', () => {})}
-        onBack={action('back', () => {})}
-        onClearError={() => {}}
-        setStep={action('step clicked', () => {})}
-        sendingData={boolean('sendingData', false)}
-        hasStickyFooter={boolean('hasStickyFooter', false)}
-        i18={{
-          close: text('Close label', 'Close'),
-          cancel: text('Cancel label', 'Cancel'),
-          back: text('Back label', 'Back'),
-          next: text('Next label', 'Next'),
-          submit: text('Submit label', 'Submit'),
-        }}>
-        {content}
-      </PageWizard>
-    </div>
-  ));
+      }
+    />
+  </div>
+);
+
+WithStickyFooterStatefulExampleWValidationInPageTitleBar.storyName = 'With Sticky Footer: stateful example w/ validation in PageTitleBar';
+
+export const WithAdditionalFooterContent = () => (
+  <div>
+    <PageTitleBar
+      title="A cool PageWizard!"
+      description="The description from the PageTitleBar"
+      breadcrumb={[
+        <Link to="www.ibm.com">Home</Link>,
+        <Link to="www.ibm.com">Something</Link>,
+        <Link to="www.ibm.com">Something Else</Link>,
+      ]}
+      content={
+        <StepValidationWizard
+          hasStickyFooter={boolean('hasStickyFooter', true)}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+          beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
+          isClickable
+        />
+      }
+    />
+  </div>
+);
+
+WithAdditionalFooterContent.storyName = 'With additional footer content';
+
+export const WI18N = () => (
+  <div>
+    <PageWizard
+      currentStepId="step1"
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
+      onClearError={() => {}}
+      setStep={action('step clicked', () => {})}
+      sendingData={boolean('sendingData', false)}
+      hasStickyFooter={boolean('hasStickyFooter', false)}
+      i18={{
+        close: text('Close label', 'Close'),
+        cancel: text('Cancel label', 'Cancel'),
+        back: text('Back label', 'Back'),
+        next: text('Next label', 'Next'),
+        submit: text('Submit label', 'Submit'),
+      }}
+    >
+      {content}
+    </PageWizard>
+  </div>
+);
+
+WI18N.storyName = 'w/ i18n';
 
 export const StepValidation = ({ ...props }) => {
   const [firstName, setFirstName] = useState('');
@@ -513,11 +524,11 @@ export const StepValidation = ({ ...props }) => {
         }
         setError('First name and Last name cannot be empty');
         return false;
-      }}>
+      }}
+    >
       <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
       <PageWizardStepDescription>
-        Make sure you do not try to go to the next step with an empty input! Bad
-        things will happen.
+        Make sure you do not try to go to the next step with an empty input! Bad things will happen.
       </PageWizardStepDescription>
       <PageWizardStepContent>
         <Form>
