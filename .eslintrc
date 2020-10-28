@@ -115,6 +115,7 @@
           }],
           // would really like this to have a custom message, but its not available for patterns
           // SVGs can't be imported directly. They must be convert to react components via svgr cli first
+          // https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.github/CONTRIBUTING.MD#adding-new-svg-images
           "patterns": ["*.svg"]
       }],
         "no-template-curly-in-string": 0,

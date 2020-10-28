@@ -90,7 +90,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged && yarn test:base",
+      "pre-commit": "yarn svg-convert && yarn lint-staged && yarn test:base",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -198,7 +198,6 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
     "@svgr/cli": "^5.4.0",
-    "@svgr/rollup": "^5.4.0",
     "@testing-library/dom": "^7.22.2",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",

@@ -24,10 +24,12 @@ import {
 } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 import {
-  Dashboard,
+  Dashboard as DashboardIcon,
   DataScientistIllustration,
   ComputerChip,
 } from '../../icons/components';
+
+import Dashboard from './Dashboard';
 
 export const originalCards = [
   {
@@ -1376,7 +1378,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           width: '100%',
                           padding: '0 36px 16px 0',
                         }}>
-                        <Dashboard width="50%" />
+                        <DashboardIcon width="50%" />
                       </div>
                     </div>
                   </ClickableTile>

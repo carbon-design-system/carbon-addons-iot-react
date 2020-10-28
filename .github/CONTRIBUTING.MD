@@ -126,9 +126,9 @@ If SVG files need to be added that are not already distributed by Carbon, please
 take the following steps.
 
 1. first add the SVG files to `src/icons/svg`.
-2. Next, run `npx @svgr/cli src/icons/svg/your-svg-filename.svg`. This will
-   produce a React JSX component file which will then need to be moved to
-   `src/icons/components`.
+2. Next, run `yarn svg-convert`. This will produce a React JSX component, as
+   well as update the `src/icons/components/index.jsx` exports with the newly
+   created component.
 3. You can then import the file as a regular react componet with
    `import MySvgIcon from 'src/icons/components/MySvgIcon.jsx`.
 

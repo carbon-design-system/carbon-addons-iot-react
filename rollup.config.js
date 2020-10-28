@@ -8,7 +8,6 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
-import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
 
@@ -88,7 +87,6 @@ export default [
         // generate a named export for every property of the JSON object
         namedExports: true, // Default: true
       }),
-      svgr(),
       ...prodSettings,
     ],
   },
@@ -235,7 +233,6 @@ export default [
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
-      svgr(),
       ...prodSettings,
     ],
   },

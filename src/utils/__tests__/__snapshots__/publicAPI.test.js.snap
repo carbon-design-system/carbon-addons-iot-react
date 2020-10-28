@@ -23520,5 +23520,19 @@ Map {
     "tableSearchApply": Object {},
     "tableToolbarToggle": Object {},
   },
+  "Icons" => Object {
+    "AlertTableIcon": Object {},
+    "BarGroupedGraphIcon": Object {},
+    "BarStackGraphIcon": Object {},
+    "ComputerChip": Object {},
+    "Dashboard": Object {},
+    "DataScientistIllustration": Object {},
+    "DataTableIcon": Object {},
+    "ImageIcon": Object {},
+    "LineGraphIcon": Object {},
+    "ListIcon": Object {},
+    "SimpleBarGraphIcon": Object {},
+    "ValueKpiIcon": Object {},
+  },
 }
 `;

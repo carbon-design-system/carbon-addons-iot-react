@@ -3612,6 +3612,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     tableActions
                   </div>
                 </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    Icons
+                  </div>
+                </div>
               </div>
             </section>
           </div>
