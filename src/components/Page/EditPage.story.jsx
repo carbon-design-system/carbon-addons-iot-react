@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
@@ -21,22 +20,39 @@ const breadcrumb = [
   <a href="/">Type</a>,
   <span>Instance</span>,
 ];
-storiesOf('Watson IoT/EditPage (Deprecated)', module)
-  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
-  .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice
-      deprecatedComponentName="EditPage"
-      replacementComponentName="PageWizard"
-    />
-  ))
-  .add('normal', () => <EditPage {...commonEditPageProps} />)
-  .add('isLoading', () => <EditPage {...commonEditPageProps} isLoading />)
-  .add('with blurb', () => (
-    <EditPage
-      {...commonEditPageProps}
-      blurb={text('blurb', 'My blurrrrbbbb!!')}
-    />
-  ))
-  .add('with breadcrumb', () => (
-    <EditPage {...commonEditPageProps} breadcrumb={breadcrumb} />
-  ));
+
+export default {
+  title: 'Watson IoT/EditPage (Deprecated)',
+  decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
+};
+
+export const Normal = () => <EditPage {...commonEditPageProps} />;
+
+Normal.story = {
+  name: 'normal',
+};
+
+export const IsLoading = () => <EditPage {...commonEditPageProps} isLoading />;
+
+IsLoading.story = {
+  name: 'isLoading',
+};
+
+export const WithBlurb = () => (
+  <EditPage
+    {...commonEditPageProps}
+    blurb={text('blurb', 'My blurrrrbbbb!!')}
+  />
+);
+
+WithBlurb.story = {
+  name: 'with blurb',
+};
+
+export const WithBreadcrumb = () => (
+  <EditPage {...commonEditPageProps} breadcrumb={breadcrumb} />
+);
+
+WithBreadcrumb.story = {
+  name: 'with breadcrumb',
+};

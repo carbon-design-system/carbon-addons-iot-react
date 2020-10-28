@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
@@ -66,30 +65,53 @@ const StatefulNavigationBar = () => {
   );
 };
 
-storiesOf('Watson IoT/NavigationBar', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/NavigationBar',
+
+  parameters: {
     component: NavigationBar,
-  })
-  .add('normal', () => <NavigationBar {...navBarProps} />)
-  .add('start with tab 2 selected', () => (
-    <NavigationBar {...navBarProps} selected={1} />
-  ))
-  .add('with actions', () => (
-    <NavigationBar
-      {...navBarProps}
-      actions={[
-        {
-          id: 'button1',
-          children: 'New Entity Type',
-          onClick: action('button1'),
-        },
-        {
-          id: 'button2',
-          children: 'Button 2',
-          kind: 'secondary',
-          onClick: action('button2'),
-        },
-      ]}
-    />
-  ))
-  .add('example with workArea', () => <StatefulNavigationBar />);
+  },
+};
+
+export const Normal = () => <NavigationBar {...navBarProps} />;
+
+Normal.story = {
+  name: 'normal',
+};
+
+export const StartWithTab2Selected = () => (
+  <NavigationBar {...navBarProps} selected={1} />
+);
+
+StartWithTab2Selected.story = {
+  name: 'start with tab 2 selected',
+};
+
+export const WithActions = () => (
+  <NavigationBar
+    {...navBarProps}
+    actions={[
+      {
+        id: 'button1',
+        children: 'New Entity Type',
+        onClick: action('button1'),
+      },
+      {
+        id: 'button2',
+        children: 'Button 2',
+        kind: 'secondary',
+        onClick: action('button2'),
+      },
+    ]}
+  />
+);
+
+WithActions.story = {
+  name: 'with actions',
+};
+
+export const ExampleWithWorkArea = () => <StatefulNavigationBar />;
+
+ExampleWithWorkArea.story = {
+  name: 'example with workArea',
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
@@ -14,53 +13,82 @@ const FileDropProps = {
   onError: action('onError'),
 };
 
-storiesOf('Watson IoT/FileDrop', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/FileDrop',
+
+  parameters: {
     component: FileDrop,
-  })
-  .add('Browse', () => (
-    <FileDrop
-      {...FileDropProps}
-      title={text('title', 'Upload Files')}
-      description={text(
-        'description',
-        'Any file can be uploaded.  Feel free to upload more than one!'
-      )}
-    />
-  ))
-  .add('Browse only one', () => (
-    <FileDrop
-      {...FileDropProps}
-      description="Only one file can be uploaded"
-      multiple={false}
-    />
-  ))
-  .add('Drag and drop', () => (
-    <FileDrop {...FileDropProps} kind="drag-and-drop" />
-  ))
-  .add('Drag only one file', () => (
-    <FileDrop
-      {...FileDropProps}
-      description="Only one file can be uploaded"
-      multiple={false}
-      kind="drag-and-drop"
-    />
-  ))
-  .add('Show files false', () => (
-    <FileDrop
-      {...FileDropProps}
-      description="Only one file can be uploaded"
-      showFiles={false}
-      multiple={false}
-      kind="drag-and-drop"
-    />
-  ))
-  .add('Accept JSON', () => (
-    <FileDrop
-      {...FileDropProps}
-      description="Only JSON can be uploaded"
-      accept={['json']}
-      fileType="TEXT"
-      kind="drag-and-drop"
-    />
-  ));
+  },
+};
+
+export const Browse = () => (
+  <FileDrop
+    {...FileDropProps}
+    title={text('title', 'Upload Files')}
+    description={text(
+      'description',
+      'Any file can be uploaded.  Feel free to upload more than one!'
+    )}
+  />
+);
+
+export const BrowseOnlyOne = () => (
+  <FileDrop
+    {...FileDropProps}
+    description="Only one file can be uploaded"
+    multiple={false}
+  />
+);
+
+BrowseOnlyOne.story = {
+  name: 'Browse only one',
+};
+
+export const DragAndDrop = () => (
+  <FileDrop {...FileDropProps} kind="drag-and-drop" />
+);
+
+DragAndDrop.story = {
+  name: 'Drag and drop',
+};
+
+export const DragOnlyOneFile = () => (
+  <FileDrop
+    {...FileDropProps}
+    description="Only one file can be uploaded"
+    multiple={false}
+    kind="drag-and-drop"
+  />
+);
+
+DragOnlyOneFile.story = {
+  name: 'Drag only one file',
+};
+
+export const ShowFilesFalse = () => (
+  <FileDrop
+    {...FileDropProps}
+    description="Only one file can be uploaded"
+    showFiles={false}
+    multiple={false}
+    kind="drag-and-drop"
+  />
+);
+
+ShowFilesFalse.story = {
+  name: 'Show files false',
+};
+
+export const AcceptJson = () => (
+  <FileDrop
+    {...FileDropProps}
+    description="Only JSON can be uploaded"
+    accept={['json']}
+    fileType="TEXT"
+    kind="drag-and-drop"
+  />
+);
+
+AcceptJson.story = {
+  name: 'Accept JSON',
+};

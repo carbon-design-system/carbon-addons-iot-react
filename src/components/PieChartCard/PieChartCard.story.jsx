@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import { SettingsAdjust16 } from '@carbon/icons-react';
@@ -48,277 +47,295 @@ const chartDataExample = [
   },
 ];
 
-storiesOf('Watson IoT/PieChartCard', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/PieChartCard',
+
+  parameters: {
     component: PieChartCard,
-  })
-  .add('basic', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUM);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
-    const chartData = object('chartData', chartDataExample);
+  },
+};
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{
-            groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
-          }}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('with CardVariables', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'group'
-    );
-    const chartDataExampleWithVars = chartDataExample.map((data) => ({
-      ...data,
-      group: `{var1} ${data.group}`,
-    }));
-    const chartData = object('chartData', chartDataExampleWithVars);
-    const cardVariables = object('cardVariables', { var1: 'Inserted' });
+export const Basic = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.MEDIUM);
+  const groupDataSourceId = select(
+    'groupDataSourceId',
+    ['category', 'group'],
+    'category'
+  );
+  const chartData = object('chartData', chartDataExample);
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          cardVariables={cardVariables}
-          content={{
-            groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
-          }}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('custom colors', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
-    const chartData = object('chartData', chartDataExample);
-    const colorsMap = object('colors', {
-      A: 'red',
-      B: 'green',
-      C: 'blue',
-      D: 'yellow',
-      E: 'purple',
-      F: 'orange',
-    });
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{
-            colors: colorsMap,
-            groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
-          }}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('custom labels', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
-    const chartData = object('chartData', chartDataExample);
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{
+          groupDataSourceId,
+          legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
+        }}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{
-            groupDataSourceId,
-            labelsFormatter: (wrapper) => {
-              return `${wrapper.data[groupDataSourceId]} (${wrapper.value})`;
-            },
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
-          }}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('custom tooltip', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const groupDataSourceId = select(
-      'groupDataSourceId',
-      ['category', 'group'],
-      'category'
-    );
-    const chartData = object('chartData', chartDataExample);
+Basic.story = {
+  name: 'basic',
+};
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{
-            customTooltip: ([pieData] = [], html) => {
-              return pieData
-                ? `label: ${pieData.label} - Value: ${pieData.value}`
-                : html;
-            },
-            groupDataSourceId,
-            legendPosition: select(
-              'legendPosition',
-              ['bottom', 'top'],
-              'bottom'
-            ),
-          }}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('no data', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
-    const chartData = object('chartData', []);
-    const i18n = object('i18n', { noDataLabel: 'No data for this card' });
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{
-            legendPosition: 'bottom',
-          }}
-          i18n={i18n}
-          id="basicCardStory"
-          isLoading={boolean('isLoading', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          onCardAction={action('onCardAction')}
-          size={size}
-          title={text('title', 'Schools')}
-          testID="basicCardStoryTest"
-          values={chartData}
-        />
-      </div>
-    );
-  })
-  .add('advanced customisation using overrides', () => {
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', CARD_SIZES.LARGE).x}px`,
-          margin: 20,
-        }}>
-        <PieChartCard
-          availableActions={{ expand: true }}
-          content={{ legendPosition: 'bottom' }}
-          id="basicCardStory"
-          isExpanded={boolean('isExpanded', true)}
-          onCardAction={action('onCardAction')}
-          size={CARD_SIZES.LARGE}
-          title="Animations turned on and FlyoutMenu added to table"
-          testID="basicCardStoryTest"
-          values={chartDataExample}
-          overrides={{
-            pieChart: {
-              props: (originalPieChartProps) => {
-                const props = cloneDeep(originalPieChartProps);
-                props.options.animations = true;
-                return props;
-              },
-            },
-            table: {
-              props: (originalTableProps) => {
-                const props = cloneDeep(originalTableProps);
-                props.view.toolbar = {
-                  customToolbarContent: (
-                    <FlyoutMenu
-                      direction={FlyoutMenuDirection.BottomEnd}
-                      buttonProps={{
-                        size: 'default',
-                        renderIcon: SettingsAdjust16,
-                      }}
-                      triggerId="test-flyout-id"
-                      transactional
-                      onApply={action('FlyoutMenuApply')}
-                      onCancel={action('FlyoutMenuCancel')}
-                      iconDescription="">
-                      Example Flyout Content
-                    </FlyoutMenu>
-                  ),
-                };
-                return props;
-              },
-            },
-          }}
-        />
-      </div>
-    );
+export const WithCardVariables = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+  const groupDataSourceId = select(
+    'groupDataSourceId',
+    ['category', 'group'],
+    'group'
+  );
+  const chartDataExampleWithVars = chartDataExample.map((data) => ({
+    ...data,
+    group: `{var1} ${data.group}`,
+  }));
+  const chartData = object('chartData', chartDataExampleWithVars);
+  const cardVariables = object('cardVariables', { var1: 'Inserted' });
+
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        cardVariables={cardVariables}
+        content={{
+          groupDataSourceId,
+          legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
+        }}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
+
+WithCardVariables.story = {
+  name: 'with CardVariables',
+};
+
+export const CustomColors = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+  const groupDataSourceId = select(
+    'groupDataSourceId',
+    ['category', 'group'],
+    'category'
+  );
+  const chartData = object('chartData', chartDataExample);
+  const colorsMap = object('colors', {
+    A: 'red',
+    B: 'green',
+    C: 'blue',
+    D: 'yellow',
+    E: 'purple',
+    F: 'orange',
   });
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{
+          colors: colorsMap,
+          groupDataSourceId,
+          legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
+        }}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
+
+CustomColors.story = {
+  name: 'custom colors',
+};
+
+export const CustomLabels = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+  const groupDataSourceId = select(
+    'groupDataSourceId',
+    ['category', 'group'],
+    'category'
+  );
+  const chartData = object('chartData', chartDataExample);
+
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{
+          groupDataSourceId,
+          labelsFormatter: (wrapper) => {
+            return `${wrapper.data[groupDataSourceId]} (${wrapper.value})`;
+          },
+          legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
+        }}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
+
+CustomLabels.story = {
+  name: 'custom labels',
+};
+
+export const CustomTooltip = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+  const groupDataSourceId = select(
+    'groupDataSourceId',
+    ['category', 'group'],
+    'category'
+  );
+  const chartData = object('chartData', chartDataExample);
+
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{
+          customTooltip: ([pieData] = [], html) => {
+            return pieData
+              ? `label: ${pieData.label} - Value: ${pieData.value}`
+              : html;
+          },
+          groupDataSourceId,
+          legendPosition: select('legendPosition', ['bottom', 'top'], 'bottom'),
+        }}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
+
+CustomTooltip.story = {
+  name: 'custom tooltip',
+};
+
+export const NoData = () => {
+  const size = select('size', acceptableSizes, CARD_SIZES.LARGE);
+  const chartData = object('chartData', []);
+  const i18n = object('i18n', { noDataLabel: 'No data for this card' });
+  return (
+    <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{
+          legendPosition: 'bottom',
+        }}
+        i18n={i18n}
+        id="basicCardStory"
+        isLoading={boolean('isLoading', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        onCardAction={action('onCardAction')}
+        size={size}
+        title={text('title', 'Schools')}
+        testID="basicCardStoryTest"
+        values={chartData}
+      />
+    </div>
+  );
+};
+
+NoData.story = {
+  name: 'no data',
+};
+
+export const AdvancedCustomisationUsingOverrides = () => {
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', CARD_SIZES.LARGE).x}px`,
+        margin: 20,
+      }}>
+      <PieChartCard
+        availableActions={{ expand: true }}
+        content={{ legendPosition: 'bottom' }}
+        id="basicCardStory"
+        isExpanded={boolean('isExpanded', true)}
+        onCardAction={action('onCardAction')}
+        size={CARD_SIZES.LARGE}
+        title="Animations turned on and FlyoutMenu added to table"
+        testID="basicCardStoryTest"
+        values={chartDataExample}
+        overrides={{
+          pieChart: {
+            props: (originalPieChartProps) => {
+              const props = cloneDeep(originalPieChartProps);
+              props.options.animations = true;
+              return props;
+            },
+          },
+          table: {
+            props: (originalTableProps) => {
+              const props = cloneDeep(originalTableProps);
+              props.view.toolbar = {
+                customToolbarContent: (
+                  <FlyoutMenu
+                    direction={FlyoutMenuDirection.BottomEnd}
+                    buttonProps={{
+                      size: 'default',
+                      renderIcon: SettingsAdjust16,
+                    }}
+                    triggerId="test-flyout-id"
+                    transactional
+                    onApply={action('FlyoutMenuApply')}
+                    onCancel={action('FlyoutMenuCancel')}
+                    iconDescription="">
+                    Example Flyout Content
+                  </FlyoutMenu>
+                ),
+              };
+              return props;
+            },
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+AdvancedCustomisationUsingOverrides.story = {
+  name: 'advanced customisation using overrides',
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 import { layout05 } from '@carbon/layout';
@@ -51,88 +50,106 @@ const content = {
   ],
 };
 
-storiesOf('Watson IoT Experimental/GaugeCard', module)
-  .addParameters({
-    component: GaugeCard,
-  })
-  .add('basic', () => {
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
-          margin: layout05,
-        }}>
-        <GaugeCard
-          isLoading={boolean('Is loading', false)}
-          tooltip={<p>Health - of floor 8</p>}
-          id="GaugeCard"
-          title={text('Text', 'Health')}
-          size={CARD_SIZES.SMALL}
-          values={{
-            usage: number('Gauge value', 81),
-            usageTrend: '12%',
-          }}
-          content={content}
-        />
-      </div>
-    );
-  })
-  .add('basic with expand', () => {
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
-          margin: layout05,
-        }}>
-        <GaugeCard
-          isLoading={boolean('Is loading', false)}
-          tooltip={<p>Health - of floor 8</p>}
-          id="GaugeCard"
-          title={text('Text', 'Health')}
-          size={CARD_SIZES.SMALL}
-          values={{
-            usage: number('Gauge value', 81),
-            usageTrend: '12%',
-          }}
-          isExpanded={false}
-          availableActions={{
-            expand: true,
-          }}
-          content={content}
-          onCardAction={action('Expand button clicked')}
-        />
-      </div>
-    );
-  })
-  .add('with data state no-data', () => {
-    const myDataState = {
-      type: select(
-        'dataState : Type',
-        Object.keys(CARD_DATA_STATE),
-        CARD_DATA_STATE.NO_DATA
-      ),
-      ...getDataStateProp(),
-    };
-    const content = {
-      gauges: [],
-    };
+export default {
+  title: 'Watson IoT Experimental/GaugeCard',
 
-    return (
-      <div style={{ width: '252px', margin: layout05 }}>
-        <GaugeCard
-          isLoading={boolean('Is loading', false)}
-          tooltip={<p>Health - of floor 8</p>}
-          id="GaugeCard"
-          title={text('Text', 'Health')}
-          size={select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL)}
-          values={{
-            usage: number('Gauge value', 81),
-            usageTrend: '12%',
-          }}
-          content={content}
-          dataState={myDataState}
-        />
-        <div style={{ height: '150vh' }} />
-      </div>
-    );
-  });
+  parameters: {
+    component: GaugeCard,
+  },
+};
+
+export const Basic = () => {
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+        margin: layout05,
+      }}>
+      <GaugeCard
+        isLoading={boolean('Is loading', false)}
+        tooltip={<p>Health - of floor 8</p>}
+        id="GaugeCard"
+        title={text('Text', 'Health')}
+        size={CARD_SIZES.SMALL}
+        values={{
+          usage: number('Gauge value', 81),
+          usageTrend: '12%',
+        }}
+        content={content}
+      />
+    </div>
+  );
+};
+
+Basic.story = {
+  name: 'basic',
+};
+
+export const BasicWithExpand = () => {
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`,
+        margin: layout05,
+      }}>
+      <GaugeCard
+        isLoading={boolean('Is loading', false)}
+        tooltip={<p>Health - of floor 8</p>}
+        id="GaugeCard"
+        title={text('Text', 'Health')}
+        size={CARD_SIZES.SMALL}
+        values={{
+          usage: number('Gauge value', 81),
+          usageTrend: '12%',
+        }}
+        isExpanded={false}
+        availableActions={{
+          expand: true,
+        }}
+        content={content}
+        onCardAction={action('Expand button clicked')}
+      />
+    </div>
+  );
+};
+
+BasicWithExpand.story = {
+  name: 'basic with expand',
+};
+
+export const WithDataStateNoData = () => {
+  const myDataState = {
+    type: select(
+      'dataState : Type',
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.NO_DATA
+    ),
+    ...getDataStateProp(),
+  };
+  const content = {
+    gauges: [],
+  };
+
+  return (
+    <div style={{ width: '252px', margin: layout05 }}>
+      <GaugeCard
+        isLoading={boolean('Is loading', false)}
+        tooltip={<p>Health - of floor 8</p>}
+        id="GaugeCard"
+        title={text('Text', 'Health')}
+        size={select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL)}
+        values={{
+          usage: number('Gauge value', 81),
+          usageTrend: '12%',
+        }}
+        content={content}
+        dataState={myDataState}
+      />
+      <div style={{ height: '150vh' }} />
+    </div>
+  );
+};
+
+WithDataStateNoData.story = {
+  name: 'with data state no-data',
+};

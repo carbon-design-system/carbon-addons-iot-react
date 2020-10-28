@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24, TrashCan24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
@@ -55,123 +54,179 @@ export const PageTitleBarNodeTooltip = () => (
   </div>
 );
 
-storiesOf('Watson IoT/PageTitleBar', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/PageTitleBar',
+  decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
+
+  parameters: {
     component: PageTitleBar,
-  })
-  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
-  .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
-  .add('with breadcrumb', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      breadcrumb={pageTitleBarBreadcrumb}
-    />
-  ))
-  .add('with description', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-    />
-  ))
-  .add('with tooltip description with node', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={<PageTitleBarNodeTooltip />}
-      breadcrumb={pageTitleBarBreadcrumb}
-      collapsed
-    />
-  ))
-  .add('with content', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      breadcrumb={pageTitleBarBreadcrumb}
-      content={
-        <Tabs>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
-        </Tabs>
-      }
-    />
-  ))
-  .add('with editable title bar', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      editable
-      onEdit={action('edit')}
-    />
-  ))
-  .add('with rich content', () => (
-    <PageTitleBar {...commonPageTitleBarProps} collapsed />
-  ))
-  .add('with everything', () => (
-    <PageTitleBar
-      title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
-      breadcrumb={pageTitleBarBreadcrumb}
-      extraContent={
-        <div>
-          <div
-            className="top"
-            style={{
-              marginBottom: '8px',
-              display: 'flex',
-              flexDirection: 'row-reverse',
-            }}>
-            <span>Last updated: yesterday</span>
-          </div>
-          <div className="bottom">
-            <Button
-              renderIcon={Add24}
-              onClick={action('click')}
-              size="field"
-              hasIconOnly
-              iconDescription="Add"
-              kind="ghost"
-              tooltipPosition="bottom"
-              tooltipAlignment="center"
-            />
-            <Button
-              renderIcon={TrashCan24}
-              onClick={action('click')}
-              size="field"
-              hasIconOnly
-              iconDescription="Remove"
-              kind="ghost"
-              tooltipPosition="bottom"
-              tooltipAlignment="center"
-            />
-            <Button onClick={action('click')} size="field">
-              Take an action
-            </Button>
-          </div>
+  },
+
+  excludeStories: [
+    'commonPageTitleBarProps',
+    'pageTitleBarBreadcrumb',
+    'PageTitleBarNodeTooltip',
+  ],
+};
+
+export const Base = () => (
+  <PageTitleBar title={commonPageTitleBarProps.title} />
+);
+
+Base.story = {
+  name: 'base',
+};
+
+export const WithBreadcrumb = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    breadcrumb={pageTitleBarBreadcrumb}
+  />
+);
+
+WithBreadcrumb.story = {
+  name: 'with breadcrumb',
+};
+
+export const WithDescription = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+  />
+);
+
+WithDescription.story = {
+  name: 'with description',
+};
+
+export const WithTooltipDescriptionWithNode = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={<PageTitleBarNodeTooltip />}
+    breadcrumb={pageTitleBarBreadcrumb}
+    collapsed
+  />
+);
+
+WithTooltipDescriptionWithNode.story = {
+  name: 'with tooltip description with node',
+};
+
+export const WithContent = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+  />
+);
+
+WithContent.story = {
+  name: 'with content',
+};
+
+export const WithEditableTitleBar = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    editable
+    onEdit={action('edit')}
+  />
+);
+
+WithEditableTitleBar.story = {
+  name: 'with editable title bar',
+};
+
+export const WithRichContent = () => (
+  <PageTitleBar {...commonPageTitleBarProps} collapsed />
+);
+
+WithRichContent.story = {
+  name: 'with rich content',
+};
+
+export const WithEverything = () => (
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    description={commonPageTitleBarProps.description}
+    breadcrumb={pageTitleBarBreadcrumb}
+    extraContent={
+      <div>
+        <div
+          className="top"
+          style={{
+            marginBottom: '8px',
+            display: 'flex',
+            flexDirection: 'row-reverse',
+          }}>
+          <span>Last updated: yesterday</span>
         </div>
-      }
-      editable
-      content={
-        <Tabs>
-          <Tab label="Tab 1">
-            <div>Content for first tab.</div>
-          </Tab>
-          <Tab label="Tab 2">
-            <div>Content for second tab.</div>
-          </Tab>
-          <Tab label="Tab 3">
-            <div>Content for third tab.</div>
-          </Tab>
-        </Tabs>
-      }
-      onEdit={action('edit')}
-    />
-  ))
-  .add('isLoading', () => (
-    <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
-  ));
+        <div className="bottom">
+          <Button
+            renderIcon={Add24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Add"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button
+            renderIcon={TrashCan24}
+            onClick={action('click')}
+            size="field"
+            hasIconOnly
+            iconDescription="Remove"
+            kind="ghost"
+            tooltipPosition="bottom"
+            tooltipAlignment="center"
+          />
+          <Button onClick={action('click')} size="field">
+            Take an action
+          </Button>
+        </div>
+      </div>
+    }
+    editable
+    content={
+      <Tabs>
+        <Tab label="Tab 1">
+          <div>Content for first tab.</div>
+        </Tab>
+        <Tab label="Tab 2">
+          <div>Content for second tab.</div>
+        </Tab>
+        <Tab label="Tab 3">
+          <div>Content for third tab.</div>
+        </Tab>
+      </Tabs>
+    }
+    onEdit={action('edit')}
+  />
+);
+
+WithEverything.story = {
+  name: 'with everything',
+};
+
+export const IsLoading = () => (
+  <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
+);
+
+IsLoading.story = {
+  name: 'isLoading',
+};

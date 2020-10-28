@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -17,40 +16,61 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-storiesOf('Watson IoT/PageHero (Deprecated)', module)
-  .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
-  .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice
-      deprecatedComponentName="PageHero"
-      replacementComponentName="Hero"
-    />
-  ))
-  .add('normal', () => <PageHero {...commonPageHeroProps} />)
-  .add('normal with content switcher', () => (
-    <PageHero
-      {...commonPageHeroProps}
-      switcher={{
-        onChange: action('onChange'),
-        selectedIndex: 1,
-        options: [
-          {
-            id: 'allDevices',
-            text: 'All Devices',
-          },
-          {
-            id: 'diagnose',
-            text: 'Diagnose',
-          },
-        ],
-      }}
-    />
-  ))
-  .add('with section', () => (
-    <PageHero {...commonPageHeroProps} section="Explore" />
-  ))
-  .add('has breadcrumb', () => (
-    <PageHero {...commonPageHeroProps} crumb={<div>breadcrumb/mybread</div>} />
-  ))
-  .add('has left content', () => (
-    <PageHero {...commonPageHeroProps} leftContent={<div>Left Content</div>} />
-  ));
+export default {
+  title: 'Watson IoT/PageHero (Deprecated)',
+  decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
+};
+
+export const Normal = () => <PageHero {...commonPageHeroProps} />;
+
+Normal.story = {
+  name: 'normal',
+};
+
+export const NormalWithContentSwitcher = () => (
+  <PageHero
+    {...commonPageHeroProps}
+    switcher={{
+      onChange: action('onChange'),
+      selectedIndex: 1,
+      options: [
+        {
+          id: 'allDevices',
+          text: 'All Devices',
+        },
+        {
+          id: 'diagnose',
+          text: 'Diagnose',
+        },
+      ],
+    }}
+  />
+);
+
+NormalWithContentSwitcher.story = {
+  name: 'normal with content switcher',
+};
+
+export const WithSection = () => (
+  <PageHero {...commonPageHeroProps} section="Explore" />
+);
+
+WithSection.story = {
+  name: 'with section',
+};
+
+export const HasBreadcrumb = () => (
+  <PageHero {...commonPageHeroProps} crumb={<div>breadcrumb/mybread</div>} />
+);
+
+HasBreadcrumb.story = {
+  name: 'has breadcrumb',
+};
+
+export const HasLeftContent = () => (
+  <PageHero {...commonPageHeroProps} leftContent={<div>Left Content</div>} />
+);
+
+HasLeftContent.story = {
+  name: 'has left content',
+};

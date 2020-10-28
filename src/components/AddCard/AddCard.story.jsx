@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import AddCard from './AddCard';
@@ -9,8 +8,16 @@ const AddCardProps = {
   title: 'Click me',
 };
 
-storiesOf('Watson IoT/AddCard', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/AddCard',
+
+  parameters: {
     component: AddCard,
-  })
-  .add('handles click', () => <AddCard {...AddCardProps} />);
+  },
+};
+
+export const HandlesClick = () => <AddCard {...AddCardProps} />;
+
+HandlesClick.story = {
+  name: 'handles click',
+};
