@@ -58,14 +58,22 @@ const CardWrapper = ({
   }, [isSelected, setIsCardSelected]);
 
   const handleSelection = (e) => {
-    console.log({ e });
-    if (
-      (e.type === 'click' && isSelected && isSelected(e)) ||
-      e.key === 'Enter'
-    ) {
-      setIsCardSelected(!isCardSelected);
+    if (e.type === 'click' || e.key === 'Enter') {
+      setIsCardSelected(true);
     }
   };
+
+  const handleBlur = (e) => {
+    if (
+      e.relatedTarget.classList.contains(
+        `${iotPrefix}--card iot--card--wrapper`
+      )
+    ) {
+      setIsCardSelected(false);
+    }
+    onBlur();
+  };
+
   return (
     <div
       role="presentation"
@@ -78,8 +86,8 @@ const CardWrapper = ({
       onTouchStart={onTouchStart}
       onScroll={onScroll}
       onFocus={onFocus}
-      onBlur={onBlur}
-      onKeyPress={handleSelection}
+      onBlur={(e) => handleBlur(e)}
+      onKeyDown={handleSelection}
       onClick={handleSelection}
       tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`, {
@@ -133,7 +141,7 @@ CardWrapper.propTypes = {
   /**
    * Is given the event as argument. Should return true or false if event should trigger selection
    */
-  isSelected: PropTypes.func,
+  isSelected: PropTypes.bool,
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
     .isRequired,
@@ -151,7 +159,7 @@ CardWrapper.propTypes = {
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {
-  isSelected: null,
+  isSelected: false,
   id: undefined,
   style: undefined,
   testID: 'Card',
