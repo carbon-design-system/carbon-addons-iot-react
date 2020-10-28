@@ -8,7 +8,6 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
-import builtins from 'rollup-plugin-node-builtins';
 import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
@@ -30,51 +29,6 @@ const external = (id) => {
     id.includes('@babel/runtime')
   );
 };
-const plugins = [
-  resolve({ mainFields: ['module', 'main'], extensions, preferBuiltins: true }),
-  builtins(),
-  commonjs({
-    namedExports: {
-      'react/index.js': [
-        'Children',
-        'Component',
-        'PureComponent',
-        'Fragment',
-        'PropTypes',
-        'createElement',
-      ],
-      'react-dom/index.js': ['render'],
-      'react-is/index.js': ['isForwardRef'],
-      'core-js': 'CoreJs',
-    },
-
-    include: '/node_modules/',
-  }),
-
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true,
-  }),
-  replace({
-    'process.env.NODE_ENV': JSON.stringify(env),
-  }),
-  json({
-    // All JSON files will be parsed by default,
-    // but you can also specifically include/exclude files
-    exclude: ['node_modules'],
-    // for tree-shaking, properties will be declared as
-    // variables, using either `var` or `const`
-    preferConst: true, // Default: false
-    // specify indentation for the generated default export —
-    // defaults to '\t'
-    indent: '  ',
-    // ignores indent and generates the smallest code
-    compact: true, // Default: false
-    // generate a named export for every property of the JSON object
-    namedExports: true, // Default: true
-  }),
-  svgr(),
-];
 
 export default [
   // CommonJS & ESM
@@ -93,7 +47,50 @@ export default [
       },
     ],
     external,
-    plugins: [...plugins, ...prodSettings],
+    plugins: [
+      resolve({ mainFields: ['module', 'main'], extensions }),
+      commonjs({
+        namedExports: {
+          'react/index.js': [
+            'Children',
+            'Component',
+            'PureComponent',
+            'Fragment',
+            'PropTypes',
+            'createElement',
+          ],
+          'react-dom/index.js': ['render'],
+          'react-is/index.js': ['isForwardRef'],
+          'core-js': 'CoreJs',
+        },
+
+        include: '/node_modules/',
+      }),
+      babel({
+        exclude: 'node_modules/**',
+        runtimeHelpers: true,
+      }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify(env),
+      }),
+      json({
+        // All JSON files will be parsed by default,
+        // but you can also specifically include/exclude files
+        exclude: ['node_modules'],
+        // for tree-shaking, properties will be declared as
+        // variables, using either `var` or `const`
+        preferConst: true, // Default: false
+        // specify indentation for the generated default export —
+        // defaults to '\t'
+        indent: '  ',
+        // ignores indent and generates the smallest code
+        compact: true, // Default: false
+        // generate a named export for every property of the JSON object
+        namedExports: true, // Default: true
+      }),
+      svgr(),
+      ...prodSettings,
+    ],
   },
   // Compile styles
   {
@@ -149,10 +146,8 @@ export default [
     plugins: [
       resolve({
         browser: true,
-        extensions: ['.mjs', '.js', '.jsx', '.json'],
-        preferBuiltins: true,
+        extensions,
       }),
-      builtins(),
       commonjs({
         namedExports: {
           'react-js': ['isValidElementType'],
