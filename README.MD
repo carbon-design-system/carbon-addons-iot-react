@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://pages.github.ibm.com/Watson-IoT/IoT-Design-Site/">
+  <a href="https://pages.github.ibm.com/ai-applications/design/">
     <img alt="Carbon add-ons for Watson IoT" src="https://user-images.githubusercontent.com/3360588/59875762-3add3180-9367-11e9-8a65-a6cf7efa5061.png" width="100%" />
   </a>
 </p>
@@ -13,20 +13,14 @@
 > and a vibrant community of contributors.
 
 <p align="center">
-  <a href="https://carbon-addons-iot-react.com">
-    <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Our Storybook" />
+  <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
+    <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="@latest npm version release" />
   </a>
-  <a href="https://app.netlify.com/sites/carbon-addons-iot-react/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/d037c99a-d51a-4729-bf7c-589679e2663e/deploy-status" alt="Netlify status" />
+  <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
+    <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/next" alt="@next npm version release" />
   </a>
   <a href="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react">
     <img src="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react.svg?branch=master" alt="Build Status" />
-  </a>
-  <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
-    <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/latest" alt="Current npm version release" />
-  </a>
-  <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
-    <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/next" alt="Next npm version release" />
   </a>
   <a href="https://coveralls.io/github/carbon-design-system/carbon-addons-iot-react?branch=master">
     <img src="https://coveralls.io/repos/github/carbon-design-system/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
@@ -41,52 +35,63 @@
 
 ## Installation
 
-Run the following command using [npm](https://www.npmjs.com/):
+**@latest from
+[`master`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/master)**
+&nbsp; - &nbsp; <a href="https://carbon-addons-iot-react.com">
+<img valign=middle src="https://img.shields.io/badge/view%20%40latest-storybook-ff4785" alt="view @latest storybook" />
+</a>
 
-```bash
-npm install carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 ```
+# with npm
+npm install carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 
-If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following
-command instead:
-
-```bash
+# with yarn
 yarn add carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 ```
 
-> _Note `d3` is a peer dependency due to the usage of `@carbon/charts` in
-> various components. The required version range is specified in
-> [our package.json](https://github.com/carbon-design-system/carbon-addons-iot-react/search?l=JSON&q=peerDependencies+d3)_
-
-You can then import any component that you need by doing the following in your
-project:
-
-```js
-import { AddCard } from 'carbon-addons-iot-react';
-```
-
-Prerelease versions are available on `carbon-addons-iot-react@next`. The semver
-range in your project's `package.json` can be modified to follow the `next`
-channel:
+**@next pre-releases from
+[`next`](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next)**
+&nbsp; - &nbsp; <a href="https://next.carbon-addons-iot-react.com">
+<img valign=middle src="https://img.shields.io/badge/view%20%40next-storybook-ff4785" alt="view @next storybook" />
+</a>
 
 ```
+# with npm
+npm install carbon-addons-iot-react@next d3@">=5.0.0 <=5.14.2"
+
+# with yarn
+yarn add carbon-addons-iot-react@next d3@">=5.0.0 <=5.14.2"
+```
+
+> _`d3` is a peer dependency due to the usage of `@carbon/charts` in various
+> components. The required version range is specified in
+> [package.json](https://github.com/carbon-design-system/carbon-addons-iot-react/search?l=JSON&q=peerDependencies+d3)_
+
+### Subscribe to all pre-releases on `next`
+
+[Pre-release versions](https://semver.org/#spec-item-9) are available on
+`carbon-addons-iot-react@next`. The default version range that is automatically
+added to your `package.json` on install/add will only follow pre-releases on the
+same `major.minor.patch` version. The version range can be modifed to follow all
+pre-releases:
+
+```diff
 "dependencies": {
-  "carbon-addons-iot-react": "next",
-}
+-    "carbon-addons-iot-react": "^2.139.0-next.4"
++    "carbon-addons-iot-react": "next"
+  }
 ```
 
 ## 🚀 Quick Start
 
-If you'd like to test drive everything here, run the following command to create
-a new project preconfigured with everything you need to begin to build an
-application.
+To test drive everything here, use
+[`create-iot-react-app`](https://github.com/davidicus/create-iot-react-app). It
+will create a new project that is preconfigured with everything you need to
+begin to build an application.
 
-```sh
+```
 npx create-iot-react-app <app-name>
 ```
-
-More
-[info on `create-iot-react-app` here](https://github.com/davidicus/create-iot-react-app)
 
 ## Styling
 
@@ -129,11 +134,6 @@ Usage of this package does not require you to install additional Carbon
 packages; `carbon-components`, `carbon-components-react`, or `@carbon` packages
 (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need
 these packages if you use them directly in your project.
-
-## 📚 Docs
-
-You can find more information about how to use each component by checking out
-the [Storybook](https://carbon-addons-iot-react.com/).
 
 ## 🤲 Contributing
 

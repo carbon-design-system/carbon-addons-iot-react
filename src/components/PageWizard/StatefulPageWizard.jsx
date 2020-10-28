@@ -43,6 +43,8 @@ const StatefulPageWizardPropTypes = {
   isProgressIndicatorVertical: PropTypes.bool,
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
+  /** Content to render after footer buttons (on right side, in LTR) */
+  afterFooterContent: PropTypes.node,
 };
 
 const defaultProps = {
@@ -63,6 +65,7 @@ const defaultProps = {
   onNext: null,
   onBack: null,
   beforeFooterContent: null,
+  afterFooterContent: null,
   setStep: null,
 };
 

@@ -2775,6 +2775,110 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                 </div>
+                <div
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  data-testid="Card"
+                  id="Timeseries"
+                  onFocus={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "304px",
+                      "height": "304px",
+                      "left": "50.625%",
+                      "position": "absolute",
+                      "top": "0px",
+                      "width": "49.375%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="TIMESERIES"
+                >
+                  <div
+                    className="iot--card--header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      title="Untitled"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Untitled
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        tabIndex={0}
+                        title="Open and close list of options"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="open and close list of options"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            open and close list of options
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    style={
+                      Object {
+                        "--card-content-height": "256px",
+                      }
+                    }
+                  >
+                    <div
+                      className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
+                    >
+                      <div
+                        className="chart-holder"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
