@@ -26,6 +26,16 @@ export default {
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="EditPage"
+    replacementComponentName="PageWizard"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
 export const Normal = () => <EditPage {...commonEditPageProps} />;
 
 Normal.story = {

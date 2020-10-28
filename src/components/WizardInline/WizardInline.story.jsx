@@ -182,6 +182,16 @@ export default {
   excludeStories: ['itemsAndComponents'],
 };
 
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="WizardInline"
+    replacementComponentName="PageWizard"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
 export const StatefulExample = () => (
   <StatefulWizardInline
     currentItemId="step1"

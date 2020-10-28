@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Button } from 'carbon-components-react';
@@ -30,106 +30,104 @@ export default {
 };
 
 export const WithCallbacksImplemented = () => {
-  return React.createElement(() => {
-    const rowPerPage = 10;
-    const [currentPageNumber, setCurrentPageNumber] = useState(1);
-    const [currentFilters, setCurrentFilters] = useState({
-      searchTerm: '',
-      showPublic: true,
-    });
-    const [isOpen, setIsOpen] = useState(true);
-    const [filteredViews, setFilteredViews] = useState(demoViews);
-    const [viewsToShow, setViewsToShow] = useState(
-      demoViews.slice(0, rowPerPage)
-    );
-
-    const showPage = (pageNumber, views) => {
-      const rowUpperLimit = pageNumber * rowPerPage;
-      const currentItemsOnPage = views.slice(
-        rowUpperLimit - rowPerPage,
-        rowUpperLimit
-      );
-      setCurrentPageNumber(pageNumber);
-      setViewsToShow(currentItemsOnPage);
-    };
-
-    const applyFiltering = ({ searchTerm, showPublic }) => {
-      const views = demoViews
-        .filter(
-          (view) =>
-            searchTerm === '' ||
-            view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-        )
-        .filter((view) => (showPublic ? view : !view.isPublic));
-
-      setFilteredViews(views);
-      showPage(1, views);
-    };
-
-    const onDelete = (viewId) => {
-      const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
-      demoViews.splice(deleteIndex, 1);
-      setFilteredViews(demoViews);
-      showPage(1, demoViews);
-    };
-
-    const onClose = () => {
-      setIsOpen(false);
-    };
-
-    const onEdit = (viewId) => {
-      /* eslint-disable-next-line no-alert */
-      alert(
-        `EDIT ${viewId} \nThis action should close this modal and open TableSaveViewModal with the data of this view prefilled.`
-      );
-    };
-
-    const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
-
-    const onSearchChange = (val) => {
-      const searchTerm = val === undefined ? '' : val;
-      const newFilters = { ...currentFilters, searchTerm };
-      setCurrentFilters(newFilters);
-      applyFiltering(newFilters);
-    };
-
-    const onDisplayPublicChange = (showPublic) => {
-      const newFilters = { ...currentFilters, showPublic };
-      setCurrentFilters(newFilters);
-      applyFiltering(newFilters);
-    };
-
-    const pagination = {
-      page: currentPageNumber,
-      onPage,
-      maxPage: Math.ceil(filteredViews.length / rowPerPage),
-      pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-    };
-
-    return (
-      <TableManageViewsModal
-        actions={{
-          onDisplayPublicChange,
-          onSearchChange,
-          onEdit,
-          onDelete,
-          onClearError: action('onClearError'),
-          onClose,
-        }}
-        defaultViewId="id1"
-        error={select('error', [undefined, 'My error msg'], undefined)}
-        isLoading={boolean('isLoading', false)}
-        open={isOpen}
-        views={viewsToShow}
-        pagination={pagination}
-      />
-    );
+  const rowPerPage = 10;
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+  const [currentFilters, setCurrentFilters] = useState({
+    searchTerm: '',
+    showPublic: true,
   });
+  const [isOpen, setIsOpen] = useState(true);
+  const [filteredViews, setFilteredViews] = useState(demoViews);
+  const [viewsToShow, setViewsToShow] = useState(
+    demoViews.slice(0, rowPerPage)
+  );
+
+  const showPage = (pageNumber, views) => {
+    const rowUpperLimit = pageNumber * rowPerPage;
+    const currentItemsOnPage = views.slice(
+      rowUpperLimit - rowPerPage,
+      rowUpperLimit
+    );
+    setCurrentPageNumber(pageNumber);
+    setViewsToShow(currentItemsOnPage);
+  };
+
+  const applyFiltering = ({ searchTerm, showPublic }) => {
+    const views = demoViews
+      .filter(
+        (view) =>
+          searchTerm === '' ||
+          view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+      )
+      .filter((view) => (showPublic ? view : !view.isPublic));
+
+    setFilteredViews(views);
+    showPage(1, views);
+  };
+
+  const onDelete = (viewId) => {
+    const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
+    demoViews.splice(deleteIndex, 1);
+    setFilteredViews(demoViews);
+    showPage(1, demoViews);
+  };
+
+  const onClose = () => {
+    setIsOpen(false);
+  };
+
+  const onEdit = (viewId) => {
+    /* eslint-disable-next-line no-alert */
+    alert(
+      `EDIT ${viewId} \nThis action should close this modal and open TableSaveViewModal with the data of this view prefilled.`
+    );
+  };
+
+  const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
+
+  const onSearchChange = (val) => {
+    const searchTerm = val === undefined ? '' : val;
+    const newFilters = { ...currentFilters, searchTerm };
+    setCurrentFilters(newFilters);
+    applyFiltering(newFilters);
+  };
+
+  const onDisplayPublicChange = (showPublic) => {
+    const newFilters = { ...currentFilters, showPublic };
+    setCurrentFilters(newFilters);
+    applyFiltering(newFilters);
+  };
+
+  const pagination = {
+    page: currentPageNumber,
+    onPage,
+    maxPage: Math.ceil(filteredViews.length / rowPerPage),
+    pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+  };
+
+  return (
+    <TableManageViewsModal
+      actions={{
+        onDisplayPublicChange,
+        onSearchChange,
+        onEdit,
+        onDelete,
+        onClearError: action('onClearError'),
+        onClose,
+      }}
+      defaultViewId="id1"
+      error={select('error', [undefined, 'My error msg'], undefined)}
+      isLoading={boolean('isLoading', false)}
+      open={isOpen}
+      views={viewsToShow}
+      pagination={pagination}
+    />
+  );
 };
 
 WithCallbacksImplemented.story = {
   name: 'With callbacks implemented',
-
+  decorators: [createElement],
   parameters: {
     info: {
       text: `

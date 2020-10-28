@@ -99,7 +99,7 @@ export default {
 export const Default = () => (
   <TextInput
     type={select('Form control type (type)', types, 'text')}
-    {...props.TextInputProps()}
+    {...props.TextInputProps()} // eslint-disable-line react/destructuring-assignment
   />
 );
 
@@ -119,8 +119,8 @@ Default.story = {
 export const TogglePasswordVisibility = () => {
   return (
     <TextInput.PasswordInput
-      {...props.TextInputProps()}
-      {...props.PasswordInputProps()}
+      {...props.TextInputProps()} // eslint-disable-line react/destructuring-assignment
+      {...props.PasswordInputProps()} // eslint-disable-line react/destructuring-assignment
     />
   );
 };
@@ -147,8 +147,8 @@ export const FullyControlledTogglePasswordVisibility = () => {
 
   return (
     <ControlledPasswordInputApp
-      {...props.TextInputProps()}
-      {...props.PasswordInputProps()}
+      {...props.TextInputProps()} // eslint-disable-line react/destructuring-assignment
+      {...props.PasswordInputProps()} // eslint-disable-line react/destructuring-assignment
     />
   );
 };

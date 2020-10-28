@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 
@@ -336,56 +336,54 @@ DashboardAllCardSizes.story = {
 };
 
 export const DashboardResizableCard = () => {
-  return React.createElement(() => {
-    const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
-    const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-    const isResizable = boolean('isResizable', true);
-    const layouts = {
-      max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-      xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-      lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-      md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-      sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
-      xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
-    };
+  const [currentSize, setCurrentSize] = useState(CARD_SIZES.SMALL);
+  const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+  const isResizable = boolean('isResizable', true);
+  const layouts = {
+    max: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+    xl: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+    lg: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+    md: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+    sm: [{ i: 'card', x: 0, y: 0, w: 2, h: 1 }],
+    xs: [{ i: 'card', x: 0, y: 0, w: 4, h: 1 }],
+  };
 
-    return (
-      <Fragment>
-        The card is resizable by dragging and the card size prop is
-        automatically updated to match the new size during the drag process.
-        <FullWidthWrapper>
-          <DashboardGrid
-            {...commonGridProps}
-            layouts={layouts}
-            breakpoint={currentBreakpoint}
-            onBreakpointChange={(newBreakpoint) =>
-              setCurrentBreakpoint(newBreakpoint)
-            }
-            onCardSizeChange={(cardSizeData, gridData) => {
-              const { size } = cardSizeData;
-              action('onCardSizeChange')(cardSizeData, gridData);
-              setCurrentSize(size);
-            }}
-            onResizeStop={action('onResizeStop')}>
-            {[
-              <Card
-                title={`Card - ${currentSize}`}
-                id="card"
-                isResizable={isResizable}
-                key="card"
-                size={currentSize}
-              />,
-            ]}
-          </DashboardGrid>
-        </FullWidthWrapper>
-      </Fragment>
-    );
-  });
+  return (
+    <Fragment>
+      The card is resizable by dragging and the card size prop is automatically
+      updated to match the new size during the drag process.
+      <FullWidthWrapper>
+        <DashboardGrid
+          {...commonGridProps}
+          layouts={layouts}
+          breakpoint={currentBreakpoint}
+          onBreakpointChange={(newBreakpoint) =>
+            setCurrentBreakpoint(newBreakpoint)
+          }
+          onCardSizeChange={(cardSizeData, gridData) => {
+            const { size } = cardSizeData;
+            action('onCardSizeChange')(cardSizeData, gridData);
+            setCurrentSize(size);
+          }}
+          onResizeStop={action('onResizeStop')}>
+          {[
+            <Card
+              title={`Card - ${currentSize}`}
+              id="card"
+              isResizable={isResizable}
+              key="card"
+              size={currentSize}
+            />,
+          ]}
+        </DashboardGrid>
+      </FullWidthWrapper>
+    </Fragment>
+  );
 };
 
 DashboardResizableCard.story = {
   name: 'dashboard, resizable card',
-
+  decorators: [createElement],
   parameters: {
     info: {
       source: true,
@@ -591,278 +589,276 @@ export const DashboardAllCardsAsResizable = () => {
     { id: 'row-8', value: 'Row content 8' },
   ];
 
-  return React.createElement(() => {
-    const [currentSizes, setCurrentSizes] = useState({
-      card: CARD_SIZES.SMALL,
-      valueCard: CARD_SIZES.SMALLWIDE,
-      gaugeCard: CARD_SIZES.MEDIUMTHIN,
-      pieChartCard: CARD_SIZES.MEDIUM,
-      tableCard: CARD_SIZES.LARGE,
-      imageCard: CARD_SIZES.LARGE,
-      timeSeriesCard: CARD_SIZES.LARGETHIN,
-      listCard: CARD_SIZES.LARGETHIN,
-      barChartCard: CARD_SIZES.LARGEWIDE,
-    });
-    const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-    const isResizable = boolean('isResizable', true);
-
-    const CARDS_ALL_SIZES = [
-      <Card
-        title={`Card - ${currentSizes.card}`}
-        id="card"
-        isResizable={isResizable}
-        key="card"
-        size={currentSizes.card}
-        availableActions={{
-          delete: true,
-        }}>
-        <p>This is a basic card</p>
-      </Card>,
-      <ValueCard
-        title={`ValueCard - ${currentSizes.valueCard}`}
-        id="valueCard"
-        key="valueCard"
-        size={currentSizes.valueCard}
-        isResizable={isResizable}
-        content={{
-          attributes: [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-              secondaryValue: {
-                dataSourceId: 'trend',
-                trend: 'down',
-                color: 'red',
-              },
-            },
-          ],
-        }}
-        values={{ occupancy: 88 }}
-      />,
-      <GaugeCard
-        id="gaugeCard"
-        key="gaugeCard"
-        isResizable={isResizable}
-        size={currentSizes.gaugeCard}
-        title={`GaugeCard - ${currentSizes.gaugeCard}`}
-        content={gaugeCardContent}
-        tooltip={<p>Health - of floor 8</p>}
-        values={{
-          usage: 81,
-          usageTrend: '12%',
-        }}
-      />,
-      <PieChartCard
-        content={{
-          groupDataSourceId: 'category',
-          legendPosition: 'bottom',
-        }}
-        title={`PieChartCard - ${currentSizes.pieChartCard}`}
-        key="pieChartCard"
-        id="pieChartCard"
-        size={currentSizes.pieChartCard}
-        isResizable={isResizable}
-        values={pieChartCardValues}
-      />,
-      <TableCard
-        title={`TableCard - ${currentSizes.tableCard}`}
-        id="tableCard"
-        key="tableCard"
-        content={{
-          columns: tableColumns,
-        }}
-        values={tableData}
-        onCardAction={() => {}}
-        size={currentSizes.tableCard}
-        isResizable={isResizable}
-      />,
-      <ImageCard
-        title={`ImageCard - ${currentSizes.imageCard}`}
-        id="imageCard"
-        isResizable={isResizable}
-        key="imageCard"
-        size={currentSizes.imageCard}
-        content={{
-          alt: 'Sample image',
-          src: 'static/media/landscape.013ce39d.jpg',
-          zoomMax: 10,
-        }}
-        values={imageCardValues}
-      />,
-      <TimeSeriesCard
-        id="timeSeriesCard"
-        isResizable={isResizable}
-        size={currentSizes.timeSeriesCard}
-        title={`TimeSeriesCard - ${currentSizes.timeSeriesCard}`}
-        chartType="LINE"
-        content={timeSeriesCardContent}
-        key="timeSeriesCard"
-        interval="hour"
-        values={chartData.events.slice(0, 5)}
-      />,
-      <ListCard
-        id="listCard"
-        isResizable={isResizable}
-        key="listCard"
-        title={`ListCard - ${currentSizes.listCard}`}
-        size={currentSizes.listCard}
-        data={listCardData}
-        hasMoreData={false}
-        loadData={() => {}}
-      />,
-      <BarChartCard
-        id="barChartCard"
-        key="barChartCard"
-        size={currentSizes.barChartCard}
-        isResizable={isResizable}
-        title={`BarChartCard - ${currentSizes.barChartCard}`}
-        content={{
-          categoryDataSourceId: 'city',
-          layout: 'VERTICAL',
-          series: [
-            {
-              dataSourceId: 'particles',
-            },
-          ],
-          type: 'SIMPLE',
-          unit: 'P',
-          xLabel: 'Cities',
-          yLabel: 'Particles',
-        }}
-        values={barChartCardValues}
-      />,
-    ];
-
-    const layouts = {
-      max: [
-        { i: 'card', x: 0, y: 0, w: 2, h: 1 },
-        { i: 'valueCard', x: 2, y: 0, w: 4, h: 1 },
-        { i: 'gaugeCard', x: 0, y: 2, w: 2, h: 2 },
-        { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 6, y: 2, w: 8, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
-        { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
-        { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
-      ],
-      xl: [
-        { i: 'card', x: 0, y: 0, w: 2, h: 1 },
-        { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
-        { i: 'gaugeCard', x: 0, y: 2, w: 4, h: 2 },
-        { i: 'pieChartCard', x: 4, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
-        { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
-        { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
-      ],
-      lg: [
-        { i: 'card', x: 0, y: 0, w: 4, h: 1 },
-        { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
-        { i: 'gaugeCard', x: 0, y: 2, w: 4, h: 2 },
-        { i: 'pieChartCard', x: 4, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
-        { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
-        { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
-      ],
-      md: [
-        { i: 'card', x: 0, y: 0, w: 4, h: 1 },
-        { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
-        { i: 'gaugeCard', x: 0, y: 2, w: 2, h: 2 },
-        { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
-        { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
-        { i: 'barChartCard', x: 8, y: 8, w: 8, h: 4 },
-      ],
-      sm: [
-        { i: 'card', x: 0, y: 0, w: 2, h: 1 },
-        { i: 'valueCard', x: 4, y: 0, w: 4, h: 2 },
-        { i: 'gaugeCard', x: 0, y: 0, w: 2, h: 2 },
-        { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 8, y: 0, w: 4, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
-        { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
-        { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
-      ],
-      xs: [
-        { i: 'card', x: 0, y: 0, w: 4, h: 1 },
-        { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
-        { i: 'gaugeCard', x: 0, y: 0, w: 4, h: 2 },
-        { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
-        { i: 'imageCard', x: 8, y: 0, w: 4, h: 2 },
-        { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
-        { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
-        { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
-        { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
-      ],
-    };
-
-    // Set minimum sizes for the cards that requires it
-    const minWidthLayouts = {};
-    Object.entries(layouts).forEach(([breakpoint, breakpointLayout]) => {
-      minWidthLayouts[breakpoint] = breakpointLayout.map((cardLayout) => {
-        const cardLayoutCopy = { ...cardLayout };
-        switch (cardLayoutCopy.i) {
-          case 'pieChartCard':
-            cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
-            cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
-            break;
-          case 'barChartCard':
-            cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
-            cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
-            break;
-          case 'tableCard':
-            cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
-            cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
-            break;
-          case 'imageCard':
-            cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
-            cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
-            break;
-          default:
-            break;
-        }
-        return cardLayoutCopy;
-      });
-    });
-
-    return (
-      <Fragment>
-        <p>
-          All cards are resizable by dragging and the card size prop is
-          automatically updated to match the new size during the drag process.
-          Some cards have a minimal size defined.
-        </p>
-        <FullWidthWrapper>
-          <DashboardGrid
-            {...commonGridProps}
-            layouts={minWidthLayouts}
-            breakpoint={currentBreakpoint}
-            onBreakpointChange={(newBreakpoint) => {
-              action('onBreakpointChange')(newBreakpoint);
-              setCurrentBreakpoint(newBreakpoint);
-            }}
-            onCardSizeChange={(...[{ id, size }, rest]) => {
-              action('onCardSizeChange')({ id, size }, rest);
-              setCurrentSizes((old) => ({ ...old, [id]: size }));
-            }}
-            onResizeStop={action('onResizeStop')}>
-            {CARDS_ALL_SIZES}
-          </DashboardGrid>
-        </FullWidthWrapper>
-      </Fragment>
-    );
+  const [currentSizes, setCurrentSizes] = useState({
+    card: CARD_SIZES.SMALL,
+    valueCard: CARD_SIZES.SMALLWIDE,
+    gaugeCard: CARD_SIZES.MEDIUMTHIN,
+    pieChartCard: CARD_SIZES.MEDIUM,
+    tableCard: CARD_SIZES.LARGE,
+    imageCard: CARD_SIZES.LARGE,
+    timeSeriesCard: CARD_SIZES.LARGETHIN,
+    listCard: CARD_SIZES.LARGETHIN,
+    barChartCard: CARD_SIZES.LARGEWIDE,
   });
+  const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+  const isResizable = boolean('isResizable', true);
+
+  const CARDS_ALL_SIZES = [
+    <Card
+      title={`Card - ${currentSizes.card}`}
+      id="card"
+      isResizable={isResizable}
+      key="card"
+      size={currentSizes.card}
+      availableActions={{
+        delete: true,
+      }}>
+      <p>This is a basic card</p>
+    </Card>,
+    <ValueCard
+      title={`ValueCard - ${currentSizes.valueCard}`}
+      id="valueCard"
+      key="valueCard"
+      size={currentSizes.valueCard}
+      isResizable={isResizable}
+      content={{
+        attributes: [
+          {
+            dataSourceId: 'occupancy',
+            unit: '%',
+            secondaryValue: {
+              dataSourceId: 'trend',
+              trend: 'down',
+              color: 'red',
+            },
+          },
+        ],
+      }}
+      values={{ occupancy: 88 }}
+    />,
+    <GaugeCard
+      id="gaugeCard"
+      key="gaugeCard"
+      isResizable={isResizable}
+      size={currentSizes.gaugeCard}
+      title={`GaugeCard - ${currentSizes.gaugeCard}`}
+      content={gaugeCardContent}
+      tooltip={<p>Health - of floor 8</p>}
+      values={{
+        usage: 81,
+        usageTrend: '12%',
+      }}
+    />,
+    <PieChartCard
+      content={{
+        groupDataSourceId: 'category',
+        legendPosition: 'bottom',
+      }}
+      title={`PieChartCard - ${currentSizes.pieChartCard}`}
+      key="pieChartCard"
+      id="pieChartCard"
+      size={currentSizes.pieChartCard}
+      isResizable={isResizable}
+      values={pieChartCardValues}
+    />,
+    <TableCard
+      title={`TableCard - ${currentSizes.tableCard}`}
+      id="tableCard"
+      key="tableCard"
+      content={{
+        columns: tableColumns,
+      }}
+      values={tableData}
+      onCardAction={() => {}}
+      size={currentSizes.tableCard}
+      isResizable={isResizable}
+    />,
+    <ImageCard
+      title={`ImageCard - ${currentSizes.imageCard}`}
+      id="imageCard"
+      isResizable={isResizable}
+      key="imageCard"
+      size={currentSizes.imageCard}
+      content={{
+        alt: 'Sample image',
+        src: 'static/media/landscape.013ce39d.jpg',
+        zoomMax: 10,
+      }}
+      values={imageCardValues}
+    />,
+    <TimeSeriesCard
+      id="timeSeriesCard"
+      isResizable={isResizable}
+      size={currentSizes.timeSeriesCard}
+      title={`TimeSeriesCard - ${currentSizes.timeSeriesCard}`}
+      chartType="LINE"
+      content={timeSeriesCardContent}
+      key="timeSeriesCard"
+      interval="hour"
+      values={chartData.events.slice(0, 5)}
+    />,
+    <ListCard
+      id="listCard"
+      isResizable={isResizable}
+      key="listCard"
+      title={`ListCard - ${currentSizes.listCard}`}
+      size={currentSizes.listCard}
+      data={listCardData}
+      hasMoreData={false}
+      loadData={() => {}}
+    />,
+    <BarChartCard
+      id="barChartCard"
+      key="barChartCard"
+      size={currentSizes.barChartCard}
+      isResizable={isResizable}
+      title={`BarChartCard - ${currentSizes.barChartCard}`}
+      content={{
+        categoryDataSourceId: 'city',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataSourceId: 'particles',
+          },
+        ],
+        type: 'SIMPLE',
+        unit: 'P',
+        xLabel: 'Cities',
+        yLabel: 'Particles',
+      }}
+      values={barChartCardValues}
+    />,
+  ];
+
+  const layouts = {
+    max: [
+      { i: 'card', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'valueCard', x: 2, y: 0, w: 4, h: 1 },
+      { i: 'gaugeCard', x: 0, y: 2, w: 2, h: 2 },
+      { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 6, y: 2, w: 8, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
+      { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
+    ],
+    xl: [
+      { i: 'card', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
+      { i: 'gaugeCard', x: 0, y: 2, w: 4, h: 2 },
+      { i: 'pieChartCard', x: 4, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
+      { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
+    ],
+    lg: [
+      { i: 'card', x: 0, y: 0, w: 4, h: 1 },
+      { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
+      { i: 'gaugeCard', x: 0, y: 2, w: 4, h: 2 },
+      { i: 'pieChartCard', x: 4, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
+      { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'barChartCard', x: 8, y: 8, w: 16, h: 4 },
+    ],
+    md: [
+      { i: 'card', x: 0, y: 0, w: 4, h: 1 },
+      { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
+      { i: 'gaugeCard', x: 0, y: 2, w: 2, h: 2 },
+      { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 8, y: 2, w: 8, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 4, w: 4, h: 4 },
+      { i: 'listCard', x: 4, y: 4, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 4, w: 8, h: 4 },
+      { i: 'barChartCard', x: 8, y: 8, w: 8, h: 4 },
+    ],
+    sm: [
+      { i: 'card', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'valueCard', x: 4, y: 0, w: 4, h: 2 },
+      { i: 'gaugeCard', x: 0, y: 0, w: 2, h: 2 },
+      { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 8, y: 0, w: 4, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
+      { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
+    ],
+    xs: [
+      { i: 'card', x: 0, y: 0, w: 4, h: 1 },
+      { i: 'valueCard', x: 4, y: 0, w: 4, h: 1 },
+      { i: 'gaugeCard', x: 0, y: 0, w: 4, h: 2 },
+      { i: 'pieChartCard', x: 2, y: 0, w: 4, h: 2 },
+      { i: 'imageCard', x: 8, y: 0, w: 4, h: 2 },
+      { i: 'timeSeriesCard', x: 0, y: 0, w: 4, h: 4 },
+      { i: 'listCard', x: 0, y: 0, w: 4, h: 4 },
+      { i: 'tableCard', x: 4, y: 0, w: 4, h: 4 },
+      { i: 'barChartCard', x: 8, y: 0, w: 4, h: 4 },
+    ],
+  };
+
+  // Set minimum sizes for the cards that requires it
+  const minWidthLayouts = {};
+  Object.entries(layouts).forEach(([breakpoint, breakpointLayout]) => {
+    minWidthLayouts[breakpoint] = breakpointLayout.map((cardLayout) => {
+      const cardLayoutCopy = { ...cardLayout };
+      switch (cardLayoutCopy.i) {
+        case 'pieChartCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
+          break;
+        case 'barChartCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
+          break;
+        case 'tableCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.LARGE.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.LARGE.max.h;
+          break;
+        case 'imageCard':
+          cardLayoutCopy.minW = CARD_DIMENSIONS.MEDIUMTHIN.max.w;
+          cardLayoutCopy.minH = CARD_DIMENSIONS.MEDIUMTHIN.max.h;
+          break;
+        default:
+          break;
+      }
+      return cardLayoutCopy;
+    });
+  });
+
+  return (
+    <Fragment>
+      <p>
+        All cards are resizable by dragging and the card size prop is
+        automatically updated to match the new size during the drag process.
+        Some cards have a minimal size defined.
+      </p>
+      <FullWidthWrapper>
+        <DashboardGrid
+          {...commonGridProps}
+          layouts={minWidthLayouts}
+          breakpoint={currentBreakpoint}
+          onBreakpointChange={(newBreakpoint) => {
+            action('onBreakpointChange')(newBreakpoint);
+            setCurrentBreakpoint(newBreakpoint);
+          }}
+          onCardSizeChange={(...[{ id, size }, rest]) => {
+            action('onCardSizeChange')({ id, size }, rest);
+            setCurrentSizes((old) => ({ ...old, [id]: size }));
+          }}
+          onResizeStop={action('onResizeStop')}>
+          {CARDS_ALL_SIZES}
+        </DashboardGrid>
+      </FullWidthWrapper>
+    </Fragment>
+  );
 };
 
 DashboardAllCardsAsResizable.story = {
   name: 'dashboard, all cards as resizable',
-
+  decorators: [createElement],
   parameters: {
     info: {
       source: true,

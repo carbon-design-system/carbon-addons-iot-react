@@ -58,6 +58,16 @@ export default {
   title: 'Watson IoT/ComposedStructuredList (Deprecated)',
 };
 
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="ComposedStructuredList"
+    replacementComponentName="StructuredList"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
 export const Default = () => (
   <ComposedStructuredList
     design={select('Row design', ['normal', 'mini'], 'mini')}

@@ -480,6 +480,13 @@ export default {
   excludeStories: ['originalCards'],
 };
 
+export const Deprecated = () => (
+  <DeprecationNotice deprecatedComponentName="Dashboard" />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
 export const BasicDashboard = () => {
   return (
     <FullWidthWrapper>

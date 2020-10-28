@@ -177,7 +177,7 @@ NotLoading.story = {
 };
 
 export const _Default = () => {
-  const regularProps = props.regular();
+  const regularProps = props.regular(); // eslint-disable-line react/destructuring-assignment
   return (
     <div
       style={{
@@ -236,7 +236,7 @@ _Default.story = {
 };
 
 export const IconOnlyButtons = () => (
-  <Button {...props.iconOnly()} hasIconOnly />
+  <Button {...props.iconOnly()} hasIconOnly /> // eslint-disable-line react/destructuring-assignment
 );
 
 IconOnlyButtons.story = {
@@ -267,7 +267,7 @@ IconSelectionButtons.story = {
 };
 
 export const SetsOfButtons = () => {
-  const setProps = props.set();
+  const setProps = props.set(); // eslint-disable-line react/destructuring-assignment
   return (
     <div className={`${prefix}--btn-set`}>
       <Button kind="secondary" {...setProps}>

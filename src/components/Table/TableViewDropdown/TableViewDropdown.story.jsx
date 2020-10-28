@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 
@@ -28,38 +28,36 @@ export const _TableViewDropdown = () => {
     },
   ];
 
-  return React.createElement(() => {
-    // This is a simple example state that should be replaced by the
-    // consuming Application's data store
-    const [selectedViewId, setSelectedViewId] = useState(undefined);
+  // This is a simple example state that should be replaced by the
+  // consuming Application's data store
+  const [selectedViewId, setSelectedViewId] = useState(undefined);
 
-    return (
-      <div
-        style={{
-          width: select('wrapper width', ['300px', '100px'], '300px'),
-        }}>
-        <TableViewDropdown
-          selectedViewId={selectedViewId}
-          activeViewEdited={boolean('activeViewEdited', true)}
-          views={myViews}
-          actions={{
-            onSaveAsNewView: action('onSaveAsNewView'),
-            onSaveChanges: action('onSaveChanges'),
-            onManageViews: action('onManageViews'),
-            onChangeView: (viewItem) => {
-              setSelectedViewId(viewItem.id);
-              action('onChangeView')(viewItem);
-            },
-          }}
-        />
-      </div>
-    );
-  });
+  return (
+    <div
+      style={{
+        width: select('wrapper width', ['300px', '100px'], '300px'),
+      }}>
+      <TableViewDropdown
+        selectedViewId={selectedViewId}
+        activeViewEdited={boolean('activeViewEdited', true)}
+        views={myViews}
+        actions={{
+          onSaveAsNewView: action('onSaveAsNewView'),
+          onSaveChanges: action('onSaveChanges'),
+          onManageViews: action('onManageViews'),
+          onChangeView: (viewItem) => {
+            setSelectedViewId(viewItem.id);
+            action('onChangeView')(viewItem);
+          },
+        }}
+      />
+    </div>
+  );
 };
 
 _TableViewDropdown.story = {
   name: 'TableViewDropdown',
-
+  decorators: [createElement],
   parameters: {
     info: {
       propTables: [TableViewDropdown],

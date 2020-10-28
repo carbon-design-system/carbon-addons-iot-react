@@ -21,6 +21,16 @@ export default {
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="PageHero"
+    replacementComponentName="Hero"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
 export const Normal = () => <PageHero {...commonPageHeroProps} />;
 
 Normal.story = {
