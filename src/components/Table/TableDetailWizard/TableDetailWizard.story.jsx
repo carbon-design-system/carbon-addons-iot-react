@@ -162,6 +162,9 @@ export const itemsAndComponents = items.map((item, i) => ({
 }));
 
 storiesOf('Watson IoT/TableDetailWizard', module)
+  .addParameters({
+    component: TableDetailWizard,
+  })
   .add('Stateful example', () => (
     <StatefulTableDetailWizard
       currentItemId="step1"

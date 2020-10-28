@@ -91,6 +91,9 @@ const props = () => ({
 });
 
 storiesOf('MultiSelect', module)
+  .addParameters({
+    component: MultiSelect,
+  })
   .addDecorator(withKnobs)
   .add(
     'default',

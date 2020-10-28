@@ -42,6 +42,9 @@ const PolyfillWarning = () => (
 );
 
 storiesOf('Watson IoT/Breadcrumb', module)
+  .addParameters({
+    component: Breadcrumb,
+  })
   .addDecorator(withKnobs)
   .add(
     'default',

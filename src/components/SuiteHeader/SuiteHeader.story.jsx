@@ -131,6 +131,9 @@ const HeaderWithHook = () => {
 */
 
 storiesOf('Watson IoT/SuiteHeader', module)
+  .addParameters({
+    component: SuiteHeader,
+  })
   .add('default', () => {
     const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
     return (

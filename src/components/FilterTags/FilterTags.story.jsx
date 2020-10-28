@@ -78,6 +78,9 @@ const StatefulFilterTags = ({ tags }) => {
 };
 
 storiesOf('Watson IoT Experimental/FilterTags', module)
+  .addParameters({
+    component: FilterTags,
+  })
   .add('Default Example', () => <StatefulFilterTags tags={tagData} />, {
     info: {
       propTables: [FilterTags],

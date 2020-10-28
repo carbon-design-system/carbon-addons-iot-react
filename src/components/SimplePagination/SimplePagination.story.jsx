@@ -12,12 +12,16 @@ const StyledSimplePagination = styled.div`
   }
 `;
 
-storiesOf('Watson IoT/SimplePagination', module).add('default', () => (
-  <StyledSimplePagination>
-    <SimplePagination
-      page={number('page', 1)}
-      maxPage={number('maxPage', 4)}
-      onPage={action('onPage')}
-    />
-  </StyledSimplePagination>
-));
+storiesOf('Watson IoT/SimplePagination', module)
+  .addParameters({
+    component: SimplePagination,
+  })
+  .add('default', () => (
+    <StyledSimplePagination>
+      <SimplePagination
+        page={number('page', 1)}
+        maxPage={number('maxPage', 4)}
+        onPage={action('onPage')}
+      />
+    </StyledSimplePagination>
+  ));

@@ -24,6 +24,9 @@ const dndProps = {
 };
 
 storiesOf('Watson IoT Experimental/ListItem', module)
+  .addParameters({
+    component: ListItem,
+  })
   .add('basic w/ knobs', () => {
     const value = text('value', 'List Item');
     const secondaryValue = text('secondaryValue', undefined);

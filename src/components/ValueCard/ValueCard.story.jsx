@@ -12,6 +12,9 @@ import { getDataStateProp } from '../Card/Card.story';
 import ValueCard from './ValueCard';
 
 storiesOf('Watson IoT/ValueCard', module)
+  .addParameters({
+    component: ValueCard,
+  })
   .add('small / basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (

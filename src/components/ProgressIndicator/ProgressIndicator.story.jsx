@@ -46,6 +46,9 @@ const items = [
 
 /* Adds the stories */
 storiesOf('Watson IoT/ProgressIndicator', module)
+  .addParameters({
+    component: ProgressIndicator,
+  })
   .add('stateful', () => (
     <ProgressIndicator
       items={items}

@@ -15,6 +15,9 @@ const FileDropProps = {
 };
 
 storiesOf('Watson IoT/FileDrop', module)
+  .addParameters({
+    component: FileDrop,
+  })
   .add('Browse', () => (
     <FileDrop
       {...FileDropProps}

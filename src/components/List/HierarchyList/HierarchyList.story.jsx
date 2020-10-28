@@ -23,6 +23,9 @@ const addButton = (
 );
 
 storiesOf('Watson IoT Experimental/HierarchyList', module)
+  .addParameters({
+    component: HierarchyList,
+  })
   .add('Stateful list with nested searching', () => (
     <div style={{ width: 400, height: 400 }}>
       <HierarchyList

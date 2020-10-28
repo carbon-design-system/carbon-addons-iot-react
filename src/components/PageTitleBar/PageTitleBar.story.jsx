@@ -56,6 +56,9 @@ export const PageTitleBarNodeTooltip = () => (
 );
 
 storiesOf('Watson IoT/PageTitleBar', module)
+  .addParameters({
+    component: PageTitleBar,
+  })
   .addDecorator((storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
   .add('with breadcrumb', () => (

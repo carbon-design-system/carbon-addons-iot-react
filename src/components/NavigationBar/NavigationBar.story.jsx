@@ -67,6 +67,9 @@ const StatefulNavigationBar = () => {
 };
 
 storiesOf('Watson IoT/NavigationBar', module)
+  .addParameters({
+    component: NavigationBar,
+  })
   .add('normal', () => <NavigationBar {...navBarProps} />)
   .add('start with tab 2 selected', () => (
     <NavigationBar {...navBarProps} selected={1} />

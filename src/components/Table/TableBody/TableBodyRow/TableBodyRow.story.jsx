@@ -36,8 +36,11 @@ const TableDecorator = (storyFn) => (
     </Table>
   </TableContainer>
 );
+// Table rows need to be rendered in a tbody or else they'll throw an error
 storiesOf('Watson IoT/TableBodyRow', module)
-  // Table rows need to be rendered in a tbody or else they'll throw an error
+  .addParameters({
+    component: TableBodyRow,
+  })
   .addDecorator(TableDecorator)
   .add('normal', () => <TableBodyRow {...tableBodyRowProps} />)
   .add('row actions', () => (

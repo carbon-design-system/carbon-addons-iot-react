@@ -20,6 +20,9 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 storiesOf('Watson IoT/BarChartCard', module)
+  .addParameters({
+    component: BarChartCard,
+  })
   .add('Simple bar - Vertical', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (

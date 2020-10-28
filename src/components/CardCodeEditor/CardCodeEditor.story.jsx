@@ -29,6 +29,9 @@ export const isValidCallback = (val, setError) => {
 };
 
 storiesOf('Watson IoT/CardCodeEditor', module)
+  .addParameters({
+    component: CardCodeEditor,
+  })
   .add('default', () => (
     <CardCodeEditor
       onSubmit={isValidCallback}

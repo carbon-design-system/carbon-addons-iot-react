@@ -18,6 +18,9 @@ const commonProps = {
 // need a timeOffset to make the data always show up
 // const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('Watson IoT/TimeSeriesCard', module)
+  .addParameters({
+    component: TimeSeriesCard,
+  })
   .add('single point', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const interval = select(

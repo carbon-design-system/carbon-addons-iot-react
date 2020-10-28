@@ -11,6 +11,9 @@ const mockValues = object('values', { temperature: 35.35, humidity: 99 });
 
 storiesOf('Watson IoT/HotspotContent', module)
   .addParameters({
+    component: HotspotContent,
+  })
+  .addParameters({
     info:
       'This Hotspot content is recommended to be used with a Carbon tooltip',
   })

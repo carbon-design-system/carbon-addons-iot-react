@@ -128,6 +128,9 @@ const headerButton = (
 );
 
 storiesOf('Watson IoT Experimental/List', module)
+  .addParameters({
+    component: List,
+  })
   .add('basic (single column)', () => (
     <div style={{ width: 400 }}>
       <List

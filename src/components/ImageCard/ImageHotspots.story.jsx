@@ -44,6 +44,9 @@ const componentDescription =
 
 storiesOf('Watson IoT/ImageHotspots', module)
   .addParameters({
+    component: ImageHotspots,
+  })
+  .addParameters({
     info: componentDescription,
   })
 

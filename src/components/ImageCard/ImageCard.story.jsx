@@ -49,6 +49,9 @@ const values = {
 };
 
 storiesOf('Watson IoT/ImageCard', module)
+  .addParameters({
+    component: ImageCard,
+  })
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (

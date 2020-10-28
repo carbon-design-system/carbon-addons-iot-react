@@ -23,6 +23,9 @@ const demoViews = Array(100)
   }));
 
 storiesOf('Watson IoT/Table/TableManageViewsModal', module)
+  .addParameters({
+    component: TableManageViewsModal,
+  })
   .add(
     'With callbacks implemented',
     () => {

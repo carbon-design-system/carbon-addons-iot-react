@@ -52,6 +52,9 @@ const content = {
 };
 
 storiesOf('Watson IoT Experimental/GaugeCard', module)
+  .addParameters({
+    component: GaugeCard,
+  })
   .add('basic', () => {
     return (
       <div

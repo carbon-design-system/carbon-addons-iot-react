@@ -280,6 +280,9 @@ class ListCardExtraContentLong extends Component {
 }
 
 storiesOf('Watson IoT Experimental/ListCard', module)
+  .addParameters({
+    component: ListCard,
+  })
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 

@@ -8,6 +8,9 @@ import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 export { default as TimePickerStory } from 'carbon-components-react/lib/components/TimePicker/TimePicker-story';
 
 storiesOf('Watson IoT Experimental/TimePickerSpinner', module)
+  .addParameters({
+    component: TimePickerSpinner,
+  })
   .add('With spinner', () => {
     return (
       <div style={{ margin: spacing05 + 4 }}>

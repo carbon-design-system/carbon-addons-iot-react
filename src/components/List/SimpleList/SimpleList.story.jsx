@@ -130,6 +130,9 @@ const buttonsToRender = [
 ];
 
 storiesOf('Watson IoT Experimental/SimpleList', module)
+  .addParameters({
+    component: SimpleList,
+  })
   .add(
     'basic',
     withReadme(SimpleListREADME, () => (

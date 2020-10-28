@@ -141,35 +141,39 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Watson IoT/SideNav', module).add(
-  'SideNav component',
-  () => (
-    <FullWidthWrapper withPadding={false}>
-      <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-          <>
-            <Header
-              {...HeaderProps}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-            />
-            <SideNav
-              links={links}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-              switcherProps={switcherProps}
-            />
-            <div className={`${iotPrefix}--main-content`}>
-              <PageTitleBar title="Title" description="Description" />
-            </div>
-          </>
-        )}
-      />
-    </FullWidthWrapper>
-  ),
-  {
-    info: {
-      text: `
+storiesOf('Watson IoT/SideNav', module)
+  .addParameters({
+    component: SideNav,
+  })
+  .add(
+    'SideNav component',
+    () => (
+      <FullWidthWrapper withPadding={false}>
+        <HeaderContainer
+          render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+            <>
+              <Header
+                {...HeaderProps}
+                isSideNavExpanded={isSideNavExpanded}
+                onClickSideNavExpand={onClickSideNavExpand}
+              />
+              <SideNav
+                links={links}
+                isSideNavExpanded={isSideNavExpanded}
+                onClickSideNavExpand={onClickSideNavExpand}
+                switcherProps={switcherProps}
+              />
+              <div className={`${iotPrefix}--main-content`}>
+                <PageTitleBar title="Title" description="Description" />
+              </div>
+            </>
+          )}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text: `
       When implementing the Header and SideNav components you must utilized the HeaderContainer component
 
       <br/>
@@ -223,6 +227,6 @@ storiesOf('Watson IoT/SideNav', module).add(
       ~~~
 
       `,
-    },
-  }
-);
+      },
+    }
+  );

@@ -31,6 +31,9 @@ export const getDataStateProp = () => ({
 });
 
 storiesOf('Watson IoT/Card', module)
+  .addParameters({
+    component: Card,
+  })
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (

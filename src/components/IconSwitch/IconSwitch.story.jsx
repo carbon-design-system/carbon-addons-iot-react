@@ -30,6 +30,9 @@ const listIcons = {
 };
 
 storiesOf('Watson IoT/IconSwitch', module)
+  .addParameters({
+    component: IconSwitch,
+  })
   .addDecorator(withKnobs)
   .add(
     'unselected',

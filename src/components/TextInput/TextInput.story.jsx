@@ -89,6 +89,9 @@ const props = {
 TextInput.displayName = 'TextInput';
 
 storiesOf('TextInput', module)
+  .addParameters({
+    component: TextInput,
+  })
   .addDecorator(withKnobs)
   .add(
     'Default',

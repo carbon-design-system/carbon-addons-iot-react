@@ -5,6 +5,9 @@ import { text, object } from '@storybook/addon-knobs';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
 
 storiesOf('Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher', module)
+  .addParameters({
+    component: SuiteHeaderAppSwitcher,
+  })
   .add('default', () => (
     <div style={{ width: '15rem', background: 'white' }}>
       <SuiteHeaderAppSwitcher

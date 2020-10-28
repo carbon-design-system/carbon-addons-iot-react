@@ -626,6 +626,9 @@ export const StatefulTableWithNestedRowItems = (props) => {
 };
 
 storiesOf('Watson IoT/Table', module)
+  .addParameters({
+    component: Table,
+  })
   .add(
     'Simple Stateful Example',
     () => (

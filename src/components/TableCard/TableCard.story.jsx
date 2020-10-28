@@ -17,6 +17,9 @@ import {
 import TableCard from './TableCard';
 
 storiesOf('Watson IoT/TableCard', module)
+  .addParameters({
+    component: TableCard,
+  })
   .add('table with multiple actions', () => {
     const size = select(
       'size',

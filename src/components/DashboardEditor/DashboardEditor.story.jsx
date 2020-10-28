@@ -17,6 +17,9 @@ import DashboardEditor from './DashboardEditor';
 const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
 
 storiesOf('Watson IoT Experimental/DashboardEditor', module)
+  .addParameters({
+    component: DashboardEditor,
+  })
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>

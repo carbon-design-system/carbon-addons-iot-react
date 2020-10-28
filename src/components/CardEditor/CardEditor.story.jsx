@@ -43,6 +43,9 @@ const CardEditorInteractive = () => {
 };
 
 storiesOf('Watson IoT Experimental/CardEditor', module)
+  .addParameters({
+    component: CardEditor,
+  })
   .addDecorator(withKnobs)
   .add('default', () => (
     <div

@@ -11,6 +11,9 @@ storiesOf(
   'Watson IoT Experimental/DashboardEditor/DashboardEditorHeader',
   module
 )
+  .addParameters({
+    component: DashboardEditorHeader,
+  })
   .addDecorator(withKnobs)
   .add('default', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>

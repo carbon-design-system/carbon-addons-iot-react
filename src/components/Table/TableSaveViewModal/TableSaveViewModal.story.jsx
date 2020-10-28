@@ -9,6 +9,9 @@ import { TextArea } from '../../TextArea';
 import TableSaveViewModal from './TableSaveViewModal';
 
 storiesOf('Watson IoT/Table/TableSaveViewModal', module)
+  .addParameters({
+    component: TableSaveViewModal,
+  })
   .add(
     'Default with knobs',
     () => {

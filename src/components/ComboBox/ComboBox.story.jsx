@@ -140,6 +140,9 @@ const Wrapper = ({ children }) => (
 );
 
 storiesOf('Watson IoT Experimental/ComboBox', module)
+  .addParameters({
+    component: ComboBox,
+  })
   .addDecorator(withKnobs)
   .add(
     'Default',

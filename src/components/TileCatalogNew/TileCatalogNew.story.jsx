@@ -31,6 +31,9 @@ const getTiles = (num) => {
 };
 
 storiesOf('Watson IoT Experimental/TileCatalogNew', module)
+  .addParameters({
+    component: TileCatalogNew,
+  })
   .add('Base with col / row specified', () => {
     const numOfTiles = number('number of tiles', 7);
     return (
