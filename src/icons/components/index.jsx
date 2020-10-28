@@ -1,0 +1,12 @@
+export { default as AlertTableIcon } from './AlertTableIcon';
+export { default as BarGroupedGraphIcon } from './BarGroupedGraphIcon';
+export { default as BarStackGraphIcon } from './BarStackGraphIcon';
+export { default as ComputerChip } from './ComputerChip';
+export { default as Dashboard } from './Dashboard';
+export { default as DataScientistIllustration } from './DataScientistIllustration';
+export { default as DataTableIcon } from './DataTableIcon';
+export { default as ImageIcon } from './ImageIcon';
+export { default as LineGraphIcon } from './LineGraphIcon';
+export { default as ListIcon } from './ListIcon';
+export { default as SimpleBarGraphIcon } from './SimpleBarGraphIcon';
+export { default as ValueKpiIcon } from './ValueKpiIcon';

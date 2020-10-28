@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 
 import { SimpleList } from '../../../index';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../../constants/LayoutConstants';
-import LineGraphIcon from '../../../icons/components/LineGraphIcon';
-import SimpleBarGraphIcon from '../../../icons/components/SimpleBarGraphIcon';
-import BarGroupedGraphIcon from '../../../icons/components/BarGroupedGraphIcon';
-import BarStackGraphIcon from '../../../icons/components/BarStackGraphIcon';
-import ValueKpiIcon from '../../../icons/components/ValueKpiIcon';
-import ImageIcon from '../../../icons/components/ImageIcon';
-import DataTableIcon from '../../../icons/components/DataTableIcon';
-import AlertTableIcon from '../../../icons/components/AlertTableIcon';
-import ListIcon from '../../../icons/components/ListIcon';
+import {
+  LineGraphIcon,
+  SimpleBarGraphIcon,
+  BarGroupedGraphIcon,
+  BarStackGraphIcon,
+  ValueKpiIcon,
+  ImageIcon,
+  DataTableIcon,
+  AlertTableIcon,
+  ListIcon,
+} from '../../../icons/components';
 
 const propTypes = {
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),

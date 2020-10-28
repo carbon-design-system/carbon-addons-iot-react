@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgImage(props) {
+function SvgImageIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <g fill="none" fillRule="evenodd">
@@ -15,4 +15,4 @@ function SvgImage(props) {
   );
 }
 
-export default SvgImage;
+export default SvgImageIcon;

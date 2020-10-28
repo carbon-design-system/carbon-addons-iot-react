@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgLineGraph(props) {
+function SvgLineGraphIcon(props) {
   return (
     <svg width={40} height={34} {...props}>
       <g transform="translate(0 1)" fillRule="nonzero" fill="none">
@@ -41,4 +41,4 @@ function SvgLineGraph(props) {
   );
 }
 
-export default SvgLineGraph;
+export default SvgLineGraphIcon;

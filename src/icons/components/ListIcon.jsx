@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgList(props) {
+function SvgListIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <g fill="none" fillRule="evenodd">
@@ -17,4 +17,4 @@ function SvgList(props) {
   );
 }
 
-export default SvgList;
+export default SvgListIcon;

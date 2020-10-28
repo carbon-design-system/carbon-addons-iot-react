@@ -19,7 +19,7 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
-import ImageIcon from '../../icons/components/ImageIcon';
+import { ImageIcon } from '../../icons/components';
 
 import { baseClassName } from './DashboardEditor';
 

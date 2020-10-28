@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgBarGroupedGraph(props) {
+function SvgBarGroupedGraphIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <g fill="none">
@@ -21,4 +21,4 @@ function SvgBarGroupedGraph(props) {
   );
 }
 
-export default SvgBarGroupedGraph;
+export default SvgBarGroupedGraphIcon;

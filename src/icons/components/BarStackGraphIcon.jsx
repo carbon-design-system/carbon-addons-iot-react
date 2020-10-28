@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgBarStackGraph(props) {
+function SvgBarStackGraphIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <g fill="none">
@@ -27,4 +27,4 @@ function SvgBarStackGraph(props) {
   );
 }
 
-export default SvgBarStackGraph;
+export default SvgBarStackGraphIcon;

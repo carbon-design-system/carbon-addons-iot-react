@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgSimpleBarGraph(props) {
+function SvgSimpleBarGraphIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <path
@@ -11,4 +11,4 @@ function SvgSimpleBarGraph(props) {
   );
 }
 
-export default SvgSimpleBarGraph;
+export default SvgSimpleBarGraphIcon;

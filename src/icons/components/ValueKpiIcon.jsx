@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgValueKpi(props) {
+function SvgValueKpiIcon(props) {
   return (
     <svg width={40} height={32} {...props}>
       <g fill="none" fillRule="evenodd">
@@ -22,4 +22,4 @@ function SvgValueKpi(props) {
   );
 }
 
-export default SvgValueKpi;
+export default SvgValueKpiIcon;
