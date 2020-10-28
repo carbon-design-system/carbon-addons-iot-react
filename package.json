@@ -23,7 +23,7 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "cross-env BABEL_ENV='production' NODE_ENV='production'  yarn build:pre && rollup -c && yarn build:post",
+    "build": "yarn svg-convert && cross-env BABEL_ENV='production' NODE_ENV='production' yarn build:pre && rollup -c && yarn build:post",
     "build:pre": "yarn test:engines && rimraf lib es umd css scss tmp storybook-static",
     "build:post": "rimraf tmp",
     "build:storybook": "yarn test:engines && NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
@@ -36,6 +36,7 @@
     "publish-npm": "yarn semantic-release",
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
+    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg",
     "test": "yarn test:engines && yarn test:a11y && yarn test:base",
     "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
@@ -89,7 +90,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged && yarn test:base",
+      "pre-commit": "yarn svg-convert && yarn lint-staged && yarn test:base",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -196,7 +197,7 @@
     "@storybook/addon-storyshots": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
-    "@svgr/rollup": "^5.4.0",
+    "@svgr/cli": "^5.4.0",
     "@testing-library/dom": "^7.22.2",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
