@@ -19,7 +19,7 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
-import sampleImage from '../CardEditor/CardGalleryList/image.svg';
+import { ImageIcon } from '../../icons/components';
 
 import { baseClassName } from './DashboardEditor';
 
@@ -70,10 +70,15 @@ export const getDefaultCard = (type, i18n) => {
         ...baseCardProps,
         content: {
           series: [],
+          xLabel: 'Time',
+          yLabel: 'Temperature',
+          unit: '˚F',
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
         },
         interval: 'day',
-        i18n,
+        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -127,7 +132,7 @@ export const getDefaultCard = (type, i18n) => {
         ...baseCardProps,
         content: {
           alt: 'Sample image',
-          src: sampleImage,
+          src: ImageIcon,
           hideMinimap: true,
           hideHotspots: false,
           hideZoomControls: false,
@@ -138,6 +143,72 @@ export const getDefaultCard = (type, i18n) => {
     default:
       return { ...baseCardProps, i18n };
   }
+};
+
+/**
+ * maps a selected time range to what is expected in the dashboardJSON
+ */
+export const timeRangeToJSON = {
+  last24Hours: {
+    range: { interval: 'day', count: -1, type: 'rolling' },
+    interval: 'hour',
+  },
+  last7Days: {
+    range: { interval: 'week', count: -1, type: 'rolling' },
+    interval: 'day',
+  },
+  lastMonth: {
+    range: { interval: 'month', count: -1, type: 'rolling' },
+    interval: 'week',
+  },
+  lastQuarter: {
+    range: {
+      interval: 'quarter',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'month',
+  },
+  lastYear: {
+    range: {
+      interval: 'year',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'month',
+  },
+  thisWeek: {
+    range: {
+      interval: 'week',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'day',
+  },
+  thisMonth: {
+    range: {
+      interval: 'month',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'week',
+  },
+  thisQuarter: {
+    range: {
+      interval: 'quarter',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'month',
+  },
+  thisYear: {
+    range: {
+      interval: 'year',
+      count: -1,
+      type: 'periodToDate',
+    },
+    interval: 'month',
+  },
 };
 
 /**
@@ -187,7 +258,14 @@ const renderValueCard = (cardJson, commonProps) => (
  * @returns {Node}
  */
 const renderTimeSeriesCard = (cardJson, commonProps) => (
-  <TimeSeriesCard isEditable {...cardJson} {...commonProps} />
+  <TimeSeriesCard
+    isEditable
+    values={[]}
+    showLegend
+    timeRange={cardJson?.dataSource?.range}
+    {...cardJson}
+    {...commonProps}
+  />
 );
 
 /**
