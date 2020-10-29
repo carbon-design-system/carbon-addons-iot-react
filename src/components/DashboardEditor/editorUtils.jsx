@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import classnames from 'classnames';
 
 import {
   CARD_SIZES,
@@ -20,8 +21,11 @@ import {
   ListCard,
 } from '../../index';
 import { ImageIcon } from '../../icons/components';
+import { settings } from '../../constants/Settings';
 
 import { baseClassName } from './DashboardEditor';
+
+const { iotPrefix } = settings;
 
 /**
  * Returns a duplicate card configuration
@@ -237,11 +241,19 @@ export const isCardJsonValid = (cardJson) => {
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderDefaultCard = (cardJson, commonProps) => (
-  <Card isEditable {...cardJson} {...commonProps}>
-    <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
-  </Card>
-);
+const renderDefaultCard = (cardJson, commonProps) => {
+  try {
+    return <Card isEditable {...cardJson} {...commonProps} />;
+  } catch {
+    return (
+      <Card isEditable {...cardJson} {...commonProps}>
+        <div style={{ padding: '1rem' }}>
+          {JSON.stringify(cardJson, null, 4)}
+        </div>
+      </Card>
+    );
+  }
+};
 
 /**
  * @param {Object} cardJson
@@ -300,6 +312,27 @@ const renderListCard = (cardJson, commonProps) => (
 );
 
 /**
+ * Selects the card if the key is 'enter'
+ * @param {Event} evt
+ * @param {Function} onSelectCard
+ * @param {string} id
+ */
+export const handleKeyDown = (evt, onSelectCard, id) => {
+  if (evt.key === 'Enter') {
+    onSelectCard(id);
+  }
+};
+
+/**
+ * Selects the card
+ * @param {Function} onSelectCard
+ * @param {string} id
+ */
+export const handleOnClick = (onSelectCard, id) => {
+  onSelectCard(id);
+};
+
+/**
  * Returns a Card component for preview in the dashboard
  * @param {Object} cardData, the JSON configuration of the card
  * @param {Function} onSelectCard, callback when card is selected for editing
@@ -311,7 +344,8 @@ export const getCardPreview = (
   cardData,
   onSelectCard,
   onDuplicateCard,
-  onRemoveCard
+  onRemoveCard,
+  isSelected
 ) => {
   const commonProps = {
     key: cardData.id,
@@ -326,8 +360,12 @@ export const getCardPreview = (
       }
     },
     tabIndex: 0,
-    onFocus: () => onSelectCard(cardData.id),
-    className: `${baseClassName}--preview__card`,
+    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardData.id),
+    onClick: () => handleOnClick(onSelectCard, cardData.id),
+    className: classnames(`${baseClassName}--preview__card`, {
+      // add black border when selected
+      [`${iotPrefix}--card--resizing`]: isSelected,
+    }),
   };
 
   if (!isCardJsonValid(cardData)) {

@@ -27,7 +27,13 @@ const propTypes = {
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
-  /** if provided, is used to render cards in dashboard */
+  /** if provided, is used to render cards in dashboard
+   * renderCardPreview( cardData: Object,
+                        onSelectCard: Function,
+                        onDuplicateCard: Function,
+                        onRemoveCard: Function,
+                        isSelected: Boolean)
+   */
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
@@ -234,19 +240,22 @@ const DashboardEditor = ({
                 })
               }>
               {dashboardJson.cards.map((cardData) => {
+                const isSelected = cardData.id === selectedCardId;
                 // if function not defined, or it returns falsy, render default preview
                 return (
                   renderCardPreview(
                     cardData,
                     onSelectCard,
                     onDuplicateCard,
-                    onRemoveCard
+                    onRemoveCard,
+                    isSelected
                   ) ??
                   getCardPreview(
                     cardData,
                     onSelectCard,
                     onDuplicateCard,
-                    onRemoveCard
+                    onRemoveCard,
+                    isSelected
                   )
                 );
               })}

@@ -355,7 +355,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -3180,7 +3181,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -3272,21 +3274,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       }
                     }
                   >
-                    <div
-                      style={
-                        Object {
-                          "padding": "1rem",
-                        }
-                      }
-                    >
-                      {
-    "id": "Custom",
-    "title": "Custom rendered card",
-    "type": "CUSTOM",
-    "size": "MEDIUM",
-    "value": 35
-}
-                    </div>
                     <span
                       className="react-resizable-handle react-resizable-handle-se"
                       onMouseDown={[Function]}
@@ -3305,7 +3292,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -3496,7 +3484,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Timeseries"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
