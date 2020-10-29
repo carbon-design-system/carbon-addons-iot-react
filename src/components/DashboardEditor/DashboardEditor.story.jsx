@@ -1,12 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, object, array } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  boolean,
+  text,
+  object,
+  array,
+} from '@storybook/addon-knobs';
 
 import { Card, Link, InlineNotification } from '../../index';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
+
+const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
 
 storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .addDecorator(withKnobs)
@@ -14,12 +22,15 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title={text('title', 'My dashboard')}
+        dataItems={mockDataItems}
+        onAddImage={action('onAddImage')}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
         onDelete={action('onDelete')}
         onCancel={action('onCancel')}
         onSubmit={action('onSubmit')}
+        submitDisabled={boolean('submitDisabled', false)}
         supportedCardTypes={array('supportedCardTypes', [
           'TIMESERIES',
           'SIMPLE_BAR',
@@ -69,6 +80,31 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
                   },
                 ],
               },
+            },
+            {
+              id: 'Timeseries',
+              title: 'Untitled',
+              size: 'MEDIUMWIDE',
+              type: 'TIMESERIES',
+              content: {
+                series: [
+                  {
+                    label: 'Temperature',
+                    dataSourceId: 'temperature',
+                  },
+                  {
+                    label: 'Pressure',
+                    dataSourceId: 'pressure',
+                  },
+                ],
+                xLabel: 'Time',
+                yLabel: 'Temperature (˚F)',
+                includeZeroOnXaxis: true,
+                includeZeroOnYaxis: true,
+                timeDataSourceId: 'timestamp',
+                addSpaceOnEdges: 1,
+              },
+              interval: 'day',
             },
           ],
           layouts: {},

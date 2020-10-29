@@ -9,12 +9,13 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
-import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import cheerio from 'cheerio';
 
-import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import {
+  convertStringsToDOMElement,
+  csvDownloadHandler,
+} from '../../utils/componentUtilityFunctions';
 import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
@@ -28,6 +29,7 @@ import {
   getUpdatedCardSize,
   handleCardVariables,
   chartValueFormatter,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -121,6 +123,10 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  /** whether or not to show a legend at the bottom of the card
+   * if not explicitly stated, the card will show based on the length of the series
+   */
+  showLegend: PropTypes.bool,
 };
 
 /**
@@ -178,16 +184,15 @@ export const formatChartData = (
   return data;
 };
 
-const memoizedGenerateSampleValues = memoize(generateSampleValues);
-
 /**
  * Extends default tooltip with the additional date information, and optionally alert information
- * @param {object} data data object for this particular datapoint should have a date field containing the timestamp
+ * @param {object} dataOrHoveredElement data object for this particular datapoint should have a date field containing the timestamp
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
- * @param {string} tooltipDataFormatPattern
+ * @param {string} tooltipDateFormatPattern
+ * @returns {string} DOM representation of the tooltip
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -205,11 +210,11 @@ export const handleTooltip = (
     : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
-                        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
-                          ? moment.utc(timeStamp)
-                          : moment(timeStamp)
-                        ).format(tooltipDateFormatPattern)}</p>
-                     </li>`
+        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+          ? moment.utc(timeStamp)
+          : moment(timeStamp)
+        ).format(tooltipDateFormatPattern)}</p>
+      </li>`
     : '';
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
@@ -220,13 +225,29 @@ export const handleTooltip = (
         )
         .join('')
     : '';
-  const parsedTooltip = cheerio.load(defaultTooltip);
-  // the first <li> will always be carbon chart's Dates row in this case, replace with our date format
-  parsedTooltip('li:first-child').replaceWith(dateLabel);
 
-  // append the matching alert labels
-  parsedTooltip('ul').append(matchingAlertLabels);
-  return parsedTooltip.html('ul');
+  // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
+  const [
+    defaultTooltipDOM,
+    dateLabelDOM,
+    matchingAlertLabelsDOM,
+  ] = convertStringsToDOMElement([
+    defaultTooltip,
+    dateLabel,
+    matchingAlertLabels,
+  ]);
+
+  // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+  defaultTooltipDOM
+    .querySelector('li:first-child')
+    .replaceWith(dateLabelDOM.querySelector('li'));
+
+  // Append all the matching alert labels
+  matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
+    defaultTooltipDOM.querySelector('ul').append(label);
+  });
+
+  return defaultTooltipDOM.innerHTML;
 };
 
 /**
@@ -249,17 +270,21 @@ export const formatColors = (series) => {
 const TimeSeriesCard = ({
   title: titleProp,
   content,
+  children,
   size,
   interval,
   isEditable,
+  isResizable,
   values: initialValues,
   locale,
   i18n: { alertDetected, noDataLabel },
   i18n,
   isExpanded,
+  timeRange,
   isLazyLoading,
   isLoading,
   domainRange,
+  showLegend,
   ...others
 }) => {
   const {
@@ -285,9 +310,13 @@ const TimeSeriesCard = ({
   const previousTick = useRef();
   moment.locale(locale);
 
-  const values = isEditable
-    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
-    : valuesProp;
+  const sampleValues = useMemo(
+    () => generateSampleValues(series, timeDataSourceId, interval, timeRange),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [series, interval, timeRange]
+  );
+
+  const values = isEditable ? sampleValues : valuesProp;
 
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
@@ -458,17 +487,21 @@ const TimeSeriesCard = ({
   const ChartComponent =
     chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       title={title}
       size={newSize}
       i18n={i18n}
+      timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
-      isLoading={isLoading}>
+      isLoading={isLoading}
+      resizeHandles={resizeHandles}>
       {!isChartDataEmpty ? (
         <>
           <div
@@ -488,7 +521,7 @@ const TimeSeriesCard = ({
                 accessibility: false,
                 axes: {
                   bottom: {
-                    title: xLabel,
+                    title: xLabel || ' ',
                     mapsTo: 'date',
                     scaleType: 'time',
                     ticks: {
@@ -517,7 +550,7 @@ const TimeSeriesCard = ({
                 legend: {
                   position: 'bottom',
                   clickable: !isEditable,
-                  enabled: series.length > 1,
+                  enabled: showLegend ?? series.length > 1,
                 },
                 containerResizable: true,
                 tooltip: {
@@ -622,6 +655,7 @@ TimeSeriesCard.defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  showLegend: null,
 };
 
 export default TimeSeriesCard;

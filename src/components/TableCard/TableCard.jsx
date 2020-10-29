@@ -25,6 +25,7 @@ import {
   handleCardVariables,
   formatNumberWithPrecision,
   getVariables,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
 
@@ -327,10 +328,12 @@ const TableCard = ({
   title: titleProp,
   isExpanded,
   content: contentProp,
+  children,
   size,
   onCardAction,
   values: valuesProp,
   isEditable,
+  isResizable,
   i18n,
   tooltip,
   locale,
@@ -811,6 +814,8 @@ const TableCard = ({
     />
   );
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       id={id}
@@ -818,8 +823,10 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
+      isResizable={isResizable}
       isExpanded={isExpanded}
       i18n={mergedI18n}
+      resizeHandles={resizeHandles}
       hideHeader
       {...others}>
       {({ height }) => {

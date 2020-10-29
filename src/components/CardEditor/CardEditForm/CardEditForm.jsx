@@ -3,21 +3,13 @@ import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 
-import {
-  CARD_SIZES,
-  CARD_DIMENSIONS,
-  ALLOWED_CARD_SIZES_PER_TYPE,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import {
-  Tabs,
-  Tab,
-  Button,
-  TextArea,
-  TextInput,
-  Dropdown,
-} from '../../../index';
+import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
+
+import CardEditFormContent from './CardEditFormContent';
+import CardEditFormSettings from './CardEditFormSettings';
 
 const { iotPrefix } = settings;
 
@@ -26,14 +18,40 @@ const propTypes = {
   cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
+  i18n: PropTypes.shape({
+    openEditorButton: PropTypes.string,
+    contentTabLabel: PropTypes.string,
+    settingsTabLabel: PropTypes.string,
+    cardSize_SMALL: PropTypes.string,
+    cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_MEDIUM: PropTypes.string,
+    cardSize_MEDIUMTHIN: PropTypes.string,
+    cardSize_MEDIUMWIDE: PropTypes.string,
+    cardSize_LARGE: PropTypes.string,
+    cardSize_LARGETHIN: PropTypes.string,
+    cardSize_LARGEWIDE: PropTypes.string,
+    chartType_BAR: PropTypes.string,
+    chartType_LINE: PropTypes.string,
+    barChartType_SIMPLE: PropTypes.string,
+    barChartType_GROUPED: PropTypes.string,
+    barChartType_STACKED: PropTypes.string,
+    barChartLayout_HORIZONTAL: PropTypes.string,
+    barChartLayout_VERTICAL: PropTypes.string,
+  }),
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardJson)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
-  i18n: PropTypes.shape({
-    openEditorButton: PropTypes.string,
-  }),
 };
 
 const defaultProps = {
@@ -41,6 +59,7 @@ const defaultProps = {
   i18n: {
     openEditorButton: 'Open JSON editor',
     contentTabLabel: 'Content',
+    settingsTabLabel: 'Settings',
     cardSize_SMALL: 'Small',
     cardSize_SMALLWIDE: 'Small wide',
     cardSize_MEDIUM: 'Medium',
@@ -58,6 +77,8 @@ const defaultProps = {
     barChartLayout_VERTICAL: 'Vertical',
     // additional card type names can be provided using the convention of `cardType_TYPE`
   },
+  getValidDataItems: null,
+  dataItems: [],
   onValidateCardJson: null,
 };
 
@@ -126,63 +147,19 @@ export const handleSubmit = (
   return false;
 };
 
-const CardEditForm = ({ cardJson, onChange, onValidateCardJson, i18n }) => {
+const CardEditForm = ({
+  cardJson,
+  onChange,
+  i18n,
+  dataItems,
+  onValidateCardJson,
+  getValidDataItems,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const commonFormItems = (
-    <>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id="title"
-          labelText="Card title"
-          light
-          onChange={(evt) => onChange({ ...cardJson, title: evt.target.value })}
-          value={cardJson.title}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextArea
-          id="description"
-          labelText="Description (Optional)"
-          light
-          onChange={(evt) =>
-            onChange({ ...cardJson, description: evt.target.value })
-          }
-          value={cardJson.description}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          id="size"
-          label="Select a size"
-          direction="bottom"
-          itemToString={(item) => item.text}
-          items={(
-            ALLOWED_CARD_SIZES_PER_TYPE[cardJson.type] ??
-            Object.keys(CARD_SIZES)
-          ).map((size) => {
-            return {
-              id: size,
-              text: getCardSizeText(size, mergedI18n),
-            };
-          })}
-          light
-          selectedItem={{
-            id: cardJson.size,
-            text: getCardSizeText(cardJson.size, mergedI18n),
-          }}
-          onChange={({ selectedItem }) => {
-            onChange({ ...cardJson, size: selectedItem.id });
-          }}
-          titleText="Size"
-        />
-      </div>
-    </>
-  );
 
   return (
     <>
@@ -212,7 +189,22 @@ const CardEditForm = ({ cardJson, onChange, onValidateCardJson, i18n }) => {
       <div className={baseClassName}>
         <Tabs>
           <Tab label={mergedI18n.contentTabLabel}>
-            <div className={`${baseClassName}--content`}>{commonFormItems}</div>
+            <CardEditFormContent
+              cardJson={cardJson}
+              onChange={onChange}
+              i18n={mergedI18n}
+              dataItems={dataItems}
+              getValidDataItems={getValidDataItems}
+            />
+          </Tab>
+          <Tab label={mergedI18n.settingsTabLabel}>
+            <CardEditFormSettings
+              cardJson={cardJson}
+              onChange={onChange}
+              i18n={mergedI18n}
+              dataItems={dataItems}
+              getValidDataItems={getValidDataItems}
+            />
           </Tab>
         </Tabs>
         <div className={`${baseClassName}--footer`}>

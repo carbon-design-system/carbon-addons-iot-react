@@ -23,10 +23,12 @@ import {
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
+import {
+  DashboardIcon,
+  DataScientistIcon,
+  ComputerChipIcon,
+} from '../../icons/components';
 
-import iconViewDashboards from './dashboard.svg';
-import iconMonitorEntities from './data-scientist-illustration.svg';
-import iconConnectDevices from './computer-chip.svg';
 import Dashboard from './Dashboard';
 
 export const originalCards = [
@@ -1376,11 +1378,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           width: '100%',
                           padding: '0 36px 16px 0',
                         }}>
-                        <img
-                          style={{ width: '50%' }}
-                          src={iconViewDashboards}
-                          alt="View Dashboards"
-                        />
+                        <DashboardIcon width="50%" />
                       </div>
                     </div>
                   </ClickableTile>
@@ -1409,11 +1407,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           width: '100%',
                           padding: '0 36px 16px 0',
                         }}>
-                        <img
-                          style={{ width: '50%' }}
-                          src={iconConnectDevices}
-                          alt="Connect Devices"
-                        />
+                        <ComputerChipIcon width="50%" />
                       </div>
                     </div>
                   </ClickableTile>
@@ -1438,11 +1432,7 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                         width: '100%',
                         padding: '0 36px 16px 0',
                       }}>
-                      <img
-                        style={{ width: '50%' }}
-                        src={iconMonitorEntities}
-                        alt="Monitor Entities"
-                      />
+                      <DataScientistIcon width="50%" />
                     </div>
                   </div>
                 ),

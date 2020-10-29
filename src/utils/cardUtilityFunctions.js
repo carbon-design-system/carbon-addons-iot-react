@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
 import mapValues from 'lodash/mapValues';
@@ -426,4 +426,64 @@ export const increaseSmallCardSize = (size, cardName) => {
     : size === CARD_SIZES.SMALLWIDE
     ? CARD_SIZES.MEDIUMWIDE
     : size;
+};
+
+const resizeHandleId = 'resizableHandle';
+
+/**
+ * Simple helper function to extract the resizeHandles from the react children
+ * @param {} children the react children data structure containing the resizeHandles
+ */
+export const getResizeHandles = (children) =>
+  React.Children.toArray(children).filter((child) =>
+    child.key?.includes(resizeHandleId)
+  );
+
+/**
+ * Custom hook that manages the isResizable state. It does that by wrapping
+ * the onStart/onStop callbacks found in the resizeHandles. The resizeHandles
+ * are created by the external library react-grid-layout.
+ *
+ * The hook returns an object with both the modified resizeHandles and
+ * the isResizing state.
+ *
+ * @param {array} wrappingCardResizeHandles resizeHandles optionally passed down by wrapping card
+ * @param {} children the react children data structure containing the resizeHandles
+ * @param {boolean} isResizable true if the component using the hook should be resizable
+ */
+export const useCardResizing = (
+  wrappingCardResizeHandles,
+  children,
+  isResizable
+) => {
+  const [isResizing, setIsResizing] = useState(false);
+  const resizeHandlesWithEventHandling = useMemo(
+    () => {
+      const resizeHandles =
+        wrappingCardResizeHandles ||
+        (isResizable && getResizeHandles(children)) ||
+        [];
+
+      return resizeHandles.map((handleElement) =>
+        React.cloneElement(handleElement, {
+          ...handleElement.props,
+          onStart: (...args) => {
+            setIsResizing(true);
+            if (handleElement.props?.onStart) {
+              handleElement.props.onStart(...args);
+            }
+          },
+          onStop: (...args) => {
+            setIsResizing(false);
+            if (handleElement.props?.onStop) {
+              handleElement.props.onStop(...args);
+            }
+          },
+        })
+      );
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isResizable]
+  );
+  return { resizeHandles: resizeHandlesWithEventHandling, isResizing };
 };

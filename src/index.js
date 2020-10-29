@@ -305,3 +305,5 @@ export {
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
+
+export * from './icons/components';

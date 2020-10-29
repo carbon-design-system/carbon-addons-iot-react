@@ -5173,6 +5173,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -5221,6 +5224,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -7503,6 +7509,9 @@ Map {
       "onBreakpointChange": Object {
         "type": "func",
       },
+      "onCardSizeChange": Object {
+        "type": "func",
+      },
       "onDashboardAction": Object {
         "type": "func",
       },
@@ -7510,6 +7519,9 @@ Map {
         "type": "func",
       },
       "onLayoutChange": Object {
+        "type": "func",
+      },
+      "onResizeStop": Object {
         "type": "func",
       },
       "onSetupCard": Object {
@@ -7647,7 +7659,9 @@ Map {
       "isEditable": false,
       "layouts": Object {},
       "onBreakpointChange": null,
+      "onCardSizeChange": null,
       "onLayoutChange": null,
+      "onResizeStop": null,
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -7847,13 +7861,21 @@ Map {
       "onBreakpointChange": Object {
         "type": "func",
       },
+      "onCardSizeChange": Object {
+        "type": "func",
+      },
       "onLayoutChange": Object {
+        "type": "func",
+      },
+      "onResizeStop": Object {
         "type": "func",
       },
     },
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7884,6 +7906,7 @@ Map {
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
+      "submitDisabled": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -7896,6 +7919,17 @@ Map {
       "title": null,
     },
     "propTypes": Object {
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
+      },
       "headerBreadcrumbs": Object {
         "args": Array [
           Object {
@@ -7993,6 +8027,9 @@ Map {
       "renderHeader": Object {
         "type": "func",
       },
+      "submitDisabled": Object {
+        "type": "bool",
+      },
       "supportedCardTypes": Object {
         "args": Array [
           Object {
@@ -8009,7 +8046,10 @@ Map {
   "CardEditor" => Object {
     "defaultProps": Object {
       "cardJson": null,
+      "dataItems": Array [],
+      "getValidDataItems": null,
       "i18n": Object {
+        "addCardButton": "Add card",
         "closeGalleryButton": "Back",
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
@@ -8029,15 +8069,94 @@ Map {
     },
     "propTypes": Object {
       "cardJson": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "content": Object {
+              "args": Array [
+                Object {
+                  "includeZeroOnXaxis": Object {
+                    "type": "bool",
+                  },
+                  "includeZeroOnYaxis": Object {
+                    "type": "bool",
+                  },
+                  "series": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
+                            },
+                            "dataSourceId": Object {
+                              "type": "string",
+                            },
+                            "label": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "unit": Object {
+                    "type": "string",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "interval": Object {
+              "type": "string",
+            },
+            "showLegend": Object {
+              "type": "bool",
+            },
+            "size": Object {
+              "type": "string",
+            },
+            "title": Object {
+              "type": "string",
+            },
+            "type": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dataItems": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "getValidDataItems": Object {
+        "type": "func",
       },
       "i18n": Object {
         "args": Array [
           Object {
-            "galleryHeader": Object {
+            "addCardButton": Object {
               "type": "string",
             },
-            "openGalleryButton": Object {
+            "galleryHeader": Object {
               "type": "string",
             },
             "searchPlaceholderText": Object {
@@ -9101,6 +9220,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -9149,6 +9271,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -9849,6 +9974,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -9973,6 +10101,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -10853,6 +10984,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -10901,6 +11035,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -10994,6 +11131,7 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
+      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -11720,6 +11858,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -11769,6 +11910,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "resizeHandles": Object {
+        "type": "array",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -11787,6 +11931,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "showLegend": Object {
+        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
@@ -12491,6 +12638,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -12539,6 +12689,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -13369,6 +13522,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -13417,6 +13573,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -14285,6 +14444,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "args": Array [
           Array [
@@ -14333,6 +14495,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -15104,6 +15269,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isResizable": Object {
+        "type": "bool",
+      },
       "layout": Object {
         "type": "string",
       },
@@ -15150,6 +15318,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
       },
       "rowHeight": Object {
         "args": Array [
@@ -23349,5 +23520,17 @@ Map {
     "tableSearchApply": Object {},
     "tableToolbarToggle": Object {},
   },
+  "AlertTableIcon" => Object {},
+  "BarGroupedGraphIcon" => Object {},
+  "BarStackGraphIcon" => Object {},
+  "ComputerChipIcon" => Object {},
+  "DashboardIcon" => Object {},
+  "DataScientistIcon" => Object {},
+  "DataTableIcon" => Object {},
+  "ImageIcon" => Object {},
+  "LineGraphIcon" => Object {},
+  "ListIcon" => Object {},
+  "SimpleBarGraphIcon" => Object {},
+  "ValueKpiIcon" => Object {},
 }
 `;

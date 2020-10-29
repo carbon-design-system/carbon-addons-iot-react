@@ -20,6 +20,7 @@ import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import {
   chartValueFormatter,
+  getResizeHandles,
   handleCardVariables,
   increaseSmallCardSize,
 } from '../../utils/cardUtilityFunctions';
@@ -43,6 +44,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 const BarChartCard = ({
   title: titleProp,
   content,
+  children,
   size: sizeProp,
   values: initialValues,
   locale,
@@ -51,6 +53,7 @@ const BarChartCard = ({
   isLazyLoading,
   isEditable,
   isLoading,
+  isResizable,
   interval,
   className,
   domainRange,
@@ -76,6 +79,8 @@ const BarChartCard = ({
   } = handleCardVariables(titleProp, content, initialValues, others);
 
   const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
+
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   // If editable, show sample presentation data
   // If there is no series defined, there is no datasets to make sample data from
@@ -159,6 +164,8 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
+      isResizable={isResizable}
+      resizeHandles={resizeHandles}
       {...others}>
       {!isAllValuesEmpty ? (
         <div

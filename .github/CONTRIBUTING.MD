@@ -120,6 +120,18 @@ Do not use `styled-components`. Any components using it should be refactored to
 the sass partial approach. This helps promote consistency with the Carbon Design
 System.
 
+## Adding new SVG images
+
+If SVG files need to be added that are not already distributed by Carbon, please
+take the following steps.
+
+1. first add the SVG files to `src/icons/svg`.
+2. Next, run `yarn svg-convert`. This will produce a React JSX component, as
+   well as update the `src/icons/components/index.jsx` exports with the newly
+   created component.
+3. You can then import the file as a regular react componet with
+   `import MySvgIcon from 'src/icons/components/MySvgIcon.jsx`.
+
 ## Testing
 
 An automated unit test bucket runs when you execute `yarn test:base`.
