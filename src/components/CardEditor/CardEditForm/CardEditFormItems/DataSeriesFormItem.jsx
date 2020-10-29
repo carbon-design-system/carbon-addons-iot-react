@@ -61,10 +61,15 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
 };
@@ -106,14 +111,14 @@ const DATAITEM_COLORS_OPTIONS = [
  * @param {object} cardJson
  */
 export const formatSeries = (selectedItems, cardJson) => {
-  const cardSeries = cardJson.content.series;
-  const series = selectedItems.map(({ id }, i) => {
+  const cardSeries = cardJson?.content?.series;
+  const series = selectedItems.map(({ id, text }, i) => {
     const color =
-      cardSeries.find((dataItem) => dataItem.label === id)?.color ??
+      cardSeries?.find((dataItem) => dataItem.label === id)?.color ??
       DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
-      dataSourceId: id.toLowerCase(),
-      label: id,
+      dataSourceId: id,
+      label: text,
       color,
     };
   });
@@ -135,6 +140,12 @@ const DataSeriesFormItem = ({
   const [editDataItem, setEditDataItem] = useState({});
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  const initialSelectedItems =
+    cardJson?.content?.series?.map(({ dataSourceId, label }) => ({
+      id: dataSourceId,
+      text: label || dataSourceId,
+    })) || [];
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardJson, selectedTimeRange)
@@ -214,11 +225,12 @@ const DataSeriesFormItem = ({
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}
+          initialSelectedItems={initialSelectedItems}
           items={
             validDataItems
-              ? validDataItems.map((dataItem) => ({
-                  id: dataItem,
-                  text: dataItem,
+              ? validDataItems.map(({ dataSourceId, label }) => ({
+                  id: dataSourceId,
+                  text: label || dataSourceId,
                 }))
               : []
           }
@@ -235,7 +247,7 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={cardJson.content.series.map((series) => ({
+        items={cardJson.content.series.map((series, i) => ({
           id: series.dataSourceId,
           content: {
             value: series.label,
@@ -244,7 +256,9 @@ const DataSeriesFormItem = ({
                 style={{
                   width: '1rem',
                   height: '1rem',
-                  backgroundColor: series.color,
+                  backgroundColor:
+                    series.color ||
+                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
                 }}
               />
             ),

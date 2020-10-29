@@ -123,7 +123,13 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
         errors={{}}
         onShowGallery={action('onShowGallery')}
         onChange={action('onChange')}
-        dataItems={['Torque Max', 'Torque Min', 'Torque Mean']}
+        dataItems={[
+          { dataSourceId: 'torque_max', label: 'Torque Max' },
+          { dataSourceId: 'torque_min', label: 'Torque Min' },
+          { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+          { dataSourceId: 'temperature', label: 'Temperature' },
+          { dataSourceId: 'pressure', label: 'Pressure' },
+        ]}
         onAddCard={action('onAddCard')}
       />
     </div>

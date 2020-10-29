@@ -32,7 +32,10 @@ const cardJson = {
   interval: 'day',
 };
 
-const dataItems = ['Temperature', 'Pressure'];
+const dataItems = [
+  { dataSourceId: 'temperature', label: 'Temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure' },
+];
 
 const mockOnChange = jest.fn();
 const mockGetValidDataItems = jest.fn();
@@ -57,11 +60,14 @@ describe('DataSeriesFormItem', () => {
         ],
       },
     };
-    const selectedItems = [{ id: 'Temperature' }, { id: 'Pressure' }];
+    const selectedItems = [
+      { id: 'temperature', text: 'Temperature' },
+      { id: 'pressure', text: 'Pressure' },
+    ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardJson)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: 'blue' },
+        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {

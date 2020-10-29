@@ -76,10 +76,15 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
 };
 
 const defaultProps = {

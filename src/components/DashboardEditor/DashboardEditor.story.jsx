@@ -14,7 +14,13 @@ import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import DashboardEditor from './DashboardEditor';
 
-const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
+const mockDataItems = [
+  { dataSourceId: 'torque_max', label: 'Torque Max' },
+  { dataSourceId: 'torque_min', label: 'Torque Min' },
+  { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+  { dataSourceId: 'temperature', label: 'Temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure' },
+];
 
 storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .addDecorator(withKnobs)
@@ -52,6 +58,100 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
         title="Custom dashboard"
+        dataItems={mockDataItems}
+        getValidDataItems={() => mockDataItems.slice(2)}
+        initialValue={object('initialValue', {
+          cards: [
+            {
+              id: 'Custom',
+              title: 'Custom rendered card',
+              type: 'CUSTOM',
+              size: 'MEDIUM',
+              value: 35,
+            },
+            {
+              id: 'Standard',
+              title: 'Default rendered card',
+              type: 'VALUE',
+              size: 'MEDIUM',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'key1',
+                    unit: '%',
+                    label: 'Key 1',
+                  },
+                  {
+                    dataSourceId: 'key2',
+                    unit: 'lb',
+                    label: 'Key 2',
+                  },
+                ],
+              },
+            },
+            {
+              id: 'Timeseries',
+              title: 'Untitled',
+              size: 'MEDIUMWIDE',
+              type: 'TIMESERIES',
+              content: {
+                series: [
+                  {
+                    label: 'Temperature',
+                    dataSourceId: 'temperature',
+                  },
+                  {
+                    label: 'Pressure',
+                    dataSourceId: 'pressure',
+                  },
+                ],
+                xLabel: 'Time',
+                yLabel: 'Temperature (˚F)',
+                includeZeroOnXaxis: true,
+                includeZeroOnYaxis: true,
+                timeDataSourceId: 'timestamp',
+                addSpaceOnEdges: 1,
+              },
+              interval: 'day',
+            },
+          ],
+          layouts: {},
+        })}
+        onEditTitle={action('onEditTitle')}
+        onImport={action('onImport')}
+        onExport={action('onExport')}
+        onDelete={action('onDelete')}
+        onCancel={action('onCancel')}
+        onSubmit={action('onSubmit')}
+        supportedCardTypes={array('supportedCardTypes', [
+          'TIMESERIES',
+          'SIMPLE_BAR',
+          'GROUPED_BAR',
+          'STACKED_BAR',
+          'VALUE',
+          'IMAGE',
+          'TABLE',
+        ])}
+        i18n={{
+          cardType_CUSTOM: 'Custom',
+        }}
+        headerBreadcrumbs={[
+          <Link href="www.ibm.com">Dashboard library</Link>,
+          <Link href="www.ibm.com">Favorites</Link>,
+        ]}
+      />
+    </div>
+  ))
+  .add('with custon onCardChange', () => (
+    <div style={{ height: 'calc(100vh - 6rem)' }}>
+      <DashboardEditor
+        title="Custom dashboard"
+        dataItems={mockDataItems}
+        getValidDataItems={() => mockDataItems.slice(2)}
+        onCardChange={(card) => {
+          console.log(card);
+          return card;
+        }}
         initialValue={object('initialValue', {
           cards: [
             {

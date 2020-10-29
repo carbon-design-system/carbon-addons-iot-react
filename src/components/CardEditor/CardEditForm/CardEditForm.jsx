@@ -43,10 +43,20 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardJson)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -78,6 +88,7 @@ const defaultProps = {
     // additional card type names can be provided using the convention of `cardType_TYPE`
   },
   getValidDataItems: null,
+  getValidTimeRanges: null,
   dataItems: [],
   onValidateCardJson: null,
 };
@@ -154,6 +165,7 @@ const CardEditForm = ({
   dataItems,
   onValidateCardJson,
   getValidDataItems,
+  getValidTimeRanges,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -195,6 +207,7 @@ const CardEditForm = ({
               i18n={mergedI18n}
               dataItems={dataItems}
               getValidDataItems={getValidDataItems}
+              getValidTimeRanges={getValidTimeRanges}
             />
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>

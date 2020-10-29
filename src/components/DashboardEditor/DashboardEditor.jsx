@@ -40,10 +40,22 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
+  /** if provided, will update the dashboard json according to its own logic */
+  onCardChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -98,7 +110,9 @@ const defaultProps = {
   title: null,
   onEditTitle: null,
   getValidDataItems: null,
+  getValidTimeRanges: null,
   dataItems: [],
+  onCardChange: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -132,9 +146,11 @@ const DashboardEditor = ({
   renderHeader,
   renderCardPreview,
   getValidDataItems,
+  getValidTimeRanges,
   dataItems,
   headerBreadcrumbs,
   notification,
+  onCardChange,
   onEditTitle,
   onImport,
   onExport,
@@ -274,11 +290,16 @@ const DashboardEditor = ({
               setDashboardJson({
                 ...dashboardJson,
                 cards: dashboardJson.cards.map((card) =>
-                  card.id === cardData.id ? cardData : card
+                  card.id === cardData.id
+                    ? onCardChange
+                      ? onCardChange(cardData, dashboardJson)
+                      : cardData
+                    : card
                 ),
               })
             }
             getValidDataItems={getValidDataItems}
+            getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
