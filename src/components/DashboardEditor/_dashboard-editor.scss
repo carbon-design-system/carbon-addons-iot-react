@@ -61,10 +61,6 @@
       outline: 2px solid $focus;
       outline-offset: -2px;
     }
-
-    &__card--selected {
-      outline: 3px dashed $active-secondary;
-    }
   }
   &--sidebar {
     height: 100%;
