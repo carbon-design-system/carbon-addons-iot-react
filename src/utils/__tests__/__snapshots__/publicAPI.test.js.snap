@@ -23524,6 +23524,7 @@ Map {
   "BarGroupedGraphIcon" => Object {},
   "BarStackGraphIcon" => Object {},
   "ComputerChipIcon" => Object {},
+  "CustomCardIcon" => Object {},
   "DashboardIcon" => Object {},
   "DataScientistIcon" => Object {},
   "DataTableIcon" => Object {},

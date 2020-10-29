@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
 
-import { CARD_DIMENSIONS } from '../../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_TYPES,
+} from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
@@ -199,7 +203,11 @@ const CardEditForm = ({
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>
             <CardEditFormSettings
-              cardJson={cardJson}
+              cardJson={
+                cardJson.type === CARD_TYPES.CUSTOM
+                  ? { ...omit(cardJson, 'content') }
+                  : cardJson
+              }
               onChange={onChange}
               i18n={mergedI18n}
               dataItems={dataItems}

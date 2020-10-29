@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  DASHBOARD_EDITOR_CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
@@ -11,6 +15,8 @@ import {
   getDefaultCard,
   getDuplicateCard,
   getCardPreview,
+  handleKeyDown,
+  handleOnClick,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -29,10 +35,11 @@ const propTypes = {
   renderHeader: PropTypes.func,
   /** if provided, is used to render cards in dashboard
    * renderCardPreview( cardData: Object,
+                        commonCardProps: Object
                         onSelectCard: Function,
                         onDuplicateCard: Function,
                         onRemoveCard: Function,
-                        isSelected: Boolean)
+                        isSelected: Boolean): Node
    */
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
@@ -199,6 +206,27 @@ const DashboardEditor = ({
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
 
+  const commonCardProps = (cardData, isSelected) => ({
+    key: cardData.id,
+    tooltip: cardData.description,
+    availableActions: { clone: true, delete: true },
+    onCardAction: (id, actionId) => {
+      if (actionId === CARD_ACTIONS.CLONE_CARD) {
+        onDuplicateCard(id);
+      }
+      if (actionId === CARD_ACTIONS.DELETE_CARD) {
+        onRemoveCard(id);
+      }
+    },
+    tabIndex: 0,
+    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardData.id),
+    onClick: () => handleOnClick(onSelectCard, cardData.id),
+    className: classnames(`${baseClassName}--preview__card`, {
+      // add black border when selected
+      [`${iotPrefix}--card--resizing`]: isSelected,
+    }),
+  });
+
   return (
     <div className={baseClassName}>
       <div className={`${baseClassName}--content`}>
@@ -241,22 +269,17 @@ const DashboardEditor = ({
               }>
               {dashboardJson.cards.map((cardData) => {
                 const isSelected = cardData.id === selectedCardId;
-                // if function not defined, or it returns falsy, render default preview
+                const cardProps = commonCardProps(cardData, isSelected);
+                // if renderCardPreview function not defined, or it returns null, render default preview
                 return (
                   renderCardPreview(
                     cardData,
+                    cardProps,
                     onSelectCard,
                     onDuplicateCard,
                     onRemoveCard,
                     isSelected
-                  ) ??
-                  getCardPreview(
-                    cardData,
-                    onSelectCard,
-                    onDuplicateCard,
-                    onRemoveCard,
-                    isSelected
-                  )
+                  ) ?? getCardPreview(cardData, cardProps)
                 );
               })}
             </DashboardGrid>

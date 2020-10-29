@@ -51,16 +51,9 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .add('with initialValue', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
-        title="Custom dashboard"
-        initialValue={object('initialValue', {
+        title={text('title', 'My dashboard')}
+        initialValue={{
           cards: [
-            {
-              id: 'Custom',
-              title: 'Custom rendered card',
-              type: 'CUSTOM',
-              size: 'MEDIUM',
-              value: 35,
-            },
             {
               id: 'Standard',
               title: 'Default rendered card',
@@ -106,9 +99,30 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
               },
               interval: 'day',
             },
+            {
+              id: 'CustomWithRenderFunction',
+              title: 'Custom card with render function',
+              type: 'CUSTOM',
+              size: 'MEDIUMWIDE',
+              content: () => (
+                <InlineNotification
+                  title="Custom component"
+                  subtitle="Add custom components by using the content prop"
+                  kind="info"
+                  lowContrast
+                />
+              ),
+            },
+            {
+              id: 'Custom',
+              title: 'Custom card with basic content',
+              type: 'CUSTOM',
+              size: 'SMALL',
+              content: <p>To add custom content, use the content prop</p>,
+            },
           ],
           layouts: {},
-        })}
+        }}
         onEditTitle={action('onEditTitle')}
         onImport={action('onImport')}
         onExport={action('onExport')}
@@ -191,7 +205,7 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
   .add('custom card preview renderer', () => (
     <div style={{ height: 'calc(100vh - 6rem)' }}>
       <DashboardEditor
-        title="Custom dashboard"
+        title={text('title', 'My dashboard')}
         initialValue={object('initialValue', {
           cards: [
             {
