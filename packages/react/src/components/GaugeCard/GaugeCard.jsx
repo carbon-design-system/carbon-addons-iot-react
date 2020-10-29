@@ -7,6 +7,7 @@ import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes
 import Card from '../Card/Card';
 import DataStateRenderer from '../Card/DataStateRenderer';
 import { settings } from '../../constants/Settings';
+import { getResizeHandles } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 // r value of the circle in SVG
@@ -48,6 +49,7 @@ export const getColor = (gauge, value) => {
   };
 };
 const GaugeCard = ({
+  children,
   id,
   title,
   tooltip,
@@ -55,6 +57,7 @@ const GaugeCard = ({
   values,
   data,
   isLoading,
+  isResizable,
   hasMoreData,
   size,
   className,
@@ -80,12 +83,15 @@ const GaugeCard = ({
         paddingLeft: CARD_CONTENT_PADDING,
       };
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       id={id}
       className={`${iotPrefix}--gauge-card`}
       title={title}
       size={size}
+      resizeHandles={resizeHandles}
       {...others}
       tooltip={tooltip}
       isLoading={isLoading}

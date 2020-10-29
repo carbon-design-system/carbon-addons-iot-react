@@ -106,10 +106,16 @@
         "no-shadow": 0,
         "no-console": 0,
         "no-extend-native": 0,
-        "no-restricted-imports": ["warn", {
-          "name": "@testing-library/jest-dom",
-          "message": "@testing-library/jest-dom is already imported globally in /config/jest/setupTest.js"
-        }],
+        "no-restricted-imports": ["error", {
+          "paths": [{
+            "name": "@testing-library/jest-dom",
+            "message": "@testing-library/jest-dom is already imported globally in /config/jest/setupTest.js"
+          }],
+          // would really like this to have a custom message, but its not available for patterns
+          // SVGs can't be imported directly. They must be convert to react components via svgr cli first
+          // https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.github/CONTRIBUTING.MD#adding-new-svg-images
+          "patterns": ["*.svg"]
+      }],
         "no-template-curly-in-string": 0,
         "react/prop-types": 0,
         "react/jsx-no-bind": 0

@@ -12,6 +12,7 @@ import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
+  getResizeHandles,
   getUpdatedCardSize,
   handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
@@ -227,17 +228,21 @@ const ValueCard = ({
   size,
   values: valuesProp,
   isEditable,
+  isResizable,
   i18n,
   dataState,
   id,
   locale,
   customFormatter,
+  children,
   ...others
 }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
   };
+
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const { title, content, values } = handleCardVariables(
@@ -280,6 +285,8 @@ const ValueCard = ({
             availableActions={availableActions}
             isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
+            isResizable={isResizable}
+            resizeHandles={resizeHandles}
             i18n={i18n}
             id={id}
             {...others}
@@ -367,6 +374,7 @@ const ValueCard = ({
                 ))
               )}
             </ContentWrapper>
+            {resizeHandles}
           </Card>
         );
       }}

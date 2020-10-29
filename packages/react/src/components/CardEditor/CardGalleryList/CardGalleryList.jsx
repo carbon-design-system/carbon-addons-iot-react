@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 import { SimpleList } from '../../../index';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../../constants/LayoutConstants';
-
-import timeSeriesImg from './line-graph.svg';
-import simpleBarImg from './simple-bar-graph.svg';
-import groupedBarImg from './bar-grouped-graph.svg';
-import stackedBarImg from './bar-stack-graph.svg';
-import valueImg from './value-kpi.svg';
-import imageImg from './image.svg';
-import tableImg from './data-table.svg';
-import alertTableImg from './alert-table.svg';
-import listImg from './list.svg';
+import {
+  LineGraphIcon,
+  SimpleBarGraphIcon,
+  BarGroupedGraphIcon,
+  BarStackGraphIcon,
+  ValueKpiIcon,
+  ImageIcon,
+  DataTableIcon,
+  AlertTableIcon,
+  ListIcon,
+} from '../../../icons/components';
 
 const propTypes = {
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
@@ -53,16 +54,15 @@ const defaultProps = {
 };
 
 const iconTypeMap = {
-  TIMESERIES: <img src={timeSeriesImg} alt="Time series" />,
-  SIMPLE_BAR: <img src={simpleBarImg} alt="Simple bar" />,
-  GROUPED_BAR: <img src={groupedBarImg} alt="Grouped bar" />,
-  STACKED_BAR: <img src={stackedBarImg} alt="Stacked bar" />,
-  VALUE: <img src={valueImg} alt="Value / KPI" />,
-  // eslint-disable-next-line jsx-a11y/img-redundant-alt
-  IMAGE: <img src={imageImg} alt="Image card" />,
-  TABLE: <img src={tableImg} alt="Table" />,
-  ALERT: <img src={alertTableImg} alt="Alert table" />,
-  LIST: <img src={listImg} alt="List" />,
+  TIMESERIES: <LineGraphIcon />,
+  SIMPLE_BAR: <SimpleBarGraphIcon />,
+  GROUPED_BAR: <BarGroupedGraphIcon />,
+  STACKED_BAR: <BarStackGraphIcon />,
+  VALUE: <ValueKpiIcon />,
+  IMAGE: <ImageIcon />,
+  TABLE: <DataTableIcon />,
+  ALERT: <AlertTableIcon />,
+  LIST: <ListIcon />,
 };
 
 const CardGalleryList = ({ supportedCardTypes, onAddCard, i18n }) => {

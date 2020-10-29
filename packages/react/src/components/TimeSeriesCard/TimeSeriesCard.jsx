@@ -11,9 +11,11 @@ import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import cheerio from 'cheerio';
 
-import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import {
+  convertStringsToDOMElement,
+  csvDownloadHandler,
+} from '../../utils/componentUtilityFunctions';
 import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
@@ -27,6 +29,7 @@ import {
   getUpdatedCardSize,
   handleCardVariables,
   chartValueFormatter,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -157,12 +160,13 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
 
 /**
  * Extends default tooltip with the additional date information, and optionally alert information
- * @param {object} data data object for this particular datapoint should have a date field containing the timestamp
+ * @param {object} dataOrHoveredElement data object for this particular datapoint should have a date field containing the timestamp
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
- * @param {string} tooltipDataFormatPattern
+ * @param {string} tooltipDateFormatPattern
+ * @returns {string} DOM representation of the tooltip
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -178,11 +182,11 @@ export const handleTooltip = (
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
-                        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
-                          ? moment.utc(timeStamp)
-                          : moment(timeStamp)
-                        ).format(tooltipDateFormatPattern)}</p>
-                     </li>`
+        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+          ? moment.utc(timeStamp)
+          : moment(timeStamp)
+        ).format(tooltipDateFormatPattern)}</p>
+      </li>`
     : '';
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
@@ -193,13 +197,29 @@ export const handleTooltip = (
         )
         .join('')
     : '';
-  const parsedTooltip = cheerio.load(defaultTooltip);
-  // the first <li> will always be carbon chart's Dates row in this case, replace with our date format
-  parsedTooltip('li:first-child').replaceWith(dateLabel);
 
-  // append the matching alert labels
-  parsedTooltip('ul').append(matchingAlertLabels);
-  return parsedTooltip.html('ul');
+  // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
+  const [
+    defaultTooltipDOM,
+    dateLabelDOM,
+    matchingAlertLabelsDOM,
+  ] = convertStringsToDOMElement([
+    defaultTooltip,
+    dateLabel,
+    matchingAlertLabels,
+  ]);
+
+  // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
+  defaultTooltipDOM
+    .querySelector('li:first-child')
+    .replaceWith(dateLabelDOM.querySelector('li'));
+
+  // Append all the matching alert labels
+  matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
+    defaultTooltipDOM.querySelector('ul').append(label);
+  });
+
+  return defaultTooltipDOM.innerHTML;
 };
 
 /**
@@ -222,9 +242,11 @@ export const formatColors = (series) => {
 const TimeSeriesCard = ({
   title: titleProp,
   content,
+  children,
   size,
   interval,
   isEditable,
+  isResizable,
   values: initialValues,
   locale,
   i18n: { alertDetected, noDataLabel },
@@ -419,6 +441,8 @@ const TimeSeriesCard = ({
   // TODO: remove in next release
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       title={title}
@@ -431,7 +455,7 @@ const TimeSeriesCard = ({
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
-    >
+      resizeHandles={resizeHandles}>
       {!isChartDataEmpty ? (
         <>
           <div

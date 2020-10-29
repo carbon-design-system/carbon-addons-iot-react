@@ -14,6 +14,7 @@ import isEmpty from 'lodash/isEmpty';
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
+import { getResizeHandles } from '../../utils/cardUtilityFunctions';
 
 const ListCard = ({
   id,
@@ -21,10 +22,12 @@ const ListCard = ({
   size,
   data,
   isLoading,
+  isResizable,
   loadData,
   hasMoreData,
   layout,
   className,
+  children,
   ...others
 }) => {
   const handleScroll = (e) => {
@@ -39,6 +42,8 @@ const ListCard = ({
     }
   };
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       id={id}
@@ -46,8 +51,8 @@ const ListCard = ({
       size={size}
       onScroll={handleScroll}
       isEmpty={isEmpty(data)}
-      {...others}
-    >
+      resizeHandles={resizeHandles}
+      {...others}>
       <div
         className={classnames('list-card', className)}
         style={{

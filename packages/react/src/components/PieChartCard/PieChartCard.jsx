@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PieChart from '@carbon/charts-react/pie-chart';
 import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
@@ -7,8 +7,15 @@ import assign from 'lodash/assign';
 import { PieCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
-import { handleCardVariables, increaseSmallCardSize } from '../../utils/cardUtilityFunctions';
-import { csvDownloadHandler, getOverrides } from '../../utils/componentUtilityFunctions';
+import {
+  getResizeHandles,
+  handleCardVariables,
+  increaseSmallCardSize,
+} from '../../utils/cardUtilityFunctions';
+import {
+  csvDownloadHandler,
+  getOverrides,
+} from '../../utils/componentUtilityFunctions';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
 
@@ -68,6 +75,7 @@ const defaultProps = {
 };
 
 const PieChartCard = ({
+  children,
   content,
   i18n: { noDataLabel },
   i18n,
@@ -75,6 +83,7 @@ const PieChartCard = ({
   isExpanded,
   isEditable,
   isLoading,
+  isResizable,
   overrides,
   size: sizeProp,
   title: titleProp,
@@ -95,12 +104,19 @@ const PieChartCard = ({
     values: valuesProp,
   } = handleCardVariables(titleProp, contentWithDefaults, initialValuesProp, others);
 
-  const sampleSlicesCount = colorsProp ? Object.keys(colorsProp).length : 4;
-  const values = isEditable ? generateSampleData(sampleSlicesCount, groupDataSourceId) : valuesProp;
+  const values = useMemo(() => {
+    const sampleSlicesCount = colorsProp ? Object.keys(colorsProp).length : 4;
+    return isEditable
+      ? generateSampleData(sampleSlicesCount, groupDataSourceId)
+      : valuesProp;
+  }, [colorsProp, groupDataSourceId, valuesProp, isEditable]);
+
   const colors =
     isEditable && colorsProp
       ? getColorsForSampleData(colorsProp, values, groupDataSourceId)
       : colorsProp;
+
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   const chartProps = {
     // Changes to some options does not update the chart so we modify the key for these
@@ -177,6 +193,8 @@ const PieChartCard = ({
       // the loading skeleton from the PieChart instead.
       isEmpty={isAllValuesEmpty && !isLoading}
       isEditable={isEditable}
+      isResizable={isResizable}
+      resizeHandles={resizeHandles}
       testID={testID}
       {...others}
       {...overrides?.card?.props}
@@ -193,6 +211,7 @@ const PieChartCard = ({
           ) : null}
         </div>
       ) : null}
+      {resizeHandles}
     </MyCard>
   );
 };
