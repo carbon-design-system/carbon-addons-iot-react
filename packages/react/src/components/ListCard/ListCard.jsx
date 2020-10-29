@@ -52,7 +52,8 @@ const ListCard = ({
       onScroll={handleScroll}
       isEmpty={isEmpty(data)}
       resizeHandles={resizeHandles}
-      {...others}>
+      {...others}
+    >
       <div
         className={classnames('list-card', className)}
         style={{

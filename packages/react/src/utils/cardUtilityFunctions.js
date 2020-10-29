@@ -395,9 +395,7 @@ const resizeHandleId = 'resizableHandle';
  * @param {} children the react children data structure containing the resizeHandles
  */
 export const getResizeHandles = (children) =>
-  React.Children.toArray(children).filter((child) =>
-    child.key?.includes(resizeHandleId)
-  );
+  React.Children.toArray(children).filter((child) => child.key?.includes(resizeHandleId));
 
 /**
  * Custom hook that manages the isResizable state. It does that by wrapping
@@ -411,18 +409,12 @@ export const getResizeHandles = (children) =>
  * @param {} children the react children data structure containing the resizeHandles
  * @param {boolean} isResizable true if the component using the hook should be resizable
  */
-export const useCardResizing = (
-  wrappingCardResizeHandles,
-  children,
-  isResizable
-) => {
+export const useCardResizing = (wrappingCardResizeHandles, children, isResizable) => {
   const [isResizing, setIsResizing] = useState(false);
   const resizeHandlesWithEventHandling = useMemo(
     () => {
       const resizeHandles =
-        wrappingCardResizeHandles ||
-        (isResizable && getResizeHandles(children)) ||
-        [];
+        wrappingCardResizeHandles || (isResizable && getResizeHandles(children)) || [];
 
       return resizeHandles.map((handleElement) =>
         React.cloneElement(handleElement, {

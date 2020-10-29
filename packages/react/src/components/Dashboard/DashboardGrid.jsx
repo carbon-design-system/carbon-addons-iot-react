@@ -84,20 +84,14 @@ const getClosestMatchingSizes = ({ sortedSizes, value, dimension }) => {
   const closestDimensionValue = closestLargerSize
     ? closestLargerSize[dimension]
     : sortedSizes[sortedSizes.length - 1][dimension];
-  return sortedSizes.filter(
-    (size) => size[dimension] === closestDimensionValue
-  );
+  return sortedSizes.filter((size) => size[dimension] === closestDimensionValue);
 };
 
 const getMatchingCardSizesByDimension = ({ breakpointSizes, ...rest }) => {
   const { value, dimension } = rest;
-  const sortedSizes = breakpointSizes.sort(
-    (a, b) => a[dimension] - b[dimension]
-  );
+  const sortedSizes = breakpointSizes.sort((a, b) => a[dimension] - b[dimension]);
   const matchingSizes = sortedSizes.filter((size) => size[dimension] === value);
-  return matchingSizes.length
-    ? matchingSizes
-    : getClosestMatchingSizes({ sortedSizes, ...rest });
+  return matchingSizes.length ? matchingSizes : getClosestMatchingSizes({ sortedSizes, ...rest });
 };
 
 /**
@@ -274,14 +268,9 @@ const DashboardGrid = ({
       w: layoutItem.w + colsJumped,
     };
 
-    const matchedSize = getMatchingCardSize(
-      jumpAdjustedlayoutItem,
-      breakpointSizes
-    );
+    const matchedSize = getMatchingCardSize(jumpAdjustedlayoutItem, breakpointSizes);
 
-    const renderedCardSizeName = cards.find(
-      (card) => card.props.id === layoutItem.i
-    ).props.size;
+    const renderedCardSizeName = cards.find((card) => card.props.id === layoutItem.i).props.size;
     placeholder.h = matchedSize.h;
     placeholder.w = matchedSize.w;
     layoutItem.h = matchedSize.h;

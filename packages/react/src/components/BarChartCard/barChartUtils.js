@@ -4,10 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
 import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
-import {
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
 /**
@@ -333,9 +330,7 @@ export const handleTooltip = (
 
     // First remove carbon charts default Date tooltip
     // the first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-    parsedTooltip
-      .querySelector('li:first-child')
-      .replaceWith(parsedDateLabel.querySelector('li'));
+    parsedTooltip.querySelector('li:first-child').replaceWith(parsedDateLabel.querySelector('li'));
   }
 
   return parsedTooltip.innerHTML;

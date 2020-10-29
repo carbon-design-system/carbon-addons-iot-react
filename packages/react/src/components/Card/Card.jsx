@@ -18,14 +18,8 @@ import {
   DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
-import {
-  getCardMinSize,
-  filterValidAttributes,
-} from '../../utils/componentUtilityFunctions';
-import {
-  getUpdatedCardSize,
-  useCardResizing,
-} from '../../utils/cardUtilityFunctions';
+import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
+import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -356,7 +350,8 @@ const Card = (props) => {
                 }
                 className={classnames(`${iotPrefix}--card`, className, {
                   [`${iotPrefix}--card--resizing`]: isResizing,
-                })}>
+                })}
+              >
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>

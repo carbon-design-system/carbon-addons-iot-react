@@ -12,10 +12,7 @@ import {
   handleCardVariables,
   increaseSmallCardSize,
 } from '../../utils/cardUtilityFunctions';
-import {
-  csvDownloadHandler,
-  getOverrides,
-} from '../../utils/componentUtilityFunctions';
+import { csvDownloadHandler, getOverrides } from '../../utils/componentUtilityFunctions';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
 
@@ -106,9 +103,7 @@ const PieChartCard = ({
 
   const values = useMemo(() => {
     const sampleSlicesCount = colorsProp ? Object.keys(colorsProp).length : 4;
-    return isEditable
-      ? generateSampleData(sampleSlicesCount, groupDataSourceId)
-      : valuesProp;
+    return isEditable ? generateSampleData(sampleSlicesCount, groupDataSourceId) : valuesProp;
   }, [colorsProp, groupDataSourceId, valuesProp, isEditable]);
 
   const colors =

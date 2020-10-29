@@ -31,17 +31,14 @@ describe('DashboardGrid', () => {
     };
 
     // if no layouts exist they should be generated
-    const generated = findLayoutOrGenerate({}, [
-      { id: 'mycard', size: CARD_SIZES.MEDIUM },
-    ]);
+    const generated = findLayoutOrGenerate({}, [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]);
 
     expect(generated).toEqual(layouts);
 
     // if layout is missing card it should be regenerated
-    const regenerated = findLayoutOrGenerate(
-      { max: [], xl: [], lg: [], md: [], sm: [], xs: [] },
-      [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]
-    );
+    const regenerated = findLayoutOrGenerate({ max: [], xl: [], lg: [], md: [], sm: [], xs: [] }, [
+      { id: 'mycard', size: CARD_SIZES.MEDIUM },
+    ]);
     expect(regenerated).toEqual(layouts);
 
     // if every layout already exists, the card should have dimensions added
@@ -220,18 +217,13 @@ describe('DashboardGrid', () => {
     it('adds resize handles for all cards with isResizable: true', () => {
       const resizeHandleClass = 'react-resizable-handle';
       const expectToBeResizable = (testId, resizeHandleIndex = 2) => {
-        const resizeHandle = screen.getByTestId(testId).childNodes[
-          resizeHandleIndex
-        ];
+        const resizeHandle = screen.getByTestId(testId).childNodes[resizeHandleIndex];
         expect(resizeHandle).toHaveClass(resizeHandleClass);
         expect(resizeHandle).toBeVisible();
       };
 
       const { rerender } = render(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={getLayouts()}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={getLayouts()} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: true })}
         </DashboardGrid>
       );
@@ -249,10 +241,7 @@ describe('DashboardGrid', () => {
 
       const emptyLayouts = {};
       rerender(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={emptyLayouts}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={emptyLayouts} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: true })}
         </DashboardGrid>
       );
@@ -264,10 +253,7 @@ describe('DashboardGrid', () => {
         [BREAKPOINT]: [{ i: 'nonExistingCard', x: 0, y: 0, w: 4, h: 1 }],
       };
       rerender(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={layoutwithMissingCards}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={layoutwithMissingCards} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: true })}
         </DashboardGrid>
       );
@@ -279,9 +265,7 @@ describe('DashboardGrid', () => {
     it('prevents resize handles for all cards with isResizable: false', () => {
       const resizeHandleClass = 'react-resizable-handle';
       const expectNotToBeResizable = (testId, resizeHandleIndex = 2) => {
-        const element = screen.getByTestId(testId).childNodes[
-          resizeHandleIndex
-        ];
+        const element = screen.getByTestId(testId).childNodes[resizeHandleIndex];
         if (element) {
           expect(element).not.toHaveClass(resizeHandleClass);
         } else {
@@ -290,10 +274,7 @@ describe('DashboardGrid', () => {
       };
 
       const { rerender } = render(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={getLayouts()}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={getLayouts()} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: false })}
         </DashboardGrid>
       );
@@ -310,10 +291,7 @@ describe('DashboardGrid', () => {
 
       const emptyLayouts = {};
       rerender(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={emptyLayouts}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={emptyLayouts} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: false })}
         </DashboardGrid>
       );
@@ -325,10 +303,7 @@ describe('DashboardGrid', () => {
         [BREAKPOINT]: [{ i: 'nonExistingCard', x: 0, y: 0, w: 4, h: 1 }],
       };
       rerender(
-        <DashboardGrid
-          {...callbackMocks}
-          layouts={layoutwithMissingCards}
-          breakpoint={BREAKPOINT}>
+        <DashboardGrid {...callbackMocks} layouts={layoutwithMissingCards} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: false })}
         </DashboardGrid>
       );
@@ -338,11 +313,7 @@ describe('DashboardGrid', () => {
     });
 
     it('it matches dimensions (height first) to closest larger or equally large card size', () => {
-      const breakpointSizes = getBreakPointSizes(
-        'xl',
-        CARD_DIMENSIONS,
-        CARD_SIZES
-      );
+      const breakpointSizes = getBreakPointSizes('xl', CARD_DIMENSIONS, CARD_SIZES);
 
       const size = getMatchingCardSize({ w: 1, h: 1 }, breakpointSizes);
       expect(size.name).toEqual(CARD_SIZES.SMALL);

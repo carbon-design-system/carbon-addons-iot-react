@@ -137,7 +137,8 @@ const BarChartCard = ({
       isLoading={isLoading}
       isResizable={isResizable}
       resizeHandles={resizeHandles}
-      {...others}>
+      {...others}
+    >
       {!isAllValuesEmpty ? (
         <div
           className={classnames(`${iotPrefix}--bar-chart-container`, {

@@ -7,10 +7,7 @@ import { spacing05 } from '@carbon/layout';
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
-import {
-  getResizeHandles,
-  getUpdatedCardSize,
-} from '../../utils/cardUtilityFunctions';
+import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 

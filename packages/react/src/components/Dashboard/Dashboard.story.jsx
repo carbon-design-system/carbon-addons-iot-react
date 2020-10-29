@@ -17,11 +17,7 @@ import {
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
-import {
-  DashboardIcon,
-  DataScientistIcon,
-  ComputerChipIcon,
-} from '../../icons/components';
+import { DashboardIcon, DataScientistIcon, ComputerChipIcon } from '../../icons/components';
 
 import Dashboard from './Dashboard';
 
@@ -1298,7 +1294,8 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           bottom: '0',
                           width: '100%',
                           padding: '0 36px 16px 0',
-                        }}>
+                        }}
+                      >
                         <DashboardIcon width="50%" />
                       </div>
                     </div>
@@ -1327,7 +1324,8 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                           bottom: '0',
                           width: '100%',
                           padding: '0 36px 16px 0',
-                        }}>
+                        }}
+                      >
                         <ComputerChipIcon width="50%" />
                       </div>
                     </div>
@@ -1350,7 +1348,8 @@ storiesOf('Watson IoT/Dashboard (Deprecated)', module)
                         bottom: '0',
                         width: '100%',
                         padding: '0 36px 16px 0',
-                      }}>
+                      }}
+                    >
                       <DataScientistIcon width="50%" />
                     </div>
                   </div>

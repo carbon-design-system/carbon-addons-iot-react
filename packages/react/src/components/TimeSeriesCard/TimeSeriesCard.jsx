@@ -199,20 +199,14 @@ export const handleTooltip = (
     : '';
 
   // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
-  const [
-    defaultTooltipDOM,
-    dateLabelDOM,
-    matchingAlertLabelsDOM,
-  ] = convertStringsToDOMElement([
+  const [defaultTooltipDOM, dateLabelDOM, matchingAlertLabelsDOM] = convertStringsToDOMElement([
     defaultTooltip,
     dateLabel,
     matchingAlertLabels,
   ]);
 
   // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-  defaultTooltipDOM
-    .querySelector('li:first-child')
-    .replaceWith(dateLabelDOM.querySelector('li'));
+  defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
 
   // Append all the matching alert labels
   matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
@@ -455,7 +449,8 @@ const TimeSeriesCard = ({
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
-      resizeHandles={resizeHandles}>
+      resizeHandles={resizeHandles}
+    >
       {!isChartDataEmpty ? (
         <>
           <div

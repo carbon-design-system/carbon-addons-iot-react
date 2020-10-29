@@ -5,11 +5,7 @@ import { boolean } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
-import {
-  CARD_DIMENSIONS,
-  CARD_SIZES,
-  CARD_TYPES,
-} from '../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import { chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
 import ValueCard from '../ValueCard/ValueCard';
@@ -93,9 +89,7 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           You can drag and drop the cards around. Watch the handler get triggered on the Actions
           tab.
           <FullWidthWrapper>
-            <DashboardGrid
-              {...commonGridProps}
-              isEditable={boolean('isEditable', true)}>
+            <DashboardGrid {...commonGridProps} isEditable={boolean('isEditable', true)}>
               {Cards}
             </DashboardGrid>
           </FullWidthWrapper>
@@ -339,22 +333,21 @@ storiesOf('Watson IoT/Dashboard Grid', module)
 
         return (
           <Fragment>
-            The card is resizable by dragging and the card size prop is
-            automatically updated to match the new size during the drag process.
+            The card is resizable by dragging and the card size prop is automatically updated to
+            match the new size during the drag process.
             <FullWidthWrapper>
               <DashboardGrid
                 {...commonGridProps}
                 layouts={layouts}
                 breakpoint={currentBreakpoint}
-                onBreakpointChange={(newBreakpoint) =>
-                  setCurrentBreakpoint(newBreakpoint)
-                }
+                onBreakpointChange={(newBreakpoint) => setCurrentBreakpoint(newBreakpoint)}
                 onCardSizeChange={(cardSizeData, gridData) => {
                   const { size } = cardSizeData;
                   action('onCardSizeChange')(cardSizeData, gridData);
                   setCurrentSize(size);
                 }}
-                onResizeStop={action('onResizeStop')}>
+                onResizeStop={action('onResizeStop')}
+              >
                 {[
                   <Card
                     title={`Card - ${currentSize}`}
@@ -559,14 +552,7 @@ storiesOf('Watson IoT/Dashboard Grid', module)
           link: 'https://internetofthings.ibmcloud.com/',
           extraContent: (
             <svg height="10" width="30">
-              <circle
-                cx="5"
-                cy="5"
-                r="3"
-                stroke="none"
-                strokeWidth="1"
-                fill="red"
-              />
+              <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
             </svg>
           ),
         },
@@ -600,7 +586,8 @@ storiesOf('Watson IoT/Dashboard Grid', module)
             size={currentSizes.card}
             availableActions={{
               delete: true,
-            }}>
+            }}
+          >
             <p>This is a basic card</p>
           </Card>,
           <ValueCard
@@ -819,9 +806,8 @@ storiesOf('Watson IoT/Dashboard Grid', module)
         return (
           <Fragment>
             <p>
-              All cards are resizable by dragging and the card size prop is
-              automatically updated to match the new size during the drag
-              process. Some cards have a minimal size defined.
+              All cards are resizable by dragging and the card size prop is automatically updated to
+              match the new size during the drag process. Some cards have a minimal size defined.
             </p>
             <FullWidthWrapper>
               <DashboardGrid
@@ -836,7 +822,8 @@ storiesOf('Watson IoT/Dashboard Grid', module)
                   action('onCardSizeChange')({ id, size }, rest);
                   setCurrentSizes((old) => ({ ...old, [id]: size }));
                 }}
-                onResizeStop={action('onResizeStop')}>
+                onResizeStop={action('onResizeStop')}
+              >
                 {CARDS_ALL_SIZES}
               </DashboardGrid>
             </FullWidthWrapper>
