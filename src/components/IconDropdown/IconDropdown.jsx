@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
 import { settings } from '../../constants/Settings';
 import { Button } from '../../index';
@@ -27,6 +28,9 @@ const defaultPropTypes = {
   columnCount: 4,
 };
 
+const defaultItemWidth = 48;
+const defaultHelperPadding = 4;
+
 const IconDropdown = ({
   columnCount,
   selectedViewId,
@@ -37,20 +41,39 @@ const IconDropdown = ({
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [uuid] = useState(`dropdown-${uuidv4()}`);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const dropdownRef = useRef(null);
 
   const onSelectionChange = (changes) => {
     const { selectedItem } = changes;
     onChangeView(selectedItem);
   };
 
+  // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
+  const dropdown = document.getElementsByClassName(`${uuid}`)[0];
+  const helperText = dropdown?.getElementsByClassName(
+    `${prefix}--form__helper-text`
+  )[0];
+  const validationText = dropdown?.getElementsByClassName(
+    `${prefix}--form-requirement`
+  )[0];
+  const menu = dropdown?.getElementsByClassName(`${prefix}--list-box__menu`)[0];
+  const menuOption = dropdown?.getElementsByClassName(
+    `${prefix}--list-box__menu-item`
+  )[0];
   const helperTextHeight =
-    document.body.getElementsByClassName(`${prefix}--form__helper-text`)[0]
-      ?.clientHeight + 4 ?? 0;
-  const widthStyle = `${columnCount * 48}px`;
-  const heightStyle = `${Math.ceil(items.length / columnCount) * 48}px`;
+    helperText !== undefined
+      ? helperText.clientHeight + defaultHelperPadding
+      : 0;
+  const validationTextHeight =
+    validationText !== undefined
+      ? validationText.clientHeight + defaultHelperPadding
+      : 0;
 
+  const widthStyle = `${
+    columnCount * (menuOption?.clientWidth ?? defaultItemWidth)
+  }px`;
+  const heightStyle = menu?.clientHeight;
   const Footer = () => {
     const selectedItem = items.filter((item) => item.id === selectedViewId);
     const highlightedItem =
@@ -66,7 +89,9 @@ const IconDropdown = ({
         className={`${iotPrefix}--dropdown__footer`}
         style={{
           width: widthStyle,
-          transform: `translateY(-${helperTextHeight}px)`,
+          transform: `translateY(-${
+            helperTextHeight + validationTextHeight
+          }px)`,
           paddingTop: heightStyle,
         }}>
         <div className={`${iotPrefix}--dropdown__footer-content`}>
@@ -103,7 +128,7 @@ const IconDropdown = ({
   };
 
   return (
-    <div ref={dropdownRef}>
+    <div className={`${uuid}`}>
       <Dropdown
         style={{ width: widthStyle }}
         items={items}

@@ -19,7 +19,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconD
         }
       }
     >
-      <div>
+      <div
+        className="dropdown-7cf07035-39ad-4b54-832f-91f0b473bf94"
+      >
         <div
           actions={Object {}}
           className="bx--dropdown__wrapper bx--list-box__wrapper"
