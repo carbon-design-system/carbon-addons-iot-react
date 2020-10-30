@@ -605,4 +605,104 @@ describe('TableCard', () => {
 
     expect(screen.getByText('Testing resize')).toBeInTheDocument();
   });
+
+  it('last column is not dublicated when changeing sizes', () => {
+    const { rerender } = render(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    expect(screen.queryAllByText('Pressure')).toHaveLength(1);
+  });
+
+  it('hides low priority columns for LARGE and LARGETHIN sizes', () => {
+    const { rerender } = render(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+
+    // Column Count has priority 3 so it should be hidden
+    expect(screen.queryAllByTitle('Count')).toHaveLength(0);
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    expect(screen.queryAllByTitle('Count')).toHaveLength(1);
+  });
+
+  it('shows toolbar expand button only when low priority columns are hidden', () => {
+    const { rerender } = render(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+    expect(screen.getByTitle('Expand to fullscreen')).toBeVisible();
+
+    rerender(
+      <TableCard
+        id="table-list"
+        title="Testing resize"
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    expect(screen.queryAllByTitle('Expand to fullscreen')).toHaveLength(0);
+  });
 });
