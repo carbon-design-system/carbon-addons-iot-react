@@ -34,7 +34,7 @@ const propTypes = {
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
   /** if provided, is used to render cards in dashboard
-   * renderCardPreview( cardData: Object,
+   * renderCardPreview( cardConfig: Object,
                         commonCardProps: Object
                         onSelectCard: Function,
                         onDuplicateCard: Function,
@@ -76,7 +76,7 @@ const propTypes = {
   /** Whether to disable the submit button */
   submitDisabled: PropTypes.bool,
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardJson)
+   * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
@@ -169,12 +169,12 @@ const DashboardEditor = ({
    * @param {string} type card type
    */
   const addCard = (type) => {
-    const cardData = getDefaultCard(type, mergedI18n);
+    const cardConfig = getDefaultCard(type, mergedI18n);
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -182,14 +182,14 @@ const DashboardEditor = ({
    * @param {string} id
    */
   const duplicateCard = (id) => {
-    const cardData = getDuplicateCard(
+    const cardConfig = getDuplicateCard(
       dashboardJson.cards.find((i) => i.id === id)
     );
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -206,24 +206,25 @@ const DashboardEditor = ({
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
 
-  const commonCardProps = (cardData, isSelected) => ({
-    key: cardData.id,
-    tooltip: cardData.description,
+  const commonCardProps = (cardConfig, isSelected) => ({
+    key: cardConfig.id,
+    tooltip: cardConfig.description,
     availableActions: { clone: true, delete: true },
     onCardAction: (id, actionId) => {
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
         onDuplicateCard(id);
-      }
-      if (actionId === CARD_ACTIONS.DELETE_CARD) {
+      } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
       }
     },
     tabIndex: 0,
-    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardData.id),
-    onClick: () => handleOnClick(onSelectCard, cardData.id),
+    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardConfig.id),
+    onClick: () => handleOnClick(onSelectCard, cardConfig.id),
     className: classnames(`${baseClassName}--preview__card`, {
       // add black border when selected
-      [`${iotPrefix}--card--resizing`]: isSelected,
+      // TODO: swap this to the true isSelected card prop once this issue is closed:
+      // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1621
+      [`${iotPrefix}--card__selected`]: isSelected,
     }),
   });
 
@@ -267,19 +268,19 @@ const DashboardEditor = ({
                   layouts: newLayouts,
                 })
               }>
-              {dashboardJson.cards.map((cardData) => {
-                const isSelected = cardData.id === selectedCardId;
-                const cardProps = commonCardProps(cardData, isSelected);
+              {dashboardJson.cards.map((cardConfig) => {
+                const isSelected = cardConfig.id === selectedCardId;
+                const cardProps = commonCardProps(cardConfig, isSelected);
                 // if renderCardPreview function not defined, or it returns null, render default preview
                 return (
                   renderCardPreview(
-                    cardData,
+                    cardConfig,
                     cardProps,
                     onSelectCard,
                     onDuplicateCard,
                     onRemoveCard,
                     isSelected
-                  ) ?? getCardPreview(cardData, cardProps)
+                  ) ?? getCardPreview(cardConfig, cardProps)
                 );
               })}
             </DashboardGrid>
@@ -297,16 +298,16 @@ const DashboardEditor = ({
             />
           }>
           <CardEditor
-            cardJson={dashboardJson.cards.find(
+            cardConfig={dashboardJson.cards.find(
               (card) => card.id === selectedCardId
             )}
             onShowGallery={() => setSelectedCardId(null)}
-            onChange={(cardData) =>
+            onChange={(cardConfig) =>
               // TODO: this is really inefficient
               setDashboardJson({
                 ...dashboardJson,
                 cards: dashboardJson.cards.map((card) =>
-                  card.id === cardData.id ? cardData : card
+                  card.id === cardConfig.id ? cardConfig : card
                 ),
               })
             }

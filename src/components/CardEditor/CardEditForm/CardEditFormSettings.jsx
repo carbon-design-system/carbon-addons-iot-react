@@ -8,7 +8,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
-  cardJson: PropTypes.shape({
+  cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
     size: PropTypes.string,
@@ -43,7 +43,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  cardJson: {},
+  cardConfig: {},
   i18n: {
     xAxisLabel: 'X-axis label',
     yAxisLabel: 'Y-axis label',
@@ -53,9 +53,9 @@ const defaultProps = {
   },
 };
 
-const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
+const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content, id } = cardJson;
+  const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -68,8 +68,8 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           light
           onChange={(evt) =>
             onChange({
-              ...cardJson,
-              content: { ...cardJson.content, xLabel: evt.target.value },
+              ...cardConfig,
+              content: { ...cardConfig.content, xLabel: evt.target.value },
             })
           }
           value={content?.xLabel}
@@ -82,8 +82,8 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           light
           onChange={(evt) =>
             onChange({
-              ...cardJson,
-              content: { ...cardJson.content, yLabel: evt.target.value },
+              ...cardConfig,
+              content: { ...cardConfig.content, yLabel: evt.target.value },
             })
           }
           value={content?.yLabel}
@@ -96,8 +96,8 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           light
           onChange={(evt) =>
             onChange({
-              ...cardJson,
-              content: { ...cardJson.content, unit: evt.target.value },
+              ...cardConfig,
+              content: { ...cardConfig.content, unit: evt.target.value },
             })
           }
           value={content?.unit}
@@ -110,9 +110,9 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
           light
           onChange={(evt) =>
             onChange({
-              ...cardJson,
+              ...cardConfig,
               content: {
-                ...cardJson.content,
+                ...cardConfig.content,
                 decimalPrecision: evt.target.value,
               },
             })
@@ -132,7 +132,7 @@ const CardEditFormSettings = ({ cardJson, onChange, i18n }) => {
             labelA=""
             labelB=""
             // This is not supported by Carbon yet. Issue open here: https://github.com/carbon-design-system/carbon-charts/issues/846
-            onToggle={showLegend => onChange({ ...cardJson, showLegend })}
+            onToggle={showLegend => onChange({ ...cardConfig, showLegend })}
           />
         </div>
       </div> */}
