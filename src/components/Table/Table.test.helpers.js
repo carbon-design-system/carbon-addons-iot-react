@@ -24,3 +24,32 @@ export const mockActions = {
     onChangeOrdering: jest.fn(),
   },
 };
+
+export const getTableColumns = (selectData) =>  [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'pick a string' },
+    isSortable: true,
+  },
+  {
+    id: 'node',
+    name: 'React node',
+    isSortable: true,
+  },
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'pick a date' },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: selectData },
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'pick a number' },
+  },
+];

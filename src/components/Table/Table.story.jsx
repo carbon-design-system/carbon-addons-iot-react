@@ -3812,4 +3812,27 @@ storiesOf('Watson IoT/Table', module)
         propTablesExclude: [StatefulTable],
       },
     }
-  );
+  )
+  .add('Aggregated column values', () => (
+    <FullWidthWrapper>
+      <Table
+        id="table"
+        {...initialState}
+        options={{
+          ...initialState.options,
+          hasAggregations: true,
+        }}
+        view={{
+          ...initialState.view,
+          aggregations: {
+            label: 'Total:',
+            columns: [
+              {
+                id: 'number',
+              },
+            ],
+          },
+        }}
+      />
+    </FullWidthWrapper>
+  ));

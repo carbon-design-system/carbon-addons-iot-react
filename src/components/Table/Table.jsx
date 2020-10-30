@@ -28,6 +28,7 @@ import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import TableBody from './TableBody/TableBody';
 import Pagination from './Pagination';
+import TableFoot from './TableFoot/TableFoot';
 
 const { iotPrefix } = settings;
 
@@ -49,6 +50,8 @@ const propTypes = {
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
   options: PropTypes.shape({
+    /** If true allows the table to aggregate values of columns in a special row */
+    hasAggregations: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowExpansion: PropTypes.bool,
@@ -93,6 +96,17 @@ const propTypes = {
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
   view: PropTypes.shape({
+    aggregations: PropTypes.shape({
+      label: PropTypes.string,
+      columns: PropTypes.arrayOf(
+        PropTypes.shape({
+          /** id of the column that should have its values aggregated */
+          id: PropTypes.string.isRequired,
+          /** the primitive value or function that will receive an array of values and returns an aggregated value */
+          value: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+        })
+      ),
+    }),
     pagination: PropTypes.shape({
       pageSize: PropTypes.number,
       pageSizes: PropTypes.arrayOf(PropTypes.number),
@@ -213,6 +227,7 @@ export const defaultProps = (baseProps) => ({
   tooltip: null,
   secondaryTitle: null,
   options: {
+    hasAggregations: false,
     hasPagination: false,
     hasRowSelection: false,
     hasRowExpansion: false,
@@ -231,6 +246,7 @@ export const defaultProps = (baseProps) => ({
     wrapCellText: 'always',
   },
   view: {
+    aggregations: { columns: [] },
     pagination: {
       pageSize: 10,
       pageSizes: [10, 20, 30],
@@ -435,6 +451,36 @@ const Table = (props) => {
       ).isHidden
   );
 
+  const hasAggregations = options.hasAggregations;
+  const aggregationsProp = view.aggregations;
+  const getColumnNumbers = (tableData, columnId) =>
+    tableData
+      .map((row) => row.values[columnId])
+      .filter((value) => Number.isFinite(value));
+
+  const aggregations = useMemo(() => {
+    return hasAggregations && aggregationsProp.columns
+      ? {
+          label: aggregationsProp.label,
+          columns: aggregationsProp.columns.map((col) => {
+            let aggregatedValue;
+            const isFunction = typeof col.value === 'function';
+            const calculateValue = isFunction || col.value === undefined;
+
+            if (calculateValue) {
+              const numbers = getColumnNumbers(data, col.id);
+              aggregatedValue = isFunction
+                ? col.value(numbers)
+                : numbers.reduce((total, num) => total + num, 0);
+            }
+            return calculateValue
+              ? { ...col, value: aggregatedValue.toString() }
+              : col;
+          }),
+        }
+      : undefined;
+  }, [data, hasAggregations, aggregationsProp]);
+
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
@@ -569,6 +615,7 @@ const Table = (props) => {
             options={{
               ...pick(
                 options,
+                'hasAggregation',
                 'hasRowSelection',
                 'hasRowExpansion',
                 'hasRowActions',
@@ -692,6 +739,23 @@ const Table = (props) => {
               }
             />
           )}
+          {hasAggregations ? (
+            <TableFoot
+              options={{
+                ...pick(
+                  options,
+                  'hasRowSelection',
+                  'hasRowExpansion',
+                  'hasRowActions'
+                ),
+              }}
+              tableState={{
+                aggregations,
+                ordering: view.table.ordering,
+              }}
+              testId={`${id}-table-foot`}
+            />
+          ) : null}
         </CarbonTable>
       </div>
       {options.hasPagination &&
