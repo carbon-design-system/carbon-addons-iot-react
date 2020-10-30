@@ -1,0 +1,68 @@
+.#{$iot-prefix}--dashboard-editor {
+  display: flex;
+  height: 100%;
+  &--content {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+  }
+  &-header {
+    flex: 0;
+    padding: $spacing-05 0 $spacing-06;
+    .#{$prefix}--grid {
+      /* allow the header to stretch the full page width */
+      max-width: none;
+      padding-left: $spacing-07;
+      padding-right: $spacing-05;
+    }
+    &--top {
+      height: calc(#{$spacing-05} + #{$spacing-02});
+      display: flex;
+      align-items: center;
+    }
+    &--bottom {
+      height: calc(#{$spacing-07} + #{$spacing-02});
+      display: flex;
+      align-items: center;
+      // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
+      &__import.#{$prefix}--tooltip__trigger {
+        // have to force the span containing the svg down to be aligned with other iconOnly buttons
+        span {
+          padding-top: 3px;
+        }
+        svg {
+          fill: $icon-01;
+        }
+      }
+
+      .#{$prefix}--btn--tertiary,
+      .#{$prefix}--btn--primary {
+        margin-left: $spacing-05;
+        padding-left: $spacing-05;
+        padding-right: $spacing-05;
+      }
+    }
+    &--left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &--right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  &--preview {
+    flex: 1;
+
+    &__card:focus {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+    }
+  }
+  &--sidebar {
+    height: 100%;
+    width: 16rem;
+  }
+}

@@ -29,7 +29,7 @@ const CardEditorInteractive = () => {
           height: 'calc(100vh - 6rem)',
         }}>
         <CardEditor
-          value={data}
+          cardJson={data}
           onShowGallery={() => setData(null)}
           onAddCard={(type) => {
             setData({ ...defaultCard, id: `card-${counter + 1}`, type });
@@ -48,7 +48,7 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
     <div
       style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
       <CardEditor
-        value={object('value', {
+        cardJson={object('cardJson', {
           content: {
             attributes: [
               {
@@ -85,6 +85,45 @@ storiesOf('Watson IoT Experimental/CardEditor', module)
         errors={{}}
         onShowGallery={action('onShowGallery')}
         onChange={action('onChange')}
+        onAddCard={action('onAddCard')}
+      />
+    </div>
+  ))
+  .add('for TimeSeries', () => (
+    <div
+      style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+      <CardEditor
+        cardJson={object('cardJson', {
+          id: 'timeseries',
+          title: 'time-series-card',
+          size: 'MEDIUMWIDE',
+          type: 'TIMESERIES',
+          content: {
+            series: [
+              {
+                dataSourceId: 'torque max',
+                label: 'Torque Max',
+                color: '#6929c4',
+              },
+              {
+                dataSourceId: 'torque mean',
+                label: 'Torque Mean',
+                color: '#1192e8',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature',
+            unit: '˚F',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          },
+          interval: 'day',
+        })}
+        errors={{}}
+        onShowGallery={action('onShowGallery')}
+        onChange={action('onChange')}
+        dataItems={['Torque Max', 'Torque Min', 'Torque Mean']}
         onAddCard={action('onAddCard')}
       />
     </div>

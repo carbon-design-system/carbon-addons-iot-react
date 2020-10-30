@@ -498,6 +498,8 @@ export const CardPropTypes = {
   isEditable: PropTypes.bool,
   /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
+  /** True if the card can be resizable in the DashboardGrid by dragging the borders */
+  isResizable: PropTypes.bool,
   /**
    * Define the icon render to be rendered.
    * Can be a React component class
@@ -587,4 +589,6 @@ export const CardPropTypes = {
   testID: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
   locale: PropTypes.string,
+  /** a way to pass down dashboard grid resize handles, only used by other card types */
+  resizeHandles: PropTypes.array,
 };

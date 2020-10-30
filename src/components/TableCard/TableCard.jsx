@@ -25,6 +25,7 @@ import {
   handleCardVariables,
   formatNumberWithPrecision,
   getVariables,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
 
@@ -327,15 +328,22 @@ const TableCard = ({
   title: titleProp,
   isExpanded,
   content: contentProp,
+  children,
   size,
   onCardAction,
   values: valuesProp,
   isEditable,
+  isResizable,
   i18n,
   tooltip,
   locale,
+  timeRange,
+  timeRangeOptions,
+  availableActions,
   ...others
 }) => {
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+
   // Set the locale
   moment.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
@@ -387,7 +395,7 @@ const TableCard = ({
         renderIcon={() => (
           <OverflowMenuVertical16
             fill="#5a6872"
-            description={i18n.overflowMenuIconDescription}
+            description={mergedI18n.overflowMenuIconDescription}
           />
         )}>
         {actionList.map((item) => {
@@ -410,11 +418,6 @@ const TableCard = ({
     ) : null;
   };
 
-  const strings = {
-    ...defaultProps.i18n,
-    ...i18n,
-  };
-
   const renderThresholdIcon = (cellItem) => {
     const matchingThresholdValue = findMatchingThresholds(
       thresholds,
@@ -426,7 +429,7 @@ const TableCard = ({
       <ThresholdIcon
         title={`${matchingThresholdValue.dataSourceId}: ${matchingThresholdValue.currentValue} ${matchingThresholdValue.comparison} ${matchingThresholdValue.value}`}
         {...matchingThresholdValue}
-        strings={strings}
+        strings={mergedI18n}
         showSeverityLabel={matchingThresholdValue.showSeverityLabel}
         severityLabel={matchingThresholdValue.severityLabel}
         renderIconByName={others.renderIconByName}
@@ -486,25 +489,25 @@ const TableCard = ({
       id: `iconColumn-${columnId}`,
       label: uniqueThresholds[uniqueThresholdIndex].label
         ? uniqueThresholds[uniqueThresholdIndex].label
-        : `${capitalize(columnId)} ${strings.severityLabel}`,
+        : `${capitalize(columnId)} ${mergedI18n.severityLabel}`,
       width: uniqueThresholds[uniqueThresholdIndex].width,
       isSortable: true,
       renderDataFunction: renderThresholdIcon,
       priority: 1,
       filter: {
-        placeholderText: strings.selectSeverityPlaceholder,
+        placeholderText: mergedI18n.selectSeverityPlaceholder,
         options: [
           {
             id: 1,
-            text: strings.criticalLabel,
+            text: mergedI18n.criticalLabel,
           },
           {
             id: 2,
-            text: strings.moderateLabel,
+            text: mergedI18n.moderateLabel,
           },
           {
             id: 3,
-            text: strings.lowLabel,
+            text: mergedI18n.lowLabel,
           },
         ],
       },
@@ -564,35 +567,29 @@ const TableCard = ({
             : '', // force the text wrap
           filter: i.filter
             ? i.filter
-            : { placeholderText: strings.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+            : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
         }))
-        .concat(hasActionColumn ? actionColumn : [])
-        .map((column) => {
-          const columnPriority = column.priority || 1; // default to 1 if not provided
-          switch (newSize) {
-            case CARD_SIZES.LARGETHIN:
-              return columnPriority === 1 ? column : null;
-
-            case CARD_SIZES.LARGE:
-              return columnPriority === 1 || columnPriority === 2
-                ? column
-                : null;
-
-            case CARD_SIZES.LARGEWIDE:
-              return column;
-
-            default:
-              return column;
-          }
-        })
-        .filter((i) => i),
+        .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
       hasActionColumn,
+      mergedI18n.defaultFilterStringPlaceholdText,
       newColumns,
       newSize,
-      strings.defaultFilterStringPlaceholdText,
     ]
+  );
+
+  const ordering = useMemo(
+    () =>
+      columnsToRender.map(({ id: columnId, priority }) => {
+        const prio = priority || 1; // default to 1 if not provided
+        const isHidden =
+          (newSize === CARD_SIZES.LARGETHIN && prio !== 1) ||
+          (newSize === CARD_SIZES.LARGE && !(prio === 1 || prio === 2));
+
+        return { columnId, isHidden };
+      }),
+    [columnsToRender, newSize]
   );
 
   const filteredTimestampColumns = useMemo(
@@ -784,11 +781,7 @@ const TableCard = ({
   );
 
   // is columns recieved is different from the columnsToRender show card expand
-  const isExpandable =
-    columns.length !==
-    columnsToRender.filter(
-      (item) => item.id !== 'actionColumn' && !item.id.includes('iconColumn')
-    ).length;
+  const isExpandable = !!ordering.find((col) => col.isHidden);
 
   const hasFilter = newSize !== CARD_SIZES.LARGETHIN;
 
@@ -802,16 +795,26 @@ const TableCard = ({
     ? columnsToRender.find((item) => item.priority === 1)
     : columnStartSortDefined;
 
+  const mergedAvailableActions = {
+    ...availableActions,
+    expand: isExpandable,
+    range: true,
+  };
+
   const cardToolbar = (
     <CardToolbar
-      availableActions={{ expand: isExpandable, range: true }}
-      i18n={i18n}
+      availableActions={mergedAvailableActions}
+      i18n={mergedI18n}
       isEditable={isEditable}
       isExpanded={isExpanded}
       onCardAction={cachedOnCardAction}
-      {...others}
+      width={newSize.width}
+      timeRange={timeRange}
+      timeRangeOptions={timeRangeOptions}
     />
   );
+
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
     <Card
@@ -820,8 +823,10 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
+      isResizable={isResizable}
       isExpanded={isExpanded}
-      i18n={i18n}
+      i18n={mergedI18n}
+      resizeHandles={resizeHandles}
       hideHeader
       {...others}>
       {({ height }) => {
@@ -882,12 +887,13 @@ const TableCard = ({
                     }
                   : {}),
                 emptyState: {
-                  message: emptyMessage || strings.emptyMessage,
+                  message: emptyMessage || mergedI18n.emptyMessage,
                 },
+                ordering,
               },
             }}
             showHeader={showHeader !== undefined ? showHeader : true}
-            i18n={i18n} // TODO: add Card defaultprops ?
+            i18n={mergedI18n} // TODO: add Card defaultprops ?
           />
         );
       }}
