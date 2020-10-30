@@ -1,8 +1,9 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import IconDropdown from './IconDropdown';
-import { items } from './IconDropdown.story';
+import { items } from '../IconDropdown/IconDropdown.story';
+
+import Dropdown from './DropdownWithIcon';
 
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
@@ -10,11 +11,26 @@ const iconDropdownProps = {
   items,
 };
 
-describe('Icon Dropdown', () => {
+const itemsWithoutIcons = [
+  {
+    id: 'option-0',
+    text: 'Option 0',
+  },
+  {
+    id: 'option-1',
+    text: 'Option 1',
+  },
+  {
+    id: 'option-2',
+    text: 'Option 2',
+  },
+];
+
+describe('Dropdown with Icon and Labels', () => {
   it('Renders default', () => {
     render(
-      <IconDropdown
-        items={items}
+      <Dropdown
+        items={itemsWithoutIcons}
         {...iconDropdownProps}
         actions={{
           onChangeView: () => {},
@@ -29,7 +45,7 @@ describe('Icon Dropdown', () => {
 
   it('Renders selected item', () => {
     render(
-      <IconDropdown
+      <Dropdown
         {...iconDropdownProps}
         selectedViewId={items[0].id}
         actions={{
@@ -43,37 +59,36 @@ describe('Icon Dropdown', () => {
     expect(selectedItem).toBeDefined();
   });
 
-  it('Renders icon buttons', () => {
+  it('Renders in dropdown', () => {
+    const label = 'Icon Dropdown menu options';
+
     render(
-      <IconDropdown
+      <Dropdown
         {...iconDropdownProps}
-        hasIconsOnly
+        items={items}
         actions={{
           onChangeView: () => {},
         }}
       />
     );
 
-    const renderedLabel = screen.queryByText(iconDropdownProps.label);
+    const renderedLabel = screen.queryByText(label);
 
     fireEvent.click(renderedLabel);
 
-    expect(
-      screen.queryByTestId(`dropdown-button__${items[3].id}`)
-    ).toBeDefined();
+    expect(screen.queryByTestId(`dropdown-button__${items[3].id}`)).toBeNull();
+    expect(screen.queryByTestId(items[3].text)).toBeDefined();
 
-    expect(
-      screen.queryByTestId(`dropdown-button__${items[5].id}`)
-    ).toBeDefined();
+    expect(screen.queryByTestId(`dropdown-button__${items[5].id}`)).toBeNull();
+    expect(screen.queryByTestId(items[5].text)).toBeDefined();
   });
 
-  it('icon handles callback', () => {
+  it('handles callback', () => {
     let selectedItem = null;
 
     render(
-      <IconDropdown
+      <Dropdown
         {...iconDropdownProps}
-        hasIconsOnly
         actions={{
           onChangeView: (item) => {
             selectedItem = item;
@@ -90,41 +105,19 @@ describe('Icon Dropdown', () => {
     expect(selectedItem.id).toEqual(itemToSelect.id);
   });
 
-  it('renders correct footer', () => {
-    const renderFooter = (item) => {
-      return <div data-testid={`test-${item.text}`}>{item.text}</div>;
-    };
-
-    const itemsWithFooter = items.map((item) => {
-      return {
-        ...item,
-        footer: renderFooter(item),
-      };
-    });
-
+  it('custom render', () => {
     render(
-      <IconDropdown
+      <Dropdown
         {...iconDropdownProps}
-        hasIconsOnly
-        helperText="help"
-        items={itemsWithFooter}
+        itemToString={() => 'test'}
         actions={{
           onChangeView: () => {},
         }}
       />
     );
 
-    const itemToHighlight = items[3];
-    const highlightedTestId = `test-${itemToHighlight.text}`;
-
-    expect(screen.queryByTestId(highlightedTestId)).toBeNull();
-
     fireEvent.click(screen.getByText(iconDropdownProps.label));
-    expect(screen.queryByTestId(highlightedTestId)).toBeNull();
 
-    fireEvent.mouseOver(screen.getAllByText(itemToHighlight.text)[0]);
-    fireEvent.mouseOver(screen.getByText(iconDropdownProps.label));
-
-    expect(screen.queryByTestId(highlightedTestId)).toBeDefined();
+    expect(screen.getAllByText('test').length).toEqual(items.length);
   });
 });

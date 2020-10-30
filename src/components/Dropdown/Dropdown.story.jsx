@@ -87,39 +87,27 @@ const props = () => ({
   ),
 });
 
-storiesOf('Watson IoT/Dropdown', module)
-  .add('with icons and labels', () => {
-    return React.createElement(() => {
-      const [selectedViewId, setSelectedViewId] = useState(items[1].id);
+storiesOf('Watson IoT/Dropdown', module).add('with icons and labels', () => {
+  return React.createElement(() => {
+    const [selectedViewId, setSelectedViewId] = useState(items[1].id);
 
-      const renderFooter = (item) => {
-        return <div>{item.title}</div>;
-      };
-
-      const itemsWithFooter = items.map((item) => {
-        return {
-          ...item,
-          footer: renderFooter(item),
-        };
-      });
-
-      return (
-        <div
-          style={{
-            width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
-          <DropdownWithIcon
-            {...props()}
-            items={itemsWithFooter}
-            selectedViewId={selectedViewId}
-            actions={{
-              onChangeView: (viewItem) => {
-                setSelectedViewId(viewItem.id);
-                action('onChangeView')(viewItem);
-              },
-            }}
-          />
-        </div>
-      );
-    });
+    return (
+      <div
+        style={{
+          width: select('wrapper width', ['300px', '100px'], '300px'),
+        }}>
+        <DropdownWithIcon
+          {...props()}
+          items={items}
+          selectedViewId={selectedViewId}
+          actions={{
+            onChangeView: (viewItem) => {
+              setSelectedViewId(viewItem.id);
+              action('onChangeView')(viewItem);
+            },
+          }}
+        />
+      </div>
+    );
   });
+});

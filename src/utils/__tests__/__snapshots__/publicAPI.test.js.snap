@@ -6004,25 +6004,24 @@ Map {
   },
   "IconDropdown" => Object {
     "defaultProps": Object {
-      "footer": null,
-      "hasIconOnly": false,
-      "itemToString": null,
+      "columnCount": 4,
+      "disabled": false,
     },
     "propTypes": Object {
-      "footer": Object {
-        "type": "node",
+      "columnCount": Object {
+        "type": "number",
       },
-      "hasIconsOnly": Object {
+      "disabled": Object {
         "type": "bool",
-      },
-      "itemToString": Object {
-        "type": "func",
       },
       "items": Object {
         "args": Array [
           Object {
             "args": Array [
               Object {
+                "footer": Object {
+                  "type": "node",
+                },
                 "icon": Object {
                   "args": Array [
                     Array [
@@ -6052,6 +6051,9 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "node",
       },
     },
   },

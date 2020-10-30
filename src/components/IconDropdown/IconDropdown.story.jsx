@@ -11,7 +11,6 @@ import {
   QqPlot32,
   ChartEvaluation32,
   ChartSunburst32,
-  Diagram32,
 } from '@carbon/icons-react';
 
 import IconDropdown from './IconDropdown';
@@ -57,11 +56,6 @@ export const items = [
     icon: ChartSunburst32,
     text: 'Sunburst Chart',
   },
-  {
-    id: 'option-8',
-    icon: Diagram32,
-    text: 'Diagram',
-  },
 ];
 
 const directions = {
@@ -86,29 +80,39 @@ const props = () => ({
   hasFooter: boolean('Renders dropdown footer', false),
 });
 
-storiesOf('Watson IoT/IconDropdown', module)
-  .add('with icons only', () => {
-    return React.createElement(() => {
-      const [selectedViewId, setSelectedViewId] = useState(items[1].id);
+storiesOf('Watson IoT/IconDropdown', module).add('with icons only', () => {
+  return React.createElement(() => {
+    const renderFooter = (item) => {
+      return <div>{item.text}</div>;
+    };
 
-      return (
-        <div
-          style={{
-            width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
-          <IconDropdown
-            {...props()}
-            items={items}
-            selectedViewId={selectedViewId}
-            actions={{
-              onChangeView: (viewItem) => {
-                setSelectedViewId(viewItem.id);
-                action('onChangeView')(viewItem);
-              },
-            }}
-            hasIconsOnly
-          />
-        </div>
-      );
+    const itemsWithFooter = items.map((item) => {
+      return {
+        ...item,
+        footer: renderFooter(item),
+      };
     });
+
+    const [selectedViewId, setSelectedViewId] = useState(items[1].id);
+
+    return (
+      <div
+        style={{
+          width: select('wrapper width', ['300px', '100px'], '300px'),
+        }}>
+        <IconDropdown
+          {...props()}
+          items={itemsWithFooter}
+          selectedViewId={selectedViewId}
+          actions={{
+            onChangeView: (viewItem) => {
+              setSelectedViewId(viewItem.id);
+              action('onChangeView')(viewItem);
+            },
+          }}
+          hasIconsOnly
+        />
+      </div>
+    );
   });
+});
