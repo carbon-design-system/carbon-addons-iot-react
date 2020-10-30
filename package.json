@@ -36,7 +36,7 @@
     "publish-npm": "yarn semantic-release",
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
-    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg",
+    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx ",
     "test": "yarn test:engines && yarn test:a11y && yarn test:base",
     "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
