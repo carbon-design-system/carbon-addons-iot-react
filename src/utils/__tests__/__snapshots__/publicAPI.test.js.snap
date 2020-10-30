@@ -15728,6 +15728,361 @@ Map {
   "List" => Object {
     "DecoratedComponent": Object {
       "$$typeof": Symbol(react.forward_ref),
+      "__docgenInfo": Object {
+        "description": "",
+        "displayName": "List",
+        "methods": Array [],
+        "props": Object {
+          "buttons": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
+            "description": "action buttons on right side of list title",
+            "required": false,
+            "type": Object {
+              "name": "arrayOf",
+              "value": Object {
+                "name": "node",
+              },
+            },
+          },
+          "className": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "Specify an optional className to be applied to the container",
+            "required": false,
+            "type": Object {
+              "name": "string",
+            },
+          },
+          "editingStyle": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "list editing style",
+            "required": false,
+            "type": Object {
+              "name": "enum",
+              "value": Array [
+                Object {
+                  "computed": true,
+                  "value": "EditingStyle.Single",
+                },
+                Object {
+                  "computed": true,
+                  "value": "EditingStyle.Multiple",
+                },
+                Object {
+                  "computed": true,
+                  "value": "EditingStyle.SingleNesting",
+                },
+                Object {
+                  "computed": true,
+                  "value": "EditingStyle.MultipleNesting",
+                },
+              ],
+            },
+          },
+          "emptyState": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'No list items to show'",
+            },
+            "description": "content shown if list is empty",
+            "required": false,
+            "type": Object {
+              "name": "union",
+              "value": Array [
+                Object {
+                  "name": "node",
+                },
+                Object {
+                  "name": "string",
+                },
+              ],
+            },
+          },
+          "expandedIds": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
+            "description": "ids of row expanded",
+            "required": false,
+            "type": Object {
+              "name": "arrayOf",
+              "value": Object {
+                "name": "string",
+              },
+            },
+          },
+          "handleSelect": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "() => {}",
+            },
+            "description": "call back function of select",
+            "required": false,
+            "type": Object {
+              "name": "func",
+            },
+          },
+          "i18n": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "{
+  searchPlaceHolderText: 'Enter a value',
+  expand: 'Expand',
+  close: 'Close',
+}",
+            },
+            "description": "i18n strings",
+            "required": false,
+            "type": Object {
+              "name": "shape",
+              "value": Object {
+                "close": Object {
+                  "name": "string",
+                  "required": false,
+                },
+                "expand": Object {
+                  "name": "string",
+                  "required": false,
+                },
+                "searchPlaceHolderText": Object {
+                  "name": "string",
+                  "required": false,
+                },
+              },
+            },
+          },
+          "iconPosition": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "'left'",
+            },
+            "description": "icon can be left or right side of list row primary value",
+            "required": false,
+            "type": Object {
+              "name": "enum",
+              "value": Array [
+                Object {
+                  "computed": false,
+                  "value": "'left'",
+                },
+                Object {
+                  "computed": false,
+                  "value": "'right'",
+                },
+              ],
+            },
+          },
+          "isFullHeight": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "false",
+            },
+            "description": "use full height in list",
+            "required": false,
+            "type": Object {
+              "name": "bool",
+            },
+          },
+          "isLargeRow": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "false",
+            },
+            "description": "use large/fat row in list",
+            "required": false,
+            "type": Object {
+              "name": "bool",
+            },
+          },
+          "isLoading": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "false",
+            },
+            "description": "optional skeleton to be rendered while loading data",
+            "required": false,
+            "type": Object {
+              "name": "bool",
+            },
+          },
+          "itemWillMove": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "() => {
+  return true;
+}",
+            },
+            "description": "callback function when reorder will occur - can cancel the move by returning false",
+            "required": false,
+            "type": Object {
+              "name": "func",
+            },
+          },
+          "items": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
+            "description": "data source of list items",
+            "required": false,
+            "type": Object {
+              "name": "arrayOf",
+              "value": Object {
+                "name": "shape",
+                "value": Object {
+                  "children": Object {
+                    "name": "arrayOf",
+                    "required": false,
+                    "value": Object {
+                      "name": "object",
+                    },
+                  },
+                  "content": Object {
+                    "name": "shape",
+                    "required": false,
+                    "value": Object {
+                      "icon": Object {
+                        "name": "node",
+                        "required": false,
+                      },
+                      "tags": Object {
+                        "description": "The nodes should be Carbon Tags components",
+                        "name": "arrayOf",
+                        "required": false,
+                        "value": Object {
+                          "name": "node",
+                        },
+                      },
+                      "value": Object {
+                        "name": "string",
+                        "required": false,
+                      },
+                    },
+                  },
+                  "id": Object {
+                    "name": "string",
+                    "required": false,
+                  },
+                  "isSelectable": Object {
+                    "name": "bool",
+                    "required": false,
+                  },
+                },
+              },
+            },
+          },
+          "onItemMoved": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "() => {}",
+            },
+            "description": "callback function for reorder",
+            "required": false,
+            "type": Object {
+              "name": "func",
+            },
+          },
+          "overrides": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "Node to override the default header",
+            "required": false,
+            "type": Object {
+              "name": "shape",
+              "value": Object {
+                "header": Object {
+                  "name": "custom",
+                  "raw": "OverridePropTypes",
+                  "required": false,
+                },
+              },
+            },
+          },
+          "pagination": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "pagination at the bottom of list",
+            "required": false,
+            "type": Object {
+              "computed": true,
+              "name": "shape",
+              "value": "import SimplePagination, {
+  SimplePaginationPropTypes,
+} from '../SimplePagination/SimplePagination';",
+            },
+          },
+          "search": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "search bar call back function and search value",
+            "required": false,
+            "type": Object {
+              "name": "shape",
+              "value": Object {
+                "onChange": Object {
+                  "name": "func",
+                  "required": false,
+                },
+                "value": Object {
+                  "name": "string",
+                  "required": false,
+                },
+              },
+            },
+          },
+          "selectedIds": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "[]",
+            },
+            "description": "Multiple currently selected items",
+            "required": false,
+            "type": Object {
+              "name": "arrayOf",
+              "value": Object {
+                "name": "string",
+              },
+            },
+          },
+          "title": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "list title",
+            "required": false,
+            "type": Object {
+              "name": "string",
+            },
+          },
+          "toggleExpansion": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "() => {}",
+            },
+            "description": "call back function of expansion",
+            "required": false,
+            "type": Object {
+              "name": "func",
+            },
+          },
+        },
+      },
       "defaultProps": Object {
         "buttons": Array [],
         "className": null,
