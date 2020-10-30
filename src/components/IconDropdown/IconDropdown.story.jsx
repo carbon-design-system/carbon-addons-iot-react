@@ -93,7 +93,7 @@ storiesOf('Watson IoT/IconDropdown', module).add('with icons only', () => {
       };
     });
 
-    const [selectedViewId, setSelectedViewId] = useState(items[1].id);
+    const [selectedViewId, setSelectedViewId] = useState(null);
 
     return (
       <div

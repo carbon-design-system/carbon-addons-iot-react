@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import IconDropdown from './IconDropdown';
 import { items } from './IconDropdown.story';
@@ -108,6 +109,7 @@ describe('Icon Dropdown', () => {
         hasIconsOnly
         helperText="help"
         items={itemsWithFooter}
+        selectedViewId={null}
         actions={{
           onChangeView: () => {},
         }}
@@ -122,9 +124,7 @@ describe('Icon Dropdown', () => {
     fireEvent.click(screen.getByText(iconDropdownProps.label));
     expect(screen.queryByTestId(highlightedTestId)).toBeNull();
 
-    fireEvent.mouseOver(screen.getAllByText(itemToHighlight.text)[0]);
-    fireEvent.mouseOver(screen.getByText(iconDropdownProps.label));
-
+    userEvent.hover(screen.getAllByText(itemToHighlight.text)[0]);
     expect(screen.queryByTestId(highlightedTestId)).toBeDefined();
   });
 });

@@ -51,13 +51,17 @@ const IconDropdown = ({
   const widthStyle = `${columnCount * 48}px`;
   const heightStyle = `${Math.ceil(items.length / columnCount) * 48}px`;
 
-  const renderFooter = () => {
+  const Footer = () => {
     const selectedItem = items.filter((item) => item.id === selectedViewId);
     const highlightedItem =
       highlightedIndex >= 0 && highlightedIndex < items.length
         ? items[highlightedIndex]
         : null;
-    return (
+
+    const selectedFooter =
+      highlightedItem !== null ? highlightedItem : selectedItem[0];
+
+    return selectedFooter !== undefined ? (
       <div
         className={`${iotPrefix}--dropdown__footer`}
         style={{
@@ -66,12 +70,10 @@ const IconDropdown = ({
           paddingTop: heightStyle,
         }}>
         <div className={`${iotPrefix}--dropdown__footer-content`}>
-          {highlightedItem !== null
-            ? highlightedItem?.footer
-            : selectedItem[0]?.footer}
+          {selectedFooter.footer}
         </div>
       </div>
-    );
+    ) : null;
   };
 
   const itemToString = (item) => {
@@ -124,7 +126,7 @@ const IconDropdown = ({
         {...other}
         itemToString={itemToString}
       />
-      {isOpen && renderFooter()}
+      {isOpen && <Footer />}
     </div>
   );
 };
