@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconDropdown with icons only 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/IconDropdown with icons only 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,7 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconD
       }
     >
       <div
-        className="dropdown-00f43bb8-5a86-437a-99ee-80689d5cd162"
+        className="dropdown-00000000-0000-0000-0000-000000000000"
       >
         <div
           actions={Object {}}

@@ -80,39 +80,42 @@ const props = () => ({
   hasFooter: boolean('Renders dropdown footer', false),
 });
 
-storiesOf('Watson IoT/IconDropdown', module).add('with icons only', () => {
-  return React.createElement(() => {
-    const renderFooter = (item) => {
-      return <div>{item.text}</div>;
-    };
-
-    const itemsWithFooter = items.map((item) => {
-      return {
-        ...item,
-        footer: renderFooter(item),
+storiesOf('Watson IoT Experimental/IconDropdown', module).add(
+  'with icons only',
+  () => {
+    return React.createElement(() => {
+      const renderFooter = (item) => {
+        return <div>{item.text}</div>;
       };
+
+      const itemsWithFooter = items.map((item) => {
+        return {
+          ...item,
+          footer: renderFooter(item),
+        };
+      });
+
+      const [selectedViewId, setSelectedViewId] = useState(null);
+
+      return (
+        <div
+          style={{
+            width: select('wrapper width', ['300px', '100px'], '300px'),
+          }}>
+          <IconDropdown
+            {...props()}
+            items={itemsWithFooter}
+            selectedViewId={selectedViewId}
+            actions={{
+              onChangeView: (viewItem) => {
+                setSelectedViewId(viewItem.id);
+                action('onChangeView')(viewItem);
+              },
+            }}
+            hasIconsOnly
+          />
+        </div>
+      );
     });
-
-    const [selectedViewId, setSelectedViewId] = useState(null);
-
-    return (
-      <div
-        style={{
-          width: select('wrapper width', ['300px', '100px'], '300px'),
-        }}>
-        <IconDropdown
-          {...props()}
-          items={itemsWithFooter}
-          selectedViewId={selectedViewId}
-          actions={{
-            onChangeView: (viewItem) => {
-              setSelectedViewId(viewItem.id);
-              action('onChangeView')(viewItem);
-            },
-          }}
-          hasIconsOnly
-        />
-      </div>
-    );
-  });
-});
+  }
+);
