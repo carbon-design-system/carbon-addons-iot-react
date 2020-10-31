@@ -8,6 +8,7 @@ import { Dropdown } from './index';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  id: PropTypes.string.isRequired,
   itemToString: PropTypes.func,
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -23,7 +24,7 @@ const defaultPropTypes = {
 };
 
 const DropdownWithIcon = ({
-  selectedViewId,
+  id,
   items,
   itemToString,
   actions: { onChangeView, ...otherActions },
@@ -37,19 +38,18 @@ const DropdownWithIcon = ({
 
   const renderLabel = (item) => {
     return (
-      <>
-        <div className={`${iotPrefix}--dropdown__label`}>
-          {item?.icon !== undefined ? React.createElement(item?.icon) : null}
-          <div className={`${iotPrefix}--dropdown__label__content`}>
-            {item ? item.text : ''}
-          </div>
+      <div className={`${iotPrefix}--dropdown__label`}>
+        {item?.icon !== undefined ? React.createElement(item?.icon) : null}
+        <div className={`${iotPrefix}--dropdown__label__content`}>
+          {item ? item.text : ''}
         </div>
-      </>
+      </div>
     );
   };
 
   return (
     <Dropdown
+      id={id}
       items={items}
       actions={otherActions}
       onChange={onSelectionChange}

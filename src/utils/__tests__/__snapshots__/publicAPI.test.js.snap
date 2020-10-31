@@ -6012,6 +6012,7 @@ Map {
     "defaultProps": Object {
       "columnCount": 4,
       "disabled": false,
+      "selectedItem": null,
     },
     "propTypes": Object {
       "columnCount": Object {
@@ -6019,6 +6020,14 @@ Map {
       },
       "disabled": Object {
         "type": "bool",
+      },
+      "dropdownId": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
       },
       "items": Object {
         "args": Array [
@@ -6060,6 +6069,38 @@ Map {
       },
       "light": Object {
         "type": "node",
+      },
+      "selectedItem": Object {
+        "args": Array [
+          Object {
+            "footer": Object {
+              "type": "node",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "isRequired": true,
+              "type": "oneOfType",
+            },
+            "id": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "text": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
     },
   },

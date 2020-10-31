@@ -7,6 +7,7 @@ import Dropdown from './DropdownWithIcon';
 
 const iconDropdownProps = {
   id: 'icon-dropdown-1',
+  dropdownId: 'dropdown-id-1',
   label: 'Icon Dropdown menu options',
   items,
 };

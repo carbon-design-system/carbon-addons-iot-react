@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import {
   ChartColumnFloating32,
   ChartLineData32,
@@ -64,12 +63,12 @@ export const items = [
   },
 ];
 
-export { default as DropdownStory } from 'carbon-components-react/lib/components/Dropdown/Dropdown-story';
-
 const directions = {
   'Bottom (default)': 'bottom',
   'Top ': 'top',
 };
+
+export { default as DropdownStory } from 'carbon-components-react/lib/components/Dropdown/Dropdown-story';
 
 const props = () => ({
   id: text('Dropdown ID (id)', 'carbon-dropdown-example'),
@@ -87,27 +86,35 @@ const props = () => ({
   ),
 });
 
-storiesOf('Watson IoT/Dropdown', module).add('with icons and labels', () => {
-  return React.createElement(() => {
-    const [selectedViewId, setSelectedViewId] = useState(items[1].id);
+export default {
+  title: 'Watson IoT/Dropdown',
+  decorators: [withKnobs],
+  parameters: {
+    component: DropdownWithIcon,
+  },
+  excludeStories: ['items', 'DropdownStory'],
+};
 
-    return (
-      <div
-        style={{
-          width: select('wrapper width', ['300px', '100px'], '300px'),
-        }}>
-        <DropdownWithIcon
-          {...props()}
-          items={items}
-          selectedViewId={selectedViewId}
-          actions={{
-            onChangeView: (viewItem) => {
-              setSelectedViewId(viewItem.id);
-              action('onChangeView')(viewItem);
-            },
-          }}
-        />
-      </div>
-    );
-  });
-});
+export const WithIcons = () => {
+  return (
+    <div
+      style={{
+        width: select('wrapper width', ['300px', '100px'], '300px'),
+      }}>
+      <DropdownWithIcon
+        {...props()}
+        id="some-dropdown-id"
+        items={items}
+        actions={{
+          onChangeView: (viewItem) => {
+            action('onChangeView')(viewItem);
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+WithIcons.story = {
+  name: 'with icons and labels',
+};

@@ -53,6 +53,3 @@ jest.doMock('moment', () => {
 Date.prototype.getTimezoneOffset = () => 300; // mock date offset
 Date.now = jest.fn(() => 1537538254000); // mock internal date
 Date.prototype.getLocaleString = () => 'Mock Date!';
-
-// Forces UUID for snapshots
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));

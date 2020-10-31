@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/IconDropdown with icons only 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/IconDropdown default 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,7 +20,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       }
     >
       <div
-        className="dropdown-00000000-0000-0000-0000-000000000000"
+        id="unique-drop-down-id"
       >
         <div
           actions={Object {}}
@@ -35,8 +35,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <label
             className="bx--label"
-            htmlFor="downshift-12-toggle-button"
-            id="downshift-12-label"
+            htmlFor="downshift-26-toggle-button"
+            id="downshift-26-label"
           >
             Dropdown label
           </label>
@@ -51,10 +51,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-labelledby="downshift-12-label downshift-12-toggle-button"
+              aria-labelledby="downshift-26-label downshift-26-toggle-button"
               className="bx--list-box__field"
               disabled={false}
-              id="downshift-12-toggle-button"
+              id="downshift-26-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
@@ -62,7 +62,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <span
                 className="bx--list-box__label"
               >
-                Dropdown menu options
+                <button
+                  className="iot--dropdown__image-button iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                  data-testid="dropdown-button__option-0"
+                  disabled={false}
+                  tabIndex={0}
+                  title="Column Chart"
+                  type="button"
+                >
+                  <span
+                    className="bx--assistive-text"
+                  >
+                    Column Chart
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Column Chart"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28 22H20V4h8zm-6-2h4V6H22zM16 24H8V10h8zm-6-2h4V12H10z"
+                    />
+                    <path
+                      d="M30,30H4a2.0021,2.0021,0,0,1-2-2V2H4V28H30Z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="iot--dropdown__selected-icon-label"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28 22H20V4h8zm-6-2h4V6H22zM16 24H8V10h8zm-6-2h4V12H10z"
+                    />
+                    <path
+                      d="M30,30H4a2.0021,2.0021,0,0,1-2-2V2H4V28H30Z"
+                    />
+                  </svg>
+                  <div
+                    className="iot--dropdown__selected-icon-label__content"
+                  >
+                    Column Chart
+                  </div>
+                </div>
               </span>
               <div
                 className="bx--list-box__menu-icon"
@@ -89,9 +148,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </button>
             <div
-              aria-labelledby="downshift-12-label"
+              aria-labelledby="downshift-26-label"
               className="bx--list-box__menu"
-              id="downshift-12-menu"
+              id="downshift-26-menu"
               onBlur={[Function]}
               onKeyDown={[Function]}
               onMouseLeave={[Function]}

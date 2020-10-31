@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import {
   ChartColumnFloating32,
   ChartLineData32,
@@ -64,7 +63,8 @@ const directions = {
 };
 
 const props = () => ({
-  id: text('Dropdown ID (id)', 'carbon-dropdown-example'),
+  id: text('IconDropdown ID (id)', 'carbon-icon-dropdown-example'),
+  dropdownId: text('Dropdown ID (id)', 'carbon-dropdown-example'),
   direction: select('Dropdown direction (direction)', directions, 'bottom'),
   label: text('Label (label)', 'Dropdown menu options'),
   ariaLabel: text('Aria Label (ariaLabel)', 'Dropdown'),
@@ -80,42 +80,56 @@ const props = () => ({
   hasFooter: boolean('Renders dropdown footer', false),
 });
 
-storiesOf('Watson IoT Experimental/IconDropdown', module).add(
-  'with icons only',
-  () => {
-    return React.createElement(() => {
-      const renderFooter = (item) => {
-        return <div>{item.text}</div>;
+export default {
+  title: 'Watson IoT Experimental/IconDropdown',
+  decorators: [withKnobs],
+  parameters: {
+    component: IconDropdown,
+  },
+  excludeStories: ['items'],
+};
+
+export const _Default = () => {
+  const DefaultExample = () => {
+    const renderFooter = (item) => {
+      return <div>{item.text}</div>;
+    };
+
+    const itemsWithFooter = items.map((item) => {
+      return {
+        ...item,
+        footer: renderFooter(item),
       };
-
-      const itemsWithFooter = items.map((item) => {
-        return {
-          ...item,
-          footer: renderFooter(item),
-        };
-      });
-
-      const [selectedViewId, setSelectedViewId] = useState(null);
-
-      return (
-        <div
-          style={{
-            width: select('wrapper width', ['300px', '100px'], '300px'),
-          }}>
-          <IconDropdown
-            {...props()}
-            items={itemsWithFooter}
-            selectedViewId={selectedViewId}
-            actions={{
-              onChangeView: (viewItem) => {
-                setSelectedViewId(viewItem.id);
-                action('onChangeView')(viewItem);
-              },
-            }}
-            hasIconsOnly
-          />
-        </div>
-      );
     });
-  }
-);
+
+    const [selectedItem, setSelectedItem] = useState(itemsWithFooter[0]);
+
+    return (
+      <div
+        style={{
+          width: select('wrapper width', ['300px', '100px'], '300px'),
+        }}>
+        <IconDropdown
+          {...props()}
+          id="unique-drop-down-id"
+          items={itemsWithFooter}
+          selectedItem={selectedItem}
+          initialSelectedItem={selectedItem}
+          actions={{
+            onChangeView: (item) => {
+              setSelectedItem(item);
+              action('onChangeView')(item);
+            },
+          }}
+          hasIconsOnly
+        />
+      </div>
+    );
+  };
+
+  return <DefaultExample />;
+};
+
+_Default.story = {
+  name: 'default',
+};

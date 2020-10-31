@@ -48,7 +48,6 @@ describe('Icon Dropdown', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        hasIconsOnly
         actions={{
           onChangeView: () => {},
         }}
@@ -74,7 +73,6 @@ describe('Icon Dropdown', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        hasIconsOnly
         actions={{
           onChangeView: (item) => {
             selectedItem = item;
@@ -86,7 +84,7 @@ describe('Icon Dropdown', () => {
     const itemToSelect = items[3];
 
     fireEvent.click(screen.getByText(iconDropdownProps.label));
-    fireEvent.click(screen.getAllByText(itemToSelect.text)[0]);
+    fireEvent.click(screen.queryAllByText(itemToSelect.text)[0]);
 
     expect(selectedItem.id).toEqual(itemToSelect.id);
   });
@@ -106,7 +104,6 @@ describe('Icon Dropdown', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        hasIconsOnly
         helperText="help"
         items={itemsWithFooter}
         selectedViewId={null}
