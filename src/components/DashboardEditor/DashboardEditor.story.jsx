@@ -9,6 +9,7 @@ import {
   array,
 } from '@storybook/addon-knobs';
 
+import sampleImage from '../CardEditor/CardGalleryList/image.svg';
 import { Card, Link, InlineNotification } from '../../index';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
@@ -62,6 +63,37 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         getValidDataItems={() => mockDataItems.slice(2)}
         initialValue={object('initialValue', {
           cards: [
+            {
+              id: 'Table',
+              title: 'Table card',
+              size: 'LARGE',
+              type: 'TABLE',
+              content: {
+                columns: [
+                  {
+                    dataSourceId: 'undefined',
+                    label: '--',
+                  },
+                  {
+                    dataSourceId: 'undefined2',
+                    label: '--',
+                  },
+                ],
+              },
+            },
+            {
+              id: 'Image',
+              title: 'Image card',
+              size: 'MEDIUMWIDE',
+              type: 'IMAGE',
+              content: {
+                alt: 'Sample image',
+                src: sampleImage,
+                hideMinimap: true,
+                hideHotspots: false,
+                hideZoomControls: false,
+              },
+            },
             {
               id: 'Custom',
               title: 'Custom rendered card',
@@ -148,6 +180,17 @@ storiesOf('Watson IoT Experimental/DashboardEditor', module)
         title="Custom dashboard"
         dataItems={mockDataItems}
         getValidDataItems={() => mockDataItems.slice(2)}
+        getDefaultTimeRanges={() => ({
+          last24Hours: 'Last 24 hrs',
+          last7Days: 'Last 7 days',
+          lastMonth: 'Last month',
+          lastQuarter: 'Last quarter',
+          lastYear: 'Last year',
+          thisWeek: 'This week',
+          thisMonth: 'This month',
+          thisQuarter: 'This quarter',
+          thisYear: 'This year',
+        })}
         onCardChange={(card) => {
           console.log(card);
           return card;

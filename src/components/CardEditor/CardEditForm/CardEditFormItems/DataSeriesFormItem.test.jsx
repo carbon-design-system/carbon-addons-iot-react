@@ -19,7 +19,6 @@ const cardJson = {
       {
         label: 'Pressure',
         dataSourceId: 'pressure',
-        color: 'blue',
       },
     ],
     xLabel: 'Time',
@@ -80,7 +79,7 @@ describe('DataSeriesFormItem', () => {
     });
   });
   describe('dataItems', () => {
-    it('should prioritize getValidDataItems', async () => {
+    it('should prioritize getValidDataItems', () => {
       render(
         <DataSeriesFormItem
           cardJson={cardJson}
@@ -91,6 +90,18 @@ describe('DataSeriesFormItem', () => {
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
+    });
+    it('handles initial dataItems', () => {
+      render(
+        <DataSeriesFormItem
+          cardJson={{ ...cardJson, content: {} }}
+          onChange={mockOnChange}
+          getValidDataItems={mockGetValidDataItems}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      expect(screen.getByText('Data series')).toBeInTheDocument();
     });
   });
   describe('dataItem editor', () => {

@@ -247,7 +247,7 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={cardJson.content.series.map((series, i) => ({
+        items={cardJson?.content?.series?.map((series, i) => ({
           id: series.dataSourceId,
           content: {
             value: series.label,

@@ -107,7 +107,7 @@ const defaultProps = {
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
-  title: null,
+  title: '',
   onEditTitle: null,
   getValidDataItems: null,
   getValidTimeRanges: null,

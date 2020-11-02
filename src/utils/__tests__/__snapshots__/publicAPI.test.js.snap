@@ -7898,7 +7898,7 @@ Map {
         "GROUPED_BAR",
         "STACKED_BAR",
       ],
-      "title": null,
+      "title": "",
     },
     "propTypes": Object {
       "dataItems": Object {
