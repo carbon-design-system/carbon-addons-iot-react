@@ -36,7 +36,6 @@ storiesOf('Watson IoT/BarChartCard', module)
             series: [
               {
                 dataSourceId: 'particles',
-                color: COLORS,
               },
             ],
             categoryDataSourceId: 'city',
@@ -67,12 +66,6 @@ storiesOf('Watson IoT/BarChartCard', module)
             series: [
               {
                 dataSourceId: 'particles',
-                color: {
-                  Amsterdam: 'yellow',
-                  'New York': 'yellow',
-                  Bangkok: 'red',
-                  'San Francisco': 'pink',
-                },
               },
             ],
             categoryDataSourceId: 'city',
@@ -82,6 +75,37 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
+        />
+      </div>
+    );
+  })
+  .add('Simple bar - Custom colors', () => {
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles by city')}
+          id="simple-sample"
+          isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            xLabel: 'Cities',
+            yLabel: 'Particles',
+            series: [
+              {
+                dataSourceId: 'particles',
+                color: COLORS,
+              },
+            ],
+            categoryDataSourceId: 'city',
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            unit: 'P',
+            type: 'SIMPLE',
+          })}
+          values={barChartData.quarters.filter((q) => q.quarter === '2020-Q1')}
+          size={size}
           availableActions={{ expand: true }}
         />
       </div>
@@ -104,7 +128,6 @@ storiesOf('Watson IoT/BarChartCard', module)
             series: [
               {
                 dataSourceId: 'particles',
-                // colors: COLORS,
                 label: 'Particles',
               },
             ],
@@ -138,7 +161,6 @@ storiesOf('Watson IoT/BarChartCard', module)
               {
                 dataSourceId: 'particles',
                 label: 'Particles',
-                color: 'blue',
               },
               {
                 dataSourceId: 'temperature',
@@ -186,7 +208,6 @@ storiesOf('Watson IoT/BarChartCard', module)
               {
                 dataSourceId: 'temperature',
                 label: 'Temperature',
-                // colors: COLORS,
               },
               {
                 dataSourceId: 'emissions',

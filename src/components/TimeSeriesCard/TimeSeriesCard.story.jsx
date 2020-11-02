@@ -903,7 +903,14 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     );
   })
   .add('lots of dots', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+    const chartData = getIntervalChartData(
+      'day',
+      2000,
+      { min: 10, max: 100 },
+      100,
+      1572824320000
+    );
     return (
       <div
         style={{
@@ -928,14 +935,21 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
             addSpaceOnEdges: 1,
+            zoomBar: {
+              axes: 'top',
+              enabled: true,
+              view: 'graph_view',
+              initialZoomDomain: [
+                new Date(0).setUTCSeconds(
+                  chartData[chartData.length - 100].timestamp / 1000
+                ),
+                new Date(0).setUTCSeconds(
+                  chartData.slice(-1)[0].timestamp / 1000
+                ),
+              ],
+            },
           })}
-          values={getIntervalChartData(
-            'day',
-            100,
-            { min: 10, max: 100 },
-            100,
-            1572824320000
-          )}
+          values={chartData}
           interval="hour"
           breakpoint="lg"
           showTimeInGMT={boolean('showTimeInGMT', false)}
