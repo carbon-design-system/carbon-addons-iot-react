@@ -55,6 +55,7 @@
   }
   &--preview {
     flex: 1;
+    margin-left: $spacing-05;
 
     &__card:focus {
       outline: 2px solid $focus;

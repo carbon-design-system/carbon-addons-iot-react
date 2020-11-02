@@ -14,6 +14,12 @@ $iot-header-padding: $spacing-05;
   overflow: hidden;
 }
 
+.#{$iot-prefix}--card__selected {
+  border: $spacing-01 solid $interactive-02;
+  box-sizing: content-box;
+  margin: -$spacing-01;
+}
+
 .#{$iot-prefix}--card--resizing {
   border: $spacing-01 solid $interactive-02;
   box-sizing: content-box;

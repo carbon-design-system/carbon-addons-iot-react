@@ -41,9 +41,19 @@ describe('DashboardEditor', () => {
     onExport: mockOnExport,
     onCancel: mockOnCancel,
     onSubmit: mockOnSubmit,
+    supportedCardTypes: [
+      'TIMESERIES',
+      'SIMPLE_BAR',
+      'GROUPED_BAR',
+      'STACKED_BAR',
+      'VALUE',
+      'IMAGE',
+      'TABLE',
+      'CUSTOM',
+    ],
   };
 
-  it('selecting card should select the card and close gallery', () => {
+  it('clicking card should select the card and close gallery', () => {
     render(
       <DashboardEditor
         {...commonProps}
@@ -56,7 +66,30 @@ describe('DashboardEditor', () => {
     // first find and click the the card
     const cardTitle = screen.getByTitle(mockValueCard.title);
     expect(cardTitle).toBeInTheDocument();
-    fireEvent.focus(cardTitle);
+    fireEvent.click(cardTitle);
+    // gallery title should be gone and the card edit form should be open
+    expect(galleryTitle).not.toBeInTheDocument();
+
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    expect(cardSizeFormInput).toBeInTheDocument();
+  });
+
+  it('enter key should select the card and close gallery', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
+    // no card should be selected, meaning the gallery should be open
+    const galleryTitle = screen.getByText('Gallery');
+    expect(galleryTitle).toBeInTheDocument();
+    // first find and click the the card
+    const cardTitle = screen.getByTitle(mockValueCard.title);
+    expect(cardTitle).toBeInTheDocument();
+    fireEvent.keyDown(cardTitle, { key: 'Enter' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
 
@@ -161,6 +194,20 @@ describe('DashboardEditor', () => {
     expect(screen.getAllByTitle('Untitled')).toHaveLength(5);
   });
 
+  it('selecting table card type in gallery should add card', () => {
+    render(<DashboardEditor {...commonProps} />);
+    // first find and click table
+    const tableBtn = screen.getByTitle('Data table');
+    expect(tableBtn).toBeInTheDocument();
+    fireEvent.click(tableBtn);
+    // then find the card title that was created
+    expect(screen.getAllByText('Untitled')).toHaveLength(1);
+    // re-open the gallery by clicking open gallery
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    fireEvent.click(addCardBtn);
+  });
+
   it('selecting submit should fire onSubmit', () => {
     render(<DashboardEditor {...commonProps} />);
     // find and click submit button
@@ -201,7 +248,12 @@ describe('DashboardEditor', () => {
   });
 
   it('changing title in CardEditForm should change rendered card title', () => {
-    render(<DashboardEditor {...commonProps} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // add a card
     const valueBtn = screen.getByTitle('Value / KPI');
     expect(valueBtn).toBeInTheDocument();
