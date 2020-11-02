@@ -28,13 +28,13 @@ const CardEditorInteractive = () => {
           height: 'calc(100vh - 6rem)',
         }}>
         <CardEditor
-          cardJson={data}
+          cardConfig={data}
           onShowGallery={() => setData(null)}
           onAddCard={(type) => {
             setData({ ...defaultCard, id: `card-${counter + 1}`, type });
             setCounter(counter + 1);
           }}
-          onChange={(newCardData) => setData(newCardData)}
+          onChange={(newCardConfig) => setData(newCardConfig)}
         />
       </div>
     </div>
@@ -53,7 +53,7 @@ export default {
 export const Default = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
     <CardEditor
-      cardJson={object('cardJson', {
+      cardConfig={object('cardConfig', {
         content: {
           attributes: [
             {
@@ -102,7 +102,7 @@ Default.story = {
 export const ForTimeSeries = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
     <CardEditor
-      cardJson={object('cardJson', {
+      cardConfig={object('cardConfig', {
         id: 'timeseries',
         title: 'time-series-card',
         size: 'MEDIUMWIDE',

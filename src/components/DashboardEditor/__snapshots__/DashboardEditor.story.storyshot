@@ -285,9 +285,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="iot--card react-grid-item selected-card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -302,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       "width": "24.0625%",
                     }
                   }
+                  tabIndex={0}
                 >
                   <div
                     className="iot--card--header"
@@ -316,6 +319,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Custom rendered card
                       </div>
                     </span>
+                    <div
+                      className="iot--card--toolbar"
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        tabIndex={0}
+                        title="Open and close list of options"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="open and close list of options"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            open and close list of options
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                   <div
                     className="iot--card--content"
@@ -355,7 +409,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -1174,6 +1229,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         className="iot--list-item--content"
                       >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
                         <div
                           className="iot--list-item--content--values"
                         >
@@ -2842,6 +2923,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -2849,9 +2956,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="CUSTOM"
+                              title="Custom"
                             >
-                              CUSTOM
+                              Custom
                             </div>
                           </div>
                         </div>
@@ -3172,15 +3279,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onDrop={[Function]}
                 style={
                   Object {
-                    "height": "304px",
+                    "height": "624px",
                   }
                 }
               >
                 <div
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
-                  id="Custom"
-                  onFocus={[Function]}
+                  id="Standard"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -3190,131 +3298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       "--card-default-height": "304px",
                       "height": "304px",
                       "left": "0%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
-                    }
-                  }
-                  tabIndex={0}
-                  type="CUSTOM"
-                  value={35}
-                >
-                  <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Custom rendered card"
-                    >
-                      <div
-                        className="iot--card--title--text"
-                      >
-                        Custom rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
-                    style={
-                      Object {
-                        "--card-content-height": "256px",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "padding": "1rem",
-                        }
-                      }
-                    >
-                      {
-    "id": "Custom",
-    "title": "Custom rendered card",
-    "type": "CUSTOM",
-    "size": "MEDIUM",
-    "value": 35
-}
-                    </div>
-                    <span
-                      className="react-resizable-handle react-resizable-handle-se"
-                      onMouseDown={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                      style={
-                        Object {
-                          "touchAction": "none",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Standard"
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
-                  style={
-                    Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "25.3125%",
                       "position": "absolute",
                       "top": "0px",
                       "width": "24.0625%",
@@ -3496,7 +3479,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Timeseries"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -3505,7 +3489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Object {
                       "--card-default-height": "304px",
                       "height": "304px",
-                      "left": "50.625%",
+                      "left": "25.3125%",
                       "position": "absolute",
                       "top": "0px",
                       "width": "49.375%",
@@ -3594,6 +3578,204 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="chart-holder"
                       />
                     </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  data-testid="Card"
+                  id="CustomWithRenderFunction"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "304px",
+                      "height": "304px",
+                      "left": "0%",
+                      "position": "absolute",
+                      "top": "320px",
+                      "width": "49.375%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="iot--card--header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      title="Custom card with render function"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Custom card with render function
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    style={
+                      Object {
+                        "--card-content-height": "256px",
+                      }
+                    }
+                  >
+                    <div
+                      className="bx--inline-notification bx--inline-notification--low-contrast bx--inline-notification--info"
+                      kind="info"
+                      role="alert"
+                    >
+                      <div
+                        className="bx--inline-notification__details"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="bx--inline-notification__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                          />
+                          <path
+                            d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                            data-icon-path="inner-path"
+                            fill="none"
+                          />
+                          <title>
+                            info icon
+                          </title>
+                        </svg>
+                        <div
+                          className="bx--inline-notification__text-wrapper"
+                        >
+                          <p
+                            className="bx--inline-notification__title"
+                          >
+                            Custom component
+                          </p>
+                          <div
+                            className="bx--inline-notification__subtitle"
+                          >
+                            Add custom components by using the content prop
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        aria-label="closes notification"
+                        className="bx--inline-notification__close-button"
+                        onClick={[Function]}
+                        title="closes notification"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="close notification"
+                          className="bx--inline-notification__close-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  data-testid="Card"
+                  id="Custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "144px",
+                      "height": "144px",
+                      "left": "50.625%",
+                      "position": "absolute",
+                      "top": "320px",
+                      "width": "24.0625%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="iot--card--header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      title="Custom card with basic content"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Custom card with basic content
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    style={
+                      Object {
+                        "--card-content-height": "96px",
+                      }
+                    }
+                  >
+                    <p>
+                      To add custom content, use the content prop
+                    </p>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -5377,6 +5559,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -5384,9 +5592,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="CUSTOM"
+                              title="Custom"
                             >
-                              CUSTOM
+                              Custom
                             </div>
                           </div>
                         </div>

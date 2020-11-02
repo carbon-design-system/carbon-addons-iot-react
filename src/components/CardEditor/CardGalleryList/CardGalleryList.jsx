@@ -13,6 +13,7 @@ import {
   DataTableIcon,
   AlertTableIcon,
   ListIcon,
+  CustomCardIcon,
 } from '../../../icons/components';
 
 const propTypes = {
@@ -30,7 +31,7 @@ const propTypes = {
     cardType_TABLE: PropTypes.string,
     cardType_ALERT: PropTypes.string,
     cardType_LIST: PropTypes.string,
-    cardType_OTHER: PropTypes.string,
+    cardType_CUSTOM: PropTypes.string,
   }),
 };
 
@@ -48,7 +49,7 @@ const defaultProps = {
     cardType_TABLE: 'Data table',
     cardType_ALERT: 'Alert table',
     cardType_LIST: 'List',
-    cardType_OTHER: 'Other',
+    cardType_CUSTOM: 'Custom',
     // additional card type names can be provided using the convention of `cardType_TYPE`
   },
 };
@@ -63,6 +64,7 @@ const iconTypeMap = {
   TABLE: <DataTableIcon />,
   ALERT: <AlertTableIcon />,
   LIST: <ListIcon />,
+  CUSTOM: <CustomCardIcon />,
 };
 
 const CardGalleryList = ({ supportedCardTypes, onAddCard, i18n }) => {
