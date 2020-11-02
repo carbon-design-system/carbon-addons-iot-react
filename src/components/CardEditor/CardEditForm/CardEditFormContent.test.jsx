@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import CardEditFormContent from './CardEditFormContent';
 
-const cardJson = {
+const cardConfig = {
   id: 'Timeseries',
   title: 'Untitled',
   size: 'MEDIUMWIDE',
@@ -43,7 +43,7 @@ describe('CardEditFormContent', () => {
     it('should update JSON for the x axis label', () => {
       render(
         <CardEditFormContent
-          cardJson={cardJson}
+          cardConfig={cardConfig}
           onChange={mockOnChange}
           getValidTimeRanges={mockGetValidTimeRanges}
         />
