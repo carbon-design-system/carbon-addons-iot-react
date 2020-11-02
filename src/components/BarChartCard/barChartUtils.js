@@ -264,7 +264,7 @@ export const mapValuesToAxes = (
  */
 export const formatColors = (series, datasetNames) => {
   // first set the carbon charts config defaults
-  const colors = { identifier: 'group', scale: {} };
+  const colors = { scale: {} };
 
   // if color is an array, order doesn't matter so just map as many as possible
   if (series[0] && Array.isArray(series[0].color)) {
