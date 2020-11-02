@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  DASHBOARD_EDITOR_CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
@@ -11,6 +15,8 @@ import {
   getDefaultCard,
   getDuplicateCard,
   getCardPreview,
+  handleKeyDown,
+  handleOnClick,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -27,7 +33,14 @@ const propTypes = {
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
-  /** if provided, is used to render cards in dashboard */
+  /** if provided, is used to render cards in dashboard
+   * renderCardPreview( cardConfig: Object,
+                        commonCardProps: Object
+                        onSelectCard: Function,
+                        onDuplicateCard: Function,
+                        onRemoveCard: Function,
+                        isSelected: Boolean): Node
+   */
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
@@ -75,7 +88,7 @@ const propTypes = {
   /** Whether to disable the submit button */
   submitDisabled: PropTypes.bool,
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardJson)
+   * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
@@ -172,12 +185,12 @@ const DashboardEditor = ({
    * @param {string} type card type
    */
   const addCard = (type) => {
-    const cardData = getDefaultCard(type, mergedI18n);
+    const cardConfig = getDefaultCard(type, mergedI18n);
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -185,14 +198,14 @@ const DashboardEditor = ({
    * @param {string} id
    */
   const duplicateCard = (id) => {
-    const cardData = getDuplicateCard(
+    const cardConfig = getDuplicateCard(
       dashboardJson.cards.find((i) => i.id === id)
     );
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -208,6 +221,28 @@ const DashboardEditor = ({
   const onSelectCard = (id) => setSelectedCardId(id);
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
+
+  const commonCardProps = (cardConfig, isSelected) => ({
+    key: cardConfig.id,
+    tooltip: cardConfig.description,
+    availableActions: { clone: true, delete: true },
+    onCardAction: (id, actionId) => {
+      if (actionId === CARD_ACTIONS.CLONE_CARD) {
+        onDuplicateCard(id);
+      } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
+        onRemoveCard(id);
+      }
+    },
+    tabIndex: 0,
+    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardConfig.id),
+    onClick: () => handleOnClick(onSelectCard, cardConfig.id),
+    className: classnames(`${baseClassName}--preview__card`, {
+      // add black border when selected
+      // TODO: swap this to the true isSelected card prop once this issue is closed:
+      // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1621
+      [`${iotPrefix}--card__selected`]: isSelected,
+    }),
+  });
 
   return (
     <div className={baseClassName}>
@@ -249,21 +284,19 @@ const DashboardEditor = ({
                   layouts: newLayouts,
                 })
               }>
-              {dashboardJson.cards.map((cardData) => {
-                // if function not defined, or it returns falsy, render default preview
+              {dashboardJson.cards.map((cardConfig) => {
+                const isSelected = cardConfig.id === selectedCardId;
+                const cardProps = commonCardProps(cardConfig, isSelected);
+                // if renderCardPreview function not defined, or it returns null, render default preview
                 return (
                   renderCardPreview(
-                    cardData,
+                    cardConfig,
+                    cardProps,
                     onSelectCard,
                     onDuplicateCard,
-                    onRemoveCard
-                  ) ??
-                  getCardPreview(
-                    cardData,
-                    onSelectCard,
-                    onDuplicateCard,
-                    onRemoveCard
-                  )
+                    onRemoveCard,
+                    isSelected
+                  ) ?? getCardPreview(cardConfig, cardProps)
                 );
               })}
             </DashboardGrid>
@@ -281,19 +314,19 @@ const DashboardEditor = ({
             />
           }>
           <CardEditor
-            cardJson={dashboardJson.cards.find(
+            cardConfig={dashboardJson.cards.find(
               (card) => card.id === selectedCardId
             )}
             onShowGallery={() => setSelectedCardId(null)}
-            onChange={(cardData) =>
+            onChange={(cardConfig) =>
               // TODO: this is really inefficient
               setDashboardJson({
                 ...dashboardJson,
                 cards: dashboardJson.cards.map((card) =>
-                  card.id === cardData.id
+                  card.id === cardConfig.id
                     ? onCardChange
-                      ? onCardChange(cardData, dashboardJson)
-                      : cardData
+                      ? onCardChange(cardConfig, dashboardJson)
+                      : cardConfig
                     : card
                 ),
               })

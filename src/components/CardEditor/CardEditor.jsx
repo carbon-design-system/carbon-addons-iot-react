@@ -14,7 +14,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data being edited */
-  cardJson: PropTypes.shape({
+  cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
     size: PropTypes.string,
@@ -63,7 +63,7 @@ const propTypes = {
     })
   ),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardJson)
+   * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
@@ -76,7 +76,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  cardJson: null,
+  cardConfig: null,
   i18n: {
     galleryHeader: 'Gallery',
     openGalleryButton: 'Add card',
@@ -95,7 +95,7 @@ const defaultProps = {
 const baseClassName = `${iotPrefix}--card-editor`;
 
 const CardEditor = ({
-  cardJson,
+  cardConfig,
   onShowGallery,
   onChange,
   onAddCard,
@@ -109,7 +109,7 @@ const CardEditor = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   // show the gallery if no card is being edited
-  const showGallery = isNil(cardJson);
+  const showGallery = isNil(cardConfig);
 
   return (
     <div className={baseClassName}>
@@ -134,7 +134,7 @@ const CardEditor = ({
           />
         ) : (
           <CardEditForm
-            cardJson={cardJson}
+            cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}

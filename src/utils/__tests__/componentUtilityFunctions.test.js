@@ -3,6 +3,7 @@ import {
   canFit,
   filterValidAttributes,
   generateCsv,
+  convertStringsToDOMElement,
 } from '../componentUtilityFunctions';
 
 const mockData = [
@@ -126,5 +127,36 @@ describe('componentUtilityFunctions', () => {
 
     // The 0 should appear as the last value in the first row
     expect(splitCsv[4]).toEqual('0');
+  });
+});
+
+describe('convertStringsToDOMElement', () => {
+  it('accepts, converts, and returns single DOM node wrapped in body', () => {
+    const [element] = convertStringsToDOMElement(['<div></div>']);
+    expect(element.tagName).toBe('BODY');
+    expect(element.querySelectorAll('div').length).toBe(1);
+    expect(element instanceof Element).toBe(true);
+  });
+  it('accepts, converts, and returns multiple DOM nodes', () => {
+    const [nestedStructure, hasAttribute] = convertStringsToDOMElement([
+      '<div><ul><li>one</li><li>two</li></ul></div>',
+      '<a href="ibm.com">IBM</a>',
+    ]);
+
+    const listItems = nestedStructure.querySelectorAll('li');
+    expect(listItems.length).toBe(2);
+    expect(listItems[0].innerHTML).toBe('one');
+    expect(listItems[0].parentElement.tagName).toBe('UL');
+    expect(listItems[0].parentElement.parentElement.tagName).toBe('DIV');
+
+    expect(hasAttribute.querySelector('a').hasAttribute('href')).toBe(true);
+  });
+  it('returns undefined on empty array', () => {
+    const [element] = convertStringsToDOMElement([]);
+    expect(element).toBeUndefined();
+  });
+  it('handles text as a parameter', () => {
+    const [element] = convertStringsToDOMElement(['just a string']);
+    expect(element.firstChild.textContent).toBe('just a string');
   });
 });

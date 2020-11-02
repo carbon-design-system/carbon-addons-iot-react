@@ -25,6 +25,7 @@ import {
   handleCardVariables,
   formatNumberWithPrecision,
   getVariables,
+  getResizeHandles,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
 
@@ -327,10 +328,12 @@ const TableCard = ({
   title: titleProp,
   isExpanded,
   content: contentProp,
+  children,
   size,
   onCardAction,
   values: valuesProp,
   isEditable,
+  isResizable,
   i18n,
   tooltip,
   locale,
@@ -566,26 +569,7 @@ const TableCard = ({
             ? i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
         }))
-        .concat(hasActionColumn ? actionColumn : [])
-        .map((column) => {
-          const columnPriority = column.priority || 1; // default to 1 if not provided
-          switch (newSize) {
-            case CARD_SIZES.LARGETHIN:
-              return columnPriority === 1 ? column : null;
-
-            case CARD_SIZES.LARGE:
-              return columnPriority === 1 || columnPriority === 2
-                ? column
-                : null;
-
-            case CARD_SIZES.LARGEWIDE:
-              return column;
-
-            default:
-              return column;
-          }
-        })
-        .filter((i) => i),
+        .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
       hasActionColumn,
@@ -593,6 +577,19 @@ const TableCard = ({
       newColumns,
       newSize,
     ]
+  );
+
+  const ordering = useMemo(
+    () =>
+      columnsToRender.map(({ id: columnId, priority }) => {
+        const prio = priority || 1; // default to 1 if not provided
+        const isHidden =
+          (newSize === CARD_SIZES.LARGETHIN && prio !== 1) ||
+          (newSize === CARD_SIZES.LARGE && !(prio === 1 || prio === 2));
+
+        return { columnId, isHidden };
+      }),
+    [columnsToRender, newSize]
   );
 
   const filteredTimestampColumns = useMemo(
@@ -784,11 +781,7 @@ const TableCard = ({
   );
 
   // is columns recieved is different from the columnsToRender show card expand
-  const isExpandable =
-    columns.length !==
-    columnsToRender.filter(
-      (item) => item.id !== 'actionColumn' && !item.id.includes('iconColumn')
-    ).length;
+  const isExpandable = !!ordering.find((col) => col.isHidden);
 
   const hasFilter = newSize !== CARD_SIZES.LARGETHIN;
 
@@ -821,6 +814,8 @@ const TableCard = ({
     />
   );
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   return (
     <Card
       id={id}
@@ -828,8 +823,10 @@ const TableCard = ({
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
+      isResizable={isResizable}
       isExpanded={isExpanded}
       i18n={mergedI18n}
+      resizeHandles={resizeHandles}
       hideHeader
       {...others}>
       {({ height }) => {
@@ -892,6 +889,7 @@ const TableCard = ({
                 emptyState: {
                   message: emptyMessage || mergedI18n.emptyMessage,
                 },
+                ordering,
               },
             }}
             showHeader={showHeader !== undefined ? showHeader : true}

@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             IBM
           </span>
            
-          Watson IoT Platform 
+          Application Name
         </a>
         <div
           className="bx--header__global"
@@ -429,7 +429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           IBM
         </span>
          
-        Watson IoT Platform 
+        Application Name
       </a>
       <div
         className="bx--header__global"
@@ -551,7 +551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             IBM
           </span>
            
-          Watson IoT Platform 
+          Application Name
         </a>
         <div
           className="bx--header__global"
@@ -747,7 +747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             IBM
           </span>
            
-          Watson IoT Platform 
+          Application Name
           <div
             className="iot--header__subtitle"
           >

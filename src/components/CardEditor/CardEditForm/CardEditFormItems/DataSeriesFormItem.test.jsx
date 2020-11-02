@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import DataSeriesFormItem, { formatSeries } from './DataSeriesFormItem';
 
-const cardJson = {
+const cardConfig = {
   id: 'Timeseries',
   title: 'Untitled',
   size: 'MEDIUMWIDE',
@@ -45,7 +45,7 @@ afterEach(() => {
 });
 describe('DataSeriesFormItem', () => {
   describe('formatSeries', () => {
-    const cardJsonWithoutColorDefinition = {
+    const cardConfigWithoutColorDefinition = {
       content: {
         series: [
           {
@@ -64,14 +64,14 @@ describe('DataSeriesFormItem', () => {
       { id: 'pressure', text: 'Pressure' },
     ];
     it('should correctly format the card series', () => {
-      expect(formatSeries(selectedItems, cardJson)).toEqual([
+      expect(formatSeries(selectedItems, cardConfig)).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
       expect(
-        formatSeries(selectedItems, cardJsonWithoutColorDefinition)
+        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
       ).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
@@ -82,7 +82,7 @@ describe('DataSeriesFormItem', () => {
     it('should prioritize getValidDataItems', () => {
       render(
         <DataSeriesFormItem
-          cardJson={cardJson}
+          cardConfig={cardConfig}
           onChange={mockOnChange}
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
@@ -94,7 +94,7 @@ describe('DataSeriesFormItem', () => {
     it('handles initial dataItems', () => {
       render(
         <DataSeriesFormItem
-          cardJson={{ ...cardJson, content: {} }}
+          cardJson={{ ...cardConfig, content: {} }}
           onChange={mockOnChange}
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
@@ -108,7 +108,7 @@ describe('DataSeriesFormItem', () => {
     it('should open dataItem editor, edit, and submit', async () => {
       render(
         <DataSeriesFormItem
-          cardJson={cardJson}
+          cardConfig={cardConfig}
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
