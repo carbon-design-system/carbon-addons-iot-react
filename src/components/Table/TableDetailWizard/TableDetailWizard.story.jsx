@@ -1,6 +1,5 @@
 /* Used dependencies */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
@@ -161,48 +160,67 @@ export const itemsAndComponents = items.map((item, i) => ({
   component: itemComponents[i],
 }));
 
-storiesOf('Watson IoT/TableDetailWizard', module)
-  .add('Stateful example', () => (
-    <StatefulTableDetailWizard
-      currentItemId="step1"
-      items={itemsAndComponents}
-      title={text('title', 'Create Physical Interface')}
-      showLabels={boolean('showLabels', true)}
-      onClose={action('closed')}
-      onSubmit={action('submit')}
-      onNext={action('next')}
-      onBack={action('back')}
-      setItem={action('step clicked')}
-      isClickable={boolean('isClickable', true)}
-    />
-  ))
-  .add('Static', () => (
-    <TableDetailWizard
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Create Physical Interface')}
-      currentItemId="step2"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-      isClickable={boolean('isClickable', true)}
-    />
-  ))
-  .add('with error', () => (
-    <TableDetailWizard
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Create Physical Interface')}
-      currentItemId="step1"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-      error="Error on the form"
-      onClearError={action('clear error')}
-      isClickable={boolean('isClickable', true)}
-    />
-  ));
+export default {
+  title: 'Watson IoT/TableDetailWizard',
+
+  parameters: {
+    component: TableDetailWizard,
+  },
+
+  excludeStories: ['itemsAndComponents'],
+};
+
+export const StatefulExample = () => (
+  <StatefulTableDetailWizard
+    currentItemId="step1"
+    items={itemsAndComponents}
+    title={text('title', 'Create Physical Interface')}
+    showLabels={boolean('showLabels', true)}
+    onClose={action('closed')}
+    onSubmit={action('submit')}
+    onNext={action('next')}
+    onBack={action('back')}
+    setItem={action('step clicked')}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+StatefulExample.story = {
+  name: 'Stateful example',
+};
+
+export const Static = () => (
+  <TableDetailWizard
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Create Physical Interface')}
+    currentItemId="step2"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+export const WithError = () => (
+  <TableDetailWizard
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Create Physical Interface')}
+    currentItemId="step1"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+    error="Error on the form"
+    onClearError={action('clear error')}
+    isClickable={boolean('isClickable', true)}
+  />
+);
+
+WithError.story = {
+  name: 'with error',
+};

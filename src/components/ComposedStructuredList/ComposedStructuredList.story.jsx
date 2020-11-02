@@ -1,7 +1,6 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/react';
 
 import DeprecationNotice, {
   deprecatedStoryTitle,
@@ -55,94 +54,123 @@ const StructuredListInputProps = {
   className: 'checks',
 };
 
-storiesOf('Watson IoT/ComposedStructuredList (Deprecated)', module)
-  .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice
-      deprecatedComponentName="ComposedStructuredList"
-      replacementComponentName="StructuredList"
-    />
-  ))
-  .add('default ', () => (
-    <ComposedStructuredList
-      design={select('Row design', ['normal', 'mini'], 'mini')}
-      data={data}
-      columns={columns}
-      onRowClick={action('onRowClick')}
-      StructuredListInputProps={StructuredListInputProps}
-    />
-  ))
-  .add('with empty state', () => (
-    <ComposedStructuredList
-      columns={columns}
-      data={[]}
-      loadingDataLabel="No data is available yet."
-      onRowClick={action('onRowClick')}
-    />
-  ))
-  .add('with fixed column widths', () => (
-    <ComposedStructuredList
-      columns={columns.map((i, idx) => ({ ...i, width: `${10 + idx * 2}rem` }))}
-      data={data}
-      isFixedWidth
-      loadingDataLabel="No data is available yet."
-      onRowClick={action('onRowClick')}
-    />
-  ))
-  .add('with empty state with fixed column width', () => (
-    <ComposedStructuredList
-      columns={columns.map((i, idx) => ({ ...i, width: `${10 + idx * 2}rem` }))}
-      data={[]}
-      isFixedWidth
-      loadingDataLabel="No data is available yet."
-      onRowClick={action('onRowClick')}
-    />
-  ))
-  .add(
-    'custom cell renderer',
-    () => (
-      <ComposedStructuredList
-        columns={columns.map((column) => ({
-          ...column,
-          renderDataFunction: ({ value }) => (
-            <span style={{ color: 'blue' }}>{value}</span>
-          ),
-        }))}
-        data={data}
-        onRowClick={action('onRowClick')}
-      />
-    ),
-    {
-      info: {
-        text: `
+export default {
+  title: 'Watson IoT/ComposedStructuredList (Deprecated)',
+};
 
-        To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="ComposedStructuredList"
+    replacementComponentName="StructuredList"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
 
-        <br />
+export const Default = () => (
+  <ComposedStructuredList
+    design={select('Row design', ['normal', 'mini'], 'mini')}
+    data={data}
+    columns={columns}
+    onRowClick={action('onRowClick')}
+    StructuredListInputProps={StructuredListInputProps}
+  />
+);
 
-        ~~~js
-        columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
-        ~~~
+Default.story = {
+  name: 'default ',
+};
 
-        <br />
+export const WithEmptyState = () => (
+  <ComposedStructuredList
+    columns={columns}
+    data={[]}
+    loadingDataLabel="No data is available yet."
+    onRowClick={action('onRowClick')}
+  />
+);
 
-        The renderDataFunction is called with this payload
+WithEmptyState.story = {
+  name: 'with empty state',
+};
 
-        <br />
+export const WithFixedColumnWidths = () => (
+  <ComposedStructuredList
+    columns={columns.map((i, idx) => ({ ...i, width: `${10 + idx * 2}rem` }))}
+    data={data}
+    isFixedWidth
+    loadingDataLabel="No data is available yet."
+    onRowClick={action('onRowClick')}
+  />
+);
 
-        ~~~js
-           {
-              value: PropTypes.any (current cell value),
-              columnId: PropTypes.string,
-              rowId: PropTypes.string,
-              row: the full data for this rowPropTypes.object like this {col: value, col2: value}
-           }
+WithFixedColumnWidths.story = {
+  name: 'with fixed column widths',
+};
 
-           const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
-        ~~~
+export const WithEmptyStateWithFixedColumnWidth = () => (
+  <ComposedStructuredList
+    columns={columns.map((i, idx) => ({ ...i, width: `${10 + idx * 2}rem` }))}
+    data={[]}
+    isFixedWidth
+    loadingDataLabel="No data is available yet."
+    onRowClick={action('onRowClick')}
+  />
+);
 
-        <br />
+WithEmptyStateWithFixedColumnWidth.story = {
+  name: 'with empty state with fixed column width',
+};
 
-          `,
-      },
-    }
-  );
+export const CustomCellRenderer = () => (
+  <ComposedStructuredList
+    columns={columns.map((column) => ({
+      ...column,
+      renderDataFunction: ({ value }) => (
+        <span style={{ color: 'blue' }}>{value}</span>
+      ),
+    }))}
+    data={data}
+    onRowClick={action('onRowClick')}
+  />
+);
+
+CustomCellRenderer.story = {
+  name: 'custom cell renderer',
+
+  parameters: {
+    info: {
+      text: `
+
+      To render a your own widget in a list cell, pass a renderDataFunction prop along with your column metadata.
+
+      <br />
+
+      ~~~js
+      columns=[ { id: 'columnA', title: 'A', renderDataFunction: myCustomRenderer }, ...]
+      ~~~
+
+      <br />
+
+      The renderDataFunction is called with this payload
+
+      <br />
+
+      ~~~js
+         {
+            value: PropTypes.any (current cell value),
+            columnId: PropTypes.string,
+            rowId: PropTypes.string,
+            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+         }
+
+         const myCustomRenderer = ({ value }) => <span style={{ color: 'blue' }}>{value}</span>
+      ~~~
+
+      <br />
+
+        `,
+    },
+  },
+};
