@@ -8045,7 +8045,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
-      "cardJson": null,
+      "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
       "i18n": Object {
@@ -8068,7 +8068,7 @@ Map {
       ],
     },
     "propTypes": Object {
-      "cardJson": Object {
+      "cardConfig": Object {
         "args": Array [
           Object {
             "content": Object {
@@ -23520,5 +23520,18 @@ Map {
     "tableSearchApply": Object {},
     "tableToolbarToggle": Object {},
   },
+  "AlertTableIcon" => Object {},
+  "BarGroupedGraphIcon" => Object {},
+  "BarStackGraphIcon" => Object {},
+  "ComputerChipIcon" => Object {},
+  "CustomCardIcon" => Object {},
+  "DashboardIcon" => Object {},
+  "DataScientistIcon" => Object {},
+  "DataTableIcon" => Object {},
+  "ImageIcon" => Object {},
+  "LineGraphIcon" => Object {},
+  "ListIcon" => Object {},
+  "SimpleBarGraphIcon" => Object {},
+  "ValueKpiIcon" => Object {},
 }
 `;

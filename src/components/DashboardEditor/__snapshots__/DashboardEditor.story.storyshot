@@ -285,9 +285,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="iot--card react-grid-item selected-card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -302,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       "width": "24.0625%",
                     }
                   }
+                  tabIndex={0}
                 >
                   <div
                     className="iot--card--header"
@@ -316,6 +319,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Custom rendered card
                       </div>
                     </span>
+                    <div
+                      className="iot--card--toolbar"
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="Menu"
+                        className="bx--overflow-menu"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        tabIndex={0}
+                        title="Open and close list of options"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="open and close list of options"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            open and close list of options
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                   <div
                     className="iot--card--content"
@@ -355,7 +409,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Standard"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -658,10 +713,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
+                          <svg
+                            height={34}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="nonzero"
+                              transform="translate(0 1)"
+                            >
+                              <path
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                fill="#0062FF"
+                              />
+                              <circle
+                                cx={7.382}
+                                cy={31.154}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={20.455}
+                                cy={0.966}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={32.904}
+                                cy={7.365}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <path
+                                d="M.13 13.592h.776v-.155H.13zM1.424 13.592H2.2v-.155h-.777zM2.718 13.592h.777v-.155h-.777zM4.013 13.592h.777v-.155h-.777zM5.307 13.592h.777v-.155h-.777zM6.602 13.592h.777v-.155h-.777zM7.896 13.592h.777v-.155h-.777zM9.19 13.592h.778v-.155H9.19zM10.485 13.592h.777v-.155h-.777zM11.78 13.592h.777v-.155h-.777zM13.074 13.592h.777v-.155h-.777zM14.369 13.592h.777v-.155h-.777zM15.663 13.592h.777v-.155h-.777zM16.958 13.592h.777v-.155h-.777zM18.252 13.592h.777v-.155h-.777zM19.547 13.592h.777v-.155h-.777zM20.841 13.592h.777v-.155h-.777zM22.136 13.592h.777v-.155h-.777zM23.43 13.592h.777v-.155h-.777zM24.725 13.592h.777v-.155h-.777zM26.02 13.592h.776v-.155h-.777zM27.314 13.592h.777v-.155h-.777zM28.608 13.592h.777v-.155h-.777zM29.903 13.592h.777v-.155h-.777zM31.197 13.592h.777v-.155h-.777zM32.492 13.592h.777v-.155h-.777zM33.786 13.592h.777v-.155h-.777zM35.08 13.592h.778v-.155h-.777zM36.375 13.592h.777v-.155h-.777zM37.67 13.592h.777v-.155h-.777zM38.964 13.592h.389v-.155h-.389z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -698,10 +792,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <path
+                              d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
+                              fill="#0062FF"
+                            />
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -738,10 +837,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.926 7.822H40V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M37.584 17.422h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M31.41 3.2h1.073V32H31.41z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.067 9.956h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M23.893 14.578h1.073V32h-1.073z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.55 21.333h1.074V32H22.55z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M16.644 12.089h1.074V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.302 25.6h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M8.86 20.267h1.073V32H8.859z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.517 23.111h1.074V32H7.517z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M1.342 0h1.074v32H1.342z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.074V32H0z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -778,10 +930,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.108 7.467H40v24.178h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M38.108 17.067H40v14.578h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M38.108 16.711H40v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M30.27 2.844h1.892v28.8H30.27z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.27 9.956h1.892V32H30.27z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M30.27 9.6h1.892v1H30.27z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M22.703 14.578h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.703 21.333h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M22.703 20.978h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M15.405 12.089h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.405 25.6h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M15.405 25.244h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M7.838 20.267H9.73V32H7.838z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.838 23.111H9.73V32H7.838z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M7.838 22.756H9.73v1H7.838z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M0 0h1.892v32H0z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.892V32H0z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M0 13.867h1.892v1H0z"
+                                fill="#FFF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -818,10 +1047,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h38.752v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
+                                fill="#8EC1FF"
+                              />
+                              <text
+                                fill="#2160F8"
+                                fontFamily="IBMPlexSans, IBM Plex Sans"
+                                fontSize={10}
+                              >
+                                <tspan
+                                  x={4.969}
+                                  y={15.5}
+                                >
+                                  25%
+                                </tspan>
+                              </text>
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -858,10 +1113,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                stroke="#0062FF"
+                              />
+                              <ellipse
+                                cx={25.835}
+                                cy={7.62}
+                                rx={3.19}
+                                ry={3.5}
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -898,10 +1174,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 12.69h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19zm21.5 0h11v2.759H25z"
+                                fill="#D8D8D8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -935,6 +1229,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <div
                         className="iot--list-item--content"
                       >
+                        <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
                         <div
                           className="iot--list-item--content--values"
                         >
@@ -1152,10 +1472,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h38.752v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
+                                fill="#8EC1FF"
+                              />
+                              <text
+                                fill="#2160F8"
+                                fontFamily="IBMPlexSans, IBM Plex Sans"
+                                fontSize={10}
+                              >
+                                <tspan
+                                  x={4.969}
+                                  y={15.5}
+                                >
+                                  25%
+                                </tspan>
+                              </text>
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1192,10 +1538,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
+                          <svg
+                            height={34}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="nonzero"
+                              transform="translate(0 1)"
+                            >
+                              <path
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                fill="#0062FF"
+                              />
+                              <circle
+                                cx={7.382}
+                                cy={31.154}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={20.455}
+                                cy={0.966}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={32.904}
+                                cy={7.365}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <path
+                                d="M.13 13.592h.776v-.155H.13zM1.424 13.592H2.2v-.155h-.777zM2.718 13.592h.777v-.155h-.777zM4.013 13.592h.777v-.155h-.777zM5.307 13.592h.777v-.155h-.777zM6.602 13.592h.777v-.155h-.777zM7.896 13.592h.777v-.155h-.777zM9.19 13.592h.778v-.155H9.19zM10.485 13.592h.777v-.155h-.777zM11.78 13.592h.777v-.155h-.777zM13.074 13.592h.777v-.155h-.777zM14.369 13.592h.777v-.155h-.777zM15.663 13.592h.777v-.155h-.777zM16.958 13.592h.777v-.155h-.777zM18.252 13.592h.777v-.155h-.777zM19.547 13.592h.777v-.155h-.777zM20.841 13.592h.777v-.155h-.777zM22.136 13.592h.777v-.155h-.777zM23.43 13.592h.777v-.155h-.777zM24.725 13.592h.777v-.155h-.777zM26.02 13.592h.776v-.155h-.777zM27.314 13.592h.777v-.155h-.777zM28.608 13.592h.777v-.155h-.777zM29.903 13.592h.777v-.155h-.777zM31.197 13.592h.777v-.155h-.777zM32.492 13.592h.777v-.155h-.777zM33.786 13.592h.777v-.155h-.777zM35.08 13.592h.778v-.155h-.777zM36.375 13.592h.777v-.155h-.777zM37.67 13.592h.777v-.155h-.777zM38.964 13.592h.389v-.155h-.389z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1232,10 +1617,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                stroke="#0062FF"
+                              />
+                              <ellipse
+                                cx={25.835}
+                                cy={7.62}
+                                rx={3.19}
+                                ry={3.5}
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1272,10 +1678,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 12.69h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19zm21.5 0h11v2.759H25z"
+                                fill="#D8D8D8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1312,10 +1736,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <path
+                              d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
+                              fill="#0062FF"
+                            />
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1352,10 +1781,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.926 7.822H40V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M37.584 17.422h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M31.41 3.2h1.073V32H31.41z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.067 9.956h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M23.893 14.578h1.073V32h-1.073z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.55 21.333h1.074V32H22.55z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M16.644 12.089h1.074V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.302 25.6h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M8.86 20.267h1.073V32H8.859z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.517 23.111h1.074V32H7.517z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M1.342 0h1.074v32H1.342z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.074V32H0z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1392,10 +1874,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.108 7.467H40v24.178h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M38.108 17.067H40v14.578h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M38.108 16.711H40v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M30.27 2.844h1.892v28.8H30.27z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.27 9.956h1.892V32H30.27z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M30.27 9.6h1.892v1H30.27z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M22.703 14.578h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.703 21.333h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M22.703 20.978h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M15.405 12.089h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.405 25.6h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M15.405 25.244h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M7.838 20.267H9.73V32H7.838z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.838 23.111H9.73V32H7.838z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M7.838 22.756H9.73v1H7.838z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M0 0h1.892v32H0z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.892V32H0z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M0 13.867h1.892v1H0z"
+                                fill="#FFF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1847,10 +2406,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
+                          <svg
+                            height={34}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="nonzero"
+                              transform="translate(0 1)"
+                            >
+                              <path
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                fill="#0062FF"
+                              />
+                              <circle
+                                cx={7.382}
+                                cy={31.154}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={20.455}
+                                cy={0.966}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={32.904}
+                                cy={7.365}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <path
+                                d="M.13 13.592h.776v-.155H.13zM1.424 13.592H2.2v-.155h-.777zM2.718 13.592h.777v-.155h-.777zM4.013 13.592h.777v-.155h-.777zM5.307 13.592h.777v-.155h-.777zM6.602 13.592h.777v-.155h-.777zM7.896 13.592h.777v-.155h-.777zM9.19 13.592h.778v-.155H9.19zM10.485 13.592h.777v-.155h-.777zM11.78 13.592h.777v-.155h-.777zM13.074 13.592h.777v-.155h-.777zM14.369 13.592h.777v-.155h-.777zM15.663 13.592h.777v-.155h-.777zM16.958 13.592h.777v-.155h-.777zM18.252 13.592h.777v-.155h-.777zM19.547 13.592h.777v-.155h-.777zM20.841 13.592h.777v-.155h-.777zM22.136 13.592h.777v-.155h-.777zM23.43 13.592h.777v-.155h-.777zM24.725 13.592h.777v-.155h-.777zM26.02 13.592h.776v-.155h-.777zM27.314 13.592h.777v-.155h-.777zM28.608 13.592h.777v-.155h-.777zM29.903 13.592h.777v-.155h-.777zM31.197 13.592h.777v-.155h-.777zM32.492 13.592h.777v-.155h-.777zM33.786 13.592h.777v-.155h-.777zM35.08 13.592h.778v-.155h-.777zM36.375 13.592h.777v-.155h-.777zM37.67 13.592h.777v-.155h-.777zM38.964 13.592h.389v-.155h-.389z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1887,10 +2485,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <path
+                              d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
+                              fill="#0062FF"
+                            />
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1927,10 +2530,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.926 7.822H40V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M37.584 17.422h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M31.41 3.2h1.073V32H31.41z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.067 9.956h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M23.893 14.578h1.073V32h-1.073z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.55 21.333h1.074V32H22.55z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M16.644 12.089h1.074V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.302 25.6h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M8.86 20.267h1.073V32H8.859z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.517 23.111h1.074V32H7.517z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M1.342 0h1.074v32H1.342z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.074V32H0z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -1967,10 +2623,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.108 7.467H40v24.178h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M38.108 17.067H40v14.578h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M38.108 16.711H40v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M30.27 2.844h1.892v28.8H30.27z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.27 9.956h1.892V32H30.27z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M30.27 9.6h1.892v1H30.27z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M22.703 14.578h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.703 21.333h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M22.703 20.978h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M15.405 12.089h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.405 25.6h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M15.405 25.244h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M7.838 20.267H9.73V32H7.838z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.838 23.111H9.73V32H7.838z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M7.838 22.756H9.73v1H7.838z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M0 0h1.892v32H0z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.892V32H0z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M0 13.867h1.892v1H0z"
+                                fill="#FFF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -2007,10 +2740,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h38.752v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
+                                fill="#8EC1FF"
+                              />
+                              <text
+                                fill="#2160F8"
+                                fontFamily="IBMPlexSans, IBM Plex Sans"
+                                fontSize={10}
+                              >
+                                <tspan
+                                  x={4.969}
+                                  y={15.5}
+                                >
+                                  25%
+                                </tspan>
+                              </text>
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -2047,10 +2806,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                stroke="#0062FF"
+                              />
+                              <ellipse
+                                cx={25.835}
+                                cy={7.62}
+                                rx={3.19}
+                                ry={3.5}
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -2087,10 +2867,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 12.69h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19zm21.5 0h11v2.759H25z"
+                                fill="#D8D8D8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -2125,6 +2923,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -2132,9 +2956,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="CUSTOM"
+                              title="Custom"
                             >
-                              CUSTOM
+                              Custom
                             </div>
                           </div>
                         </div>
@@ -2455,15 +3279,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onDrop={[Function]}
                 style={
                   Object {
-                    "height": "304px",
+                    "height": "624px",
                   }
                 }
               >
                 <div
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
-                  id="Custom"
-                  onFocus={[Function]}
+                  id="Standard"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -2473,131 +3298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       "--card-default-height": "304px",
                       "height": "304px",
                       "left": "0%",
-                      "position": "absolute",
-                      "top": "0px",
-                      "width": "24.0625%",
-                    }
-                  }
-                  tabIndex={0}
-                  type="CUSTOM"
-                  value={35}
-                >
-                  <div
-                    className="iot--card--header"
-                  >
-                    <span
-                      className="iot--card--title"
-                      title="Custom rendered card"
-                    >
-                      <div
-                        className="iot--card--title--text"
-                      >
-                        Custom rendered card
-                      </div>
-                    </span>
-                    <div
-                      className="iot--card--toolbar"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 32 32"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            cx="16"
-                            cy="8"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="2"
-                          />
-                          <circle
-                            cx="16"
-                            cy="24"
-                            r="2"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    className="iot--card--content"
-                    style={
-                      Object {
-                        "--card-content-height": "256px",
-                      }
-                    }
-                  >
-                    <div
-                      style={
-                        Object {
-                          "padding": "1rem",
-                        }
-                      }
-                    >
-                      {
-    "id": "Custom",
-    "title": "Custom rendered card",
-    "type": "CUSTOM",
-    "size": "MEDIUM",
-    "value": 35
-}
-                    </div>
-                    <span
-                      className="react-resizable-handle react-resizable-handle-se"
-                      onMouseDown={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchStart={[Function]}
-                      style={
-                        Object {
-                          "touchAction": "none",
-                        }
-                      }
-                    />
-                  </div>
-                </div>
-                <div
-                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
-                  data-testid="Card"
-                  id="Standard"
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  role="presentation"
-                  style={
-                    Object {
-                      "--card-default-height": "304px",
-                      "height": "304px",
-                      "left": "25.3125%",
                       "position": "absolute",
                       "top": "0px",
                       "width": "24.0625%",
@@ -2779,7 +3479,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                   data-testid="Card"
                   id="Timeseries"
-                  onFocus={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   onMouseDown={[Function]}
                   onMouseUp={[Function]}
                   onTouchEnd={[Function]}
@@ -2788,7 +3489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Object {
                       "--card-default-height": "304px",
                       "height": "304px",
-                      "left": "50.625%",
+                      "left": "25.3125%",
                       "position": "absolute",
                       "top": "0px",
                       "width": "49.375%",
@@ -2877,6 +3578,204 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="chart-holder"
                       />
                     </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  data-testid="Card"
+                  id="CustomWithRenderFunction"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "304px",
+                      "height": "304px",
+                      "left": "0%",
+                      "position": "absolute",
+                      "top": "320px",
+                      "width": "49.375%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="iot--card--header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      title="Custom card with render function"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Custom card with render function
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    style={
+                      Object {
+                        "--card-content-height": "256px",
+                      }
+                    }
+                  >
+                    <div
+                      className="bx--inline-notification bx--inline-notification--low-contrast bx--inline-notification--info"
+                      kind="info"
+                      role="alert"
+                    >
+                      <div
+                        className="bx--inline-notification__details"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          className="bx--inline-notification__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                          />
+                          <path
+                            d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                            data-icon-path="inner-path"
+                            fill="none"
+                          />
+                          <title>
+                            info icon
+                          </title>
+                        </svg>
+                        <div
+                          className="bx--inline-notification__text-wrapper"
+                        >
+                          <p
+                            className="bx--inline-notification__title"
+                          >
+                            Custom component
+                          </p>
+                          <div
+                            className="bx--inline-notification__subtitle"
+                          >
+                            Add custom components by using the content prop
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        aria-label="closes notification"
+                        className="bx--inline-notification__close-button"
+                        onClick={[Function]}
+                        title="closes notification"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="close notification"
+                          className="bx--inline-notification__close-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                  data-testid="Card"
+                  id="Custom"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  role="presentation"
+                  style={
+                    Object {
+                      "--card-default-height": "144px",
+                      "height": "144px",
+                      "left": "50.625%",
+                      "position": "absolute",
+                      "top": "320px",
+                      "width": "24.0625%",
+                    }
+                  }
+                  tabIndex={0}
+                  type="CUSTOM"
+                >
+                  <div
+                    className="iot--card--header"
+                  >
+                    <span
+                      className="iot--card--title"
+                      title="Custom card with basic content"
+                    >
+                      <div
+                        className="iot--card--title--text"
+                      >
+                        Custom card with basic content
+                      </div>
+                    </span>
+                    <div
+                      className="iot--card--toolbar"
+                    />
+                  </div>
+                  <div
+                    className="iot--card--content"
+                    style={
+                      Object {
+                        "--card-content-height": "96px",
+                      }
+                    }
+                  >
+                    <p>
+                      To add custom content, use the content prop
+                    </p>
+                    <span
+                      className="react-resizable-handle react-resizable-handle-se"
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "touchAction": "none",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -2995,10 +3894,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
+                          <svg
+                            height={34}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="nonzero"
+                              transform="translate(0 1)"
+                            >
+                              <path
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                fill="#0062FF"
+                              />
+                              <circle
+                                cx={7.382}
+                                cy={31.154}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={20.455}
+                                cy={0.966}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={32.904}
+                                cy={7.365}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <path
+                                d="M.13 13.592h.776v-.155H.13zM1.424 13.592H2.2v-.155h-.777zM2.718 13.592h.777v-.155h-.777zM4.013 13.592h.777v-.155h-.777zM5.307 13.592h.777v-.155h-.777zM6.602 13.592h.777v-.155h-.777zM7.896 13.592h.777v-.155h-.777zM9.19 13.592h.778v-.155H9.19zM10.485 13.592h.777v-.155h-.777zM11.78 13.592h.777v-.155h-.777zM13.074 13.592h.777v-.155h-.777zM14.369 13.592h.777v-.155h-.777zM15.663 13.592h.777v-.155h-.777zM16.958 13.592h.777v-.155h-.777zM18.252 13.592h.777v-.155h-.777zM19.547 13.592h.777v-.155h-.777zM20.841 13.592h.777v-.155h-.777zM22.136 13.592h.777v-.155h-.777zM23.43 13.592h.777v-.155h-.777zM24.725 13.592h.777v-.155h-.777zM26.02 13.592h.776v-.155h-.777zM27.314 13.592h.777v-.155h-.777zM28.608 13.592h.777v-.155h-.777zM29.903 13.592h.777v-.155h-.777zM31.197 13.592h.777v-.155h-.777zM32.492 13.592h.777v-.155h-.777zM33.786 13.592h.777v-.155h-.777zM35.08 13.592h.778v-.155h-.777zM36.375 13.592h.777v-.155h-.777zM37.67 13.592h.777v-.155h-.777zM38.964 13.592h.389v-.155h-.389z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3035,10 +3973,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <path
+                              d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
+                              fill="#0062FF"
+                            />
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3075,10 +4018,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.926 7.822H40V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M37.584 17.422h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M31.41 3.2h1.073V32H31.41z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.067 9.956h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M23.893 14.578h1.073V32h-1.073z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.55 21.333h1.074V32H22.55z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M16.644 12.089h1.074V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.302 25.6h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M8.86 20.267h1.073V32H8.859z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.517 23.111h1.074V32H7.517z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M1.342 0h1.074v32H1.342z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.074V32H0z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3115,10 +4111,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.108 7.467H40v24.178h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M38.108 17.067H40v14.578h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M38.108 16.711H40v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M30.27 2.844h1.892v28.8H30.27z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.27 9.956h1.892V32H30.27z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M30.27 9.6h1.892v1H30.27z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M22.703 14.578h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.703 21.333h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M22.703 20.978h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M15.405 12.089h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.405 25.6h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M15.405 25.244h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M7.838 20.267H9.73V32H7.838z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.838 23.111H9.73V32H7.838z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M7.838 22.756H9.73v1H7.838z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M0 0h1.892v32H0z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.892V32H0z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M0 13.867h1.892v1H0z"
+                                fill="#FFF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3155,10 +4228,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h38.752v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
+                                fill="#8EC1FF"
+                              />
+                              <text
+                                fill="#2160F8"
+                                fontFamily="IBMPlexSans, IBM Plex Sans"
+                                fontSize={10}
+                              >
+                                <tspan
+                                  x={4.969}
+                                  y={15.5}
+                                >
+                                  25%
+                                </tspan>
+                              </text>
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3195,10 +4294,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                stroke="#0062FF"
+                              />
+                              <ellipse
+                                cx={25.835}
+                                cy={7.62}
+                                rx={3.19}
+                                ry={3.5}
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3235,10 +4355,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 12.69h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19zm21.5 0h11v2.759H25z"
+                                fill="#D8D8D8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3904,10 +5042,49 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Time series"
-                            src="line-graph.svg"
-                          />
+                          <svg
+                            height={34}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="nonzero"
+                              transform="translate(0 1)"
+                            >
+                              <path
+                                d="M20.556 1.233L32.28 7.368l.033.013 7.299 1.68v-.453l-7.193-1.675L20.376.63 7.546 30.883.519 28.516l-.002.483 7.23 2.436z"
+                                fill="#0062FF"
+                              />
+                              <circle
+                                cx={7.382}
+                                cy={31.154}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={20.455}
+                                cy={0.966}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <circle
+                                cx={32.904}
+                                cy={7.365}
+                                fill="#FFF"
+                                r={1}
+                                stroke="#0062FF"
+                                strokeWidth={1.5}
+                              />
+                              <path
+                                d="M.13 13.592h.776v-.155H.13zM1.424 13.592H2.2v-.155h-.777zM2.718 13.592h.777v-.155h-.777zM4.013 13.592h.777v-.155h-.777zM5.307 13.592h.777v-.155h-.777zM6.602 13.592h.777v-.155h-.777zM7.896 13.592h.777v-.155h-.777zM9.19 13.592h.778v-.155H9.19zM10.485 13.592h.777v-.155h-.777zM11.78 13.592h.777v-.155h-.777zM13.074 13.592h.777v-.155h-.777zM14.369 13.592h.777v-.155h-.777zM15.663 13.592h.777v-.155h-.777zM16.958 13.592h.777v-.155h-.777zM18.252 13.592h.777v-.155h-.777zM19.547 13.592h.777v-.155h-.777zM20.841 13.592h.777v-.155h-.777zM22.136 13.592h.777v-.155h-.777zM23.43 13.592h.777v-.155h-.777zM24.725 13.592h.777v-.155h-.777zM26.02 13.592h.776v-.155h-.777zM27.314 13.592h.777v-.155h-.777zM28.608 13.592h.777v-.155h-.777zM29.903 13.592h.777v-.155h-.777zM31.197 13.592h.777v-.155h-.777zM32.492 13.592h.777v-.155h-.777zM33.786 13.592h.777v-.155h-.777zM35.08 13.592h.778v-.155h-.777zM36.375 13.592h.777v-.155h-.777zM37.67 13.592h.777v-.155h-.777zM38.964 13.592h.389v-.155h-.389z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3944,10 +5121,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Simple bar"
-                            src="simple-bar-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <path
+                              d="M0 0h1.111v32H0zm31.111 2.963h1.111V32h-1.111zM7.778 19.259h1.111V32H7.778zm7.778-7.407h1.111V32h-1.111zM38.889 26.37H40V32h-1.111zM23.333 14.222h1.111V32h-1.111z"
+                              fill="#0062FF"
+                            />
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -3984,10 +5166,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Grouped bar"
-                            src="bar-grouped-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.926 7.822H40V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M37.584 17.422h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M31.41 3.2h1.073V32H31.41z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.067 9.956h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M23.893 14.578h1.073V32h-1.073z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.55 21.333h1.074V32H22.55z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M16.644 12.089h1.074V32h-1.074z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.302 25.6h1.074V32h-1.074z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M8.86 20.267h1.073V32H8.859z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.517 23.111h1.074V32H7.517z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M1.342 0h1.074v32H1.342z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.074V32H0z"
+                                fill="#0062FF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -4024,10 +5259,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Stacked bar"
-                            src="bar-stack-graph.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="M38.108 7.467H40v24.178h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M38.108 17.067H40v14.578h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M38.108 16.711H40v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M30.27 2.844h1.892v28.8H30.27z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M30.27 9.956h1.892V32H30.27z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M30.27 9.6h1.892v1H30.27z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M22.703 14.578h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M22.703 21.333h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M22.703 20.978h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M15.405 12.089h1.892V32h-1.892z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M15.405 25.6h1.892V32h-1.892z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M15.405 25.244h1.892v1h-1.892z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M7.838 20.267H9.73V32H7.838z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M7.838 23.111H9.73V32H7.838z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M7.838 22.756H9.73v1H7.838z"
+                                fill="#FFF"
+                              />
+                              <path
+                                d="M0 0h1.892v32H0z"
+                                fill="#97C1FF"
+                              />
+                              <path
+                                d="M0 14.222h1.892V32H0z"
+                                fill="#0062FF"
+                              />
+                              <path
+                                d="M0 13.867h1.892v1H0z"
+                                fill="#FFF"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -4064,10 +5376,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Value / KPI"
-                            src="value-kpi.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h38.752v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M4.969 21.714h21.863v4.571H4.969zm26.832 0l1.988 4.572h-3.975z"
+                                fill="#8EC1FF"
+                              />
+                              <text
+                                fill="#2160F8"
+                                fontFamily="IBMPlexSans, IBM Plex Sans"
+                                fontSize={10}
+                              >
+                                <tspan
+                                  x={4.969}
+                                  y={15.5}
+                                >
+                                  25%
+                                </tspan>
+                              </text>
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -4104,10 +5442,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Image card"
-                            src="image.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
+                                stroke="#0062FF"
+                              />
+                              <ellipse
+                                cx={25.835}
+                                cy={7.62}
+                                rx={3.19}
+                                ry={3.5}
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -4144,10 +5503,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <div
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
-                          <img
-                            alt="Table"
-                            src="data-table.svg"
-                          />
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M0 0h40v2.759H0z"
+                                fill="#0058FF"
+                              />
+                              <path
+                                d="M.5 3.259h39V31.5H.5z"
+                                stroke="#005BFF"
+                              />
+                              <path
+                                d="M3.5 6.621h19V9.38h-19zm21.5 0h11V9.38H25zM3.5 18.759h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 12.69h19v2.759h-19zm21.5 0h11v2.759H25zM3.5 24.828h19v2.759h-19zm21.5 0h11v2.759H25z"
+                                fill="#D8D8D8"
+                              />
+                            </g>
+                          </svg>
                         </div>
                         <div
                           className="iot--list-item--content--values"
@@ -4182,6 +5559,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="iot--list-item--content"
                       >
                         <div
+                          className="iot--list-item--content--icon iot--list-item--content--icon__left"
+                        >
+                          <svg
+                            height={32}
+                            width={40}
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                            >
+                              <path
+                                d="M.5.5h39v31H.5z"
+                                stroke="#2160F8"
+                              />
+                              <path
+                                d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+                                fill="#D8D8D8"
+                              />
+                              <path
+                                d="M18.415 19.585l-2.915-2.92V14.5a.5.5 0 00-.145-.355l-5-5a.5.5 0 00-.71 0l-4.5 4.5a.5.5 0 000 .71l5 5a.5.5 0 00.355.145h2.17l2.915 2.92a2.001 2.001 0 002.83-2.83v-.005zM7 13.205l1.145 1.15.71-.71-1.15-1.145.795-.795 2.145 2.15.71-.71L9.205 11l.795-.795 3.295 3.295L9.5 17.295 6.205 14 7 13.205zm10.705 8.5a1 1 0 01-1.41 0l-3.065-3.06a.9.9 0 00-.355-.145h-2.17l-.5-.5L14 14.205l.5.5v2.17a.5.5 0 00.145.35l3.06 3.07a1 1 0 010 1.41z"
+                                fill="#0F62FE"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div
                           className="iot--list-item--content--values"
                         >
                           <div
@@ -4189,9 +5592,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           >
                             <div
                               className="iot--list-item--content--values--value"
-                              title="CUSTOM"
+                              title="Custom"
                             >
-                              CUSTOM
+                              Custom
                             </div>
                           </div>
                         </div>

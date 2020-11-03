@@ -1,6 +1,5 @@
 /* Used dependencies */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
@@ -178,103 +177,134 @@ const footerComponent = (
   <StyledFooterContent>this is footer content</StyledFooterContent>
 );
 
-// Simple Static Wizard Stories
+export default {
+  title: 'Watson IoT/WizardInline (Deprecated)',
+  excludeStories: ['itemsAndComponents'],
+};
 
-storiesOf('Watson IoT/WizardInline (Deprecated)', module)
-  .add(deprecatedStoryTitle, () => (
-    <DeprecationNotice
-      deprecatedComponentName="WizardInline"
-      replacementComponentName="PageWizard"
-    />
-  ))
-  .add('Stateful example', () => (
-    <StatefulWizardInline
-      currentItemId="step1"
-      items={itemsAndComponents}
-      title={text('title', 'I am a title')}
-      blurb={text('blurb', 'My long blurb to explain what is going on')}
-      showLabels={boolean('showLabels', true)}
-      stepWidth={number('stepWidth', 9)}
-      sidebar={sidebarComponent}
-      footerLeftContent={footerComponent}
-      onClose={action('closed')}
-      onSubmit={action('submit')}
-      onNext={action('next')}
-      onBack={action('back')}
-      setItem={action('step clicked')}
-    />
-  ))
-  .add('Static', () => (
-    <WizardInline
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Static Wizard')}
-      currentItemId="step2"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-    />
-  ))
-  .add('with breadcrumbs', () => (
-    <WizardInline
-      breadcrumb={[
-        <a href="/">Home</a>,
-        <a href="/">Type</a>,
-        <span>Instance</span>,
-      ]}
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Static Wizard')}
-      currentItemId="step2"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-    />
-  ))
-  .add('Static with Sidebar', () => (
-    <WizardInline
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Static Wizard')}
-      currentItemId="step1"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-      sidebar={sidebarComponent}
-    />
-  ))
-  .add('with error', () => (
-    <WizardInline
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onNext={action('next')}
-      onSubmit={action('submit')}
-      title={text('title', 'Static Wizard')}
-      currentItemId="step1"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-      error={text('error', 'Error on the form')}
-      onClearError={action('clear error')}
-    />
-  ))
-  .add('Static with Footer', () => (
-    <WizardInline
-      items={itemsAndComponents}
-      onBack={action('back')}
-      onClose={action('Closed')}
-      onSubmit={action('submit')}
-      onNext={action('next')}
-      title={text('title', 'Static Wizard')}
-      currentItemId="step4"
-      setItem={action('step clicked')}
-      showLabels={boolean('showLabels', true)}
-      footerLeftContent={footerComponent}
-    />
-  ));
+export const Deprecated = () => (
+  <DeprecationNotice
+    deprecatedComponentName="WizardInline"
+    replacementComponentName="PageWizard"
+  />
+);
+Deprecated.story = {
+  name: deprecatedStoryTitle,
+};
+
+export const StatefulExample = () => (
+  <StatefulWizardInline
+    currentItemId="step1"
+    items={itemsAndComponents}
+    title={text('title', 'I am a title')}
+    blurb={text('blurb', 'My long blurb to explain what is going on')}
+    showLabels={boolean('showLabels', true)}
+    stepWidth={number('stepWidth', 9)}
+    sidebar={sidebarComponent}
+    footerLeftContent={footerComponent}
+    onClose={action('closed')}
+    onSubmit={action('submit')}
+    onNext={action('next')}
+    onBack={action('back')}
+    setItem={action('step clicked')}
+  />
+);
+
+StatefulExample.story = {
+  name: 'Stateful example',
+};
+
+export const Static = () => (
+  <WizardInline
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Static Wizard')}
+    currentItemId="step2"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+  />
+);
+
+export const WithBreadcrumbs = () => (
+  <WizardInline
+    breadcrumb={[
+      <a href="/">Home</a>,
+      <a href="/">Type</a>,
+      <span>Instance</span>,
+    ]}
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Static Wizard')}
+    currentItemId="step2"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+  />
+);
+
+WithBreadcrumbs.story = {
+  name: 'with breadcrumbs',
+};
+
+export const StaticWithSidebar = () => (
+  <WizardInline
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Static Wizard')}
+    currentItemId="step1"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+    sidebar={sidebarComponent}
+  />
+);
+
+StaticWithSidebar.story = {
+  name: 'Static with Sidebar',
+};
+
+export const WithError = () => (
+  <WizardInline
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onNext={action('next')}
+    onSubmit={action('submit')}
+    title={text('title', 'Static Wizard')}
+    currentItemId="step1"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+    error={text('error', 'Error on the form')}
+    onClearError={action('clear error')}
+  />
+);
+
+WithError.story = {
+  name: 'with error',
+};
+
+export const StaticWithFooter = () => (
+  <WizardInline
+    items={itemsAndComponents}
+    onBack={action('back')}
+    onClose={action('Closed')}
+    onSubmit={action('submit')}
+    onNext={action('next')}
+    title={text('title', 'Static Wizard')}
+    currentItemId="step4"
+    setItem={action('step clicked')}
+    showLabels={boolean('showLabels', true)}
+    footerLeftContent={footerComponent}
+  />
+);
+
+StaticWithFooter.story = {
+  name: 'Static with Footer',
+};
