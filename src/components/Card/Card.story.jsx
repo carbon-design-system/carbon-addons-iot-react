@@ -32,27 +32,44 @@ export const getDataStateProp = () => ({
 
 storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    return (
-      <div style={{ width: text('width', `450px`), margin: 20 }}>
-        <Card
-          title={text('title', 'Card Title')}
-          id="facilitycard-basic"
-          size={size}
-          isLoading={boolean('isLoading', false)}
-          isSelected={boolean('isSelected', false)}
-          isEmpty={boolean('isEmpty', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          breakpoint="lg"
-          availableActions={{ range: true, expand: true }}
-          onCardAction={action('onCardAction')}
-          onFocus={action('onFocus')}
-          onBlur={action('onBlur')}
-          tabIndex={0}
-        />
-      </div>
-    );
+    const StatefulExample = () => {
+      const [selected, setSelected] = React.useState(false);
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+      const handleClick = () => {
+        setSelected(true);
+      };
+      const handleBlur = (e) => {
+        if (
+          !e.currentTarget.contains(e.relatedTarget) ||
+          (e.target === e.currentTarget && e.relatedTarget === null)
+        ) {
+          setSelected(false);
+        }
+        action('onBlur');
+      };
+      return (
+        <div style={{ width: text('width', `450px`), margin: 20 }}>
+          <Card
+            title={text('title', 'Card Title')}
+            id="facilitycard-basic"
+            size={size}
+            isLoading={boolean('isloading', false)}
+            isSelected={selected}
+            isEmpty={boolean('isEmpty', false)}
+            isEditable={boolean('isEditable', false)}
+            isExpanded={boolean('isExpanded', false)}
+            breakpoint="lg"
+            availableActions={{ range: true, expand: true }}
+            onCardAction={action('onCardAction')}
+            onFocus={action('onFocus')}
+            onBlur={handleBlur}
+            tabIndex={0}
+            onClick={handleClick}
+          />
+        </div>
+      );
+    };
+    return <StatefulExample />;
   })
   .add('with ellipsed title tooltip & external tooltip', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);

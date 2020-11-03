@@ -60,23 +60,6 @@ const CardWrapper = ({
     setIsCardSelected(isSelected);
   }, [isSelected, setIsCardSelected]);
 
-  const handleSelection = (e) => {
-    if (e.type === 'click' || e.key === 'Enter') {
-      setIsCardSelected(true);
-    }
-  };
-
-  const handleBlur = (e) => {
-    if (
-      e.relatedTarget.classList.contains(
-        `${iotPrefix}--card iot--card--wrapper`
-      )
-    ) {
-      setIsCardSelected(false);
-    }
-    onBlur();
-  };
-
   return (
     <div
       role="presentation"
@@ -89,9 +72,7 @@ const CardWrapper = ({
       onTouchStart={onTouchStart}
       onScroll={onScroll}
       onFocus={onFocus}
-      onBlur={(e) => handleBlur(e)}
-      onKeyDown={handleSelection}
-      onClick={handleSelection}
+      onBlur={onBlur}
       tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`, {
         [`${iotPrefix}--card--wrapper__selected`]: isCardSelected,
