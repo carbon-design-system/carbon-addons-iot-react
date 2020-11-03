@@ -59,7 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-10"
+            aria-controls="accordion-item-1"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-10"
+            id="accordion-item-1"
           >
             <p>
               The following table shows a comparison of exports from carbon-components-react and this library. These are primarily used for snapshot purposes to track and ensure that as the exports change upstream in Carbon we continue to provide parity with their package.
@@ -3658,6 +3658,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     ComputerChipIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    CustomCardIcon
                   </div>
                 </div>
                 <div

@@ -8,7 +8,6 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
@@ -77,71 +76,83 @@ const props = () => ({
   ),
 });
 
-storiesOf('MultiSelect', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withReadme(readme, () => {
-      const {
-        filterable,
-        listBoxMenuIconTranslationIds,
-        selectionFeedback,
-        ...multiSelectProps
-      } = props();
-      const ComponentToUse = !filterable ? MultiSelect : MultiSelect.Filterable;
-      const placeholder = !filterable ? undefined : defaultPlaceholder;
-      return (
-        <div style={{ width: 300 }}>
-          <ComponentToUse
-            {...multiSelectProps}
-            items={items}
-            itemToString={(item) => (item ? item.text : '')}
-            placeholder={placeholder}
-            translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
-            selectionFeedback={selectionFeedback}
-          />
-        </div>
-      );
-    }),
-    {
-      info: {
-        text: `
-            MultiSelect
-          `,
-      },
-    }
-  )
-  .add(
-    'with initial selected items',
-    withReadme(readme, () => {
-      const {
-        filterable,
-        listBoxMenuIconTranslationIds,
-        selectionFeedback,
-        ...multiSelectProps
-      } = props();
-      const ComponentToUse = !filterable ? MultiSelect : MultiSelect.Filterable;
-      const placeholder = !filterable ? undefined : defaultPlaceholder;
+export default {
+  title: 'MultiSelect',
+  decorators: [withKnobs],
 
-      return (
-        <div style={{ width: 300 }}>
-          <ComponentToUse
-            {...multiSelectProps}
-            items={items}
-            itemToString={(item) => (item ? item.text : '')}
-            initialSelectedItems={[items[0], items[1]]}
-            placeholder={placeholder}
-            translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
-            selectionFeedback={selectionFeedback}
-          />
-        </div>
-      );
-    }),
-    {
-      info: {
-        text: `
-            Provide a set of items to initially select in the control
-          `,
-      },
-    }
+  parameters: {
+    component: MultiSelect,
+  },
+};
+
+export const Default = withReadme(readme, () => {
+  const {
+    filterable,
+    listBoxMenuIconTranslationIds,
+    selectionFeedback,
+    ...multiSelectProps
+  } = props();
+  const ComponentToUse = !filterable ? MultiSelect : MultiSelect.Filterable;
+  const placeholder = !filterable ? undefined : defaultPlaceholder;
+  return (
+    <div style={{ width: 300 }}>
+      <ComponentToUse
+        {...multiSelectProps}
+        items={items}
+        itemToString={(item) => (item ? item.text : '')}
+        placeholder={placeholder}
+        translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
+        selectionFeedback={selectionFeedback}
+      />
+    </div>
   );
+});
+
+Default.story = {
+  name: 'default',
+
+  parameters: {
+    info: {
+      text: `
+          MultiSelect
+        `,
+    },
+  },
+};
+
+export const WithInitialSelectedItems = withReadme(readme, () => {
+  const {
+    filterable,
+    listBoxMenuIconTranslationIds,
+    selectionFeedback,
+    ...multiSelectProps
+  } = props();
+  const ComponentToUse = !filterable ? MultiSelect : MultiSelect.Filterable;
+  const placeholder = !filterable ? undefined : defaultPlaceholder;
+
+  return (
+    <div style={{ width: 300 }}>
+      <ComponentToUse
+        {...multiSelectProps}
+        items={items}
+        itemToString={(item) => (item ? item.text : '')}
+        initialSelectedItems={[items[0], items[1]]}
+        placeholder={placeholder}
+        translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
+        selectionFeedback={selectionFeedback}
+      />
+    </div>
+  );
+});
+
+WithInitialSelectedItems.story = {
+  name: 'with initial selected items',
+
+  parameters: {
+    info: {
+      text: `
+          Provide a set of items to initially select in the control
+        `,
+    },
+  },
+};

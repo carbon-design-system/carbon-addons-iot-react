@@ -83,10 +83,17 @@
     // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
     "lodash/chaining": [2, "never"],
     "lodash/import-scope": [2, "method"],
-    "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
+    "react/destructuring-assignment": [
+      2,
+      "always",
+      { "ignoreClassFields": true }
+    ],
     "jest/expect-expect": "error",
     "jest/prefer-hooks-on-top": "error",
-    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
+    "jest/consistent-test-it": [
+      "error",
+      { "fn": "test", "withinDescribe": "it" }
+    ],
     "unicorn/no-abusive-eslint-disable": "error",
     "testing-library/prefer-screen-queries": "error",
     "testing-library/prefer-wait-for": "error"
@@ -101,21 +108,34 @@
         "**/*.story.{js,jsx}"
       ],
       "rules": {
-        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ],
         "no-underscore-dangle": 0,
         "no-shadow": 0,
         "no-console": 0,
         "no-extend-native": 0,
-        "no-restricted-imports": ["error", {
-          "paths": [{
-            "name": "@testing-library/jest-dom",
-            "message": "@testing-library/jest-dom is already imported globally in /config/jest/setupTest.js"
-          }],
-          // would really like this to have a custom message, but its not available for patterns
-          // SVGs can't be imported directly. They must be convert to react components via svgr cli first
-          // https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.github/CONTRIBUTING.MD#adding-new-svg-images
-          "patterns": ["*.svg"]
-      }],
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@testing-library/jest-dom",
+                "message": "@testing-library/jest-dom is already imported globally in /config/jest/setupTest.js"
+              },
+              {
+                "name": "@storybook/react",
+                "importNames": ["storiesOf"],
+                "message": "`storiesOf` is deprecated. Please use Component Story Format (CSF) instead of `storiesOf`. https://storybook.js.org/docs/react/api/csf"
+              }
+            ],
+            // would really like this to have a custom message, but its not available for patterns
+            // SVGs can't be imported directly. They must be convert to react components via svgr cli first
+            // https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.github/CONTRIBUTING.MD#adding-new-svg-images
+            "patterns": ["*.svg"]
+          }
+        ],
         "no-template-curly-in-string": 0,
         "react/prop-types": 0,
         "react/jsx-no-bind": 0

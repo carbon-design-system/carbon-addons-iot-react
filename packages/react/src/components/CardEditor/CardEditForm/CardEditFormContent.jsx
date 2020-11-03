@@ -17,7 +17,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
-  cardJson: PropTypes.shape({
+  cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
     size: PropTypes.string,
@@ -83,7 +83,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  cardJson: {},
+  cardConfig: {},
   i18n: {
     openEditorButton: 'Open JSON editor',
     cardSize_SMALL: 'Small',
@@ -138,14 +138,14 @@ export const getCardSizeText = (size, i18n) => {
 };
 
 const CardEditFormContent = ({
-  cardJson,
+  cardConfig,
   onChange,
   i18n,
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
 }) => {
-  const { title, description, size, type, id } = cardJson;
+  const { title, description, size, type, id } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState('');
@@ -153,7 +153,7 @@ const CardEditFormContent = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validTimeRanges = getValidTimeRanges
-    ? getValidTimeRanges(cardJson, selectedDataItems)
+    ? getValidTimeRanges(cardConfig, selectedDataItems)
     : Object.keys(defaultTimeRangeOptions);
 
   return (
@@ -163,7 +163,9 @@ const CardEditFormContent = ({
           id={`${id}_title`}
           labelText={mergedI18n.cardTitle}
           light
-          onChange={(evt) => onChange({ ...cardJson, title: evt.target.value })}
+          onChange={(evt) =>
+            onChange({ ...cardConfig, title: evt.target.value })
+          }
           value={title}
         />
       </div>
@@ -172,7 +174,9 @@ const CardEditFormContent = ({
           id={`${id}_description`}
           labelText={mergedI18n.description}
           light
-          onChange={(evt) => onChange({ ...cardJson, description: evt.target.value })}
+          onChange={(evt) =>
+            onChange({ ...cardConfig, description: evt.target.value })
+          }
           value={description}
         />
       </div>
@@ -191,7 +195,7 @@ const CardEditFormContent = ({
           light
           selectedItem={{ id: size, text: getCardSizeText(size, mergedI18n) }}
           onChange={({ selectedItem }) => {
-            onChange({ ...cardJson, size: selectedItem.id });
+            onChange({ ...cardConfig, size: selectedItem.id });
           }}
           titleText={mergedI18n.size}
         />
@@ -217,16 +221,16 @@ const CardEditFormContent = ({
                 const { range, interval } = timeRangeToJSON[selectedItem.id];
                 setSelectedTimeRange(selectedItem.id);
                 onChange({
-                  ...cardJson,
+                  ...cardConfig,
                   interval,
-                  dataSource: { ...cardJson.dataSource, range },
+                  dataSource: { ...cardConfig.dataSource, range },
                 });
               }}
               titleText={mergedI18n.timeRange}
             />
           </div>
           <DataSeriesFormItem
-            cardJson={cardJson}
+            cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
             setSelectedDataItems={setSelectedDataItems}

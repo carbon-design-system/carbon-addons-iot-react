@@ -8,7 +8,6 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
@@ -34,100 +33,122 @@ const PolyfillWarning = () => (
   </p>
 );
 
-storiesOf('Watson IoT/Breadcrumb', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    () => {
-      return (
-        <Breadcrumb {...props()}>
-          <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">{text('Breadcrumb 3 text', 'Breadcrumb 3')}</BreadcrumbItem>
-        </Breadcrumb>
-      );
-    },
-    {
-      info: {
-        text: `
-          Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
-        `,
-      },
-    }
-  )
+export default {
+  title: 'Watson IoT/Breadcrumb',
+  decorators: [withKnobs],
 
-  .add('skeleton', () => <BreadcrumbSkeleton />, {
+  parameters: {
+    component: Breadcrumb,
+  },
+};
+
+export const Default = () => {
+  return (
+    <Breadcrumb {...props()}>
+      <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
+      <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+      <BreadcrumbItem href="#">
+        {text('Breadcrumb 3 text', 'Breadcrumb 3')}
+      </BreadcrumbItem>
+    </Breadcrumb>
+  );
+};
+
+Default.story = {
+  name: 'default',
+
+  parameters: {
     info: {
       text: `
-          Placeholder skeleton state to use when content is loading.
-          `,
+        Breadcrumb enables users to quickly see their location within a path of navigation and move up to a parent level if desired.
+      `,
     },
-  })
+  },
+};
 
-  .add(
-    'current page with aria-current',
-    () => (
-      <Breadcrumb {...props()}>
-        <BreadcrumbItem>
-          <a href="/#">Breadcrumb 1</a>
-        </BreadcrumbItem>
-        <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-        <BreadcrumbItem href="#" aria-current="page">
-          Breadcrumb 3
-        </BreadcrumbItem>
-      </Breadcrumb>
-    ),
-    {
-      info: {
-        text:
-          'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
-      },
-    }
-  )
-  .add(
-    'hasOverflow',
-    () => {
-      return (
-        <>
-          <div style={{ width: '50vw', border: '1px solid', padding: spacing05 }}>
-            <Breadcrumb hasOverflow {...props()}>
-              <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
-                1 Homexxxxxxxxxxxxxxxxxxxxxx
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log('clicked');
-                }}
-                title="2 Devices"
-              >
-                2 Devices
-              </BreadcrumbItem>
-              <BreadcrumbItem href="#" title="3 A really long page name">
-                3 A really long page name
-              </BreadcrumbItem>
-              <BreadcrumbItem href="#" title={text('Breadcrumb 4 text', '4 Another page')}>
-                {text('Breadcrumb 4 text', '4 Another page')}
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                href="#"
-                isCurrentPage
-                title={text('Breadcrumb 5 text', '5th level page')}
-              >
-                {text('Breadcrumb 5 text', '5th level page')}
-              </BreadcrumbItem>
-            </Breadcrumb>
-          </div>
-          <PolyfillWarning />
-        </>
-      );
+export const Skeleton = () => <BreadcrumbSkeleton />;
+
+Skeleton.story = {
+  name: 'skeleton',
+
+  parameters: {
+    info: {
+      text: `
+            Placeholder skeleton state to use when content is loading.
+            `,
     },
-    {
-      info: {
-        text: `
-          Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'hasOverflow'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
-        `,
-      },
-    }
+  },
+};
+
+export const CurrentPageWithAriaCurrent = () => (
+  <Breadcrumb {...props()}>
+    <BreadcrumbItem>
+      <a href="/#">Breadcrumb 1</a>
+    </BreadcrumbItem>
+    <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+    <BreadcrumbItem href="#" aria-current="page">
+      Breadcrumb 3
+    </BreadcrumbItem>
+  </Breadcrumb>
+);
+
+CurrentPageWithAriaCurrent.story = {
+  name: 'current page with aria-current',
+
+  parameters: {
+    info: {
+      text:
+        'You can specify a BreadcrumbItem component as the current page with the `aria-current` prop by specifying `aria-current="page"`',
+    },
+  },
+};
+
+export const HasOverflow = () => {
+  return (
+    <>
+      <div style={{ width: '50vw', border: '1px solid', padding: spacing05 }}>
+        <Breadcrumb hasOverflow {...props()}>
+          <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
+            1 Homexxxxxxxxxxxxxxxxxxxxxx
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log('clicked');
+            }}
+            title="2 Devices">
+            2 Devices
+          </BreadcrumbItem>
+          <BreadcrumbItem href="#" title="3 A really long page name">
+            3 A really long page name
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            href="#"
+            title={text('Breadcrumb 4 text', '4 Another page')}>
+            {text('Breadcrumb 4 text', '4 Another page')}
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            href="#"
+            isCurrentPage
+            title={text('Breadcrumb 5 text', '5th level page')}>
+            {text('Breadcrumb 5 text', '5th level page')}
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </div>
+      <PolyfillWarning />
+    </>
   );
+};
+
+HasOverflow.story = {
+  name: 'hasOverflow',
+
+  parameters: {
+    info: {
+      text: `
+        Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'hasOverflow'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
+      `,
+    },
+  },
+};

@@ -8045,7 +8045,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
-      "cardJson": null,
+      "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
       "i18n": Object {
@@ -8068,7 +8068,7 @@ Map {
       ],
     },
     "propTypes": Object {
-      "cardJson": Object {
+      "cardConfig": Object {
         "args": Array [
           Object {
             "content": Object {
@@ -23522,6 +23522,7 @@ Map {
   "BarGroupedGraphIcon" => Object {},
   "BarStackGraphIcon" => Object {},
   "ComputerChipIcon" => Object {},
+  "CustomCardIcon" => Object {},
   "DashboardIcon" => Object {},
   "DataScientistIcon" => Object {},
   "DataTableIcon" => Object {},

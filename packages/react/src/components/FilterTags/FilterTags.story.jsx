@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Tag, Button } from '../../index';
 
@@ -78,58 +77,75 @@ const StatefulFilterTags = ({ tags }) => {
   );
 };
 
-storiesOf('Watson IoT Experimental/FilterTags', module)
-  .add('Default Example', () => <StatefulFilterTags tags={tagData} />, {
+export default {
+  title: 'Watson IoT Experimental/FilterTags',
+
+  parameters: {
+    component: FilterTags,
+  },
+
+  excludeStories: ['tagData'],
+};
+
+export const DefaultExample = () => <StatefulFilterTags tags={tagData} />;
+
+DefaultExample.story = {
+  parameters: {
     info: {
       propTables: [FilterTags],
       propTablesExclude: [StatefulFilterTags],
     },
-  })
-  .add(
-    'With hasOverflow set to false',
-    () => (
-      <FilterTags hasOverflow={false}>
-        {tagData.map((tag) => (
-          <Tag
-            key={`tag-${tag.id}`}
-            filter
-            type={tag.type}
-            title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
-            {tag.text}
-          </Tag>
-        ))}
-      </FilterTags>
-    ),
-    {
-      info: {
-        propTables: [FilterTags],
-        propTablesExclude: [Tag],
-      },
-    }
-  )
-  .add(
-    'With tagContainer prop',
-    () => (
-      <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
-        {tagData.map((tag) => (
-          <Tag
-            key={`tag-${tag.id}`}
-            filter
-            type={tag.type}
-            title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
-            {tag.text}
-          </Tag>
-        ))}
-      </FilterTags>
-    ),
-    {
-      info: {
-        propTables: [FilterTags],
-        propTablesExclude: [Tag],
-      },
-    }
-  );
+  },
+};
+
+export const WithHasOverflowSetToFalse = () => (
+  <FilterTags hasOverflow={false}>
+    {tagData.map((tag) => (
+      <Tag
+        key={`tag-${tag.id}`}
+        filter
+        type={tag.type}
+        title="Clear Filter"
+        style={{ marginRight: '1rem' }}>
+        {tag.text}
+      </Tag>
+    ))}
+  </FilterTags>
+);
+
+WithHasOverflowSetToFalse.story = {
+  name: 'With hasOverflow set to false',
+
+  parameters: {
+    info: {
+      propTables: [FilterTags],
+      propTablesExclude: [Tag],
+    },
+  },
+};
+
+export const WithTagContainerProp = () => (
+  <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
+    {tagData.map((tag) => (
+      <Tag
+        key={`tag-${tag.id}`}
+        filter
+        type={tag.type}
+        title="Clear Filter"
+        style={{ marginRight: '1rem' }}>
+        {tag.text}
+      </Tag>
+    ))}
+  </FilterTags>
+);
+
+WithTagContainerProp.story = {
+  name: 'With tagContainer prop',
+
+  parameters: {
+    info: {
+      propTables: [FilterTags],
+      propTablesExclude: [Tag],
+    },
+  },
+};

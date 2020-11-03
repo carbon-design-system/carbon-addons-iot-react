@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 
 import CardCodeEditor from './CardCodeEditor';
@@ -28,21 +27,39 @@ export const isValidCallback = (val, setError) => {
   return false;
 };
 
-storiesOf('Watson IoT/CardCodeEditor', module)
-  .add('default', () => (
-    <CardCodeEditor
-      onSubmit={isValidCallback}
-      onClose={() => {}}
-      language={select('Editor language', ['json', 'javascript', 'css'])}
-      onCopy={(value) => console.log(value)}
-      initialValue="/* write your code here */"
-    />
-  ))
-  .add('with preloaded content', () => (
-    <CardCodeEditor
-      onSubmit={isValidCallback}
-      onClose={() => {}}
-      onCopy={(value) => console.log(value)}
-      initialValue={JSON.stringify(pkgjson, null, 2)}
-    />
-  ));
+export default {
+  title: 'Watson IoT/CardCodeEditor',
+
+  parameters: {
+    component: CardCodeEditor,
+  },
+
+  excludeStories: ['isValidCallback'],
+};
+
+export const Default = () => (
+  <CardCodeEditor
+    onSubmit={isValidCallback}
+    onClose={() => {}}
+    language={select('Editor language', ['json', 'javascript', 'css'])}
+    onCopy={(value) => console.log(value)}
+    initialValue="/* write your code here */"
+  />
+);
+
+Default.story = {
+  name: 'default',
+};
+
+export const WithPreloadedContent = () => (
+  <CardCodeEditor
+    onSubmit={isValidCallback}
+    onClose={() => {}}
+    onCopy={(value) => console.log(value)}
+    initialValue={JSON.stringify(pkgjson, null, 2)}
+  />
+);
+
+WithPreloadedContent.story = {
+  name: 'with preloaded content',
+};

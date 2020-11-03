@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import CardEditFormSettings from './CardEditFormSettings';
 
-const cardJson = {
+const cardConfig = {
   id: 'Timeseries',
   title: 'Untitled',
   size: 'MEDIUMWIDE',
@@ -40,18 +40,33 @@ afterEach(() => {
 describe('CardEditFormSettings', () => {
   describe('Form fields', () => {
     it('should update JSON for the x axis label', () => {
-      render(<CardEditFormSettings cardJson={cardJson} onChange={mockOnChange} />);
-      userEvent.type(screen.getByRole('textbox', { name: 'X-axis label' }), 'changed label');
+      render(
+        <CardEditFormSettings cardConfig={cardConfig} onChange={mockOnChange} />
+      );
+      userEvent.type(
+        screen.getByRole('textbox', { name: 'X-axis label' }),
+        'changed label'
+      );
       expect(mockOnChange).toHaveBeenCalled();
     });
     it('should update JSON for the y axis label', () => {
-      render(<CardEditFormSettings cardJson={cardJson} onChange={mockOnChange} />);
-      userEvent.type(screen.getByRole('textbox', { name: 'Y-axis label' }), 'changed label');
+      render(
+        <CardEditFormSettings cardConfig={cardConfig} onChange={mockOnChange} />
+      );
+      userEvent.type(
+        screen.getByRole('textbox', { name: 'Y-axis label' }),
+        'changed label'
+      );
       expect(mockOnChange).toHaveBeenCalled();
     });
     it('should update JSON for the unit field', () => {
-      render(<CardEditFormSettings cardJson={cardJson} onChange={mockOnChange} />);
-      userEvent.type(screen.getByRole('textbox', { name: 'Unit' }), 'changed unit');
+      render(
+        <CardEditFormSettings cardConfig={cardConfig} onChange={mockOnChange} />
+      );
+      userEvent.type(
+        screen.getByRole('textbox', { name: 'Unit' }),
+        'changed unit'
+      );
       expect(mockOnChange).toHaveBeenCalled();
     });
   });

@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import DataSeriesFormItem, { formatSeries } from './DataSeriesFormItem';
 
-const cardJson = {
+const cardConfig = {
   id: 'Timeseries',
   title: 'Untitled',
   size: 'MEDIUMWIDE',
@@ -43,7 +43,7 @@ afterEach(() => {
 });
 describe('DataSeriesFormItem', () => {
   describe('formatSeries', () => {
-    const cardJsonWithoutColorDefinition = {
+    const cardConfigWithoutColorDefinition = {
       content: {
         series: [
           {
@@ -59,13 +59,15 @@ describe('DataSeriesFormItem', () => {
     };
     const selectedItems = [{ id: 'Temperature' }, { id: 'Pressure' }];
     it('should correctly format the card series', () => {
-      expect(formatSeries(selectedItems, cardJson)).toEqual([
+      expect(formatSeries(selectedItems, cardConfig)).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
         { dataSourceId: 'pressure', label: 'Pressure', color: 'blue' },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(formatSeries(selectedItems, cardJsonWithoutColorDefinition)).toEqual([
+      expect(
+        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
+      ).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
@@ -75,7 +77,7 @@ describe('DataSeriesFormItem', () => {
     it('should prioritize getValidDataItems', async () => {
       render(
         <DataSeriesFormItem
-          cardJson={cardJson}
+          cardConfig={cardConfig}
           onChange={mockOnChange}
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
@@ -89,7 +91,7 @@ describe('DataSeriesFormItem', () => {
     it('should open dataItem editor, edit, and submit', async () => {
       render(
         <DataSeriesFormItem
-          cardJson={cardJson}
+          cardConfig={cardConfig}
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}

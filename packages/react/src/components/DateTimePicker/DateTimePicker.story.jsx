@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing06 } from '@carbon/layout';
@@ -36,128 +35,151 @@ export const defaultAbsoluteValue = {
   },
 };
 
-storiesOf('Watson IoT Experimental/DateTime Picker', module)
-  .add('Default', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
+export default {
+  title: 'Watson IoT Experimental/DateTime Picker',
+  excludeStories: ['defaultRelativeValue', 'defaultAbsoluteValue'],
+};
+
+export const Default = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+        relatives={[
+          {
+            label: 'Yesterday',
+            value: RELATIVE_VALUES.YESTERDAY,
+          },
+        ]}
+        hasTimeInput={boolean('hasTimeInput', true)}
+      />
+    </div>
+  );
+};
+
+export const SelectedPreset = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[3],
         }}
-      >
-        <DateTimePicker
-          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
-          relatives={[
-            {
-              label: 'Yesterday',
-              value: RELATIVE_VALUES.YESTERDAY,
-            },
-          ]}
-          hasTimeInput={boolean('hasTimeInput', true)}
-        />
-      </div>
-    );
-  })
-  .add('Selected preset', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
+        hasTimeInput={boolean('hasTimeInput', true)}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+SelectedPreset.story = {
+  name: 'Selected preset',
+};
+
+export const SelectedRelative = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        defaultValue={defaultRelativeValue}
+        hasTimeInput={boolean('hasTimeInput', true)}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+SelectedRelative.story = {
+  name: 'Selected relative',
+};
+
+export const SelectedAbsolute = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        defaultValue={defaultAbsoluteValue}
+        hasTimeInput={boolean('hasTimeInput', true)}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+SelectedAbsolute.story = {
+  name: 'Selected absolute',
+};
+
+export const WithoutARelativeOption = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[3],
         }}
-      >
-        <DateTimePicker
-          defaultValue={{
-            timeRangeKind: PICKER_KINDS.PRESET,
-            timeRangeValue: PRESET_VALUES[3],
-          }}
-          hasTimeInput={boolean('hasTimeInput', true)}
-          onApply={action('onApply')}
-          onCancel={action('onCancel')}
-        />
-      </div>
-    );
-  })
-  .add('Selected relative', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}
-      >
-        <DateTimePicker
-          defaultValue={defaultRelativeValue}
-          hasTimeInput={boolean('hasTimeInput', true)}
-          onApply={action('onApply')}
-          onCancel={action('onCancel')}
-        />
-      </div>
-    );
-  })
-  .add('Selected absolute', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}
-      >
-        <DateTimePicker
-          defaultValue={defaultAbsoluteValue}
-          hasTimeInput={boolean('hasTimeInput', true)}
-          onApply={action('onApply')}
-          onCancel={action('onCancel')}
-        />
-      </div>
-    );
-  })
-  .add('Without a relative option', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}
-      >
-        <DateTimePicker
-          defaultValue={{
-            timeRangeKind: PICKER_KINDS.PRESET,
-            timeRangeValue: PRESET_VALUES[3],
-          }}
-          hasTimeInput={boolean('hasTimeInput', true)}
-          showRelativeOption={false}
-          onApply={action('onApply')}
-          onCancel={action('onCancel')}
-        />
-      </div>
-    );
-  })
-  .add('Light version', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div
-        style={{
-          width: `${getCardMinSize('lg', size).x}px`,
-          margin: spacing06,
-        }}
-      >
-        <DateTimePicker
-          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
-          relatives={[
-            {
-              label: 'Yesterday',
-              value: RELATIVE_VALUES.YESTERDAY,
-            },
-          ]}
-          light
-          hasTimeInput={boolean('hasTimeInput', true)}
-        />
-      </div>
-    );
-  });
+        hasTimeInput={boolean('hasTimeInput', true)}
+        showRelativeOption={false}
+        onApply={action('onApply')}
+        onCancel={action('onCancel')}
+      />
+    </div>
+  );
+};
+
+WithoutARelativeOption.story = {
+  name: 'Without a relative option',
+};
+
+export const LightVersion = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <DateTimePicker
+        dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+        relatives={[
+          {
+            label: 'Yesterday',
+            value: RELATIVE_VALUES.YESTERDAY,
+          },
+        ]}
+        light
+        hasTimeInput={boolean('hasTimeInput', true)}
+      />
+    </div>
+  );
+};
+
+LightVersion.story = {
+  name: 'Light version',
+};

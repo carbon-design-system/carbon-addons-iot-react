@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 import { text } from '@storybook/addon-knobs';
@@ -157,36 +156,62 @@ const headerPanel = {
   )),
 };
 
-storiesOf('Watson IoT/Header', module)
-  .add('Header action buttons with dropdowns', () => (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <StyledHeader
-        {...HeaderProps}
-        headerPanel={headerPanel}
-        appSwitcherLabel={text('AppSwitcher label', 'AppSwitcher')}
-      />
-      <div id="skip" />
-    </div>
-  ))
-  .add('header submenu', () => (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <StyledHeader {...HeaderMenuProps} />
-    </div>
-  ))
-  .add('Header no submenu', () => (
+export default {
+  title: 'Watson IoT/Header',
+
+  parameters: {
+    component: Header,
+  },
+};
+
+export const HeaderActionButtonsWithDropdowns = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
     <StyledHeader
       {...HeaderProps}
-      actionItems={[
-        {
-          label: 'user',
-          onClick: action('click'),
-          btnContent: <Avatar fill="white" description="Icon" />,
-        },
-      ]}
+      headerPanel={headerPanel}
+      appSwitcherLabel={text('AppSwitcher label', 'AppSwitcher')}
     />
-  ))
-  .add('header subtitle', () => (
-    <div style={{ width: '100%', height: '100vh' }}>
-      <StyledHeader {...HeaderMenuProps} subtitle="Monitor" />
-    </div>
-  ));
+    <div id="skip" />
+  </div>
+);
+
+HeaderActionButtonsWithDropdowns.story = {
+  name: 'Header action buttons with dropdowns',
+};
+
+export const HeaderSubmenu = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <StyledHeader {...HeaderMenuProps} />
+  </div>
+);
+
+HeaderSubmenu.story = {
+  name: 'header submenu',
+};
+
+export const HeaderNoSubmenu = () => (
+  <StyledHeader
+    {...HeaderProps}
+    actionItems={[
+      {
+        label: 'user',
+        onClick: action('click'),
+        btnContent: <Avatar fill="white" description="Icon" />,
+      },
+    ]}
+  />
+);
+
+HeaderNoSubmenu.story = {
+  name: 'Header no submenu',
+};
+
+export const HeaderSubtitle = () => (
+  <div style={{ width: '100%', height: '100vh' }}>
+    <StyledHeader {...HeaderMenuProps} subtitle="Monitor" />
+  </div>
+);
+
+HeaderSubtitle.story = {
+  name: 'header subtitle',
+};

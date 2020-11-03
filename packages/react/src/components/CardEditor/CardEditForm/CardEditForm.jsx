@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
 
-import { CARD_DIMENSIONS } from '../../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_TYPES,
+} from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
@@ -15,7 +19,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
-  cardJson: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  cardConfig: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
@@ -48,14 +52,14 @@ const propTypes = {
    */
   dataItems: PropTypes.arrayOf(PropTypes.string),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
-   * onValidateCardJson(cardJson)
+   * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
 };
 
 const defaultProps = {
-  cardJson: {},
+  cardConfig: {},
   i18n: {
     openEditorButton: 'Open JSON editor',
     contentTabLabel: 'Content',
@@ -142,7 +146,7 @@ export const handleSubmit = (card, setError, onValidateCardJson, onChange, setSh
 };
 
 const CardEditForm = ({
-  cardJson,
+  cardConfig,
   onChange,
   i18n,
   dataItems,
@@ -178,7 +182,7 @@ const CardEditForm = ({
         <Tabs>
           <Tab label={mergedI18n.contentTabLabel}>
             <CardEditFormContent
-              cardJson={cardJson}
+              cardConfig={cardConfig}
               onChange={onChange}
               i18n={mergedI18n}
               dataItems={dataItems}
@@ -187,7 +191,11 @@ const CardEditForm = ({
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>
             <CardEditFormSettings
-              cardJson={cardJson}
+              cardConfig={
+                cardConfig.type === CARD_TYPES.CUSTOM
+                  ? { ...omit(cardConfig, 'content') }
+                  : cardConfig
+              }
               onChange={onChange}
               i18n={mergedI18n}
               dataItems={dataItems}
@@ -201,7 +209,7 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(cardJson, null, 4));
+              setModalData(JSON.stringify(cardConfig, null, 4));
               setShowEditor(true);
             }}
           >

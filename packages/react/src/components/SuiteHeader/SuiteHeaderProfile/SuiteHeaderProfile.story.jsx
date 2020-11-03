@@ -1,11 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile';
 
-storiesOf('Watson IoT/SuiteHeader/SuiteHeaderProfile', module).add('default', () => (
+export default {
+  title: 'Watson IoT/SuiteHeader/SuiteHeaderProfile',
+
+  parameters: {
+    component: SuiteHeaderProfile,
+  },
+};
+
+export const Default = () => (
   <div style={{ width: '15rem' }}>
     <SuiteHeaderProfile
       displayName={text('displayName', 'Test User')}
@@ -16,4 +23,8 @@ storiesOf('Watson IoT/SuiteHeader/SuiteHeaderProfile', module).add('default', ()
       onRequestLogout={action('onRequestLogout')}
     />
   </div>
-));
+);
+
+Default.story = {
+  name: 'default',
+};

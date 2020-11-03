@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import Add from '@carbon/icons-react/lib/add/32';
@@ -60,61 +59,112 @@ export const commonTileCatalogProps = {
   onSelection: action('onSelection'),
 };
 
-storiesOf('Watson IoT/TileCatalog', module)
-  .add('default', () => (
+export default {
+  title: 'Watson IoT/TileCatalog',
+  excludeStories: ['commonTileCatalogProps'],
+};
+
+export const Default = () => (
+  <StatefulTileCatalog
+    {...commonTileCatalogProps}
+    selectedTileId={select(
+      'id',
+      commonTileCatalogProps.tiles.map((tile) => tile.id),
+      commonTileCatalogProps.tiles[0].id
+    )}
+  />
+);
+
+Default.story = {
+  name: 'default',
+};
+
+export const WithSearch = () => (
+  // Example stateful catalog component that can search
+  <StatefulTileCatalog
+    {...commonTileCatalogProps}
+    search={{
+      placeHolderText: 'Search catalog',
+      onSearch: action('search'),
+    }}
+    pagination={{ pageSize: 6, onPage: action('onPage') }}
+  />
+);
+
+WithSearch.story = {
+  name: 'with search',
+};
+
+export const WithPages = () => (
+  <StatefulTileCatalog
+    {...commonTileCatalogProps}
+    pagination={{ pageSize: 6, onPage: action('onPage') }}
+    selectedTileId={select(
+      'id',
+      commonTileCatalogProps.tiles.map((tile) => tile.id),
+      commonTileCatalogProps.tiles[0].id
+    )}
+  />
+);
+
+WithPages.story = {
+  name: 'with pages',
+};
+
+export const Loading = () => (
+  <StatefulTileCatalog {...commonTileCatalogProps} isLoading />
+);
+
+Loading.story = {
+  name: 'loading',
+};
+
+export const Error = () => (
+  <FullWidthWrapper>
     <StatefulTileCatalog
       {...commonTileCatalogProps}
-      selectedTileId={select(
-        'id',
-        commonTileCatalogProps.tiles.map((tile) => tile.id),
-        commonTileCatalogProps.tiles[0].id
-      )}
+      tiles={[]}
+      error="In error state"
     />
-  ))
-  .add('with search', () => (
-    // Example stateful catalog component that can search
-    <StatefulTileCatalog
-      {...commonTileCatalogProps}
-      search={{
-        placeHolderText: 'Search catalog',
-        onSearch: action('search'),
-      }}
-      pagination={{ pageSize: 6, onPage: action('onPage') }}
-    />
-  ))
-  .add('with pages', () => (
-    <StatefulTileCatalog
-      {...commonTileCatalogProps}
-      pagination={{ pageSize: 6, onPage: action('onPage') }}
-      selectedTileId={select(
-        'id',
-        commonTileCatalogProps.tiles.map((tile) => tile.id),
-        commonTileCatalogProps.tiles[0].id
-      )}
-    />
-  ))
-  .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
-  .add('error', () => (
-    <FullWidthWrapper>
-      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
-    </FullWidthWrapper>
-  ))
-  .add('async loaded wait one second', () => {
-    const Container = () => {
-      const [tilesProp, setTiles] = useState([]);
-      const [isLoading, setIsLoading] = useState(true);
-      useEffect(() => {
-        setTimeout(() => {
-          setTiles(commonTileCatalogProps.tiles);
-          setIsLoading(false);
-        }, 1000);
-      }, []);
-      return (
-        <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
-      );
-    };
-    return <Container />;
-  })
-  .add('isSelectedByDefault false', () => (
-    <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
-  ));
+  </FullWidthWrapper>
+);
+
+Error.story = {
+  name: 'error',
+};
+
+export const AsyncLoadedWaitOneSecond = () => {
+  const Container = () => {
+    const [tilesProp, setTiles] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      setTimeout(() => {
+        setTiles(commonTileCatalogProps.tiles);
+        setIsLoading(false);
+      }, 1000);
+    }, []);
+    return (
+      <StatefulTileCatalog
+        {...commonTileCatalogProps}
+        isLoading={isLoading}
+        tiles={tilesProp}
+      />
+    );
+  };
+  return <Container />;
+};
+
+AsyncLoadedWaitOneSecond.story = {
+  name: 'async loaded wait one second',
+};
+
+export const IsSelectedByDefaultFalse = () => (
+  <StatefulTileCatalog
+    {...commonTileCatalogProps}
+    isSelectedByDefault={false}
+  />
+);
+
+IsSelectedByDefaultFalse.story = {
+  name: 'isSelectedByDefault false',
+};
