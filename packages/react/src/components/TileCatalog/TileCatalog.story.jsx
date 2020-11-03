@@ -111,9 +111,7 @@ WithPages.story = {
   name: 'with pages',
 };
 
-export const Loading = () => (
-  <StatefulTileCatalog {...commonTileCatalogProps} isLoading />
-);
+export const Loading = () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />;
 
 Loading.story = {
   name: 'loading',
@@ -121,11 +119,7 @@ Loading.story = {
 
 export const Error = () => (
   <FullWidthWrapper>
-    <StatefulTileCatalog
-      {...commonTileCatalogProps}
-      tiles={[]}
-      error="In error state"
-    />
+    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
   </FullWidthWrapper>
 );
 
@@ -144,11 +138,7 @@ export const AsyncLoadedWaitOneSecond = () => {
       }, 1000);
     }, []);
     return (
-      <StatefulTileCatalog
-        {...commonTileCatalogProps}
-        isLoading={isLoading}
-        tiles={tilesProp}
-      />
+      <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
     );
   };
   return <Container />;
@@ -159,10 +149,7 @@ AsyncLoadedWaitOneSecond.story = {
 };
 
 export const IsSelectedByDefaultFalse = () => (
-  <StatefulTileCatalog
-    {...commonTileCatalogProps}
-    isSelectedByDefault={false}
-  />
+  <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
 );
 
 IsSelectedByDefaultFalse.story = {

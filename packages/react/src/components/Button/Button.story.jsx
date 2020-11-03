@@ -172,7 +172,8 @@ export const _Default = () => {
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
-      }}>
+      }}
+    >
       <Button {...regularProps} className="some-class">
         Button
       </Button>

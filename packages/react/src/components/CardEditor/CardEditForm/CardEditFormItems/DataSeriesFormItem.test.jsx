@@ -65,9 +65,7 @@ describe('DataSeriesFormItem', () => {
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(
-        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
-      ).toEqual([
+      expect(formatSeries(selectedItems, cardConfigWithoutColorDefinition)).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);

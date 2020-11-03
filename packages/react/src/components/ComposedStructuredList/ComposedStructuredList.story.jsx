@@ -125,9 +125,7 @@ export const CustomCellRenderer = () => (
   <ComposedStructuredList
     columns={columns.map((column) => ({
       ...column,
-      renderDataFunction: ({ value }) => (
-        <span style={{ color: 'blue' }}>{value}</span>
-      ),
+      renderDataFunction: ({ value }) => <span style={{ color: 'blue' }}>{value}</span>,
     }))}
     data={data}
     onRowClick={action('onRowClick')}

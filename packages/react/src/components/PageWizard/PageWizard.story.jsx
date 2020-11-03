@@ -333,7 +333,8 @@ export const StatefulExample = () => (
       onNext={action('next', () => {})}
       onBack={action('back', () => {})}
       setStep={action('step clicked', () => {})}
-      isClickable>
+      isClickable
+    >
       {content}
     </StatefulPageWizard>
   </div>
@@ -381,10 +382,8 @@ export const WrappedInPageTitleBar = () => (
           onNext={action('next', () => {})}
           onBack={action('back', () => {})}
           setStep={action('step clicked', () => {})}
-          isProgressIndicatorVertical={boolean(
-            'Toggle Progress Indicator Alignment',
-            true
-          )}>
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+        >
           {content}
         </PageWizard>
       }
@@ -406,11 +405,9 @@ export const WithHorizontalProgressIndicator = () => (
       onBack={action('back', () => {})}
       setStep={action('step clicked', () => {})}
       onClearError={action('Clear error', () => {})}
-      isProgressIndicatorVertical={boolean(
-        'Toggle Progress Indicator Alignment',
-        false
-      )}
-      isClickable>
+      isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+      isClickable
+    >
       {content}
     </PageWizard>
   </div>
@@ -440,7 +437,8 @@ export const OnlyOneStepInPageTitleBar = () => (
           onClearError={() => {}}
           setStep={action('step clicked', () => {})}
           sendingData={boolean('sendingData', false)}
-          hasStickyFooter={boolean('hasStickyFooter', false)}>
+          hasStickyFooter={boolean('hasStickyFooter', false)}
+        >
           {[content[0]]}
         </PageWizard>
       }
@@ -465,10 +463,7 @@ export const WithStickyFooterStatefulExampleWValidationInPageTitleBar = () => (
       content={
         <StepValidationWizard
           hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean(
-            'Toggle Progress Indicator Alignment',
-            true
-          )}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
           isClickable
         />
       }
@@ -493,10 +488,7 @@ export const WithAdditionalFooterContent = () => (
       content={
         <StepValidationWizard
           hasStickyFooter={boolean('hasStickyFooter', true)}
-          isProgressIndicatorVertical={boolean(
-            'Toggle Progress Indicator Alignment',
-            true
-          )}
+          isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
           beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
           isClickable
           afterFooterContent={
@@ -508,7 +500,8 @@ export const WithAdditionalFooterContent = () => (
                 fontSize: '1rem',
                 lineHeight: '1.375rem',
                 letterSpacing: 0,
-              }}>
+              }}
+            >
               <InformationFilled20 style={{ marginRight: '0.5rem' }} />
               {text('Additional footer content', 'Additional footer content')}
             </div>
@@ -541,7 +534,8 @@ export const WI18N = () => (
         back: text('Back label', 'Back'),
         next: text('Next label', 'Next'),
         submit: text('Submit label', 'Submit'),
-      }}>
+      }}
+    >
       {content}
     </PageWizard>
   </div>

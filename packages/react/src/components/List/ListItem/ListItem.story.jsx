@@ -35,21 +35,9 @@ export const BasicWKnobs = () => {
   const secondaryValue = text('secondaryValue', undefined);
   const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
   const iconComponent =
-    iconName === 'Star16'
-      ? Star16
-      : iconName === 'StarFilled16'
-      ? StarFilled16
-      : null;
-  const rowActionSet = select(
-    'row action example',
-    ['none', 'single', 'multi'],
-    'none'
-  );
-  const tagsConfig = select(
-    'tags example',
-    ['none', 'single', 'multi'],
-    'none'
-  );
+    iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
+  const rowActionSet = select('row action example', ['none', 'single', 'multi'], 'none');
+  const tagsConfig = select('tags example', ['none', 'single', 'multi'], 'none');
 
   const rowActionComponent =
     rowActionSet === 'single'
@@ -108,11 +96,7 @@ export const BasicWKnobs = () => {
         onExpand={action('onExpand')}
         isCategory={boolean('isCategory', false)}
         isLargeRow={boolean('isLargeRow', false)}
-        nestingLevel={select(
-          'nestingLevel',
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-          0
-        )}
+        nestingLevel={select('nestingLevel', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 0)}
         rowActions={rowActionComponent}
         tags={tagsData}
       />
@@ -136,12 +120,7 @@ WithValue.story = {
 
 export const WithSecondaryValue = () => (
   <div style={{ width: 400 }}>
-    <ListItem
-      {...dndProps}
-      id="list-item"
-      value="List Item"
-      secondaryValue="Secondary Value"
-    />
+    <ListItem {...dndProps} id="list-item" value="List Item" secondaryValue="Secondary Value" />
   </div>
 );
 
@@ -334,15 +313,9 @@ export const WithOverflowMenuRowActions = () => (
       onExpand={action('onExpand')}
       rowActions={[
         <OverflowMenu key="ListItem-action-overflow-menu" flipped>
-          <OverflowMenuItem
-            key="ListItem-action-overflow-Edit"
-            itemText="Edit"
-          />
+          <OverflowMenuItem key="ListItem-action-overflow-Edit" itemText="Edit" />
           <OverflowMenuItem key="ListItem-action-overflow-Add" itemText="Add" />
-          <OverflowMenuItem
-            key="ListItem-action-overflow-Delete"
-            itemText="Delete"
-          />
+          <OverflowMenuItem key="ListItem-action-overflow-Delete" itemText="Delete" />
           <OverflowMenuItem
             key="ListItem-action-overflow-Danger"
             itemText="Danger option"

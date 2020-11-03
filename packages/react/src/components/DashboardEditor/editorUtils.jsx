@@ -314,14 +314,11 @@ const renderCustomCard = (cardConfig, commonProps) => {
       // need to omit the content because its getting passed content to be rendered, which should not
       // get attached to the card wrapper
       {...omit(cardConfig, 'content')}
-      {...commonProps}>
+      {...commonProps}
+    >
       {
         // If content is a function, this is a react component
-        typeof cardConfig.content === 'function' ? (
-          <cardConfig.content />
-        ) : (
-          cardConfig.content
-        )
+        typeof cardConfig.content === 'function' ? <cardConfig.content /> : cardConfig.content
       }
     </Card>
   );

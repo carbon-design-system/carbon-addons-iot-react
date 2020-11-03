@@ -57,26 +57,17 @@ export default {
     component: PageTitleBar,
   },
 
-  excludeStories: [
-    'commonPageTitleBarProps',
-    'pageTitleBarBreadcrumb',
-    'PageTitleBarNodeTooltip',
-  ],
+  excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
 };
 
-export const Base = () => (
-  <PageTitleBar title={commonPageTitleBarProps.title} />
-);
+export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
 
 Base.story = {
   name: 'base',
 };
 
 export const WithBreadcrumb = () => (
-  <PageTitleBar
-    title={commonPageTitleBarProps.title}
-    breadcrumb={pageTitleBarBreadcrumb}
-  />
+  <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
 );
 
 WithBreadcrumb.story = {
@@ -145,9 +136,7 @@ WithEditableTitleBar.story = {
   name: 'with editable title bar',
 };
 
-export const WithRichContent = () => (
-  <PageTitleBar {...commonPageTitleBarProps} collapsed />
-);
+export const WithRichContent = () => <PageTitleBar {...commonPageTitleBarProps} collapsed />;
 
 WithRichContent.story = {
   name: 'with rich content',
@@ -166,7 +155,8 @@ export const WithEverything = () => (
             marginBottom: '8px',
             display: 'flex',
             flexDirection: 'row-reverse',
-          }}>
+          }}
+        >
           <span>Last updated: yesterday</span>
         </div>
         <div className="bottom">
@@ -218,9 +208,7 @@ WithEverything.story = {
   name: 'with everything',
 };
 
-export const IsLoading = () => (
-  <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
-);
+export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;
 
 IsLoading.story = {
   name: 'isLoading',

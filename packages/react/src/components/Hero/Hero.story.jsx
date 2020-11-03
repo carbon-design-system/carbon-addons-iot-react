@@ -29,10 +29,7 @@ export default {
 };
 
 export const Deprecated = () => (
-  <DeprecationNotice
-    deprecatedComponentName="Hero"
-    replacementComponentName="PageTitleBar"
-  />
+  <DeprecationNotice deprecatedComponentName="Hero" replacementComponentName="PageTitleBar" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,
@@ -79,9 +76,7 @@ export const WithBreadcrumbWithRightContent = () => (
   <Hero
     {...commonPageHeroProps}
     breadcrumb={breadcrumb}
-    rightContentBreadcrumb={
-      <div style={{ textAlign: 'right' }}>breadcrumb Right Content</div>
-    }
+    rightContentBreadcrumb={<div style={{ textAlign: 'right' }}>breadcrumb Right Content</div>}
   />
 );
 
@@ -89,9 +84,7 @@ WithBreadcrumbWithRightContent.story = {
   name: 'with breadcrumb with right content',
 };
 
-export const WithBreadcrumb = () => (
-  <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />
-);
+export const WithBreadcrumb = () => <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} />;
 
 WithBreadcrumb.story = {
   name: 'with breadcrumb',
@@ -106,11 +99,7 @@ WithTooltip.story = {
 };
 
 export const WithTooltipNoLink = () => (
-  <Hero
-    {...commonPageHeroProps}
-    breadcrumb={breadcrumb}
-    tooltip={{ message: tooltip.message }}
-  />
+  <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} tooltip={{ message: tooltip.message }} />
 );
 
 WithTooltipNoLink.story = {
@@ -118,11 +107,7 @@ WithTooltipNoLink.story = {
 };
 
 export const WithCloseButton = () => (
-  <Hero
-    {...commonPageHeroProps}
-    breadcrumb={breadcrumb}
-    onClose={action('close')}
-  />
+  <Hero {...commonPageHeroProps} breadcrumb={breadcrumb} onClose={action('close')} />
 );
 
 WithCloseButton.story = {

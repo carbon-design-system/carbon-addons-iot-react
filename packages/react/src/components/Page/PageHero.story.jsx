@@ -20,10 +20,7 @@ export default {
 };
 
 export const Deprecated = () => (
-  <DeprecationNotice
-    deprecatedComponentName="PageHero"
-    replacementComponentName="Hero"
-  />
+  <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />
 );
 Deprecated.story = {
   name: deprecatedStoryTitle,
@@ -59,9 +56,7 @@ NormalWithContentSwitcher.story = {
   name: 'normal with content switcher',
 };
 
-export const WithSection = () => (
-  <PageHero {...commonPageHeroProps} section="Explore" />
-);
+export const WithSection = () => <PageHero {...commonPageHeroProps} section="Explore" />;
 
 WithSection.story = {
   name: 'with section',

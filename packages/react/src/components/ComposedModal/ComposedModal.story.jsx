@@ -59,7 +59,8 @@ export const BigModal = () => (
       title: 'Needs a lot of space to contain all the info',
     }}
     onSubmit={action('submit')}
-    onClose={action('close')}>
+    onClose={action('close')}
+  >
     Lots of really wide content here...
   </ComposedModal>
 );
@@ -68,9 +69,7 @@ BigModal.story = {
   name: 'big modal',
 };
 
-export const FetchingData = () => (
-  <ComposedModal isFetchingData onClose={action('close')} />
-);
+export const FetchingData = () => <ComposedModal isFetchingData onClose={action('close')} />;
 
 FetchingData.story = {
   name: 'fetching data',
@@ -85,7 +84,8 @@ export const ErrorStates = () => (
     }}
     onSubmit={action('submit')}
     onClose={action('close')}
-    onClearError={action('onClearError')}>
+    onClearError={action('onClearError')}
+  >
     {text('body content', '')}
   </ComposedModal>
 );
@@ -207,13 +207,10 @@ export const ComposedModalWithOverflowAndTooltip = () => (
       secondaryButtonLabel: 'My Cancel',
     }}
     onClose={action('close')}
-    onSubmit={action('submit')}>
+    onSubmit={action('submit')}
+  >
     <OverflowMenu title="Test Overflow" iconDescription="Expand">
-      <OverflowMenuItem
-        key="default"
-        onClick={action('onClick')}
-        itemText="Click me"
-      />
+      <OverflowMenuItem key="default" onClick={action('onClick')} itemText="Click me" />
     </OverflowMenu>
     <Tooltip triggerId="my test tooltip" triggerText="Trigger Text">
       Hi there

@@ -291,10 +291,11 @@ export const CustomCardPreviewRenderer = () => (
             size={cardConfig.size}
             title={cardConfig.title}
             isEditable
-            {...cardProps}>
+            {...cardProps}
+          >
             <div style={{ padding: '1rem' }}>
-              This content is rendered by the renderCardPreview function. The
-              &quot;value&quot; property on the card will be rendered here:
+              This content is rendered by the renderCardPreview function. The &quot;value&quot;
+              property on the card will be rendered here:
               <h3>{cardConfig.value}</h3>
             </div>
           </Card>

@@ -54,12 +54,7 @@ describe('DashboardEditor', () => {
   };
 
   it('clicking card should select the card and close gallery', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -77,12 +72,7 @@ describe('DashboardEditor', () => {
   });
 
   it('enter key should select the card and close gallery', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -234,12 +224,7 @@ describe('DashboardEditor', () => {
   });
 
   it('changing title in CardEditForm should change rendered card title', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
-    );
+    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
     // add a card
     const valueBtn = screen.getByTitle('Value / KPI');
     expect(valueBtn).toBeInTheDocument();

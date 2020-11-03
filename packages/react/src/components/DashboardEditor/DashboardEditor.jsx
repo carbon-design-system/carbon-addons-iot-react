@@ -4,10 +4,7 @@ import { InlineNotification } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import {
-  DASHBOARD_EDITOR_CARD_TYPES,
-  CARD_ACTIONS,
-} from '../../constants/LayoutConstants';
+import { DASHBOARD_EDITOR_CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
@@ -182,9 +179,7 @@ const DashboardEditor = ({
    * @param {string} id
    */
   const duplicateCard = (id) => {
-    const cardConfig = getDuplicateCard(
-      dashboardJson.cards.find((i) => i.id === id)
-    );
+    const cardConfig = getDuplicateCard(dashboardJson.cards.find((i) => i.id === id));
     setDashboardJson({
       ...dashboardJson,
       cards: [...dashboardJson.cards, cardConfig],
@@ -268,7 +263,8 @@ const DashboardEditor = ({
                   ...dashboardJson,
                   layouts: newLayouts,
                 })
-              }>
+              }
+            >
               {dashboardJson.cards.map((cardConfig) => {
                 const isSelected = cardConfig.id === selectedCardId;
                 const cardProps = commonCardProps(cardConfig, isSelected);
@@ -300,9 +296,7 @@ const DashboardEditor = ({
           }
         >
           <CardEditor
-            cardConfig={dashboardJson.cards.find(
-              (card) => card.id === selectedCardId
-            )}
+            cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={(cardConfig) =>
               // TODO: this is really inefficient

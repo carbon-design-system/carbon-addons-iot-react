@@ -4,10 +4,7 @@ import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 
-import {
-  CARD_DIMENSIONS,
-  CARD_TYPES,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';

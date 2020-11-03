@@ -31,12 +31,7 @@ export default {
 };
 
 export const Unselected = () => {
-  const size = select(
-    'Size',
-    Object.values(ICON_SWITCH_SIZES),
-    ICON_SWITCH_SIZES.default,
-    'size'
-  );
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
   return (
     <IconSwitch
       name="one"
@@ -55,19 +50,13 @@ Unselected.story = {
 
   parameters: {
     info: {
-      text:
-        'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
+      text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
     },
   },
 };
 
 export const Selected = () => {
-  const size = select(
-    'Size',
-    Object.values(ICON_SWITCH_SIZES),
-    ICON_SWITCH_SIZES.default,
-    'size'
-  );
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
   return (
     <IconSwitch
       name="one"
@@ -87,25 +76,20 @@ Selected.story = {
 
   parameters: {
     info: {
-      text:
-        'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
+      text: 'Designed to be embedded in ContentSwitcher - see Watson IoT/ContentSwitcher',
     },
   },
 };
 
 export const ExampleUsedInContentSwitcher = () => {
-  const size = select(
-    'Size',
-    Object.values(ICON_SWITCH_SIZES),
-    ICON_SWITCH_SIZES.default,
-    'size'
-  );
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
 
   return (
     <ContentSwitcher
       className={`${iotPrefix}--content-switcher--icon`}
       onChange={function noRefCheck() {}}
-      selectedIndex={0}>
+      selectedIndex={0}
+    >
       <IconSwitch
         name="one"
         onClick={function noRefCheck() {}}
@@ -135,18 +119,14 @@ ExampleUsedInContentSwitcher.story = {
 };
 
 export const ExampleUsedInContentSwitcherLightVersion = () => {
-  const size = select(
-    'Size',
-    Object.values(ICON_SWITCH_SIZES),
-    ICON_SWITCH_SIZES.default,
-    'size'
-  );
+  const size = select('Size', Object.values(ICON_SWITCH_SIZES), ICON_SWITCH_SIZES.default, 'size');
 
   return (
     <ContentSwitcher
       className={`${iotPrefix}--content-switcher--icon`}
       onChange={function noRefCheck() {}}
-      selectedIndex={0}>
+      selectedIndex={0}
+    >
       <IconSwitch
         name="one"
         onClick={function noRefCheck() {}}

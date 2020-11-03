@@ -47,9 +47,7 @@ export const Default = () => {
     <Breadcrumb {...props()}>
       <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
       <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-      <BreadcrumbItem href="#">
-        {text('Breadcrumb 3 text', 'Breadcrumb 3')}
-      </BreadcrumbItem>
+      <BreadcrumbItem href="#">{text('Breadcrumb 3 text', 'Breadcrumb 3')}</BreadcrumbItem>
     </Breadcrumb>
   );
 };
@@ -117,21 +115,21 @@ export const HasOverflow = () => {
               e.preventDefault();
               console.log('clicked');
             }}
-            title="2 Devices">
+            title="2 Devices"
+          >
             2 Devices
           </BreadcrumbItem>
           <BreadcrumbItem href="#" title="3 A really long page name">
             3 A really long page name
           </BreadcrumbItem>
-          <BreadcrumbItem
-            href="#"
-            title={text('Breadcrumb 4 text', '4 Another page')}>
+          <BreadcrumbItem href="#" title={text('Breadcrumb 4 text', '4 Another page')}>
             {text('Breadcrumb 4 text', '4 Another page')}
           </BreadcrumbItem>
           <BreadcrumbItem
             href="#"
             isCurrentPage
-            title={text('Breadcrumb 5 text', '5th level page')}>
+            title={text('Breadcrumb 5 text', '5th level page')}
+          >
             {text('Breadcrumb 5 text', '5th level page')}
           </BreadcrumbItem>
         </Breadcrumb>

@@ -319,7 +319,8 @@ export const SizeGallery = () => {
         style={{
           width: `${getCardMinSize('lg', CARD_SIZES[i]).x}px`,
           margin: 20,
-        }}>
+        }}
+      >
         <Card
           title={text('title', 'Card Title')}
           id={`facilitycard-size-gallery-${i}`}

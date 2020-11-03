@@ -67,10 +67,7 @@ export default {
 };
 
 export const Basic = withReadme(OverflowREADME, () => (
-  <OverflowMenuExample
-    overflowMenuProps={props.menu()}
-    overflowMenuItemProps={props.menuItem()}
-  />
+  <OverflowMenuExample overflowMenuProps={props.menu()} overflowMenuItemProps={props.menuItem()} />
 ));
 
 Basic.story = {

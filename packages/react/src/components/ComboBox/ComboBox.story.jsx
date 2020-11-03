@@ -144,11 +144,7 @@ export default {
 
 export const Default = () => (
   <Wrapper>
-    <ComboBox
-      items={items}
-      itemToString={(item) => (item ? item.text : '')}
-      {...props()}
-    />
+    <ComboBox items={items} itemToString={(item) => (item ? item.text : '')} {...props()} />
   </Wrapper>
 );
 
@@ -183,9 +179,7 @@ ItemsAsComponents.story = {
   },
 };
 
-export const ApplicationLevelControlForSelection = () => (
-  <ControlledComboBoxApp {...props()} />
-);
+export const ApplicationLevelControlForSelection = () => <ControlledComboBoxApp {...props()} />;
 
 ApplicationLevelControlForSelection.story = {
   name: 'application-level control for selection',

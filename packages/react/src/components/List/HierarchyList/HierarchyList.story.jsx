@@ -46,8 +46,7 @@ export const StatefulListWithNestedSearching = () => (
             id: `${team}_${player}`,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['American League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
             },
             isSelectable: true,
           })),
@@ -62,8 +61,7 @@ export const StatefulListWithNestedSearching = () => (
             id: `${team}_${player}`,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['National League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['National League'][team][player],
             },
             isSelectable: true,
           })),
@@ -84,10 +82,7 @@ export const WithDefaultSelectedId = () => (
   <div style={{ width: 400, height: 400 }}>
     <HierarchyList
       title={text('Title', 'MLB Expanded List')}
-      defaultSelectedId={text(
-        'Default Selected Id',
-        'New York Mets_Pete Alonso'
-      )}
+      defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
       items={[
         ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
           id: team,
@@ -95,9 +90,7 @@ export const WithDefaultSelectedId = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['American League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
@@ -111,9 +104,7 @@ export const WithDefaultSelectedId = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['National League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
@@ -144,18 +135,13 @@ export const WithOverflowMenu = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['American League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
               rowActions: [
                 <OverflowMenu title="data-item-menu" flipped>
-                  <OverflowMenuItem
-                    itemText="Configure"
-                    onClick={() => console.log('Configure')}
-                  />
+                  <OverflowMenuItem itemText="Configure" onClick={() => console.log('Configure')} />
                   <OverflowMenuItem
                     itemText="Delete"
                     onClick={() => console.log('Delete')}
@@ -174,18 +160,13 @@ export const WithOverflowMenu = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['National League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
               rowActions: [
                 <OverflowMenu title="data-item-menu" flipped>
-                  <OverflowMenuItem
-                    itemText="Configure"
-                    onClick={() => console.log('Configure')}
-                  />
+                  <OverflowMenuItem itemText="Configure" onClick={() => console.log('Configure')} />
                   <OverflowMenuItem
                     itemText="Delete"
                     onClick={() => console.log('Delete')}
@@ -219,15 +200,13 @@ export const WithNestedReorder = () => {
         content: {
           value: team,
         },
-        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(
-          (player) => ({
-            id: `${team}_${player}`,
-            content: {
-              value: player,
-            },
-            isSelectable: true,
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
       })),
       ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
         id: team,
@@ -235,15 +214,13 @@ export const WithNestedReorder = () => {
         content: {
           value: team,
         },
-        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(
-          (player) => ({
-            id: `${team}_${player}`,
-            content: {
-              value: player,
-            },
-            isSelectable: true,
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+          },
+          isSelectable: true,
+        })),
       })),
     ]);
 
@@ -253,10 +230,7 @@ export const WithNestedReorder = () => {
       <div style={{ width: 400, height: 400 }}>
         <HierarchyList
           title={text('Title', 'MLB Expanded List')}
-          defaultSelectedId={text(
-            'Default Selected Id',
-            'New York Mets_Pete Alonso'
-          )}
+          defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
           items={items}
           editingStyle={select(
             'Editing Style',
@@ -290,9 +264,7 @@ export const WithDefaultExpandedIds = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['American League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
@@ -306,9 +278,7 @@ export const WithDefaultExpandedIds = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['National League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,

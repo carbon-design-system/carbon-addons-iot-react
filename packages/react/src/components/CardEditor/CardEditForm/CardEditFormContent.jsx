@@ -163,9 +163,7 @@ const CardEditFormContent = ({
           id={`${id}_title`}
           labelText={mergedI18n.cardTitle}
           light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, title: evt.target.value })
-          }
+          onChange={(evt) => onChange({ ...cardConfig, title: evt.target.value })}
           value={title}
         />
       </div>
@@ -174,9 +172,7 @@ const CardEditFormContent = ({
           id={`${id}_description`}
           labelText={mergedI18n.description}
           light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, description: evt.target.value })
-          }
+          onChange={(evt) => onChange({ ...cardConfig, description: evt.target.value })}
           value={description}
         />
       </div>

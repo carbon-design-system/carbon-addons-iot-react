@@ -23,7 +23,6 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "pre-commit": "yarn svg-convert && yarn lint-staged && yarn test:base",
     "build": "yarn svg-convert && cross-env BABEL_ENV='production' NODE_ENV='production' yarn build:pre && rollup -c && yarn build:post",
     "build:pre": "yarn test:engines && rimraf lib es umd css scss tmp storybook-static",
     "build:post": "rimraf tmp",
@@ -34,16 +33,17 @@
     "lint": "yarn lint:javascript && yarn lint:stylelint",
     "lint:javascript": "eslint --ext .jsx --ext .js .",
     "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore --custom-formatter ./config/stylelint/sassMsgFormatter.js",
+    "pre-commit": "yarn svg-convert && yarn lint-staged && yarn test:base",
     "start": "yarn test:engines && yarn storybook",
     "storybook": "yarn test:engines && start-storybook -p 3000 -s public/development",
-    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg",
+    "svg-convert": "svgr --ext jsx -d src/icons/components src/icons/svg && prettier --write src/icons/components/index.jsx ",
     "test": "yarn test:engines && yarn test:a11y && yarn test:base",
-    "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=./../../node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
-    "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=./../../node_modules/full-icu TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
-    "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=./../../node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=./../../node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
-    "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=./../../node_modules/full-icu TZ=America/Chicago jest --clearCache",
-    "test:engines": "check-node-version --node $(cat ./../../.nvmrc) --yarn 1.x"
+    "test:base": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --coverage",
+    "test:a11y": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --no-watchman --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
+    "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --no-watchman --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
+    "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot --no-watchman",
+    "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=../../node_modules/full-icu TZ=America/Chicago jest --no-watchman --clearCache",
+    "test:engines": "check-node-version --node $(cat ../../.nvmrc) --yarn 1.x"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
@@ -272,5 +272,5 @@
   "resolutions": {
     "chokidar": "3.3.1"
   },
-  "version": "2.139.0"
+  "version": "0.0.0-development"
 }
