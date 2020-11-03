@@ -4,6 +4,7 @@ import {
   getDuplicateCard,
   getDefaultCard,
   isCardJsonValid,
+  renderBreakpointInfo,
 } from './editorUtils';
 
 describe('editorUtils', () => {
@@ -130,6 +131,35 @@ describe('editorUtils', () => {
       expect(
         isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })
       ).toEqual(true);
+    });
+  });
+
+  describe('renderBreakpointInfo', () => {
+    const i18n = {
+      layoutInfoMax: 'Max',
+      layoutInfoXl: 'Xl',
+      layoutInfoLg: 'Lg',
+      layoutInfoMd: 'Md',
+      layoutInfoSm: 'Sm',
+      layoutInfoXs: 'Xs',
+    };
+    it('should return max', () => {
+      expect(renderBreakpointInfo('max', i18n)).toEqual('Max');
+    });
+    it('should return Xl', () => {
+      expect(renderBreakpointInfo('xl', i18n)).toEqual('Xl');
+    });
+    it('should return lg', () => {
+      expect(renderBreakpointInfo('lg', i18n)).toEqual('Lg');
+    });
+    it('should return md', () => {
+      expect(renderBreakpointInfo('md', i18n)).toEqual('Md');
+    });
+    it('should return sm', () => {
+      expect(renderBreakpointInfo('sm', i18n)).toEqual('Sm');
+    });
+    it('should return xs', () => {
+      expect(renderBreakpointInfo('xs', i18n)).toEqual('Xs');
     });
   });
 });

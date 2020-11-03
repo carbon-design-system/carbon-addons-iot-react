@@ -99,6 +99,29 @@ describe('DashboardEditor', () => {
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
+  it('space key should select the card and close gallery', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
+    // no card should be selected, meaning the gallery should be open
+    const galleryTitle = screen.getByText('Gallery');
+    expect(galleryTitle).toBeInTheDocument();
+    // first find and click the the card
+    const cardTitle = screen.getByTitle(mockValueCard.title);
+    expect(cardTitle).toBeInTheDocument();
+    fireEvent.keyDown(cardTitle, { key: 'Space' });
+    // gallery title should be gone and the card edit form should be open
+    expect(galleryTitle).not.toBeInTheDocument();
+
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    expect(cardSizeFormInput).toBeInTheDocument();
+  });
+
   it('selecting clone card should duplicate card', () => {
     render(
       <DashboardEditor
