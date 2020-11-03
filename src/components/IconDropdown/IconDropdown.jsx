@@ -15,19 +15,98 @@ const itemShape = PropTypes.shape({
 });
 
 const propTypes = {
-  disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   dropdownId: PropTypes.string.isRequired,
-  light: PropTypes.node,
   columnCount: PropTypes.number,
   selectedItem: itemShape,
   items: PropTypes.arrayOf(itemShape).isRequired,
+
+  // Dropdown specific props
+  /**
+   * 'aria-label' of the ListBox component.
+   */
+  ariaLabel: PropTypes.string,
+
+  /**
+   * Specify the direction of the dropdown. Can be either top or bottom.
+   */
+  direction: PropTypes.oneOf(['top', 'bottom']),
+
+  /**
+   * Disable the control
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * Provide helper text that is used alongside the control label for
+   * additional help
+   */
+  helperText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+  /**
+   * Specify if the currently selected value is invalid.
+   */
+  invalid: PropTypes.bool,
+
+  /**
+   * Message which is displayed if the value is invalid.
+   */
+  invalidText: PropTypes.string,
+
+  /**
+   * Generic `label` that will be used as the textual representation of what
+   * this field is for
+   */
+  label: PropTypes.node.isRequired,
+
+  /**
+   * `true` to use the light version.
+   */
+  light: PropTypes.bool,
+
+  /**
+   * `onChange` is a utility for this controlled component to communicate to a
+   * consuming component what kind of internal state changes are occuring.
+   */
+  onChange: PropTypes.func,
+
+  /**
+   * Provide the title text that will be read by a screen reader when
+   * visiting this control
+   */
+  titleText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+  /**
+   * The dropdown type, `default` or `inline`
+   */
+  type: PropTypes.oneOf(['default', 'inline']),
+
+  /**
+   * Specify whether the control is currently in warning state
+   */
+  warn: PropTypes.bool,
+
+  /**
+   * Provide the text that is displayed when the control is in warning state
+   */
+  warnText: PropTypes.string,
 };
 
 const defaultPropTypes = {
-  disabled: false,
   columnCount: 4,
   selectedItem: null,
+  disabled: false,
+  type: 'default',
+  light: false,
+  titleText: '',
+  helperText: '',
+  direction: 'bottom',
+  ariaLabel: '',
+  invalid: false,
+  invalidText: '',
+  onChange: () => {},
+  warn: false,
+  warnText: '',
 };
 
 const defaultItemSize = 48;
@@ -38,10 +117,10 @@ const IconDropdown = ({
   columnCount,
   selectedItem: controlledSelectedItem,
   items,
-  light,
   dropdownId,
   disabled,
-  actions: { onChangeView, ...otherActions },
+  direction,
+  onChange,
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +142,6 @@ const IconDropdown = ({
   const validationText = dropdown?.getElementsByClassName(
     `${prefix}--form-requirement`
   )[0];
-  const menu = dropdown?.getElementsByClassName(`${prefix}--list-box__menu`)[0];
   const menuOption = dropdown?.getElementsByClassName(
     `${prefix}--list-box__menu-item`
   )[0];
@@ -80,10 +158,7 @@ const IconDropdown = ({
   const widthStyle = `${
     columnCount * (menuOption?.clientWidth ?? defaultItemSize)
   }px`;
-  const heightStyle =
-    menu?.clientHeight > 0
-      ? menu?.clientHeight
-      : `${Math.ceil(items.length / columnCount) * defaultItemSize}px`;
+  const heightStyle = Math.ceil(items.length / columnCount) * defaultItemSize;
 
   const Footer = () => {
     const highlightedItem =
@@ -94,15 +169,21 @@ const IconDropdown = ({
     const selectedFooter =
       highlightedItem !== null ? highlightedItem : selectedItem;
 
+    const bottomTranslate = `translateY(-${
+      helperTextHeight + validationTextHeight
+    }px)`;
+    const topTranslate = `translateY(-${
+      heightStyle + defaultHelperPadding * 2
+    }px)`;
+
     return selectedFooter !== undefined && selectedFooter !== null ? (
       <div
         className={`${iotPrefix}--dropdown__footer`}
         style={{
           width: widthStyle,
-          transform: `translateY(-${
-            helperTextHeight + validationTextHeight
-          }px)`,
-          paddingTop: heightStyle,
+          transform: direction === 'top' ? topTranslate : bottomTranslate,
+          paddingTop: direction !== 'top' ? `${heightStyle}px` : 0,
+          paddingBottom: direction === 'top' ? `${heightStyle}px` : 0,
         }}>
         <div className={`${iotPrefix}--dropdown__footer-content`}>
           {selectedFooter.footer}
@@ -139,18 +220,19 @@ const IconDropdown = ({
 
   return (
     <div id={id}>
+      {isOpen && direction === 'top' && <Footer />}
+
       <Dropdown
         id={dropdownId}
+        direction={direction}
         style={{ width: widthStyle }}
         items={items}
-        disabled={disabled}
         className={`${iotPrefix}--dropdown__selection-buttons`}
-        actions={otherActions}
         selectedItem={selectedItem}
         onChange={(changes) => {
           const { selectedItem: newSelected } = changes;
           setInternalSelectedItem(newSelected);
-          onChangeView(newSelected);
+          onChange(newSelected);
         }}
         downshiftProps={{
           isOpen,
@@ -167,12 +249,12 @@ const IconDropdown = ({
         {...other}
         itemToString={itemToString}
       />
-      {isOpen && <Footer />}
+      {isOpen && direction !== 'top' && <Footer />}
     </div>
   );
 };
 
-IconDropdown.propTypes = Dropdown.propTypes && propTypes;
-IconDropdown.defaultProps = Dropdown.defaultProps && defaultPropTypes;
+IconDropdown.propTypes = propTypes;
+IconDropdown.defaultProps = defaultPropTypes;
 
 export default IconDropdown;

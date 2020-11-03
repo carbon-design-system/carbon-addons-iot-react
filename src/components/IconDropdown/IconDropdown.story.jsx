@@ -108,6 +108,7 @@ export const _Default = () => {
       <div
         style={{
           width: select('wrapper width', ['300px', '100px'], '300px'),
+          transform: 'translateY(100px)',
         }}>
         <IconDropdown
           {...props()}
@@ -115,13 +116,10 @@ export const _Default = () => {
           items={itemsWithFooter}
           selectedItem={selectedItem}
           initialSelectedItem={selectedItem}
-          actions={{
-            onChangeView: (item) => {
-              setSelectedItem(item);
-              action('onChangeView')(item);
-            },
+          onChange={(item) => {
+            setSelectedItem(item);
+            action('onChangeView')(item);
           }}
-          hasIconsOnly
         />
       </div>
     );

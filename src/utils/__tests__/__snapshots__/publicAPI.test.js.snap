@@ -6010,13 +6010,36 @@ Map {
   },
   "IconDropdown" => Object {
     "defaultProps": Object {
+      "ariaLabel": "",
       "columnCount": 4,
+      "direction": "bottom",
       "disabled": false,
+      "helperText": "",
+      "invalid": false,
+      "invalidText": "",
+      "light": false,
+      "onChange": [Function],
       "selectedItem": null,
+      "titleText": "",
+      "type": "default",
+      "warn": false,
+      "warnText": "",
     },
     "propTypes": Object {
+      "ariaLabel": Object {
+        "type": "string",
+      },
       "columnCount": Object {
         "type": "number",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -6025,8 +6048,27 @@ Map {
         "isRequired": true,
         "type": "string",
       },
+      "helperText": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
       "id": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "invalidText": Object {
         "type": "string",
       },
       "items": Object {
@@ -6067,8 +6109,15 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
-      "light": Object {
+      "label": Object {
+        "isRequired": true,
         "type": "node",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
       },
       "selectedItem": Object {
         "args": Array [
@@ -6101,6 +6150,34 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "titleText": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "default",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "warn": Object {
+        "type": "bool",
+      },
+      "warnText": Object {
+        "type": "string",
       },
     },
   },

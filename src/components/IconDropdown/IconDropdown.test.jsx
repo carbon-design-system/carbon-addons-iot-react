@@ -73,10 +73,8 @@ describe('Icon Dropdown', () => {
     render(
       <IconDropdown
         {...iconDropdownProps}
-        actions={{
-          onChangeView: (item) => {
-            selectedItem = item;
-          },
+        onChange={(item) => {
+          selectedItem = item;
         }}
       />
     );

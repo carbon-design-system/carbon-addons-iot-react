@@ -6,11 +6,21 @@
   padding: 0;
 }
 
+.#{$iot-prefix}--dropdown__image-button:hover {
+  border-color: transparent;
+
+  ::before {
+    opacity: 0;
+  }
+}
+
 .#{$iot-prefix}--dropdown__footer {
   @include box-shadow();
 
+  position: absolute;
+
   background-color: $ui-01;
-  z-index: z('dropdown');
+  z-index: 5999;
   width: 100%;
 
   &-content {
@@ -31,15 +41,11 @@
 
     > .#{$prefix}--list-box__menu-item--active {
       background: transparent;
-
-      > .#{$prefix}--list-box__menu-item__option {
-        > .#{$iot-prefix}--dropdown__image-button.bx--btn.bx--btn--icon-only.bx--tooltip__trigger:hover::before {
-          opacity: 0;
-        }
-      }
     }
 
     > .#{$prefix}--list-box__menu-item.#{$prefix}--list-box__menu-item--highlighted {
+      background: transparent;
+
       &:hover {
         > .bx--list-box__menu-item__option {
           > .#{$iot-prefix}--dropdown__image-button {
@@ -53,7 +59,6 @@
           border-color: $focus;
         }
       }
-      background: transparent;
     }
 
     > .#{$prefix}--list-box__menu-item {
@@ -63,6 +68,13 @@
       > .#{$prefix}--list-box__menu-item__option {
         overflow: visible;
         border: none;
+        height: min-content;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-items: center;
 
         &:hover {
           background: $hover-ui;
@@ -75,14 +87,6 @@
         > .#{$prefix}--list-box__menu-item__selected-icon {
           display: none;
         }
-
-        height: min-content;
-        padding: 0;
-        margin: 0;
-
-        display: flex;
-        align-items: center;
-        justify-items: center;
 
         > .#{$iot-prefix}--dropdown__image-button {
           border-width: 1px;
@@ -107,7 +111,7 @@
   }
 
   .#{$prefix}--list-box__label {
-    > .#{$iot-prefix}--dropdown__image-button.bx--btn {
+    > .#{$iot-prefix}--dropdown__image-button {
       display: none;
     }
 

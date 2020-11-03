@@ -15,6 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       style={
         Object {
+          "transform": "translateY(100px)",
           "width": "300px",
         }
       }
@@ -23,15 +24,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         id="unique-drop-down-id"
       >
         <div
-          actions={Object {}}
           className="bx--dropdown__wrapper bx--list-box__wrapper"
           hasFooter={false}
-          hasIconsOnly={true}
           style={
             Object {
               "width": "192px",
             }
           }
+          warn={false}
+          warnText=""
         >
           <label
             className="bx--label"
