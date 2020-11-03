@@ -105,10 +105,8 @@ export const WithIcons = () => {
         {...props()}
         id="some-dropdown-id"
         items={items}
-        actions={{
-          onChangeView: (viewItem) => {
-            action('onChangeView')(viewItem);
-          },
+        onChange={(viewItem) => {
+          action('onChangeView')(viewItem);
         }}
       />
     </div>

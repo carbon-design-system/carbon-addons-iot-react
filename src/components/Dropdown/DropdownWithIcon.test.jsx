@@ -29,15 +29,7 @@ const itemsWithoutIcons = [
 
 describe('Dropdown with Icon and Labels', () => {
   it('Renders default', () => {
-    render(
-      <Dropdown
-        items={itemsWithoutIcons}
-        {...iconDropdownProps}
-        actions={{
-          onChangeView: () => {},
-        }}
-      />
-    );
+    render(<Dropdown items={itemsWithoutIcons} {...iconDropdownProps} />);
 
     const renderedLabel = screen.queryByText(iconDropdownProps.label);
 
@@ -45,15 +37,7 @@ describe('Dropdown with Icon and Labels', () => {
   });
 
   it('Renders selected item', () => {
-    render(
-      <Dropdown
-        {...iconDropdownProps}
-        selectedViewId={items[0].id}
-        actions={{
-          onChangeView: () => {},
-        }}
-      />
-    );
+    render(<Dropdown {...iconDropdownProps} selectedViewId={items[0].id} />);
 
     const selectedItem = screen.queryByText(items[0].text);
 
@@ -63,15 +47,7 @@ describe('Dropdown with Icon and Labels', () => {
   it('Renders in dropdown', () => {
     const label = 'Icon Dropdown menu options';
 
-    render(
-      <Dropdown
-        {...iconDropdownProps}
-        items={items}
-        actions={{
-          onChangeView: () => {},
-        }}
-      />
-    );
+    render(<Dropdown {...iconDropdownProps} items={items} />);
 
     const renderedLabel = screen.queryByText(label);
 
@@ -90,10 +66,8 @@ describe('Dropdown with Icon and Labels', () => {
     render(
       <Dropdown
         {...iconDropdownProps}
-        actions={{
-          onChangeView: (item) => {
-            selectedItem = item;
-          },
+        onChange={(item) => {
+          selectedItem = item;
         }}
       />
     );
@@ -107,18 +81,11 @@ describe('Dropdown with Icon and Labels', () => {
   });
 
   it('custom render', () => {
-    render(
-      <Dropdown
-        {...iconDropdownProps}
-        itemToString={() => 'test'}
-        actions={{
-          onChangeView: () => {},
-        }}
-      />
-    );
+    render(<Dropdown {...iconDropdownProps} itemToString={() => 'test'} />);
 
     fireEvent.click(screen.getByText(iconDropdownProps.label));
-
     expect(screen.getAllByText('test').length).toEqual(items.length);
+    fireEvent.click(screen.getAllByText('test')[0]);
+    expect(screen.getAllByText('test').length).toEqual(1);
   });
 });

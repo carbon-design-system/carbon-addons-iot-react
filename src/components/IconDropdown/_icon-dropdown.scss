@@ -20,7 +20,7 @@
   position: absolute;
 
   background-color: $ui-01;
-  z-index: 5999;
+  z-index: 5999; // dropdown z-index is 6000, this needs to render just below
   width: 100%;
 
   &-content {
