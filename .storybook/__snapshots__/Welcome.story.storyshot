@@ -59,7 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-10"
+            aria-controls="accordion-item-1"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-10"
+            id="accordion-item-1"
           >
             <p>
               The following table shows a comparison of exports from carbon-components-react and this library. These are primarily used for snapshot purposes to track and ensure that as the exports change upstream in Carbon we continue to provide parity with their package.
@@ -770,7 +770,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    FluidForm
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -824,7 +826,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Grid
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -836,7 +840,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Row
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -848,7 +854,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Column
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -1112,7 +1120,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PaginationNav
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -1950,7 +1960,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PaginationSkeleton
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2158,7 +2170,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    PageSelector
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2170,7 +2184,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    Unstable_Pagination
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -3594,6 +3610,162 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     tableActions
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    AlertTableIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    BarGroupedGraphIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    BarStackGraphIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ComputerChipIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    CustomCardIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    DashboardIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    DataScientistIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    DataTableIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ImageIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    LineGraphIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ListIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SimpleBarGraphIcon
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    ValueKpiIcon
                   </div>
                 </div>
               </div>

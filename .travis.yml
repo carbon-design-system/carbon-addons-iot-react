@@ -3,8 +3,8 @@ filter_secrets: false
 
 stages:
   - name: after_success
-    # require the branch name to be master (note for PRs this is the base branch name)
-    if: branch = master
+    # require the branch name to be master or next (note for PRs this is the base branch name)
+    if: branch = master OR branch = next
 
 before_install:
   - node --version
@@ -21,13 +21,9 @@ cache:
 install:
   - yarn install
   - yarn list
-  - yarn build
 
 script:
-  - yarn format:check
-  - yarn lint
-  - travis_wait yarn test --maxWorkers=2 --ci --logHeapUsage --coverage && cat
-    ./coverage/lcov.info | yarn run coveralls && rm -rf ./coverage # report coveralls status
+  - yarn build
 
 after_success:
   - yarn publish-npm

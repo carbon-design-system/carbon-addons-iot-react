@@ -22,7 +22,10 @@ import {
   getCardMinSize,
   filterValidAttributes,
 } from '../../utils/componentUtilityFunctions';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  useCardResizing,
+} from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -44,6 +47,8 @@ const CardWrapper = ({
   onMouseUp,
   onTouchEnd,
   onTouchStart,
+  onFocus,
+  onBlur,
   tabIndex,
   testID,
   ...others
@@ -60,6 +65,8 @@ const CardWrapper = ({
       onTouchEnd={onTouchEnd}
       onTouchStart={onTouchStart}
       onScroll={onScroll}
+      onFocus={onFocus}
+      onBlur={onBlur}
       tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`)}
       {...validOthers}>
@@ -81,7 +88,7 @@ export const CardTitle = (
   </span>
 );
 
-const CardContent = props => {
+const CardContent = (props) => {
   const { children, dimensions, isExpanded } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
@@ -95,7 +102,7 @@ const CardContent = props => {
   );
 };
 
-const EmptyMessageWrapper = props => {
+const EmptyMessageWrapper = (props) => {
   const { children } = props;
   return (
     <div
@@ -118,6 +125,8 @@ CardWrapper.propTypes = {
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
   /** Optionally sets a keyboard tab index for the container */
   tabIndex: PropTypes.number,
 };
@@ -130,6 +139,8 @@ CardWrapper.defaultProps = {
   onTouchEnd: undefined,
   onTouchStart: undefined,
   onScroll: undefined,
+  onFocus: undefined,
+  onBlur: undefined,
   tabIndex: undefined,
 };
 CardContent.propTypes = {
@@ -206,11 +217,14 @@ export const defaultProps = {
   onTouchEnd: undefined,
   onTouchStart: undefined,
   onScroll: undefined,
+  onFocus: undefined,
+  onBlur: undefined,
+  tabIndex: undefined,
   testID: CardWrapper.defaultProps.testID,
 };
 
 /** Dumb component that renders the card basics */
-const Card = props => {
+const Card = (props) => {
   const {
     size,
     children,
@@ -221,6 +235,8 @@ const Card = props => {
     isEditable,
     isExpanded,
     isLazyLoading,
+    isResizable,
+    resizeHandles: wrappingCardResizeHandles,
     error,
     hideHeader,
     id,
@@ -301,6 +317,12 @@ const Card = props => {
     }
   });
 
+  const { resizeHandles, isResizing } = useCardResizing(
+    wrappingCardResizeHandles,
+    children,
+    isResizable
+  );
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
@@ -336,7 +358,9 @@ const Card = props => {
                         width: 'calc(100% - 50px)',
                       }
                 }
-                className={classnames(`${iotPrefix}--card`, className)}>
+                className={classnames(`${iotPrefix}--card`, className, {
+                  [`${iotPrefix}--card--resizing`]: isResizing,
+                })}>
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
@@ -408,6 +432,7 @@ const Card = props => {
                     children
                   )}
                 </CardContent>
+                {resizeHandles}
               </CardWrapper>
             );
           }}

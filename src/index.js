@@ -160,6 +160,10 @@ export {
   FormGroup,
   FormItem,
   FormLabel,
+  FluidForm,
+  Grid,
+  Row,
+  Column,
   Icon,
   InlineLoading,
   Link,
@@ -177,7 +181,11 @@ export {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
+  PageSelector,
+  Unstable_Pagination, // eslint-disable-line camelcase
   Pagination,
+  PaginationNav,
+  PaginationSkeleton,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
@@ -297,3 +305,5 @@ export {
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
+
+export * from './icons/components';

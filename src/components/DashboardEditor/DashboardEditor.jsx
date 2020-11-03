@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { InlineNotification } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
-import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor } from '../../index';
+import {
+  DASHBOARD_EDITOR_CARD_TYPES,
+  CARD_ACTIONS,
+} from '../../constants/LayoutConstants';
+import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -12,6 +16,8 @@ import {
   getDuplicateCard,
   getCardPreview,
   renderBreakpointInfo,
+  handleKeyDown,
+  handleOnClick,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -35,7 +41,14 @@ const propTypes = {
   }),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
-  /** if provided, is used to render cards in dashboard */
+  /** if provided, is used to render cards in dashboard
+   * renderCardPreview( cardConfig: Object,
+                        commonCardProps: Object
+                        onSelectCard: Function,
+                        onDuplicateCard: Function,
+                        onRemoveCard: Function,
+                        isSelected: Boolean): Node
+   */
   renderCardPreview: PropTypes.func,
   /** if provided, renders array elements inside of BreadcrumbItem in header */
   headerBreadcrumbs: PropTypes.arrayOf(PropTypes.element),
@@ -43,6 +56,15 @@ const propTypes = {
   notification: PropTypes.node,
   /** if provided, renders edit button next to title linked to this callback */
   onEditTitle: PropTypes.func,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
+  /** an array of dataItem string names to be included on each card
+   * this prop will be ignored if getValidDataItems is defined
+   */
+  dataItems: PropTypes.arrayOf(PropTypes.string),
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -59,6 +81,13 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
+  /** Whether to disable the submit button */
+  submitDisabled: PropTypes.bool,
+  /** If provided, runs the function when the user clicks submit in the Card code JSON editor
+   * onValidateCardJson(cardConfig)
+   * @returns Array<string> error strings. return empty array if there is no errors
+   */
+  onValidateCardJson: PropTypes.func,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -79,6 +108,7 @@ const propTypes = {
     layoutInfoMd: PropTypes.string,
     layoutInfoSm: PropTypes.string,
     layoutInfoXs: PropTypes.string,
+    searchPlaceholderText: PropTypes.string,
   }),
 };
 
@@ -88,18 +118,22 @@ const defaultProps = {
     layouts: {},
   },
   breakpointSwitcher: null,
-  supportedCardTypes: Object.entries(DASHBOARD_EDITOR_CARD_TYPES),
+  supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
   title: null,
   onEditTitle: null,
+  getValidDataItems: null,
+  dataItems: [],
   onDelete: null,
   onImport: null,
   onExport: null,
   onCancel: null,
   onSubmit: null,
+  submitDisabled: false,
+  onValidateCardJson: null,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -119,6 +153,7 @@ const defaultProps = {
     layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
     layoutInfoSm: 'Edit dashboard at small layout (320 - 480px)',
     layoutInfoXs: 'Edit dashboard at extra small layout (0 - 320px)',
+    searchPlaceholderText: 'Enter a value',
   },
 };
 
@@ -137,6 +172,8 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
+  getValidDataItems,
+  dataItems,
   headerBreadcrumbs,
   notification,
   onEditTitle,
@@ -145,6 +182,8 @@ const DashboardEditor = ({
   onDelete,
   onCancel,
   onSubmit,
+  submitDisabled,
+  onValidateCardJson,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -172,12 +211,12 @@ const DashboardEditor = ({
    * @param {string} type card type
    */
   const addCard = (type) => {
-    const cardData = getDefaultCard(type, mergedI18n);
+    const cardConfig = getDefaultCard(type, mergedI18n);
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -185,14 +224,14 @@ const DashboardEditor = ({
    * @param {string} id
    */
   const duplicateCard = (id) => {
-    const cardData = getDuplicateCard(
+    const cardConfig = getDuplicateCard(
       dashboardJson.cards.find((i) => i.id === id)
     );
     setDashboardJson({
       ...dashboardJson,
-      cards: [...dashboardJson.cards, cardData],
+      cards: [...dashboardJson.cards, cardConfig],
     });
-    setSelectedCardId(cardData.id);
+    setSelectedCardId(cardConfig.id);
   };
 
   /**
@@ -204,6 +243,32 @@ const DashboardEditor = ({
       ...dashboardJson,
       cards: dashboardJson.cards.filter((i) => i.id !== id),
     });
+
+  const onSelectCard = (id) => setSelectedCardId(id);
+  const onDuplicateCard = (id) => duplicateCard(id);
+  const onRemoveCard = (id) => removeCard(id);
+
+  const commonCardProps = (cardConfig, isSelected) => ({
+    key: cardConfig.id,
+    tooltip: cardConfig.description,
+    availableActions: { clone: true, delete: true },
+    onCardAction: (id, actionId) => {
+      if (actionId === CARD_ACTIONS.CLONE_CARD) {
+        onDuplicateCard(id);
+      } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
+        onRemoveCard(id);
+      }
+    },
+    tabIndex: 0,
+    onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardConfig.id),
+    onClick: () => handleOnClick(onSelectCard, cardConfig.id),
+    className: classnames(`${baseClassName}--preview__card`, {
+      // add black border when selected
+      // TODO: swap this to the true isSelected card prop once this issue is closed:
+      // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1621
+      [`${iotPrefix}--card__selected`]: isSelected,
+    }),
+  });
 
   return (
     <div className={baseClassName}>
@@ -220,6 +285,7 @@ const DashboardEditor = ({
             onDelete={onDelete}
             onCancel={onCancel}
             onSubmit={onSubmit}
+            submitDisabled={submitDisabled}
             i18n={mergedI18n}
             dashboardJson={dashboardJson}
             selectedBreakpointIndex={selectedBreakpointIndex}
@@ -230,7 +296,7 @@ const DashboardEditor = ({
         {notification}
         <div className={`${baseClassName}--preview`}>
           <div
-            className={classNames(`${baseClassName}--preview__outline`, {
+            className={classnames(`${baseClassName}--preview__outline`, {
               [`${baseClassName}--preview__md`]:
                 selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
               [`${baseClassName}--preview__lg`]:
@@ -244,66 +310,80 @@ const DashboardEditor = ({
               </div>
             )}
             <div className={`${baseClassName}--preview__grid-container`}>
-              <DashboardGrid
-                isEditable
-                breakpoint={currentBreakpoint}
-                onBreakpointChange={(newBreakpoint) => {
-                  setCurrentBreakpoint(newBreakpoint);
-                }}
-                onLayoutChange={(newLayout, newLayouts) =>
-                  setDashboardJson({
-                    ...dashboardJson,
-                    layouts: newLayouts,
-                  })
+              <ErrorBoundary
+                fallback={
+                  <InlineNotification
+                    title="Dashboard editor error"
+                    subtitle="Something went wrong. Please refresh the page."
+                    kind="error"
+                    lowContrast
+                  />
                 }>
-                {dashboardJson.cards.map((cardData) => {
-                  const isSelected = selectedCardId === cardData.id;
-                  const onSelectCard = () => setSelectedCardId(cardData.id);
-                  const onDuplicateCard = (id) => duplicateCard(id);
-                  const onRemoveCard = (id) => removeCard(id);
-
-                  // if function not defined, or it returns falsy, render default preview
-                  return (
-                    renderCardPreview(
-                      cardData,
-                      isSelected,
-                      onSelectCard,
-                      onDuplicateCard,
-                      onRemoveCard
-                    ) ??
-                    getCardPreview(
-                      cardData,
-                      isSelected,
-                      onSelectCard,
-                      onDuplicateCard,
-                      onRemoveCard
-                    )
-                  );
-                })}
-              </DashboardGrid>
+                <DashboardGrid
+                  isEditable
+                  breakpoint={currentBreakpoint}
+                  onBreakpointChange={(newBreakpoint) => {
+                    setCurrentBreakpoint(newBreakpoint);
+                  }}
+                  onLayoutChange={(newLayout, newLayouts) =>
+                    setDashboardJson({
+                      ...dashboardJson,
+                      layouts: newLayouts,
+                    })
+                  }>
+                  {dashboardJson.cards.map((cardConfig) => {
+                    const isSelected = cardConfig.id === selectedCardId;
+                    const cardProps = commonCardProps(cardConfig, isSelected);
+                    // if renderCardPreview function not defined, or it returns null, render default preview
+                    return (
+                      renderCardPreview(
+                        cardConfig,
+                        cardProps,
+                        onSelectCard,
+                        onDuplicateCard,
+                        onRemoveCard,
+                        isSelected
+                      ) ?? getCardPreview(cardConfig, cardProps)
+                    );
+                  })}
+                </DashboardGrid>
+              </ErrorBoundary>
             </div>
           </div>
-
-          {/* <pre style={{ paddingTop: '4rem' }}>{JSON.stringify(dashboardData, null, 4)}</pre> */}
         </div>
       </div>
       <div className={`${baseClassName}--sidebar`}>
-        <CardEditor
-          cardJson={dashboardJson.cards.find((i) => i.id === selectedCardId)}
-          onShowGallery={() => setSelectedCardId(null)}
-          onChange={(cardData) =>
-            // TODO: this is really inefficient
-            setDashboardJson({
-              ...dashboardJson,
-              cards: dashboardJson.cards.map((card) =>
-                card.id === cardData.id ? cardData : card
-              ),
-            })
-          }
-          onAddCard={addCard}
-          supportedTypes={supportedCardTypes}
-          i18n={mergedI18n}
-        />
+        <ErrorBoundary
+          fallback={
+            <InlineNotification
+              title="Dashboard editor error"
+              subtitle="Something went wrong. Please refresh the page."
+              kind="error"
+              lowContrast
+            />
+          }>
+          <CardEditor
+            cardConfig={dashboardJson.cards.find(
+              (card) => card.id === selectedCardId
+            )}
+            onShowGallery={() => setSelectedCardId(null)}
+            onChange={(cardConfig) =>
+              // TODO: this is really inefficient
+              setDashboardJson({
+                ...dashboardJson,
+                cards: dashboardJson.cards.map((card) =>
+                  card.id === cardConfig.id ? cardConfig : card
+                ),
+              })
+            }
+            getValidDataItems={getValidDataItems}
+            dataItems={dataItems}
+            onAddCard={addCard}
+            onValidateCardJson={onValidateCardJson}
+            supportedCardTypes={supportedCardTypes}
+            i18n={mergedI18n}
+          />
+        </ErrorBoundary>
       </div>
     </div>
   );

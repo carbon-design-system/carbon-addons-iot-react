@@ -87,6 +87,11 @@ export const ValueCardPropTypes = {
       PropTypes.bool,
     ])
   ),
+  /**
+   * Value Card's formatting can be updated at runtime, customFormatter is provided the default formatted value and
+   * the original value and expects a value to be returned that will be rendered on the value card.
+   */
+  customFormatter: PropTypes.func,
 };
 
 export const TableCardPropTypes = {
@@ -493,6 +498,8 @@ export const CardPropTypes = {
   isEditable: PropTypes.bool,
   /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
+  /** True if the card can be resizable in the DashboardGrid by dragging the borders */
+  isResizable: PropTypes.bool,
   /**
    * Define the icon render to be rendered.
    * Can be a React component class
@@ -573,8 +580,15 @@ export const CardPropTypes = {
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
+  /** Optional event handlers */
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  /** Optionally adds tab index to card container */
+  tabIndex: PropTypes.number,
   /** For testing */
   testID: PropTypes.string,
   /** the locale of the card, needed for number and date formatting */
   locale: PropTypes.string,
+  /** a way to pass down dashboard grid resize handles, only used by other card types */
+  resizeHandles: PropTypes.array,
 };

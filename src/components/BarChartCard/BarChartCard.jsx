@@ -2,7 +2,7 @@ import React from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
@@ -20,6 +20,7 @@ import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import {
   chartValueFormatter,
+  getResizeHandles,
   handleCardVariables,
   increaseSmallCardSize,
 } from '../../utils/cardUtilityFunctions';
@@ -43,6 +44,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 const BarChartCard = ({
   title: titleProp,
   content,
+  children,
   size: sizeProp,
   values: initialValues,
   locale,
@@ -51,6 +53,7 @@ const BarChartCard = ({
   isLazyLoading,
   isEditable,
   isLoading,
+  isResizable,
   interval,
   className,
   domainRange,
@@ -77,7 +80,10 @@ const BarChartCard = ({
 
   const size = increaseSmallCardSize(sizeProp, 'BarChartCard');
 
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
+
   // If editable, show sample presentation data
+  // If there is no series defined, there is no datasets to make sample data from
   const values =
     isEditable && !isEmpty(series)
       ? memoizedGenerateSampleValues(
@@ -150,7 +156,7 @@ const BarChartCard = ({
   return (
     <Card
       title={title}
-      className={classNames(className, `${iotPrefix}--bar-chart-card`)}
+      className={classnames(className, `${iotPrefix}--bar-chart-card`)}
       size={size}
       i18n={i18n}
       isExpanded={isExpanded}
@@ -158,10 +164,12 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
+      isResizable={isResizable}
+      resizeHandles={resizeHandles}
       {...others}>
       {!isAllValuesEmpty ? (
         <div
-          className={classNames(`${iotPrefix}--bar-chart-container`, {
+          className={classnames(`${iotPrefix}--bar-chart-container`, {
             [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
             [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
           })}>

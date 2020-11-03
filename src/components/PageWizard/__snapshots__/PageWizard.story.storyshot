@@ -1365,7 +1365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   </form>
                 </div>
                 <div
-                  className="iot--page-wizard--content--actions--sticky"
+                  className="iot--page-wizard--content--actions--sticky iot--page-wizard--content--after-footer"
                 >
                   <button
                     className="bx--btn bx--btn--tertiary"
@@ -1393,6 +1393,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   >
                     Next
                   </button>
+                  <div
+                    className="iot--page-wizard--content--after-footer--content"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "display": "flex",
+                          "fontSize": "1rem",
+                          "fontWeight": 600,
+                          "letterSpacing": 0,
+                          "lineHeight": "1.375rem",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        style={
+                          Object {
+                            "marginRight": "0.5rem",
+                          }
+                        }
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                        />
+                        <path
+                          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                          data-icon-path="inner-path"
+                          fill="none"
+                        />
+                      </svg>
+                      Additional footer content
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

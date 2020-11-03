@@ -58,13 +58,13 @@
   }
   &--preview {
     flex: 1;
-    overflow-x: auto;
+    overflow-x: auto; // allows a larger width
     background-color: $text-03;
+    margin-left: $spacing-05;
 
-    .selected-card {
-      border: solid $spacing-01 $interactive-04;
-      box-sizing: content-box;
-      margin: -$spacing-01;
+    &__card:focus {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
     }
 
     &__md {

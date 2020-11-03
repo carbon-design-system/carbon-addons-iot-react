@@ -381,7 +381,7 @@ const TableHead = ({
               ? matchingColumnMeta.align
               : 'start';
           const hasOverflow = Array.isArray(
-            matchingColumnMeta.overflowMenuItems
+            matchingColumnMeta?.overflowMenuItems
           );
 
           // Increases the minimum width of the Header when the overflow button is present

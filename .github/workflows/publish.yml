@@ -1,0 +1,51 @@
+name: Publish
+
+# We should search around on semantic release github issues to see if there's any known issues with github actions running our publish command
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Validate formatting
+        run: yarn format:check
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test, collect coverage
+        run: yarn test --maxWorkers=2 --ci --logHeapUsage --coverage
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Dry-run only for now for testing purposes. Travis CI does the actual publish currently.
+        # https://semantic-release.gitbook.io/semantic-release/usage/configuration#dryrun
+        run: yarn publish-npm --dry-run

@@ -260,6 +260,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard empty 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "250px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="ListCard"
+        onScroll={[Function]}
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Simple List with Icon"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Simple List with Icon
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
+        >
+          <div
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ListCard with extra content 1`] = `
 <div
   className="storybook-container"

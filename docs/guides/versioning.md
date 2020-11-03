@@ -23,6 +23,23 @@ As a result, whenever you see a `minor` or `patch` update for a package from
 `carbon-addons-iot-react` you should feel confident that you can update without
 anything breaking in your project.
 
+All new development takes place on the `next` branch. For every PR that is
+merged, a new release is published to the `@next` channel. Periodically, the
+`next` branch is merged into `master` triggering a release on `@latest`.
+
+[Pre-release versions](https://semver.org/#spec-item-9) are available on
+`carbon-addons-iot-react@next`. The default version range that is automatically
+added to your `package.json` on install/add will only follow pre-releases on the
+same `major.minor.patch` version. The version range can be modifed to follow all
+pre-releases:
+
+```diff
+"dependencies": {
+-    "carbon-addons-iot-react": "^2.139.0-next.4"
++    "carbon-addons-iot-react": "next"
+  }
+```
+
 **Note:** If you ever bring in an update and it does break something in your
 project, please
 [create an issue](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/new?assignees=&labels=%3Abug%3A++Bug&template=bug-report.md&title=%5BComponentName%5D+bug_title)

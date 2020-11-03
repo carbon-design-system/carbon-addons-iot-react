@@ -44,6 +44,8 @@ const propTypes = {
    * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
+  /** Whether to disable the submit button */
+  submitDisabled: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -77,6 +79,7 @@ const defaultProps = {
   onDelete: null,
   onCancel: null,
   onSubmit: null,
+  submitDisabled: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -99,6 +102,7 @@ const DashboardEditorHeader = ({
   onDelete,
   onCancel,
   onSubmit,
+  submitDisabled,
   i18n,
   dashboardJson,
   selectedBreakpointIndex,
@@ -190,7 +194,10 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button size="field" onClick={() => onSubmit(dashboardJson)}>
+          <Button
+            size="field"
+            disabled={submitDisabled}
+            onClick={() => onSubmit(dashboardJson)}>
             {i18n.headerSubmitButton}
           </Button>
         )}

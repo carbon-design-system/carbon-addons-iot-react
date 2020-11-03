@@ -24,12 +24,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-basic"
+        onBlur={[Function]}
+        onFocus={[Function]}
         role="presentation"
         style={
           Object {
             "--card-default-height": "304px",
           }
         }
+        tabIndex={0}
       >
         <div
           className="iot--card--header"
@@ -293,8 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
         >
           <p>
             Content width is 
-             and height is
-             
+             and height is 
             NaN
           </p>
         </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
@@ -18,97 +17,117 @@ const commonWizardProps = {
   onBack: action('onBack'),
 };
 
-storiesOf('Watson IoT/WizardModal', module)
-  .addParameters({
+export default {
+  title: 'Watson IoT/WizardModal',
+
+  parameters: {
+    component: WizardModal,
+
     info: `
   Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed
   `,
-  })
-  .add('basic wizard modal', () => (
-    <WizardModal
-      header={{
-        label: 'Basic Wizard',
-        title: 'Gimme 3 Steps',
-      }}
-      steps={[
-        {
-          label: 'step1',
-          content: 'page 1',
-          onValidate: action('validateStep1'),
-        },
-        {
-          label: 'step2',
-          content: 'page 2',
-          onValidate: action('validateStep2'),
-        },
-        {
-          label: 'step3',
-          content: 'page 3',
-          onValidate: action('validateStep3'),
-        },
-      ]}
-      isClickable
-      {...commonWizardProps}
-    />
-  ))
-  .add('custom footer', () => (
-    <StyledWizard
-      header={{
-        label: 'Wizard With Custom Footer ',
-        title: 'Gimme 3 Steps',
-      }}
-      steps={[
-        {
-          label: 'step1',
-          content: 'page 1',
-          onValidate: action('validateStep1'),
-        },
-        {
-          label: 'step2',
-          content: 'page 2',
-          onValidate: action('validateStep2'),
-        },
-        {
-          label: 'step3',
-          content: 'page 3',
-          onValidate: action('validateStep3'),
-        },
-      ]}
-      footer={{
-        leftContent: <p>Custom content</p>,
-        previousButtonLabel: 'I18N Previous',
-        nextButtonLabel: 'I18N Next',
-        submitButtonLabel: 'I18N Submit',
-        cancelButtonLabel: 'I18N Cancel',
-      }}
-      {...commonWizardProps}
-    />
-  ))
-  .add('sending data', () => (
-    <WizardModal
-      header={{
-        label: 'Basic Wizard',
-        title: 'Gimme 3 Steps',
-      }}
-      steps={[
-        {
-          label: 'step1',
-          content: 'page 1',
-          onValidate: action('validateStep1'),
-        },
-        {
-          label: 'step2',
-          content: 'page 2',
-          onValidate: action('validateStep2'),
-        },
-        {
-          label: 'step3',
-          content: 'page 3',
-          onValidate: action('validateStep3'),
-        },
-      ]}
-      {...commonWizardProps}
-      currentStepIndex={2}
-      sendingData
-    />
-  ));
+  },
+};
+
+export const BasicWizardModal = () => (
+  <WizardModal
+    header={{
+      label: 'Basic Wizard',
+      title: 'Gimme 3 Steps',
+    }}
+    steps={[
+      {
+        label: 'step1',
+        content: 'page 1',
+        onValidate: action('validateStep1'),
+      },
+      {
+        label: 'step2',
+        content: 'page 2',
+        onValidate: action('validateStep2'),
+      },
+      {
+        label: 'step3',
+        content: 'page 3',
+        onValidate: action('validateStep3'),
+      },
+    ]}
+    isClickable
+    {...commonWizardProps}
+  />
+);
+
+BasicWizardModal.story = {
+  name: 'basic wizard modal',
+};
+
+export const CustomFooter = () => (
+  <StyledWizard
+    header={{
+      label: 'Wizard With Custom Footer ',
+      title: 'Gimme 3 Steps',
+    }}
+    steps={[
+      {
+        label: 'step1',
+        content: 'page 1',
+        onValidate: action('validateStep1'),
+      },
+      {
+        label: 'step2',
+        content: 'page 2',
+        onValidate: action('validateStep2'),
+      },
+      {
+        label: 'step3',
+        content: 'page 3',
+        onValidate: action('validateStep3'),
+      },
+    ]}
+    footer={{
+      leftContent: <p>Custom content</p>,
+      previousButtonLabel: 'I18N Previous',
+      nextButtonLabel: 'I18N Next',
+      submitButtonLabel: 'I18N Submit',
+      cancelButtonLabel: 'I18N Cancel',
+    }}
+    {...commonWizardProps}
+  />
+);
+
+CustomFooter.story = {
+  name: 'custom footer',
+};
+
+export const SendingData = () => (
+  <WizardModal
+    header={{
+      label: 'Basic Wizard',
+      title: 'Gimme 3 Steps',
+    }}
+    steps={[
+      {
+        label: 'step1',
+        content: 'page 1',
+        onValidate: action('validateStep1'),
+      },
+      {
+        label: 'step2',
+        content: 'page 2',
+        onValidate: action('validateStep2'),
+      },
+      {
+        label: 'step3',
+        content: 'page 3',
+        onValidate: action('validateStep3'),
+      },
+    ]}
+    {...commonWizardProps}
+    currentStepIndex={2}
+    sendingData
+  />
+);
+
+SendingData.story = {
+  name: 'sending data',
+};

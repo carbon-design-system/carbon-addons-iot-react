@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { spacing06 } from '@carbon/layout';
 
@@ -279,37 +278,78 @@ class ListCardExtraContentLong extends Component {
   };
 }
 
-storiesOf('Watson IoT Experimental/ListCard', module)
-  .add('basic', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+export default {
+  title: 'Watson IoT Experimental/ListCard',
 
-    return (
-      <ListCardSimple
+  parameters: {
+    component: ListCard,
+  },
+};
+
+export const Basic = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+
+  return (
+    <ListCardSimple
+      id="ListCard"
+      title={text('Text', 'Simple List with Icon')}
+      size={size}
+    />
+  );
+};
+
+Basic.story = {
+  name: 'basic',
+};
+
+export const WithExtraContent = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+
+  return (
+    <ListCardExtraContent
+      id="ListCard"
+      title={text('Title', 'List with extra content')}
+      size={size}
+    />
+  );
+};
+
+WithExtraContent.story = {
+  name: 'with extra content',
+};
+
+export const WithExtraLongContent = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+
+  return (
+    <ListCardExtraContentLong
+      id="ListCard"
+      title={text('Title', 'List with extra long content')}
+      size={size}
+    />
+  );
+};
+
+WithExtraLongContent.story = {
+  name: 'with extra long content',
+};
+
+export const Empty = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+
+  return (
+    <div style={{ width: text('cardWidth', `250px`), margin: 20 }}>
+      <ListCard
         id="ListCard"
         title={text('Text', 'Simple List with Icon')}
         size={size}
+        data={[]}
+        loadData={() => {}}
       />
-    );
-  })
-  .add('with extra content', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    </div>
+  );
+};
 
-    return (
-      <ListCardExtraContent
-        id="ListCard"
-        title={text('Title', 'List with extra content')}
-        size={size}
-      />
-    );
-  })
-  .add('with extra long content', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-
-    return (
-      <ListCardExtraContentLong
-        id="ListCard"
-        title={text('Title', 'List with extra long content')}
-        size={size}
-      />
-    );
-  });
+Empty.story = {
+  name: 'empty',
+};

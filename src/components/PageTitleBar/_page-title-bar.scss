@@ -13,6 +13,8 @@
 
       h2 {
         @include type-style('productive-heading-04');
+        // need to match the 40x40px icons that could render in
+        height: $spacing-08;
       }
 
       & #tooltip {
