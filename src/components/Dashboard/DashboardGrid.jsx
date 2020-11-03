@@ -219,7 +219,6 @@ const DashboardGrid = ({
   layouts,
   onLayoutChange,
   onBreakpointChange,
-  className,
   onCardSizeChange,
   onResizeStop: onResizeStopCallback,
   ...others
@@ -326,7 +325,7 @@ const DashboardGrid = ({
   };
 
   return (
-    <div className={className} style={{ flex: 1 }}>
+    <div style={{ flex: 1 }}>
       <StyledGridLayout
         layouts={generatedLayouts}
         compactType="vertical"

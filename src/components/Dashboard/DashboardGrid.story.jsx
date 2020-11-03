@@ -429,7 +429,7 @@ DashboardResizableCard.story = {
                 size={currentSize}></Card>
             </DashboardGrid>
           </FullWidthWrapper>
-        </>
+        </Fragment>
       );
       ~~~           
     `,
