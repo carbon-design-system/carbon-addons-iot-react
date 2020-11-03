@@ -22,7 +22,10 @@ import {
   getCardMinSize,
   filterValidAttributes,
 } from '../../utils/componentUtilityFunctions';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  useCardResizing,
+} from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -124,6 +127,7 @@ CardWrapper.propTypes = {
   onScroll: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  /** Optionally sets a keyboard tab index for the container */
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {
@@ -231,6 +235,8 @@ const Card = (props) => {
     isEditable,
     isExpanded,
     isLazyLoading,
+    isResizable,
+    resizeHandles: wrappingCardResizeHandles,
     error,
     hideHeader,
     id,
@@ -311,6 +317,12 @@ const Card = (props) => {
     }
   });
 
+  const { resizeHandles, isResizing } = useCardResizing(
+    wrappingCardResizeHandles,
+    children,
+    isResizable
+  );
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
@@ -346,7 +358,9 @@ const Card = (props) => {
                         width: 'calc(100% - 50px)',
                       }
                 }
-                className={classnames(`${iotPrefix}--card`, className)}>
+                className={classnames(`${iotPrefix}--card`, className, {
+                  [`${iotPrefix}--card--resizing`]: isResizing,
+                })}>
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
@@ -418,6 +432,7 @@ const Card = (props) => {
                     children
                   )}
                 </CardContent>
+                {resizeHandles}
               </CardWrapper>
             );
           }}

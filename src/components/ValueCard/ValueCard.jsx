@@ -19,6 +19,7 @@ import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
+  getResizeHandles,
   getUpdatedCardSize,
   handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
@@ -259,17 +260,21 @@ const ValueCard = ({
   size,
   values: valuesProp,
   isEditable,
+  isResizable,
   i18n,
   dataState,
   id,
   locale,
   customFormatter,
+  children,
   ...others
 }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
   };
+
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const { title, content, values } = handleCardVariables(
@@ -320,18 +325,19 @@ const ValueCard = ({
             availableActions={availableActions}
             isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
+            isResizable={isResizable}
+            resizeHandles={resizeHandles}
             i18n={i18n}
             id={id}
             {...others}>
             <ContentWrapper layout={layout}>
-              {dataState && (
+              {dataState ? (
                 <DataStateRenderer
                   dataState={dataState}
                   size={newSize}
                   id={id}
                 />
-              )}
-              {!dataState &&
+              ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment
                     key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
@@ -413,8 +419,10 @@ const ValueCard = ({
                       </AttributeWrapper>
                     ) : null}
                   </React.Fragment>
-                ))}
+                ))
+              )}
             </ContentWrapper>
+            {resizeHandles}
           </Card>
         );
       }}
@@ -427,6 +435,8 @@ ValueCard.propTypes = { ...CardPropTypes, ...ValueCardPropTypes };
 ValueCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
   locale: 'en',
+  dataState: null,
+  values: null,
 };
 
 export default ValueCard;
