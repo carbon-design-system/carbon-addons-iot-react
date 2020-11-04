@@ -25,6 +25,7 @@ import {
   TextInput,
   MultiSelect,
 } from '../../../../index';
+import { DataItemsPropTypes } from '../../../DashboardEditor/DashboardEditor';
 
 const { iotPrefix } = settings;
 
@@ -61,10 +62,10 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: DataItemsPropTypes,
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
 };
@@ -105,20 +106,26 @@ const DATAITEM_COLORS_OPTIONS = [
  * @param {array} selectedItems
  * @param {object} cardConfig
  */
-export const formatSeries = (selectedItems, cardConfig) => {
-  const cardSeries = cardConfig.content.series;
-  const series = selectedItems.map(({ id }, i) => {
+export const formatSeries = (selectedItems, cardJson) => {
+  const cardSeries = cardJson?.content?.series;
+  const series = selectedItems.map(({ id, text }, i) => {
     const color =
-      cardSeries.find((dataItem) => dataItem.label === id)?.color ??
+      cardSeries?.find((dataItem) => dataItem.label === id)?.color ??
       DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
-      dataSourceId: id.toLowerCase(),
-      label: id,
+      dataSourceId: id,
+      label: text,
       color,
     };
   });
   return series;
 };
+
+export const formatDataItemsForDropdown = (dataItems) =>
+  dataItems?.map(({ dataSourceId, label }) => ({
+    id: dataSourceId,
+    text: label || dataSourceId,
+  })) || [];
 
 const DataSeriesFormItem = ({
   cardConfig = {},
@@ -135,6 +142,10 @@ const DataSeriesFormItem = ({
   const [editDataItem, setEditDataItem] = useState({});
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  const initialSelectedItems = formatDataItemsForDropdown(
+    cardConfig?.content?.series
+  );
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
@@ -210,18 +221,13 @@ const DataSeriesFormItem = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
+          key={cardConfig.id} // need to re-gen if selected card changes
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}
-          items={
-            validDataItems
-              ? validDataItems.map((dataItem) => ({
-                  id: dataItem,
-                  text: dataItem,
-                }))
-              : []
-          }
+          initialSelectedItems={initialSelectedItems}
+          items={formatDataItemsForDropdown(validDataItems)}
           light
           onChange={({ selectedItems }) => {
             const series = formatSeries(selectedItems, cardConfig);
@@ -238,7 +244,7 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={cardConfig.content.series.map((series) => ({
+        items={cardConfig?.content?.series?.map((series, i) => ({
           id: series.dataSourceId,
           content: {
             value: series.label,
@@ -247,7 +253,9 @@ const DataSeriesFormItem = ({
                 style={{
                   width: '1rem',
                   height: '1rem',
-                  backgroundColor: series.color,
+                  backgroundColor:
+                    series.color ||
+                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
                 }}
               />
             ),

@@ -12,7 +12,13 @@ import { Card, Link, InlineNotification } from '../../index';
 
 import DashboardEditor from './DashboardEditor';
 
-const mockDataItems = ['Torque Max', 'Torque Min', 'Torque Mean'];
+const mockDataItems = [
+  { dataSourceId: 'torque_max', label: 'Torque Max' },
+  { dataSourceId: 'torque_min', label: 'Torque Min' },
+  { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+  { dataSourceId: 'temperature', label: 'Temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure' },
+];
 
 export default {
   title: 'Watson IoT Experimental/DashboardEditor',
@@ -62,8 +68,34 @@ export const WithInitialValue = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title="Custom dashboard"
+      dataItems={mockDataItems}
       initialValue={{
         cards: [
+          {
+            id: 'Table',
+            title: 'Table card',
+            size: 'LARGE',
+            type: 'TABLE',
+            content: {
+              columns: [
+                {
+                  dataSourceId: 'undefined',
+                  label: '--',
+                },
+                {
+                  dataSourceId: 'undefined2',
+                  label: '--',
+                },
+              ],
+            },
+          },
+          {
+            id: 'Custom',
+            title: 'Custom rendered card',
+            type: 'CUSTOM',
+            size: 'MEDIUM',
+            value: 35,
+          },
           {
             id: 'Standard',
             title: 'Default rendered card',
@@ -102,28 +134,12 @@ export const WithInitialValue = () => (
               ],
               xLabel: 'Time',
               yLabel: 'Temperature (˚F)',
+              includeZeroOnXaxis: true,
+              includeZeroOnYaxis: true,
+              timeDataSourceId: 'timestamp',
+              addSpaceOnEdges: 1,
             },
-          },
-          {
-            id: 'CustomWithRenderFunction',
-            title: 'Custom card with render function',
-            type: 'CUSTOM',
-            size: 'MEDIUMWIDE',
-            content: () => (
-              <InlineNotification
-                title="Custom component"
-                subtitle="Add custom components by using the content prop"
-                kind="info"
-                lowContrast
-              />
-            ),
-          },
-          {
-            id: 'Custom',
-            title: 'Custom card with basic content',
-            type: 'CUSTOM',
-            size: 'SMALL',
-            content: <p>To add custom content, use the content prop</p>,
+            interval: 'day',
           },
         ],
         layouts: {},
@@ -156,6 +172,75 @@ export const WithInitialValue = () => (
 
 WithInitialValue.story = {
   name: 'with initialValue',
+};
+
+export const WithCustomOnCardChange = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title="Custom dashboard"
+      dataItems={mockDataItems}
+      initialValue={{
+        cards: [
+          {
+            id: 'Timeseries',
+            title: 'Untitled',
+            size: 'MEDIUMWIDE',
+            type: 'TIMESERIES',
+            content: {
+              series: [
+                {
+                  label: 'Temperature',
+                  dataSourceId: 'temperature',
+                },
+                {
+                  label: 'Pressure',
+                  dataSourceId: 'pressure',
+                },
+              ],
+              xLabel: 'Time',
+              yLabel: 'Temperature (˚F)',
+              includeZeroOnXaxis: true,
+              includeZeroOnYaxis: true,
+              timeDataSourceId: 'timestamp',
+              addSpaceOnEdges: 1,
+            },
+            interval: 'day',
+          },
+        ],
+        layouts: {},
+      }}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onCardChange={(card) => {
+        console.log('onCardChange');
+        return card;
+      }}
+      supportedCardTypes={[
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ]}
+      i18n={{
+        cardType_CUSTOM: 'Custom',
+      }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+    />
+  </div>
+);
+
+WithCustomOnCardChange.story = {
+  name: 'with custom onCardChange',
 };
 
 export const WithNotifications = () => (
