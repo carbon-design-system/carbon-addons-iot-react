@@ -7876,6 +7876,7 @@ Map {
     "defaultProps": Object {
       "dataItems": Array [],
       "getValidDataItems": null,
+      "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7898,6 +7899,7 @@ Map {
       },
       "notification": null,
       "onCancel": null,
+      "onCardChange": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
@@ -7916,18 +7918,31 @@ Map {
         "GROUPED_BAR",
         "STACKED_BAR",
       ],
-      "title": null,
+      "title": "",
     },
     "propTypes": Object {
       "dataItems": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Object {
+                "dataSourceId": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidTimeRanges": Object {
         "type": "func",
       },
       "headerBreadcrumbs": Object {
@@ -8003,6 +8018,9 @@ Map {
       "onCancel": Object {
         "type": "func",
       },
+      "onCardChange": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -8048,6 +8066,7 @@ Map {
       "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
+      "getValidTimeRanges": null,
       "i18n": Object {
         "addCardButton": "Add card",
         "closeGalleryButton": "Back",
@@ -8142,12 +8161,25 @@ Map {
       "dataItems": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Object {
+                "dataSourceId": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidTimeRanges": Object {
         "type": "func",
       },
       "i18n": Object {
