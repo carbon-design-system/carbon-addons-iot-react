@@ -106,12 +106,9 @@ const propTypes = {
     openGalleryButton: PropTypes.string,
     closeGalleryButton: PropTypes.string,
     openJSONButton: PropTypes.string,
-    layoutInfoMax: PropTypes.string,
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
-    layoutInfoSm: PropTypes.string,
-    layoutInfoXs: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
   }),
 };
