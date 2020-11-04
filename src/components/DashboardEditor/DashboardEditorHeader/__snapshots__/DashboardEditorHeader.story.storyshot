@@ -98,6 +98,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Import
                   </span>
                   <label
+                    accepts={
+                      Array [
+                        ".json",
+                      ]
+                    }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
                     htmlFor="id6"
