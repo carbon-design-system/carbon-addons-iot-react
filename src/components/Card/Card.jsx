@@ -55,10 +55,6 @@ const CardWrapper = ({
   ...others
 }) => {
   const validOthers = filterValidAttributes(others);
-  const [isCardSelected, setIsCardSelected] = useState(false);
-  useEffect(() => {
-    setIsCardSelected(isSelected);
-  }, [isSelected, setIsCardSelected]);
 
   return (
     <div
@@ -75,7 +71,7 @@ const CardWrapper = ({
       onBlur={onBlur}
       tabIndex={tabIndex}
       className={classnames(className, `${iotPrefix}--card--wrapper`, {
-        [`${iotPrefix}--card--wrapper__selected`]: isCardSelected,
+        [`${iotPrefix}--card--wrapper__selected`]: isSelected,
       })}
       {...validOthers}>
       {children}
