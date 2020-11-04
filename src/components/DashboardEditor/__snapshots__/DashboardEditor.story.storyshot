@@ -3190,11 +3190,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <span
                           className="bx--assistive-text"
                         >
-                          X-large View
+                          X-large view
                         </span>
                         <svg
                           aria-hidden="true"
-                          aria-label="X-large View"
+                          aria-label="X-large view"
                           className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
@@ -3221,11 +3221,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <span
                           className="bx--assistive-text"
                         >
-                          Large View
+                          Large view
                         </span>
                         <svg
                           aria-hidden="true"
-                          aria-label="Large View"
+                          aria-label="Large view"
                           className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"

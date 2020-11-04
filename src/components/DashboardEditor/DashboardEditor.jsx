@@ -95,6 +95,10 @@ const propTypes = {
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
     headerDeleteButton: PropTypes.string,
+    headerFitToScreenButton: PropTypes.string,
+    headerXlargeButton: PropTypes.string,
+    headerLargeButton: PropTypes.string,
+    headerMediumButton: PropTypes.string,
     noDataLabel: PropTypes.string,
     defaultCardTitle: PropTypes.string,
     headerEditTitleButton: PropTypes.string,
@@ -141,6 +145,10 @@ const defaultProps = {
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
+    headerFitToScreenButton: 'Fit to screen',
+    headerXlargeButton: 'X-large view',
+    headerLargeButton: 'Large view',
+    headerMediumButton: 'Medium view',
     galleryHeader: 'Gallery',
     openGalleryButton: 'Open gallery',
     closeGalleryButton: 'Back',
@@ -155,10 +163,10 @@ const defaultProps = {
 };
 
 const LAYOUTS = {
-  FIT_TO_SCREEN: { breakpoint: 'max', index: 0 },
+  FIT_TO_SCREEN: { breakpoint: 'xl', index: 0 },
   MEDIUM: { breakpoint: 'md', index: 3 },
   LARGE: { breakpoint: 'lg', index: 2 },
-  XLARGE: { breakpoint: 'xk', index: 1 },
+  XLARGE: { breakpoint: 'xl', index: 1 },
 };
 export const baseClassName = `${iotPrefix}--dashboard-editor`;
 

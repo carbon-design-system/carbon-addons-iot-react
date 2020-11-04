@@ -7930,8 +7930,12 @@ Map {
         "headerDeleteButton": "Delete",
         "headerEditTitleButton": "Edit title",
         "headerExportButton": "Export",
+        "headerFitToScreenButton": "Fit to screen",
         "headerImportButton": "Import",
+        "headerLargeButton": "Large view",
+        "headerMediumButton": "Medium view",
         "headerSubmitButton": "Save and close",
+        "headerXlargeButton": "X-large view",
         "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
         "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
         "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
@@ -8023,10 +8027,22 @@ Map {
             "headerExportButton": Object {
               "type": "string",
             },
+            "headerFitToScreenButton": Object {
+              "type": "string",
+            },
             "headerImportButton": Object {
               "type": "string",
             },
+            "headerLargeButton": Object {
+              "type": "string",
+            },
+            "headerMediumButton": Object {
+              "type": "string",
+            },
             "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "headerXlargeButton": Object {
               "type": "string",
             },
             "layoutInfoLg": Object {

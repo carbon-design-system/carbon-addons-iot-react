@@ -54,6 +54,10 @@ const propTypes = {
     headerDeleteButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
+    headerFitToScreenButton: PropTypes.string,
+    headerXlargeButton: PropTypes.string,
+    headerLargeButton: PropTypes.string,
+    headerMediumButton: PropTypes.string,
   }),
   /** The current dashboard's JSON */
   dashboardJson: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -86,7 +90,11 @@ const defaultProps = {
     headerExportButton: 'Export',
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
-    headerSubmitButton: 'Submit',
+    headerSubmitButton: 'Save and close',
+    headerFitToScreenButton: 'Fit to screen',
+    headerXlargeButton: 'X-large view',
+    headerLargeButton: 'Large view',
+    headerMediumButton: 'Medium view',
   },
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
@@ -109,6 +117,7 @@ const DashboardEditorHeader = ({
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
+  const mergedI18n = { ...defaultProps.i18n, i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
@@ -121,25 +130,25 @@ const DashboardEditorHeader = ({
             className={`${baseClassName}--bottom__switcher`}>
             <IconSwitch
               name="fit-to-screen"
-              text="Fit to screen"
+              text={mergedI18n.headerFitToScreenButton}
               renderIcon={Maximize16}
               index={0}
             />
             <IconSwitch
               name="xlarge"
-              text="X-large View"
+              text={mergedI18n.headerXlargeButton}
               renderIcon={Screen16}
               index={1}
             />
             <IconSwitch
               name="large"
-              text="Large View"
+              text={mergedI18n.headerLargeButton}
               renderIcon={Laptop16}
               index={2}
             />
             <IconSwitch
               name="medium"
-              text="Medium view"
+              text={mergedI18n.headerMediumButton}
               renderIcon={Tablet16}
               index={3}
             />
@@ -152,7 +161,7 @@ const DashboardEditorHeader = ({
             <TooltipIcon
               align="center"
               direction="bottom"
-              tooltipText={i18n.headerImportButton}
+              tooltipText={mergedI18n.headerImportButton}
               className={`${baseClassName}--bottom__import`}>
               <FileUploaderButton
                 buttonKind="ghost"
@@ -168,7 +177,7 @@ const DashboardEditorHeader = ({
           <Button
             kind="ghost"
             size="field"
-            iconDescription={i18n.headerExportButton}
+            iconDescription={mergedI18n.headerExportButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
@@ -180,7 +189,7 @@ const DashboardEditorHeader = ({
           <Button
             kind="ghost"
             size="field"
-            iconDescription={i18n.headerDeleteButton}
+            iconDescription={mergedI18n.headerDeleteButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
@@ -190,7 +199,7 @@ const DashboardEditorHeader = ({
         )}
         {onCancel && (
           <Button kind="tertiary" size="field" onClick={onCancel}>
-            {i18n.headerCancelButton}
+            {mergedI18n.headerCancelButton}
           </Button>
         )}
         {onSubmit && (
@@ -198,7 +207,7 @@ const DashboardEditorHeader = ({
             size="field"
             disabled={submitDisabled}
             onClick={() => onSubmit(dashboardJson)}>
-            {i18n.headerSubmitButton}
+            {mergedI18n.headerSubmitButton}
           </Button>
         )}
       </div>
@@ -212,7 +221,7 @@ const DashboardEditorHeader = ({
       title={title}
       editable={!!onEditTitle}
       onEdit={onEditTitle}
-      i18n={{ editIconDescription: i18n.headerEditTitleButton }}
+      i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
     />
   );
 };

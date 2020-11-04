@@ -241,11 +241,8 @@ describe('DashboardEditor', () => {
       cards: [],
       layouts: {
         lg: [],
-        max: [],
         md: [],
-        sm: [],
         xl: [],
-        xs: [],
       },
     });
   });
@@ -288,5 +285,24 @@ describe('DashboardEditor', () => {
       target: { value: 'My new card title' },
     });
     expect(screen.getByTitle('My new card title')).toBeInTheDocument();
+  });
+
+  it('selecting medium breakpoint should render breakpoint info', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{ enabled: true }}
+      />
+    );
+    // there should be no breakpoint text on initial render
+    expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
+    // find and click medium button
+    const mediumBtn = screen.getByText('Medium view');
+    expect(mediumBtn).toBeInTheDocument();
+    fireEvent.click(mediumBtn);
+    // there should now be breakpoint text
+    expect(
+      screen.getByText('Edit dashboard at medium layout (480 - 672px)')
+    ).toBeInTheDocument();
   });
 });

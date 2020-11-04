@@ -387,18 +387,12 @@ export const getCardPreview = (cardConfig, commonProps) => {
  */
 export const renderBreakpointInfo = (breakpoint, i18n) => {
   switch (breakpoint) {
-    case 'max':
-      return i18n.layoutInfoMax;
     case 'xl':
       return i18n.layoutInfoXl;
     case 'lg':
       return i18n.layoutInfoLg;
     case 'md':
       return i18n.layoutInfoMd;
-    case 'sm':
-      return i18n.layoutInfoSm;
-    case 'xs':
-      return i18n.layoutInfoXs;
     default:
       return i18n.layoutInfoXl;
   }
