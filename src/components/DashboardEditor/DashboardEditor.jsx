@@ -147,12 +147,9 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
-    layoutInfoMax: 'Edit dashboard at maximum layout (1312 - 1800px)',
     layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
     layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
     layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
-    layoutInfoSm: 'Edit dashboard at small layout (320 - 480px)',
-    layoutInfoXs: 'Edit dashboard at extra small layout (0 - 320px)',
     searchPlaceholderText: 'Enter a value',
   },
 };
@@ -202,6 +199,7 @@ const DashboardEditor = ({
       : LAYOUTS.FIT_TO_SCREEN.breakpoint
   );
 
+  // force a window resize so that react-grid-layout will trigger its reorder / resize
   useEffect(() => {
     window.dispatchEvent(new Event('resize'));
   }, [selectedBreakpointIndex]);
@@ -296,7 +294,9 @@ const DashboardEditor = ({
         {notification}
         <div className={`${baseClassName}--preview`}>
           <div
-            className={classnames(`${baseClassName}--preview__outline`, {
+            className={classnames({
+              [`${baseClassName}--preview__outline`]:
+                selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
               [`${baseClassName}--preview__md`]:
                 selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
               [`${baseClassName}--preview__lg`]:
@@ -304,11 +304,13 @@ const DashboardEditor = ({
               [`${baseClassName}--preview__xl`]:
                 selectedBreakpointIndex === LAYOUTS.XLARGE.index,
             })}>
-            {breakpointSwitcher?.enabled && (
-              <div className={`${baseClassName}--preview__breakpoint-info`}>
-                {renderBreakpointInfo(currentBreakpoint, i18n)}
-              </div>
-            )}
+            {breakpointSwitcher?.enabled &&
+              // only show breakpoint info if fit to screen is not selected
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index && (
+                <div className={`${baseClassName}--preview__breakpoint-info`}>
+                  {renderBreakpointInfo(currentBreakpoint, mergedI18n)}
+                </div>
+              )}
             <div className={`${baseClassName}--preview__grid-container`}>
               <ErrorBoundary
                 fallback={
@@ -330,7 +332,8 @@ const DashboardEditor = ({
                       ...dashboardJson,
                       layouts: newLayouts,
                     })
-                  }>
+                  }
+                  supportedLayouts={['xl', 'lg', 'md']}>
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
                     const cardProps = commonCardProps(cardConfig, isSelected);

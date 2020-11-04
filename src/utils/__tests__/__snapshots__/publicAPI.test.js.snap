@@ -7536,6 +7536,24 @@ Map {
       "sidebar": Object {
         "type": "node",
       },
+      "supportedLayouts": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                "max",
+                "xl",
+                "lg",
+                "md",
+                "sm",
+                "xs",
+              ],
+            ],
+            "type": "oneOf",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "timeGrain": Object {
         "type": "string",
       },
@@ -7662,6 +7680,14 @@ Map {
       "onCardSizeChange": null,
       "onLayoutChange": null,
       "onResizeStop": null,
+      "supportedLayouts": Array [
+        "max",
+        "xl",
+        "lg",
+        "md",
+        "sm",
+        "xs",
+      ],
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -7870,6 +7896,24 @@ Map {
       "onResizeStop": Object {
         "type": "func",
       },
+      "supportedLayouts": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                "max",
+                "xl",
+                "lg",
+                "md",
+                "sm",
+                "xs",
+              ],
+            ],
+            "type": "oneOf",
+          },
+        ],
+        "type": "arrayOf",
+      },
     },
   },
   "DashboardEditor" => Object {
@@ -7889,11 +7933,8 @@ Map {
         "headerImportButton": "Import",
         "headerSubmitButton": "Save and close",
         "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
-        "layoutInfoMax": "Edit dashboard at maximum layout (1312 - 1800px)",
         "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
-        "layoutInfoSm": "Edit dashboard at small layout (320 - 480px)",
         "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
-        "layoutInfoXs": "Edit dashboard at extra small layout (0 - 320px)",
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
@@ -16949,8 +16990,8 @@ Map {
       "className": undefined,
       "light": false,
       "name": "",
-      "onClick": [Function],
-      "onKeyDown": [Function],
+      "onClick": undefined,
+      "onKeyDown": undefined,
       "selected": false,
       "size": "default",
     },

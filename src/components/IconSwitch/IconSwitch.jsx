@@ -148,8 +148,8 @@ IconSwitch.defaultProps = {
   name: '',
   size: 'default',
   light: false,
-  onClick: () => {},
-  onKeyDown: () => {},
+  onClick: undefined,
+  onKeyDown: undefined,
 };
 
 export default IconSwitch;

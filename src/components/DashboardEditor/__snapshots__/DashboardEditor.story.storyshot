@@ -266,7 +266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
               <div
                 className="iot--dashboard-editor--preview__grid-container"
@@ -1347,7 +1347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
               <div
                 className="iot--dashboard-editor--preview__grid-container"
@@ -2289,7 +2289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
               <div
                 className="iot--dashboard-editor--preview__grid-container"
@@ -3427,13 +3427,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
-              <div
-                className="iot--dashboard-editor--preview__breakpoint-info"
-              >
-                Edit dashboard at maximum layout (1312 - 1800px)
-              </div>
               <div
                 className="iot--dashboard-editor--preview__grid-container"
               >
@@ -4374,7 +4369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
               <div
                 className="iot--dashboard-editor--preview__grid-container"
@@ -6026,7 +6021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--dashboard-editor--preview"
           >
             <div
-              className="iot--dashboard-editor--preview__outline"
+              className=""
             >
               <div
                 className="iot--dashboard-editor--preview__grid-container"
