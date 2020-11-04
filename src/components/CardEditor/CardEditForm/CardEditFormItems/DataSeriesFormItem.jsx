@@ -125,6 +125,12 @@ export const formatSeries = (selectedItems, cardJson) => {
   return series;
 };
 
+export const formatDataItemsForDropdown = (dataItems) =>
+  dataItems?.map(({ dataSourceId, label }) => ({
+    id: dataSourceId,
+    text: label || dataSourceId,
+  })) || [];
+
 const DataSeriesFormItem = ({
   cardConfig = {},
   dataItems,
@@ -141,11 +147,9 @@ const DataSeriesFormItem = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const initialSelectedItems =
-    cardConfig?.content?.series?.map(({ dataSourceId, label }) => ({
-      id: dataSourceId,
-      text: label || dataSourceId,
-    })) || [];
+  const initialSelectedItems = formatDataItemsForDropdown(
+    cardConfig?.content?.series
+  );
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
@@ -221,19 +225,13 @@ const DataSeriesFormItem = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
+          key={cardConfig.id} // need to re-gen if selected card changes
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}
           initialSelectedItems={initialSelectedItems}
-          items={
-            validDataItems
-              ? validDataItems.map(({ dataSourceId, label }) => ({
-                  id: dataSourceId,
-                  text: label || dataSourceId,
-                }))
-              : []
-          }
+          items={formatDataItemsForDropdown(validDataItems)}
           light
           onChange={({ selectedItems }) => {
             const series = formatSeries(selectedItems, cardConfig);

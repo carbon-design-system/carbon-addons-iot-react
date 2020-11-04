@@ -21,6 +21,13 @@ import {
 
 const { iotPrefix } = settings;
 
+export const DataItemsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    label: PropTypes.string,
+  })
+);
+
 const propTypes = {
   /** Dashboard title */
   title: PropTypes.string,
@@ -61,12 +68,7 @@ const propTypes = {
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ),
+  dataItems: DataItemsPropTypes,
   /** if provided, will update the dashboard json according to its own logic */
   onCardChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
@@ -222,6 +224,19 @@ const DashboardEditor = ({
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
 
+  const handleOnCardChange = (cardConfig) =>
+    // TODO: this is really inefficient
+    setDashboardJson({
+      ...dashboardJson,
+      cards: dashboardJson.cards.map((card) =>
+        card.id === cardConfig.id
+          ? onCardChange
+            ? onCardChange(cardConfig, dashboardJson)
+            : cardConfig
+          : card
+      ),
+    });
+
   const commonCardProps = (cardConfig, isSelected) => ({
     key: cardConfig.id,
     tooltip: cardConfig.description,
@@ -318,19 +333,7 @@ const DashboardEditor = ({
               (card) => card.id === selectedCardId
             )}
             onShowGallery={() => setSelectedCardId(null)}
-            onChange={(cardConfig) =>
-              // TODO: this is really inefficient
-              setDashboardJson({
-                ...dashboardJson,
-                cards: dashboardJson.cards.map((card) =>
-                  card.id === cardConfig.id
-                    ? onCardChange
-                      ? onCardChange(cardConfig, dashboardJson)
-                      : cardConfig
-                    : card
-                ),
-              })
-            }
+            onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}

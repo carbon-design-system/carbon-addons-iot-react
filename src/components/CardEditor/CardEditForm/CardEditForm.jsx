@@ -11,6 +11,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
 import CardEditFormContent from './CardEditFormContent';
 import CardEditFormSettings from './CardEditFormSettings';
@@ -55,12 +56,7 @@ const propTypes = {
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ),
+  dataItems: DataItemsPropTypes,
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -223,7 +219,6 @@ const CardEditForm = ({
               }
               onChange={onChange}
               i18n={mergedI18n}
-              dataItems={dataItems}
               getValidDataItems={getValidDataItems}
             />
           </Tab>

@@ -68,6 +68,7 @@ export const WithInitialValue = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title="Custom dashboard"
+      dataItems={mockDataItems}
       initialValue={{
         cards: [
           {
@@ -171,6 +172,75 @@ export const WithInitialValue = () => (
 
 WithInitialValue.story = {
   name: 'with initialValue',
+};
+
+export const WithCustomOnCardChange = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title="Custom dashboard"
+      dataItems={mockDataItems}
+      initialValue={{
+        cards: [
+          {
+            id: 'Timeseries',
+            title: 'Untitled',
+            size: 'MEDIUMWIDE',
+            type: 'TIMESERIES',
+            content: {
+              series: [
+                {
+                  label: 'Temperature',
+                  dataSourceId: 'temperature',
+                },
+                {
+                  label: 'Pressure',
+                  dataSourceId: 'pressure',
+                },
+              ],
+              xLabel: 'Time',
+              yLabel: 'Temperature (˚F)',
+              includeZeroOnXaxis: true,
+              includeZeroOnYaxis: true,
+              timeDataSourceId: 'timestamp',
+              addSpaceOnEdges: 1,
+            },
+            interval: 'day',
+          },
+        ],
+        layouts: {},
+      }}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onCardChange={(card) => {
+        console.log('onCardChange');
+        return card;
+      }}
+      supportedCardTypes={[
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ]}
+      i18n={{
+        cardType_CUSTOM: 'Custom',
+      }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+    />
+  </div>
+);
+
+WithCustomOnCardChange.story = {
+  name: 'with custom onCardChange',
 };
 
 export const WithNotifications = () => (
