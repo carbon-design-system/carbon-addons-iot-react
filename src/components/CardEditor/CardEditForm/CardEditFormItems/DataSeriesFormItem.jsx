@@ -25,6 +25,7 @@ import {
   TextInput,
   MultiSelect,
 } from '../../../../index';
+import { DataItemsPropTypes } from '../../../DashboardEditor/DashboardEditor';
 
 const { iotPrefix } = settings;
 
@@ -64,12 +65,7 @@ const propTypes = {
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ),
+  dataItems: DataItemsPropTypes,
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
 };
