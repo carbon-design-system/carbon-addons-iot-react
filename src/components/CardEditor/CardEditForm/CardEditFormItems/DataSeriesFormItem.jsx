@@ -30,7 +30,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /* card value */
-  cardJson: PropTypes.shape({
+  cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
     size: PropTypes.string,
@@ -70,7 +70,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  cardJson: [],
+  cardConfig: {},
   i18n: {
     dataItemEditorTitle: 'Edit data series',
     dataItemEditorDataItemTitle: 'Data item',
@@ -103,10 +103,10 @@ const DATAITEM_COLORS_OPTIONS = [
 /**
  * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
  * @param {array} selectedItems
- * @param {object} cardJson
+ * @param {object} cardConfig
  */
-export const formatSeries = (selectedItems, cardJson) => {
-  const cardSeries = cardJson.content.series;
+export const formatSeries = (selectedItems, cardConfig) => {
+  const cardSeries = cardConfig.content.series;
   const series = selectedItems.map(({ id }, i) => {
     const color =
       cardSeries.find((dataItem) => dataItem.label === id)?.color ??
@@ -121,7 +121,7 @@ export const formatSeries = (selectedItems, cardJson) => {
 };
 
 const DataSeriesFormItem = ({
-  cardJson = {},
+  cardConfig = {},
   dataItems,
   getValidDataItems,
   onChange,
@@ -137,7 +137,7 @@ const DataSeriesFormItem = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validDataItems = getValidDataItems
-    ? getValidDataItems(cardJson, selectedTimeRange)
+    ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
 
   return (
@@ -149,14 +149,14 @@ const DataSeriesFormItem = ({
           }}
           size="xs"
           onSubmit={() => {
-            const updatedSeries = [...cardJson.content.series];
+            const updatedSeries = [...cardConfig.content.series];
             const editDataItemIndex = updatedSeries.findIndex(
               (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
             );
             updatedSeries[editDataItemIndex] = editDataItem;
             onChange({
-              ...cardJson,
-              content: { ...cardJson.content, series: updatedSeries },
+              ...cardConfig,
+              content: { ...cardConfig.content, series: updatedSeries },
             });
             setShowEditor(false);
             setEditDataItem(null);
@@ -210,7 +210,7 @@ const DataSeriesFormItem = ({
       </div>
       <div className={`${baseClassName}--input`}>
         <MultiSelect
-          id={`${cardJson.id}_dataSourceIds`}
+          id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.text}
@@ -224,9 +224,12 @@ const DataSeriesFormItem = ({
           }
           light
           onChange={({ selectedItems }) => {
-            const series = formatSeries(selectedItems, cardJson);
+            const series = formatSeries(selectedItems, cardConfig);
             setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange({ ...cardJson, content: { ...cardJson.content, series } });
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, series },
+            });
           }}
           titleText={mergedI18n.dataItem}
         />
@@ -235,7 +238,7 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={cardJson.content.series.map((series) => ({
+        items={cardConfig.content.series.map((series) => ({
           id: series.dataSourceId,
           content: {
             value: series.label,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { DataTable } from 'carbon-components-react';
@@ -36,113 +35,154 @@ const TableDecorator = (storyFn) => (
     </Table>
   </TableContainer>
 );
-storiesOf('Watson IoT/TableBodyRow', module)
-  // Table rows need to be rendered in a tbody or else they'll throw an error
-  .addDecorator(TableDecorator)
-  .add('normal', () => <TableBodyRow {...tableBodyRowProps} />)
-  .add('row actions', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      isExpanded={boolean('isExpanded', false)}
-      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowExpansion: true,
-      }}
-    />
-  ))
-  .add('row actions with overflow', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      isExpanded={boolean('isExpanded', false)}
-      rowActions={[
-        { id: 'add', renderIcon: Add32, iconDescription: 'Add' },
-        { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
-        {
-          id: 'test1',
-          renderIcon: Stop16,
-          isOverflow: true,
-          labelText: 'Test 1',
-          hasDivider: true,
-        },
-        {
-          id: 'test2',
-          renderIcon: Stop16,
-          isOverflow: true,
-          labelText: 'Test 2',
-        },
-        {
-          id: 'test3',
-          renderIcon: Stop16,
-          isOverflow: true,
-          labelText: 'Test 3',
-        },
-        {
-          id: 'delete',
-          renderIcon: TrashCan16,
-          isOverflow: true,
-          labelText: 'Delete',
-          isDelete: true,
-        },
-      ]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowExpansion: true,
-      }}
-    />
-  ))
-  .add('is not selectable', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      isSelectable={boolean('isSelectable', false)}
-      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowSelection: 'multi',
-      }}
-    />
-  ))
-  .add('is selectable', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowSelection: 'multi',
-      }}
-    />
-  ))
-  .add('rowActions running', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowExpansion: true,
-      }}
-      isRowActionRunning
-      isExpanded={boolean('isExpanded', false)}
-    />
-  ))
-  .add('rowActions error', () => (
-    <TableBodyRow
-      {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
-      options={{
-        ...tableBodyRowProps.options,
-        hasRowActions: true,
-        hasRowExpansion: true,
-      }}
-      rowActionsError={{
-        title: 'Import failed:',
-        message: 'Model type not currently supported.',
-        learnMoreURL: 'http://www.cnn.com',
-      }}
-      isExpanded={boolean('isExpanded', false)}
-    />
-  ));
+
+export default {
+  title: 'Watson IoT/TableBodyRow',
+  decorators: [TableDecorator],
+
+  parameters: {
+    component: TableBodyRow,
+  },
+};
+
+export const Normal = () => <TableBodyRow {...tableBodyRowProps} />;
+
+Normal.story = {
+  name: 'normal',
+};
+
+export const RowActions = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    isExpanded={boolean('isExpanded', false)}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowExpansion: true,
+    }}
+  />
+);
+
+RowActions.story = {
+  name: 'row actions',
+};
+
+export const RowActionsWithOverflow = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    isExpanded={boolean('isExpanded', false)}
+    rowActions={[
+      { id: 'add', renderIcon: Add32, iconDescription: 'Add' },
+      { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+      {
+        id: 'test1',
+        renderIcon: Stop16,
+        isOverflow: true,
+        labelText: 'Test 1',
+        hasDivider: true,
+      },
+      {
+        id: 'test2',
+        renderIcon: Stop16,
+        isOverflow: true,
+        labelText: 'Test 2',
+      },
+      {
+        id: 'test3',
+        renderIcon: Stop16,
+        isOverflow: true,
+        labelText: 'Test 3',
+      },
+      {
+        id: 'delete',
+        renderIcon: TrashCan16,
+        isOverflow: true,
+        labelText: 'Delete',
+        isDelete: true,
+      },
+    ]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowExpansion: true,
+    }}
+  />
+);
+
+RowActionsWithOverflow.story = {
+  name: 'row actions with overflow',
+};
+
+export const IsNotSelectable = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    isSelectable={boolean('isSelectable', false)}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowSelection: 'multi',
+    }}
+  />
+);
+
+IsNotSelectable.story = {
+  name: 'is not selectable',
+};
+
+export const IsSelectable = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowSelection: 'multi',
+    }}
+  />
+);
+
+IsSelectable.story = {
+  name: 'is selectable',
+};
+
+export const RowActionsRunning = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowExpansion: true,
+    }}
+    isRowActionRunning
+    isExpanded={boolean('isExpanded', false)}
+  />
+);
+
+RowActionsRunning.story = {
+  name: 'rowActions running',
+};
+
+export const RowActionsError = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowExpansion: true,
+    }}
+    rowActionsError={{
+      title: 'Import failed:',
+      message: 'Model type not currently supported.',
+      learnMoreURL: 'http://www.cnn.com',
+    }}
+    isExpanded={boolean('isExpanded', false)}
+  />
+);
+
+RowActionsError.story = {
+  name: 'rowActions error',
+};

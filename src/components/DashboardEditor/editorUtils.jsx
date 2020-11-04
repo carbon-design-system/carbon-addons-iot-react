@@ -1,10 +1,10 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import omit from 'lodash/omit';
 
 import {
   CARD_SIZES,
-  CARD_ACTIONS,
   CARD_TYPES,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
@@ -21,15 +21,13 @@ import {
 } from '../../index';
 import { ImageIcon } from '../../icons/components';
 
-import { baseClassName } from './DashboardEditor';
-
 /**
  * Returns a duplicate card configuration
- * @param {Object} cardData, card JSON configuration
+ * @param {Object} cardConfig, card JSON configuration
  * @returns {Object} duplicated card JSON
  */
-export const getDuplicateCard = (cardData) => ({
-  ...cardData,
+export const getDuplicateCard = (cardConfig) => ({
+  ...cardConfig,
   id: uuid.v4(),
 });
 
@@ -213,19 +211,19 @@ export const timeRangeToJSON = {
 
 /**
  * determines if a card JSON is valid depending on its card type
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @returns {Boolean}
  */
-export const isCardJsonValid = (cardJson) => {
-  switch (cardJson.type) {
+export const isCardJsonValid = (cardConfig) => {
+  switch (cardConfig.type) {
     case CARD_TYPES.VALUE:
-      return !isNil(cardJson?.content?.attributes);
+      return !isNil(cardConfig?.content?.attributes);
     case CARD_TYPES.TIMESERIES:
-      return !isNil(cardJson?.content);
+      return !isNil(cardConfig?.content);
     case CARD_TYPES.BAR:
-      return !isNil(cardJson?.content);
+      return !isNil(cardConfig?.content);
     case CARD_TYPES.TABLE:
-      return !isNil(cardJson?.content);
+      return !isNil(cardConfig?.content);
     default:
       return true;
   }
@@ -233,121 +231,150 @@ export const isCardJsonValid = (cardJson) => {
 
 /**
  * Renders a card and lists the JSON within
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderDefaultCard = (cardJson, commonProps) => (
-  <Card isEditable {...cardJson} {...commonProps}>
-    <div style={{ padding: '1rem' }}>{JSON.stringify(cardJson, null, 4)}</div>
+const renderDefaultCard = (cardConfig, commonProps) => (
+  <Card isEditable {...cardConfig} {...commonProps}>
+    <div style={{ padding: '1rem' }}>{JSON.stringify(cardConfig, null, 4)}</div>
   </Card>
 );
 
 /**
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderValueCard = (cardJson, commonProps) => (
-  <ValueCard isEditable {...cardJson} {...commonProps} />
+const renderValueCard = (cardConfig, commonProps) => (
+  <ValueCard isEditable {...cardConfig} {...commonProps} />
 );
 
 /**
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTimeSeriesCard = (cardJson, commonProps) => (
+const renderTimeSeriesCard = (cardConfig, commonProps) => (
   <TimeSeriesCard
     isEditable
     values={[]}
     showLegend
-    timeRange={cardJson?.dataSource?.range}
-    {...cardJson}
+    timeRange={cardConfig?.dataSource?.range}
+    {...cardConfig}
     {...commonProps}
   />
 );
 
 /**
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderBarChartCard = (cardJson, commonProps) => (
-  <BarChartCard isEditable {...cardJson} {...commonProps} />
+const renderBarChartCard = (cardConfig, commonProps) => (
+  <BarChartCard isEditable {...cardConfig} {...commonProps} />
 );
 
 /**
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTableCard = (cardJson, commonProps) => (
-  <TableCard isEditable {...cardJson} {...commonProps} />
-);
-
-const renderImageCard = (cardJson, commonProps) => (
-  <ImageCard isEditable {...cardJson} {...commonProps} />
+const renderTableCard = (cardConfig, commonProps) => (
+  <TableCard isEditable {...cardConfig} {...commonProps} />
 );
 
 /**
- * @param {Object} cardJson
+ * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderListCard = (cardJson, commonProps) => (
-  <ListCard isEditable {...cardJson} {...commonProps} />
+const renderImageCard = (cardConfig, commonProps) => (
+  <ImageCard isEditable {...cardConfig} {...commonProps} />
 );
+
+/**
+ * @param {Object} cardConfig
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
+const renderListCard = (cardConfig, commonProps) => (
+  <ListCard isEditable {...cardConfig} {...commonProps} />
+);
+
+/**
+ * @param {Object} cardConfig
+ * @param {Object} commonProps
+ * @returns {Node}
+ */
+const renderCustomCard = (cardConfig, commonProps) => {
+  return (
+    <Card
+      hideHeader={isNil(cardConfig.title)}
+      // need to omit the content because its getting passed content to be rendered, which should not
+      // get attached to the card wrapper
+      {...omit(cardConfig, 'content')}
+      {...commonProps}>
+      {
+        // If content is a function, this is a react component
+        typeof cardConfig.content === 'function' ? (
+          <cardConfig.content />
+        ) : (
+          cardConfig.content
+        )
+      }
+    </Card>
+  );
+};
+
+/**
+ * Selects the card if the key is 'enter' or 'space'
+ * @param {Event} evt
+ * @param {Function} onSelectCard
+ * @param {string} id
+ */
+export const handleKeyDown = (evt, onSelectCard, id) => {
+  if (evt.key === 'Enter' || evt.key === 'Space') {
+    onSelectCard(id);
+  }
+};
+
+/**
+ * Selects the card
+ * @param {Function} onSelectCard
+ * @param {string} id
+ */
+export const handleOnClick = (onSelectCard, id) => {
+  onSelectCard(id);
+};
 
 /**
  * Returns a Card component for preview in the dashboard
- * @param {Object} cardData, the JSON configuration of the card
- * @param {Function} onSelectCard, callback when card is selected for editing
- * @param {Function} onDuplicateCard, callback when card clone button is clicked
- * @param {Function} onRemoveCard, callback when card delete button is clicked
+ * @param {Object} cardConfig, the JSON configuration of the card
+ * @param {Object} commonProps basic card config props
  * @returns {Node}
  */
-export const getCardPreview = (
-  cardData,
-  onSelectCard,
-  onDuplicateCard,
-  onRemoveCard
-) => {
-  const commonProps = {
-    key: cardData.id,
-    tooltip: cardData.description,
-    availableActions: { clone: true, delete: true },
-    onCardAction: (id, actionId) => {
-      if (actionId === CARD_ACTIONS.CLONE_CARD) {
-        onDuplicateCard(id);
-      }
-      if (actionId === CARD_ACTIONS.DELETE_CARD) {
-        onRemoveCard(id);
-      }
-    },
-    tabIndex: 0,
-    onFocus: () => onSelectCard(cardData.id),
-    className: `${baseClassName}--preview__card`,
-  };
-
-  if (!isCardJsonValid(cardData)) {
-    return renderDefaultCard(cardData, commonProps);
+export const getCardPreview = (cardConfig, commonProps) => {
+  if (!isCardJsonValid(cardConfig)) {
+    return renderDefaultCard(cardConfig, commonProps);
   }
 
-  switch (cardData.type) {
+  switch (cardConfig.type) {
     case CARD_TYPES.VALUE:
-      return renderValueCard(cardData, commonProps);
+      return renderValueCard(cardConfig, commonProps);
     case CARD_TYPES.TIMESERIES:
-      return renderTimeSeriesCard(cardData, commonProps);
+      return renderTimeSeriesCard(cardConfig, commonProps);
     case CARD_TYPES.BAR:
-      return renderBarChartCard(cardData, commonProps);
+      return renderBarChartCard(cardConfig, commonProps);
     case CARD_TYPES.TABLE:
-      return renderTableCard(cardData, commonProps);
+      return renderTableCard(cardConfig, commonProps);
     case CARD_TYPES.IMAGE:
-      return renderImageCard(cardData, commonProps);
+      return renderImageCard(cardConfig, commonProps);
     case CARD_TYPES.LIST:
-      return renderListCard(cardData, commonProps);
+      return renderListCard(cardConfig, commonProps);
+    case CARD_TYPES.CUSTOM:
+      return renderCustomCard(cardConfig, commonProps);
     default:
-      return renderDefaultCard(cardData, commonProps);
+      return renderDefaultCard(cardConfig, commonProps);
   }
 };
