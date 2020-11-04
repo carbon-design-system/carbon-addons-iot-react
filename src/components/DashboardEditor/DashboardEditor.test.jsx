@@ -30,6 +30,7 @@ describe('DashboardEditor', () => {
   const mockOnExport = jest.fn();
   const mockOnCancel = jest.fn();
   const mockOnSubmit = jest.fn();
+  const mockOnCardChange = jest.fn();
 
   const commonProps = {
     title: 'My dashboard',
@@ -304,5 +305,64 @@ describe('DashboardEditor', () => {
     expect(
       screen.getByText('Edit dashboard at medium layout (480 - 672px)')
     ).toBeInTheDocument();
+  });
+
+  it('triggering an error should show error message', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{
+          cards: [
+            {
+              title: 'value card',
+              type: 'VALUE',
+              size: 'WRONG_SIZE',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'key1',
+                    unit: '%',
+                    label: 'Key 1',
+                  },
+                  {
+                    dataSourceId: 'key2',
+                    unit: 'lb',
+                    label: 'Key 2',
+                  },
+                ],
+              },
+            },
+          ],
+        }}
+      />
+    );
+    const errMsg = screen.getAllByText(
+      'Something went wrong. Please refresh the page.'
+    );
+
+    expect(errMsg).toHaveLength(2);
+  });
+
+  it('uses custom onCardChange callback', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        onCardChange={(card) => {
+          mockOnCardChange();
+          return card;
+        }}
+      />
+    );
+    // add a card
+    const valueBtn = screen.getByTitle('Value / KPI');
+    expect(valueBtn).toBeInTheDocument();
+    fireEvent.click(valueBtn);
+    // card edit form should be open
+    const cardSizeFormInput = screen.getByDisplayValue('Untitled');
+    expect(cardSizeFormInput).toBeInTheDocument();
+    fireEvent.change(cardSizeFormInput, {
+      target: { value: 'My new card title' },
+    });
+    expect(mockOnCardChange).toHaveBeenCalled();
   });
 });

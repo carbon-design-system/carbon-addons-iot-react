@@ -22,6 +22,13 @@ import {
 
 const { iotPrefix } = settings;
 
+export const DataItemsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    label: PropTypes.string,
+  })
+);
+
 const propTypes = {
   /** Dashboard title */
   title: PropTypes.string,
@@ -61,10 +68,17 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: DataItemsPropTypes,
+  /** if provided, will update the dashboard json according to its own logic */
+  onCardChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -124,10 +138,12 @@ const defaultProps = {
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
-  title: null,
+  title: '',
   onEditTitle: null,
   getValidDataItems: null,
+  getValidTimeRanges: null,
   dataItems: [],
+  onCardChange: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -175,9 +191,11 @@ const DashboardEditor = ({
   renderHeader,
   renderCardPreview,
   getValidDataItems,
+  getValidTimeRanges,
   dataItems,
   headerBreadcrumbs,
   notification,
+  onCardChange,
   onEditTitle,
   onImport,
   onExport,
@@ -250,6 +268,19 @@ const DashboardEditor = ({
   const onSelectCard = (id) => setSelectedCardId(id);
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
+
+  const handleOnCardChange = (cardConfig) =>
+    // TODO: this is really inefficient
+    setDashboardJson({
+      ...dashboardJson,
+      cards: dashboardJson.cards.map((card) =>
+        card.id === cardConfig.id
+          ? onCardChange
+            ? onCardChange(cardConfig, dashboardJson)
+            : cardConfig
+          : card
+      ),
+    });
 
   const commonCardProps = (cardConfig, isSelected) => ({
     key: cardConfig.id,
@@ -375,16 +406,9 @@ const DashboardEditor = ({
               (card) => card.id === selectedCardId
             )}
             onShowGallery={() => setSelectedCardId(null)}
-            onChange={(cardConfig) =>
-              // TODO: this is really inefficient
-              setDashboardJson({
-                ...dashboardJson,
-                cards: dashboardJson.cards.map((card) =>
-                  card.id === cardConfig.id ? cardConfig : card
-                ),
-              })
-            }
+            onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}
+            getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}

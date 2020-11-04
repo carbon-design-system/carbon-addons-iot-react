@@ -19,7 +19,6 @@ const cardConfig = {
       {
         label: 'Pressure',
         dataSourceId: 'pressure',
-        color: 'blue',
       },
     ],
     xLabel: 'Time',
@@ -32,7 +31,10 @@ const cardConfig = {
   interval: 'day',
 };
 
-const dataItems = ['Temperature', 'Pressure'];
+const dataItems = [
+  { dataSourceId: 'temperature', label: 'Temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure' },
+];
 
 const mockOnChange = jest.fn();
 const mockGetValidDataItems = jest.fn();
@@ -57,11 +59,14 @@ describe('DataSeriesFormItem', () => {
         ],
       },
     };
-    const selectedItems = [{ id: 'Temperature' }, { id: 'Pressure' }];
+    const selectedItems = [
+      { id: 'temperature', text: 'Temperature' },
+      { id: 'pressure', text: 'Pressure' },
+    ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: 'blue' },
+        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
@@ -74,7 +79,7 @@ describe('DataSeriesFormItem', () => {
     });
   });
   describe('dataItems', () => {
-    it('should prioritize getValidDataItems', async () => {
+    it('should prioritize getValidDataItems', () => {
       render(
         <DataSeriesFormItem
           cardConfig={cardConfig}
@@ -85,6 +90,18 @@ describe('DataSeriesFormItem', () => {
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
+    });
+    it('handles initial dataItems', () => {
+      render(
+        <DataSeriesFormItem
+          cardJson={{ ...cardConfig, content: {} }}
+          onChange={mockOnChange}
+          getValidDataItems={mockGetValidDataItems}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      expect(screen.getByText('Data series')).toBeInTheDocument();
     });
   });
   describe('dataItem editor', () => {
