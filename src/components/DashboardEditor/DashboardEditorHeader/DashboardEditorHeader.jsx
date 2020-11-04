@@ -169,6 +169,8 @@ const DashboardEditorHeader = ({
                 labelText={<DocumentImport16 fill="#161616" />}
                 onChange={onImport}
                 disableLabelChanges
+                accepts={['.json']}
+                multiple={false}
               />
             </TooltipIcon>
           )

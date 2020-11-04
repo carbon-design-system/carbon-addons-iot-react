@@ -78,7 +78,7 @@
     }
 
     &__breakpoint-info {
-      padding: 1rem;
+      padding: $spacing-05;
       width: 100%;
       background-color: $ui-03;
     }
@@ -94,7 +94,7 @@
     }
   }
   &--sidebar {
-    height: 100%;
+    min-height: 100%;
     width: 16rem;
   }
 }
