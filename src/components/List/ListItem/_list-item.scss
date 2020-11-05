@@ -16,6 +16,8 @@
     }
 
     &:active {
+      background: $hover-ui;
+
       cursor: grabbing;
     }
   }
@@ -73,7 +75,7 @@
     z-index: -100;
   }
 
-  &-dragging {
+  &--dragging {
     background: $hover-ui;
     cursor: grabbing;
   }
@@ -85,7 +87,6 @@
 }
 
 .#{$iot-prefix}--list-item {
-  background: $ui-01;
   border-bottom: 1px solid $ui-03;
   display: flex;
   height: rem(40px);
