@@ -302,7 +302,12 @@ const DashboardEditor = ({
 
   return (
     <div className={baseClassName}>
-      <div className={`${baseClassName}--content`}>
+      <div
+        className={classnames(`${baseClassName}--content`, {
+          // enables overflow: auto if a specific breakpoint is selected so the width can be managed
+          [`${baseClassName}__overflow`]:
+            selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+        })}>
         {renderHeader ? (
           renderHeader()
         ) : (
@@ -324,7 +329,12 @@ const DashboardEditor = ({
           />
         )}
         {notification}
-        <div className={`${baseClassName}--preview`}>
+        <div
+          className={classnames(`${baseClassName}--preview`, {
+            // enables overflow: auto if a specific breakpoint is selected so the width can be managed
+            [`${baseClassName}__overflow`]:
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+          })}>
           <div
             className={classnames({
               [`${baseClassName}--preview__outline`]:

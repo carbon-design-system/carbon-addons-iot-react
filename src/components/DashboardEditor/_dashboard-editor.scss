@@ -1,12 +1,18 @@
 .#{$iot-prefix}--dashboard-editor {
   display: flex;
   height: 100%;
+
+  &__overflow {
+    overflow-x: auto; // allows a larger width
+  }
+
   &--content {
     flex: 1;
     flex-direction: column;
     display: flex;
     overflow-x: auto;
   }
+
   &-header {
     flex: 0;
     padding: $spacing-05 0 $spacing-06;
@@ -58,7 +64,6 @@
   }
   &--preview {
     flex: 1;
-    overflow-x: auto; // allows a larger width
     background-color: $text-03;
     margin-left: $spacing-05;
 
