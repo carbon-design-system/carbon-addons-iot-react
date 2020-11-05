@@ -58,6 +58,7 @@ export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitc
 export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
+export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';

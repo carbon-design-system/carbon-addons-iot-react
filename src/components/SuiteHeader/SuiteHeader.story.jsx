@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
@@ -7,6 +7,7 @@ import Group from '@carbon/icons-react/lib/group/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+// import getSuiteHeaderData from './util/suiteHeaderData';
 // import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
@@ -226,6 +227,102 @@ export const HeaderWithSurveyNotification = () => {
     />
   );
 };
+
+/* Sample of SuiteHeader usage with data hook
+export const HeaderWithHook = () => {
+  const StatefulExample = () => {
+    const [data, isLoading, error, refreshData] = useSuiteHeaderData({
+      baseApiUrl: 'http://localhost:3001/internal',
+      domain: 'mydomain.com',
+      // isTest: true,
+      surveyConfig: {
+        id: 'suite',
+        delayIntervalDays: -1,
+        frequencyDays: -1,
+      },
+      lang: 'en',
+    });
+    const surveyData = data.showSurvey ? { surveyLink: 'https://www.ibm.com', privacyLink: 'https://www.ibm.com'} : null;
+    return (
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName={data.userDisplayName}
+        username={data.username}
+        routes={data.routes}
+        applications={data.applications}
+        sideNavProps={{
+          links: sideNavLinks,
+        }}
+        i18n={data.i18n}
+        surveyData={surveyData}
+      />
+    );
+  }
+  return <StatefulExample />;
+};
+
+HeaderWithHook.story = {
+  name: 'Header with hook',
+};
+
+export const HeaderWithDataFetching = () => {
+  const StatefulExample = () => {
+    const [data, setData] = useState({
+      username: null,
+      userDisplayName: null,
+      email: null,
+      routes: {
+        profile: null,
+        navigator: null,
+        admin: null,
+        logout: null,
+        about: null,
+        documentation: null,
+        whatsNew: null,
+        requestEnhancement: null,
+        support: null,
+        gettingStarted: null,
+      },
+      applications: [],
+      showSurvey: false,
+    });
+    useEffect(() => {
+      getSuiteHeaderData({
+        // baseApiUrl: 'http://localhost:3001/internal',
+        domain: 'mydomain.com',
+        isTest: true,
+        surveyConfig: {
+          id: 'suite',
+          delayIntervalDays: 30,
+          frequencyDays: 90,
+        },
+        lang: 'en',
+      }).then(suiteHeaderData => setData(suiteHeaderData));
+    }, []);
+    
+    const surveyData = data.showSurvey ? { surveyLink: 'https://www.ibm.com', privacyLink: 'https://www.ibm.com'} : null;
+    return (
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName={data.userDisplayName}
+        username={data.username}
+        routes={data.routes}
+        applications={data.applications}
+        i18n={data.i18n}
+        surveyData={surveyData}
+      />
+    );
+  }
+  return <StatefulExample />
+};
+
+HeaderWithDataFetching.story = {
+  name: 'Header with data fetching',
+};
+
+*/
 
 HeaderWithSurveyNotification.story = {
   name: 'Header with survey notification',
