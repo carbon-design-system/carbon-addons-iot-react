@@ -296,12 +296,8 @@ const DashboardEditor = ({
     tabIndex: 0,
     onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardConfig.id),
     onClick: () => handleOnClick(onSelectCard, cardConfig.id),
-    className: classnames(`${baseClassName}--preview__card`, {
-      // add black border when selected
-      // TODO: swap this to the true isSelected card prop once this issue is closed:
-      // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1621
-      [`${iotPrefix}--card__selected`]: isSelected,
-    }),
+    className: `${baseClassName}--preview__card`,
+    isSelected,
   });
 
   return (
