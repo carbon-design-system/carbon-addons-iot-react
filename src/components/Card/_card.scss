@@ -8,22 +8,26 @@ $iot-header-padding: $spacing-05;
 
 .#{$iot-prefix}--card--wrapper {
   background: white;
+  border: solid $spacing-01 transparent;
   height: var(--card-default-height);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  &__selected {
+    border: solid $spacing-01 $interactive-02;
+    box-sizing: content-box;
+  }
 }
 
 .#{$iot-prefix}--card__selected {
   border: $spacing-01 solid $interactive-02;
   box-sizing: content-box;
-  margin: -$spacing-01;
 }
 
 .#{$iot-prefix}--card--resizing {
   border: $spacing-01 solid $interactive-02;
   box-sizing: content-box;
-  margin: -$spacing-01;
 }
 
 .#{$iot-prefix}--card--title {
