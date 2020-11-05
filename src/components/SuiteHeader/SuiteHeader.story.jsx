@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
@@ -232,13 +232,13 @@ export const HeaderWithSurveyNotification = () => {
 export const HeaderWithHook = () => {
   const StatefulExample = () => {
     const [data, isLoading, error, refreshData] = useSuiteHeaderData({
-      baseApiUrl: 'http://localhost:3001/internal',
+      // baseApiUrl: 'http://localhost:3001/internal',
       domain: 'mydomain.com',
-      // isTest: true,
+      isTest: true,
       surveyConfig: {
         id: 'suite',
-        delayIntervalDays: -1,
-        frequencyDays: -1,
+        delayIntervalDays: 30,
+        frequencyDays: 90,
       },
       lang: 'en',
     });
@@ -251,9 +251,6 @@ export const HeaderWithHook = () => {
         username={data.username}
         routes={data.routes}
         applications={data.applications}
-        sideNavProps={{
-          links: sideNavLinks,
-        }}
         i18n={data.i18n}
         surveyData={surveyData}
       />
