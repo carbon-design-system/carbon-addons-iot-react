@@ -7537,6 +7537,24 @@ Map {
       "sidebar": Object {
         "type": "node",
       },
+      "supportedLayouts": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                "max",
+                "xl",
+                "lg",
+                "md",
+                "sm",
+                "xs",
+              ],
+            ],
+            "type": "oneOf",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "timeGrain": Object {
         "type": "string",
       },
@@ -7663,6 +7681,14 @@ Map {
       "onCardSizeChange": null,
       "onLayoutChange": null,
       "onResizeStop": null,
+      "supportedLayouts": Array [
+        "max",
+        "xl",
+        "lg",
+        "md",
+        "sm",
+        "xs",
+      ],
     },
     "propTypes": Object {
       "breakpoint": Object {
@@ -7871,12 +7897,32 @@ Map {
       "onResizeStop": Object {
         "type": "func",
       },
+      "supportedLayouts": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                "max",
+                "xl",
+                "lg",
+                "md",
+                "sm",
+                "xs",
+              ],
+            ],
+            "type": "oneOf",
+          },
+        ],
+        "type": "arrayOf",
+      },
     },
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
+      "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
       "i18n": Object {
         "closeGalleryButton": "Back",
@@ -7886,8 +7932,15 @@ Map {
         "headerDeleteButton": "Delete",
         "headerEditTitleButton": "Edit title",
         "headerExportButton": "Export",
+        "headerFitToScreenButton": "Fit to screen",
         "headerImportButton": "Import",
+        "headerLargeButton": "Large view",
+        "headerMediumButton": "Medium view",
         "headerSubmitButton": "Save and close",
+        "headerXlargeButton": "X-large view",
+        "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
+        "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
+        "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
@@ -7899,6 +7952,7 @@ Map {
       },
       "notification": null,
       "onCancel": null,
+      "onCardChange": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
@@ -7917,18 +7971,44 @@ Map {
         "GROUPED_BAR",
         "STACKED_BAR",
       ],
-      "title": null,
+      "title": "",
     },
     "propTypes": Object {
+      "breakpointSwitcher": Object {
+        "args": Array [
+          Object {
+            "enabled": Object {
+              "type": "bool",
+            },
+            "initialValue": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "dataItems": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Object {
+                "dataSourceId": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidTimeRanges": Object {
         "type": "func",
       },
       "headerBreadcrumbs": Object {
@@ -7963,10 +8043,31 @@ Map {
             "headerExportButton": Object {
               "type": "string",
             },
+            "headerFitToScreenButton": Object {
+              "type": "string",
+            },
             "headerImportButton": Object {
               "type": "string",
             },
+            "headerLargeButton": Object {
+              "type": "string",
+            },
+            "headerMediumButton": Object {
+              "type": "string",
+            },
             "headerSubmitButton": Object {
+              "type": "string",
+            },
+            "headerXlargeButton": Object {
+              "type": "string",
+            },
+            "layoutInfoLg": Object {
+              "type": "string",
+            },
+            "layoutInfoMd": Object {
+              "type": "string",
+            },
+            "layoutInfoXl": Object {
               "type": "string",
             },
             "noDataLabel": Object {
@@ -8002,6 +8103,9 @@ Map {
         "type": "node",
       },
       "onCancel": Object {
+        "type": "func",
+      },
+      "onCardChange": Object {
         "type": "func",
       },
       "onDelete": Object {
@@ -8049,6 +8153,7 @@ Map {
       "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
+      "getValidTimeRanges": null,
       "i18n": Object {
         "addCardButton": "Add card",
         "closeGalleryButton": "Back",
@@ -8143,12 +8248,25 @@ Map {
       "dataItems": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Object {
+                "dataSourceId": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
       },
       "getValidDataItems": Object {
+        "type": "func",
+      },
+      "getValidTimeRanges": Object {
         "type": "func",
       },
       "i18n": Object {
@@ -16912,6 +17030,8 @@ Map {
       "className": undefined,
       "light": false,
       "name": "",
+      "onClick": undefined,
+      "onKeyDown": undefined,
       "selected": false,
       "size": "default",
     },
@@ -16940,11 +17060,9 @@ Map {
         "type": "oneOfType",
       },
       "onClick": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onKeyDown": Object {
-        "isRequired": true,
         "type": "func",
       },
       "renderIcon": Object {
