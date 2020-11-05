@@ -144,7 +144,13 @@ export const calcI18N = (i18nData) => ({
       .replace('{userName}', userName),
 });
 
-export const defaultFetchApi = async (method, url, body, headers, testResponse) =>
+export const defaultFetchApi = async (
+  method,
+  url,
+  body,
+  headers,
+  testResponse
+) =>
   testResponse ||
   fetch(url, {
     method,
@@ -174,7 +180,6 @@ const getSuiteHeaderData = async ({
   surveyConfig = null,
   isTest = false,
 }) => {
-
   const api = (method, path, body, headers) =>
     fetchApi(
       method,
@@ -199,17 +204,13 @@ const getSuiteHeaderData = async ({
 
   // Survey
   const showSurvey = surveyConfig?.id
-    ? await calculateSurveyStatus(
-        profileData.user.username,
-        surveyConfig,
-        api
-      )
+    ? await calculateSurveyStatus(profileData.user.username, surveyConfig, api)
     : false;
 
   // i18n
   const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
 
-  return({
+  return {
     username: profileData.user.username,
     userDisplayName: profileData.user.displayName,
     email: profileData.user.email,
@@ -229,7 +230,7 @@ const getSuiteHeaderData = async ({
     ],
     i18n,
     showSurvey,
-  });
-}
+  };
+};
 
 export default getSuiteHeaderData;

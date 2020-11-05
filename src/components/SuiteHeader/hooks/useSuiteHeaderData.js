@@ -1,8 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 
 // eslint-disable-next-line import/extensions
-import getSuiteHeaderData, { calcRoutes, calcSurveyStatus, calcI18N, defaultFetchApi } from '../util/suiteHeaderData';
-
+import getSuiteHeaderData, {
+  calcRoutes,
+  calcSurveyStatus,
+  calcI18N,
+  defaultFetchApi,
+} from '../util/suiteHeaderData';
 
 const useSuiteHeaderData = ({
   baseApiUrl,
@@ -40,7 +44,17 @@ const useSuiteHeaderData = ({
   const refreshData = useCallback(async () => {
     try {
       setIsLoading(true);
-      const suiteHeaderData = await getSuiteHeaderData({ baseApiUrl, domain, lang, calculateRoutes, calculateSurveyStatus, calculateI18N, fetchApi, surveyConfig, isTest });
+      const suiteHeaderData = await getSuiteHeaderData({
+        baseApiUrl,
+        domain,
+        lang,
+        calculateRoutes,
+        calculateSurveyStatus,
+        calculateI18N,
+        fetchApi,
+        surveyConfig,
+        isTest,
+      });
       setData(suiteHeaderData);
     } catch (err) {
       setError(err);
