@@ -297,14 +297,37 @@ WithNotifications.story = {
   name: 'with notifications',
 };
 
-export const CustomHeaderRenderer = () => (
-  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
-    <DashboardEditor renderHeader={() => <h1>Custom Header</h1>} />
+export const WithBreakpointSwitcher = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ])}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      breakpointSwitcher={{ enabled: true }}
+    />
   </div>
 );
 
-CustomHeaderRenderer.story = {
-  name: 'custom header renderer',
+WithBreakpointSwitcher.story = {
+  name: 'with breakpoint switcher',
 };
 
 export const CustomCardPreviewRenderer = () => (
@@ -397,4 +420,14 @@ export const CustomCardPreviewRenderer = () => (
 
 CustomCardPreviewRenderer.story = {
   name: 'custom card preview renderer',
+};
+
+export const CustomHeaderRenderer = () => (
+  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
+    <DashboardEditor renderHeader={() => <h1>Custom Header</h1>} />
+  </div>
+);
+
+CustomHeaderRenderer.story = {
+  name: 'custom header renderer',
 };
