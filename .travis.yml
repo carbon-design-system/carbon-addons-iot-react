@@ -25,4 +25,4 @@ install:
 script:
   - yarn build
 
-after_success: bash ./scripts/relese.sh
+after_success: bash ./scripts/release.sh
