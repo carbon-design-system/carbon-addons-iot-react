@@ -48,10 +48,20 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -76,6 +86,7 @@ const defaultProps = {
     searchPlaceholderText: 'Enter a search',
   },
   getValidDataItems: null,
+  getValidTimeRanges: null,
   dataItems: [],
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
@@ -89,6 +100,7 @@ const CardEditor = ({
   onChange,
   onAddCard,
   getValidDataItems,
+  getValidTimeRanges,
   dataItems,
   onValidateCardJson,
   supportedCardTypes,
@@ -126,6 +138,7 @@ const CardEditor = ({
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}
+            getValidTimeRanges={getValidTimeRanges}
             onValidateCardJson={onValidateCardJson}
             i18n={mergedI18n}
           />
