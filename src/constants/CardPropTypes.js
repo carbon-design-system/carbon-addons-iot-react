@@ -12,8 +12,6 @@ import {
   teal70,
   cyan90,
   purple50,
-  // orange70,
-  // yellow50,
 } from '@carbon/colors';
 
 import deprecate from '../internal/deprecate';
