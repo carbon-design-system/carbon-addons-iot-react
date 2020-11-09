@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import { Button } from '../../index';
@@ -160,12 +161,14 @@ const IconDropdown = ({
   }px`;
   const heightStyle = Math.ceil(items.length / columnCount) * defaultItemSize;
 
-  const Footer = () => {
-    const highlightedItem =
-      highlightedIndex >= 0 && highlightedIndex < items.length
-        ? items[highlightedIndex]
-        : null;
+  const highlightedItem =
+    highlightedIndex >= 0 && highlightedIndex < items.length
+      ? items[highlightedIndex]
+      : null;
 
+  const hasFooter = highlightedItem || selectedItem;
+
+  const Footer = () => {
     const selectedFooter =
       highlightedItem !== null ? highlightedItem : selectedItem;
 
@@ -178,14 +181,14 @@ const IconDropdown = ({
 
     return selectedFooter !== undefined && selectedFooter !== null ? (
       <div
-        className={`${iotPrefix}--dropdown__footer`}
+        className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
           width: widthStyle,
           transform: direction === 'top' ? topTranslate : bottomTranslate,
-          paddingTop: direction !== 'top' ? `${heightStyle}px` : 0,
+          paddingTop: direction === 'bottom' ? `${heightStyle}px` : 0,
           paddingBottom: direction === 'top' ? `${heightStyle}px` : 0,
         }}>
-        <div className={`${iotPrefix}--dropdown__footer-content`}>
+        <div className={`${iotPrefix}--icon-dropdown__footer-content`}>
           {selectedFooter.footer}
         </div>
       </div>
@@ -193,24 +196,40 @@ const IconDropdown = ({
   };
 
   const itemToString = (item) => {
+    const index = items.findIndex((element) => element.id === item.id);
+
     return (
       <>
         <Button
-          className={`${iotPrefix}--dropdown__image-button`}
+          className={classnames(
+            `${iotPrefix}--icon-dropdown__image-button`,
+            {
+              [`${iotPrefix}--icon-dropdown__image-button--leading`]:
+                index % columnCount === 0,
+            },
+            {
+              [`${iotPrefix}--icon-dropdown__image-button--trailing`]:
+                (index + 1) % columnCount === 0,
+            },
+            {
+              [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
+                index + columnCount >= items.length && !hasFooter,
+            }
+          )}
           renderIcon={item?.icon}
           kind="ghost"
           hasIconOnly
           disabled={disabled}
           selected={item.id === selectedItem?.id}
           data-testid={`dropdown-button__${item?.id}`}
-          iconDescription={item?.text}
+          iconDescription={item.text}
           title={item?.text}
         />
 
-        <div className={`${iotPrefix}--dropdown__selected-icon-label`}>
+        <div className={`${iotPrefix}--icon-dropdown__selected-icon-label`}>
           {React.createElement(item.icon)}
           <div
-            className={`${iotPrefix}--dropdown__selected-icon-label__content`}>
+            className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
             {item.text}
           </div>
         </div>
@@ -227,7 +246,7 @@ const IconDropdown = ({
         direction={direction}
         style={{ width: widthStyle }}
         items={items}
-        className={`${iotPrefix}--dropdown__selection-buttons`}
+        className={`${iotPrefix}--icon-dropdown__selection-buttons`}
         selectedItem={selectedItem}
         onChange={(changes) => {
           const { selectedItem: newSelected } = changes;
@@ -249,7 +268,7 @@ const IconDropdown = ({
         {...other}
         itemToString={itemToString}
       />
-      {isOpen && direction !== 'top' && <Footer />}
+      {isOpen && direction === 'bottom' && <Footer />}
     </div>
   );
 };

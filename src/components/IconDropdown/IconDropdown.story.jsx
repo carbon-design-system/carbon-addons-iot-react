@@ -102,7 +102,7 @@ export const _Default = () => {
       };
     });
 
-    const [selectedItem, setSelectedItem] = useState(itemsWithFooter[0]);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     return (
       <div

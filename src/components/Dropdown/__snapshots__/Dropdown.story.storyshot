@@ -1,5 +1,419 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropdown Default 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        warn={false}
+        warnText=""
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-11-toggle-button"
+          id="downshift-11-label"
+        >
+          Dropdown label
+        </label>
+        <div
+          className="bx--dropdown iot--dropdown bx--list-box"
+          id="default"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-11-label downshift-11-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-11-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-11-label"
+            className="bx--list-box__menu"
+            id="downshift-11-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropdown Inline 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 600,
+        }
+      }
+    >
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper bx--dropdown__wrapper--inline bx--list-box__wrapper--inline"
+        warn={false}
+        warnText=""
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-12-toggle-button"
+          id="downshift-12-label"
+        >
+          Inline dropdown label
+        </label>
+        <div
+          className="bx--dropdown iot--dropdown bx--dropdown--inline bx--list-box"
+          id="inline"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-12-label downshift-12-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-12-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-12-label"
+            className="bx--list-box__menu"
+            id="downshift-12-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropdown Playground 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        warn={false}
+        warnText=""
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-13-toggle-button"
+          id="downshift-13-label"
+        >
+          Dropdown label
+        </label>
+        <div
+          aria-label="Dropdown"
+          className="bx--dropdown iot--dropdown bx--list-box"
+          id="carbon-dropdown-example"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-13-label downshift-13-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-13-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-13-label"
+            className="bx--list-box__menu"
+            id="downshift-13-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text.
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropdown Skeleton 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="bx--skeleton bx--dropdown-v2 bx--list-box bx--form-item"
+      >
+        <div
+          className="bx--list-box__field"
+        >
+          <span
+            className="bx--list-box__label"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropdown with icons and labels 1`] = `
 <div
   className="storybook-container"
@@ -26,14 +440,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
       >
         <label
           className="bx--label"
-          htmlFor="downshift-11-toggle-button"
-          id="downshift-11-label"
+          htmlFor="downshift-14-toggle-button"
+          id="downshift-14-label"
         >
           Dropdown label
         </label>
         <div
           aria-label="Dropdown"
-          className="bx--dropdown bx--list-box"
+          className="bx--dropdown iot--dropdown bx--list-box"
           id="some-dropdown-id"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -42,10 +456,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
             aria-disabled={false}
             aria-expanded={false}
             aria-haspopup="listbox"
-            aria-labelledby="downshift-11-label downshift-11-toggle-button"
+            aria-labelledby="downshift-14-label downshift-14-toggle-button"
             className="bx--list-box__field"
             disabled={false}
-            id="downshift-11-toggle-button"
+            id="downshift-14-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -59,13 +473,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
               className="bx--list-box__menu-icon"
             >
               <svg
-                aria-label="Open menu"
+                aria-hidden={true}
                 fill="currentColor"
                 focusable="false"
                 height={16}
                 name="chevron--down"
                 preserveAspectRatio="xMidYMid meet"
-                role="img"
                 viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,16 +486,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
                 <path
                   d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                 />
-                <title>
-                  Open menu
-                </title>
+                <title />
               </svg>
             </div>
           </button>
           <div
-            aria-labelledby="downshift-11-label"
+            aria-labelledby="downshift-14-label"
             className="bx--list-box__menu"
-            id="downshift-11-menu"
+            id="downshift-14-menu"
             onBlur={[Function]}
             onKeyDown={[Function]}
             onMouseLeave={[Function]}

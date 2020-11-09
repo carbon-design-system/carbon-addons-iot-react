@@ -2,10 +2,6 @@
 
 @import '../../globals/vars';
 
-.#{$prefix}--list-box__menu-item__option {
-  padding: 0;
-}
-
 .#{$iot-prefix}--dropdown__image-button:hover {
   border-color: transparent;
 
@@ -14,7 +10,7 @@
   }
 }
 
-.#{$iot-prefix}--dropdown__footer {
+.#{$iot-prefix}--icon-dropdown__footer {
   @include box-shadow();
 
   position: absolute;
@@ -28,7 +24,7 @@
   }
 }
 
-.#{$iot-prefix}--dropdown__selection-buttons {
+.#{$iot-prefix}--icon-dropdown__selection-buttons {
   > .#{$prefix}--list-box__field {
     padding: 0 $spacing-09 0 $spacing-05;
   }
@@ -80,7 +76,7 @@
           background: $hover-ui;
         }
 
-        > .#{$iot-prefix}--dropdown__selected-icon-label {
+        > .#{$iot-prefix}--icon-dropdown__selected-icon-label {
           display: none;
         }
 
@@ -88,18 +84,30 @@
           display: none;
         }
 
-        > .#{$iot-prefix}--dropdown__image-button {
+        > .#{$iot-prefix}--icon-dropdown__image-button {
           border-width: 1px;
           border-style: solid;
-          border-color: transparent $ui-03 $ui-03 transparent;
+          border-top-color: transparent;
+          border-right-color: $ui-03;
+          border-bottom-color: $ui-03;
+          border-left-color: transparent;
+
           color: transparent;
 
-          &:hover {
-            color: transparent;
+          &--leading {
+            border-left-color: transparent;
+          }
+
+          &--trailing {
+            border-right-color: transparent;
           }
 
           &--bottom {
-            padding-bottom: $spacing-03;
+            border-bottom-color: transparent;
+          }
+
+          &:hover {
+            color: transparent;
           }
 
           > .bx--assistive-text {
@@ -111,41 +119,17 @@
   }
 
   .#{$prefix}--list-box__label {
-    > .#{$iot-prefix}--dropdown__image-button {
+    > .#{$iot-prefix}--icon-dropdown__image-button {
       display: none;
     }
 
-    > .#{$iot-prefix}--dropdown__text {
+    > .#{$iot-prefix}--icon-dropdown__text {
       height: 100%;
     }
   }
 }
 
-.#{$iot-prefix}--dropdown__label {
-  display: flex;
-  height: 100%;
-  padding: $spacing-04 0;
-
-  > svg {
-    min-width: 16px;
-    width: 16px;
-    height: 100%;
-  }
-
-  &__content {
-    margin: auto 0;
-    margin-left: $spacing-03;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    &--open {
-      color: $active-ui;
-    }
-  }
-}
-
-.#{$iot-prefix}--dropdown__selected-icon-label {
+.#{$iot-prefix}--icon-dropdown__selected-icon-label {
   display: flex;
   height: 100%;
 
