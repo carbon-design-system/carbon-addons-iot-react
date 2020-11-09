@@ -25,6 +25,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
         data-testid="Card"
         id="facilitycard-basic"
         onBlur={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
         role="presentation"
         style={
@@ -296,8 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
         >
           <p>
             Content width is 
-             and height is
-             
+             and height is 
             NaN
           </p>
         </div>

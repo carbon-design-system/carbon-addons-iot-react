@@ -35,13 +35,16 @@ describe('CardEditor', () => {
   it('fires onChange when user edits title in form', () => {
     render(
       <CardEditor
-        cardJson={defaultCard}
+        cardConfig={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
       />
     );
-    userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'z');
+    userEvent.type(
+      screen.getByRole('textbox', { name: 'Card title X-axis label' }),
+      'z'
+    );
     userEvent.tab();
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,
@@ -61,7 +64,7 @@ describe('CardEditor', () => {
   it('fires onChange when user edits description in form', () => {
     render(
       <CardEditor
-        cardJson={defaultCard}
+        cardConfig={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
@@ -79,7 +82,7 @@ describe('CardEditor', () => {
   it('fires onShowGallery when user clicks button', () => {
     render(
       <CardEditor
-        cardJson={defaultCard}
+        cardConfig={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}
@@ -96,7 +99,7 @@ describe('CardEditor', () => {
   it('opens and closes JSON code modal through button clicks', () => {
     render(
       <CardEditor
-        cardJson={defaultCard}
+        cardConfig={defaultCard}
         onShowGallery={actions.onShowGallery}
         onChange={actions.onChange}
         onAddCard={actions.onAddCard}

@@ -6,8 +6,10 @@ import find from 'lodash/find';
 export const generateSampleValues = (
   series,
   timeDataSourceId,
-  timeGrain = 'day'
+  timeGrain = 'day',
+  timeRange = {}
 ) => {
+  const { interval, type } = timeRange;
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -20,7 +22,10 @@ export const generateSampleValues = (
       count = 4;
       break;
     case 'month':
-      count = 12;
+      count = interval === 'quarter' ? 3 : 12;
+      break;
+    case 'quarter':
+      count = 4;
       break;
     case 'year':
       count = 5;
@@ -33,7 +38,10 @@ export const generateSampleValues = (
   // number of each record to define
   const sampleValues = Array(count).fill(1);
   return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
-    const now = moment().subtract(count, timeGrain);
+    const now =
+      type === 'periodToDate' // handle "this" intervals like "this week"
+        ? moment().startOf(interval).subtract(1, timeGrain)
+        : moment().subtract(count, timeGrain);
     sampleValues.forEach(() => {
       const nextTimeStamp = now.add(1, timeGrain).valueOf();
       if (!isEmpty(dataFilter)) {

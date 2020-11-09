@@ -4,6 +4,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from 'styled-components';
 import some from 'lodash/some';
 import find from 'lodash/find';
+import pick from 'lodash/pick';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -13,6 +14,7 @@ import {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   DASHBOARD_CONTAINER_PADDING,
+  CARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { DashboardLayoutPropTypes } from '../../constants/CardPropTypes';
 
@@ -56,6 +58,10 @@ export const DashboardGridPropTypes = {
     sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
+  /** Array of layouts that are supported by this component. Defaults to all layouts */
+  supportedLayouts: PropTypes.arrayOf(
+    PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])
+  ),
   /**
    * Optionally listen to layout changes to update a dashboard template
    * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
@@ -63,24 +69,91 @@ export const DashboardGridPropTypes = {
   onLayoutChange: PropTypes.func,
   /** Optionally listen to window resize events to update a dashboard template */
   onBreakpointChange: PropTypes.func,
+  /** Callback for when a card has been resized */
+  onResizeStop: PropTypes.func,
+  /** Callback for when a card has been resized by drag */
+  onCardSizeChange: PropTypes.func,
 };
 
 const defaultProps = {
   breakpoint: 'lg',
   isEditable: false,
   layouts: {},
+  supportedLayouts: Object.keys(DASHBOARD_BREAKPOINTS),
   onLayoutChange: null,
   onBreakpointChange: null,
+  onResizeStop: null,
+  onCardSizeChange: null,
+};
+
+const getClosestMatchingSizes = ({ sortedSizes, value, dimension }) => {
+  const closestLargerSize = sortedSizes.find((size) => size[dimension] > value);
+  const closestDimensionValue = closestLargerSize
+    ? closestLargerSize[dimension]
+    : sortedSizes[sortedSizes.length - 1][dimension];
+  return sortedSizes.filter(
+    (size) => size[dimension] === closestDimensionValue
+  );
+};
+
+const getMatchingCardSizesByDimension = ({ breakpointSizes, ...rest }) => {
+  const { value, dimension } = rest;
+  const sortedSizes = breakpointSizes.sort(
+    (a, b) => a[dimension] - b[dimension]
+  );
+  const matchingSizes = sortedSizes.filter((size) => size[dimension] === value);
+  return matchingSizes.length
+    ? matchingSizes
+    : getClosestMatchingSizes({ sortedSizes, ...rest });
+};
+
+/**
+ * Returns the closest larger matching card size (SMALL, MEDIUM etc) based on the
+ * dimensions (height first) of a layoutItems.
+ * @param {*} layoutItem a layoutItem with modified dimensions
+ * @param {*} breakpointSizes list of card size objects for a specific breakpoint
+ */
+export const getMatchingCardSize = (layoutItem, breakpointSizes) => {
+  const sizesMatchingHeight = getMatchingCardSizesByDimension({
+    breakpointSizes,
+    value: layoutItem.h,
+    dimension: 'h',
+  });
+  return getMatchingCardSizesByDimension({
+    breakpointSizes: sizesMatchingHeight,
+    value: layoutItem.w,
+    dimension: 'w',
+  })[0];
+};
+
+/**
+ * Used to generate a list card size objects for a specific breakpoint.
+ * The list objects have the props 'h', 'w' and 'name' where name is the card size name.
+ * @param {*} breakpoint
+ * @param {*} cardDimensions see CARD_DIMENSIONS
+ * @param {*} cardSizes see CARD_SIZES
+ */
+export const getBreakPointSizes = (breakpoint, cardDimensions, cardSizes) => {
+  return (
+    Object.entries(cardDimensions)
+      .map(([name, breakpoints]) => ({
+        ...breakpoints[breakpoint],
+        name,
+      }))
+      // Filter out legacy sizes
+      .filter((entry) => cardSizes[entry.name])
+  );
 };
 
 /**
  * This function finds an existing layout for each dashboard breakpoint, validates it, and or generates a new one to return
- * @param {*} layouts an keyed object of each layout for each breakpoint
- * @param {*} cards an array of the card props for each card
+ * @param {Object} layouts an keyed object of each layout for each breakpoint
+ * @param {Array<Object>} cards an array of the card props for each card
+ * @param {Array<string>} supportedLayouts
  */
-export const findLayoutOrGenerate = (layouts, cards) => {
+export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
   // iterate through each breakpoint
-  return Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
+  return supportedLayouts.reduce((acc, layoutName) => {
     let layout = layouts && layouts[layoutName];
     // If layout exists for this breakpoint, make sure it contains all the cards
     if (layout) {
@@ -109,12 +182,26 @@ export const findLayoutOrGenerate = (layouts, cards) => {
       layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
     }
 
+    const layoutWithResizableItems = layout.map((cardFromLayout) => {
+      const matchingCard = find(cards, { id: cardFromLayout.i });
+      return { ...cardFromLayout, isResizable: matchingCard.isResizable };
+    });
+
     return {
       ...acc,
-      [layoutName]: layout,
+      [layoutName]: layoutWithResizableItems,
     };
   }, {});
 };
+
+const formatResizeResponse = (params) => ({
+  layout: params[0],
+  oldItem: params[1],
+  newItem: params[2],
+  placeholder: params[3],
+  event: params[4],
+  element: params[5],
+});
 
 /**
  * Renders the grid of cards according to the standardized PAL patterns for IoT.
@@ -131,16 +218,17 @@ export const findLayoutOrGenerate = (layouts, cards) => {
  *
  * You can also pass any of the additional properties documented here:
  * https://github.com/STRML/react-grid-layout#grid-layout-props
- *
- *
  */
 const DashboardGrid = ({
   children,
   breakpoint,
   isEditable,
   layouts,
+  supportedLayouts,
   onLayoutChange,
   onBreakpointChange,
+  onCardSizeChange,
+  onResizeStop: onResizeStopCallback,
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
@@ -152,9 +240,10 @@ const DashboardGrid = ({
     () =>
       findLayoutOrGenerate(
         layouts,
-        childrenArray.map((card) => card.props)
+        childrenArray.map((card) => card.props),
+        supportedLayouts
       ),
-    [childrenArray, layouts]
+    [childrenArray, layouts, supportedLayouts]
   );
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
@@ -184,13 +273,73 @@ const DashboardGrid = ({
     });
   }, [isEditable]);
 
+  const breakpointSizes = useMemo(
+    () => getBreakPointSizes(breakpoint, CARD_DIMENSIONS, CARD_SIZES),
+    [breakpoint]
+  );
+
+  const onCardResize = (...params) => {
+    const [, oldLayoutItem, layoutItem, placeholder] = params;
+    const rowsJumped = layoutItem.y - oldLayoutItem.y;
+    const colsJumped = layoutItem.x - oldLayoutItem.x;
+
+    const jumpAdjustedlayoutItem = {
+      ...layoutItem,
+      h: layoutItem.h + rowsJumped,
+      w: layoutItem.w + colsJumped,
+    };
+
+    const matchedSize = getMatchingCardSize(
+      jumpAdjustedlayoutItem,
+      breakpointSizes
+    );
+
+    const renderedCardSizeName = cards.find(
+      (card) => card.props.id === layoutItem.i
+    ).props.size;
+    placeholder.h = matchedSize.h;
+    placeholder.w = matchedSize.w;
+    layoutItem.h = matchedSize.h;
+    layoutItem.w = matchedSize.w;
+    if (renderedCardSizeName !== matchedSize.name && onCardSizeChange) {
+      const gridResponse = formatResizeResponse(params);
+      onCardSizeChange(
+        {
+          id: layoutItem.i,
+          size: matchedSize.name,
+        },
+        gridResponse
+      );
+    }
+  };
+
+  const onResizeStop = (...params) => {
+    const [, oldLayoutItem, layoutItem] = params;
+    const newSize = getMatchingCardSize(layoutItem, breakpointSizes);
+    const oldSize = getMatchingCardSize(oldLayoutItem, breakpointSizes);
+    if (newSize !== oldSize) {
+      layoutItem.h = newSize.h;
+      layoutItem.w = newSize.w;
+      if (onResizeStopCallback) {
+        const gridResponse = formatResizeResponse(params);
+        onResizeStopCallback(
+          {
+            id: layoutItem.i,
+            size: newSize.name,
+          },
+          gridResponse
+        );
+      }
+    }
+  };
+
   return (
     <div style={{ flex: 1 }}>
       <StyledGridLayout
         layouts={generatedLayouts}
         compactType="vertical"
         cols={DASHBOARD_COLUMNS}
-        breakpoints={DASHBOARD_BREAKPOINTS}
+        breakpoints={pick(DASHBOARD_BREAKPOINTS, supportedLayouts)}
         margin={cachedMargin}
         containerPadding={DASHBOARD_CONTAINER_PADDING}
         rowHeight={ROW_HEIGHT[breakpoint]}
@@ -199,6 +348,8 @@ const DashboardGrid = ({
         shouldAnimate={animationState}
         onLayoutChange={handleLayoutChange}
         onBreakpointChange={onBreakpointChange}
+        onResize={onCardResize}
+        onResizeStop={onResizeStop}
         isResizable={false}
         isDraggable={isEditable}
         {...others}>

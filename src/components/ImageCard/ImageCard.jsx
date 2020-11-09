@@ -10,7 +10,10 @@ import {
 } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getResizeHandles,
+  getUpdatedCardSize,
+} from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 
@@ -40,12 +43,14 @@ const defaultProps = {
 const ImageCard = ({
   title,
   content,
+  children,
   values,
   size,
   onCardAction,
   availableActions,
   isEditable,
   isExpanded,
+  isResizable,
   error,
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
@@ -70,6 +75,7 @@ const ImageCard = ({
   const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
   const isCardLoading = isNil(src) && !isEditable && !error;
+  const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
     <Card
@@ -80,6 +86,7 @@ const ImageCard = ({
       isLoading={isCardLoading} // only show the spinner if we don't have an image
       isExpanded={isExpanded}
       isEditable={isEditable}
+      resizeHandles={resizeHandles}
       {...others}
       error={error}
       i18n={otherLabels}>

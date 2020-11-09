@@ -22,7 +22,10 @@ import {
   getCardMinSize,
   filterValidAttributes,
 } from '../../utils/componentUtilityFunctions';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  useCardResizing,
+} from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -32,6 +35,7 @@ const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = ({
+  isSelected,
   children,
   dimensions,
   id,
@@ -51,6 +55,7 @@ const CardWrapper = ({
   ...others
 }) => {
   const validOthers = filterValidAttributes(others);
+
   return (
     <div
       role="presentation"
@@ -65,7 +70,9 @@ const CardWrapper = ({
       onFocus={onFocus}
       onBlur={onBlur}
       tabIndex={tabIndex}
-      className={classnames(className, `${iotPrefix}--card--wrapper`)}
+      className={classnames(className, `${iotPrefix}--card--wrapper`, {
+        [`${iotPrefix}--card--wrapper__selected`]: isSelected,
+      })}
       {...validOthers}>
       {children}
     </div>
@@ -111,6 +118,10 @@ const EmptyMessageWrapper = (props) => {
 };
 
 CardWrapper.propTypes = {
+  /**
+   * Is given the event as argument. Should return true or false if event should trigger selection
+   */
+  isSelected: PropTypes.bool,
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
     .isRequired,
@@ -128,6 +139,7 @@ CardWrapper.propTypes = {
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {
+  isSelected: false,
   id: undefined,
   style: undefined,
   testID: 'Card',
@@ -232,6 +244,8 @@ const Card = (props) => {
     isEditable,
     isExpanded,
     isLazyLoading,
+    isResizable,
+    resizeHandles: wrappingCardResizeHandles,
     error,
     hideHeader,
     id,
@@ -312,6 +326,12 @@ const Card = (props) => {
     }
   });
 
+  const { resizeHandles, isResizing } = useCardResizing(
+    wrappingCardResizeHandles,
+    children,
+    isResizable
+  );
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
@@ -347,7 +367,9 @@ const Card = (props) => {
                         width: 'calc(100% - 50px)',
                       }
                 }
-                className={classnames(`${iotPrefix}--card`, className)}>
+                className={classnames(`${iotPrefix}--card`, className, {
+                  [`${iotPrefix}--card--resizing`]: isResizing,
+                })}>
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
@@ -419,6 +441,7 @@ const Card = (props) => {
                     children
                   )}
                 </CardContent>
+                {resizeHandles}
               </CardWrapper>
             );
           }}

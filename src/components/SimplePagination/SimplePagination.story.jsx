@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { number } from '@storybook/addon-knobs';
 import styled from 'styled-components';
@@ -12,7 +11,15 @@ const StyledSimplePagination = styled.div`
   }
 `;
 
-storiesOf('Watson IoT/SimplePagination', module).add('default', () => (
+export default {
+  title: 'Watson IoT/SimplePagination',
+
+  parameters: {
+    component: SimplePagination,
+  },
+};
+
+export const Default = () => (
   <StyledSimplePagination>
     <SimplePagination
       page={number('page', 1)}
@@ -20,4 +27,8 @@ storiesOf('Watson IoT/SimplePagination', module).add('default', () => (
       onPage={action('onPage')}
     />
   </StyledSimplePagination>
-));
+);
+
+Default.story = {
+  name: 'default',
+};
