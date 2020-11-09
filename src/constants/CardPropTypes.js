@@ -38,7 +38,6 @@ export const CHART_COLORS = [
   green60,
   blue80,
   magenta50,
-  // yellow50,
   teal50,
   cyan90,
   purple50,
