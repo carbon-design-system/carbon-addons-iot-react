@@ -97,13 +97,13 @@ IconSwitch.propTypes = {
    * A handler that is invoked when a user clicks on the control.
    * Reserved for usage in ContentSwitcher
    */
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 
   /**
    * A handler that is invoked on the key down event for the control.
    * Reserved for usage in ContentSwitcher
    */
-  onKeyDown: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func,
 
   /**
    * Whether your Switch is selected. Reserved for usage in ContentSwitcher
@@ -148,6 +148,8 @@ IconSwitch.defaultProps = {
   name: '',
   size: 'default',
   light: false,
+  onClick: undefined,
+  onKeyDown: undefined,
 };
 
 export default IconSwitch;

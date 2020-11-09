@@ -12,8 +12,6 @@ import {
   teal70,
   cyan90,
   purple50,
-  // orange70,
-  // yellow50,
 } from '@carbon/colors';
 
 import deprecate from '../internal/deprecate';
@@ -40,10 +38,8 @@ export const CHART_COLORS = [
   green60,
   blue80,
   magenta50,
-  // yellow50,
   teal50,
   cyan90,
-  // orange70,
   purple50,
 ];
 
