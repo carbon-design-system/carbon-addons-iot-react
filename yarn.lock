@@ -2545,10 +2545,10 @@
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
 
-"@carbon/charts@^0.40.8":
-  version "0.40.8"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.40.8.tgz#e0d216e5c8d095360f73f7adf2a2d9636be1c1c2"
-  integrity sha512-/UQZKLf0+PqTA0gS0w2hOG7vL7+grWvV6ZKIbqlzLFKleHkZw6xZygrACpcpYgKFIl2Q6hZN1+HK98tlsuY4UA==
+"@carbon/charts@^0.40.12":
+  version "0.40.12"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.40.12.tgz#d7bdc802ef9a36c80c6e1614aa66e888c734663d"
+  integrity sha512-e/8Z9jJi+hf/FFokFM3trrvkA38fZZOzhEaywhnMoILQHuyJw6MYS7PTFLPeMaiIZsbDGLLBZPtYEPROczM4gg==
   dependencies:
     "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
