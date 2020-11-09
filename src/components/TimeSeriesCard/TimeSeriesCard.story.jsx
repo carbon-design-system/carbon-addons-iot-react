@@ -1019,6 +1019,11 @@ export const LotsOfDots = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          zoomBar: {
+            enabled: true,
+            axes: 'top',
+            view: 'graph_view',
+          },
         })}
         values={getIntervalChartData(
           'day',
@@ -1074,6 +1079,7 @@ export const IsEditable = () => {
             },
           ],
           xLabel: 'Time',
+
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',

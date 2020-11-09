@@ -2527,17 +2527,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.36.2":
-  version "0.36.4"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.36.4.tgz#acc93d1743937154681c380cfbb781af8d662695"
-  integrity sha512-ECsqhYPgkizjMTEYzgRkxkL+AUcF34TcQ33Jvm8HUCHqgoWUF4fEisUzb3+eZvn3gSBD190EFrIsYWEPwjGRvw==
+"@carbon/charts-react@^0.40.13":
+  version "0.40.13"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.40.13.tgz#05c65264b071bb266f9ad26cfd6067b6bf88327c"
+  integrity sha512-N8ffq5OWZxNs4DL2wV9CAR0Tvvqs18uvdSKBLBUrnXB8plPHq4FEcHvuGt2fdTBuOJizn1HQVLgisxCR1XHaJg==
   dependencies:
-    "@carbon/charts" "^0.36.4"
+    "@carbon/charts" "^0.40.13"
 
-"@carbon/charts@^0.36.4":
-  version "0.36.4"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.36.4.tgz#939c255d0a6f6c0fbd34face53f7a335bc378b9c"
-  integrity sha512-wuloEMmblf+5mVeaAfMBaEMlUztJl430AAhaANlUJRqvMYuuH3SrSv6exWYL62/3tPx7+bd8/qt5NpJtnYBcuA==
+"@carbon/charts@^0.40.13":
+  version "0.40.13"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.40.13.tgz#c54af1dd613dc063782a9780df779d450a582844"
+  integrity sha512-aE56iKjjVeSFs9+DBF48fPIuBSfxDMSMquSPLPRDJp5rWjkdOeqgVtG7TEqSTOB8cvpvUt+LdPSKE9ufUrGceQ==
   dependencies:
     "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
@@ -2545,16 +2545,10 @@
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
 
-"@carbon/charts@^0.40.12":
-  version "0.40.12"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.40.12.tgz#d7bdc802ef9a36c80c6e1614aa66e888c734663d"
-  integrity sha512-e/8Z9jJi+hf/FFokFM3trrvkA38fZZOzhEaywhnMoILQHuyJw6MYS7PTFLPeMaiIZsbDGLLBZPtYEPROczM4gg==
-  dependencies:
-    "@carbon/colors" "10.4.0"
-    "@carbon/utils-position" "1.1.1"
-    date-fns "2.8.1"
-    lodash-es "4.17.15"
-    resize-observer-polyfill "1.5.0"
+"@carbon/colors@10.15.0":
+  version "10.15.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.15.0.tgz#1a7f211a9e92b51c838995f5f3ffae002a3fed8b"
+  integrity sha512-z6Ur7unTO6XoVVujXnGcvxxDaX1g5ccCqImlb/HtJHtF7WFCQVjpxKKn76XcmI3PRZ2tbc9q+ENpfbS5Ry/NBQ==
 
 "@carbon/colors@10.4.0":
   version "10.4.0"
@@ -2565,11 +2559,6 @@
   version "10.11.0"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.11.0.tgz#060dce87ddfaabe313ad85d677962e92cf6184a1"
   integrity sha512-x9kT5sN3f8sz/gELpVmDbTeNJ20LP70MI+kLsd19RQICrZipoLJG0Ajn1J9t5NCdz3XGBYb3oiUoAtMiwt/4jA==
-
-"@carbon/colors@^10.15.0":
-  version "10.15.0"
-  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.15.0.tgz#1a7f211a9e92b51c838995f5f3ffae002a3fed8b"
-  integrity sha512-z6Ur7unTO6XoVVujXnGcvxxDaX1g5ccCqImlb/HtJHtF7WFCQVjpxKKn76XcmI3PRZ2tbc9q+ENpfbS5Ry/NBQ==
 
 "@carbon/icon-helpers@^10.9.0":
   version "10.9.0"
