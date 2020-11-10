@@ -41,6 +41,7 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       submitDisabled={boolean('submitDisabled', false)}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
@@ -150,6 +151,7 @@ export const WithInitialValue = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -216,9 +218,10 @@ export const WithCustomOnCardChange = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onCardChange={(card) => {
-        console.log('onCardChange');
+        action('onCardChange');
         return card;
       }}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -308,6 +311,7 @@ export const WithBreakpointSwitcher = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -372,6 +376,7 @@ export const CustomCardPreviewRenderer = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
