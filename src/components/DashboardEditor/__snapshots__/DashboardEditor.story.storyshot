@@ -3057,7 +3057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         className="bx--skeleton__text"
         style={
           Object {
-            "width": "100%",
+            "width": "30%",
           }
         }
       />

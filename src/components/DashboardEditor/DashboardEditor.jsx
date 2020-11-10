@@ -318,7 +318,7 @@ const DashboardEditor = ({
   });
 
   return isLoading ? (
-    <SkeletonText />
+    <SkeletonText width="30%" />
   ) : (
     <div className={baseClassName}>
       <div
