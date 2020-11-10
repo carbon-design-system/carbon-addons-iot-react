@@ -38,6 +38,7 @@ export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
+export IconDropdown from './components/IconDropdown/IconDropdown';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
