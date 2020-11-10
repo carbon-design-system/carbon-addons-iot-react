@@ -143,7 +143,62 @@ export const WithInitialValue = () => (
             interval: 'day',
           },
         ],
-        layouts: {},
+        layouts: {
+          lg: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          md: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          xl: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+        },
       }}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
