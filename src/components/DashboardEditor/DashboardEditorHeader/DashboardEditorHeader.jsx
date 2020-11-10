@@ -72,8 +72,6 @@ const propTypes = {
     enabled: PropTypes.bool,
     allowedBreakpoints: PropTypes.arrayOf(PropTypes.string),
   }),
-  /** optional loading prop to render the PageTitleBar loading state */
-  isLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -119,7 +117,6 @@ const DashboardEditorHeader = ({
   selectedBreakpointIndex,
   setSelectedBreakpointIndex,
   breakpointSwitcher,
-  isLoading,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
@@ -227,7 +224,6 @@ const DashboardEditorHeader = ({
       title={title}
       editable={!!onEditTitle}
       onEdit={onEditTitle}
-      isLoading={isLoading}
       i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
     />
   );
