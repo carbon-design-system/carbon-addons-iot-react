@@ -5462,7 +5462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     onDrop={[Function]}
                     style={
                       Object {
-                        "height": "624px",
+                        "height": "944px",
                       }
                     }
                   >
@@ -6819,9 +6819,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Object {
                           "--card-default-height": "304px",
                           "height": "304px",
-                          "left": "50.625%",
+                          "left": "6.328125%",
                           "position": "absolute",
-                          "top": "320px",
+                          "top": "640px",
                           "width": "49.375%",
                         }
                       }

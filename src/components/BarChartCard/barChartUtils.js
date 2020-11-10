@@ -104,8 +104,9 @@ export const formatChartData = (
   timeDataSourceId,
   type
 ) => {
-  const data = [];
-  if (!isNil(values) || !isEmpty(series)) {
+  let data = values;
+  if (!isNil(values) && !isEmpty(series)) {
+    data = [];
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
       let uniqueDatasetNames;

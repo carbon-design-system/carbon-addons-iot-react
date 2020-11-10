@@ -8146,6 +8146,7 @@ Map {
       "onEditTitle": null,
       "onExport": null,
       "onImport": null,
+      "onLayoutChange": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
@@ -8307,6 +8308,9 @@ Map {
         "type": "func",
       },
       "onImport": Object {
+        "type": "func",
+      },
+      "onLayoutChange": Object {
         "type": "func",
       },
       "onSubmit": Object {
