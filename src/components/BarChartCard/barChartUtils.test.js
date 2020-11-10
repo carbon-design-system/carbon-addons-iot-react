@@ -4,6 +4,7 @@ import {
   BAR_CHART_LAYOUTS,
   BAR_CHART_TYPES,
 } from '../../constants/LayoutConstants';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 import {
   mapValuesToAxes,
@@ -409,7 +410,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'yellow' },
     });
   });
@@ -426,7 +426,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature', 'Emissions'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'red', Emissions: 'green' },
     });
   });
@@ -447,7 +446,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'red' },
     });
   });
@@ -467,8 +465,7 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
-      scale: { Particles: '#4589ff', Temperature: '#0072c3' },
+      scale: { Particles: CHART_COLORS[0], Temperature: CHART_COLORS[1] },
     });
   });
 
