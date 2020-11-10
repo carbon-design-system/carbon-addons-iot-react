@@ -8,7 +8,12 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
   CARD_ACTIONS,
 } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
+import {
+  DashboardGrid,
+  CardEditor,
+  ErrorBoundary,
+  SkeletonText,
+} from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -108,6 +113,8 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /** optional loading prop to render the PageTitleBar loading state */
+  isLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -158,6 +165,7 @@ const defaultProps = {
   onSubmit: null,
   submitDisabled: false,
   onValidateCardJson: null,
+  isLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -212,6 +220,7 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  isLoading,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -308,7 +317,9 @@ const DashboardEditor = ({
     isSelected,
   });
 
-  return (
+  return isLoading ? (
+    <SkeletonText />
+  ) : (
     <div className={baseClassName}>
       <div
         className={classnames(`${baseClassName}--content`, {
@@ -334,6 +345,7 @@ const DashboardEditor = ({
             selectedBreakpointIndex={selectedBreakpointIndex}
             setSelectedBreakpointIndex={setSelectedBreakpointIndex}
             breakpointSwitcher={breakpointSwitcher}
+            isLoading={isLoading}
           />
         )}
         {notification}

@@ -57,6 +57,7 @@ export const Default = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -223,6 +224,7 @@ export const WithInitialValue = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -293,6 +295,7 @@ export const WithCustomOnCardChange = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -347,6 +350,7 @@ export const WithNotifications = () => (
           />
         </>
       }
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -381,6 +385,7 @@ export const WithBreakpointSwitcher = () => (
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
       breakpointSwitcher={{ enabled: true }}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -474,6 +479,7 @@ export const CustomCardPreviewRenderer = () => (
           </Card>
         ) : undefined;
       }}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -484,10 +490,23 @@ CustomCardPreviewRenderer.story = {
 
 export const CustomHeaderRenderer = () => (
   <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
-    <DashboardEditor renderHeader={() => <h1>Custom Header</h1>} />
+    <DashboardEditor
+      renderHeader={() => <h1>Custom Header</h1>}
+      isLoading={boolean('isLoading', false)}
+    />
   </div>
 );
 
 CustomHeaderRenderer.story = {
   name: 'custom header renderer',
+};
+
+export const isLoading = () => (
+  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
+    <DashboardEditor isLoading={boolean('isLoading', true)} />
+  </div>
+);
+
+isLoading.story = {
+  name: 'isLoading',
 };
