@@ -41,6 +41,7 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       submitDisabled={boolean('submitDisabled', false)}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
@@ -142,7 +143,62 @@ export const WithInitialValue = () => (
             interval: 'day',
           },
         ],
-        layouts: {},
+        layouts: {
+          lg: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          md: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          xl: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+        },
       }}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -150,6 +206,7 @@ export const WithInitialValue = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -216,9 +273,10 @@ export const WithCustomOnCardChange = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onCardChange={(card) => {
-        console.log('onCardChange');
+        action('onCardChange');
         return card;
       }}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -308,6 +366,7 @@ export const WithBreakpointSwitcher = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -372,6 +431,7 @@ export const CustomCardPreviewRenderer = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',

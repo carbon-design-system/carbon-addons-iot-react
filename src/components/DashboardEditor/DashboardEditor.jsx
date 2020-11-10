@@ -77,8 +77,14 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
-  /** if provided, will update the dashboard json according to its own logic */
+  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+   * onCardChange(updatedCard, template): Card
+   */
   onCardChange: PropTypes.func,
+  /** if provided, will return the updated layout and layouts
+   * onLayoutChange(newLayout, newLayouts)
+   */
+  onLayoutChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -144,6 +150,7 @@ const defaultProps = {
   getValidTimeRanges: null,
   dataItems: [],
   onCardChange: null,
+  onLayoutChange: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -196,6 +203,7 @@ const DashboardEditor = ({
   headerBreadcrumbs,
   notification,
   onCardChange,
+  onLayoutChange,
   onEditTitle,
   onImport,
   onExport,
@@ -369,12 +377,16 @@ const DashboardEditor = ({
                   onBreakpointChange={(newBreakpoint) => {
                     setCurrentBreakpoint(newBreakpoint);
                   }}
-                  onLayoutChange={(newLayout, newLayouts) =>
+                  layouts={dashboardJson.layouts}
+                  onLayoutChange={(newLayout, newLayouts) => {
+                    if (onLayoutChange) {
+                      onLayoutChange(newLayout, newLayouts);
+                    }
                     setDashboardJson({
                       ...dashboardJson,
                       layouts: newLayouts,
-                    })
-                  }
+                    });
+                  }}
                   supportedLayouts={['xl', 'lg', 'md']}>
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
