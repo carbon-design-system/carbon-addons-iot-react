@@ -345,7 +345,6 @@ const DashboardEditor = ({
             selectedBreakpointIndex={selectedBreakpointIndex}
             setSelectedBreakpointIndex={setSelectedBreakpointIndex}
             breakpointSwitcher={breakpointSwitcher}
-            isLoading={isLoading}
           />
         )}
         {notification}
