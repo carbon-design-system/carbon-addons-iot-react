@@ -99,7 +99,6 @@ const defaultProps = {
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
   breakpointSwitcher: null,
-  isLoading: false,
 };
 
 const DashboardEditorHeader = ({
