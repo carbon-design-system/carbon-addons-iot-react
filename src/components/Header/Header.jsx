@@ -68,6 +68,10 @@ const propTypes = {
   headerPanel: PropTypes.shape(HeaderPanelPropTypes),
   /** App switcher label */
   appSwitcherLabel: PropTypes.string,
+  i18n: PropTypes.shape({
+    mainHeader: PropTypes.string,
+    openMenu: PropTypes.string,
+  }),
 };
 
 export const APP_SWITCHER = 'AppSwitcher';
@@ -82,6 +86,10 @@ const defaultProps = {
   subtitle: null,
   url: '#',
   appSwitcherLabel: APP_SWITCHER,
+  i18n: {
+    mainHeader: 'main header',
+    openMenu: 'Open menu',
+  },
 };
 
 /**
@@ -99,7 +107,10 @@ const Header = ({
   headerPanel,
   url,
   appSwitcherLabel,
+  i18n,
 }) => {
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+
   const actionItems = !headerPanel
     ? actionItemsProp
     : [
@@ -126,11 +137,11 @@ const Header = ({
       ];
 
   return (
-    <CarbonHeader className={className} aria-label="main header">
+    <CarbonHeader className={className} aria-label={mergedI18n.mainHeader}>
       <SkipToContent href={skipto} />
       {hasSideNav && (
         <HeaderMenuButton
-          aria-label="Open menu"
+          aria-label={mergedI18n.openMenu}
           onClick={onClickSideNavExpand}
         />
       )}

@@ -6434,6 +6434,10 @@ Map {
       "className": "main-header",
       "hasSideNav": true,
       "headerPanel": null,
+      "i18n": Object {
+        "mainHeader": "main header",
+        "openMenu": "Open menu",
+      },
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -6517,6 +6521,19 @@ Map {
             },
             "content": Object {
               "type": "any",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "mainHeader": Object {
+              "type": "string",
+            },
+            "openMenu": Object {
+              "type": "string",
             },
           },
         ],
