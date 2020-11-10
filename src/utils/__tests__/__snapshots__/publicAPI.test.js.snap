@@ -8139,6 +8139,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isLoading": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -8288,6 +8289,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isLoading": Object {
+        "type": "bool",
       },
       "notification": Object {
         "type": "node",
