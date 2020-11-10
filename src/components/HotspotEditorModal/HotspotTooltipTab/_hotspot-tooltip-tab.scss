@@ -1,0 +1,57 @@
+@import '../../../globals/vars';
+@import '../mixins';
+
+.#{$iot-prefix}--hotspot-tooltip-tab {
+  background-color: $ui-01;
+  padding: $spacing-03 $spacing-05;
+}
+
+.#{$iot-prefix}--hotspot-editor--tooltip-form {
+  @include vertical-form();
+}
+
+.#{$iot-prefix}--icon-color-container {
+  $dropdown-spacer: 2rem; // TODO: use spacing var
+
+  display: flex;
+  & > * {
+    flex-grow: 1;
+  }
+
+  .#{$iot-prefix}--dropdown__label > svg {
+    min-width: 24px;
+    width: 24px;
+    fill: var(--icon-fill-color);
+  }
+
+  .#{$prefix}--dropdown__wrapper:nth-of-type(1) {
+    margin-right: $dropdown-spacer;
+  }
+
+  .#{$prefix}--dropdown__wrapper {
+    width: calc(50% - 1rem);
+  }
+}
+
+.#{$iot-prefix}--hotspot-tooltip-tab__delete-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.#{$iot-prefix}--hotspot-editor--tooltip-info-message {
+  display: flex;
+  align-items: flex-start;
+  color: $text-02;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $icon-02;
+    margin-right: $spacing-05;
+  }
+
+  p {
+    max-width: 22rem;
+    @include type-style('body-short-01');
+  }
+}
