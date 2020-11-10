@@ -4,6 +4,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from 'styled-components';
 import some from 'lodash/some';
 import find from 'lodash/find';
+import pick from 'lodash/pick';
 
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
@@ -57,6 +58,10 @@ export const DashboardGridPropTypes = {
     sm: PropTypes.arrayOf(DashboardLayoutPropTypes),
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
+  /** Array of layouts that are supported by this component. Defaults to all layouts */
+  supportedLayouts: PropTypes.arrayOf(
+    PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])
+  ),
   /**
    * Optionally listen to layout changes to update a dashboard template
    * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
@@ -74,6 +79,7 @@ const defaultProps = {
   breakpoint: 'lg',
   isEditable: false,
   layouts: {},
+  supportedLayouts: Object.keys(DASHBOARD_BREAKPOINTS),
   onLayoutChange: null,
   onBreakpointChange: null,
   onResizeStop: null,
@@ -141,12 +147,13 @@ export const getBreakPointSizes = (breakpoint, cardDimensions, cardSizes) => {
 
 /**
  * This function finds an existing layout for each dashboard breakpoint, validates it, and or generates a new one to return
- * @param {*} layouts an keyed object of each layout for each breakpoint
- * @param {*} cards an array of the card props for each card
+ * @param {Object} layouts an keyed object of each layout for each breakpoint
+ * @param {Array<Object>} cards an array of the card props for each card
+ * @param {Array<string>} supportedLayouts
  */
-export const findLayoutOrGenerate = (layouts, cards) => {
+export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
   // iterate through each breakpoint
-  return Object.keys(DASHBOARD_BREAKPOINTS).reduce((acc, layoutName) => {
+  return supportedLayouts.reduce((acc, layoutName) => {
     let layout = layouts && layouts[layoutName];
     // If layout exists for this breakpoint, make sure it contains all the cards
     if (layout) {
@@ -211,14 +218,13 @@ const formatResizeResponse = (params) => ({
  *
  * You can also pass any of the additional properties documented here:
  * https://github.com/STRML/react-grid-layout#grid-layout-props
- *
- *
  */
 const DashboardGrid = ({
   children,
   breakpoint,
   isEditable,
   layouts,
+  supportedLayouts,
   onLayoutChange,
   onBreakpointChange,
   onCardSizeChange,
@@ -234,9 +240,10 @@ const DashboardGrid = ({
     () =>
       findLayoutOrGenerate(
         layouts,
-        childrenArray.map((card) => card.props)
+        childrenArray.map((card) => card.props),
+        supportedLayouts
       ),
-    [childrenArray, layouts]
+    [childrenArray, layouts, supportedLayouts]
   );
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
@@ -332,7 +339,7 @@ const DashboardGrid = ({
         layouts={generatedLayouts}
         compactType="vertical"
         cols={DASHBOARD_COLUMNS}
-        breakpoints={DASHBOARD_BREAKPOINTS}
+        breakpoints={pick(DASHBOARD_BREAKPOINTS, supportedLayouts)}
         margin={cachedMargin}
         containerPadding={DASHBOARD_CONTAINER_PADDING}
         rowHeight={ROW_HEIGHT[breakpoint]}

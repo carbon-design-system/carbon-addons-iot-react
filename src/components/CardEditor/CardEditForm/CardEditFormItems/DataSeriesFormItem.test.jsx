@@ -2,7 +2,10 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DataSeriesFormItem, { formatSeries } from './DataSeriesFormItem';
+import DataSeriesFormItem, {
+  formatSeries,
+  formatDataItemsForDropdown,
+} from './DataSeriesFormItem';
 
 const cardConfig = {
   id: 'Timeseries',
@@ -19,7 +22,6 @@ const cardConfig = {
       {
         label: 'Pressure',
         dataSourceId: 'pressure',
-        color: 'blue',
       },
     ],
     xLabel: 'Time',
@@ -32,7 +34,10 @@ const cardConfig = {
   interval: 'day',
 };
 
-const dataItems = ['Temperature', 'Pressure'];
+const dataItems = [
+  { dataSourceId: 'temperature', label: 'Temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure' },
+];
 
 const mockOnChange = jest.fn();
 const mockGetValidDataItems = jest.fn();
@@ -57,11 +62,14 @@ describe('DataSeriesFormItem', () => {
         ],
       },
     };
-    const selectedItems = [{ id: 'Temperature' }, { id: 'Pressure' }];
+    const selectedItems = [
+      { id: 'temperature', text: 'Temperature' },
+      { id: 'pressure', text: 'Pressure' },
+    ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: 'blue' },
+        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
@@ -73,8 +81,16 @@ describe('DataSeriesFormItem', () => {
       ]);
     });
   });
+  describe('formatDataItemsForDropdown', () => {
+    it('should correctly format the items for the dropdown', () => {
+      expect(formatDataItemsForDropdown(dataItems)).toEqual([
+        { id: 'temperature', text: 'Temperature' },
+        { id: 'pressure', text: 'Pressure' },
+      ]);
+    });
+  });
   describe('dataItems', () => {
-    it('should prioritize getValidDataItems', async () => {
+    it('should prioritize getValidDataItems', () => {
       render(
         <DataSeriesFormItem
           cardConfig={cardConfig}
@@ -85,6 +101,18 @@ describe('DataSeriesFormItem', () => {
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
+    });
+    it('handles initial dataItems', () => {
+      render(
+        <DataSeriesFormItem
+          cardJson={{ ...cardConfig, content: {} }}
+          onChange={mockOnChange}
+          getValidDataItems={mockGetValidDataItems}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      expect(screen.getByText('Data series')).toBeInTheDocument();
     });
   });
   describe('dataItem editor', () => {
@@ -101,7 +129,7 @@ describe('DataSeriesFormItem', () => {
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
-      const pressureDataItem = await screen.findAllByText('Pressure');
+      const pressureDataItem = await screen.findAllByText('pressure');
       expect(pressureDataItem[0]).toBeInTheDocument();
       fireEvent.click(pressureDataItem[0]);
       // assert that onChange was called

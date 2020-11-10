@@ -10,6 +10,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
+import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
 import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
 
@@ -76,10 +77,10 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: DataItemsPropTypes,
 };
 
 const defaultProps = {
