@@ -6008,6 +6008,179 @@ Map {
       },
     },
   },
+  "IconDropdown" => Object {
+    "defaultProps": Object {
+      "ariaLabel": "",
+      "columnCount": 4,
+      "direction": "bottom",
+      "disabled": false,
+      "helperText": "",
+      "invalid": false,
+      "invalidText": "",
+      "light": false,
+      "onChange": [Function],
+      "selectedItem": null,
+      "titleText": "",
+      "type": "default",
+      "warn": false,
+      "warnText": "",
+    },
+    "propTypes": Object {
+      "ariaLabel": Object {
+        "type": "string",
+      },
+      "columnCount": Object {
+        "type": "number",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "dropdownId": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "helperText": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "invalidText": Object {
+        "type": "string",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "footer": Object {
+                  "type": "node",
+                },
+                "icon": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "func",
+                      },
+                      Object {
+                        "type": "object",
+                      },
+                    ],
+                  ],
+                  "isRequired": true,
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "text": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "label": Object {
+        "isRequired": true,
+        "type": "node",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "selectedItem": Object {
+        "args": Array [
+          Object {
+            "footer": Object {
+              "type": "node",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "isRequired": true,
+              "type": "oneOfType",
+            },
+            "id": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "text": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "titleText": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "default",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "warn": Object {
+        "type": "bool",
+      },
+      "warnText": Object {
+        "type": "string",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
@@ -6261,6 +6434,10 @@ Map {
       "className": "main-header",
       "hasSideNav": true,
       "headerPanel": null,
+      "i18n": Object {
+        "mainHeader": "main header",
+        "openMenu": "Open menu",
+      },
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -6344,6 +6521,19 @@ Map {
             },
             "content": Object {
               "type": "any",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "mainHeader": Object {
+              "type": "string",
+            },
+            "openMenu": Object {
+              "type": "string",
             },
           },
         ],
@@ -7949,6 +8139,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isLoading": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -7956,6 +8147,7 @@ Map {
       "onEditTitle": null,
       "onExport": null,
       "onImport": null,
+      "onLayoutChange": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
@@ -8098,6 +8290,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isLoading": Object {
+        "type": "bool",
+      },
       "notification": Object {
         "type": "node",
       },
@@ -8117,6 +8312,9 @@ Map {
         "type": "func",
       },
       "onImport": Object {
+        "type": "func",
+      },
+      "onLayoutChange": Object {
         "type": "func",
       },
       "onSubmit": Object {

@@ -114,10 +114,7 @@ const StyledStatefulTable = styled(
         }
       }
       th div.bx--list-box {
-        height: auto;
-        .bx--list-box__selection {
-          height: inherit;
-        }
+        height: 2rem;
       }
     }
   }
@@ -495,18 +492,19 @@ const TableCard = ({
       renderDataFunction: renderThresholdIcon,
       priority: 1,
       filter: {
+        isMultiselect: true,
         placeholderText: mergedI18n.selectSeverityPlaceholder,
         options: [
           {
-            id: 1,
+            id: mergedI18n.criticalLabel,
             text: mergedI18n.criticalLabel,
           },
           {
-            id: 2,
+            id: mergedI18n.moderateLabel,
             text: mergedI18n.moderateLabel,
           },
           {
-            id: 3,
+            id: mergedI18n.lowLabel,
             text: mergedI18n.lowLabel,
           },
         ],
@@ -616,6 +614,13 @@ const TableCard = ({
     [columns]
   );
 
+  // Map from threshold severity number to label
+  const thresholdSeverityLabelsMap = {
+    1: mergedI18n.criticalLabel,
+    2: mergedI18n.moderateLabel,
+    3: mergedI18n.lowLabel,
+  };
+
   // if we're in editable mode, generate fake data
   const tableDataWithTimestamp = useMemo(
     () =>
@@ -650,7 +655,7 @@ const TableCard = ({
             const iconColumns = matchingThresholds
               ? matchingThresholds.reduce((thresholdData, threshold) => {
                   thresholdData[`iconColumn-${threshold.dataSourceId}`] = // eslint-disable-line no-param-reassign
-                    threshold.severity;
+                    thresholdSeverityLabelsMap[threshold.severity];
                   return thresholdData;
                 }, {})
               : null;
@@ -698,6 +703,7 @@ const TableCard = ({
       filteredPrecisionColumns,
       thresholds,
       tableData,
+      thresholdSeverityLabelsMap,
       locale,
     ]
   );

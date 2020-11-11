@@ -38,10 +38,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-labelledby="downshift-27-label downshift-27-toggle-button"
+              aria-labelledby="downshift-29-label downshift-29-toggle-button"
               className="bx--list-box__field"
               disabled={false}
-              id="downshift-27-toggle-button"
+              id="downshift-29-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
@@ -108,9 +108,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </div>
             </button>
             <div
-              aria-labelledby="downshift-27-label"
+              aria-labelledby="downshift-29-label"
               className="bx--list-box__menu"
-              id="downshift-27-menu"
+              id="downshift-29-menu"
               onBlur={[Function]}
               onKeyDown={[Function]}
               onMouseLeave={[Function]}
