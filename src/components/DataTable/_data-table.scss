@@ -73,6 +73,11 @@ html[dir='rtl'] {
   .#{$prefix}--table-sort {
     padding-left: $spacing-04;
     padding-right: $spacing-04;
+
+    .#{$prefix}--table-header-label {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
