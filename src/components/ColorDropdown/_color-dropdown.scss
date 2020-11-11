@@ -8,6 +8,7 @@
   .#{$prefix}--list-box__menu-item__option {
     margin: 0;
     padding: 0;
+    border-top: none;
   }
 
   .#{$iot-prefix}--color-dropdown__item {
@@ -19,9 +20,6 @@
 
   // We need to recreate the border so that it doesn't stretch all the way
   // to the end of the container
-  .#{$prefix}--list-box__menu-item__option {
-    border-top: none;
-  }
   .#{$iot-prefix}--color-dropdown__item-border {
     display: flex;
     align-items: center;
