@@ -147,6 +147,10 @@ const IconDropdown = ({
     `${prefix}--list-box__menu-item`
   )[0];
 
+  const dropdownLabel = dropdown?.getElementsByClassName(
+    `${prefix}--list-box__field`
+  )[0];
+
   const helperTextHeight =
     helperText !== undefined
       ? helperText.clientHeight + defaultHelperPadding
@@ -155,6 +159,9 @@ const IconDropdown = ({
     validationText !== undefined
       ? validationText.clientHeight + defaultHelperPadding
       : 0;
+
+  const labelHeight =
+    dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
 
   const widthStyle = `${
     columnCount * (menuOption?.clientWidth ?? defaultItemSize)
@@ -175,11 +182,12 @@ const IconDropdown = ({
     const bottomTranslate = `translateY(-${
       helperTextHeight + validationTextHeight
     }px)`;
+
     const topTranslate = `translateY(-${
-      heightStyle + defaultHelperPadding * 2
+      helperTextHeight + validationTextHeight + labelHeight + 1 // Add one for the border width
     }px)`;
 
-    return selectedFooter !== undefined && selectedFooter !== null ? (
+    return (
       <div
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
@@ -187,12 +195,15 @@ const IconDropdown = ({
           transform: direction === 'top' ? topTranslate : bottomTranslate,
           paddingTop: direction === 'bottom' ? `${heightStyle}px` : 0,
           paddingBottom: direction === 'top' ? `${heightStyle}px` : 0,
+          bottom: direction === 'top' ? 0 : 'initial',
         }}>
-        <div className={`${iotPrefix}--icon-dropdown__footer-content`}>
-          {selectedFooter.footer}
-        </div>
+        {selectedFooter && (
+          <div className={`${iotPrefix}--icon-dropdown__footer-content`}>
+            {selectedFooter.footer}
+          </div>
+        )}
       </div>
-    ) : null;
+    );
   };
 
   const itemToString = (item) => {
@@ -213,7 +224,13 @@ const IconDropdown = ({
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
-                index + columnCount >= items.length && !hasFooter,
+                index + columnCount >= items.length &&
+                !hasFooter &&
+                direction === 'bottom',
+            },
+            {
+              [`${iotPrefix}--icon-dropdown__image-button--top`]:
+                index < columnCount && hasFooter && direction === 'top',
             }
           )}
           renderIcon={item?.icon}
