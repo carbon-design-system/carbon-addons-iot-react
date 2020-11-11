@@ -8139,6 +8139,7 @@ Map {
         "cards": Array [],
         "layouts": Object {},
       },
+      "isLoading": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -8146,6 +8147,7 @@ Map {
       "onEditTitle": null,
       "onExport": null,
       "onImport": null,
+      "onLayoutChange": null,
       "onSubmit": null,
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
@@ -8288,6 +8290,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isLoading": Object {
+        "type": "bool",
+      },
       "notification": Object {
         "type": "node",
       },
@@ -8307,6 +8312,9 @@ Map {
         "type": "func",
       },
       "onImport": Object {
+        "type": "func",
+      },
+      "onLayoutChange": Object {
         "type": "func",
       },
       "onSubmit": Object {
