@@ -117,15 +117,15 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
-    last24HoursLabel: 'Last 24 hours',
-    last7DaysLabel: 'Last 7 days',
-    lastMonthLabel: 'Last month',
-    lastQuarterLabel: 'Last quarter',
-    lastYearLabel: 'Last year',
-    thisWeekLabel: 'This week',
-    thisMonthLabel: 'This month',
-    thisQuarterLabel: 'This quarter',
-    thisYearLabel: 'This year',
+    last24Hours: 'Last 24 hours',
+    last7Days: 'Last 7 days',
+    lastMonth: 'Last month',
+    lastQuarter: 'Last quarter',
+    lastYear: 'Last year',
+    thisWeek: 'This week',
+    thisMonth: 'This month',
+    thisQuarter: 'This quarter',
+    thisYear: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
@@ -174,7 +174,7 @@ const CardEditFormContent = ({
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
-
+  console.log('i18n', mergedI18n);
   return (
     <>
       <div className={`${baseClassName}--input`}>
