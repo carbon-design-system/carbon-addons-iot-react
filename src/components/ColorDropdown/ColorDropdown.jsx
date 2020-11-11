@@ -26,15 +26,21 @@ const colorPropType = PropTypes.shape({
 });
 
 const propTypes = {
+  /** Array of colors to be shown */
   colors: PropTypes.arrayOf(colorPropType),
-  /** Internationalisation strings */
+  /** The label of the Dropdown, defaults to 'Select a color' */
   label: PropTypes.string,
+  /** The title of the Dropdown, defaults to 'Color' */
   titleText: PropTypes.string,
+  /** Required Id string */
   id: PropTypes.string.isRequired,
+  /** True if the light theme is to be used, defaults to false */
   light: PropTypes.bool,
   /** Callback for when any of the Dropdown color value changes */
   onChange: PropTypes.func.isRequired,
+  /** The selected color, use to set initial color */
   selectedColor: colorPropType,
+  /** Id used if needed for testing */
   testID: PropTypes.string,
 };
 
@@ -75,13 +81,15 @@ const ColorDropdown = ({
       <div
         title={`${item.name}`}
         className={`${iotPrefix}--color-dropdown__item`}>
-        <div
-          title={`${item.carbonColor}`}
-          className={`${iotPrefix}--color-dropdown__color-sample`}
-          style={{ backgroundColor: item.carbonColor }}
-        />
-        <div className={`${iotPrefix}--color-dropdown__color-name`}>
-          {item.name}
+        <div className={`${iotPrefix}--color-dropdown__item-border`}>
+          <div
+            title={`${item.carbonColor}`}
+            className={`${iotPrefix}--color-dropdown__color-sample`}
+            style={{ backgroundColor: item.carbonColor }}
+          />
+          <div className={`${iotPrefix}--color-dropdown__color-name`}>
+            {item.name}
+          </div>
         </div>
       </div>
     );

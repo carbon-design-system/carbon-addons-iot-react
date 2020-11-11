@@ -1,3 +1,5 @@
+@import '../../globals/vars';
+
 // We want to make sure the title attribute of the carbon option element
 // is not shown on hover, since that will be "[obj obj]" when we are
 // using itemToString. Hence, we remove margins and padding here and add them
@@ -10,15 +12,47 @@
 
   .#{$iot-prefix}--color-dropdown__item {
     display: flex;
-    align-items: center;
     height: 100%;
     padding-left: 1rem;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
   }
 
-  // When showing selected item we must remove the padding.
+  // We need to recreate the border so that it doesn't stretch all the way
+  // to the end of the container
+  .#{$prefix}--list-box__menu-item__option {
+    border-top: none;
+  }
+  .#{$iot-prefix}--color-dropdown__item-border {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid $decorative-01;
+  }
+  // The new borders must be hidded on :hover, :active & .highlighted
+  .#{$prefix}--list-box__menu-item:hover,
+  .#{$prefix}--list-box__menu-item:active,
+  .#{$prefix}--list-box__menu-item--highlighted {
+    .#{$iot-prefix}--color-dropdown__item-border {
+      border-color: transparent;
+    }
+    & + .bx--list-box__menu-item .#{$iot-prefix}--color-dropdown__item-border {
+      border-color: transparent;
+    }
+  }
+
+  // The new borders must be hidded for the topmost item
+  .#{$prefix}--list-box__menu-item:first-of-type
+    .#{$iot-prefix}--color-dropdown__item-border {
+    border-color: transparent;
+  }
+
+  // When showing selected item we must remove the padding and border.
   .#{$prefix}--list-box__label .#{$iot-prefix}--color-dropdown__item {
     padding-left: 0;
+    .#{$iot-prefix}--color-dropdown__item-border {
+      border-color: transparent;
+    }
   }
 }
 

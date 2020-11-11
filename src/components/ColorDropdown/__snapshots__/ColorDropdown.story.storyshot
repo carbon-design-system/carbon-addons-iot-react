@@ -287,18 +287,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 title="teal70"
               >
                 <div
-                  className="iot--color-dropdown__color-sample"
-                  style={
-                    Object {
-                      "backgroundColor": "#005d5d",
-                    }
-                  }
-                  title="#005d5d"
-                />
-                <div
-                  className="iot--color-dropdown__color-name"
+                  className="iot--color-dropdown__item-border"
                 >
-                  teal70
+                  <div
+                    className="iot--color-dropdown__color-sample"
+                    style={
+                      Object {
+                        "backgroundColor": "#005d5d",
+                      }
+                    }
+                    title="#005d5d"
+                  />
+                  <div
+                    className="iot--color-dropdown__color-name"
+                  >
+                    teal70
+                  </div>
                 </div>
               </div>
             </span>
