@@ -378,3 +378,22 @@ export const getCardPreview = (cardConfig, commonProps) => {
       return renderDefaultCard(cardConfig, commonProps);
   }
 };
+
+/**
+ * Returns the correct string based off the currently selected breakpoint
+ * @param {string} breakpoint One of the breakpoints we support with DashboardGrid
+ * @param {Object<string>} i18n internationalization strings
+ * @returns {string} translated info about the selected breakpoint
+ */
+export const renderBreakpointInfo = (breakpoint, i18n) => {
+  switch (breakpoint) {
+    case 'xl':
+      return i18n.layoutInfoXl;
+    case 'lg':
+      return i18n.layoutInfoLg;
+    case 'md':
+      return i18n.layoutInfoMd;
+    default:
+      return i18n.layoutInfoXl;
+  }
+};
