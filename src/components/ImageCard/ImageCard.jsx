@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
@@ -16,6 +16,7 @@ import {
 } from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
+import ImageUploader from './ImageUploader';
 
 const ContentWrapper = styled.div`
   height: 100%;
@@ -36,8 +37,21 @@ const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
+    dropContainerLabelText: 'Drag and drop file here or click to select file',
+    dropContainerDescText:
+      'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+    uploadByURLCancel: 'Cancel',
+    uploadByURLButton: 'OK',
+    browseImages: 'Browse images',
+    insertUrl: 'Insert from URL',
+    urlInput: 'Type or insert URL',
+    errorTitle: 'Error: ',
   },
   locale: 'en',
+  content: {},
+  accept: null,
+  onUpload: null,
+  onBrowseClick: null,
 };
 
 const ImageCard = ({
@@ -56,10 +70,26 @@ const ImageCard = ({
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
   locale,
+  isNew,
+  onUpload,
+  onBrowseClick,
   ...others
 }) => {
-  const { src } = content;
+  const [newCardState, setNewCardState] = useState(isNew);
+  const [imgContent, setImgContent] = useState(content);
+  const { src } = imgContent;
   const hotspots = values ? values.hotspots || [] : [];
+
+  const handleOnURLUpload = (imageData) => {
+    onUpload(imageData.files);
+    setImgContent({
+      src: imageData.dataURL,
+      alt: imageData.files?.addedFiles[0]?.name,
+      zoomMax: 10,
+      ...imgContent,
+    });
+    setNewCardState(false);
+  };
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -74,7 +104,8 @@ const ImageCard = ({
   const supportedSize = supportedSizes.includes(newSize);
   const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
-  const isCardLoading = isNil(src) && !isEditable && !error;
+  const isCardLoading =
+    newCardState === false && isNil(src) && !isEditable && !error;
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
@@ -97,13 +128,20 @@ const ImageCard = ({
           ) => (
             <ContentWrapper>
               {supportedSize ? (
-                isEditable ? (
+                newCardState ? (
+                  <ImageUploader
+                    onBrowseClick={onBrowseClick}
+                    width={width}
+                    height={height}
+                    onUpload={handleOnURLUpload}
+                  />
+                ) : isEditable ? (
                   <EmptyDiv>
                     <Image32 width={250} height={250} fill="gray" />
                   </EmptyDiv>
-                ) : content && src ? (
+                ) : imgContent && src ? (
                   <ImageHotspots
-                    {...content}
+                    {...imgContent}
                     width={width - 16 * 2} // Need to adjust for card chrome
                     height={height - (48 + 16)} // Need to adjust for card chrome
                     isExpanded={isExpanded}

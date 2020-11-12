@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
+import { settings } from '../../constants/Settings';
+
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 import ImageControls from './ImageControls';
 import HotspotContent from './HotspotContent';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** source of the local image file to display */
@@ -464,6 +468,7 @@ const ImageHotspots = ({
       }}>
       {src && (
         <img
+          className={`${iotPrefix}--image-card-img`}
           src={src}
           alt={alt}
           onLoad={(event) =>

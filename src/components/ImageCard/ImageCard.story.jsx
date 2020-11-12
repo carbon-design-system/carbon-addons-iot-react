@@ -67,7 +67,7 @@ export const Basic = () => {
         title={text('title', 'Image')}
         id="image-hotspots"
         content={object('content', content)}
-        values={object('values', {
+        values={{
           hotspots: [
             {
               x: 35,
@@ -88,7 +88,7 @@ export const Basic = () => {
               },
             },
           ],
-        })}
+        }}
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
@@ -99,6 +99,54 @@ export const Basic = () => {
 
 Basic.story = {
   name: 'basic',
+};
+
+export const ImageCardIsNew = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <ImageCard
+        title={text('title', 'Image')}
+        id="image-hotspots"
+        isNew
+        onUpload={action('onUpload')}
+        onBrowseClick={action('onBrowseClick')}
+        values={{
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'arrowDown',
+              color: 'purple',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                values: { deviceid: '73000', temperature: 35.05 },
+                attributes: [
+                  {
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
+              },
+            },
+          ],
+        }}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+ImageCardIsNew.story = {
+  name: 'ImageCard with image upload (experimental)',
 };
 
 export const CustomRenderIconByName = () => {
