@@ -111,7 +111,7 @@ export const WithInfoMessage = () => {
     <div>
       <HotspotTooltipTab
         infoMessage={text(
-          'inforMessage',
+          'infoMessage',
           `Select an existing hotspot on the image to edit it or insert one 
           by selecting an option from the toolbar.`
         )}
