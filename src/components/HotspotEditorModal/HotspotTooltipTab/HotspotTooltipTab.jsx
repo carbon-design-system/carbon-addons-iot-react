@@ -9,6 +9,7 @@ import { TextArea } from '../../TextArea';
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button/Button';
 import ColorDropdown from '../../ColorDropdown/ColorDropdown';
+import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -49,18 +50,24 @@ const propTypes = {
     colorDropdownLabelText: PropTypes.string,
     colorDropdownTitleText: PropTypes.string,
   }),
-  /** If present, the msg and an ifno icon will be the only thing showing  */
+  /** If present, the msg and an info icon will be the only thing showing  */
   infoMessage: PropTypes.string,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
   onDelete: PropTypes.func.isRequired,
+  /**
+   * Used to overide the internal components and props for the text based input
+   * if need should arise to manage defaultValue, length or validation etc.
+   */
+  overrides: PropTypes.shape({
+    titleTextInput: OverridePropTypes,
+    decriptionTextArea: OverridePropTypes,
+  }),
   /** The id of the form elememt that should be initially focused */
   primaryInputId: PropTypes.string,
   /** Id that can be used for testing */
   testID: PropTypes.string,
-  /** TODO: is this needed? */
-  validationErrors: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -78,9 +85,9 @@ const defaultProps = {
     iconDropdownTitleText: 'Icon',
   },
   infoMessage: undefined,
+  overrides: undefined,
   primaryInputId: undefined,
   testID: 'HotspotTooltipTab',
-  validationErrors: {},
 };
 
 const preventFormSubmission = (e) => e.preventDefault();
@@ -94,8 +101,8 @@ const HotspotTooltipTab = ({
   primaryInputId,
   onChange,
   onDelete,
+  overrides,
   testID,
-  validationErrors,
 }) => {
   const {
     deleteButtonLabelText,
@@ -150,6 +157,10 @@ const HotspotTooltipTab = ({
     </div>
   );
 
+  const MyTitleTextInput = overrides?.titleTextInput?.component || TextInput;
+  const MyDecriptionTextArea =
+    overrides?.decriptionTextArea?.component || TextArea;
+
   return (
     <div className={`${iotPrefix}--hotspot-tooltip-tab`}>
       {infoMessage ? (
@@ -160,13 +171,11 @@ const HotspotTooltipTab = ({
             className={`${iotPrefix}--hotspot-editor--tooltip-form`}
             data-testid={testID}
             onSubmit={preventFormSubmission}>
-            <TextInput
+            <MyTitleTextInput
               name="title"
               data-testid={`${testID}-title-input`}
-              defaultValue={formValues.title || ''}
+              value={formValues.title || ''}
               id={primaryInputId || 'tooltip-form-title'}
-              invalid={!!validationErrors.title}
-              invalidText={validationErrors.title}
               labelText={titleInputLabelText}
               light
               onChange={(evt) => {
@@ -174,8 +183,9 @@ const HotspotTooltipTab = ({
               }}
               placeholder={titleInputPlaceholderText}
               type="text"
+              {...overrides?.titleTextInput?.props}
             />
-            <TextArea
+            <MyDecriptionTextArea
               name="description"
               id="tooltip-form-description"
               labelText={descriptionTextareaLabelText}
@@ -185,6 +195,7 @@ const HotspotTooltipTab = ({
               }}
               placeholder={descriptionTextareaPlaceholderText}
               value={formValues.description || ''}
+              {...overrides?.decriptionTextArea?.props}
             />
             {renderColorIconContainer()}
           </form>

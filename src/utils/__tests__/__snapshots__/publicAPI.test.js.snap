@@ -17892,9 +17892,9 @@ Map {
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
       "infoMessage": undefined,
+      "overrides": undefined,
       "primaryInputId": undefined,
       "testID": "HotspotTooltipTab",
-      "validationErrors": Object {},
     },
     "propTypes": Object {
       "formValues": Object {
@@ -18015,19 +18015,64 @@ Map {
         "isRequired": true,
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "decriptionTextArea": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "titleTextInput": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "primaryInputId": Object {
         "type": "string",
       },
       "testID": Object {
         "type": "string",
-      },
-      "validationErrors": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
       },
     },
   },

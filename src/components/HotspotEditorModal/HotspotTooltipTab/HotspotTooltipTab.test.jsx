@@ -9,7 +9,7 @@ import {
 
 import HotspotTooltipTab from './HotspotTooltipTab';
 
-describe('ColorDropdown', () => {
+describe('HotspotTooltipTab', () => {
   const getColors = () => [
     { carbonColor: red50, name: 'red' },
     { carbonColor: green50, name: 'green' },

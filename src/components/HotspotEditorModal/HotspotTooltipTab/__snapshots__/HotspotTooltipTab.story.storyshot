@@ -41,7 +41,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
                   data-testid="HotspotTooltipTab-title-input"
-                  defaultValue=""
                   disabled={false}
                   id="tooltip-form-title"
                   name="title"
@@ -50,6 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   placeholder="Enter title for the tooltip"
                   title="Enter title for the tooltip"
                   type="text"
+                  value=""
                 />
               </div>
             </div>
@@ -405,7 +405,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
                   data-testid="HotspotTooltipTab-title-input"
-                  defaultValue="West building"
                   disabled={false}
                   id="tooltip-form-title"
                   name="title"
@@ -414,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   placeholder="Enter title for the tooltip"
                   title="Enter title for the tooltip"
                   type="text"
+                  value="West building"
                 />
               </div>
             </div>
