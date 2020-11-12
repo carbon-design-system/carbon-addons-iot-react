@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import Link from '../Link';
+import { Link } from '../Link';
 import { settings } from '../../constants/Settings';
 import {
-  EmptystateError as ErrorImage,
-  Emptystate404 as Error404Image,
-  EmptystateDefault as EmptyImage,
-  EmptystateSuccess as SuccessImage,
-  EmptystateNoresults as NoResultImage,
-  EmptystateNotauthorized as NotAuthImage,
+  EmptystateErrorIcon as ErrorImage,
+  Emptystate404Icon as Error404Image,
+  EmptystateDefaultIcon as EmptyImage,
+  EmptystateSuccessIcon as SuccessImage,
+  EmptystateNoresultsIcon as NoResultImage,
+  EmptystateNotauthorizedIcon as NotAuthImage,
 } from '../../icons/components';
+
+import './_emptystate.scss';
 
 const { iotPrefix } = settings;
 
 const images = {
   error: ErrorImage,
-  404: Error404Image,
+  error404: Error404Image,
   empty: EmptyImage,
   'not-authorized': NotAuthImage,
   'no-result': NoResultImage,
@@ -27,32 +29,33 @@ const images = {
 const actionProp = PropTypes.oneOfType([
   PropTypes.func,
   PropTypes.shape({
-    label: PropTypes.string,
-    onClick: PropTypes.func,
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
   }),
 ]);
 
 const props = {
   /** Title of empty state */
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   /** Description of empty state */
-  text: PropTypes.string,
-  /** Type of state */
-  type: PropTypes.oneOf(Object.keys(images)),
-  /** Specify actions for container */
-  actions: PropTypes.shape({
-    button: actionProp,
-    link: actionProp,
-  }),
+  body: PropTypes.string.isRequired,
+  /** Optional image of state */
+  image: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.oneOf([...Object.keys(images), ''])
+  ]),
+  /** Optional action for container */
+  action: actionProp,
+  /** Optional secondary action for container */
+  secondaryAction: actionProp,
   /** Specify an optional className to be applied to the container */
   className: PropTypes.string,
 };
 
 const defaultProps = {
-  title: 'Please set a state title',
-  text: 'Please set a state description',
-  actions: {},
-  type: 'empty',
+  action: {},
+  secondaryAction: {},
+  image: '',
   className: '',
 };
 
@@ -60,43 +63,41 @@ const defaultProps = {
  * Component to set empty states
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
-const EmptyState = ({ title, type, text, actions, className }) => (
+const EmptyState = ({ title, image, body, action, secondaryAction, className }) => (
   <div className={`${iotPrefix}--empty-state ${className}`}>
     <div className={`${iotPrefix}--empty-state--content`}>
-      {React.createElement(images[type], {
-        className: `${iotPrefix}--empty-state--icon`,
-        alt: '',
-      })}
+      {image && 
+        React.createElement(typeof image === 'string' ? images[image] : image, {
+          className: `${iotPrefix}--empty-state--icon`,
+          alt: '',
+        })
+      }
       <h3 className={`${iotPrefix}--empty-state--title`}>{title}</h3>
-      <p className={`${iotPrefix}--empty-state--text`}>{text}</p>
-      {actions && (
-        <>
-          {actions.button && (
+      <p className={`${iotPrefix}--empty-state--text`}>{body}</p>
+      {action && (
             <div className={`${iotPrefix}--empty-state--action`}>
-              {actions.button.label ? (
+              {action.label ? (
                 <Button
-                  onClick={actions.button.onClick && actions.button.onClick}>
-                  {actions.button.label}
+                  onClick={action.onClick && action.onClick}>
+                  {action.label}
                 </Button>
               ) : (
-                actions.button
+                action
               )}
             </div>
           )}
-          {actions.link && (
+          {secondaryAction && (
             <div className={`${iotPrefix}--empty-state--link`}>
-              {actions.link.label ? (
+              {secondaryAction.label ? (
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                <Link onClick={actions.link.onClick && actions.link.onClick}>
-                  {actions.link.label}
+                <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
+                  {secondaryAction.label}
                 </Link>
               ) : (
-                actions.link
+                secondaryAction
               )}
             </div>
           )}
-        </>
-      )}
     </div>
   </div>
 );

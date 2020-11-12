@@ -1,4 +1,8 @@
-.safety--empty-state {
+@import '../../globals/vars';
+@import '../../globals/spacing';
+@import '../../globals/typography';
+
+.#{$iot-prefix}--empty-state {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -12,6 +16,8 @@
   }
 
   &--content {
+    max-width: 30rem;
+    overflow-wrap: break-word;
     text-align: left;
   }
 
