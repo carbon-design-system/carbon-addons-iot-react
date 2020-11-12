@@ -174,7 +174,6 @@ const CardEditFormContent = ({
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
-  console.log('i18n', mergedI18n);
   return (
     <>
       <div className={`${baseClassName}--input`}>
