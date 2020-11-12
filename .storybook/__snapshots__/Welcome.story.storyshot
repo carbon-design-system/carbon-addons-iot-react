@@ -3741,7 +3741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    Emptystate404
+                    Emptystate404Icon
                   </div>
                 </div>
                 <div
@@ -3753,7 +3753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    EmptystateDefault
+                    EmptystateDefaultIcon
                   </div>
                 </div>
                 <div
@@ -3765,7 +3765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    EmptystateError
+                    EmptystateErrorIcon
                   </div>
                 </div>
                 <div
@@ -3777,7 +3777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    EmptystateNoresults
+                    EmptystateNoresultsIcon
                   </div>
                 </div>
                 <div
@@ -3789,7 +3789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    EmptystateNotauthorized
+                    EmptystateNotauthorizedIcon
                   </div>
                 </div>
                 <div
@@ -3801,7 +3801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    EmptystateSuccess
+                    EmptystateSuccessIcon
                   </div>
                 </div>
                 <div

@@ -41,8 +41,8 @@ const props = {
   body: PropTypes.string.isRequired,
   /** Optional image of state */
   image: PropTypes.oneOfType([
-    PropTypes.func, 
-    PropTypes.oneOf([...Object.keys(images), ''])
+    PropTypes.func,
+    PropTypes.oneOf([...Object.keys(images), '']),
   ]),
   /** Optional action for container */
   action: actionProp,
@@ -53,8 +53,8 @@ const props = {
 };
 
 const defaultProps = {
-  action: {},
-  secondaryAction: {},
+  action: null,
+  secondaryAction: null,
   image: '',
   className: '',
 };
@@ -63,41 +63,47 @@ const defaultProps = {
  * Component to set empty states
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
-const EmptyState = ({ title, image, body, action, secondaryAction, className }) => (
+const EmptyState = ({
+  title,
+  image,
+  body,
+  action,
+  secondaryAction,
+  className,
+}) => (
   <div className={`${iotPrefix}--empty-state ${className}`}>
     <div className={`${iotPrefix}--empty-state--content`}>
-      {image && 
+      {image &&
         React.createElement(typeof image === 'string' ? images[image] : image, {
           className: `${iotPrefix}--empty-state--icon`,
           alt: '',
-        })
-      }
+          'data-testid': 'emptystate-icon',
+        })}
       <h3 className={`${iotPrefix}--empty-state--title`}>{title}</h3>
       <p className={`${iotPrefix}--empty-state--text`}>{body}</p>
       {action && (
-            <div className={`${iotPrefix}--empty-state--action`}>
-              {action.label ? (
-                <Button
-                  onClick={action.onClick && action.onClick}>
-                  {action.label}
-                </Button>
-              ) : (
-                action
-              )}
-            </div>
+        <div className={`${iotPrefix}--empty-state--action`}>
+          {action.label ? (
+            <Button onClick={action.onClick && action.onClick}>
+              {action.label}
+            </Button>
+          ) : (
+            action
           )}
-          {secondaryAction && (
-            <div className={`${iotPrefix}--empty-state--link`}>
-              {secondaryAction.label ? (
-                // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
-                  {secondaryAction.label}
-                </Link>
-              ) : (
-                secondaryAction
-              )}
-            </div>
+        </div>
+      )}
+      {secondaryAction && (
+        <div className={`${iotPrefix}--empty-state--link`}>
+          {secondaryAction.label ? (
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
+              {secondaryAction.label}
+            </Link>
+          ) : (
+            secondaryAction
           )}
+        </div>
+      )}
     </div>
   </div>
 );
