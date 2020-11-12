@@ -32,5 +32,6 @@ beforeEach(() => {
   // Review this for more context: https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1143#issuecomment-623577505
   expect.hasAssertions();
 
+  // Ensure that downshift's internal ID is always 0, otherwise snapshots will change unecessarily when unrelated snaps are regenerated.
   resetIdCounter();
 });
