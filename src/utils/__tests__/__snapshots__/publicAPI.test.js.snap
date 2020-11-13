@@ -17764,6 +17764,118 @@ Map {
       },
     },
   },
+  "ColorDropdown" => Object {
+    "defaultProps": Object {
+      "colors": Array [
+        Object {
+          "carbonColor": "#6929c4",
+          "name": "purple70",
+        },
+        Object {
+          "carbonColor": "#1192e8",
+          "name": "cyan50",
+        },
+        Object {
+          "carbonColor": "#005d5d",
+          "name": "teal70",
+        },
+        Object {
+          "carbonColor": "#9f1853",
+          "name": "magenta70",
+        },
+        Object {
+          "carbonColor": "#fa4d56",
+          "name": "red50",
+        },
+        Object {
+          "carbonColor": "#520408",
+          "name": "red90",
+        },
+        Object {
+          "carbonColor": "#198038",
+          "name": "green60",
+        },
+        Object {
+          "carbonColor": "#002d9c",
+          "name": "blue80",
+        },
+        Object {
+          "carbonColor": "#ee5396",
+          "name": "magenta50",
+        },
+        Object {
+          "carbonColor": "#a56eff",
+          "name": "purple50",
+        },
+        Object {
+          "carbonColor": "#009d9a",
+          "name": "teal50",
+        },
+        Object {
+          "carbonColor": "#012749",
+          "name": "cyan90",
+        },
+      ],
+      "label": "Select a color",
+      "light": false,
+      "selectedColor": undefined,
+      "testID": undefined,
+      "titleText": "Color",
+    },
+    "propTypes": Object {
+      "colors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "label": Object {
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "selectedColor": Object {
+        "args": Array [
+          Object {
+            "carbonColor": Object {
+              "type": "string",
+            },
+            "name": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "titleText": Object {
+        "type": "string",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
