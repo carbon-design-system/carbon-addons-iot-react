@@ -87,12 +87,12 @@ const defaultProps = {
   infoMessage: undefined,
   overrides: undefined,
   primaryInputId: undefined,
-  testID: 'HotspotTooltipTab',
+  testID: 'HotspotEditorTooltipTab',
 };
 
 const preventFormSubmission = (e) => e.preventDefault();
 
-const HotspotTooltipTab = ({
+const HotspotEditorTooltipTab = ({
   hotspotIcons,
   hotspotIconFillColors,
   formValues,
@@ -162,7 +162,7 @@ const HotspotTooltipTab = ({
     overrides?.decriptionTextArea?.component || TextArea;
 
   return (
-    <div className={`${iotPrefix}--hotspot-tooltip-tab`}>
+    <div className={`${iotPrefix}--hotspot-editor-tooltip-tab`}>
       {infoMessage ? (
         renderInfoMessage()
       ) : (
@@ -200,7 +200,7 @@ const HotspotTooltipTab = ({
             {renderColorIconContainer()}
           </form>
           <div
-            className={`${iotPrefix}--hotspot-tooltip-tab__delete-button-container`}>
+            className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
             <Button
               kind="ghost"
               renderIcon={TrashCan32}
@@ -215,7 +215,7 @@ const HotspotTooltipTab = ({
   );
 };
 
-HotspotTooltipTab.propTypes = propTypes;
-HotspotTooltipTab.defaultProps = defaultProps;
+HotspotEditorTooltipTab.propTypes = propTypes;
+HotspotEditorTooltipTab.defaultProps = defaultProps;
 
-export default HotspotTooltipTab;
+export default HotspotEditorTooltipTab;

@@ -1,7 +1,7 @@
 @import '../../../globals/vars';
 @import '../mixins';
 
-.#{$iot-prefix}--hotspot-tooltip-tab {
+.#{$iot-prefix}--hotspot-editor-tooltip-tab {
   background-color: $ui-01;
   padding: $spacing-03 $spacing-05;
 }
@@ -33,7 +33,7 @@
   }
 }
 
-.#{$iot-prefix}--hotspot-tooltip-tab__delete-button-container {
+.#{$iot-prefix}--hotspot-editor-tooltip-tab__delete-button-container {
   display: flex;
   justify-content: flex-end;
 }

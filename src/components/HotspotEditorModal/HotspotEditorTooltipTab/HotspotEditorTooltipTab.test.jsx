@@ -7,9 +7,9 @@ import {
   InformationFilled24,
 } from '@carbon/icons-react';
 
-import HotspotTooltipTab from './HotspotTooltipTab';
+import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 
-describe('HotspotTooltipTab', () => {
+describe('HotspotEditorTooltipTab', () => {
   const getColors = () => [
     { carbonColor: red50, name: 'red' },
     { carbonColor: green50, name: 'green' },
@@ -32,7 +32,7 @@ describe('HotspotTooltipTab', () => {
   it('renders info message alone', () => {
     const infoMessage = 'My info message';
     render(
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         infoMessage={infoMessage}
         hotspotIcons={getIcons()}
         onChange={() => {}}
@@ -50,7 +50,7 @@ describe('HotspotTooltipTab', () => {
   it('calls onChange as title and description are typed into', () => {
     const onChange = jest.fn();
     render(
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
@@ -73,7 +73,7 @@ describe('HotspotTooltipTab', () => {
   it('calls onChange when color and icon dropdowns are changed ', () => {
     const onChange = jest.fn();
     render(
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         hotspotIconFillColors={getColors()}
         hotspotIcons={getIcons()}
         onChange={onChange}
@@ -102,7 +102,7 @@ describe('HotspotTooltipTab', () => {
     const description = 'My description';
     const title = 'My Title';
     render(
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         formValues={{
           color: getColors()[1],
           description,
@@ -125,7 +125,7 @@ describe('HotspotTooltipTab', () => {
   it('calls onDelete when Delete hotspot button is clicked', () => {
     const onDelete = jest.fn();
     render(
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         hotspotIconFillColors={getColors()}
         hotspotIcons={getIcons()}
         onChange={() => {}}

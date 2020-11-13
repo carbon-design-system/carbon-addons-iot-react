@@ -7,7 +7,7 @@ import {
   InformationFilled24,
 } from '@carbon/icons-react';
 
-import HotspotTooltipTab from './HotspotTooltipTab';
+import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 
 const selectableIcons = [
   {
@@ -29,10 +29,10 @@ const colors = [
 ];
 
 export default {
-  title: 'Watson IoT Experimental/HotSpotEditorModal/HotspotTooltipTab',
+  title: 'Watson IoT Experimental/HotSpotEditorModal/HotspotEditorTooltipTab',
   decorators: [withKnobs],
   parameters: {
-    component: HotspotTooltipTab,
+    component: HotspotEditorTooltipTab,
   },
 };
 
@@ -41,7 +41,7 @@ export const WithStateInStory = () => {
     const [formValues, setFormValues] = useState({});
     return (
       <div>
-        <HotspotTooltipTab
+        <HotspotEditorTooltipTab
           infoMessage={text('infoMessage')}
           hotspotIcons={selectableIcons}
           formValues={formValues}
@@ -68,7 +68,7 @@ WithStateInStory.story = {
         const [formValues, setFormValues] = useState({});
         return (
           <div>
-            <HotspotTooltipTab
+            <HotspotEditorTooltipTab
               infoMessage={text('infoMessage')}
               hotspotIcons={selectableIcons}
               formValues={formValues}
@@ -82,7 +82,7 @@ WithStateInStory.story = {
       };
       ~~~
       `,
-      propTables: [HotspotTooltipTab],
+      propTables: [HotspotEditorTooltipTab],
     },
   },
 };
@@ -90,7 +90,7 @@ WithStateInStory.story = {
 export const WithPresetValuesAndCustomColors = () => {
   return (
     <div>
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         hotspotIconFillColors={colors}
         hotspotIcons={selectableIcons}
         formValues={{
@@ -109,7 +109,7 @@ export const WithPresetValuesAndCustomColors = () => {
 export const WithInfoMessage = () => {
   return (
     <div>
-      <HotspotTooltipTab
+      <HotspotEditorTooltipTab
         infoMessage={text(
           'infoMessage',
           `Select an existing hotspot on the image to edit it or insert one 

@@ -17876,7 +17876,7 @@ Map {
       },
     },
   },
-  "HotspotTooltipTab" => Object {
+  "HotspotEditorTooltipTab" => Object {
     "defaultProps": Object {
       "formValues": Object {},
       "hotspotIconFillColors": undefined,
@@ -17894,7 +17894,7 @@ Map {
       "infoMessage": undefined,
       "overrides": undefined,
       "primaryInputId": undefined,
-      "testID": "HotspotTooltipTab",
+      "testID": "HotspotEditorTooltipTab",
     },
     "propTypes": Object {
       "formValues": Object {
