@@ -86,7 +86,14 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
   };
 
   const handleOnChange = (_event, files) => {
-    if (accept.includes(files.addedFiles[0].name)) {
+    const acceptedFiles = accept.map((i) => i.toLowerCase());
+    if (
+      acceptedFiles.includes(
+        files.addedFiles[0].name
+          .match(/([^.]*?)(?=\?|#|$)/ || [])[0]
+          .toLowerCase()
+      )
+    ) {
       const fR = new FileReader();
       fR.readAsDataURL(files.addedFiles[0]);
       fR.onloadend = (event) => {

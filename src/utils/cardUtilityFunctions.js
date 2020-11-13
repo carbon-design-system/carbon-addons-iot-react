@@ -503,7 +503,7 @@ export const fetchDataURL = (url, callback) =>
     })
     .then((ab) => ({
       files: {
-        addedFiles: [new File([ab], `${url.match(/([^/]+)[\w]+(?=\?)/)[0]}`)],
+        addedFiles: [new File([ab], `${url.match(/([^/]*?)(?=\?|#|$)/)[0]}`)],
       },
       dataURL: `data:image/png;base64,${btoa(
         new Uint8Array(ab).reduce(
