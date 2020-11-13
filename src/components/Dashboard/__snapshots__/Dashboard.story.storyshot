@@ -2014,6 +2014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="floor map picture"
@@ -2107,6 +2108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Floor Map"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}
@@ -4386,6 +4388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="floor map picture"
@@ -4479,6 +4482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Floor Map"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}
@@ -6786,6 +6790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="floor map picture"
@@ -6879,6 +6884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Floor Map"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}
@@ -7402,6 +7408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="expandedcard"
@@ -7495,6 +7502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Sample image"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}
@@ -11756,6 +11764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="floor map picture"
@@ -11849,6 +11858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Floor Map"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}
@@ -26531,6 +26541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                accept={null}
                 className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
                 data-testid="Card"
                 id="floor map picture"
@@ -26624,6 +26635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       <img
                         alt="Floor Map"
+                        className="iot--image-card-img"
                         onLoad={[Function]}
                         onMouseDown={[Function]}
                         onMouseMove={[Function]}

@@ -12048,12 +12048,32 @@ Map {
   },
   "ImageCard" => Object {
     "defaultProps": Object {
+      "accept": null,
+      "content": Object {},
       "i18n": Object {
+        "browseImages": "Browse images",
+        "dropContainerDescText": "Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000",
+        "dropContainerLabelText": "Drag and drop file here or click to select file",
+        "errorTitle": "Error: ",
+        "insertUrl": "Insert from URL",
         "loadingDataLabel": "Loading hotspot data",
+        "uploadByURLButton": "OK",
+        "uploadByURLCancel": "Cancel",
+        "urlInput": "Type or insert URL",
       },
       "locale": "en",
+      "onBrowseClick": null,
+      "onUpload": null,
     },
     "propTypes": Object {
+      "accept": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "availableActions": Object {
         "args": Array [
           Object {
@@ -12670,6 +12690,9 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isNew": Object {
+        "type": "bool",
+      },
       "isResizable": Object {
         "type": "bool",
       },
@@ -12688,6 +12711,9 @@ Map {
       "onBlur": Object {
         "type": "func",
       },
+      "onBrowseClick": Object {
+        "type": "func",
+      },
       "onFocus": Object {
         "type": "func",
       },
@@ -12704,6 +12730,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "onUpload": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
