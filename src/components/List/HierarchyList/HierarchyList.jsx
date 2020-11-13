@@ -244,7 +244,8 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useEffect(
+  useDeepCompareEffect(
+    // have to use deep compare to accurately compare items
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
