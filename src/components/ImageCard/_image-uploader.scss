@@ -4,7 +4,7 @@
   height: calc(100% - 1rem);
   margin-top: $spacing-05;
   overflow: hidden;
-  padding: 9rem $spacing-05 $spacing-05;
+  padding: 9rem $spacing-05 $spacing-05; /* stylelint-disable-line declaration-property-unit-blacklist */
   width: 100%;
 
   &-icon {
@@ -84,6 +84,8 @@
   padding-top: $spacing-07;
 
   .#{$iot-prefix}--image-uploader-url-wrapper {
+    flex-direction: column;
+
     .#{$prefix}--text-input-wrapper {
       width: 100%;
     }
@@ -112,10 +114,6 @@
 
   .#{$iot-prefix}--btn:not(:last-child) {
     margin-bottom: $spacing-05;
-  }
-
-  .#{$iot-prefix}--image-uploader-url-wrapper {
-    flex-direction: column;
   }
 
   .#{$prefix}--inline-notification {
@@ -147,8 +145,8 @@
   }
 }
 
-.#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__large {
-}
+// .#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__large {
+// }
 
 .#{$iot-prefix}--image-uploader.#{$iot-prefix}--image-uploader__largewide {
   .#{$iot-prefix}--image-uploader-icon {
