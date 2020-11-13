@@ -17,7 +17,7 @@ const { iotPrefix } = settings;
 const i18nDefaults = {
   dropContainerLabelText: 'Drag and drop file here or click to select file',
   dropContainerDescText:
-    'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+    'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
   uploadByURLCancel: 'Cancel',
   uploadByURLButton: 'OK',
   browseImages: 'Browse images',
@@ -44,7 +44,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  accept: ['JPEG', 'PNG', 'GIF', 'WEBP', 'TIFF', 'JPEG2000'],
+  accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'PNG', 'WebP'],
   onBrowseClick: () => {},
   onUpload: () => {},
   i18n: i18nDefaults,
