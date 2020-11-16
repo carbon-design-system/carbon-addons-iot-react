@@ -3,7 +3,7 @@ module.exports = {
     'src/components/**/*.js?(x)',
     '!src/**/*.story.js?(x)',
     '!src/**/hooks/*.js',
-    '! src/components/SuiteHeader/util/suiteHeaderData.js',
+    '!src/components/SuiteHeader/util/suiteHeaderData.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov'],
