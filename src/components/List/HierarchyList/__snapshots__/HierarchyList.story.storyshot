@@ -6903,7 +6903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "0px",
+                    "width": "30px",
                   }
                 }
               />
