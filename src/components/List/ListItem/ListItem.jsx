@@ -32,7 +32,11 @@ const ListItemPropTypes = {
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
-  rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
+  /** either a callback render function or a node */
+  rowActions: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.func,
+  ]),
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
   isCategory: PropTypes.bool,
@@ -120,7 +124,7 @@ const ListItem = ({
     return nestingLevel > 0 ? (
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
-        style={{ width: `${nestingLevel * 30}px` }}
+        style={{ width: `${(nestingLevel - 1) * 30}px` }}
       />
     ) : null;
   };
@@ -151,9 +155,10 @@ const ListItem = ({
     ) : null;
 
   const renderRowActions = () =>
-    rowActions && rowActions.length > 0 ? (
+    rowActions &&
+    (typeof rowActions === 'function' || rowActions.length > 0) ? (
       <div className={`${iotPrefix}--list-item--content--row-actions`}>
-        {rowActions}
+        {typeof rowActions === 'function' ? rowActions() : rowActions}
       </div>
     ) : null;
 
