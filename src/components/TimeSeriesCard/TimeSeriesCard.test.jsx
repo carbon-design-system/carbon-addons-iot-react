@@ -385,7 +385,6 @@ describe('TimeSeriesCard', () => {
     ];
 
     expect(formatColors(series)).toEqual({
-      identifier: 'group',
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
   });
@@ -397,7 +396,6 @@ describe('TimeSeriesCard', () => {
     };
 
     expect(formatColors(series)).toEqual({
-      identifier: 'group',
       scale: { Amsterdam: 'blue' },
     });
   });

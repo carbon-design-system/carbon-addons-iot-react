@@ -121,9 +121,9 @@ const BarChartCard = ({
   );
 
   // Set the colors for each dataset
-  const uniqueDatasets = [
-    ...new Set(chartData.map((dataset) => dataset.group)),
-  ];
+  const uniqueDatasets = !isAllValuesEmpty
+    ? [...new Set(chartData.map((dataset) => dataset.group))]
+    : [];
   const colors = !isAllValuesEmpty
     ? formatColors(series, uniqueDatasets, isEditable)
     : null;

@@ -8,7 +8,12 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
   CARD_ACTIONS,
 } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
+import {
+  DashboardGrid,
+  CardEditor,
+  ErrorBoundary,
+  SkeletonText,
+} from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -77,8 +82,14 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
-  /** if provided, will update the dashboard json according to its own logic */
+  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+   * onCardChange(updatedCard, template): Card
+   */
   onCardChange: PropTypes.func,
+  /** if provided, will return the updated layout and layouts
+   * onLayoutChange(newLayout, newLayouts)
+   */
+  onLayoutChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -102,6 +113,8 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /** optional loading prop to render the PageTitleBar loading state */
+  isLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -144,6 +157,7 @@ const defaultProps = {
   getValidTimeRanges: null,
   dataItems: [],
   onCardChange: null,
+  onLayoutChange: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -151,6 +165,7 @@ const defaultProps = {
   onSubmit: null,
   submitDisabled: false,
   onValidateCardJson: null,
+  isLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -196,6 +211,7 @@ const DashboardEditor = ({
   headerBreadcrumbs,
   notification,
   onCardChange,
+  onLayoutChange,
   onEditTitle,
   onImport,
   onExport,
@@ -204,6 +220,7 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  isLoading,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -300,7 +317,9 @@ const DashboardEditor = ({
     isSelected,
   });
 
-  return (
+  return isLoading ? (
+    <SkeletonText width="30%" />
+  ) : (
     <div className={baseClassName}>
       <div
         className={classnames(`${baseClassName}--content`, {
@@ -369,12 +388,16 @@ const DashboardEditor = ({
                   onBreakpointChange={(newBreakpoint) => {
                     setCurrentBreakpoint(newBreakpoint);
                   }}
-                  onLayoutChange={(newLayout, newLayouts) =>
+                  layouts={dashboardJson.layouts}
+                  onLayoutChange={(newLayout, newLayouts) => {
+                    if (onLayoutChange) {
+                      onLayoutChange(newLayout, newLayouts);
+                    }
                     setDashboardJson({
                       ...dashboardJson,
                       layouts: newLayouts,
-                    })
-                  }
+                    });
+                  }}
                   supportedLayouts={['xl', 'lg', 'md']}>
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;

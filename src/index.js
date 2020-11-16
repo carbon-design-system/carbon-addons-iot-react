@@ -38,6 +38,7 @@ export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
+export IconDropdown from './components/IconDropdown/IconDropdown';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -109,6 +110,7 @@ export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
 export FilterTags from './components/FilterTags/FilterTags';
+export ColorDropdown from './components/ColorDropdown/ColorDropdown';
 
 // Carbon proxy
 export {

@@ -3033,6 +3033,62 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor isLoading 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 3rem)",
+          "marginRight": "-3rem",
+        }
+      }
+    >
+      <p
+        className="bx--skeleton__text"
+        style={
+          Object {
+            "width": "30%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/DashboardEditor with breakpoint switcher 1`] = `
 <div
   className="storybook-container"
@@ -5462,7 +5518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     onDrop={[Function]}
                     style={
                       Object {
-                        "height": "624px",
+                        "height": "944px",
                       }
                     }
                   >
@@ -5498,7 +5554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                       >
                         <div
-                          className="TableCard__StyledStatefulTable-q9l5bz-0 cSTvat iot--table-container bx--data-table-container"
+                          className="TableCard__StyledStatefulTable-q9l5bz-0 rxvQn iot--table-container bx--data-table-container"
                         >
                           <section
                             aria-label="data table toolbar"
@@ -6819,9 +6875,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Object {
                           "--card-default-height": "304px",
                           "height": "304px",
-                          "left": "50.625%",
+                          "left": "6.328125%",
                           "position": "absolute",
-                          "top": "320px",
+                          "top": "640px",
                           "width": "49.375%",
                         }
                       }

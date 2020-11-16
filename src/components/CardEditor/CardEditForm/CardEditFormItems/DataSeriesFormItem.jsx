@@ -225,7 +225,7 @@ const DataSeriesFormItem = ({
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
-          itemToString={(item) => item.text}
+          itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
           items={formatDataItemsForDropdown(validDataItems)}
           light
