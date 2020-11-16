@@ -405,4 +405,53 @@ describe('stateful table with real reducer', () => {
     expect(initialState.data.length).toEqual(100);
     expect(screen.queryByText('1–10 of 500 items')).toBeTruthy();
   });
+
+  it('stateful table every third row unselectable', () => {
+    const modifiedData = initialState.data.map((eachRow, index) => ({
+      ...eachRow,
+      isSelectable: index % 3 !== 0,
+    }));
+
+    const dataCount = modifiedData.filter((data) => data.isSelectable).length;
+    render(
+      <StatefulTable
+        {...merge({}, { ...pick(initialState, 'columns', 'actions') })}
+        options={{
+          hasRowSelection: 'multi',
+          hasRowExpansion: false,
+        }}
+        data={modifiedData}
+        view={{ table: { selectedIds: [] } }}
+      />
+    );
+
+    // check if checkboxes displayed correctly
+    const checkboxes = screen.getAllByLabelText('Select row');
+    checkboxes.forEach((box, i) => {
+      if (i % 3 !== 0) {
+        expect(box).toHaveProperty('disabled', false);
+      } else {
+        expect(box).toHaveProperty('disabled', true);
+      }
+    });
+
+    // select all elements
+    const selectAllCheckbox = screen.getByLabelText('Select all items');
+    expect(selectAllCheckbox).toBeInTheDocument();
+    expect(selectAllCheckbox).toHaveProperty('checked', false);
+    fireEvent.click(selectAllCheckbox);
+
+    // check that only selectable items are counted
+    expect(selectAllCheckbox).toHaveProperty('checked', true);
+    expect(screen.getByText(`${dataCount} items selected`)).toBeInTheDocument();
+
+    // check if selectable checkboxes checked
+    checkboxes.forEach((box, i) => {
+      if (i % 3 !== 0) {
+        expect(box).toHaveProperty('checked', true);
+      } else {
+        expect(box).toHaveProperty('checked', false);
+      }
+    });
+  });
 });
