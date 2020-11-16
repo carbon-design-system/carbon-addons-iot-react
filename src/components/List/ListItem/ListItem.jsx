@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
+import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
@@ -119,6 +120,13 @@ const ListItem = ({
   dragPreviewText,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
+
+  if (__DEV__ && Array.isArray(rowActions)) {
+    warning(
+      false,
+      'You have passed an array of nodes to ListItem as rowActions.  This can cause performance problems and has been deprecated.  You should pass a render function instead.'
+    );
+  }
 
   const renderNestingOffset = () => {
     return nestingLevel > 0 ? (
