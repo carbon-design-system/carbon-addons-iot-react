@@ -231,7 +231,7 @@ export const HeaderWithSurveyNotification = () => {
 /* Sample of SuiteHeader usage with data hook
 export const HeaderWithHook = () => {
   const StatefulExample = () => {
-    const [data, isLoading, error, refreshData] = useSuiteHeaderData({
+    const [data] = useSuiteHeaderData({
       // baseApiUrl: 'http://localhost:3001/internal',
       domain: 'mydomain.com',
       isTest: true,
@@ -242,8 +242,13 @@ export const HeaderWithHook = () => {
       },
       lang: 'en',
     });
-    const surveyData = data.showSurvey ? { surveyLink: 'https://www.ibm.com', privacyLink: 'https://www.ibm.com'} : null;
-    return (
+    const surveyData = data.showSurvey
+      ? {
+          surveyLink: 'https://www.ibm.com',
+          privacyLink: 'https://www.ibm.com',
+        }
+      : null;
+    return data.username ? (
       <SuiteHeader
         suiteName="Application Suite"
         appName="Application Name"
@@ -254,8 +259,8 @@ export const HeaderWithHook = () => {
         i18n={data.i18n}
         surveyData={surveyData}
       />
-    );
-  }
+    ) : null;
+  };
   return <StatefulExample />;
 };
 
@@ -295,11 +300,16 @@ export const HeaderWithDataFetching = () => {
           frequencyDays: 90,
         },
         lang: 'en',
-      }).then(suiteHeaderData => setData(suiteHeaderData));
+      }).then((suiteHeaderData) => setData(suiteHeaderData));
     }, []);
-    
-    const surveyData = data.showSurvey ? { surveyLink: 'https://www.ibm.com', privacyLink: 'https://www.ibm.com'} : null;
-    return (
+
+    const surveyData = data.showSurvey
+      ? {
+          surveyLink: 'https://www.ibm.com',
+          privacyLink: 'https://www.ibm.com',
+        }
+      : null;
+    return data.username ? (
       <SuiteHeader
         suiteName="Application Suite"
         appName="Application Name"
@@ -310,9 +320,9 @@ export const HeaderWithDataFetching = () => {
         i18n={data.i18n}
         surveyData={surveyData}
       />
-    );
-  }
-  return <StatefulExample />
+    ) : null;
+  };
+  return <StatefulExample />;
 };
 
 HeaderWithDataFetching.story = {
