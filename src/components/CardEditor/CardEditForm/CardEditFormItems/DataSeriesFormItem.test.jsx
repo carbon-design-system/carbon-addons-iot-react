@@ -68,7 +68,7 @@ describe('DataSeriesFormItem', () => {
     ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
@@ -84,8 +84,8 @@ describe('DataSeriesFormItem', () => {
   describe('formatDataItemsForDropdown', () => {
     it('should correctly format the items for the dropdown', () => {
       expect(formatDataItemsForDropdown(dataItems)).toEqual([
-        { id: 'temperature', text: 'Temperature' },
-        { id: 'pressure', text: 'Pressure' },
+        { id: 'temperature', text: 'temperature' },
+        { id: 'pressure', text: 'pressure' },
       ]);
     });
   });

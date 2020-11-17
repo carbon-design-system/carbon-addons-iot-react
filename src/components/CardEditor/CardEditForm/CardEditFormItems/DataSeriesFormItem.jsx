@@ -108,13 +108,16 @@ const DATAITEM_COLORS_OPTIONS = [
  */
 export const formatSeries = (selectedItems, cardJson) => {
   const cardSeries = cardJson?.content?.series;
-  const series = selectedItems.map(({ id, text }, i) => {
+  const series = selectedItems.map(({ id }, i) => {
+    const currentItem = cardSeries?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
     const color =
-      cardSeries?.find((dataItem) => dataItem.label === id)?.color ??
+      currentItem?.color ??
       DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
       dataSourceId: id,
-      label: text,
+      label: currentItem?.label || id,
       color,
     };
   });
@@ -122,9 +125,9 @@ export const formatSeries = (selectedItems, cardJson) => {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId, label }) => ({
+  dataItems?.map(({ dataSourceId }) => ({
     id: dataSourceId,
-    text: label || dataSourceId,
+    text: dataSourceId,
   })) || [];
 
 const DataSeriesFormItem = ({
