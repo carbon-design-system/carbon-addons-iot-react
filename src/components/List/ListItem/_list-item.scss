@@ -152,6 +152,7 @@
       }
     }
     &--values {
+      position: relative;
       flex: 1;
       max-width: 100%;
       &--main {
@@ -167,10 +168,11 @@
       }
       &--value {
         flex: 1;
+
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-right: $spacing-05;
+        padding-right: $spacing-09;
         &__with-actions {
           padding-right: 0;
           width: $spacing-05;
@@ -191,6 +193,8 @@
       margin-right: 0;
       overflow: none;
       display: flex;
+      position: absolute;
+      right: 0;
     }
   }
   &--nesting-offset {
