@@ -329,7 +329,10 @@ export const WithOverflowMenuRowActions = () => (
     <ListItem
       {...dndProps}
       id="list-item"
-      value={text('value', 'List Item')}
+      value={text(
+        'value',
+        'List Item with really long values does it ellipse when I get really long text'
+      )}
       isExpandable={boolean('isExpandable', true)}
       onExpand={action('onExpand')}
       rowActions={[
