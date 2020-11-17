@@ -90,7 +90,7 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
     if (
       acceptedFiles.includes(
         files.addedFiles[0].name
-          .match(/([^.]*?)(?=\?|#|$)/ || [])[0]
+          .match(/([^/.]*?)(?=\?|#|$)/ || [])[0]
           .toLowerCase()
       )
     ) {

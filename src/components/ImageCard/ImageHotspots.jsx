@@ -13,6 +13,8 @@ import HotspotContent from './HotspotContent';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** id of the local image file to display */
+  id: PropTypes.string,
   /** source of the local image file to display */
   src: PropTypes.string,
   /** alt tag and shown on mouseover */
@@ -38,6 +40,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  id: null,
   src: null,
   hotspots: [],
   alt: null,
@@ -335,6 +338,7 @@ const ImageHotspots = ({
   i18n,
   background,
   src,
+  id,
   height,
   width,
   alt,
@@ -468,6 +472,7 @@ const ImageHotspots = ({
       }}>
       {src && (
         <img
+          id={id}
           className={`${iotPrefix}--image-card-img`}
           src={src}
           alt={alt}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
@@ -77,16 +77,21 @@ const ImageCard = ({
 }) => {
   const [newCardState, setNewCardState] = useState(isNew);
   const [imgContent, setImgContent] = useState(content);
-  const { src } = imgContent;
   const hotspots = values ? values.hotspots || [] : [];
 
-  const handleOnURLUpload = (imageData) => {
+  useEffect(
+    () => {
+      setImgContent(content);
+    }, [content]
+  )
+
+  const handleOnUpload = (imageData) => {
     onUpload(imageData.files);
     setImgContent({
+      ...imgContent,
       src: imageData.dataURL,
       alt: imageData.files?.addedFiles[0]?.name,
-      zoomMax: 10,
-      ...imgContent,
+      id:imageData.files?.addedFiles[0]?.name,
     });
     setNewCardState(false);
   };
@@ -105,7 +110,7 @@ const ImageCard = ({
   const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
   const isCardLoading =
-    newCardState === false && isNil(src) && !isEditable && !error;
+    newCardState === false && isNil(imgContent.src) && !isEditable && !error;
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
@@ -128,18 +133,14 @@ const ImageCard = ({
           ) => (
             <ContentWrapper>
               {supportedSize ? (
-                newCardState ? (
+                newCardState || isEditable && !imgContent.src ? (
                   <ImageUploader
                     onBrowseClick={onBrowseClick}
                     width={width}
                     height={height}
-                    onUpload={handleOnURLUpload}
+                    onUpload={handleOnUpload}
                   />
-                ) : isEditable ? (
-                  <EmptyDiv>
-                    <Image32 width={250} height={250} fill="gray" />
-                  </EmptyDiv>
-                ) : imgContent && src ? (
+                ) : imgContent.src ? (
                   <ImageHotspots
                     {...imgContent}
                     width={width - 16 * 2} // Need to adjust for card chrome
@@ -151,10 +152,12 @@ const ImageCard = ({
                     renderIconByName={renderIconByName}
                     locale={locale}
                   />
-                ) : (
-                  <p>Error retrieving image.</p>
-                )
-              ) : (
+                ) :
+                (<EmptyDiv>
+                  <Image32 width={250} height={250} fill="gray" />
+                </EmptyDiv>)
+              )
+              : (
                 <p>Size not supported.</p>
               )}
             </ContentWrapper>
