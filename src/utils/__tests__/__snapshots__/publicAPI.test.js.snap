@@ -6650,6 +6650,7 @@ Map {
     "defaultProps": Object {
       "appName": null,
       "className": null,
+      "customActionItems": Array [],
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -6715,6 +6716,60 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "customActionItems": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "btnContent": Object {
+                  "isRequired": true,
+                  "type": "node",
+                },
+                "childContent": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "content": Object {
+                            "type": "node",
+                          },
+                          "metaData": Object {
+                            "args": Array [
+                              Object {
+                                "element": Object {
+                                  "type": "string",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "className": Object {
+                  "type": "string",
+                },
+                "hasHeaderPanel": Object {
+                  "type": "bool",
+                },
+                "label": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "onClick": Object {
+                  "type": "func",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "i18n": Object {
         "args": Array [

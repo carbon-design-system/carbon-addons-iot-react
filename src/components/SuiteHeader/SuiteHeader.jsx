@@ -9,6 +9,7 @@ import { HeaderContainer, SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
 import { ToastNotification } from '../Notification';
 import { Link } from '../Link';
+import { HeaderActionItemPropTypes } from '../Header/Header';
 import { settings } from '../../constants/Settings';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
@@ -83,6 +84,7 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
+  customActionItems: [],
   surveyData: null,
   onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
@@ -107,6 +109,10 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
+  /** Array of custom action items */
+  customActionItems: PropTypes.arrayOf(
+    PropTypes.shape(HeaderActionItemPropTypes)
+  ),
   /** If surveyData is present, show a ToastNotification */
   surveyData: SuiteHeaderSurveyDataPropTypes,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
@@ -125,6 +131,7 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
+  customActionItems,
   surveyData,
   onRouteChange,
   i18n,
@@ -235,6 +242,7 @@ const SuiteHeader = ({
               appName={suiteName}
               subtitle={appName}
               actionItems={[
+                ...customActionItems,
                 routes.admin !== null
                   ? {
                       label: mergedI18N.administrationIcon,
