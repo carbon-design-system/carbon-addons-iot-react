@@ -7181,6 +7181,7 @@ Map {
     },
   },
   "useSuiteHeaderData" => Object {},
+  "suiteHeaderData" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
