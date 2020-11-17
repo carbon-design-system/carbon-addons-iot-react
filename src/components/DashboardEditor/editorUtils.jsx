@@ -129,8 +129,6 @@ export const getDefaultCard = (type, i18n) => {
       return {
         ...baseCardProps,
         content: {
-          alt: 'Sample image',
-          src: ImageIcon,
           hideMinimap: true,
           hideHotspots: false,
           hideZoomControls: false,

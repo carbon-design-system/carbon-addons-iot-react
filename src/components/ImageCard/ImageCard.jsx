@@ -50,7 +50,7 @@ const defaultProps = {
   locale: 'en',
   content: {},
   accept: null,
-  onUpload: null,
+  onUpload: ()=> {},
   onBrowseClick: null,
 };
 
