@@ -6181,6 +6181,185 @@ Map {
       },
     },
   },
+  "HotspotTextStyleTab" => Object {
+    "defaultProps": Object {
+      "backgroundColors": undefined,
+      "borderColors": undefined,
+      "fontColors": undefined,
+      "formValues": Object {
+        "background": Object {
+          "color": undefined,
+          "opacity": 100,
+        },
+        "bold": false,
+        "border": Object {
+          "color": undefined,
+          "width": 1,
+        },
+        "font": Object {
+          "color": undefined,
+          "size": 12,
+        },
+        "italic": false,
+        "underline": false,
+      },
+      "i18n": Object {
+        "backgroundLabel": "Background",
+        "boldLabel": "Text Bold",
+        "borderLabel": "Border",
+        "borderWidthInvalid": "Border Width is invalid",
+        "borderWidthLabel": "Border Width",
+        "fillOpacityInvalid": "Fill Opacity is invalid",
+        "fillOpacityLabel": "Fill Opacity",
+        "fontLabel": "Font",
+        "fontSizeInvalid": "Font Size is invalid",
+        "fontSizeLabel": "Font Size",
+        "italicLabel": "Text Italic",
+        "underlineLabel": "Text Underline",
+      },
+      "light": true,
+    },
+    "propTypes": Object {
+      "backgroundColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "borderColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "fontColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "formValues": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "carbonColor": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "backgroundLabel": Object {
+              "type": "string",
+            },
+            "boldLabel": Object {
+              "type": "string",
+            },
+            "borderLabel": Object {
+              "type": "string",
+            },
+            "borderWidth": Object {
+              "type": "string",
+            },
+            "borderWidthInvalid": Object {
+              "type": "string",
+            },
+            "fillOpacityInvalid": Object {
+              "type": "string",
+            },
+            "fillOpacityLabel": Object {
+              "type": "string",
+            },
+            "fontLabel": Object {
+              "type": "string",
+            },
+            "fontSize": Object {
+              "type": "string",
+            },
+            "fontSizeInvalid": Object {
+              "type": "string",
+            },
+            "italicLabel": Object {
+              "type": "string",
+            },
+            "underlineLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
