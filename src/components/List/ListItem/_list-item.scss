@@ -175,7 +175,7 @@
         text-overflow: ellipsis;
         padding-right: $spacing-09;
         &__with-actions {
-          padding-right: 0;
+          padding-right: $spacing-06; // save room for the action button
           width: $spacing-05;
         }
         &__large {
