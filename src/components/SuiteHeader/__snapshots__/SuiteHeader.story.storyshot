@@ -921,8 +921,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         >
           <a
             className="bx--link"
-            href="https://www.ibm.com"
-            target="_blank"
+            href="javascript:void(0)"
+            onClick={[Function]}
           >
             Click here to help us improve the product
           </a>
@@ -931,8 +931,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           >
             <a
               className="bx--link"
-              href="https://www.ibm.com"
-              target="_blank"
+              href="javascript:void(0)"
+              onClick={[Function]}
             >
               Privacy Policy
             </a>

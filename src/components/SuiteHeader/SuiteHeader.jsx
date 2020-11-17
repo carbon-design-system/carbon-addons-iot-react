@@ -25,6 +25,7 @@ const ROUTE_TYPES = {
   ABOUT: 'ABOUT',
   LOGOUT: 'LOGOUT',
   DOCUMENTATION: 'DOCUMENTATION',
+  SURVEY: 'SURVEY',
 };
 
 export const SuiteHeaderRoutePropTypes = PropTypes.shape({
@@ -74,6 +75,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   gettingStarted: PropTypes.string,
   surveyTitle: PropTypes.func,
   surveyText: PropTypes.string,
+  surveyPrivacyPolicy: PropTypes.string,
 });
 
 const defaultProps = {
@@ -82,7 +84,7 @@ const defaultProps = {
   isAdminView: false,
   sideNavProps: null,
   surveyData: null,
-  onRouteChange: async () => true,
+  onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -151,12 +153,32 @@ const SuiteHeader = ({
           title={mergedI18N.surveyTitle(appName || suiteName)}
           subtitle={
             <>
-              <Link target="_blank" href={surveyData.surveyLink}>
+              <Link
+                href="javascript:void(0)"
+                onClick={async () => {
+                  const result = await onRouteChange(
+                    ROUTE_TYPES.SURVEY,
+                    surveyData.surveyLink
+                  );
+                  if (result) {
+                    window.open(surveyData.surveyLink, 'blank');
+                  }
+                }}>
                 {mergedI18N.surveyText}
               </Link>
               <div
                 className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
-                <Link target="_blank" href={surveyData.privacyLink}>
+                <Link
+                  href="javascript:void(0)"
+                  onClick={async () => {
+                    const result = await onRouteChange(
+                      ROUTE_TYPES.SURVEY,
+                      surveyData.surveyLink
+                    );
+                    if (result) {
+                      window.open(surveyData.privacyLink, 'blank');
+                    }
+                  }}>
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
               </div>

@@ -6645,6 +6645,7 @@ Map {
       "NAVIGATOR": "NAVIGATOR",
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
+      "SURVEY": "SURVEY",
     },
     "defaultProps": Object {
       "appName": null,
@@ -6764,6 +6765,9 @@ Map {
               "type": "string",
             },
             "support": Object {
+              "type": "string",
+            },
+            "surveyPrivacyPolicy": Object {
               "type": "string",
             },
             "surveyText": Object {
