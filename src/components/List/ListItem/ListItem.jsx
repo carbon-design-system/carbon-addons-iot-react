@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
+import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
@@ -28,11 +29,16 @@ const ListItemPropTypes = {
   isSelectable: PropTypes.bool,
   disabled: PropTypes.bool,
   onSelect: PropTypes.func,
+  renderDropTargets: PropTypes.bool,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
-  rowActions: PropTypes.arrayOf(PropTypes.node), // TODO
+  /** either a callback render function or a node */
+  rowActions: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.func,
+  ]),
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
   isCategory: PropTypes.bool,
@@ -70,6 +76,7 @@ const ListItemDefaultProps = {
   isSelectable: false,
   disabled: false,
   onSelect: () => {},
+  renderDropTargets: false,
   selected: false,
   expanded: false,
   secondaryValue: null,
@@ -100,6 +107,7 @@ const ListItem = ({
   value,
   secondaryValue,
   rowActions,
+  renderDropTargets,
   icon,
   iconPosition, // or "right"
   onItemMoved,
@@ -116,11 +124,20 @@ const ListItem = ({
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
+  if (__DEV__ && Array.isArray(rowActions)) {
+    warning(
+      false,
+      'You have passed an array of nodes to ListItem as rowActions.  This can cause performance problems and has been deprecated.  You should pass a render function instead.'
+    );
+  }
+
   const renderNestingOffset = () => {
     return nestingLevel > 0 ? (
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
-        style={{ width: `${nestingLevel * 30}px` }}
+        style={{
+          width: `${nestingLevel * 30}px`,
+        }}
       />
     ) : null;
   };
@@ -151,9 +168,10 @@ const ListItem = ({
     ) : null;
 
   const renderRowActions = () =>
-    rowActions && rowActions.length > 0 ? (
+    rowActions &&
+    (typeof rowActions === 'function' || rowActions.length > 0) ? (
       <div className={`${iotPrefix}--list-item--content--row-actions`}>
-        {rowActions}
+        {typeof rowActions === 'function' ? rowActions() : rowActions}
       </div>
     ) : null;
 
@@ -195,6 +213,7 @@ const ListItem = ({
         onItemMoved,
         itemWillMove,
         disabled,
+        renderDropTargets,
       }}>
       {renderDragPreview()}
       {dragIcon()}
@@ -310,6 +329,7 @@ const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging(),
+  renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
 }));
 
 ListItem.propTypes = ListItemPropTypes;

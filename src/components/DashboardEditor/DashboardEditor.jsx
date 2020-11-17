@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
 import classnames from 'classnames';
@@ -8,13 +8,19 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
   CARD_ACTIONS,
 } from '../../constants/LayoutConstants';
-import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
+import {
+  DashboardGrid,
+  CardEditor,
+  ErrorBoundary,
+  SkeletonText,
+} from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
   getDefaultCard,
   getDuplicateCard,
   getCardPreview,
+  renderBreakpointInfo,
   handleKeyDown,
   handleOnClick,
 } from './editorUtils';
@@ -38,6 +44,13 @@ const propTypes = {
   }),
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
+   * regardless of the screen width
+   */
+  breakpointSwitcher: PropTypes.shape({
+    enabled: PropTypes.bool,
+    initialValue: PropTypes.string,
+  }),
   /** if provided, renders header content above preview */
   renderHeader: PropTypes.func,
   /** if provided, is used to render cards in dashboard
@@ -69,8 +82,14 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
-  /** if provided, will update the dashboard json according to its own logic */
+  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+   * onCardChange(updatedCard, template): Card
+   */
   onCardChange: PropTypes.func,
+  /** if provided, will return the updated layout and layouts
+   * onLayoutChange(newLayout, newLayouts)
+   */
+  onLayoutChange: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -94,6 +113,8 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /** optional loading prop to render the PageTitleBar loading state */
+  isLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerImportButton: PropTypes.string,
@@ -101,6 +122,10 @@ const propTypes = {
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
     headerDeleteButton: PropTypes.string,
+    headerFitToScreenButton: PropTypes.string,
+    headerXlargeButton: PropTypes.string,
+    headerLargeButton: PropTypes.string,
+    headerMediumButton: PropTypes.string,
     noDataLabel: PropTypes.string,
     defaultCardTitle: PropTypes.string,
     headerEditTitleButton: PropTypes.string,
@@ -108,6 +133,9 @@ const propTypes = {
     openGalleryButton: PropTypes.string,
     closeGalleryButton: PropTypes.string,
     openJSONButton: PropTypes.string,
+    layoutInfoXl: PropTypes.string,
+    layoutInfoLg: PropTypes.string,
+    layoutInfoMd: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
   }),
 };
@@ -117,6 +145,7 @@ const defaultProps = {
     cards: [],
     layouts: {},
   },
+  breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
   renderCardPreview: () => null,
@@ -128,6 +157,7 @@ const defaultProps = {
   getValidTimeRanges: null,
   dataItems: [],
   onCardChange: null,
+  onLayoutChange: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -135,6 +165,7 @@ const defaultProps = {
   onSubmit: null,
   submitDisabled: false,
   onValidateCardJson: null,
+  isLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -142,22 +173,36 @@ const defaultProps = {
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
+    headerFitToScreenButton: 'Fit to screen',
+    headerXlargeButton: 'X-large view',
+    headerLargeButton: 'Large view',
+    headerMediumButton: 'Medium view',
     galleryHeader: 'Gallery',
     openGalleryButton: 'Open gallery',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
+    layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
+    layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
+    layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
     searchPlaceholderText: 'Enter a value',
   },
 };
 
+const LAYOUTS = {
+  FIT_TO_SCREEN: { breakpoint: 'xl', index: 0 },
+  MEDIUM: { breakpoint: 'md', index: 3 },
+  LARGE: { breakpoint: 'lg', index: 2 },
+  XLARGE: { breakpoint: 'xl', index: 1 },
+};
 export const baseClassName = `${iotPrefix}--dashboard-editor`;
 
 const DashboardEditor = ({
   title,
   initialValue,
   supportedCardTypes,
+  breakpointSwitcher,
   renderHeader,
   renderCardPreview,
   getValidDataItems,
@@ -166,6 +211,7 @@ const DashboardEditor = ({
   headerBreadcrumbs,
   notification,
   onCardChange,
+  onLayoutChange,
   onEditTitle,
   onImport,
   onExport,
@@ -174,6 +220,7 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  isLoading,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -181,6 +228,21 @@ const DashboardEditor = ({
   // show the gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
+  const [selectedBreakpointIndex, setSelectedBreakpointIndex] = useState(
+    breakpointSwitcher?.initialValue
+      ? LAYOUTS[breakpointSwitcher.initialValue].index
+      : LAYOUTS.FIT_TO_SCREEN.index
+  );
+  const [currentBreakpoint, setCurrentBreakpoint] = useState(
+    breakpointSwitcher?.initialValue
+      ? LAYOUTS[breakpointSwitcher.initialValue].breakpoint
+      : LAYOUTS.FIT_TO_SCREEN.breakpoint
+  );
+
+  // force a window resize so that react-grid-layout will trigger its reorder / resize
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, [selectedBreakpointIndex]);
 
   /**
    * Adds a default, empty card to the preview
@@ -251,17 +313,20 @@ const DashboardEditor = ({
     tabIndex: 0,
     onKeyDown: (e) => handleKeyDown(e, onSelectCard, cardConfig.id),
     onClick: () => handleOnClick(onSelectCard, cardConfig.id),
-    className: classnames(`${baseClassName}--preview__card`, {
-      // add black border when selected
-      // TODO: swap this to the true isSelected card prop once this issue is closed:
-      // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1621
-      [`${iotPrefix}--card__selected`]: isSelected,
-    }),
+    className: `${baseClassName}--preview__card`,
+    isSelected,
   });
 
-  return (
+  return isLoading ? (
+    <SkeletonText width="30%" />
+  ) : (
     <div className={baseClassName}>
-      <div className={`${baseClassName}--content`}>
+      <div
+        className={classnames(`${baseClassName}--content`, {
+          // enables overflow: auto if a specific breakpoint is selected so the width can be managed
+          [`${baseClassName}__overflow`]:
+            selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+        })}>
         {renderHeader ? (
           renderHeader()
         ) : (
@@ -277,45 +342,82 @@ const DashboardEditor = ({
             submitDisabled={submitDisabled}
             i18n={mergedI18n}
             dashboardJson={dashboardJson}
+            selectedBreakpointIndex={selectedBreakpointIndex}
+            setSelectedBreakpointIndex={setSelectedBreakpointIndex}
+            breakpointSwitcher={breakpointSwitcher}
           />
         )}
         {notification}
-        <div className={`${baseClassName}--preview`}>
-          <ErrorBoundary
-            fallback={
-              <InlineNotification
-                title="Dashboard editor error"
-                subtitle="Something went wrong. Please refresh the page."
-                kind="error"
-                lowContrast
-              />
-            }>
-            <DashboardGrid
-              isEditable
-              onBreakpointChange={() => {}}
-              onLayoutChange={(newLayout, newLayouts) =>
-                setDashboardJson({
-                  ...dashboardJson,
-                  layouts: newLayouts,
-                })
-              }>
-              {dashboardJson.cards.map((cardConfig) => {
-                const isSelected = cardConfig.id === selectedCardId;
-                const cardProps = commonCardProps(cardConfig, isSelected);
-                // if renderCardPreview function not defined, or it returns null, render default preview
-                return (
-                  renderCardPreview(
-                    cardConfig,
-                    cardProps,
-                    onSelectCard,
-                    onDuplicateCard,
-                    onRemoveCard,
-                    isSelected
-                  ) ?? getCardPreview(cardConfig, cardProps)
-                );
-              })}
-            </DashboardGrid>
-          </ErrorBoundary>
+        <div
+          className={classnames(`${baseClassName}--preview`, {
+            // enables overflow: auto if a specific breakpoint is selected so the width can be managed
+            [`${baseClassName}__overflow`]:
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+          })}>
+          <div
+            className={classnames({
+              [`${baseClassName}--preview__outline`]:
+                selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+              [`${baseClassName}--preview__md`]:
+                selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
+              [`${baseClassName}--preview__lg`]:
+                selectedBreakpointIndex === LAYOUTS.LARGE.index,
+              [`${baseClassName}--preview__xl`]:
+                selectedBreakpointIndex === LAYOUTS.XLARGE.index,
+            })}>
+            {breakpointSwitcher?.enabled &&
+              // only show breakpoint info if fit to screen is not selected
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index && (
+                <div className={`${baseClassName}--preview__breakpoint-info`}>
+                  {renderBreakpointInfo(currentBreakpoint, mergedI18n)}
+                </div>
+              )}
+            <div className={`${baseClassName}--preview__grid-container`}>
+              <ErrorBoundary
+                fallback={
+                  <InlineNotification
+                    title="Dashboard editor error"
+                    subtitle="Something went wrong. Please refresh the page."
+                    kind="error"
+                    lowContrast
+                  />
+                }>
+                <DashboardGrid
+                  isEditable
+                  breakpoint={currentBreakpoint}
+                  onBreakpointChange={(newBreakpoint) => {
+                    setCurrentBreakpoint(newBreakpoint);
+                  }}
+                  layouts={dashboardJson.layouts}
+                  onLayoutChange={(newLayout, newLayouts) => {
+                    if (onLayoutChange) {
+                      onLayoutChange(newLayout, newLayouts);
+                    }
+                    setDashboardJson({
+                      ...dashboardJson,
+                      layouts: newLayouts,
+                    });
+                  }}
+                  supportedLayouts={['xl', 'lg', 'md']}>
+                  {dashboardJson.cards.map((cardConfig) => {
+                    const isSelected = cardConfig.id === selectedCardId;
+                    const cardProps = commonCardProps(cardConfig, isSelected);
+                    // if renderCardPreview function not defined, or it returns null, render default preview
+                    return (
+                      renderCardPreview(
+                        cardConfig,
+                        cardProps,
+                        onSelectCard,
+                        onDuplicateCard,
+                        onRemoveCard,
+                        isSelected
+                      ) ?? getCardPreview(cardConfig, cardProps)
+                    );
+                  })}
+                </DashboardGrid>
+              </ErrorBoundary>
+            </div>
+          </div>
         </div>
       </div>
       <div className={`${baseClassName}--sidebar`}>

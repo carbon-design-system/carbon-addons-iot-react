@@ -100,6 +100,29 @@ describe('DashboardEditor', () => {
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
+  it('space key should select the card and close gallery', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
+    // no card should be selected, meaning the gallery should be open
+    const galleryTitle = screen.getByText('Gallery');
+    expect(galleryTitle).toBeInTheDocument();
+    // first find and click the the card
+    const cardTitle = screen.getByTitle(mockValueCard.title);
+    expect(cardTitle).toBeInTheDocument();
+    fireEvent.keyDown(cardTitle, { key: 'Space' });
+    // gallery title should be gone and the card edit form should be open
+    expect(galleryTitle).not.toBeInTheDocument();
+
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    expect(cardSizeFormInput).toBeInTheDocument();
+  });
+
   it('selecting clone card should duplicate card', () => {
     render(
       <DashboardEditor
@@ -219,11 +242,8 @@ describe('DashboardEditor', () => {
       cards: [],
       layouts: {
         lg: [],
-        max: [],
         md: [],
-        sm: [],
         xl: [],
-        xs: [],
       },
     });
   });
@@ -268,6 +288,25 @@ describe('DashboardEditor', () => {
     expect(screen.getByTitle('My new card title')).toBeInTheDocument();
   });
 
+  it('selecting medium breakpoint should render breakpoint info', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{ enabled: true }}
+      />
+    );
+    // there should be no breakpoint text on initial render
+    expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
+    // find and click medium button
+    const mediumBtn = screen.getByText('Medium view');
+    expect(mediumBtn).toBeInTheDocument();
+    fireEvent.click(mediumBtn);
+    // there should now be breakpoint text
+    expect(
+      screen.getByText('Edit dashboard at medium layout (480 - 672px)')
+    ).toBeInTheDocument();
+  });
+
   it('triggering an error should show error message', () => {
     render(
       <DashboardEditor
@@ -302,18 +341,6 @@ describe('DashboardEditor', () => {
     );
 
     expect(errMsg).toHaveLength(2);
-  });
-
-  it('renders a custom header', () => {
-    render(
-      <DashboardEditor
-        {...commonProps}
-        renderHeader={() => <>Custom Header</>}
-      />
-    );
-    const header = screen.getByText('Custom Header');
-
-    expect(header).toBeInTheDocument();
   });
 
   it('uses custom onCardChange callback', () => {

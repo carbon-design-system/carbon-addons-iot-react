@@ -4,7 +4,11 @@ import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import assign from 'lodash/assign';
 
-import { PieCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  PieCardPropTypes,
+  CardPropTypes,
+  CHART_COLORS,
+} from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import {
@@ -66,6 +70,37 @@ const generateTableColumns = (values, groupDataSourceId) => {
     id: slice[groupDataSourceId],
     name: slice[groupDataSourceId],
   }));
+};
+
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon pie chart card expected format
+ * @param {Array} values, an array of group, value objects for each pie label
+ * @param {string} groupDataSourceId, the group id to use to find the value
+ * @param {Object} colors an object of colors
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (values, groupDataSourceId, colors) => {
+  const formattedColors = {
+    scale: {},
+  };
+  if (Array.isArray(values)) {
+    values.forEach((value, index) => {
+      formattedColors.scale[value[groupDataSourceId]] = colors?.[
+        value[groupDataSourceId]
+      ]
+        ? colors[value[groupDataSourceId]] // look to find a matching color entry in our colors otherwise use defaults
+        : CHART_COLORS[index % CHART_COLORS.length];
+    });
+  } else if (!isEmpty(values)) {
+    // values is an object
+    Object.keys(values).forEach((key, index) => {
+      formattedColors.scale[key] = colors?.[key]
+        ? colors?.[key]
+        : CHART_COLORS[index % CHART_COLORS.length];
+    });
+  }
+
+  return formattedColors;
 };
 
 const propTypes = { ...CardPropTypes, ...PieCardPropTypes };
@@ -148,6 +183,7 @@ const PieChartCard = ({
         groupMapsTo: groupDataSourceId,
         loading: isLoading,
       },
+      color: formatColors(values, groupDataSourceId, colors),
       getFillColor: (...args) => getColor(colors, ...args),
       getStrokeColor: (...args) => getColor(colors, ...args),
       legend: {

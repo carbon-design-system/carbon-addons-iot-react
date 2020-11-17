@@ -2,7 +2,10 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DataSeriesFormItem, { formatSeries } from './DataSeriesFormItem';
+import DataSeriesFormItem, {
+  formatSeries,
+  formatDataItemsForDropdown,
+} from './DataSeriesFormItem';
 
 const cardConfig = {
   id: 'Timeseries',
@@ -65,7 +68,7 @@ describe('DataSeriesFormItem', () => {
     ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
     });
@@ -75,6 +78,14 @@ describe('DataSeriesFormItem', () => {
       ).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
+      ]);
+    });
+  });
+  describe('formatDataItemsForDropdown', () => {
+    it('should correctly format the items for the dropdown', () => {
+      expect(formatDataItemsForDropdown(dataItems)).toEqual([
+        { id: 'temperature', text: 'temperature' },
+        { id: 'pressure', text: 'pressure' },
       ]);
     });
   });
@@ -118,7 +129,7 @@ describe('DataSeriesFormItem', () => {
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
-      const pressureDataItem = await screen.findAllByText('Pressure');
+      const pressureDataItem = await screen.findAllByText('pressure');
       expect(pressureDataItem[0]).toBeInTheDocument();
       fireEvent.click(pressureDataItem[0]);
       // assert that onChange was called

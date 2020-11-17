@@ -2,12 +2,12 @@ import moment from 'moment';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
-import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
 import {
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
 /**
@@ -104,8 +104,9 @@ export const formatChartData = (
   timeDataSourceId,
   type
 ) => {
-  const data = [];
-  if (!isNil(values) || !isEmpty(series)) {
+  let data = values;
+  if (!isNil(values) && !isEmpty(series)) {
+    data = [];
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
       let uniqueDatasetNames;
@@ -264,7 +265,7 @@ export const mapValuesToAxes = (
  */
 export const formatColors = (series, datasetNames) => {
   // first set the carbon charts config defaults
-  const colors = { identifier: 'group', scale: {} };
+  const colors = { scale: {} };
 
   // if color is an array, order doesn't matter so just map as many as possible
   if (series[0] && Array.isArray(series[0].color)) {
@@ -285,25 +286,10 @@ export const formatColors = (series, datasetNames) => {
     });
   }
 
-  // These are the default colors from carbon charts
-  const DEFAULT_CHART_COLORS = [blue, cyan, green, magenta, purple, red, teal];
-  let scale = 50;
-
   datasetNames.forEach((dataset, index) => {
     // if the colors aren't set, give them a default color
     if (!colors.scale[dataset]) {
-      colors.scale[dataset] =
-        DEFAULT_CHART_COLORS[index % DEFAULT_CHART_COLORS.length][scale];
-
-      // Change the scale on each iteration through the colors
-      if (index === 0) {
-        if (scale !== 100) {
-          scale += 10;
-        } else {
-          // scale is a bit hard to see if its lower than 40
-          scale = 40;
-        }
-      }
+      colors.scale[dataset] = CHART_COLORS[index % CHART_COLORS.length];
     }
   });
 

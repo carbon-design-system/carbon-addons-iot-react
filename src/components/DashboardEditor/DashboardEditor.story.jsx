@@ -41,6 +41,7 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       submitDisabled={boolean('submitDisabled', false)}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
@@ -56,6 +57,7 @@ export const Default = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -142,7 +144,62 @@ export const WithInitialValue = () => (
             interval: 'day',
           },
         ],
-        layouts: {},
+        layouts: {
+          lg: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          md: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          xl: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+        },
       }}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -150,6 +207,7 @@ export const WithInitialValue = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -166,6 +224,7 @@ export const WithInitialValue = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -216,9 +275,10 @@ export const WithCustomOnCardChange = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onCardChange={(card) => {
-        console.log('onCardChange');
+        action('onCardChange');
         return card;
       }}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={[
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -235,6 +295,7 @@ export const WithCustomOnCardChange = () => (
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -289,6 +350,7 @@ export const WithNotifications = () => (
           />
         </>
       }
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
@@ -297,14 +359,39 @@ WithNotifications.story = {
   name: 'with notifications',
 };
 
-export const CustomHeaderRenderer = () => (
-  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
-    <DashboardEditor renderHeader={() => <h1>Custom Header</h1>} />
+export const WithBreakpointSwitcher = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ])}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      breakpointSwitcher={{ enabled: true }}
+      isLoading={boolean('isLoading', false)}
+    />
   </div>
 );
 
-CustomHeaderRenderer.story = {
-  name: 'custom header renderer',
+WithBreakpointSwitcher.story = {
+  name: 'with breakpoint switcher',
 };
 
 export const CustomCardPreviewRenderer = () => (
@@ -349,6 +436,7 @@ export const CustomCardPreviewRenderer = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -391,10 +479,34 @@ export const CustomCardPreviewRenderer = () => (
           </Card>
         ) : undefined;
       }}
+      isLoading={boolean('isLoading', false)}
     />
   </div>
 );
 
 CustomCardPreviewRenderer.story = {
   name: 'custom card preview renderer',
+};
+
+export const CustomHeaderRenderer = () => (
+  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
+    <DashboardEditor
+      renderHeader={() => <h1>Custom Header</h1>}
+      isLoading={boolean('isLoading', false)}
+    />
+  </div>
+);
+
+CustomHeaderRenderer.story = {
+  name: 'custom header renderer',
+};
+
+export const isLoading = () => (
+  <div style={{ height: 'calc(100vh - 3rem)', marginRight: '-3rem' }}>
+    <DashboardEditor isLoading={boolean('isLoading', true)} />
+  </div>
+);
+
+isLoading.story = {
+  name: 'isLoading',
 };
