@@ -229,7 +229,7 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(cardConfig, null, 4));
+              setModalData(JSON.stringify(omit(cardConfig, ['content.src', 'content.imgState']), null, 4));
               setShowEditor(true);
             }}>
             {mergedI18n.openEditorButton}

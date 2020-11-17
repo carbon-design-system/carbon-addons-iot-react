@@ -8,7 +8,7 @@ import {
   ImageCardPropTypes,
   CardPropTypes,
 } from '../../constants/CardPropTypes';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import {
   getResizeHandles,
@@ -86,13 +86,15 @@ const ImageCard = ({
   )
 
   const handleOnUpload = (imageData) => {
-    onUpload(imageData.files);
-    setImgContent({
+
+    const newData = {
       ...imgContent,
       src: imageData.dataURL,
-      alt: imageData.files?.addedFiles[0]?.name,
       id:imageData.files?.addedFiles[0]?.name,
-    });
+    }
+    onCardAction(others.id, CARD_ACTIONS.ON_CARD_CHANGE, { content: { id: {$set: newData.id}, src: {$set: newData.src}, imgState: {$set: 'new'}} })
+    onUpload(imageData.files);
+    setImgContent(newData);
     setNewCardState(false);
   };
 

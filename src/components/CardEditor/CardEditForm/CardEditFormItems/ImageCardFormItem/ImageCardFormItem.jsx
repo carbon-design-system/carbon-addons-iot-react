@@ -22,7 +22,7 @@ const propTypes = {
     showLegend: PropTypes.bool,
   }),
   /* callback when image input value changes (File object) */
-  onChange: PropTypes.func.isRequired,
+  // onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({}),
 }
 
@@ -35,7 +35,7 @@ const defaultProps = {
   },
 }
 
-const ImageCardFormItems = ({cardConfig, i18n, onChange, }) => {
+const ImageCardFormItems = ({cardConfig, i18n, }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
   return (
@@ -45,7 +45,7 @@ const ImageCardFormItems = ({cardConfig, i18n, onChange, }) => {
       </div>
     <div className={`${baseClassName}--input`}>
       <label className={`${prefix}--label`} htmlFor={mergedI18n.imageFile}>{mergedI18n.imageFile}</label>
-      <input id={mergedI18n.imageFile} className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light`} readOnly value={cardConfig.content?.id}/>
+      <input id={mergedI18n.imageFile} className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light`} readOnly value={cardConfig.content?.id || ''}/>
     </div>
     </>
   )
