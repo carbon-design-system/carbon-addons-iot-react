@@ -29,6 +29,7 @@ const ListItemPropTypes = {
   isSelectable: PropTypes.bool,
   disabled: PropTypes.bool,
   onSelect: PropTypes.func,
+  renderDropTargets: PropTypes.bool,
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
@@ -75,6 +76,7 @@ const ListItemDefaultProps = {
   isSelectable: false,
   disabled: false,
   onSelect: () => {},
+  renderDropTargets: false,
   selected: false,
   expanded: false,
   secondaryValue: null,
@@ -105,6 +107,7 @@ const ListItem = ({
   value,
   secondaryValue,
   rowActions,
+  renderDropTargets,
   icon,
   iconPosition, // or "right"
   onItemMoved,
@@ -210,6 +213,7 @@ const ListItem = ({
         onItemMoved,
         itemWillMove,
         disabled,
+        renderDropTargets,
       }}>
       {renderDragPreview()}
       {dragIcon()}
@@ -325,6 +329,7 @@ const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging(),
+  renderDropTargets: monitor.getItemType() !== null, // render drop targets if anything is dragging
 }));
 
 ListItem.propTypes = ListItemPropTypes;
