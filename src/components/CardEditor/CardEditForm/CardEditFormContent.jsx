@@ -66,6 +66,15 @@ const propTypes = {
     selectASize: PropTypes.string,
     timeRange: PropTypes.string,
     selectATimeRange: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
@@ -108,23 +117,32 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
+    last24Hours: 'Last 24 hours',
+    last7Days: 'Last 7 days',
+    lastMonth: 'Last month',
+    lastQuarter: 'Last quarter',
+    lastYear: 'Last year',
+    thisWeek: 'This week',
+    thisMonth: 'This month',
+    thisQuarter: 'This quarter',
+    thisYear: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
 };
 
-export const defaultTimeRangeOptions = {
-  last24Hours: 'Last 24 hrs',
-  last7Days: 'Last 7 days',
-  lastMonth: 'Last month',
-  lastQuarter: 'Last quarter',
-  lastYear: 'Last year',
-  thisWeek: 'This week',
-  thisMonth: 'This month',
-  thisQuarter: 'This quarter',
-  thisYear: 'This year',
-};
+const defaultTimeRangeOptions = [
+  'last24Hours',
+  'last7Days',
+  'lastMonth',
+  'lastQuarter',
+  'lastYear',
+  'thisWeek',
+  'thisMonth',
+  'thisQuarter',
+  'thisYear',
+];
 
 /**
  * Returns card size and dimensions labels
@@ -155,8 +173,7 @@ const CardEditFormContent = ({
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
-    : Object.keys(defaultTimeRangeOptions);
-
+    : defaultTimeRangeOptions;
   return (
     <>
       <div className={`${baseClassName}--input`}>
@@ -215,7 +232,7 @@ const CardEditFormContent = ({
                 validTimeRanges
                   ? validTimeRanges.map((range) => ({
                       id: range,
-                      text: defaultTimeRangeOptions[range],
+                      text: mergedI18n[range] || range,
                     }))
                   : []
               }

@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - next
 
 jobs:
   publish:
@@ -46,6 +47,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        # Dry-run only for now for testing purposes. Travis CI does the actual publish currently.
-        # https://semantic-release.gitbook.io/semantic-release/usage/configuration#dryrun
-        run: yarn publish-npm --dry-run
+        run: yarn publish-npm
