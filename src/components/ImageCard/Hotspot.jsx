@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import classNames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
-import { spacing02 } from '@carbon/layout';
+
+import { settings } from '../../constants/Settings';
 
 import { HotspotContentPropTypes } from './HotspotContent';
 import CardIcon from './CardIcon';
+
+const { iotPrefix } = settings;
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -30,6 +33,12 @@ export const propTypes = {
   height: PropTypes.number,
   /** optional function to provide icon based on name */
   renderIconByName: PropTypes.func,
+  /**
+   * onClick callback for when the hotspot is clicked. Returns the event and an
+   * object width the x and y coordinates */
+  onClick: PropTypes.func,
+  /** shows a border with padding when set to true */
+  isSelected: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -39,39 +48,9 @@ const defaultProps = {
   width: 25,
   height: 25,
   renderIconByName: null,
+  onClick: null,
+  isSelected: false,
 };
-
-const StyledHotspot = styled(({ className, children }) => (
-  <div className={className}>{children}</div>
-))`
-  position: absolute;
-  ${(props) => `
-    top: calc(${props.y}% - ${props.height / 2}px);
-    left: calc(${props.x}% - ${props.width / 2}px);
-  `}
-  font-family: Sans-Serif;
-  pointer-events: auto;
-
-  .bx--tooltip__label {
-    ${(props) =>
-      props.icon
-        ? `
-      border: solid 1px #aaa;
-      cursor: pointer;
-      padding: ${spacing02};
-      background: white;
-      opacity: 0.9;
-      border-radius: 4px;
-      box-shadow: 0 0 8px #777;
-    `
-        : `
-      cursor: pointer;
-      box-shadow: 0 0 4px #999;
-      border-radius: 13px;
-      background: none;
-        `}
-  }
-`;
 
 /**
  * This component renders a hotspot with content over an image
@@ -86,6 +65,9 @@ const Hotspot = ({
   width,
   height,
   renderIconByName,
+  onClick,
+  isSelected,
+  className,
   ...others
 }) => {
   const defaultIcon = (
@@ -123,17 +105,36 @@ const Hotspot = ({
     defaultIcon
   );
 
+  const id = `hotspot-${x}-${y}`;
+
   return (
-    <StyledHotspot x={x} y={y} width={width} height={height} icon={icon}>
+    <div
+      data-testid={id}
+      className={classNames(`${iotPrefix}--hotspot-container`, {
+        [`${iotPrefix}--hotspot-container--selected`]: isSelected,
+        [`${iotPrefix}--hotspot-container--has-icon`]: icon,
+      })}
+      style={{
+        '--x-pos': x,
+        '--y-pos': y,
+        '--width': width,
+        '--height': height,
+      }}
+      icon={icon}>
       <Tooltip
         {...others}
         triggerText={iconToRender}
         showIcon={false}
-        triggerId={`hotspot-${x}-${y}`}
-        tooltipId={`hotspot-${x}-${y}`}>
+        triggerId={id}
+        tooltipId={id}
+        onChange={(evt) => {
+          if (evt.type === 'click' && onClick) {
+            onClick(evt, { x, y });
+          }
+        }}>
         {content}
       </Tooltip>
-    </StyledHotspot>
+    </div>
   );
 };
 

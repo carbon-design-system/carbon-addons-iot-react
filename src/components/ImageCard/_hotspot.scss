@@ -1,0 +1,51 @@
+// Part of the css and the colors used come from old StyledComponents code
+// and should be replaced with actual carbon colors and design. See issue 1806
+
+@import '../../globals/vars';
+
+// The custom properties --x-pos, --y-pos, --width, --height are set
+// on the container by the react js code
+.#{$iot-prefix}--hotspot-container {
+  position: absolute;
+  font-family: Sans-Serif;
+  pointer-events: auto;
+  top: calc((var(--y-pos) * 1%) - ((var(--height) / 2) * 1px));
+  left: calc((var(--x-pos) * 1%) - ((var(--width) / 2) * 1px));
+
+  .bx--tooltip__label {
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 0 4px #999;
+    border-radius: 13px;
+    background: none;
+  }
+}
+
+.#{$iot-prefix}--hotspot-container--selected {
+  $padding: #{$spacing-02};
+  $border-width: #{$spacing-01};
+
+  top: calc(
+    (var(--y-pos) * 1%) -
+      (((var(--height) * 1px) / 2) + #{$padding} + #{$border-width})
+  );
+  left: calc(
+    (var(--x-pos) * 1%) -
+      (((var(--width) * 1px) / 2) + #{$padding} + #{$border-width})
+  );
+  box-sizing: border-box;
+  border: solid #{$border-width} $interactive-04;
+  padding: #{$padding};
+}
+
+.#{$iot-prefix}--hotspot-container--has-icon {
+  .bx--tooltip__label {
+    border: solid 1px #aaa;
+    cursor: pointer;
+    padding: $spacing-02;
+    background: white;
+    opacity: 0.9;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #777;
+  }
+}
