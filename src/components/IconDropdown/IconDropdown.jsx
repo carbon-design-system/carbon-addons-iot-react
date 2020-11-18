@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -118,43 +118,18 @@ const IconDropdown = ({
     controlledSelectedItem
   );
 
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(columnCount * defaultItemSize);
+
+  const [topTranslate, setTopTranslate] = useState(0);
+  const [bottomTranslate, setBottomTranslate] = useState(0);
+
   const selectedItem =
     controlledSelectedItem !== null
       ? controlledSelectedItem
       : internalSelectedItem;
 
-  // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
-  const dropdown = document.getElementById(id);
-  const helperText = dropdown?.getElementsByClassName(
-    `${prefix}--form__helper-text`
-  )[0];
-  const validationText = dropdown?.getElementsByClassName(
-    `${prefix}--form-requirement`
-  )[0];
-  const menuOption = dropdown?.getElementsByClassName(
-    `${prefix}--list-box__menu-item`
-  )[0];
-
-  const dropdownLabel = dropdown?.getElementsByClassName(
-    `${prefix}--list-box__field`
-  )[0];
-
-  const helperTextHeight =
-    helperText !== undefined
-      ? helperText.clientHeight + defaultHelperPadding
-      : 0;
-  const validationTextHeight =
-    validationText !== undefined
-      ? validationText.clientHeight + defaultHelperPadding
-      : 0;
-
-  const labelHeight =
-    dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
-
-  const widthStyle = `${
-    columnCount * (menuOption?.clientWidth ?? defaultItemSize)
-  }px`;
-  const heightStyle = Math.ceil(items.length / columnCount) * defaultItemSize;
+  const dropdownRef = useRef(null);
 
   const highlightedItem =
     highlightedIndex >= 0 && highlightedIndex < items.length
@@ -163,26 +138,55 @@ const IconDropdown = ({
 
   const hasFooter = highlightedItem || selectedItem;
 
+  const handleClick = useCallback(() => {
+    // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
+    // const dropdown = document.getElementById(id);
+    const helperText = dropdownRef.current.getElementsByClassName(
+      `${prefix}--form__helper-text`
+    )[0];
+    const validationText = dropdownRef.current.getElementsByClassName(
+      `${prefix}--form-requirement`
+    )[0];
+    const menuOption = dropdownRef.current.getElementsByClassName(
+      `${prefix}--list-box__menu-item`
+    )[0];
+
+    const dropdownLabel = dropdownRef.current.getElementsByClassName(
+      `${prefix}--list-box__field`
+    )[0];
+
+    const helperTextHeight =
+      helperText !== undefined
+        ? helperText.clientHeight + defaultHelperPadding
+        : 0;
+    const validationTextHeight =
+      validationText !== undefined
+        ? validationText.clientHeight + defaultHelperPadding
+        : 0;
+
+    const labelHeight =
+      dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
+
+    setWidth(columnCount * (menuOption?.clientWidth ?? defaultItemSize));
+    setHeight(Math.ceil(items.length / columnCount) * defaultItemSize);
+    setTopTranslate(helperTextHeight + validationTextHeight + labelHeight + 1); // Add one for the border width
+    setBottomTranslate(helperTextHeight + validationTextHeight);
+  }, [columnCount, items, dropdownRef]);
+
   const Footer = () => {
     const selectedFooter =
       highlightedItem !== null ? highlightedItem : selectedItem;
-
-    const bottomTranslate = `translateY(-${
-      helperTextHeight + validationTextHeight
-    }px)`;
-
-    const topTranslate = `translateY(-${
-      helperTextHeight + validationTextHeight + labelHeight + 1 // Add one for the border width
-    }px)`;
 
     return (
       <div
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
-          width: widthStyle,
-          transform: direction === 'top' ? topTranslate : bottomTranslate,
-          paddingTop: direction === 'bottom' ? `${heightStyle}px` : 0,
-          paddingBottom: direction === 'top' ? `${heightStyle}px` : 0,
+          width: `${width}px`,
+          transform: `translateY(-${
+            direction === 'top' ? topTranslate : bottomTranslate
+          }px)`,
+          paddingTop: direction === 'bottom' ? `${height}px` : 0,
+          paddingBottom: direction === 'top' ? `${height}px` : 0,
           bottom: direction === 'top' ? 0 : 'initial',
         }}>
         {selectedFooter && (
@@ -243,13 +247,13 @@ const IconDropdown = ({
   };
 
   return (
-    <div id={id}>
+    <div id={id} ref={dropdownRef}>
       {isOpen && direction === 'top' && <Footer />}
 
       <Dropdown
         id={dropdownId}
         direction={direction}
-        style={{ width: widthStyle }}
+        style={{ width: `${width}px` }}
         items={items}
         className={`${iotPrefix}--icon-dropdown__selection-buttons`}
         selectedItem={selectedItem}
@@ -261,6 +265,8 @@ const IconDropdown = ({
         downshiftProps={{
           isOpen,
           onStateChange: (change) => {
+            handleClick();
+
             if (change.isOpen !== undefined) {
               setIsOpen(change.isOpen);
             }
