@@ -162,7 +162,7 @@ export const IsEditable = () => {
 };
 
 IsEditable.story = {
-  name: 'isEditable',
+  name: 'isEditable (experimental)',
 };
 
 export const HotspotsAreLoading = () => {

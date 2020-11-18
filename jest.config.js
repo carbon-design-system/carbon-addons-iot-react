@@ -78,16 +78,16 @@ module.exports = {
       functions: 25,
     },
     './src/components/ImageCard/ImageHotspots.jsx': {
-      statements: 78,
+      statements: 54,
       branches: 61,
       lines: 78,
       functions: 50,
     },
     './src/components/ImageCard/ImageUploader.jsx': {
       statements: 71,
-      branches: 47,
-      lines: 70,
-      functions: 40,
+      branches: 39,
+      lines: 56,
+      functions: 26,
     },
     './src/components/ImageCard/ImageControls.jsx': { branches: 66 },
     './src/components/Page/EditPage.jsx': {
