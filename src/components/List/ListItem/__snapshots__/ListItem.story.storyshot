@@ -276,9 +276,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <div
                 className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
-                title="List Item"
+                title="List Item with really long values does it ellipse when I get really long text"
               >
-                List Item
+                List Item with really long values does it ellipse when I get really long text
               </div>
               <div
                 className="iot--list-item--content--row-actions"

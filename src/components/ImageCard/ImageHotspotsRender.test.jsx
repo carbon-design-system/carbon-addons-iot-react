@@ -61,6 +61,7 @@ describe('render tests for the image hotspots component', () => {
     const zoomInBtn = screen.getByTitle('Zoom in');
     fireEvent.click(zoomInBtn);
     fireEvent.mouseDown(img);
+    fireEvent.mouseMove(img);
     // Minimap should appear once drag starts
     expect(screen.queryByAltText('Minimap')).toBeTruthy();
     fireEvent.mouseUp(img);

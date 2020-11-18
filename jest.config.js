@@ -14,7 +14,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|DashboardGrid).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|ImageUploader|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard|DashboardGrid|DashboardEditor).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -25,6 +25,7 @@ module.exports = {
       branches: 61,
       lines: 73,
     },
+    './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 61 },
     './src/components/BarChartCard/BarChartCard.jsx': {
       // TODO: Add tests for tooltip interaction and formatting when below issue is solved
       // https://github.com/carbon-design-system/carbon-charts/issues/594
@@ -77,10 +78,16 @@ module.exports = {
       functions: 25,
     },
     './src/components/ImageCard/ImageHotspots.jsx': {
-      statements: 78,
+      statements: 54,
       branches: 61,
       lines: 78,
       functions: 50,
+    },
+    './src/components/ImageCard/ImageUploader.jsx': {
+      statements: 54,
+      branches: 39,
+      lines: 56,
+      functions: 26,
     },
     './src/components/ImageCard/ImageControls.jsx': { branches: 66 },
     './src/components/Page/EditPage.jsx': {
@@ -100,7 +107,7 @@ module.exports = {
     },
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
-    './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
+    './src/components/ImageCard/ImageCard.jsx': { branches: 71 },
     './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
       branches: 78,
     },
