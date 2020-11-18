@@ -111,6 +111,7 @@ export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
 export FilterTags from './components/FilterTags/FilterTags';
 export ColorDropdown from './components/ColorDropdown/ColorDropdown';
+export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 
 // Carbon proxy
 export {

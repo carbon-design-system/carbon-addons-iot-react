@@ -17,26 +17,27 @@ enzyme.configure({ adapter: new Adapter() });
 // Needed to support useEffect in jest tests
 React.useEffect = React.useLayoutEffect;
 
-// Needed to use d3 in tests
-class SVGPathElement extends HTMLElement {}
+if (typeof window !== 'undefined') {
+  // Needed to use d3 in tests
+  class SVGPathElement extends HTMLElement {}
 
-window.SVGPathElement = SVGPathElement;
+  window.SVGPathElement = SVGPathElement;
 
-window.Element.prototype.getComputedTextLength = function () {
-  return 200;
-};
-
-// Needed to mock resize observer
-class ResizeObserver {
-  observe() {
-    // do nothing
+  window.Element.prototype.getComputedTextLength = function () {
+    return 200;
+  };
+  // Needed to mock resize observer
+  class ResizeObserver {
+    observe() {
+      // do nothing
+    }
+    unobserve() {
+      // do nothing
+    }
   }
-  unobserve() {
-    // do nothing
-  }
+
+  window.ResizeObserver = ResizeObserver;
 }
-
-window.ResizeObserver = ResizeObserver;
 
 // Needed so that any component that uses sizeme can be jest tested
 import sizeMe from 'react-sizeme';

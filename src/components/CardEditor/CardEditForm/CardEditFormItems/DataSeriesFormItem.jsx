@@ -262,7 +262,7 @@ const DataSeriesFormItem = ({
                 }}
               />
             ),
-            rowActions: [
+            rowActions: () => [
               <Button
                 key={`data-item-${series.dataSourceId}`}
                 renderIcon={Edit16}
