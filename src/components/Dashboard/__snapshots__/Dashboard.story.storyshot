@@ -2117,6 +2117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -2136,7 +2137,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-35-65"
+                          icon="arrowDown"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 35,
+                              "--y-pos": 65,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -2171,7 +2182,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-25"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 25,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -2212,7 +2233,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-50"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 50,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -2253,7 +2284,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-45-75"
+                          icon="arrowUp"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 75,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -4492,6 +4533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -4511,7 +4553,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-35-65"
+                          icon="arrowDown"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 35,
+                              "--y-pos": 65,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -4546,7 +4598,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-25"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 25,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -4587,7 +4649,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-50"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 50,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -4628,7 +4700,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-45-75"
+                          icon="arrowUp"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 75,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -6895,6 +6977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -6914,7 +6997,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-35-65"
+                          icon="arrowDown"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 35,
+                              "--y-pos": 65,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -6949,7 +7042,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-25"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 25,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -6990,7 +7093,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-50"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 50,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -7031,7 +7144,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-45-75"
+                          icon="arrowUp"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 75,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -7514,6 +7637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -11871,6 +11995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -11890,7 +12015,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-35-65"
+                          icon="arrowDown"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 35,
+                              "--y-pos": 65,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -11925,7 +12060,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-25"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 25,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -11966,7 +12111,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-50"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 50,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -12007,7 +12162,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-45-75"
+                          icon="arrowUp"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 75,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -26649,6 +26814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         src="landscape.jpg"
                         style={
                           Object {
+                            "cursor": "auto",
                             "left": undefined,
                             "position": "relative",
                             "top": undefined,
@@ -26668,7 +26834,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-35-65"
+                          icon="arrowDown"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 35,
+                              "--y-pos": 65,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -26703,7 +26879,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-25"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 25,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -26744,7 +26930,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                          className="iot--hotspot-container"
+                          data-testid="hotspot-45-50"
+                          icon={null}
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 50,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
@@ -26785,7 +26981,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                          className="iot--hotspot-container iot--hotspot-container--has-icon"
+                          data-testid="hotspot-45-75"
+                          icon="arrowUp"
+                          style={
+                            Object {
+                              "--height": 25,
+                              "--width": 25,
+                              "--x-pos": 45,
+                              "--y-pos": 75,
+                            }
+                          }
                         >
                           <div
                             aria-describedby={null}
