@@ -423,12 +423,16 @@ export const DonutCardPropTypes = {
 
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
-    title: PropTypes.string,
-    content: PropTypes.object,
+    id: PropTypes.string,
+    src: PropTypes.string,
+    zoomMax: PropTypes.number,
   }).isRequired,
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  onUpload: PropTypes.func,
+  onBrowseClick: PropTypes.func,
+  accept: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const GaugeCardPropTypes = {
