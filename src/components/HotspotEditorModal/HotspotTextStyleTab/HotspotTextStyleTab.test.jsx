@@ -41,7 +41,11 @@ describe('HotspotTextStyleTab', () => {
   });
 
   it('handles dropdown updates', () => {
-    let formValues = {};
+    let formValues = {
+      fontColor: colors[0],
+      backgroundColor: colors[0],
+      borderColor: colors[0],
+    };
 
     render(
       <HotspotTextStyleTab
@@ -66,13 +70,17 @@ describe('HotspotTextStyleTab', () => {
     fireEvent.click(dropdowns[2]);
     fireEvent.click(screen.getAllByText(colors[1].name)[0]);
 
-    expect(formValues.font.color).toEqual(colors[1]);
-    expect(formValues.background.color).toEqual(colors[1]);
-    expect(formValues.border.color).toEqual(colors[1]);
+    expect(formValues.fontColor).toEqual(colors[1]);
+    expect(formValues.backgroundColor).toEqual(colors[1]);
+    expect(formValues.borderColor).toEqual(colors[1]);
   });
 
   it('handles number input updates', () => {
-    let formValues = {};
+    let formValues = {
+      fontSize: '12',
+      backgroundOpacity: '99',
+      borderWidth: '1',
+    };
 
     render(
       <HotspotTextStyleTab
@@ -93,16 +101,16 @@ describe('HotspotTextStyleTab', () => {
     fireEvent.click(incrementButtons[1]);
     fireEvent.click(incrementButtons[2]);
 
-    expect(formValues.font.size).toEqual('13');
-    expect(formValues.background).toBeUndefined(); // Invalid update, will be undefined
-    expect(formValues.border.width).toEqual('2');
+    expect(formValues.fontSize).toEqual('13');
+    expect(formValues.backgroundOpacity).toEqual('100');
+    expect(formValues.borderWidth).toEqual('2');
 
     fireEvent.click(decrementButtons[0]);
     fireEvent.click(decrementButtons[1]);
     fireEvent.click(decrementButtons[2]);
 
-    expect(formValues.font.size).toEqual('12');
-    expect(formValues.background.opacity).toEqual('99');
-    expect(formValues.border.width).toEqual('1');
+    expect(formValues.fontSize).toEqual('12');
+    expect(formValues.backgroundOpacity).toEqual('99');
+    expect(formValues.borderWidth).toEqual('1');
   });
 });

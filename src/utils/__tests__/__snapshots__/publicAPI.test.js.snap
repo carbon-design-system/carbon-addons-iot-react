@@ -6185,39 +6185,40 @@ Map {
     "defaultProps": Object {
       "backgroundColors": undefined,
       "borderColors": undefined,
+      "className": "",
       "fontColors": undefined,
       "formValues": Object {
-        "background": Object {
-          "color": undefined,
-          "opacity": 100,
-        },
+        "backgroundColor": undefined,
+        "backgroundOpacity": undefined,
         "bold": false,
-        "border": Object {
-          "color": undefined,
-          "width": 1,
-        },
-        "font": Object {
-          "color": undefined,
-          "size": 12,
-        },
+        "borderColor": undefined,
+        "borderWidth": undefined,
+        "fontColor": undefined,
+        "fontSize": undefined,
         "italic": false,
         "underline": false,
       },
       "i18n": Object {
-        "backgroundLabel": "Background",
-        "boldLabel": "Text Bold",
-        "borderLabel": "Border",
-        "borderWidthInvalid": "Border Width is invalid",
-        "borderWidthLabel": "Border Width",
-        "fillOpacityInvalid": "Fill Opacity is invalid",
-        "fillOpacityLabel": "Fill Opacity",
-        "fontLabel": "Font",
-        "fontSizeInvalid": "Font Size is invalid",
-        "fontSizeLabel": "Font Size",
-        "italicLabel": "Text Italic",
-        "underlineLabel": "Text Underline",
+        "backgroundLabelText": "Background",
+        "boldLabelText": "Text Bold",
+        "borderLabelText": "Border",
+        "borderWidthInvalidText": "Border Width is invalid",
+        "borderWidthLabelText": "Border Width",
+        "fillOpacityInvalidText": "Fill Opacity is invalid",
+        "fillOpacityLabelText": "Fill Opacity",
+        "fontLabelText": "Font",
+        "fontSizeInvalidText": "Font Size is invalid",
+        "fontSizeLabelText": "Font Size",
+        "italicLabelText": "Text Italic",
+        "underlineLabelText": "Text Underline",
       },
       "light": true,
+      "maxBorderWidth": 15,
+      "maxFontSize": 50,
+      "maxOpacity": 100,
+      "minBorderWidth": 0,
+      "minFontSize": 1,
+      "minOpacity": 0,
     },
     "propTypes": Object {
       "backgroundColors": Object {
@@ -6255,6 +6256,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
       },
       "fontColors": Object {
         "args": Array [
@@ -6353,6 +6357,24 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxBorderWidth": Object {
+        "type": "number",
+      },
+      "maxFontSize": Object {
+        "type": "number",
+      },
+      "maxOpacity": Object {
+        "type": "number",
+      },
+      "minBorderWidth": Object {
+        "type": "number",
+      },
+      "minFontSize": Object {
+        "type": "number",
+      },
+      "minOpacity": Object {
+        "type": "number",
       },
       "onChange": Object {
         "isRequired": true,

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import { NumberInput } from 'carbon-components-react';
@@ -20,7 +20,13 @@ const colorPropType = PropTypes.shape({
 });
 
 const propTypes = {
+  /**
+   * Specify an optional className to be applied to the container node
+   */
+  className: PropTypes.string,
+  /** True if the light theme is to be used, defaults to true */
   light: PropTypes.bool,
+  /** set of internationalized labels */
   i18n: PropTypes.shape({
     boldLabel: PropTypes.string,
     italicLabel: PropTypes.string,
@@ -37,7 +43,7 @@ const propTypes = {
   }),
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
-  /** The state values of the controlled form elements e.g. { title: 'My hotspot 1', description: 'Lorem ipsum' } */
+  /** The state values of the controlled form elements, see defaults for shape */
   formValues: PropTypes.objectOf(
     PropTypes.oneOfType([
       PropTypes.string,
@@ -46,47 +52,63 @@ const propTypes = {
       colorPropType,
     ])
   ),
+  /** Array of colors to be shown for the font colors dropdown */
   fontColors: PropTypes.arrayOf(colorPropType),
+  /** Array of colors to be shown for the background colors dropdown */
   backgroundColors: PropTypes.arrayOf(colorPropType),
+  /** Array of colors to be shown for the border colors dropdown */
   borderColors: PropTypes.arrayOf(colorPropType),
+  /** Minimum Font size */
+  minFontSize: PropTypes.number,
+  /** Maximum Font size */
+  maxFontSize: PropTypes.number,
+  /** Minimum Opacity Value */
+  minOpacity: PropTypes.number,
+  /** Maximum Opacity Value */
+  maxOpacity: PropTypes.number,
+  /** Minimum Border Width */
+  minBorderWidth: PropTypes.number,
+  /** Maximum Border Width */
+  maxBorderWidth: PropTypes.number,
 };
 
 const defaultProps = {
+  className: '',
   light: true,
   i18n: {
-    boldLabel: 'Text Bold',
-    italicLabel: 'Text Italic',
-    underlineLabel: 'Text Underline',
-    fontLabel: 'Font',
-    fontSizeLabel: 'Font Size',
-    fontSizeInvalid: 'Font Size is invalid',
-    backgroundLabel: 'Background',
-    fillOpacityLabel: 'Fill Opacity',
-    fillOpacityInvalid: 'Fill Opacity is invalid',
-    borderLabel: 'Border',
-    borderWidthLabel: 'Border Width',
-    borderWidthInvalid: 'Border Width is invalid',
+    boldLabelText: 'Text Bold',
+    italicLabelText: 'Text Italic',
+    underlineLabelText: 'Text Underline',
+    fontLabelText: 'Font',
+    fontSizeLabelText: 'Font Size',
+    fontSizeInvalidText: 'Font Size is invalid',
+    backgroundLabelText: 'Background',
+    fillOpacityLabelText: 'Fill Opacity',
+    fillOpacityInvalidText: 'Fill Opacity is invalid',
+    borderLabelText: 'Border',
+    borderWidthLabelText: 'Border Width',
+    borderWidthInvalidText: 'Border Width is invalid',
   },
   formValues: {
     bold: false,
     italic: false,
     underline: false,
-    font: {
-      color: undefined,
-      size: 12,
-    },
-    background: {
-      color: undefined,
-      opacity: 100,
-    },
-    border: {
-      color: undefined,
-      width: 1,
-    },
+    fontColor: undefined,
+    fontSize: undefined,
+    backgroundColor: undefined,
+    backgroundOpacity: undefined,
+    borderColor: undefined,
+    borderWidth: undefined,
   },
   fontColors: undefined,
   backgroundColors: undefined,
   borderColors: undefined,
+  minFontSize: 1,
+  maxFontSize: 50,
+  minOpacity: 0,
+  maxOpacity: 100,
+  minBorderWidth: 0,
+  maxBorderWidth: 15,
 };
 
 /* this component is only used internally where props are defined and set. */
@@ -99,31 +121,39 @@ const HotspotTextStyleTab = ({
   light,
   i18n,
   onChange,
+  minFontSize,
+  maxFontSize,
+  minOpacity,
+  maxOpacity,
+  minBorderWidth,
+  maxBorderWidth,
 }) => {
   const {
-    boldLabel,
-    italicLabel,
-    underlineLabel,
-    fontLabel,
-    fontSizeLabel,
-    fontSizeInvalid,
-    backgroundLabel,
-    fillOpacityLabel,
-    fillOpacityInvalid,
-    borderLabel,
-    borderWidthLabel,
-    borderWidthInvalid,
+    boldLabelText,
+    italicLabelText,
+    underlineLabelText,
+    fontLabelText,
+    fontSizeLabelText,
+    fontSizeInvalidText,
+    backgroundLabelText,
+    fillOpacityLabelText,
+    fillOpacityInvalidText,
+    borderLabelText,
+    borderWidthLabelText,
+    borderWidthInvalidText,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const fontSizeRef = useRef(null);
-  const fillOpacityRef = useRef(null);
-  const borderWidthRef = useRef(null);
-
-  const { bold, italic, underline, font, background, border } = merge(
-    {},
-    defaultProps.formValues,
-    formValues
-  );
+  const {
+    bold,
+    italic,
+    underline,
+    fontSize,
+    fontColor,
+    backgroundColor,
+    backgroundOpacity,
+    borderColor,
+    borderWidth,
+  } = formValues;
 
   return (
     <div className={className}>
@@ -132,7 +162,7 @@ const HotspotTextStyleTab = ({
           onClick={() => onChange({ bold: !bold })}
           data-testid="hotspot-bold"
           selected={bold}
-          text={boldLabel}
+          text={boldLabelText}
           renderIcon={TextBold}
           index={0}
           light={light}
@@ -142,7 +172,7 @@ const HotspotTextStyleTab = ({
           onClick={() => onChange({ italic: !italic })}
           data-testid="hotspot-italic"
           selected={italic}
-          text={italicLabel}
+          text={italicLabelText}
           renderIcon={TextItalic}
           index={1}
           light={light}
@@ -152,7 +182,7 @@ const HotspotTextStyleTab = ({
           onClick={() => onChange({ underline: !underline })}
           data-testid="hotspot-underline"
           selected={underline}
-          text={underlineLabel}
+          text={underlineLabelText}
           renderIcon={TextUnderline}
           index={2}
           light={light}
@@ -162,27 +192,26 @@ const HotspotTextStyleTab = ({
       <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
         <ColorDropdown
           id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
-          titleText={fontLabel}
+          titleText={fontLabelText}
           light={light}
-          selectedColor={font.color ?? fontColors?.[0]}
+          selectedColor={fontColor}
           colors={fontColors}
           onChange={(selected) => {
-            onChange({ font: selected });
+            onChange({ fontColor: selected.color });
           }}
         />
 
         <NumberInput
           id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
-          min={0}
-          max={50}
-          value={font.size}
+          min={minFontSize}
+          max={maxFontSize}
+          value={fontSize}
           step={1}
           light={light}
-          label={fontSizeLabel}
-          invalidText={fontSizeInvalid}
-          ref={fontSizeRef}
-          onChange={() => {
-            onChange({ font: { size: fontSizeRef.current.value } });
+          label={fontSizeLabelText}
+          invalidText={fontSizeInvalidText}
+          onChange={(event) => {
+            onChange({ fontSize: event.imaginaryTarget.value });
           }}
         />
       </div>
@@ -190,30 +219,29 @@ const HotspotTextStyleTab = ({
       <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
         <ColorDropdown
           id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
-          titleText={backgroundLabel}
+          titleText={backgroundLabelText}
           light={light}
-          selectedColor={background.color ?? backgroundColors?.[0]}
+          selectedColor={backgroundColor}
           colors={backgroundColors}
           onChange={(selected) => {
             onChange({
-              background: selected,
+              backgroundColor: selected.color,
             });
           }}
         />
 
         <NumberInput
           id={`${iotPrefix}--hotspot-text-style-tab__background`}
-          label={fillOpacityLabel}
-          min={0}
-          max={100}
-          value={background.opacity}
-          ref={fillOpacityRef}
+          label={fillOpacityLabelText}
+          min={minOpacity}
+          max={maxOpacity}
+          value={backgroundOpacity}
           step={1}
           light={light}
-          invalidText={fillOpacityInvalid}
-          onChange={() => {
+          invalidText={fillOpacityInvalidText}
+          onChange={(event) => {
             onChange({
-              background: { opacity: fillOpacityRef.current.value },
+              backgroundOpacity: event.imaginaryTarget.value,
             });
           }}
         />
@@ -222,27 +250,26 @@ const HotspotTextStyleTab = ({
       <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
         <ColorDropdown
           id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
-          titleText={borderLabel}
+          titleText={borderLabelText}
           light={light}
           colors={borderColors}
           onChange={(selected) => {
-            onChange({ border: selected });
+            onChange({ borderColor: selected.color });
           }}
-          selectedColor={border.color ?? borderColors?.[0]}
+          selectedColor={borderColor}
         />
 
         <NumberInput
           id={`${iotPrefix}--hotspot-text-style-tab__border`}
-          label={borderWidthLabel}
-          min={0}
-          max={15}
-          value={border.width}
-          ref={borderWidthRef}
+          label={borderWidthLabelText}
+          min={minBorderWidth}
+          max={maxBorderWidth}
+          value={borderWidth}
           step={1}
           light={light}
-          invalidText={borderWidthInvalid}
-          onChange={() => {
-            onChange({ border: { width: borderWidthRef.current.value } });
+          invalidText={borderWidthInvalidText}
+          onChange={(event) => {
+            onChange({ borderWidth: event.imaginaryTarget.value });
           }}
         />
       </div>
