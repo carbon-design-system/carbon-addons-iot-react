@@ -1,8 +1,13 @@
 @import '../../../globals/vars';
+@import '../mixins';
 
 $border-radius: 5px;
 
 .#{$iot-prefix}--hotspot-text-style-tab {
+  &__form {
+    @include vertical-form();
+  }
+
   &__text-style {
     @include content-switcher-border-radius($border-radius, left, right);
   }
@@ -21,10 +26,17 @@ $border-radius: 5px;
     align-items: baseline;
     gap: $spacing-06;
 
-    margin-top: $spacing-06;
-
     .#{$prefix}--dropdown__wrapper.#{$prefix}--list-box__wrapper {
       width: 100%;
     }
   }
+}
+
+.#{$iot-prefix}--hotspot-editor--text-info-message {
+  @include info-message();
+}
+
+.#{$iot-prefix}--hotspot-text-style-tab__delete-button-container {
+  display: flex;
+  justify-content: flex-end;
 }

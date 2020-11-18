@@ -329,8 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             />
           </svg>
           <p>
-            Select an existing hotspot on the image to edit it or insert one 
-          by selecting an option from the toolbar.
+            Click on an empty region on the image to create a fixed hotspot
           </p>
         </div>
       </div>
@@ -411,7 +410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   placeholder="Enter title for the tooltip"
                   title="Enter title for the tooltip"
                   type="text"
-                  value="West building"
+                  value=""
                 />
               </div>
             </div>
@@ -441,7 +440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 onClick={[Function]}
                 placeholder="Enter description for the tooltip"
                 rows={4}
-                value="This is the largest building there is"
+                value=""
               />
             </div>
           </div>

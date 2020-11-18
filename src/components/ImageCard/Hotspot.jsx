@@ -44,7 +44,7 @@ export const propTypes = {
   /** shows a border with padding when set to true */
   isSelected: PropTypes.bool,
   /** determines the type of hotspot to render. Defaults to 'fixed'. */
-  type: PropTypes.oneOf(['fixed', 'variable', 'text']),
+  type: PropTypes.oneOf(['fixed', 'dynamic', 'text']),
   /** For text hotspots, true if title should be bold */
   bold: PropTypes.bool,
   /** For text hotspots, true if title should be italic */
@@ -173,9 +173,11 @@ const Hotspot = ({
               [`${iotPrefix}--hotspot-container--has-icon`]: icon,
               [`${iotPrefix}--hotspot-container--is-text`]: isTextType,
               [`${iotPrefix}--hotspot-container--is-fixed`]: type === 'fixed',
+              [`${iotPrefix}--hotspot-container--is-dynamic`]:
+                type === 'dynamic',
             })}
             icon={icon}>
-            {type === 'fixed' ? (
+            {type === 'fixed' || type === 'dynamic' ? (
               <Tooltip
                 {...others}
                 triggerText={iconToRender}

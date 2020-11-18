@@ -103,9 +103,7 @@ const HotspotEditorDataSourceTab = ({
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
-  const [selectedItemsArray, setSelectedItemsArray] = useState(
-    () => hotspot.content?.attributes || []
-  );
+  const selectedItemsArray = hotspot.content?.attributes || [];
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
@@ -126,8 +124,7 @@ const HotspotEditorDataSourceTab = ({
         newArray.push(containedDataItem);
       }
     });
-    setSelectedItemsArray(newArray);
-    onChange(newArray);
+    onChange({ attributes: newArray });
   };
 
   return (
