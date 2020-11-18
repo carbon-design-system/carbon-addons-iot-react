@@ -36,6 +36,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -374,6 +376,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -712,6 +716,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -1050,6 +1056,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -1388,6 +1396,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -1726,6 +1736,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}

@@ -2396,6 +2396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
+            accept={null}
             className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="imageCard"
@@ -2488,6 +2489,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 >
                   <img
                     alt="Sample image"
+                    className="iot--image-card-img"
+                    id={null}
                     onLoad={[Function]}
                     onMouseDown={[Function]}
                     onMouseMove={[Function]}
