@@ -7122,6 +7122,7 @@ Map {
     },
   },
   "useSuiteHeaderData" => Object {},
+  "suiteHeaderData" => Object {},
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -17786,6 +17787,206 @@ Map {
         "type": "string",
       },
       "titleText": Object {
+        "type": "string",
+      },
+    },
+  },
+  "HotspotEditorTooltipTab" => Object {
+    "defaultProps": Object {
+      "formValues": Object {},
+      "hotspotIconFillColors": undefined,
+      "hotspotIcons": Array [],
+      "i18n": Object {
+        "deleteButtonIconDescription": "Delete this hotspot",
+        "deleteButtonLabelText": "Delete hotspot",
+        "descriptionTextareaLabelText": "Description",
+        "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
+        "iconDropdownLabelText": "Select an Icon",
+        "iconDropdownTitleText": "Icon",
+        "titleInputLabelText": "Title",
+        "titleInputPlaceholderText": "Enter title for the tooltip",
+      },
+      "infoMessage": undefined,
+      "overrides": undefined,
+      "primaryInputId": undefined,
+      "testID": "HotspotEditorTooltipTab",
+    },
+    "propTypes": Object {
+      "formValues": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "carbonColor": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "hotspotIconFillColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "hotspotIcons": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "icon": Object {
+                  "type": "object",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "text": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "colorDropdownLabelText": Object {
+              "type": "string",
+            },
+            "colorDropdownTitleText": Object {
+              "type": "string",
+            },
+            "deleteButtonIconDescription": Object {
+              "type": "string",
+            },
+            "deleteButtonLabelText": Object {
+              "type": "string",
+            },
+            "descriptionTextareaLabelText": Object {
+              "type": "string",
+            },
+            "descriptionTextareaPlaceholderText": Object {
+              "type": "string",
+            },
+            "iconDropdownLabelText": Object {
+              "type": "string",
+            },
+            "titleInputLabelText": Object {
+              "type": "string",
+            },
+            "titleInputPlaceholderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "infoMessage": Object {
+        "type": "string",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onDelete": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "decriptionTextArea": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "titleTextInput": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "primaryInputId": Object {
+        "type": "string",
+      },
+      "testID": Object {
         "type": "string",
       },
     },
