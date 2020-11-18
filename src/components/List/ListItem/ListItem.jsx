@@ -84,7 +84,7 @@ const ListItemDefaultProps = {
   selected: false,
   expanded: false,
   secondaryValue: null,
-  rowActions: [],
+  rowActions: null,
   icon: null,
   iconPosition: 'left',
   nestingLevel: 0,
