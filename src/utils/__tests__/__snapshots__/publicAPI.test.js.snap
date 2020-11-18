@@ -12977,9 +12977,6 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
-      "isNew": Object {
-        "type": "bool",
-      },
       "isResizable": Object {
         "type": "bool",
       },

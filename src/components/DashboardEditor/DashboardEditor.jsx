@@ -310,7 +310,7 @@ const DashboardEditor = ({
       } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
       } else if (actionId === CARD_ACTIONS.ON_CARD_CHANGE) {
-        handleOnCardChange(update(cardConfig, payload))
+        handleOnCardChange(update(cardConfig, payload));
       }
     },
     tabIndex: 0,

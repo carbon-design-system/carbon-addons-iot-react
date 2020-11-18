@@ -44,7 +44,7 @@ const propTypes = {
         id: PropTypes.string,
         src: PropTypes.string,
         zoomMax: PropTypes.number,
-      })
+      }),
     ]),
     interval: PropTypes.string,
     showLegend: PropTypes.bool,
@@ -269,10 +269,7 @@ const CardEditFormContent = ({
         </>
       )}
       {type === CARD_TYPES.IMAGE && (
-        <ImageCardFormItem
-        cardConfig={cardConfig}
-        i18n={mergedI18n}
-        />
+        <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );
