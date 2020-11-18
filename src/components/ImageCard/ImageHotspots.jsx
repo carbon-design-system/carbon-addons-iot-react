@@ -1,14 +1,20 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
+import { settings } from '../../constants/Settings';
+
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 import ImageControls from './ImageControls';
 import HotspotContent from './HotspotContent';
 
+const { iotPrefix } = settings;
+
 const propTypes = {
+  /** id of the local image file to display */
+  id: PropTypes.string,
   /** source of the local image file to display */
   src: PropTypes.string,
   /** alt tag and shown on mouseover */
@@ -19,11 +25,17 @@ const propTypes = {
   hideZoomControls: PropTypes.bool,
   hideHotspots: PropTypes.bool,
   hideMinimap: PropTypes.bool,
+  /** when true activates mouse event based create & select hotspot fuctionality */
+  isEditable: PropTypes.bool,
   isHotspotDataLoading: PropTypes.bool,
   /** Background color to display around the image */
   background: PropTypes.string,
   /** Current height in pixels */
   height: PropTypes.number.isRequired,
+  /** Callback when an editable image is clicked without drag */
+  onAddHotspotPosition: PropTypes.func,
+  /** Callback when a hotspot is clicked in isEditable mode, emits position obj {x, y} */
+  onSelectHotspot: PropTypes.func,
   /** Current width in pixels */
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
@@ -31,9 +43,14 @@ const propTypes = {
   i18n: PropTypes.objectOf(PropTypes.string),
   /** locale string to pass for formatting */
   locale: PropTypes.string,
+  /** The (unique) positions of the currently selected hotspots */
+  selectedHotspots: PropTypes.arrayOf(
+    PropTypes.shape({ x: PropTypes.number, y: PropTypes.number })
+  ),
 };
 
 const defaultProps = {
+  id: null,
   src: null,
   hotspots: [],
   alt: null,
@@ -41,6 +58,9 @@ const defaultProps = {
   hideHotspots: false,
   hideMinimap: false,
   isHotspotDataLoading: false,
+  isEditable: false,
+  onAddHotspotPosition: () => {},
+  onSelectHotspot: () => {},
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
@@ -50,6 +70,18 @@ const defaultProps = {
     zoomToFit: 'Zoom to fit',
   },
   locale: null,
+  selectedHotspots: [],
+};
+
+export const prepareDrag = (event, element, cursor, setCursor) => {
+  if (element === 'image') {
+    setCursor({
+      ...cursor,
+      dragging: false,
+      dragPrepared: true,
+    });
+  }
+  event.preventDefault();
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -61,6 +93,7 @@ export const startDrag = (event, element, cursor, setCursor) => {
       cursorX,
       cursorY,
       dragging: true,
+      dragPrepared: false,
     });
   }
   event.preventDefault();
@@ -322,6 +355,49 @@ export const zoom = (
   }
 };
 
+const getAccumulatedOffset = (imageElement) => {
+  const offset = {
+    top: imageElement.offsetTop,
+    left: imageElement.offsetLeft,
+  };
+
+  let ancestor = imageElement.offsetParent;
+
+  while (ancestor) {
+    offset.top += ancestor.offsetTop;
+    offset.left += ancestor.offsetLeft;
+    ancestor = ancestor.offsetParent;
+  }
+
+  return offset;
+};
+
+/** Calculates the mouse click position in percentage and returns the
+ * result in a callback */
+export const onAddHotspotPosition = ({
+  event,
+  image,
+  setCursor,
+  isEditable,
+  callback,
+}) => {
+  setCursor((cursor) => {
+    return { ...cursor, dragPrepared: false };
+  });
+  if (isEditable) {
+    const accumelatedOffset = getAccumulatedOffset(event.currentTarget);
+    const relativePosition = {
+      x: event.pageX - accumelatedOffset.left,
+      y: event.pageY - accumelatedOffset.top,
+    };
+    const percentagePosition = {
+      x: (relativePosition.x / image.width) * 100,
+      y: (relativePosition.y / image.height) * 100,
+    };
+    callback(percentagePosition);
+  }
+};
+
 /** Parent smart component with local state that renders an image with its hotspots */
 const ImageHotspots = ({
   hideZoomControls: hideZoomControlsProp,
@@ -331,13 +407,18 @@ const ImageHotspots = ({
   i18n,
   background,
   src,
+  id,
   height,
   width,
   alt,
+  isEditable,
   isHotspotDataLoading,
+  onAddHotspotPosition: onAddHotspotPositionCallback,
+  onSelectHotspot,
   zoomMax,
   renderIconByName,
   locale,
+  selectedHotspots,
 }) => {
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
@@ -376,7 +457,7 @@ const ImageHotspots = ({
     );
   }, [container, zoomMax, image, minimap, options]);
 
-  const { dragging } = cursor;
+  const { dragging, dragPrepared } = cursor;
   const { hideZoomControls, hideHotspots, hideMinimap, draggable } = options;
   const imageLoaded = image.initialWidth && image.initialHeight;
 
@@ -390,6 +471,7 @@ const ImageHotspots = ({
   };
 
   const imageStyle = {
+    cursor: isEditable && !dragging ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
     top: image.offsetY,
@@ -404,10 +486,26 @@ const ImageHotspots = ({
     pointerEvents: 'none',
   };
 
+  const onHotspotClicked = useCallback(
+    (evt, position) => {
+      // It is possible to receive two events here, one Mouse event and one Pointer event.
+      // When used in the ImageHotspots component the Pointer event can somehow be from a
+      // previously clicked hotspot. See https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1803
+      const isPointerEventOfTypeMouse = evt?.pointerType === 'mouse';
+      if (!isPointerEventOfTypeMouse && isEditable) {
+        onSelectHotspot(position);
+      }
+    },
+    [onSelectHotspot, isEditable]
+  );
+
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
       hotspots.map((hotspot) => {
+        const hotspotIsSelected = !!selectedHotspots.find(
+          (pos) => hotspot.x === pos.x && hotspot.y === pos.y
+        );
         return (
           <Hotspot
             {...omit(hotspot, 'content')}
@@ -425,10 +523,19 @@ const ImageHotspots = ({
             key={`${hotspot.x}-${hotspot.y}`}
             style={hotspotsStyle}
             renderIconByName={renderIconByName}
+            isSelected={hotspotIsSelected}
+            onClick={onHotspotClicked}
           />
         );
       }),
-    [hotspots, hotspotsStyle, locale, renderIconByName]
+    [
+      hotspots,
+      hotspotsStyle,
+      locale,
+      renderIconByName,
+      selectedHotspots,
+      onHotspotClicked,
+    ]
   );
 
   if (imageLoaded) {
@@ -464,6 +571,8 @@ const ImageHotspots = ({
       }}>
       {src && (
         <img
+          id={id}
+          className={`${iotPrefix}--image-card-img`}
           src={src}
           alt={alt}
           onLoad={(event) =>
@@ -481,11 +590,13 @@ const ImageHotspots = ({
           style={imageStyle}
           onMouseDown={(evt) => {
             if (!hideZoomControls && draggable) {
-              startDrag(evt, 'image', cursor, setCursor);
+              prepareDrag(evt, 'image', cursor, setCursor);
             }
           }}
           onMouseMove={(evt) => {
-            if (!hideZoomControls && dragging) {
+            if (!hideZoomControls && draggable && dragPrepared) {
+              startDrag(evt, 'image', cursor, setCursor);
+            } else if (!hideZoomControls && dragging) {
               whileDrag(
                 evt,
                 cursor,
@@ -497,9 +608,17 @@ const ImageHotspots = ({
               );
             }
           }}
-          onMouseUp={() => {
+          onMouseUp={(event) => {
             if (dragging) {
               stopDrag(cursor, setCursor);
+            } else {
+              onAddHotspotPosition({
+                event,
+                image,
+                setCursor,
+                isEditable,
+                callback: onAddHotspotPositionCallback,
+              });
             }
           }}
         />
