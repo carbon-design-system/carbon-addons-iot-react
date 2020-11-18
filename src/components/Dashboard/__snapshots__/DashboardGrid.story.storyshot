@@ -2490,6 +2490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   <img
                     alt="Sample image"
                     className="iot--image-card-img"
+                    id={null}
                     onLoad={[Function]}
                     onMouseDown={[Function]}
                     onMouseMove={[Function]}

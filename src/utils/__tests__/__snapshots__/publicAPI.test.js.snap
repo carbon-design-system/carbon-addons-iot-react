@@ -12347,7 +12347,7 @@ Map {
       },
       "locale": "en",
       "onBrowseClick": null,
-      "onUpload": null,
+      "onUpload": [Function],
     },
     "propTypes": Object {
       "accept": Object {
@@ -12816,11 +12816,14 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "content": Object {
-              "type": "object",
-            },
-            "title": Object {
+            "id": Object {
               "type": "string",
+            },
+            "src": Object {
+              "type": "string",
+            },
+            "zoomMax": Object {
+              "type": "number",
             },
           },
         ],
@@ -14946,6 +14949,7 @@ Map {
     "CLOSE_EXPANDED_CARD": "CLOSE_EXPANDED_CARD",
     "DELETE_CARD": "DELETE_CARD",
     "EDIT_CARD": "EDIT_CARD",
+    "ON_CARD_CHANGE": "ON_CARD_CHANGE",
     "OPEN_EXPANDED_CARD": "OPEN_EXPANDED_CARD",
     "UPDATE_DATA": "UPDATE_DATA",
   },
