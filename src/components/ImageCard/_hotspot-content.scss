@@ -38,10 +38,3 @@
     padding-left: $spacing-01;
   }
 }
-
-.#{$iot-prefix}--image-card-img {
-  top: 0 !important; // TODO: find where styles are being set in JS
-  height: 100% !important;
-  object-fit: cover;
-  width: 100%;
-}

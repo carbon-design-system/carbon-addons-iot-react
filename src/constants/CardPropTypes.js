@@ -430,7 +430,6 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
-  isNew: PropTypes.bool,
   onUpload: PropTypes.func,
   onBrowseClick: PropTypes.func,
   accept: PropTypes.arrayOf(PropTypes.string),

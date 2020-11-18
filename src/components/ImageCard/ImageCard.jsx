@@ -50,7 +50,7 @@ const defaultProps = {
   locale: 'en',
   content: {},
   accept: null,
-  onUpload: ()=> {},
+  onUpload: () => {},
   onBrowseClick: null,
 };
 
@@ -70,32 +70,32 @@ const ImageCard = ({
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
   locale,
-  isNew,
   onUpload,
   onBrowseClick,
   ...others
 }) => {
-  const [newCardState, setNewCardState] = useState(isNew);
   const [imgContent, setImgContent] = useState(content);
   const hotspots = values ? values.hotspots || [] : [];
 
-  useEffect(
-    () => {
-      setImgContent(content);
-    }, [content]
-  )
+  useEffect(() => {
+    setImgContent(content);
+  }, [content]);
 
   const handleOnUpload = (imageData) => {
-
     const newData = {
       ...imgContent,
       src: imageData.dataURL,
-      id:imageData.files?.addedFiles[0]?.name,
-    }
-    onCardAction(others.id, CARD_ACTIONS.ON_CARD_CHANGE, { content: { id: {$set: newData.id}, src: {$set: newData.src}, imgState: {$set: 'new'}} })
+      id: imageData.files?.addedFiles[0]?.name,
+    };
+    onCardAction(others.id, CARD_ACTIONS.ON_CARD_CHANGE, {
+      content: {
+        id: { $set: newData.id },
+        src: { $set: newData.src },
+        imgState: { $set: 'new' },
+      },
+    });
     onUpload(imageData.files);
     setImgContent(newData);
-    setNewCardState(false);
   };
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -111,8 +111,7 @@ const ImageCard = ({
   const supportedSize = supportedSizes.includes(newSize);
   const mergedAvailableActions = { expand: supportedSize, ...availableActions };
 
-  const isCardLoading =
-    newCardState === false && isNil(imgContent.src) && !isEditable && !error;
+  const isCardLoading = isNil(imgContent.src) && !isEditable && !error;
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
   return (
@@ -135,7 +134,7 @@ const ImageCard = ({
           ) => (
             <ContentWrapper>
               {supportedSize ? (
-                newCardState || isEditable && !imgContent.src ? (
+                isEditable && !imgContent.src ? (
                   <ImageUploader
                     onBrowseClick={onBrowseClick}
                     width={width}
@@ -154,12 +153,12 @@ const ImageCard = ({
                     renderIconByName={renderIconByName}
                     locale={locale}
                   />
-                ) :
-                (<EmptyDiv>
-                  <Image32 width={250} height={250} fill="gray" />
-                </EmptyDiv>)
-              )
-              : (
+                ) : (
+                  <EmptyDiv>
+                    <Image32 width={250} height={250} fill="gray" />
+                  </EmptyDiv>
+                )
+              ) : (
                 <p>Size not supported.</p>
               )}
             </ContentWrapper>
