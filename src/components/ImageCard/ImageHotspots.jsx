@@ -449,8 +449,7 @@ const ImageHotspots = ({
     );
   }, [container, zoomMax, image, minimap, options]);
 
-  const { dragging } = cursor;
-  const { dragPrepared } = cursor;
+  const { dragging, dragPrepared } = cursor;
   const { hideZoomControls, hideHotspots, hideMinimap, draggable } = options;
   const imageLoaded = image.initialWidth && image.initialHeight;
 
