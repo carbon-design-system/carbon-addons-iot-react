@@ -3,7 +3,6 @@ import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
-import isEmpty from 'lodash/isEmpty';
 import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -165,7 +164,7 @@ const ListItem = ({
     ) : null;
 
   const hasRowActions =
-    rowActions && (typeof rowActions === 'function' || !isEmpty(rowActions));
+    rowActions && (typeof rowActions === 'function' || rowActions?.length);
 
   const renderRowActions = () =>
     hasRowActions ? (
