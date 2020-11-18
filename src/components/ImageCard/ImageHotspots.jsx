@@ -482,7 +482,7 @@ const ImageHotspots = ({
     (evt, position) => {
       // It is possible to receive two events here, one Mouse event and one Pointer event.
       // When used in the ImageHotspots component the Pointer event can somehow be from a
-      // previously clicked hotspot. See issue #1803
+      // previously clicked hotspot. See https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1803
       const isPointerEventOfTypeMouse = evt?.pointerType === 'mouse';
       if (!isPointerEventOfTypeMouse && isEditable) {
         onSelectHotspot(position);
