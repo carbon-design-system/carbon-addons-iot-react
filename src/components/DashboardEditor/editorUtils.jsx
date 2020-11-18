@@ -19,7 +19,6 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
-import { ImageIcon } from '../../icons/components';
 
 /**
  * Returns a duplicate card configuration

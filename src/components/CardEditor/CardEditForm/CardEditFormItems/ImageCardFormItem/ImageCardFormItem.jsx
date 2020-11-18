@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
@@ -44,8 +44,9 @@ const ImageCardFormItems = ({cardConfig, i18n, }) => {
         {mergedI18n.image}
       </div>
     <div className={`${baseClassName}--input`}>
-      <label className={`${prefix}--label`} htmlFor={mergedI18n.imageFile}>{mergedI18n.imageFile}</label>
+      <label id={`${mergedI18n.imageFile}-label`} className={`${prefix}--label`} htmlFor={mergedI18n.imageFile}>{mergedI18n.imageFile}
       <input id={mergedI18n.imageFile} className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light`} readOnly value={cardConfig.content?.id || ''}/>
+      </label>
     </div>
     </>
   )

@@ -3,11 +3,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ImageUploader from './ImageUploader';
-import testImage from './MunichBuilding.png';
 
-function mockFetch(status, data) {
-  return { status, json: () => Promise.resolve(data) };
-}
+// function mockFetch(status, data) {
+//   return { status, json: () => Promise.resolve(data) };
+// }
 
 describe('ImageUploader', () => {
   it('will switch to URL upload screen', () => {
