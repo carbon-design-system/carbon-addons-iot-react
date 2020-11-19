@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import DataSeriesFormItem, {
   formatSeries,
   formatDataItemsForDropdown,
-} from './DataSeriesFormItem';
+} from './DataSeriesFormContent';
 
 const cardConfig = {
   id: 'Timeseries',

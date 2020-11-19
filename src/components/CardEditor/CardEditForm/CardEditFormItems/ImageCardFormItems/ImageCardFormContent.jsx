@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Scale32} from '@carbon/icons-react';
 
+import Button from '../../../../Button';
 import { settings } from '../../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -39,7 +41,7 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
   const baseClassName = `${iotPrefix}--card-edit-form`;
   return (
     <>
-      <div className={`${baseClassName}--form-section`}>{mergedI18n.image}</div>
+      <div className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>{mergedI18n.image}</div>
       <div className={`${baseClassName}--input`}>
         <label
           id={`${mergedI18n.imageFile}-label`}
@@ -48,11 +50,12 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
           {mergedI18n.imageFile}
           <input
             id={mergedI18n.imageFile}
-            className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light`}
+            className={`${prefix}--text-input ${prefix}--text__input ${prefix}--text-input--light ${baseClassName}--form-section-image-input`}
             readOnly
             value={cardConfig.content?.id || ''}
           />
         </label>
+        <Button className={`${baseClassName}--form-section-image-btn`} size="small" renderIcon={Scale32}>{mergedI18n.editImage}</Button>
       </div>
     </>
   );

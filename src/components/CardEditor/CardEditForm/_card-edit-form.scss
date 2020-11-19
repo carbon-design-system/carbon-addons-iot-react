@@ -3,18 +3,23 @@
   background: $ui-01;
   display: flex;
   flex-direction: column;
+
   .#{$prefix}--tab-content {
     flex: 1;
   }
+
   .#{$prefix}--tabs__nav--hidden {
     width: 100%;
+
     .#{$prefix}--tabs__nav-link {
       width: 100%;
     }
   }
+
   .#{$prefix}--file__selected-file {
     background-color: $ui-02;
   }
+
   .color-picker {
     .color-picker-button {
       // need to leave just enough room for the selected border
@@ -22,16 +27,19 @@
       height: 1.95rem;
       border: solid $spacing-01 $ui-01;
     }
+
     .color-picker-button__selected {
       border: solid $spacing-01 $interactive-04;
     }
   }
+
   &--content {
     flex: 1;
     margin: -$spacing-05;
     height: 100%;
     padding-top: $spacing-05;
   }
+
   &--form-section {
     padding: $spacing-03 $spacing-05;
     @include type-style('productive-heading-01');
@@ -39,11 +47,14 @@
     border-bottom: solid 1px $ui-03;
     margin-bottom: $spacing-05;
   }
+
   &--input-label {
     font-size: 0.75rem;
   }
+
   &--input {
     padding-bottom: $spacing-05;
+
     &--label {
       font-size: 0.75rem;
     }
@@ -81,5 +92,16 @@
   }
   .#{$prefix}--modal-container--xs {
     max-height: none;
+  }
+}
+
+// Image card form styles
+.#{$iot-prefix}--card-edit-form--form-section-image {
+  &-input {
+    margin-bottom: $spacing-05;
+  }
+
+  &-btn {
+    width: 100%;
   }
 }

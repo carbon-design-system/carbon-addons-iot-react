@@ -12,8 +12,8 @@ import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
-import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem/DataSeriesFormItem';
-import ImageCardFormItem from './CardEditFormItems/ImageCardFormItem/ImageCardFormItem';
+import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
+import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 
 const { iotPrefix } = settings;
 
@@ -257,7 +257,7 @@ const CardEditFormContent = ({
               titleText={mergedI18n.timeRange}
             />
           </div>
-          <DataSeriesFormItem
+          <DataSeriesFormContent
             cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
@@ -269,7 +269,7 @@ const CardEditFormContent = ({
         </>
       )}
       {type === CARD_TYPES.IMAGE && (
-        <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
+        <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );

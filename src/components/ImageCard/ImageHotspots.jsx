@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
@@ -19,6 +19,8 @@ const propTypes = {
   src: PropTypes.string,
   /** alt tag and shown on mouseover */
   alt: PropTypes.string,
+  /** value for object-fit property - fit, fill, stretch */
+  displayOption: PropTypes.string,
   /** optional array of hotspots to render over the image */
   hotspots: PropTypes.arrayOf(PropTypes.shape(HotspotPropTypes)),
   /** optional features to enable or disable */
@@ -52,6 +54,7 @@ const propTypes = {
 const defaultProps = {
   id: null,
   src: null,
+  displayOption: null,
   hotspots: [],
   alt: null,
   hideZoomControls: false,
@@ -419,6 +422,7 @@ const ImageHotspots = ({
   renderIconByName,
   locale,
   selectedHotspots,
+  displayOption,
 }) => {
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
@@ -436,6 +440,18 @@ const ImageHotspots = ({
     hideHotspots: hideHotspotsProp,
     hideMinimap: hideMinimapProp,
   });
+
+  useEffect(
+    () => {
+
+    setOptions({
+      hideZoomControls: hideZoomControlsProp,
+      hideHotspots: hideHotspotsProp,
+      hideMinimap: hideMinimapProp,
+    })
+    },
+    [hideZoomControlsProp, hideHotspotsProp, hideMinimapProp]
+  )
 
   const orientation = width > height ? 'landscape' : 'portrait';
   const ratio = orientation === 'landscape' ? width / height : height / width;
@@ -474,7 +490,10 @@ const ImageHotspots = ({
     cursor: isEditable && !dragging ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
-    top: image.offsetY,
+    top: displayOption ? 0 : image.offsetY,
+    height: displayOption ? '100%' : 'auto',
+    width: displayOption ? '100%' : 'auto',
+    objectFit: displayOption,
   };
 
   const hotspotsStyle = {
@@ -540,7 +559,7 @@ const ImageHotspots = ({
 
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
-      imageStyle.height = image.height;
+      imageStyle.height = displayOption ? '100%' : image.height;
     } else {
       imageStyle.width = image.width;
     }
