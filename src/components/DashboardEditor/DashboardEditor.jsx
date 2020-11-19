@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
 import classnames from 'classnames';
+import update from 'immutability-helper';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -309,11 +310,13 @@ const DashboardEditor = ({
     key: cardConfig.id,
     tooltip: cardConfig.description,
     availableActions: { clone: true, delete: true },
-    onCardAction: (id, actionId) => {
+    onCardAction: (id, actionId, payload) => {
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
         onDuplicateCard(id);
       } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
+      } else if (actionId === CARD_ACTIONS.ON_CARD_CHANGE) {
+        handleOnCardChange(update(cardConfig, payload));
       }
     },
     tabIndex: 0,

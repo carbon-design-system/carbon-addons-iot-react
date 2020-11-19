@@ -21,6 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -105,6 +106,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             >
               <img
                 alt="Sample image"
+                className="iot--image-card-img"
+                id={null}
                 onLoad={[Function]}
                 onMouseDown={[Function]}
                 onMouseMove={[Function]}
@@ -112,6 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 src="landscape.jpg"
                 style={
                   Object {
+                    "cursor": "auto",
                     "left": undefined,
                     "position": "relative",
                     "top": undefined,
@@ -131,7 +135,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  data-testid="hotspot-35-65"
+                  icon="arrowDown"
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 35,
+                      "--y-pos": 65,
+                    }
+                  }
                 >
                   <div
                     aria-describedby={null}
@@ -263,6 +277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -347,6 +362,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             >
               <img
                 alt="Sample image"
+                className="iot--image-card-img"
+                id={null}
                 onLoad={[Function]}
                 onMouseDown={[Function]}
                 onMouseMove={[Function]}
@@ -354,6 +371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 src="landscape.jpg"
                 style={
                   Object {
+                    "cursor": "auto",
                     "left": undefined,
                     "position": "relative",
                     "top": undefined,
@@ -373,7 +391,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  data-testid="hotspot-35-65"
+                  icon="arrowDown"
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 35,
+                      "--y-pos": 65,
+                    }
+                  }
                 >
                   <div
                     aria-describedby={null}
@@ -410,7 +438,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 kwumIH"
+                  className="iot--hotspot-container"
+                  data-testid="hotspot-45-25"
+                  icon={null}
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 45,
+                      "--y-pos": 25,
+                    }
+                  }
                 >
                   <div
                     aria-describedby={null}
@@ -451,7 +489,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 eqtfro"
+                  className="iot--hotspot-container"
+                  data-testid="hotspot-45-50"
+                  icon={null}
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 45,
+                      "--y-pos": 50,
+                    }
+                  }
                 >
                   <div
                     aria-describedby={null}
@@ -492,7 +540,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  data-testid="hotspot-45-75"
+                  icon="arrowUp"
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 45,
+                      "--y-pos": 75,
+                    }
+                  }
                 >
                   <div
                     aria-describedby={null}
@@ -626,6 +684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -752,6 +811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -878,6 +938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -962,6 +1023,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             >
               <img
                 alt="Sample image"
+                className="iot--image-card-img"
+                id={null}
                 onLoad={[Function]}
                 onMouseDown={[Function]}
                 onMouseMove={[Function]}
@@ -969,6 +1032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 src="landscape.jpg"
                 style={
                   Object {
+                    "cursor": "auto",
                     "left": undefined,
                     "position": "relative",
                     "top": undefined,
@@ -1104,7 +1168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable (experimental) 1`] = `
 <div
   className="storybook-container"
 >
@@ -1125,6 +1189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
+        accept={null}
         className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="image-hotspots"
@@ -1164,25 +1229,92 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
           >
             <div
-              className="ImageCard__EmptyDiv-sc-1p2j9dm-1 dkLZTG"
+              className="iot--image-uploader"
             >
-              <svg
-                aria-hidden={true}
-                fill="gray"
-                focusable="false"
-                height={250}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={250}
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="bx--file"
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDrop={[Function]}
               >
-                <path
-                  d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
-                />
-                <path
-                  d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
-                />
-              </svg>
+                <label
+                  className="bx--file-browse-btn"
+                  htmlFor="id10"
+                  onKeyDown={[Function]}
+                  size="field"
+                  tabIndex={0}
+                >
+                  <div
+                    className="bx--file__drop-container"
+                    role="button"
+                  >
+                    
+                    <input
+                      accept={Array []}
+                      className="bx--file-input"
+                      id="id10"
+                      multiple={false}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      tabIndex="-1"
+                      type="file"
+                    />
+                  </div>
+                </label>
+              </div>
+              <div
+                className="iot--image-uploader-icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
+                  />
+                  <path
+                    d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--image-uploader-content"
+              >
+                <h2
+                  className="iot--image-uploader-drop-label-text"
+                >
+                  Drag and drop file here or click to select file
+                </h2>
+                <p
+                  className="iot--image-uploader-drop-description-text"
+                >
+                  Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
+                </p>
+                <button
+                  className="iot--btn bx--btn bx--btn--primary"
+                  disabled={false}
+                  onClick={null}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Browse images
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--tertiary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Insert from URL
+                </button>
+              </div>
             </div>
           </div>
         </div>

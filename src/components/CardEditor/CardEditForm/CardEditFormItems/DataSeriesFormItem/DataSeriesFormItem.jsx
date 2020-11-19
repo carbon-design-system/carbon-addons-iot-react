@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
 
-import { settings } from '../../../../constants/Settings';
-import { Button, List, MultiSelect } from '../../../../index';
-import { DataItemsPropTypes } from '../../../DashboardEditor/DashboardEditor';
+import { settings } from '../../../../../constants/Settings';
 import {
   DATAITEM_COLORS_OPTIONS,
   handleDataSeriesChange,
-} from '../../../DashboardEditor/editorUtils';
-import { CARD_TYPES } from '../../../../constants/LayoutConstants';
-
-import DataSeriesFormItemModal from './DataSeriesFormItemModal';
+} from '../../../../DashboardEditor/editorUtils';
+import { Button, List, MultiSelect } from '../../../../../index';
+import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
+import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
+import { CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   /* card value */
+
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -171,7 +171,7 @@ const DataSeriesFormItem = ({
                   }}
                 />
               ) : null,
-            rowActions: [
+            rowActions: () => [
               <Button
                 key={`data-item-${dataItem.dataSourceId}`}
                 renderIcon={Edit16}

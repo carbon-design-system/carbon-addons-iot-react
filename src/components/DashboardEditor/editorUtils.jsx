@@ -65,7 +65,6 @@ import {
   TableCard,
   ListCard,
 } from '../../index';
-import { ImageIcon } from '../../icons/components';
 
 /**
  * Returns a duplicate card configuration
@@ -170,8 +169,6 @@ export const getDefaultCard = (type, i18n) => {
       return {
         ...baseCardProps,
         content: {
-          alt: 'Sample image',
-          src: ImageIcon,
           hideMinimap: true,
           hideHotspots: false,
           hideZoomControls: false,
