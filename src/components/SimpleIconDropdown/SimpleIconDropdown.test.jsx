@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import SimpleIconDropdown from './SimpleIconDropdown';
 
@@ -12,10 +12,18 @@ describe('SimpleIconDropdown', () => {
     onChange: mockOnChange,
   };
 
-  it('clicking card should select the card and close gallery', async () => {
+  it('Selecting an icon should fire onChange', () => {
     render(<SimpleIconDropdown {...commonProps} />);
 
     const iconDropdown = screen.getByRole('button');
     expect(iconDropdown).toBeInTheDocument();
+
+    fireEvent.click(iconDropdown);
+
+    const secondOption = screen.getAllByRole('option')[1];
+    expect(secondOption).toBeInTheDocument();
+
+    fireEvent.click(secondOption);
+    expect(mockOnChange).toHaveBeenCalled();
   });
 });

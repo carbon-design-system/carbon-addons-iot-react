@@ -183,7 +183,7 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
                 ...cardConfig,
                 content: {
                   ...content,
-                  precision: Number(selectedItem) || selectedItem,
+                  precision: Number(selectedItem),
                 },
               });
             } else {
