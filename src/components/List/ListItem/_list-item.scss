@@ -16,6 +16,8 @@
     }
 
     &:active {
+      background: $hover-ui;
+
       cursor: grabbing;
     }
   }
@@ -73,7 +75,7 @@
     z-index: -100;
   }
 
-  &-dragging {
+  &--dragging {
     background: $hover-ui;
     cursor: grabbing;
   }
@@ -85,7 +87,6 @@
 }
 
 .#{$iot-prefix}--list-item {
-  background: $ui-01;
   border-bottom: 1px solid $ui-03;
   display: flex;
   height: rem(40px);
@@ -121,7 +122,7 @@
 
   &__selected {
     border-left: solid $spacing-02 $interactive-01;
-    padding-left: $spacing-04;
+    padding-left: $spacing-01;
     color: $text-01;
     background: $selected-ui;
   }
@@ -174,7 +175,7 @@
         text-overflow: ellipsis;
         padding-right: $spacing-09;
         &__with-actions {
-          padding-right: 0;
+          padding-right: $spacing-07; // save room for the action button
           width: $spacing-05;
         }
         &__large {

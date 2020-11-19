@@ -6423,28 +6423,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -6497,28 +6475,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -6573,28 +6529,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -6647,28 +6581,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -6723,28 +6635,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -6797,28 +6687,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -6873,28 +6741,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -6947,28 +6793,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -7023,28 +6847,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -7097,28 +6899,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -7173,28 +6953,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -7247,28 +7005,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -7323,28 +7059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -7398,28 +7112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -7472,28 +7164,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "50%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
