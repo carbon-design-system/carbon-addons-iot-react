@@ -3,7 +3,6 @@ import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
-import isEmpty from 'lodash/isEmpty';
 import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -164,9 +163,11 @@ const ListItem = ({
       </div>
     ) : null;
 
+  const hasRowActions =
+    rowActions && (typeof rowActions === 'function' || rowActions?.length);
+
   const renderRowActions = () =>
-    rowActions &&
-    (typeof rowActions === 'function' || rowActions.length > 0) ? (
+    hasRowActions ? (
       <div className={`${iotPrefix}--list-item--content--row-actions`}>
         {typeof rowActions === 'function' ? rowActions() : rowActions}
       </div>
@@ -240,9 +241,7 @@ const ListItem = ({
                     {
                       [`${iotPrefix}--list-item--category`]: isCategory,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                     }
                   )}
                   title={value}>
@@ -258,9 +257,7 @@ const ListItem = ({
                     `${iotPrefix}--list-item--content--values--value`,
                     `${iotPrefix}--list-item--content--values--value__large`,
                     {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}>
@@ -277,9 +274,7 @@ const ListItem = ({
                     {
                       [`${iotPrefix}--list-item--category`]: isCategory,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                     }
                   )}
                   title={value}>
@@ -291,9 +286,7 @@ const ListItem = ({
                     className={classnames(
                       `${iotPrefix}--list-item--content--values--value`,
                       {
-                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                          rowActions
-                        ),
+                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                         [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                       }
                     )}>
