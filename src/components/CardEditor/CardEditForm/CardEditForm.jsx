@@ -139,6 +139,7 @@ export const basicCardValidation = (card) => {
  */
 export const handleSubmit = (
   card,
+  id,
   setError,
   onValidateCardJson,
   onChange,
@@ -154,7 +155,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange(JSON.parse(card));
+    onChange({ ...JSON.parse(card), id });
     setShowEditor(false);
     return true;
   }
@@ -177,6 +178,7 @@ const CardEditForm = ({
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
+  const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -186,6 +188,7 @@ const CardEditForm = ({
           onSubmit={(card, setError) =>
             handleSubmit(
               card,
+              id,
               setError,
               onValidateCardJson,
               onChange,
