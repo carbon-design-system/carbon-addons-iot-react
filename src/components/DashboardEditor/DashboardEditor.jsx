@@ -82,6 +82,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
    * onCardChange(updatedCard, template): Card
    */
@@ -156,6 +160,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   onCardChange: null,
   onLayoutChange: null,
   onDelete: null,
@@ -220,6 +225,7 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  availableDimensions,
   isLoading,
   i18n,
 }) => {
@@ -442,6 +448,7 @@ const DashboardEditor = ({
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
             supportedCardTypes={supportedCardTypes}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         </ErrorBoundary>

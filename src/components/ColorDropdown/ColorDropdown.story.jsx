@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { red50, blue50, green50, teal70 } from '@carbon/colors';
+import { red50, blue50, green50, teal70, purple70 } from '@carbon/colors';
 
 import ColorDropdown from './ColorDropdown';
 
@@ -49,6 +49,19 @@ export const CustomColorsExample = () => (
         { carbonColor: green50, name: 'green' },
         { carbonColor: blue50, name: 'blue' },
       ]}
+      onChange={action('onChange')}
+    />
+  </div>
+);
+
+export const NoLabelsExample = () => (
+  <div style={{ width: '6rem' }}>
+    <ColorDropdown
+      id="myColorDropdown"
+      label={text('label', 'Select a color')}
+      titleText={text('titleText', 'Color')}
+      selectedColor={{ carbonColor: purple70, name: 'purple70' }}
+      hideLabels={boolean('showLabels', true)}
       onChange={action('onChange')}
     />
   </div>

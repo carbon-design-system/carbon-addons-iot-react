@@ -36,8 +36,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <label
             className="bx--label"
-            htmlFor="downshift-18-toggle-button"
-            id="downshift-18-label"
+            htmlFor="downshift-34-toggle-button"
+            id="downshift-34-label"
           >
             Dropdown label
           </label>
@@ -52,10 +52,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               aria-disabled={false}
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-labelledby="downshift-18-label downshift-18-toggle-button"
+              aria-labelledby="downshift-34-label downshift-34-toggle-button"
               className="bx--list-box__field"
               disabled={false}
-              id="downshift-18-toggle-button"
+              id="downshift-34-toggle-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               type="button"
@@ -90,9 +90,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </button>
             <div
-              aria-labelledby="downshift-18-label"
+              aria-labelledby="downshift-34-label"
               className="bx--list-box__menu"
-              id="downshift-18-menu"
+              id="downshift-34-menu"
               onBlur={[Function]}
               onKeyDown={[Function]}
               onMouseLeave={[Function]}

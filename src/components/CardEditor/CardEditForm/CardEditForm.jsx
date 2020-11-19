@@ -57,6 +57,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -90,6 +94,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   onValidateCardJson: null,
 };
 
@@ -166,6 +171,7 @@ const CardEditForm = ({
   onValidateCardJson,
   getValidDataItems,
   getValidTimeRanges,
+  availableDimensions,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -206,6 +212,7 @@ const CardEditForm = ({
               onChange={onChange}
               i18n={mergedI18n}
               dataItems={dataItems}
+              availableDimensions={availableDimensions}
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
             />

@@ -73,6 +73,60 @@
       margin-top: 0;
     }
   }
+  &--modal-wrapper {
+    .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
+      overflow: visible;
+    }
+    .#{$prefix}--modal-content {
+      overflow: visible;
+    }
+    .#{$prefix}--number,
+    input[type='number'] {
+      min-width: unset;
+    }
+  }
+  &--input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      max-width: 5rem;
+    }
+  }
+  &--threshold-input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      max-width: 5rem;
+    }
+  }
+
   &--footer {
     padding: $spacing-05;
     & > button {

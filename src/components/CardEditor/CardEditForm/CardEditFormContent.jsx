@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  CARD_TYPES,
   CARD_SIZES,
   CARD_DIMENSIONS,
   ALLOWED_CARD_SIZES_PER_TYPE,
@@ -90,6 +89,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -130,6 +133,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
 };
 
 const defaultTimeRangeOptions = [
@@ -163,6 +167,7 @@ const CardEditFormContent = ({
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
+  availableDimensions,
 }) => {
   const { title, description, size, type, id } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -220,46 +225,43 @@ const CardEditFormContent = ({
           titleText={mergedI18n.size}
         />
       </div>
-      {type === CARD_TYPES.TIMESERIES && (
-        <>
-          <div className={`${baseClassName}--input`}>
-            <Dropdown
-              id={`${id}_time_range`}
-              label={mergedI18n.selectATimeRange}
-              direction="bottom"
-              itemToString={(item) => item.text}
-              items={
-                validTimeRanges
-                  ? validTimeRanges.map((range) => ({
-                      id: range,
-                      text: mergedI18n[range] || range,
-                    }))
-                  : []
-              }
-              light
-              onChange={({ selectedItem }) => {
-                const { range, interval } = timeRangeToJSON[selectedItem.id];
-                setSelectedTimeRange(selectedItem.id);
-                onChange({
-                  ...cardConfig,
-                  interval,
-                  dataSource: { ...cardConfig.dataSource, range },
-                });
-              }}
-              titleText={mergedI18n.timeRange}
-            />
-          </div>
-          <DataSeriesFormItem
-            cardConfig={cardConfig}
-            onChange={onChange}
-            dataItems={dataItems}
-            setSelectedDataItems={setSelectedDataItems}
-            selectedTimeRange={selectedTimeRange}
-            getValidDataItems={getValidDataItems}
-            i18n={mergedI18n}
-          />
-        </>
-      )}
+      <div className={`${baseClassName}--input`}>
+        <Dropdown
+          id={`${id}_time_range`}
+          label={mergedI18n.selectATimeRange}
+          direction="bottom"
+          itemToString={(item) => item.text}
+          items={
+            validTimeRanges
+              ? validTimeRanges.map((range) => ({
+                  id: range,
+                  text: mergedI18n[range] || range,
+                }))
+              : []
+          }
+          light
+          onChange={({ selectedItem }) => {
+            const { range, interval } = timeRangeToJSON[selectedItem.id];
+            setSelectedTimeRange(selectedItem.id);
+            onChange({
+              ...cardConfig,
+              interval,
+              dataSource: { ...cardConfig.dataSource, range },
+            });
+          }}
+          titleText={mergedI18n.timeRange}
+        />
+      </div>
+      <DataSeriesFormItem
+        cardConfig={cardConfig}
+        onChange={onChange}
+        dataItems={dataItems}
+        setSelectedDataItems={setSelectedDataItems}
+        selectedTimeRange={selectedTimeRange}
+        getValidDataItems={getValidDataItems}
+        availableDimensions={availableDimensions}
+        i18n={mergedI18n}
+      />
     </>
   );
 };

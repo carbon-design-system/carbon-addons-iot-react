@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash/omit';
 
 import { settings } from '../../../constants/Settings';
-import { TextInput } from '../../../index';
+import { TextInput, NumberInput, Dropdown } from '../../../index';
+import { CARD_TYPES } from '../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 
@@ -38,7 +40,9 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    showLegendLabel: PropTypes.string,
+    fontSize: PropTypes.string,
   }),
 };
 
@@ -49,17 +53,19 @@ const defaultProps = {
     yAxisLabel: 'Y-axis label',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
+    precisionLabel: 'Precision',
+    showLegendLabel: 'Show legend',
+    fontSize: 'Font size',
   },
 };
 
 const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content, id } = cardConfig;
+  const { content, id, type } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  return (
+  const TimeSeriesSettings = (
     <>
       <div className={`${baseClassName}--input`}>
         <TextInput
@@ -138,6 +144,70 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
       </div> */}
     </>
   );
+
+  const ValueCardSettings = (
+    <>
+      <div className={`${baseClassName}--input`}>
+        <NumberInput
+          id={`${id}_value-card-font-size`}
+          step={1}
+          min={0}
+          light
+          label={mergedI18n.fontSize}
+          value={content?.fontSize?.toString() || 16}
+          onChange={({ imaginaryTarget }) =>
+            onChange({
+              ...cardConfig,
+              content: {
+                ...content,
+                fontSize:
+                  Number(imaginaryTarget.value) || imaginaryTarget.value,
+              },
+            })
+          }
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <Dropdown
+          id={`${id}_value-card-decimal-place`}
+          titleText={mergedI18n.precisionLabel}
+          direction="bottom"
+          label=""
+          items={['Not set', '0', '1', '2', '3', '4']}
+          light
+          selectedItem={content?.precision?.toString() || 'Not set'}
+          onChange={({ selectedItem }) => {
+            const isSet = selectedItem !== 'Not set';
+            if (isSet) {
+              onChange({
+                ...cardConfig,
+                content: {
+                  ...content,
+                  precision: Number(selectedItem) || selectedItem,
+                },
+              });
+            } else {
+              onChange({
+                ...cardConfig,
+                content: {
+                  ...omit(content, 'precision'),
+                },
+              });
+            }
+          }}
+        />
+      </div>
+    </>
+  );
+
+  switch (type) {
+    case CARD_TYPES.TIMESERIES:
+      return TimeSeriesSettings;
+    case CARD_TYPES.VALUE:
+      return ValueCardSettings;
+    default:
+      return null;
+  }
 };
 
 CardEditFormSettings.propTypes = propTypes;
