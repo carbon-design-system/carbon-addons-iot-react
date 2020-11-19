@@ -215,9 +215,10 @@ const DataSeriesFormItemModal = ({
             [`${baseClassName}--input-group--item`]: !isEmpty(
               editDataItem.dataFilter
             ),
-            [`${baseClassName}--input-group--item-half`]: isEmpty(
-              editDataItem.dataFilter
-            ),
+            [`${baseClassName}--input-group--item-half`]:
+              isEmpty(editDataItem.dataFilter) ||
+              (!isEmpty(editDataItem.dataFilter) &&
+                !availableDimensions[selectedDimensionFilter]),
           })}>
           <Dropdown
             id={`${cardConfig.id}_data-filter-key`}
@@ -244,7 +245,8 @@ const DataSeriesFormItemModal = ({
             titleText={mergedI18n.dataItemEditorDataItemFilter}
           />
         </div>
-        {!isEmpty(editDataItem.dataFilter) && (
+        {!isEmpty(editDataItem.dataFilter) &&
+        availableDimensions[selectedDimensionFilter] ? (
           <div className={`${baseClassName}--input-group--item-end`}>
             <Dropdown
               id={`${cardConfig.id}_data-filter-value`}
@@ -262,7 +264,7 @@ const DataSeriesFormItemModal = ({
               }}
             />
           </div>
-        )}
+        ) : null}
       </div>
       <ThresholdsFormItem
         id={`${cardConfig.id}_thresholds`}
