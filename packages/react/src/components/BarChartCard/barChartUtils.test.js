@@ -1,6 +1,10 @@
 /* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import {
+  BAR_CHART_LAYOUTS,
+  BAR_CHART_TYPES,
+} from '../../constants/LayoutConstants';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 import {
   mapValuesToAxes,
@@ -152,6 +156,9 @@ describe('barChartUtils', () => {
         value: 270,
       },
     ]);
+    expect(
+      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)
+    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based and group-based chart', () => {
@@ -224,6 +231,11 @@ describe('barChartUtils', () => {
         value: 200,
       },
     ]);
+
+    // Handle nulls
+    expect(
+      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)
+    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
@@ -259,6 +271,9 @@ describe('barChartUtils', () => {
         value: 388,
       },
     ]);
+    expect(
+      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)
+    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based, non-group chart', () => {
@@ -299,6 +314,9 @@ describe('barChartUtils', () => {
         value: 565,
       },
     ]);
+    expect(
+      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)
+    ).toBeNull();
   });
 
   it('formatChartData doesnt return null values', () => {
@@ -352,7 +370,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'yellow' },
     });
   });
@@ -369,7 +386,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature', 'Emissions'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'red', Emissions: 'green' },
     });
   });
@@ -390,7 +406,6 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'red' },
     });
   });
@@ -410,8 +425,7 @@ describe('barChartUtils', () => {
     const uniqueDatasetNames = ['Particles', 'Temperature'];
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
-      scale: { Particles: '#4589ff', Temperature: '#0072c3' },
+      scale: { Particles: CHART_COLORS[0], Temperature: CHART_COLORS[1] },
     });
   });
 
@@ -720,13 +734,13 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<ul class='multi-tooltip'><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Cities </p>
       <p class="value">San Francisco</p>
     </div>
   </li><li>
     <div class="datapoint-tooltip ">
-      
+
       <p class="label">Particles </p>
       <p class="value">512</p>
     </div>

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { DragDropContext } from 'react-dnd';
@@ -139,7 +139,7 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
     emptyState,
   } = props;
-  const mergedI18n = { ...defaultProps.i18n, i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, i18n }), [i18n]);
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {

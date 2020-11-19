@@ -68,7 +68,7 @@ export const Basic = () => {
         title={text('title', 'Image')}
         id="image-hotspots"
         content={object('content', content)}
-        values={object('values', {
+        values={{
           hotspots: [
             {
               x: 35,
@@ -89,7 +89,7 @@ export const Basic = () => {
               },
             },
           ],
-        })}
+        }}
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
@@ -165,7 +165,7 @@ export const IsEditable = () => {
 };
 
 IsEditable.story = {
-  name: 'isEditable',
+  name: 'isEditable (experimental)',
 };
 
 export const HotspotsAreLoading = () => {

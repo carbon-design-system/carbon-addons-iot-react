@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
 import { spacing02, spacing03, spacing05 } from '@carbon/layout';
@@ -55,7 +56,7 @@ const AttributeWrapper = styled.div`
   ${(props) =>
     !props.isVertical
       ? ` flex-direction: row;`
-      : ` 
+      : `
     padding: 0 ${CARD_CONTENT_PADDING}px;
     flex-direction: column;
     align-items: flex-end;
@@ -292,8 +293,12 @@ const ValueCard = ({
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {dataState ? (
-                <DataStateRenderer dataState={dataState} size={newSize} id={id} />
+              {!isNil(dataState) ? (
+                <DataStateRenderer
+                  dataState={dataState}
+                  size={newSize}
+                  id={id}
+                />
               ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment

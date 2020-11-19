@@ -17,7 +17,12 @@ const propTypes = {
     // Either a function
     PropTypes.func,
     // Or the instance of a DOM native element (see the note about SSR)
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({
+      current:
+        typeof Element === 'undefined'
+          ? PropTypes.any
+          : PropTypes.instanceOf(Element),
+    }),
   ]).isRequired,
 };
 

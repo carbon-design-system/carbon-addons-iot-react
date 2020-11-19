@@ -1,4 +1,18 @@
 import PropTypes from 'prop-types';
+import {
+  blue80,
+  cyan50,
+  green60,
+  magenta50,
+  magenta70,
+  purple70,
+  red50,
+  red90,
+  teal50,
+  teal70,
+  cyan90,
+  purple50,
+} from '@carbon/colors';
 
 import deprecate from '../internal/deprecate';
 import { bundledIconNames } from '../utils/bundledIcons';
@@ -13,6 +27,21 @@ import {
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 import { OverridePropTypes } from './SharedPropTypes';
+
+export const CHART_COLORS = [
+  purple70,
+  cyan50,
+  teal70,
+  magenta70,
+  red50,
+  red90,
+  green60,
+  blue80,
+  magenta50,
+  teal50,
+  cyan90,
+  purple50,
+];
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
@@ -359,12 +388,16 @@ export const DonutCardPropTypes = {
 
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
-    title: PropTypes.string,
-    content: PropTypes.object,
+    id: PropTypes.string,
+    src: PropTypes.string,
+    zoomMax: PropTypes.number,
   }).isRequired,
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  onUpload: PropTypes.func,
+  onBrowseClick: PropTypes.func,
+  accept: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const GaugeCardPropTypes = {

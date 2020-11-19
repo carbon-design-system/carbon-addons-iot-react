@@ -439,3 +439,29 @@ export const useCardResizing = (wrappingCardResizeHandles, children, isResizable
   );
   return { resizeHandles: resizeHandlesWithEventHandling, isResizing };
 };
+
+/**
+ *
+ * @param {string} url the url where the image is hosted
+ * @param {function} callback for handling errors from fetch
+ */
+export const fetchDataURL = (url, callback) =>
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw Error(res.statusText);
+      }
+      return res.arrayBuffer();
+    })
+    .then((ab) => ({
+      files: {
+        addedFiles: [new File([ab], `${url.match(/([^/]*?)(?=\?|#|$)/)[0]}`)],
+      },
+      dataURL: `data:image/png;base64,${btoa(
+        new Uint8Array(ab).reduce(
+          (data, byte) => data + String.fromCharCode(byte),
+          ''
+        )
+      )}`,
+    }))
+    .catch((e) => callback(e.message));

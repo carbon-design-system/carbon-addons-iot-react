@@ -31,6 +31,9 @@ const HeaderProps = {
   className: 'custom-class-name',
   appName: 'Application Name',
   skipto: 'skip',
+  i18n: {
+    openMenu: 'Open the menu',
+  },
   actionItems: [
     {
       label: 'alerts',

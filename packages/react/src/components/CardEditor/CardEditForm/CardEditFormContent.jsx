@@ -10,8 +10,10 @@ import {
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
+import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
-import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
+import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem/DataSeriesFormItem';
+import ImageCardFormItem from './CardEditFormItems/ImageCardFormItem/ImageCardFormItem';
 
 const { iotPrefix } = settings;
 
@@ -22,21 +24,28 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-    }),
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+      }),
+      PropTypes.shape({
+        id: PropTypes.string,
+        src: PropTypes.string,
+        zoomMax: PropTypes.number,
+      }),
+    ]),
     interval: PropTypes.string,
     showLegend: PropTypes.bool,
   }),
@@ -65,6 +74,15 @@ const propTypes = {
     selectASize: PropTypes.string,
     timeRange: PropTypes.string,
     selectATimeRange: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
@@ -76,10 +94,10 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: DataItemsPropTypes,
 };
 
 const defaultProps = {
@@ -107,23 +125,32 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
+    last24Hours: 'Last 24 hours',
+    last7Days: 'Last 7 days',
+    lastMonth: 'Last month',
+    lastQuarter: 'Last quarter',
+    lastYear: 'Last year',
+    thisWeek: 'This week',
+    thisMonth: 'This month',
+    thisQuarter: 'This quarter',
+    thisYear: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
 };
 
-export const defaultTimeRangeOptions = {
-  last24Hours: 'Last 24 hrs',
-  last7Days: 'Last 7 days',
-  lastMonth: 'Last month',
-  lastQuarter: 'Last quarter',
-  lastYear: 'Last year',
-  thisWeek: 'This week',
-  thisMonth: 'This month',
-  thisQuarter: 'This quarter',
-  thisYear: 'This year',
-};
+const defaultTimeRangeOptions = [
+  'last24Hours',
+  'last7Days',
+  'lastMonth',
+  'lastQuarter',
+  'lastYear',
+  'thisWeek',
+  'thisMonth',
+  'thisQuarter',
+  'thisYear',
+];
 
 /**
  * Returns card size and dimensions labels
@@ -154,8 +181,7 @@ const CardEditFormContent = ({
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
-    : Object.keys(defaultTimeRangeOptions);
-
+    : defaultTimeRangeOptions;
   return (
     <>
       <div className={`${baseClassName}--input`}>
@@ -208,7 +234,7 @@ const CardEditFormContent = ({
                 validTimeRanges
                   ? validTimeRanges.map((range) => ({
                       id: range,
-                      text: defaultTimeRangeOptions[range],
+                      text: mergedI18n[range] || range,
                     }))
                   : []
               }
@@ -235,6 +261,9 @@ const CardEditFormContent = ({
             i18n={mergedI18n}
           />
         </>
+      )}
+      {type === CARD_TYPES.IMAGE && (
+        <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );

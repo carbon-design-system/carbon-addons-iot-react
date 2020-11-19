@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { action } from '@storybook/addon-actions';
 import { text, object, boolean } from '@storybook/addon-knobs';
 import { spacing03 } from '@carbon/layout';
 
@@ -153,4 +154,55 @@ export const ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden = () => {
 
 ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.story = {
   name: 'image smaller than card, minimap and zoomcontrols should be hidden',
+};
+
+export const Editable = () => {
+  const WithState = () => {
+    const [myHotspots, setMyHotspots] = useState(hotspots);
+    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState(
+      []
+    );
+
+    const onAddHotspotPosition = (position) => {
+      const newHotspot = {
+        ...position,
+        content: (
+          <span
+            style={{
+              padding: spacing03,
+            }}>{`Hotspot ${position.x} - ${position.y}`}</span>
+        ),
+      };
+      setMyHotspots([...myHotspots, newHotspot]);
+      action('onAddHotspotPosition')(position);
+    };
+
+    const onSelectHotspot = (position) => {
+      // This example use single select, but we can allow multiple selected hotspots
+      // by modifying how onSelectHotspot alters the selectedHotspotPositions state.
+      setSelectedHotspotPositions([position]);
+      action('onSelectHotspot')(position);
+    };
+
+    return (
+      <div style={{ width: '450px', height: '300px' }}>
+        <ImageHotspots
+          isEditable
+          onAddHotspotPosition={onAddHotspotPosition}
+          onSelectHotspot={onSelectHotspot}
+          src={text('Image', landscape)}
+          alt={text('Alternate text', 'Sample image')}
+          height={300}
+          width={450}
+          hideZoomControls={boolean('Hide zoom controls', false)}
+          hotspots={myHotspots}
+          hideHotspots={boolean('Hide hotspots', false)}
+          hideMinimap={boolean('Hide Minimap', false)}
+          selectedHotspots={selectedHotspotPositions}
+        />
+      </div>
+    );
+  };
+
+  return <WithState />;
 };

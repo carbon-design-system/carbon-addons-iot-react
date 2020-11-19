@@ -30,6 +30,7 @@ describe('DashboardEditor', () => {
   const mockOnExport = jest.fn();
   const mockOnCancel = jest.fn();
   const mockOnSubmit = jest.fn();
+  const mockOnCardChange = jest.fn();
 
   const commonProps = {
     title: 'My dashboard',
@@ -80,6 +81,29 @@ describe('DashboardEditor', () => {
     const cardTitle = screen.getByTitle(mockValueCard.title);
     expect(cardTitle).toBeInTheDocument();
     fireEvent.keyDown(cardTitle, { key: 'Enter' });
+    // gallery title should be gone and the card edit form should be open
+    expect(galleryTitle).not.toBeInTheDocument();
+
+    const addCardBtn = screen.getByText('Add card');
+    expect(addCardBtn).toBeInTheDocument();
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    expect(cardSizeFormInput).toBeInTheDocument();
+  });
+
+  it('space key should select the card and close gallery', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
+    // no card should be selected, meaning the gallery should be open
+    const galleryTitle = screen.getByText('Gallery');
+    expect(galleryTitle).toBeInTheDocument();
+    // first find and click the the card
+    const cardTitle = screen.getByTitle(mockValueCard.title);
+    expect(cardTitle).toBeInTheDocument();
+    fireEvent.keyDown(cardTitle, { key: 'Space' });
     // gallery title should be gone and the card edit form should be open
     expect(galleryTitle).not.toBeInTheDocument();
 
@@ -194,11 +218,8 @@ describe('DashboardEditor', () => {
       cards: [],
       layouts: {
         lg: [],
-        max: [],
         md: [],
-        sm: [],
         xl: [],
-        xs: [],
       },
     });
   });
@@ -236,5 +257,83 @@ describe('DashboardEditor', () => {
       target: { value: 'My new card title' },
     });
     expect(screen.getByTitle('My new card title')).toBeInTheDocument();
+  });
+
+  it('selecting medium breakpoint should render breakpoint info', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{ enabled: true }}
+      />
+    );
+    // there should be no breakpoint text on initial render
+    expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
+    // find and click medium button
+    const mediumBtn = screen.getByText('Medium view');
+    expect(mediumBtn).toBeInTheDocument();
+    fireEvent.click(mediumBtn);
+    // there should now be breakpoint text
+    expect(
+      screen.getByText('Edit dashboard at medium layout (480 - 672px)')
+    ).toBeInTheDocument();
+  });
+
+  it('triggering an error should show error message', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{
+          cards: [
+            {
+              title: 'value card',
+              type: 'VALUE',
+              size: 'WRONG_SIZE',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'key1',
+                    unit: '%',
+                    label: 'Key 1',
+                  },
+                  {
+                    dataSourceId: 'key2',
+                    unit: 'lb',
+                    label: 'Key 2',
+                  },
+                ],
+              },
+            },
+          ],
+        }}
+      />
+    );
+    const errMsg = screen.getAllByText(
+      'Something went wrong. Please refresh the page.'
+    );
+
+    expect(errMsg).toHaveLength(2);
+  });
+
+  it('uses custom onCardChange callback', () => {
+    render(
+      <DashboardEditor
+        {...commonProps}
+        onCardChange={(card) => {
+          mockOnCardChange();
+          return card;
+        }}
+      />
+    );
+    // add a card
+    const valueBtn = screen.getByTitle('Value / KPI');
+    expect(valueBtn).toBeInTheDocument();
+    fireEvent.click(valueBtn);
+    // card edit form should be open
+    const cardSizeFormInput = screen.getByDisplayValue('Untitled');
+    expect(cardSizeFormInput).toBeInTheDocument();
+    fireEvent.change(cardSizeFormInput, {
+      target: { value: 'My new card title' },
+    });
+    expect(mockOnCardChange).toHaveBeenCalled();
   });
 });

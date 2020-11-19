@@ -178,7 +178,7 @@ describe('SimpleList', () => {
 
   it('SimpleList reorder', () => {
     let newData = null;
-    render(
+    const { rerender } = render(
       <SimpleList
         title="Simple list"
         items={getListItems(5)}
@@ -195,15 +195,26 @@ describe('SimpleList', () => {
     expect(firstItem).toBeInTheDocument();
     expect(listItems.length).toEqual(5);
 
-    const targets = within(listItems[1]).getAllByTestId('list-target');
-
-    expect(targets.length).toEqual(2);
-
     fireEvent.dragStart(firstItem, {
       dataTransfer: {
         dropEffect: 'move',
       },
     });
+
+    rerender(
+      <SimpleList
+        title="Simple list"
+        items={getListItems(5)}
+        editingStyle={EditingStyle.Multiple}
+        onListUpdated={(newList) => {
+          newData = newList;
+        }}
+      />
+    );
+
+    const targets = within(listItems[1]).getAllByTestId('list-target');
+    expect(targets.length).toEqual(2);
+
     fireEvent.dragEnter(targets[1], {
       dataTransfer: {
         dropEffect: 'move',

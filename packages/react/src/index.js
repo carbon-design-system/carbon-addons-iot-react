@@ -35,6 +35,7 @@ export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
+export IconDropdown from './components/IconDropdown/IconDropdown';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -55,6 +56,7 @@ export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitc
 export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
+export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
@@ -101,6 +103,8 @@ export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
 export FilterTags from './components/FilterTags/FilterTags';
+export ColorDropdown from './components/ColorDropdown/ColorDropdown';
+export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 
 // Carbon proxy
 export {

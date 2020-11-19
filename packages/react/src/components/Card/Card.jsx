@@ -29,6 +29,7 @@ const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
 const CardWrapper = ({
+  isSelected,
   children,
   dimensions,
   id,
@@ -48,6 +49,7 @@ const CardWrapper = ({
   ...others
 }) => {
   const validOthers = filterValidAttributes(others);
+
   return (
     <div
       role="presentation"
@@ -62,9 +64,10 @@ const CardWrapper = ({
       onFocus={onFocus}
       onBlur={onBlur}
       tabIndex={tabIndex}
-      className={classnames(className, `${iotPrefix}--card--wrapper`)}
-      {...validOthers}
-    >
+      className={classnames(className, `${iotPrefix}--card--wrapper`, {
+        [`${iotPrefix}--card--wrapper__selected`]: isSelected,
+      })}
+      {...validOthers}>
       {children}
     </div>
   );
@@ -111,6 +114,10 @@ const EmptyMessageWrapper = (props) => {
 };
 
 CardWrapper.propTypes = {
+  /**
+   * Is given the event as argument. Should return true or false if event should trigger selection
+   */
+  isSelected: PropTypes.bool,
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   id: CardPropTypes.id,
@@ -127,6 +134,7 @@ CardWrapper.propTypes = {
   tabIndex: PropTypes.number,
 };
 CardWrapper.defaultProps = {
+  isSelected: false,
   id: undefined,
   style: undefined,
   testID: 'Card',

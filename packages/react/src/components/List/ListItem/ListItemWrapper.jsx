@@ -19,6 +19,7 @@ const ListItemWrapper = ({
   onSelect,
   selected,
   isDragging,
+  renderDropTargets,
   isLargeRow,
   children,
   connectDragSource,
@@ -64,55 +65,57 @@ const ListItemWrapper = ({
     return (
       <div
         role="listitem"
-        className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
-          [`${iotPrefix}--list-item-editable-dragging`]: isDragging,
-        })}
+        className={classnames(
+          `${iotPrefix}--list-item-editable--drag-container`,
+          {
+            [`${iotPrefix}--list-item-editable--dragging`]: isDragging,
+          }
+        )}
         ref={(instance) => {
           if (connectDragSource) {
             connectDragSource(instance);
           }
-        }}
-      >
-        <div
-          className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
-            [`${iotPrefix}--list-item__large`]: isLargeRow,
-          })}
-        >
-          {
-            // Renders Nested location only if nesting is allowed
+        }}>
+        {renderDropTargets && (
+          <div
+            className={classnames(
+              `${iotPrefix}--list-item-editable--drop-targets`,
+              {
+                [`${iotPrefix}--list-item__large`]: isLargeRow,
+              }
+            )}>
+            {
+              // Renders Nested location only if nesting is allowed
 
-            canNest ? (
-              <ListTarget
-                id={id}
-                isDragging={isDragging}
-                targetPosition={DropLocation.Nested}
-                targetSize={TargetSize.Full}
-                itemWillMove={itemWillMove}
-                onItemMoved={onItemMoved}
-              />
-            ) : null
-          }
+              canNest ? (
+                <ListTarget
+                  id={id}
+                  targetPosition={DropLocation.Nested}
+                  targetSize={TargetSize.Full}
+                  itemWillMove={itemWillMove}
+                  onItemMoved={onItemMoved}
+                />
+              ) : null
+            }
 
-          <ListTarget
-            id={id}
-            isDragging={isDragging}
-            targetPosition={DropLocation.Above}
-            itemWillMove={itemWillMove}
-            targetSize={canNest ? TargetSize.Third : TargetSize.Half}
-            onItemMoved={onItemMoved}
-          />
+            <ListTarget
+              id={id}
+              targetPosition={DropLocation.Above}
+              itemWillMove={itemWillMove}
+              targetSize={canNest ? TargetSize.Third : TargetSize.Half}
+              onItemMoved={onItemMoved}
+            />
 
-          <ListTarget
-            id={id}
-            isDragging={isDragging}
-            targetPosition={DropLocation.Below}
-            itemWillMove={itemWillMove}
-            targetOverride={expanded ? DropLocation.Nested : null} // If item is expanded then the bottom target will nest
-            targetSize={canNest ? TargetSize.Third : TargetSize.Half}
-            onItemMoved={onItemMoved}
-          />
-        </div>
-
+            <ListTarget
+              id={id}
+              targetPosition={DropLocation.Below}
+              itemWillMove={itemWillMove}
+              targetOverride={expanded ? DropLocation.Nested : null} // If item is expanded then the bottom target will nest
+              targetSize={canNest ? TargetSize.Third : TargetSize.Half}
+              onItemMoved={onItemMoved}
+            />
+          </div>
+        )}
         {body}
       </div>
     );
@@ -135,6 +138,7 @@ const ListItemWrapperProps = {
   isSelectable: PropTypes.bool.isRequired,
   isDragging: PropTypes.bool.isRequired,
   onSelect: PropTypes.func.isRequired,
+  renderDropTargets: PropTypes.bool.isRequired,
   selected: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onItemMoved: PropTypes.func.isRequired,

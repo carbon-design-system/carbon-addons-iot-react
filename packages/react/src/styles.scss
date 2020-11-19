@@ -145,6 +145,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Slider/slider';
 @import 'components/Tile/tile';
 @import 'components/ImageCard/hotspot-content';
+@import 'components/ImageCard/image-uploader';
+@import 'components/ImageCard/hotspot';
 @import 'components/Skeleton/skeleton';
 @import 'components/InlineLoading/inline-loading';
 @import 'components/PaginationNav/pagination-nav';
@@ -155,6 +157,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // 🔬 Experimental
 //-------------------------------------
 @import 'components/UIShell/ui-shell';
+@import 'components/ColorDropdown/color-dropdown';
+@import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
@@ -187,7 +191,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/DateTimePicker/date-time-picker';
 @import 'components/GaugeCard/gauge-card';
 @import 'components/Header/header';
-@import 'components/SuiteHeader/suite-header';
+@import 'components/IconDropdown/icon-dropdown';
 @import 'components/IconSwitch/icon-switch';
 @import 'components/ListCard/listCard';
 @import 'components/List/list';
@@ -199,6 +203,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ProgressIndicator/progress-indicator';
 @import 'components/SideNav/side-nav';
 @import 'components/SimplePagination/simple-pagination';
+@import 'components/SuiteHeader/suite-header';
 @import 'components/Table/TableToolbar/table-toolbar';
 @import 'components/Table/pagination';
 @import 'components/Table/TableBody/RowActionsCell/row-actions-cell';

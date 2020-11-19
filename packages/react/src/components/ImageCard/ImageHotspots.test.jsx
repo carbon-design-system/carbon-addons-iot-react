@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act, isDOMComponent } from 'react-dom/test-utils';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
+import landscape from './landscape.jpg';
 import ImageHotspots, {
   calculateImageHeight,
   calculateImageWidth,
@@ -11,8 +13,39 @@ import ImageHotspots, {
   whileDrag,
   onImageLoad,
   zoom,
+  onAddHotspotPosition,
 } from './ImageHotspots';
 
+const getHotspots = () => {
+  return [
+    {
+      x: 10,
+      y: 20,
+      content: <span>Hotspot1</span>,
+      icon: 'warning',
+      color: 'white',
+      width: 20,
+      height: 20,
+    },
+    {
+      x: 50,
+      y: 10,
+      content: <span>Hotspot2</span>,
+      icon: 'warning',
+    },
+    {
+      x: 30,
+      y: 40,
+      content: <span>Hotspot3</span>,
+    },
+    {
+      x: 50,
+      y: 60,
+      content: <span>Hotspot4</span>,
+      color: 'green',
+    },
+  ];
+};
 describe('ImageHotspots', () => {
   let container;
 
@@ -37,6 +70,7 @@ describe('ImageHotspots', () => {
     expect(mockSetCursor).toHaveBeenCalledWith({
       cursorX: 200,
       cursorY: 300,
+      dragPrepared: false,
       dragging: true,
     });
   });
@@ -219,5 +253,114 @@ describe('ImageHotspots', () => {
     expect(screen.getByTitle(i18nTest.zoomOut)).toBeInTheDocument();
     expect(screen.queryByTitle(i18nDefault.zoomIn)).not.toBeInTheDocument();
     expect(screen.queryByTitle(i18nDefault.zoomOut)).not.toBeInTheDocument();
+  });
+  describe('isEditable', () => {
+    it('triggers onSelectHotspot callback when hotspot is clicked', () => {
+      const onSelectHotspot = jest.fn();
+
+      const { rerender } = render(
+        <ImageHotspots
+          onAddHotspotPosition={() => {}}
+          onSelectHotspot={onSelectHotspot}
+          src={landscape}
+          height={300}
+          width={450}
+          hotspots={getHotspots()}
+          selectedHotspots={[]}
+        />
+      );
+      const aHotspot = screen.getByTestId('hotspot-10-20');
+      expect(aHotspot).toBeVisible();
+      userEvent.click(within(aHotspot).getByRole('button'));
+      expect(onSelectHotspot).not.toHaveBeenCalled();
+
+      rerender(
+        <ImageHotspots
+          isEditable
+          onAddHotspotPosition={() => {}}
+          onSelectHotspot={onSelectHotspot}
+          src={landscape}
+          height={300}
+          width={450}
+          hotspots={getHotspots()}
+          selectedHotspots={[]}
+        />
+      );
+      const sameHotspot = screen.getByTestId('hotspot-10-20');
+      expect(sameHotspot).toBeVisible();
+      userEvent.click(within(sameHotspot).getByRole('button'));
+      expect(onSelectHotspot).toHaveBeenCalledWith({ x: 10, y: 20 });
+    });
+    it('triggers callback when the image is clicked', () => {
+      const onAddHotspotPosition = jest.fn();
+      const testImageText = 'test-image';
+
+      const { rerender } = render(
+        <ImageHotspots
+          alt={testImageText}
+          onAddHotspotPosition={onAddHotspotPosition}
+          onSelectHotspot={() => {}}
+          src={landscape}
+          height={300}
+          width={450}
+          hotspots={getHotspots()}
+          selectedHotspots={[]}
+        />
+      );
+
+      userEvent.click(screen.getByAltText(testImageText));
+      expect(onAddHotspotPosition).not.toHaveBeenCalled();
+
+      rerender(
+        <ImageHotspots
+          alt={testImageText}
+          isEditable
+          onAddHotspotPosition={onAddHotspotPosition}
+          onSelectHotspot={() => {}}
+          src={landscape}
+          height={300}
+          width={450}
+          hotspots={getHotspots()}
+          selectedHotspots={[]}
+        />
+      );
+
+      userEvent.click(screen.getByAltText(testImageText));
+      // We aren't more specific about the callback param here due to
+      // difficulties setting the event.pageX & event.pageY in the test,
+      // which are needed for getting the position of the click correct.
+      expect(onAddHotspotPosition).toHaveBeenCalled();
+    });
+    it('calculates the proper percentage coordinates for image click', () => {
+      const onAddHotspotPositionCallback = jest.fn();
+      const event = {
+        pageX: 100,
+        pageY: 100,
+        currentTarget: {
+          offsetTop: 5,
+          offsetLeft: 5,
+          offsetParent: { offsetTop: 5, offsetLeft: 5 },
+        },
+      };
+      const image = { width: 300, height: 450 };
+      let updatedCursor;
+      const setCursor = jest.fn().mockImplementation((func) => {
+        updatedCursor = func({});
+      });
+
+      onAddHotspotPosition({
+        event,
+        image,
+        setCursor,
+        isEditable: true,
+        callback: onAddHotspotPositionCallback,
+      });
+
+      expect(onAddHotspotPositionCallback).toHaveBeenCalledWith({
+        x: 30,
+        y: 20,
+      });
+      expect(updatedCursor).toEqual({ dragPrepared: false });
+    });
   });
 });
