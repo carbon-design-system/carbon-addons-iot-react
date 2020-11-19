@@ -234,7 +234,7 @@ const CardEditFormContent = ({
           titleText={mergedI18n.size}
         />
       </div>
-      {type === CARD_TYPES.TIMESERIES && (
+      {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.VALUE ? (
         <>
           <div className={`${baseClassName}--input`}>
             <Dropdown
@@ -274,7 +274,7 @@ const CardEditFormContent = ({
             i18n={mergedI18n}
           />
         </>
-      )}
+      ) : null}
       {type === CARD_TYPES.IMAGE && (
         <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
       )}
