@@ -40,7 +40,6 @@ const propTypes = {
       timeDataSourceId: PropTypes.string,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   onChange: PropTypes.func,
   thresholds: PropTypes.arrayOf(
@@ -89,6 +88,7 @@ const defaultProps = {
   i18n: {
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
+    dataItemEditorDataItemRemove: 'Remove',
   },
   icons: validThresholdIcons,
   selectedIcon: undefined,
@@ -238,7 +238,7 @@ const ThresholdsFormItem = ({
                   onChange(filteredThresholds.map((item) => omit(item, 'id')));
                   setThresholds(filteredThresholds);
                 }}
-                iconDescription="Remove"
+                iconDescription={mergedI18n.dataItemEditorDataItemRemove}
               />
             </div>
           </div>

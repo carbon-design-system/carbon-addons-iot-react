@@ -2,7 +2,9 @@ import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
+import find from 'lodash/find';
 import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
 import {
   purple70,
   cyan50,
@@ -119,8 +121,6 @@ export const getDefaultCard = (type, i18n) => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
         },
-        interval: 'day',
-        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -202,10 +202,22 @@ export const DATAITEM_COLORS_OPTIONS = [
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
-  lastHour: { interval: 'hour', count: -1, type: 'rolling' },
-  last2Hours: { interval: 'hour', count: -2, type: 'rolling' },
-  last4Hours: { interval: 'hour', count: -4, type: 'rolling' },
-  last8Hours: { interval: 'hour', count: -8, type: 'rolling' },
+  lastHour: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -1, type: 'rolling' },
+  },
+  last2Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -2, type: 'rolling' },
+  },
+  last4Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -4, type: 'rolling' },
+  },
+  last8Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -8, type: 'rolling' },
+  },
   last24Hours: {
     range: { interval: 'day', count: -1, type: 'rolling' },
     interval: 'hour',
@@ -363,16 +375,23 @@ const renderValueCard = (cardConfig, commonProps) => (
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTimeSeriesCard = (cardConfig, commonProps) => (
-  <TimeSeriesCard
-    isEditable
-    values={[]}
-    showLegend
-    timeRange={cardConfig?.dataSource?.range}
-    {...cardConfig}
-    {...commonProps}
-  />
-);
+const renderTimeSeriesCard = (cardConfig, commonProps) => {
+  // apply the timeRange for the card preview
+  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
+    isEqual(range, cardConfig?.dataSource?.range)
+  );
+  return (
+    <TimeSeriesCard
+      isEditable
+      values={[]}
+      showLegend
+      interval={timeRangeJSON?.interval || 'day'}
+      timeRange={cardConfig?.dataSource?.range}
+      {...cardConfig}
+      {...commonProps}
+    />
+  );
+};
 
 /**
  * @param {Object} cardConfig

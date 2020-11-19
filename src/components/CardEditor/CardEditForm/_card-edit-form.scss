@@ -110,6 +110,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-between;
     &--item {
       margin-right: 1rem;
       width: 100%;
@@ -123,7 +124,7 @@
     }
     &--item-dropdown {
       margin-right: 1rem;
-      max-width: 5rem;
+      width: 100%;
     }
   }
 
@@ -135,5 +136,6 @@
   }
   .#{$prefix}--modal-container--xs {
     max-height: none;
+    min-width: 30rem;
   }
 }
