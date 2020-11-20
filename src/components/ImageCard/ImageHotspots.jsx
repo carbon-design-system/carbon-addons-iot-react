@@ -441,17 +441,13 @@ const ImageHotspots = ({
     hideMinimap: hideMinimapProp,
   });
 
-  useEffect(
-    () => {
-
+  useEffect(() => {
     setOptions({
       hideZoomControls: hideZoomControlsProp,
       hideHotspots: hideHotspotsProp,
       hideMinimap: hideMinimapProp,
-    })
-    },
-    [hideZoomControlsProp, hideHotspotsProp, hideMinimapProp]
-  )
+    });
+  }, [hideZoomControlsProp, hideHotspotsProp, hideMinimapProp]);
 
   const orientation = width > height ? 'landscape' : 'portrait';
   const ratio = orientation === 'landscape' ? width / height : height / width;
@@ -488,12 +484,13 @@ const ImageHotspots = ({
 
   const imageStyle = {
     cursor: isEditable && !dragging ? 'crosshair' : 'auto',
-    position: 'relative',
-    left: image.offsetX,
-    top: displayOption ? 0 : image.offsetY,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
     height: displayOption ? '100%' : 'auto',
     width: displayOption ? '100%' : 'auto',
     objectFit: displayOption,
+    transform: 'translate(-50%, -50%)',
   };
 
   const hotspotsStyle = {

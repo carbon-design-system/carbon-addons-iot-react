@@ -97,11 +97,19 @@
 
 // Image card form styles
 .#{$iot-prefix}--card-edit-form--form-section-image {
+  .#{$prefix}--fieldset {
+    margin-bottom: 0;
+  }
+
   &-input {
     margin-bottom: $spacing-05;
   }
 
   &-btn {
     width: 100%;
+  }
+
+  .#{$prefix}--slider {
+    min-width: 4.5rem;
   }
 }
