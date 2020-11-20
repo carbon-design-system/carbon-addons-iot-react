@@ -62,6 +62,7 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  currentBreakpoint: PropTypes.string,
 };
 
 const defaultProps = {
@@ -91,6 +92,7 @@ const defaultProps = {
   getValidTimeRanges: null,
   dataItems: [],
   onValidateCardJson: null,
+  currentBreakpoint: 'xl',
 };
 
 /**
@@ -166,6 +168,7 @@ const CardEditForm = ({
   onValidateCardJson,
   getValidDataItems,
   getValidTimeRanges,
+  currentBreakpoint,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -208,6 +211,7 @@ const CardEditForm = ({
               dataItems={dataItems}
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
+              currentBreakpoint={currentBreakpoint}
             />
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>

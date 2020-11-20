@@ -890,7 +890,7 @@ Empty.story = {
 };
 
 export const HighlightAlertRanges = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
   return (
     <div
       style={{
@@ -929,10 +929,15 @@ export const HighlightAlertRanges = () => {
             },
           ],
           addSpaceOnEdges: 1,
+          zoomBar: {
+            enabled: true,
+            axes: 'top',
+            view: 'graph_view',
+          },
         })}
         values={getIntervalChartData(
           'day',
-          100,
+          7,
           { min: 10, max: 100 },
           100,
           1572824320000

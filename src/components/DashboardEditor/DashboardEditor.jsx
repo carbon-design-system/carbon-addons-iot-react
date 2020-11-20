@@ -446,6 +446,7 @@ const DashboardEditor = ({
             onValidateCardJson={onValidateCardJson}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         </ErrorBoundary>
       </div>

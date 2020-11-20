@@ -73,6 +73,7 @@ const propTypes = {
     addCardButton: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
   }),
+  currentBreakpoint: PropTypes.string,
 };
 
 const defaultProps = {
@@ -90,6 +91,7 @@ const defaultProps = {
   dataItems: [],
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
+  currentBreakpoint: 'xl',
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -105,6 +107,7 @@ const CardEditor = ({
   onValidateCardJson,
   supportedCardTypes,
   i18n,
+  currentBreakpoint,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -141,6 +144,7 @@ const CardEditor = ({
             getValidTimeRanges={getValidTimeRanges}
             onValidateCardJson={onValidateCardJson}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         )}
       </div>
