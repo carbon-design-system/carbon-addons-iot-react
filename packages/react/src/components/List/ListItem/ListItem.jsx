@@ -34,10 +34,7 @@ const ListItemPropTypes = {
   value: PropTypes.string.isRequired,
   secondaryValue: PropTypes.string,
   /** either a callback render function or a node */
-  rowActions: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.func,
-  ]),
+  rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
   icon: PropTypes.node,
   iconPosition: PropTypes.string,
   isCategory: PropTypes.bool,
@@ -52,10 +49,7 @@ const ListItemPropTypes = {
     PropTypes.func,
     // Or the instance of a DOM native element (see the note about SSR)
     PropTypes.shape({
-      current:
-        typeof Element === 'undefined'
-          ? PropTypes.any
-          : PropTypes.instanceOf(Element),
+      current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
     }),
   ]),
   /** The nodes should be Carbon Tags components */
@@ -173,8 +167,7 @@ const ListItem = ({
       </div>
     ) : null;
 
-  const hasRowActions =
-    rowActions && (typeof rowActions === 'function' || rowActions?.length);
+  const hasRowActions = rowActions && (typeof rowActions === 'function' || rowActions?.length);
 
   const renderRowActions = () =>
     hasRowActions ? (
@@ -222,7 +215,8 @@ const ListItem = ({
         itemWillMove,
         disabled,
         renderDropTargets,
-      }}>
+      }}
+    >
       {renderDragPreview()}
       {dragIcon()}
       {renderNestingOffset()}
@@ -249,15 +243,13 @@ const ListItem = ({
                 className={`${iotPrefix}--list-item--content--values--main ${iotPrefix}--list-item--content--values--main__large`}
               >
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    {
-                      [`${iotPrefix}--list-item--category`]: isCategory,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                    }
-                  )}
-                  title={value}>
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
                 {renderTags()}
@@ -283,27 +275,23 @@ const ListItem = ({
             <>
               <div className={`${iotPrefix}--list-item--content--values--main`}>
                 <div
-                  className={classnames(
-                    `${iotPrefix}--list-item--content--values--value`,
-                    {
-                      [`${iotPrefix}--list-item--category`]: isCategory,
-                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                    }
-                  )}
-                  title={value}>
+                  className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                    [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
+                  })}
+                  title={value}
+                >
                   {value}
                 </div>
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={classnames(
-                      `${iotPrefix}--list-item--content--values--value`,
-                      {
-                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
-                        [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      }
-                    )}>
+                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
+                      [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
+                    })}
+                  >
                     {secondaryValue}
                   </div>
                 ) : null}

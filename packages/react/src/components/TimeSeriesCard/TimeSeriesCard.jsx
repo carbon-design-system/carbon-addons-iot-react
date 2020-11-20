@@ -16,11 +16,7 @@ import {
   convertStringsToDOMElement,
   csvDownloadHandler,
 } from '../../utils/componentUtilityFunctions';
-import {
-  CardPropTypes,
-  ZoomBarPropTypes,
-  CHART_COLORS,
-} from '../../constants/CardPropTypes';
+import { CardPropTypes, ZoomBarPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -231,8 +227,7 @@ export const formatColors = (series) => {
   };
   if (Array.isArray(series)) {
     series.forEach((dataset, index) => {
-      colors.scale[dataset.label] =
-        dataset.color || CHART_COLORS[index % CHART_COLORS.length];
+      colors.scale[dataset.label] = dataset.color || CHART_COLORS[index % CHART_COLORS.length];
     });
   } else {
     colors.scale[series.label] = series.color || CHART_COLORS[0];

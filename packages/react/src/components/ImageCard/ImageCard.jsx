@@ -4,10 +4,7 @@ import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
-import {
-  ImageCardPropTypes,
-  CardPropTypes,
-} from '../../constants/CardPropTypes';
+import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';

@@ -65,25 +65,21 @@ const ListItemWrapper = ({
     return (
       <div
         role="listitem"
-        className={classnames(
-          `${iotPrefix}--list-item-editable--drag-container`,
-          {
-            [`${iotPrefix}--list-item-editable--dragging`]: isDragging,
-          }
-        )}
+        className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
+          [`${iotPrefix}--list-item-editable--dragging`]: isDragging,
+        })}
         ref={(instance) => {
           if (connectDragSource) {
             connectDragSource(instance);
           }
-        }}>
+        }}
+      >
         {renderDropTargets && (
           <div
-            className={classnames(
-              `${iotPrefix}--list-item-editable--drop-targets`,
-              {
-                [`${iotPrefix}--list-item__large`]: isLargeRow,
-              }
-            )}>
+            className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
+              [`${iotPrefix}--list-item__large`]: isLargeRow,
+            })}
+          >
             {
               // Renders Nested location only if nesting is allowed
 

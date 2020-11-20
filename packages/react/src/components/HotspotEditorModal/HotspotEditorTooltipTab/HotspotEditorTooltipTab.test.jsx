@@ -2,10 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { red50, blue50, green50 } from '@carbon/colors';
-import {
-  InformationSquareFilled24,
-  InformationFilled24,
-} from '@carbon/icons-react';
+import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 
@@ -50,11 +47,7 @@ describe('HotspotEditorTooltipTab', () => {
   it('calls onChange as title and description are typed into', () => {
     const onChange = jest.fn();
     render(
-      <HotspotEditorTooltipTab
-        hotspotIcons={getIcons()}
-        onChange={onChange}
-        onDelete={() => {}}
-      />
+      <HotspotEditorTooltipTab hotspotIcons={getIcons()} onChange={onChange} onDelete={() => {}} />
     );
 
     userEvent.type(screen.getByTitle('Enter title for the tooltip'), 'test');

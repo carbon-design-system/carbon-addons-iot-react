@@ -272,9 +272,7 @@ export const baseTableReducer = (state = {}, action) => {
             },
             selectedIds: {
               $set: isSelected
-                ? state.data
-                    .filter((i) => i.isSelectable !== false)
-                    .map((i) => i.id)
+                ? state.data.filter((i) => i.isSelectable !== false).map((i) => i.id)
                 : [],
             },
             isSelectAllIndeterminate: {

@@ -3,10 +3,7 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
 
-import {
-  BAR_CHART_TYPES,
-  BAR_CHART_LAYOUTS,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
@@ -97,13 +94,7 @@ export const generateSampleValues = (
  *
  * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
-export const formatChartData = (
-  series,
-  values,
-  categoryDataSourceId,
-  timeDataSourceId,
-  type
-) => {
+export const formatChartData = (series, values, categoryDataSourceId, timeDataSourceId, type) => {
   let data = values;
   if (!isNil(values) && !isEmpty(series)) {
     data = [];

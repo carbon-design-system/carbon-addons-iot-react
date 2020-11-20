@@ -215,11 +215,7 @@ const CardEditForm = ({
             renderIcon={Code16}
             onClick={() => {
               setModalData(
-                JSON.stringify(
-                  omit(cardConfig, ['id', 'content.src', 'content.imgState']),
-                  null,
-                  4
-                )
+                JSON.stringify(omit(cardConfig, ['id', 'content.src', 'content.imgState']), null, 4)
               );
               setShowEditor(true);
             }}

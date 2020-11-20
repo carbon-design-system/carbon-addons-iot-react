@@ -105,9 +105,7 @@ const BarChartCard = ({
   const uniqueDatasets = !isAllValuesEmpty
     ? [...new Set(chartData.map((dataset) => dataset.group))]
     : [];
-  const colors = !isAllValuesEmpty
-    ? formatColors(series, uniqueDatasets, isEditable)
-    : null;
+  const colors = !isAllValuesEmpty ? formatColors(series, uniqueDatasets, isEditable) : null;
 
   let tableColumns = [];
   let tableData = [];

@@ -330,13 +330,7 @@ const getAccumulatedOffset = (imageElement) => {
 
 /** Calculates the mouse click position in percentage and returns the
  * result in a callback */
-export const onAddHotspotPosition = ({
-  event,
-  image,
-  setCursor,
-  isEditable,
-  callback,
-}) => {
+export const onAddHotspotPosition = ({ event, image, setCursor, isEditable, callback }) => {
   setCursor((cursor) => {
     return { ...cursor, dragPrepared: false };
   });
@@ -484,14 +478,7 @@ const ImageHotspots = ({
           />
         );
       }),
-    [
-      hotspots,
-      hotspotsStyle,
-      locale,
-      renderIconByName,
-      selectedHotspots,
-      onHotspotClicked,
-    ]
+    [hotspots, hotspotsStyle, locale, renderIconByName, selectedHotspots, onHotspotClicked]
   );
 
   if (imageLoaded) {
@@ -545,15 +532,7 @@ const ImageHotspots = ({
             if (!hideZoomControls && draggable && dragPrepared) {
               startDrag(evt, 'image', cursor, setCursor);
             } else if (!hideZoomControls && dragging) {
-              whileDrag(
-                evt,
-                cursor,
-                setCursor,
-                image,
-                setImage,
-                minimap,
-                setMinimap
-              );
+              whileDrag(evt, cursor, setCursor, image, setImage, minimap, setMinimap);
             }
           }}
           onMouseUp={(event) => {

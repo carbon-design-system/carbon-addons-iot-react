@@ -25,14 +25,8 @@
   $padding: #{$spacing-02};
   $border-width: #{$spacing-01};
 
-  top: calc(
-    (var(--y-pos) * 1%) -
-      (((var(--height) * 1px) / 2) + #{$padding} + #{$border-width})
-  );
-  left: calc(
-    (var(--x-pos) * 1%) -
-      (((var(--width) * 1px) / 2) + #{$padding} + #{$border-width})
-  );
+  top: calc((var(--y-pos) * 1%) - (((var(--height) * 1px) / 2) + #{$padding} + #{$border-width}));
+  left: calc((var(--x-pos) * 1%) - (((var(--width) * 1px) / 2) + #{$padding} + #{$border-width}));
   box-sizing: border-box;
   border: solid #{$border-width} $interactive-04;
   padding: #{$padding};

@@ -118,7 +118,8 @@ const Hotspot = ({
         '--width': width,
         '--height': height,
       }}
-      icon={icon}>
+      icon={icon}
+    >
       <Tooltip
         {...others}
         triggerText={iconToRender}
@@ -129,7 +130,8 @@ const Hotspot = ({
           if (evt.type === 'click' && onClick) {
             onClick(evt, { x, y });
           }
-        }}>
+        }}
+      >
         {content}
       </Tooltip>
     </div>

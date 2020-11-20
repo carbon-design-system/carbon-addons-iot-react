@@ -1,9 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
-import {
-  BAR_CHART_LAYOUTS,
-  BAR_CHART_TYPES,
-} from '../../constants/LayoutConstants';
+import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 
 import {
@@ -156,9 +153,7 @@ describe('barChartUtils', () => {
         value: 270,
       },
     ]);
-    expect(
-      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)
-    ).toBeNull();
+    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based and group-based chart', () => {
@@ -233,9 +228,7 @@ describe('barChartUtils', () => {
     ]);
 
     // Handle nulls
-    expect(
-      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)
-    ).toBeNull();
+    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)).toBeNull();
   });
 
   it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
@@ -271,9 +264,7 @@ describe('barChartUtils', () => {
         value: 388,
       },
     ]);
-    expect(
-      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)
-    ).toBeNull();
+    expect(formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based, non-group chart', () => {
@@ -314,9 +305,7 @@ describe('barChartUtils', () => {
         value: 565,
       },
     ]);
-    expect(
-      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)
-    ).toBeNull();
+    expect(formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)).toBeNull();
   });
 
   it('formatChartData doesnt return null values', () => {

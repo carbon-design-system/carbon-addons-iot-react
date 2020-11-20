@@ -18,13 +18,7 @@ import {
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
-import {
-  ComposedModal,
-  Button,
-  List,
-  TextInput,
-  MultiSelect,
-} from '../../../../index';
+import { ComposedModal, Button, List, TextInput, MultiSelect } from '../../../../index';
 import { DataItemsPropTypes } from '../../../DashboardEditor/DashboardEditor';
 
 const { iotPrefix } = settings;
@@ -109,12 +103,8 @@ const DATAITEM_COLORS_OPTIONS = [
 export const formatSeries = (selectedItems, cardJson) => {
   const cardSeries = cardJson?.content?.series;
   const series = selectedItems.map(({ id }, i) => {
-    const currentItem = cardSeries?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
-    const color =
-      currentItem?.color ??
-      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+    const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === id);
+    const color = currentItem?.color ?? DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
       dataSourceId: id,
       label: currentItem?.label || id,
@@ -146,9 +136,7 @@ const DataSeriesFormItem = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const initialSelectedItems = formatDataItemsForDropdown(
-    cardConfig?.content?.series
-  );
+  const initialSelectedItems = formatDataItemsForDropdown(cardConfig?.content?.series);
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
@@ -253,8 +241,7 @@ const DataSeriesFormItem = ({
                   width: '1rem',
                   height: '1rem',
                   backgroundColor:
-                    series.color ||
-                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+                    series.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
                 }}
               />
             ),

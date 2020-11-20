@@ -44,7 +44,8 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
         <label
           id={`${mergedI18n.imageFile}-label`}
           className={`${prefix}--label`}
-          htmlFor={mergedI18n.imageFile}>
+          htmlFor={mergedI18n.imageFile}
+        >
           {mergedI18n.imageFile}
           <input
             id={mergedI18n.imageFile}

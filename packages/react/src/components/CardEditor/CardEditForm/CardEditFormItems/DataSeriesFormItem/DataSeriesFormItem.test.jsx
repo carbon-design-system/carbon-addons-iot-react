@@ -2,10 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DataSeriesFormItem, {
-  formatSeries,
-  formatDataItemsForDropdown,
-} from './DataSeriesFormItem';
+import DataSeriesFormItem, { formatSeries, formatDataItemsForDropdown } from './DataSeriesFormItem';
 
 const cardConfig = {
   id: 'Timeseries',

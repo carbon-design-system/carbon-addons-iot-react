@@ -5,16 +5,8 @@ import classnames from 'classnames';
 import update from 'immutability-helper';
 
 import { settings } from '../../constants/Settings';
-import {
-  DASHBOARD_EDITOR_CARD_TYPES,
-  CARD_ACTIONS,
-} from '../../constants/LayoutConstants';
-import {
-  DashboardGrid,
-  CardEditor,
-  ErrorBoundary,
-  SkeletonText,
-} from '../../index';
+import { DASHBOARD_EDITOR_CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
+import { DashboardGrid, CardEditor, ErrorBoundary, SkeletonText } from '../../index';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -325,9 +317,9 @@ const DashboardEditor = ({
       <div
         className={classnames(`${baseClassName}--content`, {
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-          [`${baseClassName}__overflow`]:
-            selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-        })}>
+          [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+        })}
+      >
         {renderHeader ? (
           renderHeader()
         ) : (
@@ -352,20 +344,18 @@ const DashboardEditor = ({
         <div
           className={classnames(`${baseClassName}--preview`, {
             // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-            [`${baseClassName}__overflow`]:
-              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-          })}>
+            [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+          })}
+        >
           <div
             className={classnames({
               [`${baseClassName}--preview__outline`]:
                 selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-              [`${baseClassName}--preview__md`]:
-                selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
-              [`${baseClassName}--preview__lg`]:
-                selectedBreakpointIndex === LAYOUTS.LARGE.index,
-              [`${baseClassName}--preview__xl`]:
-                selectedBreakpointIndex === LAYOUTS.XLARGE.index,
-            })}>
+              [`${baseClassName}--preview__md`]: selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
+              [`${baseClassName}--preview__lg`]: selectedBreakpointIndex === LAYOUTS.LARGE.index,
+              [`${baseClassName}--preview__xl`]: selectedBreakpointIndex === LAYOUTS.XLARGE.index,
+            })}
+          >
             {breakpointSwitcher?.enabled &&
               // only show breakpoint info if fit to screen is not selected
               selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index && (
@@ -382,7 +372,8 @@ const DashboardEditor = ({
                     kind="error"
                     lowContrast
                   />
-                }>
+                }
+              >
                 <DashboardGrid
                   isEditable
                   breakpoint={currentBreakpoint}
@@ -399,7 +390,8 @@ const DashboardEditor = ({
                       layouts: newLayouts,
                     });
                   }}
-                  supportedLayouts={['xl', 'lg', 'md']}>
+                  supportedLayouts={['xl', 'lg', 'md']}
+                >
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
                     const cardProps = commonCardProps(cardConfig, isSelected);

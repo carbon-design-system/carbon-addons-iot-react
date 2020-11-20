@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
-import {
-  InformationSquareFilled24,
-  InformationFilled24,
-} from '@carbon/icons-react';
+import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 

@@ -58,9 +58,7 @@ export const DashboardGridPropTypes = {
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
   /** Array of layouts that are supported by this component. Defaults to all layouts */
-  supportedLayouts: PropTypes.arrayOf(
-    PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])
-  ),
+  supportedLayouts: PropTypes.arrayOf(PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])),
   /**
    * Optionally listen to layout changes to update a dashboard template
    * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,

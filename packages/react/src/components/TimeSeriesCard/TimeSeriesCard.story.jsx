@@ -984,13 +984,7 @@ export const LotsOfDots = () => {
             view: 'graph_view',
           },
         })}
-        values={getIntervalChartData(
-          'day',
-          2000,
-          { min: 10, max: 100 },
-          100,
-          1572824320000
-        )}
+        values={getIntervalChartData('day', 2000, { min: 10, max: 100 }, 100, 1572824320000)}
         interval="hour"
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}

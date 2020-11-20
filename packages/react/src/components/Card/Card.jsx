@@ -67,7 +67,8 @@ const CardWrapper = ({
       className={classnames(className, `${iotPrefix}--card--wrapper`, {
         [`${iotPrefix}--card--wrapper__selected`]: isSelected,
       })}
-      {...validOthers}>
+      {...validOthers}
+    >
       {children}
     </div>
   );

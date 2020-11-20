@@ -262,9 +262,7 @@ const CardEditFormContent = ({
           />
         </>
       )}
-      {type === CARD_TYPES.IMAGE && (
-        <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
-      )}
+      {type === CARD_TYPES.IMAGE && <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />}
     </>
   );
 };

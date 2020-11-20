@@ -139,10 +139,7 @@ const Header = ({
     <CarbonHeader className={className} aria-label={mergedI18n.mainHeader}>
       <SkipToContent href={skipto} />
       {hasSideNav && (
-        <HeaderMenuButton
-          aria-label={mergedI18n.openMenu}
-          onClick={onClickSideNavExpand}
-        />
+        <HeaderMenuButton aria-label={mergedI18n.openMenu} onClick={onClickSideNavExpand} />
       )}
       <HeaderName href={url} prefix={prefix}>
         {appName}

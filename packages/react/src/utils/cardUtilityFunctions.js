@@ -458,10 +458,7 @@ export const fetchDataURL = (url, callback) =>
         addedFiles: [new File([ab], `${url.match(/([^/]*?)(?=\?|#|$)/)[0]}`)],
       },
       dataURL: `data:image/png;base64,${btoa(
-        new Uint8Array(ab).reduce(
-          (data, byte) => data + String.fromCharCode(byte),
-          ''
-        )
+        new Uint8Array(ab).reduce((data, byte) => data + String.fromCharCode(byte), '')
       )}`,
     }))
     .catch((e) => callback(e.message));

@@ -31,12 +31,7 @@ const propTypes = {
   hotspotIcons: PropTypes.arrayOf(iconsPropType),
   /** The state values of the controlled form elements e.g. { title: 'My hotspot 1', description: 'Lorem ipsum' } */
   formValues: PropTypes.objectOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.bool,
-      colorPropType,
-    ])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, colorPropType])
   ),
   /** Internationalisation strings */
   i18n: PropTypes.shape({
@@ -129,7 +124,8 @@ const HotspotEditorTooltipTab = ({
   const renderColorIconContainer = () => (
     <div
       className={`${iotPrefix}--icon-color-container`}
-      style={{ '--icon-fill-color': currentIconColor }}>
+      style={{ '--icon-fill-color': currentIconColor }}
+    >
       <Dropdown
         id="tooltip-form-icon"
         items={hotspotIcons}
@@ -158,8 +154,7 @@ const HotspotEditorTooltipTab = ({
   );
 
   const MyTitleTextInput = overrides?.titleTextInput?.component || TextInput;
-  const MyDecriptionTextArea =
-    overrides?.decriptionTextArea?.component || TextArea;
+  const MyDecriptionTextArea = overrides?.decriptionTextArea?.component || TextArea;
 
   return (
     <div className={`${iotPrefix}--hotspot-editor-tooltip-tab`}>
@@ -170,7 +165,8 @@ const HotspotEditorTooltipTab = ({
           <form
             className={`${iotPrefix}--hotspot-editor--tooltip-form`}
             data-testid={testID}
-            onSubmit={preventFormSubmission}>
+            onSubmit={preventFormSubmission}
+          >
             <MyTitleTextInput
               name="title"
               data-testid={`${testID}-title-input`}
@@ -199,13 +195,13 @@ const HotspotEditorTooltipTab = ({
             />
             {renderColorIconContainer()}
           </form>
-          <div
-            className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
+          <div className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
             <Button
               kind="ghost"
               renderIcon={TrashCan32}
               iconDescription={deleteButtonIconDescription}
-              onClick={onDelete}>
+              onClick={onDelete}
+            >
               {deleteButtonLabelText}
             </Button>
           </div>

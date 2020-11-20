@@ -78,18 +78,14 @@ const ColorDropdown = ({
 }) => {
   const renderColorItem = (item) => {
     return (
-      <div
-        title={`${item.name}`}
-        className={`${iotPrefix}--color-dropdown__item`}>
+      <div title={`${item.name}`} className={`${iotPrefix}--color-dropdown__item`}>
         <div className={`${iotPrefix}--color-dropdown__item-border`}>
           <div
             title={`${item.carbonColor}`}
             className={`${iotPrefix}--color-dropdown__color-sample`}
             style={{ backgroundColor: item.carbonColor }}
           />
-          <div className={`${iotPrefix}--color-dropdown__color-name`}>
-            {item.name}
-          </div>
+          <div className={`${iotPrefix}--color-dropdown__color-name`}>{item.name}</div>
         </div>
       </div>
     );

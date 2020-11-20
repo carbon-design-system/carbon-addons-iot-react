@@ -159,9 +159,7 @@ ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.story = {
 export const Editable = () => {
   const WithState = () => {
     const [myHotspots, setMyHotspots] = useState(hotspots);
-    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState(
-      []
-    );
+    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState([]);
 
     const onAddHotspotPosition = (position) => {
       const newHotspot = {
@@ -170,7 +168,8 @@ export const Editable = () => {
           <span
             style={{
               padding: spacing03,
-            }}>{`Hotspot ${position.x} - ${position.y}`}</span>
+            }}
+          >{`Hotspot ${position.x} - ${position.y}`}</span>
         ),
       };
       setMyHotspots([...myHotspots, newHotspot]);

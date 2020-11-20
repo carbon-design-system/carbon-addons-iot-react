@@ -9,11 +9,7 @@ import {
   Laptop16,
   Screen16,
 } from '@carbon/icons-react';
-import {
-  FileUploaderButton,
-  TooltipIcon,
-  ContentSwitcher,
-} from 'carbon-components-react';
+import { FileUploaderButton, TooltipIcon, ContentSwitcher } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, PageTitleBar } from '../../../index';
@@ -127,7 +123,8 @@ const DashboardEditorHeader = ({
           <ContentSwitcher
             onChange={(e) => setSelectedBreakpointIndex(e.index)}
             selectedIndex={selectedBreakpointIndex}
-            className={`${baseClassName}--bottom__switcher`}>
+            className={`${baseClassName}--bottom__switcher`}
+          >
             <IconSwitch
               name="fit-to-screen"
               text={mergedI18n.headerFitToScreenButton}
@@ -162,7 +159,8 @@ const DashboardEditorHeader = ({
               align="center"
               direction="bottom"
               tooltipText={mergedI18n.headerImportButton}
-              className={`${baseClassName}--bottom__import`}>
+              className={`${baseClassName}--bottom__import`}
+            >
               <FileUploaderButton
                 buttonKind="ghost"
                 size="field"
@@ -205,10 +203,7 @@ const DashboardEditorHeader = ({
           </Button>
         )}
         {onSubmit && (
-          <Button
-            size="field"
-            disabled={submitDisabled}
-            onClick={() => onSubmit(dashboardJson)}>
+          <Button size="field" disabled={submitDisabled} onClick={() => onSubmit(dashboardJson)}>
             {mergedI18n.headerSubmitButton}
           </Button>
         )}

@@ -4,11 +4,7 @@ import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import assign from 'lodash/assign';
 
-import {
-  PieCardPropTypes,
-  CardPropTypes,
-  CHART_COLORS,
-} from '../../constants/CardPropTypes';
+import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import {
@@ -73,9 +69,7 @@ export const formatColors = (values, groupDataSourceId, colors) => {
   };
   if (Array.isArray(values)) {
     values.forEach((value, index) => {
-      formattedColors.scale[value[groupDataSourceId]] = colors?.[
-        value[groupDataSourceId]
-      ]
+      formattedColors.scale[value[groupDataSourceId]] = colors?.[value[groupDataSourceId]]
         ? colors[value[groupDataSourceId]] // look to find a matching color entry in our colors otherwise use defaults
         : CHART_COLORS[index % CHART_COLORS.length];
     });

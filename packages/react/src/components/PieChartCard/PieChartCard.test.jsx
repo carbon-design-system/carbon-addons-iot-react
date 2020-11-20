@@ -61,11 +61,7 @@ describe('utility functions', () => {
     const mockColors = {
       'cat A': 'purple',
     };
-    const formattedColors = formatColors(
-      chartDataExample,
-      'category',
-      mockColors
-    );
+    const formattedColors = formatColors(chartDataExample, 'category', mockColors);
     expect(formattedColors.scale['cat A']).toEqual('purple');
     expect(formattedColors.scale['cat B']).toEqual('#1192e8');
   });
@@ -73,11 +69,7 @@ describe('utility functions', () => {
     const mockColors = {
       'cat A': 'purple',
     };
-    const formattedColors = formatColors(
-      { 'cat A': 124, 'cat B': 125 },
-      undefined,
-      mockColors
-    );
+    const formattedColors = formatColors({ 'cat A': 124, 'cat B': 125 }, undefined, mockColors);
     expect(formattedColors.scale['cat A']).toEqual('purple');
     expect(formattedColors.scale['cat B']).toEqual('#1192e8');
   });
@@ -159,9 +151,7 @@ describe('PieChartCard', () => {
       />
     );
 
-    const slices = screen
-      .getAllByRole('group')[0]
-      .getElementsByClassName('slice');
+    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
     const orderedColors = chartDataExample
       .sort((a, b) => b.value - a.value)
       .map((data) => colorsMap[data.category]);
@@ -211,9 +201,7 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 0')).toBeVisible();
     expect(screen.getByText('Sample 1')).toBeVisible();
 
-    const slices = screen
-      .getAllByRole('group')[0]
-      .getElementsByClassName('slice');
+    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
     const firstSliceColor = slices.item(0).getAttribute('fill');
     const secondSliceColor = slices.item(1).getAttribute('fill');
 

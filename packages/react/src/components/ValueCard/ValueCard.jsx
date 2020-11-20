@@ -294,11 +294,7 @@ const ValueCard = ({
           >
             <ContentWrapper layout={layout}>
               {!isNil(dataState) ? (
-                <DataStateRenderer
-                  dataState={dataState}
-                  size={newSize}
-                  id={id}
-                />
+                <DataStateRenderer dataState={dataState} size={newSize} id={id} />
               ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment
