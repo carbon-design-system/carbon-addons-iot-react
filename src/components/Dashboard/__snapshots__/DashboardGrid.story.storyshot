@@ -2499,9 +2499,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     style={
                       Object {
                         "cursor": "auto",
-                        "left": undefined,
-                        "position": "relative",
-                        "top": undefined,
+                        "height": "auto",
+                        "left": "50%",
+                        "objectFit": null,
+                        "position": "absolute",
+                        "top": "50%",
+                        "transform": "translate(-50%, -50%)",
+                        "width": "auto",
                       }
                     }
                   />
