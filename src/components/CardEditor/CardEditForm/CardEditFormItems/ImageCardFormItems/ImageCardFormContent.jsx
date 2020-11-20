@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Scale32} from '@carbon/icons-react';
+import { Scale32 } from '@carbon/icons-react';
 
 import Button from '../../../../Button';
 import { settings } from '../../../../../constants/Settings';
@@ -41,7 +41,10 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
   const baseClassName = `${iotPrefix}--card-edit-form`;
   return (
     <>
-      <div className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>{mergedI18n.image}</div>
+      <div
+        className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>
+        {mergedI18n.image}
+      </div>
       <div className={`${baseClassName}--input`}>
         <label
           id={`${mergedI18n.imageFile}-label`}
@@ -55,7 +58,12 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
             value={cardConfig.content?.id || ''}
           />
         </label>
-        <Button className={`${baseClassName}--form-section-image-btn`} size="small" renderIcon={Scale32}>{mergedI18n.editImage}</Button>
+        <Button
+          className={`${baseClassName}--form-section-image-btn`}
+          size="small"
+          renderIcon={Scale32}>
+          {mergedI18n.editImage}
+        </Button>
       </div>
     </>
   );

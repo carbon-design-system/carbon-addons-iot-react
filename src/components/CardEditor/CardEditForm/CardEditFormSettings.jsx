@@ -6,8 +6,6 @@ import { CARD_TYPES } from '../../../constants/LayoutConstants';
 import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 
-
-
 const propTypes = {
   /** card data value */
   cardConfig: PropTypes.shape({
@@ -47,16 +45,22 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
 
-
-
   return (
     <div>
       {type === CARD_TYPES.TIMESERIES && (
-        <DataSeriesFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
+        <DataSeriesFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
       )}
-        {type === CARD_TYPES.IMAGE && (
-          <ImageCardFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
-        )}
+      {type === CARD_TYPES.IMAGE && (
+        <ImageCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
+      )}
 
       {/*
       TODO: support and legend toggling in future iteration

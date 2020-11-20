@@ -61,65 +61,65 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
 
   return (
     <>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id={`${id}_title`}
-            labelText={mergedI18n.xAxisLabel}
-            light
-            onChange={(evt) =>
-              onChange({
-                ...cardConfig,
-                content: { ...cardConfig.content, xLabel: evt.target.value },
-              })
-            }
-            value={content?.xLabel}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id={`${id}_y-axis-label`}
-            labelText={mergedI18n.yAxisLabel}
-            light
-            onChange={(evt) =>
-              onChange({
-                ...cardConfig,
-                content: { ...cardConfig.content, yLabel: evt.target.value },
-              })
-            }
-            value={content?.yLabel}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id={`${id}_unit-selection`}
-            labelText={mergedI18n.unitLabel}
-            light
-            onChange={(evt) =>
-              onChange({
-                ...cardConfig,
-                content: { ...cardConfig.content, unit: evt.target.value },
-              })
-            }
-            value={content?.unit}
-          />
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <TextInput
-            id={`${id}_decimal-precision`}
-            labelText={mergedI18n.decimalPrecisionLabel}
-            light
-            onChange={(evt) =>
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...cardConfig.content,
-                  decimalPrecision: evt.target.value,
-                },
-              })
-            }
-            value={content?.decimalPrecision}
-          />
-        </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_title`}
+          labelText={mergedI18n.xAxisLabel}
+          light
+          onChange={(evt) =>
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, xLabel: evt.target.value },
+            })
+          }
+          value={content?.xLabel}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_y-axis-label`}
+          labelText={mergedI18n.yAxisLabel}
+          light
+          onChange={(evt) =>
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, yLabel: evt.target.value },
+            })
+          }
+          value={content?.yLabel}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_unit-selection`}
+          labelText={mergedI18n.unitLabel}
+          light
+          onChange={(evt) =>
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, unit: evt.target.value },
+            })
+          }
+          value={content?.unit}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_decimal-precision`}
+          labelText={mergedI18n.decimalPrecisionLabel}
+          light
+          onChange={(evt) =>
+            onChange({
+              ...cardConfig,
+              content: {
+                ...cardConfig.content,
+                decimalPrecision: evt.target.value,
+              },
+            })
+          }
+          value={content?.decimalPrecision}
+        />
+      </div>
     </>
   );
 };
