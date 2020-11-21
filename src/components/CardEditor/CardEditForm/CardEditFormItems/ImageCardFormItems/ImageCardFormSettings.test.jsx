@@ -8,7 +8,7 @@ import ImageCardFormSettings, {
 
 const cardConfig = {
   id: 'ImageCard',
-  title: 'Untitled',
+  title: 'Test Title',
   size: 'MEDIUMWIDE',
   type: 'IMAGE',
   content: {
