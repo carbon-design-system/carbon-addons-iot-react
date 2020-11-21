@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   RadioButtonGroup,
   RadioButton,
   FormGroup,
   ToggleSmall,
-  Slider,
 } from 'carbon-components-react';
 import { gray10, gray80, white } from '@carbon/colors';
 
@@ -22,19 +21,12 @@ const propTypes = {
     size: PropTypes.string,
     type: PropTypes.string,
     content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
+      hideMinimap: PropTypes.bool,
+      hideHotspots: PropTypes.bool,
+      hideZoomControls: PropTypes.bool,
+      id: PropTypes.string,
+      displayOption: PropTypes.string,
+      background: PropTypes.string,
     }),
     interval: PropTypes.string,
     showLegend: PropTypes.bool,
@@ -42,11 +34,11 @@ const propTypes = {
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    xAxisLabel: PropTypes.string,
-    yAxisLabel: PropTypes.string,
-    unitLabel: PropTypes.string,
-    decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
+    displayOptions: PropTypes.string,
+    colorTitleText: PropTypes.string,
+    hideMap: PropTypes.string,
+    hideZoom: PropTypes.string,
+    zoomLevel: PropTypes.string,
   }),
 };
 
@@ -61,7 +53,7 @@ const defaultProps = {
   },
 };
 
-const backGroundColor = (hex) => {
+export const backGroundColor = (hex) => {
   let color;
   switch (hex) {
     case '#f4f4f4':
@@ -82,17 +74,19 @@ const backGroundColor = (hex) => {
 
 const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);
+  // Hiding until the UX for this form item is figured out.
+  // const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const handleZoomChange = ({ value }) => {
-    onChange({
-      ...cardConfig,
-      content: { ...cardConfig.content, zoomMax: value },
-    });
-    setZoom(value);
-  };
+  // Hiding until the UX for this form item is figured out.
+  // const handleZoomChange = ({ value }) => {
+  //   onChange({
+  //     ...cardConfig,
+  //     content: { ...cardConfig.content, zoomMax: value },
+  //   });
+  //   setZoom(value);
+  // };
 
   return (
     <>
@@ -110,18 +104,21 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               orientation="vertical"
               legend={`${mergedI18n.displayOptions}`}
               labelPosition="right"
-              valueSelected={cardConfig.content.displayOption}>
+              valueSelected={cardConfig.content?.displayOption}>
               <RadioButton
+                data-testid={`${baseClassName}--input-radio1`}
                 value="contain"
                 id={`${baseClassName}--input-radio-1`}
                 labelText="Fit"
               />
               <RadioButton
+                data-testid={`${baseClassName}--input-radio2`}
                 value="cover"
                 id={`${baseClassName}--input-radio-2`}
                 labelText="Fill"
               />
               <RadioButton
+                data-testid={`${baseClassName}--input-radio3`}
                 value="fill"
                 id={`${baseClassName}--input-radio-3`}
                 labelText="Stretch"
@@ -131,6 +128,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
         </div>
         <div className={`${baseClassName}--input`}>
           <ColorDropdown
+            data-testid={`${baseClassName}--input-color-dropdown`}
             titleText={mergedI18n.colorTitleText}
             light
             colors={[
@@ -139,7 +137,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               { carbonColor: white, name: 'white' },
             ]}
             id={`${baseClassName}--input-color`}
-            selectedColor={backGroundColor(cardConfig.content.background)}
+            selectedColor={backGroundColor(cardConfig.content?.background)}
             onChange={(evt) =>
               onChange({
                 ...cardConfig,
@@ -155,11 +153,12 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           <div className={`${baseClassName}--input--toggle-field`}>
             <span>{mergedI18n.hideMap}</span>
             <ToggleSmall
+            data-testid={`${baseClassName}--input-toggle1`}
               id={`${baseClassName}--input-toggle-1`}
               aria-label={mergedI18n.hideMap}
               labelA=""
               labelB=""
-              toggled={cardConfig.content.hideMinimap}
+              toggled={cardConfig.content?.hideMinimap}
               onToggle={(bool) =>
                 onChange({
                   ...cardConfig,
@@ -173,11 +172,12 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           <div className={`${baseClassName}--input--toggle-field`}>
             <span>{mergedI18n.hideZoom}</span>
             <ToggleSmall
+            data-testid={`${baseClassName}--input-toggle2`}
               id={`${baseClassName}--input-toggle-2`}
               aria-label={mergedI18n.hideZoom}
               labelA=""
               labelB=""
-              toggled={cardConfig.content.hideZoomControls}
+              toggled={cardConfig.content?.hideZoomControls}
               onToggle={(bool) =>
                 onChange({
                   ...cardConfig,
@@ -187,6 +187,8 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             />
           </div>
         </div>
+        {/*
+        // Hiding until the UX for this form item is figured out.
         <div className={`${baseClassName}--input`}>
           <div className={`${baseClassName}--input--zoom-field`}>
             <Slider
@@ -197,7 +199,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               onChange={handleZoomChange}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
