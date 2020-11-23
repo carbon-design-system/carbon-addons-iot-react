@@ -146,13 +146,19 @@ const DataSeriesFormItem = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const initialSelectedItems = formatDataItemsForDropdown(
+  const defaultSelectedItems = formatDataItemsForDropdown(
     cardConfig?.content?.series
   );
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
+
+  const initialSelectedItems = defaultSelectedItems.map((defaultSelectedItem) =>
+    validDataItems.find(
+      (validDataItem) => validDataItem.id === defaultSelectedItem.id
+    )
+  );
 
   return (
     <>
