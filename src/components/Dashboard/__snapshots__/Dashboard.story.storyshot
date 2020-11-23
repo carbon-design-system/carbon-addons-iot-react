@@ -2119,11 +2119,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
@@ -4539,11 +4538,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
@@ -6987,11 +6985,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
@@ -7651,11 +7648,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
@@ -12013,11 +12009,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
@@ -26836,11 +26831,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "cursor": "auto",
                             "height": "auto",
-                            "left": "50%",
+                            "left": undefined,
                             "objectFit": null,
-                            "position": "absolute",
-                            "top": "50%",
-                            "transform": "translate(-50%, -50%)",
+                            "position": "relative",
+                            "top": undefined,
                             "width": "auto",
                           }
                         }
