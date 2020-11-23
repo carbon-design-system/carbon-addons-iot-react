@@ -154,6 +154,7 @@ const DataSeriesFormItem = ({
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
 
+  // This is a workaround for carbon issue https://github.com/carbon-design-system/carbon/issues/7055
   const initialSelectedItems = defaultSelectedItems.map((defaultSelectedItem) =>
     validDataItems.find(
       (validDataItem) => validDataItem.id === defaultSelectedItem.id
