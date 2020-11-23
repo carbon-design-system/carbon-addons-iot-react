@@ -57,9 +57,7 @@ const colors = [
   { carbonColor: gray10, name: 'gray10' },
   { carbonColor: gray80, name: 'gray80' },
   { carbonColor: white, name: 'white' },
-]
-
-
+];
 
 const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -78,100 +76,102 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   // };
 
   return (
-      <div className={`${baseClassName} ${baseClassName}--form-section-image`}>
-        <div className={`${baseClassName}--input`}>
-          <FormGroup legendText={mergedI18n.displayOptions}>
-            <RadioButtonGroup
-              name={`${baseClassName}--input-radios`}
-              onChange={(evt) =>
-                onChange({
-                  ...cardConfig,
-                  content: { ...cardConfig.content, displayOption: evt },
-                })
-              }
-              orientation="vertical"
-              legend={`${mergedI18n.displayOptions}`}
-              labelPosition="right"
-              valueSelected={cardConfig.content?.displayOption}>
-              <RadioButton
-                data-testid={`${baseClassName}--input-radio1`}
-                value="contain"
-                id={`${baseClassName}--input-radio-1`}
-                labelText="Fit"
-              />
-              <RadioButton
-                data-testid={`${baseClassName}--input-radio2`}
-                value="cover"
-                id={`${baseClassName}--input-radio-2`}
-                labelText="Fill"
-              />
-              <RadioButton
-                data-testid={`${baseClassName}--input-radio3`}
-                value="fill"
-                id={`${baseClassName}--input-radio-3`}
-                labelText="Stretch"
-              />
-            </RadioButtonGroup>
-          </FormGroup>
-        </div>
-        <div className={`${baseClassName}--input`}>
-          <ColorDropdown
-            data-testid={`${baseClassName}--input-color-dropdown`}
-            titleText={mergedI18n.colorTitleText}
-            light
-            colors={colors}
-            id={`${baseClassName}--input-color`}
-            selectedColor={colors.find(color => color.carbonColor === cardConfig.content?.background)}
+    <div className={`${baseClassName} ${baseClassName}--form-section-image`}>
+      <div className={`${baseClassName}--input`}>
+        <FormGroup legendText={mergedI18n.displayOptions}>
+          <RadioButtonGroup
+            name={`${baseClassName}--input-radios`}
             onChange={(evt) =>
               onChange({
                 ...cardConfig,
-                content: {
-                  ...cardConfig.content,
-                  background: evt.color.carbonColor,
-                },
+                content: { ...cardConfig.content, displayOption: evt },
+              })
+            }
+            orientation="vertical"
+            legend={`${mergedI18n.displayOptions}`}
+            labelPosition="right"
+            valueSelected={cardConfig.content?.displayOption}>
+            <RadioButton
+              data-testid={`${baseClassName}--input-radio1`}
+              value="contain"
+              id={`${baseClassName}--input-radio-1`}
+              labelText="Fit"
+            />
+            <RadioButton
+              data-testid={`${baseClassName}--input-radio2`}
+              value="cover"
+              id={`${baseClassName}--input-radio-2`}
+              labelText="Fill"
+            />
+            <RadioButton
+              data-testid={`${baseClassName}--input-radio3`}
+              value="fill"
+              id={`${baseClassName}--input-radio-3`}
+              labelText="Stretch"
+            />
+          </RadioButtonGroup>
+        </FormGroup>
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <ColorDropdown
+          data-testid={`${baseClassName}--input-color-dropdown`}
+          titleText={mergedI18n.colorTitleText}
+          light
+          colors={colors}
+          id={`${baseClassName}--input-color`}
+          selectedColor={colors.find(
+            (color) => color.carbonColor === cardConfig.content?.background
+          )}
+          onChange={(evt) =>
+            onChange({
+              ...cardConfig,
+              content: {
+                ...cardConfig.content,
+                background: evt.color.carbonColor,
+              },
+            })
+          }
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <div className={`${baseClassName}--input--toggle-field`}>
+          <span>{mergedI18n.hideMap}</span>
+          <ToggleSmall
+            data-testid={`${baseClassName}--input-toggle1`}
+            id={`${baseClassName}--input-toggle-1`}
+            aria-label={mergedI18n.hideMap}
+            labelA=""
+            labelB=""
+            toggled={cardConfig.content?.hideMinimap}
+            onToggle={(bool) =>
+              onChange({
+                ...cardConfig,
+                content: { ...cardConfig.content, hideMinimap: bool },
               })
             }
           />
         </div>
-        <div className={`${baseClassName}--input`}>
-          <div className={`${baseClassName}--input--toggle-field`}>
-            <span>{mergedI18n.hideMap}</span>
-            <ToggleSmall
-              data-testid={`${baseClassName}--input-toggle1`}
-              id={`${baseClassName}--input-toggle-1`}
-              aria-label={mergedI18n.hideMap}
-              labelA=""
-              labelB=""
-              toggled={cardConfig.content?.hideMinimap}
-              onToggle={(bool) =>
-                onChange({
-                  ...cardConfig,
-                  content: { ...cardConfig.content, hideMinimap: bool },
-                })
-              }
-            />
-          </div>
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <div className={`${baseClassName}--input--toggle-field`}>
+          <span>{mergedI18n.hideZoom}</span>
+          <ToggleSmall
+            data-testid={`${baseClassName}--input-toggle2`}
+            id={`${baseClassName}--input-toggle-2`}
+            aria-label={mergedI18n.hideZoom}
+            labelA=""
+            labelB=""
+            toggled={cardConfig.content?.hideZoomControls}
+            onToggle={(bool) =>
+              onChange({
+                ...cardConfig,
+                content: { ...cardConfig.content, hideZoomControls: bool },
+              })
+            }
+          />
         </div>
-        <div className={`${baseClassName}--input`}>
-          <div className={`${baseClassName}--input--toggle-field`}>
-            <span>{mergedI18n.hideZoom}</span>
-            <ToggleSmall
-              data-testid={`${baseClassName}--input-toggle2`}
-              id={`${baseClassName}--input-toggle-2`}
-              aria-label={mergedI18n.hideZoom}
-              labelA=""
-              labelB=""
-              toggled={cardConfig.content?.hideZoomControls}
-              onToggle={(bool) =>
-                onChange({
-                  ...cardConfig,
-                  content: { ...cardConfig.content, hideZoomControls: bool },
-                })
-              }
-            />
-          </div>
-        </div>
-        {/*
+      </div>
+      {/*
         // Hiding until the UX for this form item is figured out.
         <div className={`${baseClassName}--input`}>
           <div className={`${baseClassName}--input--zoom-field`}>
@@ -184,7 +184,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             />
           </div>
         </div> */}
-      </div>
+    </div>
   );
 };
 

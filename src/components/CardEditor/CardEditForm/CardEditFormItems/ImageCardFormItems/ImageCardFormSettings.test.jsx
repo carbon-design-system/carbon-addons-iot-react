@@ -2,9 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import ImageCardFormSettings, {
-  backGroundColor,
-} from './ImageCardFormSettings';
+import ImageCardFormSettings from './ImageCardFormSettings';
 
 const cardConfig = {
   id: 'ImageCard',
@@ -77,18 +75,5 @@ describe('ImageCardFormSettings', () => {
     actions.onChange.mockReset();
   });
 
-  it('returns an object with the right color token', () => {
-    expect(backGroundColor('#f4f4f4')).toEqual({
-      carbonColor: '#f4f4f4',
-      name: 'gray10',
-    });
-    expect(backGroundColor('#ffffff')).toEqual({
-      carbonColor: '#ffffff',
-      name: 'white',
-    });
-    expect(backGroundColor('#393939')).toEqual({
-      carbonColor: '#393939',
-      name: 'gray80',
-    });
-  });
+
 });

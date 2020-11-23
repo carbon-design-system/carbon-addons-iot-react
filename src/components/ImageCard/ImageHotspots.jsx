@@ -555,9 +555,11 @@ const ImageHotspots = ({
 
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
-      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
+      imageStyle.height =
+        displayOption && image.scale === 1 ? '100%' : image.height;
     } else {
-      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
+      imageStyle.width =
+        displayOption && image.scale === 1 ? '100%' : image.width;
     }
 
     if (image.orientation === 'landscape') {
