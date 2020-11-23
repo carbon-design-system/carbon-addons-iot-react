@@ -289,134 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="tabpanel"
               selected={false}
             >
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_title"
-                  >
-                    X-axis label
-                  </label>
-                  <div
-                    className="bx--text-input__field-outer-wrapper"
-                  >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
-                    >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="calculated_title"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_y-axis-label"
-                  >
-                    Y-axis label
-                  </label>
-                  <div
-                    className="bx--text-input__field-outer-wrapper"
-                  >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
-                    >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="calculated_y-axis-label"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_unit-selection"
-                  >
-                    Unit
-                  </label>
-                  <div
-                    className="bx--text-input__field-outer-wrapper"
-                  >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
-                    >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="calculated_unit-selection"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_decimal-precision"
-                  >
-                    Decimal precision
-                  </label>
-                  <div
-                    className="bx--text-input__field-outer-wrapper"
-                  >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
-                    >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="calculated_decimal-precision"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div />
             </div>
             <div
               className="iot--card-edit-form--footer"
@@ -1107,133 +980,135 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="tabpanel"
               selected={false}
             >
-              <div
-                className="iot--card-edit-form--input"
-              >
+              <div>
                 <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  className="iot--card-edit-form--input"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="timeseries_title"
-                  >
-                    X-axis label
-                  </label>
                   <div
-                    className="bx--text-input__field-outer-wrapper"
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                   >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
+                    <label
+                      className="bx--label"
+                      htmlFor="timeseries_title"
                     >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="timeseries_title"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                        value="Time"
-                      />
+                      X-axis label
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="timeseries_title"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                          value="Time"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
                 <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  className="iot--card-edit-form--input"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="timeseries_y-axis-label"
-                  >
-                    Y-axis label
-                  </label>
                   <div
-                    className="bx--text-input__field-outer-wrapper"
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                   >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
+                    <label
+                      className="bx--label"
+                      htmlFor="timeseries_y-axis-label"
                     >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="timeseries_y-axis-label"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                        value="Temperature"
-                      />
+                      Y-axis label
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="timeseries_y-axis-label"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                          value="Temperature"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
                 <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  className="iot--card-edit-form--input"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="timeseries_unit-selection"
-                  >
-                    Unit
-                  </label>
                   <div
-                    className="bx--text-input__field-outer-wrapper"
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                   >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
+                    <label
+                      className="bx--label"
+                      htmlFor="timeseries_unit-selection"
                     >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="timeseries_unit-selection"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                        value="˚F"
-                      />
+                      Unit
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="timeseries_unit-selection"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                          value="˚F"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
                 <div
-                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  className="iot--card-edit-form--input"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="timeseries_decimal-precision"
-                  >
-                    Decimal precision
-                  </label>
                   <div
-                    className="bx--text-input__field-outer-wrapper"
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
                   >
-                    <div
-                      className="bx--text-input__field-wrapper"
-                      data-invalid={null}
-                      data-warn={null}
+                    <label
+                      className="bx--label"
+                      htmlFor="timeseries_decimal-precision"
                     >
-                      <input
-                        className="bx--text-input bx--text__input bx--text-input--light"
-                        disabled={false}
-                        id="timeseries_decimal-precision"
-                        onChange={[Function]}
-                        onClick={[Function]}
-                        type="text"
-                      />
+                      Decimal precision
+                    </label>
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          disabled={false}
+                          id="timeseries_decimal-precision"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1608,134 +1483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 role="tabpanel"
                 selected={false}
               >
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="card-1_title"
-                    >
-                      X-axis label
-                    </label>
-                    <div
-                      className="bx--text-input__field-outer-wrapper"
-                    >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                        data-warn={null}
-                      >
-                        <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
-                          disabled={false}
-                          id="card-1_title"
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="card-1_y-axis-label"
-                    >
-                      Y-axis label
-                    </label>
-                    <div
-                      className="bx--text-input__field-outer-wrapper"
-                    >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                        data-warn={null}
-                      >
-                        <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
-                          disabled={false}
-                          id="card-1_y-axis-label"
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="card-1_unit-selection"
-                    >
-                      Unit
-                    </label>
-                    <div
-                      className="bx--text-input__field-outer-wrapper"
-                    >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                        data-warn={null}
-                      >
-                        <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
-                          disabled={false}
-                          id="card-1_unit-selection"
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="card-1_decimal-precision"
-                    >
-                      Decimal precision
-                    </label>
-                    <div
-                      className="bx--text-input__field-outer-wrapper"
-                    >
-                      <div
-                        className="bx--text-input__field-wrapper"
-                        data-invalid={null}
-                        data-warn={null}
-                      >
-                        <input
-                          className="bx--text-input bx--text__input bx--text-input--light"
-                          disabled={false}
-                          id="card-1_decimal-precision"
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div />
               </div>
               <div
                 className="iot--card-edit-form--footer"

@@ -46,9 +46,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "crosshair",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -386,9 +389,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -726,9 +732,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -1066,9 +1075,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -1406,9 +1418,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -1746,9 +1761,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           style={
             Object {
               "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
