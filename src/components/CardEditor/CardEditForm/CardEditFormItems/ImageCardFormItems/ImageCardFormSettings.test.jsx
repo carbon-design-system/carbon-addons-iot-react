@@ -74,6 +74,4 @@ describe('ImageCardFormSettings', () => {
     });
     actions.onChange.mockReset();
   });
-
-
 });
