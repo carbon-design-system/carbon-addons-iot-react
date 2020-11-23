@@ -62,7 +62,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
 
   const { pagination, toolbar, table, onUserViewModified } = callbackActions;
 
-  // Need to initially sort and filter the tables data, but preserve the selectedId
+  // Need to initially sort and filter the tables data, but preserve the selectedId.
   useDeepCompareEffect(() => {
     dispatch(
       tableRegister({
@@ -73,7 +73,38 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         hasUserViewManagement,
       })
     );
-  }, [initialData, isLoading, initialState]);
+  }, [
+    // Props of type React.Element or React.Node must not be included in
+    // useDeepCompareEffect dependency arrays, their object signature is
+    // massive and will throw out of memory errors if compared.
+    // https://github.com/kentcdodds/use-deep-compare-effect/issues/7
+    // https://twitter.com/dan_abramov/status/1104415855612432384
+    initialData,
+    isLoading,
+    initialState.pagination,
+    initialState.filters,
+    initialState.toolbar.activeBar,
+    // Remove the icon as it's a React.Element which can not be compared
+    initialState.toolbar.batchActions.map((action) => {
+      const { icon, ...nonElements } = action;
+      return nonElements;
+    }),
+    initialState.toolbar.initialDefaultSearch,
+    initialState.toolbar.search,
+    initialState.toolbar.isDisabled,
+    initialState.table.isSelectAllSelected,
+    initialState.table.isSelectAllIndeterminate,
+    initialState.table.selectedIds,
+    initialState.table.sort,
+    initialState.table.ordering,
+    // Remove the error as it's a React.Element/Node which can not be compared
+    initialState.table.rowActions.map((action) => {
+      const { error, ...nonElements } = action;
+      return nonElements;
+    }),
+    initialState.table.expandedIds,
+    initialState.table.loadingState,
+  ]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';

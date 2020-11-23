@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots Editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -15,8 +15,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "height": "560px",
-          "width": "560px",
+          "height": "300px",
+          "width": "450px",
         }
       }
     >
@@ -36,16 +36,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
-          src="MunichBuilding.png"
+          src="landscape.jpg"
           style={
             Object {
+              "cursor": "crosshair",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -62,7 +68,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 bnYUXp"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -102,7 +118,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 kDDGXo"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -142,7 +168,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 gFMCuA"
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -183,7 +219,360 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 hsZfSY"
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
+          >
+            <div
+              aria-describedby={null}
+              aria-labelledby="hotspot-50-60"
+              className="bx--tooltip__label"
+              id="hotspot-50-60"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                height={25}
+                width={25}
+              >
+                <circle
+                  cx={12.5}
+                  cy={12.5}
+                  fill="none"
+                  opacity="1"
+                  r={11.5}
+                  stroke="white"
+                  strokeWidth="2"
+                />
+                <circle
+                  cx={12.5}
+                  cy={12.5}
+                  fill="green"
+                  opacity="0.7"
+                  r={11.5}
+                  stroke="none"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "bottom": 10,
+              "pointerEvents": "auto",
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#fff",
+                "border": "none",
+                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                "height": "25px",
+                "width": "25px",
+              }
+            }
+            title="Zoom in"
+            type="button"
+          >
+            +
+          </button>
+          <br />
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#fff",
+                "border": "none",
+                "boxShadow": "0px 0px 2px 0px rgba(0,0,0,0.5)",
+                "height": "25px",
+                "width": "25px",
+              }
+            }
+            title="Zoom out"
+            type="button"
+          >
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "560px",
+          "width": "560px",
+        }
+      }
+    >
+      <div
+        onBlur={[Function]}
+        onMouseOut={[Function]}
+        style={
+          Object {
+            "background": "#eee",
+            "height": "100%",
+            "overflow": "hidden",
+            "position": "relative",
+            "textAlign": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <img
+          alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
+          onLoad={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          src="MunichBuilding.png"
+          style={
+            Object {
+              "cursor": "auto",
+              "height": "auto",
+              "left": undefined,
+              "objectFit": null,
+              "position": "relative",
+              "top": undefined,
+              "width": "auto",
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "left": undefined,
+              "margin": "auto",
+              "pointerEvents": "none",
+              "position": "absolute",
+              "right": "auto",
+              "top": undefined,
+            }
+          }
+        >
+          <div
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
+          >
+            <div
+              aria-describedby={null}
+              aria-labelledby="hotspot-10-20"
+              className="bx--tooltip__label"
+              id="hotspot-10-20"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                aria-label=""
+                fill="white"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                title=""
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                />
+                <path
+                  d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
+          >
+            <div
+              aria-describedby={null}
+              aria-labelledby="hotspot-50-10"
+              className="bx--tooltip__label"
+              id="hotspot-50-10"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                aria-label=""
+                fill="blue"
+                focusable="false"
+                height={25}
+                preserveAspectRatio="xMidYMid meet"
+                title=""
+                viewBox="0 0 32 32"
+                width={25}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.879,27.5212l-13-25.0363a1.04,1.04,0,0,0-1.7583,0l-13,25.0363A1.0015,1.0015,0,0,0,3,29H29a1.001,1.001,0,0,0,.8789-1.4788ZM14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                />
+                <path
+                  d="M14.8751,10.0086h2.25V20h-2.25ZM16,26a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,26Z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
+          >
+            <div
+              aria-describedby={null}
+              aria-labelledby="hotspot-30-40"
+              className="bx--tooltip__label"
+              id="hotspot-30-40"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                height={25}
+                width={25}
+              >
+                <circle
+                  cx={12.5}
+                  cy={12.5}
+                  fill="none"
+                  opacity="1"
+                  r={11.5}
+                  stroke="white"
+                  strokeWidth="2"
+                />
+                <circle
+                  cx={12.5}
+                  cy={12.5}
+                  fill="blue"
+                  opacity="0.7"
+                  r={11.5}
+                  stroke="none"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -333,6 +722,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -340,9 +731,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           src="landscape.jpg"
           style={
             Object {
+              "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -359,7 +754,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 bnYUXp"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -399,7 +804,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 kDDGXo"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -439,7 +854,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 gFMCuA"
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -480,7 +905,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 hsZfSY"
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -630,6 +1065,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -637,9 +1074,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           src="landscape.jpg"
           style={
             Object {
+              "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -656,7 +1097,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 bnYUXp"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -696,7 +1147,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 kDDGXo"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -736,7 +1197,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 gFMCuA"
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -777,7 +1248,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 hsZfSY"
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -927,6 +1408,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -934,9 +1417,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           src="portrait.jpg"
           style={
             Object {
+              "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -953,7 +1440,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 bnYUXp"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -993,7 +1490,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 kDDGXo"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1033,7 +1540,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 gFMCuA"
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1074,7 +1591,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 hsZfSY"
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1224,6 +1751,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       >
         <img
           alt="Sample image"
+          className="iot--image-card-img"
+          id={null}
           onLoad={[Function]}
           onMouseDown={[Function]}
           onMouseMove={[Function]}
@@ -1231,9 +1760,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           src="portrait.jpg"
           style={
             Object {
+              "cursor": "auto",
+              "height": "auto",
               "left": undefined,
+              "objectFit": null,
               "position": "relative",
               "top": undefined,
+              "width": "auto",
             }
           }
         />
@@ -1250,7 +1783,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 bnYUXp"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-10-20"
+            icon="warning"
+            style={
+              Object {
+                "--height": 20,
+                "--width": 20,
+                "--x-pos": 10,
+                "--y-pos": 20,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1290,7 +1833,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 kDDGXo"
+            className="iot--hotspot-container iot--hotspot-container--has-icon"
+            data-testid="hotspot-50-10"
+            icon="warning"
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 10,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1330,7 +1883,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 gFMCuA"
+            className="iot--hotspot-container"
+            data-testid="hotspot-30-40"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 30,
+                "--y-pos": 40,
+              }
+            }
           >
             <div
               aria-describedby={null}
@@ -1371,7 +1934,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             </div>
           </div>
           <div
-            className="Hotspot__StyledHotspot-nlpwmi-0 hsZfSY"
+            className="iot--hotspot-container"
+            data-testid="hotspot-50-60"
+            icon={null}
+            style={
+              Object {
+                "--height": 25,
+                "--width": 25,
+                "--x-pos": 50,
+                "--y-pos": 60,
+              }
+            }
           >
             <div
               aria-describedby={null}

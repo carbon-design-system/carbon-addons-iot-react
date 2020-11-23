@@ -12,7 +12,8 @@ import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
-import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
+import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
+import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 
 const { iotPrefix } = settings;
 
@@ -23,21 +24,28 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-    }),
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+      }),
+      PropTypes.shape({
+        id: PropTypes.string,
+        src: PropTypes.string,
+        zoomMax: PropTypes.number,
+      }),
+    ]),
     interval: PropTypes.string,
     showLegend: PropTypes.bool,
   }),
@@ -249,7 +257,7 @@ const CardEditFormContent = ({
               titleText={mergedI18n.timeRange}
             />
           </div>
-          <DataSeriesFormItem
+          <DataSeriesFormContent
             cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
@@ -259,6 +267,9 @@ const CardEditFormContent = ({
             i18n={mergedI18n}
           />
         </>
+      )}
+      {type === CARD_TYPES.IMAGE && (
+        <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );
