@@ -53,24 +53,13 @@ const defaultProps = {
   },
 };
 
-export const backGroundColor = (hex) => {
-  let color;
-  switch (hex) {
-    case '#f4f4f4':
-      color = { carbonColor: gray10, name: 'gray10' };
-      break;
-    case '#393939':
-      color = { carbonColor: gray80, name: 'gray80' };
-      break;
-    case '#ffffff':
-      color = { carbonColor: white, name: 'white' };
-      break;
-    default:
-      color = null;
-      break;
-  }
-  return color;
-};
+const colors = [
+  { carbonColor: gray10, name: 'gray10' },
+  { carbonColor: gray80, name: 'gray80' },
+  { carbonColor: white, name: 'white' },
+]
+
+
 
 const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -89,7 +78,6 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   // };
 
   return (
-    <>
       <div className={`${baseClassName} ${baseClassName}--form-section-image`}>
         <div className={`${baseClassName}--input`}>
           <FormGroup legendText={mergedI18n.displayOptions}>
@@ -131,13 +119,9 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             data-testid={`${baseClassName}--input-color-dropdown`}
             titleText={mergedI18n.colorTitleText}
             light
-            colors={[
-              { carbonColor: gray10, name: 'gray10' },
-              { carbonColor: gray80, name: 'gray80' },
-              { carbonColor: white, name: 'white' },
-            ]}
+            colors={colors}
             id={`${baseClassName}--input-color`}
-            selectedColor={backGroundColor(cardConfig.content?.background)}
+            selectedColor={colors.find(color => color.carbonColor === cardConfig.content?.background)}
             onChange={(evt) =>
               onChange({
                 ...cardConfig,
@@ -201,7 +185,6 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           </div>
         </div> */}
       </div>
-    </>
   );
 };
 

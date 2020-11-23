@@ -484,13 +484,12 @@ const ImageHotspots = ({
 
   const imageStyle = {
     cursor: isEditable && !dragging ? 'crosshair' : 'auto',
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    height: displayOption ? '100%' : 'auto',
-    width: displayOption ? '100%' : 'auto',
+    position: 'relative',
+    left: image.offsetX,
+    top: image.offsetY,
+    height: displayOption && image.scale === 1 ? '100%' : 'auto',
+    width: displayOption && image.scale === 1 ? '100%' : 'auto',
     objectFit: displayOption,
-    transform: 'translate(-50%, -50%)',
   };
 
   const hotspotsStyle = {
@@ -556,9 +555,9 @@ const ImageHotspots = ({
 
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
-      imageStyle.height = displayOption ? '100%' : image.height;
+      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
     } else {
-      imageStyle.width = image.width;
+      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
     }
 
     if (image.orientation === 'landscape') {

@@ -44,7 +44,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'PNG', 'WebP'],
+  accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'JPG', 'PNG', 'WebP'],
   onBrowseClick: () => {},
   onUpload: () => {},
   i18n: i18nDefaults,
