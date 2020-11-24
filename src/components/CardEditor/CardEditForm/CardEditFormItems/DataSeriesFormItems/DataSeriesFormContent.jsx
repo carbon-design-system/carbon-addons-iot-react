@@ -41,6 +41,8 @@ const propTypes = {
         PropTypes.shape({
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
+          /** Optional prop in case multiple data sources can point to the same attribute */
+          attribute: PropTypes.string,
           color: PropTypes.string,
         })
       ),
@@ -125,8 +127,8 @@ export const formatSeries = (selectedItems, cardJson) => {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId }) => ({
-    id: dataSourceId,
+  dataItems?.map(({ dataSourceId, attribute }) => ({
+    id: attribute || dataSourceId,
     text: dataSourceId,
   })) || [];
 

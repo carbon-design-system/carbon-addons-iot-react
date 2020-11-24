@@ -87,6 +87,23 @@ describe('DataSeriesFormItem', () => {
         { id: 'temperature', text: 'temperature' },
         { id: 'pressure', text: 'pressure' },
       ]);
+      expect(
+        formatDataItemsForDropdown([
+          {
+            label: 'Temperature Mean',
+            dataSourceId: 'temperature_mean',
+            attribute: 'temperature',
+          },
+          {
+            label: 'Temperature Max',
+            dataSourceId: 'temperature_max',
+            attribute: 'temperature',
+          },
+        ])
+      ).toEqual([
+        { id: 'temperature', text: 'temperature_mean' },
+        { id: 'temperature', text: 'temperature_max' },
+      ]);
     });
   });
   describe('dataItems', () => {
