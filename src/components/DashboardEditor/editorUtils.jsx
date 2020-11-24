@@ -144,6 +144,30 @@ export const getDefaultCard = (type, i18n) => {
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
+  lastHour: {
+    range: {
+      interval: 'hour',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'hour',
+  },
+  last2Hours: {
+    range: {
+      interval: 'hour',
+      count: -2,
+      type: 'rolling',
+    },
+    interval: 'hour',
+  },
+  last4Hours: {
+    range: { interval: 'hour', count: -4, type: 'rolling' },
+    interval: 'hour',
+  },
+  last8Hours: {
+    range: { interval: 'hour', count: -8, type: 'rolling' },
+    interval: 'hour',
+  },
   last24Hours: {
     range: { interval: 'day', count: -1, type: 'rolling' },
     interval: 'hour',
