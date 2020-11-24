@@ -29,7 +29,6 @@ const cardConfig = {
     timeDataSourceId: 'timestamp',
     addSpaceOnEdges: 1,
   },
-  interval: 'day',
 };
 
 const mockOnChange = jest.fn();
