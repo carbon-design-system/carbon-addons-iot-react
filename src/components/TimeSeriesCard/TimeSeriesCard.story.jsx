@@ -53,6 +53,7 @@ export const SinglePoint = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          showLegend: true,
         })}
         values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
         interval={interval}
