@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SimpleList } from '../../../index';
+import SimpleList from '../../List/SimpleList/SimpleList';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../../constants/LayoutConstants';
 import {
   LineGraphIcon,

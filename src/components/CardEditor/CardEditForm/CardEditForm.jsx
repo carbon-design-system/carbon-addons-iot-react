@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import { Tabs, Tab, Button } from 'carbon-components-react';
 
 import {
   CARD_DIMENSIONS,
   CARD_TYPES,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditorPropTypes';
 
 import CardEditFormContent from './CardEditFormContent';
 import CardEditFormSettings from './CardEditFormSettings';

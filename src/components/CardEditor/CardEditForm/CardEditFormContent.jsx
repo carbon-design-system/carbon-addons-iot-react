@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { TextArea, TextInput, Dropdown } from 'carbon-components-react';
 
 import {
   CARD_TYPES,
@@ -8,9 +9,8 @@ import {
   ALLOWED_CARD_SIZES_PER_TYPE,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
-import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditorPropTypes';
 
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';

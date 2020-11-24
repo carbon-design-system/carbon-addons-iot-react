@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TextInput } from 'carbon-components-react';
 
 import { settings } from '../../../../../constants/Settings';
-import { TextInput } from '../../../../../index';
 
 const { iotPrefix } = settings;
 

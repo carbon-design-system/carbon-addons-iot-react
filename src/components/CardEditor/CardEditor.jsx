@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Apps16 } from '@carbon/icons-react';
 import isNil from 'lodash/isNil';
+import { Button } from 'carbon-components-react';
 
-import { Button } from '../../index';
 import { settings } from '../../constants/Settings';
 import { DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
 

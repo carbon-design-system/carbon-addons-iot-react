@@ -16,16 +16,16 @@ import {
   cyan90,
 } from '@carbon/colors';
 import classnames from 'classnames';
-
-import { settings } from '../../../../../constants/Settings';
 import {
   ComposedModal,
   Button,
-  List,
   TextInput,
   MultiSelect,
-} from '../../../../../index';
-import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
+} from 'carbon-components-react';
+
+import List from '../../../../List/List';
+import { settings } from '../../../../../constants/Settings';
+import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditorPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -150,9 +150,11 @@ const DataSeriesFormItem = ({
     cardConfig?.content?.series
   );
 
-  const validDataItems = getValidDataItems
-    ? getValidDataItems(cardConfig, selectedTimeRange)
-    : dataItems;
+  const validDataItems = formatDataItemsForDropdown(
+    getValidDataItems
+      ? getValidDataItems(cardConfig, selectedTimeRange)
+      : dataItems
+  );
 
   // This is a workaround for carbon issue https://github.com/carbon-design-system/carbon/issues/7055
   const initialSelectedItems = defaultSelectedItems.map((defaultSelectedItem) =>
@@ -237,7 +239,7 @@ const DataSeriesFormItem = ({
           direction="bottom"
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(validDataItems)}
+          items={validDataItems}
           light
           onChange={({ selectedItems }) => {
             const series = formatSeries(selectedItems, cardConfig);

@@ -16,6 +16,7 @@ import {
   SkeletonText,
 } from '../../index';
 
+import { DataItemsPropTypes } from './DashboardEditorPropTypes';
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
   getDefaultCard,
@@ -27,13 +28,6 @@ import {
 } from './editorUtils';
 
 const { iotPrefix } = settings;
-
-export const DataItemsPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    dataSourceId: PropTypes.string,
-    label: PropTypes.string,
-  })
-);
 
 const propTypes = {
   /** Dashboard title */
