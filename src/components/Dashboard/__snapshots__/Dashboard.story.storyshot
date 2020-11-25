@@ -333,7 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--bar-chart-container"
                   >
                     <div
-                      className="chart-holder"
+                      id="mock-bar-chart-simple"
                     />
                   </div>
                 </div>
@@ -2752,7 +2752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--bar-chart-container"
                   >
                     <div
-                      className="chart-holder"
+                      id="mock-bar-chart-simple"
                     />
                   </div>
                 </div>
@@ -5199,7 +5199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--bar-chart-container"
                   >
                     <div
-                      className="chart-holder"
+                      id="mock-bar-chart-simple"
                     />
                   </div>
                 </div>
@@ -7428,7 +7428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   className="iot--bar-chart-container"
                 >
                   <div
-                    className="chart-holder"
+                    id="mock-bar-chart-grouped"
                   />
                 </div>
               </div>
@@ -10223,7 +10223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--bar-chart-container"
                   >
                     <div
-                      className="chart-holder"
+                      id="mock-bar-chart-simple"
                     />
                   </div>
                 </div>
@@ -25045,7 +25045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--bar-chart-container"
                   >
                     <div
-                      className="chart-holder"
+                      id="mock-bar-chart-simple"
                     />
                   </div>
                 </div>
