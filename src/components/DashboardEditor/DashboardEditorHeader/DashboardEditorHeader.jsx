@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   TrashCan16,
@@ -40,12 +40,12 @@ const propTypes = {
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
-  /** If provided, renders submit button linked to this callback
-   * onSubmit(dashboardData)
+  /** If provided, renders submit button linked to this callback. Can update spinner with setIsSubmitting
+   * onSubmit(dashboardData, setIsSubmitting)
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
-  submitDisabled: PropTypes.bool,
+  isSubmitDisabled: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -83,7 +83,7 @@ const defaultProps = {
   onDelete: null,
   onCancel: null,
   onSubmit: null,
-  submitDisabled: false,
+  isSubmitDisabled: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -110,13 +110,14 @@ const DashboardEditorHeader = ({
   onDelete,
   onCancel,
   onSubmit,
-  submitDisabled,
+  isSubmitDisabled,
   i18n,
   dashboardJson,
   selectedBreakpointIndex,
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
+  const [isSubmitLoading, setIsSubmitLoading] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
@@ -200,15 +201,16 @@ const DashboardEditorHeader = ({
           />
         )}
         {onCancel && (
-          <Button kind="tertiary" size="field" onClick={onCancel}>
+          <Button kind="secondary" size="field" onClick={onCancel}>
             {mergedI18n.headerCancelButton}
           </Button>
         )}
         {onSubmit && (
           <Button
             size="field"
-            disabled={submitDisabled}
-            onClick={() => onSubmit(dashboardJson)}>
+            disabled={isSubmitDisabled}
+            onClick={() => onSubmit(dashboardJson, setIsSubmitLoading)}
+            loading={isSubmitLoading}>
             {mergedI18n.headerSubmitButton}
           </Button>
         )}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import { Link } from '../../../index';
 
@@ -29,6 +29,7 @@ export const Default = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       dashboardJson={{}}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
     />
   </div>
 );
@@ -49,6 +50,7 @@ export const WithEditableTitleAndNoImportExportDelete = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       dashboardJson={{}}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
     />
   </div>
 );

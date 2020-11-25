@@ -42,7 +42,7 @@ export const Default = () => (
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
       onLayoutChange={action('onLayoutChange')}
-      submitDisabled={boolean('submitDisabled', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -225,6 +225,7 @@ export const WithInitialValue = () => (
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
       isLoading={boolean('isLoading', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
     />
   </div>
 );
@@ -236,6 +237,7 @@ WithInitialValue.story = {
 export const WithCustomOnCardChange = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
       title="Custom dashboard"
       dataItems={mockDataItems}
       initialValue={{
@@ -307,6 +309,7 @@ WithCustomOnCardChange.story = {
 export const WithNotifications = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
       title={text('title', 'My dashboard')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -362,6 +365,7 @@ WithNotifications.story = {
 export const WithBreakpointSwitcher = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
       title={text('title', 'My dashboard')}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
@@ -397,6 +401,7 @@ WithBreakpointSwitcher.story = {
 export const CustomCardPreviewRenderer = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
       title="Custom dashboard"
       initialValue={object('initialValue', {
         cards: [

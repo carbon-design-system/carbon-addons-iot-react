@@ -108,7 +108,7 @@ const propTypes = {
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
-  submitDisabled: PropTypes.bool,
+  isSubmitDisabled: PropTypes.bool,
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -164,7 +164,7 @@ const defaultProps = {
   onExport: null,
   onCancel: null,
   onSubmit: null,
-  submitDisabled: false,
+  isSubmitDisabled: false,
   onValidateCardJson: null,
   isLoading: false,
   i18n: {
@@ -219,7 +219,7 @@ const DashboardEditor = ({
   onDelete,
   onCancel,
   onSubmit,
-  submitDisabled,
+  isSubmitDisabled,
   onValidateCardJson,
   isLoading,
   i18n,
@@ -342,7 +342,7 @@ const DashboardEditor = ({
             onDelete={onDelete}
             onCancel={onCancel}
             onSubmit={onSubmit}
-            submitDisabled={submitDisabled}
+            isSubmitDisabled={isSubmitDisabled}
             i18n={mergedI18n}
             dashboardJson={dashboardJson}
             selectedBreakpointIndex={selectedBreakpointIndex}

@@ -245,7 +245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -2273,7 +2273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -3472,7 +3472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -4419,7 +4419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -5472,7 +5472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
@@ -7864,7 +7864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                      className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                       disabled={false}
                       onClick={[Function]}
                       tabIndex={0}
