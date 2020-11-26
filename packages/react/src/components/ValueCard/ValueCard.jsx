@@ -56,7 +56,7 @@ const AttributeWrapper = styled.div`
   ${(props) =>
     !props.isVertical
       ? ` flex-direction: row;`
-      : `
+      : ` 
     padding: 0 ${CARD_CONTENT_PADDING}px;
     flex-direction: column;
     align-items: flex-end;

@@ -63,8 +63,8 @@ _TableViewDropdown.story = {
     info: {
       propTables: [TableViewDropdown],
       text: `This is an example of the <TableViewDropdown> table sub component. The state needs to be managed by the
-     consuming application.
-
+     consuming application. 
+     
      ~~~js
     const myViews = [
       {
@@ -82,8 +82,8 @@ _TableViewDropdown.story = {
     ];
 
     return React.createElement(() => {
-      // This is a simple example state that should be replaced by the
-      // consuming Application's data store
+      // This is a simple example state that should be replaced by the 
+      // consuming Application's data store        
       const [selectedViewId, setSelectedViewId] = useState(undefined);
 
       return (
@@ -104,7 +104,7 @@ _TableViewDropdown.story = {
         </div>
       );
     });
-     ~~~
+     ~~~       
      `,
     },
   },

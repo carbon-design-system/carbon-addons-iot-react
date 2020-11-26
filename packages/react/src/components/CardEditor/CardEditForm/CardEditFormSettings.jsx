@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { settings } from '../../../constants/Settings';
-import { TextInput } from '../../../index';
+import { CARD_TYPES } from '../../../constants/LayoutConstants';
 
-const { iotPrefix } = settings;
+import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
+import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 
 const propTypes = {
   /** card data value */
@@ -33,94 +33,28 @@ const propTypes = {
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({
-    xAxisLabel: PropTypes.string,
-    yAxisLabel: PropTypes.string,
-    unitLabel: PropTypes.string,
-    decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
-  }),
+  i18n: PropTypes.shape({}),
 };
 
 const defaultProps = {
   cardConfig: {},
-  i18n: {
-    xAxisLabel: 'X-axis label',
-    yAxisLabel: 'Y-axis label',
-    unitLabel: 'Unit',
-    decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
-  },
+  i18n: {},
 };
 
 const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content, id } = cardConfig;
-
-  const baseClassName = `${iotPrefix}--card-edit-form`;
+  const { type } = cardConfig;
 
   return (
-    <>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_title`}
-          labelText={mergedI18n.xAxisLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, xLabel: evt.target.value },
-            })
-          }
-          value={content?.xLabel}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_y-axis-label`}
-          labelText={mergedI18n.yAxisLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, yLabel: evt.target.value },
-            })
-          }
-          value={content?.yLabel}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_unit-selection`}
-          labelText={mergedI18n.unitLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, unit: evt.target.value },
-            })
-          }
-          value={content?.unit}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_decimal-precision`}
-          labelText={mergedI18n.decimalPrecisionLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: {
-                ...cardConfig.content,
-                decimalPrecision: evt.target.value,
-              },
-            })
-          }
-          value={content?.decimalPrecision}
-        />
-      </div>
-      {/* 
+    <div>
+      {type === CARD_TYPES.TIMESERIES && (
+        <DataSeriesFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
+      )}
+      {type === CARD_TYPES.IMAGE && (
+        <ImageCardFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
+      )}
+
+      {/*
       TODO: support and legend toggling in future iteration
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
@@ -136,7 +70,7 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
           />
         </div>
       </div> */}
-    </>
+    </div>
   );
 };
 

@@ -12,16 +12,17 @@ async function toBeAccessible(node, label) {
     aChecker = require('accessibility-checker');
   }
 
-  const results = await aChecker.getCompliance(node, label);
+  let results = await aChecker.getCompliance(node, label);
   if (aChecker.assertCompliance(results.report) === 0) {
     return {
       pass: true,
     };
+  } else {
+    return {
+      pass: false,
+      message: () => aChecker.stringifyResults(results.report),
+    };
   }
-  return {
-    pass: false,
-    message: () => aChecker.stringifyResults(results.report),
-  };
 }
 
 expect.extend({ toBeAccessible });

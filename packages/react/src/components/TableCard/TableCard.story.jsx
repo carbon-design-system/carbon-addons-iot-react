@@ -105,10 +105,10 @@ WithLinks.story = {
 
   parameters: {
     info: {
-      text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property.
-                2 additional properties can be configured within the linkTemplate object: href and target</p>
+      text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property. 
+                2 additional properties can be configured within the linkTemplate object: href and target</p> 
             <p>href is the url the link will use. This property is required.</p>
-            <p>target is whether you would like to open the link in a new window or not.
+            <p>target is whether you would like to open the link in a new window or not. 
                 This property defaults to opening in the current window. Use '_blank' to open in a new window
             </p>
             <p> Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
@@ -483,7 +483,7 @@ TableWithThresholds.story = {
   parameters: {
     info: {
       text: `
-     Thresholds can be based off 1 specific data source with the unique key: dataSourceId .
+     Thresholds can be based off 1 specific data source with the unique key: dataSourceId . 
 
      Comparisons can then be added by defined the comparison key with one of the following: <,<=,=,>,>= .
 
@@ -491,7 +491,7 @@ TableWithThresholds.story = {
 
      Value is the number limit being compared in the comparison that was defined.
 
-     Label is a custom label that can be defined and displayed in the column. If a custom label is not set,
+     Label is a custom label that can be defined and displayed in the column. If a custom label is not set, 
      the label will default to '<dataSourceId> Severity'
 
      In addition, if the dataSourceId does not have a column displayed, a new column will be added at the end

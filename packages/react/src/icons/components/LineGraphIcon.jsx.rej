@@ -1,0 +1,29 @@
+diff a/packages/react/src/icons/components/LineGraphIcon.jsx b/packages/react/src/icons/components/LineGraphIcon.jsx	(rejected hunks)
+@@ -11,24 +11,3 @@ function SvgLineGraphIcon(props) {
+-        <circle
+-          stroke="#0062FF"
+-          strokeWidth={1.5}
+-          fill="#FFF"
+-          cx={7.382}
+-          cy={31.154}
+-          r={1}
+-        />
+-        <circle
+-          stroke="#0062FF"
+-          strokeWidth={1.5}
+-          fill="#FFF"
+-          cx={20.455}
+-          cy={0.966}
+-          r={1}
+-        />
+-        <circle
+-          stroke="#0062FF"
+-          strokeWidth={1.5}
+-          fill="#FFF"
+-          cx={32.904}
+-          cy={7.365}
+-          r={1}
+-        />
++        <circle stroke="#0062FF" strokeWidth={1.5} fill="#FFF" cx={7.382} cy={31.154} r={1} />
++        <circle stroke="#0062FF" strokeWidth={1.5} fill="#FFF" cx={20.455} cy={0.966} r={1} />
++        <circle stroke="#0062FF" strokeWidth={1.5} fill="#FFF" cx={32.904} cy={7.365} r={1} />

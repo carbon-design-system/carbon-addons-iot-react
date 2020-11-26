@@ -1,16 +1,14 @@
+'use strict';
 import React from 'react';
 import addons, { mockChannel } from '@storybook/addons';
-
-// To support storybooks inside jest
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
-
-// Needed so that any component that uses sizeme can be jest tested
-import sizeMe from 'react-sizeme';
 
 addons.setChannel(mockChannel());
 
 const enzyme = require.requireActual('enzyme');
 const Adapter = require.requireActual('enzyme-adapter-react-16');
+
+// To support storybooks inside jest
+import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 registerRequireContextHook();
 
 enzyme.configure({ adapter: new Adapter() });
@@ -40,6 +38,9 @@ if (typeof window !== 'undefined') {
 
   window.ResizeObserver = ResizeObserver;
 }
+
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
 

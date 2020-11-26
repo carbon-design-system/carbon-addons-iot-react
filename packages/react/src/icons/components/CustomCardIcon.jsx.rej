@@ -1,0 +1,7 @@
+diff a/packages/react/src/icons/components/CustomCardIcon.jsx b/packages/react/src/icons/components/CustomCardIcon.jsx	(rejected hunks)
+@@ -8,4 +8 @@ function SvgCustomCardIcon(props) {
+-        <path
+-          fill="#D8D8D8"
+-          d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z"
+-        />
++        <path fill="#D8D8D8" d="M25 5h11v3H25zm0 6h11v3H25zm0 12h11v3H25zm0-6h11v3H25z" />

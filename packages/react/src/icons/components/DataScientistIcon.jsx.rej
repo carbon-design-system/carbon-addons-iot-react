@@ -1,0 +1,89 @@
+diff a/packages/react/src/icons/components/DataScientistIcon.jsx b/packages/react/src/icons/components/DataScientistIcon.jsx	(rejected hunks)
+@@ -14 +14,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -44 +45,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -55 +57,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -73 +76,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -102 +106,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -120 +125,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -139 +145,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -151 +158,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -167 +175,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -182 +191,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -194 +204,2 @@ function SvgDataScientistIcon(props) {
+-          gradientUnits="userSpaceOnUse">
++          gradientUnits="userSpaceOnUse"
++        >
+@@ -214,4 +225 @@ function SvgDataScientistIcon(props) {
+-          <path
+-            fill="none"
+-            d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
+-          />
++          <path fill="none" d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z" />
+@@ -238 +246,2 @@ function SvgDataScientistIcon(props) {
+-          maskUnits="userSpaceOnUse">
++          maskUnits="userSpaceOnUse"
++        >
+@@ -251 +260,2 @@ function SvgDataScientistIcon(props) {
+-          maskUnits="userSpaceOnUse">
++          maskUnits="userSpaceOnUse"
++        >
+@@ -264 +274,2 @@ function SvgDataScientistIcon(props) {
+-          maskUnits="userSpaceOnUse">
++          maskUnits="userSpaceOnUse"
++        >
+@@ -275 +286,2 @@ function SvgDataScientistIcon(props) {
+-        }}>
++        }}
++      >
+@@ -280,8 +292,2 @@ function SvgDataScientistIcon(props) {
+-        <path
+-          fill="#054ada"
+-          d="M85.48 139.64l-.06 6.14 84.95-48.85.06-6.15-84.95 48.86z"
+-        />
+-        <path
+-          fill="#051b75"
+-          d="M85.42 139.64L.48 90.78l-.06 6.15 84.95 48.85.05-6.14z"
+-        />
++        <path fill="#054ada" d="M85.48 139.64l-.06 6.14 84.95-48.85.06-6.15-84.95 48.86z" />
++        <path fill="#051b75" d="M85.42 139.64L.48 90.78l-.06 6.15 84.95 48.85.05-6.14z" />
+@@ -324,4 +330 @@ function SvgDataScientistIcon(props) {
+-        <path
+-          fill="#f3f3f3"
+-          d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z"
+-        />
++        <path fill="#f3f3f3" d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z" />
+@@ -386,3 +389 @@ function SvgDataScientistIcon(props) {
+-        <g
+-          mask="url(#data-scientist-icon_svg__r)"
+-          clipPath="url(#data-scientist-icon_svg__q)">
++        <g mask="url(#data-scientist-icon_svg__r)" clipPath="url(#data-scientist-icon_svg__q)">

@@ -365,7 +365,38 @@ const Table = (props) => {
         initialRendering.current = false;
       }
     }
-  }, [view, columns]);
+  }, [
+    // Props of type React.Element or React.Node must not be included in
+    // useDeepCompareEffect dependency arrays, their object signature is
+    // massive and will throw out of memory errors if compared.
+    // https://github.com/kentcdodds/use-deep-compare-effect/issues/7
+    // https://twitter.com/dan_abramov/status/1104415855612432384
+    view.pagination,
+    view.filters,
+    view.toolbar.activeBar,
+    // Remove the icon as it's a React.Element which can not be compared
+    view.toolbar.batchActions.map((action) => {
+      const { icon, ...nonElements } = action;
+      return nonElements;
+    }),
+    view.toolbar.initialDefaultSearch,
+    view.toolbar.search,
+    view.toolbar.isDisabled,
+    view.table.isSelectAllSelected,
+    view.table.isSelectAllIndeterminate,
+    view.table.selectedIds,
+    view.table.sort,
+    view.table.ordering,
+    // Remove the error as it's a React.Element/Node which can not be compared
+    view.table.rowActions.map((action) => {
+      const { error, ...nonElements } = action;
+      return nonElements;
+    }),
+    view.table.expandedIds,
+    view.table.loadingState,
+    view.table.filteredData,
+    columns,
+  ]);
 
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();

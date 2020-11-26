@@ -41,7 +41,7 @@ describe('CardEditor', () => {
         onAddCard={actions.onAddCard}
       />
     );
-    userEvent.type(screen.getByRole('textbox', { name: 'Card title X-axis label' }), 'z');
+    userEvent.type(screen.getAllByRole('textbox')[0], 'z');
     userEvent.tab();
     expect(actions.onChange).toHaveBeenCalledWith({
       ...defaultCard,

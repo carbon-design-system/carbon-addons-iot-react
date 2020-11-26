@@ -723,13 +723,13 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<ul class='multi-tooltip'><li>
     <div class="datapoint-tooltip ">
-
+      
       <p class="label">Cities </p>
       <p class="value">San Francisco</p>
     </div>
   </li><li>
     <div class="datapoint-tooltip ">
-
+      
       <p class="label">Particles </p>
       <p class="value">512</p>
     </div>
