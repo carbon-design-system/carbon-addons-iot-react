@@ -5,8 +5,6 @@ on:
     branches: [ next, beta, master ]
   pull_request:
     branches: [ next, beta, master ]
-  schedule:
-    - cron: '39 21 * * 6'
 
 jobs:
   analyze:
