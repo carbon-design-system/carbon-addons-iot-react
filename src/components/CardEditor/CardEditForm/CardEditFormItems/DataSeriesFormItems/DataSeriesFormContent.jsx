@@ -17,15 +17,15 @@ import {
 } from '@carbon/colors';
 import classnames from 'classnames';
 
-import { settings } from '../../../../constants/Settings';
+import { settings } from '../../../../../constants/Settings';
 import {
   ComposedModal,
   Button,
   List,
   TextInput,
   MultiSelect,
-} from '../../../../index';
-import { DataItemsPropTypes } from '../../../DashboardEditor/DashboardEditor';
+} from '../../../../../index';
+import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
 
 const { iotPrefix } = settings;
 
@@ -262,7 +262,7 @@ const DataSeriesFormItem = ({
                 }}
               />
             ),
-            rowActions: [
+            rowActions: () => [
               <Button
                 key={`data-item-${series.dataSourceId}`}
                 renderIcon={Edit16}
