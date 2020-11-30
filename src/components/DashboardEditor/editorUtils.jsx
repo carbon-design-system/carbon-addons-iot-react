@@ -73,9 +73,9 @@ export const getDefaultCard = (type, i18n) => {
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
+          showLegend: true,
         },
         interval: 'day',
-        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -144,6 +144,30 @@ export const getDefaultCard = (type, i18n) => {
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
+  lastHour: {
+    range: {
+      interval: 'hour',
+      count: -1,
+      type: 'rolling',
+    },
+    interval: 'hour',
+  },
+  last2Hours: {
+    range: {
+      interval: 'hour',
+      count: -2,
+      type: 'rolling',
+    },
+    interval: 'hour',
+  },
+  last4Hours: {
+    range: { interval: 'hour', count: -4, type: 'rolling' },
+    interval: 'hour',
+  },
+  last8Hours: {
+    range: { interval: 'hour', count: -8, type: 'rolling' },
+    interval: 'hour',
+  },
   last24Hours: {
     range: { interval: 'day', count: -1, type: 'rolling' },
     interval: 'hour',
@@ -256,7 +280,6 @@ const renderTimeSeriesCard = (cardConfig, commonProps) => (
   <TimeSeriesCard
     isEditable
     values={[]}
-    showLegend
     timeRange={cardConfig?.dataSource?.range}
     {...cardConfig}
     {...commonProps}
