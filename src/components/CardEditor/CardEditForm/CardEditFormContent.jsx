@@ -39,6 +39,7 @@ const propTypes = {
         includeZeroOnXaxis: PropTypes.bool,
         includeZeroOnYaxis: PropTypes.bool,
         timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
       }),
       PropTypes.shape({
         id: PropTypes.string,
@@ -46,7 +47,6 @@ const propTypes = {
         zoomMax: PropTypes.number,
       }),
     ]),
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,

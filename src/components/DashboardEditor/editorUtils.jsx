@@ -73,9 +73,9 @@ export const getDefaultCard = (type, i18n) => {
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
+          showLegend: true,
         },
         interval: 'day',
-        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -280,7 +280,6 @@ const renderTimeSeriesCard = (cardConfig, commonProps) => (
   <TimeSeriesCard
     isEditable
     values={[]}
-    showLegend
     timeRange={cardConfig?.dataSource?.range}
     {...cardConfig}
     {...commonProps}
