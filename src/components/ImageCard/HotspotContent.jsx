@@ -12,8 +12,10 @@ import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 
-import { formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
-import { findMatchingThresholds } from '../TableCard/TableCard';
+import {
+  formatNumberWithPrecision,
+  findMatchingThresholds,
+} from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 
 import CardIcon from './CardIcon';

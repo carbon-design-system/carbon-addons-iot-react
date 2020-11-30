@@ -1,36 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
-import {
-  purple70,
-  cyan50,
-  teal70,
-  magenta70,
-  red50,
-  red90,
-  green60,
-  blue80,
-  magenta50,
-  purple50,
-  teal50,
-  cyan90,
-} from '@carbon/colors';
-import classnames from 'classnames';
 
 import { settings } from '../../../../../constants/Settings';
 import {
-  ComposedModal,
-  Button,
-  List,
-  TextInput,
-  MultiSelect,
-} from '../../../../../index';
+  DATAITEM_COLORS_OPTIONS,
+  handleDataSeriesChange,
+} from '../../../../DashboardEditor/editorUtils';
+import { Button, List, MultiSelect } from '../../../../../index';
 import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
+import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
+import { CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   /* card value */
+
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -66,6 +52,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
 };
@@ -84,44 +74,7 @@ const defaultProps = {
   },
   getValidDataItems: null,
   dataItems: [],
-};
-
-const DATAITEM_COLORS_OPTIONS = [
-  purple70,
-  cyan50,
-  teal70,
-  magenta70,
-  red50,
-  red90,
-  green60,
-  blue80,
-  magenta50,
-  purple50,
-  teal50,
-  cyan90,
-];
-
-/**
- * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
- * @param {array} selectedItems
- * @param {object} cardConfig
- */
-export const formatSeries = (selectedItems, cardJson) => {
-  const cardSeries = cardJson?.content?.series;
-  const series = selectedItems.map(({ id }, i) => {
-    const currentItem = cardSeries?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
-    const color =
-      currentItem?.color ??
-      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
-    return {
-      dataSourceId: id,
-      label: currentItem?.label || id,
-      color,
-    };
-  });
-  return series;
+  availableDimensions: {},
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -137,6 +90,7 @@ const DataSeriesFormItem = ({
   onChange,
   setSelectedDataItems,
   selectedTimeRange,
+  availableDimensions,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -146,9 +100,13 @@ const DataSeriesFormItem = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const initialSelectedItems = formatDataItemsForDropdown(
-    cardConfig?.content?.series
-  );
+  // determine which content section to look at
+  const dataSection =
+    cardConfig.type === CARD_TYPES.TIMESERIES
+      ? cardConfig?.content?.series
+      : cardConfig?.content?.attributes;
+
+  const initialSelectedItems = formatDataItemsForDropdown(dataSection);
 
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
@@ -156,69 +114,16 @@ const DataSeriesFormItem = ({
 
   return (
     <>
-      {showEditor ? (
-        <ComposedModal
-          header={{
-            title: mergedI18n.dataItemEditorDataItemTitle,
-          }}
-          size="xs"
-          onSubmit={() => {
-            const updatedSeries = [...cardConfig.content.series];
-            const editDataItemIndex = updatedSeries.findIndex(
-              (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
-            );
-            updatedSeries[editDataItemIndex] = editDataItem;
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, series: updatedSeries },
-            });
-            setShowEditor(false);
-            setEditDataItem(null);
-          }}
-          onClose={() => {
-            setShowEditor(false);
-            setEditDataItem(null);
-          }}>
-          <span className={`bx--label ${baseClassName}--input-label`}>
-            {mergedI18n.dataItemEditorDataItemTitle}
-          </span>
-          <div className={`${baseClassName}--input`}>
-            {editDataItem.dataSourceId}
-          </div>
-          <div className={`${baseClassName}--input`}>
-            <TextInput
-              id="seriesLabel"
-              labelText={mergedI18n.dataItemEditorDataItemLabel}
-              light
-              onChange={(evt) =>
-                setEditDataItem({
-                  ...editDataItem,
-                  label: evt.target.value,
-                })
-              }
-              value={editDataItem.label}
-            />
-          </div>
-          <div className={`${baseClassName}--input`}>
-            <span className={`bx--label ${baseClassName}--input--label`}>
-              {mergedI18n.dataItemEditorLegendColor}
-            </span>
-            <div className="color-picker">
-              {DATAITEM_COLORS_OPTIONS.map((color) => (
-                <button
-                  type="button"
-                  style={{ backgroundColor: color }}
-                  className={classnames('color-picker-button', {
-                    'color-picker-button__selected':
-                      color === editDataItem.color,
-                  })}
-                  onClick={() => setEditDataItem({ ...editDataItem, color })}
-                />
-              ))}
-            </div>
-          </div>
-        </ComposedModal>
-      ) : null}
+      <DataSeriesFormItemModal
+        cardConfig={cardConfig}
+        showEditor={showEditor}
+        setShowEditor={setShowEditor}
+        editDataItem={editDataItem}
+        setEditDataItem={setEditDataItem}
+        availableDimensions={availableDimensions}
+        onChange={onChange}
+        i18n={mergedI18n}
+      />
       <div className={`${baseClassName}--form-section`}>
         {mergedI18n.dataSeriesTitle}
       </div>
@@ -233,12 +138,13 @@ const DataSeriesFormItem = ({
           items={formatDataItemsForDropdown(validDataItems)}
           light
           onChange={({ selectedItems }) => {
-            const series = formatSeries(selectedItems, cardConfig);
+            const newCard = handleDataSeriesChange(
+              selectedItems,
+              cardConfig,
+              onChange
+            );
             setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, series },
-            });
+            onChange(newCard);
           }}
           titleText={mergedI18n.dataItem}
         />
@@ -247,30 +153,33 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={cardConfig?.content?.series?.map((series, i) => ({
-          id: series.dataSourceId,
+        items={dataSection?.map((dataItem, i) => ({
+          id: dataItem.dataSourceId,
           content: {
-            value: series.label,
-            icon: (
-              <div
-                style={{
-                  width: '1rem',
-                  height: '1rem',
-                  backgroundColor:
-                    series.color ||
-                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
-                }}
-              />
-            ),
+            value: dataItem.label,
+            icon:
+              cardConfig.type === CARD_TYPES.TIMESERIES ? (
+                <div
+                  style={{
+                    width: '1rem',
+                    height: '1rem',
+                    backgroundColor:
+                      dataItem.color ||
+                      DATAITEM_COLORS_OPTIONS[
+                        i % DATAITEM_COLORS_OPTIONS.length
+                      ],
+                  }}
+                />
+              ) : null,
             rowActions: () => [
               <Button
-                key={`data-item-${series.dataSourceId}`}
+                key={`data-item-${dataItem.dataSourceId}`}
                 renderIcon={Edit16}
                 hasIconOnly
                 kind="ghost"
                 size="small"
                 onClick={() => {
-                  setEditDataItem(series);
+                  setEditDataItem(dataItem);
                   setShowEditor(true);
                 }}
                 iconDescription={mergedI18n.edit}

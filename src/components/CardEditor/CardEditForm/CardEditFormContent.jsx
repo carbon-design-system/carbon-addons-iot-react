@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  CARD_TYPES,
   CARD_SIZES,
   CARD_DIMENSIONS,
   ALLOWED_CARD_SIZES_PER_TYPE,
+  CARD_TYPES,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
@@ -97,6 +97,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -124,19 +128,20 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
-    last24Hours: 'Last 24 hours',
-    last7Days: 'Last 7 days',
-    lastMonth: 'Last month',
-    lastQuarter: 'Last quarter',
-    lastYear: 'Last year',
-    thisWeek: 'This week',
-    thisMonth: 'This month',
-    thisQuarter: 'This quarter',
-    thisYear: 'This year',
+    last24HoursLabel: 'Last 24 hours',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
 };
 
 const defaultTimeRangeOptions = [
@@ -170,6 +175,7 @@ const CardEditFormContent = ({
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
+  availableDimensions,
 }) => {
   const { title, description, size, type, id, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -235,7 +241,7 @@ const CardEditFormContent = ({
           titleText={mergedI18n.size}
         />
       </div>
-      {type === CARD_TYPES.TIMESERIES && (
+      {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.VALUE ? (
         <>
           <div className={`${baseClassName}--input`}>
             <Dropdown
@@ -251,12 +257,12 @@ const CardEditFormContent = ({
               )}
               light
               onChange={({ selectedItem }) => {
-                const { range, interval } = timeRangeToJSON[selectedItem.id];
-                setSelectedTimeRange(selectedItem.id);
+                const timeRangeInterval = selectedItem.id;
+                const { range } = timeRangeToJSON[timeRangeInterval];
+                setSelectedTimeRange(timeRangeInterval);
                 onChange({
                   ...cardConfig,
-                  interval,
-                  timeRange: selectedItem.id,
+                  timeRange: timeRangeInterval,
                   dataSource: { ...cardConfig.dataSource, range },
                 });
               }}
@@ -270,10 +276,11 @@ const CardEditFormContent = ({
             setSelectedDataItems={setSelectedDataItems}
             selectedTimeRange={selectedTimeRange}
             getValidDataItems={getValidDataItems}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         </>
-      )}
+      ) : null}
       {type === CARD_TYPES.IMAGE && (
         <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
       )}

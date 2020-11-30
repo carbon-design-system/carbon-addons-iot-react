@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
 
 import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
+import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 
 const propTypes = {
@@ -38,48 +39,50 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
-  i18n: {},
+  i18n: {
+    xAxisLabel: 'X-axis label',
+    yAxisLabel: 'Y-axis label',
+    unitLabel: 'Unit',
+    decimalPrecisionLabel: 'Decimal precision',
+    showLegendLable: 'Show legend',
+    precisionLabel: 'Precision',
+    showLegendLabel: 'Show legend',
+    fontSize: 'Font size',
+  },
 };
 
 const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
 
-  return (
-    <div>
-      {type === CARD_TYPES.TIMESERIES && (
+  switch (type) {
+    case CARD_TYPES.TIMESERIES:
+      return (
         <DataSeriesFormSettings
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
         />
-      )}
-      {type === CARD_TYPES.IMAGE && (
+      );
+    case CARD_TYPES.VALUE:
+      return (
+        <ValueCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
+      );
+    case CARD_TYPES.IMAGE:
+      return (
         <ImageCardFormSettings
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
         />
-      )}
-
-      {/*
-      TODO: support and legend toggling in future iteration
-      <div className={`${baseClassName}--input`}>
-        <div className={`${baseClassName}--input--toggle-field`}>
-          <span>{mergedI18n.showLegend}</span>
-          <ToggleSmall
-            id="show-legend-toggle"
-            aria-label="show-legend"
-            defaultToggled
-            labelA=""
-            labelB=""
-            // This is not supported by Carbon yet. Issue open here: https://github.com/carbon-design-system/carbon-charts/issues/846
-            onToggle={showLegend => onChange({ ...cardConfig, showLegend })}
-          />
-        </div>
-      </div> */}
-    </div>
-  );
+      );
+    default:
+      return null;
+  }
 };
 
 CardEditFormSettings.propTypes = propTypes;

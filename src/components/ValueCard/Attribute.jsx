@@ -82,6 +82,7 @@ const propTypes = {
   attributeCount: PropTypes.number.isRequired,
   locale: PropTypes.string,
   customFormatter: PropTypes.func,
+  isEditable: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -97,6 +98,7 @@ const defaultProps = {
   secondaryValue: null,
   locale: 'en',
   customFormatter: null,
+  isEditable: false,
 };
 
 /**
@@ -120,29 +122,32 @@ const Attribute = ({
   size, // eslint-disable-line react/prop-types
   locale,
   customFormatter,
+  isEditable,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
-  // matching threshold will be the first match in the list, or a value of null
-  const matchingThreshold = thresholds
-    .filter((t) => {
-      switch (t.comparison) {
-        case '<':
-          return !isNil(value) && value < t.value;
-        case '>':
-          return value > t.value;
-        case '=':
-          return value === t.value;
-        case '<=':
-          return !isNil(value) && value <= t.value;
-        case '>=':
-          return value >= t.value;
-        default:
-          return false;
-      }
-    })
-    .concat([null])[0];
+  // matching threshold will be the first match in the list, or a value of null if not isEditable
+  const matchingThreshold = isEditable
+    ? thresholds[0]
+    : thresholds
+        .filter((t) => {
+          switch (t.comparison) {
+            case '<':
+              return !isNil(value) && value < t.value;
+            case '>':
+              return value > t.value;
+            case '=':
+              return value === t.value;
+            case '<=':
+              return !isNil(value) && value <= t.value;
+            case '>=':
+              return value >= t.value;
+            default:
+              return false;
+          }
+        })
+        .concat([null])[0];
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined
       ? matchingThreshold.color

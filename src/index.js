@@ -39,6 +39,7 @@ export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner'
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
 export IconDropdown from './components/IconDropdown/IconDropdown';
+export ImageGalleryModal from './components/ImageGalleryModal/ImageGalleryModal';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -72,9 +73,7 @@ export PieChartCard from './components/PieChartCard/PieChartCard';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
-export TableCard, {
-  findMatchingThresholds,
-} from './components/TableCard/TableCard';
+export TableCard from './components/TableCard/TableCard';
 export GaugeCard from './components/GaugeCard/GaugeCard';
 export {
   CARD_TYPES,
@@ -306,6 +305,7 @@ export {
   getVariables,
   getCardVariables,
   replaceVariables,
+  findMatchingThresholds,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
