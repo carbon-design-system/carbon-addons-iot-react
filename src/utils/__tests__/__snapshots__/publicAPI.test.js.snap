@@ -8405,6 +8405,9 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "showLegend": Object {
+                    "type": "bool",
+                  },
                   "timeDataSourceId": Object {
                     "type": "string",
                   },
@@ -8426,9 +8429,6 @@ Map {
             },
             "interval": Object {
               "type": "string",
-            },
-            "showLegend": Object {
-              "type": "bool",
             },
             "size": Object {
               "type": "string",
@@ -11441,6 +11441,7 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "showLegend": true,
       },
       "domainRange": null,
       "i18n": Object {
@@ -11448,7 +11449,6 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
-      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -12012,6 +12012,9 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showLegend": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
               "type": "string",
             },
@@ -12248,9 +12251,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showLegend": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
