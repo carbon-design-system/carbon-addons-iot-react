@@ -82,6 +82,10 @@ const TimeSeriesCardPropTypes = {
     zoomBar: ZoomBarPropTypes,
     /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
     addSpaceOnEdges: PropTypes.number,
+    /** whether or not to show a legend at the bottom of the card
+     * if not explicitly stated, the card will show based on the length of the series
+     */
+    showLegend: PropTypes.bool,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -127,10 +131,6 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
-  /** whether or not to show a legend at the bottom of the card
-   * if not explicitly stated, the card will show based on the length of the series
-   */
-  showLegend: PropTypes.bool,
 };
 
 /**
@@ -291,7 +291,7 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showLegend,
+
   ...others
 }) => {
   const {
@@ -308,6 +308,7 @@ const TimeSeriesCard = ({
       chartType,
       zoomBar,
       showTimeInGMT,
+      showLegend,
       tooltipDateFormatPattern,
       addSpaceOnEdges,
     },
@@ -658,11 +659,11 @@ TimeSeriesCard.defaultProps = {
   content: {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
+    showLegend: true,
   },
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
-  showLegend: null,
 };
 
 export default TimeSeriesCard;

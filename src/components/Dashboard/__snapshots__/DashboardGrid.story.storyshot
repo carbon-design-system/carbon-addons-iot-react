@@ -971,7 +971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--pie-chart-container"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-pie-chart"
                 />
               </div>
               <span
@@ -2499,9 +2499,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     style={
                       Object {
                         "cursor": "auto",
+                        "height": "auto",
                         "left": undefined,
+                        "objectFit": null,
                         "position": "relative",
                         "top": undefined,
+                        "width": "auto",
                       }
                     }
                   />
@@ -2668,7 +2671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--time-series-card--wrapper"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-line-chart"
                 />
               </div>
             </div>
@@ -2962,7 +2965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--bar-chart-container"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-bar-chart-simple"
                 />
               </div>
             </div>

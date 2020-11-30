@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import {
@@ -30,6 +30,8 @@ const propTypes = {
   colors: PropTypes.arrayOf(colorPropType),
   /** The label of the Dropdown, defaults to 'Select a color' */
   label: PropTypes.string,
+  /** True if the dropdown should hide the color names that display next to the color box */
+  hideLabels: PropTypes.bool,
   /** The title of the Dropdown, defaults to 'Color' */
   titleText: PropTypes.string,
   /** Required Id string */
@@ -60,6 +62,7 @@ const defaultProps = {
     { carbonColor: cyan90, name: 'cyan90' },
   ],
   label: 'Select a color',
+  hideLabels: false,
   light: false,
   selectedColor: undefined,
   testID: undefined,
@@ -70,12 +73,15 @@ const ColorDropdown = ({
   colors,
   id,
   label,
+  hideLabels,
   light,
   onChange,
-  selectedColor,
+  selectedColor: selectedColorProp,
   titleText,
   testID,
 }) => {
+  const [selectedColor, setSelectedColor] = useState(selectedColorProp);
+
   const renderColorItem = (item) => {
     return (
       <div
@@ -87,9 +93,11 @@ const ColorDropdown = ({
             className={`${iotPrefix}--color-dropdown__color-sample`}
             style={{ backgroundColor: item.carbonColor }}
           />
-          <div className={`${iotPrefix}--color-dropdown__color-name`}>
-            {item.name}
-          </div>
+          {!hideLabels && (
+            <div className={`${iotPrefix}--color-dropdown__color-name`}>
+              {item.name}
+            </div>
+          )}
         </div>
       </div>
     );
@@ -103,8 +111,9 @@ const ColorDropdown = ({
       items={colors}
       label={label}
       light={light}
-      onChange={(change) => {
-        onChange({ color: change.selectedItem });
+      onChange={({ selectedItem }) => {
+        setSelectedColor(selectedItem);
+        onChange({ color: selectedItem });
       }}
       selectedItem={selectedColor}
       titleText={titleText}
