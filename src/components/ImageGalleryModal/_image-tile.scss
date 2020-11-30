@@ -44,7 +44,7 @@ $title-height: 3rem;
   &.#{$prefix}--tile--is-selected,
   &:focus {
     border-color: transparent;
-    & + input + .bx--tile {
+    & + input + .#{$prefix}--tile {
       border-color: transparent;
     }
   }

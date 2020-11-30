@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
@@ -114,13 +114,14 @@ const ImageGalleryModal = ({
       return text.includes(searchTerm);
     });
     setFilteredContent(filtered);
+    setSelectedImage(undefined);
   };
 
   const baseClass = `${iotPrefix}--image-gallery-modal`;
   return (
     <ComposedModal
       type="normal"
-      className={classNames(className, baseClass)}
+      className={classnames(className, baseClass)}
       footer={{
         isPrimaryButtonDisabled: !selectedImage,
         primaryButtonLabel: modalPrimaryButtonLabelText,
@@ -175,7 +176,7 @@ const ImageGalleryModal = ({
       </div>
       <div className={`${baseClass}__flex-wrapper`}>
         <div
-          className={classNames(`${baseClass}__scroll-panel`, {
+          className={classnames(`${baseClass}__scroll-panel`, {
             [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
             [`${baseClass}__scroll-panel--list`]: activeView === LIST,
           })}>
