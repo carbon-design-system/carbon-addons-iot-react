@@ -8303,6 +8303,7 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8360,6 +8361,12 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "breakpointSwitcher": Object {
         "args": Array [
           Object {
@@ -8542,6 +8549,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8566,6 +8574,12 @@ Map {
       ],
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "cardConfig": Object {
         "args": Array [
           Object {
@@ -17983,6 +17997,7 @@ Map {
           "name": "cyan90",
         },
       ],
+      "hideLabels": false,
       "label": "Select a color",
       "light": false,
       "selectedColor": undefined,
@@ -18007,6 +18022,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "hideLabels": Object {
+        "type": "bool",
       },
       "id": Object {
         "isRequired": true,
