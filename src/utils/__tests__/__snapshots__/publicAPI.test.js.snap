@@ -6213,12 +6213,12 @@ Map {
         "underlineLabelText": "Text Underline",
       },
       "light": true,
-      "maxBorderWidth": 15,
-      "maxFontSize": 50,
-      "maxOpacity": 100,
-      "minBorderWidth": 0,
-      "minFontSize": 1,
-      "minOpacity": 0,
+      "maxBorderWidth": undefined,
+      "maxFontSize": undefined,
+      "maxOpacity": undefined,
+      "minBorderWidth": undefined,
+      "minFontSize": undefined,
+      "minOpacity": undefined,
     },
     "propTypes": Object {
       "backgroundColors": Object {
@@ -6315,40 +6315,40 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
-            "backgroundLabel": Object {
+            "backgroundLabelText": Object {
               "type": "string",
             },
-            "boldLabel": Object {
+            "boldLabelText": Object {
               "type": "string",
             },
-            "borderLabel": Object {
+            "borderLabelText": Object {
               "type": "string",
             },
-            "borderWidth": Object {
+            "borderWidthInvalidText": Object {
               "type": "string",
             },
-            "borderWidthInvalid": Object {
+            "borderWidthText": Object {
               "type": "string",
             },
-            "fillOpacityInvalid": Object {
+            "fillOpacityInvalidText": Object {
               "type": "string",
             },
-            "fillOpacityLabel": Object {
+            "fillOpacityLabelText": Object {
               "type": "string",
             },
-            "fontLabel": Object {
+            "fontLabelText": Object {
               "type": "string",
             },
-            "fontSize": Object {
+            "fontSizeInvalidText": Object {
               "type": "string",
             },
-            "fontSizeInvalid": Object {
+            "fontSizeText": Object {
               "type": "string",
             },
-            "italicLabel": Object {
+            "italicLabelText": Object {
               "type": "string",
             },
-            "underlineLabel": Object {
+            "underlineLabelText": Object {
               "type": "string",
             },
           },

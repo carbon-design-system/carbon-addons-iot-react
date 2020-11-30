@@ -49,6 +49,12 @@ export const Default = () => {
 
     return (
       <HotspotTextStyleTab
+        minFontSize={1}
+        maxFontSize={50}
+        minOpacity={0}
+        maxOpacity={100}
+        minBorderWidth={0}
+        maxBorderWidth={50}
         fontColors={colors}
         backgroundColors={colors}
         borderColors={colors}

@@ -534,7 +534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   aria-label={null}
                   disabled={false}
                   id="iot--hotspot-text-style-tab__border"
-                  max={15}
+                  max={50}
                   min={0}
                   onChange={[Function]}
                   pattern="[0-9]*"
