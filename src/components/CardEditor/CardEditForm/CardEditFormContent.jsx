@@ -39,6 +39,7 @@ const propTypes = {
         includeZeroOnXaxis: PropTypes.bool,
         includeZeroOnYaxis: PropTypes.bool,
         timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
       }),
       PropTypes.shape({
         id: PropTypes.string,
@@ -46,8 +47,6 @@ const propTypes = {
         zoomMax: PropTypes.number,
       }),
     ]),
-    interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -172,16 +171,24 @@ const CardEditFormContent = ({
   getValidDataItems,
   getValidTimeRanges,
 }) => {
-  const { title, description, size, type, id } = cardConfig;
+  const { title, description, size, type, id, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
-  const [selectedTimeRange, setSelectedTimeRange] = useState('');
+  const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
+
+  const validTimeRangeOptions = validTimeRanges
+    ? validTimeRanges.map((range) => ({
+        id: range,
+        text: mergedI18n[`${range}Label`] || range,
+      }))
+    : [];
+
   return (
     <>
       <div className={`${baseClassName}--input`}>
@@ -236,14 +243,12 @@ const CardEditFormContent = ({
               label={mergedI18n.selectATimeRange}
               direction="bottom"
               itemToString={(item) => item.text}
-              items={
-                validTimeRanges
-                  ? validTimeRanges.map((range) => ({
-                      id: range,
-                      text: mergedI18n[range] || range,
-                    }))
-                  : []
-              }
+              items={validTimeRangeOptions}
+              selectedItem={validTimeRangeOptions.find(
+                // This is a hacky workaround for a carbon issue
+                (validTimeRangeOption) =>
+                  validTimeRangeOption.id === selectedTimeRange
+              )}
               light
               onChange={({ selectedItem }) => {
                 const { range, interval } = timeRangeToJSON[selectedItem.id];
@@ -251,6 +256,7 @@ const CardEditFormContent = ({
                 onChange({
                   ...cardConfig,
                   interval,
+                  timeRange: selectedItem.id,
                   dataSource: { ...cardConfig.dataSource, range },
                 });
               }}
