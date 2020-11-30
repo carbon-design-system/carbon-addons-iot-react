@@ -33,9 +33,9 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
@@ -62,6 +62,10 @@ const propTypes = {
       label: PropTypes.string,
     })
   ),
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -88,6 +92,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
 };
@@ -104,6 +109,7 @@ const CardEditor = ({
   dataItems,
   onValidateCardJson,
   supportedCardTypes,
+  availableDimensions,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -140,6 +146,7 @@ const CardEditor = ({
             getValidDataItems={getValidDataItems}
             getValidTimeRanges={getValidTimeRanges}
             onValidateCardJson={onValidateCardJson}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         )}

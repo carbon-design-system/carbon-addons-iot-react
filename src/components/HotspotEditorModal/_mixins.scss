@@ -1,0 +1,5 @@
+@mixin vertical-form() {
+  & > * {
+    padding-bottom: $spacing-05;
+  }
+}

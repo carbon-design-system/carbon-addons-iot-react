@@ -137,7 +137,13 @@ export const TableCardPropTypes = {
         priority: PropTypes.number,
         /** See the renderDataFunction for TablePropTypes */
         renderDataFunction: PropTypes.func,
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
         type: PropTypes.string,
+        /** optional custom link */
+        linkTemplate: PropTypes.shape({
+          href: PropTypes.string,
+          target: PropTypes.string,
+        }),
       })
     ).isRequired,
     showHeader: PropTypes.bool,
@@ -145,6 +151,13 @@ export const TableCardPropTypes = {
       PropTypes.shape({
         id: PropTypes.string,
         label: PropTypes.string,
+        /** optional custom link */
+        linkTemplate: PropTypes.shape({
+          href: PropTypes.string,
+          target: PropTypes.string,
+        }),
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
+        type: PropTypes.string,
       })
     ),
     thresholds: PropTypes.arrayOf(
@@ -423,12 +436,16 @@ export const DonutCardPropTypes = {
 
 export const ImageCardPropTypes = {
   content: PropTypes.shape({
-    title: PropTypes.string,
-    content: PropTypes.object,
+    id: PropTypes.string,
+    src: PropTypes.string,
+    zoomMax: PropTypes.number,
   }).isRequired,
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  onUpload: PropTypes.func,
+  onBrowseClick: PropTypes.func,
+  accept: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const GaugeCardPropTypes = {

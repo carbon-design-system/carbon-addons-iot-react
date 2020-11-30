@@ -3,7 +3,6 @@ import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
-import isEmpty from 'lodash/isEmpty';
 import warning from 'warning';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -52,7 +51,12 @@ const ListItemPropTypes = {
     // Either a function
     PropTypes.func,
     // Or the instance of a DOM native element (see the note about SSR)
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    PropTypes.shape({
+      current:
+        typeof Element === 'undefined'
+          ? PropTypes.any
+          : PropTypes.instanceOf(Element),
+    }),
   ]),
   /** The nodes should be Carbon Tags components */
   tags: PropTypes.arrayOf(PropTypes.node),
@@ -80,7 +84,7 @@ const ListItemDefaultProps = {
   selected: false,
   expanded: false,
   secondaryValue: null,
-  rowActions: [],
+  rowActions: null,
   icon: null,
   iconPosition: 'left',
   nestingLevel: 0,
@@ -167,9 +171,11 @@ const ListItem = ({
       </div>
     ) : null;
 
+  const hasRowActions =
+    rowActions && (typeof rowActions === 'function' || rowActions?.length);
+
   const renderRowActions = () =>
-    rowActions &&
-    (typeof rowActions === 'function' || rowActions.length > 0) ? (
+    hasRowActions ? (
       <div className={`${iotPrefix}--list-item--content--row-actions`}>
         {typeof rowActions === 'function' ? rowActions() : rowActions}
       </div>
@@ -244,9 +250,7 @@ const ListItem = ({
                     {
                       [`${iotPrefix}--list-item--category`]: isCategory,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                     }
                   )}
                   title={value}>
@@ -262,9 +266,7 @@ const ListItem = ({
                     `${iotPrefix}--list-item--content--values--value`,
                     `${iotPrefix}--list-item--content--values--value__large`,
                     {
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     }
                   )}>
@@ -281,9 +283,7 @@ const ListItem = ({
                     {
                       [`${iotPrefix}--list-item--category`]: isCategory,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
-                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                        rowActions
-                      ),
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                     }
                   )}
                   title={value}>
@@ -295,9 +295,7 @@ const ListItem = ({
                     className={classnames(
                       `${iotPrefix}--list-item--content--values--value`,
                       {
-                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
-                          rowActions
-                        ),
+                        [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                         [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                       }
                     )}>

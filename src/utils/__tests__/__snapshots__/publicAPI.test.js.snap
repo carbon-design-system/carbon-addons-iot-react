@@ -6181,6 +6181,200 @@ Map {
       },
     },
   },
+  "ImageGalleryModal" => Object {
+    "defaultProps": Object {
+      "className": "",
+      "content": Array [],
+      "defaultView": "grid",
+      "footer": Object {},
+      "gridButtonText": "Grid",
+      "instructionText": "Select the image that you want to display on this card.",
+      "listButtonText": "List",
+      "modalCloseIconDescriptionText": "Close",
+      "modalLabelText": "New image card",
+      "modalPrimaryButtonLabelText": "Select",
+      "modalSecondaryButtonLabelText": "Cancel",
+      "modalTitleText": "Image gallery",
+      "searchPlaceHolderText": "Search image by file name",
+      "searchProperty": "src",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "alt": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "src": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "defaultView": Object {
+        "args": Array [
+          Array [
+            "grid",
+            "list",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "footer": Object {
+        "args": Array [
+          Array [
+            Object {
+              "isRequired": true,
+              "type": "element",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "isPrimaryButtonDisabled": Object {
+                    "type": "bool",
+                  },
+                  "isPrimaryButtonHidden": Object {
+                    "type": "bool",
+                  },
+                  "primaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                  "secondaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "gridButtonText": Object {
+        "type": "string",
+      },
+      "header": Object {
+        "args": Array [
+          Object {
+            "helpText": Object {
+              "type": "node",
+            },
+            "label": Object {
+              "type": "node",
+            },
+            "title": Object {
+              "type": "node",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "instructionText": Object {
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isLarge": Object {
+        "type": "bool",
+      },
+      "listButtonText": Object {
+        "type": "string",
+      },
+      "modalCloseIconDescriptionText": Object {
+        "type": "string",
+      },
+      "modalLabelText": Object {
+        "type": "string",
+      },
+      "modalPrimaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalSecondaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalTitleText": Object {
+        "type": "string",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "passiveModal": Object {
+        "type": "bool",
+      },
+      "searchPlaceHolderText": Object {
+        "type": "string",
+      },
+      "searchProperty": Object {
+        "type": "string",
+      },
+      "sendingData": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "submitFailed": Object {
+        "type": "bool",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "warn",
+            "normal",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
@@ -8168,6 +8362,7 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8225,6 +8420,12 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "breakpointSwitcher": Object {
         "args": Array [
           Object {
@@ -8407,6 +8608,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "cardConfig": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8431,6 +8633,12 @@ Map {
       ],
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "cardConfig": Object {
         "args": Array [
           Object {
@@ -8464,6 +8672,9 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "showLegend": Object {
+                    "type": "bool",
+                  },
                   "timeDataSourceId": Object {
                     "type": "string",
                   },
@@ -8485,9 +8696,6 @@ Map {
             },
             "interval": Object {
               "type": "string",
-            },
-            "showLegend": Object {
-              "type": "bool",
             },
             "size": Object {
               "type": "string",
@@ -11500,6 +11708,7 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "showLegend": true,
       },
       "domainRange": null,
       "i18n": Object {
@@ -11507,7 +11716,6 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
-      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -12071,6 +12279,9 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showLegend": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
               "type": "string",
             },
@@ -12308,9 +12519,6 @@ Map {
         ],
         "type": "shape",
       },
-      "showLegend": Object {
-        "type": "bool",
-      },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
         "type": "bool",
@@ -12392,12 +12600,32 @@ Map {
   },
   "ImageCard" => Object {
     "defaultProps": Object {
+      "accept": null,
+      "content": Object {},
       "i18n": Object {
+        "browseImages": "Browse images",
+        "dropContainerDescText": "Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000",
+        "dropContainerLabelText": "Drag and drop file here or click to select file",
+        "errorTitle": "Error: ",
+        "insertUrl": "Insert from URL",
         "loadingDataLabel": "Loading hotspot data",
+        "uploadByURLButton": "OK",
+        "uploadByURLCancel": "Cancel",
+        "urlInput": "Type or insert URL",
       },
       "locale": "en",
+      "onBrowseClick": null,
+      "onUpload": [Function],
     },
     "propTypes": Object {
+      "accept": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "availableActions": Object {
         "args": Array [
           Object {
@@ -12856,11 +13084,14 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "content": Object {
-              "type": "object",
-            },
-            "title": Object {
+            "id": Object {
               "type": "string",
+            },
+            "src": Object {
+              "type": "string",
+            },
+            "zoomMax": Object {
+              "type": "number",
             },
           },
         ],
@@ -13032,6 +13263,9 @@ Map {
       "onBlur": Object {
         "type": "func",
       },
+      "onBrowseClick": Object {
+        "type": "func",
+      },
       "onFocus": Object {
         "type": "func",
       },
@@ -13048,6 +13282,9 @@ Map {
         "type": "func",
       },
       "onTouchStart": Object {
+        "type": "func",
+      },
+      "onUpload": Object {
         "type": "func",
       },
       "renderExpandIcon": Object {
@@ -13682,6 +13919,19 @@ Map {
                       "label": Object {
                         "type": "string",
                       },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "priority": Object {
                         "type": "number",
                       },
@@ -13714,6 +13964,22 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
+                        "type": "string",
+                      },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      "type": Object {
                         "type": "string",
                       },
                     },
@@ -14088,7 +14354,6 @@ Map {
       },
     },
   },
-  "findMatchingThresholds" => Object {},
   "GaugeCard" => Object {
     "defaultProps": Object {
       "content": Object {
@@ -14977,6 +15242,7 @@ Map {
     "CLOSE_EXPANDED_CARD": "CLOSE_EXPANDED_CARD",
     "DELETE_CARD": "DELETE_CARD",
     "EDIT_CARD": "EDIT_CARD",
+    "ON_CARD_CHANGE": "ON_CARD_CHANGE",
     "OPEN_EXPANDED_CARD": "OPEN_EXPANDED_CARD",
     "UPDATE_DATA": "UPDATE_DATA",
   },
@@ -17434,122 +17700,36 @@ Map {
       "downshiftProps": Object {
         "args": Array [
           Object {
-            "children": Object {
-              "type": "func",
-            },
-            "defaultHighlightedIndex": Object {
-              "type": "number",
-            },
-            "defaultIsOpen": Object {
-              "type": "bool",
-            },
-            "environment": Object {
-              "args": Array [
-                Object {
-                  "addEventListener": Object {
-                    "type": "func",
-                  },
-                  "document": Object {
-                    "args": Array [
-                      Object {
-                        "activeElement": Object {
-                          "type": "any",
-                        },
-                        "body": Object {
-                          "type": "any",
-                        },
-                        "getElementById": Object {
-                          "type": "func",
-                        },
-                      },
-                    ],
-                    "type": "shape",
-                  },
-                  "removeEventListener": Object {
-                    "type": "func",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            "getA11yStatusMessage": Object {
-              "type": "func",
-            },
-            "getItemId": Object {
-              "type": "func",
-            },
-            "highlightedIndex": Object {
-              "type": "number",
-            },
-            "id": Object {
-              "type": "string",
-            },
-            "initialHighlightedIndex": Object {
-              "type": "number",
-            },
-            "initialInputValue": Object {
-              "type": "string",
-            },
-            "initialIsOpen": Object {
-              "type": "bool",
-            },
-            "initialSelectedItem": Object {
-              "type": "any",
-            },
-            "inputId": Object {
-              "type": "string",
-            },
-            "inputValue": Object {
-              "type": "string",
-            },
-            "isOpen": Object {
-              "type": "bool",
-            },
-            "itemCount": Object {
-              "type": "number",
-            },
-            "itemToString": Object {
-              "type": "func",
-            },
-            "labelId": Object {
-              "type": "string",
-            },
-            "menuId": Object {
-              "type": "string",
-            },
-            "onChange": Object {
-              "type": "func",
-            },
-            "onInputValueChange": Object {
-              "type": "func",
-            },
-            "onOuterClick": Object {
-              "type": "func",
-            },
-            "onSelect": Object {
-              "type": "func",
-            },
-            "onStateChange": Object {
-              "type": "func",
-            },
-            "onUserAction": Object {
-              "type": "func",
-            },
-            "scrollIntoView": Object {
-              "type": "func",
-            },
-            "selectedItem": Object {
-              "type": "any",
-            },
-            "selectedItemChanged": Object {
-              "type": "func",
-            },
-            "stateReducer": Object {
-              "type": "func",
-            },
-            "suppressRefError": Object {
-              "type": "bool",
-            },
+            "children": [Function],
+            "defaultHighlightedIndex": [Function],
+            "defaultIsOpen": [Function],
+            "environment": [Function],
+            "getA11yStatusMessage": [Function],
+            "getItemId": [Function],
+            "highlightedIndex": [Function],
+            "id": [Function],
+            "initialHighlightedIndex": [Function],
+            "initialInputValue": [Function],
+            "initialIsOpen": [Function],
+            "initialSelectedItem": [Function],
+            "inputId": [Function],
+            "inputValue": [Function],
+            "isOpen": [Function],
+            "itemCount": [Function],
+            "itemToString": [Function],
+            "labelId": [Function],
+            "menuId": [Function],
+            "onChange": [Function],
+            "onInputValueChange": [Function],
+            "onOuterClick": [Function],
+            "onSelect": [Function],
+            "onStateChange": [Function],
+            "onUserAction": [Function],
+            "scrollIntoView": [Function],
+            "selectedItem": [Function],
+            "selectedItemChanged": [Function],
+            "stateReducer": [Function],
+            "suppressRefError": [Function],
           },
         ],
         "type": "shape",
@@ -17876,6 +18056,7 @@ Map {
           "name": "cyan90",
         },
       ],
+      "hideLabels": false,
       "label": "Select a color",
       "light": false,
       "selectedColor": undefined,
@@ -17900,6 +18081,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "hideLabels": Object {
+        "type": "bool",
       },
       "id": Object {
         "isRequired": true,
@@ -17932,6 +18116,206 @@ Map {
         "type": "string",
       },
       "titleText": Object {
+        "type": "string",
+      },
+    },
+  },
+  "HotspotEditorTooltipTab" => Object {
+    "defaultProps": Object {
+      "formValues": Object {},
+      "hotspotIconFillColors": undefined,
+      "hotspotIcons": Array [],
+      "i18n": Object {
+        "deleteButtonIconDescription": "Delete this hotspot",
+        "deleteButtonLabelText": "Delete hotspot",
+        "descriptionTextareaLabelText": "Description",
+        "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
+        "iconDropdownLabelText": "Select an Icon",
+        "iconDropdownTitleText": "Icon",
+        "titleInputLabelText": "Title",
+        "titleInputPlaceholderText": "Enter title for the tooltip",
+      },
+      "infoMessage": undefined,
+      "overrides": undefined,
+      "primaryInputId": undefined,
+      "testID": "HotspotEditorTooltipTab",
+    },
+    "propTypes": Object {
+      "formValues": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "carbonColor": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "hotspotIconFillColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "hotspotIcons": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "icon": Object {
+                  "type": "object",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "text": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "colorDropdownLabelText": Object {
+              "type": "string",
+            },
+            "colorDropdownTitleText": Object {
+              "type": "string",
+            },
+            "deleteButtonIconDescription": Object {
+              "type": "string",
+            },
+            "deleteButtonLabelText": Object {
+              "type": "string",
+            },
+            "descriptionTextareaLabelText": Object {
+              "type": "string",
+            },
+            "descriptionTextareaPlaceholderText": Object {
+              "type": "string",
+            },
+            "iconDropdownLabelText": Object {
+              "type": "string",
+            },
+            "titleInputLabelText": Object {
+              "type": "string",
+            },
+            "titleInputPlaceholderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "infoMessage": Object {
+        "type": "string",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onDelete": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "decriptionTextArea": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "titleTextInput": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "primaryInputId": Object {
+        "type": "string",
+      },
+      "testID": Object {
         "type": "string",
       },
     },
@@ -20271,122 +20655,36 @@ Map {
         "downshiftProps": Object {
           "args": Array [
             Object {
-              "children": Object {
-                "type": "func",
-              },
-              "defaultHighlightedIndex": Object {
-                "type": "number",
-              },
-              "defaultIsOpen": Object {
-                "type": "bool",
-              },
-              "environment": Object {
-                "args": Array [
-                  Object {
-                    "addEventListener": Object {
-                      "type": "func",
-                    },
-                    "document": Object {
-                      "args": Array [
-                        Object {
-                          "activeElement": Object {
-                            "type": "any",
-                          },
-                          "body": Object {
-                            "type": "any",
-                          },
-                          "getElementById": Object {
-                            "type": "func",
-                          },
-                        },
-                      ],
-                      "type": "shape",
-                    },
-                    "removeEventListener": Object {
-                      "type": "func",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
-              "getA11yStatusMessage": Object {
-                "type": "func",
-              },
-              "getItemId": Object {
-                "type": "func",
-              },
-              "highlightedIndex": Object {
-                "type": "number",
-              },
-              "id": Object {
-                "type": "string",
-              },
-              "initialHighlightedIndex": Object {
-                "type": "number",
-              },
-              "initialInputValue": Object {
-                "type": "string",
-              },
-              "initialIsOpen": Object {
-                "type": "bool",
-              },
-              "initialSelectedItem": Object {
-                "type": "any",
-              },
-              "inputId": Object {
-                "type": "string",
-              },
-              "inputValue": Object {
-                "type": "string",
-              },
-              "isOpen": Object {
-                "type": "bool",
-              },
-              "itemCount": Object {
-                "type": "number",
-              },
-              "itemToString": Object {
-                "type": "func",
-              },
-              "labelId": Object {
-                "type": "string",
-              },
-              "menuId": Object {
-                "type": "string",
-              },
-              "onChange": Object {
-                "type": "func",
-              },
-              "onInputValueChange": Object {
-                "type": "func",
-              },
-              "onOuterClick": Object {
-                "type": "func",
-              },
-              "onSelect": Object {
-                "type": "func",
-              },
-              "onStateChange": Object {
-                "type": "func",
-              },
-              "onUserAction": Object {
-                "type": "func",
-              },
-              "scrollIntoView": Object {
-                "type": "func",
-              },
-              "selectedItem": Object {
-                "type": "any",
-              },
-              "selectedItemChanged": Object {
-                "type": "func",
-              },
-              "stateReducer": Object {
-                "type": "func",
-              },
-              "suppressRefError": Object {
-                "type": "bool",
-              },
+              "children": [Function],
+              "defaultHighlightedIndex": [Function],
+              "defaultIsOpen": [Function],
+              "environment": [Function],
+              "getA11yStatusMessage": [Function],
+              "getItemId": [Function],
+              "highlightedIndex": [Function],
+              "id": [Function],
+              "initialHighlightedIndex": [Function],
+              "initialInputValue": [Function],
+              "initialIsOpen": [Function],
+              "initialSelectedItem": [Function],
+              "inputId": [Function],
+              "inputValue": [Function],
+              "isOpen": [Function],
+              "itemCount": [Function],
+              "itemToString": [Function],
+              "labelId": [Function],
+              "menuId": [Function],
+              "onChange": [Function],
+              "onInputValueChange": [Function],
+              "onOuterClick": [Function],
+              "onSelect": [Function],
+              "onStateChange": [Function],
+              "onUserAction": [Function],
+              "scrollIntoView": [Function],
+              "selectedItem": [Function],
+              "selectedItemChanged": [Function],
+              "stateReducer": [Function],
+              "suppressRefError": [Function],
             },
           ],
           "type": "shape",
@@ -20493,122 +20791,36 @@ Map {
       "downshiftProps": Object {
         "args": Array [
           Object {
-            "children": Object {
-              "type": "func",
-            },
-            "defaultHighlightedIndex": Object {
-              "type": "number",
-            },
-            "defaultIsOpen": Object {
-              "type": "bool",
-            },
-            "environment": Object {
-              "args": Array [
-                Object {
-                  "addEventListener": Object {
-                    "type": "func",
-                  },
-                  "document": Object {
-                    "args": Array [
-                      Object {
-                        "activeElement": Object {
-                          "type": "any",
-                        },
-                        "body": Object {
-                          "type": "any",
-                        },
-                        "getElementById": Object {
-                          "type": "func",
-                        },
-                      },
-                    ],
-                    "type": "shape",
-                  },
-                  "removeEventListener": Object {
-                    "type": "func",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            "getA11yStatusMessage": Object {
-              "type": "func",
-            },
-            "getItemId": Object {
-              "type": "func",
-            },
-            "highlightedIndex": Object {
-              "type": "number",
-            },
-            "id": Object {
-              "type": "string",
-            },
-            "initialHighlightedIndex": Object {
-              "type": "number",
-            },
-            "initialInputValue": Object {
-              "type": "string",
-            },
-            "initialIsOpen": Object {
-              "type": "bool",
-            },
-            "initialSelectedItem": Object {
-              "type": "any",
-            },
-            "inputId": Object {
-              "type": "string",
-            },
-            "inputValue": Object {
-              "type": "string",
-            },
-            "isOpen": Object {
-              "type": "bool",
-            },
-            "itemCount": Object {
-              "type": "number",
-            },
-            "itemToString": Object {
-              "type": "func",
-            },
-            "labelId": Object {
-              "type": "string",
-            },
-            "menuId": Object {
-              "type": "string",
-            },
-            "onChange": Object {
-              "type": "func",
-            },
-            "onInputValueChange": Object {
-              "type": "func",
-            },
-            "onOuterClick": Object {
-              "type": "func",
-            },
-            "onSelect": Object {
-              "type": "func",
-            },
-            "onStateChange": Object {
-              "type": "func",
-            },
-            "onUserAction": Object {
-              "type": "func",
-            },
-            "scrollIntoView": Object {
-              "type": "func",
-            },
-            "selectedItem": Object {
-              "type": "any",
-            },
-            "selectedItemChanged": Object {
-              "type": "func",
-            },
-            "stateReducer": Object {
-              "type": "func",
-            },
-            "suppressRefError": Object {
-              "type": "bool",
-            },
+            "children": [Function],
+            "defaultHighlightedIndex": [Function],
+            "defaultIsOpen": [Function],
+            "environment": [Function],
+            "getA11yStatusMessage": [Function],
+            "getItemId": [Function],
+            "highlightedIndex": [Function],
+            "id": [Function],
+            "initialHighlightedIndex": [Function],
+            "initialInputValue": [Function],
+            "initialIsOpen": [Function],
+            "initialSelectedItem": [Function],
+            "inputId": [Function],
+            "inputValue": [Function],
+            "isOpen": [Function],
+            "itemCount": [Function],
+            "itemToString": [Function],
+            "labelId": [Function],
+            "menuId": [Function],
+            "onChange": [Function],
+            "onInputValueChange": [Function],
+            "onOuterClick": [Function],
+            "onSelect": [Function],
+            "onStateChange": [Function],
+            "onUserAction": [Function],
+            "scrollIntoView": [Function],
+            "selectedItem": [Function],
+            "selectedItemChanged": [Function],
+            "stateReducer": [Function],
+            "suppressRefError": [Function],
           },
         ],
         "type": "shape",
@@ -23962,6 +24174,7 @@ Map {
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
+  "findMatchingThresholds" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

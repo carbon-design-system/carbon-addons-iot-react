@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
 import classnames from 'classnames';
+import update from 'immutability-helper';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -82,6 +83,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
    * onCardChange(updatedCard, template): Card
    */
@@ -156,6 +161,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   onCardChange: null,
   onLayoutChange: null,
   onDelete: null,
@@ -220,6 +226,7 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  availableDimensions,
   isLoading,
   i18n,
 }) => {
@@ -303,11 +310,13 @@ const DashboardEditor = ({
     key: cardConfig.id,
     tooltip: cardConfig.description,
     availableActions: { clone: true, delete: true },
-    onCardAction: (id, actionId) => {
+    onCardAction: (id, actionId, payload) => {
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
         onDuplicateCard(id);
       } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
+      } else if (actionId === CARD_ACTIONS.ON_CARD_CHANGE) {
+        handleOnCardChange(update(cardConfig, payload));
       }
     },
     tabIndex: 0,
@@ -442,6 +451,7 @@ const DashboardEditor = ({
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
             supportedCardTypes={supportedCardTypes}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         </ErrorBoundary>

@@ -58,6 +58,7 @@ describe('CardEditForm', () => {
     it('should throw error if JSON is empty', () => {
       handleSubmit(
         '',
+        '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
@@ -68,17 +69,19 @@ describe('CardEditForm', () => {
     it('should call onChange and setShowEditor if JSON is valid', () => {
       handleSubmit(
         '{}',
+        '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
         mockSetShowEditor
       );
-      expect(mockOnChange).toBeCalledWith({});
+      expect(mockOnChange).toBeCalled();
       expect(mockSetShowEditor).toBeCalledWith(false);
     });
     it('should throw error if JSON is not valid', () => {
       handleSubmit(
         '1234',
+        '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,

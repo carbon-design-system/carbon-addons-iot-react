@@ -5,9 +5,40 @@ import {
   getDefaultCard,
   isCardJsonValid,
   renderBreakpointInfo,
+  formatSeries,
+  formatAttributes,
+  handleDataSeriesChange,
+  handleDataItemEdit,
 } from './editorUtils';
 
 describe('editorUtils', () => {
+  const cardConfig = {
+    id: 'Timeseries',
+    title: 'Untitled',
+    size: 'MEDIUMWIDE',
+    type: 'TIMESERIES',
+    content: {
+      series: [
+        {
+          label: 'Temperature',
+          dataSourceId: 'temperature',
+          color: 'red',
+        },
+        {
+          label: 'Pressure',
+          dataSourceId: 'pressure',
+        },
+      ],
+      xLabel: 'Time',
+      yLabel: 'Temperature (˚F)',
+      includeZeroOnXaxis: true,
+      includeZeroOnYaxis: true,
+      timeDataSourceId: 'timestamp',
+      addSpaceOnEdges: 1,
+    },
+    interval: 'day',
+  };
+
   const mockValueCard = {
     id: 'Standard',
     title: 'value card',
@@ -33,7 +64,18 @@ describe('editorUtils', () => {
     title: 'timeseries card',
     type: 'TIMESERIES',
     size: 'MEDIUM',
-    content: {},
+    content: {
+      series: [
+        {
+          dataSourceId: 'airflow',
+          label: 'Airflow',
+        },
+        {
+          dataSourceId: 'torque',
+          label: 'Torque',
+        },
+      ],
+    },
   };
   const mockBarChartCard = {
     id: 'Standard',
@@ -148,6 +190,194 @@ describe('editorUtils', () => {
     });
     it('should return md', () => {
       expect(renderBreakpointInfo('md', i18n)).toEqual('Md');
+    });
+  });
+  describe('formatSeries', () => {
+    const cardConfigWithoutColorDefinition = {
+      content: {
+        series: [
+          {
+            label: 'Temperature',
+            dataSourceId: 'temperature',
+          },
+          {
+            label: 'Pressure',
+            dataSourceId: 'pressure',
+          },
+        ],
+      },
+    };
+    const selectedItems = [
+      { id: 'temperature', text: 'Temperature' },
+      { id: 'pressure', text: 'Pressure' },
+    ];
+    it('should correctly format the card series', () => {
+      expect(formatSeries(selectedItems, cardConfig)).toEqual([
+        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
+        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
+      ]);
+    });
+    it('should correctly generate colors for dataItems with no color defined', () => {
+      expect(
+        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
+      ).toEqual([
+        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
+        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
+      ]);
+    });
+  });
+  describe('formatAttributes', () => {
+    it('should correctly format the card attributes', () => {
+      const mockValueCard2 = {
+        id: 'Standard',
+        title: 'value card',
+        type: 'VALUE',
+        size: 'MEDIUM',
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'key1',
+              unit: '%',
+              precision: 2,
+              thresholds: [],
+              dataFilter: { deviceid: '73000' },
+            },
+            {
+              dataSourceId: 'key2',
+              unit: 'lb',
+              label: 'Key 2',
+            },
+          ],
+        },
+      };
+      const selectedItems = [
+        { id: 'key1', text: 'Key 1' },
+        { id: 'key2', text: 'Key 2' },
+      ];
+      expect(formatAttributes(selectedItems, mockValueCard2)).toEqual([
+        {
+          dataSourceId: 'key1',
+          label: 'key1',
+          precision: 2,
+          dataFilter: { deviceid: '73000' },
+        },
+        { dataSourceId: 'key2', label: 'Key 2' },
+      ]);
+    });
+  });
+  describe('handleDataSeriesChange', () => {
+    it('should correctly format the data in Timeseries', () => {
+      const selectedItems = [
+        { id: 'key1', text: 'Key 1' },
+        { id: 'key2', text: 'Key 2' },
+      ];
+      const newCard = handleDataSeriesChange(selectedItems, mockTimeSeriesCard);
+      expect(newCard).toEqual({
+        content: {
+          series: [
+            {
+              color: '#6929c4',
+              dataSourceId: 'key1',
+              label: 'key1',
+            },
+            {
+              color: '#1192e8',
+              dataSourceId: 'key2',
+              label: 'key2',
+            },
+          ],
+        },
+        id: 'Standard',
+        size: 'MEDIUM',
+        title: 'timeseries card',
+        type: 'TIMESERIES',
+      });
+    });
+    it('should correctly format the data in Value', () => {
+      const selectedItems = [
+        { id: 'key1', text: 'Key 1' },
+        { id: 'key2', text: 'Key 2' },
+      ];
+      const newCard = handleDataSeriesChange(selectedItems, mockValueCard);
+      expect(newCard).toEqual({
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'key1',
+              label: 'Key 1',
+            },
+            {
+              dataSourceId: 'key2',
+              label: 'Key 2',
+            },
+          ],
+        },
+        id: 'Standard',
+        size: 'MEDIUM',
+        title: 'value card',
+        type: 'VALUE',
+      });
+    });
+  });
+  describe('handleDataItemEdit', () => {
+    it('should correctly format the data in Timeseries', () => {
+      const editDataItem = {
+        dataSourceId: 'torque',
+        label: 'Torque',
+        xLabel: 'X axis',
+        yLabel: 'Y axis',
+        unit: 'PSI',
+      };
+      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard);
+      expect(newCard).toEqual({
+        id: 'Standard',
+        title: 'timeseries card',
+        type: 'TIMESERIES',
+        size: 'MEDIUM',
+        content: {
+          series: [
+            {
+              dataSourceId: 'airflow',
+              label: 'Airflow',
+            },
+            {
+              dataSourceId: 'torque',
+              label: 'Torque',
+              xLabel: 'X axis',
+              yLabel: 'Y axis',
+              unit: 'PSI',
+            },
+          ],
+        },
+      });
+    });
+    it('should correctly format the data in Value', () => {
+      const editDataItem = {
+        dataSourceId: 'key2',
+        unit: 'F',
+        label: 'Updated Key 2',
+      };
+      const newCard = handleDataItemEdit(editDataItem, mockValueCard);
+      expect(newCard).toEqual({
+        id: 'Standard',
+        title: 'value card',
+        type: 'VALUE',
+        size: 'MEDIUM',
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'key1',
+              unit: '%',
+              label: 'Key 1',
+            },
+            {
+              dataSourceId: 'key2',
+              unit: 'F',
+              label: 'Updated Key 2',
+            },
+          ],
+        },
+      });
     });
   });
 });
