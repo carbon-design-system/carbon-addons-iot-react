@@ -33,9 +33,9 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,

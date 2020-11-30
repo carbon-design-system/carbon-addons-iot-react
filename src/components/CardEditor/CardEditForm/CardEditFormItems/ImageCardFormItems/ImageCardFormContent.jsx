@@ -20,7 +20,6 @@ const propTypes = {
       zoomMax: PropTypes.number,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /* callback when image input value changes (File object) */
   // onChange: PropTypes.func.isRequired,
