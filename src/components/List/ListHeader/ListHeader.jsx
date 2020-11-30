@@ -7,7 +7,7 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   buttons: PropTypes.arrayOf(PropTypes.node),
   search: PropTypes.shape({
     onChange: PropTypes.func,
@@ -29,6 +29,7 @@ const defaultProps = {
   i18n: {
     searchPlaceHolderText: 'Enter a value',
   },
+  title: null,
 };
 
 const ListHeader = ({ title, buttons, search, i18n, isLoading }) => {

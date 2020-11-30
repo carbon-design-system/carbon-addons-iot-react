@@ -13846,6 +13846,19 @@ Map {
                       "label": Object {
                         "type": "string",
                       },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "priority": Object {
                         "type": "number",
                       },
@@ -13878,6 +13891,22 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
+                        "type": "string",
+                      },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      "type": Object {
                         "type": "string",
                       },
                     },
@@ -14252,7 +14281,6 @@ Map {
       },
     },
   },
-  "findMatchingThresholds" => Object {},
   "GaugeCard" => Object {
     "defaultProps": Object {
       "content": Object {
@@ -24069,6 +24097,7 @@ Map {
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
+  "findMatchingThresholds" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
