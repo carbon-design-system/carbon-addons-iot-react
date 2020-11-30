@@ -6181,6 +6181,200 @@ Map {
       },
     },
   },
+  "ImageGalleryModal" => Object {
+    "defaultProps": Object {
+      "className": "",
+      "content": Array [],
+      "defaultView": "grid",
+      "footer": Object {},
+      "gridButtonText": "Grid",
+      "instructionText": "Select the image that you want to display on this card.",
+      "listButtonText": "List",
+      "modalCloseIconDescriptionText": "Close",
+      "modalLabelText": "New image card",
+      "modalPrimaryButtonLabelText": "Select",
+      "modalSecondaryButtonLabelText": "Cancel",
+      "modalTitleText": "Image gallery",
+      "searchPlaceHolderText": "Search image by file name",
+      "searchProperty": "src",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "alt": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "src": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "defaultView": Object {
+        "args": Array [
+          Array [
+            "grid",
+            "list",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "footer": Object {
+        "args": Array [
+          Array [
+            Object {
+              "isRequired": true,
+              "type": "element",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "isPrimaryButtonDisabled": Object {
+                    "type": "bool",
+                  },
+                  "isPrimaryButtonHidden": Object {
+                    "type": "bool",
+                  },
+                  "primaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                  "secondaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "gridButtonText": Object {
+        "type": "string",
+      },
+      "header": Object {
+        "args": Array [
+          Object {
+            "helpText": Object {
+              "type": "node",
+            },
+            "label": Object {
+              "type": "node",
+            },
+            "title": Object {
+              "type": "node",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "instructionText": Object {
+        "type": "string",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isLarge": Object {
+        "type": "bool",
+      },
+      "listButtonText": Object {
+        "type": "string",
+      },
+      "modalCloseIconDescriptionText": Object {
+        "type": "string",
+      },
+      "modalLabelText": Object {
+        "type": "string",
+      },
+      "modalPrimaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalSecondaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalTitleText": Object {
+        "type": "string",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "passiveModal": Object {
+        "type": "bool",
+      },
+      "searchPlaceHolderText": Object {
+        "type": "string",
+      },
+      "searchProperty": Object {
+        "type": "string",
+      },
+      "sendingData": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "submitFailed": Object {
+        "type": "bool",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "warn",
+            "normal",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
