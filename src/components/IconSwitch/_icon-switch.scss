@@ -84,3 +84,17 @@ $icon-switch-size-large: $spacing-09;
 .#{$iot-prefix}--content-switcher--icon {
   justify-content: center;
 }
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--icon-switch {
+    &--small {
+      padding: 0 $icon-switch-size-small/4 0 0;
+    }
+    &--default {
+      padding: 0 $icon-switch-size-default/4 0 0;
+    }
+    &--large {
+      padding: 0 $icon-switch-size-large/4 0 0;
+    }
+  }
+}
