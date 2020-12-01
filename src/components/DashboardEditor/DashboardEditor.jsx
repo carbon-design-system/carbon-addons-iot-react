@@ -312,18 +312,26 @@ const DashboardEditor = ({
   const onDuplicateCard = (id) => duplicateCard(id);
   const onRemoveCard = (id) => removeCard(id);
 
-  const handleOnCardChange = (cardConfig) =>
+  const handleOnCardChange = (cardConfig) => {
+    // need to handle resetting the src of the image for image cards based on the id
+    if (cardConfig.type === CARD_TYPES.IMAGE) {
+      // eslint-disable-next-line no-param-reassign
+      cardConfig.content.src = availableImages.find(
+        (image) => image.id === cardConfig.content.id
+      )?.src;
+    }
     // TODO: this is really inefficient
-    setDashboardJson({
-      ...dashboardJson,
-      cards: dashboardJson.cards.map((card) =>
+    setDashboardJson((oldJSON) => ({
+      ...oldJSON,
+      cards: oldJSON.cards.map((card) =>
         card.id === cardConfig.id
           ? onCardChange
-            ? onCardChange(cardConfig, dashboardJson)
+            ? onCardChange(cardConfig, oldJSON)
             : cardConfig
           : card
-      ), // TODO: need to handle switching the image id and dynamically switching the src to the correct blob
-    });
+      ),
+    }));
+  };
 
   // Show the image gallery
   const handleShowImageGallery = () => setIsImageGalleryModalOpen(true);
