@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Scale32 } from '@carbon/icons-react';
+// import { Scale32 } from '@carbon/icons-react';
 
-import Button from '../../../../Button';
+// import Button from '../../../../Button';
 import { settings } from '../../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -57,12 +57,12 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
             value={cardConfig.content?.id || ''}
           />
         </label>
-        <Button
+        {/* TODO enable once hotspot editing is live <Button
           className={`${baseClassName}--form-section-image-btn`}
           size="small"
           renderIcon={Scale32}>
           {mergedI18n.editImage}
-        </Button>
+        </Button> */}
       </div>
     </>
   );

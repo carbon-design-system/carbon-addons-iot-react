@@ -70,7 +70,7 @@ describe('ImageGalleryModal', () => {
     expect(screen.getByAltText(content[1].alt)).toBeVisible();
     expect(screen.getByAltText(content[2].alt)).toBeVisible();
 
-    userEvent.type(screen.getByRole('searchbox'), 'imagE-b');
+    userEvent.type(screen.getByRole('searchbox'), 'b');
     expect(screen.queryAllByAltText(content[0].alt)).toHaveLength(0);
     expect(screen.getByAltText(content[1].alt)).toBeVisible();
     expect(screen.queryAllByAltText(content[2].alt)).toHaveLength(0);
