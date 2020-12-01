@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { settings } from '../../constants/Settings';
 import ComposedModal from '../ComposedModal';
@@ -104,6 +105,9 @@ const ImageGalleryModal = ({
   const [activeView, setActiveView] = useState(defaultView);
   const [selectedImage, setSelectedImage] = useState();
   const [filteredContent, setFilteredContent] = useState(content);
+
+  // Need to support lazy loaded content
+  useDeepCompareEffect(() => setFilteredContent(content), [content]);
 
   const toggleImageSelection = (imageProps) => {
     setSelectedImage((currentSelected) => {
