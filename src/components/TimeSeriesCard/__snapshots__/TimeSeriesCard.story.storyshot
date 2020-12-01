@@ -135,7 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -303,7 +303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -442,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -781,7 +781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -949,7 +949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -1042,7 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -1213,7 +1213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               className="iot--time-series-card--wrapper iot--time-series-card--wrapper__expanded"
             >
               <div
-                className="chart-holder"
+                id="mock-line-chart"
               />
             </div>
             <div
@@ -3266,7 +3266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3434,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3602,7 +3602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3770,7 +3770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3938,7 +3938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4106,7 +4106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4274,7 +4274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4442,7 +4442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4772,7 +4772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4940,7 +4940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5108,7 +5108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5276,7 +5276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5444,7 +5444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5612,7 +5612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5780,7 +5780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5948,7 +5948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -6116,7 +6116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>

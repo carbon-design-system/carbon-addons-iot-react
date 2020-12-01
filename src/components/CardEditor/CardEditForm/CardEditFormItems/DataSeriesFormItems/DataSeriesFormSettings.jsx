@@ -27,9 +27,9 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,

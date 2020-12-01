@@ -29,7 +29,6 @@ const propTypes = {
       background: PropTypes.string,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,

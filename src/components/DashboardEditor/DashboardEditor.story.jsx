@@ -43,6 +43,10 @@ export const Default = () => (
       onSubmit={action('onSubmit')}
       onLayoutChange={action('onLayoutChange')}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
