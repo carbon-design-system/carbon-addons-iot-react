@@ -57,6 +57,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -91,6 +95,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
 };
@@ -136,6 +141,7 @@ export const basicCardValidation = (card) => {
  */
 export const handleSubmit = (
   card,
+  id,
   setError,
   onValidateCardJson,
   onChange,
@@ -151,7 +157,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange(JSON.parse(card));
+    onChange({ ...JSON.parse(card), id });
     setShowEditor(false);
     return true;
   }
@@ -169,11 +175,13 @@ const CardEditForm = ({
   getValidDataItems,
   getValidTimeRanges,
   currentBreakpoint,
+  availableDimensions,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
+  const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -183,6 +191,7 @@ const CardEditForm = ({
           onSubmit={(card, setError) =>
             handleSubmit(
               card,
+              id,
               setError,
               onValidateCardJson,
               onChange,
@@ -209,6 +218,7 @@ const CardEditForm = ({
               onChange={onChange}
               i18n={mergedI18n}
               dataItems={dataItems}
+              availableDimensions={availableDimensions}
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
               currentBreakpoint={currentBreakpoint}

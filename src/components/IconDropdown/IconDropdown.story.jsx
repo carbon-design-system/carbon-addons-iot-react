@@ -77,7 +77,6 @@ const props = () => ({
     'Form validation UI content (invalidText)',
     'A valid value is required'
   ),
-  hasFooter: boolean('Renders dropdown footer', false),
 });
 
 export default {

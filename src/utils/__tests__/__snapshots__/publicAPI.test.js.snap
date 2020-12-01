@@ -6022,8 +6022,6 @@ Map {
       "selectedItem": null,
       "titleText": "",
       "type": "default",
-      "warn": false,
-      "warnText": "",
     },
     "propTypes": Object {
       "ariaLabel": Object {
@@ -6173,11 +6171,199 @@ Map {
         ],
         "type": "oneOf",
       },
-      "warn": Object {
+    },
+  },
+  "ImageGalleryModal" => Object {
+    "defaultProps": Object {
+      "className": "",
+      "content": Array [],
+      "defaultView": "grid",
+      "footer": Object {},
+      "gridButtonText": "Grid",
+      "instructionText": "Select the image that you want to display on this card.",
+      "listButtonText": "List",
+      "modalCloseIconDescriptionText": "Close",
+      "modalLabelText": "New image card",
+      "modalPrimaryButtonLabelText": "Select",
+      "modalSecondaryButtonLabelText": "Cancel",
+      "modalTitleText": "Image gallery",
+      "searchPlaceHolderText": "Search image by file name",
+      "searchProperty": "src",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "alt": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "src": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "defaultView": Object {
+        "args": Array [
+          Array [
+            "grid",
+            "list",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "footer": Object {
+        "args": Array [
+          Array [
+            Object {
+              "isRequired": true,
+              "type": "element",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "isPrimaryButtonDisabled": Object {
+                    "type": "bool",
+                  },
+                  "isPrimaryButtonHidden": Object {
+                    "type": "bool",
+                  },
+                  "primaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                  "secondaryButtonLabel": Object {
+                    "type": "node",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "gridButtonText": Object {
+        "type": "string",
+      },
+      "header": Object {
+        "args": Array [
+          Object {
+            "helpText": Object {
+              "type": "node",
+            },
+            "label": Object {
+              "type": "node",
+            },
+            "title": Object {
+              "type": "node",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "instructionText": Object {
+        "type": "string",
+      },
+      "invalid": Object {
         "type": "bool",
       },
-      "warnText": Object {
+      "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isLarge": Object {
+        "type": "bool",
+      },
+      "listButtonText": Object {
         "type": "string",
+      },
+      "modalCloseIconDescriptionText": Object {
+        "type": "string",
+      },
+      "modalLabelText": Object {
+        "type": "string",
+      },
+      "modalPrimaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalSecondaryButtonLabelText": Object {
+        "type": "string",
+      },
+      "modalTitleText": Object {
+        "type": "string",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "passiveModal": Object {
+        "type": "bool",
+      },
+      "searchPlaceHolderText": Object {
+        "type": "string",
+      },
+      "searchProperty": Object {
+        "type": "string",
+      },
+      "sendingData": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "bool",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "submitFailed": Object {
+        "type": "bool",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "warn",
+            "normal",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -6645,10 +6831,12 @@ Map {
       "NAVIGATOR": "NAVIGATOR",
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
+      "SURVEY": "SURVEY",
     },
     "defaultProps": Object {
       "appName": null,
       "className": null,
+      "customActionItems": Array [],
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -6715,6 +6903,60 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "customActionItems": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "btnContent": Object {
+                  "isRequired": true,
+                  "type": "node",
+                },
+                "childContent": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "content": Object {
+                            "type": "node",
+                          },
+                          "metaData": Object {
+                            "args": Array [
+                              Object {
+                                "element": Object {
+                                  "type": "string",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "className": Object {
+                  "type": "string",
+                },
+                "hasHeaderPanel": Object {
+                  "type": "bool",
+                },
+                "label": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "onClick": Object {
+                  "type": "func",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -6764,6 +7006,9 @@ Map {
               "type": "string",
             },
             "support": Object {
+              "type": "string",
+            },
+            "surveyPrivacyPolicy": Object {
               "type": "string",
             },
             "surveyText": Object {
@@ -8109,6 +8354,7 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8166,6 +8412,12 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "breakpointSwitcher": Object {
         "args": Array [
           Object {
@@ -8348,6 +8600,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "availableDimensions": Object {},
       "cardConfig": null,
       "currentBreakpoint": "xl",
       "dataItems": Array [],
@@ -8373,6 +8626,12 @@ Map {
       ],
     },
     "propTypes": Object {
+      "availableDimensions": Object {
+        "args": Array [
+          Object {},
+        ],
+        "type": "shape",
+      },
       "cardConfig": Object {
         "args": Array [
           Object {
@@ -8406,6 +8665,9 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "showLegend": Object {
+                    "type": "bool",
+                  },
                   "timeDataSourceId": Object {
                     "type": "string",
                   },
@@ -8427,9 +8689,6 @@ Map {
             },
             "interval": Object {
               "type": "string",
-            },
-            "showLegend": Object {
-              "type": "bool",
             },
             "size": Object {
               "type": "string",
@@ -11445,6 +11704,7 @@ Map {
       "content": Object {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
+        "showLegend": true,
       },
       "domainRange": null,
       "i18n": Object {
@@ -11452,7 +11712,6 @@ Map {
         "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
-      "showLegend": null,
       "showTimeInGMT": false,
       "size": "MEDIUM",
       "tooltipDateFormatPattern": "L HH:mm:ss",
@@ -12016,6 +12275,9 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showLegend": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
               "type": "string",
             },
@@ -12252,9 +12514,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "showLegend": Object {
-        "type": "bool",
       },
       "showOverflow": [Function],
       "showTimeInGMT": Object {
@@ -13656,6 +13915,19 @@ Map {
                       "label": Object {
                         "type": "string",
                       },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "priority": Object {
                         "type": "number",
                       },
@@ -13688,6 +13960,22 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
+                        "type": "string",
+                      },
+                      "linkTemplate": Object {
+                        "args": Array [
+                          Object {
+                            "href": Object {
+                              "type": "string",
+                            },
+                            "target": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      "type": Object {
                         "type": "string",
                       },
                     },
@@ -14062,7 +14350,6 @@ Map {
       },
     },
   },
-  "findMatchingThresholds" => Object {},
   "GaugeCard" => Object {
     "defaultProps": Object {
       "content": Object {
@@ -17765,6 +18052,7 @@ Map {
           "name": "cyan90",
         },
       ],
+      "hideLabels": false,
       "label": "Select a color",
       "light": false,
       "selectedColor": undefined,
@@ -17789,6 +18077,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "hideLabels": Object {
+        "type": "bool",
       },
       "id": Object {
         "isRequired": true,
@@ -23879,6 +24170,7 @@ Map {
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
+  "findMatchingThresholds" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

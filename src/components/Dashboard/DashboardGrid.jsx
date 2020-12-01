@@ -186,12 +186,7 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
       const matchingCard = find(cards, { id: cardFromLayout.i });
       return {
         ...cardFromLayout,
-        // only add resizable attribute if it exists
-        ...(matchingCard.isResizable
-          ? {
-              isResizable: matchingCard.isResizable,
-            }
-          : {}),
+        isResizable: matchingCard.isResizable,
       };
     });
 
