@@ -18370,6 +18370,207 @@ Map {
       },
     },
   },
+  "HotspotTextStyleTab" => Object {
+    "defaultProps": Object {
+      "backgroundColors": undefined,
+      "borderColors": undefined,
+      "className": "",
+      "fontColors": undefined,
+      "formValues": Object {
+        "backgroundColor": undefined,
+        "backgroundOpacity": undefined,
+        "bold": false,
+        "borderColor": undefined,
+        "borderWidth": undefined,
+        "fontColor": undefined,
+        "fontSize": undefined,
+        "italic": false,
+        "underline": false,
+      },
+      "i18n": Object {
+        "backgroundLabelText": "Background",
+        "boldLabelText": "Text Bold",
+        "borderLabelText": "Border",
+        "borderWidthInvalidText": "Border Width is invalid",
+        "borderWidthLabelText": "Border Width",
+        "fillOpacityInvalidText": "Fill Opacity is invalid",
+        "fillOpacityLabelText": "Fill Opacity",
+        "fontLabelText": "Font",
+        "fontSizeInvalidText": "Font Size is invalid",
+        "fontSizeLabelText": "Font Size",
+        "italicLabelText": "Text Italic",
+        "underlineLabelText": "Text Underline",
+      },
+      "light": true,
+      "maxBorderWidth": undefined,
+      "maxFontSize": undefined,
+      "maxOpacity": undefined,
+      "minBorderWidth": undefined,
+      "minFontSize": undefined,
+      "minOpacity": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "borderColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "fontColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "formValues": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "carbonColor": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "backgroundLabelText": Object {
+              "type": "string",
+            },
+            "boldLabelText": Object {
+              "type": "string",
+            },
+            "borderLabelText": Object {
+              "type": "string",
+            },
+            "borderWidthInvalidText": Object {
+              "type": "string",
+            },
+            "borderWidthText": Object {
+              "type": "string",
+            },
+            "fillOpacityInvalidText": Object {
+              "type": "string",
+            },
+            "fillOpacityLabelText": Object {
+              "type": "string",
+            },
+            "fontLabelText": Object {
+              "type": "string",
+            },
+            "fontSizeInvalidText": Object {
+              "type": "string",
+            },
+            "fontSizeText": Object {
+              "type": "string",
+            },
+            "italicLabelText": Object {
+              "type": "string",
+            },
+            "underlineLabelText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "maxBorderWidth": Object {
+        "type": "number",
+      },
+      "maxFontSize": Object {
+        "type": "number",
+      },
+      "maxOpacity": Object {
+        "type": "number",
+      },
+      "minBorderWidth": Object {
+        "type": "number",
+      },
+      "minFontSize": Object {
+        "type": "number",
+      },
+      "minOpacity": Object {
+        "type": "number",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
