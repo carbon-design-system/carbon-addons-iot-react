@@ -77,6 +77,7 @@ const propTypes = {
     addCardButton: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
   }),
+  currentBreakpoint: PropTypes.string,
 };
 
 const defaultProps = {
@@ -95,6 +96,7 @@ const defaultProps = {
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
+  currentBreakpoint: 'xl',
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -111,6 +113,7 @@ const CardEditor = ({
   supportedCardTypes,
   availableDimensions,
   i18n,
+  currentBreakpoint,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -148,6 +151,7 @@ const CardEditor = ({
             onValidateCardJson={onValidateCardJson}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         )}
       </div>

@@ -6188,7 +6188,7 @@ Map {
       "modalSecondaryButtonLabelText": "Cancel",
       "modalTitleText": "Image gallery",
       "searchPlaceHolderText": "Search image by file name",
-      "searchProperty": "src",
+      "searchProperty": "id",
     },
     "propTypes": Object {
       "children": Object {
@@ -8355,6 +8355,7 @@ Map {
   "DashboardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
+      "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8417,6 +8418,32 @@ Map {
           Object {},
         ],
         "type": "shape",
+      },
+      "availableImages": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "alt": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "src": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "breakpointSwitcher": Object {
         "args": Array [
@@ -8503,6 +8530,33 @@ Map {
               "type": "string",
             },
             "headerXlargeButton": Object {
+              "type": "string",
+            },
+            "imageGalleryGridButtonText": Object {
+              "type": "string",
+            },
+            "imageGalleryInstructionText": Object {
+              "type": "string",
+            },
+            "imageGalleryListButtonText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalCloseIconDescriptionText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalPrimaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalSecondaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalTitleText": Object {
+              "type": "string",
+            },
+            "imageGallerySearchPlaceHolderText": Object {
               "type": "string",
             },
             "layoutInfoLg": Object {
@@ -8602,6 +8656,7 @@ Map {
     "defaultProps": Object {
       "availableDimensions": Object {},
       "cardConfig": null,
+      "currentBreakpoint": "xl",
       "dataItems": Array [],
       "getValidDataItems": null,
       "getValidTimeRanges": null,
@@ -8701,6 +8756,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "currentBreakpoint": Object {
+        "type": "string",
       },
       "dataItems": Object {
         "args": Array [
@@ -8859,15 +8917,15 @@ Map {
         "MEDIUM": Object {
           "lg": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "max": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "md": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "sm": Object {
             "h": 2,
@@ -8875,7 +8933,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "xs": Object {
             "h": 2,
@@ -8889,11 +8947,11 @@ Map {
           },
           "max": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "md": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "sm": Object {
             "h": 2,
@@ -8901,7 +8959,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "xs": Object {
             "h": 2,
@@ -8911,11 +8969,11 @@ Map {
         "MEDIUMWIDE": Object {
           "lg": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "max": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "md": Object {
             "h": 2,
@@ -8927,7 +8985,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "xs": Object {
             "h": 2,
@@ -8941,7 +8999,7 @@ Map {
           },
           "max": Object {
             "h": 1,
-            "w": 2,
+            "w": 4,
           },
           "md": Object {
             "h": 1,
@@ -8953,7 +9011,7 @@ Map {
           },
           "xl": Object {
             "h": 1,
-            "w": 2,
+            "w": 4,
           },
           "xs": Object {
             "h": 1,
@@ -8963,15 +9021,15 @@ Map {
         "SMALLWIDE": Object {
           "lg": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "max": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "md": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "sm": Object {
             "h": 2,
@@ -8979,7 +9037,7 @@ Map {
           },
           "xl": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "xs": Object {
             "h": 1,
@@ -9129,7 +9187,7 @@ Map {
         "lg": 16,
         "max": 16,
         "md": 8,
-        "sm": 4,
+        "sm": 8,
         "xl": 16,
         "xs": 4,
       },

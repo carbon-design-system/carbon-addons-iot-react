@@ -600,13 +600,14 @@ const Table = (props) => {
             options={{
               ...pick(
                 options,
-                'hasRowSelection',
-                'hasRowExpansion',
-                'hasRowActions',
                 'hasColumnSelectionConfig',
                 'hasResize',
-                'useAutoTableLayoutForResize',
-                'hasSingleRowEdit'
+                'hasRowActions',
+                'hasRowExpansion',
+                'hasRowNesting',
+                'hasSingleRowEdit',
+                'hasRowSelection',
+                'useAutoTableLayoutForResize'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,

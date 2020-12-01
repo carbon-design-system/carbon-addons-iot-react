@@ -16,7 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -197,7 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "232px",
+          "width": "108px",
         }
       }
     >
@@ -338,7 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "232px",
+          "width": "108px",
         }
       }
     >
@@ -666,7 +666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
         style={
           Object {
             "--card-default-height": "304px",
-            "width": "252px",
+            "width": "520px",
           }
         }
       >
@@ -1020,7 +1020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -1197,7 +1197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -2289,7 +2289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -2869,7 +2869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -3046,7 +3046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -3272,7 +3272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5836,7 +5836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5986,7 +5986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >

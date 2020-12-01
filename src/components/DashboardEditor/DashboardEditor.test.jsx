@@ -73,7 +73,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -96,7 +96,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -119,7 +119,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (4x2)');
+    const cardSizeFormInput = screen.getByText('Medium (8x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -251,7 +251,7 @@ describe('DashboardEditor', () => {
   it('selecting cancel should fire onCancel', () => {
     render(<DashboardEditor {...commonProps} />);
     // find and click submit button
-    const cancelBtn = screen.getByText('Cancel');
+    const cancelBtn = screen.getAllByText('Cancel')[0];
     expect(cancelBtn).toBeInTheDocument();
     fireEvent.click(cancelBtn);
     expect(mockOnCancel).toBeCalled();
