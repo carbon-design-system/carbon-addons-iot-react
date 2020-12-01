@@ -21,8 +21,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
     >
       <div
         className="bx--dropdown__wrapper bx--list-box__wrapper"
-        warn={false}
-        warnText=""
       >
         <label
           className="bx--label"
@@ -141,8 +139,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
     >
       <div
         className="bx--dropdown__wrapper bx--list-box__wrapper bx--dropdown__wrapper--inline bx--list-box__wrapper--inline"
-        warn={false}
-        warnText=""
       >
         <label
           className="bx--label"
@@ -256,8 +252,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
     >
       <div
         className="bx--dropdown__wrapper bx--list-box__wrapper"
-        warn={false}
-        warnText=""
       >
         <label
           className="bx--label"
@@ -435,8 +429,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dropd
     >
       <div
         className="bx--dropdown__wrapper bx--list-box__wrapper"
-        warn={false}
-        warnText=""
       >
         <label
           className="bx--label"

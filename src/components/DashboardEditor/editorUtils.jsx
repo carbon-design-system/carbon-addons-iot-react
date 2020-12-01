@@ -2,6 +2,54 @@ import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
+import find from 'lodash/find';
+import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
+import {
+  purple70,
+  cyan50,
+  teal70,
+  magenta70,
+  red60,
+  red50,
+  orange40,
+  green60,
+  blue80,
+  blue60,
+  red90,
+  green50,
+  yellow30,
+  magenta50,
+  purple50,
+  teal50,
+  cyan90,
+} from '@carbon/colors';
+import {
+  Checkmark24,
+  CheckmarkFilled24,
+  CheckmarkOutline24,
+  Error24,
+  ErrorFilled24,
+  ErrorOutline24,
+  Help24,
+  HelpFilled24,
+  Information24,
+  InformationFilled24,
+  Misuse24,
+  MisuseOutline24,
+  Undefined24,
+  UndefinedFilled24,
+  Unknown24,
+  UnknownFilled24,
+  Warning24,
+  WarningAlt24,
+  WarningAltFilled24,
+  WarningAltInverted24,
+  WarningAltInvertedFilled24,
+  WarningFilled24,
+  WarningSquare24,
+  WarningSquareFilled24,
+} from '@carbon/icons-react';
 
 import {
   CARD_SIZES,
@@ -60,7 +108,6 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           attributes: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES:
       return {
@@ -73,9 +120,8 @@ export const getDefaultCard = (type, i18n) => {
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
+          showLegend: true,
         },
-        interval: 'day',
-        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -85,7 +131,6 @@ export const getDefaultCard = (type, i18n) => {
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
       return {
@@ -95,7 +140,6 @@ export const getDefaultCard = (type, i18n) => {
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:
       return {
@@ -105,7 +149,6 @@ export const getDefaultCard = (type, i18n) => {
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
       return {
@@ -122,7 +165,6 @@ export const getDefaultCard = (type, i18n) => {
             },
           ],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
       return {
@@ -132,18 +174,51 @@ export const getDefaultCard = (type, i18n) => {
           hideHotspots: false,
           hideZoomControls: false,
         },
-        i18n,
       };
 
     default:
-      return { ...baseCardProps, i18n };
+      return { ...baseCardProps };
   }
 };
+
+/**
+ * Color options for dataItems
+ */
+export const DATAITEM_COLORS_OPTIONS = [
+  purple70,
+  cyan50,
+  teal70,
+  magenta70,
+  red50,
+  red90,
+  green60,
+  blue80,
+  magenta50,
+  purple50,
+  teal50,
+  cyan90,
+];
 
 /**
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
+  lastHour: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -1, type: 'rolling' },
+  },
+  last2Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -2, type: 'rolling' },
+  },
+  last4Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -4, type: 'rolling' },
+  },
+  last8Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -8, type: 'rolling' },
+  },
   last24Hours: {
     range: { interval: 'day', count: -1, type: 'rolling' },
     interval: 'hour',
@@ -206,6 +281,44 @@ export const timeRangeToJSON = {
   },
 };
 
+export const validThresholdIcons = [
+  { carbonIcon: <Checkmark24 />, name: 'Checkmark' },
+  { carbonIcon: <CheckmarkFilled24 />, name: 'Checkmark filled' },
+  { carbonIcon: <CheckmarkOutline24 />, name: 'Checkmark outline' },
+  { carbonIcon: <Error24 />, name: 'Error' },
+  { carbonIcon: <ErrorFilled24 />, name: 'Error filled' },
+  { carbonIcon: <ErrorOutline24 />, name: 'Error outline' },
+  { carbonIcon: <Help24 />, name: 'Help' },
+  { carbonIcon: <HelpFilled24 />, name: 'Help filled' },
+  { carbonIcon: <Information24 />, name: 'Information' },
+  { carbonIcon: <InformationFilled24 />, name: 'Information filled' },
+  { carbonIcon: <Misuse24 />, name: 'Misuse' },
+  { carbonIcon: <MisuseOutline24 />, name: 'Misuse outline' },
+  { carbonIcon: <Undefined24 />, name: 'Undefined' },
+  { carbonIcon: <UndefinedFilled24 />, name: 'Undefined filled' },
+  { carbonIcon: <Unknown24 />, name: 'Unknown' },
+  { carbonIcon: <UnknownFilled24 />, name: 'Unknown filled' },
+  { carbonIcon: <Warning24 />, name: 'Warning' },
+  { carbonIcon: <WarningAlt24 />, name: 'Warning alt' },
+  { carbonIcon: <WarningAltFilled24 />, name: 'Warning alt filled' },
+  { carbonIcon: <WarningAltInverted24 />, name: 'Warning alt inverted' },
+  {
+    carbonIcon: <WarningAltInvertedFilled24 />,
+    name: 'Warning alt inverted filled',
+  },
+  { carbonIcon: <WarningFilled24 />, name: 'Warning filled' },
+  { carbonIcon: <WarningSquare24 />, name: 'Warning square' },
+  { carbonIcon: <WarningSquareFilled24 />, name: 'Warning square filled' },
+];
+
+export const validThresholdColors = [
+  { carbonColor: red60, name: 'red60' },
+  { carbonColor: green50, name: 'green50' },
+  { carbonColor: orange40, name: 'orange40' },
+  { carbonColor: yellow30, name: 'yellow30' },
+  { carbonColor: blue60, name: 'blue60' },
+];
+
 /**
  * determines if a card JSON is valid depending on its card type
  * @param {Object} cardConfig
@@ -244,24 +357,41 @@ const renderDefaultCard = (cardConfig, commonProps) => (
  * @returns {Node}
  */
 const renderValueCard = (cardConfig, commonProps) => (
-  <ValueCard isEditable {...cardConfig} {...commonProps} />
+  <ValueCard
+    // render the icon in the right color in the card preview
+    renderIconByName={(iconName, props) => {
+      const iconToRender = validThresholdIcons.find(
+        (icon) => icon.name === iconName
+      )?.carbonIcon || <Warning24 />;
+      // eslint-disable-next-line react/prop-types
+      return <div style={{ color: props.fill }}>{iconToRender}</div>;
+    }}
+    isEditable
+    {...cardConfig}
+    {...commonProps}
+  />
 );
-
 /**
  * @param {Object} cardConfig
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTimeSeriesCard = (cardConfig, commonProps) => (
-  <TimeSeriesCard
-    isEditable
-    values={[]}
-    showLegend
-    timeRange={cardConfig?.dataSource?.range}
-    {...cardConfig}
-    {...commonProps}
-  />
-);
+const renderTimeSeriesCard = (cardConfig, commonProps) => {
+  // apply the timeRange for the card preview
+  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
+    isEqual(range, cardConfig?.dataSource?.range)
+  );
+  return (
+    <TimeSeriesCard
+      isEditable
+      values={[]}
+      interval={timeRangeJSON?.interval || 'day'}
+      timeRange={cardConfig?.dataSource?.range}
+      {...cardConfig}
+      {...commonProps}
+    />
+  );
+};
 
 /**
  * @param {Object} cardConfig
@@ -392,5 +522,121 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
       return i18n.layoutInfoMd;
     default:
       return i18n.layoutInfoXl;
+  }
+};
+
+/**
+ * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const formatSeries = (selectedItems, cardConfig) => {
+  const cardSeries = cardConfig?.content?.series;
+  const series = selectedItems.map(({ id }, i) => {
+    const currentItem = cardSeries?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
+    const color =
+      currentItem?.color ??
+      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+    return {
+      dataSourceId: id,
+      label: currentItem?.label || id,
+      color,
+    };
+  });
+  return series;
+};
+
+/**
+ * returns a new attributes array in the format expected by the JSON payload
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const formatAttributes = (selectedItems, cardConfig) => {
+  const cardAttributes = cardConfig?.content?.attributes;
+  const attributes = selectedItems.map(({ id }) => {
+    const currentItem = cardAttributes?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
+
+    return {
+      dataSourceId: id,
+      label: currentItem?.label || id,
+      ...(!isNil(currentItem?.precision)
+        ? { precision: currentItem.precision }
+        : {}),
+      ...(currentItem?.thresholds && !isEmpty(currentItem?.thresholds)
+        ? { thresholds: currentItem.thresholds }
+        : {}),
+      ...(currentItem?.dataFilter
+        ? { dataFilter: currentItem.dataFilter }
+        : {}),
+    };
+  });
+  return attributes;
+};
+
+/**
+ * determines how to format the dataSection based on card type
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const handleDataSeriesChange = (selectedItems, cardConfig) => {
+  const { type } = cardConfig;
+  let series;
+  let attributes;
+
+  switch (type) {
+    case CARD_TYPES.VALUE:
+      attributes = formatAttributes(selectedItems, cardConfig);
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, attributes },
+      };
+    case CARD_TYPES.TIMESERIES:
+      series = formatSeries(selectedItems, cardConfig);
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, series },
+      };
+    default:
+      return cardConfig;
+  }
+};
+
+/**
+ * updates the dataSection on edit of a dataItem based on card type
+ * @param {array} editDataItem
+ * @param {object} cardConfig
+ */
+export const handleDataItemEdit = (editDataItem, cardConfig) => {
+  const { type, content } = cardConfig;
+  let dataSection;
+  let editDataItemIndex;
+
+  switch (type) {
+    case CARD_TYPES.VALUE:
+      dataSection = [...content.attributes];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...content, attributes: dataSection },
+      };
+    case CARD_TYPES.TIMESERIES:
+      dataSection = [...content.series];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...content, series: dataSection },
+      };
+    default:
+      return cardConfig;
   }
 };

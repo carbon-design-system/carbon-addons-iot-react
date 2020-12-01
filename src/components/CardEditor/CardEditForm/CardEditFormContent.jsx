@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  CARD_TYPES,
   CARD_SIZES,
   CARD_DIMENSIONS,
   ALLOWED_CARD_SIZES_PER_TYPE,
+  CARD_TYPES,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
-import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem/DataSeriesFormItem';
-import ImageCardFormItem from './CardEditFormItems/ImageCardFormItem/ImageCardFormItem';
+import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
+import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 
 const { iotPrefix } = settings;
 
@@ -39,6 +39,7 @@ const propTypes = {
         includeZeroOnXaxis: PropTypes.bool,
         includeZeroOnYaxis: PropTypes.bool,
         timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
       }),
       PropTypes.shape({
         id: PropTypes.string,
@@ -46,8 +47,6 @@ const propTypes = {
         zoomMax: PropTypes.number,
       }),
     ]),
-    interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -98,6 +97,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -125,19 +128,20 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
-    last24Hours: 'Last 24 hours',
-    last7Days: 'Last 7 days',
-    lastMonth: 'Last month',
-    lastQuarter: 'Last quarter',
-    lastYear: 'Last year',
-    thisWeek: 'This week',
-    thisMonth: 'This month',
-    thisQuarter: 'This quarter',
-    thisYear: 'This year',
+    last24HoursLabel: 'Last 24 hours',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
 };
 
 const defaultTimeRangeOptions = [
@@ -171,17 +175,26 @@ const CardEditFormContent = ({
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
+  availableDimensions,
 }) => {
-  const { title, description, size, type, id } = cardConfig;
+  const { title, description, size, type, id, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
-  const [selectedTimeRange, setSelectedTimeRange] = useState('');
+  const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
+
+  const validTimeRangeOptions = validTimeRanges
+    ? validTimeRanges.map((range) => ({
+        id: range,
+        text: mergedI18n[`${range}Label`] || range,
+      }))
+    : [];
+
   return (
     <>
       <div className={`${baseClassName}--input`}>
@@ -228,7 +241,7 @@ const CardEditFormContent = ({
           titleText={mergedI18n.size}
         />
       </div>
-      {type === CARD_TYPES.TIMESERIES && (
+      {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.VALUE ? (
         <>
           <div className={`${baseClassName}--input`}>
             <Dropdown
@@ -236,40 +249,40 @@ const CardEditFormContent = ({
               label={mergedI18n.selectATimeRange}
               direction="bottom"
               itemToString={(item) => item.text}
-              items={
-                validTimeRanges
-                  ? validTimeRanges.map((range) => ({
-                      id: range,
-                      text: mergedI18n[range] || range,
-                    }))
-                  : []
-              }
+              items={validTimeRangeOptions}
+              selectedItem={validTimeRangeOptions.find(
+                // This is a hacky workaround for a carbon issue
+                (validTimeRangeOption) =>
+                  validTimeRangeOption.id === selectedTimeRange
+              )}
               light
               onChange={({ selectedItem }) => {
-                const { range, interval } = timeRangeToJSON[selectedItem.id];
-                setSelectedTimeRange(selectedItem.id);
+                const timeRangeInterval = selectedItem.id;
+                const { range } = timeRangeToJSON[timeRangeInterval];
+                setSelectedTimeRange(timeRangeInterval);
                 onChange({
                   ...cardConfig,
-                  interval,
+                  timeRange: timeRangeInterval,
                   dataSource: { ...cardConfig.dataSource, range },
                 });
               }}
               titleText={mergedI18n.timeRange}
             />
           </div>
-          <DataSeriesFormItem
+          <DataSeriesFormContent
             cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
             setSelectedDataItems={setSelectedDataItems}
             selectedTimeRange={selectedTimeRange}
             getValidDataItems={getValidDataItems}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         </>
-      )}
+      ) : null}
       {type === CARD_TYPES.IMAGE && (
-        <ImageCardFormItem cardConfig={cardConfig} i18n={mergedI18n} />
+        <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );

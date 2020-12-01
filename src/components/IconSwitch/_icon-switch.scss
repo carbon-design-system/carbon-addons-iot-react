@@ -19,10 +19,6 @@ $icon-switch-size-large: $spacing-09;
     }
   }
 
-  html[dir='rtl'] &--small {
-    padding: 0 $icon-switch-size-small / 4 0 0;
-  }
-
   &--default {
     min-height: $icon-switch-size-default;
     height: $icon-switch-size-default;
@@ -36,10 +32,6 @@ $icon-switch-size-large: $spacing-09;
     }
   }
 
-  html[dir='rtl'] &--default {
-    padding: 0 $icon-switch-size-default / 4 0 0;
-  }
-
   &--large {
     min-height: $icon-switch-size-large;
     height: $icon-switch-size-large;
@@ -51,10 +43,6 @@ $icon-switch-size-large: $spacing-09;
       height: $icon-switch-size-large / 2;
       width: $icon-switch-size-large / 2;
     }
-  }
-
-  html[dir='rtl'] &--large {
-    padding: 0 $icon-switch-size-large / 4 0 0;
   }
 
   &--unselected {
@@ -101,4 +89,18 @@ $icon-switch-size-large: $spacing-09;
 // using icon switchers. Use this class to override this behaviour
 .#{$iot-prefix}--content-switcher--icon {
   justify-content: center;
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--icon-switch {
+    &--small {
+      padding: 0 $icon-switch-size-small/4 0 0;
+    }
+    &--default {
+      padding: 0 $icon-switch-size-default/4 0 0;
+    }
+    &--large {
+      padding: 0 $icon-switch-size-large/4 0 0;
+    }
+  }
 }

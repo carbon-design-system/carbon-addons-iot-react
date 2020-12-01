@@ -65,10 +65,10 @@ describe('HotspotTextStyleTab', () => {
     fireEvent.click(screen.getAllByText(colors[1].name)[0]);
 
     fireEvent.click(dropdowns[1]);
-    fireEvent.click(screen.getAllByText(colors[1].name)[0]);
+    fireEvent.click(screen.getAllByText(colors[1].name)[1]);
 
     fireEvent.click(dropdowns[2]);
-    fireEvent.click(screen.getAllByText(colors[1].name)[0]);
+    fireEvent.click(screen.getAllByText(colors[1].name)[2]);
 
     expect(formValues.fontColor).toEqual(colors[1]);
     expect(formValues.backgroundColor).toEqual(colors[1]);

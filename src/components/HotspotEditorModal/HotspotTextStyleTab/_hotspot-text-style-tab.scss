@@ -1,32 +1,14 @@
 @import '../../../globals/vars';
 
+$border-radius: 5px;
+
 .#{$iot-prefix}--hotspot-text-style-tab {
   &__text-style {
-    :first-child {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
-
-    :last-child {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
+    @include content-switcher-border-radius($border-radius, left, right);
   }
 
   html[dir='rtl'] &__text-style {
-    :first-child {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    :last-child {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+    @include content-switcher-border-radius($border-radius, right, left);
   }
 
   &__dropdown {

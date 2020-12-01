@@ -3,18 +3,23 @@
   background: $ui-01;
   display: flex;
   flex-direction: column;
+
   .#{$prefix}--tab-content {
     flex: 1;
   }
+
   .#{$prefix}--tabs__nav--hidden {
     width: 100%;
+
     .#{$prefix}--tabs__nav-link {
       width: 100%;
     }
   }
+
   .#{$prefix}--file__selected-file {
     background-color: $ui-02;
   }
+
   .color-picker {
     .color-picker-button {
       // need to leave just enough room for the selected border
@@ -22,16 +27,19 @@
       height: 1.95rem;
       border: solid $spacing-01 $ui-01;
     }
+
     .color-picker-button__selected {
       border: solid $spacing-01 $interactive-04;
     }
   }
+
   &--content {
     flex: 1;
     margin: -$spacing-05;
     height: 100%;
     padding-top: $spacing-05;
   }
+
   &--form-section {
     padding: $spacing-03 $spacing-05;
     @include type-style('productive-heading-01');
@@ -39,11 +47,14 @@
     border-bottom: solid 1px $ui-03;
     margin-bottom: $spacing-05;
   }
+
   &--input-label {
     font-size: 0.75rem;
   }
+
   &--input {
     padding-bottom: $spacing-05;
+
     &--label {
       font-size: 0.75rem;
     }
@@ -73,6 +84,61 @@
       margin-top: 0;
     }
   }
+  &--modal-wrapper {
+    .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
+      overflow: visible;
+    }
+    .#{$prefix}--modal-content {
+      overflow: visible;
+    }
+    .#{$prefix}--number,
+    input[type='number'] {
+      min-width: unset;
+    }
+  }
+  &--input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      max-width: 5rem;
+    }
+  }
+  &--threshold-input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      width: 100%;
+    }
+  }
+
   &--footer {
     padding: $spacing-05;
     & > button {
@@ -81,5 +147,25 @@
   }
   .#{$prefix}--modal-container--xs {
     max-height: none;
+    min-width: 30rem;
+  }
+}
+
+// Image card form styles
+.#{$iot-prefix}--card-edit-form--form-section-image {
+  .#{$prefix}--fieldset {
+    margin-bottom: 0;
+  }
+
+  &-input {
+    margin-bottom: $spacing-05;
+  }
+
+  &-btn {
+    width: 100%;
+  }
+
+  .#{$prefix}--slider {
+    min-width: 4.5rem;
   }
 }
