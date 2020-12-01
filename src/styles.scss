@@ -147,6 +147,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ImageCard/hotspot-content';
 @import 'components/ImageCard/image-uploader';
 @import 'components/ImageCard/hotspot';
+@import 'components/ImageGalleryModal/image-gallery-modal';
+@import 'components/ImageGalleryModal/image-tile';
+
 @import 'components/Skeleton/skeleton';
 @import 'components/InlineLoading/inline-loading';
 @import 'components/PaginationNav/pagination-nav';
@@ -158,6 +161,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 //-------------------------------------
 @import 'components/UIShell/ui-shell';
 @import 'components/ColorDropdown/color-dropdown';
+@import 'components/SimpleIconDropdown/simple-icon-dropdown';
 @import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
 
 //-------------------------------------
