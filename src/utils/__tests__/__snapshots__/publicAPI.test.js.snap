@@ -6188,7 +6188,7 @@ Map {
       "modalSecondaryButtonLabelText": "Cancel",
       "modalTitleText": "Image gallery",
       "searchPlaceHolderText": "Search image by file name",
-      "searchProperty": "src",
+      "searchProperty": "id",
     },
     "propTypes": Object {
       "children": Object {
@@ -8355,6 +8355,7 @@ Map {
   "DashboardEditor" => Object {
     "defaultProps": Object {
       "availableDimensions": Object {},
+      "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
       "getValidDataItems": null,
@@ -8417,6 +8418,32 @@ Map {
           Object {},
         ],
         "type": "shape",
+      },
+      "availableImages": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "alt": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "src": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "breakpointSwitcher": Object {
         "args": Array [
@@ -8503,6 +8530,33 @@ Map {
               "type": "string",
             },
             "headerXlargeButton": Object {
+              "type": "string",
+            },
+            "imageGalleryGridButtonText": Object {
+              "type": "string",
+            },
+            "imageGalleryInstructionText": Object {
+              "type": "string",
+            },
+            "imageGalleryListButtonText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalCloseIconDescriptionText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalPrimaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalSecondaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryModalTitleText": Object {
+              "type": "string",
+            },
+            "imageGallerySearchPlaceHolderText": Object {
               "type": "string",
             },
             "layoutInfoLg": Object {

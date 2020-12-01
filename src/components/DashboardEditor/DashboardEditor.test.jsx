@@ -251,7 +251,7 @@ describe('DashboardEditor', () => {
   it('selecting cancel should fire onCancel', () => {
     render(<DashboardEditor {...commonProps} />);
     // find and click submit button
-    const cancelBtn = screen.getByText('Cancel');
+    const cancelBtn = screen.getAllByText('Cancel')[0];
     expect(cancelBtn).toBeInTheDocument();
     fireEvent.click(cancelBtn);
     expect(mockOnCancel).toBeCalled();

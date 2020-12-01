@@ -17,25 +17,34 @@ const LIST = 'list';
 
 const { iotPrefix } = settings;
 
+export const ImagePropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    /** The alt attribute of the image element */
+    alt: PropTypes.string,
+    /** Title to be shown above image. Defaults to file name from src. */
+    title: PropTypes.string,
+  })
+);
+
 const propTypes = {
   ...ComposedModalPropTypes, // eslint-disable-line react/forbid-foreign-prop-types
   /** Classname to be added to the root node */
   className: PropTypes.string,
   /** Array of the images that should be shown */
-  content: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      src: PropTypes.string.isRequired,
-      /** The alt attribute of the image element */
-      alt: PropTypes.string,
-      /** Title to be shown above image. Defaults to file name from src. */
-      title: PropTypes.string,
-    })
-  ),
+  content: ImagePropTypes,
   /** The name of the view to be selected by default */
   defaultView: PropTypes.oneOf([GRID, LIST]),
   /** The footer prop of the ComposedModalPropTypes */
   footer: ComposedModalPropTypes.footer,
+  /** Callback called with selected image props when modal submit button is pressed. */
+  onSubmit: PropTypes.func.isRequired,
+  /** Callback called when modal close icon or cancel button is pressed */
+  onClose: PropTypes.func.isRequired,
+  /** The image property to be included in the search */
+  searchProperty: PropTypes.string,
+
   /** The text of the grid button in the grid list toggle */
   gridButtonText: PropTypes.string,
   /** The text with instructions showing above the search */
@@ -51,14 +60,8 @@ const propTypes = {
   modalPrimaryButtonLabelText: PropTypes.string,
   /** The secondary button (cancel) text of the modal */
   modalSecondaryButtonLabelText: PropTypes.string,
-  /** Callback called with selected image props when modal submit button is pressed. */
-  onSubmit: PropTypes.func.isRequired,
-  /** Callback called when modal close icon or cancel button is pressed */
-  onClose: PropTypes.func.isRequired,
   /** The text for the search input placeHolder */
   searchPlaceHolderText: PropTypes.string,
-  /** The image property to be included in the search */
-  searchProperty: PropTypes.string,
 };
 
 const defaultProps = {
@@ -66,6 +69,8 @@ const defaultProps = {
   content: [],
   defaultView: GRID,
   footer: {},
+  searchProperty: 'id',
+
   gridButtonText: 'Grid',
   instructionText: 'Select the image that you want to display on this card.',
   listButtonText: 'List',
@@ -75,7 +80,6 @@ const defaultProps = {
   modalSecondaryButtonLabelText: 'Cancel',
   modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
-  searchProperty: 'src',
 };
 
 const ImageGalleryModal = ({
