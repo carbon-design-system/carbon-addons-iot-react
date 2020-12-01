@@ -6022,8 +6022,6 @@ Map {
       "selectedItem": null,
       "titleText": "",
       "type": "default",
-      "warn": false,
-      "warnText": "",
     },
     "propTypes": Object {
       "ariaLabel": Object {
@@ -6172,12 +6170,6 @@ Map {
           ],
         ],
         "type": "oneOf",
-      },
-      "warn": Object {
-        "type": "bool",
-      },
-      "warnText": Object {
-        "type": "string",
       },
     },
   },
