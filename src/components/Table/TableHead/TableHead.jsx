@@ -152,6 +152,7 @@ const TableHead = ({
   options: {
     hasRowExpansion,
     hasRowSelection,
+    hasRowNesting,
     hasResize,
     wrapCellText,
     truncateCellText,
@@ -342,13 +343,14 @@ const TableHead = ({
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}>
       <TableRow>
-        {hasRowExpansion ? (
+        {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             className={classnames({
               [`${iotPrefix}--table-expand-resize`]: hasResize,
             })}
           />
         ) : null}
+
         {hasRowSelection === 'multi' ? (
           <TableHeader
             className={classnames(`${iotPrefix}--table-header-checkbox`, {

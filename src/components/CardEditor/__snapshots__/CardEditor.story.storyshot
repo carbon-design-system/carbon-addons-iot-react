@@ -1069,7 +1069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <span
                         className="bx--list-box__label"
                       >
-                        Medium wide (8x2)
+                        Medium wide (16x2)
                       </span>
                       <div
                         className="bx--list-box__menu-icon"
