@@ -13,6 +13,22 @@
     }
   }
 
+  html[dir='rtl'] &__text-style {
+    :first-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    :last-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
   &__dropdown {
     width: 100%;
   }
