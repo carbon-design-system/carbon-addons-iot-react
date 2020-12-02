@@ -16,17 +16,19 @@ import EmptyState from './EmptyState';
 
 const title = 'Titletest';
 const body = 'Titlebody';
-const iconID = 'emptystate-icon';
 const commonProps = {
   title,
   body,
 };
+
+const testID = 'EmptyState';
+
 const action = (name, onClick) => ({
   label: name,
   onClick,
 });
 
-const images = {
+const icons = {
   error: ErrorImage,
   error404: Error404Image,
   empty: EmptyImage,
@@ -38,27 +40,26 @@ const images = {
 describe('EmptyState', () => {
   it('shows title and body', () => {
     render(<EmptyState {...commonProps} />);
-    expect(screen.getByText(title)).toBeTruthy();
-    expect(screen.getByText(body)).toBeTruthy();
-    expect(screen.queryByTestId(iconID)).toBeNull();
+    expect(screen.getByTestId(`${testID}-title`).textContent).toEqual(title);
+    expect(screen.getByTestId(`${testID}-body`).textContent).toEqual(body);
+    expect(screen.queryByTestId(`${testID}-icon`)).toBeNull();
   });
 
-  it('shows different images', () => {
-    // predefined images
-    Object.keys(images).forEach((image) => {
-      document.body.innerHTML = '';
-      const icon = render(React.createElement(images[image]));
-      render(<EmptyState {...commonProps} image={image} />);
-      const renderedIcon = screen.getByTestId(iconID);
-      expect(renderedIcon.innerHTML).toEqual(
-        icon.container.firstChild.innerHTML
-      );
-    });
-    // passing custom image
-    document.body.innerHTML = '';
+  it.each(Object.keys(icons))('shows different images', (icon) => {
+    const iconContainer = render(React.createElement(icons[icon]));
+    render(<EmptyState {...commonProps} icon={icon} />);
+    const renderedIcon = screen.getByTestId(`${testID}-icon`);
+
+    // is passed image type equal to related icon
+    expect(renderedIcon.innerHTML).toEqual(
+      iconContainer.container.firstChild.innerHTML
+    );
+  });
+
+  it('shows custom image', () => {
     const icon = render(React.createElement(CustomIcon));
-    render(<EmptyState {...commonProps} image={CustomIcon} />);
-    const renderedIcon = screen.getByTestId(iconID);
+    render(<EmptyState {...commonProps} icon={CustomIcon} />);
+    const renderedIcon = screen.getByTestId(`${testID}-icon`);
     expect(renderedIcon.innerHTML).toEqual(icon.container.firstChild.innerHTML);
   });
 
@@ -73,21 +74,36 @@ describe('EmptyState', () => {
     );
 
     // has button
-    expect(screen.getByRole('button')).toBeTruthy();
+    expect(screen.getByTestId(`${testID}-action`)).toBeTruthy();
+
     // has label
-    expect(screen.getByText(actionLabel)).toBeTruthy();
+    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(
+      actionLabel
+    );
+
+    // has no link
+    expect(screen.queryByTestId(`${testID}-secondaryAction`)).toBeNull();
 
     // onclick called
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(
+      screen.getByTestId(`${testID}-action`).querySelector('button')
+    );
     expect(onClick).toHaveBeenCalled();
-
-    // passing custom component
-    document.body.innerHTML = '';
-    const customAction = <div data-testid="customcomponent">Hello</div>;
-    render(<EmptyState {...commonProps} action={customAction} />);
-
-    expect(screen.getByTestId('customcomponent')).toBeTruthy();
   });
+
+  // it('shows custom action component', () => {
+  //   const customAction = <div data-testid="customcomponent">Hello</div>;
+  //   render(<EmptyState {...commonProps} action={customAction} />);
+
+  //   expect(screen.getByTestId('customcomponent')).toBeTruthy();
+  // });
+
+  // it('shows custom secondaryAction component', () => {
+  //   const customAction = <div data-testid="customcomponent">Hello</div>;
+  //   render(<EmptyState {...commonProps} secondaryAction={customAction} />);
+
+  //   expect(screen.getByTestId('customcomponent')).toBeTruthy();
+  // });
 
   it('shows secondaryAction if desired', () => {
     const actionLabel = 'TestLink';
@@ -100,20 +116,50 @@ describe('EmptyState', () => {
       />
     );
     // has no button
-    expect(screen.queryByRole('button')).toBeNull();
+    expect(screen.queryByTestId(`${testID}-action`)).toBeNull();
 
     // has label
-    expect(screen.getByText(actionLabel)).toBeTruthy();
+    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(
+      actionLabel
+    );
 
     // onclick called
-    userEvent.click(screen.getByText(actionLabel));
+    userEvent.click(
+      screen.getByTestId(`${testID}-secondaryAction`).querySelector('a')
+    );
     expect(onClick).toHaveBeenCalled();
+  });
 
-    // passing custom component
-    document.body.innerHTML = '';
-    const customAction = <div data-testid="customcomponent">Hello</div>;
-    render(<EmptyState {...commonProps} secondaryAction={customAction} />);
+  it('shows both actions if desired', () => {
+    const actionLabel = 'TestButton';
+    const actionOnClick = jest.fn();
+    const secondaryActionOnClick = jest.fn();
 
-    expect(screen.getByTestId('customcomponent')).toBeTruthy();
+    render(
+      <EmptyState
+        {...commonProps}
+        secondaryAction={{ ...action(actionLabel, secondaryActionOnClick) }}
+        action={{ ...action(actionLabel, actionOnClick) }}
+      />
+    );
+
+    // has link and button with right content
+    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(
+      actionLabel
+    );
+    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(
+      actionLabel
+    );
+
+    // onclick called
+    userEvent.click(
+      screen.getByTestId(`${testID}-action`).querySelector('button')
+    );
+    userEvent.click(
+      screen.getByTestId(`${testID}-secondaryAction`).querySelector('a')
+    );
+
+    expect(actionOnClick).toHaveBeenCalled();
+    expect(secondaryActionOnClick).toHaveBeenCalled();
   });
 });

@@ -6,17 +6,6 @@ import { DashboardIcon } from '../../icons/components';
 
 import EmptyState from './EmptyState';
 
-const commonActions = {
-  action: {
-    label: text('action.label', 'Optional action'),
-    onClick: action('action onClick'),
-  },
-  secondaryAction: {
-    label: text('link.label', 'Optional link'),
-    onClick: action('secondaryAction onClick'),
-  },
-};
-
 export default {
   title: 'Watson IoT/EmptyState',
 
@@ -49,7 +38,7 @@ export default {
 
 export const FirstTimeUse = () => (
   <EmptyState
-    image="empty"
+    icon="empty"
     title="You don’t have any [variable] yet"
     body="Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take."
     action={{
@@ -65,7 +54,7 @@ FirstTimeUse.story = {
 
 export const NoSearchResultsFound = () => (
   <EmptyState
-    image="no-result"
+    icon="no-result"
     title="No results found"
     body="Subtext is optional because this user experience is common and the user knows how to return to the search mechanism. Use an optional extra sentence or sentences to explain how to adjust search parameters or prompt user action."
   />
@@ -73,7 +62,7 @@ export const NoSearchResultsFound = () => (
 
 export const Success = () => (
   <EmptyState
-    image="success"
+    icon="success"
     title="Success"
     body="Optional extra sentence or sentences to describe the process or procedure that completed successfully. If needed, describe the next step that the user needs to take."
   />
@@ -81,7 +70,7 @@ export const Success = () => (
 
 export const Page404 = () => (
   <EmptyState
-    image="error404"
+    icon="error404"
     title="Uh oh. Something’s not right."
     body="Optional extra sentence or sentences to describe further details about the error and, if applicable, how the user can fix it."
     action={{
@@ -97,7 +86,7 @@ Page404.story = {
 
 export const DataMissing = () => (
   <EmptyState
-    image="empty"
+    icon="empty"
     title="No [variable] to show"
     body="Optional extra sentence or sentences to describe the data and how to create it, the action a user needs to take, or to describe why the data is missing. For example, in a scenario in which no errors occurred, the optional text might describe why no errors are displayed."
     action={{
@@ -109,7 +98,7 @@ export const DataMissing = () => (
 
 export const Error = () => (
   <EmptyState
-    image="error"
+    icon="error"
     title="Oops! We’re having trouble [problem]"
     body="Optional extra sentence or sentences to describe further details about the error and, if applicable, how the user can fix it. Can provide information about who to contact if the error persists."
     action={{
@@ -121,7 +110,7 @@ export const Error = () => (
 
 export const NotAuthorized = () => (
   <EmptyState
-    image="not-authorized"
+    icon="not-authorized"
     title="You don’t have permission to [variable]"
     body="Optional extra sentence or sentences to describe any action that the user can take or who to contact regarding permissions."
     action={{
@@ -133,7 +122,7 @@ export const NotAuthorized = () => (
 
 export const NotConfigured = () => (
   <EmptyState
-    image="empty"
+    icon="empty"
     title="Configure your [variable]"
     body="Optional extra sentence or sentences to describe the [variable] and how to configure it or set it up."
     action={{
@@ -159,7 +148,7 @@ export const WithoutIcon = () => (
 
 export const WithCustomIcon = () => (
   <EmptyState
-    image={DashboardIcon}
+    icon={DashboardIcon}
     title="Empty state with a custom icon"
     body="Custom icons can be used in addition to the preconfigured options."
     action={{
@@ -171,26 +160,30 @@ export const WithCustomIcon = () => (
 
 export const Playground = () => (
   <EmptyState
-    image={select('image', [
-      'error',
-      'error404',
-      'empty',
-      'not-authorized',
-      'no-result',
-      'success',
-      null,
-    ], 'empty')}
+    icon={select(
+      'image',
+      [
+        'error',
+        'error404',
+        'empty',
+        'not-authorized',
+        'no-result',
+        'success',
+        null,
+      ],
+      'empty'
+    )}
     title={text('title', 'This is an empty state you can configure via knobs')}
     body={text(
       'body',
       'You can create empty states without images, although it is recommended to always use images. The secondary action should be a text link.'
     )}
     action={{
-      label: text('action.label','Primary action'),
+      label: text('action.label', 'Primary action'),
       onClick: action('action onClick'),
     }}
     secondaryAction={{
-      label: text('secondaryAction.label','Secondary action'),
+      label: text('secondaryAction.label', 'Secondary action'),
       onClick: action('secondaryAction onClick'),
     }}
   />

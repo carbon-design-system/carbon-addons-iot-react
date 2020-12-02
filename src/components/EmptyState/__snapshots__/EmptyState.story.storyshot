@@ -14,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -21,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -160,16 +161,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           Uh oh. Something’s not right.
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe further details about the error and, if applicable, how the user can fix it.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -224,6 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -231,7 +236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -475,16 +480,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           No [variable] to show
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe the data and how to create it, the action a user needs to take, or to describe why the data is missing. For example, in a scenario in which no errors occurred, the optional text might describe why no errors are displayed.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -539,6 +547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -546,7 +555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -774,16 +783,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           Oops! We’re having trouble [problem]
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe further details about the error and, if applicable, how the user can fix it. Can provide information about who to contact if the error persists.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -838,6 +850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -845,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -1089,16 +1102,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           You don’t have any [variable] yet
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -1153,6 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -1160,7 +1177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -1473,11 +1490,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           No results found
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Subtext is optional because this user experience is common and the user knows how to return to the search mechanism. Use an optional extra sentence or sentences to explain how to adjust search parameters or prompt user action.
         </p>
@@ -1524,6 +1543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -1531,7 +1551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -1795,16 +1815,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           You don’t have permission to [variable]
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe any action that the user can take or who to contact regarding permissions.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -1859,6 +1882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -1866,7 +1890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -2110,16 +2134,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           Configure your [variable]
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe the [variable] and how to configure it or set it up.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -2174,6 +2201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -2181,7 +2209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -2425,16 +2453,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           This is an empty state you can configure via knobs
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           You can create empty states without images, although it is recommended to always use images. The secondary action should be a text link.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -2448,6 +2479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </div>
         <div
           className="iot--empty-state--link"
+          data-testid="EmptyState-secondaryAction"
         >
           <a
             className="bx--link"
@@ -2499,6 +2531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -2506,7 +2539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           height={80}
           width={80}
         >
@@ -2625,11 +2658,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           Success
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Optional extra sentence or sentences to describe the process or procedure that completed successfully. If needed, describe the next step that the user needs to take.
         </p>
@@ -2676,6 +2711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -2683,7 +2719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         <svg
           alt=""
           className="iot--empty-state--icon"
-          data-testid="emptystate-icon"
+          data-testid="EmptyState-icon"
           viewBox="0 0 170.76 146.75"
         >
           <defs>
@@ -2760,16 +2796,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         </svg>
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           Empty state with a custom icon
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           Custom icons can be used in addition to the preconfigured options.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"
@@ -2824,6 +2863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
   >
     <div
       className="iot--empty-state "
+      data-testid="EmptyState"
     >
       <div
         className="iot--empty-state--content"
@@ -2831,16 +2871,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Empty
         
         <h3
           className="iot--empty-state--title"
+          data-testid="EmptyState-title"
         >
           This is an empty state without an image
         </h3>
         <p
           className="iot--empty-state--text"
+          data-testid="EmptyState-body"
         >
           You can create empty states without images, although it is recommended to always use images.
         </p>
         <div
           className="iot--empty-state--action"
+          data-testid="EmptyState-action"
         >
           <button
             className="iot--btn bx--btn bx--btn--primary"

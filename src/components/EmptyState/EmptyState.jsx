@@ -13,11 +13,9 @@ import {
   EmptystateNotauthorizedIcon as NotAuthImage,
 } from '../../icons/components';
 
-import './_emptystate.scss';
-
 const { iotPrefix } = settings;
 
-const images = {
+const icons = {
   error: ErrorImage,
   error404: Error404Image,
   empty: EmptyImage,
@@ -26,37 +24,61 @@ const images = {
   success: SuccessImage,
 };
 
-const actionProp = PropTypes.oneOfType([
-  PropTypes.func,
-  PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-  }),
-]);
-
+// TODO: Discuss whether actions can be custom components, e.g. for showing details in error messages.
 const props = {
   /** Title of empty state */
   title: PropTypes.string.isRequired,
   /** Description of empty state */
   body: PropTypes.string.isRequired,
   /** Optional image of state */
-  image: PropTypes.oneOfType([
+  icon: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.oneOf([...Object.keys(images), '']),
+    PropTypes.oneOf([
+      'error',
+      'error404',
+      'empty',
+      'not-authorized',
+      'no-result',
+      'success',
+      '',
+    ]),
   ]),
   /** Optional action for container */
-  action: actionProp,
+  action: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+  }),
+  // action: PropTypes.oneOfType([
+  //   PropTypes.func,
+  //   PropTypes.shape({
+  //     label: PropTypes.string.isRequired,
+  //     onClick: PropTypes.func.isRequired,
+  //   }),
+  // ]),
   /** Optional secondary action for container */
-  secondaryAction: actionProp,
+  secondaryAction: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+  }),
+  // secondaryAction: PropTypes.oneOfType([
+  //   PropTypes.func,
+  //   PropTypes.shape({
+  //     label: PropTypes.string.isRequired,
+  //     onClick: PropTypes.func.isRequired,
+  //   }),
+  // ]),
   /** Specify an optional className to be applied to the container */
   className: PropTypes.string,
+  /** Specify a testid for testing this component */
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
   action: null,
   secondaryAction: null,
-  image: '',
+  icon: '',
   className: '',
+  testID: 'EmptyState',
 };
 
 /**
@@ -65,43 +87,67 @@ const defaultProps = {
  */
 const EmptyState = ({
   title,
-  image,
+  icon,
   body,
   action,
   secondaryAction,
   className,
+  testID,
 }) => (
-  <div className={`${iotPrefix}--empty-state ${className}`}>
+  <div
+    className={`${iotPrefix}--empty-state ${className}`}
+    data-testid={testID}>
     <div className={`${iotPrefix}--empty-state--content`}>
-      {image &&
-        React.createElement(typeof image === 'string' ? images[image] : image, {
+      {icon &&
+        React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
           className: `${iotPrefix}--empty-state--icon`,
           alt: '',
-          'data-testid': 'emptystate-icon',
+          'data-testid': `${testID}-icon`,
         })}
-      <h3 className={`${iotPrefix}--empty-state--title`}>{title}</h3>
-      <p className={`${iotPrefix}--empty-state--text`}>{body}</p>
+      <h3
+        className={`${iotPrefix}--empty-state--title`}
+        data-testid={`${testID}-title`}>
+        {title}
+      </h3>
+      <p
+        className={`${iotPrefix}--empty-state--text`}
+        data-testid={`${testID}-body`}>
+        {body}
+      </p>
       {action && (
-        <div className={`${iotPrefix}--empty-state--action`}>
-          {action.label ? (
+        <div
+          className={`${iotPrefix}--empty-state--action`}
+          data-testid={`${testID}-action`}>
+          <Button onClick={action.onClick && action.onClick}>
+            {action.label}
+          </Button>
+          {/* {action.label ? (
             <Button onClick={action.onClick && action.onClick}>
               {action.label}
             </Button>
           ) : (
             action
-          )}
+          )} */}
         </div>
       )}
       {secondaryAction && (
-        <div className={`${iotPrefix}--empty-state--link`}>
-          {secondaryAction.label ? (
+        <div
+          className={`${iotPrefix}--empty-state--link`}
+          data-testid={`${testID}-secondaryAction`}>
+          {secondaryAction.label && (
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
+              {secondaryAction.label}
+            </Link>
+          )}
+          {/* {secondaryAction.label ? (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
               {secondaryAction.label}
             </Link>
           ) : (
             secondaryAction
-          )}
+          )} */}
         </div>
       )}
     </div>
