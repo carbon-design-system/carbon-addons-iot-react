@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import omit from 'lodash/omit';
 
 import { settings } from '../../constants/Settings';
 
@@ -140,7 +141,8 @@ describe('ImageGalleryModal', () => {
     const submitButton = screen.getByRole('button', { name: 'Select' });
     userEvent.click(imageElement);
     userEvent.click(submitButton);
-    expect(onSubmit).toHaveBeenCalledWith(content[0]);
+    // title isn't passed back
+    expect(onSubmit).toHaveBeenCalledWith(omit(content[0], 'title'));
   });
 
   it('disables select (sumit) button when no image is selected', () => {
@@ -159,7 +161,8 @@ describe('ImageGalleryModal', () => {
 
     userEvent.click(screen.getByAltText(content[0].alt));
     userEvent.click(screen.getByRole('button', { name: 'Select' }));
-    expect(onSubmit).toHaveBeenCalledWith(content[0]);
+    // everything except title is returned
+    expect(onSubmit).toHaveBeenCalledWith(omit(content[0], 'title'));
     expect(onSubmit).toHaveBeenCalledTimes(1);
 
     // Unselect the same image
