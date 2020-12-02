@@ -1,25 +1,5 @@
 @import '../../globals/vars';
 
-@mixin content-switcher-border-radius(
-  $border-radius,
-  $first-button-side,
-  $last-button-side
-) {
-  button:first-of-type,
-  button:last-of-type {
-    border-radius: 0;
-  }
-
-  button:first-of-type {
-    border-top-#{$first-button-side}-radius: $border-radius;
-    border-bottom-#{$first-button-side}-radius: $border-radius;
-  }
-  button:last-of-type {
-    border-top-#{$last-button-side}-radius: $border-radius;
-    border-bottom-#{$last-button-side}-radius: $border-radius;
-  }
-}
-
 $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
 
