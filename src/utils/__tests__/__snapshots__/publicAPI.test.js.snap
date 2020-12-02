@@ -6173,6 +6173,85 @@ Map {
       },
     },
   },
+  "EmptyState" => Object {
+    "defaultProps": Object {
+      "action": null,
+      "className": "",
+      "icon": "",
+      "secondaryAction": null,
+      "testID": "EmptyState",
+    },
+    "propTypes": Object {
+      "action": Object {
+        "args": Array [
+          Object {
+            "label": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "onClick": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "body": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "icon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  "error",
+                  "error404",
+                  "empty",
+                  "not-authorized",
+                  "no-result",
+                  "success",
+                  "",
+                ],
+              ],
+              "type": "oneOf",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "secondaryAction": Object {
+        "args": Array [
+          Object {
+            "label": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "onClick": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
   "ImageGalleryModal" => Object {
     "defaultProps": Object {
       "className": "",
@@ -6364,85 +6443,6 @@ Map {
           ],
         ],
         "type": "oneOf",
-      },
-    },
-  },
-  "EmptyState" => Object {
-    "defaultProps": Object {
-      "action": null,
-      "className": "",
-      "icon": "",
-      "secondaryAction": null,
-      "testID": "EmptyState",
-    },
-    "propTypes": Object {
-      "action": Object {
-        "args": Array [
-          Object {
-            "label": Object {
-              "isRequired": true,
-              "type": "string",
-            },
-            "onClick": Object {
-              "isRequired": true,
-              "type": "func",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "body": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "icon": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "func",
-            },
-            Object {
-              "args": Array [
-                Array [
-                  "error",
-                  "error404",
-                  "empty",
-                  "not-authorized",
-                  "no-result",
-                  "success",
-                  "",
-                ],
-              ],
-              "type": "oneOf",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "secondaryAction": Object {
-        "args": Array [
-          Object {
-            "label": Object {
-              "isRequired": true,
-              "type": "string",
-            },
-            "onClick": Object {
-              "isRequired": true,
-              "type": "func",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "testID": Object {
-        "type": "string",
-      },
-      "title": Object {
-        "isRequired": true,
-        "type": "string",
       },
     },
   },
