@@ -523,6 +523,7 @@ const DashboardEditor = ({
             supportedCardTypes={supportedCardTypes}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         </ErrorBoundary>
       </div>

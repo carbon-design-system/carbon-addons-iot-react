@@ -8656,6 +8656,7 @@ Map {
     "defaultProps": Object {
       "availableDimensions": Object {},
       "cardConfig": null,
+      "currentBreakpoint": "xl",
       "dataItems": Array [],
       "getValidDataItems": null,
       "getValidTimeRanges": null,
@@ -8755,6 +8756,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "currentBreakpoint": Object {
+        "type": "string",
       },
       "dataItems": Object {
         "args": Array [
@@ -8913,15 +8917,15 @@ Map {
         "MEDIUM": Object {
           "lg": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "max": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "md": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "sm": Object {
             "h": 2,
@@ -8929,7 +8933,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 4,
+            "w": 8,
           },
           "xs": Object {
             "h": 2,
@@ -8943,11 +8947,11 @@ Map {
           },
           "max": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "md": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "sm": Object {
             "h": 2,
@@ -8955,7 +8959,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 2,
+            "w": 4,
           },
           "xs": Object {
             "h": 2,
@@ -8965,11 +8969,11 @@ Map {
         "MEDIUMWIDE": Object {
           "lg": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "max": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "md": Object {
             "h": 2,
@@ -8981,7 +8985,7 @@ Map {
           },
           "xl": Object {
             "h": 2,
-            "w": 8,
+            "w": 16,
           },
           "xs": Object {
             "h": 2,
@@ -8995,7 +8999,7 @@ Map {
           },
           "max": Object {
             "h": 1,
-            "w": 2,
+            "w": 4,
           },
           "md": Object {
             "h": 1,
@@ -9007,7 +9011,7 @@ Map {
           },
           "xl": Object {
             "h": 1,
-            "w": 2,
+            "w": 4,
           },
           "xs": Object {
             "h": 1,
@@ -9017,15 +9021,15 @@ Map {
         "SMALLWIDE": Object {
           "lg": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "max": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "md": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "sm": Object {
             "h": 2,
@@ -9033,7 +9037,7 @@ Map {
           },
           "xl": Object {
             "h": 1,
-            "w": 4,
+            "w": 8,
           },
           "xs": Object {
             "h": 1,
@@ -9183,7 +9187,7 @@ Map {
         "lg": 16,
         "max": 16,
         "md": 8,
-        "sm": 4,
+        "sm": 8,
         "xl": 16,
         "xs": 4,
       },
@@ -18363,6 +18367,207 @@ Map {
       },
       "testID": Object {
         "type": "string",
+      },
+    },
+  },
+  "HotspotTextStyleTab" => Object {
+    "defaultProps": Object {
+      "backgroundColors": undefined,
+      "borderColors": undefined,
+      "className": "",
+      "fontColors": undefined,
+      "formValues": Object {
+        "backgroundColor": undefined,
+        "backgroundOpacity": undefined,
+        "bold": false,
+        "borderColor": undefined,
+        "borderWidth": undefined,
+        "fontColor": undefined,
+        "fontSize": undefined,
+        "italic": false,
+        "underline": false,
+      },
+      "i18n": Object {
+        "backgroundLabelText": "Background",
+        "boldLabelText": "Text Bold",
+        "borderLabelText": "Border",
+        "borderWidthInvalidText": "Border Width is invalid",
+        "borderWidthLabelText": "Border Width",
+        "fillOpacityInvalidText": "Fill Opacity is invalid",
+        "fillOpacityLabelText": "Fill Opacity",
+        "fontLabelText": "Font",
+        "fontSizeInvalidText": "Font Size is invalid",
+        "fontSizeLabelText": "Font Size",
+        "italicLabelText": "Text Italic",
+        "underlineLabelText": "Text Underline",
+      },
+      "light": true,
+      "maxBorderWidth": undefined,
+      "maxFontSize": undefined,
+      "maxOpacity": undefined,
+      "minBorderWidth": undefined,
+      "minFontSize": undefined,
+      "minOpacity": undefined,
+    },
+    "propTypes": Object {
+      "backgroundColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "borderColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "fontColors": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "carbonColor": Object {
+                  "type": "string",
+                },
+                "name": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "formValues": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "carbonColor": Object {
+                        "type": "string",
+                      },
+                      "name": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "backgroundLabelText": Object {
+              "type": "string",
+            },
+            "boldLabelText": Object {
+              "type": "string",
+            },
+            "borderLabelText": Object {
+              "type": "string",
+            },
+            "borderWidthInvalidText": Object {
+              "type": "string",
+            },
+            "borderWidthText": Object {
+              "type": "string",
+            },
+            "fillOpacityInvalidText": Object {
+              "type": "string",
+            },
+            "fillOpacityLabelText": Object {
+              "type": "string",
+            },
+            "fontLabelText": Object {
+              "type": "string",
+            },
+            "fontSizeInvalidText": Object {
+              "type": "string",
+            },
+            "fontSizeText": Object {
+              "type": "string",
+            },
+            "italicLabelText": Object {
+              "type": "string",
+            },
+            "underlineLabelText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "maxBorderWidth": Object {
+        "type": "number",
+      },
+      "maxFontSize": Object {
+        "type": "number",
+      },
+      "maxOpacity": Object {
+        "type": "number",
+      },
+      "minBorderWidth": Object {
+        "type": "number",
+      },
+      "minFontSize": Object {
+        "type": "number",
+      },
+      "minOpacity": Object {
+        "type": "number",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
       },
     },
   },

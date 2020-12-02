@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-6"
+                      aria-describedby="icon-tooltip-7"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-6"
+                        id="icon-tooltip-7"
                       >
                         Import
                       </span>
@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id6"
+                        htmlFor="id8"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -170,7 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id6"
+                        id="id8"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -552,7 +552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           "left": "0%",
                           "position": "absolute",
                           "top": "0px",
-                          "width": "24.0625%",
+                          "width": "49.375%",
                         }
                       }
                       tabIndex={0}
@@ -670,10 +670,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Object {
                           "--card-default-height": "304px",
                           "height": "304px",
-                          "left": "25.3125%",
+                          "left": "50.625%",
                           "position": "absolute",
                           "top": "0px",
-                          "width": "24.0625%",
+                          "width": "49.375%",
                         }
                       }
                       tabIndex={0}
@@ -4621,7 +4621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </button>
                     </div>
                     <button
-                      aria-describedby="icon-tooltip-5"
+                      aria-describedby="icon-tooltip-6"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -4629,7 +4629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-5"
+                        id="icon-tooltip-6"
                       >
                         Import
                       </span>
@@ -4641,7 +4641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id5"
+                        htmlFor="id7"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -4670,7 +4670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id5"
+                        id="id7"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -5808,7 +5808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-3"
+                      aria-describedby="icon-tooltip-4"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -5816,7 +5816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-3"
+                        id="icon-tooltip-4"
                       >
                         Import
                       </span>
@@ -5828,7 +5828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id3"
+                        htmlFor="id5"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -5857,7 +5857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id3"
+                        id="id5"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -6239,7 +6239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           "left": "0%",
                           "position": "absolute",
                           "top": "0px",
-                          "width": "49.375%",
+                          "width": "100%",
                         }
                       }
                       tabIndex={0}
@@ -7101,7 +7101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-2"
+                      aria-describedby="icon-tooltip-3"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -7109,7 +7109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-2"
+                        id="icon-tooltip-3"
                       >
                         Import
                       </span>
@@ -7516,7 +7516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     }
                   >
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Table"
                       onClick={[Function]}
@@ -7528,11 +7528,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "624px",
+                          "MozTransform": "translate(0px,0px)",
+                          "OTransform": "translate(0px,0px)",
+                          "WebkitTransform": "translate(0px,0px)",
                           "height": "624px",
-                          "left": "0%",
+                          "msTransform": "translate(0px,0px)",
                           "position": "absolute",
-                          "top": "0px",
-                          "width": "49.375%",
+                          "transform": "translate(0px,0px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -8600,7 +8603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Custom"
                       onClick={[Function]}
@@ -8612,11 +8615,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(648px,0px)",
+                          "OTransform": "translate(648px,0px)",
+                          "WebkitTransform": "translate(648px,0px)",
                           "height": "304px",
-                          "left": "50.625%",
+                          "msTransform": "translate(648px,0px)",
                           "position": "absolute",
-                          "top": "0px",
-                          "width": "24.0625%",
+                          "transform": "translate(648px,0px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -8663,7 +8669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Standard"
                       onClick={[Function]}
@@ -8675,11 +8681,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(648px,320px)",
+                          "OTransform": "translate(648px,320px)",
+                          "WebkitTransform": "translate(648px,320px)",
                           "height": "304px",
-                          "left": "75.9375%",
+                          "msTransform": "translate(648px,320px)",
                           "position": "absolute",
-                          "top": "0px",
-                          "width": "24.0625%",
+                          "transform": "translate(648px,320px)",
+                          "width": "632px",
                         }
                       }
                       tabIndex={0}
@@ -8855,7 +8864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Timeseries"
                       onClick={[Function]}
@@ -8867,11 +8876,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
+                          "MozTransform": "translate(0px,640px)",
+                          "OTransform": "translate(0px,640px)",
+                          "WebkitTransform": "translate(0px,640px)",
                           "height": "304px",
-                          "left": "6.328125%",
+                          "msTransform": "translate(0px,640px)",
                           "position": "absolute",
-                          "top": "640px",
-                          "width": "49.375%",
+                          "transform": "translate(0px,640px)",
+                          "width": "1280px",
                         }
                       }
                       tabIndex={0}
@@ -9733,7 +9745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-4"
+                      aria-describedby="icon-tooltip-5"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -9741,7 +9753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-4"
+                        id="icon-tooltip-5"
                       >
                         Import
                       </span>
@@ -9753,7 +9765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id4"
+                        htmlFor="id6"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -9782,7 +9794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id4"
+                        id="id6"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}

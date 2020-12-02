@@ -179,7 +179,14 @@ export const WithInitialValue = () => (
               timeDataSourceId: 'timestamp',
               addSpaceOnEdges: 1,
             },
-            interval: 'day',
+            timeRange: 'thisWeek',
+            dataSource: {
+              range: {
+                interval: 'week',
+                count: -1,
+                type: 'periodToDate',
+              },
+            },
           },
         ],
         layouts: {
