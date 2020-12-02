@@ -16,7 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       style={
         Object {
           "margin": "1.5rem",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -370,7 +370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       style={
         Object {
           "margin": "1.5rem",
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -569,7 +569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       style={
         Object {
           "margin": "1.5rem",
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >

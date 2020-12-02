@@ -3,9 +3,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DataSeriesFormItem, {
-  formatSeries,
   formatDataItemsForDropdown,
-} from './DataSeriesFormItem';
+} from './DataSeriesFormContent';
 
 const cardConfig = {
   id: 'Timeseries',
@@ -47,45 +46,11 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 describe('DataSeriesFormItem', () => {
-  describe('formatSeries', () => {
-    const cardConfigWithoutColorDefinition = {
-      content: {
-        series: [
-          {
-            label: 'Temperature',
-            dataSourceId: 'temperature',
-          },
-          {
-            label: 'Pressure',
-            dataSourceId: 'pressure',
-          },
-        ],
-      },
-    };
-    const selectedItems = [
-      { id: 'temperature', text: 'Temperature' },
-      { id: 'pressure', text: 'Pressure' },
-    ];
-    it('should correctly format the card series', () => {
-      expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
-      ]);
-    });
-    it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(
-        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
-      ).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
-      ]);
-    });
-  });
   describe('formatDataItemsForDropdown', () => {
     it('should correctly format the items for the dropdown', () => {
       expect(formatDataItemsForDropdown(dataItems)).toEqual([
-        { id: 'temperature', text: 'Temperature' },
-        { id: 'pressure', text: 'Pressure' },
+        { id: 'temperature', text: 'temperature' },
+        { id: 'pressure', text: 'pressure' },
       ]);
     });
   });

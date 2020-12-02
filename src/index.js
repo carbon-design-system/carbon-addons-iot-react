@@ -40,6 +40,7 @@ export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
 export IconDropdown from './components/IconDropdown/IconDropdown';
 export EmptyState from './components/EmptyState/EmptyState';
+export ImageGalleryModal from './components/ImageGalleryModal/ImageGalleryModal';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -60,6 +61,7 @@ export SuiteHeaderAppSwitcher from './components/SuiteHeader/SuiteHeaderAppSwitc
 export SuiteHeaderLogoutModal from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 export SuiteHeaderI18N from './components/SuiteHeader/i18n';
 export useSuiteHeaderData from './components/SuiteHeader/hooks/useSuiteHeaderData';
+export suiteHeaderData from './components/SuiteHeader/util/suiteHeaderData';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
@@ -72,9 +74,7 @@ export PieChartCard from './components/PieChartCard/PieChartCard';
 export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
-export TableCard, {
-  findMatchingThresholds,
-} from './components/TableCard/TableCard';
+export TableCard from './components/TableCard/TableCard';
 export GaugeCard from './components/GaugeCard/GaugeCard';
 export {
   CARD_TYPES,
@@ -111,6 +111,8 @@ export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
 export FilterTags from './components/FilterTags/FilterTags';
 export ColorDropdown from './components/ColorDropdown/ColorDropdown';
+export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
+export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
 
 // Carbon proxy
 export {
@@ -305,6 +307,7 @@ export {
   getVariables,
   getCardVariables,
   replaceVariables,
+  findMatchingThresholds,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';

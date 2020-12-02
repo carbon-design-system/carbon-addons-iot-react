@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id10"
+                    id="id13"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id10"
+                    htmlFor="id13"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -165,7 +165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id11"
+                    id="id14"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id11"
+                    htmlFor="id14"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -209,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id12"
+                    id="id15"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -218,7 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id12"
+                    htmlFor="id15"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -253,7 +253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id13"
+                    id="id16"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -262,7 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id13"
+                    htmlFor="id16"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -297,7 +297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id14"
+                    id="id17"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -306,7 +306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id14"
+                    htmlFor="id17"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -341,7 +341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id15"
+                    id="id18"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id15"
+                    htmlFor="id18"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -993,7 +993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id28"
+                    id="id31"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1002,7 +1002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id28"
+                    htmlFor="id31"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1037,7 +1037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id29"
+                    id="id32"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1046,7 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id29"
+                    htmlFor="id32"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1081,7 +1081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id30"
+                    id="id33"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1090,7 +1090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id30"
+                    htmlFor="id33"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1125,7 +1125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id31"
+                    id="id34"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1134,7 +1134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id31"
+                    htmlFor="id34"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1169,7 +1169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id32"
+                    id="id35"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1178,7 +1178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id32"
+                    htmlFor="id35"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1213,7 +1213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id33"
+                    id="id36"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -1222,7 +1222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id33"
+                    htmlFor="id36"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -1312,37 +1312,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -1419,37 +1388,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -1528,37 +1466,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -1635,37 +1542,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -1744,37 +1620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -1852,37 +1697,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -1943,37 +1757,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -2036,37 +1819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -2127,37 +1879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -2220,37 +1941,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -2311,37 +2001,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -2404,37 +2063,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -2495,37 +2123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -2588,37 +2185,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="listitem"
             >
               <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
-              <div
                 className="iot--list-item iot--list-item-editable"
               >
                 <div
@@ -2679,37 +2245,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               className="iot--list-item-editable--drag-container"
               role="listitem"
             >
-              <div
-                className="iot--list-item-editable--drop-targets"
-              >
-                <div
-                  className="iot--list-item-editable--drop-target-nested"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-above"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-                <div
-                  className="iot--list-item-editable--drop-target-below"
-                  data-testid="list-target"
-                  style={
-                    Object {
-                      "height": "33%",
-                    }
-                  }
-                />
-              </div>
               <div
                 className="iot--list-item iot--list-item-editable"
               >
@@ -2944,7 +2479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id22"
+                    id="id25"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -2953,7 +2488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id22"
+                    htmlFor="id25"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -2988,7 +2523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id23"
+                    id="id26"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -2997,7 +2532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id23"
+                    htmlFor="id26"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3032,7 +2567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id24"
+                    id="id27"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3041,7 +2576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id24"
+                    htmlFor="id27"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3076,7 +2611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id25"
+                    id="id28"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3085,7 +2620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id25"
+                    htmlFor="id28"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3120,7 +2655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id26"
+                    id="id29"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3129,7 +2664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id26"
+                    htmlFor="id29"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3164,7 +2699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id27"
+                    id="id30"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3173,7 +2708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id27"
+                    htmlFor="id30"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3788,7 +3323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id34"
+                    id="id37"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3797,7 +3332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id34"
+                    htmlFor="id37"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3832,7 +3367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id35"
+                    id="id38"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3841,7 +3376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id35"
+                    htmlFor="id38"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3876,7 +3411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id36"
+                    id="id39"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3885,7 +3420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id36"
+                    htmlFor="id39"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3920,7 +3455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id37"
+                    id="id40"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3929,7 +3464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id37"
+                    htmlFor="id40"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -3964,7 +3499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id38"
+                    id="id41"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -3973,7 +3508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id38"
+                    htmlFor="id41"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -4008,7 +3543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id39"
+                    id="id42"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -4017,7 +3552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id39"
+                    htmlFor="id42"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5392,7 +4927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id16"
+                    id="id19"
                     name="Chicago White Sox"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5401,7 +4936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id16"
+                    htmlFor="id19"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5436,7 +4971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id17"
+                    id="id20"
                     name="New York Yankees"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5445,7 +4980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id17"
+                    htmlFor="id20"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5480,7 +5015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id18"
+                    id="id21"
                     name="Houston Astros"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5489,7 +5024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id18"
+                    htmlFor="id21"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5524,7 +5059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id19"
+                    id="id22"
                     name="Atlanta Braves"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5533,7 +5068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id19"
+                    htmlFor="id22"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5568,7 +5103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id20"
+                    id="id23"
                     name="New York Mets"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5577,7 +5112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id20"
+                    htmlFor="id23"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -5612,7 +5147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id21"
+                    id="id24"
                     name="Washington Nationals"
                     onChange={[Function]}
                     tabIndex={0}
@@ -5621,7 +5156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id21"
+                    htmlFor="id24"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -6595,7 +6130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id40"
+                    id="id43"
                     name="Tasks"
                     onChange={[Function]}
                     tabIndex={0}
@@ -6604,7 +6139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id40"
+                    htmlFor="id43"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -6639,7 +6174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id41"
+                    id="id44"
                     name="My Reports"
                     onChange={[Function]}
                     tabIndex={0}
@@ -6648,7 +6183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id41"
+                    htmlFor="id44"
                   >
                     <span
                       className="bx--radio-button__appearance"
@@ -6683,7 +6218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     checked={false}
                     className="bx--radio-button"
-                    id="id42"
+                    id="id45"
                     name="Requests"
                     onChange={[Function]}
                     tabIndex={0}
@@ -6692,7 +6227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                   <label
                     className="bx--radio-button__label"
-                    htmlFor="id42"
+                    htmlFor="id45"
                   >
                     <span
                       className="bx--radio-button__appearance"

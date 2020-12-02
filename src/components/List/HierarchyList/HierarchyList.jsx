@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
+import isEqual from 'lodash/isEqual';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
@@ -244,7 +245,8 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useEffect(
+  useDeepCompareEffect(
+    // have to use deep compare to accurately compare items
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
@@ -259,8 +261,10 @@ const HierarchyList = ({
         });
         setExpandedIds(tempExpandedIds);
 
-        // If the defaultSelectedId prop is updated from the outside, we need to use it
-        handleSelect(defaultSelectedId);
+        if (!isEqual(selectedIds, [defaultSelectedId])) {
+          // If the defaultSelectedId prop is updated from the outside, we need to use it
+          handleSelect(defaultSelectedId);
+        }
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps

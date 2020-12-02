@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  CARD_TYPES,
   CARD_SIZES,
   CARD_DIMENSIONS,
   ALLOWED_CARD_SIZES_PER_TYPE,
+  CARD_TYPES,
 } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
 import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
-import DataSeriesFormItem from './CardEditFormItems/DataSeriesFormItem';
+import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
+import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
 
 const { iotPrefix } = settings;
 
@@ -23,23 +24,29 @@ const propTypes = {
     title: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
-    content: PropTypes.shape({
-      series: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          dataSourceId: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
-      unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-    }),
-    interval: PropTypes.string,
-    showLegend: PropTypes.bool,
+    content: PropTypes.oneOfType([
+      PropTypes.shape({
+        series: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            dataSourceId: PropTypes.string,
+            color: PropTypes.string,
+          })
+        ),
+        xLabel: PropTypes.string,
+        yLabel: PropTypes.string,
+        unit: PropTypes.string,
+        includeZeroOnXaxis: PropTypes.bool,
+        includeZeroOnYaxis: PropTypes.bool,
+        timeDataSourceId: PropTypes.string,
+        showLegend: PropTypes.bool,
+      }),
+      PropTypes.shape({
+        id: PropTypes.string,
+        src: PropTypes.string,
+        zoomMax: PropTypes.number,
+      }),
+    ]),
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -66,6 +73,15 @@ const propTypes = {
     selectASize: PropTypes.string,
     timeRange: PropTypes.string,
     selectATimeRange: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the timeRanges to be allowed
    * on each card
@@ -81,6 +97,11 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  currentBreakpoint: PropTypes.string,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -108,23 +129,34 @@ const defaultProps = {
     selectASize: 'Select a size',
     timeRange: 'Time range',
     selectATimeRange: 'Select a time range',
+    last24HoursLabel: 'Last 24 hours',
+    last7DaysLabel: 'Last 7 days',
+    lastMonthLabel: 'Last month',
+    lastQuarterLabel: 'Last quarter',
+    lastYearLabel: 'Last year',
+    thisWeekLabel: 'This week',
+    thisMonthLabel: 'This month',
+    thisQuarterLabel: 'This quarter',
+    thisYearLabel: 'This year',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  currentBreakpoint: 'xl',
+  availableDimensions: {},
 };
 
-export const defaultTimeRangeOptions = {
-  last24Hours: 'Last 24 hrs',
-  last7Days: 'Last 7 days',
-  lastMonth: 'Last month',
-  lastQuarter: 'Last quarter',
-  lastYear: 'Last year',
-  thisWeek: 'This week',
-  thisMonth: 'This month',
-  thisQuarter: 'This quarter',
-  thisYear: 'This year',
-};
+const defaultTimeRangeOptions = [
+  'last24Hours',
+  'last7Days',
+  'lastMonth',
+  'lastQuarter',
+  'lastYear',
+  'thisWeek',
+  'thisMonth',
+  'thisQuarter',
+  'thisYear',
+];
 
 /**
  * Returns card size and dimensions labels
@@ -132,9 +164,9 @@ export const defaultTimeRangeOptions = {
  * @param {Object<string>} i18n
  * @returns {string}
  */
-export const getCardSizeText = (size, i18n) => {
+export const getCardSizeText = (size, i18n, breakpoint) => {
   const sizeName = i18n[`cardSize_${size}`];
-  const sizeDimensions = `(${CARD_DIMENSIONS[size].lg.w}x${CARD_DIMENSIONS[size].lg.h})`;
+  const sizeDimensions = `(${CARD_DIMENSIONS[size][breakpoint].w}x${CARD_DIMENSIONS[size][breakpoint].h})`;
   return `${sizeName} ${sizeDimensions}`;
 };
 
@@ -145,17 +177,26 @@ const CardEditFormContent = ({
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
+  currentBreakpoint,
+  availableDimensions,
 }) => {
-  const { title, description, size, type, id } = cardConfig;
+  const { title, description, size, type, id, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
-  const [selectedTimeRange, setSelectedTimeRange] = useState('');
+  const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
-    : Object.keys(defaultTimeRangeOptions);
+    : defaultTimeRangeOptions;
+
+  const validTimeRangeOptions = validTimeRanges
+    ? validTimeRanges.map((range) => ({
+        id: range,
+        text: mergedI18n[`${range}Label`] || range,
+      }))
+    : [];
 
   return (
     <>
@@ -192,18 +233,21 @@ const CardEditFormContent = ({
           ).map((cardSize) => {
             return {
               id: cardSize,
-              text: getCardSizeText(cardSize, mergedI18n),
+              text: getCardSizeText(cardSize, mergedI18n, currentBreakpoint),
             };
           })}
           light
-          selectedItem={{ id: size, text: getCardSizeText(size, mergedI18n) }}
+          selectedItem={{
+            id: size,
+            text: getCardSizeText(size, mergedI18n, currentBreakpoint),
+          }}
           onChange={({ selectedItem }) => {
             onChange({ ...cardConfig, size: selectedItem.id });
           }}
           titleText={mergedI18n.size}
         />
       </div>
-      {type === CARD_TYPES.TIMESERIES && (
+      {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.VALUE ? (
         <>
           <div className={`${baseClassName}--input`}>
             <Dropdown
@@ -211,37 +255,40 @@ const CardEditFormContent = ({
               label={mergedI18n.selectATimeRange}
               direction="bottom"
               itemToString={(item) => item.text}
-              items={
-                validTimeRanges
-                  ? validTimeRanges.map((range) => ({
-                      id: range,
-                      text: defaultTimeRangeOptions[range],
-                    }))
-                  : []
-              }
+              items={validTimeRangeOptions}
+              selectedItem={validTimeRangeOptions.find(
+                // This is a hacky workaround for a carbon issue
+                (validTimeRangeOption) =>
+                  validTimeRangeOption.id === selectedTimeRange
+              )}
               light
               onChange={({ selectedItem }) => {
-                const { range, interval } = timeRangeToJSON[selectedItem.id];
-                setSelectedTimeRange(selectedItem.id);
+                const timeRangeInterval = selectedItem.id;
+                const { range } = timeRangeToJSON[timeRangeInterval];
+                setSelectedTimeRange(timeRangeInterval);
                 onChange({
                   ...cardConfig,
-                  interval,
+                  timeRange: timeRangeInterval,
                   dataSource: { ...cardConfig.dataSource, range },
                 });
               }}
               titleText={mergedI18n.timeRange}
             />
           </div>
-          <DataSeriesFormItem
+          <DataSeriesFormContent
             cardConfig={cardConfig}
             onChange={onChange}
             dataItems={dataItems}
             setSelectedDataItems={setSelectedDataItems}
             selectedTimeRange={selectedTimeRange}
             getValidDataItems={getValidDataItems}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
           />
         </>
+      ) : null}
+      {type === CARD_TYPES.IMAGE && (
+        <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
       )}
     </>
   );

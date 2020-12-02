@@ -35,7 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           onDrop={[Function]}
           style={
             Object {
-              "height": "1744px",
+              "height": "2064px",
             }
           }
         >
@@ -113,7 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "25.3125%",
                 "position": "absolute",
                 "top": "0px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "25.3125%",
                 "position": "absolute",
                 "top": "160px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -287,10 +287,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               Object {
                 "--card-default-height": "304px",
                 "height": "304px",
-                "left": "50.625%",
+                "left": "0%",
                 "position": "absolute",
-                "top": "0px",
-                "width": "49.375%",
+                "top": "480px",
+                "width": "100%",
               }
             }
             type="VALUE"
@@ -348,7 +348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "0%",
                 "position": "absolute",
-                "top": "480px",
+                "top": "800px",
                 "width": "24.0625%",
               }
             }
@@ -407,7 +407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "25.3125%",
                 "position": "absolute",
-                "top": "480px",
+                "top": "800px",
                 "width": "49.375%",
               }
             }
@@ -466,7 +466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "0%",
                 "position": "absolute",
-                "top": "1120px",
+                "top": "1440px",
                 "width": "100%",
               }
             }
@@ -578,7 +578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           onDrop={[Function]}
           style={
             Object {
-              "height": "2544px",
+              "height": "3024px",
             }
           }
         >
@@ -670,7 +670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "25.3125%",
                 "position": "absolute",
                 "top": "0px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
           >
@@ -941,7 +941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "25.3125%",
                 "position": "absolute",
                 "top": "160px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
           >
@@ -971,7 +971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--pie-chart-container"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-pie-chart"
                 />
               </div>
               <span
@@ -1014,7 +1014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "25.3125%",
                 "position": "absolute",
-                "top": "640px",
+                "top": "1120px",
                 "width": "49.375%",
               }
             }
@@ -2396,6 +2396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
+            accept={null}
             className="iot--card react-grid-item react-resizable iot--card--wrapper"
             data-testid="Card"
             id="imageCard"
@@ -2409,7 +2410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "50.625%",
                 "position": "absolute",
-                "top": "0px",
+                "top": "480px",
                 "width": "49.375%",
               }
             }
@@ -2488,6 +2489,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 >
                   <img
                     alt="Sample image"
+                    className="iot--image-card-img"
+                    id={null}
                     onLoad={[Function]}
                     onMouseDown={[Function]}
                     onMouseMove={[Function]}
@@ -2495,9 +2498,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     src="static/media/landscape.013ce39d.jpg"
                     style={
                       Object {
+                        "cursor": "auto",
+                        "height": "auto",
                         "left": undefined,
+                        "objectFit": null,
                         "position": "relative",
                         "top": undefined,
+                        "width": "auto",
                       }
                     }
                   />
@@ -2514,7 +2521,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     }
                   >
                     <div
-                      className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
+                      className="iot--hotspot-container iot--hotspot-container--has-icon"
+                      data-testid="hotspot-35-65"
+                      icon="arrowDown"
+                      style={
+                        Object {
+                          "--height": 25,
+                          "--width": 25,
+                          "--x-pos": 35,
+                          "--y-pos": 65,
+                        }
+                      }
                     >
                       <div
                         aria-describedby={null}
@@ -2654,7 +2671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--time-series-card--wrapper"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-line-chart"
                 />
               </div>
             </div>
@@ -2686,7 +2703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "25.3125%",
                 "position": "absolute",
-                "top": "1280px",
+                "top": "1760px",
                 "width": "24.0625%",
               }
             }
@@ -2917,7 +2934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "624px",
                 "left": "0%",
                 "position": "absolute",
-                "top": "1920px",
+                "top": "2400px",
                 "width": "100%",
               }
             }
@@ -2948,7 +2965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--bar-chart-container"
               >
                 <div
-                  className="chart-holder"
+                  id="mock-bar-chart-simple"
                 />
               </div>
             </div>
@@ -3050,7 +3067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "25.3125%",
                 "position": "absolute",
                 "top": "320px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -3299,7 +3316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "0%",
                 "position": "absolute",
                 "top": "0px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -3356,7 +3373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               Object {
                 "--card-default-height": "144px",
                 "height": "144px",
-                "left": "25.3125%",
+                "left": "50.625%",
                 "position": "absolute",
                 "top": "0px",
                 "width": "24.0625%",
@@ -3416,7 +3433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               Object {
                 "--card-default-height": "144px",
                 "height": "144px",
-                "left": "50.625%",
+                "left": "75.9375%",
                 "position": "absolute",
                 "top": "0px",
                 "width": "24.0625%",
@@ -3548,7 +3565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "left": "0%",
                 "position": "absolute",
                 "top": "0px",
-                "width": "24.0625%",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -3605,7 +3622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               Object {
                 "--card-default-height": "144px",
                 "height": "144px",
-                "left": "25.3125%",
+                "left": "50.625%",
                 "position": "absolute",
                 "top": "0px",
                 "width": "24.0625%",
@@ -3665,7 +3682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               Object {
                 "--card-default-height": "144px",
                 "height": "144px",
-                "left": "50.625%",
+                "left": "75.9375%",
                 "position": "absolute",
                 "top": "0px",
                 "width": "24.0625%",

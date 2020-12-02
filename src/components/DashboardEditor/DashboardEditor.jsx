@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
+import isNil from 'lodash/isNil';
 import classnames from 'classnames';
+import update from 'immutability-helper';
 
 import { settings } from '../../constants/Settings';
 import {
   DASHBOARD_EDITOR_CARD_TYPES,
   CARD_ACTIONS,
+  CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import {
   DashboardGrid,
@@ -14,6 +17,9 @@ import {
   ErrorBoundary,
   SkeletonText,
 } from '../../index';
+import ImageGalleryModal, {
+  ImagePropTypes,
+} from '../ImageGalleryModal/ImageGalleryModal';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import {
@@ -81,7 +87,12 @@ const propTypes = {
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
+  availableImages: ImagePropTypes,
   dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
    * onCardChange(updatedCard, template): Card
    */
@@ -137,6 +148,15 @@ const propTypes = {
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
+    imageGalleryGridButtonText: PropTypes.string,
+    imageGalleryInstructionText: PropTypes.string,
+    imageGalleryListButtonText: PropTypes.string,
+    imageGalleryModalLabelText: PropTypes.string,
+    imageGalleryModalTitleText: PropTypes.string,
+    imageGalleryModalPrimaryButtonLabelText: PropTypes.string,
+    imageGalleryModalSecondaryButtonLabelText: PropTypes.string,
+    imageGalleryModalCloseIconDescriptionText: PropTypes.string,
+    imageGallerySearchPlaceHolderText: PropTypes.string,
   }),
 };
 
@@ -155,7 +175,9 @@ const defaultProps = {
   onEditTitle: null,
   getValidDataItems: null,
   getValidTimeRanges: null,
+  availableImages: [],
   dataItems: [],
+  availableDimensions: {},
   onCardChange: null,
   onLayoutChange: null,
   onDelete: null,
@@ -208,6 +230,7 @@ const DashboardEditor = ({
   getValidDataItems,
   getValidTimeRanges,
   dataItems,
+  availableImages,
   headerBreadcrumbs,
   notification,
   onCardChange,
@@ -220,12 +243,15 @@ const DashboardEditor = ({
   onSubmit,
   submitDisabled,
   onValidateCardJson,
+  availableDimensions,
   isLoading,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  // Need to keep track of whether the image gallery is open or not
+  const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
 
-  // show the gallery if no card is being edited
+  // show the card gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
   const [selectedCardId, setSelectedCardId] = useState();
   const [selectedBreakpointIndex, setSelectedBreakpointIndex] = useState(
@@ -296,18 +322,36 @@ const DashboardEditor = ({
             ? onCardChange(cardConfig, dashboardJson)
             : cardConfig
           : card
-      ),
+      ), // TODO: need to handle switching the image id and dynamically switching the src to the correct blob
     });
+
+  // Show the image gallery
+  const handleShowImageGallery = () => setIsImageGalleryModalOpen(true);
+
+  // Update the src section of a card when a new image is selected
+  const handleImageSelection = (selectedImage) => {
+    setDashboardJson((json) => ({
+      ...json,
+      cards: json.cards.map((card) =>
+        card.id === selectedCardId
+          ? { ...card, content: { ...card.content, ...selectedImage } }
+          : card
+      ),
+    }));
+    setIsImageGalleryModalOpen(false);
+  };
 
   const commonCardProps = (cardConfig, isSelected) => ({
     key: cardConfig.id,
     tooltip: cardConfig.description,
     availableActions: { clone: true, delete: true },
-    onCardAction: (id, actionId) => {
+    onCardAction: (id, actionId, payload) => {
       if (actionId === CARD_ACTIONS.CLONE_CARD) {
         onDuplicateCard(id);
       } else if (actionId === CARD_ACTIONS.DELETE_CARD) {
         onRemoveCard(id);
+      } else if (actionId === CARD_ACTIONS.ON_CARD_CHANGE) {
+        handleOnCardChange(update(cardConfig, payload));
       }
     },
     tabIndex: 0,
@@ -315,6 +359,11 @@ const DashboardEditor = ({
     onClick: () => handleOnClick(onSelectCard, cardConfig.id),
     className: `${baseClassName}--preview__card`,
     isSelected,
+    // Add the show gallery to image card
+    onBrowseClick:
+      cardConfig.type === CARD_TYPES.IMAGE && isNil(cardConfig.content?.src)
+        ? handleShowImageGallery
+        : undefined,
   });
 
   return isLoading ? (
@@ -382,6 +431,27 @@ const DashboardEditor = ({
                     lowContrast
                   />
                 }>
+                <ImageGalleryModal
+                  open={isImageGalleryModalOpen}
+                  content={availableImages}
+                  onClose={() => setIsImageGalleryModalOpen(false)}
+                  onSubmit={handleImageSelection}
+                  gridButtonText={i18n.imageGalleryGridButtonText}
+                  instructionText={i18n.imageGalleryInstructionText}
+                  listButtonText={i18n.imageGalleryListButtonText}
+                  modalLabelText={i18n.imageGalleryModalLabelText}
+                  modalTitleText={i18n.imageGalleryModalTitleText}
+                  modalPrimaryButtonLabelText={
+                    i18n.imageGalleryModalPrimaryButtonLabelText
+                  }
+                  modalSecondaryButtonLabelText={
+                    i18n.imageGalleryModalSecondaryButtonLabelText
+                  }
+                  modalCloseIconDescriptionText={
+                    i18n.imageGalleryModalCloseIconDescriptionText
+                  }
+                  searchPlaceHolderText={i18n.imageGallerySearchPlaceHolderText}
+                />
                 <DashboardGrid
                   isEditable
                   breakpoint={currentBreakpoint}
@@ -410,7 +480,8 @@ const DashboardEditor = ({
                         onSelectCard,
                         onDuplicateCard,
                         onRemoveCard,
-                        isSelected
+                        isSelected,
+                        handleShowImageGallery
                       ) ?? getCardPreview(cardConfig, cardProps)
                     );
                   })}
@@ -442,7 +513,9 @@ const DashboardEditor = ({
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
             supportedCardTypes={supportedCardTypes}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         </ErrorBoundary>
       </div>

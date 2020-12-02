@@ -82,6 +82,10 @@ const TimeSeriesCardPropTypes = {
     zoomBar: ZoomBarPropTypes,
     /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
     addSpaceOnEdges: PropTypes.number,
+    /** whether or not to show a legend at the bottom of the card
+     * if not explicitly stated, the card will show based on the length of the series
+     */
+    showLegend: PropTypes.bool,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -127,10 +131,6 @@ const TimeSeriesCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
-  /** whether or not to show a legend at the bottom of the card
-   * if not explicitly stated, the card will show based on the length of the series
-   */
-  showLegend: PropTypes.bool,
 };
 
 /**
@@ -291,7 +291,7 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showLegend,
+
   ...others
 }) => {
   const {
@@ -308,6 +308,7 @@ const TimeSeriesCard = ({
       chartType,
       zoomBar,
       showTimeInGMT,
+      showLegend,
       tooltipDateFormatPattern,
       addSpaceOnEdges,
     },
@@ -383,6 +384,14 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = formatColors(series);
 
+  /**
+   * Determines the dot stroke color (the border of the data point)
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalStrokeColor from carbon charts
+   * @returns {string} stroke color
+   */
   const handleStrokeColor = (
     datasetLabel,
     label,
@@ -398,6 +407,14 @@ const TimeSeriesCard = ({
     return originalStrokeColor;
   };
 
+  /**
+   * Determines the dot fill color based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalFillColor from carbon charts
+   * @returns {string} fill color
+   */
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
     // If it's editable don't fill the dot
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
@@ -411,6 +428,14 @@ const TimeSeriesCard = ({
     return defaultFillColor;
   };
 
+  /**
+   * Determines if the dot is filled based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {Boolean} isFilled default setting from carbon charts
+   * @returns {Boolean}
+   */
   const handleIsFilled = (datasetLabel, label, data, isFilled) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
@@ -658,11 +683,11 @@ TimeSeriesCard.defaultProps = {
   content: {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
+    showLegend: true,
   },
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
-  showLegend: null,
 };
 
 export default TimeSeriesCard;

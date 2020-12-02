@@ -487,3 +487,98 @@ export const useCardResizing = (
   );
   return { resizeHandles: resizeHandlesWithEventHandling, isResizing };
 };
+
+/**
+ *
+ * @param {string} url the url where the image is hosted
+ * @param {function} callback for handling errors from fetch
+ */
+export const fetchDataURL = (url, callback) =>
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw Error(res.statusText);
+      }
+      return res.arrayBuffer();
+    })
+    .then((ab) => ({
+      files: {
+        addedFiles: [new File([ab], `${url.match(/([^/]*?)(?=\?|#|$)/)[0]}`)],
+      },
+      dataURL: `data:image/png;base64,${btoa(
+        new Uint8Array(ab).reduce(
+          (data, byte) => data + String.fromCharCode(byte),
+          ''
+        )
+      )}`,
+    }))
+    .catch((e) => callback(e.message));
+
+/**
+ * Returns an array of matching thresholds will only return the highest severity threshold for a column
+ * If passed a columnId, it filters the threshold check on the current column only
+ * @param {Array<Object>} thresholds
+ * @param {Object} item
+ * @param {string} columnId
+ * @returns {Array} matching thresholds
+ */
+export const findMatchingThresholds = (thresholds, item, columnId) => {
+  return thresholds
+    .filter((t) => {
+      const { comparison, value, dataSourceId } = t;
+      // Does the threshold apply to the current column?
+      if (columnId && !columnId.includes(dataSourceId)) {
+        return false;
+      }
+
+      switch (comparison) {
+        case '<':
+          return (
+            !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) < value
+          );
+        case '>':
+          return parseFloat(item[dataSourceId]) > value;
+        case '=':
+          return (
+            parseFloat(item[dataSourceId]) === value ||
+            item[dataSourceId] === value
+          ); // need to handle the string case
+        case '<=':
+          return (
+            !isNil(item[dataSourceId]) &&
+            parseFloat(item[dataSourceId]) <= value
+          );
+        case '>=':
+          return parseFloat(item[dataSourceId]) >= value;
+        default:
+          return false;
+      }
+    })
+    .reduce((highestSeverityThreshold, threshold) => {
+      const currentThresholdIndex = highestSeverityThreshold.findIndex(
+        (currentThreshold) =>
+          currentThreshold.dataSourceId === threshold.dataSourceId
+      );
+
+      if (
+        // If I don't have a threshold currently for this column
+        currentThresholdIndex < 0
+      ) {
+        highestSeverityThreshold.push({
+          ...threshold,
+          currentValue: item[threshold.dataSourceId],
+        });
+      } // The lowest severity is actually the most severe
+      else if (
+        highestSeverityThreshold[currentThresholdIndex].severity >
+        threshold.severity
+      ) {
+        // eslint-disable-next-line no-param-reassign
+        highestSeverityThreshold[currentThresholdIndex] = {
+          ...threshold,
+          currentValue: item[threshold.dataSourceId],
+        };
+      }
+      return highestSeverityThreshold;
+    }, []);
+};

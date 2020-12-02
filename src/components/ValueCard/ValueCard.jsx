@@ -370,6 +370,7 @@ const ValueCard = ({
                             ? 'center'
                             : undefined
                         }
+                        isEditable={isEditable}
                         {...attribute}
                         renderIconByName={others.renderIconByName}
                         size={newSize} // When the card is in the editable state, we will show a preview
