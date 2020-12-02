@@ -7048,6 +7048,9 @@ Map {
             "documentation": Object {
               "type": "string",
             },
+            "domain": Object {
+              "type": "string",
+            },
             "gettingStarted": Object {
               "type": "string",
             },
@@ -7067,6 +7070,9 @@ Map {
               "type": "string",
             },
             "whatsNew": Object {
+              "type": "string",
+            },
+            "workspaceId": Object {
               "type": "string",
             },
           },
