@@ -195,6 +195,8 @@ export const Default = () => {
         requestEnhancement: 'https://www.ibm.com',
         support: 'https://www.ibm.com',
         about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
       })}
       i18n={SuiteHeaderI18N[language]}
       applications={object('applications', [

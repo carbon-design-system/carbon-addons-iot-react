@@ -7127,6 +7127,9 @@ Map {
             "documentation": Object {
               "type": "string",
             },
+            "domain": Object {
+              "type": "string",
+            },
             "gettingStarted": Object {
               "type": "string",
             },
@@ -7146,6 +7149,9 @@ Map {
               "type": "string",
             },
             "whatsNew": Object {
+              "type": "string",
+            },
+            "workspaceId": Object {
               "type": "string",
             },
           },
@@ -8467,6 +8473,8 @@ Map {
         "layouts": Object {},
       },
       "isLoading": false,
+      "isSubmitDisabled": false,
+      "isSubmitLoading": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -8479,7 +8487,6 @@ Map {
       "onValidateCardJson": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
-      "submitDisabled": false,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -8679,6 +8686,12 @@ Map {
       "isLoading": Object {
         "type": "bool",
       },
+      "isSubmitDisabled": Object {
+        "type": "bool",
+      },
+      "isSubmitLoading": Object {
+        "type": "bool",
+      },
       "notification": Object {
         "type": "node",
       },
@@ -8714,9 +8727,6 @@ Map {
       },
       "renderHeader": Object {
         "type": "func",
-      },
-      "submitDisabled": Object {
-        "type": "bool",
       },
       "supportedCardTypes": Object {
         "args": Array [
