@@ -654,7 +654,8 @@ export const SimpleStatefulExample = () => (
           ['multi', 'single'],
           'multi'
         ),
-        hasRowExpansion: false,
+        hasRowExpansion: boolean('hasRowExpansion', false),
+        hasRowNesting: boolean('hasRowNesting', false),
         wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
       }}
       view={{ table: { selectedIds: array('selectedIds', []) } }}
@@ -1969,13 +1970,12 @@ StatefulExampleWithRowNestingAndFixedColumns.story = {
 
       <br />
 
-      You must also set hasRowExpansion and hasRowNesting to true in your table options
+      You must also set hasRowNesting to true in your table options
 
       <br />
 
       ~~~js
         options={
-          hasRowExpansion: true,
           hasRowNesting: true
         }
       ~~~

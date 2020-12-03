@@ -9,8 +9,41 @@ import {
 } from '@storybook/addon-knobs';
 
 import { Card, Link, InlineNotification } from '../../index';
+import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
+import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
+import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
+import extra_wide_image from '../ImageGalleryModal/images/extra-wide-image.png'; // eslint-disable-line camelcase
+import robot_arm from '../ImageGalleryModal/images/robot_arm.png'; // eslint-disable-line camelcase
+import tankmodal from '../ImageGalleryModal/images/tankmodal.png';
+import turbines from '../ImageGalleryModal/images/turbines.png';
+import large from '../ImageGalleryModal/images/large.png';
+import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
 
 import DashboardEditor from './DashboardEditor';
+
+const images = [
+  {
+    id: 'assemblyline',
+    src: assemblyline,
+    alt: 'assemblyline',
+    title: `custom title assemblyline that is very long a and must be managed. 
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+      ad minim veniam.`,
+  },
+  { id: 'floow_plan', src: floow_plan, alt: 'floow plan' },
+  {
+    id: 'manufacturing_plant',
+    src: manufacturing_plant,
+    alt: 'manufacturing plant',
+  },
+  { id: 'robot_arm', src: robot_arm, alt: 'robot arm' },
+  { id: 'tankmodal', src: tankmodal, alt: 'tankmodal' },
+  { id: 'turbines', src: turbines, alt: 'turbines' },
+  { id: 'extra-wide-image', src: extra_wide_image, alt: 'extra wide image' },
+  { id: 'large', src: large, alt: 'large image' },
+  { id: 'large_portrait', src: large_portrait, alt: 'large image portrait' },
+];
 
 const mockDataItems = [
   { dataSourceId: 'torque_max', label: 'Torque Max' },
@@ -34,6 +67,7 @@ export const Default = () => (
     <DashboardEditor
       title={text('title', 'My dashboard')}
       dataItems={mockDataItems}
+      availableImages={images}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -145,7 +179,14 @@ export const WithInitialValue = () => (
               timeDataSourceId: 'timestamp',
               addSpaceOnEdges: 1,
             },
-            interval: 'day',
+            timeRange: 'thisWeek',
+            dataSource: {
+              range: {
+                interval: 'week',
+                count: -1,
+                type: 'periodToDate',
+              },
+            },
           },
         ],
         layouts: {

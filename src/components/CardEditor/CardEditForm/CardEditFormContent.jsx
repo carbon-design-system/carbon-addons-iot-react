@@ -97,6 +97,7 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  currentBreakpoint: PropTypes.string,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -141,6 +142,7 @@ const defaultProps = {
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
+  currentBreakpoint: 'xl',
   availableDimensions: {},
 };
 
@@ -162,9 +164,9 @@ const defaultTimeRangeOptions = [
  * @param {Object<string>} i18n
  * @returns {string}
  */
-export const getCardSizeText = (size, i18n) => {
+export const getCardSizeText = (size, i18n, breakpoint) => {
   const sizeName = i18n[`cardSize_${size}`];
-  const sizeDimensions = `(${CARD_DIMENSIONS[size].lg.w}x${CARD_DIMENSIONS[size].lg.h})`;
+  const sizeDimensions = `(${CARD_DIMENSIONS[size][breakpoint].w}x${CARD_DIMENSIONS[size][breakpoint].h})`;
   return `${sizeName} ${sizeDimensions}`;
 };
 
@@ -175,6 +177,7 @@ const CardEditFormContent = ({
   dataItems,
   getValidDataItems,
   getValidTimeRanges,
+  currentBreakpoint,
   availableDimensions,
 }) => {
   const { title, description, size, type, id, timeRange } = cardConfig;
@@ -230,11 +233,14 @@ const CardEditFormContent = ({
           ).map((cardSize) => {
             return {
               id: cardSize,
-              text: getCardSizeText(cardSize, mergedI18n),
+              text: getCardSizeText(cardSize, mergedI18n, currentBreakpoint),
             };
           })}
           light
-          selectedItem={{ id: size, text: getCardSizeText(size, mergedI18n) }}
+          selectedItem={{
+            id: size,
+            text: getCardSizeText(size, mergedI18n, currentBreakpoint),
+          }}
           onChange={({ selectedItem }) => {
             onChange({ ...cardConfig, size: selectedItem.id });
           }}
