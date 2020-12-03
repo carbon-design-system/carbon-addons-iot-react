@@ -40,6 +40,9 @@ export const SuiteHeaderRoutePropTypes = PropTypes.shape({
   requestEnhancement: PropTypes.string,
   support: PropTypes.string,
   about: PropTypes.string,
+  // properties rendered as data attributes
+  workspaceId: PropTypes.string,
+  domain: PropTypes.string,
 });
 
 export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
@@ -217,6 +220,11 @@ const SuiteHeader = ({
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
+            <span
+              className={`${settings.iotPrefix}--suite-header-data`}
+              data-workspace-id={routes.workspaceId}
+              data-domain={routes.domain}
+            />
             <Header
               className={[`${settings.iotPrefix}--suite-header`, className]
                 .filter((i) => i)

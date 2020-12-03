@@ -143,6 +143,9 @@
 }
 
 .#{$iot-prefix}--suite-header {
+  &-data {
+    display: none;
+  }
   button.admin-icon {
     .#{$prefix}--tooltip__trigger svg {
       fill: $ui-01;
