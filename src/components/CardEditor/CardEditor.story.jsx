@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
+import munichBuilding from '../ImageCard/MunichBuilding.png';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import CardEditor from './CardEditor';
@@ -166,4 +167,37 @@ export const Interactive = () => <CardEditorInteractive />;
 
 Interactive.story = {
   name: 'interactive',
+};
+
+export const ForImage = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        id: 'image',
+        title: 'image-card',
+        size: 'MEDIUMWIDE',
+        type: 'IMAGE',
+        content: {
+          id: 'munich_image',
+          src: munichBuilding,
+          alt: 'Munich',
+        },
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      dataItems={[
+        { dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataSourceId: 'temperature', label: 'Temperature' },
+        { dataSourceId: 'pressure', label: 'Pressure' },
+      ]}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+ForImage.story = {
+  name: 'for Image',
 };
