@@ -45,7 +45,9 @@ const propTypes = {
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
-  submitDisabled: PropTypes.bool,
+  isSubmitDisabled: PropTypes.bool,
+  /** Whether to set the loading spinner on the submit button */
+  isSubmitLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -83,7 +85,8 @@ const defaultProps = {
   onDelete: null,
   onCancel: null,
   onSubmit: null,
-  submitDisabled: false,
+  isSubmitDisabled: false,
+  isSubmitLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -110,7 +113,8 @@ const DashboardEditorHeader = ({
   onDelete,
   onCancel,
   onSubmit,
-  submitDisabled,
+  isSubmitDisabled,
+  isSubmitLoading,
   i18n,
   dashboardJson,
   selectedBreakpointIndex,
@@ -200,15 +204,16 @@ const DashboardEditorHeader = ({
           />
         )}
         {onCancel && (
-          <Button kind="tertiary" size="field" onClick={onCancel}>
+          <Button kind="secondary" size="field" onClick={onCancel}>
             {mergedI18n.headerCancelButton}
           </Button>
         )}
         {onSubmit && (
           <Button
             size="field"
-            disabled={submitDisabled}
-            onClick={() => onSubmit(dashboardJson)}>
+            disabled={isSubmitDisabled}
+            onClick={() => onSubmit(dashboardJson)}
+            loading={isSubmitLoading}>
             {mergedI18n.headerSubmitButton}
           </Button>
         )}
