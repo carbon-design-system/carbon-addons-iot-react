@@ -24,7 +24,6 @@ const icons = {
   success: SuccessImage,
 };
 
-// TODO: Discuss whether actions can be custom components, e.g. for showing details in error messages.
 const props = {
   /** Title of empty state */
   title: PropTypes.string.isRequired,
@@ -48,25 +47,11 @@ const props = {
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   }),
-  // action: PropTypes.oneOfType([
-  //   PropTypes.func,
-  //   PropTypes.shape({
-  //     label: PropTypes.string.isRequired,
-  //     onClick: PropTypes.func.isRequired,
-  //   }),
-  // ]),
   /** Optional secondary action for container */
   secondaryAction: PropTypes.shape({
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   }),
-  // secondaryAction: PropTypes.oneOfType([
-  //   PropTypes.func,
-  //   PropTypes.shape({
-  //     label: PropTypes.string.isRequired,
-  //     onClick: PropTypes.func.isRequired,
-  //   }),
-  // ]),
   /** Specify an optional className to be applied to the container */
   className: PropTypes.string,
   /** Specify a testid for testing this component */
@@ -121,13 +106,6 @@ const EmptyState = ({
           <Button onClick={action.onClick && action.onClick}>
             {action.label}
           </Button>
-          {/* {action.label ? (
-            <Button onClick={action.onClick && action.onClick}>
-              {action.label}
-            </Button>
-          ) : (
-            action
-          )} */}
         </div>
       )}
       {secondaryAction && (
@@ -140,14 +118,6 @@ const EmptyState = ({
               {secondaryAction.label}
             </Link>
           )}
-          {/* {secondaryAction.label ? (
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
-              {secondaryAction.label}
-            </Link>
-          ) : (
-            secondaryAction
-          )} */}
         </div>
       )}
     </div>

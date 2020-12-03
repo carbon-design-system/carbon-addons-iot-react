@@ -91,19 +91,6 @@ describe('EmptyState', () => {
     expect(onClick).toHaveBeenCalled();
   });
 
-  // it('shows custom action component', () => {
-  //   const customAction = <div data-testid="customcomponent">Hello</div>;
-  //   render(<EmptyState {...commonProps} action={customAction} />);
-
-  //   expect(screen.getByTestId('customcomponent')).toBeTruthy();
-  // });
-
-  // it('shows custom secondaryAction component', () => {
-  //   const customAction = <div data-testid="customcomponent">Hello</div>;
-  //   render(<EmptyState {...commonProps} secondaryAction={customAction} />);
-
-  //   expect(screen.getByTestId('customcomponent')).toBeTruthy();
-  // });
 
   it('shows secondaryAction if desired', () => {
     const actionLabel = 'TestLink';
