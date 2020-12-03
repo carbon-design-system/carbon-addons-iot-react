@@ -30,6 +30,7 @@ export const Default = () => (
       onSubmit={action('onSubmit')}
       dashboardJson={{}}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
     />
   </div>
 );
@@ -51,6 +52,7 @@ export const WithEditableTitleAndNoImportExportDelete = () => (
       onSubmit={action('onSubmit')}
       dashboardJson={{}}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
     />
   </div>
 );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   TrashCan16,
@@ -40,12 +40,14 @@ const propTypes = {
   onDelete: PropTypes.func,
   /** If provided, renders cancel button linked to this callback */
   onCancel: PropTypes.func,
-  /** If provided, renders submit button linked to this callback. Can update spinner with setIsSubmitting
-   * onSubmit(dashboardData, setIsSubmitting)
+  /** If provided, renders submit button linked to this callback
+   * onSubmit(dashboardData)
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
   isSubmitDisabled: PropTypes.bool,
+  /** Whether to set the loading spinner on the submit button */
+  isSubmitLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -84,6 +86,7 @@ const defaultProps = {
   onCancel: null,
   onSubmit: null,
   isSubmitDisabled: false,
+  isSubmitLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -111,13 +114,13 @@ const DashboardEditorHeader = ({
   onCancel,
   onSubmit,
   isSubmitDisabled,
+  isSubmitLoading,
   i18n,
   dashboardJson,
   selectedBreakpointIndex,
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
-  const [isSubmitLoading, setIsSubmitLoading] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
@@ -209,7 +212,7 @@ const DashboardEditorHeader = ({
           <Button
             size="field"
             disabled={isSubmitDisabled}
-            onClick={() => onSubmit(dashboardJson, setIsSubmitLoading)}
+            onClick={() => onSubmit(dashboardJson)}
             loading={isSubmitLoading}>
             {mergedI18n.headerSubmitButton}
           </Button>

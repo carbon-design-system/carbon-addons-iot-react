@@ -77,6 +77,7 @@ export const Default = () => (
       onSubmit={action('onSubmit')}
       onLayoutChange={action('onLayoutChange')}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       availableDimensions={{
         deviceid: ['73000', '73001', '73002'],
         manufacturer: ['rentech', 'GHI Industries'],
@@ -271,6 +272,7 @@ export const WithInitialValue = () => (
       ]}
       isLoading={boolean('isLoading', false)}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
     />
   </div>
 );
@@ -283,6 +285,7 @@ export const WithCustomOnCardChange = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title="Custom dashboard"
       dataItems={mockDataItems}
       initialValue={{
@@ -355,6 +358,7 @@ export const WithNotifications = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -411,6 +415,7 @@ export const WithBreakpointSwitcher = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
@@ -447,6 +452,7 @@ export const CustomCardPreviewRenderer = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title="Custom dashboard"
       initialValue={object('initialValue', {
         cards: [

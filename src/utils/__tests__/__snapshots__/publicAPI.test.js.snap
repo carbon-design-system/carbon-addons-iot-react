@@ -8395,6 +8395,7 @@ Map {
       },
       "isLoading": false,
       "isSubmitDisabled": false,
+      "isSubmitLoading": false,
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
@@ -8607,6 +8608,9 @@ Map {
         "type": "bool",
       },
       "isSubmitDisabled": Object {
+        "type": "bool",
+      },
+      "isSubmitLoading": Object {
         "type": "bool",
       },
       "notification": Object {
