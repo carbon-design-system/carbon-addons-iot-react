@@ -340,16 +340,16 @@ const DashboardEditor = ({
   // Show the image gallery
   const handleShowImageGallery = () => setIsImageGalleryModalOpen(true);
 
-  // Update the src section of a card when a new image is selected
   const handleImageSelection = (selectedImage) => {
-    setDashboardJson((json) => ({
-      ...json,
-      cards: json.cards.map((card) =>
-        card.id === selectedCardId
-          ? { ...card, content: { ...card.content, ...selectedImage } }
-          : card
-      ),
-    }));
+    let cardConfig = dashboardJson.cards.find(
+      (card) => card.id === selectedCardId
+    );
+    // Update the card with the new image information
+    cardConfig = {
+      ...cardConfig,
+      content: { ...cardConfig.content, ...selectedImage },
+    };
+    handleOnCardChange(cardConfig);
     setIsImageGalleryModalOpen(false);
   };
 
