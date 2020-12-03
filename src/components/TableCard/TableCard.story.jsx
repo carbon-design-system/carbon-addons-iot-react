@@ -71,6 +71,7 @@ export const WithLinks = () => {
   );
   const cardVariables = object('Dynamic link variable', {
     assetId: '11112',
+    company: 'ibm',
   });
   const tableLinkColumns = [
     {
@@ -81,7 +82,7 @@ export const WithLinks = () => {
       dataSourceId: 'deviceId',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{assetId}'),
+        href: text('href', 'https://{company}.com/{assetId}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },
@@ -150,7 +151,7 @@ export const WithRowSpecificLinkVariables = () => {
       dataSourceId: 'Link',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{deviceId}'),
+        href: text('href', 'https://ibm.com/{deviceId}?time={hour}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },

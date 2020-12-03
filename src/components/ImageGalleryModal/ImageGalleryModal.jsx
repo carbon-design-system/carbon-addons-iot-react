@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import omit from 'lodash/omit';
 
 import { settings } from '../../constants/Settings';
 import ComposedModal from '../ComposedModal';
@@ -144,7 +145,8 @@ const ImageGalleryModal = ({
       iconDescription={modalCloseIconDescriptionText}
       onClose={onClose}
       onSubmit={() => {
-        onSubmit(selectedImage);
+        // title only makes sense in the modal selector, not in the image card
+        onSubmit(omit(selectedImage, 'title'));
       }}
       {...composedModalProps}>
       <div className={`${baseClass}__top-section`}>
