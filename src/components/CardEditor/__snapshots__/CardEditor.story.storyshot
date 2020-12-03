@@ -1129,7 +1129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     value="munich_image"
                   />
                   <button
-                    className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--ghost"
+                    className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}

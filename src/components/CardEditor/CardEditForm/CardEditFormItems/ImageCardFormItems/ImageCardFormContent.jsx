@@ -62,6 +62,7 @@ const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
           <Button
             kind="ghost"
             renderIcon={Close16}
+            size="field"
             iconDescription={mergedI18n.close}
             className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
             onClick={() =>

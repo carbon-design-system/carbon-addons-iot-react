@@ -167,11 +167,10 @@
   }
   &-clear-button {
     position: absolute;
-    right: $spacing-05;
-    margin-bottom: 0;
-    padding: 0 $spacing-02;
-    bottom: $spacing-04;
+    right: 0;
+    top: 1.25rem;
     color: $ui-05;
+    background-color: $ui-02;
     &:hover,
     &:active {
       color: $ui-05;
