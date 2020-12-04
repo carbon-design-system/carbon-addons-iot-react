@@ -105,7 +105,7 @@ export const formatChartData = (
   type
 ) => {
   const data = [];
-  if (!isNil(values) || !isEmpty(series)) {
+  if (!isNil(values) && !isEmpty(series)) {
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
       let uniqueDatasetNames;
