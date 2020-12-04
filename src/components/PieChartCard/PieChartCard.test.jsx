@@ -8,7 +8,7 @@ import Table from '../Table/Table';
 
 import PieChartCard, { formatColors } from './PieChartCard';
 
-jest.unmock('@carbon/charts-react/pie-chart');
+jest.unmock('@carbon/charts-react');
 
 const chartDataExample = [
   {
