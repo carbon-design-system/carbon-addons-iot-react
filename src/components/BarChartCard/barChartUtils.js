@@ -105,7 +105,7 @@ export const formatChartData = (
   type
 ) => {
   const data = [];
-  if (!isNil(values) || !isEmpty(series)) {
+  if (!isNil(values) && !isEmpty(series)) {
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
       let uniqueDatasetNames;
@@ -151,7 +151,7 @@ export const formatChartData = (
         });
       });
     } // single bars and not time-based
-    else if (categoryDataSourceId) {
+    else if (categoryDataSourceId && Array.isArray(values)) {
       const uniqueDatasetNames = [
         ...new Set(values.map((val) => val[categoryDataSourceId])),
       ];
@@ -171,7 +171,7 @@ export const formatChartData = (
         });
       });
     } // single bars and time-based
-    else {
+    else if (Array.isArray(values)) {
       const uniqueDatasetNames = [
         ...new Set(values.map((val) => val[timeDataSourceId])),
       ];
