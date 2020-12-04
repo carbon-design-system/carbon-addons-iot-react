@@ -827,6 +827,699 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor for Image 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 6rem)",
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+    >
+      <div
+        className="iot--card-editor"
+      >
+        <div
+          className="iot--card-editor--header"
+        >
+          <button
+            className="gallery-button iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Add card
+            <svg
+              aria-hidden={true}
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="iot--card-editor--content"
+        >
+          <div
+            className="iot--card-edit-form"
+          >
+            <div
+              className="bx--tabs"
+              role="navigation"
+              selected={0}
+            >
+              <div
+                aria-label="listbox"
+                className="bx--tabs-trigger"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="listbox"
+                tabIndex={0}
+              >
+                <a
+                  className="bx--tabs-trigger-text"
+                  href="#"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Content
+                </a>
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                  <title>
+                    show menu options
+                  </title>
+                </svg>
+              </div>
+              <ul
+                className="bx--tabs__nav bx--tabs__nav--hidden"
+                role="tablist"
+              >
+                <li
+                  aria-controls="undefined__panel"
+                  aria-selected={true}
+                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <a
+                    className="bx--tabs__nav-link"
+                    href="#"
+                    tabIndex={0}
+                  >
+                    Content
+                  </a>
+                </li>
+                <li
+                  aria-controls="undefined__panel"
+                  aria-selected={false}
+                  className="bx--tabs__nav-item"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="tab"
+                  tabIndex={-1}
+                >
+                  <a
+                    className="bx--tabs__nav-link"
+                    href="#"
+                    tabIndex={-1}
+                  >
+                    Settings
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              aria-hidden={false}
+              className="bx--tab-content"
+              hidden={false}
+              role="tabpanel"
+              selected={true}
+            >
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="image_title"
+                  >
+                    Card title
+                  </label>
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        disabled={false}
+                        id="image_title"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                        value="image-card"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--form-item"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="image_description"
+                  >
+                    Description (Optional)
+                  </label>
+                  <div
+                    className="bx--text-area__wrapper"
+                    data-invalid={null}
+                  >
+                    <textarea
+                      aria-describedby={null}
+                      aria-invalid={null}
+                      className="bx--text-area bx--text-area--light"
+                      cols={50}
+                      disabled={false}
+                      id="image_description"
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      placeholder=""
+                      rows={4}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="downshift-0-toggle-button"
+                    id="downshift-0-label"
+                  >
+                    Size
+                  </label>
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="image_size"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-0-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Medium wide (16x2)
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-0-label"
+                      className="bx--list-box__menu"
+                      id="downshift-0-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image"
+              >
+                Image
+              </div>
+              <div
+                className="iot--card-edit-form--form-section-image--input"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="Image file"
+                  id="Image file-label"
+                >
+                  Image file
+                  <input
+                    className="bx--text-input bx--text__input bx--text-input--light iot--card-edit-form--form-section-image-input"
+                    id="Image file"
+                    readOnly={true}
+                    value="munich_image"
+                  />
+                  <button
+                    className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image-clear-button bx--btn bx--btn--field bx--btn--ghost"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                      />
+                    </svg>
+                  </button>
+                </label>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="bx--tab-content"
+              hidden={true}
+              role="tabpanel"
+              selected={false}
+            >
+              <div
+                className="iot--card-edit-form iot--card-edit-form--form-section-image"
+              >
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <fieldset
+                    className="bx--fieldset"
+                  >
+                    <legend
+                      className="bx--label"
+                    >
+                      Image display options
+                    </legend>
+                    <div
+                      className="bx--form-item"
+                    >
+                      <div
+                        className="bx--radio-button-group bx--radio-button-group--vertical bx--radio-button-group--label-right"
+                      >
+                        <div
+                          className="bx--radio-button-wrapper"
+                        >
+                          <input
+                            checked={false}
+                            className="bx--radio-button"
+                            data-testid="iot--card-edit-form--input-radio1"
+                            id="iot--card-edit-form--input-radio-1"
+                            name="iot--card-edit-form--input-radios"
+                            onChange={[Function]}
+                            type="radio"
+                            value="contain"
+                          />
+                          <label
+                            className="bx--radio-button__label"
+                            htmlFor="iot--card-edit-form--input-radio-1"
+                          >
+                            <span
+                              className="bx--radio-button__appearance"
+                            />
+                            <span
+                              className=""
+                            >
+                              Fit
+                            </span>
+                          </label>
+                        </div>
+                        <div
+                          className="bx--radio-button-wrapper"
+                        >
+                          <input
+                            checked={false}
+                            className="bx--radio-button"
+                            data-testid="iot--card-edit-form--input-radio2"
+                            id="iot--card-edit-form--input-radio-2"
+                            name="iot--card-edit-form--input-radios"
+                            onChange={[Function]}
+                            type="radio"
+                            value="cover"
+                          />
+                          <label
+                            className="bx--radio-button__label"
+                            htmlFor="iot--card-edit-form--input-radio-2"
+                          >
+                            <span
+                              className="bx--radio-button__appearance"
+                            />
+                            <span
+                              className=""
+                            >
+                              Fill
+                            </span>
+                          </label>
+                        </div>
+                        <div
+                          className="bx--radio-button-wrapper"
+                        >
+                          <input
+                            checked={false}
+                            className="bx--radio-button"
+                            data-testid="iot--card-edit-form--input-radio3"
+                            id="iot--card-edit-form--input-radio-3"
+                            name="iot--card-edit-form--input-radios"
+                            onChange={[Function]}
+                            type="radio"
+                            value="fill"
+                          />
+                          <label
+                            className="bx--radio-button__label"
+                            htmlFor="iot--card-edit-form--input-radio-3"
+                          >
+                            <span
+                              className="bx--radio-button__appearance"
+                            />
+                            <span
+                              className=""
+                            >
+                              Stretch
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <div
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  >
+                    <label
+                      className="bx--label"
+                      htmlFor="downshift-1-toggle-button"
+                      id="downshift-1-label"
+                    >
+                      Background color
+                    </label>
+                    <div
+                      className="bx--dropdown iot--color-dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="iot--card-edit-form--input-color"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-1-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="bx--list-box__label"
+                        >
+                          Select a color
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-1-label"
+                        className="bx--list-box__menu"
+                        id="downshift-1-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <div
+                    className="iot--card-edit-form--input--toggle-field"
+                  >
+                    <span>
+                      Hide mini map
+                    </span>
+                    <div
+                      className="bx--form-item"
+                    >
+                      <input
+                        aria-label={null}
+                        className="bx--toggle-input bx--toggle-input--small"
+                        data-testid="iot--card-edit-form--input-toggle1"
+                        defaultChecked={false}
+                        id="iot--card-edit-form--input-toggle-1"
+                        onChange={[Function]}
+                        onKeyUp={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        aria-label="Hide mini map"
+                        className="bx--toggle-input__label"
+                        htmlFor="iot--card-edit-form--input-toggle-1"
+                      >
+                        <span
+                          className="bx--toggle__switch"
+                        >
+                          <svg
+                            className="bx--toggle__check"
+                            height="5px"
+                            viewBox="0 0 6 5"
+                            width="6px"
+                          >
+                            <path
+                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                            />
+                          </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <div
+                    className="iot--card-edit-form--input--toggle-field"
+                  >
+                    <span>
+                      Hide zoom controls
+                    </span>
+                    <div
+                      className="bx--form-item"
+                    >
+                      <input
+                        aria-label={null}
+                        className="bx--toggle-input bx--toggle-input--small"
+                        data-testid="iot--card-edit-form--input-toggle2"
+                        defaultChecked={false}
+                        id="iot--card-edit-form--input-toggle-2"
+                        onChange={[Function]}
+                        onKeyUp={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        aria-label="Hide zoom controls"
+                        className="bx--toggle-input__label"
+                        htmlFor="iot--card-edit-form--input-toggle-2"
+                      >
+                        <span
+                          className="bx--toggle__switch"
+                        >
+                          <svg
+                            className="bx--toggle__check"
+                            height="5px"
+                            viewBox="0 0 6 5"
+                            width="6px"
+                          >
+                            <path
+                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                            />
+                          </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--card-edit-form--footer"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Open JSON editor
+                <svg
+                  aria-hidden={true}
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+                  />
+                  <path
+                    d="M5.91 15H26.080000000000002V17H5.91z"
+                    transform="rotate(-75 15.996 16)"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/CardEditor for TimeSeries 1`] = `
 <div
   className="storybook-container"
