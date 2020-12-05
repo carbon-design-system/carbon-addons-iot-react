@@ -267,6 +267,8 @@ const DataSeriesFormItemModal = ({
         ) : null}
       </div>
       <ThresholdsFormItem
+        dataSourceId={editDataItem.dataSourceId}
+        cardConfig={cardConfig}
         id={`${cardConfig.id}_thresholds`}
         thresholds={editDataItem.thresholds}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}

@@ -582,10 +582,12 @@ export const formatAttributes = (selectedItems, cardConfig) => {
  * @param {array} selectedItems
  * @param {object} cardConfig
  */
-export const handleDataSeriesChange = (selectedItems, cardConfig) => {
+export const handleDataSeriesChange = (selectedItems, cardConfig, title) => {
   const { type } = cardConfig;
   let series;
   let attributes;
+  let dataSection;
+  let editDataItemIndex;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -599,6 +601,22 @@ export const handleDataSeriesChange = (selectedItems, cardConfig) => {
       return {
         ...cardConfig,
         content: { ...cardConfig.content, series },
+      };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(cardConfig.content?.hotspots || [])];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.title === title
+      );
+      dataSection[editDataItemIndex].content = {
+        ...dataSection[editDataItemIndex].content,
+        attributes: selectedItems,
+      };
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          hotspots: dataSection,
+        },
       };
     default:
       return cardConfig;
@@ -635,6 +653,22 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
       return {
         ...cardConfig,
         content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.IMAGE:
+      // dataSection = [...(content.hotspots || [])];
+      // editDataItemIndex = dataSection.findIndex(
+      //   (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      // );
+      // dataSection[editDataItemIndex] = editDataItem.attributes;
+      return {
+        ...cardConfig,
+        // content: { ...content, hotspots: dataSection,},
+        thresholds: [
+          ...(cardConfig.thresholds?.filter(
+            (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
+          ) || []),
+          ...editDataItem.thresholds,
+        ].map((thresh) => omit(thresh, 'id')),
       };
     default:
       return cardConfig;
