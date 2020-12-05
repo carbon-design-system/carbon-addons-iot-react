@@ -83,7 +83,7 @@ export const formatDataItemsForDropdown = (dataItems) =>
   dataItems?.map(({ dataSourceId }) => ({
     id: dataSourceId,
     text: dataSourceId,
-  })) || [];
+  }));
 
 const HotspotEditorDataSourceTab = ({
   title,

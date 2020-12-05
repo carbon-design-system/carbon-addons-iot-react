@@ -655,6 +655,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
         content: { ...content, series: dataSection },
       };
     case CARD_TYPES.IMAGE:
+      console.log('handleDataItemEdit', {editDataItem})
       // dataSection = [...(content.hotspots || [])];
       // editDataItemIndex = dataSection.findIndex(
       //   (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
