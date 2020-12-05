@@ -291,7 +291,7 @@ const DataSeriesFormItemModal = ({
             header={{
               title: mergedI18n.dataItemEditorDataItemTitle,
             }}
-            size="xs"
+            size="sm"
             onSubmit={() => {
               const newCard = handleDataItemEdit(editDataItem, cardConfig);
               onChange(newCard);
