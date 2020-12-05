@@ -655,15 +655,8 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
         content: { ...content, series: dataSection },
       };
     case CARD_TYPES.IMAGE:
-      console.log('handleDataItemEdit', {editDataItem})
-      // dataSection = [...(content.hotspots || [])];
-      // editDataItemIndex = dataSection.findIndex(
-      //   (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
-      // );
-      // dataSection[editDataItemIndex] = editDataItem.attributes;
       return {
         ...cardConfig,
-        // content: { ...content, hotspots: dataSection,},
         thresholds: [
           ...(cardConfig.thresholds?.filter(
             (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
