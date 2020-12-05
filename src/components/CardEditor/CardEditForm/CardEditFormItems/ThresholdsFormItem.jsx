@@ -5,7 +5,6 @@ import omit from 'lodash/omit';
 import isEmpty from 'lodash/isEmpty';
 import uuid from 'uuid';
 import { red60 } from '@carbon/colors';
-import { data } from 'autoprefixer';
 
 import { settings } from '../../../../constants/Settings';
 import { Button, NumberInput, Dropdown } from '../../../../index';
