@@ -268,12 +268,9 @@ const ThresholdsFormItem = ({
             },
           ]);
           if (dataSourceId) {
-            newThreshold = { dataSourceId, ...newThreshold}
+            newThreshold = { dataSourceId, ...newThreshold };
           }
-          onChange([
-            ...thresholds,
-              newThreshold,
-          ]);
+          onChange([...thresholds, newThreshold]);
         }}>
         {mergedI18n.dataItemEditorDataItemAddThreshold}
       </Button>

@@ -61,9 +61,8 @@ describe('HotspotEditorDataSourceTab', () => {
           },
         ],
       },
-
     };
-  })
+  });
 
   it('calls onChange & removes attribute when existig item is clicked in multiselect', () => {
     const onChange = jest.fn();
@@ -129,9 +128,9 @@ describe('HotspotEditorDataSourceTab', () => {
                   unit: 'floor',
                 },
                 {
-                  "dataSourceId": "other_metric",
-                  "label": "Other metric",
-                  "unit": "lbs",
+                  dataSourceId: 'other_metric',
+                  label: 'Other metric',
+                  unit: 'lbs',
                 },
               ],
             },
@@ -152,8 +151,8 @@ describe('HotspotEditorDataSourceTab', () => {
           label: 'high temp',
           unit: '{unitVar}',
         },
-      ]
-    }
+      ],
+    };
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
