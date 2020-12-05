@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import PieChart from '@carbon/charts-react/pie-chart';
+import { PieChart } from '@carbon/charts-react';
 import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import assign from 'lodash/assign';

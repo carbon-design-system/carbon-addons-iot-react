@@ -106,6 +106,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         Focus sentinel
       </span>
     </div>
+    <span
+      className="iot--suite-header-data"
+      data-type="workspaceId"
+    />
+    <span
+      className="iot--suite-header-data"
+      data-type="domain"
+    />
     <header
       aria-label="main header"
       className="bx--header iot--suite-header"
@@ -867,6 +875,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         Focus sentinel
       </span>
     </div>
+    <span
+      className="iot--suite-header-data"
+      data-type="workspaceId"
+    />
+    <span
+      className="iot--suite-header-data"
+      data-type="domain"
+    />
     <header
       aria-label="main header"
       className="bx--header iot--suite-header"
@@ -1824,6 +1840,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         Focus sentinel
       </span>
     </div>
+    <span
+      className="iot--suite-header-data"
+      data-type="workspaceId"
+    />
+    <span
+      className="iot--suite-header-data"
+      data-type="domain"
+    />
     <header
       aria-label="main header"
       className="bx--header iot--suite-header"
@@ -2382,6 +2406,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         Focus sentinel
       </span>
     </div>
+    <span
+      className="iot--suite-header-data"
+      data-type="workspaceId"
+    >
+      workspace1
+    </span>
+    <span
+      className="iot--suite-header-data"
+      data-type="domain"
+    >
+      ibm.com
+    </span>
     <header
       aria-label="main header"
       className="bx--header iot--suite-header"

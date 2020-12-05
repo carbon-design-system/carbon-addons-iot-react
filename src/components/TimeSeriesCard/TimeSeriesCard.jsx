@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/min/locales';
-import LineChart from '@carbon/charts-react/line-chart';
-import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
+import { LineChart, StackedBarChart } from '@carbon/charts-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -384,6 +383,14 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = formatColors(series);
 
+  /**
+   * Determines the dot stroke color (the border of the data point)
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalStrokeColor from carbon charts
+   * @returns {string} stroke color
+   */
   const handleStrokeColor = (
     datasetLabel,
     label,
@@ -399,6 +406,14 @@ const TimeSeriesCard = ({
     return originalStrokeColor;
   };
 
+  /**
+   * Determines the dot fill color based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalFillColor from carbon charts
+   * @returns {string} fill color
+   */
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
     // If it's editable don't fill the dot
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
@@ -412,6 +427,14 @@ const TimeSeriesCard = ({
     return defaultFillColor;
   };
 
+  /**
+   * Determines if the dot is filled based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {Boolean} isFilled default setting from carbon charts
+   * @returns {Boolean}
+   */
   const handleIsFilled = (datasetLabel, label, data, isFilled) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);

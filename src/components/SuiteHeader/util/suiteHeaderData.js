@@ -24,6 +24,8 @@ export const calcRoutes = (domain, user, workspaces, applications) => {
     requestEnhancement: 'https://ibm-watson-iot.ideas.aha.io/',
     support: 'https://www.ibm.com/mysupport',
     about: `https://home.${domain}/about`,
+    workspaceId,
+    domain,
   };
   const appOrdering = ['monitor', 'health', 'predict', 'visualinspection'];
   const workspaceApplications = user.workspaces[workspaceId].applications || {};

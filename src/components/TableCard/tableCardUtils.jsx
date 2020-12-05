@@ -45,9 +45,12 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
             variableLink = linkTemplate.href;
             variables.forEach((variable) => {
               const variableValue = row[variable];
+              // encode value so the URL can be valid
+              const encodedValue = encodeURIComponent(variableValue);
+
               variableLink = variableLink.replace(
                 `{${variable}}`,
-                variableValue
+                encodedValue
               );
             });
           }
@@ -90,7 +93,9 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
       variableLink = linkTemplate.href;
       variables.forEach((variable) => {
         const variableValue = row[variable];
-        variableLink = variableLink.replace(`{${variable}}`, variableValue);
+        // encode value so the URL can be valid
+        const encodedValue = encodeURIComponent(variableValue);
+        variableLink = variableLink.replace(`{${variable}}`, encodedValue);
       });
     }
     if (linkTemplate) {

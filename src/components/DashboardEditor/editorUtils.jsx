@@ -386,7 +386,6 @@ const renderTimeSeriesCard = (cardConfig, commonProps) => {
       isEditable
       values={[]}
       interval={timeRangeJSON?.interval || 'day'}
-      timeRange={cardConfig?.dataSource?.range}
       {...cardConfig}
       {...commonProps}
     />
