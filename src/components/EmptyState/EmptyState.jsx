@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Button from '../Button';
 import { Link } from '../Link';
@@ -80,7 +81,7 @@ const EmptyState = ({
   testID,
 }) => (
   <div
-    className={`${iotPrefix}--empty-state ${className}`}
+    className={classnames(`${iotPrefix}--empty-state`, className)}
     data-testid={testID}>
     <div className={`${iotPrefix}--empty-state--content`}>
       {icon &&
@@ -103,9 +104,7 @@ const EmptyState = ({
         <div
           className={`${iotPrefix}--empty-state--action`}
           data-testid={`${testID}-action`}>
-          <Button onClick={action.onClick && action.onClick}>
-            {action.label}
-          </Button>
+          <Button onClick={action.onClick}>{action.label}</Button>
         </div>
       )}
       {secondaryAction && (
@@ -114,7 +113,7 @@ const EmptyState = ({
           data-testid={`${testID}-secondaryAction`}>
           {secondaryAction.label && (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <Link onClick={secondaryAction.onClick && secondaryAction.onClick}>
+            <Link onClick={secondaryAction.onClick}>
               {secondaryAction.label}
             </Link>
           )}

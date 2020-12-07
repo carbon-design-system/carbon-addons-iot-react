@@ -91,7 +91,6 @@ describe('EmptyState', () => {
     expect(onClick).toHaveBeenCalled();
   });
 
-
   it('shows secondaryAction if desired', () => {
     const actionLabel = 'TestLink';
     const onClick = jest.fn();
