@@ -39,6 +39,7 @@ export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner'
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 export TableViewDropdown from './components/Table/TableViewDropdown/TableViewDropdown';
 export IconDropdown from './components/IconDropdown/IconDropdown';
+export EmptyState from './components/EmptyState/EmptyState';
 export ImageGalleryModal from './components/ImageGalleryModal/ImageGalleryModal';
 
 // reusable reducers
