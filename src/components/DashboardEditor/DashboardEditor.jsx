@@ -318,7 +318,10 @@ const DashboardEditor = ({
 
   const handleOnCardChange = (cardConfig) => {
     // need to handle resetting the src of the image for image cards based on the id
-    if (cardConfig.type === CARD_TYPES.IMAGE) {
+    if (
+      cardConfig.type === CARD_TYPES.IMAGE &&
+      cardConfig.content.imgState !== 'new'
+    ) {
       // eslint-disable-next-line no-param-reassign
       cardConfig.content.src = availableImages.find(
         (image) => image.id === cardConfig.content.id
