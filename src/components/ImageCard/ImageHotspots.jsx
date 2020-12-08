@@ -72,7 +72,8 @@ const defaultProps = {
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
   },
-  locale: null,
+  // undefined instead of null allows for functions to set default values
+  locale: undefined,
   selectedHotspots: [],
 };
 

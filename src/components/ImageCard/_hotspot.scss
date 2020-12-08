@@ -3,26 +3,7 @@
 
 @import '../../globals/vars';
 
-// The custom properties --x-pos, --y-pos, --width, --height are set
-// on the container by the react js code
-.#{$iot-prefix}--hotspot-container {
-  position: absolute;
-  font-family: Sans-Serif;
-  pointer-events: auto;
-  top: calc((var(--y-pos) * 1%) - ((var(--height) / 2) * 1px));
-  left: calc((var(--x-pos) * 1%) - ((var(--width) / 2) * 1px));
-
-  .bx--tooltip__label {
-    display: flex;
-    cursor: pointer;
-    box-shadow: 0 0 4px #999;
-    border-radius: 13px;
-    background: none;
-  }
-}
-
-.#{$iot-prefix}--hotspot-container--selected {
-  $padding: #{$spacing-02};
+@mixin selected($padding) {
   $border-width: #{$spacing-01};
 
   top: calc(
@@ -38,14 +19,79 @@
   padding: #{$padding};
 }
 
-.#{$iot-prefix}--hotspot-container--has-icon {
+// The custom properties --x-pos, --y-pos, --width, --height are set
+// on the container by the react js code. The do not include units.
+.#{$iot-prefix}--hotspot-container {
+  position: absolute;
+  font-family: Sans-Serif;
+  pointer-events: auto;
+  top: calc((var(--y-pos) * 1%) - ((var(--height) / 2) * 1px));
+  left: calc((var(--x-pos) * 1%) - ((var(--width) / 2) * 1px));
+}
+
+// FIXED HOTSPOT
+.#{$iot-prefix}--hotspot-container--is-fixed {
+  &.#{$iot-prefix}--hotspot-container--selected {
+    @include selected($spacing-02);
+  }
+  &.#{$iot-prefix}--hotspot-container--has-icon {
+    .bx--tooltip__label {
+      border: solid 1px #aaa;
+      cursor: pointer;
+      padding: $spacing-02;
+      background: white;
+      opacity: 0.9;
+      border-radius: 4px;
+      box-shadow: 0 0 8px #777;
+    }
+  }
+
   .bx--tooltip__label {
-    border: solid 1px #aaa;
+    display: flex;
     cursor: pointer;
-    padding: $spacing-02;
-    background: white;
-    opacity: 0.9;
-    border-radius: 4px;
-    box-shadow: 0 0 8px #777;
+    box-shadow: 0 0 4px #999;
+    border-radius: 13px;
+    background: none;
+  }
+}
+
+// TEXT HOTSPOT
+// The custom properties --bold, --italic, --background-color-r etc are set
+// on the container by the react js code
+.#{$iot-prefix}--hotspot-container--is-text {
+  &.#{$iot-prefix}--hotspot-container--selected {
+    @include selected(0px);
+  }
+}
+
+.#{$iot-prefix}--text-hotspot {
+  padding: $spacing-04;
+  box-sizing: border-box;
+
+  width: calc(var(--width) * 1px);
+  height: calc(var(--height) * 1px);
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: calc(var(--border-width) * 1px);
+
+  .#{$iot-prefix}--hotspot-content h4 {
+    @include type-style('productive-heading-01');
+    text-align: left;
+
+    font-weight: var(--title-font-weight);
+    font-style: var(--title-font-style);
+    text-decoration-line: var(--title-text-decoration-line);
+    color: var(--title-font-color);
+    font-size: calc(var(--title-font-size) * 1px);
+  }
+
+  .#{$iot-prefix}--hotspot-content-label-section {
+    text-align: left;
+  }
+  .#{$iot-prefix}--hotspot-content-label,
+  .#{$iot-prefix}--hotspot-content-threshold {
+    @include type-style('helper-text-01');
+    font-weight: normal;
   }
 }

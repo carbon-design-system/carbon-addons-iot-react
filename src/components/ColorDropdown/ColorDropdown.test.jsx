@@ -6,6 +6,7 @@ import { red50, blue50, green50 } from '@carbon/colors';
 import { settings } from '../../constants/Settings';
 
 import ColorDropdown from './ColorDropdown';
+import { hexToRgb } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -20,13 +21,7 @@ describe('ColorDropdown', () => {
     getColors().find((obj) => obj.name === name).carbonColor;
 
   const hexToRgbStyle = (hexColor) => {
-    const regexResult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
-      hexColor
-    );
-    const radix = 16;
-    const r = parseInt(regexResult[1], radix);
-    const g = parseInt(regexResult[2], radix);
-    const b = parseInt(regexResult[3], radix);
+    const { r, g, b } = hexToRgb(hexColor);
     return `rgb(${r}, ${g}, ${b})`;
   };
 

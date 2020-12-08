@@ -32,7 +32,18 @@ const hotspots = [
   {
     x: 50,
     y: 60,
-    content: <span style={{ padding: spacing03 }}>Hotspot4</span>,
+    content: {
+      title: 'Hotspot3',
+      values: {
+        temperature: 35.35,
+        humidity: 99,
+      },
+      attributes: [
+        { dataSourceId: 'temperature', label: 'Temperature' },
+        { dataSourceId: 'humidity', label: 'Humidity' },
+      ],
+      locale: 'en',
+    },
     color: 'green',
   },
 ];
@@ -156,9 +167,39 @@ ImageSmallerThanCardMinimapAndZoomcontrolsShouldBeHidden.story = {
   name: 'image smaller than card, minimap and zoomcontrols should be hidden',
 };
 
-export const Editable = () => {
+export const EditableWithTextHotspot = () => {
   const WithState = () => {
-    const [myHotspots, setMyHotspots] = useState(hotspots);
+    const [myHotspots, setMyHotspots] = useState([
+      ...hotspots,
+      {
+        x: 26,
+        y: 68,
+        type: 'text',
+        content: {
+          title: 'Facility rooms',
+          values: {
+            temperature: 35.35,
+            humidity: 99,
+          },
+          attributes: [
+            { dataSourceId: 'temperature', label: 'Temperature' },
+            { dataSourceId: 'humidity', label: 'Humidity' },
+          ],
+          locale: 'en',
+        },
+        bold: true,
+        italic: false,
+        underline: false,
+        fontColor: '#006666',
+        fontSize: 16,
+        backgroundColor: '#00FF00',
+        backgroundOpacity: 50,
+        borderColor: '#006666',
+        borderWidth: 1,
+        height: 100,
+        width: 200,
+      },
+    ]);
     const [selectedHotspotPositions, setSelectedHotspotPositions] = useState(
       []
     );
@@ -205,4 +246,8 @@ export const Editable = () => {
   };
 
   return <WithState />;
+};
+
+EditableWithTextHotspot.story = {
+  name: 'Editable with text hotspot',
 };
