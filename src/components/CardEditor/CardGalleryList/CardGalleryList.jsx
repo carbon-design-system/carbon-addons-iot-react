@@ -71,6 +71,7 @@ const CardGalleryList = ({ supportedCardTypes, onAddCard, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   return (
     <SimpleList
+      title=""
       isFullHeight
       hasSearch
       hasPagination={false}
