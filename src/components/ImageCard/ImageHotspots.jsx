@@ -38,6 +38,11 @@ const propTypes = {
   onAddHotspotPosition: PropTypes.func,
   /** Callback when a hotspot is clicked in isEditable mode, emits position obj {x, y} */
   onSelectHotspot: PropTypes.func,
+  /**
+   * Callback when the hotspot content is changed, emits position obj {x, y}
+   * and content change obj, e.g. {title: 'new title value'}
+   * */
+  onHotspotContentChanged: PropTypes.func,
   /** Current width in pixels */
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
@@ -64,6 +69,7 @@ const defaultProps = {
   isEditable: false,
   onAddHotspotPosition: () => {},
   onSelectHotspot: () => {},
+  onHotspotContentChanged: () => {},
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
@@ -419,6 +425,7 @@ const ImageHotspots = ({
   isHotspotDataLoading,
   onAddHotspotPosition: onAddHotspotPositionCallback,
   onSelectHotspot,
+  onHotspotContentChanged,
   zoomMax,
   renderIconByName,
   locale,
@@ -519,8 +526,9 @@ const ImageHotspots = ({
   const cachedHotspots = useMemo(
     () =>
       hotspots.map((hotspot) => {
+        const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find(
-          (pos) => hotspot.x === pos.x && hotspot.y === pos.y
+          (pos) => x === pos.x && y === pos.y
         );
         return (
           <Hotspot
@@ -533,10 +541,17 @@ const ImageHotspots = ({
                   {...hotspot.content}
                   locale={locale}
                   renderIconByName={renderIconByName}
+                  id={`hotspot-content-${x}-${y}`}
+                  isTitleEditable={
+                    (isEditable, hotspotIsSelected && hotspot.type === 'text')
+                  }
+                  onChange={(change) => {
+                    onHotspotContentChanged({ x, y }, change);
+                  }}
                 />
               )
             }
-            key={`${hotspot.x}-${hotspot.y}`}
+            key={`${x}-${y}`}
             style={hotspotsStyle}
             renderIconByName={renderIconByName}
             isSelected={hotspotIsSelected}

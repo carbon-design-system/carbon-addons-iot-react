@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { g10 } from '@carbon/themes';
 
 import Hotspot from './Hotspot';
@@ -38,87 +38,104 @@ describe('Hotspot', () => {
       expect.stringContaining('--height: 50')
     );
   });
-  it('uses defult text styles', () => {
-    render(<Hotspot x={10} y={5} content={<HotspotContent />} type="text" />);
+  describe('text type', () => {
+    it('uses defult text styles', () => {
+      render(<Hotspot x={10} y={5} content={<HotspotContent />} type="text" />);
 
-    const textHotspot = screen.getByTestId(/hotspot-10-5/).firstChild;
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--background-color: rgba( 255, 255, 255, 1)')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining(`--border-color: ${ui03}`)
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--border-width: 0')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-font-weight: normal')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-text-decoration-line: none')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining(`--title-font-color: ${text01}`)
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-font-size: 14')
-    );
-  });
+      const textHotspot = screen.getByTestId(/hotspot-10-5/).firstChild;
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--background-color: rgba( 255, 255, 255, 1)')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining(`--border-color: ${ui03}`)
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--border-width: 0')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-font-weight: normal')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-text-decoration-line: none')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining(`--title-font-color: ${text01}`)
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-font-size: 14')
+      );
+    });
 
-  it('uses custom text styles', () => {
-    render(
-      <Hotspot
-        x={10}
-        y={5}
-        content={<HotspotContent />}
-        type="text"
-        bold
-        italic
-        underline
-        fontColor="#006666"
-        fontSize={16}
-        backgroundColor="#00FF00"
-        backgroundOpacity={50}
-        borderColor="#006666"
-        borderWidth={1}
-      />
-    );
+    it('uses custom text styles', () => {
+      render(
+        <Hotspot
+          x={10}
+          y={5}
+          content={<HotspotContent />}
+          type="text"
+          bold
+          italic
+          underline
+          fontColor="#006666"
+          fontSize={16}
+          backgroundColor="#00FF00"
+          backgroundOpacity={50}
+          borderColor="#006666"
+          borderWidth={1}
+        />
+      );
 
-    const textHotspot = screen.getByTestId(/hotspot-10-5/).firstChild;
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--background-color: rgba( 0, 255, 0, 0.5)')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--border-color: #006666')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--border-width: 1')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-font-weight: bold')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-text-decoration-line: underline')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-font-color: #006666')
-    );
-    expect(textHotspot).toHaveAttribute(
-      'style',
-      expect.stringContaining('--title-font-size: 16')
-    );
+      const textHotspot = screen.getByTestId(/hotspot-10-5/).firstChild;
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--background-color: rgba( 0, 255, 0, 0.5)')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--border-color: #006666')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--border-width: 1')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-font-weight: bold')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-text-decoration-line: underline')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-font-color: #006666')
+      );
+      expect(textHotspot).toHaveAttribute(
+        'style',
+        expect.stringContaining('--title-font-size: 16')
+      );
+    });
+    it('handles onClick callback', () => {
+      const onClick = jest.fn();
+      render(
+        <Hotspot
+          x={10}
+          y={5}
+          content={<HotspotContent title="test-title" />}
+          type="text"
+          onClick={onClick}
+        />
+      );
+
+      fireEvent.click(screen.getByText('test-title'));
+      expect(onClick).toHaveBeenCalled();
+    });
   });
 });

@@ -3,9 +3,9 @@
 
 @import '../../globals/vars';
 
-@mixin selected($padding) {
-  $border-width: #{$spacing-01};
+$selected-border-width: #{$spacing-01};
 
+@mixin selected($padding, $border-width) {
   top: calc(
     (var(--y-pos) * 1%) -
       (((var(--height) * 1px) / 2) + #{$padding} + #{$border-width})
@@ -20,7 +20,7 @@
 }
 
 // The custom properties --x-pos, --y-pos, --width, --height are set
-// on the container by the react js code. The do not include units.
+// on the container by the react js code. They do not include units.
 .#{$iot-prefix}--hotspot-container {
   position: absolute;
   font-family: Sans-Serif;
@@ -32,7 +32,7 @@
 // FIXED HOTSPOT
 .#{$iot-prefix}--hotspot-container--is-fixed {
   &.#{$iot-prefix}--hotspot-container--selected {
-    @include selected($spacing-02);
+    @include selected($spacing-02, $selected-border-width);
   }
   &.#{$iot-prefix}--hotspot-container--has-icon {
     .bx--tooltip__label {
@@ -56,16 +56,17 @@
 }
 
 // TEXT HOTSPOT
-// The custom properties --bold, --italic, --background-color-r etc are set
+// The custom properties --bold, --italic, --background-color etc are set
 // on the container by the react js code
 .#{$iot-prefix}--hotspot-container--is-text {
   &.#{$iot-prefix}--hotspot-container--selected {
-    @include selected(0px);
+    @include selected(0px, $selected-border-width);
   }
 }
 
 .#{$iot-prefix}--text-hotspot {
-  padding: $spacing-04;
+  $padding: $spacing-03;
+  padding: $padding;
   box-sizing: border-box;
 
   width: calc(var(--width) * 1px);
@@ -93,5 +94,14 @@
   .#{$iot-prefix}--hotspot-content-threshold {
     @include type-style('helper-text-01');
     font-weight: normal;
+  }
+
+  .#{$iot-prefix}--hotspot-content-title-wrapper--editable {
+    $negative-margin: calc(-1 * (#{$padding} + #{$selected-border-width}));
+    margin: $negative-margin $negative-margin 0 $negative-margin;
+
+    .#{$iot-prefix}--hotspot-content-title-input {
+      padding: 0 calc(#{$padding} + #{$selected-border-width});
+    }
   }
 }

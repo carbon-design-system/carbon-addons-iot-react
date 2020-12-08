@@ -199,10 +199,20 @@ export const EditableWithTextHotspot = () => {
         height: 100,
         width: 200,
       },
+      {
+        x: 75,
+        y: 10,
+        type: 'text',
+        content: { title: '' },
+        height: 36,
+        width: 100,
+        backgroundColor: '#999999',
+        backgroundOpacity: 50,
+      },
     ]);
-    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState(
-      []
-    );
+    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState([
+      { x: 75, y: 10 },
+    ]);
 
     const onAddHotspotPosition = (position) => {
       const newHotspot = {
@@ -225,12 +235,23 @@ export const EditableWithTextHotspot = () => {
       action('onSelectHotspot')(position);
     };
 
+    const onHotspotContentChanged = (position, change) => {
+      const modifiedHotspots = myHotspots.map((hotspot) =>
+        hotspot.x === position.x && hotspot.y === position.y
+          ? { ...hotspot, content: { ...hotspot.content, ...change } }
+          : hotspot
+      );
+      setMyHotspots(modifiedHotspots);
+      action('onHotspotContentChanged')(position, change);
+    };
+
     return (
       <div style={{ width: '450px', height: '300px' }}>
         <ImageHotspots
           isEditable
           onAddHotspotPosition={onAddHotspotPosition}
           onSelectHotspot={onSelectHotspot}
+          onHotspotContentChanged={onHotspotContentChanged}
           src={text('Image', landscape)}
           alt={text('Alternate text', 'Sample image')}
           height={300}

@@ -42,6 +42,7 @@ export const propTypes = {
   onClick: PropTypes.func,
   /** shows a border with padding when set to true */
   isSelected: PropTypes.bool,
+  /** determines the type of hotspot to render. Defaults to 'fixed'. */
   type: PropTypes.oneOf(['fixed', 'variable', 'text']),
   /** For text hotspots, true if title should be bold */
   bold: PropTypes.bool,
