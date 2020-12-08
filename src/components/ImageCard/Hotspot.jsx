@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
+import { g10 } from '@carbon/themes';
 
 import { settings } from '../../constants/Settings';
+import { hexToRgb } from '../../utils/componentUtilityFunctions';
 
 import { HotspotContentPropTypes } from './HotspotContent';
 import CardIcon from './CardIcon';
 
 const { iotPrefix } = settings;
+const { ui01, text01, ui03 } = g10;
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -39,6 +42,26 @@ export const propTypes = {
   onClick: PropTypes.func,
   /** shows a border with padding when set to true */
   isSelected: PropTypes.bool,
+  /** determines the type of hotspot to render. Defaults to 'fixed'. */
+  type: PropTypes.oneOf(['fixed', 'variable', 'text']),
+  /** For text hotspots, true if title should be bold */
+  bold: PropTypes.bool,
+  /** For text hotspots, true if title should be italic */
+  italic: PropTypes.bool,
+  /** For text hotspots, true if title should be underline */
+  underline: PropTypes.bool,
+  /** For text hotspots, the hexdec color of the title font, e.g. #ff0000  */
+  fontColor: PropTypes.string,
+  /** For text hotspots, the size in px of the font, e.g. 12  */
+  fontSize: PropTypes.number,
+  /** For text hotspots, the hexdec color of the background, e.g. #ff0000  */
+  backgroundColor: PropTypes.string,
+  /** For text hotspots, the opactity of the background in percentage, e.g. 100 */
+  backgroundOpacity: PropTypes.number,
+  /** For text hotspots, the hexdec color of the border, e.g. #ff0000  */
+  borderColor: PropTypes.string,
+  /** For text hotspots, the border width in px, e.g. 12  */
+  borderWidth: PropTypes.number,
 };
 
 const defaultProps = {
@@ -50,6 +73,16 @@ const defaultProps = {
   renderIconByName: null,
   onClick: null,
   isSelected: false,
+  type: 'fixed',
+  bold: false,
+  italic: false,
+  underline: false,
+  fontColor: text01,
+  fontSize: 14,
+  backgroundColor: ui01,
+  backgroundOpacity: 100,
+  borderColor: ui03,
+  borderWidth: 0,
 };
 
 /**
@@ -68,6 +101,16 @@ const Hotspot = ({
   onClick,
   isSelected,
   className,
+  type,
+  bold,
+  italic,
+  underline,
+  fontColor,
+  fontSize,
+  backgroundColor,
+  backgroundOpacity,
+  borderColor,
+  borderWidth,
   ...others
 }) => {
   const defaultIcon = (
@@ -106,34 +149,58 @@ const Hotspot = ({
   );
 
   const id = `hotspot-${x}-${y}`;
+  const { r, g, b } = hexToRgb(backgroundColor);
+  const opacity = backgroundOpacity / 100;
 
   return (
     <div
       data-testid={id}
-      className={classNames(`${iotPrefix}--hotspot-container`, {
-        [`${iotPrefix}--hotspot-container--selected`]: isSelected,
-        [`${iotPrefix}--hotspot-container--has-icon`]: icon,
-      })}
       style={{
         '--x-pos': x,
         '--y-pos': y,
         '--width': width,
         '--height': height,
       }}
+      className={classnames(`${iotPrefix}--hotspot-container`, {
+        [`${iotPrefix}--hotspot-container--selected`]: isSelected,
+        [`${iotPrefix}--hotspot-container--has-icon`]: icon,
+        [`${iotPrefix}--hotspot-container--is-text`]: type === 'text',
+        [`${iotPrefix}--hotspot-container--is-fixed`]: type === 'fixed',
+      })}
       icon={icon}>
-      <Tooltip
-        {...others}
-        triggerText={iconToRender}
-        showIcon={false}
-        triggerId={id}
-        tooltipId={id}
-        onChange={(evt) => {
-          if (evt.type === 'click' && onClick) {
-            onClick(evt, { x, y });
-          }
-        }}>
-        {content}
-      </Tooltip>
+      {type === 'fixed' ? (
+        <Tooltip
+          {...others}
+          triggerText={iconToRender}
+          showIcon={false}
+          triggerId={id}
+          tooltipId={id}
+          onChange={(evt) => {
+            if (evt.type === 'click' && onClick) {
+              onClick(evt, { x, y });
+            }
+          }}>
+          {content}
+        </Tooltip>
+      ) : type === 'text' ? (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+        <div
+          role="complementary"
+          style={{
+            '--background-color': `rgba( ${r}, ${g}, ${b}, ${opacity})`,
+            '--border-color': borderColor,
+            '--border-width': borderWidth,
+            '--title-font-weight': bold ? 'bold' : 'normal',
+            '--title-font-style': italic ? 'italic' : 'normal',
+            '--title-text-decoration-line': underline ? 'underline' : 'none',
+            '--title-font-color': fontColor,
+            '--title-font-size': fontSize,
+          }}
+          className={`${iotPrefix}--text-hotspot`}
+          onClick={(evt) => onClick(evt, { x, y })}>
+          {content}
+        </div>
+      ) : null}
     </div>
   );
 };
