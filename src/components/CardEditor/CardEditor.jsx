@@ -139,9 +139,7 @@ const CardEditor = ({
             {mergedI18n.galleryHeader}
           </h2>
         </div>
-      )
-
-      }
+      )}
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
