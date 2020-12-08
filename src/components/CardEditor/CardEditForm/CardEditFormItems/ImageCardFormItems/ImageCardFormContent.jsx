@@ -59,19 +59,21 @@ const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
             readOnly
             value={cardConfig.content?.id || ''}
           />
-          <Button
-            kind="ghost"
-            renderIcon={Close16}
-            size="field"
-            iconDescription={mergedI18n.close}
-            className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
-            onClick={() =>
-              // close means clear the image info out of the JSON
-              onChange(
-                omit(cardConfig, 'content.id', 'content.src', 'content.alt')
-              )
-            }
-          />
+          {cardConfig.content?.id ? (
+            <Button
+              kind="ghost"
+              renderIcon={Close16}
+              size="field"
+              iconDescription={mergedI18n.close}
+              className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
+              onClick={() =>
+                // close means clear the image info out of the JSON
+                onChange(
+                  omit(cardConfig, 'content.id', 'content.src', 'content.alt')
+                )
+              }
+            />
+          ) : null}
         </label>
         {/* TODO enable once hotspot editing is live <Button
           className={`${baseClassName}--form-section-image-btn`}
