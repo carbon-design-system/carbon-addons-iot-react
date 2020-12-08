@@ -69,7 +69,13 @@ const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
               onClick={() =>
                 // close means clear the image info out of the JSON
                 onChange(
-                  omit(cardConfig, 'content.id', 'content.src', 'content.alt')
+                  omit(
+                    cardConfig,
+                    'content.id',
+                    'content.src',
+                    'content.alt',
+                    'content.imgState'
+                  )
                 )
               }
             />

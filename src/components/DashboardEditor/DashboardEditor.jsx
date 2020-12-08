@@ -331,10 +331,12 @@ const DashboardEditor = ({
       cardConfig.content.imgState === 'new' &&
       !imagesToUpload.some((image) => image.id === cardConfig.content.id)
     ) {
-      setImagesToUpload((prevImagesToUpload) => [
-        ...prevImagesToUpload,
-        { id: cardConfig.content.id, src: cardConfig.content.src },
-      ]);
+      if (cardConfig.content.id && cardConfig.content.src) {
+        setImagesToUpload((prevImagesToUpload) => [
+          ...prevImagesToUpload,
+          { id: cardConfig.content.id, src: cardConfig.content.src },
+        ]);
+      }
     }
 
     // TODO: this is really inefficient
