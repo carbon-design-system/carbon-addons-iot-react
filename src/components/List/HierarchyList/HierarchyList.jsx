@@ -220,23 +220,25 @@ const HierarchyList = ({
     [defaultSelectedId]
   );
 
-  const handleSelect = (id, parentId = null) => {
+  const setSelected = (id, parentId = null) => {
     if (editingStyle) {
       setEditModeSelectedIds(
         handleEditModeSelect(items, editModeSelectedIds, id, parentId)
       );
     } else if (selectedIds.includes(id)) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
+    } else if (hasMultiSelect) {
+      setSelectedIds([...selectedIds, id]);
     } else {
-      if (hasMultiSelect) {
-        setSelectedIds([...selectedIds, id]);
-      } else {
-        setSelectedIds([id]);
-      }
+      setSelectedIds([id]);
+    }
+  };
 
-      if (onSelect) {
-        onSelect(id);
-      }
+  const handleSelect = (id, parentId = null) => {
+    setSelected(id, parentId);
+
+    if (onSelect) {
+      onSelect(id);
     }
   };
 
@@ -263,7 +265,7 @@ const HierarchyList = ({
 
         if (!isEqual(selectedIds, [defaultSelectedId])) {
           // If the defaultSelectedId prop is updated from the outside, we need to use it
-          handleSelect(defaultSelectedId);
+          setSelected(defaultSelectedId);
         }
       }
     },
