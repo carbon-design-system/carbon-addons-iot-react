@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import { Scale32 } from '@carbon/icons-react';
+import { Close16 } from '@carbon/icons-react';
+import { Button } from 'carbon-components-react';
+import omit from 'lodash/omit';
 
-// import Button from '../../../../Button';
 import { settings } from '../../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -22,7 +24,7 @@ const propTypes = {
     interval: PropTypes.string,
   }),
   /* callback when image input value changes (File object) */
-  // onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({}),
 };
 
@@ -32,10 +34,11 @@ const defaultProps = {
     imageFile: 'Image file',
     editImage: 'Edit image',
     image: 'Image',
+    close: 'Close',
   },
 };
 
-const ImageCardFormItems = ({ cardConfig, i18n }) => {
+const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
   return (
@@ -44,7 +47,7 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
         className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>
         {mergedI18n.image}
       </div>
-      <div className={`${baseClassName}--input`}>
+      <div className={`${baseClassName}--form-section-image--input`}>
         <label
           id={`${mergedI18n.imageFile}-label`}
           className={`${prefix}--label`}
@@ -56,6 +59,27 @@ const ImageCardFormItems = ({ cardConfig, i18n }) => {
             readOnly
             value={cardConfig.content?.id || ''}
           />
+          {cardConfig.content?.id ? (
+            <Button
+              kind="ghost"
+              renderIcon={Close16}
+              size="field"
+              iconDescription={mergedI18n.close}
+              className={`${baseClassName}--form-section ${baseClassName}--form-section-image-clear-button`}
+              onClick={() =>
+                // close means clear the image info out of the JSON
+                onChange(
+                  omit(
+                    cardConfig,
+                    'content.id',
+                    'content.src',
+                    'content.alt',
+                    'content.imgState'
+                  )
+                )
+              }
+            />
+          ) : null}
         </label>
         {/* TODO enable once hotspot editing is live <Button
           className={`${baseClassName}--form-section-image-btn`}

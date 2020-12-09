@@ -238,14 +238,17 @@ describe('DashboardEditor', () => {
     const submitBtn = screen.getByText('Save and close');
     expect(submitBtn).toBeInTheDocument();
     fireEvent.click(submitBtn);
-    expect(mockOnSubmit).toBeCalledWith({
-      cards: [],
-      layouts: {
-        lg: [],
-        md: [],
-        xl: [],
+    expect(mockOnSubmit).toBeCalledWith(
+      {
+        cards: [],
+        layouts: {
+          lg: [],
+          md: [],
+          xl: [],
+        },
       },
-    });
+      []
+    );
   });
 
   it('selecting cancel should fire onCancel', () => {
