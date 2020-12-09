@@ -66,10 +66,13 @@ $selected-border-width: #{$spacing-01};
 
 .#{$iot-prefix}--text-hotspot {
   $padding: $spacing-03;
+  $min-width: $layout-06;
+  $text-input-height: $spacing-08;
+
   padding: $padding;
   box-sizing: border-box;
-
-  width: calc(var(--width) * 1px);
+  min-width: $min-width;
+  min-height: calc(#{$text-input-height} - (#{$selected-border-width} * 2));
   height: calc(var(--height) * 1px);
   background-color: var(--background-color);
   border-color: var(--border-color);
@@ -85,6 +88,12 @@ $selected-border-width: #{$spacing-01};
     text-decoration-line: var(--title-text-decoration-line);
     color: var(--title-font-color);
     font-size: calc(var(--title-font-size) * 1px);
+
+    // Used to expand the hotspot as the while the user types into the TextInput
+    &.#{$iot-prefix}--hotspot-content-title__visually-hidden {
+      visibility: hidden;
+      height: 0px;
+    }
   }
 
   .#{$iot-prefix}--hotspot-content-label-section {
@@ -99,9 +108,12 @@ $selected-border-width: #{$spacing-01};
   .#{$iot-prefix}--hotspot-content-title-wrapper--editable {
     $negative-margin: calc(-1 * (#{$padding} + #{$selected-border-width}));
     margin: $negative-margin $negative-margin 0 $negative-margin;
+    width: calc((var(--width) * 1px) - #{$selected-border-width});
 
     .#{$iot-prefix}--hotspot-content-title-input {
       padding: 0 calc(#{$padding} + #{$selected-border-width});
+      min-width: calc(#{$min-width} + #{$selected-border-width});
+      height: $text-input-height;
     }
   }
 }

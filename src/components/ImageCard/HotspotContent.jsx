@@ -8,9 +8,11 @@
  * Office.
  */
 import React, { useEffect, useRef, useState } from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import Edit from '@carbon/icons-react/lib/edit/20';
 
 import {
   formatNumberWithPrecision,
@@ -70,7 +72,7 @@ export const HotspotContentPropTypes = {
 const defaultProps = {
   title: null,
   titlePlaceholderText: 'Enter label',
-  titleEditableHintText: 'Click to edit title',
+  titleEditableHintText: 'Click to edit label',
   description: null,
   values: {},
   attributes: [],
@@ -100,6 +102,7 @@ const HotspotContent = ({
     isTitleEditable && !title
   );
   const titleInputFocusRef = useRef(null);
+  const [titleValue, setTitleValue] = useState(title);
 
   useEffect(() => {
     if (showTitleInput) {
@@ -108,43 +111,57 @@ const HotspotContent = ({
   });
 
   const renderTitle = () => {
-    const editableTitle = (
-      <div className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
-        <TextInput
-          className={`${iotPrefix}--hotspot-content-title-input`}
-          defaultValue={title}
-          id={`${id}-title`}
-          test-id={`${id}-title-test`}
-          ref={titleInputFocusRef}
-          onBlur={(evt) => {
-            const latestValue = evt.currentTarget.value;
-            setShowTitleInput(false);
-            if (title !== latestValue) {
-              onChange({ title: latestValue });
-            }
-          }}
-          labelText={''}
-          placeholder={titlePlaceholderText}
-        />
-      </div>
-    );
-
-    const headingTitle = (
+    const titleTextVersion = (
       <h4
         onClick={() => {
           if (isTitleEditable) {
             setShowTitleInput(isTitleEditable);
           }
         }}
-        title={isTitleEditable ? titleEditableHintText : title}>
-        {title}
+        title={isTitleEditable ? titleEditableHintText : titleValue}>
+        {titleValue ? titleValue : isTitleEditable ? <Edit /> : null}
       </h4>
     );
 
+    const titleInputVersion = (
+      <>
+        <div
+          className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
+          <TextInput
+            className={`${iotPrefix}--hotspot-content-title-input`}
+            defaultValue={title}
+            id={`${id}-title`}
+            test-id={`${id}-title-test`}
+            ref={titleInputFocusRef}
+            onChange={(evt) => {
+              setTitleValue(evt.currentTarget.value);
+            }}
+            onBlur={(evt) => {
+              const latestValue = evt.currentTarget.value;
+              setShowTitleInput(false);
+              if (title !== latestValue) {
+                onChange({ title: latestValue });
+              }
+            }}
+            labelText={''}
+            placeholder={titlePlaceholderText}
+          />
+        </div>
+        {
+          // We still render the non editable title but as visually hidden so that the width will be
+          // correctly modified as we type in the TextInput.
+          <h4
+            className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>
+            {titleValue}
+          </h4>
+        }
+      </>
+    );
+
     return typeof title === 'string' && showTitleInput
-      ? editableTitle
+      ? titleInputVersion
       : typeof title === 'string'
-      ? headingTitle
+      ? titleTextVersion
       : React.isValidElement(title)
       ? title
       : null;
