@@ -4,9 +4,9 @@ import userEvent from '@testing-library/user-event';
 import { red50, blue50, green50 } from '@carbon/colors';
 
 import { settings } from '../../constants/Settings';
+import { hexToRgb } from '../../utils/componentUtilityFunctions';
 
 import ColorDropdown from './ColorDropdown';
-import { hexToRgb } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 

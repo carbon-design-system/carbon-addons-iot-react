@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
+import userEvent from '@testing-library/user-event';
 
 describe('HotspotContent', () => {
   it('basic attributes', () => {
@@ -198,5 +199,30 @@ describe('HotspotContent', () => {
       'Warning',
       expect.anything()
     );
+  });
+  it('calls onChange callback when editable title is modified', () => {
+    const onChange = jest.fn();
+    render(
+      <HotspotContent
+        onChange={onChange}
+        id="content"
+        title=""
+        isTitleEditable
+      />
+    );
+    const titleInputElement = screen.getByTestId('content-title-test');
+    expect(titleInputElement).toBeInTheDocument();
+    userEvent.type(titleInputElement, 'abc');
+    fireEvent.blur(titleInputElement, {
+      currentTarget: { value: titleInputElement.value },
+    });
+    expect(onChange).toHaveBeenCalledWith({ title: 'abc' });
+  });
+  it('activates text input when editable title is clicked', () => {
+    render(<HotspotContent id="content" title="my title" isTitleEditable />);
+    fireEvent.click(screen.getByText('my title'));
+
+    const titleInputElement = screen.getByTestId('content-title-test');
+    expect(titleInputElement).toBeInTheDocument();
   });
 });

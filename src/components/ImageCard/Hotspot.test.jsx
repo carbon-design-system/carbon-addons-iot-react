@@ -16,7 +16,7 @@ describe('Hotspot', () => {
         y={5}
         height={50}
         width={200}
-        type="text"
+        type="fixed"
       />
     );
 

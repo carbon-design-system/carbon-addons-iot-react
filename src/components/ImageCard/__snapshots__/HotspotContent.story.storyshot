@@ -97,6 +97,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             className="iot--hotspot-content"
           >
             <h4
+              onClick={[Function]}
               title="Hotspot title"
             >
               Hotspot title
@@ -299,6 +300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             className="iot--hotspot-content"
           >
             <h4
+              onClick={[Function]}
               title="Hotspot title"
             >
               Hotspot title
@@ -511,6 +513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             className="iot--hotspot-content"
           >
             <h4
+              onClick={[Function]}
               title="Hotspot title"
             >
               Hotspot title
@@ -767,6 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             className="iot--hotspot-content"
           >
             <h4
+              onClick={[Function]}
               title="Hotspot title"
             >
               Hotspot title

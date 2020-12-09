@@ -194,24 +194,31 @@ export const EditableWithTextHotspot = () => {
         fontSize: 16,
         backgroundColor: '#00FF00',
         backgroundOpacity: 50,
-        borderColor: '#006666',
-        borderWidth: 1,
-        height: 100,
-        width: 200,
+        borderColor: '#FFFF00',
+        borderWidth: 8,
       },
       {
         x: 75,
         y: 10,
         type: 'text',
-        content: { title: '' },
-        height: 36,
-        width: 100,
+        content: { title: 'Storage' },
+        fontSize: 24,
         backgroundColor: '#999999',
         backgroundOpacity: 50,
       },
+      {
+        x: 75,
+        y: 40,
+        type: 'text',
+        content: { title: '' },
+        backgroundColor: '#ffffff',
+        backgroundOpacity: 90,
+        borderWidth: 1,
+        borderColor: '#DDDDDD',
+      },
     ]);
     const [selectedHotspotPositions, setSelectedHotspotPositions] = useState([
-      { x: 75, y: 10 },
+      { x: 75, y: 40 },
     ]);
 
     const onAddHotspotPosition = (position) => {

@@ -275,8 +275,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             icon={null}
             style={
               Object {
-                "--height": 100,
-                "--width": 200,
+                "--height": undefined,
+                "--width": undefined,
                 "--x-pos": 26,
                 "--y-pos": 68,
               }
@@ -289,8 +289,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               style={
                 Object {
                   "--background-color": "rgba( 0, 255, 0, 0.5)",
-                  "--border-color": "#006666",
-                  "--border-width": 1,
+                  "--border-color": "#FFFF00",
+                  "--border-width": 8,
                   "--title-font-color": "#006666",
                   "--title-font-size": 16,
                   "--title-font-style": "normal",
@@ -303,6 +303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 className="iot--hotspot-content"
               >
                 <h4
+                  onClick={[Function]}
                   title="Facility rooms"
                 >
                   Facility rooms
@@ -365,6 +366,120 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     </span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--hotspot-container iot--hotspot-container--is-text"
+            data-testid="hotspot-75-10"
+            icon={null}
+            style={
+              Object {
+                "--height": undefined,
+                "--width": undefined,
+                "--x-pos": 75,
+                "--y-pos": 10,
+              }
+            }
+          >
+            <div
+              className="iot--text-hotspot"
+              onClick={[Function]}
+              role="complementary"
+              style={
+                Object {
+                  "--background-color": "rgba( 153, 153, 153, 0.5)",
+                  "--border-color": "#e0e0e0",
+                  "--border-width": 0,
+                  "--title-font-color": "#161616",
+                  "--title-font-size": 24,
+                  "--title-font-style": "normal",
+                  "--title-font-weight": "normal",
+                  "--title-text-decoration-line": "none",
+                }
+              }
+            >
+              <div
+                className="iot--hotspot-content"
+              >
+                <h4
+                  onClick={[Function]}
+                  title="Storage"
+                >
+                  Storage
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--hotspot-container iot--hotspot-container--selected iot--hotspot-container--is-text"
+            data-testid="hotspot-75-40"
+            icon={null}
+            style={
+              Object {
+                "--height": undefined,
+                "--width": undefined,
+                "--x-pos": 75,
+                "--y-pos": 40,
+              }
+            }
+          >
+            <div
+              className="iot--text-hotspot"
+              onClick={[Function]}
+              role="complementary"
+              style={
+                Object {
+                  "--background-color": "rgba( 255, 255, 255, 0.9)",
+                  "--border-color": "#DDDDDD",
+                  "--border-width": 1,
+                  "--title-font-color": "#161616",
+                  "--title-font-size": 14,
+                  "--title-font-style": "normal",
+                  "--title-font-weight": "normal",
+                  "--title-text-decoration-line": "none",
+                }
+              }
+            >
+              <div
+                className="iot--hotspot-content"
+              >
+                <div
+                  className="iot--hotspot-content-title-wrapper--editable"
+                >
+                  <div
+                    className="bx--form-item bx--text-input-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input iot--hotspot-content-title-input"
+                          data-testid="hotspot-content-75-40-title-test"
+                          defaultValue=""
+                          disabled={false}
+                          id="hotspot-content-75-40-title"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          placeholder="Enter label"
+                          title="Enter label"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h4
+                  className="iot--hotspot-content-title__visually-hidden"
+                >
+                  
+                </h4>
               </div>
             </div>
           </div>

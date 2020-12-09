@@ -566,6 +566,8 @@ const ImageHotspots = ({
       renderIconByName,
       selectedHotspots,
       onHotspotClicked,
+      isEditable,
+      onHotspotContentChanged,
     ]
   );
 

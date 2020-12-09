@@ -7,19 +7,20 @@
  * trade secrets, irrespective of what has been deposited with the U.S. Copyright
  * Office.
  */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import Edit from '@carbon/icons-react/lib/edit/20';
 
 import {
   formatNumberWithPrecision,
   findMatchingThresholds,
 } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
+import { TextInput } from '../TextInput';
 
 import CardIcon from './CardIcon';
-import { TextInput } from 'carbon-components-react';
 
 const { iotPrefix } = settings;
 
@@ -70,7 +71,7 @@ export const HotspotContentPropTypes = {
 const defaultProps = {
   title: null,
   titlePlaceholderText: 'Enter label',
-  titleEditableHintText: 'Click to edit title',
+  titleEditableHintText: 'Click to edit label',
   description: null,
   values: {},
   attributes: [],
@@ -100,51 +101,69 @@ const HotspotContent = ({
     isTitleEditable && !title
   );
   const titleInputFocusRef = useRef(null);
+  const [titleValue, setTitleValue] = useState(title);
 
-  useEffect(() => {
-    if (showTitleInput) {
-      titleInputFocusRef.current?.focus();
-    }
-  });
+  if (showTitleInput && titleInputFocusRef.current) {
+    titleInputFocusRef.current.focus();
+  }
 
   const renderTitle = () => {
-    const editableTitle = (
-      <div className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
-        <TextInput
-          className={`${iotPrefix}--hotspot-content-title-input`}
-          defaultValue={title}
-          id={`${id}-title`}
-          test-id={`${id}-title-test`}
-          ref={titleInputFocusRef}
-          onBlur={(evt) => {
-            const latestValue = evt.currentTarget.value;
-            setShowTitleInput(false);
-            if (title !== latestValue) {
-              onChange({ title: latestValue });
-            }
-          }}
-          labelText={''}
-          placeholder={titlePlaceholderText}
-        />
-      </div>
-    );
-
-    const headingTitle = (
+    const titleTextVersion = (
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
       <h4
         onClick={() => {
           if (isTitleEditable) {
             setShowTitleInput(isTitleEditable);
           }
         }}
-        title={isTitleEditable ? titleEditableHintText : title}>
-        {title}
+        title={isTitleEditable ? titleEditableHintText : titleValue}>
+        {titleValue !== null && titleValue !== '' ? (
+          titleValue
+        ) : isTitleEditable ? (
+          <Edit />
+        ) : null}
       </h4>
     );
 
+    const titleInputVersion = (
+      <>
+        <div
+          className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
+          <TextInput
+            className={`${iotPrefix}--hotspot-content-title-input`}
+            defaultValue={title}
+            id={`${id}-title`}
+            data-testid={`${id}-title-test`}
+            ref={titleInputFocusRef}
+            onChange={(evt) => {
+              setTitleValue(evt.currentTarget.value);
+            }}
+            onBlur={(evt) => {
+              const latestValue = evt.currentTarget.value;
+              setShowTitleInput(false);
+              if (title !== latestValue) {
+                onChange({ title: latestValue });
+              }
+            }}
+            labelText=""
+            placeholder={titlePlaceholderText}
+          />
+        </div>
+        {
+          // We still render the non editable title but as visually hidden so that the width will be
+          // correctly modified as we type in the TextInput.
+          <h4
+            className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>
+            {titleValue}
+          </h4>
+        }
+      </>
+    );
+
     return typeof title === 'string' && showTitleInput
-      ? editableTitle
+      ? titleInputVersion
       : typeof title === 'string'
-      ? headingTitle
+      ? titleTextVersion
       : React.isValidElement(title)
       ? title
       : null;
