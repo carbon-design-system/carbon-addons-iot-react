@@ -112,7 +112,7 @@ $selected-border-width: #{$spacing-01};
 
     .#{$iot-prefix}--hotspot-content-title-input {
       padding: 0 calc(#{$padding} + #{$selected-border-width});
-      min-width: calc(#{$min-width} + #{$selected-border-width});
+      min-width: calc(#{$min-width} + (#{$selected-border-width} * 2));
       height: $text-input-height;
     }
   }

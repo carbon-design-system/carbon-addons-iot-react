@@ -195,7 +195,7 @@ export const EditableWithTextHotspot = () => {
         backgroundColor: '#00FF00',
         backgroundOpacity: 50,
         borderColor: '#006666',
-        borderWidth: 1,
+        // borderWidth: 1,
         height: 100,
         // width: 200,
       },
