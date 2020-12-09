@@ -257,6 +257,7 @@ const DashboardEditor = ({
 
   // show the card gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
+  const [imagesToUpload, setImagesToUpload] = useState([]);
   const [selectedCardId, setSelectedCardId] = useState();
   const [selectedBreakpointIndex, setSelectedBreakpointIndex] = useState(
     breakpointSwitcher?.initialValue
@@ -326,7 +327,18 @@ const DashboardEditor = ({
       cardConfig.content.src = availableImages.find(
         (image) => image.id === cardConfig.content.id
       )?.src;
+    } else if (
+      cardConfig.content.imgState === 'new' &&
+      !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+    ) {
+      if (cardConfig.content.id && cardConfig.content.src) {
+        setImagesToUpload((prevImagesToUpload) => [
+          ...prevImagesToUpload,
+          { id: cardConfig.content.id, src: cardConfig.content.src },
+        ]);
+      }
     }
+
     // TODO: this is really inefficient
     setDashboardJson((oldJSON) => ({
       ...oldJSON,
@@ -399,10 +411,10 @@ const DashboardEditor = ({
             breadcrumbs={headerBreadcrumbs}
             onEditTitle={onEditTitle}
             onImport={onImport}
-            onExport={() => onExport(dashboardJson)}
+            onExport={() => onExport(dashboardJson, imagesToUpload)}
             onDelete={onDelete}
             onCancel={onCancel}
-            onSubmit={onSubmit}
+            onSubmit={(params) => onSubmit(params, imagesToUpload)}
             isSubmitDisabled={isSubmitDisabled}
             isSubmitLoading={isSubmitLoading}
             i18n={mergedI18n}
