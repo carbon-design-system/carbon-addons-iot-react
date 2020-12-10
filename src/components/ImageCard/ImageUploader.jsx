@@ -23,7 +23,8 @@ const i18nDefaults = {
   browseImages: 'Add from gallery',
   insertUrl: 'Insert from URL',
   urlInput: 'Type or insert URL',
-  errorTitle: 'Error: ',
+  errorTitle: 'Upload error: ',
+  fileTooLarge: 'Image file is too large',
   wrongFileType: (accept) =>
     `This file is not one of the accepted file types, ${accept.join(', ')}`,
 };
@@ -32,6 +33,8 @@ const propTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   onBrowseClick: PropTypes.func,
   onUpload: PropTypes.func,
+  /** the maximum file size in bytes */
+  maxFileSizeInBytes: PropTypes.number,
   hasInsertFromUrl: PropTypes.bool,
   i18n: PropTypes.shape({
     dropContainerLabelText: PropTypes.string,
@@ -41,11 +44,13 @@ const propTypes = {
     browseImages: PropTypes.string,
     insertUrl: PropTypes.string,
     urlInput: PropTypes.string,
+    fileTooLarge: PropTypes.string,
   }),
 };
 
 const defaultProps = {
   accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'JPG', 'PNG', 'WebP'],
+  maxFileSizeInBytes: 1048576,
   onBrowseClick: () => {},
   onUpload: () => {},
   hasInsertFromUrl: false,
@@ -58,6 +63,7 @@ const ImageUploader = ({
   i18n,
   onUpload,
   accept,
+  maxFileSizeInBytes,
   ...other
 }) => {
   const [fromURL, setFromURL] = useState(false);
@@ -96,7 +102,9 @@ const ImageUploader = ({
 
   const handleOnChange = (_event, files) => {
     const acceptedFiles = accept.map((i) => i.toLowerCase());
-    if (
+    if (files.addedFiles[0].size > maxFileSizeInBytes) {
+      setError(i18n.fileTooLarge);
+    } else if (
       acceptedFiles.includes(
         files.addedFiles[0].name
           .match(/([^/.]*?)(?=\?|#|$)/ || [])[0]

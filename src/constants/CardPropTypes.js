@@ -443,6 +443,8 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  /** the maximum supported file size in bytes */
+  maxFileSizeInBytes: PropTypes.number,
   onUpload: PropTypes.func,
   onBrowseClick: PropTypes.func,
   accept: PropTypes.arrayOf(PropTypes.string),
