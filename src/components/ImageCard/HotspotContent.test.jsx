@@ -1,9 +1,9 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
-import userEvent from '@testing-library/user-event';
 
 describe('HotspotContent', () => {
   it('basic attributes', () => {
