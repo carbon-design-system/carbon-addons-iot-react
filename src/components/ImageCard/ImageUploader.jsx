@@ -15,7 +15,7 @@ import { fetchDataURL } from '../../utils/cardUtilityFunctions';
 const { iotPrefix } = settings;
 
 const i18nDefaults = {
-  dropContainerLabelText: 'Drag and drop file here or click to select file',
+  dropContainerLabelText: 'Drag file here or click to upload file',
   dropContainerDescText:
     'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
   uploadByURLCancel: 'Cancel',
