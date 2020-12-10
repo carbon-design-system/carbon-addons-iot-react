@@ -40,7 +40,7 @@ const defaultProps = {
     loadingDataLabel: 'Loading hotspot data',
     dropContainerLabelText: 'Drag and drop file here or click to select file',
     dropContainerDescText:
-      'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+      'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
     uploadByURLCancel: 'Cancel',
     uploadByURLButton: 'OK',
     browseImages: 'Add from gallery',

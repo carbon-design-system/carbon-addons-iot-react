@@ -21,7 +21,6 @@ const i18nDefaults = {
   uploadByURLCancel: 'Cancel',
   uploadByURLButton: 'OK',
   browseImages: 'Add from gallery',
-  uploadFile: 'Click to upload file',
   insertUrl: 'Insert from URL',
   urlInput: 'Type or insert URL',
   errorTitle: 'Error: ',
