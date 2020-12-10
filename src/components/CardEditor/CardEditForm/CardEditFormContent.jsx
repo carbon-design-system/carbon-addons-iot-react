@@ -127,7 +127,11 @@ const CardEditFormContent = ({
         i18n={mergedI18n}
       />
       {type === CARD_TYPES.IMAGE && (
-        <ImageCardFormContent cardConfig={cardConfig} i18n={mergedI18n} />
+        <ImageCardFormContent
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
       )}
     </>
   );

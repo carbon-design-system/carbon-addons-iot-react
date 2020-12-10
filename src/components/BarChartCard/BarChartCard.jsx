@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
-import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
-import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
-import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
+import {
+  SimpleBarChart,
+  StackedBarChart,
+  GroupedBarChart,
+} from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
