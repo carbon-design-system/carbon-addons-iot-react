@@ -2,6 +2,7 @@ import moment from 'moment';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
+import omit from 'lodash/omit';
 
 import {
   BAR_CHART_TYPES,
@@ -21,8 +22,17 @@ export const generateSampleValues = (
   series,
   timeDataSourceId,
   timeGrain = 'day',
+  timeRange,
   categoryDataSourceId
 ) => {
+  // determine interval type
+  const timeRangeType = timeRange?.includes('this')
+    ? 'periodToDate'
+    : 'rolling';
+  // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
+  const timeRangeInterval = timeRange?.includes('Quarter')
+    ? 'quarter'
+    : timeRange;
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -35,7 +45,7 @@ export const generateSampleValues = (
       count = 4;
       break;
     case 'month':
-      count = 12;
+      count = timeRangeInterval === 'quarter' ? 3 : 12;
       break;
     case 'year':
       count = 5;
@@ -47,7 +57,10 @@ export const generateSampleValues = (
 
   if (timeDataSourceId) {
     return series.reduce((sampleData, { dataSourceId }) => {
-      const now = moment().subtract(count, timeGrain);
+      const now =
+        timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
+          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : moment().subtract(count, timeGrain);
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < count; i++) {
         const nextTimeStamp = now.add(1, timeGrain).valueOf();
@@ -86,6 +99,107 @@ export const generateSampleValues = (
 };
 
 /**
+ * Generate fake, sample values for isDashboardPreview state. This is needed to preview
+ * data grouped by the categoryDataSourceId prop
+ * @param {Array<Object>} values a list of metrics and the dimension values to group them by
+ *
+ * @returns {Array} array of value objects to show in the chart
+ */
+export const generateSampleValuesForEditor = (
+  data,
+  categoryDataSourceId,
+  timeDataSourceId,
+  availableDimensions,
+  timeGrain = 'day',
+  timeRange
+) => {
+  // determine interval type
+  const timeRangeType = timeRange?.includes('this')
+    ? 'periodToDate'
+    : 'rolling';
+  // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
+  const timeRangeInterval = timeRange?.includes('Quarter')
+    ? 'quarter'
+    : timeRange;
+  let count = 7;
+  switch (timeGrain) {
+    case 'hour':
+      count = 24;
+      break;
+    case 'day':
+      count = 7;
+      break;
+    case 'week':
+      count = 4;
+      break;
+    case 'month':
+      count = timeRangeInterval === 'quarter' ? 3 : 12;
+      break;
+    case 'year':
+      count = 5;
+      break;
+    default:
+      count = 7;
+      break;
+  }
+
+  // need to remove the label if it is a categorized timeseries bar chart
+  const metrics = data;
+  const dimensions = [];
+  if (availableDimensions && availableDimensions[categoryDataSourceId]) {
+    availableDimensions[categoryDataSourceId].forEach((value) => {
+      dimensions.push({
+        dimension: categoryDataSourceId,
+        value,
+      });
+    });
+  }
+
+  if (timeDataSourceId) {
+    const sampleData = [];
+    metrics.forEach(({ dataSourceId }) => {
+      const now =
+        timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
+          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : moment().subtract(count, timeGrain);
+      // create 4 random dataSets
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < count; i++) {
+        const nextTimeStamp = now.add(1, timeGrain).valueOf();
+        // include dimension category if there is one
+        if (categoryDataSourceId) {
+          dimensions.forEach((dimension) => {
+            sampleData.push({
+              [timeDataSourceId]: nextTimeStamp,
+              [dataSourceId]: Math.random() * 100,
+              [dimension.dimension]: dimension.value,
+            });
+          });
+        } else {
+          // otherwise we need explicit row
+          sampleData.push({
+            [timeDataSourceId]: nextTimeStamp,
+            [dataSourceId]: Math.random() * 100,
+          });
+        }
+      }
+    });
+    return sampleData;
+  }
+
+  // for every dimension value, create a value object that contains sample data for each metric
+  const valuesGeneratedByDimensions = dimensions.map((dimension) => {
+    const value = { [dimension.dimension]: dimension.value };
+    metrics.forEach((metric) => {
+      value[metric.dataSourceId] = Math.random() * 100;
+    });
+    return value;
+  });
+
+  return valuesGeneratedByDimensions;
+};
+
+/**
  * Translates our raw data into a language the carbon-charts understand
  * @param {Array<Object>} series, the definition of the plotted series
  * @param {string} series.dataSourceId, the numeric field that identifies the value to display in the main axis
@@ -98,12 +212,24 @@ export const generateSampleValues = (
  * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
 export const formatChartData = (
-  series,
+  seriesArg,
   values,
   categoryDataSourceId,
   timeDataSourceId,
-  type
+  type,
+  isDashboardPreview
 ) => {
+  let series = seriesArg;
+  // need to remove the label if it is a categorized timeseries bar chart in the dashboard editor
+  if (
+    type === BAR_CHART_TYPES.STACKED &&
+    timeDataSourceId &&
+    categoryDataSourceId &&
+    isDashboardPreview
+  ) {
+    series = series.map((item) => omit(item, 'label'));
+  }
+
   let data = values;
   if (!isNil(values) && !isEmpty(series)) {
     data = [];
@@ -196,7 +322,7 @@ export const formatChartData = (
     }
   }
 
-  return data;
+  return isDashboardPreview && isEmpty(series) ? [] : data;
 };
 
 /**

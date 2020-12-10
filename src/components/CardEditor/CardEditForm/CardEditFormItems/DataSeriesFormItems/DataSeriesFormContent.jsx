@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16 } from '@carbon/icons-react';
+import { Edit16, Subtract16 } from '@carbon/icons-react';
+import omit from 'lodash/omit';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../../../constants/Settings';
 import {
   DATAITEM_COLORS_OPTIONS,
   handleDataSeriesChange,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect } from '../../../../../index';
+import { Button, List, MultiSelect, Dropdown } from '../../../../../index';
 import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
-import { CARD_TYPES } from '../../../../../constants/LayoutConstants';
+import {
+  CARD_TYPES,
+  BAR_CHART_TYPES,
+} from '../../../../../constants/LayoutConstants';
+
+import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
 const { iotPrefix } = settings;
 
@@ -56,6 +63,8 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** list of dataItem names that have been selected to display on the card */
+  selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
 };
@@ -67,13 +76,16 @@ const defaultProps = {
     dataItemEditorDataItemTitle: 'Data item',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data series',
+    dataSeriesTitle: 'Data',
     selectDataItems: 'Select data items',
+    selectDataItem: 'Select data item',
     dataItem: 'Data item',
     edit: 'Edit',
+    customize: 'Customize',
   },
   getValidDataItems: null,
   dataItems: [],
+  selectedDataItems: [],
   availableDimensions: {},
 };
 
@@ -88,6 +100,7 @@ const DataSeriesFormItem = ({
   dataItems,
   getValidDataItems,
   onChange,
+  selectedDataItems,
   setSelectedDataItems,
   selectedTimeRange,
   availableDimensions,
@@ -97,12 +110,24 @@ const DataSeriesFormItem = ({
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
+  const [editDataSeries, setEditDataSeries] = useState(
+    cardConfig.content?.series || []
+  );
+  const [removedDataItems, setRemovedDataItems] = useState([]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
+  const isComplexDataSeries =
+    cardConfig.type === CARD_TYPES.TIMESERIES ||
+    cardConfig.type === CARD_TYPES.BAR;
+
+  const canMultiSelectDataItems =
+    cardConfig.content.type !== BAR_CHART_TYPES.SIMPLE;
+
   // determine which content section to look at
   const dataSection =
-    cardConfig.type === CARD_TYPES.TIMESERIES
+    cardConfig.type === CARD_TYPES.TIMESERIES ||
+    cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
 
@@ -118,6 +143,8 @@ const DataSeriesFormItem = ({
         cardConfig={cardConfig}
         showEditor={showEditor}
         setShowEditor={setShowEditor}
+        editDataSeries={editDataSeries}
+        setEditDataSeries={setEditDataSeries}
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
         availableDimensions={availableDimensions}
@@ -127,29 +154,74 @@ const DataSeriesFormItem = ({
       <div className={`${baseClassName}--form-section`}>
         {mergedI18n.dataSeriesTitle}
       </div>
-      <div className={`${baseClassName}--input`}>
-        <MultiSelect
-          key={cardConfig.id} // need to re-gen if selected card changes
-          id={`${cardConfig.id}_dataSourceIds`}
-          label={mergedI18n.selectDataItems}
-          direction="bottom"
-          itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(validDataItems)}
-          light
-          onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(
-              selectedItems,
-              cardConfig,
-              onChange
-            );
-            setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange(newCard);
-          }}
-          titleText={mergedI18n.dataItem}
+      {cardConfig.type === CARD_TYPES.BAR ? (
+        <BarChartDataSeriesContent
+          cardConfig={cardConfig}
+          onChange={onChange}
+          availableDimensions={availableDimensions}
+          i18n={mergedI18n}
         />
-      </div>
+      ) : null}
+      {canMultiSelectDataItems ? (
+        <div className={`${baseClassName}--input`}>
+          <MultiSelect
+            // need to re-gen if selected card changes or if a dataItem is removed from the list
+            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+            id={`${cardConfig.id}_dataSourceIds`}
+            label={mergedI18n.selectDataItems}
+            direction="bottom"
+            itemToString={(item) => item.id}
+            initialSelectedItems={initialSelectedItems}
+            items={formatDataItemsForDropdown(validDataItems)}
+            light
+            onChange={({ selectedItems }) => {
+              // need to remove the category if the card is a stacked timeseries bar
+              const card =
+                cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+                cardConfig.content.timeDataSourceId &&
+                selectedItems.length > 1
+                  ? omit(cardConfig, 'content.categoryDataSourceId')
+                  : cardConfig;
+
+              const newCard = handleDataSeriesChange(
+                selectedItems,
+                card,
+                setEditDataSeries
+              );
+              setSelectedDataItems(selectedItems.map(({ id }) => id));
+              onChange(newCard);
+            }}
+            titleText={mergedI18n.dataItem}
+          />
+        </div>
+      ) : (
+        <div className={`${baseClassName}--input`}>
+          <Dropdown
+            id={`${cardConfig.id}_dataSourceId`}
+            direction="bottom"
+            label={mergedI18n.selectDataItem}
+            light
+            titleText={mergedI18n.dataItem}
+            items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
+            selectedItem={
+              !isEmpty(cardConfig.content?.series)
+                ? cardConfig.content?.series[0]?.dataSourceId
+                : null
+            }
+            onChange={({ selectedItem }) => {
+              const newCard = handleDataSeriesChange(
+                [{ id: selectedItem }],
+                cardConfig,
+                setEditDataSeries
+              );
+              setSelectedDataItems([selectedItem]);
+              onChange(newCard);
+            }}
+          />
+        </div>
+      )}
       <List
+        key={`data-item-list${selectedDataItems.length}`}
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
@@ -157,30 +229,50 @@ const DataSeriesFormItem = ({
           id: dataItem.dataSourceId,
           content: {
             value: dataItem.label,
-            icon:
-              cardConfig.type === CARD_TYPES.TIMESERIES ? (
-                <div
-                  style={{
-                    width: '1rem',
-                    height: '1rem',
-                    backgroundColor:
-                      dataItem.color ||
-                      DATAITEM_COLORS_OPTIONS[
-                        i % DATAITEM_COLORS_OPTIONS.length
-                      ],
-                  }}
-                />
-              ) : null,
+            icon: isComplexDataSeries ? (
+              <div
+                style={{
+                  width: '1rem',
+                  height: '1rem',
+                  backgroundColor:
+                    dataItem.color ||
+                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+                }}
+              />
+            ) : null,
             rowActions: () => [
               <Button
                 key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
+                renderIcon={isComplexDataSeries ? Subtract16 : Edit16}
                 hasIconOnly
                 kind="ghost"
                 size="small"
                 onClick={() => {
-                  setEditDataItem(dataItem);
-                  setShowEditor(true);
+                  if (isComplexDataSeries) {
+                    const filteredItems = cardConfig.content?.series?.filter(
+                      (item) => item.dataSourceId !== dataItem.dataSourceId
+                    );
+                    setSelectedDataItems(
+                      filteredItems.map((item) => item.dataSourceId)
+                    );
+                    setRemovedDataItems([
+                      ...removedDataItems,
+                      cardConfig.content?.series?.find(
+                        (item) => item.dataSourceId === dataItem.dataSourceId
+                      ),
+                    ]);
+                    setEditDataSeries(filteredItems);
+                    onChange({
+                      ...cardConfig,
+                      content: {
+                        ...cardConfig.content,
+                        series: filteredItems,
+                      },
+                    });
+                  } else {
+                    setEditDataItem(dataItem);
+                    setShowEditor(true);
+                  }
                 }}
                 iconDescription={mergedI18n.edit}
               />,
@@ -188,6 +280,18 @@ const DataSeriesFormItem = ({
           },
         }))}
       />
+      {isComplexDataSeries && dataSection.length ? (
+        <Button
+          renderIcon={Edit16}
+          kind="ghost"
+          size="small"
+          onClick={() => {
+            setShowEditor(true);
+          }}
+          iconDescription={mergedI18n.customize}>
+          {mergedI18n.customize}
+        </Button>
+      ) : null}
     </>
   );
 };

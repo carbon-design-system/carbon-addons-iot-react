@@ -159,7 +159,7 @@ export const WithInitialValue = () => (
           },
           {
             id: 'Timeseries',
-            title: 'Untitled',
+            title: 'Timeseries',
             size: 'MEDIUMWIDE',
             type: 'TIMESERIES',
             content: {
@@ -187,6 +187,28 @@ export const WithInitialValue = () => (
                 count: -1,
                 type: 'periodToDate',
               },
+            },
+          },
+          {
+            id: 'Bar',
+            title: 'Bar',
+            size: 'MEDIUM',
+            type: 'BAR',
+            content: {
+              type: 'SIMPLE',
+              layout: 'VERTICAL',
+              series: [
+                {
+                  dataSourceId: 'pressure',
+                  label: 'pressure',
+                  color: '#6929c4',
+                },
+                {
+                  dataSourceId: 'temperature',
+                  label: 'temperature',
+                  color: '#1192e8',
+                },
+              ],
             },
           },
         ],

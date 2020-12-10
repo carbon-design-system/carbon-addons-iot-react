@@ -54,6 +54,9 @@
 
   &--input {
     padding-bottom: $spacing-05;
+    .#{$prefix}--fieldset {
+      margin-bottom: unset;
+    }
 
     &--label {
       font-size: 0.75rem;
@@ -95,6 +98,12 @@
     input[type='number'] {
       min-width: unset;
     }
+    .iot--table-container .addons-iot-table-container {
+      overflow: visible;
+    }
+    .bx--data-table-content {
+      overflow: visible;
+    }
   }
   &--input-group {
     display: flex;
@@ -135,7 +144,7 @@
     }
     &--item-dropdown {
       margin-right: 1rem;
-      width: 100%;
+      max-width: 5rem;
     }
   }
 
