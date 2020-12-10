@@ -12742,7 +12742,7 @@ Map {
       "accept": null,
       "content": Object {},
       "i18n": Object {
-        "browseImages": "Browse images",
+        "browseImages": "Add from gallery",
         "dropContainerDescText": "Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000",
         "dropContainerLabelText": "Drag and drop file here or click to select file",
         "errorTitle": "Error: ",

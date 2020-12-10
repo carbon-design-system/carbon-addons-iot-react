@@ -20,7 +20,8 @@ const i18nDefaults = {
     'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
   uploadByURLCancel: 'Cancel',
   uploadByURLButton: 'OK',
-  browseImages: 'Browse images',
+  browseImages: 'Add from gallery',
+  uploadFile: 'Click to upload file',
   insertUrl: 'Insert from URL',
   urlInput: 'Type or insert URL',
   errorTitle: 'Error: ',
@@ -32,6 +33,7 @@ const propTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   onBrowseClick: PropTypes.func,
   onUpload: PropTypes.func,
+  hasInsertFromUrl: PropTypes.bool,
   i18n: PropTypes.shape({
     dropContainerLabelText: PropTypes.string,
     dropContainerDescText: PropTypes.string,
@@ -47,10 +49,18 @@ const defaultProps = {
   accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'JPG', 'PNG', 'WebP'],
   onBrowseClick: () => {},
   onUpload: () => {},
+  hasInsertFromUrl: false,
   i18n: i18nDefaults,
 };
 
-const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
+const ImageUploader = ({
+  hasInsertFromUrl,
+  onBrowseClick,
+  i18n,
+  onUpload,
+  accept,
+  ...other
+}) => {
   const [fromURL, setFromURL] = useState(false);
   const [error, setError] = useState(null);
   const [buttonSize, setButtonSize] = useState('default');
@@ -166,15 +176,17 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
             <p className={`${iotPrefix}--image-uploader-drop-description-text`}>
               {i18n.dropContainerDescText}
             </p>
-            <Button size={buttonSize} onClick={onBrowseClick} kind="primary">
+            <Button size={buttonSize} onClick={onBrowseClick} kind="tertiary">
               {i18n.browseImages}
             </Button>
-            <Button
-              size={buttonSize}
-              onClick={handleFromURLClick}
-              kind="tertiary">
-              {i18n.insertUrl}
-            </Button>
+            {hasInsertFromUrl ? (
+              <Button
+                size={buttonSize}
+                onClick={handleFromURLClick}
+                kind="tertiary">
+                {i18n.insertUrl}
+              </Button>
+            ) : null}
           </div>
         </>
       )}

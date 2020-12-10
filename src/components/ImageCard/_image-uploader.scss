@@ -16,7 +16,11 @@
 
   &-drop-label-text {
     color: $interactive-01;
-    display: block;
+    display: flex;
+    align-items: center;
+    button {
+      margin-left: 1rem;
+    }
     @include carbon--type-style('productive-heading-02');
     margin-bottom: $spacing-03;
   }
