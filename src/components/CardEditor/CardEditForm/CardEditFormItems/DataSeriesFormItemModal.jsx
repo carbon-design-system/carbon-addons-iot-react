@@ -293,7 +293,10 @@ const DataSeriesFormItemModal = ({
             }}
             size="sm"
             onSubmit={() => {
-              const newCard = handleDataItemEdit(editDataItem, cardConfig);
+              const newCard =
+                cardConfig.type === 'IMAGE'
+                  ? editDataItem
+                  : handleDataItemEdit(editDataItem, cardConfig);
               onChange(newCard);
               setShowEditor(false);
               setEditDataItem({});

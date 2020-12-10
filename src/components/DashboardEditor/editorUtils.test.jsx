@@ -92,6 +92,40 @@ describe('editorUtils', () => {
     content: {},
   };
 
+  const mockImageCard = {
+    type: CARD_TYPES.IMAGE,
+    content: {
+      hotspots: [
+        {
+          title: 'elevators',
+          content: {
+            attributes: [
+              {
+                dataSourceId: 'temp_last',
+                label: '{high} temp',
+                unit: '{unitVar}',
+              },
+              {
+                dataSourceId: 'elevators',
+                label: 'Elevators',
+                unit: 'floor',
+              },
+            ],
+          },
+        },
+      ],
+    },
+    thresholds: [
+      {
+        dataSourceId: 'temp_last',
+        comparison: '>=',
+        color: '#da1e28',
+        icon: 'Checkmark',
+        value: 98,
+      },
+    ],
+  };
+
   describe('getDuplicateCard', () => {
     it('should return same card JSON with unique id', () => {
       expect(getDuplicateCard(mockValueCard).id).not.toEqual(mockValueCard.id);
@@ -316,6 +350,58 @@ describe('editorUtils', () => {
         size: 'MEDIUM',
         title: 'value card',
         type: 'VALUE',
+      });
+    });
+
+    it('should correctly format the data in Image Card', () => {
+      const selectedItems = [
+        { dataSourceId: 'temp_last', label: '{high} temp', unit: '{unitVar}' },
+        { dataSourceId: 'elevators', label: 'Elevators', unit: '°' },
+        { dataSourceId: 'pressure', label: 'Pressure', unit: 'psi' },
+      ];
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockImageCard,
+        'elevators'
+      );
+
+      expect(newCard).toEqual({
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temp',
+                    unit: '{unitVar}',
+                  },
+                  {
+                    dataSourceId: 'elevators',
+                    label: 'Elevators',
+                    unit: '°',
+                  },
+                  {
+                    dataSourceId: 'pressure',
+                    label: 'Pressure',
+                    unit: 'psi',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        thresholds: [
+          {
+            dataSourceId: 'temp_last',
+            comparison: '>=',
+            color: '#da1e28',
+            icon: 'Checkmark',
+            value: 98,
+          },
+        ],
       });
     });
   });

@@ -5,6 +5,10 @@ import { spacing04 } from '@carbon/layout';
 
 import imageFile from '../../ImageCard/landscape.jpg';
 import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
+import {
+  handleDataSeriesChange,
+  handleDataItemEdit,
+} from '../../DashboardEditor/editorUtils';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 
@@ -147,9 +151,19 @@ export const WithStateInStory = () => {
           title="pressure"
           cardConfig={cardConfigState}
           dataItems={dataItems}
-          onChange={(newCard) => {
-            setCardConfigState({ ...cardConfigState, ...newCard });
-            action('onChange')(newCard);
+          onChange={(newData) => {
+            if (Array.isArray(newData)) {
+              setCardConfigState({
+                ...cardConfigState,
+                ...handleDataSeriesChange(newData, cardConfigState, 'pressure'),
+              });
+            } else {
+              setCardConfigState({
+                ...cardConfigState,
+                ...handleDataItemEdit(newData, cardConfigState),
+              });
+            }
+            action('onChange')(newData);
           }}
         />
       </div>
@@ -199,9 +213,19 @@ export const WithPresetValues = () => {
           title="elevators"
           cardConfig={cardConfigState}
           dataItems={dataItems}
-          onChange={(newCard) => {
-            setCardConfigState({ ...cardConfigState, ...newCard });
-            action('onChange')(newCard);
+          onChange={(newData) => {
+            let dataUpdate;
+            if (Array.isArray(newData)) {
+              dataUpdate = handleDataSeriesChange(
+                newData,
+                cardConfigState,
+                'pressure'
+              );
+            } else {
+              dataUpdate = handleDataItemEdit(newData, cardConfigState);
+            }
+            setCardConfigState({ ...cardConfigState, ...dataUpdate });
+            action('onChange')(newData);
           }}
         />
       </div>

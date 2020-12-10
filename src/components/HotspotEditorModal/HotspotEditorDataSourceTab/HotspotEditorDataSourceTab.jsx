@@ -6,10 +6,7 @@ import { MultiSelect } from 'carbon-components-react';
 import DataSeriesFormItemModal from '../../CardEditor/CardEditForm/CardEditFormItems/DataSeriesFormItemModal';
 import List from '../../List/List';
 import Button from '../../Button/Button';
-// import {formatDataItemsForDropdown} from '../../CardEditor/CardEditForm/CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
-// import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import { settings } from '../../../constants/Settings';
-import { handleDataSeriesChange } from '../../DashboardEditor/editorUtils';
 
 const { iotPrefix } = settings;
 
@@ -129,8 +126,7 @@ const HotspotEditorDataSourceTab = ({
       }
     });
     setSelectedItemsArray(newArray);
-    const newCard = handleDataSeriesChange(newArray, cardConfig, title);
-    onChange(newCard);
+    onChange(newArray);
   };
 
   return (

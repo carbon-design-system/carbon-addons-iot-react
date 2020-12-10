@@ -259,6 +259,9 @@ const ThresholdsFormItem = ({
             icon: selectedIcon?.name || 'Warning alt',
             color: selectedColor?.carbonColor || red60,
           };
+          if (dataSourceId) {
+            newThreshold = { dataSourceId, ...newThreshold };
+          }
           setThresholds([
             ...thresholds,
             {
@@ -266,9 +269,6 @@ const ThresholdsFormItem = ({
               ...newThreshold,
             },
           ]);
-          if (dataSourceId) {
-            newThreshold = { dataSourceId, ...newThreshold };
-          }
           onChange([...thresholds, newThreshold]);
         }}>
         {mergedI18n.dataItemEditorDataItemAddThreshold}
