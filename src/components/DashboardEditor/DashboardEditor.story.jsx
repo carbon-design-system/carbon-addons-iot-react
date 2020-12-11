@@ -209,6 +209,7 @@ export const WithInitialValue = () => (
                   color: '#1192e8',
                 },
               ],
+              timeDataSourceId: 'timestamp',
             },
           },
         ],

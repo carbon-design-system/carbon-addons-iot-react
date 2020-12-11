@@ -9,7 +9,6 @@ import {
 import { settings } from '../../../constants/Settings';
 import { TextArea, TextInput, Dropdown } from '../../../index';
 import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
 const { iotPrefix } = settings;
 
@@ -74,7 +73,7 @@ const propTypes = {
    */
   availableDimensions: PropTypes.shape({}),
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
-  setSelectedTimeRange: PropTypes.func().isRequired,
+  setSelectedTimeRange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -144,12 +143,10 @@ const CardEditFormContent = ({
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
 
-  const validTimeRangeOptions = validTimeRanges
-    ? validTimeRanges.map((range) => ({
-        id: range,
-        text: mergedI18n[`${range}Label`] || range,
-      }))
-    : [];
+  const validTimeRangeOptions = validTimeRanges.map((range) => ({
+    id: range,
+    text: mergedI18n[`${range}Label`] || range,
+  }));
 
   return (
     <>

@@ -81,6 +81,7 @@ const defaultProps = {
     selectDataItem: 'Select data item',
     dataItem: 'Data item',
     edit: 'Edit',
+    remove: 'Remove',
     customize: 'Customize',
   },
   getValidDataItems: null,
@@ -96,7 +97,7 @@ export const formatDataItemsForDropdown = (dataItems) =>
   })) || [];
 
 const DataSeriesFormItem = ({
-  cardConfig = {},
+  cardConfig,
   dataItems,
   getValidDataItems,
   onChange,
@@ -122,7 +123,7 @@ const DataSeriesFormItem = ({
     cardConfig.type === CARD_TYPES.BAR;
 
   const canMultiSelectDataItems =
-    cardConfig.content.type !== BAR_CHART_TYPES.SIMPLE;
+    cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
   const dataSection =
@@ -205,7 +206,7 @@ const DataSeriesFormItem = ({
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={
               !isEmpty(cardConfig.content?.series)
-                ? cardConfig.content?.series[0]?.dataSourceId
+                ? cardConfig.content?.series[0].dataSourceId
                 : null
             }
             onChange={({ selectedItem }) => {
@@ -274,7 +275,9 @@ const DataSeriesFormItem = ({
                     setShowEditor(true);
                   }
                 }}
-                iconDescription={mergedI18n.edit}
+                iconDescription={
+                  isComplexDataSeries ? mergedI18n.remove : mergedI18n.edit
+                }
               />,
             ],
           },

@@ -11,6 +11,7 @@ describe('DataSeriesFormItemModal', () => {
   const mockOnChange = jest.fn();
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
+  const mockSetEditDataSeries = jest.fn();
   const timeSeriesCardConfig = {
     id: 'Timeseries',
     title: 'Untitled',
@@ -33,7 +34,6 @@ describe('DataSeriesFormItemModal', () => {
       includeZeroOnXaxis: true,
       includeZeroOnYaxis: true,
       timeDataSourceId: 'timestamp',
-      addSpaceOnEdges: 1,
     },
     interval: 'day',
   };
@@ -65,6 +65,14 @@ describe('DataSeriesFormItemModal', () => {
     color: 'red',
   };
 
+  const editDataSeriesTimeSeries = [
+    {
+      label: 'Temperature',
+      dataSourceId: 'temperature',
+      color: 'red',
+    },
+  ];
+
   const editValueDataItem = {
     dataSourceId: 'key1',
     unit: '%',
@@ -80,6 +88,7 @@ describe('DataSeriesFormItemModal', () => {
     onChange: mockOnChange,
     setShowEditor: mockSetShowEditor,
     setEditDataItem: mockSetEditDataItem,
+    setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
   };
 
@@ -90,11 +99,12 @@ describe('DataSeriesFormItemModal', () => {
         showEditor
         cardConfig={timeSeriesCardConfig}
         editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
       />
     );
 
-    const label = screen.getByText('Label');
-    const legendColorLabel = screen.getByText('Legend color');
+    const label = screen.getByText('Custom label');
+    const legendColorLabel = screen.getByText('Line color');
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
   });
@@ -231,6 +241,7 @@ describe('DataSeriesFormItemModal', () => {
         showEditor
         cardConfig={timeSeriesCardConfig}
         editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
       />
     );
 
@@ -240,11 +251,13 @@ describe('DataSeriesFormItemModal', () => {
     fireEvent.change(labelInput, {
       target: { value: 'newLabel' },
     });
-    expect(mockSetEditDataItem).toHaveBeenCalledWith({
-      label: 'newLabel',
-      dataSourceId: 'temperature',
-      color: 'red',
-    });
+    expect(mockSetEditDataSeries).toHaveBeenCalledWith([
+      {
+        label: 'newLabel',
+        dataSourceId: 'temperature',
+        color: 'red',
+      },
+    ]);
   });
   it('Changes the color in a TimeseriesCard', () => {
     render(
@@ -253,17 +266,25 @@ describe('DataSeriesFormItemModal', () => {
         showEditor
         cardConfig={timeSeriesCardConfig}
         editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
       />
     );
 
-    const pinkColor = screen.getAllByRole('button')[5];
-    expect(pinkColor).toBeInTheDocument();
+    const colorDropdown = screen.getByRole('img', { name: 'Open menu' });
+    expect(colorDropdown).toBeInTheDocument();
 
-    fireEvent.click(pinkColor);
-    expect(mockSetEditDataItem).toHaveBeenCalledWith({
-      label: 'Temperature',
-      dataSourceId: 'temperature',
-      color: '#fa4d56',
-    });
+    fireEvent.click(colorDropdown);
+
+    const magentaColor = screen.getAllByRole('option')[5];
+    expect(magentaColor).toBeInTheDocument();
+
+    fireEvent.click(magentaColor);
+    expect(mockSetEditDataSeries).toHaveBeenCalledWith([
+      {
+        label: 'Temperature',
+        dataSourceId: 'temperature',
+        color: '#520408',
+      },
+    ]);
   });
 });

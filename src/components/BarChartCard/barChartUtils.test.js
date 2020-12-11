@@ -199,9 +199,6 @@ describe('barChartUtils', () => {
         value: 270,
       },
     ]);
-    expect(
-      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)
-    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based and group-based chart', () => {
@@ -274,11 +271,6 @@ describe('barChartUtils', () => {
         value: 200,
       },
     ]);
-
-    // Handle nulls
-    expect(
-      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.STACKED)
-    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
@@ -314,9 +306,6 @@ describe('barChartUtils', () => {
         value: 388,
       },
     ]);
-    expect(
-      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.SIMPLE)
-    ).toBeNull();
   });
 
   it('formatChartData returns formatted data for time-based, non-group chart', () => {
@@ -357,9 +346,6 @@ describe('barChartUtils', () => {
         value: 565,
       },
     ]);
-    expect(
-      formatChartData(series, null, null, 'timestamp', BAR_CHART_TYPES.SIMPLE)
-    ).toBeNull();
   });
 
   it('formatChartData doesnt return null values', () => {
