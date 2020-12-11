@@ -12786,6 +12786,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "validateUploadedImage": null,
     },
     "propTypes": Object {
       "accept": Object {
@@ -13537,6 +13538,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "validateUploadedImage": Object {
+        "type": "func",
       },
       "values": Object {
         "args": Array [
