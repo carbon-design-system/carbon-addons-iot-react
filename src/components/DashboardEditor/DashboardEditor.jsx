@@ -497,6 +497,9 @@ const DashboardEditor = ({
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
                     const cardProps = commonCardProps(cardConfig, isSelected);
+                    const dataItemsForCard = getValidDataItems
+                      ? getValidDataItems(cardConfig)
+                      : dataItems;
                     // if renderCardPreview function not defined, or it returns null, render default preview
                     return (
                       renderCardPreview(
@@ -511,7 +514,7 @@ const DashboardEditor = ({
                       getCardPreview(
                         cardConfig,
                         cardProps,
-                        dataItems,
+                        dataItemsForCard,
                         availableDimensions
                       )
                     );
