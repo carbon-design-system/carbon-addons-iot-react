@@ -3052,6 +3052,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="assemblyline"
                                   src="assemblyline.jpg"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3113,6 +3146,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="floow plan"
                                   src="floow_plan.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3174,6 +3240,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="manufacturing plant"
                                   src="Manufacturing_plant.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3235,6 +3334,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="robot arm"
                                   src="robot_arm.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3296,6 +3428,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="tankmodal"
                                   src="tankmodal.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3357,6 +3522,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="turbines"
                                   src="turbines.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3418,6 +3616,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="extra wide image"
                                   src="extra-wide-image.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3479,6 +3710,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="large image"
                                   src="large.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3540,6 +3804,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="large image portrait"
                                   src="large_portrait.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>

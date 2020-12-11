@@ -76,6 +76,7 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
       onLayoutChange={action('onLayoutChange')}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
       isSubmitLoading={boolean('isSubmitLoading', false)}

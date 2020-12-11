@@ -72,12 +72,18 @@ $title-height: 3rem;
   background-color: $ui-01;
   padding-left: $spacing-05;
   padding-right: $spacing-07; // Make room for check mark when selected
-
   span {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
+}
+
+// position the button on the far right
+.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$iot-prefix}--image-tile__title__delete {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
 }
 
 html[dir='rtl'] {
