@@ -46,10 +46,12 @@ const defaultProps = {
     browseImages: 'Add from gallery',
     insertUrl: 'Insert from URL',
     urlInput: 'Type or insert URL',
-    errorTitle: 'Error: ',
+    errorTitle: 'Upload error: ',
+    fileTooLarge: 'Image file is too large',
   },
   locale: 'en',
   content: {},
+  maxFileSizeInBytes: 1048576,
   accept: null,
   onUpload: () => {},
   onBrowseClick: null,
@@ -68,6 +70,7 @@ const ImageCard = ({
   isResizable,
   error,
   isLoading,
+  maxFileSizeInBytes,
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
   locale,
@@ -142,6 +145,7 @@ const ImageCard = ({
                     onBrowseClick={onBrowseClick}
                     width={width}
                     height={height}
+                    maxFileSizeInBytes={maxFileSizeInBytes}
                     onUpload={handleOnUpload}
                     i18n={pick(
                       otherLabels,
@@ -151,7 +155,9 @@ const ImageCard = ({
                       'uploadByURLButton',
                       'browseImages',
                       'insertUrl',
-                      'urlInput'
+                      'urlInput',
+                      'fileTooLarge',
+                      'errorTitle'
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
                   />
