@@ -172,6 +172,7 @@ const ImageGalleryModal = ({
         type="normal"
         className={classnames(className, baseClass)}
         footer={{
+          isPrimaryButtonDisabled: !selectedImage,
           primaryButtonLabel: modalPrimaryButtonLabelText,
           secondaryButtonLabel: modalSecondaryButtonLabelText,
           ...footer,
