@@ -12746,6 +12746,7 @@ Map {
         "dropContainerDescText": "Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP",
         "dropContainerLabelText": "Drag file here or click to upload file",
         "errorTitle": "Upload error: ",
+        "fileTooLarge": "Image file is too large",
         "insertUrl": "Insert from URL",
         "loadingDataLabel": "Loading hotspot data",
         "uploadByURLButton": "OK",
