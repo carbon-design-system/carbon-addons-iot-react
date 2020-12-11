@@ -389,9 +389,23 @@ export const mapValuesToAxes = (
  *
  * @returns {Object} colors - formatted
  */
-export const formatColors = (series, datasetNames) => {
+export const formatColors = (
+  series,
+  datasetNames,
+  isDashboardPreview,
+  type
+) => {
   // first set the carbon charts config defaults
   const colors = { scale: {} };
+
+  if (isDashboardPreview && type === BAR_CHART_TYPES.SIMPLE) {
+    datasetNames.forEach((dataset) => {
+      if (series[0].color) {
+        colors.scale[dataset] = series[0].color;
+      }
+    });
+    return colors;
+  }
 
   // if color is an array, order doesn't matter so just map as many as possible
   if (series[0] && Array.isArray(series[0].color)) {
