@@ -498,8 +498,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -1819,8 +1819,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -3856,8 +3856,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -5299,8 +5299,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -6486,8 +6486,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -7779,8 +7779,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
@@ -10637,8 +10637,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         Cancel
                       </button>
                       <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
+                        className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+                        disabled={true}
                         onClick={[Function]}
                         tabIndex={0}
                         type="button"
