@@ -133,6 +133,7 @@
     "@carbon/icons-react": "10.17.0",
     "@carbon/layout": "10.12.0",
     "@carbon/motion": "10.6.0",
+    "@carbon/pictograms-react": "^11.0.0",
     "@carbon/telemetry": "^0.0.0-alpha.5",
     "@carbon/themes": "10.16.0",
     "@monaco-editor/react": "^3.6.2",
