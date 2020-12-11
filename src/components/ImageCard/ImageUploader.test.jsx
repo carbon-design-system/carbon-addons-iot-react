@@ -10,7 +10,7 @@ import ImageUploader from './ImageUploader';
 
 describe('ImageUploader', () => {
   it('will switch to URL upload screen', () => {
-    render(<ImageUploader />);
+    render(<ImageUploader hasInsertFromUrl />);
 
     const insertFromURLBtn = screen.getByText(/Insert from URL/);
     userEvent.click(insertFromURLBtn);
@@ -19,12 +19,13 @@ describe('ImageUploader', () => {
     expect(screen.getAllByText(/Insert from URL/)).toHaveLength(1);
   });
 
+  // eslint-disable-next-line jest/no-commented-out-tests
   // it('will upload and use an image from URL', async () => {
   //   const file = new File(['(⌐□_□)'], 'chucknorris.png', { type: 'image/png' });
   //   const { container } = render(<ImageUploader />);
 
   //   userEvent.click(
-  //     screen.getByText(/Drag and drop file here or click to select file/)
+  //     screen.getByText(/Drag file here or click to upload file/)
   //   );
   //   // await waitFor(() => expect(screen.getAllByText(/OK/)).toHaveLength(1));
   //   fireEvent.change(container.querySelector('input'), {
