@@ -322,7 +322,7 @@ export const formatChartData = (
     }
   }
 
-  return (isDashboardPreview && isEmpty(series)) || !data ? [] : data;
+  return isDashboardPreview && isEmpty(series) ? [] : data;
 };
 
 /**
