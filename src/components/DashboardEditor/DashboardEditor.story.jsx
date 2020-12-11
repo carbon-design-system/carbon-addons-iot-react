@@ -66,6 +66,7 @@ export const Default = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
       dataItems={mockDataItems}
       availableImages={images}
       onAddImage={action('onAddImage')}
