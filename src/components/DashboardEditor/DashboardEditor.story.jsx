@@ -203,11 +203,6 @@ export const WithInitialValue = () => (
                   label: 'pressure',
                   color: '#6929c4',
                 },
-                {
-                  dataSourceId: 'temperature',
-                  label: 'temperature',
-                  color: '#1192e8',
-                },
               ],
               timeDataSourceId: 'timestamp',
             },
