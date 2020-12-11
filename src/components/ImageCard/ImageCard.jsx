@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import pick from 'lodash/pick';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
@@ -37,12 +38,12 @@ const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
-    dropContainerLabelText: 'Drag and drop file here or click to select file',
+    dropContainerLabelText: 'Drag file here or click to upload file',
     dropContainerDescText:
-      'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+      'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
     uploadByURLCancel: 'Cancel',
     uploadByURLButton: 'OK',
-    browseImages: 'Browse images',
+    browseImages: 'Add from gallery',
     insertUrl: 'Insert from URL',
     urlInput: 'Type or insert URL',
     errorTitle: 'Error: ',
@@ -76,6 +77,8 @@ const ImageCard = ({
 }) => {
   const [imgContent, setImgContent] = useState(content);
   const hotspots = values ? values.hotspots || [] : [];
+
+  const { hasInsertFromUrl } = content || {};
 
   useEffect(() => {
     setImgContent(content);
@@ -140,6 +143,17 @@ const ImageCard = ({
                     width={width}
                     height={height}
                     onUpload={handleOnUpload}
+                    i18n={pick(
+                      otherLabels,
+                      'dropContainerLabelText',
+                      'dropContainerDescText',
+                      'uploadByURLCancel',
+                      'uploadByURLButton',
+                      'browseImages',
+                      'insertUrl',
+                      'urlInput'
+                    )}
+                    hasInsertFromUrl={hasInsertFromUrl}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots
