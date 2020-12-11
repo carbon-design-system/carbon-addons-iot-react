@@ -36,6 +36,8 @@ const propTypes = {
   /** the maximum file size in bytes */
   maxFileSizeInBytes: PropTypes.number,
   hasInsertFromUrl: PropTypes.bool,
+  /** a callback invoked with the image information, if you want to fail validation return a string with the error */
+  validateUploadedImage: PropTypes.func,
   i18n: PropTypes.shape({
     dropContainerLabelText: PropTypes.string,
     dropContainerDescText: PropTypes.string,
@@ -51,6 +53,7 @@ const propTypes = {
 const defaultProps = {
   accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'JPG', 'PNG', 'WebP'],
   maxFileSizeInBytes: 1048576,
+  validateUploadedImage: null,
   onBrowseClick: () => {},
   onUpload: () => {},
   hasInsertFromUrl: false,
@@ -63,6 +66,7 @@ const ImageUploader = ({
   i18n,
   onUpload,
   accept,
+  validateUploadedImage,
   maxFileSizeInBytes,
   ...other
 }) => {
@@ -102,6 +106,13 @@ const ImageUploader = ({
 
   const handleOnChange = (_event, files) => {
     const acceptedFiles = accept.map((i) => i.toLowerCase());
+    if (validateUploadedImage) {
+      const validationError = validateUploadedImage(files.addedFiles[0]);
+      if (validationError) {
+        setError(validationError);
+        return;
+      }
+    }
     if (files.addedFiles[0].size > maxFileSizeInBytes) {
       setError(i18n.fileTooLarge);
     } else if (
