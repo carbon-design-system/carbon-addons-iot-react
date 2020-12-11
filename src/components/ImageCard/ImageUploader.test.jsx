@@ -25,7 +25,7 @@ describe('ImageUploader', () => {
   //   const { container } = render(<ImageUploader />);
 
   //   userEvent.click(
-  //     screen.getByText(/Drag and drop file here or click to select file/)
+  //     screen.getByText(/Drag file here or click to upload file/)
   //   );
   //   // await waitFor(() => expect(screen.getAllByText(/OK/)).toHaveLength(1));
   //   fireEvent.change(container.querySelector('input'), {

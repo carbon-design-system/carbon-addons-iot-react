@@ -1298,7 +1298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 <h2
                   className="iot--image-uploader-drop-label-text"
                 >
-                  Drag and drop file here or click to select file
+                  Drag file here or click to upload file
                 </h2>
                 <p
                   className="iot--image-uploader-drop-description-text"
