@@ -115,22 +115,23 @@ const CardEditFormContent = ({
         selectedDataItems={selectedDataItems}
         setSelectedTimeRange={setSelectedTimeRange}
       />
-      <DataSeriesFormContent
-        cardConfig={cardConfig}
-        onChange={onChange}
-        dataItems={dataItems}
-        selectedDataItems={selectedDataItems}
-        setSelectedDataItems={setSelectedDataItems}
-        selectedTimeRange={selectedTimeRange}
-        getValidDataItems={getValidDataItems}
-        availableDimensions={availableDimensions}
-        i18n={mergedI18n}
-      />
-      {type === CARD_TYPES.IMAGE && (
+      {type === CARD_TYPES.IMAGE ? (
         <ImageCardFormContent
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+        />
+      ) : (
+        <DataSeriesFormContent
+          cardConfig={cardConfig}
+          onChange={onChange}
+          dataItems={dataItems}
+          selectedDataItems={selectedDataItems}
+          setSelectedDataItems={setSelectedDataItems}
+          selectedTimeRange={selectedTimeRange}
+          getValidDataItems={getValidDataItems}
+          availableDimensions={availableDimensions}
+          i18n={mergedI18n}
         />
       )}
     </>

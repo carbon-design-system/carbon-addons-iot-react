@@ -1182,98 +1182,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                className="iot--card-edit-form--form-section"
-              >
-                Data
-              </div>
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--multi-select__wrapper bx--list-box__wrapper"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="downshift-2-toggle-button"
-                    id="downshift-2-label"
-                  >
-                    Data item
-                  </label>
-                  <div
-                    className="bx--multi-select bx--list-box bx--list-box--light"
-                    id="image_dataSourceIds"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                  >
-                    <button
-                      aria-disabled={false}
-                      aria-expanded={false}
-                      aria-haspopup="listbox"
-                      aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                      className="bx--list-box__field"
-                      disabled={false}
-                      id="downshift-2-toggle-button"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      type="button"
-                    >
-                      <span
-                        className="bx--list-box__label"
-                        id="multiselect-field-label-4"
-                      >
-                        Select data items
-                      </span>
-                      <div
-                        className="bx--list-box__menu-icon"
-                      >
-                        <svg
-                          aria-label="Open menu"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          name="chevron--down"
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                          <title>
-                            Open menu
-                          </title>
-                        </svg>
-                      </div>
-                    </button>
-                    <div
-                      aria-labelledby="downshift-2-label"
-                      aria-multiselectable="true"
-                      className="bx--list-box__menu"
-                      id="downshift-2-menu"
-                      onBlur={[Function]}
-                      onKeyDown={[Function]}
-                      onMouseLeave={[Function]}
-                      role="listbox"
-                      tabIndex={-1}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="iot--list"
-              >
-                <div
-                  className="iot--list-header-container"
-                />
-                <div
-                  className="iot--list--content"
-                >
-                  <div />
-                </div>
-              </div>
-              <div
                 className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image"
               >
                 Image
@@ -1441,8 +1349,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="downshift-3-toggle-button"
-                      id="downshift-3-label"
+                      htmlFor="downshift-2-toggle-button"
+                      id="downshift-2-label"
                     >
                       Background color
                     </label>
@@ -1456,10 +1364,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         aria-disabled={false}
                         aria-expanded={false}
                         aria-haspopup="listbox"
-                        aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                        aria-labelledby="downshift-2-label downshift-2-toggle-button"
                         className="bx--list-box__field"
                         disabled={false}
-                        id="downshift-3-toggle-button"
+                        id="downshift-2-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         type="button"
@@ -1494,9 +1402,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </div>
                       </button>
                       <div
-                        aria-labelledby="downshift-3-label"
+                        aria-labelledby="downshift-2-label"
                         className="bx--list-box__menu"
-                        id="downshift-3-menu"
+                        id="downshift-2-menu"
                         onBlur={[Function]}
                         onKeyDown={[Function]}
                         onMouseLeave={[Function]}
