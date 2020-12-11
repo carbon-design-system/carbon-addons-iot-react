@@ -84,9 +84,9 @@ module.exports = {
       functions: 50,
     },
     './src/components/ImageCard/ImageUploader.jsx': {
-      statements: 54,
+      statements: 52,
       branches: 39,
-      lines: 56,
+      lines: 53,
       functions: 26,
     },
     './src/components/ImageCard/ImageControls.jsx': { branches: 66 },

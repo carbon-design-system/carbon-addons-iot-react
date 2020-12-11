@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { InlineNotification } from 'carbon-components-react';
+import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
 import update from 'immutability-helper';
@@ -11,12 +11,7 @@ import {
   CARD_ACTIONS,
   CARD_TYPES,
 } from '../../constants/LayoutConstants';
-import {
-  DashboardGrid,
-  CardEditor,
-  ErrorBoundary,
-  SkeletonText,
-} from '../../index';
+import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 import ImageGalleryModal, {
   ImagePropTypes,
 } from '../ImageGalleryModal/ImageGalleryModal';
@@ -401,7 +396,9 @@ const DashboardEditor = ({
   });
 
   return isLoading ? (
-    <SkeletonText width="30%" />
+    <div className={baseClassName}>
+      <SkeletonText width="30%" />
+    </div>
   ) : (
     <div className={baseClassName}>
       <div
