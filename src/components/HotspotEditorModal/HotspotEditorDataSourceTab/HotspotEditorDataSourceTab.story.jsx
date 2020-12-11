@@ -160,7 +160,7 @@ export const WithStateInStory = () => {
             } else {
               setCardConfigState({
                 ...cardConfigState,
-                ...handleDataItemEdit(newData, cardConfigState),
+                ...handleDataItemEdit(newData, cardConfigState, 'pressure'),
               });
             }
             action('onChange')(newData);
@@ -214,17 +214,21 @@ export const WithPresetValues = () => {
           cardConfig={cardConfigState}
           dataItems={dataItems}
           onChange={(newData) => {
-            let dataUpdate;
             if (Array.isArray(newData)) {
-              dataUpdate = handleDataSeriesChange(
-                newData,
-                cardConfigState,
-                'pressure'
-              );
+              setCardConfigState({
+                ...cardConfigState,
+                ...handleDataSeriesChange(
+                  newData,
+                  cardConfigState,
+                  'elevators'
+                ),
+              });
             } else {
-              dataUpdate = handleDataItemEdit(newData, cardConfigState);
+              setCardConfigState({
+                ...cardConfigState,
+                ...handleDataItemEdit(newData, cardConfigState, 'elevators'),
+              });
             }
-            setCardConfigState({ ...cardConfigState, ...dataUpdate });
             action('onChange')(newData);
           }}
         />

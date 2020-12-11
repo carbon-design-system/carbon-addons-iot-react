@@ -1,3 +1,5 @@
+import omit from 'lodash/omit';
+
 import { CARD_TYPES, BAR_CHART_TYPES } from '../..';
 
 import {
@@ -90,40 +92,6 @@ describe('editorUtils', () => {
     type: 'TABLE',
     size: 'MEDIUM',
     content: {},
-  };
-
-  const mockImageCard = {
-    type: CARD_TYPES.IMAGE,
-    content: {
-      hotspots: [
-        {
-          title: 'elevators',
-          content: {
-            attributes: [
-              {
-                dataSourceId: 'temp_last',
-                label: '{high} temp',
-                unit: '{unitVar}',
-              },
-              {
-                dataSourceId: 'elevators',
-                label: 'Elevators',
-                unit: 'floor',
-              },
-            ],
-          },
-        },
-      ],
-    },
-    thresholds: [
-      {
-        dataSourceId: 'temp_last',
-        comparison: '>=',
-        color: '#da1e28',
-        icon: 'Checkmark',
-        value: 98,
-      },
-    ],
   };
 
   describe('getDuplicateCard', () => {
@@ -300,6 +268,14 @@ describe('editorUtils', () => {
     });
   });
   describe('handleDataSeriesChange', () => {
+    it('should just return cardConfig if there is no Type', () => {
+      const newCard = handleDataSeriesChange(
+        [],
+        omit(mockTimeSeriesCard, 'type')
+      );
+      expect(newCard).toEqual(omit(mockTimeSeriesCard, 'type'));
+    });
+
     it('should correctly format the data in Timeseries', () => {
       const selectedItems = [
         { id: 'key1', text: 'Key 1' },
@@ -354,6 +330,39 @@ describe('editorUtils', () => {
     });
 
     it('should correctly format the data in Image Card', () => {
+      const mockImageCard = {
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temp',
+                    unit: '{unitVar}',
+                  },
+                  {
+                    dataSourceId: 'elevators',
+                    label: 'Elevators',
+                    unit: 'floor',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        thresholds: [
+          {
+            dataSourceId: 'temp_last',
+            comparison: '>=',
+            color: '#da1e28',
+            icon: 'Checkmark',
+            value: 98,
+          },
+        ],
+      };
       const selectedItems = [
         { dataSourceId: 'temp_last', label: '{high} temp', unit: '{unitVar}' },
         { dataSourceId: 'elevators', label: 'Elevators', unit: '°' },
@@ -406,6 +415,118 @@ describe('editorUtils', () => {
     });
   });
   describe('handleDataItemEdit', () => {
+    it('should correctly format the data in Image Card', () => {
+      const mockImageCard = {
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temp',
+                    unit: '{unitVar}',
+                  },
+                  {
+                    dataSourceId: 'elevators',
+                    label: 'Elevators',
+                    unit: 'floor',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        thresholds: [
+          {
+            dataSourceId: 'temp_last',
+            comparison: '>=',
+            color: '#da1e28',
+            icon: 'Checkmark',
+            value: 98,
+          },
+        ],
+      };
+      const editDataItem = {
+        dataSourceId: 'temp_last',
+        label: '{high} temps',
+        unit: 'degrees',
+        thresholds: [
+          {
+            dataSourceId: 'temp_last',
+            comparison: '>',
+            color: '#da1e28',
+            icon: 'Checkmark',
+            value: 98,
+          },
+          {
+            dataSourceId: 'temp_last',
+            comparison: '=',
+            color: '#ffffff',
+            icon: 'Checkmark',
+            value: 100,
+          },
+        ],
+      };
+      let newCard = handleDataItemEdit(
+        editDataItem,
+        mockImageCard,
+        'elevators'
+      );
+
+      expect(newCard).toEqual({
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temps',
+                    unit: 'degrees',
+                  },
+                  {
+                    dataSourceId: 'elevators',
+                    label: 'Elevators',
+                    unit: 'floor',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        thresholds: [
+          {
+            dataSourceId: 'temp_last',
+            comparison: '>',
+            color: '#da1e28',
+            icon: 'Checkmark',
+            value: 98,
+          },
+          {
+            dataSourceId: 'temp_last',
+            comparison: '=',
+            color: '#ffffff',
+            icon: 'Checkmark',
+            value: 100,
+          },
+        ],
+      });
+
+      const withoutThresholds = omit(mockImageCard, 'thresholds');
+      newCard = handleDataSeriesChange(
+        editDataItem,
+        withoutThresholds,
+        'elevators'
+      );
+
+      expect(newCard).toEqual(withoutThresholds);
+    });
+
     it('should correctly format the data in Timeseries', () => {
       const editDataItem = {
         dataSourceId: 'torque',
