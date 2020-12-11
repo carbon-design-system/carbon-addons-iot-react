@@ -1,6 +1,10 @@
 .#{$iot-prefix}--dashboard-editor {
   display: flex;
   height: 100%;
+  > .#{$prefix}--skeleton__text {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
 
   &__overflow {
     overflow-x: auto; // allows a larger width

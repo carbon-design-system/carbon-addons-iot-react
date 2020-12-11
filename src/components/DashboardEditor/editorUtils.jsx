@@ -115,8 +115,6 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          yLabel: 'Temperature',
-          unit: '˚F',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
