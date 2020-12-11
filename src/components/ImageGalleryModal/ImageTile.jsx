@@ -63,6 +63,9 @@ const ImageTile = ({
       light>
       <div className={`${iotPrefix}--image-tile__title`}>
         <span>{title ?? extractFileName(src) ?? src}</span>
+      </div>
+      <div className={`${iotPrefix}--image-tile__image-container`}>
+        <img src={src} alt={alt} />
         {onDelete ? (
           <Button
             className={`${iotPrefix}--image-tile__title__delete`}
@@ -76,9 +79,6 @@ const ImageTile = ({
             }}
           />
         ) : null}
-      </div>
-      <div className={`${iotPrefix}--image-tile__image-container`}>
-        <img src={src} alt={alt} />
       </div>
     </SelectableTile>
   );

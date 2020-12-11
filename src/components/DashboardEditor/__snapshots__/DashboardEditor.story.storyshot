@@ -3044,6 +3044,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
       ad minim veniam.
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="assemblyline"
+                                  src="assemblyline.jpg"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3077,14 +3085,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="assemblyline"
-                                  src="assemblyline.jpg"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3138,6 +3138,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   floow_plan
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="floow plan"
+                                  src="floow_plan.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3171,14 +3179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="floow plan"
-                                  src="floow_plan.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3232,6 +3232,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   Manufacturing_plant
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="manufacturing plant"
+                                  src="Manufacturing_plant.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3265,14 +3273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="manufacturing plant"
-                                  src="Manufacturing_plant.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3326,6 +3326,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   robot_arm
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="robot arm"
+                                  src="robot_arm.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3359,14 +3367,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="robot arm"
-                                  src="robot_arm.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3420,6 +3420,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   tankmodal
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="tankmodal"
+                                  src="tankmodal.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3453,14 +3461,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="tankmodal"
-                                  src="tankmodal.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3514,6 +3514,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   turbines
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="turbines"
+                                  src="turbines.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3547,14 +3555,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="turbines"
-                                  src="turbines.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3608,6 +3608,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   extra-wide-image
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="extra wide image"
+                                  src="extra-wide-image.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3641,14 +3649,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="extra wide image"
-                                  src="extra-wide-image.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3702,6 +3702,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   large
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="large image"
+                                  src="large.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3735,14 +3743,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="large image"
-                                  src="large.png"
-                                />
                               </div>
                             </span>
                           </label>
@@ -3796,6 +3796,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span>
                                   large_portrait
                                 </span>
+                              </div>
+                              <div
+                                className="iot--image-tile__image-container"
+                              >
+                                <img
+                                  alt="large image portrait"
+                                  src="large_portrait.png"
+                                />
                                 <button
                                   className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                                   disabled={false}
@@ -3829,14 +3837,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     />
                                   </svg>
                                 </button>
-                              </div>
-                              <div
-                                className="iot--image-tile__image-container"
-                              >
-                                <img
-                                  alt="large image portrait"
-                                  src="large_portrait.png"
-                                />
                               </div>
                             </span>
                           </label>
