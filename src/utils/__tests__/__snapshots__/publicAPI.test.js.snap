@@ -12745,7 +12745,8 @@ Map {
         "browseImages": "Add from gallery",
         "dropContainerDescText": "Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP",
         "dropContainerLabelText": "Drag file here or click to upload file",
-        "errorTitle": "Error: ",
+        "errorTitle": "Upload error: ",
+        "fileTooLarge": "Image file is too large",
         "insertUrl": "Insert from URL",
         "loadingDataLabel": "Loading hotspot data",
         "uploadByURLButton": "OK",
@@ -12753,6 +12754,7 @@ Map {
         "urlInput": "Type or insert URL",
       },
       "locale": "en",
+      "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
     },
@@ -13398,6 +13400,9 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "maxFileSizeInBytes": Object {
+        "type": "number",
       },
       "onBlur": Object {
         "type": "func",
