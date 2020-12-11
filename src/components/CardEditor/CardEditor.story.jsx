@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
+import { EscalatorDown } from '@carbon/pictograms-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from '../../constants/LayoutConstants';
 
 import CardEditor from './CardEditor';
 
@@ -152,6 +156,40 @@ ForTimeSeries.story = {
 export const WithNoCardDefinedGalleryView = () => (
   <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
     <CardEditor
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+export const WithNoCardDefinedGalleryViewAndCustomCards = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      i18n={{
+        TIMESERIES: 'ITEM 1',
+        SIMPLE_BAR: 'ITEM 2',
+        GROUPED_BAR: 'ITEM 3',
+        STACKED_BAR: 'ITEM 4',
+        VALUE: 'ITEM 5',
+        IMAGE: 'ITEM 6',
+        TABLE: 'ITEM 7',
+        ALERT: 'ITEM 8',
+        LIST: 'ITEM 9',
+        CUSTOM: 'ITEM 10',
+        COOL_NEW_CARD: 'Missing Icon',
+      }}
+      supportedCardTypes={[
+        'VALUE',
+        DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES,
+        DASHBOARD_EDITOR_CARD_TYPES.LIST,
+        DASHBOARD_EDITOR_CARD_TYPES.ALERT,
+        'CUSTOM',
+        'COOL_NEW_CARD',
+      ]}
+      icons={{
+        VALUE: <EscalatorDown />,
+      }}
       onShowGallery={action('onShowGallery')}
       onChange={action('onChange')}
       onAddCard={action('onAddCard')}

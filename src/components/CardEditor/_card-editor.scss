@@ -31,3 +31,8 @@
     }
   }
 }
+
+.#{$iot-prefix}--card-gallery-list__icon > svg {
+  height: 34px;
+  width: 40px;
+}

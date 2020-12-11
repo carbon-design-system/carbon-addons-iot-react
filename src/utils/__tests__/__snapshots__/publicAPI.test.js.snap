@@ -8495,6 +8495,8 @@ Map {
         "SIMPLE_BAR",
         "GROUPED_BAR",
         "STACKED_BAR",
+        "LIST",
+        "ALERT",
       ],
       "title": "",
     },
@@ -8757,6 +8759,7 @@ Map {
         "openJSONButton": "Open JSON editor",
         "searchPlaceholderText": "Enter a search",
       },
+      "icons": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -8766,6 +8769,8 @@ Map {
         "SIMPLE_BAR",
         "GROUPED_BAR",
         "STACKED_BAR",
+        "LIST",
+        "ALERT",
       ],
     },
     "propTypes": Object {
@@ -8888,6 +8893,14 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "icons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "objectOf",
       },
       "onAddCard": Object {
         "isRequired": true,

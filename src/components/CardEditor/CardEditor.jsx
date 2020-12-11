@@ -72,6 +72,7 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  icons: PropTypes.objectOf(PropTypes.node),
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
@@ -95,6 +96,7 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  icons: null,
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
 };
@@ -112,6 +114,7 @@ const CardEditor = ({
   onValidateCardJson,
   supportedCardTypes,
   availableDimensions,
+  icons,
   i18n,
   currentBreakpoint,
 }) => {
@@ -137,6 +140,7 @@ const CardEditor = ({
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
+            icons={icons}
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
