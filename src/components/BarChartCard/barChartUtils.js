@@ -152,7 +152,7 @@ export const formatChartData = (
         });
       });
     } // single bars and not time-based
-    else if (categoryDataSourceId) {
+    else if (categoryDataSourceId && Array.isArray(values)) {
       const uniqueDatasetNames = [
         ...new Set(values.map((val) => val[categoryDataSourceId])),
       ];
@@ -172,7 +172,7 @@ export const formatChartData = (
         });
       });
     } // single bars and time-based
-    else {
+    else if (Array.isArray(values)) {
       const uniqueDatasetNames = [
         ...new Set(values.map((val) => val[timeDataSourceId])),
       ];
