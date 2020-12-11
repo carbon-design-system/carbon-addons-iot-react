@@ -15,6 +15,7 @@ const content = {
   src: imageFile,
   alt: 'Sample image',
   zoomMax: 10,
+  hasInsertFromUrl: true,
 };
 
 const values = {

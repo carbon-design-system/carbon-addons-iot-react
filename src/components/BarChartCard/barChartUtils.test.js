@@ -158,7 +158,7 @@ describe('barChartUtils', () => {
     // check horizontal layout
     expect(
       formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)
-    ).toEqual([]);
+    ).toEqual(null);
   });
 
   it('formatChartData returns formatted data for group-based chart', () => {
