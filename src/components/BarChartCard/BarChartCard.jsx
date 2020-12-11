@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   SimpleBarChart,
   StackedBarChart,
@@ -6,7 +6,6 @@ import {
 } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
-import memoize from 'lodash/memoize';
 
 import {
   BarChartCardPropTypes,
@@ -31,6 +30,7 @@ import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 import {
   generateSampleValues,
+  generateSampleValuesForEditor,
   formatChartData,
   mapValuesToAxes,
   formatColors,
@@ -41,24 +41,25 @@ import {
 
 const { iotPrefix } = settings;
 
-const memoizedGenerateSampleValues = memoize(generateSampleValues);
-
 const BarChartCard = ({
   title: titleProp,
   content,
   children,
   size: sizeProp,
   values: initialValues,
+  availableDimensions,
   locale,
   i18n,
   isExpanded,
   isLazyLoading,
   isEditable,
+  isDashboardPreview,
   isLoading,
   isResizable,
   interval,
   className,
   domainRange,
+  timeRange,
   ...others
 }) => {
   const { noDataLabel } = i18n;
@@ -84,24 +85,57 @@ const BarChartCard = ({
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
+  const memoizedGenerateSampleValues = useMemo(
+    () =>
+      generateSampleValues(
+        series,
+        timeDataSourceId,
+        interval,
+        timeRange,
+        categoryDataSourceId
+      ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [series, interval, timeRange]
+  );
+
+  const memoizedGenerateSampleValuesForEditor = useMemo(
+    () =>
+      generateSampleValuesForEditor(
+        valuesProp,
+        categoryDataSourceId,
+        timeDataSourceId,
+        availableDimensions,
+        interval,
+        timeRange
+      ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      availableDimensions,
+      categoryDataSourceId,
+      isDashboardPreview,
+      timeDataSourceId,
+      interval,
+      timeRange,
+      valuesProp,
+      series.length,
+    ]
+  );
+
   // If editable, show sample presentation data
   // If there is no series defined, there is no datasets to make sample data from
-  const values =
-    isEditable && !isEmpty(series)
-      ? memoizedGenerateSampleValues(
-          series,
-          timeDataSourceId,
-          interval,
-          categoryDataSourceId
-        )
-      : valuesProp;
+  const values = isDashboardPreview
+    ? memoizedGenerateSampleValuesForEditor
+    : isEditable && !isEmpty(series)
+    ? memoizedGenerateSampleValues
+    : valuesProp;
 
   const chartData = formatChartData(
     series,
     values,
     categoryDataSourceId,
     timeDataSourceId,
-    type
+    type,
+    isDashboardPreview
   );
 
   const isAllValuesEmpty = isEmpty(chartData);
@@ -127,7 +161,7 @@ const BarChartCard = ({
     ? [...new Set(chartData.map((dataset) => dataset.group))]
     : [];
   const colors = !isAllValuesEmpty
-    ? formatColors(series, uniqueDatasets, isEditable)
+    ? formatColors(series, uniqueDatasets, isDashboardPreview, type)
     : null;
 
   let tableColumns = [];
@@ -168,6 +202,7 @@ const BarChartCard = ({
       isLoading={isLoading}
       isResizable={isResizable}
       resizeHandles={resizeHandles}
+      timeRange={timeRange}
       {...others}>
       {!isAllValuesEmpty ? (
         <div
@@ -176,6 +211,13 @@ const BarChartCard = ({
             [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
           })}>
           <ChartComponent
+            // When showing the dashboard editor preview, we need to recalculate the chart scale
+            // because the data is added and removed dynamically
+            key={
+              isDashboardPreview
+                ? `bar-chart_preview_${values.length}_${series.length}`
+                : 'bar-chart'
+            }
             data={chartData}
             options={{
               animations: false,

@@ -271,7 +271,11 @@ describe('editorUtils', () => {
         { id: 'key1', text: 'Key 1' },
         { id: 'key2', text: 'Key 2' },
       ];
-      const newCard = handleDataSeriesChange(selectedItems, mockTimeSeriesCard);
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockTimeSeriesCard,
+        () => {}
+      );
       expect(newCard).toEqual({
         content: {
           series: [
@@ -328,7 +332,9 @@ describe('editorUtils', () => {
         yLabel: 'Y axis',
         unit: 'PSI',
       };
-      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard);
+      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [
+        editDataItem,
+      ]);
       expect(newCard).toEqual({
         id: 'Standard',
         title: 'timeseries card',
@@ -336,10 +342,6 @@ describe('editorUtils', () => {
         size: 'MEDIUM',
         content: {
           series: [
-            {
-              dataSourceId: 'airflow',
-              label: 'Airflow',
-            },
             {
               dataSourceId: 'torque',
               label: 'Torque',

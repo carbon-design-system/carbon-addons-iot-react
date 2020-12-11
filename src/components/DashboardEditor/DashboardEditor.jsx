@@ -507,7 +507,13 @@ const DashboardEditor = ({
                         onRemoveCard,
                         isSelected,
                         handleShowImageGallery
-                      ) ?? getCardPreview(cardConfig, cardProps)
+                      ) ??
+                      getCardPreview(
+                        cardConfig,
+                        cardProps,
+                        dataItems,
+                        availableDimensions
+                      )
                     );
                   })}
                 </DashboardGrid>
