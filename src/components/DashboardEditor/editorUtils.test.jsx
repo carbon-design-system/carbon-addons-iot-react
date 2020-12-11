@@ -429,25 +429,11 @@ describe('editorUtils', () => {
                     label: '{high} temp',
                     unit: '{unitVar}',
                   },
-                  {
-                    dataSourceId: 'elevators',
-                    label: 'Elevators',
-                    unit: 'floor',
-                  },
                 ],
               },
             },
           ],
         },
-        thresholds: [
-          {
-            dataSourceId: 'temp_last',
-            comparison: '>=',
-            color: '#da1e28',
-            icon: 'Checkmark',
-            value: 98,
-          },
-        ],
       };
       const editDataItem = {
         dataSourceId: 'temp_last',
@@ -488,11 +474,6 @@ describe('editorUtils', () => {
                     dataSourceId: 'temp_last',
                     label: '{high} temps',
                     unit: 'degrees',
-                  },
-                  {
-                    dataSourceId: 'elevators',
-                    label: 'Elevators',
-                    unit: 'floor',
                   },
                 ],
               },
