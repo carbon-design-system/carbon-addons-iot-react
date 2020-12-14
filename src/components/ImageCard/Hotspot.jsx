@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
 import { g10 } from '@carbon/themes';
-import { withSize } from 'react-sizeme';
+import withSize from 'react-sizeme';
 
 import { settings } from '../../constants/Settings';
 import { hexToRgb } from '../../utils/componentUtilityFunctions';
