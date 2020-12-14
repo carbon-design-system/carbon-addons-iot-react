@@ -121,6 +121,8 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /** callback function to validate the uploaded image */
+  onValidateUploadedImage: PropTypes.func,
   /** callback if an image is deleted from the gallery */
   onImageDelete: PropTypes.func,
   /** optional loading prop to render the PageTitleBar loading state */
@@ -191,6 +193,7 @@ const defaultProps = {
   isSubmitDisabled: false,
   isSubmitLoading: false,
   onValidateCardJson: null,
+  onValidateUploadedImage: null,
   isLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
@@ -249,6 +252,7 @@ const DashboardEditor = ({
   isSubmitDisabled,
   isSubmitLoading,
   onValidateCardJson,
+  onValidateUploadedImage,
   availableDimensions,
   isLoading,
   i18n,
@@ -271,6 +275,11 @@ const DashboardEditor = ({
       ? LAYOUTS[breakpointSwitcher.initialValue].breakpoint
       : LAYOUTS.FIT_TO_SCREEN.breakpoint
   );
+
+  useEffect(() => {
+    // if the loaded template changes, we need to update the state
+    setDashboardJson(initialValue);
+  }, [initialValue]);
 
   // force a window resize so that react-grid-layout will trigger its reorder / resize
   useEffect(() => {
@@ -392,6 +401,10 @@ const DashboardEditor = ({
     onBrowseClick:
       cardConfig.type === CARD_TYPES.IMAGE && isNil(cardConfig.content?.src)
         ? handleShowImageGallery
+        : undefined,
+    validateUploadedImage:
+      cardConfig.type === CARD_TYPES.IMAGE
+        ? onValidateUploadedImage
         : undefined,
   });
 
