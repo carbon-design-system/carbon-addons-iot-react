@@ -245,3 +245,32 @@ export const ErrorLoadingImage = () => {
 ErrorLoadingImage.story = {
   name: 'error loading image',
 };
+
+export const ValidationError = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing06,
+      }}>
+      <ImageCard
+        title={text('title', 'Image')}
+        isEditable
+        id="image-hotspots"
+        content={object('content', omit(content, ['src']))}
+        values={object('values', values)}
+        breakpoint="lg"
+        size={size}
+        onCardAction={action('onCardAction')}
+        validateUploadedImage={(image) =>
+          `This file is invalid: ${image?.name}`
+        }
+      />
+    </div>
+  );
+};
+
+ValidationError.story = {
+  name: 'image upload error',
+};
