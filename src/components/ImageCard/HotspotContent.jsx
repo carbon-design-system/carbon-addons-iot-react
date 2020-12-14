@@ -11,7 +11,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
-import Edit from '@carbon/icons-react/lib/edit/20';
+import { Edit20 } from '@carbon/icons-react';
 
 import {
   formatNumberWithPrecision,
@@ -120,7 +120,7 @@ const HotspotContent = ({
         {titleValue !== null && titleValue !== '' ? (
           titleValue
         ) : isTitleEditable ? (
-          <Edit />
+          <Edit20 />
         ) : null}
       </h4>
     );
