@@ -4,6 +4,9 @@ $top-section-height: 6.25rem;
 $border-radius: 0.25rem;
 
 .#{$iot-prefix}--image-gallery-modal {
+  &--warning-modal {
+    z-index: 30000;
+  }
   &.#{$iot-prefix}--composed-modal.#{$iot-prefix}--composed-modal--large {
     .#{$prefix}--modal-container {
       background-color: $ui-02;

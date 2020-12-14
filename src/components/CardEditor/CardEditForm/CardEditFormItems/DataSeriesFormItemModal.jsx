@@ -19,10 +19,14 @@ import { WarningAlt32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../../constants/Settings';
 import { ComposedModal, TextInput, Dropdown } from '../../../../index';
 import { handleDataItemEdit } from '../../../DashboardEditor/editorUtils';
+import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
+import Table from '../../../Table/Table';
+import { CARD_TYPES } from '../../../../constants/LayoutConstants';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -63,6 +67,14 @@ const propTypes = {
   availableDimensions: PropTypes.shape({}),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
+  setEditDataSeries: PropTypes.func.isRequired,
+  editDataSeries: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+      color: PropTypes.string,
+    })
+  ),
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -82,7 +94,8 @@ const propTypes = {
 const defaultProps = {
   cardConfig: {},
   i18n: {
-    dataItemEditorDataItemTitle: 'Data item',
+    dataItemEditorDataSeriesTitle: 'Customize data series',
+    dataItemEditorValueCardTitle: 'Edit data',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
     dataSeriesTitle: 'Data series',
@@ -94,7 +107,10 @@ const defaultProps = {
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
+    dataItemEditorBarColor: 'Bar color',
+    dataItemEditorLineColor: 'Line color',
   },
+  editDataSeries: [],
   showEditor: false,
   setShowEditor: null,
   availableDimensions: {},
@@ -103,23 +119,25 @@ const defaultProps = {
 };
 
 const DATAITEM_COLORS_OPTIONS = [
-  purple70,
-  cyan50,
-  teal70,
-  magenta70,
-  red50,
-  red90,
-  green60,
-  blue80,
-  magenta50,
-  purple50,
-  teal50,
-  cyan90,
+  { carbonColor: purple70, name: 'purple70' },
+  { carbonColor: cyan50, name: 'cyan50' },
+  { carbonColor: teal70, name: 'teal70' },
+  { carbonColor: magenta70, name: 'magenta70' },
+  { carbonColor: red50, name: 'red50' },
+  { carbonColor: red90, name: 'red90' },
+  { carbonColor: green60, name: 'green60' },
+  { carbonColor: blue80, name: 'blue80' },
+  { carbonColor: magenta50, name: 'magenta50' },
+  { carbonColor: purple50, name: 'purple50' },
+  { carbonColor: teal50, name: 'teal50' },
+  { carbonColor: cyan90, name: 'cyan90' },
 ];
 
 const DataSeriesFormItemModal = ({
   cardConfig,
   showEditor,
+  editDataSeries,
+  setEditDataSeries,
   setShowEditor,
   editDataItem,
   setEditDataItem,
@@ -128,61 +146,90 @@ const DataSeriesFormItemModal = ({
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const { id, type } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const TimeSeriesContent = (
-    <>
-      <span className={`bx--label ${baseClassName}--input-label`}>
-        {mergedI18n.dataItemEditorDataItemTitle}
-      </span>
-      <div className={`${baseClassName}--input`}>
-        {editDataItem.dataSourceId}
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${cardConfig.id}_series-label`}
-          labelText={mergedI18n.dataItemEditorDataItemLabel}
-          light
-          onChange={(evt) =>
-            setEditDataItem({
-              ...editDataItem,
-              label: evt.target.value,
-            })
-          }
-          value={editDataItem.label}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <span className={`bx--label ${baseClassName}--input--label`}>
-          {mergedI18n.dataItemEditorLegendColor}
-        </span>
-        <div className="color-picker">
-          {DATAITEM_COLORS_OPTIONS.map((color, i) => (
-            <button
-              key={`color_${i}`}
-              type="button"
-              style={{ backgroundColor: color }}
-              className={classnames('color-picker-button', {
-                'color-picker-button__selected': color === editDataItem.color,
-              })}
-              onClick={() => setEditDataItem({ ...editDataItem, color })}
-            />
-          ))}
-        </div>
-      </div>
-    </>
+  const DataSeriesEditorTable = (
+    <Table
+      id={`${id}_data_items_table`}
+      columns={[
+        { id: 'dataSourceId', name: mergedI18n.dataItem },
+        {
+          id: 'label',
+          name: mergedI18n.dataItemEditorDataItemCustomLabel,
+          // eslint-disable-next-line react/prop-types
+          renderDataFunction: ({ row }) => {
+            const seriesIndex = editDataSeries.findIndex(
+              (series) => series.dataSourceId === row.dataSourceId
+            );
+            return (
+              <TextInput
+                id={`${row.dataSourceId}_label-input`}
+                light
+                titleText=""
+                onChange={(evt) => {
+                  const updatedSeries = cloneDeep(editDataSeries);
+                  updatedSeries[seriesIndex].label = evt.target.value;
+                  setEditDataSeries(updatedSeries);
+                }}
+                value={editDataSeries[seriesIndex].label}
+              />
+            );
+          },
+        },
+        {
+          id: 'color',
+          name:
+            type === CARD_TYPES.TIMESERIES
+              ? mergedI18n.dataItemEditorLineColor
+              : type === CARD_TYPES.BAR
+              ? mergedI18n.dataItemEditorBarColor
+              : '',
+          // eslint-disable-next-line react/prop-types
+          renderDataFunction: ({ row }) => {
+            const seriesIndex = editDataSeries.findIndex(
+              (series) => series.dataSourceId === row.dataSourceId
+            );
+            const selectedColor = DATAITEM_COLORS_OPTIONS.find(
+              ({ carbonColor }) => carbonColor === row.color
+            );
+            return (
+              <ColorDropdown
+                id={`${id}_color-dropdown`}
+                label=""
+                titleText=""
+                selectedColor={selectedColor}
+                onChange={({ color }) => {
+                  const updatedSeries = cloneDeep(editDataSeries);
+                  updatedSeries[seriesIndex].color = color.carbonColor;
+                  setEditDataSeries(updatedSeries);
+                }}
+              />
+            );
+          },
+        },
+      ]}
+      data={editDataSeries.map(({ dataSourceId, color, label }) => ({
+        id: dataSourceId,
+        values: {
+          dataSourceId,
+          label,
+          color,
+        },
+      }))}
+    />
   );
 
   const selectedDimensionFilter = editDataItem.dataFilter
     ? Object.keys(editDataItem.dataFilter)[0]
     : '';
 
-  const ValueContent = (
+  const ValueCardDataEditor = (
     <>
       <div className={`${baseClassName}--input-group`}>
         <div className={`${baseClassName}--input-group--item`}>
           <TextInput
-            id={`${cardConfig.id}_attribute-label`}
+            id={`${id}_attribute-label`}
             labelText={mergedI18n.dataItemEditorDataItemCustomLabel}
             light
             onChange={(evt) =>
@@ -196,7 +243,7 @@ const DataSeriesFormItemModal = ({
         </div>
         <div className={`${baseClassName}--input-group--item-end`}>
           <TextInput
-            id={`${cardConfig.id}_attribute-unit`}
+            id={`${id}_attribute-unit`}
             labelText={mergedI18n.dataItemEditorDataItemUnit}
             light
             onChange={(evt) =>
@@ -221,7 +268,7 @@ const DataSeriesFormItemModal = ({
                 !availableDimensions[selectedDimensionFilter]),
           })}>
           <Dropdown
-            id={`${cardConfig.id}_data-filter-key`}
+            id={`${id}_data-filter-key`}
             label=""
             direction="bottom"
             items={['None', ...Object.keys(availableDimensions)]}
@@ -249,7 +296,7 @@ const DataSeriesFormItemModal = ({
         availableDimensions[selectedDimensionFilter] ? (
           <div className={`${baseClassName}--input-group--item-end`}>
             <Dropdown
-              id={`${cardConfig.id}_data-filter-value`}
+              id={`${id}_data-filter-value`}
               label=""
               direction="bottom"
               items={availableDimensions[selectedDimensionFilter]}
@@ -269,7 +316,7 @@ const DataSeriesFormItemModal = ({
       <ThresholdsFormItem
         dataSourceId={editDataItem.dataSourceId}
         cardConfig={cardConfig}
-        id={`${cardConfig.id}_thresholds`}
+        id={`${id}_thresholds`}
         thresholds={editDataItem.thresholds}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
         selectedColor={{ carbonColor: red60, name: 'red60' }}
@@ -289,14 +336,21 @@ const DataSeriesFormItemModal = ({
         <div className={`${baseClassName}--modal-wrapper`}>
           <ComposedModal
             header={{
-              title: mergedI18n.dataItemEditorDataItemTitle,
+              title:
+                type === CARD_TYPES.VALUE
+                  ? mergedI18n.dataItemEditorValueCardTitle
+                  : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
             size="sm"
             onSubmit={() => {
               const newCard =
                 cardConfig.type === 'IMAGE'
                   ? editDataItem
-                  : handleDataItemEdit(editDataItem, cardConfig);
+                  : handleDataItemEdit(
+                      editDataItem,
+                      cardConfig,
+                      editDataSeries
+                    );
               onChange(newCard);
               setShowEditor(false);
               setEditDataItem({});
@@ -305,9 +359,9 @@ const DataSeriesFormItemModal = ({
               setShowEditor(false);
               setEditDataItem({});
             }}>
-            {cardConfig.type === 'TIMESERIES'
-              ? TimeSeriesContent
-              : ValueContent}
+            {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR
+              ? DataSeriesEditorTable
+              : ValueCardDataEditor}
           </ComposedModal>
         </div>
       ) : null}

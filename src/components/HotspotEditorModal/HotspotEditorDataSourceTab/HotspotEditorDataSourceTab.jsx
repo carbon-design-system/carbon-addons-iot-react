@@ -138,6 +138,7 @@ const HotspotEditorDataSourceTab = ({
         setShowEditor={setShowEditor}
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
+        setEditDataSeries={setEditDataItem}
         availableDimensions={availableDimensions}
         onChange={onChange}
         i18n={mergedI18n}

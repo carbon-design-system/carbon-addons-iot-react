@@ -448,6 +448,8 @@ export const ImageCardPropTypes = {
   onUpload: PropTypes.func,
   onBrowseClick: PropTypes.func,
   accept: PropTypes.arrayOf(PropTypes.string),
+  /** callback that you can use to validate the image, if you return a message we will display it as an error */
+  validateUploadedImage: PropTypes.func,
 };
 
 export const GaugeCardPropTypes = {

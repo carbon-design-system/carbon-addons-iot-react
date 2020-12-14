@@ -53,6 +53,7 @@ const defaultProps = {
   content: {},
   maxFileSizeInBytes: 1048576,
   accept: null,
+  validateUploadedImage: null,
   onUpload: () => {},
   onBrowseClick: null,
 };
@@ -75,6 +76,7 @@ const ImageCard = ({
   renderIconByName,
   locale,
   onUpload,
+  validateUploadedImage,
   onBrowseClick,
   ...others
 }) => {
@@ -160,6 +162,7 @@ const ImageCard = ({
                       'errorTitle'
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
+                    validateUploadedImage={validateUploadedImage}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots

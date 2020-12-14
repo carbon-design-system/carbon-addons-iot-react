@@ -6,6 +6,7 @@ import { CARD_TYPES } from '../../../constants/LayoutConstants';
 import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
 import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
+import BarChartCardFormSettings from './CardEditFormItems/BarChartCardFormItems/BarChartCardFormSettings';
 
 const propTypes = {
   /** card data value */
@@ -56,6 +57,14 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const { type } = cardConfig;
 
   switch (type) {
+    case CARD_TYPES.VALUE:
+      return (
+        <ValueCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
+      );
     case CARD_TYPES.TIMESERIES:
       return (
         <DataSeriesFormSettings
@@ -64,9 +73,9 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
           onChange={onChange}
         />
       );
-    case CARD_TYPES.VALUE:
+    case CARD_TYPES.BAR:
       return (
-        <ValueCardFormSettings
+        <BarChartCardFormSettings
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
