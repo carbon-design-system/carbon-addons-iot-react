@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { InlineNotification } from 'carbon-components-react';
+import { InlineNotification, SkeletonText } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
 import update from 'immutability-helper';
@@ -11,12 +11,7 @@ import {
   CARD_ACTIONS,
   CARD_TYPES,
 } from '../../constants/LayoutConstants';
-import {
-  DashboardGrid,
-  CardEditor,
-  ErrorBoundary,
-  SkeletonText,
-} from '../../index';
+import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
 import ImageGalleryModal, {
   ImagePropTypes,
 } from '../ImageGalleryModal/ImageGalleryModal';
@@ -126,6 +121,8 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /** callback if an image is deleted from the gallery */
+  onImageDelete: PropTypes.func,
   /** optional loading prop to render the PageTitleBar loading state */
   isLoading: PropTypes.bool,
   /** internationalization strings */
@@ -150,6 +147,9 @@ const propTypes = {
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
+    imageGalleryDeleteLabelText: PropTypes.string,
+    imageGalleryDeleteModalLabelText: PropTypes.string,
+    imageGalleryDeleteModalTitleText: PropTypes.func,
     imageGalleryGridButtonText: PropTypes.string,
     imageGalleryInstructionText: PropTypes.string,
     imageGalleryListButtonText: PropTypes.string,
@@ -181,6 +181,7 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   onCardChange: null,
+  onImageDelete: null,
   onLayoutChange: null,
   onDelete: null,
   onImport: null,
@@ -235,6 +236,7 @@ const DashboardEditor = ({
   dataItems,
   availableImages,
   headerBreadcrumbs,
+  onImageDelete,
   notification,
   onCardChange,
   onLayoutChange,
@@ -257,6 +259,7 @@ const DashboardEditor = ({
 
   // show the card gallery if no card is being edited
   const [dashboardJson, setDashboardJson] = useState(initialValue);
+  const [imagesToUpload, setImagesToUpload] = useState([]);
   const [selectedCardId, setSelectedCardId] = useState();
   const [selectedBreakpointIndex, setSelectedBreakpointIndex] = useState(
     breakpointSwitcher?.initialValue
@@ -326,7 +329,18 @@ const DashboardEditor = ({
       cardConfig.content.src = availableImages.find(
         (image) => image.id === cardConfig.content.id
       )?.src;
+    } else if (
+      cardConfig.content.imgState === 'new' &&
+      !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+    ) {
+      if (cardConfig.content.id && cardConfig.content.src) {
+        setImagesToUpload((prevImagesToUpload) => [
+          ...prevImagesToUpload,
+          { id: cardConfig.content.id, src: cardConfig.content.src },
+        ]);
+      }
     }
+
     // TODO: this is really inefficient
     setDashboardJson((oldJSON) => ({
       ...oldJSON,
@@ -382,7 +396,9 @@ const DashboardEditor = ({
   });
 
   return isLoading ? (
-    <SkeletonText width="30%" />
+    <div className={baseClassName}>
+      <SkeletonText width="30%" />
+    </div>
   ) : (
     <div className={baseClassName}>
       <div
@@ -399,10 +415,10 @@ const DashboardEditor = ({
             breadcrumbs={headerBreadcrumbs}
             onEditTitle={onEditTitle}
             onImport={onImport}
-            onExport={() => onExport(dashboardJson)}
+            onExport={() => onExport(dashboardJson, imagesToUpload)}
             onDelete={onDelete}
             onCancel={onCancel}
-            onSubmit={onSubmit}
+            onSubmit={(params) => onSubmit(params, imagesToUpload)}
             isSubmitDisabled={isSubmitDisabled}
             isSubmitLoading={isSubmitLoading}
             i18n={mergedI18n}
@@ -452,6 +468,7 @@ const DashboardEditor = ({
                   content={availableImages}
                   onClose={() => setIsImageGalleryModalOpen(false)}
                   onSubmit={handleImageSelection}
+                  onDelete={onImageDelete}
                   gridButtonText={i18n.imageGalleryGridButtonText}
                   instructionText={i18n.imageGalleryInstructionText}
                   listButtonText={i18n.imageGalleryListButtonText}
@@ -467,6 +484,9 @@ const DashboardEditor = ({
                     i18n.imageGalleryModalCloseIconDescriptionText
                   }
                   searchPlaceHolderText={i18n.imageGallerySearchPlaceHolderText}
+                  deleteLabelText={i18n.imageGalleryDeleteLabelText}
+                  deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
+                  deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
                 />
                 <DashboardGrid
                   isEditable
@@ -488,6 +508,9 @@ const DashboardEditor = ({
                   {dashboardJson.cards.map((cardConfig) => {
                     const isSelected = cardConfig.id === selectedCardId;
                     const cardProps = commonCardProps(cardConfig, isSelected);
+                    const dataItemsForCard = getValidDataItems
+                      ? getValidDataItems(cardConfig)
+                      : dataItems;
                     // if renderCardPreview function not defined, or it returns null, render default preview
                     return (
                       renderCardPreview(
@@ -498,7 +521,13 @@ const DashboardEditor = ({
                         onRemoveCard,
                         isSelected,
                         handleShowImageGallery
-                      ) ?? getCardPreview(cardConfig, cardProps)
+                      ) ??
+                      getCardPreview(
+                        cardConfig,
+                        cardProps,
+                        dataItemsForCard,
+                        availableDimensions
+                      )
                     );
                   })}
                 </DashboardGrid>

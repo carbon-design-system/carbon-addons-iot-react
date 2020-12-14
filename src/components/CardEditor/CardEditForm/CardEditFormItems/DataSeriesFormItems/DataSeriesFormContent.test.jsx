@@ -32,6 +32,43 @@ const cardConfig = {
   },
   interval: 'day',
 };
+const barChartCardConfig = {
+  id: 'BarChart',
+  title: 'BarChartCard',
+  size: 'MEDIUM',
+  type: 'BAR',
+  content: {
+    type: 'STACKED',
+    series: [
+      {
+        label: 'Temperature',
+        dataSourceId: 'temperature',
+        color: 'red',
+      },
+    ],
+    xLabel: 'Time',
+    yLabel: 'Temperature (˚F)',
+    timeDataSourceId: 'timestamp',
+  },
+  interval: 'day',
+};
+const valueCardConfig = {
+  id: 'ValueCard',
+  title: 'Value Card',
+  type: 'VALUE',
+  size: 'MEDIUM',
+  content: {
+    attributes: [
+      {
+        dataSourceId: 'key2',
+        unit: 'lb',
+        label: 'Key 2',
+      },
+    ],
+    fontSize: 16,
+    precision: 5,
+  },
+};
 
 const dataItems = [
   { dataSourceId: 'temperature', label: 'Temperature' },
@@ -77,7 +114,109 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
-      expect(screen.getByText('Data series')).toBeInTheDocument();
+      expect(screen.getByText('Data')).toBeInTheDocument();
+    });
+    it('should remove the category if the card is a stacked timeseries bar', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={barChartCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      const dataItemDropDown = screen.getByText('Select data items');
+      expect(dataItemDropDown).toBeInTheDocument();
+      fireEvent.click(dataItemDropDown);
+
+      const pressureOption = screen.getByText('pressure');
+      expect(pressureOption).toBeInTheDocument();
+      fireEvent.click(pressureOption);
+
+      expect(mockOnChange).toHaveBeenCalledWith({
+        id: 'BarChart',
+        interval: 'day',
+        size: 'MEDIUM',
+        title: 'BarChartCard',
+        type: 'BAR',
+        content: {
+          series: [
+            {
+              color: 'red',
+              dataSourceId: 'temperature',
+              label: 'Temperature',
+            },
+            {
+              color: '#1192e8',
+              dataSourceId: 'pressure',
+              label: 'pressure',
+            },
+          ],
+          timeDataSourceId: 'timestamp',
+          type: 'STACKED',
+          xLabel: 'Time',
+          yLabel: 'Temperature (˚F)',
+        },
+      });
+    });
+    it('sets selected data items in a simple bar chart', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={{
+            ...barChartCardConfig,
+            content: { ...barChartCardConfig.content, type: 'SIMPLE' },
+          }}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      const dataItemDropDown = screen.getByText('temperature');
+      expect(dataItemDropDown).toBeInTheDocument();
+      fireEvent.click(dataItemDropDown);
+
+      const pressureOption = screen.getByText('pressure');
+      expect(pressureOption).toBeInTheDocument();
+      fireEvent.click(pressureOption);
+
+      expect(mockOnChange).toHaveBeenCalled();
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+    });
+    it('handles row actions for dataItems for complexDataSeries', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={barChartCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Remove',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+    it('handles row actions for dataItems for simpleDataSeries', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={valueCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Edit',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      const editDataItemModal = screen.getByText('Data item');
+      expect(editDataItemModal).toBeInTheDocument();
     });
   });
   describe('dataItem editor', () => {
@@ -101,14 +240,12 @@ describe('DataSeriesFormItem', () => {
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockSetSelectedDataItems).toHaveBeenCalled();
       // click the edit icon on the data item
-      const editButton = screen.getAllByText('Edit');
-      expect(editButton[0]).toBeInTheDocument();
-      fireEvent.click(editButton[0]);
-      // the legend color picker is only present on the edit data item modal
-      const legendColorPicker = screen.getByText('Legend color');
-      expect(legendColorPicker).toBeInTheDocument();
+      const customizeButton = screen.getByText('Customize');
+      expect(customizeButton).toBeInTheDocument();
+      fireEvent.click(customizeButton);
+
       userEvent.type(
-        screen.getByRole('textbox', { name: 'Label' }),
+        screen.getByRole('cell', { name: 'Temperature' }),
         'changed label'
       );
       expect(mockOnChange).toHaveBeenCalled();

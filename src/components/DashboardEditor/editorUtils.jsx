@@ -85,12 +85,12 @@ export const getDuplicateCard = (cardConfig) => ({
  */
 export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
-    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALL,
+    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUM,
     [DASHBOARD_EDITOR_CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
   };
 
@@ -115,8 +115,6 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          yLabel: 'Temperature',
-          unit: '˚F',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -130,6 +128,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.SIMPLE,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
@@ -148,6 +147,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.STACKED,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
@@ -397,9 +397,32 @@ const renderTimeSeriesCard = (cardConfig, commonProps) => {
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderBarChartCard = (cardConfig, commonProps) => (
-  <BarChartCard isEditable {...cardConfig} {...commonProps} />
-);
+const renderBarChartCard = (
+  cardConfig,
+  commonProps,
+  dataItems,
+  availableDimensions
+) => {
+  // apply the timeRange for the card preview
+  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
+    isEqual(range, cardConfig?.dataSource?.range)
+  );
+  return (
+    <BarChartCard
+      isEditable
+      isDashboardPreview
+      values={
+        !cardConfig.dataSource?.groupBy && isEmpty(cardConfig.content.series)
+          ? []
+          : dataItems
+      }
+      availableDimensions={availableDimensions}
+      interval={timeRangeJSON?.interval || 'day'}
+      {...cardConfig}
+      {...commonProps}
+    />
+  );
+};
 
 /**
  * @param {Object} cardConfig
@@ -478,9 +501,17 @@ export const handleOnClick = (onSelectCard, id) => {
  * Returns a Card component for preview in the dashboard
  * @param {Object} cardConfig, the JSON configuration of the card
  * @param {Object} commonProps basic card config props
+ * @param {Array} dataItems list of dataItems available to the card
+ * @param {Object} availableDimensions collection of dimensions where the key is the
+ * dimension and the value is a list of values for that dimension
  * @returns {Node}
  */
-export const getCardPreview = (cardConfig, commonProps) => {
+export const getCardPreview = (
+  cardConfig,
+  commonProps,
+  dataItems,
+  availableDimensions
+) => {
   if (!isCardJsonValid(cardConfig)) {
     return renderDefaultCard(cardConfig, commonProps);
   }
@@ -491,7 +522,12 @@ export const getCardPreview = (cardConfig, commonProps) => {
     case CARD_TYPES.TIMESERIES:
       return renderTimeSeriesCard(cardConfig, commonProps);
     case CARD_TYPES.BAR:
-      return renderBarChartCard(cardConfig, commonProps);
+      return renderBarChartCard(
+        cardConfig,
+        commonProps,
+        dataItems,
+        availableDimensions
+      );
     case CARD_TYPES.TABLE:
       return renderTableCard(cardConfig, commonProps);
     case CARD_TYPES.IMAGE:
@@ -581,7 +617,11 @@ export const formatAttributes = (selectedItems, cardConfig) => {
  * @param {array} selectedItems
  * @param {object} cardConfig
  */
-export const handleDataSeriesChange = (selectedItems, cardConfig) => {
+export const handleDataSeriesChange = (
+  selectedItems,
+  cardConfig,
+  setEditDataSeries
+) => {
   const { type } = cardConfig;
   let series;
   let attributes;
@@ -594,7 +634,9 @@ export const handleDataSeriesChange = (selectedItems, cardConfig) => {
         content: { ...cardConfig.content, attributes },
       };
     case CARD_TYPES.TIMESERIES:
+    case CARD_TYPES.BAR:
       series = formatSeries(selectedItems, cardConfig);
+      setEditDataSeries(series);
       return {
         ...cardConfig,
         content: { ...cardConfig.content, series },
@@ -609,7 +651,11 @@ export const handleDataSeriesChange = (selectedItems, cardConfig) => {
  * @param {array} editDataItem
  * @param {object} cardConfig
  */
-export const handleDataItemEdit = (editDataItem, cardConfig) => {
+export const handleDataItemEdit = (
+  editDataItem,
+  cardConfig,
+  editDataSeries
+) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
@@ -626,7 +672,8 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
         content: { ...content, attributes: dataSection },
       };
     case CARD_TYPES.TIMESERIES:
-      dataSection = [...content.series];
+    case CARD_TYPES.BAR:
+      dataSection = [...editDataSeries];
       editDataItemIndex = dataSection.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );

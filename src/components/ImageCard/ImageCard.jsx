@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import pick from 'lodash/pick';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
@@ -37,19 +38,22 @@ const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
-    dropContainerLabelText: 'Drag and drop file here or click to select file',
+    dropContainerLabelText: 'Drag file here or click to upload file',
     dropContainerDescText:
-      'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+      'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
     uploadByURLCancel: 'Cancel',
     uploadByURLButton: 'OK',
-    browseImages: 'Browse images',
+    browseImages: 'Add from gallery',
     insertUrl: 'Insert from URL',
     urlInput: 'Type or insert URL',
-    errorTitle: 'Error: ',
+    errorTitle: 'Upload error: ',
+    fileTooLarge: 'Image file is too large',
   },
   locale: 'en',
   content: {},
+  maxFileSizeInBytes: 1048576,
   accept: null,
+  validateUploadedImage: null,
   onUpload: () => {},
   onBrowseClick: null,
 };
@@ -67,15 +71,19 @@ const ImageCard = ({
   isResizable,
   error,
   isLoading,
+  maxFileSizeInBytes,
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
   locale,
   onUpload,
+  validateUploadedImage,
   onBrowseClick,
   ...others
 }) => {
   const [imgContent, setImgContent] = useState(content);
   const hotspots = values ? values.hotspots || [] : [];
+
+  const { hasInsertFromUrl } = content || {};
 
   useEffect(() => {
     setImgContent(content);
@@ -139,7 +147,22 @@ const ImageCard = ({
                     onBrowseClick={onBrowseClick}
                     width={width}
                     height={height}
+                    maxFileSizeInBytes={maxFileSizeInBytes}
                     onUpload={handleOnUpload}
+                    i18n={pick(
+                      otherLabels,
+                      'dropContainerLabelText',
+                      'dropContainerDescText',
+                      'uploadByURLCancel',
+                      'uploadByURLButton',
+                      'browseImages',
+                      'insertUrl',
+                      'urlInput',
+                      'fileTooLarge',
+                      'errorTitle'
+                    )}
+                    hasInsertFromUrl={hasInsertFromUrl}
+                    validateUploadedImage={validateUploadedImage}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots

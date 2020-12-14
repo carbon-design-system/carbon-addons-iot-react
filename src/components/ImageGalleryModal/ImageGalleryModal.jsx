@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Grid20, List20 } from '@carbon/icons-react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
+import { Modal } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import ComposedModal from '../ComposedModal';
@@ -47,6 +48,9 @@ const propTypes = {
   /** The image property to be included in the search */
   searchProperty: PropTypes.string,
 
+  /** optional method to allow deletion of the images in the gallery */
+  onDelete: PropTypes.func,
+
   /** The text of the grid button in the grid list toggle */
   gridButtonText: PropTypes.string,
   /** The text with instructions showing above the search */
@@ -60,6 +64,10 @@ const propTypes = {
   modalTitleText: PropTypes.string,
   /** The primary button (select) text of the modal */
   modalPrimaryButtonLabelText: PropTypes.string,
+  deleteLabelText: PropTypes.string,
+  deleteModalLabelText: PropTypes.string,
+  /** callback function that passes the image name and returns the title text for the delete */
+  deleteModalTitleText: PropTypes.func,
   /** The secondary button (cancel) text of the modal */
   modalSecondaryButtonLabelText: PropTypes.string,
   /** The text for the search input placeHolder */
@@ -72,6 +80,7 @@ const defaultProps = {
   defaultView: GRID,
   footer: {},
   searchProperty: 'id',
+  onDelete: null,
 
   gridButtonText: 'Grid',
   instructionText: 'Select the image that you want to display on this card.',
@@ -79,6 +88,10 @@ const defaultProps = {
   modalLabelText: 'New image card',
   modalTitleText: 'Image gallery',
   modalPrimaryButtonLabelText: 'Select',
+  deleteLabelText: 'Delete',
+  deleteModalLabelText: 'Delete image',
+  deleteModalTitleText: (image) =>
+    `Are you sure you want to delete the image: ${image}?`,
   modalSecondaryButtonLabelText: 'Cancel',
   modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
@@ -94,17 +107,24 @@ const ImageGalleryModal = ({
   modalCloseIconDescriptionText,
   modalLabelText,
   modalTitleText,
+  deleteLabelText,
+  deleteModalLabelText,
+  deleteModalTitleText,
   modalPrimaryButtonLabelText,
   modalSecondaryButtonLabelText,
   onSubmit,
   onClose,
   searchPlaceHolderText,
   searchProperty,
+  onDelete,
   footer,
   ...composedModalProps
 }) => {
   const [activeView, setActiveView] = useState(defaultView);
   const [selectedImage, setSelectedImage] = useState();
+  const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(
+    false
+  );
   const [filteredContent, setFilteredContent] = useState(content);
 
   // Need to support lazy loaded content
@@ -126,82 +146,110 @@ const ImageGalleryModal = ({
     setSelectedImage(undefined);
   };
 
+  const handleDelete = () => {
+    onDelete(selectedImage.id);
+    setIsDeleteWarningModalOpen(false);
+  };
+
   const baseClass = `${iotPrefix}--image-gallery-modal`;
   return (
-    <ComposedModal
-      type="normal"
-      className={classnames(className, baseClass)}
-      footer={{
-        isPrimaryButtonDisabled: !selectedImage,
-        primaryButtonLabel: modalPrimaryButtonLabelText,
-        secondaryButtonLabel: modalSecondaryButtonLabelText,
-        ...footer,
-      }}
-      header={{
-        label: modalLabelText,
-        title: modalTitleText,
-      }}
-      isLarge
-      iconDescription={modalCloseIconDescriptionText}
-      onClose={onClose}
-      onSubmit={() => {
-        // title only makes sense in the modal selector, not in the image card
-        onSubmit(omit(selectedImage, 'title'));
-      }}
-      {...composedModalProps}>
-      <div className={`${baseClass}__top-section`}>
-        <p className={`${baseClass}__instruction-text`} alt={instructionText}>
-          {instructionText}
-        </p>
-        <div className={`${baseClass}__search-list-view-container`}>
-          <Search
-            id={`${baseClass}--search`}
-            onChange={filterContent}
-            labelText=""
-            light
-            placeHolderText={searchPlaceHolderText}
-          />
-          <ContentSwitcher
-            className={`${baseClass}__content-switcher`}
-            onChange={(selected) => {
-              setActiveView(selected.name);
-            }}
-            selectedIndex={activeView === GRID ? 0 : 1}>
-            <IconSwitch
-              name={GRID}
-              size="large"
-              text={gridButtonText}
-              renderIcon={Grid20}
-              index={0}
+    <>
+      {isDeleteWarningModalOpen ? ( // warning modal to show first
+        <Modal
+          className={`${baseClass}--warning-modal`}
+          open={isDeleteWarningModalOpen}
+          danger
+          primaryButtonText={deleteLabelText}
+          secondaryButtonText={modalSecondaryButtonLabelText}
+          modalHeading={deleteModalTitleText(selectedImage?.id)}
+          size="xs"
+          iconDescription={modalCloseIconDescriptionText}
+          onRequestClose={() => setIsDeleteWarningModalOpen(false)}
+          onRequestSubmit={handleDelete}
+        />
+      ) : null}
+      <ComposedModal
+        type="normal"
+        className={classnames(className, baseClass)}
+        footer={{
+          isPrimaryButtonDisabled: !selectedImage,
+          primaryButtonLabel: modalPrimaryButtonLabelText,
+          secondaryButtonLabel: modalSecondaryButtonLabelText,
+          ...footer,
+        }}
+        header={{
+          label: modalLabelText,
+          title: modalTitleText,
+        }}
+        isLarge
+        iconDescription={modalCloseIconDescriptionText}
+        onClose={onClose}
+        onSubmit={() => {
+          // title only makes sense in the modal selector, not in the image card
+          onSubmit(omit(selectedImage, 'title'));
+        }}
+        {...composedModalProps}>
+        <div className={`${baseClass}__top-section`}>
+          <p className={`${baseClass}__instruction-text`} alt={instructionText}>
+            {instructionText}
+          </p>
+          <div className={`${baseClass}__search-list-view-container`}>
+            <Search
+              id={`${baseClass}--search`}
+              onChange={filterContent}
+              labelText=""
+              light
+              placeHolderText={searchPlaceHolderText}
             />
-            <IconSwitch
-              name={LIST}
-              size="large"
-              text={listButtonText}
-              renderIcon={List20}
-              index={1}
-            />
-          </ContentSwitcher>
+            <ContentSwitcher
+              className={`${baseClass}__content-switcher`}
+              onChange={(selected) => {
+                setActiveView(selected.name);
+              }}
+              selectedIndex={activeView === GRID ? 0 : 1}>
+              <IconSwitch
+                name={GRID}
+                size="large"
+                text={gridButtonText}
+                renderIcon={Grid20}
+                index={0}
+              />
+              <IconSwitch
+                name={LIST}
+                size="large"
+                text={listButtonText}
+                renderIcon={List20}
+                index={1}
+              />
+            </ContentSwitcher>
+          </div>
         </div>
-      </div>
-      <div className={`${baseClass}__flex-wrapper`}>
-        <div
-          className={classnames(`${baseClass}__scroll-panel`, {
-            [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
-            [`${baseClass}__scroll-panel--list`]: activeView === LIST,
-          })}>
-          {filteredContent.map((imageProps) => (
-            <ImageTile
-              isWide={activeView === LIST}
-              key={imageProps.id}
-              {...imageProps}
-              toggleImageSelection={() => toggleImageSelection(imageProps)}
-              isSelected={selectedImage?.id === imageProps.id}
-            />
-          ))}
+        <div className={`${baseClass}__flex-wrapper`}>
+          <div
+            className={classnames(`${baseClass}__scroll-panel`, {
+              [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
+              [`${baseClass}__scroll-panel--list`]: activeView === LIST,
+            })}>
+            {filteredContent.map((imageProps) => (
+              <ImageTile
+                isWide={activeView === LIST}
+                key={imageProps.id}
+                onDelete={(id) => {
+                  // set the current selected image and popup the warning modal
+                  if (selectedImage?.id !== id) {
+                    setSelectedImage(imageProps);
+                  }
+                  setIsDeleteWarningModalOpen(true);
+                }}
+                {...imageProps}
+                toggleImageSelection={() => toggleImageSelection(imageProps)}
+                isSelected={selectedImage?.id === imageProps.id}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </ComposedModal>
+      </ComposedModal>
+    </>
   );
 };
 
