@@ -68,6 +68,9 @@ describe('HotspotEditorDataSourceTab', () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspotIndex={0}
+        thresholds={cardConfigWithPresets.thresholds || []}
         title="elevators"
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -75,7 +78,8 @@ describe('HotspotEditorDataSourceTab', () => {
       />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
-    userEvent.click(screen.getAllByRole('option')[0]);
+    const options = screen.getByTitle(/elevators/);
+    userEvent.click(options);
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith([
       {
@@ -90,7 +94,9 @@ describe('HotspotEditorDataSourceTab', () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
-        title="elevators"
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspotIndex={0}
+        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -118,36 +124,13 @@ describe('HotspotEditorDataSourceTab', () => {
     ]);
   });
 
-  it('calls uses `getValidDataItems` to get data items array', () => {
-    const cardConfig = {
-      ...cardConfigWithPresets,
-      dataItems: [
-        {
-          dataSourceId: 'temp_last',
-          label: 'high temp',
-          unit: '{unitVar}',
-        },
-      ],
-    };
-    const onChange = jest.fn();
-    render(
-      <HotspotEditorDataSourceTab
-        title="elevators"
-        cardConfig={cardConfig}
-        dataItems={dataItems}
-        onChange={onChange}
-        getValidDataItems={(config) => config.dataItems}
-      />
-    );
-    userEvent.click(screen.getAllByRole('button')[0]);
-    expect(screen.getByText(/temp_last/)).toBeInTheDocument();
-  });
-
   it('pops the data items modal', () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
-        title="elevators"
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspotIndex={0}
+        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -162,7 +145,9 @@ describe('HotspotEditorDataSourceTab', () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
-        title="elevators"
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspotIndex={0}
+        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -177,6 +162,7 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
+      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [
@@ -195,7 +181,9 @@ describe('HotspotEditorDataSourceTab', () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
-        title="elevators"
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspotIndex={0}
+        thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
@@ -212,6 +200,7 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
+      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [

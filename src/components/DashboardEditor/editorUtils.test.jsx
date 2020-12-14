@@ -376,7 +376,7 @@ describe('editorUtils', () => {
         selectedItems,
         mockImageCard,
         null,
-        'elevators'
+        0
       );
 
       expect(newCard).toEqual({
@@ -461,12 +461,7 @@ describe('editorUtils', () => {
           },
         ],
       };
-      let newCard = handleDataItemEdit(
-        editDataItem,
-        mockImageCard,
-        null,
-        'elevators'
-      );
+      let newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
 
       expect(newCard).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -509,7 +504,7 @@ describe('editorUtils', () => {
         editDataItem,
         withoutThresholds,
         null,
-        'elevators'
+        0
       );
 
       expect(newCard).toEqual(withoutThresholds);

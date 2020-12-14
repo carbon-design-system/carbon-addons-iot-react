@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 import { spacing04 } from '@carbon/layout';
+import omit from 'lodash/omit';
 
 import imageFile from '../../ImageCard/landscape.jpg';
 import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -148,19 +149,24 @@ export const WithStateInStory = () => {
     return (
       <div>
         <HotspotEditorDataSourceTab
-          title="pressure"
+          hotspot={cardConfigState.content.hotspots[0]}
+          hotspotIndex={0}
+          thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({
                 ...cardConfigState,
-                ...handleDataSeriesChange(newData, cardConfigState, 'pressure'),
+                ...handleDataSeriesChange(newData, cardConfigState, null, 0),
               });
             } else {
               setCardConfigState({
                 ...cardConfigState,
-                ...handleDataItemEdit(newData, cardConfigState, 'pressure'),
+                ...omit(
+                  handleDataItemEdit(newData, cardConfigState, null, 0),
+                  'hotspotIndex'
+                ),
               });
             }
             action('onChange')(newData);
@@ -210,23 +216,24 @@ export const WithPresetValues = () => {
     return (
       <div>
         <HotspotEditorDataSourceTab
-          title="elevators"
+          hotspot={cardConfigState.content.hotspots[0]}
+          hotspotIndex={0}
+          thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({
                 ...cardConfigState,
-                ...handleDataSeriesChange(
-                  newData,
-                  cardConfigState,
-                  'elevators'
-                ),
+                ...handleDataSeriesChange(newData, cardConfigState, null, 0),
               });
             } else {
               setCardConfigState({
                 ...cardConfigState,
-                ...handleDataItemEdit(newData, cardConfigState, 'elevators'),
+                ...omit(
+                  handleDataItemEdit(newData, cardConfigState, null, 0),
+                  'hotspotIndex'
+                ),
               });
             }
             action('onChange')(newData);

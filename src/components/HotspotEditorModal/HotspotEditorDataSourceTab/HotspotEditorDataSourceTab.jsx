@@ -11,7 +11,17 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  hotspotIndex: PropTypes.number.isRequired,
+  hotspot: PropTypes.shape({}),
+  thresholds: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      comparison: PropTypes.string,
+      value: PropTypes.number,
+      color: PropTypes.string,
+      icon: PropTypes.string,
+    })
+  ),
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -36,11 +46,6 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
   testID: PropTypes.string,
-  /** if provided, returns an array of strings which are the dataItems to be allowed
-   * on each card
-   * getValidDataItems(card, selectedTimeRange)
-   */
-  getValidDataItems: PropTypes.func,
   /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
@@ -57,7 +62,9 @@ const propTypes = {
 };
 
 const defaultProps = {
+  hotspot: {},
   cardConfig: {},
+  thresholds: [],
   i18n: {
     selectDataItemsText: 'Select data items',
     dataItemText: 'Data items',
@@ -70,7 +77,6 @@ const defaultProps = {
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
   },
-  getValidDataItems: null,
   dataItems: [],
   availableDimensions: {},
   testID: 'HotspotEditorDataSourceTab',
@@ -83,31 +89,26 @@ export const formatDataItemsForDropdown = (dataItems) =>
   }));
 
 const HotspotEditorDataSourceTab = ({
-  title,
+  hotspotIndex,
+  thresholds,
+  hotspot,
   cardConfig,
   dataItems,
-  getValidDataItems,
   i18n,
   onChange,
   availableDimensions,
   testID,
-  ...other
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
   const [selectedItemsArray, setSelectedItemsArray] = useState(
-    () =>
-      cardConfig?.content?.hotspots?.find((hotspot) => hotspot.title === title)
-        ?.content?.attributes || []
+    () => hotspot.content?.attributes || []
   );
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
-  const validDataItems = getValidDataItems
-    ? getValidDataItems(cardConfig, other.selectedTimeRange)
-    : dataItems;
 
   const handleSelectionChange = ({ selectedItems }) => {
     const newArray = [];
@@ -151,7 +152,7 @@ const HotspotEditorDataSourceTab = ({
           direction="bottom"
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(validDataItems)}
+          items={formatDataItemsForDropdown(dataItems)}
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}
@@ -161,35 +162,33 @@ const HotspotEditorDataSourceTab = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={selectedItemsArray?.map((dataItem) => {
-          const thresholds =
-            cardConfig?.thresholds?.filter(
-              (threshold) => threshold.dataSourceId === dataItem.dataSourceId
-            ) || [];
-          return {
-            id: dataItem.dataSourceId,
-            content: {
-              value: dataItem.label,
-              rowActions: () => [
-                <Button
-                  key={`data-item-${dataItem.dataSourceId}`}
-                  renderIcon={Edit16}
-                  hasIconOnly
-                  kind="ghost"
-                  size="small"
-                  onClick={() => {
-                    setEditDataItem({
-                      ...dataItem,
-                      thresholds,
-                    });
-                    setShowEditor(true);
-                  }}
-                  iconDescription={mergedI18n.editText}
-                />,
-              ],
-            },
-          };
-        })}
+        items={selectedItemsArray?.map((dataItem) => ({
+          id: dataItem.dataSourceId,
+          content: {
+            value: dataItem.label,
+            rowActions: () => [
+              <Button
+                key={`data-item-${dataItem.dataSourceId}`}
+                renderIcon={Edit16}
+                hasIconOnly
+                kind="ghost"
+                size="small"
+                onClick={() => {
+                  setEditDataItem({
+                    ...dataItem,
+                    hotspotIndex,
+                    thresholds: thresholds.filter(
+                      (threshold) =>
+                        threshold.dataSourceId === dataItem.dataSourceId
+                    ),
+                  });
+                  setShowEditor(true);
+                }}
+                iconDescription={mergedI18n.editText}
+              />,
+            ],
+          },
+        }))}
       />
     </div>
   );

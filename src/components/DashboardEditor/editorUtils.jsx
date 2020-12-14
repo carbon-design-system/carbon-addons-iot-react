@@ -621,13 +621,12 @@ export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
   setEditDataSeries,
-  title
+  hotspotIndex
 ) => {
   const { type } = cardConfig;
   let series;
   let attributes;
   let dataSection;
-  let editDataItemIndex;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -646,11 +645,8 @@ export const handleDataSeriesChange = (
       };
     case CARD_TYPES.IMAGE:
       dataSection = [...(cardConfig.content?.hotspots || [])];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.title === title
-      );
-      dataSection[editDataItemIndex].content = {
-        ...dataSection[editDataItemIndex].content,
+      dataSection[hotspotIndex].content = {
+        ...dataSection[hotspotIndex].content,
         attributes: selectedItems,
       };
       return {
@@ -675,12 +671,11 @@ export const handleDataItemEdit = (
   editDataItem,
   cardConfig,
   editDataSeries,
-  title
+  hotspotIndex
 ) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
-  let nestedIndex;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -706,13 +701,13 @@ export const handleDataItemEdit = (
       };
     case CARD_TYPES.IMAGE:
       dataSection = [...(content.hotspots || [])];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.title === title
-      );
-      nestedIndex = dataSection[editDataItemIndex].content.attributes.findIndex(
+
+      editDataItemIndex = dataSection[
+        hotspotIndex
+      ].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[editDataItemIndex].content.attributes[nestedIndex] = omit(
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
         editDataItem,
         'thresholds'
       );
