@@ -620,11 +620,13 @@ export const formatAttributes = (selectedItems, cardConfig) => {
 export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
-  setEditDataSeries
+  setEditDataSeries,
+  hotspotIndex
 ) => {
   const { type } = cardConfig;
   let series;
   let attributes;
+  let dataSection;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -641,6 +643,19 @@ export const handleDataSeriesChange = (
         ...cardConfig,
         content: { ...cardConfig.content, series },
       };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(cardConfig.content?.hotspots || [])];
+      dataSection[hotspotIndex].content = {
+        ...dataSection[hotspotIndex].content,
+        attributes: selectedItems,
+      };
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          hotspots: dataSection,
+        },
+      };
     default:
       return cardConfig;
   }
@@ -648,13 +663,15 @@ export const handleDataSeriesChange = (
 
 /**
  * updates the dataSection on edit of a dataItem based on card type
- * @param {array} editDataItem
+ * @param {object} editDataItem
  * @param {object} cardConfig
+ * @param {string} title
  */
 export const handleDataItemEdit = (
   editDataItem,
   cardConfig,
-  editDataSeries
+  editDataSeries,
+  hotspotIndex
 ) => {
   const { type, content } = cardConfig;
   let dataSection;
@@ -681,6 +698,34 @@ export const handleDataItemEdit = (
       return {
         ...cardConfig,
         content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(content.hotspots || [])];
+
+      editDataItemIndex = dataSection[
+        hotspotIndex
+      ].content.attributes.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
+        editDataItem,
+        'thresholds'
+      );
+      if (cardConfig.thresholds || editDataItem.thresholds) {
+        return {
+          ...cardConfig,
+          content: { ...content, hotspots: dataSection },
+          thresholds: [
+            ...(cardConfig.thresholds?.filter(
+              (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
+            ) || []),
+            ...editDataItem.thresholds,
+          ].map((thresh) => omit(thresh, 'id')),
+        };
+      }
+      return {
+        ...cardConfig,
+        content: { ...content, hotspots: dataSection },
       };
     default:
       return cardConfig;
