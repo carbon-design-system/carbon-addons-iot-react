@@ -23,12 +23,16 @@ import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
   handleCardVariables,
-  formatNumberWithPrecision,
-  getVariables,
   getResizeHandles,
+  findMatchingThresholds,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
 
+import {
+  createColumnsWithFormattedLinks,
+  determinePrecisionAndValue,
+  handleExpandedItemLinks,
+} from './tableCardUtils';
 import ThresholdIcon from './ThresholdIcon';
 
 const { iotPrefix } = settings;
@@ -114,10 +118,7 @@ const StyledStatefulTable = styled(
         }
       }
       th div.bx--list-box {
-        height: auto;
-        .bx--list-box__selection {
-          height: inherit;
-        }
+        height: 2rem;
       }
     }
   }
@@ -157,170 +158,6 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
-};
-/**
- * Returns an array of matching thresholds will only return the highest severity threshold for a column
- * If passed a columnId, it filters the threshold check on the current column only
- */
-export const findMatchingThresholds = (thresholds, item, columnId) => {
-  return thresholds
-    .filter((t) => {
-      const { comparison, value, dataSourceId } = t;
-      // Does the threshold apply to the current column?
-      if (columnId && !columnId.includes(dataSourceId)) {
-        return false;
-      }
-
-      switch (comparison) {
-        case '<':
-          return (
-            !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) < value
-          );
-        case '>':
-          return parseFloat(item[dataSourceId]) > value;
-        case '=':
-          return (
-            parseFloat(item[dataSourceId]) === value ||
-            item[dataSourceId] === value
-          ); // need to handle the string case
-        case '<=':
-          return (
-            !isNil(item[dataSourceId]) &&
-            parseFloat(item[dataSourceId]) <= value
-          );
-        case '>=':
-          return parseFloat(item[dataSourceId]) >= value;
-        default:
-          return false;
-      }
-    })
-    .reduce((highestSeverityThreshold, threshold) => {
-      const currentThresholdIndex = highestSeverityThreshold.findIndex(
-        (currentThreshold) =>
-          currentThreshold.dataSourceId === threshold.dataSourceId
-      );
-
-      if (
-        // If I don't have a threshold currently for this column
-        currentThresholdIndex < 0
-      ) {
-        highestSeverityThreshold.push({
-          ...threshold,
-          currentValue: item[threshold.dataSourceId],
-        });
-      } // The lowest severity is actually the most severe
-      else if (
-        highestSeverityThreshold[currentThresholdIndex].severity >
-        threshold.severity
-      ) {
-        // eslint-disable-next-line no-param-reassign
-        highestSeverityThreshold[currentThresholdIndex] = {
-          ...threshold,
-          currentValue: item[threshold.dataSourceId],
-        };
-      }
-      return highestSeverityThreshold;
-    }, []);
-};
-
-const determinePrecisionAndValue = (precision = 0, value, locale) => {
-  const precisionDefined = Number.isInteger(value) ? 0 : precision;
-
-  if (typeof value === 'number') {
-    return formatNumberWithPrecision(value, precisionDefined, locale);
-  }
-  if (isNil(value)) {
-    return '--';
-  }
-  return '--';
-};
-
-/**
- * Updates the hrefs in each column to be us-able links. If href variables are on a table that has row specific values, the user
- * should not pass in a cardVariables object as each variable with have multiple values.
- * @param {array} columns - Array of TableCard columns
- * @param {object} cardVariables - object of cardVariables
- * @return {array} array of columns with formatted links and updated variable values
- */
-export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
-  return columns.map((column) => {
-    const { linkTemplate } = column;
-    if (linkTemplate) {
-      let variables;
-      if (!cardVariables) {
-        // fetch variables on the href
-        variables = linkTemplate.href ? getVariables(linkTemplate.href) : [];
-      }
-      return {
-        ...column,
-        // eslint-disable-next-line react/prop-types
-        renderDataFunction: ({ value, row }) => {
-          let variableLink;
-          // if we have variables the value is based on its own row's context
-          if (variables && variables.length) {
-            variableLink = linkTemplate.href;
-            variables.forEach((variable) => {
-              const variableValue = row[variable];
-              variableLink = variableLink.replace(
-                `{${variable}}`,
-                variableValue
-              );
-            });
-          }
-          return (
-            <Link
-              href={variableLink || linkTemplate.href}
-              target={linkTemplate.target ? linkTemplate.target : null}>
-              {value}
-            </Link>
-          );
-        },
-      };
-    }
-    return column;
-  });
-};
-
-/**
- * Updates expandedRow to have us-able links if any hrefs are found. If href variables are on a table that has row specific values, the user
- * should not pass in a cardVariables object as each variable with have multiple values.
- * @param {object} row - Object containing each value present on the row
- * @param {array} expandedRow - Array of data to display when the row is expanded
- * @param {object} cardVariables - object of cardVariables
- * @return {array} Array of data with formatted links to display when the row is expanded
- */
-export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
-  // if the user has given us variable values, we can assume that they don't want them to be row specific
-  if (cardVariables) {
-    return expandedRow;
-  }
-
-  const updatedExpandedRow = [];
-
-  expandedRow.forEach((item) => {
-    const { linkTemplate } = item;
-    const variables = linkTemplate?.href ? getVariables(linkTemplate.href) : [];
-    let variableLink;
-    // if we have variables the value is based on its own row's context
-    if (variables && variables.length) {
-      variableLink = linkTemplate.href;
-      variables.forEach((variable) => {
-        const variableValue = row[variable];
-        variableLink = variableLink.replace(`{${variable}}`, variableValue);
-      });
-    }
-    if (linkTemplate) {
-      updatedExpandedRow.push({
-        ...item,
-        linkTemplate: {
-          href: variableLink || linkTemplate.href,
-        },
-      });
-    } else {
-      updatedExpandedRow.push(item);
-    }
-  });
-  return updatedExpandedRow;
 };
 
 const TableCard = ({
@@ -495,18 +332,19 @@ const TableCard = ({
       renderDataFunction: renderThresholdIcon,
       priority: 1,
       filter: {
+        isMultiselect: true,
         placeholderText: mergedI18n.selectSeverityPlaceholder,
         options: [
           {
-            id: 1,
+            id: mergedI18n.criticalLabel,
             text: mergedI18n.criticalLabel,
           },
           {
-            id: 2,
+            id: mergedI18n.moderateLabel,
             text: mergedI18n.moderateLabel,
           },
           {
-            id: 3,
+            id: mergedI18n.lowLabel,
             text: mergedI18n.lowLabel,
           },
         ],
@@ -616,6 +454,13 @@ const TableCard = ({
     [columns]
   );
 
+  // Map from threshold severity number to label
+  const thresholdSeverityLabelsMap = {
+    1: mergedI18n.criticalLabel,
+    2: mergedI18n.moderateLabel,
+    3: mergedI18n.lowLabel,
+  };
+
   // if we're in editable mode, generate fake data
   const tableDataWithTimestamp = useMemo(
     () =>
@@ -650,7 +495,7 @@ const TableCard = ({
             const iconColumns = matchingThresholds
               ? matchingThresholds.reduce((thresholdData, threshold) => {
                   thresholdData[`iconColumn-${threshold.dataSourceId}`] = // eslint-disable-line no-param-reassign
-                    threshold.severity;
+                    thresholdSeverityLabelsMap[threshold.severity];
                   return thresholdData;
                 }, {})
               : null;
@@ -698,6 +543,7 @@ const TableCard = ({
       filteredPrecisionColumns,
       thresholds,
       tableData,
+      thresholdSeverityLabelsMap,
       locale,
     ]
   );
@@ -758,7 +604,13 @@ const TableCard = ({
                               {item ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>
-                              {item ? dataItem.values[item.id] : null}
+                              {item
+                                ? item.type === 'TIMESTAMP'
+                                  ? moment(dataItem.values[item.id]).format(
+                                      'L HH:mm'
+                                    )
+                                  : dataItem.values[item.id]
+                                : null}
                             </span>
                           </>
                         )}

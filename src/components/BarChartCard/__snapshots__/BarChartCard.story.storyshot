@@ -16,7 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -90,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-grouped"
             />
           </div>
         </div>
@@ -139,7 +139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -213,7 +213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-grouped"
             />
           </div>
         </div>
@@ -433,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -507,7 +507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-simple"
             />
           </div>
         </div>
@@ -556,7 +556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -675,7 +675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-simple"
             />
           </div>
         </div>
@@ -724,7 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -798,7 +798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-simple"
             />
           </div>
         </div>
@@ -847,7 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -921,7 +921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-stacked"
             />
           </div>
         </div>
@@ -970,7 +970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -1089,7 +1089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-stacked"
             />
           </div>
         </div>
@@ -1138,7 +1138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -1257,7 +1257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-stacked"
             />
           </div>
         </div>
@@ -1306,7 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -1380,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-stacked"
             />
           </div>
         </div>
@@ -1429,7 +1429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -1470,7 +1470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container iot--bar-chart-container--editable"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-grouped"
             />
           </div>
         </div>
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -1641,7 +1641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
               className="iot--bar-chart-container iot--bar-chart-container--expanded"
             >
               <div
-                className="chart-holder"
+                id="mock-bar-chart-stacked"
               />
               <div
                 className="iot--bar-chart-card--stateful-table iot--table-container bx--data-table-container"
@@ -2839,7 +2839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
             className="iot--bar-chart-container"
           >
             <div
-              className="chart-holder"
+              id="mock-bar-chart-stacked"
             />
           </div>
         </div>

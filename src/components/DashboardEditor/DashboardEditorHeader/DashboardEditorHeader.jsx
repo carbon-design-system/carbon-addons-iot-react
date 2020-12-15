@@ -4,11 +4,20 @@ import {
   TrashCan16,
   DocumentImport16,
   DocumentExport16,
+  Maximize16,
+  Tablet16,
+  Laptop16,
+  Screen16,
 } from '@carbon/icons-react';
-import { FileUploaderButton, TooltipIcon } from 'carbon-components-react';
+import {
+  FileUploaderButton,
+  TooltipIcon,
+  ContentSwitcher,
+} from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, PageTitleBar } from '../../../index';
+import IconSwitch from '../../IconSwitch/IconSwitch';
 
 const { iotPrefix } = settings;
 
@@ -36,7 +45,9 @@ const propTypes = {
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
-  submitDisabled: PropTypes.bool,
+  isSubmitDisabled: PropTypes.bool,
+  /** Whether to set the loading spinner on the submit button */
+  isSubmitLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -45,9 +56,24 @@ const propTypes = {
     headerDeleteButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
     headerSubmitButton: PropTypes.string,
+    headerFitToScreenButton: PropTypes.string,
+    headerXlargeButton: PropTypes.string,
+    headerLargeButton: PropTypes.string,
+    headerMediumButton: PropTypes.string,
   }),
   /** The current dashboard's JSON */
   dashboardJson: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  /** currently selected breakpoint which is being held in state by DashboardEditor */
+  selectedBreakpointIndex: PropTypes.number,
+  /** handler to change the selectedBreakpoint state */
+  setSelectedBreakpointIndex: PropTypes.func,
+  /** if enabled, renders a ContentSwitcher with IconSwitches that allow for manually changing the breakpoint,
+   * regardless of the screen width
+   */
+  breakpointSwitcher: PropTypes.shape({
+    enabled: PropTypes.bool,
+    allowedBreakpoints: PropTypes.arrayOf(PropTypes.string),
+  }),
 };
 
 const defaultProps = {
@@ -59,15 +85,23 @@ const defaultProps = {
   onDelete: null,
   onCancel: null,
   onSubmit: null,
-  submitDisabled: false,
+  isSubmitDisabled: false,
+  isSubmitLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
     headerExportButton: 'Export',
     headerDeleteButton: 'Delete',
     headerCancelButton: 'Cancel',
-    headerSubmitButton: 'Submit',
+    headerSubmitButton: 'Save and close',
+    headerFitToScreenButton: 'Fit to screen',
+    headerXlargeButton: 'X-large view',
+    headerLargeButton: 'Large view',
+    headerMediumButton: 'Medium view',
   },
+  selectedBreakpointIndex: null,
+  setSelectedBreakpointIndex: null,
+  breakpointSwitcher: null,
 };
 
 const DashboardEditorHeader = ({
@@ -79,22 +113,59 @@ const DashboardEditorHeader = ({
   onDelete,
   onCancel,
   onSubmit,
-  submitDisabled,
+  isSubmitDisabled,
+  isSubmitLoading,
   i18n,
   dashboardJson,
+  selectedBreakpointIndex,
+  setSelectedBreakpointIndex,
+  breakpointSwitcher,
 }) => {
+  const mergedI18n = { ...defaultProps.i18n, i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
       <div className={`${baseClassName}--top`} />
       <div className={`${baseClassName}--bottom`}>
+        {breakpointSwitcher?.enabled && (
+          <ContentSwitcher
+            onChange={(e) => setSelectedBreakpointIndex(e.index)}
+            selectedIndex={selectedBreakpointIndex}
+            className={`${baseClassName}--bottom__switcher`}>
+            <IconSwitch
+              name="fit-to-screen"
+              text={mergedI18n.headerFitToScreenButton}
+              renderIcon={Maximize16}
+              index={0}
+            />
+            <IconSwitch
+              name="xlarge"
+              text={mergedI18n.headerXlargeButton}
+              renderIcon={Screen16}
+              index={1}
+            />
+            <IconSwitch
+              name="large"
+              text={mergedI18n.headerLargeButton}
+              renderIcon={Laptop16}
+              index={2}
+            />
+            <IconSwitch
+              name="medium"
+              text={mergedI18n.headerMediumButton}
+              renderIcon={Tablet16}
+              index={3}
+            />
+          </ContentSwitcher>
+        )}
+
         {
           // FileUploaderButton isn't a true button so extra styling is needed to make it look like a iconOnly button
           onImport && (
             <TooltipIcon
               align="center"
               direction="bottom"
-              tooltipText={i18n.headerImportButton}
+              tooltipText={mergedI18n.headerImportButton}
               className={`${baseClassName}--bottom__import`}>
               <FileUploaderButton
                 buttonKind="ghost"
@@ -102,6 +173,8 @@ const DashboardEditorHeader = ({
                 labelText={<DocumentImport16 fill="#161616" />}
                 onChange={onImport}
                 disableLabelChanges
+                accepts={['.json']}
+                multiple={false}
               />
             </TooltipIcon>
           )
@@ -110,7 +183,7 @@ const DashboardEditorHeader = ({
           <Button
             kind="ghost"
             size="field"
-            iconDescription={i18n.headerExportButton}
+            iconDescription={mergedI18n.headerExportButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
@@ -122,7 +195,7 @@ const DashboardEditorHeader = ({
           <Button
             kind="ghost"
             size="field"
-            iconDescription={i18n.headerDeleteButton}
+            iconDescription={mergedI18n.headerDeleteButton}
             tooltipPosition="bottom"
             tooltipAlignment="center"
             hasIconOnly
@@ -131,16 +204,17 @@ const DashboardEditorHeader = ({
           />
         )}
         {onCancel && (
-          <Button kind="tertiary" size="field" onClick={onCancel}>
-            {i18n.headerCancelButton}
+          <Button kind="secondary" size="field" onClick={onCancel}>
+            {mergedI18n.headerCancelButton}
           </Button>
         )}
         {onSubmit && (
           <Button
             size="field"
-            disabled={submitDisabled}
-            onClick={() => onSubmit(dashboardJson)}>
-            {i18n.headerSubmitButton}
+            disabled={isSubmitDisabled}
+            onClick={() => onSubmit(dashboardJson)}
+            loading={isSubmitLoading}>
+            {mergedI18n.headerSubmitButton}
           </Button>
         )}
       </div>
@@ -154,7 +228,7 @@ const DashboardEditorHeader = ({
       title={title}
       editable={!!onEditTitle}
       onEdit={onEditTitle}
-      i18n={{ editIconDescription: i18n.headerEditTitleButton }}
+      i18n={{ editIconDescription: mergedI18n.headerEditTitleButton }}
     />
   );
 };

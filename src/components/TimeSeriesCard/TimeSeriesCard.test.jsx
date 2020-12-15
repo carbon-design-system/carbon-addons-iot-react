@@ -5,7 +5,12 @@ import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  COLORS,
+  TIME_SERIES_TYPES,
+} from '../../constants/LayoutConstants';
+import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, {
@@ -46,13 +51,13 @@ describe('TimeSeriesCard', () => {
         size={CARD_SIZES.MEDIUM}
       />
     );
-    expect(wrapper.find('LineChart')).toHaveLength(0);
+    expect(wrapper.find('#mock-line-chart')).toHaveLength(0);
     expect(wrapper.find('SkeletonText')).toHaveLength(1);
 
     wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />
     );
-    expect(wrapper.find('LineChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
     expect(wrapper.find('SkeletonText')).toHaveLength(0);
   });
   it('does not fail to render if no data is given', () => {
@@ -79,9 +84,23 @@ describe('TimeSeriesCard', () => {
         size={CARD_SIZES.MEDIUMTHIN}
       />
     );
-    expect(wrapper.find('LineChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
+  });
+
+  it('type bar shows', () => {
+    const wrapper = mount(
+      <TimeSeriesCard
+        {...timeSeriesCardProps}
+        content={{
+          ...timeSeriesCardProps.content,
+          chartType: TIME_SERIES_TYPES.BAR,
+        }}
+        size={CARD_SIZES.MEDIUMTHIN}
+      />
+    );
+    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
   });
 
   it('handleTooltip should add date', () => {
@@ -184,7 +203,7 @@ describe('TimeSeriesCard', () => {
     const wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardWithOneColorProps} />
     );
-    expect(wrapper.find('LineChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
   });
   it('formatChartData returns properly formatted data without dataFilter set', () => {
     const series = [
@@ -385,7 +404,6 @@ describe('TimeSeriesCard', () => {
     ];
 
     expect(formatColors(series)).toEqual({
-      identifier: 'group',
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
   });
@@ -397,8 +415,12 @@ describe('TimeSeriesCard', () => {
     };
 
     expect(formatColors(series)).toEqual({
-      identifier: 'group',
       scale: { Amsterdam: 'blue' },
+    });
+
+    // Default color should be used if no color is passed
+    expect(formatColors(omit(series, 'color'))).toEqual({
+      scale: { Amsterdam: CHART_COLORS[0] },
     });
   });
   it('tableColumn headers should use the label, not the dataSourceId', () => {

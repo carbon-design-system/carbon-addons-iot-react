@@ -6,63 +6,86 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
 
-import PieChartCard from './PieChartCard';
+import PieChartCard, { formatColors } from './PieChartCard';
+
+jest.unmock('@carbon/charts-react');
+
+const chartDataExample = [
+  {
+    group: '2V2N 9KYPM',
+    category: 'cat A',
+    value: 1,
+  },
+  {
+    group: 'L22I P66EP L22I P66EP',
+    category: 'cat B',
+    value: 10,
+  },
+  {
+    group: 'JQAI 2M4L1',
+    category: 'cat C',
+    value: 20,
+  },
+  {
+    group: 'J9DZ F37AP',
+    category: 'cat D',
+    value: 50,
+  },
+  {
+    group: 'YEL48 Q6XK YEL48',
+    category: 'cat E',
+    value: 15,
+  },
+  {
+    group: 'Misc',
+    category: 'cat F',
+    value: 40,
+  },
+];
+
+const pieChartCardProps = {
+  availableActions: { expand: true },
+  content: {
+    groupDataSourceId: 'group',
+    legendPosition: 'bottom',
+  },
+  id: 'pie-chart-card',
+  isLoading: false,
+  isExpanded: false,
+  onCardAction: jest.fn(),
+  size: CARD_SIZES.LARGE,
+  title: 'Schools',
+  testID: 'test-pie-chart-card',
+  values: chartDataExample,
+};
+describe('utility functions', () => {
+  it('formatColors with array', () => {
+    const mockColors = {
+      'cat A': 'purple',
+    };
+    const formattedColors = formatColors(
+      chartDataExample,
+      'category',
+      mockColors
+    );
+    expect(formattedColors.scale['cat A']).toEqual('purple');
+    expect(formattedColors.scale['cat B']).toEqual('#1192e8');
+  });
+  it('formatColors with object', () => {
+    const mockColors = {
+      'cat A': 'purple',
+    };
+    const formattedColors = formatColors(
+      { 'cat A': 124, 'cat B': 125 },
+      undefined,
+      mockColors
+    );
+    expect(formattedColors.scale['cat A']).toEqual('purple');
+    expect(formattedColors.scale['cat B']).toEqual('#1192e8');
+  });
+});
 
 describe('PieChartCard', () => {
-  let chartDataExample;
-  let pieChartCardProps;
-
-  beforeEach(() => {
-    chartDataExample = [
-      {
-        group: '2V2N 9KYPM',
-        category: 'cat A',
-        value: 1,
-      },
-      {
-        group: 'L22I P66EP L22I P66EP',
-        category: 'cat B',
-        value: 10,
-      },
-      {
-        group: 'JQAI 2M4L1',
-        category: 'cat C',
-        value: 20,
-      },
-      {
-        group: 'J9DZ F37AP',
-        category: 'cat D',
-        value: 50,
-      },
-      {
-        group: 'YEL48 Q6XK YEL48',
-        category: 'cat E',
-        value: 15,
-      },
-      {
-        group: 'Misc',
-        category: 'cat F',
-        value: 40,
-      },
-    ];
-
-    pieChartCardProps = {
-      availableActions: { expand: true },
-      content: {
-        groupDataSourceId: 'group',
-        legendPosition: 'bottom',
-      },
-      id: 'pie-chart-card',
-      isLoading: false,
-      isExpanded: false,
-      onCardAction: jest.fn(),
-      size: CARD_SIZES.LARGE,
-      title: 'Schools',
-      testID: 'test-pie-chart-card',
-      values: chartDataExample,
-    };
-  });
-
   it('shows loading skeleton for isLoading even for empty data  ', () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
     const { container, rerender } = render(
@@ -156,7 +179,7 @@ describe('PieChartCard', () => {
     );
 
     const slices = screen
-      .getByLabelText('slices')
+      .getAllByRole('group')[0]
       .getElementsByClassName('slice');
     const orderedColors = chartDataExample
       .sort((a, b) => b.value - a.value)
@@ -210,7 +233,7 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 1')).toBeVisible();
 
     const slices = screen
-      .getByLabelText('slices')
+      .getAllByRole('group')[0]
       .getElementsByClassName('slice');
     const firstSliceColor = slices.item(0).getAttribute('fill');
     const secondSliceColor = slices.item(1).getAttribute('fill');

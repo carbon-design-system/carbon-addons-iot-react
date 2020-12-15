@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { settings } from '../../../constants/Settings';
-import { TextInput } from '../../../index';
+import { CARD_TYPES } from '../../../constants/LayoutConstants';
 
-const { iotPrefix } = settings;
+import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
+import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
+import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
+import BarChartCardFormSettings from './CardEditFormItems/BarChartCardFormItems/BarChartCardFormSettings';
 
 const propTypes = {
   /** card data value */
@@ -27,19 +29,13 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({
-    xAxisLabel: PropTypes.string,
-    yAxisLabel: PropTypes.string,
-    unitLabel: PropTypes.string,
-    decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
-  }),
+  i18n: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -50,94 +46,52 @@ const defaultProps = {
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
     showLegendLable: 'Show legend',
+    precisionLabel: 'Precision',
+    showLegendLabel: 'Show legend',
+    fontSize: 'Font size',
   },
 };
 
 const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content, id } = cardConfig;
+  const { type } = cardConfig;
 
-  const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  return (
-    <>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_title`}
-          labelText={mergedI18n.xAxisLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, xLabel: evt.target.value },
-            })
-          }
-          value={content?.xLabel}
+  switch (type) {
+    case CARD_TYPES.VALUE:
+      return (
+        <ValueCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
         />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_y-axis-label`}
-          labelText={mergedI18n.yAxisLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, yLabel: evt.target.value },
-            })
-          }
-          value={content?.yLabel}
+      );
+    case CARD_TYPES.TIMESERIES:
+      return (
+        <DataSeriesFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
         />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_unit-selection`}
-          labelText={mergedI18n.unitLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: { ...cardConfig.content, unit: evt.target.value },
-            })
-          }
-          value={content?.unit}
+      );
+    case CARD_TYPES.BAR:
+      return (
+        <BarChartCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
         />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_decimal-precision`}
-          labelText={mergedI18n.decimalPrecisionLabel}
-          light
-          onChange={(evt) =>
-            onChange({
-              ...cardConfig,
-              content: {
-                ...cardConfig.content,
-                decimalPrecision: evt.target.value,
-              },
-            })
-          }
-          value={content?.decimalPrecision}
+      );
+    case CARD_TYPES.IMAGE:
+      return (
+        <ImageCardFormSettings
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
         />
-      </div>
-      {/* 
-      TODO: support and legend toggling in future iteration
-      <div className={`${baseClassName}--input`}>
-        <div className={`${baseClassName}--input--toggle-field`}>
-          <span>{mergedI18n.showLegend}</span>
-          <ToggleSmall
-            id="show-legend-toggle"
-            aria-label="show-legend"
-            defaultToggled
-            labelA=""
-            labelB=""
-            // This is not supported by Carbon yet. Issue open here: https://github.com/carbon-design-system/carbon-charts/issues/846
-            onToggle={showLegend => onChange({ ...cardConfig, showLegend })}
-          />
-        </div>
-      </div> */}
-    </>
-  );
+      );
+    default:
+      return null;
+  }
 };
 
 CardEditFormSettings.propTypes = propTypes;

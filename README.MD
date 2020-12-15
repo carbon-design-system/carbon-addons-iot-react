@@ -19,8 +19,8 @@
   <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
     <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/next" alt="@next npm version release" />
   </a>
-  <a href="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react">
-    <img src="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react.svg?branch=master" alt="Build Status" />
+  <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/actions?query=workflow%3ABuild+branch%3Amaster">
+    <img src="https://img.shields.io/github/workflow/status/carbon-design-system/carbon-addons-iot-react/Build/master" alt="Build Status" />
   </a>
   <a href="https://coveralls.io/github/carbon-design-system/carbon-addons-iot-react?branch=master">
     <img src="https://coveralls.io/repos/github/carbon-design-system/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />

@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="38-search"
+                  aria-labelledby="40-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -64,8 +64,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="38"
-                    id="38-search"
+                    htmlFor="40"
+                    id="40-search"
                   >
                     Filter table
                   </label>
@@ -73,7 +73,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="38"
+                    id="40"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -412,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="39-search"
+                  aria-labelledby="41-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -433,8 +433,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="39"
-                    id="39-search"
+                    htmlFor="41"
+                    id="41-search"
                   >
                     Filter table
                   </label>
@@ -442,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="39"
+                    id="41"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -688,7 +688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="41-search"
+                  aria-labelledby="43-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -709,8 +709,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="41"
-                    id="41-search"
+                    htmlFor="43"
+                    id="43-search"
                   >
                     Filter table
                   </label>
@@ -718,7 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="41"
+                    id="43"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -892,7 +892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="40-search"
+                  aria-labelledby="42-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -913,8 +913,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="40"
-                    id="40-search"
+                    htmlFor="42"
+                    id="42-search"
                   >
                     Filter table
                   </label>
@@ -922,7 +922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="40"
+                    id="42"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -1120,7 +1120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="44-search"
+                  aria-labelledby="46-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -1141,8 +1141,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="44"
-                    id="44-search"
+                    htmlFor="46"
+                    id="46-search"
                   >
                     Filter table
                   </label>
@@ -1150,7 +1150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="44"
+                    id="46"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -1602,7 +1602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="42-search"
+                  aria-labelledby="44-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -1623,8 +1623,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="42"
-                    id="42-search"
+                    htmlFor="44"
+                    id="44-search"
                   >
                     Filter table
                   </label>
@@ -1632,7 +1632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="42"
+                    id="44"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"
@@ -2205,7 +2205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 tabIndex="0"
               >
                 <div
-                  aria-labelledby="43-search"
+                  aria-labelledby="45-search"
                   className="bx--search bx--search--sm iot--tile-catalog--tile-canvas--header--search"
                   role="search"
                 >
@@ -2226,8 +2226,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                   <label
                     className="bx--label"
-                    htmlFor="43"
-                    id="43-search"
+                    htmlFor="45"
+                    id="45-search"
                   >
                     Filter table
                   </label>
@@ -2235,7 +2235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-hidden={true}
                     autoComplete="off"
                     className="bx--search-input"
-                    id="43"
+                    id="45"
                     onChange={[Function]}
                     placeholder="Enter a value"
                     role="searchbox"

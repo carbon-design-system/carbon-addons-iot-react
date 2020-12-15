@@ -85,7 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--dashboard-editor-header--bottom"
               >
                 <button
-                  aria-describedby="icon-tooltip-5"
+                  aria-describedby="icon-tooltip-7"
                   className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                   onFocus={[Function]}
                   onMouseEnter={[Function]}
@@ -93,14 +93,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 >
                   <span
                     className="bx--assistive-text"
-                    id="icon-tooltip-5"
+                    id="icon-tooltip-7"
                   >
                     Import
                   </span>
                   <label
+                    accepts={
+                      Array [
+                        ".json",
+                      ]
+                    }
                     aria-disabled={false}
                     className="bx--btn bx--btn--ghost bx--btn--field"
-                    htmlFor="id5"
+                    htmlFor="id7"
                     onKeyDown={[Function]}
                     tabIndex={0}
                   >
@@ -129,7 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <input
                     className="bx--visually-hidden"
                     disabled={false}
-                    id="id5"
+                    id="id7"
                     multiple={false}
                     onChange={[Function]}
                     onClick={[Function]}
@@ -204,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </svg>
                 </button>
                 <button
-                  className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                  className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -219,7 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   tabIndex={0}
                   type="button"
                 >
-                  Submit
+                  Save and close
                 </button>
               </div>
             </div>
@@ -369,7 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 className="iot--dashboard-editor-header--bottom"
               >
                 <button
-                  className="iot--btn bx--btn bx--btn--field bx--btn--tertiary"
+                  className="iot--btn bx--btn bx--btn--field bx--btn--secondary"
                   disabled={false}
                   onClick={[Function]}
                   tabIndex={0}
@@ -384,7 +389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   tabIndex={0}
                   type="button"
                 >
-                  Submit
+                  Save and close
                 </button>
               </div>
             </div>

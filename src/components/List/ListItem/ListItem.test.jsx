@@ -211,6 +211,7 @@ describe('ListItem', () => {
       id: '1',
       value: 'test',
       editingStyle: 'single-nesting',
+      renderDropTargets: true,
     };
 
     const Wrapped = wrapInTestContext(UnconnectedListItem, listItemProps);
@@ -228,6 +229,7 @@ describe('ListItem', () => {
       value: 'test',
       editingStyle: 'single',
       index: '0',
+      renderDropTargets: true,
     };
 
     const Wrapped = wrapInTestContext(UnconnectedListItem, listItemProps);

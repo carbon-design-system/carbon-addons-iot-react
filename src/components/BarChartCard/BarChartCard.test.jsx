@@ -50,7 +50,7 @@ describe('BarChartCard', () => {
 
   it('does not show bar chart when loading', () => {
     const wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
+    expect(wrapper.find('#mock-bar-chart-simple')).toHaveLength(0);
   });
 
   it('does not show bar chart when empty data', () => {
@@ -60,7 +60,7 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((q) => q.quarter === 'NOT_VALID')}
       />
     );
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
+    expect(wrapper.find('#mock-bar-chart-simple')).toHaveLength(0);
   });
 
   it('shows table when isExpanded', () => {
@@ -103,7 +103,7 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-bar-chart-grouped')).toHaveLength(1);
   });
 
   it('shows stackedBarChart', () => {
@@ -130,7 +130,7 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q3')}
       />
     );
-    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
   });
 
   it('shows a timeSeries chart', () => {
@@ -152,7 +152,7 @@ describe('BarChartCard', () => {
         values={barChartData.timestamps.filter((t) => t.city === 'Amsterdam')}
       />
     );
-    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-bar-chart-stacked')).toHaveLength(1);
   });
 
   it('shows a horizontal chart', () => {
@@ -180,7 +180,7 @@ describe('BarChartCard', () => {
         values={barChartData.quarters.filter((a) => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
+    expect(wrapper.find('#mock-bar-chart-grouped')).toHaveLength(1);
   });
 
   it('i18n string test', () => {

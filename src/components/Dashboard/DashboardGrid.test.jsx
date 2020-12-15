@@ -2,7 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { CARD_DIMENSIONS, CARD_SIZES } from '../../constants/LayoutConstants';
+import {
+  CARD_DIMENSIONS,
+  CARD_SIZES,
+  DASHBOARD_BREAKPOINTS,
+} from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import ValueCard from '../ValueCard/ValueCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
@@ -20,61 +24,78 @@ import DashboardGrid, {
 } from './DashboardGrid';
 
 describe('DashboardGrid', () => {
-  it('findLayoutOrGenerate', () => {
+  describe('findLayoutOrGenerate', () => {
     const layouts = {
-      max: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      xl: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      lg: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      md: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
+      max: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      xl: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      lg: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      md: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
       sm: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
       xs: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
     };
+    it('if no layouts exist they should be generated', () => {
+      const generated = findLayoutOrGenerate(
+        {},
+        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
+        Object.keys(DASHBOARD_BREAKPOINTS)
+      );
 
-    // if no layouts exist they should be generated
-    const generated = findLayoutOrGenerate({}, [
-      { id: 'mycard', size: CARD_SIZES.MEDIUM },
-    ]);
-
-    expect(generated).toEqual(layouts);
-
-    // if layout is missing card it should be regenerated
-    const regenerated = findLayoutOrGenerate(
-      { max: [], xl: [], lg: [], md: [], sm: [], xs: [] },
-      [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]
-    );
-    expect(regenerated).toEqual(layouts);
-
-    // if every layout already exists, the card should have dimensions added
-    const addedDimensions = findLayoutOrGenerate(
-      {
-        max: [{ i: 'mycard', x: 0, y: 0 }],
-        xl: [{ i: 'mycard', x: 0, y: 0 }],
-        lg: [{ i: 'mycard', x: 0, y: 0 }],
-        md: [{ i: 'mycard', x: 0, y: 0 }],
-        sm: [{ i: 'mycard', x: 0, y: 0 }],
-        xs: [{ i: 'mycard', x: 0, y: 0 }],
-      },
-      [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]
-    );
-    expect(addedDimensions).toEqual(layouts);
-
-    // handle old layouts with bogus cards
-    const emptyLayouts = findLayoutOrGenerate(
-      {
-        max: [
-          { i: 'boguscard', x: 0, y: 0 },
-          { i: 'mycard', x: 0, y: 0 },
-        ],
-        xl: [{ i: 'boguscard', x: 0, y: 0 }],
-        lg: [{ i: 'boguscard', x: 0, y: 0 }],
-        md: [{ i: 'boguscard', x: 0, y: 0 }],
-        sm: [{ i: 'boguscard', x: 0, y: 0 }],
-        xs: [{ i: 'boguscard', x: 0, y: 0 }],
-      },
-      [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]
-    );
-    // the bogus card was quietly removed from the layout
-    expect(emptyLayouts.max).toHaveLength(1);
+      expect(generated).toEqual(layouts);
+    });
+    it('if layout is missing card it should be regenerated', () => {
+      const regenerated = findLayoutOrGenerate(
+        { max: [], xl: [], lg: [], md: [], sm: [], xs: [] },
+        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
+        Object.keys(DASHBOARD_BREAKPOINTS)
+      );
+      expect(regenerated).toEqual(layouts);
+    });
+    it('if every layout already exists, the card should have dimensions added', () => {
+      const addedDimensions = findLayoutOrGenerate(
+        {
+          max: [{ i: 'mycard', x: 0, y: 0 }],
+          xl: [{ i: 'mycard', x: 0, y: 0 }],
+          lg: [{ i: 'mycard', x: 0, y: 0 }],
+          md: [{ i: 'mycard', x: 0, y: 0 }],
+          sm: [{ i: 'mycard', x: 0, y: 0 }],
+          xs: [{ i: 'mycard', x: 0, y: 0 }],
+        },
+        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
+        Object.keys(DASHBOARD_BREAKPOINTS)
+      );
+      expect(addedDimensions).toEqual(layouts);
+    });
+    it('handle old layouts with bogus cards', () => {
+      const emptyLayouts = findLayoutOrGenerate(
+        {
+          max: [
+            { i: 'boguscard', x: 0, y: 0 },
+            { i: 'mycard', x: 0, y: 0 },
+          ],
+          xl: [{ i: 'boguscard', x: 0, y: 0 }],
+          lg: [{ i: 'boguscard', x: 0, y: 0 }],
+          md: [{ i: 'boguscard', x: 0, y: 0 }],
+          sm: [{ i: 'boguscard', x: 0, y: 0 }],
+          xs: [{ i: 'boguscard', x: 0, y: 0 }],
+        },
+        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
+        Object.keys(DASHBOARD_BREAKPOINTS)
+      );
+      // the bogus card was quietly removed from the layout
+      expect(emptyLayouts.max).toHaveLength(1);
+    });
+    it('should only find supported layouts', () => {
+      const regenerated = findLayoutOrGenerate(
+        { max: [], xl: [], lg: [], md: [], sm: [], xs: [] },
+        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
+        ['xl', 'lg', 'md']
+      );
+      expect(regenerated).toEqual({
+        xl: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+        lg: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+        md: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      });
+    });
   });
 
   describe('resizing', () => {
@@ -351,22 +372,22 @@ describe('DashboardGrid', () => {
       expect(sizeA.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeB = getMatchingCardSize({ w: 3, h: 1 }, breakpointSizes);
-      expect(sizeB.name).toEqual(CARD_SIZES.SMALLWIDE);
+      expect(sizeB.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeC = getMatchingCardSize({ w: 4, h: 1 }, breakpointSizes);
-      expect(sizeC.name).toEqual(CARD_SIZES.SMALLWIDE);
+      expect(sizeC.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeD = getMatchingCardSize({ w: 4, h: 2 }, breakpointSizes);
-      expect(sizeD.name).toEqual(CARD_SIZES.MEDIUM);
+      expect(sizeD.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeE = getMatchingCardSize({ w: 3, h: 2 }, breakpointSizes);
-      expect(sizeE.name).toEqual(CARD_SIZES.MEDIUM);
+      expect(sizeE.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeF = getMatchingCardSize({ w: 2, h: 2 }, breakpointSizes);
       expect(sizeF.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeG = getMatchingCardSize({ w: 5, h: 2 }, breakpointSizes);
-      expect(sizeG.name).toEqual(CARD_SIZES.MEDIUMWIDE);
+      expect(sizeG.name).toEqual(CARD_SIZES.MEDIUM);
 
       const sizeH = getMatchingCardSize({ w: 18, h: 5 }, breakpointSizes);
       expect(sizeH.name).toEqual(CARD_SIZES.LARGEWIDE);

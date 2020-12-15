@@ -18,6 +18,7 @@ const dndProps = {
   index: 0,
   dragPreviewText: '',
   isDragging: false,
+  renderDropTargets: false,
   onItemMoved: identity,
   itemWillMove: identity,
 };

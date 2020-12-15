@@ -135,7 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -303,7 +303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -352,7 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -442,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -781,7 +781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -830,7 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "1056px",
         }
       }
     >
@@ -841,7 +841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -941,15 +941,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
           <div
-            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
+            className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -1042,7 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper iot--time-series-card--wrapper__editable"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -1091,7 +1091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -1213,7 +1213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               className="iot--time-series-card--wrapper iot--time-series-card--wrapper__expanded"
             >
               <div
-                className="chart-holder"
+                id="mock-line-chart"
               />
             </div>
             <div
@@ -2898,8 +2898,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-45"
-                    id="bx-pagination-select-45-count-label"
+                    htmlFor="bx-pagination-select-47"
+                    id="bx-pagination-select-47-count-label"
                   >
                     Items per page:
                   </label>
@@ -2918,7 +2918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-45"
+                            id="bx-pagination-select-47"
                             onChange={[Function]}
                             value={10}
                           >
@@ -2983,7 +2983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-45-right"
+                        htmlFor="bx-pagination-select-47-right"
                       >
                         Page number, of 1 pages
                       </label>
@@ -2996,7 +2996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-45-right"
+                            id="bx-pagination-select-47-right"
                             onChange={[Function]}
                             value={1}
                           >
@@ -3266,7 +3266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3434,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3602,7 +3602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3770,7 +3770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -3938,7 +3938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4106,7 +4106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4274,7 +4274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4442,7 +4442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4491,7 +4491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "1056px",
         }
       }
     >
@@ -4502,7 +4502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -4602,17 +4602,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
-          <div
-            className="iot--time-series-card--wrapper iot--time-series-card--wrapper__lots-of-points"
-          >
-            <div
-              className="chart-holder"
-            />
-          </div>
+          
         </div>
       </div>
     </div>
@@ -4659,7 +4653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -4778,7 +4772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4827,7 +4821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -4946,7 +4940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -4995,7 +4989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5114,7 +5108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5163,7 +5157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5282,7 +5276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5331,7 +5325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5450,7 +5444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5499,7 +5493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5618,7 +5612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5667,7 +5661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5786,7 +5780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -5835,7 +5829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       style={
         Object {
           "margin": "1rem4",
-          "width": "252px",
+          "width": "520px",
         }
       }
     >
@@ -5954,7 +5948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>
@@ -6122,7 +6116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             className="iot--time-series-card--wrapper"
           >
             <div
-              className="chart-holder"
+              id="mock-line-chart"
             />
           </div>
         </div>

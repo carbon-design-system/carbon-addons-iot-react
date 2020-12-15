@@ -23,7 +23,7 @@ export default {
   },
 };
 
-export const TableWithMultipleActions = () => {
+export const WithMultipleActions = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -59,8 +59,8 @@ export const TableWithMultipleActions = () => {
   );
 };
 
-TableWithMultipleActions.story = {
-  name: 'table with multiple actions',
+WithMultipleActions.story = {
+  name: 'with multiple actions',
 };
 
 export const WithLinks = () => {
@@ -71,6 +71,7 @@ export const WithLinks = () => {
   );
   const cardVariables = object('Dynamic link variable', {
     assetId: '11112',
+    company: 'ibm',
   });
   const tableLinkColumns = [
     {
@@ -81,7 +82,7 @@ export const WithLinks = () => {
       dataSourceId: 'deviceId',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{assetId}'),
+        href: text('href', 'https://{company}.com/{assetId}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },
@@ -150,7 +151,7 @@ export const WithRowSpecificLinkVariables = () => {
       dataSourceId: 'Link',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{deviceId}'),
+        href: text('href', 'https://ibm.com/{deviceId}?time={hour}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },
@@ -227,7 +228,7 @@ WithRowSpecificLinkVariables.story = {
   },
 };
 
-export const TableWithSingleActions = () => {
+export const WithSingleActions = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -263,11 +264,11 @@ export const TableWithSingleActions = () => {
   );
 };
 
-TableWithSingleActions.story = {
-  name: 'table with single actions',
+WithSingleActions.story = {
+  name: 'with single actions',
 };
 
-export const TableWithThresholdsPrecisionAndExpandedRows = () => {
+export const WithThresholdsPrecisionAndExpandedRows = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -372,8 +373,8 @@ export const TableWithThresholdsPrecisionAndExpandedRows = () => {
   );
 };
 
-TableWithThresholdsPrecisionAndExpandedRows.story = {
-  name: 'table with thresholds, precision and expanded rows',
+WithThresholdsPrecisionAndExpandedRows.story = {
+  name: 'with thresholds, precision and expanded rows',
 };
 
 export const WithDynamicVariables = () => {
@@ -456,7 +457,7 @@ WithDynamicVariables.story = {
   },
 };
 
-export const TableWithThresholds = () => {
+export const WithThresholds = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -524,8 +525,8 @@ export const TableWithThresholds = () => {
   );
 };
 
-TableWithThresholds.story = {
-  name: 'table with thresholds',
+WithThresholds.story = {
+  name: 'with thresholds',
 
   parameters: {
     info: {
@@ -548,7 +549,7 @@ TableWithThresholds.story = {
   },
 };
 
-export const TableWithThresholdsOnlyWithIcon = () => {
+export const WithThresholdsOnlyWithIcon = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -617,8 +618,8 @@ export const TableWithThresholdsOnlyWithIcon = () => {
   );
 };
 
-TableWithThresholdsOnlyWithIcon.story = {
-  name: 'table with thresholds only with icon',
+WithThresholdsOnlyWithIcon.story = {
+  name: 'with thresholds only with icon',
 
   parameters: {
     info: {
@@ -682,7 +683,7 @@ WithMatchingThresholds.story = {
   name: 'with matching thresholds',
 };
 
-export const TableWithCustomColumnSort = () => {
+export const WithCustomColumnSort = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -716,11 +717,11 @@ export const TableWithCustomColumnSort = () => {
   );
 };
 
-TableWithCustomColumnSort.story = {
-  name: 'table with custom column sort',
+WithCustomColumnSort.story = {
+  name: 'with custom column sort',
 };
 
-export const TableWithFixedColumnSize = () => {
+export const WithFixedColumnSize = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -756,11 +757,11 @@ export const TableWithFixedColumnSize = () => {
   );
 };
 
-TableWithFixedColumnSize.story = {
-  name: 'table with fixed column size',
+WithFixedColumnSize.story = {
+  name: 'with fixed column size',
 };
 
-export const TableWithRowExpansion = () => {
+export const WithRowExpansion = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -800,11 +801,52 @@ export const TableWithRowExpansion = () => {
   );
 };
 
-TableWithRowExpansion.story = {
-  name: 'table with row expansion',
+WithRowExpansion.story = {
+  name: 'with row expansion',
 };
 
-export const TableWithRowExpansionAndLinkVariables = () => {
+export const WithRowExpansionAndTimestamp = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}>
+      <TableCard
+        title={text('title', 'Open Alerts')}
+        id="table-list"
+        tooltip={text('Tooltip text', "Here's a Tooltip")}
+        content={{
+          columns: tableColumns,
+          expandedRows: [
+            {
+              id: 'hour',
+              label: 'Time',
+              type: 'TIMESTAMP',
+            },
+          ],
+        }}
+        values={tableData}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
+        size={size}
+      />
+    </div>
+  );
+};
+
+WithRowExpansionAndTimestamp.story = {
+  name: 'with row expansion and timestamp',
+};
+
+export const WithRowExpansionAndLinkVariables = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -850,8 +892,8 @@ export const TableWithRowExpansionAndLinkVariables = () => {
   );
 };
 
-TableWithRowExpansionAndLinkVariables.story = {
-  name: 'table with row expansion and link variables',
+WithRowExpansionAndLinkVariables.story = {
+  name: 'with row expansion and link variables',
 
   parameters: {
     info: {
@@ -866,7 +908,7 @@ TableWithRowExpansionAndLinkVariables.story = {
   },
 };
 
-export const TableWithRowExpansionAndRowSpecificLinkVariables = () => {
+export const WithRowExpansionAndRowSpecificLinkVariables = () => {
   const size = select(
     'size',
     [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
@@ -909,8 +951,8 @@ export const TableWithRowExpansionAndRowSpecificLinkVariables = () => {
   );
 };
 
-TableWithRowExpansionAndRowSpecificLinkVariables.story = {
-  name: 'table with row expansion and row specific link variables',
+WithRowExpansionAndRowSpecificLinkVariables.story = {
+  name: 'with row expansion and row specific link variables',
 
   parameters: {
     info: {

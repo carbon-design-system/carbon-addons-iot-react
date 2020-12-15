@@ -53,6 +53,7 @@ export const SinglePoint = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          showLegend: true,
         })}
         values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
         interval={interval}
@@ -890,7 +891,7 @@ Empty.story = {
 };
 
 export const HighlightAlertRanges = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
   return (
     <div
       style={{
@@ -929,10 +930,15 @@ export const HighlightAlertRanges = () => {
             },
           ],
           addSpaceOnEdges: 1,
+          zoomBar: {
+            enabled: true,
+            axes: 'top',
+            view: 'graph_view',
+          },
         })}
         values={getIntervalChartData(
           'day',
-          100,
+          7,
           { min: 10, max: 100 },
           100,
           1572824320000
@@ -994,7 +1000,7 @@ EmptyForARange.story = {
 };
 
 export const LotsOfDots = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
   return (
     <div
       style={{
@@ -1019,10 +1025,15 @@ export const LotsOfDots = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          zoomBar: {
+            enabled: true,
+            axes: 'top',
+            view: 'graph_view',
+          },
         })}
         values={getIntervalChartData(
           'day',
-          100,
+          2000,
           { min: 10, max: 100 },
           100,
           1572824320000
@@ -1074,6 +1085,7 @@ export const IsEditable = () => {
             },
           ],
           xLabel: 'Time',
+
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',

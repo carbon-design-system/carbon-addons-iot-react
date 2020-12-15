@@ -7,9 +7,16 @@ export const generateSampleValues = (
   series,
   timeDataSourceId,
   timeGrain = 'day',
-  timeRange = {}
+  timeRange
 ) => {
-  const { interval, type } = timeRange;
+  // determine interval type
+  const timeRangeType = timeRange?.includes('this')
+    ? 'periodToDate'
+    : 'rolling';
+  // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
+  const timeRangeInterval = timeRange?.includes('Quarter')
+    ? 'quarter'
+    : timeRange;
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -22,7 +29,7 @@ export const generateSampleValues = (
       count = 4;
       break;
     case 'month':
-      count = interval === 'quarter' ? 3 : 12;
+      count = timeRangeInterval === 'quarter' ? 3 : 12;
       break;
     case 'quarter':
       count = 4;
@@ -39,8 +46,8 @@ export const generateSampleValues = (
   const sampleValues = Array(count).fill(1);
   return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
     const now =
-      type === 'periodToDate' // handle "this" intervals like "this week"
-        ? moment().startOf(interval).subtract(1, timeGrain)
+      timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
+        ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
         : moment().subtract(count, timeGrain);
     sampleValues.forEach(() => {
       const nextTimeStamp = now.add(1, timeGrain).valueOf();

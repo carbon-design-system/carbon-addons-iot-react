@@ -40,26 +40,44 @@ export default {
 };
 
 export const Basic = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: text('width', `450px`), margin: 20 }}>
-      <Card
-        title={text('title', 'Card Title')}
-        id="facilitycard-basic"
-        size={size}
-        isLoading={boolean('isLoading', false)}
-        isEmpty={boolean('isEmpty', false)}
-        isEditable={boolean('isEditable', false)}
-        isExpanded={boolean('isExpanded', false)}
-        breakpoint="lg"
-        availableActions={{ range: true, expand: true }}
-        onCardAction={action('onCardAction')}
-        onFocus={action('onFocus')}
-        onBlur={action('onBlur')}
-        tabIndex={0}
-      />
-    </div>
-  );
+  const StatefulExample = () => {
+    const [selected, setSelected] = React.useState(false);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const handleClick = () => {
+      setSelected(true);
+    };
+    const handleBlur = (e) => {
+      if (
+        !e.currentTarget.contains(e.relatedTarget) ||
+        (e.target === e.currentTarget && e.relatedTarget === null)
+      ) {
+        setSelected(false);
+      }
+      action('onBlur');
+    };
+    return (
+      <div style={{ width: text('width', `450px`), margin: 20 }}>
+        <Card
+          title={text('title', 'Card Title')}
+          id="facilitycard-basic"
+          size={size}
+          isLoading={boolean('isloading', false)}
+          isSelected={selected}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          availableActions={{ range: true, expand: true }}
+          onCardAction={action('onCardAction')}
+          onFocus={action('onFocus')}
+          onBlur={handleBlur}
+          tabIndex={0}
+          onClick={handleClick}
+        />
+      </div>
+    );
+  };
+  return <StatefulExample />;
 };
 
 Basic.story = {
@@ -445,11 +463,11 @@ ImplementingACustomCard.story = {
      - If you want to hide the title/toolbar, do not pass a title prop
      - (Optionally, if you want to use the card in a Dashboard) Extend the Card Renderer so the Dashboard knows how to render your card type
      - (Optionally, if you want to use the card in a Dashboard) Create a validator for this card type within "utils/schemas/validators" and add it to the validateDashboardJSON function used to validate dashboards on import.
-     
+
      ## Data flow for a card in the dashboard
      All data loading for a card goes through the dashboard's onFetchData function.  There are two ways to trigger a refetch of data for a card.  The first is to directly interact
      with the Card's range controls.  The second is for the Dashboard to trigger that all of the cards need a reload by updating it's isLoading bit.  The CardRenderer component will call the onSetupCard function of the dashboard first
-     for each card (if it exists), then will call the onFetchData function for the dashboard.  
+     for each card (if it exists), then will call the onFetchData function for the dashboard.
      `,
     },
   },

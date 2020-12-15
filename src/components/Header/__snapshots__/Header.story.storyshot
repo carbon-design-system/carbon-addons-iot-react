@@ -32,10 +32,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           Skip to main content
         </a>
         <button
-          aria-label="Open menu"
+          aria-label="Open the menu"
           className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
           onClick={null}
-          title="Open menu"
+          title="Open the menu"
           type="button"
         >
           <svg
@@ -398,10 +398,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         Skip to main content
       </a>
       <button
-        aria-label="Open menu"
+        aria-label="Open the menu"
         className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
         onClick={null}
-        title="Open menu"
+        title="Open the menu"
         type="button"
       >
         <svg

@@ -33,9 +33,9 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when user clicks Show Gallery */
   onShowGallery: PropTypes.func.isRequired,
@@ -48,10 +48,24 @@ const propTypes = {
    * getValidDataItems(card, selectedTimeRange)
    */
   getValidDataItems: PropTypes.func,
-  /** an array of dataItem string names to be included on each card
+  /** if provided, returns an array of strings which are the timeRanges to be allowed
+   * on each card
+   * getValidTimeRanges(card, selectedDataItems)
+   */
+  getValidTimeRanges: PropTypes.func,
+  /** an array of dataItems to be included on each card
    * this prop will be ignored if getValidDataItems is defined
    */
-  dataItems: PropTypes.arrayOf(PropTypes.string),
+  dataItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      dataSourceId: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** If provided, runs the function when the user clicks submit in the Card code JSON editor
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
@@ -63,6 +77,7 @@ const propTypes = {
     addCardButton: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
   }),
+  currentBreakpoint: PropTypes.string,
 };
 
 const defaultProps = {
@@ -76,9 +91,12 @@ const defaultProps = {
     searchPlaceholderText: 'Enter a search',
   },
   getValidDataItems: null,
+  getValidTimeRanges: null,
   dataItems: [],
+  availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
+  currentBreakpoint: 'xl',
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -89,10 +107,13 @@ const CardEditor = ({
   onChange,
   onAddCard,
   getValidDataItems,
+  getValidTimeRanges,
   dataItems,
   onValidateCardJson,
   supportedCardTypes,
+  availableDimensions,
   i18n,
+  currentBreakpoint,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -112,7 +133,13 @@ const CardEditor = ({
             {mergedI18n.addCardButton}
           </Button>
         </div>
-      ) : null}
+      ) : (
+        <div className={`${baseClassName}--header`}>
+          <h2 className={`${baseClassName}--header--title`}>
+            {mergedI18n.galleryHeader}
+          </h2>
+        </div>
+      )}
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
@@ -126,8 +153,11 @@ const CardEditor = ({
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}
+            getValidTimeRanges={getValidTimeRanges}
             onValidateCardJson={onValidateCardJson}
+            availableDimensions={availableDimensions}
             i18n={mergedI18n}
+            currentBreakpoint={currentBreakpoint}
           />
         )}
       </div>
