@@ -861,6 +861,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -869,18 +878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -1868,6 +1865,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -1876,18 +1882,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -3905,6 +3899,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -3913,18 +3916,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -5348,6 +5339,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -5356,18 +5356,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -6641,6 +6629,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -6649,18 +6646,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -9378,6 +9363,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -9386,18 +9380,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -10779,6 +10761,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -10787,18 +10778,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
