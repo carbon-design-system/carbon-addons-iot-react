@@ -48,6 +48,8 @@ const defaultProps = {
     urlInput: 'Type or insert URL',
     errorTitle: 'Upload error: ',
     fileTooLarge: 'Image file is too large',
+    wrongFileType: (accept) =>
+      `This file is not one of the accepted file types, ${accept.join(', ')}`,
   },
   locale: 'en',
   content: {},
@@ -159,7 +161,8 @@ const ImageCard = ({
                       'insertUrl',
                       'urlInput',
                       'fileTooLarge',
-                      'errorTitle'
+                      'errorTitle',
+                      'wrongFileType'
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
                     validateUploadedImage={validateUploadedImage}
