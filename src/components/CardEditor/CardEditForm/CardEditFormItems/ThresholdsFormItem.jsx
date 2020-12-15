@@ -79,9 +79,12 @@ const propTypes = {
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
   }),
+  /** The current data item's id */
+  dataSourceId: PropTypes.string,
 };
 
 const defaultProps = {
+  dataSourceId: null,
   cardConfig: {},
   onChange: null,
   thresholds: [],
@@ -97,6 +100,7 @@ const defaultProps = {
 };
 
 const ThresholdsFormItem = ({
+  dataSourceId,
   cardConfig,
   thresholds: thresholdsProp,
   icons,
@@ -249,25 +253,23 @@ const ThresholdsFormItem = ({
         size="small"
         renderIcon={Add16}
         onClick={() => {
-          onChange([
-            ...thresholds,
-            {
-              comparison: '>',
-              value: 0,
-              icon: selectedIcon?.name || 'Warning alt',
-              color: selectedColor?.carbonColor || red60,
-            },
-          ]);
+          let newThreshold = {
+            comparison: '>',
+            value: 0,
+            icon: selectedIcon?.name || 'Warning alt',
+            color: selectedColor?.carbonColor || red60,
+          };
+          if (dataSourceId) {
+            newThreshold = { dataSourceId, ...newThreshold };
+          }
           setThresholds([
             ...thresholds,
             {
               id: uuid.v4(),
-              comparison: '>',
-              value: 0,
-              icon: selectedIcon?.name || 'Warning alt',
-              color: selectedColor?.carbonColor || red60,
+              ...newThreshold,
             },
           ]);
+          onChange([...thresholds, newThreshold]);
         }}>
         {mergedI18n.dataItemEditorDataItemAddThreshold}
       </Button>
