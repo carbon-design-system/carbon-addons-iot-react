@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
 import {
   purple70,
   cyan50,
