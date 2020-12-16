@@ -1,10 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import omit from 'lodash/omit';
-import find from 'lodash/find';
 import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
 import {
   purple70,
   cyan50,
@@ -58,15 +55,6 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
-import {
-  Card,
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  ListCard,
-} from '../../index';
 
 /**
  * Returns a duplicate card configuration
@@ -340,143 +328,6 @@ export const isCardJsonValid = (cardConfig) => {
 };
 
 /**
- * Renders a card and lists the JSON within
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderDefaultCard = (cardConfig, commonProps) => (
-  <Card isEditable {...cardConfig} {...commonProps}>
-    <div style={{ padding: '1rem' }}>{JSON.stringify(cardConfig, null, 4)}</div>
-  </Card>
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderValueCard = (cardConfig, commonProps) => (
-  <ValueCard
-    // render the icon in the right color in the card preview
-    renderIconByName={(iconName, props) => {
-      const iconToRender = validThresholdIcons.find(
-        (icon) => icon.name === iconName
-      )?.carbonIcon || <Warning24 />;
-      // eslint-disable-next-line react/prop-types
-      return <div style={{ color: props.fill }}>{iconToRender}</div>;
-    }}
-    isEditable
-    {...cardConfig}
-    {...commonProps}
-  />
-);
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTimeSeriesCard = (cardConfig, commonProps) => {
-  // apply the timeRange for the card preview
-  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
-    isEqual(range, cardConfig?.dataSource?.range)
-  );
-  return (
-    <TimeSeriesCard
-      isEditable
-      values={[]}
-      interval={timeRangeJSON?.interval || 'day'}
-      {...cardConfig}
-      {...commonProps}
-    />
-  );
-};
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderBarChartCard = (
-  cardConfig,
-  commonProps,
-  dataItems,
-  availableDimensions
-) => {
-  // apply the timeRange for the card preview
-  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
-    isEqual(range, cardConfig?.dataSource?.range)
-  );
-  return (
-    <BarChartCard
-      isEditable
-      isDashboardPreview
-      values={
-        !cardConfig.dataSource?.groupBy && isEmpty(cardConfig.content.series)
-          ? []
-          : dataItems
-      }
-      availableDimensions={availableDimensions}
-      interval={timeRangeJSON?.interval || 'day'}
-      {...cardConfig}
-      {...commonProps}
-    />
-  );
-};
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTableCard = (cardConfig, commonProps) => (
-  <TableCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderImageCard = (cardConfig, commonProps) => (
-  <ImageCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderListCard = (cardConfig, commonProps) => (
-  <ListCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderCustomCard = (cardConfig, commonProps) => {
-  return (
-    <Card
-      hideHeader={isNil(cardConfig.title)}
-      // need to omit the content because its getting passed content to be rendered, which should not
-      // get attached to the card wrapper
-      {...omit(cardConfig, 'content')}
-      {...commonProps}>
-      {
-        // If content is a function, this is a react component
-        typeof cardConfig.content === 'function' ? (
-          <cardConfig.content />
-        ) : (
-          cardConfig.content
-        )
-      }
-    </Card>
-  );
-};
-
-/**
  * Selects the card if the key is 'enter' or 'space'
  * @param {Event} evt
  * @param {Function} onSelectCard
@@ -495,50 +346,6 @@ export const handleKeyDown = (evt, onSelectCard, id) => {
  */
 export const handleOnClick = (onSelectCard, id) => {
   onSelectCard(id);
-};
-
-/**
- * Returns a Card component for preview in the dashboard
- * @param {Object} cardConfig, the JSON configuration of the card
- * @param {Object} commonProps basic card config props
- * @param {Array} dataItems list of dataItems available to the card
- * @param {Object} availableDimensions collection of dimensions where the key is the
- * dimension and the value is a list of values for that dimension
- * @returns {Node}
- */
-export const getCardPreview = (
-  cardConfig,
-  commonProps,
-  dataItems,
-  availableDimensions
-) => {
-  if (!isCardJsonValid(cardConfig)) {
-    return renderDefaultCard(cardConfig, commonProps);
-  }
-
-  switch (cardConfig.type) {
-    case CARD_TYPES.VALUE:
-      return renderValueCard(cardConfig, commonProps);
-    case CARD_TYPES.TIMESERIES:
-      return renderTimeSeriesCard(cardConfig, commonProps);
-    case CARD_TYPES.BAR:
-      return renderBarChartCard(
-        cardConfig,
-        commonProps,
-        dataItems,
-        availableDimensions
-      );
-    case CARD_TYPES.TABLE:
-      return renderTableCard(cardConfig, commonProps);
-    case CARD_TYPES.IMAGE:
-      return renderImageCard(cardConfig, commonProps);
-    case CARD_TYPES.LIST:
-      return renderListCard(cardConfig, commonProps);
-    case CARD_TYPES.CUSTOM:
-      return renderCustomCard(cardConfig, commonProps);
-    default:
-      return renderDefaultCard(cardConfig, commonProps);
-  }
 };
 
 /**
