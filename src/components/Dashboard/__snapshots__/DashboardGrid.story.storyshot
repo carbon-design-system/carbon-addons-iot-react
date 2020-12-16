@@ -2521,7 +2521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     }
                   >
                     <div
-                      className="iot--hotspot-container iot--hotspot-container--has-icon"
+                      className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                       data-testid="hotspot-35-65"
                       icon="arrowDown"
                       style={

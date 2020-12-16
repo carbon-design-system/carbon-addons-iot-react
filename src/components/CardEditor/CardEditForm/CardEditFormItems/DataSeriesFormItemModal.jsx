@@ -314,6 +314,8 @@ const DataSeriesFormItemModal = ({
         ) : null}
       </div>
       <ThresholdsFormItem
+        dataSourceId={editDataItem.dataSourceId}
+        cardConfig={cardConfig}
         id={`${id}_thresholds`}
         thresholds={editDataItem.thresholds}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
@@ -339,13 +341,16 @@ const DataSeriesFormItemModal = ({
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
-            size="xs"
+            size="sm"
             onSubmit={() => {
-              const newCard = handleDataItemEdit(
-                editDataItem,
-                cardConfig,
-                editDataSeries
-              );
+              const newCard =
+                cardConfig.type === 'IMAGE'
+                  ? editDataItem
+                  : handleDataItemEdit(
+                      editDataItem,
+                      cardConfig,
+                      editDataSeries
+                    );
               onChange(newCard);
               setShowEditor(false);
               setEditDataItem({});
