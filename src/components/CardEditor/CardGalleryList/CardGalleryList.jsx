@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Analyze } from '@carbon/pictograms-react';
 
 import { SimpleList } from '../../../index';
 import { settings } from '../../../constants/Settings';
@@ -87,7 +86,7 @@ const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n }) => {
           value: mergedI18n[cardType] || cardType,
           icon: (
             <div className={`${iotPrefix}--card-gallery-list__icon`}>
-              {mergedIcons[cardType] || <Analyze />}
+              {mergedIcons[cardType]}
             </div>
           ),
         },
