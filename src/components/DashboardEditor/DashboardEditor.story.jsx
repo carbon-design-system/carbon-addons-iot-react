@@ -66,6 +66,7 @@ export const Default = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
       dataItems={mockDataItems}
       availableImages={images}
       onAddImage={action('onAddImage')}
@@ -75,6 +76,7 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
       onLayoutChange={action('onLayoutChange')}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
       isSubmitLoading={boolean('isSubmitLoading', false)}
@@ -159,7 +161,7 @@ export const WithInitialValue = () => (
           },
           {
             id: 'Timeseries',
-            title: 'Untitled',
+            title: 'Timeseries',
             size: 'MEDIUMWIDE',
             type: 'TIMESERIES',
             content: {
@@ -187,6 +189,24 @@ export const WithInitialValue = () => (
                 count: -1,
                 type: 'periodToDate',
               },
+            },
+          },
+          {
+            id: 'Bar',
+            title: 'Bar',
+            size: 'MEDIUM',
+            type: 'BAR',
+            content: {
+              type: 'SIMPLE',
+              layout: 'VERTICAL',
+              series: [
+                {
+                  dataSourceId: 'pressure',
+                  label: 'pressure',
+                  color: '#6929c4',
+                },
+              ],
+              timeDataSourceId: 'timestamp',
             },
           },
         ],

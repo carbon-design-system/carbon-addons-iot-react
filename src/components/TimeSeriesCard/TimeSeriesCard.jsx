@@ -290,7 +290,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-
   ...others
 }) => {
   const {

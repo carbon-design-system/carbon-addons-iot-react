@@ -170,4 +170,23 @@ describe('ImageGalleryModal', () => {
     userEvent.click(screen.getByRole('button', { name: 'Select' }));
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
+  it('clicking delete button triggers delete', () => {
+    const content = getTestContent();
+    const onSubmit = jest.fn();
+    const onDelete = jest.fn();
+    render(
+      <ImageGalleryModal
+        content={content}
+        onSubmit={onSubmit}
+        onDelete={onDelete}
+        onClose={() => {}}
+      />
+    );
+
+    userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
+    expect(onDelete).not.toHaveBeenCalled();
+    expect(screen.queryByText(/Are you sure you want/)).toBeInTheDocument();
+    userEvent.click(screen.getAllByRole('button', { name: 'Delete' })[0]);
+    expect(onDelete).toHaveBeenCalled();
+  });
 });

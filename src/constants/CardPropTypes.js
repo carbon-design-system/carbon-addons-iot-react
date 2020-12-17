@@ -443,9 +443,13 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  /** the maximum supported file size in bytes */
+  maxFileSizeInBytes: PropTypes.number,
   onUpload: PropTypes.func,
   onBrowseClick: PropTypes.func,
   accept: PropTypes.arrayOf(PropTypes.string),
+  /** callback that you can use to validate the image, if you return a message we will display it as an error */
+  validateUploadedImage: PropTypes.func,
 };
 
 export const GaugeCardPropTypes = {

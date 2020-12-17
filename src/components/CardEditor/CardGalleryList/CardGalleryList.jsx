@@ -76,7 +76,7 @@ const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n }) => {
 
   return (
     <SimpleList
-      title={mergedI18n.galleryHeader}
+      title=""
       isFullHeight
       hasSearch
       hasPagination={false}

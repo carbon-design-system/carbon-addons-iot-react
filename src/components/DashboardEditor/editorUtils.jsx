@@ -1,10 +1,8 @@
 import React from 'react';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import omit from 'lodash/omit';
-import find from 'lodash/find';
 import isEmpty from 'lodash/isEmpty';
-import isEqual from 'lodash/isEqual';
+import omit from 'lodash/omit';
 import {
   purple70,
   cyan50,
@@ -58,15 +56,6 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
-import {
-  Card,
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  ListCard,
-} from '../../index';
 
 /**
  * Returns a duplicate card configuration
@@ -85,12 +74,12 @@ export const getDuplicateCard = (cardConfig) => ({
  */
 export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
-    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALL,
+    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUM,
     [DASHBOARD_EDITOR_CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
   };
 
@@ -115,8 +104,6 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          yLabel: 'Temperature',
-          unit: '˚F',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -130,6 +117,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.SIMPLE,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
@@ -148,6 +136,7 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.STACKED,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
@@ -340,120 +329,6 @@ export const isCardJsonValid = (cardConfig) => {
 };
 
 /**
- * Renders a card and lists the JSON within
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderDefaultCard = (cardConfig, commonProps) => (
-  <Card isEditable {...cardConfig} {...commonProps}>
-    <div style={{ padding: '1rem' }}>{JSON.stringify(cardConfig, null, 4)}</div>
-  </Card>
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderValueCard = (cardConfig, commonProps) => (
-  <ValueCard
-    // render the icon in the right color in the card preview
-    renderIconByName={(iconName, props) => {
-      const iconToRender = validThresholdIcons.find(
-        (icon) => icon.name === iconName
-      )?.carbonIcon || <Warning24 />;
-      // eslint-disable-next-line react/prop-types
-      return <div style={{ color: props.fill }}>{iconToRender}</div>;
-    }}
-    isEditable
-    {...cardConfig}
-    {...commonProps}
-  />
-);
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTimeSeriesCard = (cardConfig, commonProps) => {
-  // apply the timeRange for the card preview
-  const timeRangeJSON = find(timeRangeToJSON, ({ range }) =>
-    isEqual(range, cardConfig?.dataSource?.range)
-  );
-  return (
-    <TimeSeriesCard
-      isEditable
-      values={[]}
-      interval={timeRangeJSON?.interval || 'day'}
-      {...cardConfig}
-      {...commonProps}
-    />
-  );
-};
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderBarChartCard = (cardConfig, commonProps) => (
-  <BarChartCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTableCard = (cardConfig, commonProps) => (
-  <TableCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderImageCard = (cardConfig, commonProps) => (
-  <ImageCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderListCard = (cardConfig, commonProps) => (
-  <ListCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderCustomCard = (cardConfig, commonProps) => {
-  return (
-    <Card
-      hideHeader={isNil(cardConfig.title)}
-      // need to omit the content because its getting passed content to be rendered, which should not
-      // get attached to the card wrapper
-      {...omit(cardConfig, 'content')}
-      {...commonProps}>
-      {
-        // If content is a function, this is a react component
-        typeof cardConfig.content === 'function' ? (
-          <cardConfig.content />
-        ) : (
-          cardConfig.content
-        )
-      }
-    </Card>
-  );
-};
-
-/**
  * Selects the card if the key is 'enter' or 'space'
  * @param {Event} evt
  * @param {Function} onSelectCard
@@ -472,37 +347,6 @@ export const handleKeyDown = (evt, onSelectCard, id) => {
  */
 export const handleOnClick = (onSelectCard, id) => {
   onSelectCard(id);
-};
-
-/**
- * Returns a Card component for preview in the dashboard
- * @param {Object} cardConfig, the JSON configuration of the card
- * @param {Object} commonProps basic card config props
- * @returns {Node}
- */
-export const getCardPreview = (cardConfig, commonProps) => {
-  if (!isCardJsonValid(cardConfig)) {
-    return renderDefaultCard(cardConfig, commonProps);
-  }
-
-  switch (cardConfig.type) {
-    case CARD_TYPES.VALUE:
-      return renderValueCard(cardConfig, commonProps);
-    case CARD_TYPES.TIMESERIES:
-      return renderTimeSeriesCard(cardConfig, commonProps);
-    case CARD_TYPES.BAR:
-      return renderBarChartCard(cardConfig, commonProps);
-    case CARD_TYPES.TABLE:
-      return renderTableCard(cardConfig, commonProps);
-    case CARD_TYPES.IMAGE:
-      return renderImageCard(cardConfig, commonProps);
-    case CARD_TYPES.LIST:
-      return renderListCard(cardConfig, commonProps);
-    case CARD_TYPES.CUSTOM:
-      return renderCustomCard(cardConfig, commonProps);
-    default:
-      return renderDefaultCard(cardConfig, commonProps);
-  }
 };
 
 /**
@@ -581,10 +425,16 @@ export const formatAttributes = (selectedItems, cardConfig) => {
  * @param {array} selectedItems
  * @param {object} cardConfig
  */
-export const handleDataSeriesChange = (selectedItems, cardConfig) => {
+export const handleDataSeriesChange = (
+  selectedItems,
+  cardConfig,
+  setEditDataSeries,
+  hotspotIndex
+) => {
   const { type } = cardConfig;
   let series;
   let attributes;
+  let dataSection;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -594,10 +444,25 @@ export const handleDataSeriesChange = (selectedItems, cardConfig) => {
         content: { ...cardConfig.content, attributes },
       };
     case CARD_TYPES.TIMESERIES:
+    case CARD_TYPES.BAR:
       series = formatSeries(selectedItems, cardConfig);
+      setEditDataSeries(series);
       return {
         ...cardConfig,
         content: { ...cardConfig.content, series },
+      };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(cardConfig.content?.hotspots || [])];
+      dataSection[hotspotIndex].content = {
+        ...dataSection[hotspotIndex].content,
+        attributes: selectedItems,
+      };
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          hotspots: dataSection,
+        },
       };
     default:
       return cardConfig;
@@ -606,10 +471,16 @@ export const handleDataSeriesChange = (selectedItems, cardConfig) => {
 
 /**
  * updates the dataSection on edit of a dataItem based on card type
- * @param {array} editDataItem
+ * @param {object} editDataItem
  * @param {object} cardConfig
+ * @param {string} title
  */
-export const handleDataItemEdit = (editDataItem, cardConfig) => {
+export const handleDataItemEdit = (
+  editDataItem,
+  cardConfig,
+  editDataSeries,
+  hotspotIndex
+) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
@@ -626,7 +497,8 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
         content: { ...content, attributes: dataSection },
       };
     case CARD_TYPES.TIMESERIES:
-      dataSection = [...content.series];
+    case CARD_TYPES.BAR:
+      dataSection = [...editDataSeries];
       editDataItemIndex = dataSection.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
@@ -634,6 +506,34 @@ export const handleDataItemEdit = (editDataItem, cardConfig) => {
       return {
         ...cardConfig,
         content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(content.hotspots || [])];
+
+      editDataItemIndex = dataSection[
+        hotspotIndex
+      ].content.attributes.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
+        editDataItem,
+        'thresholds'
+      );
+      if (cardConfig.thresholds || editDataItem.thresholds) {
+        return {
+          ...cardConfig,
+          content: { ...content, hotspots: dataSection },
+          thresholds: [
+            ...(cardConfig.thresholds?.filter(
+              (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
+            ) || []),
+            ...editDataItem.thresholds,
+          ].map((thresh) => omit(thresh, 'id')),
+        };
+      }
+      return {
+        ...cardConfig,
+        content: { ...content, hotspots: dataSection },
       };
     default:
       return cardConfig;

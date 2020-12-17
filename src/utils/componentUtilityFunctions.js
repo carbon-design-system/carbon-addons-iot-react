@@ -3,6 +3,7 @@ import moment from 'moment';
 import { sortStates } from 'carbon-components-react/es/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
+import warning from 'warning';
 
 import {
   GUTTER,
@@ -359,4 +360,31 @@ export const convertStringsToDOMElement = (strings = []) => {
   return strings.map((string) => {
     return domparser.parseFromString(string, mimetype).querySelector('body');
   });
+};
+
+/**
+ * Converts a color in hexadecimal to the RGB values.
+ * @param {string} hexColor
+ * @returns {object} object with values for r, g, b properties
+ */
+export const hexToRgb = (hexColor) => {
+  const regexResult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
+    hexColor
+  );
+  const radix = 16;
+  let rgbColors;
+  try {
+    const r = parseInt(regexResult[1], radix);
+    const g = parseInt(regexResult[2], radix);
+    const b = parseInt(regexResult[3], radix);
+    rgbColors = { r, g, b };
+  } catch {
+    if (__DEV__) {
+      warning(
+        false,
+        'Incorrect color value used, expected hexadecimal string. Defaulting to gray.'
+      );
+    }
+  }
+  return rgbColors ?? { r: 200, g: 200, b: 200 };
 };

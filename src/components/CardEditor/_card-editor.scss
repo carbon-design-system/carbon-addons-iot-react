@@ -6,7 +6,7 @@
   flex-direction: column;
   border-left: 1px solid $ui-03;
   &--header {
-    flex: 0 0 3rem;
+    flex: 0 0 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +17,7 @@
     }
     button.gallery-button {
       /* make ghost button stretch full width */
+      height: calc(100% - 0.5rem);
       justify-content: space-between;
       width: 100%;
     }
@@ -29,6 +30,12 @@
     .#{$iot-prefix}--list-item {
       height: $spacing-09;
     }
+  }
+
+  &--header--title {
+    @include type-style('productive-heading-02');
+    padding-left: $spacing-03;
+    width: 100%;
   }
 }
 

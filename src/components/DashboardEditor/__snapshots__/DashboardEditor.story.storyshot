@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-7"
+                      aria-describedby="icon-tooltip-6"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-7"
+                        id="icon-tooltip-6"
                       >
                         Import
                       </span>
@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id8"
+                        htmlFor="id6"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -170,7 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id8"
+                        id="id6"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -861,6 +861,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -869,18 +878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -1900,6 +1897,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -1908,18 +1914,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -3254,6 +3248,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="assemblyline"
                                   src="assemblyline.jpg"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3315,6 +3342,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="floow plan"
                                   src="floow_plan.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3376,6 +3436,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="manufacturing plant"
                                   src="Manufacturing_plant.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3437,6 +3530,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="robot arm"
                                   src="robot_arm.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3498,6 +3624,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="tankmodal"
                                   src="tankmodal.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3559,6 +3718,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="turbines"
                                   src="turbines.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3620,6 +3812,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="extra wide image"
                                   src="extra-wide-image.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3681,6 +3906,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="large image"
                                   src="large.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3742,6 +4000,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   alt="large image portrait"
                                   src="large_portrait.png"
                                 />
+                                <button
+                                  className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Delete
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Delete"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 32 32"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 12H14V24H12zM18 12H20V24H18z"
+                                    />
+                                    <path
+                                      d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </span>
                           </label>
@@ -3810,6 +4101,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -3818,18 +4118,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -4560,14 +4848,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         }
       }
     >
-      <p
-        className="bx--skeleton__text"
-        style={
-          Object {
-            "width": "30%",
+      <div
+        className="iot--dashboard-editor"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "30%",
+            }
           }
-        }
-      />
+        />
+      </div>
     </div>
   </div>
   <button
@@ -4855,7 +5147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </button>
                     </div>
                     <button
-                      aria-describedby="icon-tooltip-6"
+                      aria-describedby="icon-tooltip-5"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -4863,7 +5155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-6"
+                        id="icon-tooltip-5"
                       >
                         Import
                       </span>
@@ -4875,7 +5167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id7"
+                        htmlFor="id5"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -4904,7 +5196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id7"
+                        id="id5"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -5281,6 +5573,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -5289,18 +5590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -6070,7 +6359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-4"
+                      aria-describedby="icon-tooltip-3"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -6078,7 +6367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-4"
+                        id="icon-tooltip-3"
                       >
                         Import
                       </span>
@@ -6090,7 +6379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id5"
+                        htmlFor="id3"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -6119,7 +6408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id5"
+                        id="id3"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -6602,6 +6891,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -6610,18 +6908,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -7391,7 +7677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-3"
+                      aria-describedby="icon-tooltip-2"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -7399,7 +7685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-3"
+                        id="icon-tooltip-2"
                       >
                         Import
                       </span>
@@ -7801,12 +8087,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     onDrop={[Function]}
                     style={
                       Object {
-                        "height": "944px",
+                        "height": "1264px",
                       }
                     }
                   >
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Table"
                       onClick={[Function]}
@@ -7818,14 +8104,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "624px",
-                          "MozTransform": "translate(0px,0px)",
-                          "OTransform": "translate(0px,0px)",
-                          "WebkitTransform": "translate(0px,0px)",
                           "height": "624px",
-                          "msTransform": "translate(0px,0px)",
+                          "left": "0%",
                           "position": "absolute",
-                          "transform": "translate(0px,0px)",
-                          "width": "632px",
+                          "top": "0px",
+                          "width": "49.375%",
                         }
                       }
                       tabIndex={0}
@@ -8893,7 +9176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Custom"
                       onClick={[Function]}
@@ -8905,14 +9188,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
-                          "MozTransform": "translate(648px,0px)",
-                          "OTransform": "translate(648px,0px)",
-                          "WebkitTransform": "translate(648px,0px)",
                           "height": "304px",
-                          "msTransform": "translate(648px,0px)",
+                          "left": "50.625%",
                           "position": "absolute",
-                          "transform": "translate(648px,0px)",
-                          "width": "632px",
+                          "top": "0px",
+                          "width": "49.375%",
                         }
                       }
                       tabIndex={0}
@@ -8943,23 +9223,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             "--card-content-height": "256px",
                           }
                         }
-                      >
-                        <span
-                          className="react-resizable-handle react-resizable-handle-se"
-                          onMouseDown={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchStart={[Function]}
-                          style={
-                            Object {
-                              "touchAction": "none",
-                            }
-                          }
-                        />
-                      </div>
+                      />
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Standard"
                       onClick={[Function]}
@@ -8971,14 +9238,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
-                          "MozTransform": "translate(648px,320px)",
-                          "OTransform": "translate(648px,320px)",
-                          "WebkitTransform": "translate(648px,320px)",
                           "height": "304px",
-                          "msTransform": "translate(648px,320px)",
+                          "left": "50.625%",
                           "position": "absolute",
-                          "transform": "translate(648px,320px)",
-                          "width": "632px",
+                          "top": "320px",
+                          "width": "49.375%",
                         }
                       }
                       tabIndex={0}
@@ -9154,7 +9418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--card--wrapper"
                       data-testid="Card"
                       id="Timeseries"
                       onClick={[Function]}
@@ -9166,14 +9430,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
-                          "MozTransform": "translate(0px,640px)",
-                          "OTransform": "translate(0px,640px)",
-                          "WebkitTransform": "translate(0px,640px)",
                           "height": "304px",
-                          "msTransform": "translate(0px,640px)",
+                          "left": "0%",
                           "position": "absolute",
-                          "transform": "translate(0px,640px)",
-                          "width": "1280px",
+                          "top": "640px",
+                          "width": "100%",
                         }
                       }
                       tabIndex={0}
@@ -9184,12 +9445,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       >
                         <span
                           className="iot--card--title"
-                          title="Untitled"
+                          title="Timeseries"
                         >
                           <div
                             className="iot--card--title--text"
                           >
-                            Untitled
+                            Timeseries
                           </div>
                         </span>
                         <div
@@ -9261,6 +9522,111 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </div>
                       </div>
                     </div>
+                    <div
+                      className="iot--card react-grid-item iot--dashboard-editor--preview__card react-draggable react-resizable-hide react-resizable iot--bar-chart-card iot--card--wrapper"
+                      data-testid="Card"
+                      id="Bar"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      role="presentation"
+                      style={
+                        Object {
+                          "--card-default-height": "304px",
+                          "height": "304px",
+                          "left": "0%",
+                          "position": "absolute",
+                          "top": "960px",
+                          "width": "49.375%",
+                        }
+                      }
+                      tabIndex={0}
+                      type="BAR"
+                    >
+                      <div
+                        className="iot--card--header"
+                      >
+                        <span
+                          className="iot--card--title"
+                          title="Bar"
+                        >
+                          <div
+                            className="iot--card--title--text"
+                          >
+                            Bar
+                          </div>
+                        </span>
+                        <div
+                          className="iot--card--toolbar"
+                        >
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--card--content"
+                        style={
+                          Object {
+                            "--card-content-height": "256px",
+                          }
+                        }
+                      >
+                        <div
+                          className="iot--bar-chart-container iot--bar-chart-container--editable"
+                        >
+                          <div
+                            id="mock-bar-chart-simple"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9274,6 +9640,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -9282,18 +9657,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
@@ -10063,7 +10426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--dashboard-editor-header--bottom"
                   >
                     <button
-                      aria-describedby="icon-tooltip-5"
+                      aria-describedby="icon-tooltip-4"
                       className="bx--tooltip__trigger bx--tooltip--a11y iot--dashboard-editor-header--bottom__import bx--tooltip--bottom bx--tooltip--align-center"
                       onFocus={[Function]}
                       onMouseEnter={[Function]}
@@ -10071,7 +10434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <span
                         className="bx--assistive-text"
-                        id="icon-tooltip-5"
+                        id="icon-tooltip-4"
                       >
                         Import
                       </span>
@@ -10083,7 +10446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                         aria-disabled={false}
                         className="bx--btn bx--btn--ghost bx--btn--field"
-                        htmlFor="id6"
+                        htmlFor="id4"
                         onKeyDown={[Function]}
                         tabIndex={0}
                       >
@@ -10112,7 +10475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <input
                         className="bx--visually-hidden"
                         disabled={false}
-                        id="id6"
+                        id="id4"
                         multiple={false}
                         onChange={[Function]}
                         onClick={[Function]}
@@ -10703,6 +11066,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="iot--card-editor"
           >
             <div
+              className="iot--card-editor--header"
+            >
+              <h2
+                className="iot--card-editor--header--title"
+              >
+                Gallery
+              </h2>
+            </div>
+            <div
               className="iot--card-editor--content"
             >
               <div
@@ -10711,18 +11083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-header-container"
                 >
-                  <div
-                    className="iot--list-header"
-                  >
-                    <div
-                      className="iot--list-header--title"
-                    >
-                      Gallery
-                    </div>
-                    <div
-                      className="iot--list-header--btn-container"
-                    />
-                  </div>
                   <div
                     className="iot--list-header--search"
                   >
