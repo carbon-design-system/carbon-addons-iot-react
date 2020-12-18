@@ -7,6 +7,7 @@ import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
+import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCardFormContent';
 
 const propTypes = {
   /** card data value */
@@ -121,7 +122,23 @@ const CardEditFormContent = ({
           i18n={mergedI18n}
           onChange={onChange}
         />
-      ) : (
+      ) : type === CARD_TYPES.TABLE ?
+      (
+
+        <TableCardFormContent
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+          dataItems={dataItems}
+          selectedDataItems={selectedDataItems}
+          selectedTimeRange={selectedTimeRange}
+          setSelectedDataItems={setSelectedDataItems}
+          getValidDataItems={getValidDataItems}
+          availableDimensions={availableDimensions}
+        />
+      )
+
+      :(
         <DataSeriesFormContent
           cardConfig={cardConfig}
           onChange={onChange}

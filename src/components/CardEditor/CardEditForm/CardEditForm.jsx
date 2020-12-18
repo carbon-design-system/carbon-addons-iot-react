@@ -226,6 +226,7 @@ const CardEditForm = ({
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>
             <CardEditFormSettings
+              availableDimensions={availableDimensions}
               cardConfig={
                 cardConfig.type === CARD_TYPES.CUSTOM
                   ? { ...omit(cardConfig, 'content') }

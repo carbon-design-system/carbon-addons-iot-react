@@ -88,6 +88,7 @@ const propTypes = {
     dataItemEditorDataItemFilter: PropTypes.string,
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
+    source: PropTypes.string,
   }),
 };
 
@@ -109,6 +110,7 @@ const defaultProps = {
     dataItemEditorDataItemAddThreshold: 'Add threshold',
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
+    source: 'Source data item'
   },
   editDataSeries: [],
   showEditor: false,
@@ -328,6 +330,40 @@ const DataSeriesFormItemModal = ({
     </>
   );
 
+  const TableCardDataEditor = (
+    <>
+      <div className={`${baseClassName}--input-group`}>
+        <div className={`${baseClassName}--input-group--item`}>
+          <TextInput
+            id={`${id}_attribute-label`}
+            labelText={mergedI18n.dataItemEditorDataItemCustomLabel}
+            light
+            onChange={(evt) =>
+              setEditDataItem({
+                ...editDataItem,
+                label: evt.target.value,
+              })
+            }
+            value={editDataItem.label}
+          />
+          <p className={`${baseClassName}--input-group--span`}>{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
+        </div>
+      </div>
+      <ThresholdsFormItem
+        id={`${id}_thresholds`}
+        thresholds={editDataItem.thresholds}
+        selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
+        selectedColor={{ carbonColor: red60, name: 'red60' }}
+        onChange={(thresholds) => {
+          setEditDataItem({
+            ...editDataItem,
+            thresholds,
+          });
+        }}
+      />
+    </>
+  );
+
   return (
     <>
       {showEditor ? (
@@ -356,6 +392,8 @@ const DataSeriesFormItemModal = ({
             }}>
             {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR
               ? DataSeriesEditorTable
+              : type === CARD_TYPES.TABLE
+              ? TableCardDataEditor
               : ValueCardDataEditor}
           </ComposedModal>
         </div>

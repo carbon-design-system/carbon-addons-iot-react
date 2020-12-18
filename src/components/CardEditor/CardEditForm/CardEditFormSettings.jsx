@@ -7,8 +7,13 @@ import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/Data
 import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 import BarChartCardFormSettings from './CardEditFormItems/BarChartCardFormItems/BarChartCardFormSettings';
+import TableCardFormSettings from './CardEditFormItems/TableCardFormItems/TableCardFormSettings';
 
 const propTypes = {
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** card data value */
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
@@ -39,6 +44,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  availableDimensions: {},
   cardConfig: {},
   i18n: {
     xAxisLabel: 'X-axis label',
@@ -52,7 +58,7 @@ const defaultProps = {
   },
 };
 
-const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
+const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
 
@@ -89,6 +95,15 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
           onChange={onChange}
         />
       );
+    case CARD_TYPES.TABLE:
+      return (
+        <TableCardFormSettings
+          availableDimensions={availableDimensions}
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+        />
+      )
     default:
       return null;
   }

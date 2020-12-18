@@ -625,6 +625,7 @@ export const handleDataSeriesChange = (
   const { type } = cardConfig;
   let series;
   let attributes;
+  let columns;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -640,6 +641,12 @@ export const handleDataSeriesChange = (
       return {
         ...cardConfig,
         content: { ...cardConfig.content, series },
+      };
+    case CARD_TYPES.TABLE:
+      columns = selectedItems.length > 0 ? selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) : cardConfig.content.columns;
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, columns },
       };
     default:
       return cardConfig;
@@ -681,6 +688,16 @@ export const handleDataItemEdit = (
       return {
         ...cardConfig,
         content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.TABLE:
+      dataSection = [...content.columns];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, columns: dataSection },
       };
     default:
       return cardConfig;
