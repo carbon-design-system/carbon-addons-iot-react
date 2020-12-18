@@ -131,7 +131,6 @@ const CardEditFormContent = ({
           onChange={onChange}
           dataItems={dataItems}
           selectedDataItems={selectedDataItems}
-          selectedTimeRange={selectedTimeRange}
           setSelectedDataItems={setSelectedDataItems}
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}

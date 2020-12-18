@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useMemo} from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
@@ -28,6 +28,7 @@ const propTypes = {
     ascending: PropTypes.string,
     descending: PropTypes.string,
     showHeader: PropTypes.string,
+    allowNavigation: PropTypes.string,
   }),
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
@@ -44,6 +45,7 @@ const defaultProps = {
     ascending: 'Ascending',
     descending: 'Descending',
     showHeader: 'Show table header',
+    allowNavigation: 'Allow navigation to assets',
   },
   availableDimensions: {},
 };
@@ -53,6 +55,8 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
+  const dataItems = useMemo(() => content?.columns.map(column => column.label), [content]);
+  const [sortByValue, setSortByValue] = useState(dataItems[0]);
 
   return (
     <>
@@ -84,31 +88,15 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
       </div> */}
       <div className={`${baseClassName}--input`}>
         <Dropdown
-          id={`${id}_value-card-decimal-place`}
+          id={`${id}_sort_by_dropdown`}
           titleText={mergedI18n.sortBy}
           direction="bottom"
           label=""
-          items={cardConfig.content?.columns.map(column => column.label)}
+          items={dataItems}
           light
-          selectedItem={content?.precision?.toString() || mergedI18n.sortByTitle}
+          selectedItem={sortByValue}
           onChange={({ selectedItem }) => {
-            const isSet = selectedItem !== 'Not set';
-            if (isSet) {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...content,
-                  precision: Number(selectedItem),
-                },
-              });
-            } else {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...omit(content, 'precision'),
-                },
-              });
-            }
+              setSortByValue(selectedItem);
           }}
         />
       </div>
@@ -118,7 +106,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             onChange={(evt) =>
               onChange({
                 ...cardConfig,
-                content: { ...cardConfig.content, sort: evt },
+                content: { ...cardConfig.content, sort: evt},
               })
             }
             orientation="vertical"
@@ -158,6 +146,25 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           />
         </div>
       </div>
+      {/* <div className={`${baseClassName}--input`}>
+        <div className={`${baseClassName}--input--toggle-field`}>
+          <span>{mergedI18n.allowNavigation}</span>
+          <ToggleSmall
+            data-testid={`${baseClassName}--input-toggle1`}
+            id={`${baseClassName}--input-toggle-1`}
+            aria-label={mergedI18n.allowNavigation}
+            labelA=""
+            labelB=""
+            toggled={cardConfig.content?.showHeader ?? true}
+            onToggle={(bool) =>
+              onChange({
+                ...cardConfig,
+                content: { ...cardConfig.content, showHeader: bool },
+              })
+            }
+          />
+        </div>
+      </div> */}
     </>
   );
 };
