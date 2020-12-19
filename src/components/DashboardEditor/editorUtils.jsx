@@ -431,7 +431,7 @@ export const handleDataSeriesChange = (
   setEditDataSeries,
   hotspotIndex
 ) => {
-  const { type } = cardConfig;
+  const { type, content } = cardConfig;
   let series;
   let attributes;
   let columns;
@@ -453,19 +453,14 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE:
-      if (selectedItems[0].hasOwnProperty('type')) {
-        columns = [
-          ...(selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) ?? []),
-          ...(cardConfig.content.columns.filter(column => column.dataSourceId !== 'timestamp') ?? [])
-        ]
-
-      }
-      else {
-        columns = selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) ?? [];
-      }
+      dataSection = selectedItems.map(i => i.hasOwnProperty('type') ?
+        {dataSourceId: i.id, label: i.text, type: i.type} :
+        {dataSourceId: i.id, label: i.text}
+      )
+      columns = content.columns.filter(col => col.type === 'TIMESTAMP')
       return {
         ...cardConfig,
-        content: { ...cardConfig.content, columns: [{dataSourceId: 'timestamp', label: 'timestamp', type: 'timestamp'}, ...columns] },
+        content: { ...cardConfig.content, columns: [{dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP'}, ...dataSection] },
     };
     case CARD_TYPES.IMAGE:
       dataSection = [...(cardConfig.content?.hotspots || [])];

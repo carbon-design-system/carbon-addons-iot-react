@@ -93,6 +93,7 @@ const TableCardFormContent = ({
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const { content: { columns }} = cardConfig;
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
@@ -109,6 +110,8 @@ const TableCardFormContent = ({
   const initialSelectedItems = formatDataItemsForDropdown(dataSection);
 
   const validDimensions = useMemo(() => Object.keys(availableDimensions).map(i => ({ id: i, text: i})), [availableDimensions]);
+  const timeStampColumn = cardConfig.content?.columns?.filter(col => col.type === 'TIMESTAMP').map(i => ({id: i.dataSourceId, text: i.label, type: 'TIMESTAMP'}));
+  const dataItemColumns = cardConfig.content?.columns?.filter(col => !col?.hasOwnProperty('type'));
 
   return (
     <>
@@ -162,9 +165,14 @@ const TableCardFormContent = ({
           items={validDimensions}
           light
           onChange={({ selectedItems }) => {
-            console.log({selectedItems: selectedItems.map(i => ({...i, type: 'dimension'})), availableDimensions})
+            console.log({selectedItems: selectedItems.map(i => ({...i, type: 'DIMENSION'})), availableDimensions})
             const newCard = handleDataSeriesChange(
-              selectedItems.map(i => ({...i, type: 'dimension'})),
+              [
+                ...timeStampColumn.map(i => ({id: i.dataSourceId, text: i.label, type: 'TIMESTAMP'})) || [],
+                ...selectedItems.map(i => ({...i, type: 'DIMENSION'})),
+                ...dataItemColumns
+                  .map(i => ({id: i.dataSourceId, text: i.label})) || []
+              ],
               cardConfig,
             );
             // setSelectedDataItems(selectedItems.map(({ id }) => id));
