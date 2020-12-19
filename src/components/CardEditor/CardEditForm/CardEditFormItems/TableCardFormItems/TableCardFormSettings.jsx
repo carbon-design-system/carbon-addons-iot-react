@@ -155,11 +155,11 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             aria-label={mergedI18n.allowNavigation}
             labelA=""
             labelB=""
-            toggled={cardConfig.content?.allowNavigation ?? true}
+            toggled={cardConfig.content?.allowNavigation ?? false}
             onToggle={(bool) =>
               onChange({
                 ...cardConfig,
-                // content: { ...cardConfig.content, showHeader: bool },
+                content: { ...cardConfig.content, allowNavigation: bool },
               })
             }
           />

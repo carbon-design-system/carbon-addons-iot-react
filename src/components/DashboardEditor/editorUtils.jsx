@@ -457,10 +457,10 @@ export const handleDataSeriesChange = (
         {dataSourceId: i.id, label: i.text, type: i.type} :
         {dataSourceId: i.id, label: i.text}
       )
-      columns = content.columns.filter(col => col.type === 'TIMESTAMP')
+      columns = content.columns.filter(col => col.type === 'TIMESTAMP')[0] || {dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP'}
       return {
         ...cardConfig,
-        content: { ...cardConfig.content, columns: [{dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP'}, ...dataSection] },
+        content: { ...cardConfig.content, columns: [columns, ...dataSection] },
     };
     case CARD_TYPES.IMAGE:
       dataSection = [...(cardConfig.content?.hotspots || [])];
