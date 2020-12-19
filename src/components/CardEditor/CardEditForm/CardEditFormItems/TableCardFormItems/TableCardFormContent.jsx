@@ -162,9 +162,9 @@ const TableCardFormContent = ({
           items={validDimensions}
           light
           onChange={({ selectedItems }) => {
-            console.log({selectedItems, availableDimensions})
+            console.log({selectedItems: selectedItems.map(i => ({...i, type: 'dimension'})), availableDimensions})
             const newCard = handleDataSeriesChange(
-              selectedItems,
+              selectedItems.map(i => ({...i, type: 'dimension'})),
               cardConfig,
             );
             // setSelectedDataItems(selectedItems.map(({ id }) => id));

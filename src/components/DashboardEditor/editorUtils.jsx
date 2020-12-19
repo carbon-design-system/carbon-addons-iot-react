@@ -643,10 +643,19 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE:
-      columns = selectedItems.length > 0 ? selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) : cardConfig.content.columns;
+      if (selectedItems[0].hasOwnProperty('type')) {
+        columns = [
+          ...(selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) ?? []),
+          ...(cardConfig.content.columns.filter(column => column.dataSourceId !== 'timestamp') ?? [])
+        ]
+
+      }
+      else {
+        columns = selectedItems.map(i => ({dataSourceId: i.id, label: i.text})) ?? [];
+      }
       return {
         ...cardConfig,
-        content: { ...cardConfig.content, columns },
+        content: { ...cardConfig.content, columns: [{dataSourceId: 'timestamp', label: 'timestamp', type: 'timestamp'}, ...columns] },
       };
     default:
       return cardConfig;

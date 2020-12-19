@@ -146,25 +146,25 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           />
         </div>
       </div>
-      {/* <div className={`${baseClassName}--input`}>
+      <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.allowNavigation}</span>
           <ToggleSmall
-            data-testid={`${baseClassName}--input-toggle1`}
-            id={`${baseClassName}--input-toggle-1`}
+            data-testid={`${baseClassName}--input-toggle2`}
+            id={`${baseClassName}--input-toggle-2`}
             aria-label={mergedI18n.allowNavigation}
             labelA=""
             labelB=""
-            toggled={cardConfig.content?.showHeader ?? true}
+            toggled={cardConfig.content?.allowNavigation ?? true}
             onToggle={(bool) =>
               onChange({
                 ...cardConfig,
-                content: { ...cardConfig.content, showHeader: bool },
+                // content: { ...cardConfig.content, showHeader: bool },
               })
             }
           />
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
