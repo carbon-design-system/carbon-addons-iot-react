@@ -138,7 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-35-65"
                   icon="arrowDown"
                   style={
@@ -397,7 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-35-65"
                   icon="arrowDown"
                   style={
@@ -444,7 +444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container"
+                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-25"
                   icon={null}
                   style={
@@ -495,7 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container"
+                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-50"
                   icon={null}
                   style={
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-75"
                   icon="arrowUp"
                   style={

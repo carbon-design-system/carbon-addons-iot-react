@@ -246,7 +246,13 @@ const CardEditForm = ({
             onClick={() => {
               setModalData(
                 JSON.stringify(
-                  omit(cardConfig, ['id', 'content.src', 'content.imgState']),
+                  omit(cardConfig, [
+                    'id',
+                    'content.src',
+                    'content.imgState',
+                    'i18n',
+                    'validateUploadedImage',
+                  ]),
                   null,
                   4
                 )

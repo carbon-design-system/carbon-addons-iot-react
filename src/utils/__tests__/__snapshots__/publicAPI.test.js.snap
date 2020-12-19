@@ -8502,6 +8502,7 @@ Map {
       "onLayoutChange": null,
       "onSubmit": null,
       "onValidateCardJson": null,
+      "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
@@ -8749,6 +8750,9 @@ Map {
         "type": "func",
       },
       "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "onValidateUploadedImage": Object {
         "type": "func",
       },
       "renderCardPreview": Object {
@@ -12781,6 +12785,7 @@ Map {
         "uploadByURLButton": "OK",
         "uploadByURLCancel": "Cancel",
         "urlInput": "Type or insert URL",
+        "wrongFileType": [Function],
       },
       "locale": "en",
       "maxFileSizeInBytes": 1048576,

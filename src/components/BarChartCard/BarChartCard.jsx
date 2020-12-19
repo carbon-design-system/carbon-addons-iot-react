@@ -87,28 +87,31 @@ const BarChartCard = ({
 
   const memoizedGenerateSampleValues = useMemo(
     () =>
-      generateSampleValues(
-        series,
-        timeDataSourceId,
-        interval,
-        timeRange,
-        categoryDataSourceId
-      ),
+      isEditable
+        ? generateSampleValues(
+            series,
+            timeDataSourceId,
+            interval,
+            timeRange,
+            categoryDataSourceId
+          )
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [series, interval, timeRange]
+    [series, interval, timeRange, isEditable]
   );
 
   const memoizedGenerateSampleValuesForEditor = useMemo(
     () =>
-      generateSampleValuesForEditor(
-        valuesProp,
-        categoryDataSourceId,
-        timeDataSourceId,
-        availableDimensions,
-        interval,
-        timeRange
-      ),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      isDashboardPreview
+        ? generateSampleValuesForEditor(
+            valuesProp,
+            categoryDataSourceId,
+            timeDataSourceId,
+            availableDimensions,
+            interval,
+            timeRange
+          )
+        : [],
     [
       availableDimensions,
       categoryDataSourceId,
@@ -117,7 +120,6 @@ const BarChartCard = ({
       interval,
       timeRange,
       valuesProp,
-      series.length,
     ]
   );
 
