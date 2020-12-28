@@ -419,6 +419,7 @@ describe('HotspotEditorModal', () => {
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}
+        showTooManyHotspotsInfo
       />
     );
 

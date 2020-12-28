@@ -82,7 +82,7 @@ const defaultProps = {
     iconDropdownLabelText: 'Select an Icon',
     iconDropdownTitleText: 'Icon',
     infoMessageText:
-      'Click on an empty region on the image to create a fixed hotspot',
+      'Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
   },
   overrides: undefined,
   primaryInputId: undefined,

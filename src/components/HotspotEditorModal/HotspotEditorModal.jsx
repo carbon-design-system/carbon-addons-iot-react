@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { ContentSwitcher, Switch, Tabs, Tab } from 'carbon-components-react';
+import {
+  ContentSwitcher,
+  Switch,
+  Tabs,
+  Tab,
+  InlineNotification,
+} from 'carbon-components-react';
 import { withSize } from 'react-sizeme';
 import update from 'immutability-helper';
 
@@ -94,7 +100,7 @@ const propTypes = {
   fontLabelText: PropTypes.string,
   fontSizeText: PropTypes.string,
   fontSizeInvalidText: PropTypes.string,
-  getValidDataItems: PropTypes.func, // TODO: use this one
+  getValidDataItems: PropTypes.func,
   /** Array of selectable color objects for hotspot icon fill */
   hotspotIconFillColors: PropTypes.arrayOf(ColorPropType).isRequired,
   /** Array of selectable icon objects. */
@@ -133,10 +139,12 @@ const propTypes = {
   /** Should the dialog be open or not */
   open: PropTypes.bool,
   saveButtonLabelText: PropTypes.string,
+  showTooManyHotspotsInfo: PropTypes.bool,
   textTypeDataSourceTabLabelText: PropTypes.string,
   textTypeStyleInfoText: PropTypes.string,
   titleInputLabelText: PropTypes.string,
   titleInputPlaceholderText: PropTypes.string,
+  tooManyHotspotsInfoText: PropTypes.string,
   underlineLabelText: PropTypes.string,
 };
 
@@ -186,10 +194,12 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: undefined,
   open: true,
   saveButtonLabelText: undefined,
+  showTooManyHotspotsInfo: false,
   textTypeDataSourceTabLabelText: 'Data source',
   textTypeStyleInfoText: undefined,
   titleInputLabelText: undefined,
   titleInputPlaceholderText: undefined,
+  tooManyHotspotsInfoText: 'There are more hotspots than can be shown',
   underlineLabelText: undefined,
 };
 
@@ -255,10 +265,12 @@ const HotspotEditorModal = ({
   onSave: onSaveCallback,
   open,
   saveButtonLabelText,
+  showTooManyHotspotsInfo,
   textTypeDataSourceTabLabelText,
   textTypeStyleInfoText,
   titleInputLabelText,
   titleInputPlaceholderText,
+  tooManyHotspotsInfoText,
   underlineLabelText,
 }) => {
   const initialHotspots = cardConfig.values.hotspots;
@@ -383,8 +395,8 @@ const HotspotEditorModal = ({
         hotspot={selectedHotspot}
         hotspotIndex={selectedHotspotIndex}
         thresholds={thresholds}
-        // TODO: this should be the latest state of card config and the
-        // locations of the hotspots should be the same as our ImageCard...
+        // TODO:
+        // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
         cardConfig={{
           ...cardConfig,
           content: {
@@ -392,7 +404,6 @@ const HotspotEditorModal = ({
             hotspots: cardConfig.values.hotspots,
           },
         }}
-        // TODO: add cardConfig to the getValidDataItems callback
         dataItems={myDataItems}
         onChange={(newData) => {
           updateHotspotDataSource(newData);
@@ -418,6 +429,10 @@ const HotspotEditorModal = ({
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
         />
+        {showTooManyHotspotsInfo ? (
+          <InlineNotification kind="info" title={tooManyHotspotsInfoText} />
+        ) : null}
+
         {dynamicHotspotsLoading ? (
           <InlineLoading
             className={`${iotPrefix}--hotspot-editor-modal__dynamic-loading`}

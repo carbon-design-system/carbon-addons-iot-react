@@ -67,7 +67,7 @@ function hotspotEditorReducer(state, { type, payload }) {
     case hotspotActionTypes.hotspotDataSourceChange: {
       const mergeSpec = payload.attributes
         ? { content: { attributes: { $set: payload.attributes } } }
-        : {}; // TODO: Handle this part
+        : {}; // TODO: https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
       return getHotspotUpdate(state, mergeSpec);
     }
     // HOTSPOT TOOLTIP CHANGE
@@ -219,6 +219,7 @@ function useHotspotEditorState({
     currentType: hotspotTypes.FIXED,
     selectedHotspot: undefined,
     // TODO: Would be nice if we could skip dealing with this index used by the HotspotEditorDataSourceTab
+    // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
     selectedHotspotIndex: undefined,
     dynamicHotspotSourceX: undefined,
     dynamicHotspotSourceY: undefined,

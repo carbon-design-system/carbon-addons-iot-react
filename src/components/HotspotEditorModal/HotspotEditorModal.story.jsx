@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import {
   InformationSquareFilled24,
@@ -32,17 +32,6 @@ const selectableColors = [
   { carbonColor: blue50, name: 'blue' },
 ];
 
-const demoDynamicHotspots = [
-  {
-    x: 10,
-    y: 30,
-  },
-  {
-    x: 90,
-    y: 60,
-  },
-];
-
 const cardConfig = {
   content: {
     alt: 'Floor Map',
@@ -55,45 +44,7 @@ const cardConfig = {
   title: 'Floor Map',
   type: CARD_TYPES.IMAGE,
   values: {
-    hotspots: [
-      {
-        x: 'temp_last',
-        y: 'temperature',
-        type: 'dynamic',
-        content: { title: 'dynamic hotspot title' },
-        icon: 'InformationFilled24',
-        color: red50,
-      },
-      {
-        x: 75,
-        y: 10,
-        type: 'text',
-        content: { title: 'Storage' },
-        backgroundColor: gray50,
-        backgroundOpacity: 50,
-      },
-      {
-        x: 35,
-        y: 65,
-        icon: 'InformationFilled24',
-        color: green50,
-        content: {
-          title: 'My Device',
-          description: 'Description',
-          values: {
-            deviceid: '73000',
-            temperature: 35.05,
-          },
-          attributes: [
-            {
-              dataSourceId: 'temperature',
-              label: 'Temp',
-              precision: 2,
-            },
-          ],
-        },
-      },
-    ],
+    hotspots: [],
   },
 };
 
@@ -115,6 +66,26 @@ const dataItems = [
   },
 ];
 
+const getDemoHotspots = (reqObj) => {
+  action('onFetchDynamicDemoHotspots')(reqObj);
+  return new Promise((resolve) =>
+    setTimeout(
+      () =>
+        resolve([
+          {
+            x: 10,
+            y: 30,
+          },
+          {
+            x: 90,
+            y: 60,
+          },
+        ]),
+      1000
+    )
+  );
+};
+
 export default {
   title: 'Watson IoT Experimental/HotSpotEditorModal',
   decorators: [withKnobs],
@@ -123,7 +94,7 @@ export default {
   },
 };
 
-export const WrappedInComponent = () => {
+export const Empty = () => {
   return (
     <HotspotEditorModal
       backgroundColors={selectableColors}
@@ -136,12 +107,155 @@ export const WrappedInComponent = () => {
       hotspotIcons={selectableIcons}
       modalHeaderLabelText={landscape}
       onClose={action('onClose')}
-      onFetchDynamicDemoHotspots={() => {
-        return new Promise((resolve) =>
-          setTimeout(() => resolve(demoDynamicHotspots), 1000)
-        );
-      }}
+      onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
     />
   );
+};
+Empty.story = {
+  parameters: {
+    info: {
+      propTables: [HotspotEditorModal],
+    },
+  },
+};
+
+export const EmptyWithGetValidDataItemsCallback = () => {
+  return (
+    <HotspotEditorModal
+      backgroundColors={selectableColors}
+      borderColors={selectableColors}
+      cardConfig={cardConfig}
+      dataItems={dataItems}
+      getValidDataItems={(cardConf) => {
+        action('getValidDataItems')(cardConf);
+        return dataItems;
+      }}
+      defaultHotspotType="fixed"
+      fontColors={selectableColors}
+      hotspotIconFillColors={selectableColors}
+      hotspotIcons={selectableIcons}
+      modalHeaderLabelText={landscape}
+      onClose={action('onClose')}
+      onFetchDynamicDemoHotspots={getDemoHotspots}
+      onSave={action('onSave')}
+    />
+  );
+};
+EmptyWithGetValidDataItemsCallback.story = {
+  name: 'Empty with getValidDataItems callback',
+  parameters: {
+    info: {
+      propTables: [HotspotEditorModal],
+    },
+  },
+};
+
+export const WidthExistingHotspots = () => {
+  const myCardConfig = {
+    ...cardConfig,
+    values: {
+      ...cardConfig.values,
+      hotspots: [
+        {
+          x: 75,
+          y: 10,
+          type: 'text',
+          content: { title: 'Storage' },
+          backgroundColor: gray50,
+          backgroundOpacity: 50,
+        },
+        {
+          x: 35,
+          y: 65,
+          icon: 'InformationFilled24',
+          color: green50,
+          content: {
+            title: 'My Device',
+            description: 'Description',
+            values: {
+              deviceid: '73000',
+              temperature: 35.05,
+            },
+            attributes: [
+              {
+                dataSourceId: 'temperature',
+                label: 'Temp',
+                precision: 2,
+              },
+            ],
+          },
+        },
+      ],
+    },
+  };
+
+  return (
+    <HotspotEditorModal
+      backgroundColors={selectableColors}
+      borderColors={selectableColors}
+      cardConfig={myCardConfig}
+      dataItems={dataItems}
+      defaultHotspotType="fixed"
+      fontColors={selectableColors}
+      hotspotIconFillColors={selectableColors}
+      hotspotIcons={selectableIcons}
+      modalHeaderLabelText={landscape}
+      onClose={action('onClose')}
+      onFetchDynamicDemoHotspots={getDemoHotspots}
+      onSave={action('onSave')}
+    />
+  );
+};
+WidthExistingHotspots.story = {
+  parameters: {
+    info: {
+      propTables: [HotspotEditorModal],
+    },
+  },
+};
+
+export const WidthExistingDynamicHotspots = () => {
+  const myCardConfig = {
+    ...cardConfig,
+    values: {
+      ...cardConfig.values,
+      hotspots: [
+        {
+          x: 'temp_last',
+          y: 'temperature',
+          type: 'dynamic',
+          content: { title: 'dynamic hotspot title' },
+          icon: 'InformationFilled24',
+          color: red50,
+        },
+      ],
+    },
+  };
+
+  return (
+    <HotspotEditorModal
+      backgroundColors={selectableColors}
+      borderColors={selectableColors}
+      cardConfig={myCardConfig}
+      dataItems={dataItems}
+      defaultHotspotType="fixed"
+      fontColors={selectableColors}
+      hotspotIconFillColors={selectableColors}
+      hotspotIcons={selectableIcons}
+      maxHotspots={2}
+      modalHeaderLabelText={landscape}
+      onClose={action('onClose')}
+      onFetchDynamicDemoHotspots={getDemoHotspots}
+      onSave={action('onSave')}
+      showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
+    />
+  );
+};
+WidthExistingDynamicHotspots.story = {
+  parameters: {
+    info: {
+      propTables: [HotspotEditorModal],
+    },
+  },
 };

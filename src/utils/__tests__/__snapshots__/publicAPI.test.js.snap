@@ -18321,7 +18321,7 @@ Map {
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
         "iconDropdownLabelText": "Select an Icon",
         "iconDropdownTitleText": "Icon",
-        "infoMessageText": "Click on an empty region on the image to create a fixed hotspot",
+        "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
