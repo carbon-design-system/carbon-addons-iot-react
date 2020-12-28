@@ -429,7 +429,8 @@ export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
   setEditDataSeries,
-  hotspotIndex
+  hotspotIndex,
+  isDimensionUpdate
 ) => {
   const { type, content } = cardConfig;
   let series;
@@ -451,10 +452,6 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE: {
-      const isDimensionUpdate = selectedItems.find(
-        (item) => item.type === 'DIMENSION'
-      );
-
       const existingAttributeColumns = Array.isArray(content?.columns)
         ? content.columns.filter((col) => !col.type)
         : [];

@@ -151,7 +151,13 @@ const TableCardFormContent = ({
           items={formatDataItemsForDropdown(dataItems)}
           light
           onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(selectedItems, cardConfig);
+            const newCard = handleDataSeriesChange(
+              selectedItems,
+              cardConfig,
+              null,
+              null,
+              false
+            );
             setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange(newCard);
           }}
@@ -176,7 +182,10 @@ const TableCardFormContent = ({
             // Add the new dimensions as dimension columns at the beginning of the table
             const newCard = handleDataSeriesChange(
               selectedItems.map((i) => ({ ...i, type: 'DIMENSION' })),
-              cardConfig
+              cardConfig,
+              null,
+              null,
+              true
             );
             // setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange(newCard);

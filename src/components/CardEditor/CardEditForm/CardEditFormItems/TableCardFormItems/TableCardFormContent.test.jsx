@@ -43,6 +43,53 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('manufacturer')).toBeDefined();
     expect(screen.queryByText('deviceid')).toBeDefined();
   });
+  it('selecting data attributes shows clear button', () => {
+    const mockOnChange = jest.fn();
+    render(<TableCardFormContent {...commonProps} onChange={mockOnChange} />);
+    expect(mockOnChange).not.toHaveBeenCalled();
+    // check for the temperature and pressure to be shown under data items
+    fireEvent.click(screen.getByLabelText(/Select data/));
+    expect(screen.queryByText('temperature')).toBeDefined();
+    fireEvent.click(screen.queryByText('temperature'));
+    // the selection state of the box should be updated
+    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+    // the callback for onChange should be called
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          { dataSourceId: 'temperature', label: 'temperature' },
+        ],
+      },
+    });
+  });
+  it('selecting dimensions shows clear button', () => {
+    const mockOnChange = jest.fn();
+    render(<TableCardFormContent {...commonProps} onChange={mockOnChange} />);
+    expect(mockOnChange).not.toHaveBeenCalled();
+    // check for the temperature and pressure to be shown under data items
+    fireEvent.click(screen.getByLabelText(/Select dim/));
+    expect(screen.queryByText('manufacturer')).toBeDefined();
+    fireEvent.click(screen.queryByText('manufacturer'));
+    // the selection state of the box should be updated
+    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+    // the callback for onChange should be called
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      ...commonCardConfig,
+      content: {
+        columns: [
+          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          {
+            dataSourceId: 'manufacturer',
+            label: 'manufacturer',
+            type: 'DIMENSION',
+          },
+        ],
+      },
+    });
+  });
   it('edit mode with dataitems and dimension columns show work correctly', () => {
     render(
       <TableCardFormContent
