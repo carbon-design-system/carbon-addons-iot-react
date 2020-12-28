@@ -434,8 +434,6 @@ export const handleDataSeriesChange = (
   const { type, content } = cardConfig;
   let series;
   let attributes;
-  let columns;
-  let dataSection;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -452,18 +450,56 @@ export const handleDataSeriesChange = (
         ...cardConfig,
         content: { ...cardConfig.content, series },
       };
-    case CARD_TYPES.TABLE:
-      dataSection = selectedItems.map(i => i.hasOwnProperty('type') ?
-        {dataSourceId: i.id, label: i.text, type: i.type} :
-        {dataSourceId: i.id, label: i.text}
-      )
-      columns = content.columns.filter(col => col.type === 'TIMESTAMP')[0] || {dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP'}
+    case CARD_TYPES.TABLE: {
+      const isDimensionUpdate = selectedItems.find(
+        (item) => item.type === 'DIMENSION'
+      );
+
+      const existingAttributeColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => !col.type)
+        : [];
+
+      // find just the attributes to add
+      const attributeColumns = selectedItems
+        .filter((i) => !i.hasOwnProperty('type'))
+        .map((i) => ({ dataSourceId: i.id, label: i.text }));
+      // start off with a default timestamp column if we don't already have one
+      const timestampColumn =
+        Array.isArray(content?.columns) &&
+        content.columns.find((col) => col.type === 'TIMESTAMP')
+          ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
+          : {
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+            };
+      const existingDimensionColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => col.type === 'DIMENSION')
+        : [];
+
+      // new dimension columns should go right after the timestamp column
+      const dimensionColumns = selectedItems
+        .filter((col) => col.type === 'DIMENSION')
+        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+
       return {
         ...cardConfig,
-        content: { ...cardConfig.content, columns: [columns, ...dataSection] },
-    };
-    case CARD_TYPES.IMAGE:
-      dataSection = [...(cardConfig.content?.hotspots || [])];
+        content: {
+          ...cardConfig.content,
+          columns: [
+            timestampColumn,
+            ...(isDimensionUpdate
+              ? dimensionColumns
+              : existingDimensionColumns),
+            ...(!isDimensionUpdate
+              ? attributeColumns
+              : existingAttributeColumns),
+          ],
+        },
+      };
+    }
+    case CARD_TYPES.IMAGE: {
+      const dataSection = [...(cardConfig.content?.hotspots || [])];
       dataSection[hotspotIndex].content = {
         ...dataSection[hotspotIndex].content,
         attributes: selectedItems,
@@ -475,6 +511,7 @@ export const handleDataSeriesChange = (
           hotspots: dataSection,
         },
       };
+    }
     default:
       return cardConfig;
   }
