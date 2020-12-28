@@ -71,5 +71,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Temperature')).toBeDefined();
     expect(screen.queryByText('Timestamp')).toBeDefined();
     expect(screen.queryByText('Manufacturer')).toBeDefined();
+    // both the dimension and attribute show show selections
+    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(2);
   });
 });

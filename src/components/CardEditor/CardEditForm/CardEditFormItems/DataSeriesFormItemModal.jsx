@@ -67,7 +67,7 @@ const propTypes = {
   availableDimensions: PropTypes.shape({}),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
-  setEditDataSeries: PropTypes.func.isRequired,
+  setEditDataSeries: PropTypes.func,
   editDataSeries: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
@@ -110,7 +110,7 @@ const defaultProps = {
     dataItemEditorDataItemAddThreshold: 'Add threshold',
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
-    source: 'Source data item'
+    source: 'Source data item',
   },
   editDataSeries: [],
   showEditor: false,
@@ -118,6 +118,7 @@ const defaultProps = {
   availableDimensions: {},
   editDataItem: {},
   setEditDataItem: null,
+  setEditDataSeries: null,
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -348,7 +349,8 @@ const DataSeriesFormItemModal = ({
             }
             value={editDataItem.label}
           />
-          <p className={`${baseClassName}--input-group--span`}>{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
+          <p
+            className={`${baseClassName}--input-group--span`}>{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
         </div>
       </div>
       <ThresholdsFormItem

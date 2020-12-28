@@ -115,6 +115,11 @@ const TableCardFormContent = ({
     [availableDimensions]
   );
 
+  const initialSelectedDimensions = useMemo(
+    () => dataSection.filter((col) => col.type === 'DIMENSION'),
+    [dataSection]
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -164,8 +169,7 @@ const TableCardFormContent = ({
           label={mergedI18n.selectGroupByDimensions}
           direction="bottom"
           itemToString={(item) => item.id}
-          // TODO: need to populate selected dimensions in the edit case
-          // initialSelectedItems={initialSelectedItems}
+          initialSelectedItems={initialSelectedDimensions}
           items={validDimensions}
           light
           onChange={({ selectedItems }) => {
