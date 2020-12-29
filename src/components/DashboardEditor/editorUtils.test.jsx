@@ -301,6 +301,7 @@ describe('editorUtils', () => {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
+              sort: 'DESC',
             },
             {
               dataSourceId: 'key1',
@@ -329,6 +330,7 @@ describe('editorUtils', () => {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
                 type: 'TIMESTAMP',
+                sort: 'DESC',
               },
               {
                 dataSourceId: 'manufacturer',
@@ -352,6 +354,7 @@ describe('editorUtils', () => {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
+              sort: 'DESC',
             },
             {
               dataSourceId: 'manufacturer',
@@ -389,6 +392,7 @@ describe('editorUtils', () => {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
+              sort: 'DESC',
             },
             {
               dataSourceId: 'manufacturer',

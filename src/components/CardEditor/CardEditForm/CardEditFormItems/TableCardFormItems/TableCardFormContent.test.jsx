@@ -58,7 +58,12 @@ describe('TableCardFormContent', () => {
       ...commonCardConfig,
       content: {
         columns: [
-          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          {
+            dataSourceId: 'timestamp',
+            label: 'Timestamp',
+            type: 'TIMESTAMP',
+            sort: 'DESC',
+          },
           { dataSourceId: 'temperature', label: 'temperature' },
         ],
       },
@@ -80,7 +85,12 @@ describe('TableCardFormContent', () => {
       ...commonCardConfig,
       content: {
         columns: [
-          { dataSourceId: 'timestamp', label: 'Timestamp', type: 'TIMESTAMP' },
+          {
+            dataSourceId: 'timestamp',
+            label: 'Timestamp',
+            type: 'TIMESTAMP',
+            sort: 'DESC',
+          },
           {
             dataSourceId: 'manufacturer',
             label: 'manufacturer',
