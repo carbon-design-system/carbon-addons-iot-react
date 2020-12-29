@@ -644,23 +644,23 @@ export const MediumVerticalMultiple = () => {
             {
               label: 'Comfort Level',
               dataSourceId: 'comfortLevel',
-              unit: '%',
+              precision: 4,
             },
             {
               label: 'Average Temperature',
               dataSourceId: 'averageTemp',
               unit: '˚F',
-              precision: 1,
+              precision: 6,
             },
-            { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
+            { label: 'Utilization', dataSourceId: 'utilization', precision: 2 },
           ]),
         }}
         breakpoint="lg"
         size={size}
         values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-          utilization: number('utilization', 76),
+          comfortLevel: number('comfortLevel', 100012312312.5023934),
+          averageTemp: number('averageTemp', 20302.5023934),
+          utilization: number('utilization', 404015614.5023934),
         }}
       />
     </div>
@@ -668,7 +668,7 @@ export const MediumVerticalMultiple = () => {
 };
 
 MediumVerticalMultiple.story = {
-  name: 'medium / vertical / multiple',
+  name: 'medium / vertical / multiple / long values',
 };
 
 export const MediumVertical2 = () => {

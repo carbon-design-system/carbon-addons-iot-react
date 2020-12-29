@@ -67,7 +67,23 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
       default:
     }
   }
-  return isMini ? 1 : isSmall ? 2 : 2.5;
+  const valueLength = value?.toString().length;
+  if (isMini) {
+    return 1;
+  }
+  if (isSmall) {
+    return 2;
+  }
+  if (valueLength > 15) {
+    return 1.25;
+  }
+  if (valueLength > 12) {
+    return 1.5;
+  }
+  if (valueLength > 8) {
+    return 1.75;
+  }
+  return 2.5;
 };
 
 /** Renders the actual attribute value */

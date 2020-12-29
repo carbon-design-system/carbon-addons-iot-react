@@ -150,60 +150,27 @@ export const getUpdatedCardSize = (oldSize) => {
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
  */
-export const formatNumberWithPrecision = (
-  value,
-  precision = 0,
-  locale = 'en'
-) => {
-  return value > 1000000000000
-    ? `${(value / 1000000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}T`
-    : value > 1000000000
-    ? `${(value / 1000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}B`
-    : value > 1000000
-    ? `${(value / 1000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}M`
-    : value > 1000
-    ? `${(value / 1000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}K`
-    : value.toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      );
+export const formatNumberWithPrecision = (value, precision, locale = 'en') => {
+  // do not truncate if precision is set
+  if (!isNil(precision)) {
+    return value.toLocaleString(locale, {
+      minimumFractionDigits: precision,
+      maximumFractionDigits: precision,
+    });
+  } // truncate if precision is not set
+  if (value > 1000000000000) {
+    return `${(value / 1000000000000).toLocaleString(locale)}T`;
+  }
+  if (value > 1000000000) {
+    return `${(value / 1000000000).toLocaleString(locale)}B`;
+  }
+  if (value > 1000000) {
+    return `${(value / 1000000).toLocaleString(locale, !isNil(precision))}M`;
+  }
+  if (value > 1000) {
+    return `${(value / 1000).toLocaleString(locale)}K`;
+  }
+  return value.toLocaleString(locale);
 };
 
 /**

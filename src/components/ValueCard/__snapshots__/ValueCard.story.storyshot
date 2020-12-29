@@ -1913,7 +1913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 jKAmol"
                     size="LARGETHIN"
                     title="Australia "
                     value="Australia"
@@ -2220,7 +2220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="20000000000000000 "
                     value={20000000000000000}
                   >
-                    20,000T
+                    20,000,000,000,000,000
                   </span>
                 </div>
                 <span
@@ -2343,12 +2343,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 jKAmol"
                     size="MEDIUM"
                     title="100000000 Wh"
                     value={100000000}
                   >
-                    100M
+                    100,000,000
                   </span>
                 </div>
                 <span
@@ -2392,12 +2392,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 eiVIVr"
                     size="MEDIUM"
                     title="40000000000000 Wh"
                     value={40000000000000}
                   >
-                    40T
+                    40,000,000,000,000
                   </span>
                 </div>
                 <span
@@ -3030,7 +3030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / multiple / long values 1`] = `
 <div
   className="storybook-container"
 >
@@ -3096,16 +3096,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 size="MEDIUM"
               >
                 <div
-                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 bBjGNb"
                     size="MEDIUM"
-                    title="89 %"
-                    value={89}
+                    title="100012312312.5024 "
+                    value={100012312312.5024}
                   >
-                    89
+                    100,012,312,312.5024
                   </span>
                 </div>
                 <span
@@ -3116,7 +3116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     }
                   }
                 >
-                  %
+                  
                 </span>
               </div>
               <div
@@ -3149,12 +3149,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 eiVIVr"
                     size="MEDIUM"
-                    title="76.7 ˚F"
-                    value={76.7}
+                    title="20302.5023934 ˚F"
+                    value={20302.5023934}
                   >
-                    76.7
+                    20,302.502393
                   </span>
                 </div>
                 <span
@@ -3194,16 +3194,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 size="MEDIUM"
               >
                 <div
-                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 bBjGNb"
                     size="MEDIUM"
-                    title="76 %"
-                    value={76}
+                    title="404015614.5023934 "
+                    value={404015614.5023934}
                   >
-                    76
+                    404,015,614.50
                   </span>
                 </div>
                 <span
@@ -3214,7 +3214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     }
                   }
                 >
-                  %
+                  
                 </span>
               </div>
               <div
@@ -3685,7 +3685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="345678234234234240 %"
                     value={345678234234234240}
                   >
-                    345,678T
+                    345,678,234,234,234,240
                   </span>
                 </div>
                 <span
@@ -3764,7 +3764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="456778234234234240 ˚F"
                     value={456778234234234240}
                   >
-                    456,778T
+                    456,778,234,234,234,240
                   </span>
                 </div>
                 <span
@@ -3843,7 +3843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="88888678234234240000 ˚F"
                     value={88888678234234240000}
                   >
-                    88,888,678T
+                    88,888,678,234,234,240,000
                   </span>
                 </div>
                 <span
@@ -4684,7 +4684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="13572 "
                     value={13572}
                   >
-                    14K
+                    13,572
                   </span>
                 </div>
                 <span
@@ -4812,7 +4812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     title="13572 "
                     value={13572}
                   >
-                    14K
+                    13,572
                   </span>
                 </div>
                 <span
