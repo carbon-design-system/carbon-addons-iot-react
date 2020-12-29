@@ -1,12 +1,15 @@
-import React, {useState, useMemo} from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../../../constants/Settings';
-import { ToggleSmall, Dropdown, FormGroup, RadioButton, RadioButtonGroup } from '../../../../../index';
 import {
-  TableCardPropTypes,
-} from '../../../../../constants/CardPropTypes';
+  ToggleSmall,
+  Dropdown,
+  RadioButton,
+  RadioButtonGroup,
+} from '../../../../../index';
+import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -55,8 +58,16 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-  const dataItems = useMemo(() => content?.columns.map(column => column.label), [content]);
-  const [sortByValue, setSortByValue] = useState(dataItems[0]);
+  const dataItems = useMemo(
+    () =>
+      Array.isArray(content?.columns)
+        ? content?.columns.map((column) => column.label)
+        : [],
+    [content]
+  );
+
+  // default to timestamp sort
+  const [sortByValue, setSortByValue] = useState('timestamp');
 
   return (
     <>
@@ -86,47 +97,52 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             }}
           />
       </div> */}
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          id={`${id}_sort_by_dropdown`}
-          titleText={mergedI18n.sortBy}
-          direction="bottom"
-          label=""
-          items={dataItems}
-          light
-          selectedItem={sortByValue}
-          onChange={({ selectedItem }) => {
-              setSortByValue(selectedItem);
-          }}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-          <RadioButtonGroup
-            name={`${baseClassName}--input-radios`}
-            onChange={(evt) =>
-              onChange({
-                ...cardConfig,
-                content: { ...cardConfig.content, sort: evt},
-              })
-            }
-            orientation="vertical"
-            legend={`${mergedI18n.descending}`}
-            labelPosition="right"
-            valueSelected={cardConfig.content?.displayOption}>
-            <RadioButton
-              data-testid={`${baseClassName}--input-radio1`}
-              value="DESC"
-              id={`${baseClassName}--input-radio-1`}
-              labelText={mergedI18n.descending}
+      {!isEmpty(cardConfig?.content?.columns) ? (
+        <>
+          <div className={`${baseClassName}--input`}>
+            <Dropdown
+              id={`${id}_sort_by_dropdown`}
+              titleText={mergedI18n.sortBy}
+              direction="bottom"
+              hideLabel
+              label={mergedI18n.sortBy}
+              items={dataItems}
+              light
+              selectedItem={sortByValue}
+              onChange={({ selectedItem }) => {
+                setSortByValue(selectedItem);
+              }}
             />
-            <RadioButton
-              data-testid={`${baseClassName}--input-radio2`}
-              value="ASC"
-              id={`${baseClassName}--input-radio-2`}
-              labelText={mergedI18n.ascending}
-            />
-          </RadioButtonGroup>
-      </div>
+          </div>
+          <div className={`${baseClassName}--input`}>
+            <RadioButtonGroup
+              name={`${baseClassName}--input-radios`}
+              onChange={(evt) =>
+                onChange({
+                  ...cardConfig,
+                  content: { ...cardConfig.content, sort: evt },
+                })
+              }
+              orientation="vertical"
+              legend={`${mergedI18n.descending}`}
+              labelPosition="right"
+              valueSelected={cardConfig.content?.displayOption}>
+              <RadioButton
+                data-testid={`${baseClassName}--input-radio1`}
+                value="DESC"
+                id={`${baseClassName}--input-radio-1`}
+                labelText={mergedI18n.descending}
+              />
+              <RadioButton
+                data-testid={`${baseClassName}--input-radio2`}
+                value="ASC"
+                id={`${baseClassName}--input-radio-2`}
+                labelText={mergedI18n.ascending}
+              />
+            </RadioButtonGroup>
+          </div>
+        </>
+      ) : null}
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.showHeader}</span>

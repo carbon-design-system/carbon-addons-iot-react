@@ -93,13 +93,9 @@ const TableCardFormContent = ({
   // Need to keep track of the data item that's currently being edited so the detailed modal knows which one to show
   const [editDataItem, setEditDataItem] = useState({});
 
-  const dataSection = useMemo(
-    () =>
-      Array.isArray(columns) // Filter out the fake columns from the selected data items view
-        ? columns.filter((col) => col.label !== '--')
-        : [],
-    [columns]
-  );
+  const dataSection = useMemo(() => (Array.isArray(columns) ? columns : []), [
+    columns,
+  ]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 

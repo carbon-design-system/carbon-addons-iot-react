@@ -143,16 +143,7 @@ export const getDefaultCard = (type, i18n) => {
       return {
         ...baseCardProps,
         content: {
-          columns: [
-            {
-              dataSourceId: 'undefined',
-              label: '--',
-            },
-            {
-              dataSourceId: 'undefined2',
-              label: '--',
-            },
-          ],
+          columns: [],
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
