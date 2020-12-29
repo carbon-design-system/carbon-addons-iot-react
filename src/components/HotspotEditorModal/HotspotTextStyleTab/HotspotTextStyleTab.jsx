@@ -132,6 +132,10 @@ const getSelectedColorItem = (color, colorCollection) => {
     : color;
 };
 
+const getIntOrUndefined = (value) => {
+  return value === '' ? undefined : parseInt(value, 10);
+};
+
 const preventFormSubmission = (e) => e.preventDefault();
 
 /* this component is only used internally where props are defined and set. */
@@ -245,6 +249,7 @@ const HotspotTextStyleTab = ({
               />
 
               <NumberInput
+                allowEmpty
                 id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
                 min={minFontSize}
                 max={maxFontSize}
@@ -255,7 +260,7 @@ const HotspotTextStyleTab = ({
                 invalidText={fontSizeInvalidText}
                 onChange={(event) => {
                   onChange({
-                    fontSize: parseInt(event.imaginaryTarget.value, 10),
+                    fontSize: getIntOrUndefined(event.imaginaryTarget.value),
                   });
                 }}
               />
@@ -290,9 +295,8 @@ const HotspotTextStyleTab = ({
                 invalidText={fillOpacityInvalidText}
                 onChange={(event) => {
                   onChange({
-                    backgroundOpacity: parseInt(
-                      event.imaginaryTarget.value,
-                      10
+                    backgroundOpacity: getIntOrUndefined(
+                      event.imaginaryTarget.value
                     ),
                   });
                 }}
@@ -323,7 +327,7 @@ const HotspotTextStyleTab = ({
                 invalidText={borderWidthInvalidText}
                 onChange={(event) => {
                   onChange({
-                    borderWidth: parseInt(event.imaginaryTarget.value, 10),
+                    borderWidth: getIntOrUndefined(event.imaginaryTarget.value),
                   });
                 }}
               />

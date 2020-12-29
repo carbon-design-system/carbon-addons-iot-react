@@ -148,9 +148,17 @@ function hotspotEditorReducer(state, { type, payload }) {
     }
     // TEXT HOTSPOT STYLE CHANGE
     case hotspotActionTypes.textHotspotStyleChange: {
-      const modifiedHotspot = update(state.selectedHotspot, {
-        $merge: payload,
-      });
+      const styleKey = Object.getOwnPropertyNames(payload)[0];
+      const updateSpec =
+        payload[styleKey] === undefined
+          ? {
+              $unset: [styleKey],
+            }
+          : {
+              $merge: payload,
+            };
+
+      const modifiedHotspot = update(state.selectedHotspot, updateSpec);
 
       return update(state, {
         selectedHotspot: { $set: modifiedHotspot },

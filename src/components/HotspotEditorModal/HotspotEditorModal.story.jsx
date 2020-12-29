@@ -164,6 +164,10 @@ export const WidthExistingHotspots = () => {
           content: { title: 'Storage' },
           backgroundColor: gray50,
           backgroundOpacity: 50,
+          fontSize: 12,
+          fontColor: gray50,
+          borderColor: gray50,
+          borderWidth: 1,
         },
         {
           x: 35,
