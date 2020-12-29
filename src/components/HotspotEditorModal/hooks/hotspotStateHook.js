@@ -1,11 +1,37 @@
 import * as React from 'react';
 import update from 'immutability-helper';
 import merge from 'lodash/merge';
+import PropTypes from 'prop-types';
+
+import { HotspotPropTypes } from '../../../constants/SharedPropTypes';
 
 const hotspotTypes = {
   FIXED: 'fixed',
   DYNAMIC: 'dynamic',
   TEXT: 'text',
+};
+
+const hotspotStateProptypes = {
+  /** The current thresholds from a card configuration object */
+  thresholds: PropTypes.arrayOf(PropTypes.object),
+  /** All the curren hotspots, including dynamic demo hotspots */
+  hotspots: PropTypes.arrayOf(HotspotPropTypes),
+  /** The type of hotspot that is currently being shown by the context switcher */
+  currentType: PropTypes.oneOf([
+    hotspotTypes.FIXED,
+    hotspotTypes.DYNAMIC,
+    hotspotTypes.TEXT,
+  ]),
+  /** The currently selected hotspot */
+  selectedHotspot: HotspotPropTypes,
+  /**  */
+  selectedHotspotIndex: PropTypes.number,
+  /** The data item containing the x source of the dynammic hotspot */
+  dynamicHotspotSourceX: PropTypes.shape({ dataSourceId: PropTypes.string }),
+  /** The data item containing the y source of the dynammic hotspot */
+  dynamicHotspotSourceY: PropTypes.shape({ dataSourceId: PropTypes.string }),
+  /** Loading flag for dynamic hotspots */
+  dynamicHotspotsLoading: PropTypes.bool,
 };
 
 const hotspotActionTypes = {
@@ -58,7 +84,7 @@ const getHotspotUpdate = (state, mergeSpec) => {
 
 /**
  * hotspotEditorReducer
- * @param {*} state
+ * @param {hotspotStateProptypes} state
  * @param {*} action
  */
 function hotspotEditorReducer(state, { type, payload }) {
@@ -85,11 +111,16 @@ function hotspotEditorReducer(state, { type, payload }) {
       const defaultContent =
         state.currentType === hotspotTypes.TEXT ? { title: '' } : {};
 
+      const createableType =
+        state.currentType === hotspotTypes.DYNAMIC
+          ? hotspotTypes.FIXED
+          : state.currentType;
+
       const newHotspot = {
         ...payload.hotspotDefaults,
         ...payload.position,
         content: defaultContent,
-        type: state.currentType,
+        type: createableType,
       };
 
       return isPositionAvailable
@@ -207,7 +238,9 @@ function hotspotEditorReducer(state, { type, payload }) {
 }
 
 /**
- * TODO: describe the state
+ * The HotspotEditorModal's custom state manager hook that allows for inversion of control
+ * by accepting a custom the reducer, which can be based on the exported default hotspotEditorReducer.
+ * @param {Object} Configuration with 'reducer' and 'initialState'
  */
 function useHotspotEditorState({
   reducer = hotspotEditorReducer,
@@ -342,6 +375,12 @@ function useHotspotEditorState({
     updateDynamicHotspotSourceY,
   };
 }
+useHotspotEditorState.prototypes = {
+  configuration: PropTypes.shape({
+    reducer: PropTypes.func,
+    initialState: hotspotStateProptypes,
+  }),
+};
 
 export {
   hotspotActionTypes,

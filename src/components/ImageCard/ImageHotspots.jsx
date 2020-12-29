@@ -5,9 +5,12 @@ import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
 import { settings } from '../../constants/Settings';
-import { HotspotIconPropType } from '../../constants/SharedPropTypes';
+import {
+  HotspotIconPropType,
+  HotspotPropTypes,
+} from '../../constants/SharedPropTypes';
 
-import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
+import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
 import HotspotContent from './HotspotContent';
 
