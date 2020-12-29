@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
+import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -53,6 +54,64 @@ const defaultProps = {
   availableDimensions: {},
 };
 
+/**
+ * Helper function to update the column sort
+ * @param {array} columns existing array of columns
+ * @param {*} columnDataSourceId
+ * @param {*} sortDirection
+ * @returns {array} newColumns returned with updated sort
+ */
+export const updateColumnSort = (columns, sortDataSourceId, sortDirection) => {
+  const existingColumnSort = columns.find((col) => col.sort);
+  if (
+    sortDataSourceId === existingColumnSort?.dataSourceId &&
+    sortDirection !== existingColumnSort?.sort
+  ) {
+    // update existing column sort to the new sort direction
+    return update(columns, {
+      $splice: [
+        [
+          columns.findIndex((col) => col.sort),
+          1,
+          { ...existingColumnSort, sort: sortDirection },
+        ],
+      ],
+    });
+  }
+  // Is it a new column sort?
+  if (sortDataSourceId !== existingColumnSort?.dataSourceId) {
+    const newColumnToSort = columns.find(
+      (col) => col.dataSourceId === sortDataSourceId
+    );
+    return update(columns, {
+      $splice: [
+        // if I have an existing Column, I need to clear the sort
+        ...(existingColumnSort
+          ? [
+              [
+                columns.findIndex((col) => col.sort),
+                1,
+                { ...existingColumnSort, sort: undefined }, // clear the existing sort
+              ],
+            ]
+          : [[]]),
+        [
+          // update the new column with the new sort direction
+          columns.findIndex((col) => col.dataSourceId === sortDataSourceId),
+          1,
+          { ...newColumnToSort, sort: sortDirection },
+        ],
+      ],
+    });
+  }
+  // otherwise don't sort anything
+  return columns;
+};
+
+/**
+ * Stateless render component that renders the current settings panel based on the inbound cardConfig prop
+ * and calls onChange with the updated cardConfig object every time the user interacts with the form
+ */
 const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
@@ -61,42 +120,41 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const dataItems = useMemo(
     () =>
       Array.isArray(content?.columns)
-        ? content?.columns.map((column) => column.label)
+        ? content?.columns.map((column) => column.dataSourceId)
         : [],
     [content]
   );
 
-  // default to timestamp sort
-  const [sortByValue, setSortByValue] = useState('timestamp');
+  // figure out if a column has been updated to be the default sort column
+  const defaultSortColumn = useMemo(
+    () =>
+      Array.isArray(content?.columns)
+        ? content.columns.find((col) => col.sort)
+        : null,
+    [content]
+  );
+
+  // updates the sort based on the direction
+  const handleSortColumn = useCallback(
+    (sortDirection) =>
+      onChange(
+        update(cardConfig, {
+          content: {
+            columns: {
+              $set: updateColumnSort(
+                cardConfig?.content?.columns,
+                defaultSortColumn?.dataSourceId,
+                sortDirection
+              ),
+            },
+          },
+        })
+      ),
+    [cardConfig, defaultSortColumn, onChange]
+  );
 
   return (
     <>
-      {/* This is handled by the card. Do we want to override this or will it mess with the grid layout?
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-            id={`${cardConfig.id}_rows_per_page`}
-            direction="bottom"
-            label={mergedI18n.rowsPerPage}
-            light
-            titleText={mergedI18n.rowsPerPage}
-            items={[]}
-            selectedItem={cardConfig.content?.categoryDataSourceId}
-            onChange={({ selectedItem }) => {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...cardConfig.content,
-                  timeDataSourceId: 'timestamp',
-                  categoryDataSourceId: selectedItem,
-                },
-                dataSource: {
-                  ...cardConfig.dataSource,
-                  groupBy: [selectedItem],
-                },
-              });
-            }}
-          />
-      </div> */}
       {!isEmpty(cardConfig?.content?.columns) ? (
         <>
           <div className={`${baseClassName}--input`}>
@@ -104,29 +162,39 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               id={`${id}_sort_by_dropdown`}
               titleText={mergedI18n.sortBy}
               direction="bottom"
-              hideLabel
               label={mergedI18n.sortBy}
               items={dataItems}
               light
-              selectedItem={sortByValue}
+              selectedItem={defaultSortColumn?.dataSourceId}
               onChange={({ selectedItem }) => {
-                setSortByValue(selectedItem);
+                const existingColumn = cardConfig?.content?.columns.find(
+                  (col) => col.dataSourceId === selectedItem
+                );
+                // default the sort for the newly selected field
+                onChange(
+                  update(cardConfig, {
+                    content: {
+                      columns: {
+                        $set: updateColumnSort(
+                          cardConfig?.content?.columns,
+                          selectedItem,
+                          existingColumn?.type === 'TIMESTAMP' ? 'DESC' : 'ASC'
+                        ),
+                      },
+                    },
+                  })
+                );
               }}
             />
           </div>
           <div className={`${baseClassName}--input`}>
             <RadioButtonGroup
               name={`${baseClassName}--input-radios`}
-              onChange={(evt) =>
-                onChange({
-                  ...cardConfig,
-                  content: { ...cardConfig.content, sort: evt },
-                })
-              }
+              onChange={(evt) => handleSortColumn(evt)}
               orientation="vertical"
               legend={`${mergedI18n.descending}`}
               labelPosition="right"
-              valueSelected={cardConfig.content?.displayOption}>
+              valueSelected={defaultSortColumn?.sort}>
               <RadioButton
                 data-testid={`${baseClassName}--input-radio1`}
                 value="DESC"

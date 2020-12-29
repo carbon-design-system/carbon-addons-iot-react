@@ -460,6 +460,7 @@ export const handleDataSeriesChange = (
               dataSourceId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
+              sort: 'DESC',
             };
       const existingDimensionColumns = Array.isArray(content?.columns)
         ? content.columns.filter((col) => col.type === 'DIMENSION')

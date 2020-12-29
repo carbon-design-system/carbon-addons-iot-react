@@ -122,9 +122,7 @@ const CardEditFormContent = ({
           i18n={mergedI18n}
           onChange={onChange}
         />
-      ) : type === CARD_TYPES.TABLE ?
-      (
-
+      ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
           cardConfig={cardConfig}
           i18n={mergedI18n}
@@ -135,9 +133,7 @@ const CardEditFormContent = ({
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
         />
-      )
-
-      :(
+      ) : (
         <DataSeriesFormContent
           cardConfig={cardConfig}
           onChange={onChange}

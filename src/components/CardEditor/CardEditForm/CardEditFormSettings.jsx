@@ -58,7 +58,12 @@ const defaultProps = {
   },
 };
 
-const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions }) => {
+const CardEditFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  availableDimensions,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
 
@@ -103,7 +108,7 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions 
           i18n={mergedI18n}
           onChange={onChange}
         />
-      )
+      );
     default:
       return null;
   }
