@@ -46,11 +46,16 @@ const defaultProps = {
     browseImages: 'Add from gallery',
     insertUrl: 'Insert from URL',
     urlInput: 'Type or insert URL',
-    errorTitle: 'Error: ',
+    errorTitle: 'Upload error: ',
+    fileTooLarge: 'Image file is too large',
+    wrongFileType: (accept) =>
+      `This file is not one of the accepted file types, ${accept.join(', ')}`,
   },
   locale: 'en',
   content: {},
+  maxFileSizeInBytes: 1048576,
   accept: null,
+  validateUploadedImage: null,
   onUpload: () => {},
   onBrowseClick: null,
 };
@@ -68,10 +73,12 @@ const ImageCard = ({
   isResizable,
   error,
   isLoading,
+  maxFileSizeInBytes,
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
   locale,
   onUpload,
+  validateUploadedImage,
   onBrowseClick,
   ...others
 }) => {
@@ -142,6 +149,7 @@ const ImageCard = ({
                     onBrowseClick={onBrowseClick}
                     width={width}
                     height={height}
+                    maxFileSizeInBytes={maxFileSizeInBytes}
                     onUpload={handleOnUpload}
                     i18n={pick(
                       otherLabels,
@@ -151,9 +159,13 @@ const ImageCard = ({
                       'uploadByURLButton',
                       'browseImages',
                       'insertUrl',
-                      'urlInput'
+                      'urlInput',
+                      'fileTooLarge',
+                      'errorTitle',
+                      'wrongFileType'
                     )}
                     hasInsertFromUrl={hasInsertFromUrl}
+                    validateUploadedImage={validateUploadedImage}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots

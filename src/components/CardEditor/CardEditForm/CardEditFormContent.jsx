@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  CARD_SIZES,
-  CARD_DIMENSIONS,
-  ALLOWED_CARD_SIZES_PER_TYPE,
-  CARD_TYPES,
-} from '../../../constants/LayoutConstants';
-import { settings } from '../../../constants/Settings';
-import { TextArea, TextInput, Dropdown } from '../../../index';
-import { timeRangeToJSON } from '../../DashboardEditor/editorUtils';
+import { CARD_TYPES } from '../../../constants/LayoutConstants';
 import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
 
+import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
-
-const { iotPrefix } = settings;
 
 const propTypes = {
   /** card data value */
@@ -51,22 +42,6 @@ const propTypes = {
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    openEditorButton: PropTypes.string,
-    cardSize_SMALL: PropTypes.string,
-    cardSize_SMALLWIDE: PropTypes.string,
-    cardSize_MEDIUM: PropTypes.string,
-    cardSize_MEDIUMTHIN: PropTypes.string,
-    cardSize_MEDIUMWIDE: PropTypes.string,
-    cardSize_LARGE: PropTypes.string,
-    cardSize_LARGETHIN: PropTypes.string,
-    cardSize_LARGEWIDE: PropTypes.string,
-    chartType_BAR: PropTypes.string,
-    chartType_LINE: PropTypes.string,
-    barChartType_SIMPLE: PropTypes.string,
-    barChartType_GROUPED: PropTypes.string,
-    barChartType_STACKED: PropTypes.string,
-    barChartLayout_HORIZONTAL: PropTypes.string,
-    barChartLayout_VERTICAL: PropTypes.string,
     cardTitle: PropTypes.string,
     description: PropTypes.string,
     size: PropTypes.string,
@@ -106,68 +81,12 @@ const propTypes = {
 
 const defaultProps = {
   cardConfig: {},
-  i18n: {
-    openEditorButton: 'Open JSON editor',
-    cardSize_SMALL: 'Small',
-    cardSize_SMALLWIDE: 'Small wide',
-    cardSize_MEDIUM: 'Medium',
-    cardSize_MEDIUMTHIN: 'Medium thin',
-    cardSize_MEDIUMWIDE: 'Medium wide',
-    cardSize_LARGE: 'Large',
-    cardSize_LARGETHIN: 'Large thin',
-    cardSize_LARGEWIDE: 'Large wide',
-    chartType_BAR: 'Bar',
-    chartType_LINE: 'Line',
-    barChartType_SIMPLE: 'Simple',
-    barChartType_GROUPED: 'Grouped',
-    barChartType_STACKED: 'Stacked',
-    barChartLayout_HORIZONTAL: 'Horizontal',
-    barChartLayout_VERTICAL: 'Vertical',
-    cardTitle: 'Card title',
-    description: 'Description (Optional)',
-    size: 'Size',
-    selectASize: 'Select a size',
-    timeRange: 'Time range',
-    selectATimeRange: 'Select a time range',
-    last24HoursLabel: 'Last 24 hours',
-    last7DaysLabel: 'Last 7 days',
-    lastMonthLabel: 'Last month',
-    lastQuarterLabel: 'Last quarter',
-    lastYearLabel: 'Last year',
-    thisWeekLabel: 'This week',
-    thisMonthLabel: 'This month',
-    thisQuarterLabel: 'This quarter',
-    thisYearLabel: 'This year',
-  },
+  i18n: {},
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
   currentBreakpoint: 'xl',
   availableDimensions: {},
-};
-
-const defaultTimeRangeOptions = [
-  'last24Hours',
-  'last7Days',
-  'lastMonth',
-  'lastQuarter',
-  'lastYear',
-  'thisWeek',
-  'thisMonth',
-  'thisQuarter',
-  'thisYear',
-];
-
-/**
- * Returns card size and dimensions labels
- * @param {string} size
- * @param {Object<string>} i18n
- * @returns {string}
- */
-export const getCardSizeText = (size, i18n, breakpoint) => {
-  const sizeName = i18n[`cardSize_${size}`];
-  const sizeDimensions = `(${CARD_DIMENSIONS[size][breakpoint].w}x${CARD_DIMENSIONS[size][breakpoint].h})`;
-  return `${sizeName} ${sizeDimensions}`;
 };
 
 const CardEditFormContent = ({
@@ -180,118 +99,39 @@ const CardEditFormContent = ({
   currentBreakpoint,
   availableDimensions,
 }) => {
-  const { title, description, size, type, id, timeRange } = cardConfig;
+  const { type, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
-  const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const validTimeRanges = getValidTimeRanges
-    ? getValidTimeRanges(cardConfig, selectedDataItems)
-    : defaultTimeRangeOptions;
-
-  const validTimeRangeOptions = validTimeRanges
-    ? validTimeRanges.map((range) => ({
-        id: range,
-        text: mergedI18n[`${range}Label`] || range,
-      }))
-    : [];
-
   return (
     <>
-      <div className={`${baseClassName}--input`}>
-        <TextInput
-          id={`${id}_title`}
-          labelText={mergedI18n.cardTitle}
-          light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, title: evt.target.value })
-          }
-          value={title}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <TextArea
-          id={`${id}_description`}
-          labelText={mergedI18n.description}
-          light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, description: evt.target.value })
-          }
-          value={description}
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          id={`${id}_size`}
-          label={mergedI18n.selectASize}
-          direction="bottom"
-          itemToString={(item) => item.text}
-          items={(
-            ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)
-          ).map((cardSize) => {
-            return {
-              id: cardSize,
-              text: getCardSizeText(cardSize, mergedI18n, currentBreakpoint),
-            };
-          })}
-          light
-          selectedItem={{
-            id: size,
-            text: getCardSizeText(size, mergedI18n, currentBreakpoint),
-          }}
-          onChange={({ selectedItem }) => {
-            onChange({ ...cardConfig, size: selectedItem.id });
-          }}
-          titleText={mergedI18n.size}
-        />
-      </div>
-      {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.VALUE ? (
-        <>
-          <div className={`${baseClassName}--input`}>
-            <Dropdown
-              id={`${id}_time_range`}
-              label={mergedI18n.selectATimeRange}
-              direction="bottom"
-              itemToString={(item) => item.text}
-              items={validTimeRangeOptions}
-              selectedItem={validTimeRangeOptions.find(
-                // This is a hacky workaround for a carbon issue
-                (validTimeRangeOption) =>
-                  validTimeRangeOption.id === selectedTimeRange
-              )}
-              light
-              onChange={({ selectedItem }) => {
-                const timeRangeInterval = selectedItem.id;
-                const { range } = timeRangeToJSON[timeRangeInterval];
-                setSelectedTimeRange(timeRangeInterval);
-                onChange({
-                  ...cardConfig,
-                  timeRange: timeRangeInterval,
-                  dataSource: { ...cardConfig.dataSource, range },
-                });
-              }}
-              titleText={mergedI18n.timeRange}
-            />
-          </div>
-          <DataSeriesFormContent
-            cardConfig={cardConfig}
-            onChange={onChange}
-            dataItems={dataItems}
-            setSelectedDataItems={setSelectedDataItems}
-            selectedTimeRange={selectedTimeRange}
-            getValidDataItems={getValidDataItems}
-            availableDimensions={availableDimensions}
-            i18n={mergedI18n}
-          />
-        </>
-      ) : null}
-      {type === CARD_TYPES.IMAGE && (
+      <CommonCardEditFormFields
+        cardConfig={cardConfig}
+        onChange={onChange}
+        i18n={mergedI18n}
+        getValidTimeRanges={getValidTimeRanges}
+        currentBreakpoint={currentBreakpoint}
+        selectedDataItems={selectedDataItems}
+        setSelectedTimeRange={setSelectedTimeRange}
+      />
+      {type === CARD_TYPES.IMAGE ? (
         <ImageCardFormContent
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+        />
+      ) : (
+        <DataSeriesFormContent
+          cardConfig={cardConfig}
+          onChange={onChange}
+          dataItems={dataItems}
+          selectedDataItems={selectedDataItems}
+          setSelectedDataItems={setSelectedDataItems}
+          selectedTimeRange={selectedTimeRange}
+          getValidDataItems={getValidDataItems}
+          availableDimensions={availableDimensions}
+          i18n={mergedI18n}
         />
       )}
     </>

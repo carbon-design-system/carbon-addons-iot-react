@@ -194,6 +194,8 @@ const getSuiteHeaderData = async ({
   const profileData = await api('GET', '/profile');
   const appsData = await api('GET', '/applications');
   const eamData = await api('GET', '/config/eam');
+  const mroioData = await api('GET', '/config/mroio');
+  const apmData = await api('GET', '/config/apm');
   const i18nData = await api('GET', `/i18n/header/${isTest ? 'en' : lang}`);
 
   // Routes
@@ -224,6 +226,26 @@ const getSuiteHeaderData = async ({
               id: 'eam',
               name: 'Manage',
               href: eamData.url,
+              isExternal: true,
+            },
+          ]
+        : []),
+      ...(mroioData?.url
+        ? [
+            {
+              id: 'mroio',
+              name: 'MRO Inventory Optimization',
+              href: mroioData.url,
+              isExternal: true,
+            },
+          ]
+        : []),
+      ...(apmData?.dashboard
+        ? [
+            {
+              id: 'apm',
+              name: 'Asset Performance Management for Energy and Utilities',
+              href: apmData.dashboard,
               isExternal: true,
             },
           ]

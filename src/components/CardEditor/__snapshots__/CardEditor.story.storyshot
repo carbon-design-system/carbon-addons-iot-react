@@ -357,7 +357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="iot--card-edit-form--form-section"
               >
-                Data series
+                Data
               </div>
               <div
                 className="iot--card-edit-form--input"
@@ -1109,6 +1109,79 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="downshift-1-toggle-button"
+                    id="downshift-1-label"
+                  >
+                    Time range
+                  </label>
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="image_time_range"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-1-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Select a time range
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-1-label"
+                      className="bx--list-box__menu"
+                      id="downshift-1-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card-edit-form--form-section iot--card-edit-form--form-section-image"
               >
                 Image
@@ -1276,8 +1349,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <label
                       className="bx--label"
-                      htmlFor="downshift-1-toggle-button"
-                      id="downshift-1-label"
+                      htmlFor="downshift-2-toggle-button"
+                      id="downshift-2-label"
                     >
                       Background color
                     </label>
@@ -1291,10 +1364,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         aria-disabled={false}
                         aria-expanded={false}
                         aria-haspopup="listbox"
-                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                        aria-labelledby="downshift-2-label downshift-2-toggle-button"
                         className="bx--list-box__field"
                         disabled={false}
-                        id="downshift-1-toggle-button"
+                        id="downshift-2-toggle-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         type="button"
@@ -1329,9 +1402,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </div>
                       </button>
                       <div
-                        aria-labelledby="downshift-1-label"
+                        aria-labelledby="downshift-2-label"
                         className="bx--list-box__menu"
-                        id="downshift-1-menu"
+                        id="downshift-2-menu"
                         onBlur={[Function]}
                         onKeyDown={[Function]}
                         onMouseLeave={[Function]}
@@ -1877,7 +1950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="iot--card-edit-form--form-section"
               >
-                Data series
+                Data
               </div>
               <div
                 className="iot--card-edit-form--input"
@@ -2036,11 +2109,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span
                                   className="bx--assistive-text"
                                 >
-                                  Edit
+                                  Remove
                                 </span>
                                 <svg
                                   aria-hidden="true"
-                                  aria-label="Edit"
+                                  aria-label="Remove"
                                   className="bx--btn__icon"
                                   fill="currentColor"
                                   focusable="false"
@@ -2052,7 +2125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                    d="M8 15H24V17H8z"
                                   />
                                 </svg>
                               </button>
@@ -2110,11 +2183,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <span
                                   className="bx--assistive-text"
                                 >
-                                  Edit
+                                  Remove
                                 </span>
                                 <svg
                                   aria-hidden="true"
-                                  aria-label="Edit"
+                                  aria-label="Remove"
                                   className="bx--btn__icon"
                                   fill="currentColor"
                                   focusable="false"
@@ -2126,7 +2199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                    d="M8 15H24V17H8z"
                                   />
                                 </svg>
                               </button>
@@ -2138,6 +2211,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Customize
+                <svg
+                  aria-hidden="true"
+                  aria-label="Customize"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
               aria-hidden={true}
@@ -2715,7 +2814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--card-edit-form--form-section"
                 >
-                  Data series
+                  Data
                 </div>
                 <div
                   className="iot--card-edit-form--input"
@@ -3065,6 +3164,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         className="iot--card-editor"
       >
         <div
+          className="iot--card-editor--header"
+        >
+          <h2
+            className="iot--card-editor--header--title"
+          >
+            Gallery
+          </h2>
+        </div>
+        <div
           className="iot--card-editor--content"
         >
           <div
@@ -3073,18 +3181,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             <div
               className="iot--list-header-container"
             >
-              <div
-                className="iot--list-header"
-              >
-                <div
-                  className="iot--list-header--title"
-                >
-                  Gallery
-                </div>
-                <div
-                  className="iot--list-header--btn-container"
-                />
-              </div>
               <div
                 className="iot--list-header--search"
               >

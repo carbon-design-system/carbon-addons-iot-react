@@ -6257,6 +6257,9 @@ Map {
       "className": "",
       "content": Array [],
       "defaultView": "grid",
+      "deleteLabelText": "Delete",
+      "deleteModalLabelText": "Delete image",
+      "deleteModalTitleText": [Function],
       "footer": Object {},
       "gridButtonText": "Grid",
       "instructionText": "Select the image that you want to display on this card.",
@@ -6266,6 +6269,7 @@ Map {
       "modalPrimaryButtonLabelText": "Select",
       "modalSecondaryButtonLabelText": "Cancel",
       "modalTitleText": "Image gallery",
+      "onDelete": null,
       "searchPlaceHolderText": "Search image by file name",
       "searchProperty": "id",
     },
@@ -6310,6 +6314,15 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "deleteLabelText": Object {
+        "type": "string",
+      },
+      "deleteModalLabelText": Object {
+        "type": "string",
+      },
+      "deleteModalTitleText": Object {
+        "type": "func",
       },
       "error": Object {
         "type": "string",
@@ -6401,6 +6414,9 @@ Map {
       },
       "onClose": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onDelete": Object {
         "type": "func",
       },
       "onSubmit": Object {
@@ -8481,10 +8497,12 @@ Map {
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
+      "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
       "onSubmit": null,
       "onValidateCardJson": null,
+      "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
       "supportedCardTypes": Array [
@@ -8618,6 +8636,15 @@ Map {
             "headerXlargeButton": Object {
               "type": "string",
             },
+            "imageGalleryDeleteLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryDeleteModalLabelText": Object {
+              "type": "string",
+            },
+            "imageGalleryDeleteModalTitleText": Object {
+              "type": "func",
+            },
             "imageGalleryGridButtonText": Object {
               "type": "string",
             },
@@ -8710,6 +8737,9 @@ Map {
       "onExport": Object {
         "type": "func",
       },
+      "onImageDelete": Object {
+        "type": "func",
+      },
       "onImport": Object {
         "type": "func",
       },
@@ -8720,6 +8750,9 @@ Map {
         "type": "func",
       },
       "onValidateCardJson": Object {
+        "type": "func",
+      },
+      "onValidateUploadedImage": Object {
         "type": "func",
       },
       "renderCardPreview": Object {
@@ -12745,16 +12778,20 @@ Map {
         "browseImages": "Add from gallery",
         "dropContainerDescText": "Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP",
         "dropContainerLabelText": "Drag file here or click to upload file",
-        "errorTitle": "Error: ",
+        "errorTitle": "Upload error: ",
+        "fileTooLarge": "Image file is too large",
         "insertUrl": "Insert from URL",
         "loadingDataLabel": "Loading hotspot data",
         "uploadByURLButton": "OK",
         "uploadByURLCancel": "Cancel",
         "urlInput": "Type or insert URL",
+        "wrongFileType": [Function],
       },
       "locale": "en",
+      "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "validateUploadedImage": null,
     },
     "propTypes": Object {
       "accept": Object {
@@ -13399,6 +13436,9 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "maxFileSizeInBytes": Object {
+        "type": "number",
+      },
       "onBlur": Object {
         "type": "func",
       },
@@ -13503,6 +13543,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "validateUploadedImage": Object {
+        "type": "func",
       },
       "values": Object {
         "args": Array [

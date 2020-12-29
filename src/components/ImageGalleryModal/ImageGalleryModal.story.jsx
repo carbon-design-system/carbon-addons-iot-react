@@ -56,6 +56,7 @@ export const Basic = () => {
         key={regenerationKey} // Only used for story knob demo purpose
         onSubmit={action('onSubmit')}
         onClose={action('onClose')}
+        onDelete={action('onDelete')}
         content={editableContent}
         searchProperty={select(
           'searchProperty',
