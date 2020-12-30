@@ -67,6 +67,7 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -98,6 +99,7 @@ const defaultProps = {
   availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  testID: 'card-edit-form',
 };
 
 /**
@@ -176,6 +178,7 @@ const CardEditForm = ({
   getValidTimeRanges,
   currentBreakpoint,
   availableDimensions,
+  testID,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -239,6 +242,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
+            data-testid={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}

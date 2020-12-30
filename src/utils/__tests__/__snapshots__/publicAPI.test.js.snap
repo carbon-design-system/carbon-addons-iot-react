@@ -8800,6 +8800,7 @@ Map {
         "GROUPED_BAR",
         "STACKED_BAR",
       ],
+      "testID": "card-editor",
     },
     "propTypes": Object {
       "availableDimensions": Object {
@@ -8944,6 +8945,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
