@@ -69,7 +69,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         title="elevators"
         cardConfig={cardConfigWithPresets}
@@ -97,7 +96,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -133,7 +131,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -150,7 +147,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -166,7 +162,6 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
-      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [
@@ -186,7 +181,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -204,7 +198,6 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
-      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [

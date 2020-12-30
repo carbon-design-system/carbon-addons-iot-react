@@ -11,17 +11,7 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  hotspotIndex: PropTypes.number.isRequired,
   hotspot: PropTypes.shape({}),
-  thresholds: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      comparison: PropTypes.string,
-      value: PropTypes.number,
-      color: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -64,7 +54,6 @@ const propTypes = {
 const defaultProps = {
   hotspot: {},
   cardConfig: {},
-  thresholds: [],
   i18n: {
     selectDataItemsText: 'Select data items',
     dataItemText: 'Data items',
@@ -89,8 +78,6 @@ export const formatDataItemsForDropdown = (dataItems) =>
   }));
 
 const HotspotEditorDataSourceTab = ({
-  hotspotIndex,
-  thresholds,
   hotspot,
   cardConfig,
   dataItems,
@@ -173,11 +160,6 @@ const HotspotEditorDataSourceTab = ({
                 onClick={() => {
                   setEditDataItem({
                     ...dataItem,
-                    hotspotIndex,
-                    thresholds: thresholds.filter(
-                      (threshold) =>
-                        threshold.dataSourceId === dataItem.dataSourceId
-                    ),
                   });
                   setShowEditor(true);
                 }}

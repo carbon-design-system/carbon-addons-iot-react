@@ -24,8 +24,6 @@ const hotspotStateProptypes = {
   ]),
   /** The currently selected hotspot */
   selectedHotspot: HotspotPropTypes,
-  /**  */
-  selectedHotspotIndex: PropTypes.number,
   /** The data item containing the x source of the dynammic hotspot */
   dynamicHotspotSourceX: PropTypes.shape({ dataSourceId: PropTypes.string }),
   /** The data item containing the y source of the dynammic hotspot */
@@ -105,6 +103,7 @@ function hotspotEditorReducer(state, { type, payload }) {
                     label: payload.label,
                     unit: payload.unit,
                     dataFilter: payload.dataFilter,
+                    thresholds: payload.thresholds,
                   },
                 },
               },
@@ -141,7 +140,6 @@ function hotspotEditorReducer(state, { type, payload }) {
 
       return isPositionAvailable
         ? update(state, {
-            selectedHotspotIndex: { $set: state.hotspots.lenght },
             selectedHotspot: { $set: newHotspot },
             hotspots: { $push: [newHotspot] },
           })
@@ -157,7 +155,6 @@ function hotspotEditorReducer(state, { type, payload }) {
       const defaultTypeWhenMissing = hotspotTypes.FIXED;
 
       return update(state, {
-        selectedHotspotIndex: { $set: hotspotIndex },
         selectedHotspot: { $set: hotspot },
         currentType: { $set: hotspot.type ?? defaultTypeWhenMissing },
       });
@@ -185,14 +182,14 @@ function hotspotEditorReducer(state, { type, payload }) {
     case hotspotActionTypes.currentTypeSwitch: {
       return update(state, {
         currentType: { $set: payload },
-        $unset: ['selectedHotspot', 'selectedHotspotIndex'],
+        $unset: ['selectedHotspot'],
       });
     }
     // SELECTED HOTSPOT DELETE
     case hotspotActionTypes.selectedHotspotDelete: {
       return update(state, {
         hotspots: { $splice: [[getSelectedIndex(state), 1]] },
-        $unset: ['selectedHotspot', 'selectedHotspotIndex'],
+        $unset: ['selectedHotspot'],
       });
     }
     // TEXT HOTSPOT CONTENT CHANGE
@@ -210,7 +207,7 @@ function hotspotEditorReducer(state, { type, payload }) {
     // DYNAMIC HOTSPOT SOURCE X CHANGE
     case hotspotActionTypes.dynamicHotspotSourceXChange: {
       return update(state, {
-        $unset: ['selectedHotspot', 'selectedHotspotIndex'],
+        $unset: ['selectedHotspot'],
         dynamicHotspotSourceX: { $set: payload },
       });
     }
@@ -218,7 +215,7 @@ function hotspotEditorReducer(state, { type, payload }) {
     // DYNAMIC HOTSPOT SOURCE Y CHANGE
     case hotspotActionTypes.dynamicHotspotSourceYChange: {
       return update(state, {
-        $unset: ['selectedHotspot', 'selectedHotspotIndex'],
+        $unset: ['selectedHotspot'],
         dynamicHotspotSourceY: { $set: payload },
       });
     }
@@ -248,7 +245,6 @@ function hotspotEditorReducer(state, { type, payload }) {
           arr.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
         $unset: [
           'selectedHotspot',
-          'selectedHotspotIndex',
           'dynamicHotspotSourceX',
           'dynamicHotspotSourceY',
         ],
@@ -271,13 +267,9 @@ function useHotspotEditorState({
   initialState = {},
 } = {}) {
   const defaultState = {
-    thresholds: [],
     hotspots: [],
     currentType: hotspotTypes.FIXED,
     selectedHotspot: undefined,
-    // TODO: Would be nice if we could skip dealing with this index used by the HotspotEditorDataSourceTab
-    // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
-    selectedHotspotIndex: undefined,
     dynamicHotspotSourceX: undefined,
     dynamicHotspotSourceY: undefined,
     dynamicHotspotsLoading: false,
@@ -288,7 +280,6 @@ function useHotspotEditorState({
     {
       hotspots,
       selectedHotspot,
-      selectedHotspotIndex,
       currentType,
       thresholds,
       dynamicHotspotsLoading,
@@ -379,7 +370,6 @@ function useHotspotEditorState({
     currentType,
     hotspots,
     selectedHotspot,
-    selectedHotspotIndex,
     thresholds,
     dynamicHotspotsLoading,
     dynamicHotspotSourceX,

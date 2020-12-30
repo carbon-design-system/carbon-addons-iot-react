@@ -191,7 +191,7 @@ export const WidthExistingHotspots = () => {
                     comparison: '>',
                     value: 30.5,
                     icon: 'Warning',
-                    color: red50,
+                    color: '#da1e28',
                   },
                 ],
               },

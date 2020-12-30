@@ -57,15 +57,6 @@ const propTypes = {
     id: PropTypes.string,
     size: PropTypes.string,
     title: PropTypes.string,
-    thresholds: PropTypes.arrayOf(
-      PropTypes.shape({
-        dataSourceId: PropTypes.string,
-        comparison: PropTypes.string,
-        value: PropTypes.number,
-        color: PropTypes.string,
-        icon: PropTypes.string,
-      })
-    ),
     type: PropTypes.string,
     values: PropTypes.shape({
       hotspots: PropTypes.arrayOf(PropTypes.object),
@@ -288,8 +279,6 @@ const HotspotEditorModal = ({
     currentType,
     hotspots,
     selectedHotspot,
-    selectedHotspotIndex,
-    thresholds,
     dynamicHotspotsLoading,
     dynamicHotspotSourceX,
     dynamicHotspotSourceY,
@@ -311,7 +300,6 @@ const HotspotEditorModal = ({
       hotspots: initialHotspots.filter(
         (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
       ),
-      thresholds: cardConfig.thresholds,
       currentType: defaultHotspotType,
     },
   });
@@ -410,17 +398,11 @@ const HotspotEditorModal = ({
         availableDimensions={availableDimensions}
         key={`${selectedHotspot?.x}${selectedHotspot?.y}`} // Regenerate when hotspot change
         hotspot={selectedHotspot}
-        hotspotIndex={selectedHotspotIndex}
-        thresholds={thresholds}
-        // TODO:
-        // https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
-        cardConfig={{
-          ...cardConfig,
+        cardConfig={update(cardConfig, {
           content: {
-            ...cardConfig.content,
-            hotspots: cardConfig.values.hotspots,
+            hotspots: { $set: [selectedHotspot] },
           },
-        }}
+        })}
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
       />
