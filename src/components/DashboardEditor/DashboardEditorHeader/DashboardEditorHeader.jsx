@@ -121,7 +121,7 @@ const DashboardEditorHeader = ({
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, i18n };
+  const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
