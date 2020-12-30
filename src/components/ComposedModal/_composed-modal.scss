@@ -40,10 +40,7 @@
   }
 
   &.#{$iot-prefix}--composed-modal--full-screen {
-    .#{$prefix}--modal-header {
-      margin-bottom: 0;
-    }
-    .#{$prefix}--modal-container {
+    & > .#{$prefix}--modal-container {
       $min-width: calc(100% - #{$layout-02});
       min-height: $min-width;
       min-width: $min-width;
@@ -53,6 +50,10 @@
       }
       @media (min-width: carbon--rem(1200px)) {
         min-width: $min-width;
+      }
+
+      .#{$prefix}--modal-header {
+        margin-bottom: 0;
       }
     }
   }

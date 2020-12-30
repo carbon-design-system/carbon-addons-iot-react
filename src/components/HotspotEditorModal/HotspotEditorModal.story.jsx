@@ -184,8 +184,16 @@ export const WidthExistingHotspots = () => {
             attributes: [
               {
                 dataSourceId: 'temperature',
-                label: 'Temp',
-                precision: 2,
+                label: 'Custom label temp',
+                unit: '°',
+                thresholds: [
+                  {
+                    comparison: '>',
+                    value: 30.5,
+                    icon: 'Warning',
+                    color: red50,
+                  },
+                ],
               },
             ],
           },
@@ -196,6 +204,10 @@ export const WidthExistingHotspots = () => {
 
   return (
     <HotspotEditorModal
+      availableDimensions={{
+        manufacturer: ['Rentech', 'GHI Industries'],
+        deviceid: ['73000', '73001', '73002'],
+      }}
       backgroundColors={selectableColors}
       borderColors={selectableColors}
       cardConfig={myCardConfig}

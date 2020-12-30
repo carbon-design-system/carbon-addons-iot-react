@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   ContentSwitcher,
@@ -18,6 +18,7 @@ import ImageHotspots from '../ImageCard/ImageHotspots';
 import ComposedModal from '../ComposedModal';
 import { InlineLoading } from '../InlineLoading';
 import { settings } from '../../constants/Settings';
+import { validThresholdIcons } from '../DashboardEditor/editorUtils';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
@@ -28,6 +29,10 @@ import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHots
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** Array of selectable color objects for text hotspot background */
   backgroundColors: PropTypes.arrayOf(ColorPropType).isRequired,
   backgroundLabelText: PropTypes.string,
@@ -103,7 +108,7 @@ const propTypes = {
   getValidDataItems: PropTypes.func,
   /** Array of selectable color objects for hotspot icon fill */
   hotspotIconFillColors: PropTypes.arrayOf(ColorPropType).isRequired,
-  /** Array of selectable icon objects. */
+  /** Array of selectable icon objects for the hotspots. */
   hotspotIcons: PropTypes.arrayOf(HotspotIconPropType).isRequired,
   hotspotsText: PropTypes.string,
   iconDropdownLabelText: PropTypes.string,
@@ -149,6 +154,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  availableDimensions: {},
   backgroundLabelText: undefined,
   boldLabelText: undefined,
   borderLabelText: undefined,
@@ -212,6 +218,7 @@ const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
 };
 
 const HotspotEditorModal = ({
+  availableDimensions,
   backgroundColors,
   backgroundLabelText,
   boldLabelText,
@@ -382,6 +389,15 @@ const HotspotEditorModal = ({
     [initialHotspots]
   );
 
+  const imageHotspotsIcons = useMemo(() => {
+    const correctFormatedThresholdIcons = validThresholdIcons.map((icon) => ({
+      id: icon.name,
+      icon: icon.carbonIcon.type,
+      text: icon.name,
+    }));
+    return [...hotspotIcons, ...correctFormatedThresholdIcons];
+  }, [hotspotIcons]);
+
   const hotspotDefaults = {
     borderWidth: defaultBorderWidth,
     backgroundOpacity: defaultBackgroundOpacity,
@@ -391,6 +407,7 @@ const HotspotEditorModal = ({
   const renderDataSourceTab = () => {
     return selectedHotspot ? (
       <HotspotEditorDataSourceTab
+        availableDimensions={availableDimensions}
         key={`${selectedHotspot?.x}${selectedHotspot?.y}`} // Regenerate when hotspot change
         hotspot={selectedHotspot}
         hotspotIndex={selectedHotspotIndex}
@@ -405,9 +422,7 @@ const HotspotEditorModal = ({
           },
         }}
         dataItems={myDataItems}
-        onChange={(newData) => {
-          updateHotspotDataSource(newData);
-        }}
+        onChange={updateHotspotDataSource}
       />
     ) : null;
   };
@@ -541,7 +556,7 @@ const HotspotEditorModal = ({
                 onHotspotContentChanged={updateTextHotspotContent}
                 height={size.height}
                 hotspots={hotspots}
-                icons={hotspotIcons}
+                icons={imageHotspotsIcons}
                 imageZoomMax={imageZoomMax}
                 isEditable
                 isHotspotDataLoading={dynamicHotspotsLoading}

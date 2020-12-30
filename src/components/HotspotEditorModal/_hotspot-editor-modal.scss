@@ -1,7 +1,8 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--hotspot-editor-modal.#{$iot-prefix}--composed-modal
-  .#{$prefix}--modal-content {
+  // Only apply to the top level modal, in case there is another modal nested inside the modal
+  & > .#{$prefix}--modal-container > .#{$prefix}--modal-content {
   $right-side-width: 420px;
   padding-right: 0;
   display: flex;
@@ -28,11 +29,4 @@
 .#{$iot-prefix}--hotspot-editor-modal__variable-loading {
   margin-top: $layout-05;
   justify-content: center;
-}
-
-.#{$iot-prefix}--hotspot-editor-modal
-  .#{$prefix}--tab-content
-  .#{$iot-prefix}--list-item--content--row-actions
-  .#{$iot-prefix}--btn {
-  pointer-events: none;
 }

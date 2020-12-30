@@ -3,6 +3,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -545,7 +546,16 @@ const ImageHotspots = ({
       renderIconByName ||
       (Array.isArray(icons)
         ? (name, props) => {
-            const Icon = icons.find((iconObj) => iconObj.id === name).icon;
+            const Icon = icons.find((iconObj) => iconObj.id === name)?.icon;
+            if (!Icon) {
+              if (__DEV__) {
+                warning(
+                  false,
+                  `An arrray of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
+                );
+              }
+              return null;
+            }
             return <Icon {...props} />;
           }
         : null)

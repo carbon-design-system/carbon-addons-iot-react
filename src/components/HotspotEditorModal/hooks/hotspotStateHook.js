@@ -91,9 +91,25 @@ function hotspotEditorReducer(state, { type, payload }) {
   switch (type) {
     // HOTSPOT DATA SOURCE CHANGE
     case hotspotActionTypes.hotspotDataSourceChange: {
+      const attributeIndex =
+        state.selectedHotspot.content?.attributes?.findIndex(
+          (attr) => attr.dataSourceId === payload.dataSourceId
+        ) ?? 0;
       const mergeSpec = payload.attributes
         ? { content: { attributes: { $set: payload.attributes } } }
-        : {}; // TODO: https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1769
+        : {
+            content: {
+              attributes: {
+                [attributeIndex]: {
+                  $merge: {
+                    label: payload.label,
+                    unit: payload.unit,
+                    dataFilter: payload.dataFilter,
+                  },
+                },
+              },
+            },
+          };
       return getHotspotUpdate(state, mergeSpec);
     }
     // HOTSPOT TOOLTIP CHANGE
