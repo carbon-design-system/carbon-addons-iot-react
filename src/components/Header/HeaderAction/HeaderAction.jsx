@@ -12,7 +12,7 @@ import HeaderActionPanel from './HeaderActionPanel';
 
 const { prefix: carbonPrefix } = settings;
 
-export const propTypes = {
+export const HeaderActionPropTypes = {
   /** details of the item to render in the action */
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
   /** unique index for the menu item */
@@ -131,7 +131,7 @@ const HeaderAction = ({ item, index, testID }) => {
   );
 };
 
-HeaderAction.propTypes = propTypes;
+HeaderAction.propTypes = HeaderActionPropTypes;
 HeaderAction.defaultProps = defaultProps;
 
 export default HeaderAction;
