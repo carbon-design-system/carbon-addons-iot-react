@@ -66,22 +66,16 @@ const HotspotContent = ({
   }
 
   const renderTitle = () => {
-    const titleTextVersion = (
+    const titleEditableTextVersion = (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
       <h4
-        onClick={() => {
-          if (isTitleEditable) {
-            setShowTitleInput(isTitleEditable);
-          }
-        }}
-        title={isTitleEditable ? titleEditableHintText : titleValue}>
-        {titleValue !== null && titleValue !== '' ? (
-          titleValue
-        ) : isTitleEditable ? (
-          <Edit20 />
-        ) : null}
+        onClick={() => setShowTitleInput(isTitleEditable)}
+        title={titleEditableHintText}>
+        {titleValue !== null && titleValue !== '' ? titleValue : <Edit20 />}
       </h4>
     );
+
+    const titleFixedTextVersion = <h4 title={title}>{title}</h4>;
 
     const titleInputVersion = (
       <>
@@ -120,8 +114,10 @@ const HotspotContent = ({
 
     return typeof title === 'string' && showTitleInput
       ? titleInputVersion
+      : typeof title === 'string' && isTitleEditable
+      ? titleEditableTextVersion
       : typeof title === 'string'
-      ? titleTextVersion
+      ? titleFixedTextVersion
       : React.isValidElement(title)
       ? title
       : null;
