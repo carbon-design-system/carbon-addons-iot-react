@@ -16924,6 +16924,9 @@ Map {
                           "moreInfoLink": Object {
                             "type": "string",
                           },
+                          "onClick": Object {
+                            "type": "func",
+                          },
                           "thumbnail": Object {
                             "type": "node",
                           },
