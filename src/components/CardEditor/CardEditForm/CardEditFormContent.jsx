@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
 
 import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';

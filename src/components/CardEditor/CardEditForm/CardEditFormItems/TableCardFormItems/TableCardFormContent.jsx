@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
 
 import { settings } from '../../../../../constants/Settings';
-import { handleDataSeriesChange } from '../../../../DashboardEditor/editorUtils';
+import {
+  handleDataSeriesChange,
+  DataItemsPropTypes,
+} from '../../../../DashboardEditor/editorUtils';
 import { Button, List, MultiSelect } from '../../../../../index';
-import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import {
   CARD_SIZES,

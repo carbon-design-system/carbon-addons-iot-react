@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
@@ -56,6 +57,13 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
+
+export const DataItemsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    label: PropTypes.string,
+  })
+);
 
 /**
  * Returns a duplicate card configuration
