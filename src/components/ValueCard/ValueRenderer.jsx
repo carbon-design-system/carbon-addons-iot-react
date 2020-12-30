@@ -56,7 +56,15 @@ const Attribute = styled.div`
   ${(props) => props.isMini && 'align-items: center;'}
 `;
 
-/** Returns font size in rem */
+/**
+ * @param {Object} params
+ * @param {string || Number} params.value
+ * @param {string} params.size
+ * @param {Boolean} params.isSmall
+ * @param {Boolean} params.isMini
+ * @param {string} params.layout
+ * @returns {Number} font size in rem
+ */
 const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
   if (typeof value === 'string') {
     switch (size) {
@@ -68,12 +76,11 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
     }
   }
   const valueLength = value?.toString().length;
+  // mini is the smallest
   if (isMini) {
     return 1;
   }
-  if (isSmall) {
-    return 2;
-  }
+  // swap to a smaller font size if there is a long value
   if (valueLength > 15) {
     return 1.25;
   }
@@ -83,6 +90,11 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
   if (valueLength > 8) {
     return 1.75;
   }
+  // if its not a long value, use the small value size
+  if (isSmall) {
+    return 2;
+  }
+  // otherwise use the default font size
   return 2.5;
 };
 
