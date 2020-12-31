@@ -96,12 +96,14 @@ const TableCardFormContent = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   // This is used in the edit case where some of these data items have been selected before
-  const initialSelectedItems = useMemo(
+  const initialSelectedAttributes = useMemo(
     () =>
-      dataSection?.map(({ dataSourceId }) => ({
-        id: dataSourceId,
-        text: dataSourceId,
-      })),
+      dataSection
+        .filter((col) => !col.type)
+        .map(({ dataSourceId }) => ({
+          id: dataSourceId,
+          text: dataSourceId,
+        })),
     [dataSection]
   );
 
@@ -112,7 +114,13 @@ const TableCardFormContent = ({
   );
 
   const initialSelectedDimensions = useMemo(
-    () => dataSection.filter((col) => col.type === 'DIMENSION'),
+    () =>
+      dataSection
+        .filter((col) => col.type === 'DIMENSION')
+        .map(({ dataSourceId }) => ({
+          id: dataSourceId,
+          text: dataSourceId,
+        })),
     [dataSection]
   );
 
@@ -151,7 +159,7 @@ const TableCardFormContent = ({
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedItems}
+          initialSelectedItems={initialSelectedAttributes}
           items={validDataItems}
           light
           onChange={({ selectedItems }) => {

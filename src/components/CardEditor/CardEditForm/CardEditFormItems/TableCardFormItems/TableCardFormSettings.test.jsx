@@ -15,7 +15,7 @@ const commonCardConfig = {
   title: 'My Table Card',
   size: CARD_SIZES.LARGE,
   type: CARD_TYPES.TABLE,
-  content: { columns: [] },
+  content: { columns: [], showHeader: true, allowNavigation: true },
 };
 const commonProps = {
   cardConfig: commonCardConfig,
@@ -170,7 +170,7 @@ describe('TableCardFormSettings', () => {
     fireEvent.click(screen.getByLabelText('Allow navigation to assets'));
     expect(mockOnChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        content: expect.objectContaining({ allowNavigation: true }),
+        content: expect.objectContaining({ allowNavigation: false }),
       })
     );
   });
