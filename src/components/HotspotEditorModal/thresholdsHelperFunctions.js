@@ -61,11 +61,14 @@ export const moveThresholdsToCardconfigRoot = (hotspots, cardConfig) => {
   const uniqThresholds = getUniqueThresholdsFromHotspots(hotspots);
 
   const hotspotsWithoutThresholds = hotspots.map((hotspot) =>
-    update(hotspot, {
-      content: {
-        attributes: (arr) => arr.map(({ thresholds, ...restAttr }) => restAttr),
-      },
-    })
+    Array.isArray(hotspot.content.attributes)
+      ? update(hotspot, {
+          content: {
+            attributes: (arr) =>
+              arr.map(({ thresholds, ...restAttr }) => restAttr),
+          },
+        })
+      : hotspot
   );
 
   return update(cardConfig, {

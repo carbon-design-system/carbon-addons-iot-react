@@ -65,6 +65,7 @@ const defaultProps = {
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
+    modalPrimaryButtonLabel: 'Update',
   },
   dataItems: [],
   availableDimensions: {},
