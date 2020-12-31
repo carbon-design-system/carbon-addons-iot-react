@@ -40,6 +40,16 @@ describe('TableCardFormSettings', () => {
       { dataSourceId: 'manufacturer' },
     ]);
   });
+  it('updateColumnSort same sort', () => {
+    const mockColumns = [
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ];
+    expect(updateColumnSort(mockColumns, 'timestamp', 'DESC')).toEqual([
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ]);
+  });
   it('updateColumnSort with no previous column sort', () => {
     const mockColumns = [
       { dataSourceId: 'timestamp' },

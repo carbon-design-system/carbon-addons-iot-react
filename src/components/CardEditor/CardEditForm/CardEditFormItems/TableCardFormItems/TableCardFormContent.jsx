@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -133,6 +133,32 @@ const TableCardFormContent = ({
     [dataItems]
   );
 
+  // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
+  const handleDataItemModalChanges = useCallback(
+    (card) => {
+      const allThresholds = [];
+      // the table card is looking for the thresholds on the main content object
+      const updatedColumns = card?.content?.columns?.map(
+        // eslint-disable-next-line no-unused-vars
+        ({ thresholds, ...others }) => {
+          if (!isEmpty(thresholds)) {
+            allThresholds.push(...thresholds);
+          }
+          return others;
+        }
+      );
+      onChange({
+        ...card,
+        content: {
+          ...card.content,
+          columns: updatedColumns,
+          thresholds: allThresholds,
+        },
+      });
+    },
+    [onChange]
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -143,7 +169,7 @@ const TableCardFormContent = ({
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
         availableDimensions={availableDimensions}
-        onChange={onChange}
+        onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
       />
       <div className={`${baseClassName}--form-section`}>
