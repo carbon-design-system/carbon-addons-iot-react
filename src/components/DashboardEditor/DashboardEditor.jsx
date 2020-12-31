@@ -24,16 +24,10 @@ import {
   renderBreakpointInfo,
   handleKeyDown,
   handleOnClick,
+  DataItemsPropTypes,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
-
-export const DataItemsPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    dataSourceId: PropTypes.string,
-    label: PropTypes.string,
-  })
-);
 
 const propTypes = {
   /** Dashboard title */

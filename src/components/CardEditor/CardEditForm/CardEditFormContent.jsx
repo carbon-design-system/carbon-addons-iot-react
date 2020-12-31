@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
 
 import CommonCardEditFormFields from './CommonCardEditFormFields';
 import DataSeriesFormContent from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormContent';
 import ImageCardFormContent from './CardEditFormItems/ImageCardFormItems/ImageCardFormContent';
+import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCardFormContent';
 
 const propTypes = {
   /** card data value */
@@ -120,6 +121,17 @@ const CardEditFormContent = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+        />
+      ) : type === CARD_TYPES.TABLE ? (
+        <TableCardFormContent
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+          dataItems={dataItems}
+          selectedDataItems={selectedDataItems}
+          setSelectedDataItems={setSelectedDataItems}
+          getValidDataItems={getValidDataItems}
+          availableDimensions={availableDimensions}
         />
       ) : (
         <DataSeriesFormContent

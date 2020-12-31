@@ -112,7 +112,14 @@ const EditorBarChartCard = ({ dataItems, availableDimensions, ...props }) => {
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderTableCard = (props) => <TableCard isEditable {...props} />;
+const renderTableCard = (props) => (
+  <TableCard
+    // TODO: workaround need to regen TableCard if columns change
+    key={JSON.stringify(props?.content?.columns)}
+    isEditable
+    {...props}
+  />
+);
 
 /**
  * @param {Object} cardConfig
