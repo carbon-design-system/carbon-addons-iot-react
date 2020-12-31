@@ -34,6 +34,7 @@ const hotspotStateProptypes = {
 
 const hotspotActionTypes = {
   hotspotDataSourceChange: 'HOTSPOT_DATA_SOURCE_CHANGE',
+  hotspotDataSourceSettingsChange: 'HOTSPOT_DATA_SOURCE_SETTINGS_CHANGE',
   hotspotTooltipChange: 'HOTSPOT_TOOLTIP_CHANGE',
   hotspotSelect: 'HOTSPOT_SELECT',
   hotspotsAdd: 'HOTSPOTS_ADD',
@@ -89,26 +90,30 @@ function hotspotEditorReducer(state, { type, payload }) {
   switch (type) {
     // HOTSPOT DATA SOURCE CHANGE
     case hotspotActionTypes.hotspotDataSourceChange: {
+      return getHotspotUpdate(state, {
+        content: { attributes: { $set: payload.attributes } },
+      });
+    }
+    // HOTSPOT DATA SOURCE SETTINGS CHANGE
+    case hotspotActionTypes.hotspotDataSourceSettingsChange: {
       const attributeIndex =
         state.selectedHotspot.content?.attributes?.findIndex(
           (attr) => attr.dataSourceId === payload.dataSourceId
         ) ?? 0;
-      const mergeSpec = payload.attributes
-        ? { content: { attributes: { $set: payload.attributes } } }
-        : {
-            content: {
-              attributes: {
-                [attributeIndex]: {
-                  $merge: {
-                    label: payload.label,
-                    unit: payload.unit,
-                    dataFilter: payload.dataFilter,
-                    thresholds: payload.thresholds,
-                  },
-                },
+      const mergeSpec = {
+        content: {
+          attributes: {
+            [attributeIndex]: {
+              $merge: {
+                label: payload.label,
+                unit: payload.unit,
+                dataFilter: payload.dataFilter,
+                thresholds: payload.thresholds,
               },
             },
-          };
+          },
+        },
+      };
       return getHotspotUpdate(state, mergeSpec);
     }
     // HOTSPOT TOOLTIP CHANGE
@@ -301,11 +306,19 @@ function useHotspotEditorState({
     });
   };
 
-  const updateHotspotDataSource = (hotspotContent) =>
-    dispatch({
-      type: hotspotActionTypes.hotspotDataSourceChange,
-      payload: hotspotContent,
-    });
+  const updateHotspotDataSource = (dataSourceChange) => {
+    if (dataSourceChange.attributes) {
+      dispatch({
+        type: hotspotActionTypes.hotspotDataSourceChange,
+        payload: dataSourceChange,
+      });
+    } else {
+      dispatch({
+        type: hotspotActionTypes.hotspotDataSourceSettingsChange,
+        payload: dataSourceChange,
+      });
+    }
+  };
 
   const updateHotspotTooltip = (hotspotContent) =>
     dispatch({

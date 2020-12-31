@@ -25,6 +25,10 @@ import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab/HotspotEditorDataSourceTab';
 import { hotspotTypes, useHotspotEditorState } from './hooks/hotspotStateHook';
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
+import {
+  addThresholdsToHotspot,
+  moveThresholdsToCardconfigRoot,
+} from './thresholdsHelperFunctions';
 
 const { iotPrefix } = settings;
 
@@ -57,6 +61,19 @@ const propTypes = {
     id: PropTypes.string,
     size: PropTypes.string,
     title: PropTypes.string,
+    /**
+     * If this prop is present the HotspotEditorModal will place new and exsisting thresholds here
+     * instead of under the each hotspot in cardConfig.values.hotspots.
+     */
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        dataSourceId: PropTypes.string,
+        comparison: PropTypes.string,
+        value: PropTypes.number,
+        color: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
     type: PropTypes.string,
     values: PropTypes.shape({
       hotspots: PropTypes.arrayOf(PropTypes.object),
@@ -297,9 +314,9 @@ const HotspotEditorModal = ({
     updateDynamicHotspotSourceY,
   } = useHotspotEditorState({
     initialState: {
-      hotspots: initialHotspots.filter(
-        (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
-      ),
+      hotspots: initialHotspots
+        .filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC)
+        .map((hotspot) => addThresholdsToHotspot(cardConfig, hotspot)),
       currentType: defaultHotspotType,
     },
   });
@@ -323,15 +340,17 @@ const HotspotEditorModal = ({
       update(hotspot, { content: { $unset: ['values'] } })
     );
 
-    onSaveCallback(
-      update(cardConfig, {
-        values: {
-          hotspots: {
-            $set: hotspotsWithoutExampleValues,
+    const updatedCardConfig = cardConfig.thresholds
+      ? moveThresholdsToCardconfigRoot(hotspotsWithoutExampleValues, cardConfig)
+      : update(cardConfig, {
+          values: {
+            hotspots: {
+              $set: hotspotsWithoutExampleValues,
+            },
           },
-        },
-      })
-    );
+        });
+
+    onSaveCallback(updatedCardConfig);
   };
 
   const loadDemoHotspots = async (
