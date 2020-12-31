@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -17,8 +18,6 @@ import {
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /* card value */
-
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -71,12 +70,6 @@ const defaultProps = {
   availableDimensions: {},
 };
 
-export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId }) => ({
-    id: dataSourceId,
-    text: dataSourceId,
-  }));
-
 const TableCardFormContent = ({
   cardConfig,
   dataItems,
@@ -95,6 +88,7 @@ const TableCardFormContent = ({
   // Need to keep track of the data item that's currently being edited so the detailed modal knows which one to show
   const [editDataItem, setEditDataItem] = useState({});
 
+  // Initialize the selected columns if its not currently set
   const dataSection = useMemo(() => (Array.isArray(columns) ? columns : []), [
     columns,
   ]);
@@ -103,7 +97,11 @@ const TableCardFormContent = ({
 
   // This is used in the edit case where some of these data items have been selected before
   const initialSelectedItems = useMemo(
-    () => formatDataItemsForDropdown(dataSection),
+    () =>
+      dataSection?.map(({ dataSourceId }) => ({
+        id: dataSourceId,
+        text: dataSourceId,
+      })),
     [dataSection]
   );
 
@@ -118,6 +116,15 @@ const TableCardFormContent = ({
     [dataSection]
   );
 
+  const validDataItems = useMemo(
+    () =>
+      dataItems?.map(({ dataSourceId }) => ({
+        id: dataSourceId,
+        text: dataSourceId,
+      })),
+    [dataItems]
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -125,7 +132,6 @@ const TableCardFormContent = ({
         showEditor={showEditor}
         setShowEditor={setShowEditor}
         editDataSeries={dataSection}
-        // setEditDataSeries={setDataSection}
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
         availableDimensions={availableDimensions}
@@ -146,7 +152,7 @@ const TableCardFormContent = ({
           direction="bottom"
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedItems}
-          items={formatDataItemsForDropdown(dataItems)}
+          items={validDataItems}
           light
           onChange={({ selectedItems }) => {
             const newCard = handleDataSeriesChange(
@@ -163,34 +169,36 @@ const TableCardFormContent = ({
         />
       </div>
 
-      <div
-        className={`${baseClassName}--input`} // Dimensions selector
-      >
-        <MultiSelect
-          // need to re-gen if selected card changes or if a dataItem is removed from the list
-          key={`data-item-select-selected_card-id-${cardConfig.id}`}
-          id={`${cardConfig.id}_dataSourceIds`}
-          label={mergedI18n.selectGroupByDimensions}
-          direction="bottom"
-          itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedDimensions}
-          items={validDimensions}
-          light
-          onChange={({ selectedItems }) => {
-            // Add the new dimensions as dimension columns at the beginning of the table
-            const newCard = handleDataSeriesChange(
-              selectedItems.map((i) => ({ ...i, type: 'DIMENSION' })),
-              cardConfig,
-              null,
-              null,
-              true
-            );
-            // setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange(newCard);
-          }}
-          titleText={mergedI18n.dataItemEditorDimensionTitle}
-        />
-      </div>
+      {!isEmpty(validDimensions) ? (
+        <div
+          className={`${baseClassName}--input`} // Dimensions selector
+        >
+          <MultiSelect
+            // need to re-gen if selected card changes or if a dataItem is removed from the list
+            key={`data-item-select-selected_card-id-${cardConfig.id}`}
+            id={`${cardConfig.id}_dataSourceIds`}
+            label={mergedI18n.selectGroupByDimensions}
+            direction="bottom"
+            itemToString={(item) => item.id}
+            initialSelectedItems={initialSelectedDimensions}
+            items={validDimensions}
+            light
+            onChange={({ selectedItems }) => {
+              // Add the new dimensions as dimension columns at the beginning of the table
+              const newCard = handleDataSeriesChange(
+                selectedItems.map((i) => ({ ...i, type: 'DIMENSION' })),
+                cardConfig,
+                null,
+                null,
+                true
+              );
+              // setSelectedDataItems(selectedItems.map(({ id }) => id));
+              onChange(newCard);
+            }}
+            titleText={mergedI18n.dataItemEditorDimensionTitle}
+          />
+        </div>
+      ) : null}
       <List
         // Lists the selected dataItem columns in the bottom section and allow additional configuration
         key={`data-item-list${selectedDataItems.length}`}
