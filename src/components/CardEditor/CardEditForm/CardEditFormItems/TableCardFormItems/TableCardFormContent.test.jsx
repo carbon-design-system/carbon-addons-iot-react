@@ -176,6 +176,7 @@ describe('TableCardFormContent', () => {
           {
             color: '#da1e28',
             comparison: '>',
+            dataSourceId: 'manufacturer',
             icon: 'Warning alt',
             value: 0,
           },
