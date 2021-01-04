@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
@@ -56,6 +57,13 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
+
+export const DataItemsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    label: PropTypes.string,
+  })
+);
 
 /**
  * Returns a duplicate card configuration
@@ -143,16 +151,7 @@ export const getDefaultCard = (type, i18n) => {
       return {
         ...baseCardProps,
         content: {
-          columns: [
-            {
-              dataSourceId: 'undefined',
-              label: '--',
-            },
-            {
-              dataSourceId: 'undefined2',
-              label: '--',
-            },
-          ],
+          columns: [],
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
@@ -429,12 +428,12 @@ export const handleDataSeriesChange = (
   selectedItems,
   cardConfig,
   setEditDataSeries,
-  hotspotIndex
+  hotspotIndex,
+  isDimensionUpdate
 ) => {
-  const { type } = cardConfig;
+  const { type, content } = cardConfig;
   let series;
   let attributes;
-  let dataSection;
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -451,8 +450,53 @@ export const handleDataSeriesChange = (
         ...cardConfig,
         content: { ...cardConfig.content, series },
       };
-    case CARD_TYPES.IMAGE:
-      dataSection = [...(cardConfig.content?.hotspots || [])];
+    case CARD_TYPES.TABLE: {
+      const existingAttributeColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => !col.type)
+        : [];
+
+      // find just the attributes to add
+      const attributeColumns = selectedItems
+        .filter((i) => !i.hasOwnProperty('type'))
+        .map((i) => ({ dataSourceId: i.id, label: i.text }));
+      // start off with a default timestamp column if we don't already have one
+      const timestampColumn =
+        Array.isArray(content?.columns) &&
+        content.columns.find((col) => col.type === 'TIMESTAMP')
+          ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
+          : {
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+              sort: 'DESC',
+            };
+      const existingDimensionColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => col.type === 'DIMENSION')
+        : [];
+
+      // new dimension columns should go right after the timestamp column
+      const dimensionColumns = selectedItems
+        .filter((col) => col.type === 'DIMENSION')
+        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          columns: [
+            timestampColumn,
+            ...(isDimensionUpdate
+              ? dimensionColumns
+              : existingDimensionColumns),
+            ...(!isDimensionUpdate
+              ? attributeColumns
+              : existingAttributeColumns),
+          ],
+        },
+      };
+    }
+    case CARD_TYPES.IMAGE: {
+      const dataSection = [...(cardConfig.content?.hotspots || [])];
       dataSection[hotspotIndex].content = {
         ...dataSection[hotspotIndex].content,
         attributes: selectedItems,
@@ -464,6 +508,7 @@ export const handleDataSeriesChange = (
           hotspots: dataSection,
         },
       };
+    }
     default:
       return cardConfig;
   }
@@ -506,6 +551,16 @@ export const handleDataItemEdit = (
       return {
         ...cardConfig,
         content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.TABLE:
+      dataSection = [...content.columns];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, columns: dataSection },
       };
     case CARD_TYPES.IMAGE:
       dataSection = [...(content.hotspots || [])];
