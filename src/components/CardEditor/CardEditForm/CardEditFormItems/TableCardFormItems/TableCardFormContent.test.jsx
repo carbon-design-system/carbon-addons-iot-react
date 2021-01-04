@@ -131,4 +131,57 @@ describe('TableCardFormContent', () => {
     // both the dimension and attribute show show selections
     expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(2);
   });
+  it('edit mode with dataitems adds threshold correctly', () => {
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            type: 'DIMENSION',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    // Popup the Data Item Editor
+    fireEvent.click(screen.queryAllByText('Edit')[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
+    fireEvent.click(screen.queryByText(/Add threshold/));
+    fireEvent.click(screen.queryByText('Save'));
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...mockCardConfig,
+      content: {
+        ...mockCardConfig.content,
+        thresholds: [
+          {
+            color: '#da1e28',
+            comparison: '>',
+            dataSourceId: 'manufacturer',
+            icon: 'Warning alt',
+            value: 0,
+          },
+        ],
+      },
+    });
+  });
 });
