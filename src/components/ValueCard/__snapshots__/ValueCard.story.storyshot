@@ -2215,7 +2215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 kmAyHP"
                     size="SMALL"
                     title="20000000000000000 "
                     value={20000000000000000}
@@ -3680,7 +3680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 kolfZc"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 gQouVk"
                     size="MEDIUMTHIN"
                     title="345678234234234240 %"
                     value={345678234234234240}
@@ -3759,7 +3759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 kolfZc"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 gQouVk"
                     size="MEDIUMTHIN"
                     title="456778234234234240 ˚F"
                     value={456778234234234240}
@@ -3838,7 +3838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   color={null}
                 >
                   <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 kolfZc"
+                    className="ValueRenderer__AttributeValue-f4stpz-1 gQouVk"
                     size="MEDIUMTHIN"
                     title="88888678234234240000 ˚F"
                     value={88888678234234240000}

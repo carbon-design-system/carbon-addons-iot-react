@@ -20962,7 +20962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 houHFr"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -21419,7 +21419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 houHFr"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -21876,7 +21876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 houHFr"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -22333,7 +22333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 houHFr"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
