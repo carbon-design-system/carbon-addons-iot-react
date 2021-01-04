@@ -11,7 +11,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
-import { DataItemsPropTypes } from '../../DashboardEditor/DashboardEditor';
+import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
 
 import CardEditFormContent from './CardEditFormContent';
 import CardEditFormSettings from './CardEditFormSettings';
@@ -229,6 +229,7 @@ const CardEditForm = ({
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>
             <CardEditFormSettings
+              availableDimensions={availableDimensions}
               cardConfig={
                 cardConfig.type === CARD_TYPES.CUSTOM
                   ? { ...omit(cardConfig, 'content') }

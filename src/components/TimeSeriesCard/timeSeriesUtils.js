@@ -88,7 +88,7 @@ export const generateTableSampleValues = (id, columns) => {
     id: `sample-values-${id}-${index}`,
     values: columns.reduce((obj, column) => {
       obj[column.dataSourceId] = // eslint-disable-line no-param-reassign
-        column.type === 'TIMESTAMP' ? 'hh:mm:ss' : '--';
+        column.type === 'TIMESTAMP' ? 'xx/xx/xxxx xx:xx' : '--';
       return obj;
     }, {}),
   }));
