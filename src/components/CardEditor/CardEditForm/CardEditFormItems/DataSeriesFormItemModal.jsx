@@ -229,38 +229,6 @@ const DataSeriesFormItemModal = ({
 
   const ValueCardDataEditor = (
     <>
-      {editDataItem.isAggregated ? (
-        <div className={`${baseClassName}--input-group`}>
-          <div className={`${baseClassName}--input-group--item`}>
-            <TextInput
-              id={`${id}_attribute-label`}
-              labelText="aggregator"
-              light
-              onChange={(evt) =>
-                setEditDataItem({
-                  ...editDataItem,
-                  label: evt.target.value,
-                })
-              }
-              value={editDataItem.label}
-            />
-          </div>
-          <div className={`${baseClassName}--input-group--item-end`}>
-            <TextInput
-              id={`${id}_attribute-unit`}
-              labelText="grain"
-              light
-              onChange={(evt) =>
-                setEditDataItem({
-                  ...editDataItem,
-                  unit: evt.target.value,
-                })
-              }
-              value={editDataItem.unit}
-            />
-          </div>
-        </div>
-      ) : null}
       <div className={`${baseClassName}--input-group`}>
         <div className={`${baseClassName}--input-group--item`}>
           <TextInput

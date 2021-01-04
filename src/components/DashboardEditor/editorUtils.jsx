@@ -62,8 +62,6 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     dataSourceId: PropTypes.string,
     label: PropTypes.string,
-    /** displays additional options for data item customization */
-    isAggregated: PropTypes.bool,
   })
 );
 
