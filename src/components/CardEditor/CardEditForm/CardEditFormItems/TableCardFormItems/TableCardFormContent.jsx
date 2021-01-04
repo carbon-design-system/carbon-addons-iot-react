@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
@@ -81,7 +81,7 @@ const TableCardFormContent = ({
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
-    content: { columns },
+    content: { columns, thresholds },
   } = cardConfig;
 
   const [showEditor, setShowEditor] = useState(false);
@@ -89,19 +89,30 @@ const TableCardFormContent = ({
   const [editDataItem, setEditDataItem] = useState({});
 
   // Initialize the selected columns if its not currently set
-  const dataSection = useMemo(() => (Array.isArray(columns) ? columns : []), [
-    columns,
-  ]);
+  const dataSection = useMemo(
+    () =>
+      Array.isArray(columns)
+        ? columns.map((column) => ({
+            ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
+            thresholds: thresholds?.filter(
+              (threshold) => column.dataSourceId === threshold.dataSourceId
+            ),
+          }))
+        : [],
+    [columns, thresholds]
+  );
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   // This is used in the edit case where some of these data items have been selected before
-  const initialSelectedItems = useMemo(
+  const initialSelectedAttributes = useMemo(
     () =>
-      dataSection?.map(({ dataSourceId }) => ({
-        id: dataSourceId,
-        text: dataSourceId,
-      })),
+      dataSection
+        .filter((col) => !col.type)
+        .map(({ dataSourceId }) => ({
+          id: dataSourceId,
+          text: dataSourceId,
+        })),
     [dataSection]
   );
 
@@ -112,7 +123,13 @@ const TableCardFormContent = ({
   );
 
   const initialSelectedDimensions = useMemo(
-    () => dataSection.filter((col) => col.type === 'DIMENSION'),
+    () =>
+      dataSection
+        .filter((col) => col.type === 'DIMENSION')
+        .map(({ dataSourceId }) => ({
+          id: dataSourceId,
+          text: dataSourceId,
+        })),
     [dataSection]
   );
 
@@ -125,6 +142,37 @@ const TableCardFormContent = ({
     [dataItems]
   );
 
+  // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
+  const handleDataItemModalChanges = useCallback(
+    (card) => {
+      const allThresholds = [];
+      // the table card is looking for the thresholds on the main content object
+      const updatedColumns = card?.content?.columns?.map(
+        // eslint-disable-next-line no-unused-vars
+        ({ thresholds: columnThresholds, ...others }) => {
+          if (!isEmpty(columnThresholds)) {
+            allThresholds.push(
+              ...columnThresholds.map((threshold) => ({
+                ...threshold,
+                dataSourceId: others?.dataSourceId,
+              }))
+            );
+          }
+          return others;
+        }
+      );
+      onChange({
+        ...card,
+        content: {
+          ...card.content,
+          columns: updatedColumns,
+          thresholds: allThresholds,
+        },
+      });
+    },
+    [onChange]
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -135,7 +183,7 @@ const TableCardFormContent = ({
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
         availableDimensions={availableDimensions}
-        onChange={onChange}
+        onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
       />
       <div className={`${baseClassName}--form-section`}>
@@ -151,7 +199,7 @@ const TableCardFormContent = ({
           label={mergedI18n.selectDataItems}
           direction="bottom"
           itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedItems}
+          initialSelectedItems={initialSelectedAttributes}
           items={validDataItems}
           light
           onChange={({ selectedItems }) => {

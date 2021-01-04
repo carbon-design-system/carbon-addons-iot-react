@@ -15,7 +15,7 @@ const commonCardConfig = {
   title: 'My Table Card',
   size: CARD_SIZES.LARGE,
   type: CARD_TYPES.TABLE,
-  content: { columns: [] },
+  content: { columns: [], showHeader: true, allowNavigation: true },
 };
 const commonProps = {
   cardConfig: commonCardConfig,
@@ -37,6 +37,16 @@ describe('TableCardFormSettings', () => {
     ]);
     expect(updateColumnSort(mockColumns, 'timestamp', 'ASC')).toEqual([
       { dataSourceId: 'timestamp', sort: 'ASC' },
+      { dataSourceId: 'manufacturer' },
+    ]);
+  });
+  it('updateColumnSort same sort', () => {
+    const mockColumns = [
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ];
+    expect(updateColumnSort(mockColumns, 'timestamp', 'DESC')).toEqual([
+      { dataSourceId: 'timestamp', sort: 'DESC' },
       { dataSourceId: 'manufacturer' },
     ]);
   });
@@ -170,7 +180,7 @@ describe('TableCardFormSettings', () => {
     fireEvent.click(screen.getByLabelText('Allow navigation to assets'));
     expect(mockOnChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        content: expect.objectContaining({ allowNavigation: true }),
+        content: expect.objectContaining({ allowNavigation: false }),
       })
     );
   });
