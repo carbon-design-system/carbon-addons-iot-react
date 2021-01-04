@@ -152,6 +152,8 @@ export const getDefaultCard = (type, i18n) => {
         ...baseCardProps,
         content: {
           columns: [],
+          allowNavigation: true,
+          showHeader: true,
         },
       };
     case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
