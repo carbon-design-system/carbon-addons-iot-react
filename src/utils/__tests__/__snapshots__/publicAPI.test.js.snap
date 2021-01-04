@@ -8570,6 +8570,9 @@ Map {
                 "dataSourceId": Object {
                   "type": "string",
                 },
+                "isAggregated": Object {
+                  "type": "bool",
+                },
                 "label": Object {
                   "type": "string",
                 },
