@@ -8,9 +8,9 @@ import { settings } from '../../../../../constants/Settings';
 import {
   DATAITEM_COLORS_OPTIONS,
   handleDataSeriesChange,
+  DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import { Button, List, MultiSelect, Dropdown } from '../../../../../index';
-import { DataItemsPropTypes } from '../../../../DashboardEditor/DashboardEditor';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import {
   CARD_TYPES,
