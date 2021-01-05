@@ -71,7 +71,32 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /**
+   * An array of card types that are allowed to show up in the list. These keys will also be used in both icons and i18n
+   * ex: [ DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES, DASHBOARD_EDITOR_CARD_TYPES.ALERT, 'CUSTOM', 'ANOTHER_CUSTOM']
+   */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Dictionary of icons that corresponds to both `supportedCardTypes` and `i18n`
+   * ex:
+   * {
+   *  TIMESERIES: <EscalatorDown />,
+   *  ALERT: <Code24 />,
+   *  CUSTOM: <Basketball32 />,
+   *  ANOTHER_CUSTOM: <Automobile32 />,
+   * }
+   */
+  icons: PropTypes.objectOf(PropTypes.node),
+  /**
+   * i18n must include the label for each `supportedCardTypes`
+   * ex:
+   * [
+   *  TIMESERIES: 'ITEM 1',
+   *  ALERT: 'ITEM 8',
+   *  CUSTOM: 'ITEM 10',
+   *  COOL_NEW_CARD: 'Missing Icon',
+   * ]
+   */
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
@@ -97,6 +122,7 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  icons: null,
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   testID: 'card-editor',
@@ -115,6 +141,7 @@ const CardEditor = ({
   onValidateCardJson,
   supportedCardTypes,
   availableDimensions,
+  icons,
   i18n,
   currentBreakpoint,
   testID,
@@ -147,6 +174,7 @@ const CardEditor = ({
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
+            icons={icons}
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
