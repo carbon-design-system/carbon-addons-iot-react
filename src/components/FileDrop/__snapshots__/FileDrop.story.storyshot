@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--secondary"
-        htmlFor="id8"
+        htmlFor="id9"
         onKeyDown={[Function]}
         tabIndex={0}
       >
@@ -135,7 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id8"
+        id="id9"
         multiple={true}
         onChange={[Function]}
         onClick={[Function]}
@@ -202,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
       <label
         aria-disabled={false}
         className="bx--btn bx--btn--secondary"
-        htmlFor="id9"
+        htmlFor="id10"
         onKeyDown={[Function]}
         tabIndex={0}
       >
@@ -216,7 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         accept={Array []}
         className="bx--visually-hidden"
         disabled={false}
-        id="id9"
+        id="id10"
         multiple={false}
         onChange={[Function]}
         onClick={[Function]}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -40,7 +40,16 @@ const propTypes = {
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    unitLabel: PropTypes.string,
+    decimalPrecisionLabel: PropTypes.string,
+    showLegendLable: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    showLegendLabel: PropTypes.string,
+    fontSize: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -66,6 +75,29 @@ const CardEditFormSettings = ({
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
+  const handleTranslation = useCallback(
+    (idToTranslate) => {
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+      } = mergedI18n;
+      switch (idToTranslate) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'clear.selection':
+          return clearSelectionText || 'Clear selection';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -74,6 +106,7 @@ const CardEditFormSettings = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          translateWithId={handleTranslation}
         />
       );
     case CARD_TYPES.TIMESERIES:
@@ -98,6 +131,7 @@ const CardEditFormSettings = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          translateWithId={handleTranslation}
         />
       );
     case CARD_TYPES.TABLE:
@@ -107,6 +141,7 @@ const CardEditFormSettings = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          translateWithId={handleTranslation}
         />
       );
     default:

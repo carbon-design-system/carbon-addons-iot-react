@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -139,6 +139,30 @@ const CardEditFormContent = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
+  const handleTranslation = useCallback(
+    (idToTranslate) => {
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+      } = mergedI18n;
+      switch (idToTranslate) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'clear.selection':
+          return clearSelectionText || 'Clear selection';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
+
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
     : defaultTimeRangeOptions;
@@ -187,6 +211,7 @@ const CardEditFormContent = ({
             };
           })}
           light
+          translateWithId={handleTranslation}
           selectedItem={{
             id: size,
             text: getCardSizeText(size, mergedI18n, currentBreakpoint),
@@ -211,6 +236,7 @@ const CardEditFormContent = ({
               validTimeRangeOption.id === cardConfig.timeRange
           )}
           light
+          translateWithId={handleTranslation}
           onChange={({ selectedItem }) => {
             const timeRangeInterval = selectedItem.id;
             const { range } = timeRangeToJSON[timeRangeInterval];

@@ -144,7 +144,7 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
     emptyState,
   } = props;
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, i18n }), [i18n]);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const selectedItemRef = ref;
   const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {

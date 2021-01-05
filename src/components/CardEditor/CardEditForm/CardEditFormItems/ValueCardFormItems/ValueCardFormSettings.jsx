@@ -41,6 +41,8 @@ const propTypes = {
     decimalPrecisionLabel: PropTypes.string,
     showLegendLable: PropTypes.string,
   }),
+  /** Callback function to translate common ids */
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -56,7 +58,12 @@ const defaultProps = {
   },
 };
 
-const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
+const ValueCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
 
@@ -92,6 +99,7 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           label=""
           items={['Not set', '0', '1', '2', '3', '4']}
           light
+          translateWithId={translateWithId}
           selectedItem={content?.precision?.toString() || 'Not set'}
           onChange={({ selectedItem }) => {
             const isSet = selectedItem !== 'Not set';

@@ -25,7 +25,12 @@ const propTypes = {
   }),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    imageFile: PropTypes.string,
+    editImage: PropTypes.string,
+    image: PropTypes.string,
+    close: PropTypes.string,
+  }),
 };
 
 const defaultProps = {

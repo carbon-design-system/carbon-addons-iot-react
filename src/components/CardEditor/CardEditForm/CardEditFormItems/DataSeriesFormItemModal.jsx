@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   purple70,
@@ -89,6 +89,8 @@ const propTypes = {
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     source: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
   }),
 };
 
@@ -111,6 +113,8 @@ const defaultProps = {
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
     source: 'Source data item',
+    primaryButtonLabelText: 'Save',
+    secondaryButtonLabelText: 'Cancel',
   },
   editDataSeries: [],
   showEditor: false,
@@ -151,6 +155,30 @@ const DataSeriesFormItemModal = ({
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  const handleTranslation = useCallback(
+    (idToTranslate) => {
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+      } = mergedI18n;
+      switch (idToTranslate) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'clear.selection':
+          return clearSelectionText || 'Clear selection';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
 
   const DataSeriesEditorTable = (
     <Table
@@ -202,6 +230,7 @@ const DataSeriesFormItemModal = ({
                 label=""
                 titleText=""
                 selectedColor={selectedColor}
+                translateWithId={handleTranslation}
                 onChange={({ color }) => {
                   const updatedSeries = cloneDeep(editDataSeries);
                   updatedSeries[seriesIndex].color = color.carbonColor;
@@ -276,6 +305,7 @@ const DataSeriesFormItemModal = ({
             direction="bottom"
             items={['None', ...Object.keys(availableDimensions)]}
             light
+            translateWithId={handleTranslation}
             selectedItem={selectedDimensionFilter || 'None'}
             onChange={({ selectedItem }) => {
               if (selectedItem !== 'None') {
@@ -301,6 +331,7 @@ const DataSeriesFormItemModal = ({
             <Dropdown
               id={`${id}_data-filter-value`}
               label=""
+              translateWithId={handleTranslation}
               direction="bottom"
               items={availableDimensions[selectedDimensionFilter]}
               light
@@ -320,6 +351,8 @@ const DataSeriesFormItemModal = ({
         dataSourceId={editDataItem.dataSourceId}
         cardConfig={cardConfig}
         id={`${id}_thresholds`}
+        i18n={mergedI18n}
+        translateWithId={handleTranslation}
         thresholds={editDataItem.thresholds}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
         selectedColor={{ carbonColor: red60, name: 'red60' }}
@@ -355,7 +388,9 @@ const DataSeriesFormItemModal = ({
       </div>
       <ThresholdsFormItem
         id={`${id}_thresholds`}
+        i18n={mergedI18n}
         thresholds={editDataItem.thresholds}
+        translateWithId={handleTranslation}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
         selectedColor={{ carbonColor: red60, name: 'red60' }}
         onChange={(thresholds) => {
@@ -379,6 +414,10 @@ const DataSeriesFormItemModal = ({
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
+            footer={{
+              primaryButtonLabel: mergedI18n.primaryButtonLabelText,
+              secondaryButtonLabel: mergedI18n.secondaryButtonLabelText,
+            }}
             size="sm"
             onSubmit={() => {
               const newCard =
@@ -393,6 +432,7 @@ const DataSeriesFormItemModal = ({
               setShowEditor(false);
               setEditDataItem({});
             }}
+            iconDescription={mergedI18n.closeButtonLabelText}
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});

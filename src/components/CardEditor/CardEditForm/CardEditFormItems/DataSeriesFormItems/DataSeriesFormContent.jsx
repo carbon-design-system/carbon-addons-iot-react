@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
@@ -49,7 +49,23 @@ const propTypes = {
   }),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectDataItem: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+    clearAllText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
+  }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -83,6 +99,10 @@ const defaultProps = {
     edit: 'Edit',
     remove: 'Remove',
     customize: 'Customize',
+    clearAllText: 'Clear all',
+    clearSelectionText: 'Clear selection',
+    openMenuText: 'Open menu',
+    closeMenuText: 'Close menu',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -137,6 +157,30 @@ const DataSeriesFormItem = ({
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
+
+  const handleTranslation = useCallback(
+    (id) => {
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+      } = mergedI18n;
+      switch (id) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'clear.selection':
+          return clearSelectionText || 'Clear selection';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
 
   return (
     <>
@@ -193,6 +237,7 @@ const DataSeriesFormItem = ({
               onChange(newCard);
             }}
             titleText={mergedI18n.dataItem}
+            translateWithId={handleTranslation}
           />
         </div>
       ) : (
@@ -202,6 +247,7 @@ const DataSeriesFormItem = ({
             direction="bottom"
             label={mergedI18n.selectDataItem}
             light
+            translateWithId={handleTranslation}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={
