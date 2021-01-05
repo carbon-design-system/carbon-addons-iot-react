@@ -70,9 +70,9 @@ describe('HotspotTextStyleTab', () => {
     fireEvent.click(dropdowns[2]);
     fireEvent.click(screen.getAllByText(colors[1].name)[2]);
 
-    expect(formValues.fontColor).toEqual(colors[1]);
-    expect(formValues.backgroundColor).toEqual(colors[1]);
-    expect(formValues.borderColor).toEqual(colors[1]);
+    expect(formValues.fontColor).toEqual(colors[1].carbonColor);
+    expect(formValues.backgroundColor).toEqual(colors[1].carbonColor);
+    expect(formValues.borderColor).toEqual(colors[1].carbonColor);
   });
 
   it('handles number input updates', () => {
@@ -101,16 +101,33 @@ describe('HotspotTextStyleTab', () => {
     fireEvent.click(incrementButtons[1]);
     fireEvent.click(incrementButtons[2]);
 
-    expect(formValues.fontSize).toEqual('13');
-    expect(formValues.backgroundOpacity).toEqual('100');
-    expect(formValues.borderWidth).toEqual('2');
+    expect(formValues.fontSize).toEqual(13);
+    expect(formValues.backgroundOpacity).toEqual(100);
+    expect(formValues.borderWidth).toEqual(2);
 
     fireEvent.click(decrementButtons[0]);
     fireEvent.click(decrementButtons[1]);
     fireEvent.click(decrementButtons[2]);
 
-    expect(formValues.fontSize).toEqual('12');
-    expect(formValues.backgroundOpacity).toEqual('99');
-    expect(formValues.borderWidth).toEqual('1');
+    expect(formValues.fontSize).toEqual(12);
+    expect(formValues.backgroundOpacity).toEqual(99);
+    expect(formValues.borderWidth).toEqual(1);
+  });
+
+  it('renders preset color string value', () => {
+    const colorObj = colors[1];
+    const colorString = colorObj.carbonColor;
+
+    render(
+      <HotspotTextStyleTab
+        fontColors={colors}
+        backgroundColors={colors}
+        borderColors={colors}
+        formValues={{ fontColor: colorString }}
+        onChange={() => {}}
+      />
+    );
+
+    expect(screen.getByText(colorObj.name)).toBeVisible();
   });
 });

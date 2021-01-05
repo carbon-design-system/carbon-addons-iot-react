@@ -164,6 +164,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ColorDropdown/color-dropdown';
 @import 'components/SimpleIconDropdown/simple-icon-dropdown';
 @import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
+@import 'components/HotspotEditorModal/hotspot-editor-modal';
+@import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)

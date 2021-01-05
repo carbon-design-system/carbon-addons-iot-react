@@ -13,7 +13,7 @@ import ImageHotspots, {
   whileDrag,
   onImageLoad,
   zoom,
-  onAddHotspotPosition,
+  handleMouseUp,
 } from './ImageHotspots';
 
 const getHotspots = () => {
@@ -384,9 +384,10 @@ describe('ImageHotspots', () => {
         updatedCursor = func({});
       });
 
-      onAddHotspotPosition({
+      handleMouseUp({
         event,
         image,
+        cursor: { imageMousedown: true },
         setCursor,
         isEditable: true,
         callback: onAddHotspotPositionCallback,
@@ -396,7 +397,10 @@ describe('ImageHotspots', () => {
         x: 30,
         y: 20,
       });
-      expect(updatedCursor).toEqual({ dragPrepared: false });
+      expect(updatedCursor).toEqual({
+        dragPrepared: false,
+        imageMousedown: false,
+      });
     });
   });
 });

@@ -303,7 +303,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 className="iot--hotspot-content"
               >
                 <h4
-                  onClick={[Function]}
                   title="Facility rooms"
                 >
                   Facility rooms
@@ -403,7 +402,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 className="iot--hotspot-content"
               >
                 <h4
-                  onClick={[Function]}
                   title="Storage"
                 >
                   Storage

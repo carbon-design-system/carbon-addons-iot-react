@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
+import { EscalatorDown } from '@carbon/pictograms-react';
 
 import CardEditor from './CardEditor';
 
@@ -91,6 +92,39 @@ describe('CardEditor', () => {
       })
     );
     expect(actions.onShowGallery).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows gallery when no card is defined', () => {
+    render(<CardEditor />);
+
+    expect(screen.getByText('Gallery')).toBeTruthy();
+  });
+
+  it('shows custom gallery', () => {
+    const testId = 'escalator';
+    const inDomText = 'In The Dom';
+    const notInDomText = 'Not In The Dom';
+    render(
+      <CardEditor
+        i18n={{
+          TIMESERIES: notInDomText,
+          SIMPLE_BAR: notInDomText,
+          GROUPED_BAR: notInDomText,
+          STACKED_BAR: notInDomText,
+          VALUE: inDomText,
+          COOL_NEW_CARD: inDomText,
+        }}
+        supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
+        icons={{
+          VALUE: <EscalatorDown data-testid={testId} />,
+        }}
+      />
+    );
+
+    expect(screen.getByText('Gallery')).toBeTruthy();
+    expect(screen.getByTestId(testId)).toBeTruthy();
+    expect(screen.queryAllByText(notInDomText).length).toBe(0);
+    expect(screen.queryAllByText(inDomText).length).toBe(2);
   });
 
   it('opens and closes JSON code modal through button clicks', () => {

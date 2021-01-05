@@ -39,6 +39,25 @@
     }
   }
 
+  &.#{$iot-prefix}--composed-modal--full-screen {
+    & > .#{$prefix}--modal-container {
+      $min-width: calc(100% - #{$layout-02});
+      min-height: $min-width;
+      min-width: $min-width;
+      max-height: 80%;
+      @media (min-width: carbon--rem(1024px)) {
+        min-width: $min-width;
+      }
+      @media (min-width: carbon--rem(1200px)) {
+        min-width: $min-width;
+      }
+
+      .#{$prefix}--modal-header {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   /* Needed for buttons when they're next to each other */
 
   .#{$prefix}--modal-header__heading {
