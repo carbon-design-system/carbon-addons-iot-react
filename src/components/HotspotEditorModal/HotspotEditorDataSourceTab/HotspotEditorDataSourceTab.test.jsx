@@ -69,7 +69,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         title="elevators"
         cardConfig={cardConfigWithPresets}
@@ -81,13 +80,15 @@ describe('HotspotEditorDataSourceTab', () => {
     const options = screen.getByTitle(/elevators/);
     userEvent.click(options);
     // Card config with the elevators hotspot removed
-    expect(onChange).toHaveBeenCalledWith([
-      {
-        dataSourceId: 'temp_last',
-        label: '{high} temp',
-        unit: '{unitVar}',
-      },
-    ]);
+    expect(onChange).toHaveBeenCalledWith({
+      attributes: [
+        {
+          dataSourceId: 'temp_last',
+          label: '{high} temp',
+          unit: '{unitVar}',
+        },
+      ],
+    });
   });
 
   it('calls onChange & adds attribute when new item is clicked in multiselect', () => {
@@ -95,7 +96,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -105,23 +105,25 @@ describe('HotspotEditorDataSourceTab', () => {
     userEvent.click(screen.getAllByRole('button')[0]);
     userEvent.click(screen.getAllByRole('option')[1]);
     // Card config with the elevators hotspot removed
-    expect(onChange).toHaveBeenCalledWith([
-      {
-        dataSourceId: 'temp_last',
-        label: '{high} temp',
-        unit: '{unitVar}',
-      },
-      {
-        dataSourceId: 'elevators',
-        label: 'Elevators',
-        unit: 'floor',
-      },
-      {
-        dataSourceId: 'other_metric',
-        label: 'Other metric',
-        unit: 'lbs',
-      },
-    ]);
+    expect(onChange).toHaveBeenCalledWith({
+      attributes: [
+        {
+          dataSourceId: 'temp_last',
+          label: '{high} temp',
+          unit: '{unitVar}',
+        },
+        {
+          dataSourceId: 'elevators',
+          label: 'Elevators',
+          unit: 'floor',
+        },
+        {
+          dataSourceId: 'other_metric',
+          label: 'Other metric',
+          unit: 'lbs',
+        },
+      ],
+    });
   });
 
   it('pops the data items modal', () => {
@@ -129,7 +131,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -146,7 +147,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -162,7 +162,6 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
-      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [
@@ -182,7 +181,6 @@ describe('HotspotEditorDataSourceTab', () => {
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
-        hotspotIndex={0}
         thresholds={cardConfigWithPresets.thresholds || []}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
@@ -200,7 +198,6 @@ describe('HotspotEditorDataSourceTab', () => {
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
       dataSourceId: 'temp_last',
-      hotspotIndex: 0,
       label: '{high} temp',
       unit: '{unitVar}',
       thresholds: [
