@@ -87,7 +87,7 @@ const CardGalleryList = ({ supportedCardTypes, onAddCard, i18n }) => {
         onAddCard(cardType);
       }}
       i18n={{
-        searchPlaceHolderText: i18n.searchPlaceHolderText,
+        searchPlaceHolderText: mergedI18n.searchPlaceHolderText,
       }}
     />
   );

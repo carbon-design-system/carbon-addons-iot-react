@@ -14,7 +14,7 @@ const propTypes = {
     value: PropTypes.string,
   }),
   i18n: PropTypes.shape({
-    searchPlaceHolderText: PropTypes.string.isRequired,
+    searchPlaceHolderText: PropTypes.string,
   }),
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool.isRequired,
