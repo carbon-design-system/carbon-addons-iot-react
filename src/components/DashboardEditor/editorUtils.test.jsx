@@ -133,6 +133,8 @@ describe('editorUtils', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.TABLE, i18n);
       expect(defaultCard.type).toEqual(CARD_TYPES.TABLE);
       expect(defaultCard.content).toBeDefined();
+      expect(defaultCard.content.showHeader).toEqual(true);
+      expect(defaultCard.content.allowNavigation).toEqual(true);
     });
     it('should return ImageCard', () => {
       const defaultCard = getDefaultCard(CARD_TYPES.IMAGE, i18n);

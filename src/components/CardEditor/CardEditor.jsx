@@ -103,6 +103,8 @@ const propTypes = {
     searchPlaceholderText: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
+  /** Id that can be used for testing */
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -123,6 +125,7 @@ const defaultProps = {
   icons: null,
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  testID: 'card-editor',
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -141,6 +144,7 @@ const CardEditor = ({
   icons,
   i18n,
   currentBreakpoint,
+  testID,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -148,7 +152,7 @@ const CardEditor = ({
   const showGallery = isNil(cardConfig);
 
   return (
-    <div className={baseClassName}>
+    <div className={baseClassName} data-testid={testID}>
       {!showGallery ? (
         <div className={`${baseClassName}--header`}>
           <Button
@@ -174,6 +178,7 @@ const CardEditor = ({
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
+            data-testid={`${testID}-card-gallery-list`}
           />
         ) : (
           <CardEditForm

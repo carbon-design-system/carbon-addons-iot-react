@@ -859,6 +859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -1895,6 +1896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -2789,11 +2791,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <span
                         className="bx--assistive-text"
                       >
-                        Edit title
+                        Edit title updated
                       </span>
                       <svg
                         aria-hidden="true"
-                        aria-label="Edit title"
+                        aria-label="Edit title updated"
                         className="bx--btn__icon"
                         fill="currentColor"
                         focusable="false"
@@ -4099,6 +4101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -5571,6 +5574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -6889,6 +6893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -9638,6 +9643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
@@ -11064,6 +11070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             className="iot--card-editor"
+            data-testid="card-editor"
           >
             <div
               className="iot--card-editor--header"
