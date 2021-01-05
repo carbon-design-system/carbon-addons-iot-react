@@ -23,6 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     >
       <div
         className="iot--card-editor"
+        data-testid="card-editor"
       >
         <div
           className="iot--card-editor--header"
