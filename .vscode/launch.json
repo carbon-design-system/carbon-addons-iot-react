@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Debug Story Book",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/lib/index.js"
+    },
+    {
       "type": "node",
       "runtimeVersion": "12.17.0",
       "request": "launch",

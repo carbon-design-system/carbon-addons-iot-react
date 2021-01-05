@@ -148,6 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <button
           aria-label="alerts"
           className="bx--header-action-btn bx--header__action"
+          data-testid="menu-item-alerts-global"
           onClick={[Function]}
           type="button"
         >
@@ -351,6 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <button
           aria-label="Administration"
           className="bx--header-action-btn admin-icon bx--header__action"
+          data-testid="menu-item-Administration-global"
           onClick={[Function]}
           type="button"
         >
@@ -939,6 +941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <button
           aria-label="Administration"
           className="bx--header-action-btn admin-icon bx--header__action"
+          data-testid="menu-item-Administration-global"
           onClick={[Function]}
           type="button"
         >
@@ -1881,6 +1884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <button
           aria-label="Administration"
           className="bx--header-action-btn admin-icon bx--header__action"
+          data-testid="menu-item-Administration-global"
           onClick={[Function]}
           type="button"
         >
@@ -2451,6 +2455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         <button
           aria-label="Administration"
           className="bx--header-action-btn admin-icon bx--header__action"
+          data-testid="menu-item-Administration-global"
           onClick={[Function]}
           type="button"
         >
