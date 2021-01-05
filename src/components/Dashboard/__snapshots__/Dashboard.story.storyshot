@@ -27833,6 +27833,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <defs>
                             <linearGradient
                               gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
+                              id="data-scientist-icon_svg__l"
+                              x1={-143.47}
+                              x2={-143.1}
+                              xlinkHref="#data-scientist-icon_svg__b"
+                              y1={4805.59}
+                              y2={4805.36}
+                            />
+                            <linearGradient
+                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
                               gradientUnits="userSpaceOnUse"
                               id="data-scientist-icon_svg__a"
                               x1={-143.46}
@@ -27851,15 +27860,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 offset={1}
                               />
                             </linearGradient>
-                            <linearGradient
-                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
-                              id="data-scientist-icon_svg__c"
-                              x1={-141.77}
-                              x2={-141.23}
-                              xlinkHref="#data-scientist-icon_svg__a"
-                              y1={4806.28}
-                              y2={4806.28}
-                            />
                             <linearGradient
                               gradientTransform="matrix(0 -9.62 9.62 0 -56968.54 10565.32)"
                               id="data-scientist-icon_svg__f"
@@ -27965,74 +27965,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               />
                             </linearGradient>
                             <linearGradient
-                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
-                              id="data-scientist-icon_svg__l"
-                              x1={-143.47}
-                              x2={-143.1}
-                              xlinkHref="#data-scientist-icon_svg__b"
-                              y1={4805.59}
-                              y2={4805.36}
-                            />
-                            <linearGradient
-                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
-                              id="data-scientist-icon_svg__n"
-                              x1={-141.79}
-                              x2={-141.16}
-                              xlinkHref="#data-scientist-icon_svg__b"
-                              y1={4806.38}
-                              y2={4805.99}
-                            />
-                            <linearGradient
-                              gradientTransform="translate(-12645.2)"
+                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__o"
-                              x1={12749.65}
-                              x2={12755.31}
-                              y1={37.47}
-                              y2={37.47}
+                              id="data-scientist-icon_svg__v"
+                              x1={-2655.26}
+                              x2={-2657.15}
+                              y1={49.06}
+                              y2={48.41}
                             >
                               <stop
-                                offset={0}
-                                stopColor="#0530ad"
-                              />
-                              <stop
-                                offset={0.04}
-                                stopColor="#0530ad"
-                                stopOpacity={0.87}
-                              />
-                              <stop
-                                offset={0.12}
-                                stopColor="#0530ad"
-                                stopOpacity={0.64}
-                              />
-                              <stop
                                 offset={0.2}
-                                stopColor="#0530ad"
-                                stopOpacity={0.44}
+                                stopColor="#97c1ff"
+                                stopOpacity={0}
                               />
                               <stop
                                 offset={0.29}
-                                stopColor="#0530ad"
-                                stopOpacity={0.28}
+                                stopColor="#7ea9f1"
+                                stopOpacity={0.17}
                               />
                               <stop
-                                offset={0.39}
-                                stopColor="#0530ad"
-                                stopOpacity={0.16}
+                                offset={0.46}
+                                stopColor="#537ed9"
+                                stopOpacity={0.46}
                               />
                               <stop
-                                offset={0.5}
-                                stopColor="#0530ad"
-                                stopOpacity={0.07}
+                                offset={0.63}
+                                stopColor="#315cc6"
+                                stopOpacity={0.7}
                               />
                               <stop
-                                offset={0.62}
-                                stopColor="#0530ad"
-                                stopOpacity={0.02}
+                                offset={0.78}
+                                stopColor="#1944b8"
+                                stopOpacity={0.86}
                               />
                               <stop
-                                offset={0.8}
+                                offset={0.91}
+                                stopColor="#0a35b0"
+                                stopOpacity={0.96}
+                              />
+                              <stop
+                                offset={1}
                                 stopColor="#0530ad"
+                              />
+                            </linearGradient>
+                            <linearGradient
+                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
+                              gradientUnits="userSpaceOnUse"
+                              id="data-scientist-icon_svg__u"
+                              x1={-2637.72}
+                              x2={-2656}
+                              y1={74.55}
+                              y2={76.73}
+                            >
+                              <stop
+                                offset={0}
+                                stopColor="#b9bfc7"
+                              />
+                              <stop
+                                offset={0.67}
+                                stopColor="#b9bfc7"
+                                stopOpacity={0.32}
+                              />
+                              <stop
+                                offset={1}
+                                stopColor="#b9bfc7"
                                 stopOpacity={0}
                               />
                             </linearGradient>
@@ -28096,73 +28092,77 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               />
                             </linearGradient>
                             <linearGradient
-                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
+                              gradientTransform="translate(-12645.2)"
                               gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__u"
-                              x1={-2637.72}
-                              x2={-2656}
-                              y1={74.55}
-                              y2={76.73}
+                              id="data-scientist-icon_svg__o"
+                              x1={12749.65}
+                              x2={12755.31}
+                              y1={37.47}
+                              y2={37.47}
                             >
                               <stop
                                 offset={0}
-                                stopColor="#b9bfc7"
+                                stopColor="#0530ad"
                               />
                               <stop
-                                offset={0.67}
-                                stopColor="#b9bfc7"
-                                stopOpacity={0.32}
+                                offset={0.04}
+                                stopColor="#0530ad"
+                                stopOpacity={0.87}
                               />
                               <stop
-                                offset={1}
-                                stopColor="#b9bfc7"
+                                offset={0.12}
+                                stopColor="#0530ad"
+                                stopOpacity={0.64}
+                              />
+                              <stop
+                                offset={0.2}
+                                stopColor="#0530ad"
+                                stopOpacity={0.44}
+                              />
+                              <stop
+                                offset={0.29}
+                                stopColor="#0530ad"
+                                stopOpacity={0.28}
+                              />
+                              <stop
+                                offset={0.39}
+                                stopColor="#0530ad"
+                                stopOpacity={0.16}
+                              />
+                              <stop
+                                offset={0.5}
+                                stopColor="#0530ad"
+                                stopOpacity={0.07}
+                              />
+                              <stop
+                                offset={0.62}
+                                stopColor="#0530ad"
+                                stopOpacity={0.02}
+                              />
+                              <stop
+                                offset={0.8}
+                                stopColor="#0530ad"
                                 stopOpacity={0}
                               />
                             </linearGradient>
                             <linearGradient
-                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-                              gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__v"
-                              x1={-2655.26}
-                              x2={-2657.15}
-                              y1={49.06}
-                              y2={48.41}
-                            >
-                              <stop
-                                offset={0.2}
-                                stopColor="#97c1ff"
-                                stopOpacity={0}
-                              />
-                              <stop
-                                offset={0.29}
-                                stopColor="#7ea9f1"
-                                stopOpacity={0.17}
-                              />
-                              <stop
-                                offset={0.46}
-                                stopColor="#537ed9"
-                                stopOpacity={0.46}
-                              />
-                              <stop
-                                offset={0.63}
-                                stopColor="#315cc6"
-                                stopOpacity={0.7}
-                              />
-                              <stop
-                                offset={0.78}
-                                stopColor="#1944b8"
-                                stopOpacity={0.86}
-                              />
-                              <stop
-                                offset={0.91}
-                                stopColor="#0a35b0"
-                                stopOpacity={0.96}
-                              />
-                              <stop
-                                offset={1}
-                                stopColor="#0530ad"
-                              />
-                            </linearGradient>
+                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
+                              id="data-scientist-icon_svg__n"
+                              x1={-141.79}
+                              x2={-141.16}
+                              xlinkHref="#data-scientist-icon_svg__b"
+                              y1={4806.38}
+                              y2={4805.99}
+                            />
+                            <linearGradient
+                              gradientTransform="matrix(-9.62 0 0 -9.62 -1273.73 46275.97)"
+                              id="data-scientist-icon_svg__c"
+                              x1={-141.77}
+                              x2={-141.23}
+                              xlinkHref="#data-scientist-icon_svg__a"
+                              y1={4806.28}
+                              y2={4806.28}
+                            />
                             <linearGradient
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
                               gradientUnits="userSpaceOnUse"
@@ -28208,6 +28208,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               />
                             </linearGradient>
                             <radialGradient
+                              cx={-2644.06}
+                              cy={60.05}
+                              id="data-scientist-icon_svg__p"
+                              r={5.83}
+                              xlinkHref="#data-scientist-icon_svg__d"
+                            />
+                            <radialGradient
+                              cx={-2647.22}
+                              cy={59.91}
+                              id="data-scientist-icon_svg__t"
+                              r={6.78}
+                              xlinkHref="#data-scientist-icon_svg__d"
+                            />
+                            <radialGradient
+                              cx={-2655.87}
+                              cy={70.73}
+                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
+                              gradientUnits="userSpaceOnUse"
+                              id="data-scientist-icon_svg__h"
+                              r={20.6}
+                            >
+                              <stop
+                                offset={0}
+                                stopColor="#f3f3f3"
+                              />
+                              <stop
+                                offset={0.23}
+                                stopColor="#f3f3f3"
+                              />
+                              <stop
+                                offset={1}
+                                stopColor="#b9bfc7"
+                              />
+                            </radialGradient>
+                            <radialGradient
                               cx={-2663.42}
                               cy={53.56}
                               gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
@@ -28232,49 +28267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 stopColor="#b9bfc7"
                               />
                             </radialGradient>
-                            <radialGradient
-                              cx={-2655.87}
-                              cy={70.73}
-                              gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-                              gradientUnits="userSpaceOnUse"
-                              id="data-scientist-icon_svg__h"
-                              r={20.6}
-                            >
-                              <stop
-                                offset={0}
-                                stopColor="#f3f3f3"
-                              />
-                              <stop
-                                offset={0.23}
-                                stopColor="#f3f3f3"
-                              />
-                              <stop
-                                offset={1}
-                                stopColor="#b9bfc7"
-                              />
-                            </radialGradient>
-                            <radialGradient
-                              cx={-2644.06}
-                              cy={60.05}
-                              id="data-scientist-icon_svg__p"
-                              r={5.83}
-                              xlinkHref="#data-scientist-icon_svg__d"
-                            />
-                            <radialGradient
-                              cx={-2647.22}
-                              cy={59.91}
-                              id="data-scientist-icon_svg__t"
-                              r={6.78}
-                              xlinkHref="#data-scientist-icon_svg__d"
-                            />
-                            <clipPath
-                              id="data-scientist-icon_svg__i"
-                            >
-                              <path
-                                d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
-                                fill="none"
-                              />
-                            </clipPath>
                             <clipPath
                               id="data-scientist-icon_svg__j"
                             >
@@ -28292,20 +28284,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 opacity={0.7}
                               />
                             </clipPath>
-                            <mask
-                              height={6.35}
-                              id="data-scientist-icon_svg__k"
-                              maskUnits="userSpaceOnUse"
-                              width={6.35}
-                              x={103.38}
-                              y={41.28}
+                            <clipPath
+                              id="data-scientist-icon_svg__i"
                             >
                               <path
-                                d="M104.29 42.23h4.53v4.46h-4.53z"
-                                fill="url(#data-scientist-icon_svg__a)"
-                                transform="rotate(-47.95 106.56 44.465)"
+                                d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
+                                fill="none"
                               />
-                            </mask>
+                            </clipPath>
                             <mask
                               height={10.77}
                               id="data-scientist-icon_svg__m"
@@ -28318,6 +28304,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 d="M86.12 48.38h7.68v7.57h-7.68z"
                                 fill="url(#data-scientist-icon_svg__c)"
                                 transform="rotate(-47.95 89.952 52.163)"
+                              />
+                            </mask>
+                            <mask
+                              height={6.35}
+                              id="data-scientist-icon_svg__k"
+                              maskUnits="userSpaceOnUse"
+                              width={6.35}
+                              x={103.38}
+                              y={41.28}
+                            >
+                              <path
+                                d="M104.29 42.23h4.53v4.46h-4.53z"
+                                fill="url(#data-scientist-icon_svg__a)"
+                                transform="rotate(-47.95 106.56 44.465)"
                               />
                             </mask>
                             <mask

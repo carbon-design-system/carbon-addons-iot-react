@@ -8528,7 +8528,7 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a value",
+        "searchPlaceHolderText": "Enter a value",
       },
       "initialValue": Object {
         "cards": Array [],
@@ -8736,7 +8736,7 @@ Map {
             "openJSONButton": Object {
               "type": "string",
             },
-            "searchPlaceholderText": Object {
+            "searchPlaceHolderText": Object {
               "type": "string",
             },
           },
@@ -8834,7 +8834,7 @@ Map {
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a search",
+        "searchPlaceHolderText": "Enter a search",
       },
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
@@ -8962,7 +8962,7 @@ Map {
             "galleryHeader": Object {
               "type": "string",
             },
-            "searchPlaceholderText": Object {
+            "searchPlaceHolderText": Object {
               "type": "string",
             },
           },
