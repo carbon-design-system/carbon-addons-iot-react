@@ -16,7 +16,6 @@ const commonProps = {
 
 export default {
   title: 'Watson IoT/TimeSeriesCard',
-
   parameters: {
     component: TimeSeriesCard,
   },
@@ -1331,6 +1330,9 @@ export const Locale = () => {
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
         onCardAction={action('onCardAction')}
+        i18n={{
+          tooltipGroupLabel: 'Translated Group',
+        }}
       />
     </div>
   );

@@ -20,7 +20,6 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 
 export default {
   title: 'Watson IoT/BarChartCard',
-
   parameters: {
     component: BarChartCard,
   },

@@ -4510,6 +4510,8 @@ Map {
       "domainRange": null,
       "i18n": Object {
         "noDataLabel": "No data",
+        "tooltipGroupLabel": "Group",
+        "tooltipTotalLabel": "Total",
       },
       "locale": "en",
       "showTimeInGMT": false,
@@ -5156,6 +5158,12 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "tooltipGroupLabel": Object {
+              "type": "string",
+            },
+            "tooltipTotalLabel": Object {
               "type": "string",
             },
           },
@@ -11910,6 +11918,7 @@ Map {
       "i18n": Object {
         "alertDetected": "Alert detected:",
         "noDataLabel": "No data is available for this time range.",
+        "tooltipGroupLabel": "Group",
       },
       "locale": "en",
       "showTimeInGMT": false,
@@ -12606,6 +12615,9 @@ Map {
               "type": "string",
             },
             "noData": Object {
+              "type": "string",
+            },
+            "tooltipGroupLabel": Object {
               "type": "string",
             },
           },
