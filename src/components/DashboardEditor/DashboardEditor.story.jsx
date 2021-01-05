@@ -49,6 +49,7 @@ const mockDataItems = [
   { dataSourceId: 'torque_max', label: 'Torque Max' },
   { dataSourceId: 'torque_min', label: 'Torque Min' },
   { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+  { dataSourceId: 'torque', label: 'Torque' },
   { dataSourceId: 'temperature', label: 'Temperature' },
   { dataSourceId: 'pressure', label: 'Pressure' },
 ];

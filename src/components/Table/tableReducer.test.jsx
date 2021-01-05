@@ -458,9 +458,7 @@ describe('table reducer', () => {
       expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(
         false
       );
-      expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(
-        initialState.data.length
-      );
+      expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(0);
     });
   });
 });
