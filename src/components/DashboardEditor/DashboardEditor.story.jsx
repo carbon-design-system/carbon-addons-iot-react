@@ -70,6 +70,9 @@ export const Default = () => (
       getValidDataItems={() => mockDataItems}
       dataItems={mockDataItems}
       availableImages={images}
+      i18n={{
+        headerEditTitleButton: 'Edit title updated',
+      }}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
