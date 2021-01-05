@@ -113,6 +113,7 @@ export FilterTags from './components/FilterTags/FilterTags';
 export ColorDropdown from './components/ColorDropdown/ColorDropdown';
 export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
+export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
 
 // Carbon proxy
 export {

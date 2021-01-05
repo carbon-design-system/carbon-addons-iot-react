@@ -89,6 +89,7 @@ const propTypes = {
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     source: PropTypes.string,
+    primaryButtonLabel: PropTypes.string,
   }),
 };
 
@@ -111,6 +112,7 @@ const defaultProps = {
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
     source: 'Source data item',
+    primaryButtonLabel: 'Save',
   },
   editDataSeries: [],
   showEditor: false,
@@ -396,6 +398,9 @@ const DataSeriesFormItemModal = ({
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});
+            }}
+            footer={{
+              primaryButtonLabel: mergedI18n.modalPrimaryButtonLabel,
             }}>
             {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR
               ? DataSeriesEditorTable
