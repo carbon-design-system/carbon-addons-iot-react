@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -105,6 +105,23 @@ const CardEditFormContent = ({
   const [selectedDataItems, setSelectedDataItems] = useState([]);
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
+  const handleTranslation = useCallback(
+    (id) => {
+      const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
+      switch (id) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
+
   return (
     <>
       <CommonCardEditFormFields
@@ -115,6 +132,7 @@ const CardEditFormContent = ({
         currentBreakpoint={currentBreakpoint}
         selectedDataItems={selectedDataItems}
         setSelectedTimeRange={setSelectedTimeRange}
+        translateWithId={handleTranslation}
       />
       {type === CARD_TYPES.IMAGE ? (
         <ImageCardFormContent
@@ -132,6 +150,7 @@ const CardEditFormContent = ({
           setSelectedDataItems={setSelectedDataItems}
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
+          translateWithId={handleTranslation}
         />
       ) : (
         <DataSeriesFormContent
@@ -144,6 +163,7 @@ const CardEditFormContent = ({
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          translateWithId={handleTranslation}
         />
       )}
     </>

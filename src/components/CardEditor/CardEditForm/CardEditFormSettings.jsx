@@ -77,19 +77,10 @@ const CardEditFormSettings = ({
   const { type } = cardConfig;
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
+      const { openMenuText, closeMenuText } = mergedI18n;
       switch (idToTranslate) {
         default:
           return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'clear.selection':
-          return clearSelectionText || 'Clear selection';
         case 'open.menu':
           return openMenuText || 'Open menu';
         case 'close.menu':

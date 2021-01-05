@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -74,6 +74,7 @@ const propTypes = {
   availableDimensions: PropTypes.shape({}),
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedTimeRange: PropTypes.func.isRequired,
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -133,35 +134,12 @@ const CardEditFormContent = ({
   currentBreakpoint,
   selectedDataItems,
   setSelectedTimeRange,
+  translateWithId,
 }) => {
   const { title, description, size, type, id } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const handleTranslation = useCallback(
-    (idToTranslate) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
-      switch (idToTranslate) {
-        default:
-          return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'clear.selection':
-          return clearSelectionText || 'Clear selection';
-        case 'open.menu':
-          return openMenuText || 'Open menu';
-        case 'close.menu':
-          return closeMenuText || 'Close menu';
-      }
-    },
-    [mergedI18n]
-  );
 
   const validTimeRanges = getValidTimeRanges
     ? getValidTimeRanges(cardConfig, selectedDataItems)
@@ -211,7 +189,7 @@ const CardEditFormContent = ({
             };
           })}
           light
-          translateWithId={handleTranslation}
+          translateWithId={translateWithId}
           selectedItem={{
             id: size,
             text: getCardSizeText(size, mergedI18n, currentBreakpoint),
@@ -236,7 +214,7 @@ const CardEditFormContent = ({
               validTimeRangeOption.id === cardConfig.timeRange
           )}
           light
-          translateWithId={handleTranslation}
+          translateWithId={translateWithId}
           onChange={({ selectedItem }) => {
             const timeRangeInterval = selectedItem.id;
             const { range } = timeRangeToJSON[timeRangeInterval];

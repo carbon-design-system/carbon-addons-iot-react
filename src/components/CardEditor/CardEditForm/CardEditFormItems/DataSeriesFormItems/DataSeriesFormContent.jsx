@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
@@ -83,6 +83,7 @@ const propTypes = {
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -126,6 +127,7 @@ const DataSeriesFormItem = ({
   selectedTimeRange,
   availableDimensions,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -158,30 +160,6 @@ const DataSeriesFormItem = ({
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
 
-  const handleTranslation = useCallback(
-    (id) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
-      switch (id) {
-        default:
-          return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'clear.selection':
-          return clearSelectionText || 'Clear selection';
-        case 'open.menu':
-          return openMenuText || 'Open menu';
-        case 'close.menu':
-          return closeMenuText || 'Close menu';
-      }
-    },
-    [mergedI18n]
-  );
-
   return (
     <>
       <DataSeriesFormItemModal
@@ -205,6 +183,7 @@ const DataSeriesFormItem = ({
           onChange={onChange}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          translateWithId={translateWithId}
         />
       ) : null}
       {canMultiSelectDataItems ? (
@@ -237,7 +216,7 @@ const DataSeriesFormItem = ({
               onChange(newCard);
             }}
             titleText={mergedI18n.dataItem}
-            translateWithId={handleTranslation}
+            translateWithId={translateWithId}
           />
         </div>
       ) : (
@@ -247,7 +226,7 @@ const DataSeriesFormItem = ({
             direction="bottom"
             label={mergedI18n.selectDataItem}
             light
-            translateWithId={handleTranslation}
+            translateWithId={translateWithId}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={

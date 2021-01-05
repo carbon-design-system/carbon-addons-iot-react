@@ -732,6 +732,9 @@ export const I18N = () => (
         primaryButtonLabelText: 'primaryButtonLabelText',
         secondaryButtonLabelText: 'secondaryButtonLabelText',
 
+        // settings for Value card
+        notSet: 'notSet',
+
         // Settings for Data Series
         xAxisLabel: 'xAxisLabel',
         yAxisLabel: 'yAxisLabel',
@@ -798,6 +801,17 @@ export const I18N = () => (
         imageGalleryModalCloseIconDescriptionText:
           'imageGalleryModalCloseIconDescriptionText',
         imageGallerySearchPlaceHolderText: 'imageGallerySearchPlaceHolderText',
+
+        // table card settings
+        selectGroupByDimensions: 'selectGroupByDimensions',
+        dataItemEditorDimensionTitle: 'dataItemEditorDimensionTitle',
+        rowsPerPage: 'rowsPerPage',
+        sortBy: 'sortBy',
+        sortByTitle: 'sortByTitle',
+        ascending: 'ascending',
+        descending: 'descending',
+        showHeader: 'showHeader',
+        allowNavigation: 'allowNavigation',
       }}
       breakpointSwitcher={{ enabled: true }}
       headerBreadcrumbs={[
@@ -810,5 +824,5 @@ export const I18N = () => (
 );
 
 I18N.story = {
-  name: 'i18N',
+  name: 'i18n',
 };

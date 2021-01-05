@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
@@ -53,6 +53,7 @@ const propTypes = {
     subGroup: PropTypes.string,
     timeInterval: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -87,34 +88,11 @@ const BarChartDataSeriesContent = ({
   onChange,
   availableDimensions,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  const handleTranslation = useCallback(
-    (idToTranslate) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
-      switch (idToTranslate) {
-        default:
-          return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'clear.selection':
-          return clearSelectionText || 'Clear selection';
-        case 'open.menu':
-          return openMenuText || 'Open menu';
-        case 'close.menu':
-          return closeMenuText || 'Close menu';
-      }
-    },
-    [mergedI18n]
-  );
 
   return (
     <>
@@ -124,7 +102,7 @@ const BarChartDataSeriesContent = ({
           direction="bottom"
           label={mergedI18n.selectGroupBy}
           light
-          translateWithId={handleTranslation}
+          translateWithId={translateWithId}
           titleText={mergedI18n.groupBy}
           items={[
             ...(cardConfig.content.type !== BAR_CHART_TYPES.GROUPED
@@ -177,7 +155,7 @@ const BarChartDataSeriesContent = ({
             direction="bottom"
             label={mergedI18n.selectCategory}
             light
-            translateWithId={handleTranslation}
+            translateWithId={translateWithId}
             titleText={mergedI18n.subGroup}
             items={Object.keys(availableDimensions)}
             selectedItem={cardConfig.content?.categoryDataSourceId}
