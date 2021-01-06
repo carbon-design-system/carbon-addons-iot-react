@@ -358,14 +358,14 @@ export const handleOnClick = (onSelectCard, id) => {
  */
 export const renderBreakpointInfo = (breakpoint, i18n) => {
   switch (breakpoint) {
-    case 'xl':
-      return i18n.layoutInfoXl;
     case 'lg':
       return i18n.layoutInfoLg;
     case 'md':
       return i18n.layoutInfoMd;
+    case 'sm':
+      return i18n.layoutInfoSm;
     default:
-      return i18n.layoutInfoXl;
+      return i18n.layoutInfoLg;
   }
 };
 

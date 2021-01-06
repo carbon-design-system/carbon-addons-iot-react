@@ -23,7 +23,6 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /* card value */
-
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -222,6 +221,7 @@ const DataSeriesFormItem = ({
         </div>
       )}
       <List
+        className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}
         // need to force an empty "empty state"
         emptyState={<div />}

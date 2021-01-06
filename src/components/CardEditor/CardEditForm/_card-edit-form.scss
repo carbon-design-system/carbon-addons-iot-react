@@ -45,6 +45,8 @@
     @include type-style('productive-heading-01');
     border-top: solid 1px $ui-03;
     border-bottom: solid 1px $ui-03;
+    margin-left: -$spacing-05;
+    margin-right: -$spacing-05;
     margin-bottom: $spacing-05;
   }
 
@@ -197,5 +199,17 @@
 
   .#{$prefix}--slider {
     min-width: 4.5rem;
+  }
+}
+
+div.#{$iot-prefix}--card-edit-form--data-item-list {
+  // remove the spacing
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+  width: unset;
+
+  // add more spacing to the item so that the content will still align
+  .#{$iot-prefix}--list-item {
+    padding-left: $spacing-05;
   }
 }

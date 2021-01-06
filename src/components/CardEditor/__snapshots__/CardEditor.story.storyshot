@@ -949,7 +949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                className="iot--list"
+                className="iot--list iot--card-edit-form--data-item-list"
               >
                 <div
                   className="iot--list-header-container"
@@ -2546,7 +2546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
               <div
-                className="iot--list"
+                className="iot--list iot--card-edit-form--data-item-list"
               >
                 <div
                   className="iot--list-header-container"
@@ -3387,7 +3387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
                 <div
-                  className="iot--list"
+                  className="iot--list iot--card-edit-form--data-item-list"
                 >
                   <div
                     className="iot--list-header-container"
