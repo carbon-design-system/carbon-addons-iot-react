@@ -38,7 +38,7 @@ export const SinglePoint = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -90,7 +90,7 @@ export const WithVariables = () => {
         {...commonProps}
         title={text('title', 'Temperature {not-working}')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         cardVariables={object('Variables', {
           'not-working': 'working',
         })}
@@ -150,7 +150,7 @@ export const MediumSingleLineIntervalHour = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -190,7 +190,7 @@ export const MultiLineNoXYLabel = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -228,7 +228,7 @@ export const MediumSingleLineIntervalMonthYearSameYear = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -271,7 +271,7 @@ export const MediumMultipleLineIntervalMonthYearSameYear = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -325,7 +325,7 @@ export const MediumSingleLineIntervalYearTwoDataPoint = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -374,7 +374,7 @@ export const MediumMultiLineNoXYLabel = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -427,7 +427,7 @@ export const LargeSingleLineIntervalHourSameDay = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -510,7 +510,7 @@ export const LargeSingleLineIntervalDayMonth = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -547,7 +547,7 @@ export const LargeSingleLineIntervalMonthYearDiffYear = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -589,7 +589,7 @@ export const LargeSingleLineYearIntervalOneDataPoint = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -630,7 +630,7 @@ export const LargeMultiLineNoInterval = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -684,7 +684,7 @@ export const CustomColors = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -732,7 +732,7 @@ export const LargeUnits = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -772,7 +772,7 @@ export const WithZoomBar = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -820,7 +820,7 @@ export const DomainRange = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -863,7 +863,7 @@ export const Empty = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -901,7 +901,7 @@ export const HighlightAlertRanges = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -968,7 +968,7 @@ export const EmptyForARange = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -1010,7 +1010,7 @@ export const LotsOfDots = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -1064,7 +1064,7 @@ export const IsEditable = () => {
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
         isEditable={boolean('isEditable', true)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -1179,7 +1179,7 @@ export const IsExpanded = () => {
         {...commonProps}
         title={text('title', 'Temperature')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', true)}
+        isExpanded={boolean('isExpanded', true)}
         content={object('content', {
           series: [
             {
@@ -1237,7 +1237,7 @@ export const DataFilter = () => {
         key="dataFilter"
         isEditable={boolean('isEditable', false)}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {
@@ -1306,7 +1306,7 @@ export const Locale = () => {
         {...commonProps}
         title={text('title', 'Pressure')}
         isLoading={boolean('isLoading', false)}
-        isExpanded={boolean('isExpandable', false)}
+        isExpanded={boolean('isExpanded', false)}
         content={object('content', {
           series: [
             {

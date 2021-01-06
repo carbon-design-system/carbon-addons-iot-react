@@ -161,9 +161,15 @@ const propTypes = {
     applyBtnLabel: PropTypes.string,
     cancelBtnLabel: PropTypes.string,
     backBtnLabel: PropTypes.string,
+    increment: PropTypes.string,
+    decrement: PropTypes.string,
+    hours: PropTypes.string,
+    minutes: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
+  /** The language locale used to format the days of the week, months, and numbers. */
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -238,8 +244,14 @@ const defaultProps = {
     applyBtnLabel: 'Apply',
     cancelBtnLabel: 'Cancel',
     backBtnLabel: 'Back',
+    increment: 'Increment',
+    decrement: 'Decrement',
+    hours: 'hours',
+    minutes: 'minutes',
+    number: 'number',
   },
   light: false,
+  locale: 'en',
 };
 
 const DateTimePicker = ({
@@ -257,6 +269,7 @@ const DateTimePicker = ({
   onApply,
   i18n,
   light,
+  locale,
   ...others
 }) => {
   const strings = {
@@ -795,6 +808,13 @@ const DateTimePicker = ({
                           min={0}
                           value={relativeValue ? relativeValue.lastNumber : 0}
                           onChange={onRelativeLastNumberChange}
+                          translateWithId={(id) =>
+                            id === 'increment.number'
+                              ? `${i18n.increment} ${i18n.number}`
+                              : id === 'decrement.number'
+                              ? `${i18n.decrement} ${i18n.number}`
+                              : null
+                          }
                         />
                         <Select
                           {...others}
@@ -854,6 +874,7 @@ const DateTimePicker = ({
                             value={
                               relativeValue ? relativeValue.relativeToTime : ''
                             }
+                            i18n={i18n}
                             onChange={onRelativeToTimeChange}
                             spinner
                             autoComplete="off"
@@ -876,7 +897,8 @@ const DateTimePicker = ({
                           absoluteValue
                             ? [absoluteValue.startDate, absoluteValue.endDate]
                             : ''
-                        }>
+                        }
+                        locale={locale}>
                         <DatePickerInput
                           labelText=""
                           id="date-picker-input-start"
@@ -901,6 +923,7 @@ const DateTimePicker = ({
                             value={
                               absoluteValue ? absoluteValue.startTime : '00:00'
                             }
+                            i18n={i18n}
                             onChange={onAbsoluteStartTimeChange}
                             spinner
                             autoComplete="off"
@@ -911,6 +934,7 @@ const DateTimePicker = ({
                             value={
                               absoluteValue ? absoluteValue.endTime : '00:00'
                             }
+                            i18n={i18n}
                             onChange={onAbsoluteEndTimeChange}
                             spinner
                             autoComplete="off"

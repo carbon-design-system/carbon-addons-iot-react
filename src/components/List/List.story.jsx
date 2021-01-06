@@ -155,6 +155,41 @@ BasicSingleColumn.story = {
   name: 'basic (single column)',
 };
 
+export const BasicSingleColumnWithSearch = () => {
+  const ListWithSearch = () => {
+    const [searchValue, setSearchValue] = useState(null);
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title={text('title', 'NY Yankees')}
+          items={Object.entries(
+            sampleHierarchy.MLB['American League']['New York Yankees']
+          )
+            .map(([key]) => ({
+              id: key,
+              content: { value: key },
+            }))
+            .filter(
+              ({ id }) =>
+                searchValue === null ||
+                id.toLowerCase().includes(searchValue?.toLowerCase())
+            )}
+          isLoading={boolean('isLoading', false)}
+          search={{
+            onChange: (evt) => setSearchValue(evt.target.value),
+          }}
+        />
+      </div>
+    );
+  };
+
+  return <ListWithSearch />;
+};
+
+BasicSingleColumnWithSearch.story = {
+  name: 'basic (single column) with search',
+};
+
 export const WithSecondaryValue = () => (
   <div style={{ width: 400 }}>
     <List

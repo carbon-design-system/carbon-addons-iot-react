@@ -177,6 +177,7 @@ const TableCard = ({
   timeRange,
   timeRangeOptions,
   availableActions,
+  isLoading,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -680,6 +681,8 @@ const TableCard = ({
       i18n={mergedI18n}
       resizeHandles={resizeHandles}
       hideHeader
+      // Use the Table's loading state rather than Card's
+      isLoading={false}
       {...others}>
       {({ height }) => {
         const numberOfRowsPerPage = !isNil(height)
@@ -740,6 +743,10 @@ const TableCard = ({
                   : {}),
                 emptyState: {
                   message: emptyMessage || mergedI18n.emptyMessage,
+                },
+                loadingState: {
+                  isLoading,
+                  rowCount: 7,
                 },
                 ordering,
               },
