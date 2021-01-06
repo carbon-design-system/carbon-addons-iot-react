@@ -49,7 +49,7 @@ const defaultProps = {
     dataItemEditorDataItemTitle: 'Data item',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data',
+    dataItemEditorSectionTitle: 'Data',
     selectDataItems: 'Select data items',
     selectDataItem: 'Select data item',
     dataItem: 'Data item',

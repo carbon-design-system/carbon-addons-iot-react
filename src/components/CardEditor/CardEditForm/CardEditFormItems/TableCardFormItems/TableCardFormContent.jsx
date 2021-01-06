@@ -36,7 +36,20 @@ const propTypes = {
   }),
   /* callback when any changes are made to the card config, the full updated card JSON is passed as the argument */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDimensionTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataItemEditorSectionTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectGroupByDimensions: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+  }),
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -57,7 +70,7 @@ const defaultProps = {
     dataItemEditorDimensionTitle: 'Group by',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data',
+    dataItemEditorSectionTitle: 'Columns',
     selectDataItems: 'Select data item(s)',
     selectGroupByDimensions: 'Select dimension(s)',
     dataItem: 'Data item',
@@ -187,7 +200,7 @@ const TableCardFormContent = ({
         i18n={mergedI18n}
       />
       <div className={`${baseClassName}--form-section`}>
-        {mergedI18n.dataSeriesTitle}
+        {mergedI18n.dataItemEditorSectionTitle}
       </div>
       <div
         className={`${baseClassName}--input`} // data item selector
