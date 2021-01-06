@@ -168,6 +168,7 @@ const ThresholdsFormItem = ({
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
                   }}
+                  translateWithId={translateWithId}
                 />
               </div>
               <div
@@ -190,6 +191,7 @@ const ThresholdsFormItem = ({
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
                   }}
+                  translateWithId={translateWithId}
                 />
               </div>
               <div

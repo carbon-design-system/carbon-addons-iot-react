@@ -242,7 +242,6 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
     precisionLabel: PropTypes.string,
     showLegendLabel: PropTypes.string,
     fontSize: PropTypes.string,

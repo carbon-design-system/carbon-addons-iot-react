@@ -8953,9 +8953,6 @@ Map {
             "showLegendLabel": Object {
               "type": "string",
             },
-            "showLegendLable": Object {
-              "type": "string",
-            },
             "size": Object {
               "type": "string",
             },
