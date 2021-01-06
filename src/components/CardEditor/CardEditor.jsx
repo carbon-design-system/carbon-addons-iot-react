@@ -100,7 +100,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
-    searchPlaceholderText: PropTypes.string,
+    searchPlaceHolderText: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
   /** Id that can be used for testing */
@@ -115,7 +115,7 @@ const defaultProps = {
     addCardButton: 'Add card',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
-    searchPlaceholderText: 'Enter a search',
+    searchPlaceHolderText: 'Enter a search',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,

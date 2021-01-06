@@ -142,7 +142,7 @@ const propTypes = {
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
-    searchPlaceholderText: PropTypes.string,
+    searchPlaceHolderText: PropTypes.string,
     imageGalleryDeleteLabelText: PropTypes.string,
     imageGalleryDeleteModalLabelText: PropTypes.string,
     imageGalleryDeleteModalTitleText: PropTypes.func,
@@ -209,7 +209,7 @@ const defaultProps = {
     layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
     layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
     layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
-    searchPlaceholderText: 'Enter a value',
+    searchPlaceHolderText: 'Enter a value',
   },
 };
 

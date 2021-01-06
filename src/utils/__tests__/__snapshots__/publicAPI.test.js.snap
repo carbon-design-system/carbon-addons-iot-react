@@ -5396,6 +5396,12 @@ Map {
       "children": null,
       "defaultTimegroup": "HOURS",
       "disabled": false,
+      "i18n": Object {
+        "decrement": "Decrement",
+        "hours": "hours",
+        "increment": "Increment",
+        "minutes": "minutes",
+      },
       "is12hour": false,
       "onChange": null,
       "onClick": null,
@@ -5433,6 +5439,25 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "decrement": Object {
+              "type": "string",
+            },
+            "hours": Object {
+              "type": "string",
+            },
+            "increment": Object {
+              "type": "string",
+            },
+            "minutes": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "is12hour": Object {
         "type": "bool",
       },
@@ -5465,7 +5490,10 @@ Map {
         "cancelBtnLabel": "Cancel",
         "customRangeLabel": "Custom range",
         "customRangeLinkLabel": "Custom Range",
+        "decrement": "Decrement",
         "endTimeLabel": "End time",
+        "hours": "hours",
+        "increment": "Increment",
         "intervalLabels": Array [
           "minutes",
           "hours",
@@ -5476,6 +5504,8 @@ Map {
         ],
         "invalidNumberLabel": "Number is not valid",
         "lastLabel": "Last",
+        "minutes": "minutes",
+        "number": "number",
         "presetLabels": Array [
           "Last 30 minutes",
           "Last 1 hour",
@@ -5520,6 +5550,7 @@ Map {
         },
       ],
       "light": false,
+      "locale": "en",
       "onApply": null,
       "onCancel": null,
       "presets": Array [
@@ -5724,7 +5755,16 @@ Map {
             "customRangeLinkLabel": Object {
               "type": "string",
             },
+            "decrement": Object {
+              "type": "string",
+            },
             "endTimeLabel": Object {
+              "type": "string",
+            },
+            "hours": Object {
+              "type": "string",
+            },
+            "increment": Object {
               "type": "string",
             },
             "intervalLabels": Object {
@@ -5739,6 +5779,9 @@ Map {
               "type": "string",
             },
             "lastLabel": Object {
+              "type": "string",
+            },
+            "minutes": Object {
               "type": "string",
             },
             "presetLabels": Object {
@@ -5796,6 +5839,9 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onApply": Object {
         "type": "func",
@@ -8497,7 +8543,7 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a value",
+        "searchPlaceHolderText": "Enter a value",
       },
       "initialValue": Object {
         "cards": Array [],
@@ -8707,7 +8753,7 @@ Map {
             "openJSONButton": Object {
               "type": "string",
             },
-            "searchPlaceholderText": Object {
+            "searchPlaceHolderText": Object {
               "type": "string",
             },
           },
@@ -8805,7 +8851,7 @@ Map {
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a search",
+        "searchPlaceHolderText": "Enter a search",
       },
       "icons": null,
       "onValidateCardJson": null,
@@ -8936,7 +8982,7 @@ Map {
             "galleryHeader": Object {
               "type": "string",
             },
-            "searchPlaceholderText": Object {
+            "searchPlaceHolderText": Object {
               "type": "string",
             },
           },
