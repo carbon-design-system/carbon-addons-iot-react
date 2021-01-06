@@ -71,6 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           <button
             aria-label="alerts"
             className="bx--header-action-btn bx--header__action"
+            data-testid="menu-item-alerts-global"
             onClick={[Function]}
             type="button"
           >
@@ -437,6 +438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         <button
           aria-label="user"
           className="bx--header-action-btn bx--header__action"
+          data-testid="menu-item-user-global"
           onClick={[Function]}
           type="button"
         >

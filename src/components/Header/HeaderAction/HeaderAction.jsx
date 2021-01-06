@@ -17,6 +17,12 @@ export const HeaderActionPropTypes = {
   item: PropTypes.shape(HeaderActionItemPropTypes).isRequired,
   /** unique index for the menu item */
   index: PropTypes.number.isRequired,
+  /** Id that can be used for testing */
+  testID: PropTypes.string,
+};
+
+const defaultProps = {
+  testID: 'header-action',
 };
 
 /**
@@ -28,7 +34,7 @@ export const HeaderActionPropTypes = {
  * Consists of nav buttons that can be clicked to perform actions, open header panels (side panels),
  * or dropdown menus
  */
-const HeaderAction = ({ item, index }) => {
+const HeaderAction = ({ item, index, testID }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const parentContainerRef = useRef(null);
   const menuButtonRef = useRef(null);
@@ -100,8 +106,8 @@ const HeaderAction = ({ item, index }) => {
             ref={menuButtonRef}
             onToggleExpansion={toggleExpandedState}
             label={item.label}
-            data-testid="header-menu"
-            title="header-menu"
+            data-testid={testID}
+            title={item.label}
             childContent={item.childContent}
           />
         )}
@@ -117,6 +123,7 @@ const HeaderAction = ({ item, index }) => {
         item.className
       )}
       key={`menu-item-${item.label}-global-${index}`}
+      data-testid={`menu-item-${item.label}-global`}
       aria-label={item.label}
       onClick={item.onClick || (() => {})}>
       {item.btnContent}
@@ -125,5 +132,6 @@ const HeaderAction = ({ item, index }) => {
 };
 
 HeaderAction.propTypes = HeaderActionPropTypes;
+HeaderAction.defaultProps = defaultProps;
 
 export default HeaderAction;

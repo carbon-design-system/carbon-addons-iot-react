@@ -500,7 +500,12 @@ const TimeSeriesCard = ({
         return {
           id: columnName,
           // use the label if one exists as it will be the user-defined, readable name
-          name: matchingDataSource ? matchingDataSource.label : columnName,
+          // UNLESS dataFilter is enabled as the matchingDataSource will only find the first match
+          name: matchingDataSource
+            ? matchingDataSource.dataFilter
+              ? matchingDataSource.dataSourceId
+              : matchingDataSource.label
+            : columnName,
           isSortable: true,
           filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
         };

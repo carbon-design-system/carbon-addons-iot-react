@@ -137,6 +137,7 @@ Map {
       "iconDescription": "Close",
       "invalid": false,
       "isFetchingData": false,
+      "isFullScreen": false,
       "isLarge": false,
       "onClearError": null,
       "onSubmit": null,
@@ -206,6 +207,9 @@ Map {
         "type": "bool",
       },
       "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isFullScreen": Object {
         "type": "bool",
       },
       "isLarge": Object {
@@ -5384,6 +5388,12 @@ Map {
       "children": null,
       "defaultTimegroup": "HOURS",
       "disabled": false,
+      "i18n": Object {
+        "decrement": "Decrement",
+        "hours": "hours",
+        "increment": "Increment",
+        "minutes": "minutes",
+      },
       "is12hour": false,
       "onChange": null,
       "onClick": null,
@@ -5421,6 +5431,25 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "decrement": Object {
+              "type": "string",
+            },
+            "hours": Object {
+              "type": "string",
+            },
+            "increment": Object {
+              "type": "string",
+            },
+            "minutes": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "is12hour": Object {
         "type": "bool",
       },
@@ -5453,7 +5482,10 @@ Map {
         "cancelBtnLabel": "Cancel",
         "customRangeLabel": "Custom range",
         "customRangeLinkLabel": "Custom Range",
+        "decrement": "Decrement",
         "endTimeLabel": "End time",
+        "hours": "hours",
+        "increment": "Increment",
         "intervalLabels": Array [
           "minutes",
           "hours",
@@ -5464,6 +5496,8 @@ Map {
         ],
         "invalidNumberLabel": "Number is not valid",
         "lastLabel": "Last",
+        "minutes": "minutes",
+        "number": "number",
         "presetLabels": Array [
           "Last 30 minutes",
           "Last 1 hour",
@@ -5508,6 +5542,7 @@ Map {
         },
       ],
       "light": false,
+      "locale": "en",
       "onApply": null,
       "onCancel": null,
       "presets": Array [
@@ -5712,7 +5747,16 @@ Map {
             "customRangeLinkLabel": Object {
               "type": "string",
             },
+            "decrement": Object {
+              "type": "string",
+            },
             "endTimeLabel": Object {
+              "type": "string",
+            },
+            "hours": Object {
+              "type": "string",
+            },
+            "increment": Object {
               "type": "string",
             },
             "intervalLabels": Object {
@@ -5727,6 +5771,9 @@ Map {
               "type": "string",
             },
             "lastLabel": Object {
+              "type": "string",
+            },
+            "minutes": Object {
               "type": "string",
             },
             "presetLabels": Object {
@@ -5784,6 +5831,9 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onApply": Object {
         "type": "func",
@@ -6390,6 +6440,9 @@ Map {
         "type": "bool",
       },
       "isFetchingData": Object {
+        "type": "bool",
+      },
+      "isFullScreen": Object {
         "type": "bool",
       },
       "isLarge": Object {
@@ -8486,7 +8539,7 @@ Map {
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a value",
+        "searchPlaceHolderText": "Enter a value",
       },
       "initialValue": Object {
         "cards": Array [],
@@ -8517,6 +8570,8 @@ Map {
         "SIMPLE_BAR",
         "GROUPED_BAR",
         "STACKED_BAR",
+        "LIST",
+        "ALERT",
       ],
       "title": "",
     },
@@ -8601,6 +8656,33 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "ALERT": Object {
+              "type": "string",
+            },
+            "GROUPED_BAR": Object {
+              "type": "string",
+            },
+            "IMAGE": Object {
+              "type": "string",
+            },
+            "LIST": Object {
+              "type": "string",
+            },
+            "SIMPLE_BAR": Object {
+              "type": "string",
+            },
+            "STACKED_BAR": Object {
+              "type": "string",
+            },
+            "TABLE": Object {
+              "type": "string",
+            },
+            "TIMESERIES": Object {
+              "type": "string",
+            },
+            "VALUE": Object {
+              "type": "string",
+            },
             "addCardButton": Object {
               "type": "string",
             },
@@ -8644,33 +8726,6 @@ Map {
               "type": "string",
             },
             "cardTitle": Object {
-              "type": "string",
-            },
-            "cardType_ALERT": Object {
-              "type": "string",
-            },
-            "cardType_GROUPED_BAR": Object {
-              "type": "string",
-            },
-            "cardType_IMAGE": Object {
-              "type": "string",
-            },
-            "cardType_LIST": Object {
-              "type": "string",
-            },
-            "cardType_SIMPLE_BAR": Object {
-              "type": "string",
-            },
-            "cardType_STACKED_BAR": Object {
-              "type": "string",
-            },
-            "cardType_TABLE": Object {
-              "type": "string",
-            },
-            "cardType_TIMESERIES": Object {
-              "type": "string",
-            },
-            "cardType_VALUE": Object {
               "type": "string",
             },
             "chartType_BAR": Object {
@@ -8874,6 +8929,9 @@ Map {
             "primaryButtonLabelText": Object {
               "type": "string",
             },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
             "searchPlaceholderText": Object {
               "type": "string",
             },
@@ -9023,8 +9081,9 @@ Map {
         "galleryHeader": "Gallery",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
-        "searchPlaceholderText": "Enter a search",
+        "searchPlaceHolderText": "Enter a search",
       },
+      "icons": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9034,7 +9093,10 @@ Map {
         "SIMPLE_BAR",
         "GROUPED_BAR",
         "STACKED_BAR",
+        "LIST",
+        "ALERT",
       ],
+      "testID": "card-editor",
     },
     "propTypes": Object {
       "availableDimensions": Object {
@@ -9150,12 +9212,20 @@ Map {
             "galleryHeader": Object {
               "type": "string",
             },
-            "searchPlaceholderText": Object {
+            "searchPlaceHolderText": Object {
               "type": "string",
             },
           },
         ],
         "type": "shape",
+      },
+      "icons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "objectOf",
       },
       "onAddCard": Object {
         "isRequired": true,
@@ -9179,6 +9249,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
     },
   },
@@ -18550,54 +18623,78 @@ Map {
       "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
-        "deleteButtonIconDescription": "Delete this hotspot",
+        "deleteButtonIconDescriptionText": "Delete this hotspot",
         "deleteButtonLabelText": "Delete hotspot",
         "descriptionTextareaLabelText": "Description",
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
         "iconDropdownLabelText": "Select an Icon",
         "iconDropdownTitleText": "Icon",
+        "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
-      "infoMessage": undefined,
       "overrides": undefined,
       "primaryInputId": undefined,
+      "showDeleteButton": true,
+      "showInfoMessage": false,
       "testID": "HotspotEditorTooltipTab",
     },
     "propTypes": Object {
       "formValues": Object {
         "args": Array [
           Object {
-            "args": Array [
-              Array [
-                Object {
-                  "type": "string",
-                },
-                Object {
-                  "type": "number",
-                },
-                Object {
-                  "type": "bool",
-                },
-                Object {
-                  "args": Array [
-                    Object {
-                      "carbonColor": Object {
-                        "type": "string",
+            "color": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "carbonColor": Object {
+                          "type": "string",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
                       },
-                      "name": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
+                    ],
+                    "type": "shape",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "description": Object {
+                    "type": "string",
+                  },
+                  "title": Object {
+                    "type": "string",
+                  },
                 },
               ],
-            ],
-            "type": "oneOfType",
+              "type": "shape",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "object",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           },
         ],
-        "type": "objectOf",
+        "type": "shape",
       },
       "hotspotIconFillColors": Object {
         "args": Array [
@@ -18647,7 +18744,7 @@ Map {
             "colorDropdownTitleText": Object {
               "type": "string",
             },
-            "deleteButtonIconDescription": Object {
+            "deleteButtonIconDescriptionText": Object {
               "type": "string",
             },
             "deleteButtonLabelText": Object {
@@ -18662,6 +18759,9 @@ Map {
             "iconDropdownLabelText": Object {
               "type": "string",
             },
+            "infoMessageText": Object {
+              "type": "string",
+            },
             "titleInputLabelText": Object {
               "type": "string",
             },
@@ -18671,9 +18771,6 @@ Map {
           },
         ],
         "type": "shape",
-      },
-      "infoMessage": Object {
-        "type": "string",
       },
       "onChange": Object {
         "isRequired": true,
@@ -18739,6 +18836,12 @@ Map {
       "primaryInputId": Object {
         "type": "string",
       },
+      "showDeleteButton": Object {
+        "type": "bool",
+      },
+      "showInfoMessage": Object {
+        "type": "bool",
+      },
       "testID": Object {
         "type": "string",
       },
@@ -18767,11 +18870,14 @@ Map {
         "borderLabelText": "Border",
         "borderWidthInvalidText": "Border Width is invalid",
         "borderWidthLabelText": "Border Width",
+        "deleteButtonIconDescription": "Delete this hotspot",
+        "deleteButtonLabelText": "Delete hotspot",
         "fillOpacityInvalidText": "Fill Opacity is invalid",
         "fillOpacityLabelText": "Fill Opacity",
-        "fontLabelText": "Font",
+        "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
+        "infoMessageText": "Select an existing label on the image to edit it or click on an empty regoion to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -18782,6 +18888,7 @@ Map {
       "minBorderWidth": undefined,
       "minFontSize": undefined,
       "minOpacity": undefined,
+      "showInfoMessage": false,
     },
     "propTypes": Object {
       "backgroundColors": Object {
@@ -18893,19 +19000,28 @@ Map {
             "borderWidthText": Object {
               "type": "string",
             },
+            "deleteButtonIconDescription": Object {
+              "type": "string",
+            },
+            "deleteButtonLabelText": Object {
+              "type": "string",
+            },
             "fillOpacityInvalidText": Object {
               "type": "string",
             },
             "fillOpacityLabelText": Object {
               "type": "string",
             },
-            "fontLabelText": Object {
+            "fontColorLabelText": Object {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
               "type": "string",
             },
             "fontSizeText": Object {
+              "type": "string",
+            },
+            "infoMessageText": Object {
               "type": "string",
             },
             "italicLabelText": Object {
@@ -18942,6 +19058,86 @@ Map {
       "onChange": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "onDelete": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "showInfoMessage": Object {
+        "type": "bool",
+      },
+    },
+  },
+  "DynamicHotspotSourcePicker" => Object {
+    "defaultProps": Object {
+      "clearIconDescription": "Clear coordinate sources",
+      "id": "dynamic-hotspot-source-picker",
+      "selectedSourceIdX": undefined,
+      "selectedSourceIdY": undefined,
+      "testID": "dynamic-hotspot-source-picker",
+      "xCoordinateDropdownLabelText": "Select data item",
+      "xCoordinateDropdownTitleText": "X coordinate",
+      "yCoordinateDropdownLabelText": "Select data item",
+      "yCoordinateDropdownTitleText": "Y coordinate",
+    },
+    "propTypes": Object {
+      "clearIconDescription": Object {
+        "type": "string",
+      },
+      "dataSourceItems": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "dataSourceId": Object {
+                  "type": "string",
+                },
+                "label": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "onClear": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onXValueChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onYValueChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "selectedSourceIdX": Object {
+        "type": "string",
+      },
+      "selectedSourceIdY": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "xCoordinateDropdownLabelText": Object {
+        "type": "string",
+      },
+      "xCoordinateDropdownTitleText": Object {
+        "type": "string",
+      },
+      "yCoordinateDropdownLabelText": Object {
+        "type": "string",
+      },
+      "yCoordinateDropdownTitleText": Object {
+        "type": "string",
       },
     },
   },

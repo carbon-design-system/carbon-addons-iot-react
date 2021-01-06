@@ -49,6 +49,7 @@ const mockDataItems = [
   { dataSourceId: 'torque_max', label: 'Torque Max' },
   { dataSourceId: 'torque_min', label: 'Torque Min' },
   { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+  { dataSourceId: 'torque', label: 'Torque' },
   { dataSourceId: 'temperature', label: 'Temperature' },
   { dataSourceId: 'pressure', label: 'Pressure' },
 ];
@@ -69,6 +70,9 @@ export const Default = () => (
       getValidDataItems={() => mockDataItems}
       dataItems={mockDataItems}
       availableImages={images}
+      i18n={{
+        headerEditTitleButton: 'Edit title updated',
+      }}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -284,7 +288,7 @@ export const WithInitialValue = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -359,7 +363,7 @@ export const WithCustomOnCardChange = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -524,7 +528,7 @@ export const CustomCardPreviewRenderer = () => (
         'CUSTOM',
       ])}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -648,15 +652,15 @@ export const I18N = () => (
         closeGalleryButton: 'closeGalleryButton',
         openJSONButton: 'openJSONButton',
         searchPlaceholderText: 'searchPlaceholderText',
-        cardType_TIMESERIES: 'cardType_TIMESERIES',
-        cardType_SIMPLE_BAR: 'cardType_SIMPLE_BAR',
-        cardType_GROUPED_BAR: 'cardType_GROUPED_BAR',
-        cardType_STACKED_BAR: 'cardType_STACKED_BAR',
-        cardType_VALUE: 'cardType_VALUE',
-        cardType_IMAGE: 'cardType_IMAGE',
-        cardType_TABLE: 'cardType_TABLE',
-        cardType_ALERT: 'cardType_ALERT',
-        cardType_LIST: 'cardType_LIST',
+        TIMESERIES: 'TIMESERIES',
+        SIMPLE_BAR: 'SIMPLE_BAR',
+        GROUPED_BAR: 'GROUPED_BAR',
+        STACKED_BAR: 'STACKED_BAR',
+        VALUE: 'VALUE',
+        IMAGE: 'IMAGE',
+        TABLE: 'TABLE',
+        ALERT: 'ALERT',
+        LIST: 'LIST',
 
         // card form
         openEditorButton: 'openEditorButton',

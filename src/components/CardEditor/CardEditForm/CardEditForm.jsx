@@ -74,6 +74,7 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -97,7 +98,6 @@ const defaultProps = {
     barChartType_STACKED: 'Stacked',
     barChartLayout_HORIZONTAL: 'Horizontal',
     barChartLayout_VERTICAL: 'Vertical',
-    // additional card type names can be provided using the convention of `cardType_TYPE`
     errorTitle: 'Error:',
     modalTitle: 'Edit card JSON configuration',
     modalLabel: 'Card editor',
@@ -111,6 +111,7 @@ const defaultProps = {
   availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  testID: 'card-edit-form',
 };
 
 /**
@@ -189,6 +190,7 @@ const CardEditForm = ({
   getValidTimeRanges,
   currentBreakpoint,
   availableDimensions,
+  testID,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -258,6 +260,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
+            data-testid={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}

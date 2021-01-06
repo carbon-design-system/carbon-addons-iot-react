@@ -17,8 +17,9 @@ $selected-border: solid $selected-border-width $interactive-04;
   left: calc((var(--x-pos) * 1%) - ((var(--width) / 2) * 1px));
 }
 
-// FIXED HOTSPOT
-.#{$iot-prefix}--hotspot-container--is-fixed {
+// FIXED OR DYNAMIC HOTSPOT (USING TOOLTIP)
+.#{$iot-prefix}--hotspot-container--is-fixed,
+.#{$iot-prefix}--hotspot-container--is-dynamic {
   &.#{$iot-prefix}--hotspot-container--selected {
     $padding: $spacing-02;
 
@@ -53,6 +54,10 @@ $selected-border: solid $selected-border-width $interactive-04;
     border-radius: 13px;
     background: none;
   }
+}
+
+.#{$iot-prefix}--hotspot-container--is-dynamic.#{$iot-prefix}--hotspot-container--selected {
+  border-style: dashed;
 }
 
 // TEXT HOTSPOT
