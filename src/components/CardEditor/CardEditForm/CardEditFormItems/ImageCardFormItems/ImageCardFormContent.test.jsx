@@ -19,7 +19,7 @@ describe('ImageCardFormContent', () => {
         cardConfig={mockCardConfig}
       />
     );
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getAllByRole('button')[1]);
     expect(mockOnChange).toHaveBeenCalledTimes(1);
     expect(mockOnChange).toHaveBeenCalledWith({ content: {} });
   });

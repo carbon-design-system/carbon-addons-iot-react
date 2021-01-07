@@ -182,18 +182,18 @@ describe('editorUtils', () => {
 
   describe('renderBreakpointInfo', () => {
     const i18n = {
-      layoutInfoXl: 'Xl',
       layoutInfoLg: 'Lg',
       layoutInfoMd: 'Md',
+      layoutInfoSm: 'Sm',
     };
-    it('should return Xl', () => {
-      expect(renderBreakpointInfo('xl', i18n)).toEqual('Xl');
-    });
-    it('should return lg', () => {
+    it('should return Lg', () => {
       expect(renderBreakpointInfo('lg', i18n)).toEqual('Lg');
     });
     it('should return md', () => {
       expect(renderBreakpointInfo('md', i18n)).toEqual('Md');
+    });
+    it('should return sm', () => {
+      expect(renderBreakpointInfo('sm', i18n)).toEqual('Sm');
     });
   });
   describe('formatSeries', () => {

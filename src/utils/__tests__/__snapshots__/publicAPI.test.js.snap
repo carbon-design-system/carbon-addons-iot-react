@@ -8512,6 +8512,7 @@ Map {
       "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
@@ -8634,6 +8635,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",
@@ -8835,6 +8867,7 @@ Map {
       "cardConfig": null,
       "currentBreakpoint": "xl",
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "i18n": Object {
@@ -8958,6 +8991,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",

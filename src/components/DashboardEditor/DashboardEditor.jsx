@@ -156,6 +156,17 @@ const propTypes = {
     imageGalleryModalCloseIconDescriptionText: PropTypes.string,
     imageGallerySearchPlaceHolderText: PropTypes.string,
   }),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -211,6 +222,7 @@ const defaultProps = {
     layoutInfoSm: 'Edit dashboard at small layout (480 - 672px)',
     searchPlaceHolderText: 'Enter a value',
   },
+  dataSeriesItemLinks: null,
 };
 
 const LAYOUTS = {
@@ -250,6 +262,7 @@ const DashboardEditor = ({
   availableDimensions,
   isLoading,
   i18n,
+  dataSeriesItemLinks,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
@@ -599,6 +612,7 @@ const DashboardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            dataSeriesItemLinks={dataSeriesItemLinks}
           />
         </ErrorBoundary>
       </div>
