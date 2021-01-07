@@ -35,7 +35,25 @@ const propTypes = {
   }),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectDataItem: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    customize: PropTypes.string,
+
+    selectGroupBy: PropTypes.string,
+    selectCategory: PropTypes.string,
+    groupBy: PropTypes.string,
+    subGroup: PropTypes.string,
+    timeInterval: PropTypes.string,
+  }),
+  translateWithId: PropTypes.func.isRequired,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -60,6 +78,7 @@ const defaultProps = {
     selectCategory: 'Select a category',
     groupBy: 'Group by',
     subGroup: 'Sub-group',
+    timeInterval: 'Time interval',
   },
   availableDimensions: {},
 };
@@ -69,6 +88,7 @@ const BarChartDataSeriesContent = ({
   onChange,
   availableDimensions,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -82,22 +102,24 @@ const BarChartDataSeriesContent = ({
           direction="bottom"
           label={mergedI18n.selectGroupBy}
           light
+          translateWithId={translateWithId}
           titleText={mergedI18n.groupBy}
           items={[
             ...(cardConfig.content.type !== BAR_CHART_TYPES.GROUPED
-              ? ['Time interval']
+              ? [mergedI18n.timeInterval]
               : []),
             ...Object.keys(availableDimensions),
           ]}
           selectedItem={
             cardConfig.content?.timeDataSourceId
-              ? 'Time interval'
+              ? mergedI18n.timeInterval
               : cardConfig.content.type !== BAR_CHART_TYPES.GROUPED
-              ? cardConfig.content?.categoryDataSourceId || 'Time interval'
+              ? cardConfig.content?.categoryDataSourceId ||
+                mergedI18n.timeInterval
               : cardConfig.content?.categoryDataSourceId
           }
           onChange={({ selectedItem }) => {
-            if (selectedItem !== 'Time interval') {
+            if (selectedItem !== mergedI18n.timeInterval) {
               onChange({
                 ...cardConfig,
                 content: {
@@ -133,6 +155,7 @@ const BarChartDataSeriesContent = ({
             direction="bottom"
             label={mergedI18n.selectCategory}
             light
+            translateWithId={translateWithId}
             titleText={mergedI18n.subGroup}
             items={Object.keys(availableDimensions)}
             selectedItem={cardConfig.content?.categoryDataSourceId}

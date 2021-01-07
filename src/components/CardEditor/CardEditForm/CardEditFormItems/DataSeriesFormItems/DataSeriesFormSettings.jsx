@@ -38,7 +38,6 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
   }),
 };
 
@@ -49,7 +48,6 @@ const defaultProps = {
     yAxisLabel: 'Y-axis label',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
   },
 };
 
