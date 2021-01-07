@@ -35,28 +35,29 @@ const propTypes = {
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    xAxisLabel: PropTypes.string,
-    yAxisLabel: PropTypes.string,
-    unitLabel: PropTypes.string,
-    decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
+    fontSize: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    notSet: PropTypes.string,
   }),
+  /** Callback function to translate common ids */
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   cardConfig: {},
   i18n: {
-    xAxisLabel: 'X-axis label',
-    yAxisLabel: 'Y-axis label',
-    unitLabel: 'Unit',
-    decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
     fontSize: 'Font size',
     precisionLabel: 'Precision',
+    notSet: 'Not set',
   },
 };
 
-const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
+const ValueCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
 
@@ -90,11 +91,12 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           titleText={mergedI18n.precisionLabel}
           direction="bottom"
           label=""
-          items={['Not set', '0', '1', '2', '3', '4']}
+          items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
           light
-          selectedItem={content?.precision?.toString() || 'Not set'}
+          translateWithId={translateWithId}
+          selectedItem={content?.precision?.toString() || mergedI18n.notSet}
           onChange={({ selectedItem }) => {
-            const isSet = selectedItem !== 'Not set';
+            const isSet = selectedItem !== mergedI18n.notSet;
             if (isSet) {
               onChange({
                 ...cardConfig,

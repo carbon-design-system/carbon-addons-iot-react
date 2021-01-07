@@ -35,6 +35,9 @@ const propTypes = {
     modalIconDescription: PropTypes.string,
     copyBtnDescription: PropTypes.string,
     copyBtnFeedBack: PropTypes.string,
+    expandBtnLabel: PropTypes.string,
+    modalPrimaryButtonLabel: PropTypes.string,
+    modalSecondaryButtonLabel: PropTypes.string,
   }),
   /** the language being written in the editor */
   language: PropTypes.string,
@@ -49,6 +52,9 @@ const defaultProps = {
     modalLabel: 'JSON Editor',
     modalHelpText: null,
     modalIconDescription: 'Close',
+    expandBtnLabel: 'Expand',
+    modalPrimaryButtonLabel: 'Save',
+    modalSecondaryButtonLabel: 'Cancel',
   },
   language: 'json',
   initialValue: null,
@@ -109,12 +115,16 @@ const CardCodeEditor = ({
       onSubmit={handleOnSubmit}
       onClose={onClose}
       iconDescription={i18n.modalIconDescription}
+      footer={{
+        primaryButtonLabel: i18n.modalPrimaryButtonLabel,
+        secondaryButtonLabel: i18n.modalSecondaryButtonLabel,
+      }}
       {...composedModalProps}>
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly
         renderIcon={Popup16}
-        iconDescription="Expand"
+        iconDescription={i18n.expandBtnLabel}
         onClick={handleOnExpand}
         kind="ghost"
       />

@@ -36,7 +36,20 @@ const propTypes = {
   }),
   /* callback when any changes are made to the card config, the full updated card JSON is passed as the argument */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDimensionTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectGroupByDimensions: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+  }),
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -47,6 +60,7 @@ const propTypes = {
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   /** the callback is called with a list of the new data item names selected */
   setSelectedDataItems: PropTypes.func.isRequired,
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -78,6 +92,7 @@ const TableCardFormContent = ({
   setSelectedDataItems,
   availableDimensions,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
@@ -201,6 +216,7 @@ const TableCardFormContent = ({
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedAttributes}
           items={validDataItems}
+          translateWithId={translateWithId}
           light
           onChange={({ selectedItems }) => {
             const newCard = handleDataSeriesChange(
@@ -226,6 +242,7 @@ const TableCardFormContent = ({
             key={`data-item-select-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
+            translateWithId={translateWithId}
             direction="bottom"
             itemToString={(item) => item.id}
             initialSelectedItems={initialSelectedDimensions}

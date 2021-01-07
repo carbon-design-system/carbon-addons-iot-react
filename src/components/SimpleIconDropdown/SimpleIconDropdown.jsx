@@ -23,6 +23,8 @@ const propTypes = {
   light: PropTypes.bool,
   /** Callback for when any of the Dropdown icon value changes */
   onChange: PropTypes.func.isRequired,
+  /** Callback to translate common icons */
+  translateWithId: PropTypes.func,
   /** The selected icon, use to set initial icon */
   selectedIcon: iconProptype,
   /** Id used if needed for testing */
@@ -35,6 +37,7 @@ const defaultProps = {
   selectedIcon: undefined,
   testID: undefined,
   titleText: '',
+  translateWithId: undefined,
 };
 
 const SimpleIconDropdown = ({
@@ -45,6 +48,7 @@ const SimpleIconDropdown = ({
   selectedIcon: selectedIconProp,
   titleText,
   testID,
+  translateWithId,
 }) => {
   const [selectedIcon, setSelectedIcon] = useState(selectedIconProp);
 
@@ -70,6 +74,7 @@ const SimpleIconDropdown = ({
         setSelectedIcon(selectedItem);
         onChange({ icon: selectedItem });
       }}
+      translateWithId={translateWithId}
       selectedItem={selectedIcon || icons[0]}
       titleText={titleText}
       type="default"
