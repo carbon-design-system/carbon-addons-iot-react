@@ -54,6 +54,7 @@ export const WithMultipleActions = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -110,6 +111,7 @@ export const WithLinks = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
         cardVariables={cardVariables}
       />
     </div>
@@ -210,6 +212,7 @@ export const WithRowSpecificLinkVariables = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -259,6 +262,7 @@ export const WithSingleActions = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -359,6 +363,7 @@ export const WithThresholdsPrecisionAndExpandedRows = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
         renderIconByName={(name, props = {}) =>
           name === 'bee' ? (
             <Bee16 {...props}>
@@ -435,6 +440,7 @@ export const WithDynamicVariables = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
         cardVariables={cardVariables}
       />
     </div>
@@ -520,6 +526,7 @@ export const WithThresholds = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -613,6 +620,7 @@ export const WithThresholdsOnlyWithIcon = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -674,6 +682,7 @@ export const WithMatchingThresholds = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -712,6 +721,7 @@ export const WithCustomColumnSort = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -752,6 +762,7 @@ export const WithFixedColumnSize = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -796,6 +807,7 @@ export const WithRowExpansion = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -837,6 +849,7 @@ export const WithRowExpansionAndTimestamp = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -887,6 +900,7 @@ export const WithRowExpansionAndLinkVariables = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -946,6 +960,7 @@ export const WithRowExpansionAndRowSpecificLinkVariables = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -992,6 +1007,7 @@ export const NoRowActions = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -1025,6 +1041,7 @@ export const EmptyTable = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -1060,6 +1077,7 @@ export const Editable = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -1096,6 +1114,7 @@ export const EditableWithExpandedRows = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -1103,6 +1122,41 @@ export const EditableWithExpandedRows = () => {
 
 EditableWithExpandedRows.story = {
   name: 'editable with expanded rows',
+};
+
+export const WithIsLoading = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}>
+      <TableCard
+        title={text('title', 'Open Alerts')}
+        id="table-list"
+        tooltip={text('Tooltip text', "Here's a Tooltip")}
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
+        size={size}
+        isLoading={boolean('isLoading', true)}
+      />
+    </div>
+  );
+};
+
+WithIsLoading.story = {
+  name: 'with isLoading',
 };
 
 export const I18N = () => {
@@ -1164,6 +1218,7 @@ export const I18N = () => {
           action('onCardAction', id, type, payload)
         }
         size={size}
+        isLoading={boolean('isLoading', false)}
         i18n={{
           criticalLabel: text('criticalLabel', 'Critical'),
           moderateLabel: text('moderateLabel', 'Moderate'),

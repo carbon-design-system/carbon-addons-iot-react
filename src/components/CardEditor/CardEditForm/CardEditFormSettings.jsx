@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -7,8 +7,13 @@ import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/Data
 import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 import BarChartCardFormSettings from './CardEditFormItems/BarChartCardFormItems/BarChartCardFormSettings';
+import TableCardFormSettings from './CardEditFormItems/TableCardFormItems/TableCardFormSettings';
 
 const propTypes = {
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
   /** card data value */
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
@@ -35,26 +40,53 @@ const propTypes = {
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    unitLabel: PropTypes.string,
+    decimalPrecisionLabel: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    showLegendLabel: PropTypes.string,
+    fontSize: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
+  availableDimensions: {},
   cardConfig: {},
   i18n: {
     xAxisLabel: 'X-axis label',
     yAxisLabel: 'Y-axis label',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
     precisionLabel: 'Precision',
     showLegendLabel: 'Show legend',
     fontSize: 'Font size',
   },
 };
 
-const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
+const CardEditFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  availableDimensions,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
+  const handleTranslation = useCallback(
+    (idToTranslate) => {
+      const { openMenuText, closeMenuText } = mergedI18n;
+      switch (idToTranslate) {
+        default:
+          return '';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
 
   switch (type) {
     case CARD_TYPES.VALUE:
@@ -63,6 +95,7 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          translateWithId={handleTranslation}
         />
       );
     case CARD_TYPES.TIMESERIES:
@@ -87,6 +120,17 @@ const CardEditFormSettings = ({ cardConfig, onChange, i18n }) => {
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          translateWithId={handleTranslation}
+        />
+      );
+    case CARD_TYPES.TABLE:
+      return (
+        <TableCardFormSettings
+          availableDimensions={availableDimensions}
+          cardConfig={cardConfig}
+          i18n={mergedI18n}
+          onChange={onChange}
+          translateWithId={handleTranslation}
         />
       );
     default:

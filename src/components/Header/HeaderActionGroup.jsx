@@ -25,6 +25,7 @@ const HeaderActionGroup = ({ actionItems }) => {
             item={item}
             index={i}
             key={`header-action-item-${item.label}-${i}`}
+            testID={`header-action-item-${item.label}`}
           />
         ))}
       </HeaderGlobalBar>

@@ -70,6 +70,7 @@ const propTypes = {
    * consuming component what kind of internal state changes are occuring.
    */
   onChange: PropTypes.func,
+  translateWithId: PropTypes.func,
 
   /**
    * Provide the title text that will be read by a screen reader when
@@ -96,6 +97,7 @@ const defaultPropTypes = {
   invalid: false,
   invalidText: '',
   onChange: () => {},
+  translateWithId: undefined,
 };
 
 const defaultItemSize = 48;
@@ -110,6 +112,7 @@ const IconDropdown = ({
   disabled,
   direction,
   onChange,
+  translateWithId,
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -262,6 +265,7 @@ const IconDropdown = ({
           setInternalSelectedItem(newSelected);
           onChange(newSelected);
         }}
+        translateWithId={translateWithId}
         downshiftProps={{
           isOpen,
           onStateChange: (change) => {

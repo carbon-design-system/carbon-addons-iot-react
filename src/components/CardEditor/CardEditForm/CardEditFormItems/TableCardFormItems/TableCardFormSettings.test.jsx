@@ -1,0 +1,187 @@
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+
+import {
+  CARD_SIZES,
+  CARD_TYPES,
+} from '../../../../../constants/LayoutConstants';
+
+import TableCardFormSettings, {
+  updateColumnSort,
+} from './TableCardFormSettings';
+
+const commonCardConfig = {
+  id: 'id',
+  title: 'My Table Card',
+  size: CARD_SIZES.LARGE,
+  type: CARD_TYPES.TABLE,
+  content: { columns: [], showHeader: true, allowNavigation: true },
+};
+const commonProps = {
+  cardConfig: commonCardConfig,
+  onChange: jest.fn(),
+  availableDimensions: {
+    manufacturer: ['Rentech', 'GHI'],
+    deviceid: ['73000', '73001'],
+  },
+};
+describe('TableCardFormSettings', () => {
+  it('updateColumnSort where a column is already sorted', () => {
+    const mockColumns = [
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ];
+    expect(updateColumnSort(mockColumns, 'manufacturer', 'ASC')).toEqual([
+      { dataSourceId: 'timestamp', sort: undefined },
+      { dataSourceId: 'manufacturer', sort: 'ASC' },
+    ]);
+    expect(updateColumnSort(mockColumns, 'timestamp', 'ASC')).toEqual([
+      { dataSourceId: 'timestamp', sort: 'ASC' },
+      { dataSourceId: 'manufacturer' },
+    ]);
+  });
+  it('updateColumnSort same sort', () => {
+    const mockColumns = [
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ];
+    expect(updateColumnSort(mockColumns, 'timestamp', 'DESC')).toEqual([
+      { dataSourceId: 'timestamp', sort: 'DESC' },
+      { dataSourceId: 'manufacturer' },
+    ]);
+  });
+  it('updateColumnSort with no previous column sort', () => {
+    const mockColumns = [
+      { dataSourceId: 'timestamp' },
+      { dataSourceId: 'manufacturer' },
+    ];
+    expect(updateColumnSort(mockColumns, 'manufacturer', 'ASC')).toEqual([
+      { dataSourceId: 'timestamp' },
+      { dataSourceId: 'manufacturer', sort: 'ASC' },
+    ]);
+  });
+  it('sort by drop down does not render with no columns', () => {
+    render(<TableCardFormSettings {...commonProps} />);
+    expect(screen.queryByLabelText('Sort by')).toBeNull();
+    expect(screen.queryByText('Ascending')).toBeNull();
+    expect(screen.queryByText('Descending')).toBeNull();
+  });
+  it('sort by drop down renders with columns', () => {
+    render(
+      <TableCardFormSettings
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                dataSourceId: 'timestamp',
+                label: 'Timestamp',
+                type: 'TIMESTAMP',
+              },
+            ],
+          },
+        }}
+      />
+    );
+    expect(screen.queryAllByLabelText('Sort by')).toBeDefined();
+    expect(screen.queryByText('Ascending')).toBeDefined();
+    expect(screen.queryByText('Descending')).toBeDefined();
+  });
+  it('sort by drop down populates correctly', () => {
+    render(
+      <TableCardFormSettings
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                dataSourceId: 'timestamp',
+                label: 'Timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                dataSourceId: 'manufacturer',
+                label: 'Manufacturer',
+                sort: 'DESC',
+              },
+            ],
+          },
+        }}
+      />
+    );
+    expect(screen.queryAllByLabelText('Sort by')[0].innerHTML).toEqual(
+      expect.stringContaining('manufacturer')
+    );
+  });
+  it('changing sort calls onChange', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <TableCardFormSettings
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                dataSourceId: 'timestamp',
+                label: 'Timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                dataSourceId: 'manufacturer',
+                label: 'Manufacturer',
+                sort: 'DESC',
+              },
+            ],
+          },
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByLabelText('Sort by')[0]);
+    fireEvent.click(screen.getByText('timestamp'));
+    expect(mockOnChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: expect.objectContaining({
+          columns: [
+            {
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+              sort: 'DESC',
+            },
+            {
+              dataSourceId: 'manufacturer',
+              label: 'Manufacturer',
+              sort: undefined,
+            },
+          ],
+        }),
+      })
+    );
+  });
+  it('toggle showHeader should call onChange', () => {
+    const mockOnChange = jest.fn();
+    render(<TableCardFormSettings {...commonProps} onChange={mockOnChange} />);
+    expect(mockOnChange).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByLabelText('Show table header'));
+    expect(mockOnChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: expect.objectContaining({ showHeader: false }),
+      })
+    );
+  });
+  it('toggle allowNavigation should call onChange', () => {
+    const mockOnChange = jest.fn();
+    render(<TableCardFormSettings {...commonProps} onChange={mockOnChange} />);
+    expect(mockOnChange).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByLabelText('Allow navigation to assets'));
+    expect(mockOnChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: expect.objectContaining({ allowNavigation: false }),
+      })
+    );
+  });
+});

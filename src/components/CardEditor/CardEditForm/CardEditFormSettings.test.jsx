@@ -52,6 +52,13 @@ const valueCardConfig = {
     precision: 5,
   },
 };
+const imageCardConfig = {
+  id: 'Standard',
+  title: 'image card',
+  type: 'IMAGE',
+  size: 'MEDIUM',
+  content: {},
+};
 
 const mockOnChange = jest.fn();
 
@@ -98,6 +105,22 @@ describe('CardEditFormSettings', () => {
         'changed unit'
       );
       expect(mockOnChange).toHaveBeenCalled();
+    });
+  });
+
+  describe('render image card', () => {
+    it('should see open menu options translated correctly', () => {
+      render(
+        <CardEditFormSettings
+          cardConfig={imageCardConfig}
+          onChange={mockOnChange}
+        />
+      );
+      expect(screen.getByText('Open menu')).toBeInTheDocument();
+      userEvent.click(screen.getByText('Open menu'));
+      expect(screen.getByText('Close menu')).toBeInTheDocument();
+      userEvent.click(screen.getByText('gray80'));
+      expect(screen.getByText('Open menu')).toBeInTheDocument();
     });
   });
   describe('other form fields', () => {

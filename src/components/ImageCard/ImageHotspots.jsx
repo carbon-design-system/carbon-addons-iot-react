@@ -3,10 +3,15 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
+import {
+  HotspotIconPropType,
+  HotspotPropTypes,
+} from '../../constants/SharedPropTypes';
 
-import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
+import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
 import HotspotContent from './HotspotContent';
 
@@ -34,10 +39,23 @@ const propTypes = {
   background: PropTypes.string,
   /** Current height in pixels */
   height: PropTypes.number.isRequired,
-  /** Callback when an editable image is clicked without drag */
+  /**
+   * Array of identifiable icons used by the hotspots. The icons here will be used to
+   * render the hotspot icons unless the renderIconByName prop us used.
+   */
+  icons: PropTypes.arrayOf(HotspotIconPropType),
+  /**
+   * Callback when an editable image is clicked without drag, used to add hotspot.
+   * Emits position obj {x, y} of hotspot to be added.
+   */
   onAddHotspotPosition: PropTypes.func,
   /** Callback when a hotspot is clicked in isEditable mode, emits position obj {x, y} */
   onSelectHotspot: PropTypes.func,
+  /**
+   * Callback when the hotspot content is changed, emits position obj {x, y}
+   * and content change obj, e.g. {title: 'new title value'}
+   * */
+  onHotspotContentChanged: PropTypes.func,
   /** Current width in pixels */
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
@@ -64,6 +82,7 @@ const defaultProps = {
   isEditable: false,
   onAddHotspotPosition: () => {},
   onSelectHotspot: () => {},
+  onHotspotContentChanged: () => {},
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
@@ -72,18 +91,20 @@ const defaultProps = {
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
   },
-  locale: null,
+  // undefined instead of null allows for functions to set default values
+  locale: undefined,
   selectedHotspots: [],
+  icons: null,
 };
 
-export const prepareDrag = (event, element, cursor, setCursor) => {
-  if (element === 'image') {
-    setCursor({
-      ...cursor,
-      dragging: false,
-      dragPrepared: true,
-    });
-  }
+export const prepareDrag = (event, cursor, setCursor) => {
+  setCursor({
+    ...cursor,
+    dragging: false,
+    dragPrepared: true,
+    imageMousedown: true,
+  });
+
   event.preventDefault();
 };
 
@@ -138,7 +159,7 @@ export const whileDrag = (
 
 /** Make sure that the pointer hasn't left the */
 export const stopDrag = (cursor, setCursor) => {
-  setCursor({ ...cursor, dragging: false });
+  setCursor({ ...cursor, dragging: false, imageMousedown: false });
 };
 
 export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
@@ -376,18 +397,22 @@ const getAccumulatedOffset = (imageElement) => {
 };
 
 /** Calculates the mouse click position in percentage and returns the
- * result in a callback */
-export const onAddHotspotPosition = ({
+ * result in a callback if a hotspot should be added */
+export const handleMouseUp = ({
   event,
   image,
+  cursor,
   setCursor,
   isEditable,
   callback,
 }) => {
-  setCursor((cursor) => {
-    return { ...cursor, dragPrepared: false };
+  setCursor((newCursor) => {
+    return { ...newCursor, dragPrepared: false, imageMousedown: false };
   });
-  if (isEditable) {
+
+  // We only trigger the callback if the image is editable and the intitiating
+  // mouse down event was on the actual image (as oppose of outside).
+  if (isEditable && cursor?.imageMousedown) {
     const accumelatedOffset = getAccumulatedOffset(event.currentTarget);
     const relativePosition = {
       x: event.pageX - accumelatedOffset.left,
@@ -414,10 +439,12 @@ const ImageHotspots = ({
   height,
   width,
   alt,
+  icons,
   isEditable,
   isHotspotDataLoading,
-  onAddHotspotPosition: onAddHotspotPositionCallback,
+  onAddHotspotPosition,
   onSelectHotspot,
+  onHotspotContentChanged,
   zoomMax,
   renderIconByName,
   locale,
@@ -514,12 +541,34 @@ const ImageHotspots = ({
     [onSelectHotspot, isEditable]
   );
 
+  const getIconRenderFunction = useCallback(() => {
+    return (
+      renderIconByName ||
+      (Array.isArray(icons)
+        ? (name, props) => {
+            const Icon = icons.find((iconObj) => iconObj.id === name)?.icon;
+            if (!Icon) {
+              if (__DEV__) {
+                warning(
+                  false,
+                  `An arrray of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
+                );
+              }
+              return null;
+            }
+            return <Icon {...props} />;
+          }
+        : null)
+    );
+  }, [icons, renderIconByName]);
+
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
       hotspots.map((hotspot) => {
+        const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find(
-          (pos) => hotspot.x === pos.x && hotspot.y === pos.y
+          (pos) => x === pos.x && y === pos.y
         );
         return (
           <Hotspot
@@ -531,13 +580,18 @@ const ImageHotspots = ({
                 <HotspotContent
                   {...hotspot.content}
                   locale={locale}
-                  renderIconByName={renderIconByName}
+                  renderIconByName={getIconRenderFunction()}
+                  id={`hotspot-content-${x}-${y}`}
+                  isTitleEditable={
+                    (isEditable, hotspotIsSelected && hotspot.type === 'text')
+                  }
+                  onChange={onHotspotContentChanged}
                 />
               )
             }
-            key={`${hotspot.x}-${hotspot.y}`}
+            key={`${x}-${y}`}
             style={hotspotsStyle}
-            renderIconByName={renderIconByName}
+            renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}
             onClick={onHotspotClicked}
           />
@@ -546,10 +600,12 @@ const ImageHotspots = ({
     [
       hotspots,
       hotspotsStyle,
+      getIconRenderFunction,
       locale,
-      renderIconByName,
       selectedHotspots,
       onHotspotClicked,
+      isEditable,
+      onHotspotContentChanged,
     ]
   );
 
@@ -607,7 +663,12 @@ const ImageHotspots = ({
           style={imageStyle}
           onMouseDown={(evt) => {
             if (!hideZoomControls && draggable) {
-              prepareDrag(evt, 'image', cursor, setCursor);
+              prepareDrag(evt, cursor, setCursor);
+            } else {
+              setCursor({
+                ...cursor,
+                imageMousedown: true,
+              });
             }
           }}
           onMouseMove={(evt) => {
@@ -629,12 +690,13 @@ const ImageHotspots = ({
             if (dragging) {
               stopDrag(cursor, setCursor);
             } else {
-              onAddHotspotPosition({
+              handleMouseUp({
                 event,
                 image,
+                cursor,
                 setCursor,
                 isEditable,
-                callback: onAddHotspotPositionCallback,
+                callback: onAddHotspotPosition,
               });
             }
           }}
