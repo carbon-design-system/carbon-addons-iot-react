@@ -88,13 +88,19 @@ const propTypes = {
     dataItemEditorSectionValueTooltipText: PropTypes.string,
     dataItemEditorSectionCustomTooltipText: PropTypes.string,
     dataItemEditorSectionTooltipLinkText: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
     selectDataItems: PropTypes.string,
     selectDataItem: PropTypes.string,
     dataItem: PropTypes.string,
     edit: PropTypes.string,
     remove: PropTypes.string,
     customize: PropTypes.string,
+    clearAllText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -124,6 +130,10 @@ const defaultProps = {
     edit: 'Edit',
     remove: 'Remove',
     customize: 'Customize',
+    clearAllText: 'Clear all',
+    clearSelectionText: 'Clear selection',
+    openMenuText: 'Open menu',
+    closeMenuText: 'Close menu',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -230,6 +240,7 @@ const DataSeriesFormItem = ({
   availableDimensions,
   i18n,
   dataSeriesItemLinks,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -293,6 +304,7 @@ const DataSeriesFormItem = ({
           onChange={onChange}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          translateWithId={translateWithId}
         />
       ) : null}
       {canMultiSelectDataItems ? (
@@ -325,6 +337,7 @@ const DataSeriesFormItem = ({
               onChange(newCard);
             }}
             titleText={mergedI18n.dataItem}
+            translateWithId={translateWithId}
           />
         </div>
       ) : (
@@ -334,6 +347,7 @@ const DataSeriesFormItem = ({
             direction="bottom"
             label={mergedI18n.selectDataItem}
             light
+            translateWithId={translateWithId}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={

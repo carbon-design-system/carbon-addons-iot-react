@@ -34,6 +34,8 @@ const propTypes = {
     showHeader: PropTypes.string,
     allowNavigation: PropTypes.string,
   }),
+  /** Callback function to translate common ids */
+  translateWithId: PropTypes.func.isRequired,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -112,7 +114,12 @@ export const updateColumnSort = (columns, sortDataSourceId, sortDirection) => {
  * Stateless render component that renders the current settings panel based on the inbound cardConfig prop
  * and calls onChange with the updated cardConfig object every time the user interacts with the form
  */
-const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
+const TableCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
 
@@ -165,6 +172,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               label={mergedI18n.sortBy}
               items={dataItems}
               light
+              translateWithId={translateWithId}
               selectedItem={defaultSortColumn?.dataSourceId}
               onChange={({ selectedItem }) => {
                 const existingColumn = cardConfig?.content?.columns.find(

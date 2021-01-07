@@ -196,6 +196,7 @@ const getSuiteHeaderData = async ({
   const eamData = await api('GET', '/config/eam');
   const mroioData = await api('GET', '/config/mroio');
   const apmData = await api('GET', '/config/apm');
+  const appconnectData = await api('GET', '/config/appconnect');
   const i18nData = await api('GET', `/i18n/header/${isTest ? 'en' : lang}`);
 
   // Routes
@@ -214,6 +215,16 @@ const getSuiteHeaderData = async ({
   // i18n
   const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
 
+  // apps to open in a new window
+  const externalApps = [
+    'eam',
+    'mroio',
+    'digitaltwin',
+    'apm',
+    'visualinspection',
+    'appconnect',
+  ];
+
   return {
     username: profileData.user.username,
     userDisplayName: profileData.user.displayName,
@@ -226,17 +237,25 @@ const getSuiteHeaderData = async ({
               id: 'eam',
               name: 'Manage',
               href: eamData.url,
-              isExternal: true,
             },
           ]
         : []),
+      ...applications,
       ...(mroioData?.url
         ? [
             {
               id: 'mroio',
               name: 'MRO Inventory Optimization',
               href: mroioData.url,
-              isExternal: true,
+            },
+          ]
+        : []),
+      ...((appconnectData?.users ?? []).includes(profileData?.user?.username)
+        ? [
+            {
+              id: 'appconnect',
+              name: 'App Connect',
+              href: appconnectData?.dashboard,
             },
           ]
         : []),
@@ -244,14 +263,15 @@ const getSuiteHeaderData = async ({
         ? [
             {
               id: 'apm',
-              name: 'Asset Performance Management for Energy and Utilities',
+              name: 'APM for E&U',
               href: apmData.dashboard,
-              isExternal: true,
             },
           ]
         : []),
-      ...applications,
-    ],
+    ].map((app) => ({
+      ...app,
+      isExternal: externalApps.includes(app.id),
+    })),
     i18n,
     showSurvey,
   };

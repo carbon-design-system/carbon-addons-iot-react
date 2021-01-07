@@ -45,6 +45,7 @@ const propTypes = {
     dataItemEditorLegendColor: PropTypes.string,
     tableColumnEditorSectionTitle: PropTypes.string,
     dataItemEditorSectionTableTooltipText: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
     selectDataItems: PropTypes.string,
     selectGroupByDimensions: PropTypes.string,
     dataItem: PropTypes.string,
@@ -66,6 +67,7 @@ const propTypes = {
   dataSeriesItemLinks: PropTypes.shape({
     table: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -101,6 +103,7 @@ const TableCardFormContent = ({
   availableDimensions,
   i18n,
   dataSeriesItemLinks,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
@@ -233,6 +236,7 @@ const TableCardFormContent = ({
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedAttributes}
           items={validDataItems}
+          translateWithId={translateWithId}
           light
           onChange={({ selectedItems }) => {
             const newCard = handleDataSeriesChange(
@@ -258,6 +262,7 @@ const TableCardFormContent = ({
             key={`data-item-select-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
+            translateWithId={translateWithId}
             direction="bottom"
             itemToString={(item) => item.id}
             initialSelectedItems={initialSelectedDimensions}

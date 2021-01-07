@@ -927,7 +927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        title="Clear all selected items"
+                        title="Clear all"
                       >
                         2
                         <svg
@@ -1797,7 +1797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        title="Clear all selected items"
+                        title="Clear all"
                       >
                         2
                         <svg
@@ -3476,7 +3476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        title="Clear all selected items"
+                        title="Clear all"
                       >
                         2
                         <svg

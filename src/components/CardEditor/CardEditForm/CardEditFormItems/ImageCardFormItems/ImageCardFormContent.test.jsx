@@ -19,6 +19,7 @@ describe('ImageCardFormContent', () => {
         cardConfig={mockCardConfig}
       />
     );
+    // first button is the card tooltip
     userEvent.click(screen.getAllByRole('button')[1]);
     expect(mockOnChange).toHaveBeenCalledTimes(1);
     expect(mockOnChange).toHaveBeenCalledWith({ content: {} });
