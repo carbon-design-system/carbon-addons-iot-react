@@ -163,9 +163,9 @@ class FilterHeaderRow extends Component {
     }
   };
 
-  handleTranslation = (id) => {
+  handleTranslation = (idToTranslate) => {
     const { clearSelectionText, openMenuText, closeMenuText } = this.props;
-    switch (id) {
+    switch (idToTranslate) {
       default:
         return '';
       case 'clear.selection':

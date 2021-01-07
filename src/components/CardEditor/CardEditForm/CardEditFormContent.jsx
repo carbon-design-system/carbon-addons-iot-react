@@ -106,9 +106,9 @@ const CardEditFormContent = ({
   const [selectedTimeRange, setSelectedTimeRange] = useState(timeRange || '');
 
   const handleTranslation = useCallback(
-    (id) => {
+    (idToTranslate) => {
       const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
-      switch (id) {
+      switch (idToTranslate) {
         default:
           return '';
         case 'clear.all':
