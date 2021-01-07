@@ -288,7 +288,7 @@ export const WithInitialValue = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -363,7 +363,7 @@ export const WithCustomOnCardChange = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -528,7 +528,7 @@ export const CustomCardPreviewRenderer = () => (
         'CUSTOM',
       ])}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -589,4 +589,244 @@ export const isLoading = () => (
 
 isLoading.story = {
   name: 'isLoading',
+};
+
+export const I18N = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+        'CUSTOM',
+      ])}
+      i18n={{
+        // dashboard header
+        headerEditTitleButton: 'headerEditTitleButton',
+        headerImportButton: 'headerImportButton',
+        headerExportButton: 'headerExportButton',
+        headerCancelButton: 'headerCancelButton',
+        headerSubmitButton: 'headerSubmitButton',
+        headerDeleteButton: 'headerDeleteButton',
+        headerFitToScreenButton: 'headerFitToScreenButton',
+        headerXlargeButton: 'headerXlargeButton',
+        headerLargeButton: 'headerLargeButton',
+        headerMediumButton: 'headerMediumButton',
+        layoutInfoXl: 'layoutInfoXl',
+        layoutInfoLg: 'layoutInfoLg',
+        layoutInfoMd: 'layoutInfoMd',
+
+        // card strings
+        noDataLabel: 'noDataLabel',
+        defaultCardTitle: 'defaultCardTitle',
+        cloneCardLabel: 'cloneCardLabel',
+        deleteCardLabel: 'deleteCardLabel',
+
+        // card gallery
+        galleryHeader: 'galleryHeader',
+        addCardButton: 'addCardButton',
+        openGalleryButton: 'openGalleryButton',
+        closeGalleryButton: 'closeGalleryButton',
+        openJSONButton: 'openJSONButton',
+        searchPlaceholderText: 'searchPlaceholderText',
+        TIMESERIES: 'TIMESERIES',
+        SIMPLE_BAR: 'SIMPLE_BAR',
+        GROUPED_BAR: 'GROUPED_BAR',
+        STACKED_BAR: 'STACKED_BAR',
+        VALUE: 'VALUE',
+        IMAGE: 'IMAGE',
+        TABLE: 'TABLE',
+        ALERT: 'ALERT',
+        LIST: 'LIST',
+
+        // card form
+        openEditorButton: 'openEditorButton',
+        contentTabLabel: 'contentTabLabel',
+        settingsTabLabel: 'settingsTabLabel',
+        cardSize_SMALL: 'cardSize_small',
+        cardSize_SMALLWIDE: 'cardSize_smallwide',
+        cardSize_MEDIUM: 'cardSize_medium',
+        cardSize_MEDIUMTHIN: 'cardSize_mediumthin',
+        cardSize_MEDIUMWIDE: 'cardSize_medium wide',
+        cardSize_LARGE: 'cardSize_large',
+        cardSize_LARGETHIN: 'cardSize_largethin',
+        cardSize_LARGEWIDE: 'cardSize_largewide',
+        chartType_BAR: 'chartType_bar',
+        chartType_LINE: 'chartType_line',
+        barChartType_SIMPLE: 'barChartType_simple',
+        barChartType_GROUPED: 'barChartType_grouped',
+        barChartType_STACKED: 'barChartType_stacked',
+        barChartLayout_HORIZONTAL: 'barChartType_horizontal',
+        barChartLayout_VERTICAL: 'barChartType_vertical',
+        errorTitle: 'errorTitle',
+        modalTitle: 'modalTitle',
+        modalLabel: 'modalLabel',
+        modalHelpText: 'modalHelpText',
+        modalIconDescription: 'modalIconDescription',
+        expandBtnLabel: 'expandBtnLabel',
+        modalPrimaryButtonLabel: 'modalPrimaryButtonLabel',
+        modalSecondaryButtonLabel: 'modalSecondaryButtonLabel',
+        cardTitle: 'cardTitle',
+        description: 'description',
+        size: 'size',
+        selectASize: 'selectASize',
+        timeRange: 'timeRange',
+        selectATimeRange: 'selectATimeRange',
+        last24HoursLabel: 'Last24hours',
+        last7DaysLabel: 'Last7days',
+        lastMonthLabel: 'Lastmonth',
+        lastQuarterLabel: 'Lastquarter',
+        lastYearLabel: 'Lastyear',
+        thisWeekLabel: 'Thisweek',
+        thisMonthLabel: 'Thismonth',
+        thisQuarterLabel: 'Thisquarter',
+        thisYearLabel: 'Thisyear',
+        dataItemEditorTitle: 'dataItemEditorTitle',
+        dataItemEditorDataItemTitle: 'dataItemEditorDataItemTitle',
+        dataItemEditorDataItemLabel: 'dataItemEditorDataItemLabel',
+        dataItemEditorLegendColor: 'dataItemEditorLegendColor',
+        dataSeriesTitle: 'dataSeriesTitle',
+        selectDataItems: 'selectDataItems',
+        selectDataItem: 'selectDataItem',
+        dataItem: 'dataItem',
+        edit: 'edit',
+        remove: 'remove',
+        customize: 'customize',
+        clearSelectionText: 'clearSelectionText',
+        clearAllText: 'clearAllText',
+        openMenuText: 'openMenuText',
+        closeMenuText: 'closeMenuText',
+
+        dataItemEditorDataSeriesTitle: 'dataItemEditorDataSeriesTitle',
+        dataItemEditorValueCardTitle: 'dataItemEditorValueCardTitle',
+        dataItemEditorDataItemCustomLabel: 'dataItemEditorDataItemCustomLabel',
+        dataItemEditorDataItemUnit: 'dataItemEditorDataItemUnit',
+        dataItemEditorDataItemFilter: 'dataItemEditorDataItemFilter',
+        dataItemEditorDataItemThresholds: 'dataItemEditorDataItemThresholds',
+        dataItemEditorDataItemAddThreshold:
+          'dataItemEditorDataItemAddThreshold',
+        dataItemEditorDataItemRemove: 'dataItemEditorDataItemRemove',
+        dataItemEditorBarColor: 'dataItemEditorBarColor',
+        dataItemEditorLineColor: 'dataItemEditorLineColor',
+        source: 'source',
+        closeButtonLabelText: 'closeButtonLabelText',
+        primaryButtonLabelText: 'primaryButtonLabelText',
+        secondaryButtonLabelText: 'secondaryButtonLabelText',
+
+        // settings for Value card
+        notSet: 'notSet',
+
+        // Settings for Data Series
+        xAxisLabel: 'xAxisLabel',
+        yAxisLabel: 'yAxisLabel',
+        unitLabel: 'unitLabel',
+        decimalPrecisionLabel: 'decimalPrecisionLabel',
+        precisionLabel: 'precisionLabel',
+        showLegendLabel: 'showLegendLabel',
+        fontSize: 'fontSize',
+
+        // Additional fields for Bar Chart
+        selectGroupBy: 'selectGroupBy',
+        selectCategory: 'selectCategory',
+        groupBy: 'groupBy',
+        subGroup: 'subGroup',
+        timeInterval: 'timeInterval',
+        decimalPlacesLabel: 'decimalPlacesLabel',
+        layoutLabel: 'layoutLabel',
+        horizontal: 'horizontal',
+        vertical: 'vertical',
+
+        // settings for Image card form
+        imageFile: 'imageFile',
+        editImage: 'editImage',
+        image: 'image',
+        close: 'close',
+
+        displayOptions: 'displayOptions',
+        colorTitleText: 'colorTitleText',
+        hideMap: 'hideMap',
+        hideZoom: 'hideZoom',
+        zoomLevel: 'zoomLevel',
+        fit: 'fit',
+        fill: 'fill',
+        stretch: 'stretch',
+        selectAColor: 'selectAColor',
+
+        // image card strings
+        dropContainerLabelText: 'dropContainerLabelText',
+        dropContainerDescText: 'dropContainerDescText',
+        uploadByURLCancel: 'uploadByURLCancel',
+        uploadByURLButton: 'uploadByURLButton',
+        browseImages: 'browseImages',
+        insertUrl: 'insertUrl',
+        urlInput: 'urlInput',
+        fileTooLarge: 'fileTooLarge',
+        wrongFileType: (accept) =>
+          `This file is not one of the accepted file types, ${accept.join(
+            ', '
+          )}`,
+        // image gallery strings
+        imageGalleryDeleteLabelText: 'imageGalleryDeleteLabelText',
+        imageGalleryDeleteModalLabelText: 'imageGalleryDeleteModalLabelText',
+        imageGalleryDeleteModalTitleText: (image) =>
+          `imageGalleryDeleteModalTitleText: ${image}?`,
+        imageGalleryGridButtonText: 'imageGalleryGridButtonText',
+        imageGalleryInstructionText: 'imageGalleryInstructionText',
+        imageGalleryListButtonText: 'imageGalleryListButtonText',
+        imageGalleryModalLabelText: 'imageGalleryModalLabelText',
+        imageGalleryModalTitleText: 'imageGalleryModalTitleText',
+        imageGalleryModalPrimaryButtonLabelText:
+          'imageGalleryModalPrimaryButtonLabelText',
+        imageGalleryModalSecondaryButtonLabelText:
+          'imageGalleryModalSecondaryButtonLabelText',
+        imageGalleryModalCloseIconDescriptionText:
+          'imageGalleryModalCloseIconDescriptionText',
+        imageGallerySearchPlaceHolderText: 'imageGallerySearchPlaceHolderText',
+
+        // table card settings
+        selectGroupByDimensions: 'selectGroupByDimensions',
+        dataItemEditorDimensionTitle: 'dataItemEditorDimensionTitle',
+        rowsPerPage: 'rowsPerPage',
+        sortBy: 'sortBy',
+        sortByTitle: 'sortByTitle',
+        ascending: 'ascending',
+        descending: 'descending',
+        showHeader: 'showHeader',
+        allowNavigation: 'allowNavigation',
+      }}
+      breakpointSwitcher={{ enabled: true }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+    />
+  </div>
+);
+
+I18N.story = {
+  name: 'i18n',
 };

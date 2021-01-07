@@ -6071,6 +6071,7 @@ Map {
       "onChange": [Function],
       "selectedItem": null,
       "titleText": "",
+      "translateWithId": undefined,
       "type": "default",
     },
     "propTypes": Object {
@@ -6211,6 +6212,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "translateWithId": Object {
+        "type": "func",
       },
       "type": Object {
         "args": Array [
@@ -8652,10 +8656,148 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "ALERT": Object {
+              "type": "string",
+            },
+            "GROUPED_BAR": Object {
+              "type": "string",
+            },
+            "IMAGE": Object {
+              "type": "string",
+            },
+            "LIST": Object {
+              "type": "string",
+            },
+            "SIMPLE_BAR": Object {
+              "type": "string",
+            },
+            "STACKED_BAR": Object {
+              "type": "string",
+            },
+            "TABLE": Object {
+              "type": "string",
+            },
+            "TIMESERIES": Object {
+              "type": "string",
+            },
+            "VALUE": Object {
+              "type": "string",
+            },
+            "addCardButton": Object {
+              "type": "string",
+            },
+            "barChartLayout_HORIZONTAL": Object {
+              "type": "string",
+            },
+            "barChartLayout_VERTICAL": Object {
+              "type": "string",
+            },
+            "barChartType_GROUPED": Object {
+              "type": "string",
+            },
+            "barChartType_SIMPLE": Object {
+              "type": "string",
+            },
+            "barChartType_STACKED": Object {
+              "type": "string",
+            },
+            "cardSize_LARGE": Object {
+              "type": "string",
+            },
+            "cardSize_LARGETHIN": Object {
+              "type": "string",
+            },
+            "cardSize_LARGEWIDE": Object {
+              "type": "string",
+            },
+            "cardSize_MEDIUM": Object {
+              "type": "string",
+            },
+            "cardSize_MEDIUMTHIN": Object {
+              "type": "string",
+            },
+            "cardSize_MEDIUMWIDE": Object {
+              "type": "string",
+            },
+            "cardSize_SMALL": Object {
+              "type": "string",
+            },
+            "cardSize_SMALLWIDE": Object {
+              "type": "string",
+            },
+            "cardTitle": Object {
+              "type": "string",
+            },
+            "chartType_BAR": Object {
+              "type": "string",
+            },
+            "chartType_LINE": Object {
+              "type": "string",
+            },
+            "cloneCardLabel": Object {
+              "type": "string",
+            },
+            "closeButtonLabelText": Object {
+              "type": "string",
+            },
             "closeGalleryButton": Object {
               "type": "string",
             },
+            "contentTabLabel": Object {
+              "type": "string",
+            },
+            "dataItem": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemAddThreshold": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemCustomLabel": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemFilter": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemLabel": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemThresholds": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemTitle": Object {
+              "type": "string",
+            },
+            "dataItemEditorDataItemUnit": Object {
+              "type": "string",
+            },
+            "dataItemEditorLegendColor": Object {
+              "type": "string",
+            },
+            "dataSeriesTitle": Object {
+              "type": "string",
+            },
+            "decimalPrecisionLabel": Object {
+              "type": "string",
+            },
             "defaultCardTitle": Object {
+              "type": "string",
+            },
+            "deleteCardLabel": Object {
+              "type": "string",
+            },
+            "description": Object {
+              "type": "string",
+            },
+            "edit": Object {
+              "type": "string",
+            },
+            "errorTitle": Object {
+              "type": "string",
+            },
+            "expandBtnLabel": Object {
+              "type": "string",
+            },
+            "fontSize": Object {
               "type": "string",
             },
             "galleryHeader": Object {
@@ -8727,6 +8869,21 @@ Map {
             "imageGallerySearchPlaceHolderText": Object {
               "type": "string",
             },
+            "last24HoursLabel": Object {
+              "type": "string",
+            },
+            "last7DaysLabel": Object {
+              "type": "string",
+            },
+            "lastMonthLabel": Object {
+              "type": "string",
+            },
+            "lastQuarterLabel": Object {
+              "type": "string",
+            },
+            "lastYearLabel": Object {
+              "type": "string",
+            },
             "layoutInfoLg": Object {
               "type": "string",
             },
@@ -8736,7 +8893,28 @@ Map {
             "layoutInfoXl": Object {
               "type": "string",
             },
+            "modalHelpText": Object {
+              "type": "string",
+            },
+            "modalIconDescription": Object {
+              "type": "string",
+            },
+            "modalLabel": Object {
+              "type": "string",
+            },
+            "modalPrimaryButtonLabel": Object {
+              "type": "string",
+            },
+            "modalSecondaryButtonLabel": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
             "noDataLabel": Object {
+              "type": "string",
+            },
+            "openEditorButton": Object {
               "type": "string",
             },
             "openGalleryButton": Object {
@@ -8745,7 +8923,64 @@ Map {
             "openJSONButton": Object {
               "type": "string",
             },
+            "precisionLabel": Object {
+              "type": "string",
+            },
+            "primaryButtonLabelText": Object {
+              "type": "string",
+            },
             "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
+              "type": "string",
+            },
+            "secondaryButtonLabelText": Object {
+              "type": "string",
+            },
+            "selectASize": Object {
+              "type": "string",
+            },
+            "selectATimeRange": Object {
+              "type": "string",
+            },
+            "selectDataItems": Object {
+              "type": "string",
+            },
+            "settingsTabLabel": Object {
+              "type": "string",
+            },
+            "showLegendLabel": Object {
+              "type": "string",
+            },
+            "size": Object {
+              "type": "string",
+            },
+            "source": Object {
+              "type": "string",
+            },
+            "thisMonthLabel": Object {
+              "type": "string",
+            },
+            "thisQuarterLabel": Object {
+              "type": "string",
+            },
+            "thisWeekLabel": Object {
+              "type": "string",
+            },
+            "thisYearLabel": Object {
+              "type": "string",
+            },
+            "timeRange": Object {
+              "type": "string",
+            },
+            "unitLabel": Object {
+              "type": "string",
+            },
+            "xAxisLabel": Object {
+              "type": "string",
+            },
+            "yAxisLabel": Object {
               "type": "string",
             },
           },
@@ -18317,6 +18552,7 @@ Map {
       "selectedColor": undefined,
       "testID": undefined,
       "titleText": "Color",
+      "translateWithId": undefined,
     },
     "propTypes": Object {
       "colors": Object {
@@ -18372,6 +18608,9 @@ Map {
       },
       "titleText": Object {
         "type": "string",
+      },
+      "translateWithId": Object {
+        "type": "func",
       },
     },
   },

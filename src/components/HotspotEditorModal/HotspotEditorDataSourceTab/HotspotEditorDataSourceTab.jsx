@@ -31,7 +31,20 @@ const propTypes = {
       hotspots: PropTypes.arrayOf(PropTypes.object),
     }),
   }),
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    selectDataItemsText: PropTypes.string,
+    dataItemText: PropTypes.string,
+    editText: PropTypes.string,
+    // items for data item modal
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemCustomLabel: PropTypes.string,
+    dataItemEditorDataItemUnit: PropTypes.string,
+    dataItemEditorDataItemFilter: PropTypes.string,
+    dataItemEditorDataItemThresholds: PropTypes.string,
+    dataItemEditorDataItemAddThreshold: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
+  }),
   /* callback when image input value changes */
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
@@ -65,7 +78,8 @@ const defaultProps = {
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
-    modalPrimaryButtonLabel: 'Update',
+    primaryButtonLabelText: 'Update',
+    secondaryButtonLabelText: 'Cancel',
   },
   dataItems: [],
   availableDimensions: {},
