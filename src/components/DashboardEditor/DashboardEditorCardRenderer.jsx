@@ -126,7 +126,19 @@ const renderTableCard = (props) => (
  * @param {Object} commonProps
  * @returns {Node}
  */
-const renderImageCard = (props) => <ImageCard isEditable {...props} />;
+const renderImageCard = (props) => (
+  <ImageCard
+    isEditable // render the icon in the right color in the card preview
+    renderIconByName={(iconName, iconProps) => {
+      const iconToRender = validThresholdIcons.find(
+        (icon) => icon.name === iconName
+      )?.carbonIcon || <Warning24 />;
+      // eslint-disable-next-line react/prop-types
+      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+    }}
+    {...props}
+  />
+);
 
 /**
  * @param {Object} cardConfig

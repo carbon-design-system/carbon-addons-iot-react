@@ -9,6 +9,7 @@ import {
 } from 'carbon-components-react';
 import { withSize } from 'react-sizeme';
 import update from 'immutability-helper';
+import { gray50, red50, green50, blue50 } from '@carbon/colors';
 
 import {
   HotspotIconPropType,
@@ -18,7 +19,10 @@ import ImageHotspots from '../ImageCard/ImageHotspots';
 import ComposedModal from '../ComposedModal';
 import { InlineLoading } from '../InlineLoading';
 import { settings } from '../../constants/Settings';
-import { validThresholdIcons } from '../DashboardEditor/editorUtils';
+import {
+  validThresholdIcons,
+  validThresholdColors,
+} from '../DashboardEditor/editorUtils';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
@@ -32,17 +36,24 @@ import {
 
 const { iotPrefix } = settings;
 
+const selectableColors = [
+  { carbonColor: gray50, name: 'gray' },
+  { carbonColor: red50, name: 'red' },
+  { carbonColor: green50, name: 'green' },
+  { carbonColor: blue50, name: 'blue' },
+];
+
 const propTypes = {
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
   /** Array of selectable color objects for text hotspot background */
-  backgroundColors: PropTypes.arrayOf(ColorPropType).isRequired,
+  backgroundColors: PropTypes.arrayOf(ColorPropType),
   backgroundLabelText: PropTypes.string,
   boldLabelText: PropTypes.string,
   /** Array of selectable color objects for text hotspot border */
-  borderColors: PropTypes.arrayOf(ColorPropType).isRequired,
+  borderColors: PropTypes.arrayOf(ColorPropType),
   borderLabelText: PropTypes.string,
   borderWidthText: PropTypes.string,
   borderWidthInvalidText: PropTypes.string,
@@ -109,15 +120,15 @@ const propTypes = {
   fixedTypeTooltipInfoText: PropTypes.string,
   fixedTypeTooltipTabLabelText: PropTypes.string,
   /** Array of selectable color objects for text hotspot font */
-  fontColors: PropTypes.arrayOf(ColorPropType).isRequired,
+  fontColors: PropTypes.arrayOf(ColorPropType),
   fontLabelText: PropTypes.string,
   fontSizeText: PropTypes.string,
   fontSizeInvalidText: PropTypes.string,
   getValidDataItems: PropTypes.func,
   /** Array of selectable color objects for hotspot icon fill */
-  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType).isRequired,
-  /** Array of selectable icon objects for the hotspots. */
-  hotspotIcons: PropTypes.arrayOf(HotspotIconPropType).isRequired,
+  hotspotIconFillColors: PropTypes.arrayOf(ColorPropType),
+  /** Array of selectable icon objects for the hotspots adds to the default icons */
+  hotspotIcons: PropTypes.arrayOf(HotspotIconPropType),
   hotspotsText: PropTypes.string,
   iconDropdownLabelText: PropTypes.string,
   imageId: PropTypes.string,
@@ -147,7 +158,7 @@ const propTypes = {
    * matching the x & y source in param {maxHotspots, xSource, ySource }.
    * */
   onFetchDynamicDemoHotspots: PropTypes.func,
-  /** Callback for modal save button */
+  /** Callback for modal save button returns the entire updated card config */
   onSave: PropTypes.func.isRequired,
   /** Should the dialog be open or not */
   open: PropTypes.bool,
@@ -163,8 +174,10 @@ const propTypes = {
 
 const defaultProps = {
   availableDimensions: {},
+  backgroundColors: selectableColors,
   backgroundLabelText: undefined,
   boldLabelText: undefined,
+  borderColors: selectableColors,
   borderLabelText: undefined,
   borderWidthInvalidText: undefined,
   borderWidthText: undefined,
@@ -185,10 +198,13 @@ const defaultProps = {
   fixedTypeDataSourceTabLabelText: 'Data source',
   fixedTypeTooltipInfoText: undefined,
   fixedTypeTooltipTabLabelText: 'Tooltip',
+  fontColors: selectableColors,
   fontLabelText: undefined,
   fontSizeInvalidText: undefined,
   fontSizeText: undefined,
   getValidDataItems: undefined,
+  hotspotIconFillColors: validThresholdColors,
+  hotspotIcons: [],
   hotspotsText: 'Hotspots',
   iconDropdownLabelText: undefined,
   imageId: undefined,
@@ -288,7 +304,7 @@ const HotspotEditorModal = ({
   tooManyHotspotsInfoText,
   underlineLabelText,
 }) => {
-  const initialHotspots = cardConfig.values.hotspots;
+  const initialHotspots = cardConfig.values?.hotspots || [];
   const myDataItems = getValidDataItems
     ? getValidDataItems(cardConfig)
     : dataItems;
@@ -462,7 +478,7 @@ const HotspotEditorModal = ({
                   !(selectedHotspot?.type === hotspotTypes.DYNAMIC)
                 }
                 showInfoMessage={!selectedHotspot}
-                hotspotIcons={hotspotIcons}
+                hotspotIcons={imageHotspotsIcons}
                 hotspotIconFillColors={hotspotIconFillColors}
                 formValues={selectedHotspot}
                 onChange={updateHotspotTooltip}
