@@ -18,6 +18,7 @@ const propTypes = {
     })
   ).isRequired,
   id: PropTypes.string,
+  /** totally clear the dynamic hotspots */
   onClear: PropTypes.func.isRequired,
   onXValueChange: PropTypes.func.isRequired,
   onYValueChange: PropTypes.func.isRequired,
@@ -42,6 +43,10 @@ const defaultProps = {
   yCoordinateDropdownLabelText: 'Select data item',
 };
 
+/**
+ * This component renders a form where the user can selection which dataSources to use
+ * for the X and Y positions
+ */
 const DynamicHotspotSourcePicker = ({
   clearIconDescription,
   dataSourceItems,

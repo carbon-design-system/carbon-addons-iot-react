@@ -138,7 +138,9 @@ const getIntOrUndefined = (value) => {
 
 const preventFormSubmission = (e) => e.preventDefault();
 
-/* this component is only used internally where props are defined and set. */
+/**
+ * This component renders a form that allows the user to change the style of the text type hotspots
+ */
 const HotspotTextStyleTab = ({
   className,
   fontColors,

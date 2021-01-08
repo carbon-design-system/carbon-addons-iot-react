@@ -62,7 +62,7 @@ const propTypes = {
     size: PropTypes.string,
     title: PropTypes.string,
     /**
-     * If this prop is present the HotspotEditorModal will place new and exsisting thresholds here
+     * If this prop is present the HotspotEditorModal will place new and existing thresholds here
      * instead of under the each hotspot in cardConfig.values.hotspots.
      */
     thresholds: PropTypes.arrayOf(
