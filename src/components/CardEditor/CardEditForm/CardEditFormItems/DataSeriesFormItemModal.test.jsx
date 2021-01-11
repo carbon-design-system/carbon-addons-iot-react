@@ -48,12 +48,14 @@ describe('DataSeriesFormItemModal', () => {
         {
           dataSourceId: 'key1',
           unit: '%',
+          precision: 3,
           label: 'Key 1',
         },
         {
           dataSourceId: 'key2',
           unit: 'lb',
           label: 'Key 2',
+          precision: 3,
         },
       ],
     },
@@ -76,6 +78,7 @@ describe('DataSeriesFormItemModal', () => {
   const editValueDataItem = {
     dataSourceId: 'key1',
     unit: '%',
+    precision: 3,
     label: 'Key 1',
   };
 
@@ -144,6 +147,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(mockSetEditDataItem).toHaveBeenCalledWith({
       dataSourceId: 'key1',
       label: 'newLabel',
+      precision: 3,
       unit: '%',
     });
   });
@@ -166,7 +170,34 @@ describe('DataSeriesFormItemModal', () => {
     expect(mockSetEditDataItem).toHaveBeenCalledWith({
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: 'PSI',
+    });
+  });
+  it('changes precision in a valueCard', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={valueCardConfig}
+        editDataItem={editValueDataItem}
+      />
+    );
+
+    const precisionInput = screen.getByText('3');
+    expect(precisionInput).toBeInTheDocument();
+    fireEvent.click(precisionInput);
+
+    const precisionOption = screen.getByText('4');
+    expect(precisionOption).toBeInTheDocument();
+
+    fireEvent.click(precisionOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      dataSourceId: 'key1',
+      unit: '%',
+      precision: 4,
+      label: 'Key 1',
     });
   });
   it('Changes dataFilter in a ValueCard', () => {
@@ -195,6 +226,7 @@ describe('DataSeriesFormItemModal', () => {
       },
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: '%',
     });
   });
@@ -210,6 +242,7 @@ describe('DataSeriesFormItemModal', () => {
           },
           dataSourceId: 'key1',
           label: 'Key 1',
+          precision: 3,
           unit: '%',
         }}
       />
@@ -231,6 +264,7 @@ describe('DataSeriesFormItemModal', () => {
       },
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: '%',
     });
   });
