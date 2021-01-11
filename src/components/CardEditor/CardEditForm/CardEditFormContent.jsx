@@ -78,6 +78,7 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  isSummaryDashboard: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -88,10 +89,12 @@ const defaultProps = {
   dataItems: [],
   currentBreakpoint: 'xl',
   availableDimensions: {},
+  isSummaryDashboard: false,
 };
 
 const CardEditFormContent = ({
   cardConfig,
+  isSummaryDashboard,
   onChange,
   i18n,
   dataItems,
@@ -136,6 +139,7 @@ const CardEditFormContent = ({
       ) : (
         <DataSeriesFormContent
           cardConfig={cardConfig}
+          isSummaryDashboard={isSummaryDashboard}
           onChange={onChange}
           dataItems={dataItems}
           selectedDataItems={selectedDataItems}

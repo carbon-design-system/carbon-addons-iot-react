@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
 
 import { settings } from '../../../../../constants/Settings';
-import { NumberInput, Dropdown } from '../../../../../index';
+import { NumberInput } from '../../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -49,10 +48,8 @@ const defaultProps = {
     xAxisLabel: 'X-axis label',
     yAxisLabel: 'Y-axis label',
     unitLabel: 'Unit',
-    decimalPrecisionLabel: 'Decimal precision',
     showLegendLable: 'Show legend',
     fontSize: 'Font size',
-    precisionLabel: 'Precision',
   },
 };
 
@@ -82,36 +79,6 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               },
             })
           }
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          id={`${id}_value-card-decimal-place`}
-          titleText={mergedI18n.precisionLabel}
-          direction="bottom"
-          label=""
-          items={['Not set', '0', '1', '2', '3', '4']}
-          light
-          selectedItem={content?.precision?.toString() || 'Not set'}
-          onChange={({ selectedItem }) => {
-            const isSet = selectedItem !== 'Not set';
-            if (isSet) {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...content,
-                  precision: Number(selectedItem),
-                },
-              });
-            } else {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...omit(content, 'precision'),
-                },
-              });
-            }
-          }}
         />
       </div>
     </>

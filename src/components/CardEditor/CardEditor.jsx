@@ -78,6 +78,7 @@ const propTypes = {
     searchPlaceholderText: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -97,12 +98,14 @@ const defaultProps = {
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
 
 const CardEditor = ({
   cardConfig,
+  isSummaryDashboard,
   onShowGallery,
   onChange,
   onAddCard,
@@ -150,6 +153,7 @@ const CardEditor = ({
         ) : (
           <CardEditForm
             cardConfig={cardConfig}
+            isSummaryDashboard={isSummaryDashboard}
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}

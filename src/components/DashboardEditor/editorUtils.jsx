@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import {
   purple70,
@@ -62,6 +61,10 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     dataSourceId: PropTypes.string,
     label: PropTypes.string,
+    aggregationMethod: PropTypes.string,
+    aggregationMethods: PropTypes.arrayOf(PropTypes.string),
+    /** Grain is needed in summary dashboard editors */
+    grain: PropTypes.string,
   })
 );
 
@@ -367,6 +370,29 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
   }
 };
 
+export const determineDefaultAggregation = (aggregationMethods) => {
+  if (aggregationMethods?.includes('mean')) {
+    return 'mean';
+  }
+  if (aggregationMethods?.includes('count')) {
+    return 'count';
+  }
+  if (aggregationMethods?.includes('last')) {
+    return 'last';
+  }
+  return '';
+};
+
+export const determineDefaultLabel = (aggregationMethods, label) => {
+  const defaultAggregationMethod = determineDefaultAggregation(
+    aggregationMethods
+  );
+
+  return defaultAggregationMethod && !label.includes(defaultAggregationMethod)
+    ? `${label}_${defaultAggregationMethod}`
+    : label;
+};
+
 /**
  * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
  * @param {array} selectedItems
@@ -374,19 +400,37 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
  */
 export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
-  const series = selectedItems.map(({ id }, i) => {
-    const currentItem = cardSeries?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
-    const color =
-      currentItem?.color ??
-      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
-    return {
-      dataSourceId: id,
-      label: currentItem?.label || id,
-      color,
-    };
-  });
+  const series = selectedItems.map(
+    (
+      {
+        id: dataSourceId,
+        label: unEditedLabel,
+        aggregationMethods,
+        aggregationMethod,
+      },
+      i
+    ) => {
+      const currentItem = cardSeries?.find(
+        (dataItem) => dataItem.dataSourceId === dataSourceId
+      );
+      const defaultAggregationLabel = determineDefaultLabel(
+        aggregationMethods,
+        currentItem?.label || unEditedLabel || dataSourceId
+      );
+      const color =
+        currentItem?.color ??
+        DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+      const label = !aggregationMethod
+        ? defaultAggregationLabel
+        : currentItem?.label || unEditedLabel || dataSourceId;
+
+      return {
+        dataSourceId,
+        label,
+        color,
+      };
+    }
+  );
   return series;
 };
 
@@ -397,25 +441,32 @@ export const formatSeries = (selectedItems, cardConfig) => {
  */
 export const formatAttributes = (selectedItems, cardConfig) => {
   const cardAttributes = cardConfig?.content?.attributes;
-  const attributes = selectedItems.map(({ id }) => {
-    const currentItem = cardAttributes?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
+  const attributes = selectedItems.map(
+    ({
+      id: dataSourceId,
+      label: unEditedLabel,
+      aggregationMethods,
+      aggregationMethod,
+    }) => {
+      const currentItem = cardAttributes?.find(
+        (dataItem) => dataItem.dataSourceId === dataSourceId
+      );
+      const defaultAggregationLabel = determineDefaultLabel(
+        aggregationMethods,
+        currentItem?.label || unEditedLabel || dataSourceId
+      );
+      // Need to default the label to reflect the default aggregator if there isn't one set
+      const label = !aggregationMethod
+        ? defaultAggregationLabel
+        : currentItem?.label || unEditedLabel || dataSourceId;
 
-    return {
-      dataSourceId: id,
-      label: currentItem?.label || id,
-      ...(!isNil(currentItem?.precision)
-        ? { precision: currentItem.precision }
-        : {}),
-      ...(currentItem?.thresholds && !isEmpty(currentItem?.thresholds)
-        ? { thresholds: currentItem.thresholds }
-        : {}),
-      ...(currentItem?.dataFilter
-        ? { dataFilter: currentItem.dataFilter }
-        : {}),
-    };
-  });
+      return {
+        ...currentItem,
+        dataSourceId,
+        label,
+      };
+    }
+  );
   return attributes;
 };
 
@@ -536,21 +587,31 @@ export const handleDataItemEdit = (
       editDataItemIndex = dataSection.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[editDataItemIndex] = editDataItem;
+      // if there isn't an item found, place it at the end
+      dataSection[
+        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+      ] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, attributes: dataSection },
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      dataSection = [...editDataSeries];
+      dataSection =
+        type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
       editDataItemIndex = dataSection.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[editDataItemIndex] = editDataItem;
+      // if there isn't an item found, place it at the end
+      dataSection[
+        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+      ] = editDataItem;
       return {
         ...cardConfig,
-        content: { ...content, series: dataSection },
+        content: {
+          ...content,
+          series: dataSection,
+        },
       };
     case CARD_TYPES.TABLE:
       dataSection = [...content.columns];

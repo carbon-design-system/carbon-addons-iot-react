@@ -111,10 +111,15 @@
     align-items: flex-end;
     padding-bottom: 1rem;
     &--item {
+      .iot--color-dropdown {
+        margin-bottom: 1.25rem;
+      }
       margin-right: 1rem;
       width: 100%;
     }
     &--item-half {
+      display: flex;
+      flex-direction: column;
       margin-right: 1rem;
       width: 50%;
     }
@@ -161,6 +166,13 @@
   .#{$prefix}--modal-container--xs {
     max-height: none;
     min-width: 30rem;
+  }
+  .#{$iot-prefix}--combobox {
+    padding-top: 0;
+  }
+  .#{$iot-prefix}--combobox-tags {
+    // hide multi-select combobox tags in editor form
+    display: none;
   }
 }
 

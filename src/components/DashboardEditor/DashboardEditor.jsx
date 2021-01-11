@@ -36,6 +36,7 @@ const propTypes = {
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    isSummaryDashboard: PropTypes.bool,
   }),
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
@@ -588,6 +589,7 @@ const DashboardEditor = ({
             cardConfig={dashboardJson.cards.find(
               (card) => card.id === selectedCardId
             )}
+            isSummaryDashboard={dashboardJson.isSummaryDashboard}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}

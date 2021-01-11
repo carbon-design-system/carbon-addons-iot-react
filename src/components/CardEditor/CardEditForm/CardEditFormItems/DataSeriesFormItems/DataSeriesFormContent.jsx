@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
 import isEmpty from 'lodash/isEmpty';
+import merge from 'lodash/merge';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -10,7 +11,13 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect, Dropdown } from '../../../../../index';
+import {
+  Button,
+  List,
+  MultiSelect,
+  ComboBox,
+  Dropdown,
+} from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import {
   CARD_TYPES,
@@ -67,6 +74,7 @@ const propTypes = {
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
+  isSummaryDashboard: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -88,6 +96,7 @@ const defaultProps = {
   dataItems: [],
   selectedDataItems: [],
   availableDimensions: {},
+  isSummaryDashboard: false,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -98,6 +107,7 @@ export const formatDataItemsForDropdown = (dataItems) =>
 
 const DataSeriesFormItem = ({
   cardConfig,
+  isSummaryDashboard,
   dataItems,
   getValidDataItems,
   onChange,
@@ -119,8 +129,7 @@ const DataSeriesFormItem = ({
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   const isComplexDataSeries =
-    cardConfig.type === CARD_TYPES.TIMESERIES ||
-    cardConfig.type === CARD_TYPES.BAR;
+    cardConfig.content?.type === BAR_CHART_TYPES.GROUPED;
 
   const canMultiSelectDataItems =
     cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
@@ -142,12 +151,14 @@ const DataSeriesFormItem = ({
     <>
       <DataSeriesFormItemModal
         cardConfig={cardConfig}
+        isSummaryDashboard={isSummaryDashboard}
         showEditor={showEditor}
         setShowEditor={setShowEditor}
         editDataSeries={editDataSeries}
         setEditDataSeries={setEditDataSeries}
         editDataItem={editDataItem}
         setEditDataItem={setEditDataItem}
+        validDataItems={validDataItems}
         availableDimensions={availableDimensions}
         onChange={onChange}
         i18n={mergedI18n}
@@ -164,38 +175,83 @@ const DataSeriesFormItem = ({
         />
       ) : null}
       {canMultiSelectDataItems ? (
-        <div className={`${baseClassName}--input`}>
-          <MultiSelect
-            // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
-            id={`${cardConfig.id}_dataSourceIds`}
-            label={mergedI18n.selectDataItems}
-            direction="bottom"
-            itemToString={(item) => item.id}
-            initialSelectedItems={initialSelectedItems}
-            items={formatDataItemsForDropdown(validDataItems)}
-            light
-            onChange={({ selectedItems }) => {
-              // need to remove the category if the card is a stacked timeseries bar
-              const card =
-                cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
-                cardConfig.content.timeDataSourceId &&
-                selectedItems.length > 1
-                  ? omit(cardConfig, 'content.categoryDataSourceId')
-                  : cardConfig;
+        isComplexDataSeries ? (
+          <div className={`${baseClassName}--input`}>
+            <MultiSelect
+              // need to re-gen if selected card changes or if a dataItem is removed from the list
+              key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+              id={`${cardConfig.id}_dataSourceIds`}
+              label={mergedI18n.selectDataItems}
+              direction="bottom"
+              itemToString={(item) => item.id}
+              initialSelectedItems={initialSelectedItems}
+              items={formatDataItemsForDropdown(validDataItems)}
+              light
+              onChange={({ selectedItems }) => {
+                // need to remove the category if the card is a stacked timeseries bar
+                const card =
+                  cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+                  cardConfig.content.timeDataSourceId &&
+                  selectedItems.length > 1
+                    ? omit(cardConfig, 'content.categoryDataSourceId')
+                    : cardConfig;
 
-              const newCard = handleDataSeriesChange(
-                selectedItems,
-                card,
-                setEditDataSeries
-              );
-              setSelectedDataItems(selectedItems.map(({ id }) => id));
-              onChange(newCard);
-            }}
-            titleText={mergedI18n.dataItem}
-          />
-        </div>
+                const newCard = handleDataSeriesChange(
+                  selectedItems,
+                  card,
+                  setEditDataSeries
+                );
+                setSelectedDataItems(selectedItems.map(({ id }) => id));
+                onChange(newCard);
+              }}
+              titleText={mergedI18n.dataItem}
+            />
+          </div>
+        ) : (
+          <div className={`${baseClassName}--input`}>
+            <ComboBox
+              // need to re-gen if selected card changes or if a dataItem is removed from the list
+              key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+              id={`${cardConfig.id}_dataSourceIds`}
+              items={formatDataItemsForDropdown(validDataItems)}
+              itemToString={(item) => item.id}
+              titleText="Data item"
+              addToList={false}
+              placeholder="Filter"
+              // clears out the input field after each selection
+              selectedItem={{ id: '', text: '' }}
+              onChange={(selectedItem) => {
+                // ignore the value added by the "enter" keypress
+                if (selectedItem && !selectedItem.id.includes('iot-input')) {
+                  const itemWithMetaData = validDataItems?.find(
+                    ({ dataSourceId }) => dataSourceId === selectedItem.id
+                  );
+
+                  const selectedItems = [
+                    ...dataSection.map((item) => ({
+                      ...item,
+                      id: item.dataSourceId,
+                    })),
+                    {
+                      ...selectedItem,
+                      ...(itemWithMetaData && { ...itemWithMetaData }),
+                    },
+                  ];
+                  const newCard = handleDataSeriesChange(
+                    selectedItems,
+                    cardConfig,
+                    setEditDataSeries
+                  );
+                  setSelectedDataItems(selectedItems.map(({ id }) => id));
+                  onChange(newCard);
+                }
+              }}
+              light
+            />
+          </div>
+        )
       ) : (
+        // Can't select more than one dataItem
         <div className={`${baseClassName}--input`}>
           <Dropdown
             id={`${cardConfig.id}_dataSourceId`}
@@ -210,8 +266,16 @@ const DataSeriesFormItem = ({
                 : null
             }
             onChange={({ selectedItem }) => {
+              const itemWithMetaData = validDataItems?.find(
+                ({ dataSourceId }) => dataSourceId === selectedItem
+              );
               const newCard = handleDataSeriesChange(
-                [{ id: selectedItem }],
+                [
+                  {
+                    id: selectedItem,
+                    ...(itemWithMetaData && { ...itemWithMetaData }),
+                  },
+                ],
                 cardConfig,
                 setEditDataSeries
               );
@@ -230,54 +294,66 @@ const DataSeriesFormItem = ({
           id: dataItem.dataSourceId,
           content: {
             value: dataItem.label,
-            icon: isComplexDataSeries ? (
-              <div
-                style={{
-                  width: '1rem',
-                  height: '1rem',
-                  backgroundColor:
-                    dataItem.color ||
-                    DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
-                }}
-              />
-            ) : null,
+            icon:
+              cardConfig.type === CARD_TYPES.TIMESERIES ||
+              cardConfig.type === CARD_TYPES.BAR ? (
+                <div
+                  style={{
+                    width: '1rem',
+                    height: '1rem',
+                    backgroundColor:
+                      dataItem.color ||
+                      DATAITEM_COLORS_OPTIONS[
+                        i % DATAITEM_COLORS_OPTIONS.length
+                      ],
+                  }}
+                />
+              ) : null,
             rowActions: () => [
+              !isComplexDataSeries && [
+                <Button
+                  key={`data-item-${dataItem.dataSourceId}_edit`}
+                  renderIcon={Edit16}
+                  hasIconOnly
+                  kind="ghost"
+                  size="small"
+                  onClick={() => {
+                    const itemWithMetaData = validDataItems?.find(
+                      ({ dataSourceId }) =>
+                        dataSourceId === dataItem.dataSourceId
+                    );
+                    setEditDataItem(merge(itemWithMetaData, dataItem));
+                    setShowEditor(true);
+                  }}
+                  iconDescription={mergedI18n.edit}
+                />,
+              ],
               <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={isComplexDataSeries ? Subtract16 : Edit16}
+                key={`data-item-${dataItem.dataSourceId}_remove`}
+                renderIcon={Subtract16}
                 hasIconOnly
                 kind="ghost"
                 size="small"
                 onClick={() => {
-                  if (isComplexDataSeries) {
-                    const filteredItems = cardConfig.content?.series?.filter(
-                      (item) => item.dataSourceId !== dataItem.dataSourceId
-                    );
-                    setSelectedDataItems(
-                      filteredItems.map((item) => item.dataSourceId)
-                    );
-                    setRemovedDataItems([
-                      ...removedDataItems,
-                      cardConfig.content?.series?.find(
-                        (item) => item.dataSourceId === dataItem.dataSourceId
-                      ),
-                    ]);
-                    setEditDataSeries(filteredItems);
-                    onChange({
-                      ...cardConfig,
-                      content: {
-                        ...cardConfig.content,
-                        series: filteredItems,
-                      },
-                    });
-                  } else {
-                    setEditDataItem(dataItem);
-                    setShowEditor(true);
-                  }
+                  const filteredItems = dataSection.filter(
+                    (item) => item.dataSourceId !== dataItem.dataSourceId
+                  );
+                  setSelectedDataItems(
+                    filteredItems.map((item) => item.dataSourceId)
+                  );
+                  setRemovedDataItems([...removedDataItems, dataItem]);
+                  setEditDataSeries(filteredItems);
+                  onChange({
+                    ...cardConfig,
+                    content: {
+                      ...cardConfig.content,
+                      ...(cardConfig.type === CARD_TYPES.VALUE
+                        ? { attributes: filteredItems }
+                        : { series: filteredItems }),
+                    },
+                  });
                 }}
-                iconDescription={
-                  isComplexDataSeries ? mergedI18n.remove : mergedI18n.edit
-                }
+                iconDescription={mergedI18n.remove}
               />,
             ],
           },

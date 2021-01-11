@@ -67,6 +67,7 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -98,6 +99,7 @@ const defaultProps = {
   availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
 };
 
 /**
@@ -168,6 +170,7 @@ export const handleSubmit = (
 
 const CardEditForm = ({
   cardConfig,
+  isSummaryDashboard,
   onChange,
   i18n,
   dataItems,
@@ -216,6 +219,7 @@ const CardEditForm = ({
             <CardEditFormContent
               cardConfig={cardConfig}
               onChange={onChange}
+              isSummaryDashboard={isSummaryDashboard}
               i18n={mergedI18n}
               dataItems={dataItems}
               availableDimensions={availableDimensions}
@@ -244,18 +248,47 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(
-                JSON.stringify(
-                  omit(cardConfig, [
+              // removes properties needed for the editor that we don't want the user to be able to modify
+              const hideCardPropertiesForEditor = (card) => {
+                let attributes;
+                let series;
+                if (card.content?.attributes) {
+                  attributes = card.content?.attributes?.map((attribute) =>
+                    omit(attribute, [
+                      'aggregationMethods',
+                      'aggregationMethod',
+                      'grain',
+                      'index',
+                    ])
+                  );
+                }
+                if (card.content?.series) {
+                  series = card.content?.series?.map((attribute) =>
+                    omit(attribute, [
+                      'aggregationMethods',
+                      'aggregationMethod',
+                      'grain',
+                      'index',
+                    ])
+                  );
+                }
+                return omit(
+                  attributes
+                    ? { ...card, content: { ...card.content, attributes } }
+                    : series
+                    ? { ...card, content: { ...card.content, series } }
+                    : card,
+                  [
                     'id',
                     'content.src',
                     'content.imgState',
                     'i18n',
                     'validateUploadedImage',
-                  ]),
-                  null,
-                  4
-                )
+                  ]
+                );
+              };
+              setModalData(
+                JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4)
               );
               setShowEditor(true);
             }}>

@@ -40,6 +40,7 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  setSelectedGroupBy: PropTypes.func,
 };
 
 const defaultProps = {
@@ -62,11 +63,13 @@ const defaultProps = {
     subGroup: 'Sub-group',
   },
   availableDimensions: {},
+  setSelectedGroupBy: null,
 };
 
 const BarChartDataSeriesContent = ({
   cardConfig = {},
   onChange,
+  setSelectedGroupBy,
   availableDimensions,
   i18n,
 }) => {
@@ -97,6 +100,7 @@ const BarChartDataSeriesContent = ({
               : cardConfig.content?.categoryDataSourceId
           }
           onChange={({ selectedItem }) => {
+            setSelectedGroupBy(selectedItem);
             if (selectedItem !== 'Time interval') {
               onChange({
                 ...cardConfig,

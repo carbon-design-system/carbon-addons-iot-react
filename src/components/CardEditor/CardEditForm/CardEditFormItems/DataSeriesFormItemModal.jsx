@@ -16,6 +16,7 @@ import {
   cyan90,
 } from '@carbon/colors';
 import { WarningAlt32 } from '@carbon/icons-react';
+import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -23,10 +24,17 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../../constants/Settings';
 import { ComposedModal, TextInput, Dropdown } from '../../../../index';
-import { handleDataItemEdit } from '../../../DashboardEditor/editorUtils';
+import {
+  handleDataItemEdit,
+  determineDefaultAggregation,
+  DataItemsPropTypes,
+} from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import Table from '../../../Table/Table';
-import { CARD_TYPES } from '../../../../constants/LayoutConstants';
+import {
+  BAR_CHART_TYPES,
+  CARD_TYPES,
+} from '../../../../constants/LayoutConstants';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -75,6 +83,8 @@ const propTypes = {
       color: PropTypes.string,
     })
   ),
+  validDataItems: DataItemsPropTypes,
+  isSummaryDashboard: PropTypes.bool,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -119,6 +129,8 @@ const defaultProps = {
   editDataItem: {},
   setEditDataItem: null,
   setEditDataSeries: null,
+  isSummaryDashboard: false,
+  validDataItems: [],
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -138,19 +150,28 @@ const DATAITEM_COLORS_OPTIONS = [
 
 const DataSeriesFormItemModal = ({
   cardConfig,
+  isSummaryDashboard,
   showEditor,
   editDataSeries,
   setEditDataSeries,
   setShowEditor,
   editDataItem,
   setEditDataItem,
+  validDataItems,
   availableDimensions,
   onChange,
   i18n,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { id, type } = cardConfig;
+  const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
+
+  // only certain cards should allow the user to edit grains
+  const canEditGrain =
+    type === CARD_TYPES.TIMESERIES ||
+    type === CARD_TYPES.TABLE ||
+    content?.type === BAR_CHART_TYPES.SIMPLE ||
+    content?.type === BAR_CHART_TYPES.STACKED;
 
   const DataSeriesEditorTable = (
     <Table
@@ -227,8 +248,90 @@ const DataSeriesFormItemModal = ({
     ? Object.keys(editDataItem.dataFilter)[0]
     : '';
 
-  const ValueCardDataEditor = (
+  const DataEditorContent = (
     <>
+      <div className={`${baseClassName}--input-group`}>
+        {!validDataItems?.find(
+          ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
+        )?.aggregationMethod || !isSummaryDashboard ? ( // don't show selector if item has already been aggregated in summary dashboard
+          <div className={`${baseClassName}--input-group--item-half`}>
+            <Dropdown
+              id="aggregation-method"
+              label=""
+              direction="bottom"
+              itemToString={(item) =>
+                `${item[0].toUpperCase()}${item.slice(1)}`
+              }
+              items={editDataItem.aggregationMethods || []}
+              selectedItem={
+                editDataItem.aggregationMethod ||
+                determineDefaultAggregation(editDataItem.aggregationMethods)
+              }
+              titleText="Aggregation method"
+              light
+              onChange={({ selectedItem }) =>
+                setEditDataItem({
+                  ...editDataItem,
+                  aggregationMethod: selectedItem,
+                })
+              }
+            />
+          </div>
+        ) : (
+          <div className={`${baseClassName}--input-group--item-half`}>
+            <FormLabel style={{ marginBottom: '1rem' }}>
+              Aggregation method
+            </FormLabel>
+            <span style={{ marginBottom: '0.6rem' }}>
+              {`${
+                editDataItem.aggregationMethod
+                  ? editDataItem.aggregationMethod[0].toUpperCase()
+                  : ''
+              }${editDataItem.aggregationMethod?.slice(1) || ''}`}
+            </span>
+          </div>
+        )}
+
+        {isSummaryDashboard && canEditGrain ? ( // grain in summary dashboards should be read-only
+          <div className={`${baseClassName}--input-group--item-half`}>
+            <FormLabel style={{ marginBottom: '1rem' }}>Grain</FormLabel>
+            <span style={{ marginBottom: '0.6rem' }}>{editDataItem.grain}</span>
+          </div>
+        ) : (
+          canEditGrain && (
+            <div className={`${baseClassName}--input-group--item-half`}>
+              <Dropdown
+                id="grain"
+                label=""
+                direction="bottom"
+                itemToString={(item) => item}
+                items={[
+                  'Input',
+                  'Hourly',
+                  'Daily',
+                  'Weekly',
+                  'Monthly',
+                  'Yearly',
+                ]}
+                selectedItem={editDataItem.grain || 'Input'}
+                titleText="Grain"
+                light
+                onChange={({ selectedItem }) => {
+                  if (selectedItem !== 'Input') {
+                    setEditDataItem({
+                      ...editDataItem,
+                      grain: selectedItem,
+                    });
+                  } else {
+                    setEditDataItem(omit(editDataItem, 'grain'));
+                  }
+                }}
+              />
+            </div>
+          )
+        )}
+      </div>
+
       <div className={`${baseClassName}--input-group`}>
         <div className={`${baseClassName}--input-group--item`}>
           <TextInput
@@ -242,94 +345,152 @@ const DataSeriesFormItemModal = ({
               })
             }
             value={editDataItem.label}
+            helperText={`Data item source: ${editDataItem.dataSourceId}`}
           />
         </div>
-        <div className={`${baseClassName}--input-group--item-end`}>
-          <TextInput
-            id={`${id}_attribute-unit`}
-            labelText={mergedI18n.dataItemEditorDataItemUnit}
-            light
-            onChange={(evt) =>
-              setEditDataItem({
-                ...editDataItem,
-                unit: evt.target.value,
-              })
-            }
-            value={editDataItem.unit}
-          />
-        </div>
-      </div>
-      <div className={`${baseClassName}--input-group`}>
-        <div
-          className={classnames({
-            [`${baseClassName}--input-group--item`]: !isEmpty(
-              editDataItem.dataFilter
-            ),
-            [`${baseClassName}--input-group--item-half`]:
-              isEmpty(editDataItem.dataFilter) ||
-              (!isEmpty(editDataItem.dataFilter) &&
-                !availableDimensions[selectedDimensionFilter]),
-          })}>
-          <Dropdown
-            id={`${id}_data-filter-key`}
-            label=""
-            direction="bottom"
-            items={['None', ...Object.keys(availableDimensions)]}
-            light
-            selectedItem={selectedDimensionFilter || 'None'}
-            onChange={({ selectedItem }) => {
-              if (selectedItem !== 'None') {
-                const dataFilter = {
-                  [selectedItem]: availableDimensions[selectedItem][0],
-                };
+
+        {(type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR) && ( // show color selector
+          <div className={`${baseClassName}--input-group--item`}>
+            <ColorDropdown
+              id={`${id}_color-dropdown`}
+              label=""
+              titleText={
+                type === CARD_TYPES.TIMESERIES ? 'Line color' : 'Bar color'
+              }
+              selectedColor={DATAITEM_COLORS_OPTIONS.find(
+                ({ carbonColor }) => carbonColor === editDataItem.color
+              )}
+              onChange={({ color }) =>
                 setEditDataItem({
                   ...editDataItem,
-                  dataFilter,
-                });
-              } else {
-                setEditDataItem({
-                  ...omit(editDataItem, 'dataFilter'),
-                });
+                  color: color.carbonColor,
+                })
               }
-            }}
-            titleText={mergedI18n.dataItemEditorDataItemFilter}
-          />
-        </div>
-        {!isEmpty(editDataItem.dataFilter) &&
-        availableDimensions[selectedDimensionFilter] ? (
+            />
+          </div>
+        )}
+      </div>
+
+      {type === CARD_TYPES.VALUE && ( // only value cards need unit and precision selectors
+        <div className={`${baseClassName}--input-group`}>
+          <div className={`${baseClassName}--input-group--item`}>
+            <TextInput
+              id={`${id}_attribute-unit`}
+              labelText={mergedI18n.dataItemEditorDataItemUnit}
+              light
+              placeholder="Example: %"
+              onChange={(evt) =>
+                setEditDataItem({
+                  ...editDataItem,
+                  unit: evt.target.value,
+                })
+              }
+              value={editDataItem.unit}
+            />
+          </div>
           <div className={`${baseClassName}--input-group--item-end`}>
             <Dropdown
-              id={`${id}_data-filter-value`}
-              label=""
+              id={`${id}_value-card-decimal-place`}
+              titleText="Decimal places"
               direction="bottom"
-              items={availableDimensions[selectedDimensionFilter]}
+              label=""
+              items={['Not set', '0', '1', '2', '3', '4']}
               light
-              selectedItem={editDataItem.dataFilter[selectedDimensionFilter]}
+              selectedItem={editDataItem.precision?.toString() || 'Not set'}
               onChange={({ selectedItem }) => {
-                const dataFilter = { [selectedDimensionFilter]: selectedItem };
-                setEditDataItem({
-                  ...editDataItem,
-                  dataFilter,
-                });
+                const isSet = selectedItem !== 'Not set';
+                if (isSet) {
+                  setEditDataItem({
+                    ...editDataItem,
+                    precision: Number(selectedItem),
+                  });
+                } else {
+                  setEditDataItem(omit(editDataItem, 'precision'));
+                }
               }}
             />
           </div>
-        ) : null}
-      </div>
-      <ThresholdsFormItem
-        dataSourceId={editDataItem.dataSourceId}
-        cardConfig={cardConfig}
-        id={`${id}_thresholds`}
-        thresholds={editDataItem.thresholds}
-        selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
-        selectedColor={{ carbonColor: red60, name: 'red60' }}
-        onChange={(thresholds) => {
-          setEditDataItem({
-            ...editDataItem,
-            thresholds,
-          });
-        }}
-      />
+        </div>
+      )}
+
+      {isSummaryDashboard ? ( // only show data filter in summary dashboards
+        <div className={`${baseClassName}--input-group`}>
+          <div
+            className={classnames({
+              [`${baseClassName}--input-group--item`]: !isEmpty(
+                editDataItem.dataFilter
+              ),
+              [`${baseClassName}--input-group--item-half`]:
+                isEmpty(editDataItem.dataFilter) ||
+                (!isEmpty(editDataItem.dataFilter) &&
+                  !availableDimensions[selectedDimensionFilter]),
+            })}>
+            <Dropdown
+              id={`${id}_data-filter-key`}
+              label=""
+              direction="bottom"
+              items={['None', ...Object.keys(availableDimensions)]}
+              light
+              selectedItem={selectedDimensionFilter || 'None'}
+              onChange={({ selectedItem }) => {
+                if (selectedItem !== 'None') {
+                  const dataFilter = {
+                    [selectedItem]: availableDimensions[selectedItem][0],
+                  };
+                  setEditDataItem({
+                    ...editDataItem,
+                    dataFilter,
+                  });
+                } else {
+                  setEditDataItem({
+                    ...omit(editDataItem, 'dataFilter'),
+                  });
+                }
+              }}
+              titleText={mergedI18n.dataItemEditorDataItemFilter}
+            />
+          </div>
+          {!isEmpty(editDataItem.dataFilter) &&
+          availableDimensions[selectedDimensionFilter] ? (
+            <div className={`${baseClassName}--input-group--item-end`}>
+              <Dropdown
+                id={`${id}_data-filter-value`}
+                label=""
+                direction="bottom"
+                items={availableDimensions[selectedDimensionFilter]}
+                light
+                selectedItem={editDataItem.dataFilter[selectedDimensionFilter]}
+                onChange={({ selectedItem }) => {
+                  const dataFilter = {
+                    [selectedDimensionFilter]: selectedItem,
+                  };
+                  setEditDataItem({
+                    ...editDataItem,
+                    dataFilter,
+                  });
+                }}
+              />
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+
+      {type === CARD_TYPES.VALUE && (
+        <ThresholdsFormItem
+          dataSourceId={editDataItem.dataSourceId}
+          cardConfig={cardConfig}
+          id={`${id}_thresholds`}
+          thresholds={editDataItem.thresholds}
+          selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
+          selectedColor={{ carbonColor: red60, name: 'red60' }}
+          onChange={(thresholds) => {
+            setEditDataItem({
+              ...editDataItem,
+              thresholds,
+            });
+          }}
+        />
+      )}
     </>
   );
 
@@ -348,9 +509,8 @@ const DataSeriesFormItemModal = ({
               })
             }
             value={editDataItem.label}
+            helperText={`${mergedI18n.source}: ${editDataItem.dataSourceId}`}
           />
-          <p
-            className={`${baseClassName}--input-group--span`}>{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
         </div>
       </div>
       <ThresholdsFormItem
@@ -374,12 +534,13 @@ const DataSeriesFormItemModal = ({
         <div className={`${baseClassName}--modal-wrapper`}>
           <ComposedModal
             header={{
+              label: editDataItem.dataSourceId,
               title:
                 type === CARD_TYPES.VALUE
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
-            size="sm"
+            size="xs"
             onSubmit={() => {
               const newCard =
                 cardConfig.type === 'IMAGE'
@@ -397,11 +558,11 @@ const DataSeriesFormItemModal = ({
               setShowEditor(false);
               setEditDataItem({});
             }}>
-            {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR
+            {type === CARD_TYPES.BAR && content.type === BAR_CHART_TYPES.GROUPED
               ? DataSeriesEditorTable
               : type === CARD_TYPES.TABLE
               ? TableCardDataEditor
-              : ValueCardDataEditor}
+              : DataEditorContent}
           </ComposedModal>
         </div>
       ) : null}

@@ -46,11 +46,39 @@ const images = [
 ];
 
 const mockDataItems = [
-  { dataSourceId: 'torque_max', label: 'Torque Max' },
-  { dataSourceId: 'torque_min', label: 'Torque Min' },
-  { dataSourceId: 'torque_mean', label: 'Torque Mean' },
-  { dataSourceId: 'temperature', label: 'Temperature' },
-  { dataSourceId: 'pressure', label: 'Pressure' },
+  {
+    dataSourceId: 'torque_max',
+    label: 'Torque Max',
+    aggregationMethod: 'max',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
+  {
+    dataSourceId: 'torque_min',
+    label: 'Torque Min',
+    aggregationMethod: 'min',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
+  {
+    dataSourceId: 'torque_mean',
+    label: 'Torque Mean',
+    aggregationMethod: 'mean',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
+  {
+    dataSourceId: 'torque',
+    label: 'Torque',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
+  {
+    dataSourceId: 'temperature',
+    label: 'Temperature',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
+  {
+    dataSourceId: 'pressure',
+    label: 'Pressure',
+    aggregationMethods: ['mean', 'max', 'min'],
+  },
 ];
 
 export default {
@@ -111,7 +139,7 @@ export const WithInitialValue = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title="Custom dashboard"
-      dataItems={mockDataItems}
+      dataItems={mockDataItems.filter((item) => !item.aggregationMethod)}
       initialValue={{
         cards: [
           {
@@ -141,20 +169,14 @@ export const WithInitialValue = () => (
           },
           {
             id: 'Standard',
-            title: 'Default rendered card',
+            title: 'Value card',
             type: 'VALUE',
             size: 'MEDIUM',
             content: {
               attributes: [
                 {
-                  dataSourceId: 'key1',
-                  unit: '%',
-                  label: 'Key 1',
-                },
-                {
-                  dataSourceId: 'key2',
-                  unit: 'lb',
-                  label: 'Key 2',
+                  dataSourceId: 'torque',
+                  label: 'Torque',
                 },
               ],
             },
@@ -299,6 +321,200 @@ export const WithInitialValue = () => (
 
 WithInitialValue.story = {
   name: 'with initialValue',
+};
+
+export const SummaryDashboardWithInitialValue = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title="Custom dashboard"
+      // summary dashboards need to pass their grain to the items
+      dataItems={mockDataItems.map((item) => ({ ...item, grain: 'Weekly' }))}
+      availableDimensions={{
+        firmware: ['1.2', '1.3'],
+      }}
+      initialValue={{
+        isSummaryDashboard: true,
+        cards: [
+          {
+            id: 'Table',
+            title: 'Table card',
+            size: 'LARGE',
+            type: 'TABLE',
+            content: {
+              columns: [
+                {
+                  dataSourceId: 'undefined',
+                  label: '--',
+                },
+                {
+                  dataSourceId: 'undefined2',
+                  label: '--',
+                },
+              ],
+            },
+          },
+          {
+            id: 'Custom',
+            title: 'Custom rendered card',
+            type: 'CUSTOM',
+            size: 'MEDIUM',
+            value: 35,
+          },
+          {
+            id: 'Standard',
+            title: 'Value card',
+            type: 'VALUE',
+            size: 'MEDIUM',
+            content: {
+              attributes: [
+                {
+                  dataSourceId: 'torque_min',
+                  label: 'Torque Min',
+                  aggregationMethod: 'min',
+                },
+              ],
+            },
+          },
+          {
+            id: 'Timeseries',
+            title: 'Timeseries',
+            size: 'MEDIUMWIDE',
+            type: 'TIMESERIES',
+            content: {
+              series: [
+                {
+                  label: 'Temperature',
+                  dataSourceId: 'temperature',
+                },
+                {
+                  label: 'Pressure',
+                  dataSourceId: 'pressure',
+                },
+              ],
+              xLabel: 'Time',
+              yLabel: 'Temperature (˚F)',
+              includeZeroOnXaxis: true,
+              includeZeroOnYaxis: true,
+              timeDataSourceId: 'timestamp',
+              addSpaceOnEdges: 1,
+            },
+            timeRange: 'thisWeek',
+            dataSource: {
+              range: {
+                interval: 'week',
+                count: -1,
+                type: 'periodToDate',
+              },
+            },
+          },
+          {
+            id: 'Bar',
+            title: 'Bar',
+            size: 'MEDIUM',
+            type: 'BAR',
+            content: {
+              type: 'SIMPLE',
+              layout: 'VERTICAL',
+              series: [
+                {
+                  dataSourceId: 'pressure',
+                  label: 'Pressure',
+                  color: '#6929c4',
+                },
+              ],
+              timeDataSourceId: 'timestamp',
+            },
+          },
+        ],
+        layouts: {
+          lg: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          md: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+          xl: [
+            { h: 4, i: 'Table', w: 8, x: 0, y: 0 },
+            { h: 2, i: 'Custom', w: 4, x: 8, y: 0 },
+            {
+              h: 2,
+              i: 'Standard',
+              w: 4,
+              x: 12,
+              y: 0,
+            },
+            {
+              h: 2,
+              i: 'Timeseries',
+              w: 8,
+              x: 1,
+              y: 4,
+            },
+          ],
+        },
+      }}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
+      supportedCardTypes={[
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ]}
+      i18n={{
+        cardType_CUSTOM: 'Custom',
+      }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+    />
+  </div>
+);
+
+SummaryDashboardWithInitialValue.story = {
+  name: 'Summary Dashboard with initialValue',
 };
 
 export const WithCustomOnCardChange = () => (
