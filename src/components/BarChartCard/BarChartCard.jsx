@@ -282,6 +282,8 @@ const BarChartCard = ({
                     showTimeInGMT,
                     tooltipDateFormatPattern
                   ),
+                groupLabel: i18n.tooltipGroupLabel,
+                totalLabel: i18n.tooltipTotalLabel,
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -353,6 +355,8 @@ BarChartCard.defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
   i18n: {
     noDataLabel: 'No data',
+    tooltipGroupLabel: 'Group',
+    tooltipTotalLabel: 'Total',
   },
   domainRange: null,
   content: {
