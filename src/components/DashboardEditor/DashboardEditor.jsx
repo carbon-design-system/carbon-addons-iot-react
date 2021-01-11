@@ -124,6 +124,8 @@ const propTypes = {
   isLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
+    // header strings
+    headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
     headerExportButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
@@ -133,17 +135,35 @@ const propTypes = {
     headerXlargeButton: PropTypes.string,
     headerLargeButton: PropTypes.string,
     headerMediumButton: PropTypes.string,
-    noDataLabel: PropTypes.string,
-    defaultCardTitle: PropTypes.string,
-    headerEditTitleButton: PropTypes.string,
-    galleryHeader: PropTypes.string,
-    openGalleryButton: PropTypes.string,
-    closeGalleryButton: PropTypes.string,
-    openJSONButton: PropTypes.string,
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+
+    // card stirngs
+    noDataLabel: PropTypes.string,
+    defaultCardTitle: PropTypes.string,
+    cloneCardLabel: PropTypes.string,
+    deleteCardLabel: PropTypes.string,
+
+    // card gallery strings
+    galleryHeader: PropTypes.string,
+    addCardButton: PropTypes.string,
+    openGalleryButton: PropTypes.string,
+    closeGalleryButton: PropTypes.string,
+    openJSONButton: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
+    TIMESERIES: PropTypes.string,
+    SIMPLE_BAR: PropTypes.string,
+    GROUPED_BAR: PropTypes.string,
+    STACKED_BAR: PropTypes.string,
+    VALUE: PropTypes.string,
+    IMAGE: PropTypes.string,
+    TABLE: PropTypes.string,
+    ALERT: PropTypes.string,
+    LIST: PropTypes.string,
+
+    // image gallery strings
+    searchPlaceHolderText: PropTypes.string,
     imageGalleryDeleteLabelText: PropTypes.string,
     imageGalleryDeleteModalLabelText: PropTypes.string,
     imageGalleryDeleteModalTitleText: PropTypes.func,
@@ -156,6 +176,76 @@ const propTypes = {
     imageGalleryModalSecondaryButtonLabelText: PropTypes.string,
     imageGalleryModalCloseIconDescriptionText: PropTypes.string,
     imageGallerySearchPlaceHolderText: PropTypes.string,
+
+    // card form strings
+    openEditorButton: PropTypes.string,
+    contentTabLabel: PropTypes.string,
+    settingsTabLabel: PropTypes.string,
+    cardSize_SMALL: PropTypes.string,
+    cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_MEDIUM: PropTypes.string,
+    cardSize_MEDIUMTHIN: PropTypes.string,
+    cardSize_MEDIUMWIDE: PropTypes.string,
+    cardSize_LARGE: PropTypes.string,
+    cardSize_LARGETHIN: PropTypes.string,
+    cardSize_LARGEWIDE: PropTypes.string,
+    chartType_BAR: PropTypes.string,
+    chartType_LINE: PropTypes.string,
+    barChartType_SIMPLE: PropTypes.string,
+    barChartType_GROUPED: PropTypes.string,
+    barChartType_STACKED: PropTypes.string,
+    barChartLayout_HORIZONTAL: PropTypes.string,
+    barChartLayout_VERTICAL: PropTypes.string,
+
+    errorTitle: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalLabel: PropTypes.string,
+    modalHelpText: PropTypes.string,
+    modalIconDescription: PropTypes.string,
+    expandBtnLabel: PropTypes.string,
+    modalPrimaryButtonLabel: PropTypes.string,
+    modalSecondaryButtonLabel: PropTypes.string,
+    cardTitle: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.string,
+    selectASize: PropTypes.string,
+    timeRange: PropTypes.string,
+    selectATimeRange: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
+
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    dataItemEditorDataItemCustomLabel: PropTypes.string,
+    dataItemEditorDataItemUnit: PropTypes.string,
+    dataItemEditorDataItemFilter: PropTypes.string,
+    dataItemEditorDataItemThresholds: PropTypes.string,
+    dataItemEditorDataItemAddThreshold: PropTypes.string,
+    source: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
+    closeButtonLabelText: PropTypes.string,
+
+    // data series form
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    unitLabel: PropTypes.string,
+    decimalPrecisionLabel: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    showLegendLabel: PropTypes.string,
+    fontSize: PropTypes.string,
   }),
 };
 
@@ -210,7 +300,7 @@ const defaultProps = {
     layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
     layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
     layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
-    searchPlaceholderText: 'Enter a value',
+    searchPlaceHolderText: 'Enter a value',
   },
 };
 
@@ -388,6 +478,7 @@ const DashboardEditor = ({
     (cardConfig, isSelected) => ({
       key: cardConfig.id,
       tooltip: cardConfig.description,
+      i18n: mergedI18n,
       availableActions: { clone: true, delete: true },
       onCardAction: (id, actionId, payload) => {
         if (actionId === CARD_ACTIONS.CLONE_CARD) {
@@ -413,7 +504,13 @@ const DashboardEditor = ({
           ? onValidateUploadedImage
           : undefined,
     }),
-    [duplicateCard, handleOnCardChange, onValidateUploadedImage, removeCard]
+    [
+      duplicateCard,
+      handleOnCardChange,
+      mergedI18n,
+      onValidateUploadedImage,
+      removeCard,
+    ]
   );
 
   const cards = useMemo(

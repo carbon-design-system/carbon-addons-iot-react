@@ -78,9 +78,12 @@ const propTypes = {
   i18n: PropTypes.shape({
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
+    dataItemEditorDataItemRemove: PropTypes.string,
   }),
   /** The current data item's id */
   dataSourceId: PropTypes.string,
+  /** callback function to translate common ids */
+  translateWithId: PropTypes.func,
 };
 
 const defaultProps = {
@@ -97,6 +100,7 @@ const defaultProps = {
   selectedIcon: undefined,
   colors: validThresholdColors,
   selectedColor: undefined,
+  translateWithId: undefined,
 };
 
 const ThresholdsFormItem = ({
@@ -109,6 +113,7 @@ const ThresholdsFormItem = ({
   selectedColor,
   onChange,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
@@ -163,6 +168,7 @@ const ThresholdsFormItem = ({
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
                   }}
+                  translateWithId={translateWithId}
                 />
               </div>
               <div
@@ -185,6 +191,7 @@ const ThresholdsFormItem = ({
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
                   }}
+                  translateWithId={translateWithId}
                 />
               </div>
               <div
@@ -194,6 +201,7 @@ const ThresholdsFormItem = ({
                   key={`${thresholds.length}`}
                   id={`${cardConfig.id}_value-card-threshold-comparison_${i}`}
                   direction="bottom"
+                  translateWithId={translateWithId}
                   label=""
                   items={['>', '<', '=']} // current valid comparison operators
                   selectedItem={threshold.comparison || '>'}

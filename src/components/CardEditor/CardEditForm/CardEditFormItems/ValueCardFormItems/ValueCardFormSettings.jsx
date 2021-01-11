@@ -34,11 +34,9 @@ const propTypes = {
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
-    xAxisLabel: PropTypes.string,
-    yAxisLabel: PropTypes.string,
-    unitLabel: PropTypes.string,
-    decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
+    fontSize: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    notSet: PropTypes.string,
   }),
 };
 
@@ -50,6 +48,8 @@ const defaultProps = {
     unitLabel: 'Unit',
     showLegendLable: 'Show legend',
     fontSize: 'Font size',
+    precisionLabel: 'Precision',
+    notSet: 'Not set',
   },
 };
 

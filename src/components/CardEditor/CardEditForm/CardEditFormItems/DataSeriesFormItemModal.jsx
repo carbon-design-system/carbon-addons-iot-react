@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   purple70,
@@ -99,6 +99,8 @@ const propTypes = {
     dataItemEditorDataItemThresholds: PropTypes.string,
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     source: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
   }),
 };
 
@@ -129,6 +131,8 @@ const defaultProps = {
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
     dataItemSource: 'Data item source',
+    primaryButtonLabelText: 'Save',
+    secondaryButtonLabelText: 'Cancel',
   },
   editDataSeries: [],
   showEditor: false,
@@ -181,6 +185,30 @@ const DataSeriesFormItemModal = ({
     content?.type === BAR_CHART_TYPES.SIMPLE ||
     content?.type === BAR_CHART_TYPES.STACKED;
 
+  const handleTranslation = useCallback(
+    (idToTranslate) => {
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+      } = mergedI18n;
+      switch (idToTranslate) {
+        default:
+          return '';
+        case 'clear.all':
+          return clearAllText || 'Clear all';
+        case 'clear.selection':
+          return clearSelectionText || 'Clear selection';
+        case 'open.menu':
+          return openMenuText || 'Open menu';
+        case 'close.menu':
+          return closeMenuText || 'Close menu';
+      }
+    },
+    [mergedI18n]
+  );
+
   const DataSeriesEditorTable = (
     <Table
       id={`${id}_data_items_table`}
@@ -231,6 +259,7 @@ const DataSeriesFormItemModal = ({
                 label=""
                 titleText=""
                 selectedColor={selectedColor}
+                translateWithId={handleTranslation}
                 onChange={({ color }) => {
                   const updatedSeries = cloneDeep(editDataSeries);
                   updatedSeries[seriesIndex].color = color.carbonColor;
@@ -438,6 +467,7 @@ const DataSeriesFormItemModal = ({
             <Dropdown
               id={`${id}_data-filter-key`}
               label=""
+              translateWithId={handleTranslation}
               direction="bottom"
               items={['None', ...Object.keys(availableDimensions)]}
               light
@@ -525,7 +555,9 @@ const DataSeriesFormItemModal = ({
       </div>
       <ThresholdsFormItem
         id={`${id}_thresholds`}
+        i18n={mergedI18n}
         thresholds={editDataItem.thresholds}
+        translateWithId={handleTranslation}
         selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
         selectedColor={{ carbonColor: red60, name: 'red60' }}
         onChange={(thresholds) => {
@@ -551,6 +583,10 @@ const DataSeriesFormItemModal = ({
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
             size="xs"
+            footer={{
+              primaryButtonLabel: mergedI18n.primaryButtonLabelText,
+              secondaryButtonLabel: mergedI18n.secondaryButtonLabelText,
+            }}
             onSubmit={() => {
               const newCard =
                 cardConfig.type === 'IMAGE'
@@ -564,6 +600,7 @@ const DataSeriesFormItemModal = ({
               setShowEditor(false);
               setEditDataItem({});
             }}
+            iconDescription={mergedI18n.closeButtonLabelText}
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});

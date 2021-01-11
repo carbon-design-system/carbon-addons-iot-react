@@ -56,7 +56,23 @@ const propTypes = {
   }),
   /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectDataItem: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+    clearAllText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
+  }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -75,6 +91,7 @@ const propTypes = {
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
   isSummaryDashboard: PropTypes.bool,
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -92,6 +109,10 @@ const defaultProps = {
     remove: 'Remove',
     customize: 'Customize',
     filter: 'Filter',
+    clearAllText: 'Clear all',
+    clearSelectionText: 'Clear selection',
+    openMenuText: 'Open menu',
+    closeMenuText: 'Close menu',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -117,6 +138,7 @@ const DataSeriesFormItem = ({
   selectedTimeRange,
   availableDimensions,
   i18n,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -174,6 +196,7 @@ const DataSeriesFormItem = ({
           onChange={onChange}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          translateWithId={translateWithId}
         />
       ) : null}
       {canMultiSelectDataItems ? (
@@ -207,6 +230,7 @@ const DataSeriesFormItem = ({
                 onChange(newCard);
               }}
               titleText={mergedI18n.dataItem}
+              translateWithId={translateWithId}
             />
           </div>
         ) : (
@@ -260,6 +284,7 @@ const DataSeriesFormItem = ({
             direction="bottom"
             label={mergedI18n.selectDataItem}
             light
+            translateWithId={translateWithId}
             titleText={mergedI18n.dataItem}
             items={validDataItems.map(({ dataSourceId }) => dataSourceId)}
             selectedItem={

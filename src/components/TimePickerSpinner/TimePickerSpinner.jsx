@@ -34,6 +34,13 @@ const propTypes = {
   is12hour: PropTypes.bool,
   /** the default selected timegroup (hours, minutes) */
   defaultTimegroup: PropTypes.oneOf([TIMEGROUPS.HOURS, TIMEGROUPS.MINUTES]),
+  /** All the labels that need translation */
+  i18n: PropTypes.shape({
+    increment: PropTypes.string,
+    decrement: PropTypes.string,
+    hours: PropTypes.string,
+    minutes: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -45,6 +52,12 @@ const defaultProps = {
   disabled: false,
   is12hour: false,
   defaultTimegroup: TIMEGROUPS.HOURS,
+  i18n: {
+    increment: 'Increment',
+    decrement: 'Decrement',
+    hours: 'hours',
+    minutes: 'minutes',
+  },
 };
 
 const TimePickerSpinner = ({
@@ -56,6 +69,7 @@ const TimePickerSpinner = ({
   disabled,
   is12hour,
   defaultTimegroup,
+  i18n,
   ...others
 }) => {
   const [pickerValue, setPickerValue] = useState(value || '');
@@ -194,7 +208,7 @@ const TimePickerSpinner = ({
     }
   };
 
-  const timeGroupForLabel = currentTimeGroup === 0 ? 'hours' : 'minutes';
+  const timeGroupForLabel = currentTimeGroup === 0 ? i18n.hours : i18n.minutes;
 
   return (
     <div
@@ -229,8 +243,8 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`Increment ${timeGroupForLabel}`}
-              aria-label={`Increment ${timeGroupForLabel}`}
+              title={`${i18n.increment} ${timeGroupForLabel}`}
+              aria-label={`${i18n.increment} ${timeGroupForLabel}`}
               disabled={disabled}>
               <CaretUpGlyph className="up-icon" />
             </button>
@@ -244,8 +258,8 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`Decrement ${timeGroupForLabel}`}
-              aria-label={`Decrement ${timeGroupForLabel}`}
+              title={`${i18n.decrement} ${timeGroupForLabel}`}
+              aria-label={`${i18n.decrement} ${timeGroupForLabel}`}
               disabled={disabled}>
               <CaretDownGlyph className="down-icon" />
             </button>

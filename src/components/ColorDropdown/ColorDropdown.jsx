@@ -40,6 +40,8 @@ const propTypes = {
   light: PropTypes.bool,
   /** Callback for when any of the Dropdown color value changes */
   onChange: PropTypes.func.isRequired,
+  /** Callback to translate common strings */
+  translateWithId: PropTypes.func,
   /** The selected color, use to set initial color */
   selectedColor: colorPropType,
   /** Id used if needed for testing */
@@ -67,6 +69,7 @@ const defaultProps = {
   selectedColor: undefined,
   testID: undefined,
   titleText: 'Color',
+  translateWithId: undefined,
 };
 
 const ColorDropdown = ({
@@ -79,6 +82,7 @@ const ColorDropdown = ({
   selectedColor: selectedColorProp,
   titleText,
   testID,
+  translateWithId,
 }) => {
   const [selectedColor, setSelectedColor] = useState(selectedColorProp);
 
@@ -111,6 +115,7 @@ const ColorDropdown = ({
       items={colors}
       label={label}
       light={light}
+      translateWithId={translateWithId}
       onChange={({ selectedItem }) => {
         setSelectedColor(selectedItem);
         onChange({ color: selectedItem });

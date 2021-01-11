@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import pick from 'lodash/pick';
 
 import {
   CARD_DIMENSIONS,
@@ -42,6 +43,12 @@ const propTypes = {
     barChartType_STACKED: PropTypes.string,
     barChartLayout_HORIZONTAL: PropTypes.string,
     barChartLayout_VERTICAL: PropTypes.string,
+
+    errorTitle: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalLabel: PropTypes.string,
+    modalHelpText: PropTypes.string,
+    modalIconDescription: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
@@ -68,6 +75,7 @@ const propTypes = {
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -91,7 +99,12 @@ const defaultProps = {
     barChartType_STACKED: 'Stacked',
     barChartLayout_HORIZONTAL: 'Horizontal',
     barChartLayout_VERTICAL: 'Vertical',
-    // additional card type names can be provided using the convention of `cardType_TYPE`
+    errorTitle: 'Error:',
+    modalTitle: 'Edit card JSON configuration',
+    modalLabel: 'Card editor',
+    modalHelpText:
+      'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
+    modalIconDescription: 'Close',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
@@ -100,6 +113,7 @@ const defaultProps = {
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
+  testID: 'card-edit-form',
 };
 
 /**
@@ -179,6 +193,7 @@ const CardEditForm = ({
   getValidTimeRanges,
   currentBreakpoint,
   availableDimensions,
+  testID,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -203,14 +218,19 @@ const CardEditForm = ({
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
-          i18n={{
-            errorTitle: 'Error:',
-            modalTitle: 'Edit card JSON configuration',
-            modalLabel: 'Card editor',
-            modalHelpText:
-              'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
-            modalIconDescription: 'Close',
-          }}
+          i18n={pick(
+            mergedI18n,
+            'errorTitle',
+            'modalTitle',
+            'modalLabel',
+            'modalHelpText',
+            'modalIconDescription',
+            'copyBtnDescription',
+            'copyBtnFeedBack',
+            'expandBtnLabel',
+            'modalPrimaryButtonLabel',
+            'modalSecondaryButtonLabel'
+          )}
         />
       ) : null}
       <div className={baseClassName}>
@@ -244,6 +264,7 @@ const CardEditForm = ({
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
+            data-testid={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}

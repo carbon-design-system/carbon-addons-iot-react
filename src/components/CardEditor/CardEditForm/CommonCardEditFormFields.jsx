@@ -74,6 +74,7 @@ const propTypes = {
   availableDimensions: PropTypes.shape({}),
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   setSelectedTimeRange: PropTypes.func.isRequired,
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -133,6 +134,7 @@ const CardEditFormContent = ({
   currentBreakpoint,
   selectedDataItems,
   setSelectedTimeRange,
+  translateWithId,
 }) => {
   const { title, description, size, type, id } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -187,6 +189,7 @@ const CardEditFormContent = ({
             };
           })}
           light
+          translateWithId={translateWithId}
           selectedItem={{
             id: size,
             text: getCardSizeText(size, mergedI18n, currentBreakpoint),
@@ -211,6 +214,7 @@ const CardEditFormContent = ({
               validTimeRangeOption.id === cardConfig.timeRange
           )}
           light
+          translateWithId={translateWithId}
           onChange={({ selectedItem }) => {
             const timeRangeInterval = selectedItem.id;
             const { range } = timeRangeToJSON[timeRangeInterval];
