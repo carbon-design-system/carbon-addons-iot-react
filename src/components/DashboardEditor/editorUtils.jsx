@@ -407,13 +407,14 @@ export const formatSeries = (selectedItems, cardConfig) => {
       {
         id: dataSourceId,
         label: unEditedLabel,
+        uuid: attributeId,
         aggregationMethods,
         aggregationMethod,
       },
       i
     ) => {
       const currentItem = cardSeries?.find(
-        (dataItem) => dataItem.dataSourceId === dataSourceId
+        (dataItem) => dataItem.uuid === attributeId
       );
       const defaultAggregationLabel = determineDefaultLabel(
         aggregationMethods,
@@ -428,6 +429,7 @@ export const formatSeries = (selectedItems, cardConfig) => {
 
       return {
         dataSourceId,
+        uuid: attributeId,
         label,
         color,
       };
@@ -447,11 +449,12 @@ export const formatAttributes = (selectedItems, cardConfig) => {
     ({
       id: dataSourceId,
       label: unEditedLabel,
+      uuid: attributeId,
       aggregationMethods,
       aggregationMethod,
     }) => {
       const currentItem = cardAttributes?.find(
-        (dataItem) => dataItem.dataSourceId === dataSourceId
+        (dataItem) => dataItem.uuid === attributeId
       );
       const defaultAggregationLabel = determineDefaultLabel(
         aggregationMethods,
@@ -464,6 +467,7 @@ export const formatAttributes = (selectedItems, cardConfig) => {
 
       return {
         ...currentItem,
+        uuid: attributeId,
         dataSourceId,
         label,
       };
@@ -587,7 +591,7 @@ export const handleDataItemEdit = (
     case CARD_TYPES.VALUE:
       dataSection = [...content.attributes];
       editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+        (dataItem) => dataItem.uuid === editDataItem.uuid
       );
       // if there isn't an item found, place it at the end
       dataSection[
@@ -602,7 +606,7 @@ export const handleDataItemEdit = (
       dataSection =
         type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
       editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+        (dataItem) => dataItem.uuid === editDataItem.uuid
       );
       // if there isn't an item found, place it at the end
       dataSection[

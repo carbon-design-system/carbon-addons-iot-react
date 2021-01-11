@@ -279,7 +279,7 @@ const CardEditForm = ({
                       'aggregationMethods',
                       'aggregationMethod',
                       'grain',
-                      'index',
+                      'uuid',
                     ])
                   );
                 }
@@ -289,7 +289,7 @@ const CardEditForm = ({
                       'aggregationMethods',
                       'aggregationMethod',
                       'grain',
-                      'index',
+                      'uuid',
                     ])
                   );
                 }

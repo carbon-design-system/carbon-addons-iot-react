@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
 import isEmpty from 'lodash/isEmpty';
-import merge from 'lodash/merge';
+import uuid from 'uuid';
 
 import { settings } from '../../../../../constants/Settings';
 import {
@@ -261,6 +261,7 @@ const DataSeriesFormItem = ({
                     {
                       ...selectedItem,
                       ...(itemWithMetaData && { ...itemWithMetaData }),
+                      uuid: uuid.v4(),
                     },
                   ];
                   const newCard = handleDataSeriesChange(
@@ -345,11 +346,14 @@ const DataSeriesFormItem = ({
                   kind="ghost"
                   size="small"
                   onClick={() => {
-                    const itemWithMetaData = validDataItems?.find(
+                    const { aggregationMethods } = validDataItems?.find(
                       ({ dataSourceId }) =>
                         dataSourceId === dataItem.dataSourceId
                     );
-                    setEditDataItem(merge(itemWithMetaData, dataItem));
+                    setEditDataItem({
+                      ...dataItem,
+                      aggregationMethods,
+                    });
                     setShowEditor(true);
                   }}
                   iconDescription={mergedI18n.edit}
@@ -363,7 +367,7 @@ const DataSeriesFormItem = ({
                 size="small"
                 onClick={() => {
                   const filteredItems = dataSection.filter(
-                    (item) => item.dataSourceId !== dataItem.dataSourceId
+                    (item) => item.uuid !== dataItem.uuid
                   );
                   setSelectedDataItems(
                     filteredItems.map((item) => item.dataSourceId)

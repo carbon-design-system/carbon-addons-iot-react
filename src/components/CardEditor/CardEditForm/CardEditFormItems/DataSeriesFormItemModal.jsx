@@ -126,6 +126,7 @@ const defaultProps = {
     source: 'Source data item',
     aggregationMethod: 'Aggregation method',
     grain: 'Grain',
+    inputLabel: 'Input',
     hourlyLabel: 'Hourly',
     dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
