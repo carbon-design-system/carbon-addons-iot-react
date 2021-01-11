@@ -113,6 +113,7 @@ const defaultProps = {
     selectDataItems: 'Select data items',
     dataItem: 'Data item',
     edit: 'Edit',
+    example: 'Example',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
@@ -121,6 +122,13 @@ const defaultProps = {
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
     source: 'Source data item',
+    aggregationMethod: 'Aggregation method',
+    grain: 'Grain',
+    hourlyLabel: 'Hourly',
+    dailyLabel: 'Daily',
+    weeklyLabel: 'Weekly',
+    monthlyLabel: 'Monthly',
+    dataItemSource: 'Data item source',
   },
   editDataSeries: [],
   showEditor: false,
@@ -256,7 +264,7 @@ const DataSeriesFormItemModal = ({
         )?.aggregationMethod || !isSummaryDashboard ? ( // don't show selector if item has already been aggregated in summary dashboard
           <div className={`${baseClassName}--input-group--item-half`}>
             <Dropdown
-              id="aggregation-method"
+              id={`${id}_aggregation-method`}
               label=""
               direction="bottom"
               itemToString={(item) =>
@@ -267,7 +275,7 @@ const DataSeriesFormItemModal = ({
                 editDataItem.aggregationMethod ||
                 determineDefaultAggregation(editDataItem.aggregationMethods)
               }
-              titleText="Aggregation method"
+              titleText={mergedI18n.aggregationMethod}
               light
               onChange={({ selectedItem }) =>
                 setEditDataItem({
@@ -306,18 +314,18 @@ const DataSeriesFormItemModal = ({
                 direction="bottom"
                 itemToString={(item) => item}
                 items={[
-                  'Input',
-                  'Hourly',
-                  'Daily',
-                  'Weekly',
-                  'Monthly',
-                  'Yearly',
+                  mergedI18n.inputLabel,
+                  mergedI18n.hourlyLabel,
+                  mergedI18n.dailyLabel,
+                  mergedI18n.weeklyLabel,
+                  mergedI18n.monthlyLabel,
+                  mergedI18n.yearlyLabel,
                 ]}
-                selectedItem={editDataItem.grain || 'Input'}
-                titleText="Grain"
+                selectedItem={editDataItem.grain || mergedI18n.inputLabel}
+                titleText={mergedI18n.grain}
                 light
                 onChange={({ selectedItem }) => {
-                  if (selectedItem !== 'Input') {
+                  if (selectedItem !== mergedI18n.inputLabel) {
                     setEditDataItem({
                       ...editDataItem,
                       grain: selectedItem,
@@ -345,7 +353,7 @@ const DataSeriesFormItemModal = ({
               })
             }
             value={editDataItem.label}
-            helperText={`Data item source: ${editDataItem.dataSourceId}`}
+            helperText={`${mergedI18n.dataItemSource}: ${editDataItem.dataSourceId}`}
           />
         </div>
 
@@ -355,7 +363,9 @@ const DataSeriesFormItemModal = ({
               id={`${id}_color-dropdown`}
               label=""
               titleText={
-                type === CARD_TYPES.TIMESERIES ? 'Line color' : 'Bar color'
+                type === CARD_TYPES.TIMESERIES
+                  ? mergedI18n.dataItemEditorLineColor
+                  : mergedI18n.dataItemEditorBarColor
               }
               selectedColor={DATAITEM_COLORS_OPTIONS.find(
                 ({ carbonColor }) => carbonColor === editDataItem.color
@@ -378,7 +388,7 @@ const DataSeriesFormItemModal = ({
               id={`${id}_attribute-unit`}
               labelText={mergedI18n.dataItemEditorDataItemUnit}
               light
-              placeholder="Example: %"
+              placeholder={`${mergedI18n.example}: %`}
               onChange={(evt) =>
                 setEditDataItem({
                   ...editDataItem,

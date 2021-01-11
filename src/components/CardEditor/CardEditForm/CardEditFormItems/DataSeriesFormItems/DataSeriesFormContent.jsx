@@ -91,6 +91,7 @@ const defaultProps = {
     edit: 'Edit',
     remove: 'Remove',
     customize: 'Customize',
+    filter: 'Filter',
   },
   getValidDataItems: null,
   dataItems: [],
@@ -160,6 +161,7 @@ const DataSeriesFormItem = ({
         setEditDataItem={setEditDataItem}
         validDataItems={validDataItems}
         availableDimensions={availableDimensions}
+        dataSection={dataSection}
         onChange={onChange}
         i18n={mergedI18n}
       />
@@ -180,7 +182,7 @@ const DataSeriesFormItem = ({
             <MultiSelect
               // need to re-gen if selected card changes or if a dataItem is removed from the list
               key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
-              id={`${cardConfig.id}_dataSourceIds`}
+              id={`${cardConfig.id}_dataSourceIds-select`}
               label={mergedI18n.selectDataItems}
               direction="bottom"
               itemToString={(item) => item.id}
@@ -212,12 +214,12 @@ const DataSeriesFormItem = ({
             <ComboBox
               // need to re-gen if selected card changes or if a dataItem is removed from the list
               key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
-              id={`${cardConfig.id}_dataSourceIds`}
+              id={`${cardConfig.id}_dataSourceIds-combobox`}
               items={formatDataItemsForDropdown(validDataItems)}
               itemToString={(item) => item.id}
-              titleText="Data item"
+              titleText={mergedI18n.dataItemEditorDataItemTitle}
               addToList={false}
-              placeholder="Filter"
+              placeholder={mergedI18n.filter}
               // clears out the input field after each selection
               selectedItem={{ id: '', text: '' }}
               onChange={(selectedItem) => {
