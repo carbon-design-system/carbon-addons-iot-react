@@ -46,6 +46,7 @@ const propTypes = {
     colorDropdownTitleText: PropTypes.string,
     infoMessageText: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
@@ -117,6 +118,7 @@ const HotspotEditorTooltipTab = ({
   showInfoMessage,
   showDeleteButton,
   testID,
+  translateWithId,
 }) => {
   const {
     deleteButtonLabelText,
@@ -158,6 +160,7 @@ const HotspotEditorTooltipTab = ({
         selectedItem={getSelectedIconItem(formValues?.icon, hotspotIcons)}
         titleText={iconDropdownTitleText}
         type="default"
+        translateWithId={translateWithId}
       />
 
       <ColorDropdown
@@ -174,6 +177,7 @@ const HotspotEditorTooltipTab = ({
           onChange({ color: selectedColorItem.color?.carbonColor });
         }}
         titleText={colorDropdownTitleText}
+        translateWithId={translateWithId}
       />
     </div>
   );

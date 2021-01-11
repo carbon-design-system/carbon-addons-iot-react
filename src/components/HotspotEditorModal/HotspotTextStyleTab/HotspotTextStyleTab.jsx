@@ -47,6 +47,7 @@ const propTypes = {
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
@@ -156,6 +157,7 @@ const HotspotTextStyleTab = ({
   minBorderWidth,
   maxBorderWidth,
   showInfoMessage,
+  translateWithId,
 }) => {
   const {
     boldLabelText,
@@ -173,6 +175,7 @@ const HotspotTextStyleTab = ({
     borderWidthInvalidText,
     deleteButtonLabelText,
     deleteButtonIconDescription,
+    selectAColor,
   } = merge({}, defaultProps.i18n, i18n);
 
   const {
@@ -241,11 +244,13 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
                 titleText={fontColorLabelText}
                 light={light}
+                label={selectAColor}
                 selectedColor={getSelectedColorItem(fontColor, fontColors)}
                 colors={fontColors}
                 onChange={(selected) => {
                   onChange({ fontColor: selected.color.carbonColor });
                 }}
+                translateWithId={translateWithId}
               />
 
               <NumberInput
@@ -272,6 +277,7 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
                 titleText={backgroundLabelText}
                 light={light}
+                label={selectAColor}
                 selectedColor={getSelectedColorItem(
                   backgroundColor,
                   backgroundColors
@@ -282,6 +288,7 @@ const HotspotTextStyleTab = ({
                     backgroundColor: selected.color.carbonColor,
                   });
                 }}
+                translateWithId={translateWithId}
               />
 
               <NumberInput
@@ -309,10 +316,12 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
                 titleText={borderLabelText}
                 light={light}
+                label={i18n.selectAColor}
                 colors={borderColors}
                 onChange={(selected) => {
                   onChange({ borderColor: selected.color.carbonColor });
                 }}
+                translateWithId={translateWithId}
                 selectedColor={getSelectedColorItem(borderColor, borderColors)}
               />
 

@@ -60,7 +60,13 @@ const propTypes = {
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
-  i18n: PropTypes.objectOf(PropTypes.string),
+  i18n: PropTypes.shape({
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
+    titlePlaceholderText: PropTypes.string,
+    titleEditableHintText: PropTypes.string,
+  }),
   /** locale string to pass for formatting */
   locale: PropTypes.string,
   /** The (unique) positions of the currently selected hotspots */
@@ -90,6 +96,8 @@ const defaultProps = {
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
+    titlePlaceholderText: 'Enter label',
+    titleEditableHintText: 'Click to edit label',
   },
   // undefined instead of null allows for functions to set default values
   locale: undefined,
@@ -586,6 +594,7 @@ const ImageHotspots = ({
                     (isEditable, hotspotIsSelected && hotspot.type === 'text')
                   }
                   onChange={onHotspotContentChanged}
+                  i18n={i18n}
                 />
               )
             }
@@ -599,13 +608,14 @@ const ImageHotspots = ({
       }),
     [
       hotspots,
-      hotspotsStyle,
-      getIconRenderFunction,
-      locale,
       selectedHotspots,
-      onHotspotClicked,
+      locale,
+      getIconRenderFunction,
       isEditable,
       onHotspotContentChanged,
+      i18n,
+      hotspotsStyle,
+      onHotspotClicked,
     ]
   );
 
