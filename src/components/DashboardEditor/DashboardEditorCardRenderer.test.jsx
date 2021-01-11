@@ -35,4 +35,14 @@ describe('DashboardEditorCardRenderer', () => {
     );
     expect(screen.getByText(/Row content 1/)).toBeInTheDocument();
   });
+  it('should render default', () => {
+    render(
+      <DashboardEditorCardRenderer
+        type="unsupported card type"
+        id="defaultCard"
+        size={CARD_SIZES.SMALL}
+      />
+    );
+    expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
+  });
 });
