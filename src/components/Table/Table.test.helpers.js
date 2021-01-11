@@ -25,7 +25,7 @@ export const mockActions = {
   },
 };
 
-export const getTableColumns = (selectData) =>  [
+export const getTableColumns = (selectData) => [
   {
     id: 'string',
     name: 'String',
