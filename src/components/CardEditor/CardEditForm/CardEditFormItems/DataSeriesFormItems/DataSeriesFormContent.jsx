@@ -158,11 +158,16 @@ const DataSeriesFormItem = ({
     cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
-  const dataSection =
+  const data =
     cardConfig.type === CARD_TYPES.TIMESERIES ||
     cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
+
+  // initialize items with a unique id if not present
+  const dataSection = data.map((item) =>
+    !item.uuid ? { ...item, uuid: uuid.v4() } : item
+  );
 
   const initialSelectedItems = formatDataItemsForDropdown(dataSection);
 
@@ -346,13 +351,33 @@ const DataSeriesFormItem = ({
                   kind="ghost"
                   size="small"
                   onClick={() => {
-                    const { aggregationMethods } = validDataItems?.find(
+                    const dataItemWithMetaData = validDataItems?.find(
                       ({ dataSourceId }) =>
                         dataSourceId === dataItem.dataSourceId
                     );
                     setEditDataItem({
+                      ...omit(dataItemWithMetaData, 'uuid'),
                       ...dataItem,
-                      aggregationMethods,
+                      ...(cardConfig.type === CARD_TYPES.TIMESERIES ||
+                      cardConfig.type === CARD_TYPES.BAR
+                        ? {
+                            color:
+                              dataItem.color ||
+                              DATAITEM_COLORS_OPTIONS[
+                                i % DATAITEM_COLORS_OPTIONS.length
+                              ],
+                          }
+                        : {}),
+                    });
+                    // need to reset the card to include the unique id's
+                    onChange({
+                      ...cardConfig,
+                      content: {
+                        ...cardConfig.content,
+                        ...(cardConfig.type === CARD_TYPES.VALUE
+                          ? { attributes: dataSection }
+                          : { series: dataSection }),
+                      },
                     });
                     setShowEditor(true);
                   }}
