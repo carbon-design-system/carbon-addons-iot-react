@@ -385,16 +385,6 @@ export const determineDefaultAggregation = (aggregationMethods) => {
   return '';
 };
 
-export const determineDefaultLabel = (aggregationMethods, label) => {
-  const defaultAggregationMethod = determineDefaultAggregation(
-    aggregationMethods
-  );
-
-  return defaultAggregationMethod && !label.includes(defaultAggregationMethod)
-    ? `${label}_${defaultAggregationMethod}`
-    : label;
-};
-
 /**
  * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
  * @param {array} selectedItems
@@ -403,29 +393,14 @@ export const determineDefaultLabel = (aggregationMethods, label) => {
 export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
-    (
-      {
-        id: dataSourceId,
-        label: unEditedLabel,
-        uuid: attributeId,
-        aggregationMethods,
-        aggregationMethod,
-      },
-      i
-    ) => {
+    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }, i) => {
       const currentItem = cardSeries?.find(
         (dataItem) => dataItem.uuid === attributeId
-      );
-      const defaultAggregationLabel = determineDefaultLabel(
-        aggregationMethods,
-        currentItem?.label || unEditedLabel || dataSourceId
       );
       const color =
         currentItem?.color ??
         DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
-      const label = !aggregationMethod
-        ? defaultAggregationLabel
-        : currentItem?.label || unEditedLabel || dataSourceId;
+      const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
         dataSourceId,
@@ -446,24 +421,12 @@ export const formatSeries = (selectedItems, cardConfig) => {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const cardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({
-      id: dataSourceId,
-      label: unEditedLabel,
-      uuid: attributeId,
-      aggregationMethods,
-      aggregationMethod,
-    }) => {
+    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }) => {
       const currentItem = cardAttributes?.find(
         (dataItem) => dataItem.uuid === attributeId
       );
-      const defaultAggregationLabel = determineDefaultLabel(
-        aggregationMethods,
-        currentItem?.label || unEditedLabel || dataSourceId
-      );
       // Need to default the label to reflect the default aggregator if there isn't one set
-      const label = !aggregationMethod
-        ? defaultAggregationLabel
-        : currentItem?.label || unEditedLabel || dataSourceId;
+      const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
         ...currentItem,
