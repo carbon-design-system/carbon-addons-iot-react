@@ -32,23 +32,24 @@ const propTypes = {
         isHidden: PropTypes.bool,
       })
     ).isRequired,
-  }),
-  testId: PropTypes.string,
+  }).isRequired,
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
   options: {},
+  testID: 'table-foot',
 };
 
 const TableFoot = ({
-  testId,
+  testID,
   options: { hasRowExpansion, hasRowSelection, hasRowActions },
   tableState: { aggregations, ordering },
 }) => {
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
   return (
-    <tfoot data-testid={testId}>
+    <tfoot className={`${iotPrefix}-table-foot`} data-testid={testID}>
       <TableRow>
         {hasRowExpansion ? <TableCell key="row-expansion" /> : null}
         {hasRowSelection === 'multi' ? <TableCell key="row-selection" /> : null}
@@ -57,7 +58,7 @@ const TableFoot = ({
             (col) => orderedCol.columnId === col.id
           );
           const isLabelCell = !aggregated && index === 0;
-          const cellTestId = `${testId}-aggregation-${orderedCol.columnId}`;
+          const cellTestId = `${testID}-aggregation-${orderedCol.columnId}`;
           const cellKey = `${orderedCol.columnId}${index}`;
 
           return isLabelCell ? (
@@ -68,12 +69,15 @@ const TableFoot = ({
               {aggregations.label}
             </TableCell>
           ) : aggregated ? (
-            <TableCell data-testid={cellTestId} key={cellKey}>
+            <TableCell
+              className={`${iotPrefix}-table-foot--value`}
+              data-testid={cellTestId}
+              key={cellKey}>
               {aggregated.value}
             </TableCell>
           ) : (
             <TableCell data-testid={cellTestId} key={cellKey}>
-              -
+              &nbsp;
             </TableCell>
           );
         })}

@@ -451,7 +451,7 @@ const Table = (props) => {
       ).isHidden
   );
 
-  const hasAggregations = options.hasAggregations;
+  const { hasAggregations } = options;
   const aggregationsProp = view.aggregations;
   const getColumnNumbers = (tableData, columnId) =>
     tableData
@@ -753,7 +753,7 @@ const Table = (props) => {
                 aggregations,
                 ordering: view.table.ordering,
               }}
-              testId={`${id}-table-foot`}
+              testID={`${id}-table-foot`}
             />
           ) : null}
         </CarbonTable>
