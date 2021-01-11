@@ -5,14 +5,16 @@ import userEvent from '@testing-library/user-event';
 import ImageCardFormContent from './ImageCardFormContent';
 
 describe('ImageCardFormContent', () => {
+  const mockCardConfig = {
+    content: {
+      id: 'imageid',
+      src: 'imagesrc',
+    },
+    values: {},
+  };
   it('onChange', () => {
     const mockOnChange = jest.fn();
-    const mockCardConfig = {
-      content: {
-        id: 'imageid',
-        src: 'imagesrc',
-      },
-    };
+
     render(
       <ImageCardFormContent
         onChange={mockOnChange}
@@ -21,6 +23,23 @@ describe('ImageCardFormContent', () => {
     );
     userEvent.click(screen.getAllByRole('button')[0]);
     expect(mockOnChange).toHaveBeenCalledTimes(1);
-    expect(mockOnChange).toHaveBeenCalledWith({ content: {} });
+    expect(mockOnChange).toHaveBeenCalledWith({ content: {}, values: {} });
+  });
+  it('popup hotspot modal', () => {
+    const mockOnChange = jest.fn();
+    render(
+      <ImageCardFormContent
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+      />
+    );
+    // Open up the hotspot modal
+    userEvent.click(screen.getByText('Edit image'));
+    expect(screen.getByText('Hotspots')).toBeInTheDocument();
+
+    // Save hotspot modal
+    userEvent.click(screen.getByText('Save'));
+    expect(screen.queryByText('Hotspots')).toBeNull();
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
 });

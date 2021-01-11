@@ -50,7 +50,11 @@ const renderValueCard = (props) => (
         (icon) => icon.name === iconName
       )?.carbonIcon || <Warning24 />;
       // eslint-disable-next-line react/prop-types
-      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+      return (
+        <div style={{ color: iconProps.fill }}>
+          {React.cloneElement(iconToRender, iconProps)}
+        </div>
+      );
     }}
     isEditable
     {...props}
@@ -134,7 +138,11 @@ const renderImageCard = (props) => (
         (icon) => icon.name === iconName
       )?.carbonIcon || <Warning24 />;
       // eslint-disable-next-line react/prop-types
-      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+      return (
+        <div style={{ color: iconProps.fill }}>
+          {React.cloneElement(iconToRender, iconProps)}
+        </div>
+      );
     }}
     {...props}
   />

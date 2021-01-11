@@ -76,10 +76,10 @@ const ImageCardFormItems = ({
 
   const handleSaveHotspotEditor = useCallback(
     (cardConfigWithHotspots) => {
-      setIsHotspotModalShowing(false);
+      handleCloseHotspotEditor();
       onChange(cardConfigWithHotspots);
     },
-    [onChange]
+    [handleCloseHotspotEditor, onChange]
   );
   return (
     <>
