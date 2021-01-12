@@ -180,6 +180,14 @@ const ImageCard = ({
                     loadingHotspotsLabel={loadingDataLabel}
                     renderIconByName={renderIconByName}
                     locale={locale}
+                    i18n={pick(
+                      mergedI18n,
+                      'zoomIn',
+                      'zoomOut',
+                      'zoomToFit',
+                      'titlePlaceholderText',
+                      'titleEditableHintText'
+                    )}
                   />
                 ) : (
                   <EmptyDiv>

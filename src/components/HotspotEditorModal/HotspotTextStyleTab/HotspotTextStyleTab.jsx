@@ -36,17 +36,16 @@ const propTypes = {
     italicLabelText: PropTypes.string,
     underlineLabelText: PropTypes.string,
     fontColorLabelText: PropTypes.string,
-    fontSizeText: PropTypes.string,
     fontSizeInvalidText: PropTypes.string,
     backgroundLabelText: PropTypes.string,
     fillOpacityLabelText: PropTypes.string,
     fillOpacityInvalidText: PropTypes.string,
     borderLabelText: PropTypes.string,
-    borderWidthText: PropTypes.string,
     borderWidthInvalidText: PropTypes.string,
     deleteButtonLabelText: PropTypes.string,
     deleteButtonIconDescription: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
@@ -88,7 +87,7 @@ const defaultProps = {
   i18n: {
     boldLabelText: 'Text Bold',
     infoMessageText:
-      'Select an existing label on the image to edit it or click on an empty regoion to create one',
+      'Select an existing label on the image to edit it or click on an empty region to create one',
     italicLabelText: 'Text Italic',
     underlineLabelText: 'Text Underline',
     fontColorLabelText: 'Font color',
@@ -156,6 +155,7 @@ const HotspotTextStyleTab = ({
   minBorderWidth,
   maxBorderWidth,
   showInfoMessage,
+  translateWithId,
 }) => {
   const {
     boldLabelText,
@@ -173,6 +173,7 @@ const HotspotTextStyleTab = ({
     borderWidthInvalidText,
     deleteButtonLabelText,
     deleteButtonIconDescription,
+    selectAColor,
   } = merge({}, defaultProps.i18n, i18n);
 
   const {
@@ -241,11 +242,13 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
                 titleText={fontColorLabelText}
                 light={light}
+                label={selectAColor}
                 selectedColor={getSelectedColorItem(fontColor, fontColors)}
                 colors={fontColors}
                 onChange={(selected) => {
                   onChange({ fontColor: selected.color.carbonColor });
                 }}
+                translateWithId={translateWithId}
               />
 
               <NumberInput
@@ -272,6 +275,7 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
                 titleText={backgroundLabelText}
                 light={light}
+                label={selectAColor}
                 selectedColor={getSelectedColorItem(
                   backgroundColor,
                   backgroundColors
@@ -282,6 +286,7 @@ const HotspotTextStyleTab = ({
                     backgroundColor: selected.color.carbonColor,
                   });
                 }}
+                translateWithId={translateWithId}
               />
 
               <NumberInput
@@ -309,10 +314,12 @@ const HotspotTextStyleTab = ({
                 id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
                 titleText={borderLabelText}
                 light={light}
+                label={i18n.selectAColor}
                 colors={borderColors}
                 onChange={(selected) => {
                   onChange({ borderColor: selected.color.carbonColor });
                 }}
+                translateWithId={translateWithId}
                 selectedColor={getSelectedColorItem(borderColor, borderColors)}
               />
 
