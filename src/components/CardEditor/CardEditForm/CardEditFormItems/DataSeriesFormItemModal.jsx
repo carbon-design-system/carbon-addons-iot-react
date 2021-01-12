@@ -118,6 +118,7 @@ const defaultProps = {
     notSet: 'Not set',
     none: 'None',
     last: 'Last',
+    mean: 'Mean',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
@@ -137,7 +138,6 @@ const defaultProps = {
     dataItemSource: 'Data item source',
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
-    example: 'Example',
     decimalPlaces: 'Decimal places',
   },
   editDataSeries: [],
@@ -322,7 +322,11 @@ const DataSeriesFormItemModal = ({
               items={editDataItem.aggregationMethods || []}
               selectedItem={
                 editDataItem.aggregationMethod ||
-                (!isTimeBasedCard ? mergedI18n.none : mergedI18n.last)
+                (!isTimeBasedCard
+                  ? mergedI18n.last
+                  : isSummaryDashboard
+                  ? mergedI18n.mean
+                  : mergedI18n.none)
               }
               titleText={mergedI18n.aggregationMethod}
               light

@@ -221,12 +221,12 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const precisionSelector = screen.getByText('Not set');
+    const precisionSelector = screen.getByText('3');
     expect(precisionSelector).toBeInTheDocument();
 
     fireEvent.click(precisionSelector);
 
-    const selectorOption = screen.getByText('3');
+    const selectorOption = screen.getByText('2');
     expect(selectorOption).toBeInTheDocument();
 
     fireEvent.click(selectorOption);
@@ -273,7 +273,7 @@ describe('DataSeriesFormItemModal', () => {
 
     fireEvent.click(dataFilterSelector);
 
-    const noneOption = screen.getAllByText('None')[1];
+    const noneOption = screen.getByText('None');
     expect(noneOption).toBeInTheDocument();
 
     fireEvent.click(noneOption);
@@ -291,7 +291,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const dataFilterDimensionInput = screen.getAllByText('None')[1];
+    const dataFilterDimensionInput = screen.getByText('None');
     expect(dataFilterDimensionInput).toBeInTheDocument();
 
     fireEvent.click(dataFilterDimensionInput);
@@ -435,12 +435,12 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const aggregationDropdown = screen.getByText('Last');
+    const aggregationDropdown = screen.getByText('Mean');
     expect(aggregationDropdown).toBeInTheDocument();
 
     fireEvent.click(aggregationDropdown);
 
-    const aggregationOption = screen.getByText('Mean');
+    const aggregationOption = screen.getByText('Min');
     expect(aggregationOption).toBeInTheDocument();
 
     fireEvent.click(aggregationOption);
