@@ -45,6 +45,10 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
+  /** callback called when hotspot data source changes, if new attributes are added it's called with an object only with attributes.
+   * If an existing data item is modified, this callback is called with the whole updated card
+   * TODO: ideally these two operations would be split into two different callbacks
+   */
   translateWithId: PropTypes.func.isRequired,
   /* callback when image input value changes */
   onChange: PropTypes.func.isRequired,
