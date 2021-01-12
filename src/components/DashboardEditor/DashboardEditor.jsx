@@ -340,6 +340,8 @@ const DashboardEditor = ({
   availableDimensions,
   isLoading,
   i18n,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots, // needed for the hotspoteditormodal, see the proptypes for more details
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
@@ -696,6 +698,7 @@ const DashboardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         </ErrorBoundary>
       </div>

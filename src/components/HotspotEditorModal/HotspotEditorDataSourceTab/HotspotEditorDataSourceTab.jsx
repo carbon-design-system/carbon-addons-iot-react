@@ -49,6 +49,8 @@ const propTypes = {
    * If an existing data item is modified, this callback is called with the whole updated card
    * TODO: ideally these two operations would be split into two different callbacks
    */
+  translateWithId: PropTypes.func.isRequired,
+  /* callback when image input value changes */
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
   testID: PropTypes.string,
@@ -103,6 +105,7 @@ const HotspotEditorDataSourceTab = ({
   onChange,
   availableDimensions,
   testID,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -158,6 +161,7 @@ const HotspotEditorDataSourceTab = ({
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}
+          translateWithId={translateWithId}
         />
       </div>
       <List

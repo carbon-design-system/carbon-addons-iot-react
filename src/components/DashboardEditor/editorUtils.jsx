@@ -48,6 +48,12 @@ import {
   WarningFilled24,
   WarningSquare24,
   WarningSquareFilled24,
+  User24,
+  Location24,
+  Temperature24,
+  Flag24,
+  Tag24,
+  Alarm24,
 } from '@carbon/icons-react';
 
 import {
@@ -57,6 +63,15 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
+
+export const validHotspotIcons = [
+  { id: 'User', icon: User24, text: 'User' },
+  { id: 'Location', icon: Location24, text: 'Location' },
+  { id: 'Temperature', icon: Temperature24, text: 'Temperature' },
+  { id: 'Flag', icon: Flag24, text: 'Flag' },
+  { id: 'Tag', icon: Tag24, text: 'Tag' },
+  { id: 'Alarm', icon: Alarm24, text: 'Alarm' },
+];
 
 export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({

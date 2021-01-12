@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Erase32 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -10,7 +10,6 @@ import Button from '../../Button/Button';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  clearIconDescription: PropTypes.string,
   dataSourceItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
@@ -25,22 +24,28 @@ const propTypes = {
   selectedSourceIdX: PropTypes.string,
   selectedSourceIdY: PropTypes.string,
   testID: PropTypes.string,
-  xCoordinateDropdownTitleText: PropTypes.string,
-  xCoordinateDropdownLabelText: PropTypes.string,
-  yCoordinateDropdownTitleText: PropTypes.string,
-  yCoordinateDropdownLabelText: PropTypes.string,
+  i18n: PropTypes.shape({
+    clearIconDescription: PropTypes.string,
+    xCoordinateDropdownTitleText: PropTypes.string,
+    xCoordinateDropdownLabelText: PropTypes.string,
+    yCoordinateDropdownTitleText: PropTypes.string,
+    yCoordinateDropdownLabelText: PropTypes.string,
+  }),
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-  clearIconDescription: 'Clear coordinate sources',
   id: 'dynamic-hotspot-source-picker',
   selectedSourceIdX: undefined,
   selectedSourceIdY: undefined,
   testID: 'dynamic-hotspot-source-picker',
-  xCoordinateDropdownTitleText: 'X coordinate',
-  xCoordinateDropdownLabelText: 'Select data item',
-  yCoordinateDropdownTitleText: 'Y coordinate',
-  yCoordinateDropdownLabelText: 'Select data item',
+  i18n: {
+    clearIconDescription: 'Clear coordinate sources',
+    xCoordinateDropdownTitleText: 'X coordinate',
+    xCoordinateDropdownLabelText: 'Select data item',
+    yCoordinateDropdownTitleText: 'Y coordinate',
+    yCoordinateDropdownLabelText: 'Select data item',
+  },
 };
 
 /**
@@ -48,7 +53,6 @@ const defaultProps = {
  * for the X and Y positions
  */
 const DynamicHotspotSourcePicker = ({
-  clearIconDescription,
   dataSourceItems,
   id,
   onClear,
@@ -57,12 +61,18 @@ const DynamicHotspotSourcePicker = ({
   selectedSourceIdX,
   selectedSourceIdY,
   testID,
-  xCoordinateDropdownTitleText,
-  xCoordinateDropdownLabelText,
-  yCoordinateDropdownTitleText,
-  yCoordinateDropdownLabelText,
+  i18n,
+  translateWithId,
 }) => {
   const classname = `${iotPrefix}--dynamic-hotspot-source-picker`;
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const {
+    clearIconDescription,
+    xCoordinateDropdownTitleText,
+    xCoordinateDropdownLabelText,
+    yCoordinateDropdownTitleText,
+    yCoordinateDropdownLabelText,
+  } = mergedI18n;
   return (
     <div data-testid={testID} className={classname}>
       <Dropdown
@@ -76,6 +86,7 @@ const DynamicHotspotSourcePicker = ({
         label={xCoordinateDropdownLabelText}
         items={dataSourceItems}
         itemToString={(item) => item.label}
+        translateWithId={translateWithId}
         onChange={(change) => {
           onXValueChange(change.selectedItem.dataSourceId);
         }}
@@ -90,6 +101,7 @@ const DynamicHotspotSourcePicker = ({
         titleText={yCoordinateDropdownTitleText}
         label={yCoordinateDropdownLabelText}
         items={dataSourceItems}
+        translateWithId={translateWithId}
         itemToString={(item) => item.label}
         onChange={(change) => {
           onYValueChange(change.selectedItem.dataSourceId);
