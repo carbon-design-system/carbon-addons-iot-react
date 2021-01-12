@@ -632,12 +632,12 @@ export const I18N = () => (
         headerSubmitButton: 'headerSubmitButton',
         headerDeleteButton: 'headerDeleteButton',
         headerFitToScreenButton: 'headerFitToScreenButton',
-        headerXlargeButton: 'headerXlargeButton',
         headerLargeButton: 'headerLargeButton',
         headerMediumButton: 'headerMediumButton',
-        layoutInfoXl: 'layoutInfoXl',
+        headerSmallButton: 'headerSmallButton',
         layoutInfoLg: 'layoutInfoLg',
         layoutInfoMd: 'layoutInfoMd',
+        layoutInfoSm: 'layoutInfoSm',
 
         // card strings
         noDataLabel: 'noDataLabel',

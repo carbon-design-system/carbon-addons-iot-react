@@ -75,6 +75,17 @@ const propTypes = {
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
   testID: PropTypes.string,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -112,6 +123,7 @@ const defaultProps = {
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
   testID: 'card-edit-form',
+  dataSeriesItemLinks: null,
 };
 
 /**
@@ -191,6 +203,7 @@ const CardEditForm = ({
   currentBreakpoint,
   availableDimensions,
   testID,
+  dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
@@ -244,6 +257,7 @@ const CardEditForm = ({
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
               currentBreakpoint={currentBreakpoint}
+              dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
