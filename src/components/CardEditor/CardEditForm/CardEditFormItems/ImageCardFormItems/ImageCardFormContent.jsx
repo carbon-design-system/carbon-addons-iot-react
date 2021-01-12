@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-// import { Scale32 } from '@carbon/icons-react';
-import { Close16 } from '@carbon/icons-react';
+import { Close16, Scale32 } from '@carbon/icons-react';
 import { Button } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
+import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
+import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -23,7 +24,7 @@ const propTypes = {
     }),
     interval: PropTypes.string,
   }),
-  /* callback when image input value changes (File object) */
+  /* callback when image cardConfig needs to be updated */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     imageFile: PropTypes.string,
@@ -31,6 +32,12 @@ const propTypes = {
     image: PropTypes.string,
     close: PropTypes.string,
   }),
+  /** an array of dataItems to be included on each card */
+  dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
 };
 
 const defaultProps = {
@@ -41,13 +48,52 @@ const defaultProps = {
     image: 'Image',
     close: 'Close',
   },
+  dataItems: [],
+  availableDimensions: {},
 };
 
-const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
+const ImageCardFormItems = ({
+  cardConfig,
+  i18n,
+  onChange,
+  dataItems,
+  availableDimensions,
+}) => {
+  const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
+  const handleShowHotspotEditor = useCallback(() => {
+    // if this image card doesn't have a hotspots field, set it
+    if (!cardConfig.values) {
+      onChange({ ...cardConfig, values: { hotspots: [] } });
+    }
+    setIsHotspotModalShowing(true);
+  }, [cardConfig, onChange]);
+  const handleCloseHotspotEditor = useCallback(
+    () => setIsHotspotModalShowing(false),
+    []
+  );
+
+  const handleSaveHotspotEditor = useCallback(
+    (cardConfigWithHotspots) => {
+      handleCloseHotspotEditor();
+      onChange(cardConfigWithHotspots);
+    },
+    [handleCloseHotspotEditor, onChange]
+  );
   return (
     <>
+      {isHotspotModalShowing ? (
+        <HotspotEditorModal
+          cardConfig={cardConfig}
+          dataItems={dataItems}
+          availableDimensions={availableDimensions}
+          onSave={handleSaveHotspotEditor}
+          onClose={handleCloseHotspotEditor}
+          // TODO go get the hotspots from the real data layer
+          onFetchDynamicHotspots={() => Promise.resolve([{ x: 10, y: 10 }])}
+        />
+      ) : null}
       <div
         className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>
         {mergedI18n.image}
@@ -86,12 +132,15 @@ const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
             />
           ) : null}
         </label>
-        {/* TODO enable once hotspot editing is live <Button
-          className={`${baseClassName}--form-section-image-btn`}
-          size="small"
-          renderIcon={Scale32}>
-          {mergedI18n.editImage}
-        </Button> */}
+        {cardConfig.content?.id ? (
+          <Button
+            className={`${baseClassName}--form-section-image-btn`}
+            size="small"
+            renderIcon={Scale32}
+            onClick={handleShowHotspotEditor}>
+            {mergedI18n.editImage}
+          </Button>
+        ) : null}
       </div>
     </>
   );

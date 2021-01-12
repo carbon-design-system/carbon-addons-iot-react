@@ -139,6 +139,8 @@ const CardEditFormContent = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          dataItems={dataItems}
+          availableDimensions={availableDimensions}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
