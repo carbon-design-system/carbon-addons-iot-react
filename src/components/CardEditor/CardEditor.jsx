@@ -158,6 +158,8 @@ const CardEditor = ({
   currentBreakpoint,
   testID,
   dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -205,6 +207,7 @@ const CardEditor = ({
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         )}
       </div>

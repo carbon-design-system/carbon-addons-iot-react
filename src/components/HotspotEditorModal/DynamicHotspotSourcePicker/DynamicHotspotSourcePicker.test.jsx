@@ -18,6 +18,7 @@ const getCallbacks = () => ({
   onXValueChange: jest.fn(),
   onYValueChange: jest.fn(),
   onClear: jest.fn(),
+  translateWithId: jest.fn(),
 });
 
 describe('DynamicHotspotSourcePicker', () => {
@@ -103,8 +104,10 @@ describe('DynamicHotspotSourcePicker', () => {
         dataSourceItems={getDataItems()}
         selectedSourceIdX={xSourceItem.dataSourceId}
         selectedSourceIdY={ySourceItem.dataSourceId}
-        xCoordinateDropdownLabelText="select x"
-        yCoordinateDropdownLabelText="select y"
+        i18n={{
+          xCoordinateDropdownLabelText: 'select x',
+          yCoordinateDropdownLabelText: 'select y',
+        }}
         onClear={onClear}
       />
     );
@@ -126,8 +129,10 @@ describe('DynamicHotspotSourcePicker', () => {
         dataSourceItems={getDataItems()}
         selectedSourceIdX={xSourceItem.dataSourceId}
         selectedSourceIdY={ySourceItem.dataSourceId}
-        xCoordinateDropdownLabelText="select x"
-        yCoordinateDropdownLabelText="select y"
+        i18n={{
+          xCoordinateDropdownLabelText: 'select x',
+          yCoordinateDropdownLabelText: 'select y',
+        }}
       />
     );
 
@@ -140,8 +145,10 @@ describe('DynamicHotspotSourcePicker', () => {
         dataSourceItems={getDataItems()}
         selectedSourceIdX={undefined}
         selectedSourceIdY={undefined}
-        xCoordinateDropdownLabelText="select x"
-        yCoordinateDropdownLabelText="select y"
+        i18n={{
+          xCoordinateDropdownLabelText: 'select x',
+          yCoordinateDropdownLabelText: 'select y',
+        }}
       />
     );
     expect(screen.getByText('select x')).toBeVisible();
@@ -156,8 +163,10 @@ describe('DynamicHotspotSourcePicker', () => {
     render(
       <DynamicHotspotSourcePicker
         testID="test-picker"
-        xCoordinateDropdownLabelText="select x"
-        yCoordinateDropdownLabelText="select y"
+        i18n={{
+          xCoordinateDropdownLabelText: 'select x',
+          yCoordinateDropdownLabelText: 'select y',
+        }}
         dataSourceItems={getDataItems()}
         onXValueChange={onXValueChange}
         onYValueChange={onYValueChange}

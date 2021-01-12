@@ -204,6 +204,8 @@ const CardEditForm = ({
   availableDimensions,
   testID,
   dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
@@ -256,6 +258,7 @@ const CardEditForm = ({
               getValidTimeRanges={getValidTimeRanges}
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
+              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
           <Tab label={mergedI18n.settingsTabLabel}>

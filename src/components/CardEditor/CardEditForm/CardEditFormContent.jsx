@@ -112,6 +112,8 @@ const CardEditFormContent = ({
   currentBreakpoint,
   availableDimensions,
   dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const { type, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -153,6 +155,10 @@ const CardEditFormContent = ({
           i18n={mergedI18n}
           onChange={onChange}
           dataSeriesItemLinks={dataSeriesItemLinks}
+          dataItems={dataItems}
+          availableDimensions={availableDimensions}
+          translateWithId={handleTranslation}
+          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent

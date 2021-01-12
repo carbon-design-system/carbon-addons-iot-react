@@ -153,6 +153,7 @@ export const WithStateInStory = () => {
           thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
+          translateWithId={() => {}}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({
@@ -219,6 +220,7 @@ export const WithPresetValues = () => {
           thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
+          translateWithId={() => {}}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({

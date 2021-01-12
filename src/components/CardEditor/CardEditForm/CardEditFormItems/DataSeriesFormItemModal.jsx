@@ -115,6 +115,8 @@ const defaultProps = {
     source: 'Source data item',
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
+    example: 'Example',
+    decimalPlaces: 'Decimal places',
   },
   editDataSeries: [],
   showEditor: false,
@@ -273,11 +275,14 @@ const DataSeriesFormItemModal = ({
             value={editDataItem.label}
           />
         </div>
-        <div className={`${baseClassName}--input-group--item-end`}>
+      </div>
+      <div className={`${baseClassName}--input-group`}>
+        <div className={`${baseClassName}--input-group--item`}>
           <TextInput
             id={`${id}_attribute-unit`}
             labelText={mergedI18n.dataItemEditorDataItemUnit}
             light
+            placeholder={`${mergedI18n.example}: %`}
             onChange={(evt) =>
               setEditDataItem({
                 ...editDataItem,
@@ -287,6 +292,33 @@ const DataSeriesFormItemModal = ({
             value={editDataItem.unit}
           />
         </div>
+        {cardConfig.type === CARD_TYPES.VALUE && (
+          <div className={`${baseClassName}--input-group--item-end`}>
+            <Dropdown
+              id={`${id}_value-card-decimal-place`}
+              titleText={mergedI18n.decimalPlaces}
+              direction="bottom"
+              label=""
+              items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
+              light
+              translateWithId={handleTranslation}
+              selectedItem={
+                editDataItem.precision?.toString() || mergedI18n.notSet
+              }
+              onChange={({ selectedItem }) => {
+                const isSet = selectedItem !== mergedI18n.notSet;
+                if (isSet) {
+                  setEditDataItem({
+                    ...editDataItem,
+                    precision: Number(selectedItem),
+                  });
+                } else {
+                  setEditDataItem(omit(editDataItem, 'precision'));
+                }
+              }}
+            />
+          </div>
+        )}
       </div>
       <div className={`${baseClassName}--input-group`}>
         <div

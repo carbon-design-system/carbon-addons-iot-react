@@ -18696,11 +18696,13 @@ Map {
       "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
+        "colorDropdownLabelText": "Select a color",
+        "colorDropdownTitleText": "Color",
         "deleteButtonIconDescriptionText": "Delete this hotspot",
         "deleteButtonLabelText": "Delete hotspot",
         "descriptionTextareaLabelText": "Description",
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
-        "iconDropdownLabelText": "Select an Icon",
+        "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
         "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
@@ -18918,6 +18920,10 @@ Map {
       "testID": Object {
         "type": "string",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "HotspotTextStyleTab" => Object {
@@ -18950,7 +18956,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty regoion to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -19070,9 +19076,6 @@ Map {
             "borderWidthInvalidText": Object {
               "type": "string",
             },
-            "borderWidthText": Object {
-              "type": "string",
-            },
             "deleteButtonIconDescription": Object {
               "type": "string",
             },
@@ -19089,9 +19092,6 @@ Map {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
-              "type": "string",
-            },
-            "fontSizeText": Object {
               "type": "string",
             },
             "infoMessageText": Object {
@@ -19139,24 +19139,27 @@ Map {
       "showInfoMessage": Object {
         "type": "bool",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "DynamicHotspotSourcePicker" => Object {
     "defaultProps": Object {
-      "clearIconDescription": "Clear coordinate sources",
+      "i18n": Object {
+        "clearIconDescription": "Clear coordinate sources",
+        "xCoordinateDropdownLabelText": "Select data item",
+        "xCoordinateDropdownTitleText": "X coordinate",
+        "yCoordinateDropdownLabelText": "Select data item",
+        "yCoordinateDropdownTitleText": "Y coordinate",
+      },
       "id": "dynamic-hotspot-source-picker",
       "selectedSourceIdX": undefined,
       "selectedSourceIdY": undefined,
       "testID": "dynamic-hotspot-source-picker",
-      "xCoordinateDropdownLabelText": "Select data item",
-      "xCoordinateDropdownTitleText": "X coordinate",
-      "yCoordinateDropdownLabelText": "Select data item",
-      "yCoordinateDropdownTitleText": "Y coordinate",
     },
     "propTypes": Object {
-      "clearIconDescription": Object {
-        "type": "string",
-      },
       "dataSourceItems": Object {
         "args": Array [
           Object {
@@ -19175,6 +19178,28 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "clearIconDescription": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "id": Object {
         "type": "string",
@@ -19200,17 +19225,9 @@ Map {
       "testID": Object {
         "type": "string",
       },
-      "xCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "xCoordinateDropdownTitleText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownTitleText": Object {
-        "type": "string",
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
       },
     },
   },
