@@ -476,6 +476,8 @@ const ImageHotspots = ({
     hideMinimap: hideMinimapProp,
   });
 
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
   useEffect(() => {
     setOptions({
       hideZoomControls: hideZoomControlsProp,
@@ -594,7 +596,7 @@ const ImageHotspots = ({
                     (isEditable, hotspotIsSelected && hotspot.type === 'text')
                   }
                   onChange={onHotspotContentChanged}
-                  i18n={i18n}
+                  i18n={mergedI18n}
                 />
               )
             }
@@ -613,7 +615,7 @@ const ImageHotspots = ({
       getIconRenderFunction,
       isEditable,
       onHotspotContentChanged,
-      i18n,
+      mergedI18n,
       hotspotsStyle,
       onHotspotClicked,
     ]
@@ -724,7 +726,7 @@ const ImageHotspots = ({
       )}
       {!hideZoomControls && (
         <ImageControls
-          i18n={i18n}
+          i18n={mergedI18n}
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}

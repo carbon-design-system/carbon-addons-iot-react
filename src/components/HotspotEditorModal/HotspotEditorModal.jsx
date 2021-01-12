@@ -152,6 +152,8 @@ const propTypes = {
   /** Should the dialog be open or not */
   open: PropTypes.bool,
 
+  /** the label of the hotspot modal */
+  label: PropTypes.string,
   showTooManyHotspotsInfo: PropTypes.bool,
 
   i18n: PropTypes.shape({
@@ -180,7 +182,6 @@ const propTypes = {
     italicLabelText: PropTypes.string,
     labelsText: PropTypes.string,
     loadingDynamicHotspotsText: PropTypes.string,
-    modalHeaderLabelText: PropTypes.string,
     modalHeaderTitleText: PropTypes.string,
     modalIconDescriptionText: PropTypes.string,
     saveButtonLabelText: PropTypes.string,
@@ -192,7 +193,7 @@ const propTypes = {
     tooManyHotspotsInfoText: PropTypes.string,
     underlineLabelText: PropTypes.string,
   }),
-  translateWithId: PropTypes.func.isRequired,
+  translateWithId: PropTypes.func,
 };
 
 const defaultProps = {
@@ -226,6 +227,7 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: undefined,
   open: true,
   showTooManyHotspotsInfo: false,
+  label: undefined,
   i18n: {
     backgroundLabelText: undefined,
     boldLabelText: undefined,
@@ -252,7 +254,6 @@ const defaultProps = {
     italicLabelText: undefined,
     labelsText: 'Labels',
     loadingDynamicHotspotsText: 'Locating hotspots',
-    modalHeaderLabelText: undefined,
     modalHeaderTitleText: 'Edit image',
     modalIconDescriptionText: 'Close',
     saveButtonLabelText: undefined,
@@ -263,6 +264,18 @@ const defaultProps = {
     titleInputPlaceholderText: undefined,
     tooManyHotspotsInfoText: 'There are more hotspots than can be shown',
     underlineLabelText: undefined,
+  },
+  translateWithId: (idToTranslate) => {
+    switch (idToTranslate) {
+      default:
+        return '';
+      case 'clear.all':
+        return 'Clear all';
+      case 'open.menu':
+        return 'Open menu';
+      case 'close.menu':
+        return 'Close menu';
+    }
   },
 };
 
@@ -290,6 +303,7 @@ const HotspotEditorModal = ({
   hotspotIcons,
   imageId,
   imageZoomMax,
+  label,
   maxBorderWidth,
   maxFontSize,
   maxHotspots,
@@ -365,7 +379,6 @@ const HotspotEditorModal = ({
     italicLabelText,
     labelsText,
     loadingDynamicHotspotsText,
-    modalHeaderLabelText,
     modalHeaderTitleText,
     modalIconDescriptionText,
     saveButtonLabelText,
@@ -607,7 +620,7 @@ const HotspotEditorModal = ({
     <ComposedModal
       className={`${iotPrefix}--hotspot-editor-modal`}
       header={{
-        label: modalHeaderLabelText,
+        label,
         title: modalHeaderTitleText,
       }}
       iconDescription={modalIconDescriptionText}

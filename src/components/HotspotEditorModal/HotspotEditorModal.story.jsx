@@ -104,7 +104,7 @@ export const Empty = () => {
       fontColors={selectableColors}
       hotspotIconFillColors={selectableColors}
       hotspotIcons={selectableIcons}
-      modalHeaderLabelText={landscape}
+      label={landscape}
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
@@ -134,7 +134,7 @@ export const EmptyWithGetValidDataItemsCallback = () => {
       fontColors={selectableColors}
       hotspotIconFillColors={selectableColors}
       hotspotIcons={selectableIcons}
-      modalHeaderLabelText={landscape}
+      label={landscape}
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
@@ -215,7 +215,7 @@ export const WidthExistingHotspots = () => {
       fontColors={selectableColors}
       hotspotIconFillColors={selectableColors}
       hotspotIcons={selectableIcons}
-      modalHeaderLabelText={landscape}
+      label={landscape}
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
@@ -285,7 +285,7 @@ export const WidthSharedThresholds = () => {
       fontColors={selectableColors}
       hotspotIconFillColors={selectableColors}
       hotspotIcons={selectableIcons}
-      modalHeaderLabelText={landscape}
+      label={landscape}
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
@@ -333,7 +333,7 @@ export const WidthExistingDynamicHotspots = () => {
       hotspotIconFillColors={selectableColors}
       hotspotIcons={selectableIcons}
       maxHotspots={2}
-      modalHeaderLabelText={landscape}
+      label={landscape}
       onClose={action('onClose')}
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}

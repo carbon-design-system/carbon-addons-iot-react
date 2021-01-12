@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Erase32 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -56,16 +56,18 @@ const DynamicHotspotSourcePicker = ({
   selectedSourceIdX,
   selectedSourceIdY,
   testID,
-  i18n: {
+  i18n,
+  translateWithId,
+}) => {
+  const classname = `${iotPrefix}--dynamic-hotspot-source-picker`;
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const {
     clearIconDescription,
     xCoordinateDropdownTitleText,
     xCoordinateDropdownLabelText,
     yCoordinateDropdownTitleText,
     yCoordinateDropdownLabelText,
-  },
-  translateWithId,
-}) => {
-  const classname = `${iotPrefix}--dynamic-hotspot-source-picker`;
+  } = mergedI18n;
   return (
     <div data-testid={testID} className={classname}>
       <Dropdown

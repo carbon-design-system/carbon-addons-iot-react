@@ -55,6 +55,7 @@ export const WithStateInStory = () => {
           formValues={formValues}
           onChange={handleOnChange}
           onDelete={action('onDelete')}
+          translateWithId={jest.fn()}
         />
       </div>
     );
@@ -107,6 +108,7 @@ export const WithPresetValuesAndCustomColors = () => {
         }}
         onChange={action('onChange')}
         onDelete={action('onDelete')}
+        translateWithId={jest.fn()}
       />
     </div>
   );
@@ -121,6 +123,7 @@ export const WithInfoMessage = () => {
         formValues={{}}
         onChange={action('onChange')}
         onDelete={action('onDelete')}
+        translateWithId={jest.fn()}
       />
     </div>
   );

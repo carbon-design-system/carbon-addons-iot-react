@@ -38,6 +38,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -55,6 +56,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -79,6 +81,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -114,6 +117,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -138,6 +142,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -154,6 +159,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={() => {}}
         onDelete={onDelete}
         showDeleteButton={false}
+        translateWithId={jest.fn()}
       />
     );
     expect(
@@ -169,6 +175,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={() => {}}
         showDeleteButton
         onDelete={onDelete}
+        translateWithId={jest.fn()}
       />
     );
     userEvent.click(

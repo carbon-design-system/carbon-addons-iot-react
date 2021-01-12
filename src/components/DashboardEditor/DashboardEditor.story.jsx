@@ -846,7 +846,6 @@ export const I18N = () => (
         italicLabelText: 'italicLabelText',
         labelsText: 'labelsText',
         loadingDynamicHotspotsText: 'loadingDynamicHotspotsText',
-        modalHeaderLabelText: 'modalHeaderLabelText',
         modalHeaderTitleText: 'modalHeaderTitleText',
         modalIconDescriptionText: 'modalIconDescriptionText',
         saveButtonLabelText: 'saveButtonLabelText',

@@ -18854,6 +18854,10 @@ Map {
       "testID": Object {
         "type": "string",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "HotspotTextStyleTab" => Object {
@@ -18886,7 +18890,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty regoion to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -19075,24 +19079,27 @@ Map {
       "showInfoMessage": Object {
         "type": "bool",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "DynamicHotspotSourcePicker" => Object {
     "defaultProps": Object {
-      "clearIconDescription": "Clear coordinate sources",
+      "i18n": Object {
+        "clearIconDescription": "Clear coordinate sources",
+        "xCoordinateDropdownLabelText": "Select data item",
+        "xCoordinateDropdownTitleText": "X coordinate",
+        "yCoordinateDropdownLabelText": "Select data item",
+        "yCoordinateDropdownTitleText": "Y coordinate",
+      },
       "id": "dynamic-hotspot-source-picker",
       "selectedSourceIdX": undefined,
       "selectedSourceIdY": undefined,
       "testID": "dynamic-hotspot-source-picker",
-      "xCoordinateDropdownLabelText": "Select data item",
-      "xCoordinateDropdownTitleText": "X coordinate",
-      "yCoordinateDropdownLabelText": "Select data item",
-      "yCoordinateDropdownTitleText": "Y coordinate",
     },
     "propTypes": Object {
-      "clearIconDescription": Object {
-        "type": "string",
-      },
       "dataSourceItems": Object {
         "args": Array [
           Object {
@@ -19111,6 +19118,28 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "clearIconDescription": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "id": Object {
         "type": "string",
@@ -19136,17 +19165,9 @@ Map {
       "testID": Object {
         "type": "string",
       },
-      "xCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "xCoordinateDropdownTitleText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownTitleText": Object {
-        "type": "string",
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
       },
     },
   },

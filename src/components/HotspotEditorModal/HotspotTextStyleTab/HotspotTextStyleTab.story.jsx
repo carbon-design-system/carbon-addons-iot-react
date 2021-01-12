@@ -66,6 +66,7 @@ export const Default = () => {
         onDelete={(change) => {
           action('onDelete')(change);
         }}
+        translateWithId={jest.fn()}
       />
     );
   };
