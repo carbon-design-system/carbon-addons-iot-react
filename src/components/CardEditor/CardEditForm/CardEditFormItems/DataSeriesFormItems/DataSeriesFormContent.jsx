@@ -165,7 +165,7 @@ const DataSeriesFormItem = ({
       : cardConfig?.content?.attributes;
 
   // initialize items with a unique id if not present
-  const dataSection = data.map((item) =>
+  const dataSection = data?.map((item) =>
     !item.uuid ? { ...item, uuid: uuid.v4() } : item
   );
 
@@ -218,17 +218,9 @@ const DataSeriesFormItem = ({
               items={formatDataItemsForDropdown(validDataItems)}
               light
               onChange={({ selectedItems }) => {
-                // need to remove the category if the card is a stacked timeseries bar
-                const card =
-                  cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
-                  cardConfig.content.timeDataSourceId &&
-                  selectedItems.length > 1
-                    ? omit(cardConfig, 'content.categoryDataSourceId')
-                    : cardConfig;
-
                 const newCard = handleDataSeriesChange(
                   selectedItems,
-                  card,
+                  cardConfig,
                   setEditDataSeries
                 );
                 setSelectedDataItems(selectedItems.map(({ id }) => id));
@@ -261,6 +253,7 @@ const DataSeriesFormItem = ({
                   const selectedItems = [
                     ...dataSection.map((item) => ({
                       ...item,
+                      ...(!item.uuid && { uuid: uuid.v4() }),
                       id: item.dataSourceId,
                     })),
                     {
@@ -269,9 +262,16 @@ const DataSeriesFormItem = ({
                       uuid: uuid.v4(),
                     },
                   ];
+                  // need to remove the category if the card is a stacked timeseries bar
+                  const card =
+                    cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+                    cardConfig.content.timeDataSourceId &&
+                    selectedItems.length > 1
+                      ? omit(cardConfig, 'content.categoryDataSourceId')
+                      : cardConfig;
                   const newCard = handleDataSeriesChange(
                     selectedItems,
-                    cardConfig,
+                    card,
                     setEditDataSeries
                   );
                   setSelectedDataItems(selectedItems.map(({ id }) => id));

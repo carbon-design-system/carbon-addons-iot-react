@@ -26,7 +26,6 @@ import { settings } from '../../../../constants/Settings';
 import { ComposedModal, TextInput, Dropdown } from '../../../../index';
 import {
   handleDataItemEdit,
-  determineDefaultAggregation,
   DataItemsPropTypes,
 } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
@@ -116,6 +115,9 @@ const defaultProps = {
     dataItem: 'Data item',
     edit: 'Edit',
     example: 'Example',
+    notSet: 'Not set',
+    none: 'None',
+    last: 'Last',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
@@ -131,6 +133,7 @@ const defaultProps = {
     dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',
     monthlyLabel: 'Monthly',
+    yearlyLabel: 'Yearly',
     dataItemSource: 'Data item source',
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
@@ -179,8 +182,7 @@ const DataSeriesFormItemModal = ({
   const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  // only certain cards should allow the user to edit grains
-  const canEditGrain =
+  const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
     type === CARD_TYPES.TABLE ||
     content?.type === BAR_CHART_TYPES.SIMPLE ||
@@ -209,6 +211,23 @@ const DataSeriesFormItemModal = ({
     },
     [mergedI18n]
   );
+
+  const availableGrains = [
+    mergedI18n.inputLabel,
+    mergedI18n.hourlyLabel,
+    mergedI18n.dailyLabel,
+    mergedI18n.weeklyLabel,
+    mergedI18n.monthlyLabel,
+    mergedI18n.yearlyLabel,
+  ];
+
+  const initialAggregation = validDataItems?.find(
+    ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
+  )?.aggregationMethod;
+
+  const initialGrain = validDataItems?.find(
+    ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
+  )?.grain;
 
   const DataSeriesEditorTable = (
     <Table
@@ -289,9 +308,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = (
     <>
       <div className={`${baseClassName}--input-group`}>
-        {!validDataItems?.find(
-          ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
-        )?.aggregationMethod || !isSummaryDashboard ? ( // don't show selector if item has already been aggregated in summary dashboard
+        {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
           <div className={`${baseClassName}--input-group--item-half`}>
             <Dropdown
               id={`${id}_aggregation-method`}
@@ -303,7 +320,7 @@ const DataSeriesFormItemModal = ({
               items={editDataItem.aggregationMethods || []}
               selectedItem={
                 editDataItem.aggregationMethod ||
-                determineDefaultAggregation(editDataItem.aggregationMethods)
+                (!isTimeBasedCard ? mergedI18n.none : mergedI18n.last)
               }
               titleText={mergedI18n.aggregationMethod}
               light
@@ -317,10 +334,12 @@ const DataSeriesFormItemModal = ({
           </div>
         ) : (
           <div className={`${baseClassName}--input-group--item-half`}>
-            <FormLabel style={{ marginBottom: '1rem' }}>
-              Aggregation method
+            <FormLabel
+              className={`${baseClassName}--input-group--item-half-label`}>
+              {mergedI18n.aggregationMethod}
             </FormLabel>
-            <span style={{ marginBottom: '0.6rem' }}>
+            <span
+              className={`${baseClassName}--input-group--item-half-content`}>
               {`${
                 editDataItem.aggregationMethod
                   ? editDataItem.aggregationMethod[0].toUpperCase()
@@ -330,43 +349,37 @@ const DataSeriesFormItemModal = ({
           </div>
         )}
 
-        {isSummaryDashboard && canEditGrain ? ( // grain in summary dashboards should be read-only
+        {isTimeBasedCard && (
           <div className={`${baseClassName}--input-group--item-half`}>
-            <FormLabel style={{ marginBottom: '1rem' }}>Grain</FormLabel>
-            <span style={{ marginBottom: '0.6rem' }}>{editDataItem.grain}</span>
+            <Dropdown
+              id={`${id}_grain-selector`}
+              label=""
+              direction="bottom"
+              itemToString={(item) => item}
+              items={
+                isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
+                  ? availableGrains.slice(
+                      availableGrains.findIndex(
+                        (grain) => grain === initialGrain
+                      )
+                    )
+                  : availableGrains
+              }
+              selectedItem={editDataItem.grain || mergedI18n.inputLabel}
+              titleText={mergedI18n.grain}
+              light
+              onChange={({ selectedItem }) => {
+                if (selectedItem !== mergedI18n.inputLabel) {
+                  setEditDataItem({
+                    ...editDataItem,
+                    grain: selectedItem,
+                  });
+                } else {
+                  setEditDataItem(omit(editDataItem, 'grain'));
+                }
+              }}
+            />
           </div>
-        ) : (
-          canEditGrain && (
-            <div className={`${baseClassName}--input-group--item-half`}>
-              <Dropdown
-                id="grain"
-                label=""
-                direction="bottom"
-                itemToString={(item) => item}
-                items={[
-                  mergedI18n.inputLabel,
-                  mergedI18n.hourlyLabel,
-                  mergedI18n.dailyLabel,
-                  mergedI18n.weeklyLabel,
-                  mergedI18n.monthlyLabel,
-                  mergedI18n.yearlyLabel,
-                ]}
-                selectedItem={editDataItem.grain || mergedI18n.inputLabel}
-                titleText={mergedI18n.grain}
-                light
-                onChange={({ selectedItem }) => {
-                  if (selectedItem !== mergedI18n.inputLabel) {
-                    setEditDataItem({
-                      ...editDataItem,
-                      grain: selectedItem,
-                    });
-                  } else {
-                    setEditDataItem(omit(editDataItem, 'grain'));
-                  }
-                }}
-              />
-            </div>
-          )
         )}
       </div>
 
@@ -411,7 +424,7 @@ const DataSeriesFormItemModal = ({
         )}
       </div>
 
-      {type === CARD_TYPES.VALUE && ( // only value cards need unit and precision selectors
+      {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE) && (
         <div className={`${baseClassName}--input-group`}>
           <div className={`${baseClassName}--input-group--item`}>
             <TextInput
@@ -428,28 +441,32 @@ const DataSeriesFormItemModal = ({
               value={editDataItem.unit}
             />
           </div>
-          <div className={`${baseClassName}--input-group--item-end`}>
-            <Dropdown
-              id={`${id}_value-card-decimal-place`}
-              titleText="Decimal places"
-              direction="bottom"
-              label=""
-              items={['Not set', '0', '1', '2', '3', '4']}
-              light
-              selectedItem={editDataItem.precision?.toString() || 'Not set'}
-              onChange={({ selectedItem }) => {
-                const isSet = selectedItem !== 'Not set';
-                if (isSet) {
-                  setEditDataItem({
-                    ...editDataItem,
-                    precision: Number(selectedItem),
-                  });
-                } else {
-                  setEditDataItem(omit(editDataItem, 'precision'));
+          {type === CARD_TYPES.VALUE && (
+            <div className={`${baseClassName}--input-group--item-end`}>
+              <Dropdown
+                id={`${id}_value-card-decimal-place`}
+                titleText="Decimal places"
+                direction="bottom"
+                label=""
+                items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
+                light
+                selectedItem={
+                  editDataItem.precision?.toString() || mergedI18n.notSet
                 }
-              }}
-            />
-          </div>
+                onChange={({ selectedItem }) => {
+                  const isSet = selectedItem !== mergedI18n.notSet;
+                  if (isSet) {
+                    setEditDataItem({
+                      ...editDataItem,
+                      precision: Number(selectedItem),
+                    });
+                  } else {
+                    setEditDataItem(omit(editDataItem, 'precision'));
+                  }
+                }}
+              />
+            </div>
+          )}
         </div>
       )}
 
@@ -470,11 +487,11 @@ const DataSeriesFormItemModal = ({
               label=""
               translateWithId={handleTranslation}
               direction="bottom"
-              items={['None', ...Object.keys(availableDimensions)]}
+              items={[mergedI18n.none, ...Object.keys(availableDimensions)]}
               light
-              selectedItem={selectedDimensionFilter || 'None'}
+              selectedItem={selectedDimensionFilter || mergedI18n.none}
               onChange={({ selectedItem }) => {
-                if (selectedItem !== 'None') {
+                if (selectedItem !== mergedI18n.none) {
                   const dataFilter = {
                     [selectedItem]: availableDimensions[selectedItem][0],
                   };
@@ -516,7 +533,7 @@ const DataSeriesFormItemModal = ({
         </div>
       ) : null}
 
-      {type === CARD_TYPES.VALUE && (
+      {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE) && (
         <ThresholdsFormItem
           dataSourceId={editDataItem.dataSourceId}
           cardConfig={cardConfig}
@@ -590,7 +607,7 @@ const DataSeriesFormItemModal = ({
             }}
             onSubmit={() => {
               const newCard =
-                cardConfig.type === 'IMAGE'
+                cardConfig.type === CARD_TYPES.IMAGE
                   ? editDataItem
                   : handleDataItemEdit(
                       editDataItem,

@@ -85,45 +85,6 @@ describe('Value form fields', () => {
     const invalidText = screen.getByText('Provide invalidText');
     expect(invalidText).toBeInTheDocument();
   });
-  it('should update JSON for the precision', () => {
-    render(
-      <ValueCardFormSettings
-        cardConfig={valueCardConfig}
-        onChange={mockOnChange}
-      />
-    );
-    const precisionInput = screen.getByText('5');
-    expect(precisionInput).toBeInTheDocument();
-
-    fireEvent.click(precisionInput);
-    const precisionOption = screen.getByText('3');
-    expect(precisionOption).toBeInTheDocument();
-
-    fireEvent.click(precisionOption);
-
-    expect(mockOnChange).toHaveBeenCalledWith({
-      content: {
-        attributes: [
-          {
-            dataSourceId: 'key1',
-            label: 'Key 1',
-            unit: '%',
-          },
-          {
-            dataSourceId: 'key2',
-            label: 'Key 2',
-            unit: 'lb',
-          },
-        ],
-        fontSize: 16,
-        precision: 3,
-      },
-      id: 'Standard',
-      size: 'MEDIUM',
-      title: 'value card',
-      type: 'VALUE',
-    });
-  });
   it('should handle undefined content', () => {
     render(
       <ValueCardFormSettings
@@ -138,7 +99,5 @@ describe('Value form fields', () => {
     );
     const fontSizeInput = screen.getByText('Font size');
     expect(fontSizeInput).toBeInTheDocument();
-    const precisionInput = screen.getByText('Precision');
-    expect(precisionInput).toBeInTheDocument();
   });
 });

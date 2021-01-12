@@ -122,6 +122,12 @@
       flex-direction: column;
       margin-right: 1rem;
       width: 50%;
+      &-label {
+        margin-bottom: 1rem;
+      }
+      &-content {
+        margin-bottom: 0.6rem;
+      }
     }
     &--item-end {
       width: 100%;

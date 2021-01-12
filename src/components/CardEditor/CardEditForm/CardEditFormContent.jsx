@@ -92,6 +92,20 @@ const defaultProps = {
   isSummaryDashboard: false,
 };
 
+export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
+  const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
+  switch (idToTranslate) {
+    default:
+      return '';
+    case 'clear.all':
+      return clearAllText || 'Clear all';
+    case 'open.menu':
+      return openMenuText || 'Open menu';
+    case 'close.menu':
+      return closeMenuText || 'Close menu';
+  }
+};
+
 const CardEditFormContent = ({
   cardConfig,
   isSummaryDashboard,
@@ -110,17 +124,7 @@ const CardEditFormContent = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
-      switch (idToTranslate) {
-        default:
-          return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'open.menu':
-          return openMenuText || 'Open menu';
-        case 'close.menu':
-          return closeMenuText || 'Close menu';
-      }
+      handleTranslationCallback(idToTranslate, mergedI18n);
     },
     [mergedI18n]
   );

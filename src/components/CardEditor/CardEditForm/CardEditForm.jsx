@@ -148,6 +148,44 @@ export const basicCardValidation = (card) => {
 };
 
 /**
+ * removes properties needed for the editor that we don't want the user to be able to modify
+ * @param {Object} card JSON currently being edited
+ * @returns {Object} card with omitted attributes
+ */
+export const hideCardPropertiesForEditor = (card) => {
+  let attributes;
+  let series;
+  if (card.content?.attributes) {
+    attributes = card.content?.attributes?.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  if (card.content?.series) {
+    series = card.content?.series?.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  return omit(
+    attributes
+      ? { ...card, content: { ...card.content, attributes } }
+      : series
+      ? { ...card, content: { ...card.content, series } }
+      : card,
+    ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
+  );
+};
+
+/**
  * Checks for JSON form errors
  * @param {Object} card JSON text input
  * @param {Function} setError
@@ -158,6 +196,7 @@ export const basicCardValidation = (card) => {
 export const handleSubmit = (
   card,
   id,
+  content,
   setError,
   onValidateCardJson,
   onChange,
@@ -173,7 +212,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id });
+    onChange({ ...JSON.parse(card), id, content });
     setShowEditor(false);
     return true;
   }
@@ -199,7 +238,7 @@ const CardEditForm = ({
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id } = cardConfig;
+  const { id, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -210,6 +249,7 @@ const CardEditForm = ({
             handleSubmit(
               card,
               id,
+              content,
               setError,
               onValidateCardJson,
               onChange,
@@ -269,45 +309,6 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              // removes properties needed for the editor that we don't want the user to be able to modify
-              const hideCardPropertiesForEditor = (card) => {
-                let attributes;
-                let series;
-                if (card.content?.attributes) {
-                  attributes = card.content?.attributes?.map((attribute) =>
-                    omit(attribute, [
-                      'aggregationMethods',
-                      'aggregationMethod',
-                      'grain',
-                      'uuid',
-                    ])
-                  );
-                }
-                if (card.content?.series) {
-                  series = card.content?.series?.map((attribute) =>
-                    omit(attribute, [
-                      'aggregationMethods',
-                      'aggregationMethod',
-                      'grain',
-                      'uuid',
-                    ])
-                  );
-                }
-                return omit(
-                  attributes
-                    ? { ...card, content: { ...card.content, attributes } }
-                    : series
-                    ? { ...card, content: { ...card.content, series } }
-                    : card,
-                  [
-                    'id',
-                    'content.src',
-                    'content.imgState',
-                    'i18n',
-                    'validateUploadedImage',
-                  ]
-                );
-              };
               setModalData(
                 JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4)
               );

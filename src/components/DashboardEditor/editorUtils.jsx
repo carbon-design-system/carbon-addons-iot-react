@@ -372,19 +372,6 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
   }
 };
 
-export const determineDefaultAggregation = (aggregationMethods) => {
-  if (aggregationMethods?.includes('mean')) {
-    return 'mean';
-  }
-  if (aggregationMethods?.includes('count')) {
-    return 'count';
-  }
-  if (aggregationMethods?.includes('last')) {
-    return 'last';
-  }
-  return '';
-};
-
 /**
  * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
  * @param {array} selectedItems
@@ -568,8 +555,11 @@ export const handleDataItemEdit = (
     case CARD_TYPES.BAR:
       dataSection =
         type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.uuid === editDataItem.uuid
+      editDataItemIndex = dataSection.findIndex((dataItem) =>
+        // check for true dataSourceId in simple bar charts
+        content.type !== BAR_CHART_TYPES.SIMPLE
+          ? dataItem.uuid === editDataItem.uuid
+          : dataItem.dataSourceId === editDataItem.dataSourceId
       );
       // if there isn't an item found, place it at the end
       dataSection[
