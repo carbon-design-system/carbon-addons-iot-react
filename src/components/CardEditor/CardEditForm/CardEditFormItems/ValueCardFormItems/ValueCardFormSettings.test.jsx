@@ -22,7 +22,6 @@ const valueCardConfig = {
       },
     ],
     fontSize: 16,
-    precision: 5,
   },
 };
 
@@ -60,7 +59,6 @@ describe('Value form fields', () => {
           },
         ],
         fontSize: 30,
-        precision: 5,
       },
       id: 'Standard',
       size: 'MEDIUM',

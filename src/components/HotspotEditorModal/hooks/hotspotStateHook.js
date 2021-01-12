@@ -1,6 +1,7 @@
 import * as React from 'react';
 import update from 'immutability-helper';
 import merge from 'lodash/merge';
+import isNil from 'lodash/isNil';
 import PropTypes from 'prop-types';
 
 import { HotspotPropTypes } from '../../../constants/SharedPropTypes';
@@ -167,14 +168,13 @@ function hotspotEditorReducer(state, { type, payload }) {
     // TEXT HOTSPOT STYLE CHANGE
     case hotspotActionTypes.textHotspotStyleChange: {
       const styleKey = Object.getOwnPropertyNames(payload)[0];
-      const updateSpec =
-        payload[styleKey] === undefined
-          ? {
-              $unset: [styleKey],
-            }
-          : {
-              $merge: payload,
-            };
+      const updateSpec = isNil(payload[styleKey])
+        ? {
+            $unset: [styleKey],
+          }
+        : {
+            $merge: payload,
+          };
 
       const modifiedHotspot = update(state.selectedHotspot, updateSpec);
 
@@ -232,7 +232,7 @@ function hotspotEditorReducer(state, { type, payload }) {
       });
     }
 
-    // DYNAMIC HOTSPOTS SET
+    // DYNAMIC HOTSPOTS SET, this clears the previous dynamic hotspots but leaves the static ones
     case hotspotActionTypes.dynamicHotspotsSet: {
       const stateWithoutDynamicHotspots = update(state, {
         hotspots: (arr) =>
@@ -306,6 +306,7 @@ function useHotspotEditorState({
     });
   };
 
+  /** update the hotspot data items for instance renaming or adding thresholds to a data item */
   const updateHotspotDataSource = (dataSourceChange) => {
     if (dataSourceChange.attributes) {
       dispatch({
@@ -320,18 +321,29 @@ function useHotspotEditorState({
     }
   };
 
+  /**
+   * Update the properties of the tooltip like 'title', 'description', 'icon', or 'color'
+   * TODO: the title and description are under the content section so the `hotspotContent` argument needs to put those title and description updates
+   * under a content key.  We should really just do that in the reducer ideally
+   *
+   */
   const updateHotspotTooltip = (hotspotContent) =>
     dispatch({
       type: hotspotActionTypes.hotspotTooltipChange,
       payload: hotspotContent,
     });
 
+  /** Updates the properties of the text hotspot, passes a payload like {color: 'blue'} */
   const updateTextHotspotStyle = (textHotspotStyle) =>
     dispatch({
       type: hotspotActionTypes.textHotspotStyleChange,
       payload: textHotspotStyle,
     });
 
+  /**
+   * User clicks on the hotspot and this should change the selection
+   * @param {*} hotspotPosition
+   */
   const setSelectedHotspot = (hotspotPosition) =>
     dispatch({
       type: hotspotActionTypes.hotspotSelect,
@@ -344,6 +356,10 @@ function useHotspotEditorState({
       payload: contentName,
     });
 
+  /**
+   *
+   * @param {object} contentChange an example to update the title would be {title: 'my new title'}
+   */
   const updateTextHotspotContent = (contentChange) =>
     dispatch({
       type: hotspotActionTypes.textHotspotContentChange,
@@ -368,6 +384,10 @@ function useHotspotEditorState({
       payload: isLoading,
     });
 
+  /**
+   * the assumption here is that demo hotspots are loaded to show in the image carrd
+   * @param {*} dynamicHotspots
+   */
   const setDynamicHotspots = (dynamicHotspots) =>
     dispatch({
       type: hotspotActionTypes.dynamicHotspotsSet,

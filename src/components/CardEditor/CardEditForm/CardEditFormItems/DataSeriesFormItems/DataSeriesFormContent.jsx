@@ -23,6 +23,7 @@ import {
   CARD_TYPES,
   BAR_CHART_TYPES,
 } from '../../../../../constants/LayoutConstants';
+import ContentFormItemTitle from '../ContentFormItemTitle';
 
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
@@ -30,7 +31,6 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /* card value */
-
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -54,25 +54,8 @@ const propTypes = {
     }),
     interval: PropTypes.string,
   }),
-  /* callback when image input value changes (File object) */
+  /* callback when data item input value changes */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({
-    dataItemEditorTitle: PropTypes.string,
-    dataItemEditorDataItemTitle: PropTypes.string,
-    dataItemEditorDataItemLabel: PropTypes.string,
-    dataItemEditorLegendColor: PropTypes.string,
-    dataSeriesTitle: PropTypes.string,
-    selectDataItems: PropTypes.string,
-    selectDataItem: PropTypes.string,
-    dataItem: PropTypes.string,
-    edit: PropTypes.string,
-    remove: PropTypes.string,
-    customize: PropTypes.string,
-    clearAllText: PropTypes.string,
-    clearSelectionText: PropTypes.string,
-    openMenuText: PropTypes.string,
-    closeMenuText: PropTypes.string,
-  }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
    * getValidDataItems(card, selectedTimeRange)
@@ -91,6 +74,40 @@ const propTypes = {
   setSelectedDataItems: PropTypes.func.isRequired,
   selectedTimeRange: PropTypes.string.isRequired,
   isSummaryDashboard: PropTypes.bool,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+  }),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataItemEditorSectionTitle: PropTypes.string,
+    dataItemEditorSectionSimpleBarTooltipText: PropTypes.string,
+    dataItemEditorSectionGroupedBarTooltipText: PropTypes.string,
+    dataItemEditorSectionStackedBarTooltipText: PropTypes.string,
+    dataItemEditorSectionTimeSeriesTooltipText: PropTypes.string,
+    dataItemEditorSectionValueTooltipText: PropTypes.string,
+    dataItemEditorSectionCustomTooltipText: PropTypes.string,
+    dataItemEditorSectionTooltipLinkText: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectDataItem: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+    clearAllText: PropTypes.string,
+    clearSelectionText: PropTypes.string,
+    openMenuText: PropTypes.string,
+    closeMenuText: PropTypes.string,
+  }),
   translateWithId: PropTypes.func.isRequired,
 };
 
@@ -101,7 +118,20 @@ const defaultProps = {
     dataItemEditorDataItemTitle: 'Data item',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data',
+    dataItemEditorSectionTitle: 'Data',
+    dataItemEditorSectionSimpleBarTooltipText:
+      'Display a metric using bars. Plot over time or by a dimension from Group by.',
+    dataItemEditorSectionGroupedBarTooltipText:
+      'Group categories side by side in bars. Show groupings of related metrics or different categories of a single metric.',
+    dataItemEditorSectionStackedBarTooltipText:
+      'Stack bars by categories of a single dimension or into multiple related metrics.',
+    dataItemEditorSectionTimeSeriesTooltipText:
+      'Plot time series metrics over time.',
+    dataItemEditorSectionValueTooltipText:
+      'Display metric values, dimension values, or alert counts. Select from Data item. ',
+    dataItemEditorSectionCustomTooltipText:
+      'Show or hide alert fields. Choose dimensions to add as extra columns. ',
+    dataItemEditorSectionTooltipLinkText: 'Learn more',
     selectDataItems: 'Select data items',
     selectDataItem: 'Select data item',
     dataItem: 'Data item',
@@ -119,6 +149,7 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   isSummaryDashboard: false,
+  dataSeriesItemLinks: null,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -126,6 +157,87 @@ export const formatDataItemsForDropdown = (dataItems) =>
     id: dataSourceId,
     text: dataSourceId,
   })) || [];
+
+/**
+ * Retuns card specific tooltip depending on card type
+ * @param {Object} cardConfig
+ * @returns {Object} tooltip definition
+ */
+export const defineCardSpecificTooltip = (
+  cardConfig,
+  dataSeriesItemLinks,
+  i18n
+) => {
+  switch (cardConfig.type) {
+    case CARD_TYPES.BAR:
+      if (cardConfig.content.type === BAR_CHART_TYPES.SIMPLE) {
+        return {
+          tooltipText: i18n.dataItemEditorSectionSimpleBarTooltipText,
+          ...(dataSeriesItemLinks?.simpleBar
+            ? {
+                linkText: i18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.simpleBar,
+              }
+            : {}),
+        };
+      }
+      if (cardConfig.content.type === BAR_CHART_TYPES.GROUPED) {
+        return {
+          tooltipText: i18n.dataItemEditorSectionGroupedBarTooltipText,
+          ...(dataSeriesItemLinks?.groupedBar
+            ? {
+                linkText: i18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.groupedBar,
+              }
+            : {}),
+        };
+      }
+      // STACKED
+      return {
+        tooltipText: i18n.dataItemEditorSectionStackedBarTooltipText,
+        ...(dataSeriesItemLinks?.stackedBar
+          ? {
+              linkText: i18n.dataItemEditorSectionTooltipLinkText,
+              href: dataSeriesItemLinks.stackedBar,
+            }
+          : {}),
+      };
+
+    case CARD_TYPES.TIMESERIES:
+      return {
+        tooltipText: i18n.dataItemEditorSectionTimeSeriesTooltipText,
+        ...(dataSeriesItemLinks?.timeSeries
+          ? {
+              linkText: i18n.dataItemEditorSectionTooltipLinkText,
+              href: dataSeriesItemLinks.timeSeries,
+            }
+          : {}),
+      };
+
+    case CARD_TYPES.VALUE:
+      return {
+        tooltipText: i18n.dataItemEditorSectionValueTooltipText,
+        ...(dataSeriesItemLinks?.value
+          ? {
+              linkText: i18n.dataItemEditorSectionTooltipLinkText,
+              href: dataSeriesItemLinks.value,
+            }
+          : {}),
+      };
+
+    case CARD_TYPES.CUSTOM:
+    default:
+      return {
+        tooltipText: i18n.dataItemEditorSectionCustomTooltipText,
+        ...(dataSeriesItemLinks?.custom
+          ? {
+              linkText: i18n.dataItemEditorSectionTooltipLinkText,
+              href: dataSeriesItemLinks.custom,
+            }
+          : {}),
+      };
+  }
+};
 
 const DataSeriesFormItem = ({
   cardConfig,
@@ -138,6 +250,7 @@ const DataSeriesFormItem = ({
   selectedTimeRange,
   availableDimensions,
   i18n,
+  dataSeriesItemLinks,
   translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -175,6 +288,12 @@ const DataSeriesFormItem = ({
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
 
+  const cardSpecificTooltip = defineCardSpecificTooltip(
+    cardConfig,
+    dataSeriesItemLinks,
+    mergedI18n
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -192,9 +311,11 @@ const DataSeriesFormItem = ({
         onChange={onChange}
         i18n={mergedI18n}
       />
-      <div className={`${baseClassName}--form-section`}>
-        {mergedI18n.dataSeriesTitle}
-      </div>
+      <ContentFormItemTitle
+        title={mergedI18n.dataItemEditorSectionTitle}
+        // Specific to each card type
+        tooltip={{ ...cardSpecificTooltip }}
+      />
       {cardConfig.type === CARD_TYPES.BAR ? (
         <BarChartDataSeriesContent
           cardConfig={cardConfig}
@@ -319,6 +440,7 @@ const DataSeriesFormItem = ({
         </div>
       )}
       <List
+        className={`${baseClassName}--data-item-list`}
         key={`data-item-list${selectedDataItems.length}`}
         // need to force an empty "empty state"
         emptyState={<div />}

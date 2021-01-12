@@ -69,12 +69,14 @@ describe('DataSeriesFormItemModal', () => {
         {
           dataSourceId: 'key1',
           unit: '%',
+          precision: 3,
           label: 'Key 1',
         },
         {
           dataSourceId: 'key2',
           unit: 'lb',
           label: 'Key 2',
+          precision: 3,
         },
       ],
     },
@@ -112,6 +114,7 @@ describe('DataSeriesFormItemModal', () => {
   const editValueDataItem = {
     dataSourceId: 'key1',
     unit: '%',
+    precision: 3,
     label: 'Key 1',
   };
 
@@ -181,6 +184,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(mockSetEditDataItem).toHaveBeenCalledWith({
       dataSourceId: 'key1',
       label: 'newLabel',
+      precision: 3,
       unit: '%',
     });
   });
@@ -203,6 +207,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(mockSetEditDataItem).toHaveBeenCalledWith({
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: 'PSI',
     });
   });
@@ -302,6 +307,7 @@ describe('DataSeriesFormItemModal', () => {
       },
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: '%',
     });
   });
@@ -318,6 +324,7 @@ describe('DataSeriesFormItemModal', () => {
           },
           dataSourceId: 'key1',
           label: 'Key 1',
+          precision: 3,
           unit: '%',
         }}
       />
@@ -339,6 +346,7 @@ describe('DataSeriesFormItemModal', () => {
       },
       dataSourceId: 'key1',
       label: 'Key 1',
+      precision: 3,
       unit: '%',
     });
   });

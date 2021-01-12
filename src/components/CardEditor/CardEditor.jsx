@@ -106,6 +106,17 @@ const propTypes = {
   isSummaryDashboard: PropTypes.bool,
   /** Id that can be used for testing */
   testID: PropTypes.string,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -128,6 +139,7 @@ const defaultProps = {
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
   testID: 'card-editor',
+  dataSeriesItemLinks: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -148,6 +160,9 @@ const CardEditor = ({
   i18n,
   currentBreakpoint,
   testID,
+  dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -195,6 +210,8 @@ const CardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            dataSeriesItemLinks={dataSeriesItemLinks}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         )}
       </div>
