@@ -123,7 +123,7 @@ const getDemoDynamicHotspots = () => [
   },
 ];
 
-const loading = HotspotEditorModal.defaultProps.loadingDynamicHotspotsText;
+const loading = HotspotEditorModal.defaultProps.i18n.loadingDynamicHotspotsText;
 
 describe('HotspotEditorModal', () => {
   beforeAll(() => {
@@ -151,7 +151,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={() => {
           return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
@@ -191,7 +191,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         onSave={onSave}
@@ -224,7 +224,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         onSave={onSave}
@@ -325,7 +325,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}
@@ -429,7 +429,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}
@@ -491,7 +491,7 @@ describe('HotspotEditorModal', () => {
         fontColors={getSelectableColors()}
         hotspotIconFillColors={getSelectableColors()}
         hotspotIcons={getSelectableIcons()}
-        modalHeaderLabelText={landscape}
+        label={landscape}
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}

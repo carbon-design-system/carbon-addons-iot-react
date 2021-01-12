@@ -7,6 +7,7 @@ import {
   Tab,
   InlineNotification,
 } from 'carbon-components-react';
+import pick from 'lodash/pick';
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
@@ -51,14 +52,10 @@ const propTypes = {
   availableDimensions: PropTypes.shape({}),
   /** Array of selectable color objects for text hotspot background */
   backgroundColors: PropTypes.arrayOf(ColorPropType),
-  backgroundLabelText: PropTypes.string,
-  boldLabelText: PropTypes.string,
+
   /** Array of selectable color objects for text hotspot border */
   borderColors: PropTypes.arrayOf(ColorPropType),
-  borderLabelText: PropTypes.string,
-  borderWidthText: PropTypes.string,
-  borderWidthInvalidText: PropTypes.string,
-  cancelButtonLabelText: PropTypes.string,
+
   cardConfig: PropTypes.shape({
     content: PropTypes.shape({
       alt: PropTypes.string,
@@ -91,8 +88,7 @@ const propTypes = {
       hotspots: PropTypes.arrayOf(PropTypes.object),
     }),
   }).isRequired,
-  colorDropdownLabelText: PropTypes.string,
-  colorDropdownTitleText: PropTypes.string,
+
   dataItems: PropTypes.arrayOf(
     PropTypes.shape({
       dataSourceId: PropTypes.string,
@@ -111,32 +107,19 @@ const propTypes = {
     hotspotTypes.TEXT,
     hotspotTypes.DYNAMIC,
   ]),
-  deleteButtonLabelText: PropTypes.string,
-  deleteButtonIconDescriptionText: PropTypes.string,
-  descriptionTextareaLabelText: PropTypes.string,
-  descriptionTextareaPlaceholderText: PropTypes.string,
-  fillOpacityLabelText: PropTypes.string,
-  fillOpacityInvalidText: PropTypes.string,
-  fixedTypeDataSourceTabLabelText: PropTypes.string,
-  fixedTypeTooltipInfoText: PropTypes.string,
-  fixedTypeTooltipTabLabelText: PropTypes.string,
+
   /** Array of selectable color objects for text hotspot font */
   fontColors: PropTypes.arrayOf(ColorPropType),
-  fontLabelText: PropTypes.string,
-  fontSizeText: PropTypes.string,
-  fontSizeInvalidText: PropTypes.string,
+
   getValidDataItems: PropTypes.func,
   /** Array of selectable color objects for hotspot icon fill */
   hotspotIconFillColors: PropTypes.arrayOf(ColorPropType),
   /** Array of selectable icon objects for the hotspots adds to the default icons */
   hotspotIcons: PropTypes.arrayOf(HotspotIconPropType),
-  hotspotsText: PropTypes.string,
-  iconDropdownLabelText: PropTypes.string,
+
   imageId: PropTypes.string,
   imageZoomMax: PropTypes.number,
-  italicLabelText: PropTypes.string,
-  labelsText: PropTypes.string,
-  loadingDynamicHotspotsText: PropTypes.string,
+
   /** Maximum Border Width */
   maxBorderWidth: PropTypes.number,
   /** Maximum Font size */
@@ -145,9 +128,7 @@ const propTypes = {
   maxHotspots: PropTypes.number,
   /** Maximum Opacity Value */
   maxOpacity: PropTypes.number,
-  modalHeaderLabelText: PropTypes.string,
-  modalHeaderTitleText: PropTypes.string,
-  modalIconDescriptionText: PropTypes.string,
+
   /** Minimum Opacity Value */
   minOpacity: PropTypes.number,
   /** Minimum Border Width */
@@ -163,75 +144,79 @@ const propTypes = {
   onSave: PropTypes.func.isRequired,
   /** Should the dialog be open or not */
   open: PropTypes.bool,
-  saveButtonLabelText: PropTypes.string,
+
+  /** the label of the hotspot modal */
+  label: PropTypes.string,
   showTooManyHotspotsInfo: PropTypes.bool,
-  textTypeDataSourceTabLabelText: PropTypes.string,
-  textTypeStyleInfoText: PropTypes.string,
-  titleInputLabelText: PropTypes.string,
-  titleInputPlaceholderText: PropTypes.string,
-  tooManyHotspotsInfoText: PropTypes.string,
-  underlineLabelText: PropTypes.string,
+
+  i18n: PropTypes.shape({
+    fixedTypeDataSourceTabLabelText: PropTypes.string,
+    fixedTypeTooltipTabLabelText: PropTypes.string,
+    hotspotsText: PropTypes.string,
+    labelsText: PropTypes.string,
+    loadingDynamicHotspotsText: PropTypes.string,
+    modalHeaderTitleText: PropTypes.string,
+    modalIconDescriptionText: PropTypes.string,
+    cancelButtonLabelText: PropTypes.string,
+    saveButtonLabelText: PropTypes.string,
+    textStyleLabelText: PropTypes.string,
+    textTypeDataSourceTabLabelText: PropTypes.string,
+    tooManyHotspotsInfoText: PropTypes.string,
+  }),
+  translateWithId: PropTypes.func,
 };
 
 const defaultProps = {
   availableDimensions: {},
   backgroundColors: selectableColors,
-  backgroundLabelText: undefined,
-  boldLabelText: undefined,
   borderColors: selectableColors,
-  borderLabelText: undefined,
-  borderWidthInvalidText: undefined,
-  borderWidthText: undefined,
-  cancelButtonLabelText: undefined,
-  colorDropdownLabelText: undefined,
-  colorDropdownTitleText: undefined,
   dataItems: [],
   defaultBackgroundOpacity: 100,
   defaultBorderWidth: 0,
   defaultFontSize: 12,
   defaultHotspotType: hotspotTypes.FIXED,
-  deleteButtonIconDescriptionText: undefined,
-  deleteButtonLabelText: undefined,
-  descriptionTextareaLabelText: undefined,
-  descriptionTextareaPlaceholderText: undefined,
-  fillOpacityInvalidText: undefined,
-  fillOpacityLabelText: undefined,
-  fixedTypeDataSourceTabLabelText: 'Data source',
-  fixedTypeTooltipInfoText: undefined,
-  fixedTypeTooltipTabLabelText: 'Tooltip',
   fontColors: selectableColors,
-  fontLabelText: undefined,
-  fontSizeInvalidText: undefined,
-  fontSizeText: undefined,
   getValidDataItems: undefined,
   hotspotIconFillColors: validThresholdColors,
   hotspotIcons: validHotspotIcons,
-  hotspotsText: 'Hotspots',
-  iconDropdownLabelText: undefined,
   imageId: undefined,
   imageZoomMax: undefined,
-  italicLabelText: undefined,
-  labelsText: 'Labels',
-  loadingDynamicHotspotsText: 'Locating hotspots',
   maxBorderWidth: 50,
   maxFontSize: 50,
   maxHotspots: 10,
   maxOpacity: 100,
   minBorderWidth: 0,
   minOpacity: 0,
-  modalHeaderLabelText: undefined,
-  modalHeaderTitleText: 'Edit image',
-  modalIconDescriptionText: 'Close',
   onFetchDynamicDemoHotspots: undefined,
   open: true,
-  saveButtonLabelText: undefined,
   showTooManyHotspotsInfo: false,
-  textTypeDataSourceTabLabelText: 'Data source',
-  textTypeStyleInfoText: undefined,
-  titleInputLabelText: undefined,
-  titleInputPlaceholderText: undefined,
-  tooManyHotspotsInfoText: 'There are more hotspots than can be shown',
-  underlineLabelText: undefined,
+  label: undefined,
+  i18n: {
+    fixedTypeDataSourceTabLabelText: 'Data source',
+    fixedTypeTooltipTabLabelText: 'Tooltip',
+    hotspotsText: 'Hotspots',
+    labelsText: 'Labels',
+    loadingDynamicHotspotsText: 'Locating hotspots',
+    modalHeaderTitleText: 'Edit image',
+    modalIconDescriptionText: 'Close',
+    cancelButtonLabelText: 'Cancel',
+    saveButtonLabelText: 'Save',
+    textStyleLabelText: 'Text style',
+    textTypeDataSourceTabLabelText: 'Data source',
+    tooManyHotspotsInfoText: 'There are more hotspots than can be shown',
+  },
+  translateWithId: (idToTranslate) => {
+    switch (idToTranslate) {
+      default:
+        return '';
+      case 'clear.all':
+        return 'Clear all';
+      case 'open.menu':
+        return 'Open menu';
+      case 'close.menu':
+        return 'Close menu';
+    }
+  },
 };
 
 const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
@@ -245,65 +230,34 @@ const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
 const HotspotEditorModal = ({
   availableDimensions,
   backgroundColors,
-  backgroundLabelText,
-  boldLabelText,
   borderColors,
-  borderLabelText,
-  borderWidthText,
-  borderWidthInvalidText,
-  cancelButtonLabelText,
   cardConfig,
-  colorDropdownLabelText,
-  colorDropdownTitleText,
   dataItems,
   defaultBorderWidth,
   defaultBackgroundOpacity,
   defaultFontSize,
   defaultHotspotType,
-  deleteButtonLabelText,
-  deleteButtonIconDescriptionText,
-  descriptionTextareaLabelText,
-  descriptionTextareaPlaceholderText,
-  fillOpacityLabelText,
-  fillOpacityInvalidText,
-  fixedTypeDataSourceTabLabelText,
-  fixedTypeTooltipInfoText,
-  fixedTypeTooltipTabLabelText,
   fontColors,
-  fontLabelText,
-  fontSizeText,
-  fontSizeInvalidText,
   getValidDataItems,
   hotspotIconFillColors,
   hotspotIcons,
-  hotspotsText,
-  iconDropdownLabelText,
   imageId,
   imageZoomMax,
-  italicLabelText,
-  labelsText,
-  loadingDynamicHotspotsText,
+  label,
   maxBorderWidth,
   maxFontSize,
   maxHotspots,
   maxOpacity,
   minOpacity,
   minBorderWidth,
-  modalHeaderLabelText,
-  modalHeaderTitleText,
-  modalIconDescriptionText,
   onClose,
   onFetchDynamicDemoHotspots,
   onSave: onSaveCallback,
   open,
-  saveButtonLabelText,
   showTooManyHotspotsInfo,
-  textTypeDataSourceTabLabelText,
-  textTypeStyleInfoText,
-  titleInputLabelText,
-  titleInputPlaceholderText,
-  tooManyHotspotsInfoText,
-  underlineLabelText,
+  i18n,
+
+  translateWithId,
 }) => {
   const initialHotspots = cardConfig.values?.hotspots || [];
   const myDataItems = getValidDataItems
@@ -337,6 +291,49 @@ const HotspotEditorModal = ({
       currentType: defaultHotspotType,
     },
   });
+
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const {
+    backgroundLabelText,
+    boldLabelText,
+    borderLabelText,
+    borderWidthInvalidText,
+    cancelButtonLabelText,
+    colorDropdownLabelText,
+    colorDropdownTitleText,
+    deleteButtonLabelText,
+    deleteButtonIconDescriptionText,
+    descriptionTextareaLabelText,
+    descriptionTextareaPlaceholderText,
+    fillOpacityLabelText,
+    fillOpacityInvalidText,
+    fixedTypeDataSourceTabLabelText,
+    fixedTypeTooltipInfoText,
+    fixedTypeTooltipTabLabelText,
+    fontSizeInvalidText,
+    hotspotsText,
+    iconDropdownLabelText,
+    iconDropdownTitleText,
+    italicLabelText,
+    labelsText,
+    loadingDynamicHotspotsText,
+    modalHeaderTitleText,
+    modalIconDescriptionText,
+    saveButtonLabelText,
+    textStyleLabelText,
+    textTypeStyleInfoText,
+    textTypeDataSourceTabLabelText,
+    titleInputLabelText,
+    titleInputPlaceholderText,
+    tooManyHotspotsInfoText,
+    underlineLabelText,
+    fontColorLabelText,
+    fontSizeLabelText,
+    borderWidthLabelText,
+    deleteButtonIconDescription,
+    selectAColor,
+  } = mergedI18n;
 
   const onSave = () => {
     const filteredHotspots = hotspots.filter(
@@ -439,6 +436,8 @@ const HotspotEditorModal = ({
             hotspots: { $set: [selectedHotspot] },
           },
         })}
+        i18n={mergedI18n}
+        translateWithId={translateWithId}
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
       />
@@ -449,6 +448,7 @@ const HotspotEditorModal = ({
     return (
       <>
         <DynamicHotspotSourcePicker
+          i18n={mergedI18n}
           dataSourceItems={myDataItems}
           onXValueChange={(newXSource) => {
             updateDynamicHotspotSourceX(newXSource);
@@ -461,6 +461,7 @@ const HotspotEditorModal = ({
           selectedSourceIdX={dynamicHotspotSourceX}
           selectedSourceIdY={dynamicHotspotSourceY}
           onClear={clearDynamicHotspotsSource}
+          translateWithId={translateWithId}
         />
         {showTooManyHotspotsInfo ? (
           <InlineNotification kind="info" title={tooManyHotspotsInfoText} />
@@ -492,10 +493,12 @@ const HotspotEditorModal = ({
                   descriptionTextareaLabelText,
                   descriptionTextareaPlaceholderText,
                   iconDropdownLabelText,
+                  iconDropdownTitleText,
                   colorDropdownLabelText,
                   colorDropdownTitleText,
                   infoMessageText: fixedTypeTooltipInfoText,
                 }}
+                translateWithId={translateWithId}
               />
             </Tab>
             <Tab label={fixedTypeDataSourceTabLabelText}>
@@ -510,7 +513,7 @@ const HotspotEditorModal = ({
   const renderTextHotspotPage = () => {
     return (
       <Tabs selected={0}>
-        <Tab label="Text style">
+        <Tab label={textStyleLabelText}>
           <HotspotTextStyleTab
             maxBorderWidth={maxBorderWidth}
             maxFontSize={maxFontSize}
@@ -529,15 +532,18 @@ const HotspotEditorModal = ({
               infoMessageText: textTypeStyleInfoText,
               italicLabelText,
               underlineLabelText,
-              fontLabelText,
-              fontSizeText,
+              fontColorLabelText,
+              fontSizeLabelText,
               fontSizeInvalidText,
               backgroundLabelText,
               fillOpacityLabelText,
               fillOpacityInvalidText,
               borderLabelText,
-              borderWidthText,
+              borderWidthLabelText,
               borderWidthInvalidText,
+              deleteButtonLabelText,
+              deleteButtonIconDescription,
+              selectAColor,
             }}
           />
         </Tab>
@@ -552,7 +558,7 @@ const HotspotEditorModal = ({
     <ComposedModal
       className={`${iotPrefix}--hotspot-editor-modal`}
       header={{
-        label: modalHeaderLabelText,
+        label,
         title: modalHeaderTitleText,
       }}
       iconDescription={modalIconDescriptionText}
@@ -577,6 +583,14 @@ const HotspotEditorModal = ({
                 icons={imageHotspotsIcons}
                 imageZoomMax={imageZoomMax}
                 isEditable
+                i18n={pick(
+                  mergedI18n,
+                  'zoomIn',
+                  'zoomOut',
+                  'zoomToFit',
+                  'titlePlaceholderText',
+                  'titleEditableHintText'
+                )}
                 isHotspotDataLoading={dynamicHotspotsLoading}
                 onAddHotspotPosition={(position) => {
                   addHotspot({
