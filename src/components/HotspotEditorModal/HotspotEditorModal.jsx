@@ -10,14 +10,6 @@ import {
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
-import {
-  User24,
-  Location24,
-  Temperature24,
-  Flag24,
-  Tag24,
-  Alarm24,
-} from '@carbon/icons-react';
 
 import {
   HotspotIconPropType,
@@ -30,6 +22,7 @@ import { settings } from '../../constants/Settings';
 import {
   validThresholdIcons,
   validThresholdColors,
+  validHotspotIcons,
 } from '../DashboardEditor/editorUtils';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab/HotspotEditorTooltipTab';
@@ -212,14 +205,7 @@ const defaultProps = {
   fontSizeText: undefined,
   getValidDataItems: undefined,
   hotspotIconFillColors: validThresholdColors,
-  hotspotIcons: [
-    { id: 'User', icon: User24, text: 'User' },
-    { id: 'Location', icon: Location24, text: 'Location' },
-    { id: 'Temperature', icon: Temperature24, text: 'Temperature' },
-    { id: 'Flag', icon: Flag24, text: 'Flag' },
-    { id: 'Tag', icon: Tag24, text: 'Tag' },
-    { id: 'Alarm', icon: Alarm24, text: 'Alarm' },
-  ],
+  hotspotIcons: validHotspotIcons,
   hotspotsText: 'Hotspots',
   iconDropdownLabelText: undefined,
   imageId: undefined,

@@ -56,6 +56,36 @@ describe('DashboardEditorCardRenderer', () => {
     );
     expect(screen.getByTitle('>= 30')).toBeInTheDocument();
   });
+  it('image card renders custom hotspot icon', () => {
+    render(
+      <DashboardEditorCardRenderer
+        title="Alert Count"
+        id="facilitycard"
+        size="LARGE"
+        type="IMAGE"
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        breakpoint="lg"
+        values={{
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'User',
+              color: 'purple',
+            },
+          ],
+        }}
+      />
+    );
+    // Should find the correct User icon and text
+    expect(screen.getByTitle('User')).toBeInTheDocument();
+  });
   it('list card renders list', () => {
     const listCardData = [
       {
