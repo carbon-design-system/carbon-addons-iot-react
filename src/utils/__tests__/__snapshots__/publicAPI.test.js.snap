@@ -18632,11 +18632,13 @@ Map {
       "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
+        "colorDropdownLabelText": "Select a color",
+        "colorDropdownTitleText": "Color",
         "deleteButtonIconDescriptionText": "Delete this hotspot",
         "deleteButtonLabelText": "Delete hotspot",
         "descriptionTextareaLabelText": "Description",
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
-        "iconDropdownLabelText": "Select an Icon",
+        "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
         "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
@@ -19010,9 +19012,6 @@ Map {
             "borderWidthInvalidText": Object {
               "type": "string",
             },
-            "borderWidthText": Object {
-              "type": "string",
-            },
             "deleteButtonIconDescription": Object {
               "type": "string",
             },
@@ -19029,9 +19028,6 @@ Map {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
-              "type": "string",
-            },
-            "fontSizeText": Object {
               "type": "string",
             },
             "infoMessageText": Object {

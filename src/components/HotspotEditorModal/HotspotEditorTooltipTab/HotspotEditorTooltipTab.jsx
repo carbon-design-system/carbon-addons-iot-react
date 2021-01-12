@@ -80,10 +80,12 @@ const defaultProps = {
     titleInputPlaceholderText: 'Enter title for the tooltip',
     descriptionTextareaLabelText: 'Description',
     descriptionTextareaPlaceholderText: 'Enter description for the tooltip',
-    iconDropdownLabelText: 'Select an Icon',
+    iconDropdownLabelText: 'Select an icon',
     iconDropdownTitleText: 'Icon',
     infoMessageText:
       'Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
+    colorDropdownLabelText: 'Select a color',
+    colorDropdownTitleText: 'Color',
   },
   overrides: undefined,
   primaryInputId: undefined,

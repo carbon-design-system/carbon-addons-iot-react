@@ -122,7 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <span
                     className="bx--list-box__label"
                   >
-                    Select an Icon
+                    Select an icon
                   </span>
                   <div
                     className="bx--list-box__menu-icon"

@@ -38,7 +38,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
 
@@ -56,7 +56,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
 
@@ -81,7 +81,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
 
@@ -92,7 +92,7 @@ describe('HotspotEditorTooltipTab', () => {
       color: getColors()[0].carbonColor,
     });
 
-    userEvent.click(screen.getByText('Select an Icon'));
+    userEvent.click(screen.getByText('Select an icon'));
     const firstItemIcon = screen.getAllByRole('option')[0];
     userEvent.click(firstItemIcon);
     expect(onChange).toHaveBeenCalledWith(
@@ -117,7 +117,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
 
@@ -142,7 +142,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
 
@@ -159,7 +159,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={() => {}}
         onDelete={onDelete}
         showDeleteButton={false}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
     expect(
@@ -175,7 +175,7 @@ describe('HotspotEditorTooltipTab', () => {
         onChange={() => {}}
         showDeleteButton
         onDelete={onDelete}
-        translateWithId={jest.fn()}
+        translateWithId={() => {}}
       />
     );
     userEvent.click(
