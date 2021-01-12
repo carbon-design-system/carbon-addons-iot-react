@@ -143,8 +143,13 @@ const propTypes = {
   /** Callback for modal cancel button and close icon button */
   onClose: PropTypes.func.isRequired,
   /**
-   * Callback to fetch dynamic hotstpots. Returns a Propmise that resolves to an array of demo hotspots
-   * matching the x & y source in param {maxHotspots, xSource, ySource }.
+   * Callback to fetch dynamic hotstpots. Should returns a Promise that resolves to an array of demo hotspots
+   * matching the x & y source.  Called with one param, an object with 3 values
+   * {
+   *  maxHotspots: maximum number to return,
+   *  xSource: the name of the data item to use as the xSource,
+   *  ySource: the name of the data item to use as the ySource
+   * }.
    * */
   onFetchDynamicDemoHotspots: PropTypes.func,
   /** Callback for modal save button returns the entire updated card config */
