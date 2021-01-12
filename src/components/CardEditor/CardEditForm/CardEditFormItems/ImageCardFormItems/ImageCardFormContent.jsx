@@ -39,6 +39,9 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** call back to retrieve the dynamic demo hotspots, by default just returns one example dynamic hotspot, override to return true hotspots.
+   * See HotspotEditorModal propTypes for params and details */
+  onFetchDynamicDemoHotspots: PropTypes.func,
 };
 
 const defaultProps = {
@@ -51,6 +54,7 @@ const defaultProps = {
   },
   dataItems: [],
   availableDimensions: {},
+  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50 }]),
 };
 
 const ImageCardFormItems = ({
@@ -60,6 +64,7 @@ const ImageCardFormItems = ({
   dataItems,
   availableDimensions,
   translateWithId,
+  onFetchDynamicDemoHotspots,
 }) => {
   const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -94,8 +99,7 @@ const ImageCardFormItems = ({
           onClose={handleCloseHotspotEditor}
           translateWithId={translateWithId}
           i18n={mergedI18n}
-          // TODO go get the hotspots from the real data layer
-          onFetchDynamicHotspots={() => Promise.resolve([{ x: 10, y: 10 }])}
+          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         />
       ) : null}
       <div

@@ -145,6 +145,8 @@ const CardEditor = ({
   i18n,
   currentBreakpoint,
   testID,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -191,6 +193,7 @@ const CardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         )}
       </div>
