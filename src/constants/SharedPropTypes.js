@@ -46,10 +46,7 @@ export const HotspotContentPropTypes = {
   }),
   /** the locale to use for formatting numeric values */
   locale: PropTypes.string,
-  /** The placeholder text for editable title */
-  titlePlaceholderText: PropTypes.string,
-  /** The html title attribute text for the title label when editable */
-  titleEditableHintText: PropTypes.string,
+
   /** ability to render icon by name */
   renderIconByName: PropTypes.func,
   /** when true the title can be edited by the user. */
@@ -58,6 +55,12 @@ export const HotspotContentPropTypes = {
   id: PropTypes.string,
   /** For text hotspots, callback with current value for when the editable fields are blurred. */
   onChange: PropTypes.func,
+  i18n: PropTypes.shape({
+    /** The placeholder text for editable title */
+    titlePlaceholderText: PropTypes.string,
+    /** The html title attribute text for the title label when editable */
+    titleEditableHintText: PropTypes.string,
+  }),
 };
 
 export const HotspotPropTypes = {

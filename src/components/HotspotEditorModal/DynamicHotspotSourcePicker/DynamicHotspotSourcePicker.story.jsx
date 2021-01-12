@@ -48,6 +48,7 @@ export const WithStateInStory = () => {
             setXSourceId(undefined);
             setYSourceId(undefined);
           }}
+          translateWithId={jest.fn()}
         />
       </div>
     );
