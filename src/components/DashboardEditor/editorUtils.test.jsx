@@ -630,8 +630,8 @@ describe('editorUtils', () => {
       };
       const editDataItem = {
         dataSourceId: 'temp_last',
-        label: '{high} temps',
-        unit: 'degrees',
+        label: '{high} temps', // update the label
+        unit: 'degrees', // update the unit
         thresholds: [
           {
             dataSourceId: 'temp_last',
@@ -698,6 +698,79 @@ describe('editorUtils', () => {
       expect(newCard).toEqual(withoutThresholds);
     });
 
+    it('handleDataItemEdit for Image Card updates the correct hotspot', () => {
+      const mockImageCard = {
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temp',
+                    unit: '{unitVar}',
+                  },
+                ],
+              },
+            },
+            {
+              title: 'hotspot2',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'pressure',
+                    label: 'pressure',
+                    unit: 'psi',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      };
+      const editDataItem = {
+        dataSourceId: 'pressure',
+        label: 'Pressure', // This is the change the user is making
+        unit: 'psi',
+      };
+      // Notice we're updating the second hotspot!
+      const newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 1);
+
+      // Only the second hotspot should be updated with a new label
+      expect(newCard).toEqual({
+        type: CARD_TYPES.IMAGE,
+        content: {
+          hotspots: [
+            {
+              title: 'elevators',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'temp_last',
+                    label: '{high} temp',
+                    unit: '{unitVar}',
+                  },
+                ],
+              },
+            },
+            {
+              title: 'hotspot2',
+              content: {
+                attributes: [
+                  {
+                    dataSourceId: 'pressure',
+                    label: 'Pressure',
+                    unit: 'psi',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      });
+    });
     it('should correctly format the data in Timeseries', () => {
       const editDataItem = {
         dataSourceId: 'torque',
