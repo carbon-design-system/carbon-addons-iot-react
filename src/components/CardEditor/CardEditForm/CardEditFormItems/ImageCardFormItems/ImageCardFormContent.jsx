@@ -32,6 +32,7 @@ const propTypes = {
     image: PropTypes.string,
     close: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -58,6 +59,7 @@ const ImageCardFormItems = ({
   onChange,
   dataItems,
   availableDimensions,
+  translateWithId,
 }) => {
   const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -90,6 +92,8 @@ const ImageCardFormItems = ({
           availableDimensions={availableDimensions}
           onSave={handleSaveHotspotEditor}
           onClose={handleCloseHotspotEditor}
+          translateWithId={translateWithId}
+          i18n={mergedI18n}
           // TODO go get the hotspots from the real data layer
           onFetchDynamicHotspots={() => Promise.resolve([{ x: 10, y: 10 }])}
         />

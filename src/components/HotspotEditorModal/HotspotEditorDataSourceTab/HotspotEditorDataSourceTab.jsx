@@ -45,6 +45,7 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /* callback when image input value changes */
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
@@ -100,6 +101,7 @@ const HotspotEditorDataSourceTab = ({
   onChange,
   availableDimensions,
   testID,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -155,6 +157,7 @@ const HotspotEditorDataSourceTab = ({
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}
+          translateWithId={translateWithId}
         />
       </div>
       <List

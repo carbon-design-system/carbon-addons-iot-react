@@ -141,6 +141,7 @@ const CardEditFormContent = ({
           onChange={onChange}
           dataItems={dataItems}
           availableDimensions={availableDimensions}
+          translateWithId={handleTranslation}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
