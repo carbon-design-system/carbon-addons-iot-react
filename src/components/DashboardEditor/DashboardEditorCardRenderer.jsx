@@ -141,7 +141,7 @@ const renderImageCard = (props) => (
             ...iconProps,
             title: 'Warning',
           });
-          // otherwise default to Warning24
+      // otherwise default to Warning24
       // eslint-disable-next-line react/prop-types
       return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
     }}
