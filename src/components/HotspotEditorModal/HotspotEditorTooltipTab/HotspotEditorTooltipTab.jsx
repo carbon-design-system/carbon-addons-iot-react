@@ -108,6 +108,10 @@ const getSelectedIconItem = (icon, hotspotIcons) => {
     : icon;
 };
 
+/**
+ * This component renders a form for editing the tooltip settings of an existing Hotspot.
+ * The title, description, icon and color of this tooltip foor this hotspot
+ */
 const HotspotEditorTooltipTab = ({
   hotspotIcons,
   hotspotIconFillColors,

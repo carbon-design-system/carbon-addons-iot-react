@@ -43,6 +43,9 @@ const defaultProps = {
   onChange: () => {},
 };
 
+/**
+ * This component renders a form for editing Text Hotspot contents
+ */
 const HotspotContent = ({
   title,
   i18n,
