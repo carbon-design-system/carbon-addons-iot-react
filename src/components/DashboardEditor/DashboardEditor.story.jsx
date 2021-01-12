@@ -839,6 +839,7 @@ export const I18N = () => (
         fontSizeInvalidText: 'fontSizeInvalidText',
         hotspotsText: 'hotspotsText',
         iconDropdownLabelText: 'iconDropdownLabelText',
+        iconDropdownTitleText: 'iconDropdownTitleText',
         italicLabelText: 'italicLabelText',
         labelsText: 'labelsText',
         loadingDynamicHotspotsText: 'loadingDynamicHotspotsText',
@@ -851,7 +852,7 @@ export const I18N = () => (
         titleInputPlaceholderText: 'titleInputPlaceholderText',
         tooManyHotspotsInfoText: 'tooManyHotspotsInfoText',
         underlineLabelText: 'underlineLabelText',
-
+        fixedTypeTooltipInfoText: 'fixedTypeTooltipInfoText',
         clearIconDescription: 'clearIconDescription',
         xCoordinateDropdownTitleText: 'xCoordinateDropdownTitleText',
         xCoordinateDropdownLabelText: 'xCoordinateDropdownLabelText',
@@ -861,7 +862,7 @@ export const I18N = () => (
         dataItemText: 'dataItemText',
         editText: 'editText',
         // Hotspot Text Style Tab fields
-        infoMessageText: 'infoMessageText',
+        textTypeStyleInfoText: 'textTypeStyleInfoText',
         fontColorLabelText: 'fontColorLabelText',
         fontSizeLabelText: 'fontSizeLabelText',
         borderWidthLabelText: 'borderWidthLabelText',
