@@ -1,1 +1,5 @@
-export { ProgressIndicatorSkeleton } from 'carbon-components-react';
+export {
+  ProgressIndicatorSkeleton,
+  ProgressIndicator as CarbonProgressIndicator,
+  ProgressStep as CarbonProgressStep,
+} from 'carbon-components-react';
