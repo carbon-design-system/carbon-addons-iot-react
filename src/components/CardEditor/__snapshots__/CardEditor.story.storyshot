@@ -607,23 +607,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Content
                   </a>
                 </li>
-                <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
-                >
-                  <a
-                    className="bx--tabs__nav-link"
-                    href="#"
-                    tabIndex={-1}
-                  >
-                    Settings
-                  </a>
-                </li>
               </ul>
             </div>
             <div
@@ -1082,13 +1065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 </div>
               </div>
             </div>
-            <div
-              aria-hidden={true}
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-            />
             <div
               className="iot--card-edit-form--footer"
             >
@@ -2933,23 +2909,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Content
                     </a>
                   </li>
-                  <li
-                    aria-controls="undefined__panel"
-                    aria-selected={false}
-                    className="bx--tabs__nav-item"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    role="tab"
-                    tabIndex={-1}
-                  >
-                    <a
-                      className="bx--tabs__nav-link"
-                      href="#"
-                      tabIndex={-1}
-                    >
-                      Settings
-                    </a>
-                  </li>
                 </ul>
               </div>
               <div
@@ -3262,13 +3221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
-              <div
-                aria-hidden={true}
-                className="bx--tab-content"
-                hidden={true}
-                role="tabpanel"
-                selected={false}
-              />
               <div
                 className="iot--card-edit-form--footer"
               >
