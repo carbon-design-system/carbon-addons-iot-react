@@ -306,7 +306,7 @@ describe('DashboardEditor', () => {
     fireEvent.click(smallBtn);
     // there should now be breakpoint text
     expect(
-      screen.getByText('Edit dashboard at small layout (480 - 672px)')
+      screen.getByText('Edit dashboard at small layout (481 - 672px)')
     ).toBeInTheDocument();
   });
 

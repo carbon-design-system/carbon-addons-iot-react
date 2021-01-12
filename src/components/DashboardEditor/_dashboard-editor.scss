@@ -77,15 +77,15 @@
       outline-offset: -2px;
     }
 
-    // add an extra 10 pixels to each so that DashboardGrid and detect the breakpoint
+    // add an extra 4 pixels for the 2px border plus 1 pixel to fully detect the breakpoint
     &__sm {
-      width: 490px;
+      width: 485px;
     }
     &__md {
-      width: 682px;
+      width: 677px;
     }
     &__lg {
-      width: 1066px;
+      width: 1061px;
     }
 
     &__breakpoint-info {
