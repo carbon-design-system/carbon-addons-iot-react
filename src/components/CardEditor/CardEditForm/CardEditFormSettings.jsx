@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
 
 import DataSeriesFormSettings from './CardEditFormItems/DataSeriesFormItems/DataSeriesFormSettings';
-import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
+// import ValueCardFormSettings from './CardEditFormItems/ValueCardFormItems/ValueCardFormSettings';
 import ImageCardFormSettings from './CardEditFormItems/ImageCardFormItems/ImageCardFormSettings';
 import BarChartCardFormSettings from './CardEditFormItems/BarChartCardFormItems/BarChartCardFormSettings';
 import TableCardFormSettings from './CardEditFormItems/TableCardFormItems/TableCardFormSettings';
@@ -90,14 +90,16 @@ const CardEditFormSettings = ({
 
   switch (type) {
     case CARD_TYPES.VALUE:
-      return (
-        <ValueCardFormSettings
-          cardConfig={cardConfig}
-          i18n={mergedI18n}
-          onChange={onChange}
-          translateWithId={handleTranslation}
-        />
-      );
+      // Hide value card form settings until font size option is functional
+      return null;
+    // return (
+    //   <ValueCardFormSettings
+    //     cardConfig={cardConfig}
+    //     i18n={mergedI18n}
+    //     onChange={onChange}
+    //     translateWithId={handleTranslation}
+    //   />
+    // );
     case CARD_TYPES.TIMESERIES:
       return (
         <DataSeriesFormSettings
