@@ -7,6 +7,7 @@ import omit from 'lodash/omit';
 import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
 import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
+import ContentFormItemTitle from '../ContentFormItemTitle';
 
 const { iotPrefix, prefix } = settings;
 
@@ -31,6 +32,11 @@ const propTypes = {
     editImage: PropTypes.string,
     image: PropTypes.string,
     close: PropTypes.string,
+    dataItemEditorSectionImageTooltipText: PropTypes.string,
+  }),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    image: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
   /** an array of dataItems to be included on each card */
@@ -51,7 +57,10 @@ const defaultProps = {
     editImage: 'Edit image',
     image: 'Image',
     close: 'Close',
+    dataItemEditorSectionImageTooltipText:
+      'Add tooltips to hotspots on the image. Show metric or dimension values on the tooltips.',
   },
+  dataSeriesItemLinks: null,
   dataItems: [],
   availableDimensions: {},
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50 }]),
@@ -61,6 +70,7 @@ const ImageCardFormItems = ({
   cardConfig,
   i18n,
   onChange,
+  dataSeriesItemLinks,
   dataItems,
   availableDimensions,
   translateWithId,
@@ -102,10 +112,18 @@ const ImageCardFormItems = ({
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         />
       ) : null}
-      <div
-        className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>
-        {mergedI18n.image}
-      </div>
+      <ContentFormItemTitle
+        title={mergedI18n.image}
+        tooltip={{
+          tooltipText: mergedI18n.dataItemEditorSectionImageTooltipText,
+          ...(dataSeriesItemLinks?.image
+            ? {
+                linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.image,
+              }
+            : {}),
+        }}
+      />
       <div className={`${baseClassName}--form-section-image--input`}>
         <label
           id={`${mergedI18n.imageFile}-label`}

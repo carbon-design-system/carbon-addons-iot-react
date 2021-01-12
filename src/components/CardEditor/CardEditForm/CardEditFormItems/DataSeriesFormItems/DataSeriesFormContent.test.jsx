@@ -2,8 +2,14 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import {
+  CARD_TYPES,
+  BAR_CHART_TYPES,
+} from '../../../../../constants/LayoutConstants';
+
 import DataSeriesFormItem, {
   formatDataItemsForDropdown,
+  defineCardSpecificTooltip,
 } from './DataSeriesFormContent';
 
 const cardConfig = {
@@ -217,6 +223,108 @@ describe('DataSeriesFormItem', () => {
 
       const editDataItemModal = screen.getByText('Data item');
       expect(editDataItemModal).toBeInTheDocument();
+    });
+  });
+  describe('defineCardSpecificTooltip', () => {
+    const i18n = {
+      dataItemEditorSectionSimpleBarTooltipText:
+        'Display a metric using bars. Plot over time or by a dimension from Group by.',
+      dataItemEditorSectionGroupedBarTooltipText:
+        'Group categories side by side in bars. Show groupings of related metrics or different categories of a single metric.',
+      dataItemEditorSectionStackedBarTooltipText:
+        'Stack bars by categories of a single dimension or into multiple related metrics.',
+      dataItemEditorSectionTimeSeriesTooltipText:
+        'Plot time series metrics over time.',
+      dataItemEditorSectionValueTooltipText:
+        'Display metric values, dimension values, or alert counts. Select from Data item. ',
+      dataItemEditorSectionCustomTooltipText:
+        'Show or hide alert fields. Choose dimensions to add as extra columns. ',
+    };
+    const dataSeriesItemLinks = {
+      simpleBar: 'simplebar.com',
+      groupedBar: 'groupedbar.com',
+      stackedBar: 'stackedbar.com',
+      timeSeries: 'timeseries.com',
+      value: 'value.com',
+      custom: 'custom.com',
+    };
+    it('should return simple bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.SIMPLE } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionSimpleBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.simpleBar,
+      });
+    });
+    it('should return grouped bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.GROUPED } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionGroupedBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.groupedBar,
+      });
+    });
+    it('should return stacked bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.STACKED } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionStackedBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.stackedBar,
+      });
+    });
+    it('should return timeseries tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.TIMESERIES },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionTimeSeriesTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.timeSeries,
+      });
+    });
+    it('should return value tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.VALUE },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionValueTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.value,
+      });
+    });
+    it('should return custom tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.CUSTOM },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionCustomTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.custom,
+      });
     });
   });
   describe('dataItem editor', () => {
