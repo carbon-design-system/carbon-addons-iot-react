@@ -12,7 +12,9 @@ import {
   CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import { DashboardGrid, CardEditor, ErrorBoundary } from '../../index';
-import ImageGalleryModal, { ImagePropTypes } from '../ImageGalleryModal/ImageGalleryModal';
+import ImageGalleryModal, {
+  ImagePropTypes,
+} from '../ImageGalleryModal/ImageGalleryModal';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import DashboardEditorCardRenderer from './DashboardEditorCardRenderer';
@@ -407,7 +409,9 @@ const DashboardEditor = ({
   const duplicateCard = useCallback((id) => {
     // eslint-disable-next-line no-shadow
     setDashboardJson((dashboardJson) => {
-      const cardConfig = getDuplicateCard(dashboardJson.cards.find((i) => i.id === id));
+      const cardConfig = getDuplicateCard(
+        dashboardJson.cards.find((i) => i.id === id)
+      );
       return {
         ...dashboardJson,
         cards: [...dashboardJson.cards, cardConfig],
@@ -433,7 +437,10 @@ const DashboardEditor = ({
   const handleOnCardChange = useCallback(
     (cardConfig) => {
       // need to handle resetting the src of the image for image cards based on the id
-      if (cardConfig.type === CARD_TYPES.IMAGE && cardConfig.content.imgState !== 'new') {
+      if (
+        cardConfig.type === CARD_TYPES.IMAGE &&
+        cardConfig.content.imgState !== 'new'
+      ) {
         // eslint-disable-next-line no-param-reassign
         cardConfig.content.src = availableImages.find(
           (image) => image.id === cardConfig.content.id
@@ -469,7 +476,9 @@ const DashboardEditor = ({
   const handleShowImageGallery = () => setIsImageGalleryModalOpen(true);
 
   const handleImageSelection = (selectedImage) => {
-    let cardConfig = dashboardJson.cards.find((card) => card.id === selectedCardId);
+    let cardConfig = dashboardJson.cards.find(
+      (card) => card.id === selectedCardId
+    );
     // Update the card with the new image information
     cardConfig = {
       ...cardConfig,
@@ -505,9 +514,17 @@ const DashboardEditor = ({
           ? handleShowImageGallery
           : undefined,
       validateUploadedImage:
-        cardConfig.type === CARD_TYPES.IMAGE ? onValidateUploadedImage : undefined,
+        cardConfig.type === CARD_TYPES.IMAGE
+          ? onValidateUploadedImage
+          : undefined,
     }),
-    [duplicateCard, handleOnCardChange, mergedI18n, onValidateUploadedImage, removeCard]
+    [
+      duplicateCard,
+      handleOnCardChange,
+      mergedI18n,
+      onValidateUploadedImage,
+      removeCard,
+    ]
   );
 
   const cards = useMemo(
@@ -515,7 +532,9 @@ const DashboardEditor = ({
       dashboardJson?.cards?.map((cardConfig) => {
         const isSelected = cardConfig.id === selectedCardId;
         const cardProps = commonCardProps(cardConfig, isSelected);
-        const dataItemsForCard = getValidDataItems ? getValidDataItems(cardConfig) : dataItems;
+        const dataItemsForCard = getValidDataItems
+          ? getValidDataItems(cardConfig)
+          : dataItems;
         // if renderCardPreview function not defined, or it returns null, render default preview
         return (
           renderCardPreview(
@@ -559,9 +578,9 @@ const DashboardEditor = ({
       <div
         className={classnames(`${baseClassName}--content`, {
           // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-          [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-        })}
-      >
+          [`${baseClassName}__overflow`]:
+            selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+        })}>
         {renderHeader ? (
           renderHeader()
         ) : (
@@ -587,18 +606,20 @@ const DashboardEditor = ({
         <div
           className={classnames(`${baseClassName}--preview`, {
             // enables overflow: auto if a specific breakpoint is selected so the width can be managed
-            [`${baseClassName}__overflow`]: selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-          })}
-        >
+            [`${baseClassName}__overflow`]:
+              selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+          })}>
           <div
             className={classnames({
               [`${baseClassName}--preview__outline`]:
                 selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
-              [`${baseClassName}--preview__sm`]: selectedBreakpointIndex === LAYOUTS.SMALL.index,
-              [`${baseClassName}--preview__md`]: selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
-              [`${baseClassName}--preview__lg`]: selectedBreakpointIndex === LAYOUTS.LARGE.index,
-            })}
-          >
+              [`${baseClassName}--preview__sm`]:
+                selectedBreakpointIndex === LAYOUTS.SMALL.index,
+              [`${baseClassName}--preview__md`]:
+                selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
+              [`${baseClassName}--preview__lg`]:
+                selectedBreakpointIndex === LAYOUTS.LARGE.index,
+            })}>
             {breakpointSwitcher?.enabled &&
               // only show breakpoint info if fit to screen is not selected
               selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index && (
@@ -615,8 +636,7 @@ const DashboardEditor = ({
                     kind="error"
                     lowContrast
                   />
-                }
-              >
+                }>
                 <ImageGalleryModal
                   open={isImageGalleryModalOpen}
                   content={availableImages}
@@ -628,9 +648,15 @@ const DashboardEditor = ({
                   listButtonText={i18n.imageGalleryListButtonText}
                   modalLabelText={i18n.imageGalleryModalLabelText}
                   modalTitleText={i18n.imageGalleryModalTitleText}
-                  modalPrimaryButtonLabelText={i18n.imageGalleryModalPrimaryButtonLabelText}
-                  modalSecondaryButtonLabelText={i18n.imageGalleryModalSecondaryButtonLabelText}
-                  modalCloseIconDescriptionText={i18n.imageGalleryModalCloseIconDescriptionText}
+                  modalPrimaryButtonLabelText={
+                    i18n.imageGalleryModalPrimaryButtonLabelText
+                  }
+                  modalSecondaryButtonLabelText={
+                    i18n.imageGalleryModalSecondaryButtonLabelText
+                  }
+                  modalCloseIconDescriptionText={
+                    i18n.imageGalleryModalCloseIconDescriptionText
+                  }
                   searchPlaceHolderText={i18n.imageGallerySearchPlaceHolderText}
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
@@ -652,8 +678,7 @@ const DashboardEditor = ({
                       layouts: newLayouts,
                     });
                   }}
-                  supportedLayouts={['lg', 'md', 'sm']}
-                >
+                  supportedLayouts={['lg', 'md', 'sm']}>
                   {cards}
                 </DashboardGrid>
               </ErrorBoundary>
@@ -670,10 +695,11 @@ const DashboardEditor = ({
               kind="error"
               lowContrast
             />
-          }
-        >
+          }>
           <CardEditor
-            cardConfig={dashboardJson.cards.find((card) => card.id === selectedCardId)}
+            cardConfig={dashboardJson.cards.find(
+              (card) => card.id === selectedCardId
+            )}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}

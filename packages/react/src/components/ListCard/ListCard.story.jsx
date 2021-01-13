@@ -99,8 +99,7 @@ class ListCardSimple extends Component {
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}
-      >
+        }}>
         <ListCard
           {...this.props}
           data={data}
@@ -135,8 +134,7 @@ class ListCardExtraContent extends Component {
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}
-      >
+        }}>
         <ListCard
           {...this.props}
           data={[
@@ -147,9 +145,10 @@ class ListCardExtraContent extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
               extraContent: (
                 <span>
-                  View your device data in the entity view of the main Watson IoT Platform
-                  dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored
-                  in the data lake for later retrieval and processing.
+                  View your device data in the entity view of the main Watson
+                  IoT Platform dashboard. If your plan includes Watson IoT
+                  Platform Analytics, the data is stored in the data lake for
+                  later retrieval and processing.
                 </span>
               ),
             },
@@ -160,8 +159,8 @@ class ListCardExtraContent extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
               extraContent: (
                 <span>
-                  Process your entity metrics by running simple or complex calculations to create
-                  calculated metrics.
+                  Process your entity metrics by running simple or complex
+                  calculations to create calculated metrics.
                 </span>
               ),
             },
@@ -172,8 +171,8 @@ class ListCardExtraContent extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
               extraContent: (
                 <span>
-                  Visualize your entity metrics in monitoring dashboards to get an overview of your
-                  data.
+                  Visualize your entity metrics in monitoring dashboards to get
+                  an overview of your data.
                 </span>
               ),
             },
@@ -206,8 +205,7 @@ class ListCardExtraContentLong extends Component {
         style={{
           width: `${getCardMinSize('lg', size).x}px`,
           margin: spacing06,
-        }}
-      >
+        }}>
         <ListCard
           {...this.props}
           data={[
@@ -218,14 +216,16 @@ class ListCardExtraContentLong extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
               extraContent: (
                 <span>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid cumque in quam
-                  qui ut vero facilis autem. Laudantium enim accusantium facere nemo aspernatur
-                  repudiandae at, incidunt adipisci consequuntur ut, non, sint delectus labore id
-                  quaerat debitis quia veritatis autem aliquid voluptates? Quam perspiciatis aperiam
-                  perferendis incidunt rerum magni ratione iusto porro natus cumque omnis velit
-                  dolores, ipsa veniam! Maiores libero quam nam fugiat, voluptatum fuga ex
-                  architecto, enim similique quod, voluptates qui voluptas blanditiis tempora dolor
-                  assumenda quos numquam temporibus.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Aliquid cumque in quam qui ut vero facilis autem. Laudantium
+                  enim accusantium facere nemo aspernatur repudiandae at,
+                  incidunt adipisci consequuntur ut, non, sint delectus labore
+                  id quaerat debitis quia veritatis autem aliquid voluptates?
+                  Quam perspiciatis aperiam perferendis incidunt rerum magni
+                  ratione iusto porro natus cumque omnis velit dolores, ipsa
+                  veniam! Maiores libero quam nam fugiat, voluptatum fuga ex
+                  architecto, enim similique quod, voluptates qui voluptas
+                  blanditiis tempora dolor assumenda quos numquam temporibus.
                 </span>
               ),
             },
@@ -236,19 +236,23 @@ class ListCardExtraContentLong extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
               extraContent: (
                 <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id nulla porro
-                  temporibus excepturi cupiditate rem voluptatibus aspernatur minima quasi autem
-                  labore, quaerat facilis perferendis quas iste quae, voluptatem, possimus dicta
-                  fugit. Voluptatem similique odio necessitatibus delectus non itaque fugiat, saepe
-                  consectetur impedit, harum cupiditate velit repellendus assumenda, vel quasi
-                  eveniet at vero voluptate asperiores maxime quas. Error, nemo, nobis recusandae
-                  totam quod provident pariatur ipsum exercitationem nihil, doloremque consequuntur.
-                  Possimus assumenda odit nesciunt veritatis, maxime quae. Hic unde quasi quas
-                  recusandae obcaecati repellendus officia aperiam sunt, aut, minus quod vero
-                  provident, velit blanditiis necessitatibus laudantium nihil tempore nostrum
-                  impedit porro enim. Enim ipsam quasi iure perferendis repellat saepe vero,
-                  voluptate tenetur consequatur necessitatibus excepturi accusamus asperiores nam
-                  hic sapiente!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Delectus id nulla porro temporibus excepturi cupiditate rem
+                  voluptatibus aspernatur minima quasi autem labore, quaerat
+                  facilis perferendis quas iste quae, voluptatem, possimus dicta
+                  fugit. Voluptatem similique odio necessitatibus delectus non
+                  itaque fugiat, saepe consectetur impedit, harum cupiditate
+                  velit repellendus assumenda, vel quasi eveniet at vero
+                  voluptate asperiores maxime quas. Error, nemo, nobis
+                  recusandae totam quod provident pariatur ipsum exercitationem
+                  nihil, doloremque consequuntur. Possimus assumenda odit
+                  nesciunt veritatis, maxime quae. Hic unde quasi quas
+                  recusandae obcaecati repellendus officia aperiam sunt, aut,
+                  minus quod vero provident, velit blanditiis necessitatibus
+                  laudantium nihil tempore nostrum impedit porro enim. Enim
+                  ipsam quasi iure perferendis repellat saepe vero, voluptate
+                  tenetur consequatur necessitatibus excepturi accusamus
+                  asperiores nam hic sapiente!
                 </span>
               ),
             },
@@ -259,8 +263,8 @@ class ListCardExtraContentLong extends Component {
                 'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
               extraContent: (
                 <span>
-                  Visualize your entity metrics in monitoring dashboards to get an overview of your
-                  data.
+                  Visualize your entity metrics in monitoring dashboards to get
+                  an overview of your data.
                 </span>
               ),
             },
@@ -285,7 +289,13 @@ export default {
 export const Basic = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
 
-  return <ListCardSimple id="ListCard" title={text('Text', 'Simple List with Icon')} size={size} />;
+  return (
+    <ListCardSimple
+      id="ListCard"
+      title={text('Text', 'Simple List with Icon')}
+      size={size}
+    />
+  );
 };
 
 Basic.story = {

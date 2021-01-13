@@ -79,7 +79,13 @@ describe('ImageGalleryModal', () => {
 
   it('can filter on value of searchProperty', () => {
     const content = getTestContent();
-    render(<ImageGalleryModal searchProperty="title" content={content} {...getActions()} />);
+    render(
+      <ImageGalleryModal
+        searchProperty="title"
+        content={content}
+        {...getActions()}
+      />
+    );
     expect(screen.getByAltText(content[0].alt)).toBeVisible();
     expect(screen.getByAltText(content[1].alt)).toBeVisible();
     expect(screen.getByAltText(content[2].alt)).toBeVisible();
@@ -91,7 +97,13 @@ describe('ImageGalleryModal', () => {
   });
 
   it('handles cutom default view mode', () => {
-    render(<ImageGalleryModal defaultView="list" content={getTestContent()} {...getActions()} />);
+    render(
+      <ImageGalleryModal
+        defaultView="list"
+        content={getTestContent()}
+        {...getActions()}
+      />
+    );
     const listButton = screen.getByText('List').parentElement;
     expect(listButton).not.toHaveClass(unselectedClass);
   });
@@ -102,17 +114,29 @@ describe('ImageGalleryModal', () => {
 
     const listButton = screen.getByText('List').parentElement;
     expect(listButton).toHaveClass(unselectedClass);
-    expect(screen.getByText('image-b').closest('label')).not.toHaveClass(wideTileClass);
+    expect(screen.getByText('image-b').closest('label')).not.toHaveClass(
+      wideTileClass
+    );
 
     userEvent.click(listButton);
-    expect(screen.getByText('List').parentElement).not.toHaveClass(unselectedClass);
-    expect(screen.getByText('image-b').closest('label')).toHaveClass(wideTileClass);
+    expect(screen.getByText('List').parentElement).not.toHaveClass(
+      unselectedClass
+    );
+    expect(screen.getByText('image-b').closest('label')).toHaveClass(
+      wideTileClass
+    );
   });
 
   it('adds selected image to onSubmit callback', () => {
     const content = getTestContent();
     const onSubmit = jest.fn();
-    render(<ImageGalleryModal content={content} onSubmit={onSubmit} onClose={() => {}} />);
+    render(
+      <ImageGalleryModal
+        content={content}
+        onSubmit={onSubmit}
+        onClose={() => {}}
+      />
+    );
     const imageElement = screen.getByAltText(content[0].alt);
     const submitButton = screen.getByRole('button', { name: 'Select' });
     userEvent.click(imageElement);
@@ -124,7 +148,13 @@ describe('ImageGalleryModal', () => {
   it('disables select (sumit) button when no image is selected', () => {
     const content = getTestContent();
     const onSubmit = jest.fn();
-    render(<ImageGalleryModal content={content} onSubmit={onSubmit} onClose={() => {}} />);
+    render(
+      <ImageGalleryModal
+        content={content}
+        onSubmit={onSubmit}
+        onClose={() => {}}
+      />
+    );
 
     userEvent.click(screen.getByRole('button', { name: 'Select' }));
     expect(onSubmit).not.toHaveBeenCalled();

@@ -32,7 +32,12 @@ afterEach(() => {
 });
 describe('Value form fields', () => {
   it('should update JSON for the font size', () => {
-    render(<ValueCardFormSettings cardConfig={valueCardConfig} onChange={mockOnChange} />);
+    render(
+      <ValueCardFormSettings
+        cardConfig={valueCardConfig}
+        onChange={mockOnChange}
+      />
+    );
     const fontSizeInput = screen.getByDisplayValue('16');
     expect(fontSizeInput).toBeInTheDocument();
 
@@ -62,7 +67,12 @@ describe('Value form fields', () => {
     });
   });
   it('should validate input for the invalid font size', () => {
-    render(<ValueCardFormSettings cardConfig={valueCardConfig} onChange={mockOnChange} />);
+    render(
+      <ValueCardFormSettings
+        cardConfig={valueCardConfig}
+        onChange={mockOnChange}
+      />
+    );
     const fontSizeInput = screen.getByDisplayValue('16');
     expect(fontSizeInput).toBeInTheDocument();
 

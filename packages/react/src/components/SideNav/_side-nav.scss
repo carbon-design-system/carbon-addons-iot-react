@@ -32,7 +32,8 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--side-nav__submenu:hover,
   .#{$prefix}--side-nav__submenu:hover + .#{$prefix}--side-nav__menu,
   [aria-expanded='true'].#{$prefix}--side-nav__submenu,
-  [aria-expanded='true'].#{$prefix}--side-nav__submenu + .#{$prefix}--side-nav__menu,
+  [aria-expanded='true'].#{$prefix}--side-nav__submenu
+    + .#{$prefix}--side-nav__menu,
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
     background-color: $hoverBgColor;
@@ -54,7 +55,8 @@ $hoverBgColor: #2c2c2c;
     color: $textColor;
   }
 
-  .#{$prefix}--side-nav__item--active .#{$prefix}--side-nav__submenu[aria-expanded='false'] {
+  .#{$prefix}--side-nav__item--active
+    .#{$prefix}--side-nav__submenu[aria-expanded='false'] {
     background-color: $selectedBgColor;
     color: $textColor;
   }

@@ -66,8 +66,11 @@ describe('ResourceList', () => {
         extraContent={resourceData.map((i) => i.id)}
       />
     );
-    expect(wrapper.find('div.bx--structured-list-td').first().contains(resourceData[0].id)).toEqual(
-      true
-    );
+    expect(
+      wrapper
+        .find('div.bx--structured-list-td')
+        .first()
+        .contains(resourceData[0].id)
+    ).toEqual(true);
   });
 });

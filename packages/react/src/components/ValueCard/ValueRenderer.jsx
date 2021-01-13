@@ -49,7 +49,8 @@ const defaultProps = {
 const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
-  ${(props) => (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
+  ${(props) =>
+    (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
   ${(props) => props.color && `color: ${props.color}`};
   display: flex;
   ${(props) => props.isMini && 'align-items: center;'}
@@ -71,7 +72,8 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
 
 /** Renders the actual attribute value */
 const AttributeValue = styled.span`
-  line-height: ${(props) => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
+  line-height: ${(props) =>
+    props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem'};
   font-size: ${(props) => `${determineFontSize(props)}rem`};
   padding-bottom: ${spacing02};
   font-weight: ${(props) => (props.isMini ? 'normal' : 'lighter')};
@@ -129,7 +131,9 @@ const ValueRenderer = ({
     typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
   const hasWords = hasWordsCheck(renderValue);
 
-  renderValue = isNil(customFormatter) ? renderValue : customFormatter(renderValue, value);
+  renderValue = isNil(customFormatter)
+    ? renderValue
+    : customFormatter(renderValue, value);
 
   return (
     <Attribute
@@ -142,8 +146,7 @@ const ValueRenderer = ({
       className={classnames({
         [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
         [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
-      })}
-    >
+      })}>
       <AttributeValue
         size={newSize}
         title={`${value} ${unit || ''}`}
@@ -152,8 +155,7 @@ const ValueRenderer = ({
         isMini={isMini}
         value={value}
         allowedToWrap={allowedToWrap}
-        hasWords={hasWords}
-      >
+        hasWords={hasWords}>
         {renderValue}
       </AttributeValue>
     </Attribute>

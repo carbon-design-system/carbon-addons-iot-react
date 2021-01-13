@@ -63,7 +63,11 @@ describe('utility functions', () => {
     const mockColors = {
       'cat A': 'purple',
     };
-    const formattedColors = formatColors(chartDataExample, 'category', mockColors);
+    const formattedColors = formatColors(
+      chartDataExample,
+      'category',
+      mockColors
+    );
     expect(formattedColors.scale['cat A']).toEqual('purple');
     expect(formattedColors.scale['cat B']).toEqual('#1192e8');
   });
@@ -71,7 +75,11 @@ describe('utility functions', () => {
     const mockColors = {
       'cat A': 'purple',
     };
-    const formattedColors = formatColors({ 'cat A': 124, 'cat B': 125 }, undefined, mockColors);
+    const formattedColors = formatColors(
+      { 'cat A': 124, 'cat B': 125 },
+      undefined,
+      mockColors
+    );
     expect(formattedColors.scale['cat A']).toEqual('purple');
     expect(formattedColors.scale['cat B']).toEqual('#1192e8');
   });
@@ -80,7 +88,9 @@ describe('utility functions', () => {
 describe('PieChartCard', () => {
   it('shows loading skeleton for isLoading even for empty data  ', () => {
     const loadingSkeletonQuery = '.iot--pie-chart-container svg.chart-skeleton';
-    const { container, rerender } = render(<PieChartCard {...pieChartCardProps} />);
+    const { container, rerender } = render(
+      <PieChartCard {...pieChartCardProps} />
+    );
     let svgLoadingIcon = container.querySelector(loadingSkeletonQuery);
     expect(svgLoadingIcon).toBeFalsy();
 
@@ -99,7 +109,13 @@ describe('PieChartCard', () => {
 
   it('shows empty data message when there are no values', () => {
     const noDataMsg = 'No data for this card';
-    render(<PieChartCard {...pieChartCardProps} i18n={{ noDataLabel: noDataMsg }} values={[]} />);
+    render(
+      <PieChartCard
+        {...pieChartCardProps}
+        i18n={{ noDataLabel: noDataMsg }}
+        values={[]}
+      />
+    );
     expect(screen.queryByText(noDataMsg)).toBeVisible();
   });
 
@@ -111,11 +127,20 @@ describe('PieChartCard', () => {
   it('shows uses labels based on groupDataSourceId', () => {
     const groupBasedLabelExample = 'Misc';
     const categoryBasedLabelExample = 'cat A';
-    const { rerender } = render(<PieChartCard {...pieChartCardProps} groupDataSourceId="group" />);
+    const { rerender } = render(
+      <PieChartCard {...pieChartCardProps} groupDataSourceId="group" />
+    );
     expect(screen.getByText(groupBasedLabelExample)).toBeVisible();
-    expect(screen.queryByText(categoryBasedLabelExample)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(categoryBasedLabelExample)
+    ).not.toBeInTheDocument();
 
-    rerender(<PieChartCard {...pieChartCardProps} content={{ groupDataSourceId: 'category' }} />);
+    rerender(
+      <PieChartCard
+        {...pieChartCardProps}
+        content={{ groupDataSourceId: 'category' }}
+      />
+    );
     expect(screen.getByText(categoryBasedLabelExample)).toBeVisible();
     expect(screen.queryByText(groupBasedLabelExample)).toBeFalsy();
   });
@@ -153,13 +178,17 @@ describe('PieChartCard', () => {
       />
     );
 
-    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
+    const slices = screen
+      .getAllByRole('group')[0]
+      .getElementsByClassName('slice');
     const orderedColors = chartDataExample
       .sort((a, b) => b.value - a.value)
       .map((data) => colorsMap[data.category]);
 
     for (let index = 0; index < orderedColors.length; index += 1) {
-      expect(slices.item(index).getAttribute('fill')).toEqual(orderedColors[index]);
+      expect(slices.item(index).getAttribute('fill')).toEqual(
+        orderedColors[index]
+      );
     }
   });
 
@@ -203,7 +232,9 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 0')).toBeVisible();
     expect(screen.getByText('Sample 1')).toBeVisible();
 
-    const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
+    const slices = screen
+      .getAllByRole('group')[0]
+      .getElementsByClassName('slice');
     const firstSliceColor = slices.item(0).getAttribute('fill');
     const secondSliceColor = slices.item(1).getAttribute('fill');
 

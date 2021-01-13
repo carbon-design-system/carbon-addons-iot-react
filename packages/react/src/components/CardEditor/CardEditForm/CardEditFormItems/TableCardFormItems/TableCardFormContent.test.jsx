@@ -1,7 +1,10 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  CARD_TYPES,
+} from '../../../../../constants/LayoutConstants';
 
 import TableCardFormContent from './TableCardFormContent';
 
@@ -149,7 +152,11 @@ describe('TableCardFormContent', () => {
       },
     };
     render(
-      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+      />
     );
     // All of the existing columns should be rendered in the data section
     expect(screen.queryByText('Temperature')).toBeDefined();

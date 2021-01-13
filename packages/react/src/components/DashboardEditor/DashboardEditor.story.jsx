@@ -1,6 +1,12 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  boolean,
+  text,
+  object,
+  array,
+} from '@storybook/addon-knobs';
 
 import { Card, Link, InlineNotification } from '../../index';
 import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
@@ -544,11 +550,10 @@ export const CustomCardPreviewRenderer = () => (
             size={cardConfig.size}
             title={cardConfig.title}
             isEditable
-            {...cardProps}
-          >
+            {...cardProps}>
             <div style={{ padding: '1rem' }}>
-              This content is rendered by the renderCardPreview function. The &quot;value&quot;
-              property on the card will be rendered here:
+              This content is rendered by the renderCardPreview function. The
+              &quot;value&quot; property on the card will be rendered here:
               <h3>{cardConfig.value}</h3>
             </div>
           </Card>
@@ -723,7 +728,8 @@ export const I18N = () => (
         dataItemEditorDataItemUnit: 'dataItemEditorDataItemUnit',
         dataItemEditorDataItemFilter: 'dataItemEditorDataItemFilter',
         dataItemEditorDataItemThresholds: 'dataItemEditorDataItemThresholds',
-        dataItemEditorDataItemAddThreshold: 'dataItemEditorDataItemAddThreshold',
+        dataItemEditorDataItemAddThreshold:
+          'dataItemEditorDataItemAddThreshold',
         dataItemEditorDataItemRemove: 'dataItemEditorDataItemRemove',
         dataItemEditorBarColor: 'dataItemEditorBarColor',
         dataItemEditorLineColor: 'dataItemEditorLineColor',
@@ -781,19 +787,25 @@ export const I18N = () => (
         urlInput: 'urlInput',
         fileTooLarge: 'fileTooLarge',
         wrongFileType: (accept) =>
-          `This file is not one of the accepted file types, ${accept.join(', ')}`,
+          `This file is not one of the accepted file types, ${accept.join(
+            ', '
+          )}`,
         // image gallery strings
         imageGalleryDeleteLabelText: 'imageGalleryDeleteLabelText',
         imageGalleryDeleteModalLabelText: 'imageGalleryDeleteModalLabelText',
-        imageGalleryDeleteModalTitleText: (image) => `imageGalleryDeleteModalTitleText: ${image}?`,
+        imageGalleryDeleteModalTitleText: (image) =>
+          `imageGalleryDeleteModalTitleText: ${image}?`,
         imageGalleryGridButtonText: 'imageGalleryGridButtonText',
         imageGalleryInstructionText: 'imageGalleryInstructionText',
         imageGalleryListButtonText: 'imageGalleryListButtonText',
         imageGalleryModalLabelText: 'imageGalleryModalLabelText',
         imageGalleryModalTitleText: 'imageGalleryModalTitleText',
-        imageGalleryModalPrimaryButtonLabelText: 'imageGalleryModalPrimaryButtonLabelText',
-        imageGalleryModalSecondaryButtonLabelText: 'imageGalleryModalSecondaryButtonLabelText',
-        imageGalleryModalCloseIconDescriptionText: 'imageGalleryModalCloseIconDescriptionText',
+        imageGalleryModalPrimaryButtonLabelText:
+          'imageGalleryModalPrimaryButtonLabelText',
+        imageGalleryModalSecondaryButtonLabelText:
+          'imageGalleryModalSecondaryButtonLabelText',
+        imageGalleryModalCloseIconDescriptionText:
+          'imageGalleryModalCloseIconDescriptionText',
         imageGallerySearchPlaceHolderText: 'imageGallerySearchPlaceHolderText',
 
         // table card settings
@@ -818,7 +830,8 @@ export const I18N = () => (
         deleteButtonIconDescriptionText: 'deleteButtonIconDescriptionText',
         deleteButtonLabelText: 'deleteButtonLabelText',
         descriptionTextareaLabelText: 'descriptionTextareaLabelText',
-        descriptionTextareaPlaceholderText: 'descriptionTextareaPlaceholderText',
+        descriptionTextareaPlaceholderText:
+          'descriptionTextareaPlaceholderText',
         fillOpacityInvalidText: 'fillOpacityInvalidText',
         fillOpacityLabelText: 'fillOpacityLabelText',
         fixedTypeDataSourceTabLabelText: 'fixedTypeDataSourceTabLabelText',

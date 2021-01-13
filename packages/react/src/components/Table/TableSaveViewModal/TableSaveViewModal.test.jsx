@@ -24,7 +24,12 @@ describe('TableSaveViewModal', () => {
 
   it('passes along all input data onSave callback', () => {
     render(
-      <TableSaveViewModal actions={actions} open testID="my-modal" viewDescription="My view text" />
+      <TableSaveViewModal
+        actions={actions}
+        open
+        testID="my-modal"
+        viewDescription="My view text"
+      />
     );
     fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
       target: { value: 'testval1' },
@@ -75,17 +80,28 @@ describe('TableSaveViewModal', () => {
   it('calls onClose on cancel and close-icon click', () => {
     render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
     fireEvent.click(screen.getByText(i18n.cancelButtonLabelText));
-    fireEvent.click(screen.getByRole('button', { name: i18n.closeIconDescription }));
+    fireEvent.click(
+      screen.getByRole('button', { name: i18n.closeIconDescription })
+    );
 
     expect(actions.onClose).toHaveBeenCalledTimes(2);
   });
 
   it('handles errors correctly', () => {
-    render(<TableSaveViewModal actions={actions} open testID="my-modal" error="my test error" />);
+    render(
+      <TableSaveViewModal
+        actions={actions}
+        open
+        testID="my-modal"
+        error="my test error"
+      />
+    );
     expect(screen.queryByText('my test error')).toBeInTheDocument();
     expect(actions.onClearError).not.toHaveBeenCalled();
 
-    fireEvent.click(screen.getByRole('button', { name: 'closes notification' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: 'closes notification' })
+    );
     expect(screen.queryByText('my test error')).not.toBeInTheDocument();
     expect(actions.onClearError).toHaveBeenCalled();
   });
@@ -102,26 +118,57 @@ describe('TableSaveViewModal', () => {
       cancelButtonLabelText: 'cancel-button-label-test',
     };
 
-    render(<TableSaveViewModal actions={actions} open testID="my-modal" i18n={i18nTest} />);
+    render(
+      <TableSaveViewModal
+        actions={actions}
+        open
+        testID="my-modal"
+        i18n={i18nTest}
+      />
+    );
 
     expect(screen.getByText(i18nTest.modalTitle)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.modalBodyText)).toBeInTheDocument();
-    expect(screen.getByLabelText(i18nTest.titleInputLabelText)).toBeInTheDocument();
-    expect(screen.getByLabelText(i18nTest.defaultCheckboxLabelText)).toBeInTheDocument();
-    expect(screen.getByLabelText(i18nTest.publicCheckboxLabelText)).toBeInTheDocument();
-    expect(screen.getByTitle(i18nTest.closeIconDescription)).toBeInTheDocument();
+    expect(
+      screen.getByLabelText(i18nTest.titleInputLabelText)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText(i18nTest.defaultCheckboxLabelText)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText(i18nTest.publicCheckboxLabelText)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTitle(i18nTest.closeIconDescription)
+    ).toBeInTheDocument();
     expect(screen.getByText(i18nTest.saveButtonLabelText)).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.cancelButtonLabelText)).toBeInTheDocument();
+    expect(
+      screen.getByText(i18nTest.cancelButtonLabelText)
+    ).toBeInTheDocument();
 
     const defaultI18n = TableSaveViewModal.defaultProps.i18n;
     expect(screen.queryByText(defaultI18n.modalTitle)).not.toBeInTheDocument();
-    expect(screen.queryByText(defaultI18n.modalBodyText)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(defaultI18n.titleInputLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(defaultI18n.defaultCheckboxLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(defaultI18n.publicCheckboxLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByTitle(defaultI18n.closeIconDescription)).not.toBeInTheDocument();
-    expect(screen.queryByText(defaultI18n.saveButtonLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByText(defaultI18n.cancelButtonLabelText)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(defaultI18n.modalBodyText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(defaultI18n.titleInputLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(defaultI18n.defaultCheckboxLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(defaultI18n.publicCheckboxLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByTitle(defaultI18n.closeIconDescription)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(defaultI18n.saveButtonLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(defaultI18n.cancelButtonLabelText)
+    ).not.toBeInTheDocument();
   });
 
   it('has disabled Save unless the view title input has gotten a value', () => {
@@ -159,16 +206,24 @@ describe('TableSaveViewModal', () => {
       return <TableSaveViewForm {...props} testID="custom-test-form" />;
     };
     const TestTitleInput = (props) => {
-      return <TextInput {...props} data-testid="custom-test-form-title-input" />;
+      return (
+        <TextInput {...props} data-testid="custom-test-form-title-input" />
+      );
     };
     const TestViewDescriptionContainer = (props) => {
-      return <p {...props} data-testid="custom-test-form-description-container" />;
+      return (
+        <p {...props} data-testid="custom-test-form-description-container" />
+      );
     };
     const TestDefaultCheckbox = (props) => {
-      return <Checkbox {...props} data-testid="custom-test-form-default-checkbox" />;
+      return (
+        <Checkbox {...props} data-testid="custom-test-form-default-checkbox" />
+      );
     };
     const TestPublicCheckbox = (props) => {
-      return <Checkbox {...props} data-testid="custom-test-form-public-checkbox" />;
+      return (
+        <Checkbox {...props} data-testid="custom-test-form-public-checkbox" />
+      );
     };
 
     render(
@@ -195,10 +250,18 @@ describe('TableSaveViewModal', () => {
     );
     expect(screen.getByTestId('custom-test-modal')).toBeInTheDocument();
     expect(screen.getByTestId('custom-test-form')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-title-input')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-description-container')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-title-input')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-description-container')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-default-checkbox')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-public-checkbox')
+    ).toBeInTheDocument();
   });
 
   it('can be customised with props overrides', () => {
@@ -234,14 +297,28 @@ describe('TableSaveViewModal', () => {
     );
     expect(screen.getByTestId('custom-test-modal')).toBeInTheDocument();
     expect(screen.getByTestId('custom-test-form')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-title-input')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-description-container')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
-    expect(screen.getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-title-input')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-description-container')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-default-checkbox')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('custom-test-form-public-checkbox')
+    ).toBeInTheDocument();
   });
 
   it('shows a description text', () => {
-    render(<TableSaveViewModal actions={actions} open viewDescription="test view description" />);
+    render(
+      <TableSaveViewModal
+        actions={actions}
+        open
+        viewDescription="test view description"
+      />
+    );
 
     expect(screen.getByText('test view description')).toBeInTheDocument();
   });
@@ -275,19 +352,41 @@ describe('TableSaveViewModal', () => {
     expect(screen.getByText(i18nTest.modalTitle)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.modalBodyText)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.titleInputLabelText)).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.defaultCheckboxLabelText)).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.publicCheckboxLabelText)).toBeInTheDocument();
-    expect(screen.getByLabelText(i18nTest.closeIconDescription)).toBeInTheDocument();
+    expect(
+      screen.getByText(i18nTest.defaultCheckboxLabelText)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(i18nTest.publicCheckboxLabelText)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText(i18nTest.closeIconDescription)
+    ).toBeInTheDocument();
     expect(screen.getByText(i18nTest.saveButtonLabelText)).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.cancelButtonLabelText)).toBeInTheDocument();
+    expect(
+      screen.getByText(i18nTest.cancelButtonLabelText)
+    ).toBeInTheDocument();
 
     expect(screen.queryByText(i18nDefault.modalTitle)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.modalBodyText)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.titleInputLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.defaultCheckboxLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.publicCheckboxLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.closeIconDescription)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.saveButtonLabelText)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.cancelButtonLabelText)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.modalBodyText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.titleInputLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.defaultCheckboxLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.publicCheckboxLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.closeIconDescription)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.saveButtonLabelText)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.cancelButtonLabelText)
+    ).not.toBeInTheDocument();
   });
 });

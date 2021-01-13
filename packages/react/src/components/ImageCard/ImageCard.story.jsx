@@ -63,8 +63,7 @@ export const Basic = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         id="image-hotspots"
@@ -110,8 +109,7 @@ export const CustomRenderIconByName = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         id="image-hotspots"
@@ -149,8 +147,7 @@ export const IsEditable = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         isEditable
@@ -176,8 +173,7 @@ export const HotspotsAreLoading = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         isLoading={boolean('isLoading', true)}
@@ -203,8 +199,7 @@ export const Error = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         isLoading={boolean('isLoading', true)}
@@ -231,8 +226,7 @@ export const ErrorLoadingImage = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         isLoading={boolean('isLoading', true)}
@@ -259,8 +253,7 @@ export const ValidationError = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}
-    >
+      }}>
       <ImageCard
         title={text('title', 'Image')}
         isEditable
@@ -270,7 +263,9 @@ export const ValidationError = () => {
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
-        validateUploadedImage={(image) => `This file is invalid: ${image?.name}`}
+        validateUploadedImage={(image) =>
+          `This file is invalid: ${image?.name}`
+        }
       />
     </div>
   );

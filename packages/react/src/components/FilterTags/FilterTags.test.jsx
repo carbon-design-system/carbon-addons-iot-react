@@ -35,8 +35,7 @@ describe('Filtertags', () => {
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -57,8 +56,7 @@ describe('Filtertags', () => {
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -76,8 +74,7 @@ describe('Filtertags', () => {
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -95,8 +92,7 @@ describe('Filtertags', () => {
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -114,8 +110,7 @@ describe('Filtertags', () => {
             filter
             type={tag.type}
             title="Clear Filter"
-            style={{ marginRight: '1rem' }}
-          >
+            style={{ marginRight: '1rem' }}>
             {tag.text}
           </Tag>
         ))}
@@ -139,8 +134,7 @@ describe('Filtertags', () => {
             type={tag.type}
             title="Clear Filter"
             style={{ marginRight: '1rem' }}
-            onClose={() => mockOnClose(tag.id)}
-          >
+            onClose={() => mockOnClose(tag.id)}>
             {tag.text}
           </Tag>
         ))}

@@ -9,8 +9,7 @@ function SvgEmptystate404Icon(props) {
           y1="56.704%"
           x2="34.436%"
           y2="36.281%"
-          id="emptystate-404-icon_svg__a"
-        >
+          id="emptystate-404-icon_svg__a">
           <stop stopColor="#5C5C5C" offset="0%" />
           <stop stopColor="#B2B2B2" offset="98%" />
         </linearGradient>
@@ -19,8 +18,7 @@ function SvgEmptystate404Icon(props) {
           y1="35.257%"
           x2="20.038%"
           y2="99.807%"
-          id="emptystate-404-icon_svg__b"
-        >
+          id="emptystate-404-icon_svg__b">
           <stop stopColor="#D4D4D4" offset="0%" />
           <stop stopColor="#757575" offset="100%" />
         </linearGradient>
@@ -29,8 +27,7 @@ function SvgEmptystate404Icon(props) {
           y1="88.863%"
           x2="58.465%"
           y2="81.744%"
-          id="emptystate-404-icon_svg__c"
-        >
+          id="emptystate-404-icon_svg__c">
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.37} offset="98%" />
         </linearGradient>
@@ -39,8 +36,7 @@ function SvgEmptystate404Icon(props) {
           y1="3308.565%"
           x2="-127.214%"
           y2="3313.015%"
-          id="emptystate-404-icon_svg__d"
-        >
+          id="emptystate-404-icon_svg__d">
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.37} offset="98%" />
         </linearGradient>
@@ -49,8 +45,7 @@ function SvgEmptystate404Icon(props) {
           y1="0%"
           x2="54.886%"
           y2="158.279%"
-          id="emptystate-404-icon_svg__e"
-        >
+          id="emptystate-404-icon_svg__e">
           <stop stopOpacity={0} offset="0%" />
           <stop stopOpacity={0.345} offset="47.927%" />
           <stop stopOpacity={0.37} offset="100%" />

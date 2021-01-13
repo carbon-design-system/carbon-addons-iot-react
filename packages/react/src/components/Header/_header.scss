@@ -73,8 +73,8 @@
   text-decoration: none;
   user-select: none;
   border: 2px solid #0000;
-  transition: background-color $duration--fast-02, border-color $duration--fast-02,
-    color $duration--fast-02;
+  transition: background-color $duration--fast-02,
+    border-color $duration--fast-02, color $duration--fast-02;
   justify-content: center;
   padding: 0;
   width: 100%;
@@ -112,8 +112,8 @@
   user-select: none;
   // Used for focus styles
   border: 2px solid transparent;
-  transition: background-color $duration--fast-02, border-color $duration--fast-02,
-    color $duration--fast-02;
+  transition: background-color $duration--fast-02,
+    border-color $duration--fast-02, color $duration--fast-02;
 }
 
 button.#{$prefix}--header__menu-item {

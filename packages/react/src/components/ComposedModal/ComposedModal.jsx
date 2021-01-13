@@ -178,24 +178,23 @@ class ComposedModal extends React.Component {
             [`${iotPrefix}--composed-modal--full-screen`]: isFullScreen,
           },
           `${iotPrefix}--composed-modal`
-        )}
-      >
+        )}>
         <ModalHeader
           label={label}
           title={title}
           closeModal={onClose}
           buttonOnClick={onClose}
-          iconDescription={iconDescription}
-        >
-          {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
+          iconDescription={iconDescription}>
+          {helpText ? (
+            <p className="bx--modal-content__text">{helpText}</p>
+          ) : null}
         </ModalHeader>
         {children ? (
           <ModalBody
             className={classnames({
               // Prevent double scrollbars
               [`${iotPrefix}--composed-modal__body--small-margin-bottom`]: error,
-            })}
-          >
+            })}>
             {children}
           </ModalBody>
         ) : null}
@@ -225,8 +224,7 @@ class ComposedModal extends React.Component {
                       (typeof sendingData === 'boolean' && sendingData) ||
                       typeof sendingData === 'string'
                     }
-                    onClick={onSubmit}
-                  >
+                    onClick={onSubmit}>
                     {(footer && footer.primaryButtonLabel) || 'Save'}
                   </Button>
                 ) : null}

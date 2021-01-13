@@ -8,7 +8,8 @@ import testApiData from './suiteHeaderData.fixture.js';
 // default route calculation logic
 export const calcRoutes = (domain, user, workspaces, applications) => {
   const workspaceId = Object.keys(user.workspaces)[0];
-  const getApplicationUrl = (appId) => user.workspaces[workspaceId].applications[appId].href;
+  const getApplicationUrl = (appId) =>
+    user.workspaces[workspaceId].applications[appId].href;
   const isAdmin = user.permissions.systemAdmin || user.permissions.userAdmin;
   const routeData = {
     profile: `https://home.${domain}/myaccount`,
@@ -32,8 +33,16 @@ export const calcRoutes = (domain, user, workspaces, applications) => {
   const appData = Object.keys(workspaceApplications)
     .filter((appId) => workspaceApplications[appId].role !== 'NO_ACCESS')
     .filter((appId) => applicationSyncStates[appId]?.sync?.state === 'SUCCESS')
-    .filter((appId) => (applications.find((i) => i.id === appId) || {}).category === 'application')
-    .sort((a, b) => appOrdering.findIndex((i) => i === a) - appOrdering.findIndex((i) => i === b))
+    .filter(
+      (appId) =>
+        (applications.find((i) => i.id === appId) || {}).category ===
+        'application'
+    )
+    .sort(
+      (a, b) =>
+        appOrdering.findIndex((i) => i === a) -
+        appOrdering.findIndex((i) => i === b)
+    )
     .map((appId) => ({
       id: appId,
       name:
@@ -61,33 +70,49 @@ export const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
     // so, we check if another survey prompt is due.
     if (
       surveyData.lastPromptTimestamp &&
-      moment(surveyData.lastPromptTimestamp).isAfter(surveyData.initialInteractionTimestamp)
+      moment(surveyData.lastPromptTimestamp).isAfter(
+        surveyData.initialInteractionTimestamp
+      )
     ) {
-      if (moment().diff(surveyData.lastPromptTimestamp, 'days') > surveyData.frequencyDays) {
+      if (
+        moment().diff(surveyData.lastPromptTimestamp, 'days') >
+        surveyData.frequencyDays
+      ) {
         return true;
       }
     }
     // No survey has been prompted yet, so we check if it is time for the first one.
     else if (
-      moment().diff(surveyData.initialInteractionTimestamp, 'days') > surveyData.delayIntervalDays
+      moment().diff(surveyData.initialInteractionTimestamp, 'days') >
+      surveyData.delayIntervalDays
     ) {
       return true;
     }
     return false;
   };
 
-  const surveyData = await apiFct('GET', `/users/${userId}/surveys/${surveyConfig.id}`);
+  const surveyData = await apiFct(
+    'GET',
+    `/users/${userId}/surveys/${surveyConfig.id}`
+  );
   if (surveyData) {
     // Survey data found, check it some config props need to be updated on the backend
     const updateObject = {};
     ['delayIntervalDays', 'frequencyDays', 'enabled'].forEach((surveyProp) => {
-      if (surveyConfig[surveyProp] && surveyConfig[surveyProp] !== surveyData[surveyProp]) {
+      if (
+        surveyConfig[surveyProp] &&
+        surveyConfig[surveyProp] !== surveyData[surveyProp]
+      ) {
         updateObject[surveyProp] = surveyConfig[surveyProp];
       }
     });
     // If at least one config prop is different than the one in the existing record, update it
     if (Object.keys(updateObject).length > 0) {
-      await apiFct('PUT', `/users/${userId}/surveys/${surveyConfig.id}`, updateObject);
+      await apiFct(
+        'PUT',
+        `/users/${userId}/surveys/${surveyConfig.id}`,
+        updateObject
+      );
     }
     // Based on survey data and current timestamp, make the proper time comparisons to check if it is time to show a survey
     showSurvey = isTimeForSurvey(surveyData);
@@ -113,14 +138,21 @@ export const calcSurveyStatus = async (userId, surveyConfig, apiFct) => {
 // default i18n calculation logic
 export const calcI18N = (i18nData) => ({
   ...i18nData,
-  surveyTitle: (solutionName) => i18nData.surveyTitle.replace('{solutionName}', solutionName),
+  surveyTitle: (solutionName) =>
+    i18nData.surveyTitle.replace('{solutionName}', solutionName),
   profileLogoutModalBody: (solutionName, userName) =>
     i18nData.profileLogoutModalBody
       .replace('{solutionName}', solutionName)
       .replace('{userName}', userName),
 });
 
-export const defaultFetchApi = async (method, url, body, headers, testResponse) =>
+export const defaultFetchApi = async (
+  method,
+  url,
+  body,
+  headers,
+  testResponse
+) =>
   testResponse ||
   fetch(url, {
     method,
@@ -151,7 +183,13 @@ const getSuiteHeaderData = async ({
   isTest = false,
 }) => {
   const api = (method, path, body, headers) =>
-    fetchApi(method, `${baseApiUrl}${path}`, body, headers, isTest ? testApiData[path] : null);
+    fetchApi(
+      method,
+      `${baseApiUrl}${path}`,
+      body,
+      headers,
+      isTest ? testApiData[path] : null
+    );
 
   const profileData = await api('GET', '/profile');
   const appsData = await api('GET', '/applications');
@@ -178,7 +216,14 @@ const getSuiteHeaderData = async ({
   const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
 
   // apps to open in a new window
-  const externalApps = ['eam', 'mroio', 'digitaltwin', 'apm', 'visualinspection', 'appconnect'];
+  const externalApps = [
+    'eam',
+    'mroio',
+    'digitaltwin',
+    'apm',
+    'visualinspection',
+    'appconnect',
+  ];
 
   return {
     username: profileData.user.username,

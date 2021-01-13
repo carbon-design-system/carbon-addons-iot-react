@@ -51,7 +51,9 @@ describe('EmptyState', () => {
     const renderedIcon = screen.getByTestId(`${testID}-icon`);
 
     // is passed image type equal to related icon
-    expect(renderedIcon.innerHTML).toEqual(iconContainer.container.firstChild.innerHTML);
+    expect(renderedIcon.innerHTML).toEqual(
+      iconContainer.container.firstChild.innerHTML
+    );
   });
 
   it('shows custom image', () => {
@@ -64,19 +66,28 @@ describe('EmptyState', () => {
   it('shows action if desired', () => {
     const actionLabel = 'Testbutton';
     const onClick = jest.fn();
-    render(<EmptyState {...commonProps} action={{ ...action(actionLabel, onClick) }} />);
+    render(
+      <EmptyState
+        {...commonProps}
+        action={{ ...action(actionLabel, onClick) }}
+      />
+    );
 
     // has button
     expect(screen.getByTestId(`${testID}-action`)).toBeTruthy();
 
     // has label
-    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(actionLabel);
+    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(
+      actionLabel
+    );
 
     // has no link
     expect(screen.queryByTestId(`${testID}-secondaryAction`)).toBeNull();
 
     // onclick called
-    userEvent.click(screen.getByTestId(`${testID}-action`).querySelector('button'));
+    userEvent.click(
+      screen.getByTestId(`${testID}-action`).querySelector('button')
+    );
     expect(onClick).toHaveBeenCalled();
   });
 
@@ -84,15 +95,24 @@ describe('EmptyState', () => {
     const actionLabel = 'TestLink';
     const onClick = jest.fn();
 
-    render(<EmptyState {...commonProps} secondaryAction={{ ...action(actionLabel, onClick) }} />);
+    render(
+      <EmptyState
+        {...commonProps}
+        secondaryAction={{ ...action(actionLabel, onClick) }}
+      />
+    );
     // has no button
     expect(screen.queryByTestId(`${testID}-action`)).toBeNull();
 
     // has label
-    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(actionLabel);
+    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(
+      actionLabel
+    );
 
     // onclick called
-    userEvent.click(screen.getByTestId(`${testID}-secondaryAction`).querySelector('a'));
+    userEvent.click(
+      screen.getByTestId(`${testID}-secondaryAction`).querySelector('a')
+    );
     expect(onClick).toHaveBeenCalled();
   });
 
@@ -110,12 +130,20 @@ describe('EmptyState', () => {
     );
 
     // has link and button with right content
-    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(actionLabel);
-    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(actionLabel);
+    expect(screen.getByTestId(`${testID}-action`).textContent).toEqual(
+      actionLabel
+    );
+    expect(screen.getByTestId(`${testID}-secondaryAction`).textContent).toEqual(
+      actionLabel
+    );
 
     // onclick called
-    userEvent.click(screen.getByTestId(`${testID}-action`).querySelector('button'));
-    userEvent.click(screen.getByTestId(`${testID}-secondaryAction`).querySelector('a'));
+    userEvent.click(
+      screen.getByTestId(`${testID}-action`).querySelector('button')
+    );
+    userEvent.click(
+      screen.getByTestId(`${testID}-secondaryAction`).querySelector('a')
+    );
 
     expect(actionOnClick).toHaveBeenCalled();
     expect(secondaryActionOnClick).toHaveBeenCalled();

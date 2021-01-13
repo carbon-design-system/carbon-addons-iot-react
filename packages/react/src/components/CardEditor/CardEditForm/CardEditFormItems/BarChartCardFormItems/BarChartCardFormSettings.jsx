@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { RadioButtonGroup, RadioButton, FormGroup, TextInput } from '../../../../../index';
+import {
+  RadioButtonGroup,
+  RadioButton,
+  FormGroup,
+  TextInput,
+} from '../../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -88,8 +93,7 @@ const BarChartCardFormSettings = ({ cardConfig, onChange, i18n }) => {
             }}
             orientation="vertical"
             legend={mergedI18n.layoutLabel}
-            valueSelected={cardConfig.content?.layout}
-          >
+            valueSelected={cardConfig.content?.layout}>
             <RadioButton
               data-testid={`${baseClassName}--layout-radio1`}
               value="HORIZONTAL"

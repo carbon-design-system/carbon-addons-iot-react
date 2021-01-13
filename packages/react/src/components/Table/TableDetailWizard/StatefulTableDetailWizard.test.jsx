@@ -16,7 +16,9 @@ const commonWizardProps = {
 describe('StatefulWizardInline', () => {
   it('onNext', () => {
     const mockNext = jest.fn();
-    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onNext={mockNext} />);
+    const wrapper = mount(
+      <StatefulTableDetailWizard {...commonWizardProps} onNext={mockNext} />
+    );
     const cancelAndNextButtons = wrapper.find('.bx--btn');
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(2).simulate('click');
@@ -25,7 +27,11 @@ describe('StatefulWizardInline', () => {
   it('onNext without currentItemId', () => {
     const mockNext = jest.fn();
     const wrapper = mount(
-      <StatefulTableDetailWizard {...commonWizardProps} currentItemId="" onNext={mockNext} />
+      <StatefulTableDetailWizard
+        {...commonWizardProps}
+        currentItemId=""
+        onNext={mockNext}
+      />
     );
     const cancelAndNextButtons = wrapper.find('.bx--btn');
     expect(cancelAndNextButtons).toHaveLength(3);
@@ -57,7 +63,9 @@ describe('StatefulWizardInline', () => {
         onClearError={mockClearError}
       />
     );
-    const clearErrorButton = wrapper.find('.bx--inline-notification__close-button');
+    const clearErrorButton = wrapper.find(
+      '.bx--inline-notification__close-button'
+    );
     expect(clearErrorButton).toHaveLength(1);
     clearErrorButton.simulate('click');
     expect(mockClearError).toHaveBeenCalled();
@@ -120,7 +128,9 @@ describe('StatefulWizardInline', () => {
   });
   it('onClose', () => {
     const mockClose = jest.fn();
-    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />);
+    const wrapper = mount(
+      <StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />
+    );
     const cancelAndNextButtons = wrapper.find('.bx--btn');
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(1).simulate('click');
@@ -128,7 +138,9 @@ describe('StatefulWizardInline', () => {
   });
   it('onClose Top', () => {
     const mockClose = jest.fn();
-    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />);
+    const wrapper = mount(
+      <StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />
+    );
     const cancelAndNextButtons = wrapper.find('.bx--btn');
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(0).simulate('click');

@@ -17,7 +17,15 @@ export default class MockApiClient {
     'Taylor',
   ];
 
-  static lastNames = ['Smith', 'Brown', 'Johnson', 'Williams', 'Miller', 'Davis', 'Wilson'];
+  static lastNames = [
+    'Smith',
+    'Brown',
+    'Johnson',
+    'Williams',
+    'Miller',
+    'Davis',
+    'Wilson',
+  ];
 
   constructor(resultCount = 100, fetchDurationMs = 500) {
     this.data = [];
@@ -28,10 +36,14 @@ export default class MockApiClient {
         ...this.data,
         {
           firstName: `${
-            MockApiClient.firstNames[Math.floor(Math.random() * MockApiClient.firstNames.length)]
+            MockApiClient.firstNames[
+              Math.floor(Math.random() * MockApiClient.firstNames.length)
+            ]
           } (${i + 1})`,
           lastName: `${
-            MockApiClient.lastNames[Math.floor(Math.random() * MockApiClient.lastNames.length)]
+            MockApiClient.lastNames[
+              Math.floor(Math.random() * MockApiClient.lastNames.length)
+            ]
           } (${i + 1})`,
         },
       ];
@@ -68,7 +80,9 @@ export default class MockApiClient {
     return new Promise((resolve) => {
       // filter results
       const maybeFilteredByFirstName = firstNameFilter
-        ? this.data.filter((r) => MockApiClient.doesRecordMatch(r, 'firstName', firstNameFilter))
+        ? this.data.filter((r) =>
+            MockApiClient.doesRecordMatch(r, 'firstName', firstNameFilter)
+          )
         : this.data;
 
       const maybeFilteredByLastName = lastNameFilter
@@ -81,7 +95,9 @@ export default class MockApiClient {
         ? maybeFilteredByLastName.sort((da, db) => {
             const a = da[sortSpec.fieldName];
             const b = db[sortSpec.fieldName];
-            return a === b ? 0 : (a < b ? -1 : 1) * (sortSpec.descending ? -1 : 1);
+            return a === b
+              ? 0
+              : (a < b ? -1 : 1) * (sortSpec.descending ? -1 : 1);
           })
         : maybeFilteredByLastName;
 

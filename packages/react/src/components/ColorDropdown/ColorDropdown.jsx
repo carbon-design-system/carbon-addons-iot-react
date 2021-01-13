@@ -88,7 +88,9 @@ const ColorDropdown = ({
 
   const renderColorItem = (item) => {
     return (
-      <div title={`${item.name}`} className={`${iotPrefix}--color-dropdown__item`}>
+      <div
+        title={`${item.name}`}
+        className={`${iotPrefix}--color-dropdown__item`}>
         <div className={`${iotPrefix}--color-dropdown__item-border`}>
           <div
             title={`${item.carbonColor}`}
@@ -96,7 +98,9 @@ const ColorDropdown = ({
             style={{ backgroundColor: item.carbonColor }}
           />
           {!hideLabels && (
-            <div className={`${iotPrefix}--color-dropdown__color-name`}>{item.name}</div>
+            <div className={`${iotPrefix}--color-dropdown__color-name`}>
+              {item.name}
+            </div>
           )}
         </div>
       </div>

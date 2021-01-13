@@ -200,7 +200,11 @@ export const _StatefulTileCatalog = () => {
           onSearch={(evt) => {
             const searchTerm = evt.target.value;
             const searchFilteredTiles = tiles.filter((tile) => {
-              return tile.props.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
+              return (
+                tile.props.title
+                  .toLowerCase()
+                  .search(searchTerm.toLowerCase()) !== -1
+              );
             });
             setTiles(searchFilteredTiles);
           }}

@@ -1,6 +1,10 @@
 import omit from 'lodash/omit';
 
-import { hotspotEditorReducer, hotspotActionTypes, hotspotTypes } from './hotspotStateHook';
+import {
+  hotspotEditorReducer,
+  hotspotActionTypes,
+  hotspotTypes,
+} from './hotspotStateHook';
 
 describe('hotspotStateHook tests', () => {
   const mockDataItem = {
@@ -452,6 +456,8 @@ describe('hotspotStateHook tests', () => {
     });
   });
   it('hotspot action types invalid type', () => {
-    expect(() => hotspotEditorReducer(mockHotspotState, { type: 'bogus' })).toThrow();
+    expect(() =>
+      hotspotEditorReducer(mockHotspotState, { type: 'bogus' })
+    ).toThrow();
   });
 });

@@ -70,7 +70,8 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               ...cardConfig,
               content: {
                 ...content,
-                fontSize: Number(imaginaryTarget.value) || imaginaryTarget.value,
+                fontSize:
+                  Number(imaginaryTarget.value) || imaginaryTarget.value,
               },
             })
           }

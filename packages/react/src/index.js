@@ -6,7 +6,10 @@ sizeMe.noPlaceholders = true;
 // Components
 export AddCard from './components/AddCard';
 export Button from './components/Button';
-export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
+export Breadcrumb, {
+  BreadcrumbItem,
+  BreadcrumbSkeleton,
+} from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
 export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export Table from './components/Table';
@@ -100,7 +103,9 @@ export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 export List from './components/List/List';
 export SimpleList from './components/List/SimpleList/SimpleList';
-export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
+export IconSwitch, {
+  ICON_SWITCH_SIZES,
+} from './components/IconSwitch/IconSwitch';
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';

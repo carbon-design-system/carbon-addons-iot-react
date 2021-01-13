@@ -2,7 +2,11 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { Close16, Popup16 } from '@carbon/icons-react';
-import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react';
+import {
+  OverflowMenu,
+  OverflowMenuItem,
+  Button,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';

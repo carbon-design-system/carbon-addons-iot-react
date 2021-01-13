@@ -123,11 +123,13 @@ const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
     <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
-        <li key={`${rowId}-${key}`}>
-          <b>{key}</b>: {value}
-        </li>
-      ))}
+      {Object.entries(tableData.find((i) => i.id === rowId).values).map(
+        ([key, value]) => (
+          <li key={`${rowId}-${key}`}>
+            <b>{key}</b>: {value}
+          </li>
+        )
+      )}
     </ul>
   </div>
 );
@@ -320,13 +322,21 @@ describe('Table', () => {
 
     const min = 1;
     const max = 10;
-    const renderItemRangeField = wrapper.find('Table').at(0).props().i18n.itemsRange(min, max);
+    const renderItemRangeField = wrapper
+      .find('Table')
+      .at(0)
+      .props()
+      .i18n.itemsRange(min, max);
     expect(renderItemRangeField).toContain('items');
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {
     const tableHeaderWrapper = mount(
-      <TableToolbar actions={mockActions} options={options} tableState={tableState} />
+      <TableToolbar
+        actions={mockActions}
+        options={options}
+        tableState={tableState}
+      />
     );
     //  Should render Row count label when hasRowCountInHeader (option) property is true
     const renderRowCountLabel = tableHeaderWrapper.find(
@@ -335,7 +345,11 @@ describe('Table', () => {
     expect(renderRowCountLabel).toHaveLength(1);
 
     const tableHeaderWrapper2 = mount(
-      <TableToolbar actions={mockActions} options={options2} tableState={tableState} />
+      <TableToolbar
+        actions={mockActions}
+        options={options2}
+        tableState={tableState}
+      />
     );
     //  Should not render Row count label when hasRowCountInHeader (option2) property is false
     const renderRowCountLabel2 = tableHeaderWrapper2.find(
@@ -346,7 +360,11 @@ describe('Table', () => {
 
   it('click should trigger onDownload', () => {
     render(
-      <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={options2}
+        tableState={tableState}
+      />
     );
 
     const downloadButton = screen.getByTestId('download-button');
@@ -367,7 +385,9 @@ describe('Table', () => {
     const columnSelectButton = screen.getByTestId('column-selection-button');
     expect(columnSelectButton).toBeTruthy();
     fireEvent.click(columnSelectButton);
-    expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(
+      1
+    );
   });
 
   it('click should trigger onFilter', () => {
@@ -409,7 +429,9 @@ describe('Table', () => {
         tableState={{
           ...tableState,
           activeBar: 'rowEdit',
-          rowEditBarButtons: <button type="button" data-testid="row-edit-bar-button" />,
+          rowEditBarButtons: (
+            <button type="button" data-testid="row-edit-bar-button" />
+          ),
         }}
       />
     );
@@ -439,7 +461,9 @@ describe('Table', () => {
 
     expect(wrapper.find('.bx--search-input')).toHaveLength(1);
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
+    expect(wrapper.find('.bx--search-input').html()).toContain(
+      `aria-hidden="true"`
+    );
 
     wrapper.setProps({
       view: { toolbar: { search: { defaultValue: 'ferrari' } } },
@@ -447,21 +471,33 @@ describe('Table', () => {
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+    expect(wrapper.find('.bx--search-input').html()).toContain(
+      `aria-hidden="false"`
+    );
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
+    expect(wrapper.find('.bx--search-input').html()).toContain(
+      `aria-hidden="true"`
+    );
   });
 
   it('cells should always wrap by default', () => {
     const wrapper = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasResize: true }} />
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={{ hasResize: true }}
+      />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
 
     const wrapper2 = mount(
       <Table
@@ -470,12 +506,22 @@ describe('Table', () => {
         options={{ hasResize: false }}
       />
     );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
+    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
 
-    const wrapper3 = mount(<Table columns={tableColumns} data={[tableData[0]]} />);
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
+    const wrapper3 = mount(
+      <Table columns={tableColumns} data={[tableData[0]]} />
+    );
+    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
   });
 
   it('cells should truncate with wrapCellText:auto if resize or fixed col widths', () => {
@@ -486,8 +532,12 @@ describe('Table', () => {
         options={{ hasResize: true, wrapCellText: 'auto' }}
       />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+    expect(
+      wrapper.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeTruthy();
+    expect(
+      wrapper.find(TableHead).prop('options').truncateCellText
+    ).toBeTruthy();
 
     const wrapper2 = mount(
       <Table
@@ -496,15 +546,20 @@ describe('Table', () => {
         options={{ hasResize: false, wrapCellText: 'auto' }}
       />
     );
-    expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+    expect(
+      wrapper2.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeTruthy();
+    expect(
+      wrapper2.find(TableHead).prop('options').truncateCellText
+    ).toBeTruthy();
 
     const wrapper3 = mount(
       <Table
         columns={tableColumns.map((col) => ({
           ...col,
           width: undefined,
-          renderDataFunction: () => 'hello this is a custom rendered long string',
+          renderDataFunction: () =>
+            'hello this is a custom rendered long string',
         }))}
         data={[tableData[0]]}
         options={{ hasResize: false, wrapCellText: 'auto' }}
@@ -512,7 +567,9 @@ describe('Table', () => {
     );
     expect(
       wrapper3
-        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .find(
+          'TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate'
+        )
         .first()
     ).toHaveLength(1);
   });
@@ -525,34 +582,58 @@ describe('Table', () => {
         options={{ hasResize: false, wrapCellText: 'auto' }}
       />
     );
-    expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
+    expect(
+      wrapper3.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(
+      wrapper3.find(TableHead).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'auto'
+    );
+    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual(
+      'auto'
+    );
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
     const { unmount, rerender, baseElement } = render(
-      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
+      <Table
+        id={id}
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={options}
+      />
     );
-    await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
+    await fireEvent.click(
+      screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`)
+    );
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
-      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).toHaveClass(
-        'bx--overflow-menu--flip'
-      );
+      expect(
+        baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')
+      ).toHaveClass('bx--overflow-menu--flip');
     });
     document.documentElement.setAttribute('dir', 'rtl');
 
-    rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
-    await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
+    rerender(
+      <Table
+        id={id}
+        columns={tableColumns}
+        data={[tableData[1]]}
+        options={options}
+      />
+    );
+    await fireEvent.click(
+      screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`)
+    );
     await waitFor(() => {
       // the menu is rendered via a portal outside of the container/screen
-      expect(baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')).not.toHaveClass(
-        'bx--overflow-menu--flip'
-      );
+      expect(
+        baseElement.querySelector('ul[role="menu"][class*=overflow-menu]')
+      ).not.toHaveClass('bx--overflow-menu--flip');
     });
 
     // unmounting to be sure to clean up the documentElement
@@ -571,10 +652,18 @@ describe('Table', () => {
         }}
       />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'auto'
+    );
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual(
+      'auto'
+    );
+    expect(
+      wrapper.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(
+      wrapper.find(TableHead).prop('options').truncateCellText
+    ).toBeFalsy();
   });
 
   it('cells should always wrap when wrapCellText is always', () => {
@@ -585,10 +674,18 @@ describe('Table', () => {
         options={{ hasResize: true, wrapCellText: 'always' }}
       />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(
+      wrapper.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(
+      wrapper.find(TableHead).prop('options').truncateCellText
+    ).toBeFalsy();
 
     const wrapper2 = mount(
       <Table
@@ -597,18 +694,38 @@ describe('Table', () => {
         options={{ wrapCellText: 'always' }}
       />
     );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeFalsy();
+    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(
+      wrapper2.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(
+      wrapper2.find(TableHead).prop('options').truncateCellText
+    ).toBeFalsy();
 
     const wrapper3 = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ wrapCellText: 'always' }} />
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={{ wrapCellText: 'always' }}
+      />
     );
-    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
-    expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
-    expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
+    expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual(
+      'always'
+    );
+    expect(
+      wrapper3.find(TableBodyRow).prop('options').truncateCellText
+    ).toBeFalsy();
+    expect(
+      wrapper3.find(TableHead).prop('options').truncateCellText
+    ).toBeFalsy();
   });
 
   describe('Text truncation and wrapping', () => {
@@ -619,26 +736,48 @@ describe('Table', () => {
     const textNoWrapClassName = `${iotPrefix}--table__cell-text--no-wrap`;
 
     const expectWrapping = () => {
-      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textNoWrapClassName);
-      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(
+        textNoWrapClassName
+      );
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(
+        textNoWrapClassName
+      );
     };
     const expectExplicitNoWrapping = () => {
-      expect(screen.getByText(bodyRowCellText)).toHaveClass(textNoWrapClassName);
-      expect(screen.getByText(columnHeaderText)).toHaveClass(textNoWrapClassName);
+      expect(screen.getByText(bodyRowCellText)).toHaveClass(
+        textNoWrapClassName
+      );
+      expect(screen.getByText(columnHeaderText)).toHaveClass(
+        textNoWrapClassName
+      );
     };
     const expectTruncation = (myBodyRowCellText = bodyRowCellText) => {
-      expect(screen.getByText(myBodyRowCellText)).toHaveClass(textTruncateClassName);
-      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(tdTruncateClassName);
-      expect(screen.getByText(columnHeaderText)).toHaveClass(textTruncateClassName);
+      expect(screen.getByText(myBodyRowCellText)).toHaveClass(
+        textTruncateClassName
+      );
+      expect(screen.getByText(myBodyRowCellText).closest('td')).toHaveClass(
+        tdTruncateClassName
+      );
+      expect(screen.getByText(columnHeaderText)).toHaveClass(
+        textTruncateClassName
+      );
     };
     const expectNoTruncation = () => {
-      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(textTruncateClassName);
-      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(tdTruncateClassName);
-      expect(screen.getByText(columnHeaderText)).not.toHaveClass(textTruncateClassName);
+      expect(screen.getByText(bodyRowCellText)).not.toHaveClass(
+        textTruncateClassName
+      );
+      expect(screen.getByText(bodyRowCellText).closest('td')).not.toHaveClass(
+        tdTruncateClassName
+      );
+      expect(screen.getByText(columnHeaderText)).not.toHaveClass(
+        textTruncateClassName
+      );
     };
 
     const renderDefaultTable = (options = {}, columns = tableColumns) => {
-      render(<Table columns={columns} data={[tableData[0]]} options={options} />);
+      render(
+        <Table columns={columns} data={[tableData[0]]} options={options} />
+      );
     };
 
     it('wraps cell text by default', () => {
@@ -676,7 +815,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:auto', () => {
-      const renderAutoWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderAutoWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -725,7 +867,8 @@ describe('Table', () => {
           tableColumns.map((col) => ({
             ...col,
             width: undefined,
-            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+            renderDataFunction:
+              col.id === 'string' ? () => customCellText : undefined,
           }))
         );
         expectTruncation(customCellText);
@@ -734,7 +877,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:always', () => {
-      const renderAlwaysWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderAlwaysWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -780,7 +926,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:never', () => {
-      const renderNeverWrappingTable = (options = {}, columns = tableColumns) => {
+      const renderNeverWrappingTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -807,7 +956,10 @@ describe('Table', () => {
     });
 
     describe('wrapCellText:alwaysTruncate', () => {
-      const renderAlwaysTruncatTable = (options = {}, columns = tableColumns) => {
+      const renderAlwaysTruncatTable = (
+        options = {},
+        columns = tableColumns
+      ) => {
         render(
           <Table
             columns={columns}
@@ -835,7 +987,8 @@ describe('Table', () => {
           {},
           tableColumns.map((col) => ({
             ...col,
-            renderDataFunction: col.id === 'string' ? () => customCellText : undefined,
+            renderDataFunction:
+              col.id === 'string' ? () => customCellText : undefined,
           }))
         );
         expectTruncation(customCellText);
@@ -846,14 +999,26 @@ describe('Table', () => {
 
   it('table should get row-actions HTML class only when rowActions are enabled', () => {
     const wrapper = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: true }} />
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={{ hasRowActions: true }}
+      />
     );
-    expect(wrapper.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeTruthy();
+    expect(
+      wrapper.exists(`table.${iotPrefix}--data-table--row-actions`)
+    ).toBeTruthy();
 
     const wrapper2 = mount(
-      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: false }} />
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        options={{ hasRowActions: false }}
+      />
     );
-    expect(wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeFalsy();
+    expect(
+      wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)
+    ).toBeFalsy();
   });
 
   it('i18n string test 1', () => {
@@ -878,44 +1043,107 @@ describe('Table', () => {
     };
 
     const { rerender } = render(
-      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
+      <Table
+        {...initialState}
+        {...additionalProps}
+        isSortable
+        i18n={i18nTest}
+      />
     );
 
-    expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.clickToCollapseAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.selectAllAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.selectRowAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.downloadIconDescription)[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.clickToCollapseAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.selectAllAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.selectRowAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.downloadIconDescription)[0]
+    ).toBeInTheDocument();
 
-    expect(screen.getAllByText(i18nTest.clearAllFilters)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.columnSelectionButtonAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.filterButtonAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.editButtonAria)[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByText(i18nTest.clearAllFilters)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.columnSelectionButtonAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.filterButtonAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.editButtonAria)[0]
+    ).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.searchLabel)[0]).toBeInTheDocument();
-    expect(screen.getAllByPlaceholderText(i18nTest.searchPlaceholder)[0]).toBeInTheDocument();
-    expect(screen.getAllByTitle(i18nTest.clearFilterAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
-    expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByPlaceholderText(i18nTest.searchPlaceholder)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByTitle(i18nTest.clearFilterAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.filterAria)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByLabelText(i18nTest.openMenuAria)[0]
+    ).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))).toBeInTheDocument();
+    expect(
+      screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))
+    ).toBeInTheDocument();
 
-    expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.clickToCollapseAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.selectAllAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.selectRowAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.downloadIconDescription)).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.overflowMenuAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.clickToExpandAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.clickToCollapseAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.selectAllAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.selectRowAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.downloadIconDescription)
+    ).not.toBeInTheDocument();
 
-    expect(screen.queryByText(i18nDefault.clearAllFilters)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.columnSelectionButtonAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.filterButtonAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.editButtonAria)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.clearAllFilters)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.columnSelectionButtonAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.filterButtonAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.editButtonAria)
+    ).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.searchLabel)).not.toBeInTheDocument();
-    expect(screen.queryByPlaceholderText(i18nDefault.searchPlaceholder)).not.toBeInTheDocument();
-    expect(screen.queryByTitle(i18nDefault.clearFilterAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.filterAria)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(i18nDefault.openMenuAria)).not.toBeInTheDocument();
+    expect(
+      screen.queryByPlaceholderText(i18nDefault.searchPlaceholder)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByTitle(i18nDefault.clearFilterAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.filterAria)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(i18nDefault.openMenuAria)
+    ).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.batchCancel)).not.toBeInTheDocument();
 
     rerender(
@@ -934,8 +1162,12 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
+    expect(
+      screen.getAllByText(i18nTest.columnSelectionConfig)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.columnSelectionConfig)
+    ).not.toBeInTheDocument();
   });
 
   it('i18n string test 2', () => {
@@ -952,8 +1184,12 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getAllByText(i18nTest.emptyMessageWithFilters)[0]).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.emptyMessageWithFilters)).not.toBeInTheDocument();
+    expect(
+      screen.getAllByText(i18nTest.emptyMessageWithFilters)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.emptyMessageWithFilters)
+    ).not.toBeInTheDocument();
 
     rerender(
       <Table
@@ -968,9 +1204,15 @@ describe('Table', () => {
       />
     );
     expect(screen.getAllByText(i18nTest.emptyMessage)[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+    expect(
+      screen.getAllByText(i18nTest.emptyButtonLabel)[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.emptyMessage)
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(i18nDefault.emptyButtonLabel)
+    ).not.toBeInTheDocument();
   });
 
   it('Table in modal select all', () => {
@@ -1039,7 +1281,9 @@ describe('Table', () => {
     expect(inModal.mock.calls.length).toBe(0);
     fireEvent.click(screen.getByText('Drill in 2').closest('button'));
     expect(inModal.mock.calls.length).toBe(1);
-    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(
+      container.querySelector('.iot--row-actions-cell--overflow-menu')
+    );
     fireEvent.click(screen.queryByText('Drill in').closest('button'));
     expect(inModal.mock.calls.length).toBe(2);
   });
@@ -1193,7 +1437,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'checked',
+      false
+    );
   });
 
   it('overrides automatic "select all" check if "isSelectAllSelected" is used', () => {
@@ -1229,7 +1476,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('checked', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'checked',
+      false
+    );
   });
 
   it('automatically marks "select all" as Indeterminate if some but not all rows are selected', () => {
@@ -1262,7 +1512,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
   });
 
   it('overrides automatically indeterminate state for "select all" if "isSelectAllSelected" or "isSelectAllIndeterminate" is used', () => {
@@ -1302,7 +1555,10 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
 
     rerender(
       <Table
@@ -1318,6 +1574,9 @@ describe('Table', () => {
         }}
       />
     );
-    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+    expect(screen.getByLabelText('Select all items')).toHaveProperty(
+      'indeterminate',
+      false
+    );
   });
 });

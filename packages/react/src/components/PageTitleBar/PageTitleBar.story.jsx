@@ -11,13 +11,17 @@ import PageTitleBar from './PageTitleBar';
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
-  description: 'Descriptive text about this page and what the user can or should do on it',
+  description:
+    'Descriptive text about this page and what the user can or should do on it',
   extraContent: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <span style={{ marginRight: spacing05 }}>
         <b>Last updated:</b> yesterday
       </span>
-      <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
+      <Button
+        className="some-right-content"
+        renderIcon={Add24}
+        onClick={action('click')}>
         Take an action
       </Button>
     </div>
@@ -32,15 +36,16 @@ export const pageTitleBarBreadcrumb = [
 
 export const PageTitleBarNodeTooltip = () => (
   <div>
-    <p>Descriptive text about this page and what the user can or should do on it </p>
+    <p>
+      Descriptive text about this page and what the user can or should do on it{' '}
+    </p>
     <div
       style={{
         display: 'flex',
         'align-items': 'center',
         'justify-content': 'space-between',
         'padding-top': spacing05,
-      }}
-    >
+      }}>
       <a href="/">Link one</a>
       <Button renderIcon={Add24} onClick={action('click')}>
         Take an action
@@ -57,17 +62,26 @@ export default {
     component: PageTitleBar,
   },
 
-  excludeStories: ['commonPageTitleBarProps', 'pageTitleBarBreadcrumb', 'PageTitleBarNodeTooltip'],
+  excludeStories: [
+    'commonPageTitleBarProps',
+    'pageTitleBarBreadcrumb',
+    'PageTitleBarNodeTooltip',
+  ],
 };
 
-export const Base = () => <PageTitleBar title={commonPageTitleBarProps.title} />;
+export const Base = () => (
+  <PageTitleBar title={commonPageTitleBarProps.title} />
+);
 
 Base.story = {
   name: 'base',
 };
 
 export const WithBreadcrumb = () => (
-  <PageTitleBar title={commonPageTitleBarProps.title} breadcrumb={pageTitleBarBreadcrumb} />
+  <PageTitleBar
+    title={commonPageTitleBarProps.title}
+    breadcrumb={pageTitleBarBreadcrumb}
+  />
 );
 
 WithBreadcrumb.story = {
@@ -136,7 +150,9 @@ WithEditableTitleBar.story = {
   name: 'with editable title bar',
 };
 
-export const WithRichContent = () => <PageTitleBar {...commonPageTitleBarProps} collapsed />;
+export const WithRichContent = () => (
+  <PageTitleBar {...commonPageTitleBarProps} collapsed />
+);
 
 WithRichContent.story = {
   name: 'with rich content',
@@ -155,8 +171,7 @@ export const WithEverything = () => (
             marginBottom: '8px',
             display: 'flex',
             flexDirection: 'row-reverse',
-          }}
-        >
+          }}>
           <span>Last updated: yesterday</span>
         </div>
         <div className="bottom">
@@ -208,7 +223,9 @@ WithEverything.story = {
   name: 'with everything',
 };
 
-export const IsLoading = () => <PageTitleBar title={commonPageTitleBarProps.title} isLoading />;
+export const IsLoading = () => (
+  <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
+);
 
 IsLoading.story = {
   name: 'isLoading',

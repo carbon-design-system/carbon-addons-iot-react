@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadioButtonGroup, RadioButton, FormGroup, ToggleSmall } from 'carbon-components-react';
+import {
+  RadioButtonGroup,
+  RadioButton,
+  FormGroup,
+  ToggleSmall,
+} from 'carbon-components-react';
 import { gray10, gray80, white } from '@carbon/colors';
 
 import { settings } from '../../../../../constants/Settings';
@@ -63,7 +68,12 @@ const colors = [
   { carbonColor: white, name: 'white' },
 ];
 
-const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
+const ImageCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // Hiding until the UX for this form item is figured out.
   // const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);
@@ -94,8 +104,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
             orientation="vertical"
             legend={mergedI18n.displayOptions}
             labelPosition="right"
-            valueSelected={cardConfig.content?.displayOption}
-          >
+            valueSelected={cardConfig.content?.displayOption}>
             <RadioButton
               data-testid={`${baseClassName}--input-radio1`}
               value="contain"

@@ -103,7 +103,8 @@ const TableDetailWizard = ({
   onClearError,
   isClickable,
 }) => {
-  const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
+  const currentItemObj =
+    items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
 
   const hasNext = currentItemIndex !== items.length - 1;
@@ -125,7 +126,11 @@ const TableDetailWizard = ({
   };
 
   return (
-    <div className={classnames(className, `${iotPrefix}--table-detail-wizard--wizard-wrapper`)}>
+    <div
+      className={classnames(
+        className,
+        `${iotPrefix}--table-detail-wizard--wizard-wrapper`
+      )}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
       <div className={`${iotPrefix}--table-detail-wizard--wizard-container`}>
         <DetailWizardSidebar
@@ -150,7 +155,11 @@ const TableDetailWizard = ({
           className={`${iotPrefix}--table-detail-wizard--inline-notification`}
         />
       ) : null}
-      <div className={classnames(className, `${iotPrefix}--table-detail-wizard--footer`)}>
+      <div
+        className={classnames(
+          className,
+          `${iotPrefix}--table-detail-wizard--footer`
+        )}>
         <div className="bx--modal-footer">
           <WizardFooter
             backLabel={backLabel}

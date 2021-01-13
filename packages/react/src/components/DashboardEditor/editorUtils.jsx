@@ -392,8 +392,12 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
 export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(({ id }, i) => {
-    const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === id);
-    const color = currentItem?.color ?? DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+    const currentItem = cardSeries?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
+    const color =
+      currentItem?.color ??
+      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
     return {
       dataSourceId: id,
       label: currentItem?.label || id,
@@ -411,16 +415,22 @@ export const formatSeries = (selectedItems, cardConfig) => {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const cardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(({ id }) => {
-    const currentItem = cardAttributes?.find((dataItem) => dataItem.dataSourceId === id);
+    const currentItem = cardAttributes?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
 
     return {
       dataSourceId: id,
       label: currentItem?.label || id,
-      ...(!isNil(currentItem?.precision) ? { precision: currentItem.precision } : {}),
+      ...(!isNil(currentItem?.precision)
+        ? { precision: currentItem.precision }
+        : {}),
       ...(currentItem?.thresholds && !isEmpty(currentItem?.thresholds)
         ? { thresholds: currentItem.thresholds }
         : {}),
-      ...(currentItem?.dataFilter ? { dataFilter: currentItem.dataFilter } : {}),
+      ...(currentItem?.dataFilter
+        ? { dataFilter: currentItem.dataFilter }
+        : {}),
     };
   });
   return attributes;
@@ -468,7 +478,8 @@ export const handleDataSeriesChange = (
         .map((i) => ({ dataSourceId: i.id, label: i.text }));
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
-        Array.isArray(content?.columns) && content.columns.find((col) => col.type === 'TIMESTAMP')
+        Array.isArray(content?.columns) &&
+        content.columns.find((col) => col.type === 'TIMESTAMP')
           ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
           : {
               dataSourceId: 'timestamp',
@@ -491,8 +502,12 @@ export const handleDataSeriesChange = (
           ...cardConfig.content,
           columns: [
             timestampColumn,
-            ...(isDimensionUpdate ? dimensionColumns : existingDimensionColumns),
-            ...(!isDimensionUpdate ? attributeColumns : existingAttributeColumns),
+            ...(isDimensionUpdate
+              ? dimensionColumns
+              : existingDimensionColumns),
+            ...(!isDimensionUpdate
+              ? attributeColumns
+              : existingAttributeColumns),
           ],
         },
       };
@@ -524,7 +539,12 @@ export const handleDataSeriesChange = (
  * @param {string} editDataSeries only used for bar chart card forms
  * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
  */
-export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hotspotIndex) => {
+export const handleDataItemEdit = (
+  editDataItem,
+  cardConfig,
+  editDataSeries,
+  hotspotIndex
+) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
@@ -564,7 +584,9 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
     case CARD_TYPES.IMAGE:
       dataSection = [...(content.hotspots || [])];
 
-      editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
+      editDataItemIndex = dataSection[
+        hotspotIndex
+      ].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
       dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(

@@ -5,7 +5,10 @@ import { EscalatorDown } from '@carbon/pictograms-react';
 import { Basketball32, Code24 } from '@carbon/icons-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
-import { CARD_SIZES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from '../../constants/LayoutConstants';
 
 import CardEditor from './CardEditor';
 
@@ -29,8 +32,7 @@ const CardEditorInteractive = () => {
           position: 'absolute',
           right: 0,
           height: 'calc(100vh - 6rem)',
-        }}
-      >
+        }}>
         <CardEditor
           cardConfig={data}
           onShowGallery={() => setData(null)}

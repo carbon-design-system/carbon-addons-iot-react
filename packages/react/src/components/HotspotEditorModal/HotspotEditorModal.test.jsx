@@ -1,7 +1,16 @@
 import React from 'react';
-import { render, fireEvent, screen, waitFor, within } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
-import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+import {
+  InformationSquareFilled24,
+  InformationFilled24,
+} from '@carbon/icons-react';
 import sizeMe from 'react-sizeme';
 import userEvent from '@testing-library/user-event';
 
@@ -118,12 +127,14 @@ const loading = HotspotEditorModal.defaultProps.i18n.loadingDynamicHotspotsText;
 
 describe('HotspotEditorModal', () => {
   beforeAll(() => {
-    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect.mockImplementation(() => {
-      return {
-        width: 1000,
-        height: 1000,
-      };
-    });
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect.mockImplementation(
+      () => {
+        return {
+          width: 1000,
+          height: 1000,
+        };
+      }
+    );
   });
   afterAll(() => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
@@ -224,7 +235,9 @@ describe('HotspotEditorModal', () => {
     await waitFor(() => expect(screen.queryByText(loading)).toBeFalsy());
 
     // Select one of the dynamic demo hotspots
-    userEvent.click(within(screen.getByTestId('hotspot-10-30')).getByRole('button'));
+    userEvent.click(
+      within(screen.getByTestId('hotspot-10-30')).getByRole('button')
+    );
     // The initial dynamic hotspot title is showing
     const titleInputElement = screen.getByDisplayValue('dynamic test title');
 
@@ -260,12 +273,16 @@ describe('HotspotEditorModal', () => {
     await waitFor(() => expect(screen.queryByText(loading)).toBeFalsy());
 
     // Select one of the dynamic demo hotspots
-    userEvent.click(within(screen.getByTestId('hotspot-10-30')).getByRole('button'));
+    userEvent.click(
+      within(screen.getByTestId('hotspot-10-30')).getByRole('button')
+    );
 
     // Click anywhere to remove focus the selected hotspot
     fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
 
-    const emptyTitleInputElement = screen.getByTitle('Enter title for the tooltip');
+    const emptyTitleInputElement = screen.getByTitle(
+      'Enter title for the tooltip'
+    );
     userEvent.type(emptyTitleInputElement, 'new test title');
 
     fireEvent.click(screen.getByRole('button', { name: 'Save' }));
@@ -291,7 +308,9 @@ describe('HotspotEditorModal', () => {
     const myCardConfig = {
       ...getCardConfig(),
       values: {
-        hotspots: getHotspots().filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+        hotspots: getHotspots().filter(
+          (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
+        ),
       },
     };
 
@@ -313,10 +332,14 @@ describe('HotspotEditorModal', () => {
       />
     );
 
-    await waitFor(() => expect(screen.getByTestId('hotspot-35-65')).toBeTruthy());
+    await waitFor(() =>
+      expect(screen.getByTestId('hotspot-35-65')).toBeTruthy()
+    );
 
     // Select one of the fixed demo hotspots
-    userEvent.click(within(screen.getByTestId('hotspot-35-65')).getByRole('button'));
+    userEvent.click(
+      within(screen.getByTestId('hotspot-35-65')).getByRole('button')
+    );
     // The initial fixed hotspot title is showing
     const titleInputElement = screen.getByDisplayValue('My Device');
 
@@ -389,7 +412,9 @@ describe('HotspotEditorModal', () => {
     const myCardConfig = {
       ...getCardConfig(),
       values: {
-        hotspots: getHotspots().filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+        hotspots: getHotspots().filter(
+          (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
+        ),
       },
     };
 
@@ -412,7 +437,9 @@ describe('HotspotEditorModal', () => {
       />
     );
 
-    await waitFor(() => expect(screen.getByTestId('hotspot-75-10')).toBeTruthy());
+    await waitFor(() =>
+      expect(screen.getByTestId('hotspot-75-10')).toBeTruthy()
+    );
 
     fireEvent.click(screen.getByRole('tab', { name: /Labels/i }));
     userEvent.click(screen.getByText('Storage'));
@@ -438,7 +465,9 @@ describe('HotspotEditorModal', () => {
     const myCardConfig = {
       ...getCardConfig(),
       values: {
-        hotspots: getHotspots().filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+        hotspots: getHotspots().filter(
+          (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
+        ),
       },
       thresholds: [
         {
@@ -469,10 +498,14 @@ describe('HotspotEditorModal', () => {
       />
     );
 
-    await waitFor(() => expect(screen.getByTestId('hotspot-35-65')).toBeTruthy());
+    await waitFor(() =>
+      expect(screen.getByTestId('hotspot-35-65')).toBeTruthy()
+    );
 
     // Select one of the fixed demo hotspots
-    userEvent.click(within(screen.getByTestId('hotspot-35-65')).getByRole('button'));
+    userEvent.click(
+      within(screen.getByTestId('hotspot-35-65')).getByRole('button')
+    );
 
     // Click anywhere to remove focus the selected hotspot
     fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);

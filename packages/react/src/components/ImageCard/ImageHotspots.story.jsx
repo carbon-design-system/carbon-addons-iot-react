@@ -217,7 +217,9 @@ export const EditableWithTextHotspot = () => {
         borderColor: '#DDDDDD',
       },
     ]);
-    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState([{ x: 75, y: 40 }]);
+    const [selectedHotspotPositions, setSelectedHotspotPositions] = useState([
+      { x: 75, y: 40 },
+    ]);
 
     const onAddHotspotPosition = (position) => {
       const newHotspot = {
@@ -226,8 +228,7 @@ export const EditableWithTextHotspot = () => {
           <span
             style={{
               padding: spacing03,
-            }}
-          >{`Hotspot ${position.x} - ${position.y}`}</span>
+            }}>{`Hotspot ${position.x} - ${position.y}`}</span>
         ),
       };
       setMyHotspots([...myHotspots, newHotspot]);

@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useLayoutEffect, useState, Children } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  Children,
+} from 'react';
 import PropTypes from 'prop-types';
 import { OverflowMenuItem, OverflowMenu } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
@@ -86,21 +92,20 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
       className={classnames(`${iotPrefix}--filtertags-container`, {
         [`${iotPrefix}--filtertags-container__wrap`]: hasOverflow,
       })}
-      ref={overFlowContainerRef}
-    >
+      ref={overFlowContainerRef}>
       {visibleItems}
       {overflowItems.length > 0 && (
         <OverflowMenu
           data-floating-menu-container
           className={`${iotPrefix}--filtertags-overflow-menu`}
           renderIcon={() => (
-            <div className={`${prefix}--tag`}>{`More: ${overflowItems.length}`}</div>
+            <div
+              className={`${prefix}--tag`}>{`More: ${overflowItems.length}`}</div>
           )}
           menuOptionsClass={`${iotPrefix}--filtertags-overflow-items`}
           menuOffset={{
             top: 15,
-          }}
-        >
+          }}>
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
               className={`${iotPrefix}--filtertags-overflow-item`}

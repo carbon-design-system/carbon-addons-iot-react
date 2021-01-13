@@ -116,7 +116,11 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
       isMultiselect: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+          id: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]).isRequired,
           text: PropTypes.string.isRequired,
         })
       ),
@@ -129,7 +133,11 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
      */
     options: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+        id: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+        ]).isRequired,
         text: PropTypes.string.isRequired,
       })
     ),
@@ -243,4 +251,8 @@ export const TableSearchPropTypes = PropTypes.shape({
 });
 
 /** Which toolbar is currently active */
-export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);
+export const ActiveTableToolbarPropType = PropTypes.oneOf([
+  'column',
+  'filter',
+  'rowEdit',
+]);

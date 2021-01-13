@@ -4,7 +4,12 @@ import isEmpty from 'lodash/isEmpty';
 import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
-import { ToggleSmall, Dropdown, RadioButton, RadioButtonGroup } from '../../../../../index';
+import {
+  ToggleSmall,
+  Dropdown,
+  RadioButton,
+  RadioButtonGroup,
+} from '../../../../../index';
 import { TableCardPropTypes } from '../../../../../constants/CardPropTypes';
 
 const { iotPrefix } = settings;
@@ -67,13 +72,19 @@ export const updateColumnSort = (columns, sortDataSourceId, sortDirection) => {
     // update existing column sort to the new sort direction
     return update(columns, {
       $splice: [
-        [columns.findIndex((col) => col.sort), 1, { ...existingColumnSort, sort: sortDirection }],
+        [
+          columns.findIndex((col) => col.sort),
+          1,
+          { ...existingColumnSort, sort: sortDirection },
+        ],
       ],
     });
   }
   // Is it a new column sort?
   if (sortDataSourceId !== existingColumnSort?.dataSourceId) {
-    const newColumnToSort = columns.find((col) => col.dataSourceId === sortDataSourceId);
+    const newColumnToSort = columns.find(
+      (col) => col.dataSourceId === sortDataSourceId
+    );
     return update(columns, {
       $splice: [
         // if I have an existing Column, I need to clear the sort
@@ -103,20 +114,30 @@ export const updateColumnSort = (columns, sortDataSourceId, sortDirection) => {
  * Stateless render component that renders the current settings panel based on the inbound cardConfig prop
  * and calls onChange with the updated cardConfig object every time the user interacts with the form
  */
-const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
+const TableCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const dataItems = useMemo(
     () =>
-      Array.isArray(content?.columns) ? content?.columns.map((column) => column.dataSourceId) : [],
+      Array.isArray(content?.columns)
+        ? content?.columns.map((column) => column.dataSourceId)
+        : [],
     [content]
   );
 
   // figure out if a column has been updated to be the default sort column
   const defaultSortColumn = useMemo(
-    () => (Array.isArray(content?.columns) ? content.columns.find((col) => col.sort) : null),
+    () =>
+      Array.isArray(content?.columns)
+        ? content.columns.find((col) => col.sort)
+        : null,
     [content]
   );
 
@@ -181,8 +202,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
               orientation="vertical"
               legend={`${mergedI18n.descending}`}
               labelPosition="right"
-              valueSelected={defaultSortColumn?.sort}
-            >
+              valueSelected={defaultSortColumn?.sort}>
               <RadioButton
                 data-testid={`${baseClassName}--input-radio1`}
                 value="DESC"

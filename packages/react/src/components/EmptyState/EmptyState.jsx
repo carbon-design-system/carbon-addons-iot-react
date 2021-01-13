@@ -33,7 +33,15 @@ const props = {
   /** Optional image of state */
   icon: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.oneOf(['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', '']),
+    PropTypes.oneOf([
+      'error',
+      'error404',
+      'empty',
+      'not-authorized',
+      'no-result',
+      'success',
+      '',
+    ]),
   ]),
   /** Optional action for container */
   action: PropTypes.shape({
@@ -63,8 +71,18 @@ const defaultProps = {
  * Component to set empty states
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
-const EmptyState = ({ title, icon, body, action, secondaryAction, className, testID }) => (
-  <div className={classnames(`${iotPrefix}--empty-state`, className)} data-testid={testID}>
+const EmptyState = ({
+  title,
+  icon,
+  body,
+  action,
+  secondaryAction,
+  className,
+  testID,
+}) => (
+  <div
+    className={classnames(`${iotPrefix}--empty-state`, className)}
+    data-testid={testID}>
     <div className={`${iotPrefix}--empty-state--content`}>
       {icon &&
         React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
@@ -72,25 +90,32 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
           alt: '',
           'data-testid': `${testID}-icon`,
         })}
-      <h3 className={`${iotPrefix}--empty-state--title`} data-testid={`${testID}-title`}>
+      <h3
+        className={`${iotPrefix}--empty-state--title`}
+        data-testid={`${testID}-title`}>
         {title}
       </h3>
-      <p className={`${iotPrefix}--empty-state--text`} data-testid={`${testID}-body`}>
+      <p
+        className={`${iotPrefix}--empty-state--text`}
+        data-testid={`${testID}-body`}>
         {body}
       </p>
       {action && (
-        <div className={`${iotPrefix}--empty-state--action`} data-testid={`${testID}-action`}>
+        <div
+          className={`${iotPrefix}--empty-state--action`}
+          data-testid={`${testID}-action`}>
           <Button onClick={action.onClick}>{action.label}</Button>
         </div>
       )}
       {secondaryAction && (
         <div
           className={`${iotPrefix}--empty-state--link`}
-          data-testid={`${testID}-secondaryAction`}
-        >
+          data-testid={`${testID}-secondaryAction`}>
           {secondaryAction.label && (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <Link onClick={secondaryAction.onClick}>{secondaryAction.label}</Link>
+            <Link onClick={secondaryAction.onClick}>
+              {secondaryAction.label}
+            </Link>
           )}
         </div>
       )}

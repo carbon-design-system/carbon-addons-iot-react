@@ -52,7 +52,12 @@ const propTypes = {
   onDelete: PropTypes.func.isRequired,
   /** The state values of the controlled form elements, see defaults for shape */
   formValues: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, colorPropType])
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      colorPropType,
+    ])
   ),
   /** Array of colors to be shown for the font colors dropdown */
   fontColors: PropTypes.arrayOf(colorPropType),
@@ -200,8 +205,7 @@ const HotspotTextStyleTab = ({
         <>
           <form
             onSubmit={preventFormSubmission}
-            className={`${iotPrefix}--hotspot-text-style-tab__form`}
-          >
+            className={`${iotPrefix}--hotspot-text-style-tab__form`}>
             <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
               <IconSwitch
                 onClick={() => onChange({ bold: !bold })}
@@ -274,7 +278,10 @@ const HotspotTextStyleTab = ({
                 titleText={backgroundLabelText}
                 light={light}
                 label={selectAColor}
-                selectedColor={getSelectedColorItem(backgroundColor, backgroundColors)}
+                selectedColor={getSelectedColorItem(
+                  backgroundColor,
+                  backgroundColors
+                )}
                 colors={backgroundColors}
                 onChange={(selected) => {
                   onChange({
@@ -295,7 +302,9 @@ const HotspotTextStyleTab = ({
                 invalidText={fillOpacityInvalidText}
                 onChange={(event) => {
                   onChange({
-                    backgroundOpacity: getIntOrUndefined(event.imaginaryTarget.value),
+                    backgroundOpacity: getIntOrUndefined(
+                      event.imaginaryTarget.value
+                    ),
                   });
                 }}
               />
@@ -333,13 +342,13 @@ const HotspotTextStyleTab = ({
               />
             </div>
           </form>
-          <div className={`${iotPrefix}--hotspot-text-style-tab__delete-button-container`}>
+          <div
+            className={`${iotPrefix}--hotspot-text-style-tab__delete-button-container`}>
             <Button
               kind="ghost"
               renderIcon={TrashCan32}
               iconDescription={deleteButtonIconDescription}
-              onClick={onDelete}
-            >
+              onClick={onDelete}>
               {deleteButtonLabelText}
             </Button>
           </div>

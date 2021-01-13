@@ -43,11 +43,14 @@ const renderValueCard = (props) => (
   <ValueCard
     // render the icon in the right color in the card preview
     renderIconByName={(iconName, iconProps) => {
-      const iconToRender = validThresholdIcons.find((icon) => icon.name === iconName)
-        ?.carbonIcon || <Warning24 />;
+      const iconToRender = validThresholdIcons.find(
+        (icon) => icon.name === iconName
+      )?.carbonIcon || <Warning24 />;
       // eslint-disable-next-line react/prop-types
       return (
-        <div style={{ color: iconProps.fill }}>{React.cloneElement(iconToRender, iconProps)}</div>
+        <div style={{ color: iconProps.fill }}>
+          {React.cloneElement(iconToRender, iconProps)}
+        </div>
       );
     }}
     isEditable
@@ -64,7 +67,12 @@ const renderTimeSeriesCard = (props) => {
     isEqual(range, props?.dataSource?.range)
   );
   return (
-    <TimeSeriesCard isEditable values={[]} interval={timeRangeJSON?.interval || 'day'} {...props} />
+    <TimeSeriesCard
+      isEditable
+      values={[]}
+      interval={timeRangeJSON?.interval || 'day'}
+      {...props}
+    />
   );
 };
 
@@ -111,10 +119,14 @@ const renderImageCard = (props) => (
     isEditable // render the icon in the right color in the card preview
     renderIconByName={(iconName, iconProps) => {
       // first search the validHotspot Icons
-      const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+      const matchingHotspotIcon = validHotspotIcons.find(
+        (icon) => icon.id === iconName
+      );
 
       // then search the validThresholdIcons
-      const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
+      const matchingThresholdIcon = validThresholdIcons.find(
+        (icon) => icon.name === iconName
+      );
       const iconToRender = matchingHotspotIcon
         ? React.createElement(matchingHotspotIcon.icon, {
             ...iconProps,
@@ -152,8 +164,7 @@ const renderCustomCard = (props) => {
     <Card
       // need to omit the content because its getting passed content to be rendered, which should not
       // get attached to the card wrapper
-      {...omit(props, 'content')}
-    >
+      {...omit(props, 'content')}>
       {
         // If content is a function, this is a react component
         typeof props.content === 'function' ? <props.content /> : props.content
@@ -169,7 +180,11 @@ const renderCustomCard = (props) => {
  * dimension and the value is a list of values for that dimension
  * @returns {Node}
  */
-const DashboardEditorCardRenderer = ({ dataItems, availableDimensions, ...others }) => {
+const DashboardEditorCardRenderer = ({
+  dataItems,
+  availableDimensions,
+  ...others
+}) => {
   if (!isCardJsonValid(others)) {
     return renderDefaultCard(others);
   }

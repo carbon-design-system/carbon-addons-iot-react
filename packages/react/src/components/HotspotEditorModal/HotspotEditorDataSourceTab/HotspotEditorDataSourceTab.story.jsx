@@ -6,12 +6,16 @@ import omit from 'lodash/omit';
 
 import imageFile from '../../ImageCard/landscape.jpg';
 import { CARD_SIZES, CARD_TYPES } from '../../../constants/LayoutConstants';
-import { handleDataSeriesChange, handleDataItemEdit } from '../../DashboardEditor/editorUtils';
+import {
+  handleDataSeriesChange,
+  handleDataItemEdit,
+} from '../../DashboardEditor/editorUtils';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 
 export default {
-  title: 'Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab',
+  title:
+    'Watson IoT Experimental/HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
   parameters: {
     component: HotspotEditorDataSourceTab,
@@ -159,7 +163,10 @@ export const WithStateInStory = () => {
             } else {
               setCardConfigState({
                 ...cardConfigState,
-                ...omit(handleDataItemEdit(newData, cardConfigState, null, 0), 'hotspotIndex'),
+                ...omit(
+                  handleDataItemEdit(newData, cardConfigState, null, 0),
+                  'hotspotIndex'
+                ),
               });
             }
             action('onChange')(newData);
@@ -203,7 +210,9 @@ WithStateInStory.story = {
 
 export const WithPresetValues = () => {
   const WithState = () => {
-    const [cardConfigState, setCardConfigState] = useState(cardConfigWithPresets);
+    const [cardConfigState, setCardConfigState] = useState(
+      cardConfigWithPresets
+    );
     return (
       <div>
         <HotspotEditorDataSourceTab
@@ -221,7 +230,10 @@ export const WithPresetValues = () => {
             } else {
               setCardConfigState({
                 ...cardConfigState,
-                ...omit(handleDataItemEdit(newData, cardConfigState, null, 0), 'hotspotIndex'),
+                ...omit(
+                  handleDataItemEdit(newData, cardConfigState, null, 0),
+                  'hotspotIndex'
+                ),
               });
             }
             action('onChange')(newData);

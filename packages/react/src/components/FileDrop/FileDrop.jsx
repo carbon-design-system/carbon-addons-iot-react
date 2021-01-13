@@ -103,7 +103,12 @@ class FileDrop extends React.Component {
     const x = evt.pageX - window.pageXOffset;
     const y = evt.pageY - window.pageYOffset;
 
-    const inArea = !(x < rect.left || x > rect.right || y < rect.top || y > rect.bottom);
+    const inArea = !(
+      x < rect.left ||
+      x > rect.right ||
+      y < rect.top ||
+      y > rect.bottom
+    );
 
     this.setState({
       hover: inArea && evt.type !== 'drop',
@@ -129,7 +134,8 @@ class FileDrop extends React.Component {
     Array.prototype.forEach.call(files, (file) => {
       this.readers[file.name] = new FileReader();
       this.readers[file.name].onload = () => this.handleFileLoad(file);
-      this.readers[file.name].onerror = (evt) => this.handleFileError(evt, file);
+      this.readers[file.name].onerror = (evt) =>
+        this.handleFileError(evt, file);
       if (fileType === FILE_TYPES.BINARY) {
         this.readers[file.name].readAsBinaryString(file);
       } else {
@@ -194,7 +200,8 @@ class FileDrop extends React.Component {
         )
         .filter(
           (elem, index, arr) =>
-            index === arr.findIndex((indexFound) => indexFound.name === elem.name) &&
+            index ===
+              arr.findIndex((indexFound) => indexFound.name === elem.name) &&
             (multiple || index === 0) // only support the first if set to multiple=false
         ),
     }));
@@ -256,8 +263,7 @@ class FileDrop extends React.Component {
               this.fileInput.click();
             }
           }}
-          role="presentation"
-        >
+          role="presentation">
           <LinkButton>{buttonLabel}</LinkButton>
         </span>
         <div>{description}</div>
@@ -307,11 +313,14 @@ class FileDrop extends React.Component {
           onChange={this.handleChange}
         />
         <Text
-          style={hover ? { border: '1px solid #3D70B2' } : { border: '1px dashed #8C8C8C' }}
+          style={
+            hover
+              ? { border: '1px solid #3D70B2' }
+              : { border: '1px dashed #8C8C8C' }
+          }
           onDragOver={this.fileDragHover}
           onDragLeave={this.fileDragHover}
-          onDrop={this.fileDrop}
-        >
+          onDrop={this.fileDrop}>
           {linkElement}
         </Text>
         {showFiles ? fileNameElements : null}
@@ -319,7 +328,9 @@ class FileDrop extends React.Component {
     ) : (
       <div id={id} className="bx--form-item">
         {title ? <strong className="bx--label">{title}</strong> : null}
-        {description ? <p className="bx--label-description">{description}</p> : null}
+        {description ? (
+          <p className="bx--label-description">{description}</p>
+        ) : null}
         <FileUploaderButton
           labelText={buttonLabel}
           multiple={multiple}

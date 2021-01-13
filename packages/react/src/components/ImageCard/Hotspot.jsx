@@ -123,10 +123,10 @@ const Hotspot = ({
               [`${iotPrefix}--hotspot-container--has-icon`]: icon,
               [`${iotPrefix}--hotspot-container--is-text`]: isTextType,
               [`${iotPrefix}--hotspot-container--is-fixed`]: type === 'fixed',
-              [`${iotPrefix}--hotspot-container--is-dynamic`]: type === 'dynamic',
+              [`${iotPrefix}--hotspot-container--is-dynamic`]:
+                type === 'dynamic',
             })}
-            icon={icon}
-          >
+            icon={icon}>
             {type === 'fixed' || type === 'dynamic' ? (
               <Tooltip
                 {...others}
@@ -138,8 +138,7 @@ const Hotspot = ({
                   if (evt.type === 'click' && onClick) {
                     onClick(evt, { x, y });
                   }
-                }}
-              >
+                }}>
                 {content}
               </Tooltip>
             ) : isTextType ? (
@@ -152,13 +151,14 @@ const Hotspot = ({
                   '--border-width': borderWidth,
                   '--title-font-weight': bold ? 'bold' : 'normal',
                   '--title-font-style': italic ? 'italic' : 'normal',
-                  '--title-text-decoration-line': underline ? 'underline' : 'none',
+                  '--title-text-decoration-line': underline
+                    ? 'underline'
+                    : 'none',
                   '--title-font-color': fontColor,
                   '--title-font-size': fontSize,
                 }}
                 className={`${iotPrefix}--text-hotspot`}
-                onClick={(evt) => onClick(evt, { x, y })}
-              >
+                onClick={(evt) => onClick(evt, { x, y })}>
                 {content}
               </div>
             ) : null}

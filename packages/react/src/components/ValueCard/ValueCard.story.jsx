@@ -25,8 +25,7 @@ export const SmallBasic = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Occupancy')}
         id="facilitycard"
@@ -57,8 +56,7 @@ export const SmallWithExpand = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Occupancy')}
         id="facilitycard"
@@ -93,8 +91,7 @@ export const SmallWithVariables = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Title variable is {not-working}')}
         id="facilitycard"
@@ -140,8 +137,7 @@ export const SmallLong = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Occupancy')}
         id="facilitycard"
@@ -183,7 +179,10 @@ export const SmallWrapping = () => {
         breakpoint="lg"
         size={size}
         values={{
-          occupancy: text('occupancy', 'Really really busy loong long long long'),
+          occupancy: text(
+            'occupancy',
+            'Really really busy loong long long long'
+          ),
         }}
       />
     </div>
@@ -208,8 +207,7 @@ export const SmallWrappingNoUnits = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title="Tagpath"
         id="facilitycard"
@@ -252,8 +250,7 @@ export const SmallTitle = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Foot Traffic')}
         id="facilitycard"
@@ -349,8 +346,7 @@ export const SmallThresholdsNumberNoIcon = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Alert Count')}
         id="facilitycard"
@@ -397,8 +393,7 @@ export const SmallThresholdsNumberIcon = () => {
       style={{
         width: `${number('cardWidth', 300)}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Alert Count')}
         id="facilitycard"
@@ -436,8 +431,7 @@ export const SmallThresholdsNumberCustomRenderIconByName = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Alert Count')}
         id="facilitycard"
@@ -488,8 +482,7 @@ export const SmallwideThresholdsString = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Status')}
         id="facilitycard"
@@ -533,8 +526,7 @@ export const SmallwideVertical2 = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Status')}
         id="facilitycard"
@@ -572,8 +564,7 @@ export const SmallwideHorizontal2 = () => {
       style={{
         width: `${number('cardWidth', 300)}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Status')}
         id="facilitycard"
@@ -612,8 +603,7 @@ export const MediumVerticalSingle = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -645,8 +635,7 @@ export const MediumVerticalMultiple = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -689,8 +678,7 @@ export const MediumVertical2 = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -1022,13 +1010,14 @@ export const WithBoolean = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Uncomfortable?')}
         id="facilitycard"
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         breakpoint="lg"
         size={size}
@@ -1049,8 +1038,7 @@ export const EmptyState = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -1068,18 +1056,24 @@ EmptyState.story = {
 
 export const DataStateNoDataMediumScrollPage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const width = text('cardWidth', `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`);
+  const width = text(
+    'cardWidth',
+    `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`
+  );
 
   const myDataState = {
-    type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
+    type: select(
+      'dataState : Type',
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.NO_DATA
+    ),
     ...getDataStateProp(),
     learnMoreElement: (
       <button
         type="button"
         onClick={() => {
           console.info('Learning more is great');
-        }}
-      >
+        }}>
         Learn more
       </button>
     ),
@@ -1091,7 +1085,9 @@ export const DataStateNoDataMediumScrollPage = () => {
         style={{ width }}
         title={text('title', 'Health score')}
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         dataState={myDataState}
         breakpoint="lg"
@@ -1111,7 +1107,11 @@ DataStateNoDataMediumScrollPage.story = {
 export const DataStateNoDataCustomIconLarge = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   const myDataState = {
-    type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
+    type: select(
+      'dataState : Type',
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.NO_DATA
+    ),
     ...getDataStateProp(),
     icon: (
       <Bee16 style={{ fill: 'orange' }}>
@@ -1125,12 +1125,13 @@ export const DataStateNoDataCustomIconLarge = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Health score')}
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         dataState={myDataState}
         breakpoint="lg"
@@ -1149,7 +1150,11 @@ export const DataStateErrorMedium = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const myDataState = {
     ...getDataStateProp(),
-    type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.ERROR),
+    type: select(
+      'dataState : Type',
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.ERROR
+    ),
   };
 
   return (
@@ -1157,12 +1162,13 @@ export const DataStateErrorMedium = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Health score')}
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         dataState={myDataState}
         breakpoint="lg"
@@ -1189,13 +1195,14 @@ export const DataStateErrorSmall = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('sm', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Health score')}
         id="myStoryId"
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         dataState={{
           type: dataStateType,
@@ -1229,13 +1236,14 @@ export const DataStateErrorSmallTooltipDirectionRight = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('sm', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Health score')}
         id="myStoryId"
         content={{
-          attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
+          attributes: [
+            { label: 'Monthly summary', dataSourceId: 'monthlySummary' },
+          ],
         }}
         dataState={{
           type: dataStateType,
@@ -1265,8 +1273,7 @@ export const LongTitlesAndValues = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Really long card title?')}
         id="facilitycard"
@@ -1300,8 +1307,7 @@ export const LongTitlesAndValuesMultiple = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Really really really long card title?')}
         id="facilitycard"
@@ -1341,8 +1347,7 @@ export const Editable = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Really really really long card title?')}
         id="facilitycard"
@@ -1417,8 +1422,7 @@ export const Locale = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Occupancy')}
         id="facilitycard"
@@ -1450,8 +1454,7 @@ export const SmallWithCustomFormatter = () => {
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <ValueCard
         title={text('title', 'Occupancy')}
         id="facilitycard"
