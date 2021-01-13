@@ -242,3 +242,53 @@ export const ForImage = () => (
 ForImage.story = {
   name: 'for Image',
 };
+
+export const WithTooltipLink = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'discharge_flow_rate',
+              label: 'Discharge flow',
+              precision: 3,
+            },
+            {
+              dataSourceId: 'discharge_perc',
+              label: 'Max Discharge %',
+              precision: 3,
+            },
+          ],
+        },
+        dataSource: {
+          attributes: [
+            {
+              aggregator: 'mean',
+              attribute: 'discharge_flow_rate',
+              id: 'discharge_flow_rate',
+            },
+            {
+              aggregator: 'max',
+              attribute: 'discharge_perc',
+              id: 'discharge_perc',
+            },
+          ],
+        },
+        id: 'calculated',
+        size: 'MEDIUMTHIN',
+        title: 'Calculated',
+        type: 'VALUE',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+      dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+    />
+  </div>
+);
+
+Default.story = {
+  name: 'default',
+};

@@ -8524,6 +8524,7 @@ Map {
       "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
@@ -8539,11 +8540,11 @@ Map {
         "headerImportButton": "Import",
         "headerLargeButton": "Large view",
         "headerMediumButton": "Medium view",
+        "headerSmallButton": "Small view",
         "headerSubmitButton": "Save and close",
-        "headerXlargeButton": "X-large view",
-        "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
-        "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
-        "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
+        "layoutInfoLg": "Edit dashboard at large layout (1057 - 1312px)",
+        "layoutInfoMd": "Edit dashboard at medium layout (673 - 1056px)",
+        "layoutInfoSm": "Edit dashboard at small layout (481 - 672px)",
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
@@ -8646,6 +8647,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",
@@ -9078,6 +9110,7 @@ Map {
       "cardConfig": null,
       "currentBreakpoint": "xl",
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "i18n": Object {
@@ -9201,6 +9234,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",

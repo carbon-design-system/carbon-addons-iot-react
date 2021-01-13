@@ -246,6 +246,17 @@ const propTypes = {
     showLegendLabel: PropTypes.string,
     fontSize: PropTypes.string,
   }),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -287,27 +298,28 @@ const defaultProps = {
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
-    headerXlargeButton: 'X-large view',
     headerLargeButton: 'Large view',
     headerMediumButton: 'Medium view',
+    headerSmallButton: 'Small view',
     galleryHeader: 'Gallery',
     openGalleryButton: 'Open gallery',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
-    layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
-    layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
-    layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
+    layoutInfoLg: 'Edit dashboard at large layout (1057 - 1312px)',
+    layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
+    layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
     searchPlaceHolderText: 'Enter a value',
   },
+  dataSeriesItemLinks: null,
 };
 
 const LAYOUTS = {
-  FIT_TO_SCREEN: { breakpoint: 'xl', index: 0 },
-  MEDIUM: { breakpoint: 'md', index: 3 },
-  LARGE: { breakpoint: 'lg', index: 2 },
-  XLARGE: { breakpoint: 'xl', index: 1 },
+  FIT_TO_SCREEN: { breakpoint: 'lg', index: 0 },
+  SMALL: { breakpoint: 'sm', index: 3 },
+  MEDIUM: { breakpoint: 'md', index: 2 },
+  LARGE: { breakpoint: 'lg', index: 1 },
 };
 export const baseClassName = `${iotPrefix}--dashboard-editor`;
 
@@ -340,8 +352,9 @@ const DashboardEditor = ({
   availableDimensions,
   isLoading,
   i18n,
+  dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
-  onFetchDynamicDemoHotspots, // needed for the hotspoteditormodal, see the proptypes for more details
+  onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
@@ -600,12 +613,12 @@ const DashboardEditor = ({
             className={classnames({
               [`${baseClassName}--preview__outline`]:
                 selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+              [`${baseClassName}--preview__sm`]:
+                selectedBreakpointIndex === LAYOUTS.SMALL.index,
               [`${baseClassName}--preview__md`]:
                 selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
               [`${baseClassName}--preview__lg`]:
                 selectedBreakpointIndex === LAYOUTS.LARGE.index,
-              [`${baseClassName}--preview__xl`]:
-                selectedBreakpointIndex === LAYOUTS.XLARGE.index,
             })}>
             {breakpointSwitcher?.enabled &&
               // only show breakpoint info if fit to screen is not selected
@@ -665,7 +678,7 @@ const DashboardEditor = ({
                       layouts: newLayouts,
                     });
                   }}
-                  supportedLayouts={['xl', 'lg', 'md']}>
+                  supportedLayouts={['lg', 'md', 'sm']}>
                   {cards}
                 </DashboardGrid>
               </ErrorBoundary>
@@ -698,6 +711,7 @@ const DashboardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         </ErrorBoundary>
