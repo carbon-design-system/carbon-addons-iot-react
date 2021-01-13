@@ -129,9 +129,7 @@ const Attribute = ({
             className={classnames(`${baseClassName}__attribute`, {
               [`${bemBase}--wrappable`]: allowWrap,
               [`${bemBase}--small`]: !label || size === CARD_SIZES.SMALL,
-            })}
-            size={newSize}
-            label={label}>
+            })}>
             <ValueRenderer
               value={value}
               unit={unit}
@@ -148,7 +146,6 @@ const Attribute = ({
             <UnitRenderer
               value={value}
               unit={unit}
-              layout={layout}
               allowedToWrap={allowWrap}
               wrapCompact={wrapCompact}
               attributeCount={attributeCount}

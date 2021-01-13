@@ -66,29 +66,28 @@ const ValueRenderer = ({
   const newSize = getUpdatedCardSize(size);
 
   const precision = determinePrecision(newSize, value, precisionProp);
-  let renderValue = value;
 
+  let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = (
       <span className={`${baseClassName}__value-renderer--boolean`}>
         {value.toString()}
       </span>
     );
-  }
-
-  if (typeof value === 'number') {
+  } else if (typeof value === 'number') {
     renderValue = formatNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }
 
-  const hasWordsCheck = (string) =>
-    typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
-  const hasWords = hasWordsCheck(renderValue);
-
   renderValue = isNil(customFormatter)
     ? renderValue
     : customFormatter(renderValue, value);
+
+  const hasWords =
+    typeof renderValue === 'string'
+      ? renderValue.trim().indexOf(' ') >= 0
+      : false;
 
   return (
     <Attribute

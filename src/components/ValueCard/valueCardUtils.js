@@ -52,22 +52,6 @@ export const determineValue = (dataSourceId, values, dataFilter = {}) =>
 /**
  * @param {string} size card size
  * @param {Array<Object>} attributes
- */
-export const determineAttributes = (size, attributes) => {
-  if (!attributes || !Array.isArray(attributes)) {
-    return attributes;
-  }
-  // TODO: need to remove this max attributes for new design
-  const attributeCount = determineMaxValueCardAttributeCount(
-    size,
-    attributes.length
-  );
-  return attributes.slice(0, attributeCount);
-};
-
-/**
- * @param {string} size card size
- * @param {Array<Object>} attributes
  * @param {Number} measuredWidth
  * @returns card layout - horizontal or vertical
  */

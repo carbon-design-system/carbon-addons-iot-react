@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
-import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -10,15 +9,15 @@ const { iotPrefix } = settings;
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   unit: PropTypes.string,
-  layout: PropTypes.string,
   allowedToWrap: PropTypes.bool.isRequired,
   wrapCompact: PropTypes.bool,
+  attributeCount: PropTypes.number,
 };
 
 const defaultProps = {
   unit: '',
-  layout: null,
   wrapCompact: false,
+  attributeCount: 0,
 };
 
 /**
@@ -27,7 +26,6 @@ const defaultProps = {
 const UnitRenderer = ({
   value,
   unit,
-  layout,
   allowedToWrap,
   wrapCompact,
   attributeCount,
@@ -36,11 +34,10 @@ const UnitRenderer = ({
   const notAllowedToWrap =
     typeof value === 'string' && !allowedToWrap && attributeCount === 1;
 
-  const unitElement = (
+  return (
     <span
       style={{
-        '--default-font-size':
-          layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem',
+        '--default-font-size': '1.25rem',
       }}
       className={classnames(bemBase, {
         [`${bemBase}--wrappable`]: allowedToWrap,
@@ -50,8 +47,6 @@ const UnitRenderer = ({
       {unit}
     </span>
   );
-
-  return unitElement;
 };
 
 UnitRenderer.propTypes = propTypes;

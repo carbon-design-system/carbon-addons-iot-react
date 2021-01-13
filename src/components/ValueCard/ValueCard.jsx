@@ -21,7 +21,6 @@ import DataStateRenderer from '../Card/DataStateRenderer';
 import {
   baseClassName,
   determineLayout,
-  determineAttributes,
   determineValue,
   shouldLabelWrap,
 } from './valueCardUtils';
@@ -83,11 +82,6 @@ const ValueCard = ({
           measuredSize.width
         );
 
-        const attributes = determineAttributes(
-          newSize,
-          content && content.attributes
-        );
-
         return (
           <Card
             title={title}
@@ -114,14 +108,14 @@ const ValueCard = ({
                   id={id}
                 />
               ) : (
-                attributes.map((attribute, i) => (
+                content.attributes.map((attribute, attrIndex) => (
                   <React.Fragment
                     key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
                       attribute.dataFilter || {}
                     )}`}>
                     <div className={`${baseClassName}__attribute-wrapper`}>
                       <Attribute
-                        attributeCount={attributes.length}
+                        attributeCount={content.attributes.length}
                         layout={layout}
                         locale={locale}
                         isEditable={isEditable}
@@ -169,7 +163,7 @@ const ValueCard = ({
                         {attribute.label}
                       </div>
                     </div>
-                    {i < attributes.length - 1 &&
+                    {attrIndex < content.attributes.length - 1 &&
                     layout === CARD_LAYOUTS.VERTICAL &&
                     newSize !== CARD_SIZES.SMALLWIDE ? (
                       <div className={`${baseClassName}__attribute-wrapper`}>
