@@ -92,15 +92,25 @@ describe('DataSeriesFormItemModal', () => {
     label: 'Temperature',
     dataSourceId: 'temperature',
     color: 'red',
-    aggregationMethods: ['Last', 'Mean', 'Max', 'Min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   };
 
   const editTimeseriesDataItemAggregated = {
     label: 'Temperature Max',
     dataSourceId: 'temperature_max',
     color: 'red',
-    aggregationMethods: ['Last', 'Mean', 'Max', 'Min'],
-    aggregationMethod: 'Max',
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
+    aggregationMethod: 'max',
   };
 
   const editDataSeriesTimeSeries = [
@@ -371,7 +381,24 @@ describe('DataSeriesFormItemModal', () => {
       label: 'newLabel',
       dataSourceId: 'temperature',
       color: 'red',
-      aggregationMethods: ['Last', 'Mean', 'Max', 'Min'],
+      aggregationMethods: [
+        {
+          id: 'last',
+          text: 'Last',
+        },
+        {
+          id: 'mean',
+          text: 'Mean',
+        },
+        {
+          id: 'max',
+          text: 'Max',
+        },
+        {
+          id: 'min',
+          text: 'Min',
+        },
+      ],
     });
   });
   it('Changes the color in a TimeseriesCard', () => {
@@ -398,7 +425,24 @@ describe('DataSeriesFormItemModal', () => {
       label: 'Temperature',
       dataSourceId: 'temperature',
       color: '#520408',
-      aggregationMethods: ['Last', 'Mean', 'Max', 'Min'],
+      aggregationMethods: [
+        {
+          id: 'last',
+          text: 'Last',
+        },
+        {
+          id: 'mean',
+          text: 'Mean',
+        },
+        {
+          id: 'max',
+          text: 'Max',
+        },
+        {
+          id: 'min',
+          text: 'Min',
+        },
+      ],
     });
   });
   it('Changes grain', () => {

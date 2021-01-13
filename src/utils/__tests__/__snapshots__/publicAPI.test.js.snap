@@ -8641,7 +8641,17 @@ Map {
                 "aggregationMethods": Object {
                   "args": Array [
                     Object {
-                      "type": "string",
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "type": "string",
+                          },
+                          "text": Object {
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
                     },
                   ],
                   "type": "arrayOf",

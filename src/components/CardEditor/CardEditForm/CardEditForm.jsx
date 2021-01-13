@@ -168,7 +168,7 @@ export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
   if (card.content?.attributes) {
-    attributes = card.content?.attributes?.map((attribute) =>
+    attributes = card.content.attributes.map((attribute) =>
       omit(attribute, [
         'aggregationMethods',
         'aggregationMethod',
@@ -178,7 +178,7 @@ export const hideCardPropertiesForEditor = (card) => {
     );
   }
   if (card.content?.series) {
-    series = card.content?.series?.map((attribute) =>
+    series = card.content.series.map((attribute) =>
       omit(attribute, [
         'aggregationMethods',
         'aggregationMethod',

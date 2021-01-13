@@ -115,7 +115,7 @@
     align-items: flex-end;
     padding-bottom: 1rem;
     &--item {
-      .iot--color-dropdown {
+      .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;
       }
       margin-right: 1rem;

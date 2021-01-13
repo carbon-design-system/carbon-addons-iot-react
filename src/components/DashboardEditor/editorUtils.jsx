@@ -77,7 +77,9 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
     dataSourceId: PropTypes.string,
     label: PropTypes.string,
     aggregationMethod: PropTypes.string,
-    aggregationMethods: PropTypes.arrayOf(PropTypes.string),
+    aggregationMethods: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
+    ),
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
   })

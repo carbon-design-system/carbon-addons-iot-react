@@ -294,6 +294,42 @@ const DataSeriesFormItem = ({
     mergedI18n
   );
 
+  const handleSimpleDataSeriesChange = (selectedItem) => {
+    // ignore the extra value added by the "enter" keypress
+    if (selectedItem && !selectedItem.id.includes('iot-input')) {
+      const itemWithMetaData = validDataItems?.find(
+        ({ dataSourceId }) => dataSourceId === selectedItem.id
+      );
+
+      const selectedItems = [
+        ...dataSection.map((item) => ({
+          ...item,
+          ...(!item.uuid && { uuid: uuid.v4() }),
+          id: item.dataSourceId,
+        })),
+        {
+          ...selectedItem,
+          ...(itemWithMetaData && { ...itemWithMetaData }),
+          uuid: uuid.v4(),
+        },
+      ];
+      // need to remove the category if the card is a stacked timeseries bar
+      const card =
+        cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
+        cardConfig.content.timeDataSourceId &&
+        selectedItems.length > 1
+          ? omit(cardConfig, 'content.categoryDataSourceId')
+          : cardConfig;
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        card,
+        setEditDataSeries
+      );
+      setSelectedDataItems(selectedItems.map(({ id }) => id));
+      onChange(newCard);
+    }
+  };
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -364,41 +400,7 @@ const DataSeriesFormItem = ({
               placeholder={mergedI18n.filter}
               // clears out the input field after each selection
               selectedItem={{ id: '', text: '' }}
-              onChange={(selectedItem) => {
-                // ignore the value added by the "enter" keypress
-                if (selectedItem && !selectedItem.id.includes('iot-input')) {
-                  const itemWithMetaData = validDataItems?.find(
-                    ({ dataSourceId }) => dataSourceId === selectedItem.id
-                  );
-
-                  const selectedItems = [
-                    ...dataSection.map((item) => ({
-                      ...item,
-                      ...(!item.uuid && { uuid: uuid.v4() }),
-                      id: item.dataSourceId,
-                    })),
-                    {
-                      ...selectedItem,
-                      ...(itemWithMetaData && { ...itemWithMetaData }),
-                      uuid: uuid.v4(),
-                    },
-                  ];
-                  // need to remove the category if the card is a stacked timeseries bar
-                  const card =
-                    cardConfig.content.type === BAR_CHART_TYPES.STACKED &&
-                    cardConfig.content.timeDataSourceId &&
-                    selectedItems.length > 1
-                      ? omit(cardConfig, 'content.categoryDataSourceId')
-                      : cardConfig;
-                  const newCard = handleDataSeriesChange(
-                    selectedItems,
-                    card,
-                    setEditDataSeries
-                  );
-                  setSelectedDataItems(selectedItems.map(({ id }) => id));
-                  onChange(newCard);
-                }
-              }}
+              onChange={handleSimpleDataSeriesChange}
               light
             />
           </div>

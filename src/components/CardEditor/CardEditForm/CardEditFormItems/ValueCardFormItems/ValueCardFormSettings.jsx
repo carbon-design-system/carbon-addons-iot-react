@@ -43,13 +43,7 @@ const propTypes = {
 const defaultProps = {
   cardConfig: {},
   i18n: {
-    xAxisLabel: 'X-axis label',
-    yAxisLabel: 'Y-axis label',
-    unitLabel: 'Unit',
-    showLegendLable: 'Show legend',
     fontSize: 'Font size',
-    precisionLabel: 'Precision',
-    notSet: 'Not set',
   },
 };
 

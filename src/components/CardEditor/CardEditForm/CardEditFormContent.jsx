@@ -107,14 +107,14 @@ const defaultProps = {
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
   const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
   switch (idToTranslate) {
-    default:
-      return '';
     case 'clear.all':
       return clearAllText || 'Clear all';
     case 'open.menu':
       return openMenuText || 'Open menu';
     case 'close.menu':
       return closeMenuText || 'Close menu';
+    default:
+      return '';
   }
 };
 

@@ -117,8 +117,6 @@ const defaultProps = {
     example: 'Example',
     notSet: 'Not set',
     none: 'None',
-    last: 'Last',
-    mean: 'Mean',
     dataItemEditorDataItemCustomLabel: 'Custom label',
     dataItemEditorDataItemUnit: 'Unit',
     dataItemEditorDataItemFilter: 'Data filter',
@@ -215,12 +213,12 @@ const DataSeriesFormItemModal = ({
   );
 
   const availableGrains = [
-    mergedI18n.inputLabel,
-    mergedI18n.hourlyLabel,
-    mergedI18n.dailyLabel,
-    mergedI18n.weeklyLabel,
-    mergedI18n.monthlyLabel,
-    mergedI18n.yearlyLabel,
+    { id: 'input', text: mergedI18n.inputLabel },
+    { id: 'hourly', text: mergedI18n.hourlyLabel },
+    { id: 'daily', text: mergedI18n.dailyLabel },
+    { id: 'weekly', text: mergedI18n.weeklyLabel },
+    { id: 'monthly', text: mergedI18n.monthlyLabel },
+    { id: 'yearly', text: mergedI18n.yearlyLabel },
   ];
 
   const initialAggregation = validDataItems?.find(
@@ -316,24 +314,31 @@ const DataSeriesFormItemModal = ({
               id={`${id}_aggregation-method`}
               label=""
               direction="bottom"
-              itemToString={(item) =>
-                `${item[0].toUpperCase()}${item.slice(1)}`
-              }
+              itemToString={(item) => item.text}
               items={editDataItem.aggregationMethods || []}
               selectedItem={
-                editDataItem.aggregationMethod ||
+                editDataItem.aggregationMethods?.find(
+                  (method) => method.id === editDataItem.aggregationMethod
+                ) ||
                 (!isTimeBasedCard
-                  ? mergedI18n.last
+                  ? // need to search by id to preserve translations
+                    editDataItem.aggregationMethods?.find(
+                      (method) => method.id === 'last'
+                    )
                   : isSummaryDashboard
-                  ? mergedI18n.mean
-                  : mergedI18n.none)
+                  ? editDataItem.aggregationMethods?.find(
+                      (method) => method.id === 'mean'
+                    )
+                  : editDataItem.aggregationMethods?.find(
+                      (method) => method.id === 'none'
+                    ))
               }
               titleText={mergedI18n.aggregationMethod}
               light
               onChange={({ selectedItem }) =>
                 setEditDataItem({
                   ...editDataItem,
-                  aggregationMethod: selectedItem,
+                  aggregationMethod: selectedItem.id,
                 })
               }
             />
@@ -361,24 +366,28 @@ const DataSeriesFormItemModal = ({
               id={`${id}_grain-selector`}
               label=""
               direction="bottom"
-              itemToString={(item) => item}
+              itemToString={(item) => item.text}
               items={
                 isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
                   ? availableGrains.slice(
                       availableGrains.findIndex(
-                        (grain) => grain === initialGrain
+                        (grain) => grain.id === initialGrain
                       )
                     )
                   : availableGrains
               }
-              selectedItem={editDataItem.grain || mergedI18n.inputLabel}
+              selectedItem={
+                availableGrains.find(
+                  (grain) => grain.id === editDataItem.grain
+                ) || availableGrains.find((grain) => grain.id === 'input')
+              }
               titleText={mergedI18n.grain}
               light
               onChange={({ selectedItem }) => {
                 if (selectedItem !== mergedI18n.inputLabel) {
                   setEditDataItem({
                     ...editDataItem,
-                    grain: selectedItem,
+                    grain: selectedItem.id,
                   });
                 } else {
                   setEditDataItem(omit(editDataItem, 'grain'));

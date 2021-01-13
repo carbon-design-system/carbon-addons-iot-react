@@ -50,34 +50,64 @@ const mockDataItems = [
     dataSourceId: 'torque_max',
     label: 'Torque Max',
     aggregationMethod: 'max',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
   {
     dataSourceId: 'torque_min',
     label: 'Torque Min',
     aggregationMethod: 'min',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
   {
     dataSourceId: 'torque_mean',
     label: 'Torque Mean',
     aggregationMethod: 'mean',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
   {
     dataSourceId: 'torque',
     label: 'Torque',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
   {
     dataSourceId: 'temperature',
     label: 'Temperature',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
   {
     dataSourceId: 'pressure',
     label: 'Pressure',
-    aggregationMethods: ['mean', 'max', 'min'],
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
   },
 ];
 
