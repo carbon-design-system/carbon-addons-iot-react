@@ -113,9 +113,7 @@ const propTypes = {
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** Array of custom action items */
-  customActionItems: PropTypes.arrayOf(
-    PropTypes.shape(HeaderActionItemPropTypes)
-  ),
+  customActionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)),
   /** If surveyData is present, show a ToastNotification */
   surveyData: SuiteHeaderSurveyDataPropTypes,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
@@ -142,9 +140,7 @@ const SuiteHeader = ({
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showToast, setShowToast] = useState(
-    surveyData !== null && surveyData !== undefined
-  );
+  const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
 
   // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
   // not only at mount time
@@ -166,29 +162,24 @@ const SuiteHeader = ({
               <Link
                 href="javascript:void(0)"
                 onClick={async () => {
-                  const result = await onRouteChange(
-                    ROUTE_TYPES.SURVEY,
-                    surveyData.surveyLink
-                  );
+                  const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                   if (result) {
                     window.open(surveyData.surveyLink, 'blank');
                   }
-                }}>
+                }}
+              >
                 {mergedI18N.surveyText}
               </Link>
-              <div
-                className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
+              <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
                   href="javascript:void(0)"
                   onClick={async () => {
-                    const result = await onRouteChange(
-                      ROUTE_TYPES.SURVEY,
-                      surveyData.surveyLink
-                    );
+                    const result = await onRouteChange(ROUTE_TYPES.SURVEY, surveyData.surveyLink);
                     if (result) {
                       window.open(surveyData.privacyLink, 'blank');
                     }
-                  }}>
+                  }}
+                >
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
               </div>
@@ -220,14 +211,10 @@ const SuiteHeader = ({
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
-            <span
-              className={`${settings.iotPrefix}--suite-header-data`}
-              data-type="workspaceId">
+            <span className={`${settings.iotPrefix}--suite-header-data`} data-type="workspaceId">
               {routes.workspaceId}
             </span>
-            <span
-              className={`${settings.iotPrefix}--suite-header-data`}
-              data-type="domain">
+            <span className={`${settings.iotPrefix}--suite-header-data`} data-type="domain">
               {routes.domain}
             </span>
             <Header
@@ -259,10 +246,7 @@ const SuiteHeader = ({
                 routes.admin !== null
                   ? {
                       label: mergedI18N.administrationIcon,
-                      className: [
-                        'admin-icon',
-                        isAdminView ? 'admin-icon__selected' : null,
-                      ]
+                      className: ['admin-icon', isAdminView ? 'admin-icon__selected' : null]
                         .filter((i) => i)
                         .join(' '),
                       btnContent: (
@@ -279,10 +263,7 @@ const SuiteHeader = ({
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
                           // Only use referrer URL if it is not the login screen.
-                          if (
-                            document.referrer !== '' &&
-                            document.referrer.indexOf('auth') < 0
-                          ) {
+                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
                             href = document.referrer;
                             routeType = ROUTE_TYPES.REFERRER;
                           } else {
@@ -337,10 +318,7 @@ const SuiteHeader = ({
                         href: 'javascript:void(0)',
                         title: mergedI18N.about,
                         onClick: async () => {
-                          const result = await onRouteChange(
-                            ROUTE_TYPES.ABOUT,
-                            routes.about
-                          );
+                          const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
                           if (result) {
                             window.location.href = routes.about;
                           }
@@ -370,10 +348,7 @@ const SuiteHeader = ({
                           displayName={userDisplayName}
                           username={username}
                           onProfileClick={async () => {
-                            const result = await onRouteChange(
-                              ROUTE_TYPES.PROFILE,
-                              routes.profile
-                            );
+                            const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
                             if (result) {
                               window.location.href = routes.profile;
                             }
@@ -393,10 +368,7 @@ const SuiteHeader = ({
               {...otherHeaderProps}
             />
             {sideNavProps ? (
-              <SideNav
-                {...sideNavProps}
-                isSideNavExpanded={isSideNavExpanded}
-              />
+              <SideNav {...sideNavProps} isSideNavExpanded={isSideNavExpanded} />
             ) : null}
           </>
         )}

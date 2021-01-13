@@ -149,17 +149,14 @@ export const BasicSingleColumnWithSearch = () => {
       <div style={{ width: 400 }}>
         <List
           title={text('title', 'NY Yankees')}
-          items={Object.entries(
-            sampleHierarchy.MLB['American League']['New York Yankees']
-          )
+          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
             .map(([key]) => ({
               id: key,
               content: { value: key },
             }))
             .filter(
               ({ id }) =>
-                searchValue === null ||
-                id.toLowerCase().includes(searchValue?.toLowerCase())
+                searchValue === null || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
           isLoading={boolean('isLoading', false)}
           search={{

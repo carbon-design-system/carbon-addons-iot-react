@@ -9,10 +9,7 @@ import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 
-import {
-  CardPropTypes,
-  TableCardPropTypes,
-} from '../../constants/CardPropTypes';
+import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
@@ -37,11 +34,9 @@ import ThresholdIcon from './ThresholdIcon';
 
 const { iotPrefix } = settings;
 
-const StyledStatefulTable = styled(
-  ({ showHeader, isExpanded, data, ...rest }) => (
-    <StatefulTable {...rest} data={data} />
-  )
-)`
+const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
+  <StatefulTable {...rest} data={data} />
+))`
   flex: inherit;
   height: 100%;
   position: relative;
@@ -92,10 +87,7 @@ const StyledStatefulTable = styled(
       margin-left: ${spacing05};
     }
     .bx--data-table {
-      ${(props) =>
-        props.data && props.data.length > 0
-          ? `height: initial;`
-          : `height: 100%;`}
+      ${(props) => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
       td {
         white-space: nowrap;
       }
@@ -187,14 +179,7 @@ const TableCard = ({
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
-    content: {
-      columns = [],
-      showHeader,
-      expandedRows,
-      sort,
-      thresholds,
-      emptyMessage,
-    },
+    content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
     values: data,
   } = handleCardVariables(titleProp, contentProp, valuesProp, others);
 
@@ -202,18 +187,16 @@ const TableCard = ({
   const newSize = getUpdatedCardSize(size);
 
   /** adds the id to the card action */
-  const cachedOnCardAction = useCallback(
-    (...args) => onCardAction(id, ...args),
-    [onCardAction, id]
-  );
+  const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
+    onCardAction,
+    id,
+  ]);
 
   const renderActionCell = (cellItem) => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
       React.createElement(
-        typeof actionList[0].icon === 'string'
-          ? icons[actionList[0].icon]
-          : actionList.icon,
+        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList.icon,
         {
           className: `${iotPrefix}--table-card--action-icon`,
           onClick: (evt) => {
@@ -235,7 +218,8 @@ const TableCard = ({
             fill="#5a6872"
             description={mergedI18n.overflowMenuIconDescription}
           />
-        )}>
+        )}
+      >
         {actionList.map((item) => {
           return (
             <OverflowMenuItem
@@ -282,9 +266,7 @@ const TableCard = ({
     () =>
       onlyShowIfColumnHasData
         ? data
-            .map((i) =>
-              i.values[onlyShowIfColumnHasData.dataSourceId] ? i : null
-            )
+            .map((i) => (i.values[onlyShowIfColumnHasData.dataSourceId] ? i : null))
             .filter((i) => i)
         : data,
     [onlyShowIfColumnHasData, data]
@@ -305,10 +287,7 @@ const TableCard = ({
   const hasActionColumn = data.filter((i) => i.actions).length > 0;
 
   // If a column has a linkTemplate, format the column to render a link
-  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(
-    columns,
-    others.cardVariables
-  );
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
 
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
@@ -363,28 +342,20 @@ const TableCard = ({
       // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
       // in the next call
       if (columnIndex !== -1) {
-        columnsUpdated.splice(
-          columnIndex,
-          0,
-          generateThresholdColumn(threshold.dataSourceId)
-        );
+        columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
       }
     });
 
     // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
     const missingThresholdColumns = uniqueThresholds.filter((threshold) => {
-      return !columnsUpdated.find(
-        (column) => threshold.dataSourceId === column.dataSourceId
-      );
+      return !columnsUpdated.find((column) => threshold.dataSourceId === column.dataSourceId);
     });
 
     if (missingThresholdColumns.length > 0) {
       columnsUpdated.splice(
         columnsUpdated.length,
         0,
-        ...missingThresholdColumns.map(({ dataSourceId }) =>
-          generateThresholdColumn(dataSourceId)
-        )
+        ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
       );
     }
   }
@@ -399,11 +370,7 @@ const TableCard = ({
           id: i.dataSourceId ? i.dataSourceId : i.id,
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
-          width: i.width
-            ? `${i.width}px`
-            : newSize === CARD_SIZES.LARGETHIN
-            ? '150px'
-            : '', // force the text wrap
+          width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
           filter: i.filter
             ? i.filter
             : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
@@ -434,11 +401,7 @@ const TableCard = ({
   const filteredTimestampColumns = useMemo(
     () =>
       columns
-        .map((column) =>
-          column.type && column.type === 'TIMESTAMP'
-            ? column.dataSourceId
-            : null
-        )
+        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
         .filter((i) => !isNil(i)),
     [columns]
   );
@@ -556,9 +519,7 @@ const TableCard = ({
         ? tableData.map((dataItem) => {
             // filter the data keys and find the expandaded row exist for that key
             const expandedItem = Object.keys(dataItem.values)
-              .map(
-                (value) => expandedRows.filter((item) => item.id === value)[0]
-              )
+              .map((value) => expandedRows.filter((item) => item.id === value)[0])
               .filter((i) => i);
 
             // add links and link variables to the expandedItem
@@ -573,43 +534,36 @@ const TableCard = ({
               content: (
                 <div
                   key={`${dataItem.id}-expanded`}
-                  className={`${iotPrefix}--table-card--expanded-row-content`}>
+                  className={`${iotPrefix}--table-card--expanded-row-content`}
+                >
                   {formattedExpandedItems.length ? (
                     formattedExpandedItems.map((item, index) => (
                       <div
                         key={`${item.id}-expanded-${index}`}
-                        className={`${iotPrefix}--table-card--expanded`}>
+                        className={`${iotPrefix}--table-card--expanded`}
+                      >
                         {item.linkTemplate ? (
                           <>
-                            <p
-                              key={`${item.id}-label`}
-                              style={{ marginRight: '5px' }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                               {item ? item.label : '--'}
                             </p>
                             <Link
                               key={`${item.id}-link`}
                               href={item.linkTemplate.href}
-                              target={
-                                item.linkTemplate.target
-                                  ? item.linkTemplate.target
-                                  : null
-                              }>
+                              target={item.linkTemplate.target ? item.linkTemplate.target : null}
+                            >
                               {dataItem.values[item.id]}
                             </Link>
                           </>
                         ) : (
                           <>
-                            <p
-                              key={`${item.id}-label`}
-                              style={{ marginRight: '5px' }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                               {item ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>
                               {item
                                 ? item.type === 'TIMESTAMP'
-                                  ? moment(dataItem.values[item.id]).format(
-                                      'L HH:mm'
-                                    )
+                                  ? moment(dataItem.values[item.id]).format('L HH:mm')
                                   : dataItem.values[item.id]
                                 : null}
                             </span>
@@ -620,7 +574,8 @@ const TableCard = ({
                   ) : (
                     <div
                       key={`${dataItem.id}-expanded`}
-                      className={`${iotPrefix}--table-card--expanded`}>
+                      className={`${iotPrefix}--table-card--expanded`}
+                    >
                       {' '}
                       <p key={`${dataItem.id}-label`}>--</p>
                     </div>
@@ -683,11 +638,10 @@ const TableCard = ({
       hideHeader
       // Use the Table's loading state rather than Card's
       isLoading={false}
-      {...others}>
+      {...others}
+    >
       {({ height }) => {
-        const numberOfRowsPerPage = !isNil(height)
-          ? Math.floor((height - 48 * 3) / 48)
-          : 10;
+        const numberOfRowsPerPage = !isNil(height) ? Math.floor((height - 48 * 3) / 48) : 10;
         return (
           <StyledStatefulTable
             columns={columnsToRender}
@@ -714,8 +668,7 @@ const TableCard = ({
               toolbar: {
                 onClearAllFilters: () => {},
                 onToggleFilter: () => {},
-                onDownloadCSV: (filteredData) =>
-                  csvDownloadHandler(filteredData, title),
+                onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, title),
               },
             }}
             view={{
@@ -735,9 +688,7 @@ const TableCard = ({
                   ? {
                       sort: {
                         columnId: columnStartSort.id,
-                        direction: !columnStartSortDefined
-                          ? sort
-                          : columnStartSortDefined.sort,
+                        direction: !columnStartSortDefined ? sort : columnStartSortDefined.sort,
                       },
                     }
                   : {}),

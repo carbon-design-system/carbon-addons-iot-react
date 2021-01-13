@@ -349,9 +349,7 @@ export const convertStringsToDOMElement = (strings = []) => {
  * @returns {object} object with values for r, g, b properties
  */
 export const hexToRgb = (hexColor) => {
-  const regexResult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
-    hexColor
-  );
+  const regexResult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColor);
   const radix = 16;
   let rgbColors;
   try {

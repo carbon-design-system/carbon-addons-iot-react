@@ -18,11 +18,7 @@ const hotspotStateProptypes = {
   /** All the curren hotspots, including dynamic demo hotspots */
   hotspots: PropTypes.arrayOf(HotspotPropTypes),
   /** The type of hotspot that is currently being shown by the context switcher */
-  currentType: PropTypes.oneOf([
-    hotspotTypes.FIXED,
-    hotspotTypes.DYNAMIC,
-    hotspotTypes.TEXT,
-  ]),
+  currentType: PropTypes.oneOf([hotspotTypes.FIXED, hotspotTypes.DYNAMIC, hotspotTypes.TEXT]),
   /** The currently selected hotspot */
   selectedHotspot: HotspotPropTypes,
   /** The data item containing the x source of the dynammic hotspot */
@@ -54,9 +50,7 @@ const isHotspotMatch = (hotspot, position) => {
   return hotspot.x === position.x && hotspot.y === position.y;
 };
 const getSelectedIndex = (state) =>
-  state.hotspots.findIndex((hotspot) =>
-    isHotspotMatch(hotspot, state.selectedHotspot)
-  );
+  state.hotspots.findIndex((hotspot) => isHotspotMatch(hotspot, state.selectedHotspot));
 
 const getDynamicHotspotsUpdateFunction = (mergeSpec) => (arr) =>
   arr.map((hotspot) =>
@@ -68,8 +62,7 @@ const getDynamicHotspotsUpdateFunction = (mergeSpec) => (arr) =>
  * selectedHotspot and the hotspots collection.
  */
 const getHotspotUpdate = (state, mergeSpec) => {
-  const isMultiHotspotUpdate =
-    state.selectedHotspot.type === hotspotTypes.DYNAMIC;
+  const isMultiHotspotUpdate = state.selectedHotspot.type === hotspotTypes.DYNAMIC;
   const modifiedHotspot = update(state.selectedHotspot, mergeSpec);
 
   const collectionUpdateSpec = isMultiHotspotUpdate
@@ -129,13 +122,10 @@ function hotspotEditorReducer(state, { type, payload }) {
       const isPositionAvailable = !state.hotspots.find((hotspot) =>
         isHotspotMatch(hotspot, payload.position)
       );
-      const defaultContent =
-        state.currentType === hotspotTypes.TEXT ? { title: '' } : {};
+      const defaultContent = state.currentType === hotspotTypes.TEXT ? { title: '' } : {};
 
       const createableType =
-        state.currentType === hotspotTypes.DYNAMIC
-          ? hotspotTypes.FIXED
-          : state.currentType;
+        state.currentType === hotspotTypes.DYNAMIC ? hotspotTypes.FIXED : state.currentType;
 
       const newHotspot = {
         ...payload.hotspotDefaults,
@@ -154,9 +144,7 @@ function hotspotEditorReducer(state, { type, payload }) {
     // HOTSPOT SELECT
     case hotspotActionTypes.hotspotSelect: {
       const { x, y } = payload;
-      const hotspotIndex = state.hotspots.findIndex((hotspot) =>
-        isHotspotMatch(hotspot, { x, y })
-      );
+      const hotspotIndex = state.hotspots.findIndex((hotspot) => isHotspotMatch(hotspot, { x, y }));
       const hotspot = state.hotspots[hotspotIndex];
       const defaultTypeWhenMissing = hotspotTypes.FIXED;
 
@@ -235,8 +223,7 @@ function hotspotEditorReducer(state, { type, payload }) {
     // DYNAMIC HOTSPOTS SET, this clears the previous dynamic hotspots but leaves the static ones
     case hotspotActionTypes.dynamicHotspotsSet: {
       const stateWithoutDynamicHotspots = update(state, {
-        hotspots: (arr) =>
-          arr.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+        hotspots: (arr) => arr.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
       });
       return update(stateWithoutDynamicHotspots, {
         hotspots: { $push: payload },
@@ -246,13 +233,8 @@ function hotspotEditorReducer(state, { type, payload }) {
     // DYNAMIC HOTSPOT SOURCE CLEAR
     case hotspotActionTypes.dynamicHotspotSourceClear: {
       return update(state, {
-        hotspots: (arr) =>
-          arr.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
-        $unset: [
-          'selectedHotspot',
-          'dynamicHotspotSourceX',
-          'dynamicHotspotSourceY',
-        ],
+        hotspots: (arr) => arr.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
+        $unset: ['selectedHotspot', 'dynamicHotspotSourceX', 'dynamicHotspotSourceY'],
       });
     }
 
@@ -267,10 +249,7 @@ function hotspotEditorReducer(state, { type, payload }) {
  * by accepting a custom the reducer, which can be based on the exported default hotspotEditorReducer.
  * @param {Object} Configuration with 'reducer' and 'initialState'
  */
-function useHotspotEditorState({
-  reducer = hotspotEditorReducer,
-  initialState = {},
-} = {}) {
+function useHotspotEditorState({ reducer = hotspotEditorReducer, initialState = {} } = {}) {
   const defaultState = {
     hotspots: [],
     currentType: hotspotTypes.FIXED,
@@ -429,9 +408,4 @@ useHotspotEditorState.prototypes = {
   }),
 };
 
-export {
-  hotspotActionTypes,
-  hotspotTypes,
-  hotspotEditorReducer,
-  useHotspotEditorState,
-};
+export { hotspotActionTypes, hotspotTypes, hotspotEditorReducer, useHotspotEditorState };

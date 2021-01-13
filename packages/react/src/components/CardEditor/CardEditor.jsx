@@ -182,9 +182,7 @@ const CardEditor = ({
         </div>
       ) : (
         <div className={`${baseClassName}--header`}>
-          <h2 className={`${baseClassName}--header--title`}>
-            {mergedI18n.galleryHeader}
-          </h2>
+          <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
         </div>
       )}
       <div className={`${baseClassName}--content`}>

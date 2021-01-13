@@ -6,8 +6,7 @@ import HeaderAction from './HeaderAction/HeaderAction';
 import { HeaderActionItemPropTypes } from './Header';
 
 const propTypes = {
-  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes))
-    .isRequired,
+  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)).isRequired,
 };
 
 /**

@@ -197,14 +197,7 @@ describe('HotspotContent', () => {
   });
   it('calls onChange callback when editable title is modified', () => {
     const onChange = jest.fn();
-    render(
-      <HotspotContent
-        onChange={onChange}
-        id="content"
-        title=""
-        isTitleEditable
-      />
-    );
+    render(<HotspotContent onChange={onChange} id="content" title="" isTitleEditable />);
     const titleInputElement = screen.getByTestId('content-title-test');
     expect(titleInputElement).toBeInTheDocument();
     userEvent.type(titleInputElement, 'abc');

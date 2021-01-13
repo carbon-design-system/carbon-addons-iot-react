@@ -212,9 +212,7 @@ describe('editorUtils', () => {
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(
-        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
-      ).toEqual([
+      expect(formatSeries(selectedItems, cardConfigWithoutColorDefinition)).toEqual([
         { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
         { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
       ]);
@@ -261,10 +259,7 @@ describe('editorUtils', () => {
   });
   describe('handleDataSeriesChange', () => {
     it('should just return cardConfig if there is no Type', () => {
-      const newCard = handleDataSeriesChange(
-        [],
-        omit(mockTimeSeriesCard, 'type')
-      );
+      const newCard = handleDataSeriesChange([], omit(mockTimeSeriesCard, 'type'));
       expect(newCard).toEqual(omit(mockTimeSeriesCard, 'type'));
     });
     // base table card
@@ -280,11 +275,7 @@ describe('editorUtils', () => {
         { id: 'key1', text: 'Key 1' },
         { id: 'key2', text: 'Key 2' },
       ];
-      const newCard = handleDataSeriesChange(
-        selectedItems,
-        mockTableCard,
-        () => {}
-      );
+      const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {});
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
@@ -366,16 +357,8 @@ describe('editorUtils', () => {
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [
-        { id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' },
-      ];
-      const newCard = handleDataSeriesChange(
-        selectedItems,
-        mockTableCard,
-        () => {},
-        null,
-        true
-      );
+      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
+      const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
@@ -459,11 +442,7 @@ describe('editorUtils', () => {
         { id: 'key1', text: 'Key 1' },
         { id: 'key2', text: 'Key 2' },
       ];
-      const newCard = handleDataSeriesChange(
-        selectedItems,
-        mockTimeSeriesCard,
-        () => {}
-      );
+      const newCard = handleDataSeriesChange(selectedItems, mockTimeSeriesCard, () => {});
       expect(newCard).toEqual({
         content: {
           series: [
@@ -550,12 +529,7 @@ describe('editorUtils', () => {
         { dataSourceId: 'elevators', label: 'Elevators', unit: '°' },
         { dataSourceId: 'pressure', label: 'Pressure', unit: 'psi' },
       ];
-      const newCard = handleDataSeriesChange(
-        selectedItems,
-        mockImageCard,
-        null,
-        0
-      );
+      const newCard = handleDataSeriesChange(selectedItems, mockImageCard, null, 0);
 
       expect(newCard).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -678,12 +652,7 @@ describe('editorUtils', () => {
       });
 
       const withoutThresholds = omit(mockImageCard, 'thresholds');
-      newCard = handleDataSeriesChange(
-        editDataItem,
-        withoutThresholds,
-        null,
-        0
-      );
+      newCard = handleDataSeriesChange(editDataItem, withoutThresholds, null, 0);
 
       expect(newCard).toEqual(withoutThresholds);
     });
@@ -769,9 +738,7 @@ describe('editorUtils', () => {
         yLabel: 'Y axis',
         unit: 'PSI',
       };
-      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [
-        editDataItem,
-      ]);
+      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [editDataItem]);
       expect(newCard).toEqual({
         id: 'Standard',
         title: 'timeseries card',

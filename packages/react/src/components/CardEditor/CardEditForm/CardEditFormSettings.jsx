@@ -65,12 +65,7 @@ const defaultProps = {
   },
 };
 
-const CardEditFormSettings = ({
-  cardConfig,
-  onChange,
-  i18n,
-  availableDimensions,
-}) => {
+const CardEditFormSettings = ({ cardConfig, onChange, i18n, availableDimensions }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { type } = cardConfig;
   const handleTranslation = useCallback(
@@ -100,19 +95,11 @@ const CardEditFormSettings = ({
       );
     case CARD_TYPES.TIMESERIES:
       return (
-        <DataSeriesFormSettings
-          cardConfig={cardConfig}
-          i18n={mergedI18n}
-          onChange={onChange}
-        />
+        <DataSeriesFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
       );
     case CARD_TYPES.BAR:
       return (
-        <BarChartCardFormSettings
-          cardConfig={cardConfig}
-          i18n={mergedI18n}
-          onChange={onChange}
-        />
+        <BarChartCardFormSettings cardConfig={cardConfig} i18n={mergedI18n} onChange={onChange} />
       );
     case CARD_TYPES.IMAGE:
       return (

@@ -259,7 +259,8 @@ export const ValidationError = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-      }}>
+      }}
+    >
       <ImageCard
         title={text('title', 'Image')}
         isEditable
@@ -269,9 +270,7 @@ export const ValidationError = () => {
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
-        validateUploadedImage={(image) =>
-          `This file is invalid: ${image?.name}`
-        }
+        validateUploadedImage={(image) => `This file is invalid: ${image?.name}`}
       />
     </div>
   );

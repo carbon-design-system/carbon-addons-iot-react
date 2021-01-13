@@ -117,9 +117,7 @@ const IconDropdown = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const [internalSelectedItem, setInternalSelectedItem] = useState(
-    controlledSelectedItem
-  );
+  const [internalSelectedItem, setInternalSelectedItem] = useState(controlledSelectedItem);
 
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(columnCount * defaultItemSize);
@@ -128,16 +126,12 @@ const IconDropdown = ({
   const [bottomTranslate, setBottomTranslate] = useState(0);
 
   const selectedItem =
-    controlledSelectedItem !== null
-      ? controlledSelectedItem
-      : internalSelectedItem;
+    controlledSelectedItem !== null ? controlledSelectedItem : internalSelectedItem;
 
   const dropdownRef = useRef(null);
 
   const highlightedItem =
-    highlightedIndex >= 0 && highlightedIndex < items.length
-      ? items[highlightedIndex]
-      : null;
+    highlightedIndex >= 0 && highlightedIndex < items.length ? items[highlightedIndex] : null;
 
   const hasFooter = highlightedItem || selectedItem;
 
@@ -159,16 +153,11 @@ const IconDropdown = ({
     )[0];
 
     const helperTextHeight =
-      helperText !== undefined
-        ? helperText.clientHeight + defaultHelperPadding
-        : 0;
+      helperText !== undefined ? helperText.clientHeight + defaultHelperPadding : 0;
     const validationTextHeight =
-      validationText !== undefined
-        ? validationText.clientHeight + defaultHelperPadding
-        : 0;
+      validationText !== undefined ? validationText.clientHeight + defaultHelperPadding : 0;
 
-    const labelHeight =
-      dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
+    const labelHeight = dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
 
     setWidth(columnCount * (menuOption?.clientWidth ?? defaultItemSize));
     setHeight(Math.ceil(items.length / columnCount) * defaultItemSize);
@@ -177,21 +166,19 @@ const IconDropdown = ({
   }, [columnCount, items, dropdownRef]);
 
   const Footer = () => {
-    const selectedFooter =
-      highlightedItem !== null ? highlightedItem : selectedItem;
+    const selectedFooter = highlightedItem !== null ? highlightedItem : selectedItem;
 
     return (
       <div
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
           width: `${width}px`,
-          transform: `translateY(-${
-            direction === 'top' ? topTranslate : bottomTranslate
-          }px)`,
+          transform: `translateY(-${direction === 'top' ? topTranslate : bottomTranslate}px)`,
           paddingTop: direction === 'bottom' ? `${height}px` : 0,
           paddingBottom: direction === 'top' ? `${height}px` : 0,
           bottom: direction === 'top' ? 0 : 'initial',
-        }}>
+        }}
+      >
         {selectedFooter && (
           <div className={`${iotPrefix}--icon-dropdown__footer-content`}>
             {selectedFooter.footer}
@@ -210,8 +197,7 @@ const IconDropdown = ({
           className={classnames(
             `${iotPrefix}--icon-dropdown__image-button`,
             {
-              [`${iotPrefix}--icon-dropdown__image-button--leading`]:
-                index % columnCount === 0,
+              [`${iotPrefix}--icon-dropdown__image-button--leading`]: index % columnCount === 0,
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--trailing`]:
@@ -219,9 +205,7 @@ const IconDropdown = ({
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
-                index + columnCount >= items.length &&
-                !hasFooter &&
-                direction === 'bottom',
+                index + columnCount >= items.length && !hasFooter && direction === 'bottom',
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--top`]:
@@ -240,8 +224,7 @@ const IconDropdown = ({
 
         <div className={`${iotPrefix}--icon-dropdown__selected-icon-label`}>
           {React.createElement(item.icon)}
-          <div
-            className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
+          <div className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
             {item.text}
           </div>
         </div>

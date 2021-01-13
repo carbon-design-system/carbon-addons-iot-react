@@ -30,10 +30,10 @@ const ContentFormItemTitle = ({ title, tooltip }) => {
           <Tooltip
             direction="bottom"
             triggerId={`card-edit-form-${title}`}
-            tooltipId={`card-edit-form-${title}`}>
+            tooltipId={`card-edit-form-${title}`}
+          >
             <p>
-              {tooltipText}{' '}
-              {href && linkText ? <Link href={href}>{linkText}</Link> : null}
+              {tooltipText} {href && linkText ? <Link href={href}>{linkText}</Link> : null}
             </p>
           </Tooltip>
         ) : null}

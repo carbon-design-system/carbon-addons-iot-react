@@ -23,16 +23,9 @@ const getCallbacks = () => ({
 
 describe('DynamicHotspotSourcePicker', () => {
   it('renders dropdowns for x and y coordinates', () => {
-    render(
-      <DynamicHotspotSourcePicker
-        dataSourceItems={getDataItems()}
-        {...getCallbacks()}
-      />
-    );
+    render(<DynamicHotspotSourcePicker dataSourceItems={getDataItems()} {...getCallbacks()} />);
 
-    expect(
-      screen.getByLabelText('X coordinate', { selector: 'button' })
-    ).toBeVisible();
+    expect(screen.getByLabelText('X coordinate', { selector: 'button' })).toBeVisible();
   });
 
   it('Renders selected items', () => {
@@ -55,8 +48,7 @@ describe('DynamicHotspotSourcePicker', () => {
   it('Shows clear button when both x & y cources are selected', () => {
     const xSourceItem = getDataItems()[0];
     const ySourceItem = getDataItems()[1];
-    const invisible =
-      'iot--dynamic-hotspot-source-picker__clear-button--invisible';
+    const invisible = 'iot--dynamic-hotspot-source-picker__clear-button--invisible';
     const pickerTestId = 'test-picker-clear-dropdown';
 
     const { rerender } = render(

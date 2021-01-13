@@ -63,12 +63,7 @@ const colors = [
   { carbonColor: white, name: 'white' },
 ];
 
-const ImageCardFormSettings = ({
-  cardConfig,
-  onChange,
-  i18n,
-  translateWithId,
-}) => {
+const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // Hiding until the UX for this form item is figured out.
   // const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);

@@ -86,10 +86,7 @@ const ImageCardFormItems = ({
     }
     setIsHotspotModalShowing(true);
   }, [cardConfig, onChange]);
-  const handleCloseHotspotEditor = useCallback(
-    () => setIsHotspotModalShowing(false),
-    []
-  );
+  const handleCloseHotspotEditor = useCallback(() => setIsHotspotModalShowing(false), []);
 
   const handleSaveHotspotEditor = useCallback(
     (cardConfigWithHotspots) => {
@@ -128,7 +125,8 @@ const ImageCardFormItems = ({
         <label
           id={`${mergedI18n.imageFile}-label`}
           className={`${prefix}--label`}
-          htmlFor={mergedI18n.imageFile}>
+          htmlFor={mergedI18n.imageFile}
+        >
           {mergedI18n.imageFile}
           <input
             id={mergedI18n.imageFile}
@@ -146,13 +144,7 @@ const ImageCardFormItems = ({
               onClick={() =>
                 // close means clear the image info out of the JSON
                 onChange(
-                  omit(
-                    cardConfig,
-                    'content.id',
-                    'content.src',
-                    'content.alt',
-                    'content.imgState'
-                  )
+                  omit(cardConfig, 'content.id', 'content.src', 'content.alt', 'content.imgState')
                 )
               }
             />
@@ -163,7 +155,8 @@ const ImageCardFormItems = ({
             className={`${baseClassName}--form-section-image-btn`}
             size="small"
             renderIcon={Scale32}
-            onClick={handleShowHotspotEditor}>
+            onClick={handleShowHotspotEditor}
+          >
             {mergedI18n.editImage}
           </Button>
         ) : null}

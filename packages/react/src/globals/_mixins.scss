@@ -26,11 +26,7 @@
   }
 }
 
-@mixin content-switcher-border-radius(
-  $border-radius,
-  $first-button-side,
-  $last-button-side
-) {
+@mixin content-switcher-border-radius($border-radius, $first-button-side, $last-button-side) {
   button:first-of-type,
   button:last-of-type {
     border-radius: 0;

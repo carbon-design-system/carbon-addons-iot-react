@@ -5,19 +5,11 @@ import omit from 'lodash/omit';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import {
-  CARD_SIZES,
-  COLORS,
-  TIME_SERIES_TYPES,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
 
-import TimeSeriesCard, {
-  handleTooltip,
-  formatChartData,
-  formatColors,
-} from './TimeSeriesCard';
+import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
 
 const timeSeriesCardProps = {
   title: 'Temperature',
@@ -45,18 +37,12 @@ const timeSeriesCardProps = {
 describe('TimeSeriesCard', () => {
   it('does not show line chart when loading', () => {
     let wrapper = mount(
-      <TimeSeriesCard
-        {...timeSeriesCardProps}
-        isLoading
-        size={CARD_SIZES.MEDIUM}
-      />
+      <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
     );
     expect(wrapper.find('#mock-line-chart')).toHaveLength(0);
     expect(wrapper.find('SkeletonText')).toHaveLength(1);
 
-    wrapper = mount(
-      <TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />
-    );
+    wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
     expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
     expect(wrapper.find('SkeletonText')).toHaveLength(0);
   });
@@ -65,24 +51,14 @@ describe('TimeSeriesCard', () => {
     // should render instead of the line graph
     const emptyValues = [{ deviceid: 'robot1' }, { deviceid: 'robot2' }];
     render(
-      <TimeSeriesCard
-        {...timeSeriesCardProps}
-        values={emptyValues}
-        size={CARD_SIZES.MEDIUM}
-      />
+      <TimeSeriesCard {...timeSeriesCardProps} values={emptyValues} size={CARD_SIZES.MEDIUM} />
     );
 
-    expect(
-      screen.getByText('No data is available for this time range.')
-    ).toBeInTheDocument();
+    expect(screen.getByText('No data is available for this time range.')).toBeInTheDocument();
   });
   it('shows table with data when expanded', () => {
     const wrapper = mount(
-      <TimeSeriesCard
-        {...timeSeriesCardProps}
-        isExpanded
-        size={CARD_SIZES.MEDIUMTHIN}
-      />
+      <TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUMTHIN} />
     );
     expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
     // Carbon Table should be there
@@ -180,29 +156,25 @@ describe('TimeSeriesCard', () => {
         yLabel: 'Temperature (˚F)',
         timeDataSourceId: 'timestamp',
       },
-      values: getIntervalChartData(
-        'day',
-        12,
-        { min: 10, max: 100 },
-        100
-      ).reduce((acc, dataPoint) => {
-        // make "two devices worth of data" so that we can filter
-        acc.push(dataPoint);
-        acc.push({
-          ...dataPoint,
-          temperature: dataPoint.temperature / 2,
-          ENTITY_ID: 'Sensor2-3',
-        });
-        return acc;
-      }, []),
+      values: getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
+        (acc, dataPoint) => {
+          // make "two devices worth of data" so that we can filter
+          acc.push(dataPoint);
+          acc.push({
+            ...dataPoint,
+            temperature: dataPoint.temperature / 2,
+            ENTITY_ID: 'Sensor2-3',
+          });
+          return acc;
+        },
+        []
+      ),
       interval: 'hour',
       breakpoint: 'lg',
       size: 'LARGE',
       onCardAction: () => {},
     };
-    const wrapper = mount(
-      <TimeSeriesCard {...timeSeriesCardWithOneColorProps} />
-    );
+    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
     expect(wrapper.find('#mock-line-chart')).toHaveLength(1);
   });
   it('formatChartData returns properly formatted data without dataFilter set', () => {
@@ -301,9 +273,7 @@ describe('TimeSeriesCard', () => {
       },
     ];
 
-    expect(
-      formatChartData('timestamp', series, barChartData.timestamps)
-    ).toEqual([
+    expect(formatChartData('timestamp', series, barChartData.timestamps)).toEqual([
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'Amsterdam',
@@ -361,14 +331,11 @@ describe('TimeSeriesCard', () => {
       'timestamp',
       series,
       barChartData.timestamps.slice(0, 2).map(
-        (dataPoint, index) =>
-          index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint // make the data sparse (this skips the emissions datapoint in a few points)
+        (dataPoint, index) => (index % 2 === 0 ? omit(dataPoint, 'emissions') : dataPoint) // make the data sparse (this skips the emissions datapoint in a few points)
       )
     );
     expect(formattedChartData).toHaveLength(3);
-    expect(formattedChartData.every((dataPoint) => dataPoint.value)).toEqual(
-      true
-    ); // every value should be valid
+    expect(formattedChartData.every((dataPoint) => dataPoint.value)).toEqual(true); // every value should be valid
   });
   it('formatChartData returns empty array if no data matches dataFilter', () => {
     const series = [
@@ -424,13 +391,7 @@ describe('TimeSeriesCard', () => {
     });
   });
   it('tableColumn headers should use the label, not the dataSourceId', () => {
-    render(
-      <TimeSeriesCard
-        {...timeSeriesCardProps}
-        isExpanded
-        size={CARD_SIZES.MEDIUM}
-      />
-    );
+    render(<TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUM} />);
 
     // the dataSourceId is temperature so this should show the appreviated label Temp instead
     expect(screen.getByText('Temp')).toBeInTheDocument();

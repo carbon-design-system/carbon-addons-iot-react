@@ -157,9 +157,7 @@ const CardEditFormContent = ({
           id={`${id}_title`}
           labelText={mergedI18n.cardTitle}
           light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, title: evt.target.value })
-          }
+          onChange={(evt) => onChange({ ...cardConfig, title: evt.target.value })}
           value={title}
         />
       </div>
@@ -168,9 +166,7 @@ const CardEditFormContent = ({
           id={`${id}_description`}
           labelText={mergedI18n.description}
           light
-          onChange={(evt) =>
-            onChange({ ...cardConfig, description: evt.target.value })
-          }
+          onChange={(evt) => onChange({ ...cardConfig, description: evt.target.value })}
           value={description}
         />
       </div>
@@ -180,9 +176,7 @@ const CardEditFormContent = ({
           label={mergedI18n.selectASize}
           direction="bottom"
           itemToString={(item) => item.text}
-          items={(
-            ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)
-          ).map((cardSize) => {
+          items={(ALLOWED_CARD_SIZES_PER_TYPE[type] ?? Object.keys(CARD_SIZES)).map((cardSize) => {
             return {
               id: cardSize,
               text: getCardSizeText(cardSize, mergedI18n, currentBreakpoint),
@@ -210,8 +204,7 @@ const CardEditFormContent = ({
           items={validTimeRangeOptions}
           selectedItem={validTimeRangeOptions.find(
             // This is a hacky workaround for a carbon issue
-            (validTimeRangeOption) =>
-              validTimeRangeOption.id === cardConfig.timeRange
+            (validTimeRangeOption) => validTimeRangeOption.id === cardConfig.timeRange
           )}
           light
           translateWithId={translateWithId}

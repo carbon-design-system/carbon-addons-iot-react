@@ -140,8 +140,7 @@ const HotspotEditorTooltipTab = ({
     colorDropdownTitleText,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const currentIconColor =
-    formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
+  const currentIconColor = formValues.color?.carbonColor ?? formValues.color ?? 'currentcolor';
 
   const renderInfoMessage = () => (
     <div className={`${iotPrefix}--hotspot-editor--tooltip-info-message`}>
@@ -153,7 +152,8 @@ const HotspotEditorTooltipTab = ({
   const renderColorIconContainer = () => (
     <div
       className={`${iotPrefix}--icon-color-container`}
-      style={{ '--icon-fill-color': currentIconColor }}>
+      style={{ '--icon-fill-color': currentIconColor }}
+    >
       <Dropdown
         key={formValues.icon?.id ?? formValues.icon}
         id="tooltip-form-icon"
@@ -171,10 +171,7 @@ const HotspotEditorTooltipTab = ({
 
       <ColorDropdown
         key={currentIconColor} // Neded to update the selectedColor after initial render
-        selectedColor={getSelectedColorItem(
-          formValues.color,
-          hotspotIconFillColors
-        )}
+        selectedColor={getSelectedColorItem(formValues.color, hotspotIconFillColors)}
         id="tooltip-form-color"
         colors={hotspotIconFillColors}
         label={colorDropdownLabelText}
@@ -189,8 +186,7 @@ const HotspotEditorTooltipTab = ({
   );
 
   const MyTitleTextInput = overrides?.titleTextInput?.component || TextInput;
-  const MyDecriptionTextArea =
-    overrides?.decriptionTextArea?.component || TextArea;
+  const MyDecriptionTextArea = overrides?.decriptionTextArea?.component || TextArea;
 
   return (
     <div className={`${iotPrefix}--hotspot-editor-tooltip-tab`}>
@@ -201,7 +197,8 @@ const HotspotEditorTooltipTab = ({
           <form
             className={`${iotPrefix}--hotspot-editor--tooltip-form`}
             data-testid={testID}
-            onSubmit={preventFormSubmission}>
+            onSubmit={preventFormSubmission}
+          >
             <MyTitleTextInput
               name="title"
               data-testid={`${testID}-title-input`}
@@ -231,13 +228,13 @@ const HotspotEditorTooltipTab = ({
             {renderColorIconContainer()}
           </form>
           {showDeleteButton ? (
-            <div
-              className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
+            <div className={`${iotPrefix}--hotspot-editor-tooltip-tab__delete-button-container`}>
               <Button
                 kind="ghost"
                 renderIcon={TrashCan32}
                 iconDescription={deleteButtonIconDescriptionText}
-                onClick={onDelete}>
+                onClick={onDelete}
+              >
                 {deleteButtonLabelText}
               </Button>
             </div>

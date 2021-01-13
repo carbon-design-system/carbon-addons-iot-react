@@ -78,9 +78,7 @@ const DynamicHotspotSourcePicker = ({
       <Dropdown
         key={`${id}-x-coordinate-dropdown-${selectedSourceIdX}`}
         data-testid={`${testID}-x-coordinate-dropdown`}
-        selectedItem={dataSourceItems.find(
-          (item) => item.dataSourceId === selectedSourceIdX
-        )}
+        selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdX)}
         id={`${id}-x-coordinate-dropdown`}
         titleText={xCoordinateDropdownTitleText}
         label={xCoordinateDropdownLabelText}
@@ -94,9 +92,7 @@ const DynamicHotspotSourcePicker = ({
       <Dropdown
         key={`${id}-y-coordinate-dropdown-${selectedSourceIdY}`}
         data-testid={`${testID}-y-coordinate-dropdown`}
-        selectedItem={dataSourceItems.find(
-          (item) => item.dataSourceId === selectedSourceIdY
-        )}
+        selectedItem={dataSourceItems.find((item) => item.dataSourceId === selectedSourceIdY)}
         id={`${id}-y-coordinate-dropdown`}
         titleText={yCoordinateDropdownTitleText}
         label={yCoordinateDropdownLabelText}
@@ -111,8 +107,7 @@ const DynamicHotspotSourcePicker = ({
         <Button
           data-testid={`${testID}-clear-dropdown`}
           className={classnames(`${classname}__clear-button`, {
-            [`${classname}__clear-button--invisible`]:
-              !selectedSourceIdX || !selectedSourceIdY,
+            [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
           })}
           kind="ghost"
           size="small"

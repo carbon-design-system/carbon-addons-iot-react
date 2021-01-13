@@ -1,7 +1,4 @@
-import {
-  CARD_DIMENSIONS,
-  CARD_SIZES,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
 
 import { getCardSizeText, handleSubmit } from './CardEditForm';
 
@@ -56,25 +53,11 @@ describe('CardEditForm', () => {
   // meaning we can't fire user events on the form
   describe('handleSubmit', () => {
     it('should throw error if JSON is empty', () => {
-      handleSubmit(
-        '',
-        '',
-        mockSetError,
-        mockOnValidateCardJson,
-        mockOnChange,
-        mockSetShowEditor
-      );
+      handleSubmit('', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
       expect(mockSetError).toBeCalledWith('Unexpected end of JSON input');
     });
     it('should call onChange and setShowEditor if JSON is valid', () => {
-      handleSubmit(
-        '{}',
-        '',
-        mockSetError,
-        mockOnValidateCardJson,
-        mockOnChange,
-        mockSetShowEditor
-      );
+      handleSubmit('{}', '', mockSetError, mockOnValidateCardJson, mockOnChange, mockSetShowEditor);
       expect(mockOnChange).toBeCalled();
       expect(mockSetShowEditor).toBeCalledWith(false);
     });

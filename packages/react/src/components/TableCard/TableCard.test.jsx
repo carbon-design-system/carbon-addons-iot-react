@@ -6,10 +6,7 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
 import TableCard from './TableCard';
-import {
-  createColumnsWithFormattedLinks,
-  handleExpandedItemLinks,
-} from './tableCardUtils';
+import { createColumnsWithFormattedLinks, handleExpandedItemLinks } from './tableCardUtils';
 
 describe('TableCard', () => {
   it('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {

@@ -482,21 +482,13 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
 
       switch (comparison) {
         case '<':
-          return (
-            !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) < value
-          );
+          return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) < value;
         case '>':
           return parseFloat(item[dataSourceId]) > value;
         case '=':
-          return (
-            parseFloat(item[dataSourceId]) === value ||
-            item[dataSourceId] === value
-          ); // need to handle the string case
+          return parseFloat(item[dataSourceId]) === value || item[dataSourceId] === value; // need to handle the string case
         case '<=':
-          return (
-            !isNil(item[dataSourceId]) &&
-            parseFloat(item[dataSourceId]) <= value
-          );
+          return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) <= value;
         case '>=':
           return parseFloat(item[dataSourceId]) >= value;
         default:
@@ -505,8 +497,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
     })
     .reduce((highestSeverityThreshold, threshold) => {
       const currentThresholdIndex = highestSeverityThreshold.findIndex(
-        (currentThreshold) =>
-          currentThreshold.dataSourceId === threshold.dataSourceId
+        (currentThreshold) => currentThreshold.dataSourceId === threshold.dataSourceId
       );
 
       if (
@@ -518,10 +509,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
           currentValue: item[threshold.dataSourceId],
         });
       } // The lowest severity is actually the most severe
-      else if (
-        highestSeverityThreshold[currentThresholdIndex].severity >
-        threshold.severity
-      ) {
+      else if (highestSeverityThreshold[currentThresholdIndex].severity > threshold.severity) {
         // eslint-disable-next-line no-param-reassign
         highestSeverityThreshold[currentThresholdIndex] = {
           ...threshold,

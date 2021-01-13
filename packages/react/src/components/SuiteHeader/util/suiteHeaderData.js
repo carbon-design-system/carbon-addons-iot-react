@@ -178,14 +178,7 @@ const getSuiteHeaderData = async ({
   const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
 
   // apps to open in a new window
-  const externalApps = [
-    'eam',
-    'mroio',
-    'digitaltwin',
-    'apm',
-    'visualinspection',
-    'appconnect',
-  ];
+  const externalApps = ['eam', 'mroio', 'digitaltwin', 'apm', 'visualinspection', 'appconnect'];
 
   return {
     username: profileData.user.username,

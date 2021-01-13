@@ -1,21 +1,12 @@
 import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import {
-  ContentSwitcher,
-  Switch,
-  Tabs,
-  Tab,
-  InlineNotification,
-} from 'carbon-components-react';
+import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from 'carbon-components-react';
 import pick from 'lodash/pick';
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 
-import {
-  HotspotIconPropType,
-  ColorPropType,
-} from '../../constants/SharedPropTypes';
+import { HotspotIconPropType, ColorPropType } from '../../constants/SharedPropTypes';
 import ImageHotspots from '../ImageCard/ImageHotspots';
 import ComposedModal from '../ComposedModal';
 import { InlineLoading } from '../InlineLoading';
@@ -265,9 +256,7 @@ const HotspotEditorModal = ({
   translateWithId,
 }) => {
   const initialHotspots = cardConfig.values?.hotspots || [];
-  const myDataItems = getValidDataItems
-    ? getValidDataItems(cardConfig)
-    : dataItems;
+  const myDataItems = getValidDataItems ? getValidDataItems(cardConfig) : dataItems;
   const {
     currentType,
     hotspots,
@@ -341,12 +330,8 @@ const HotspotEditorModal = ({
   } = mergedI18n;
 
   const onSave = () => {
-    const filteredHotspots = hotspots.filter(
-      (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
-    );
-    const aDynamicHotspotDemo = hotspots.find(
-      (hotspot) => hotspot.type === hotspotTypes.DYNAMIC
-    );
+    const filteredHotspots = hotspots.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC);
+    const aDynamicHotspotDemo = hotspots.find((hotspot) => hotspot.type === hotspotTypes.DYNAMIC);
     if (aDynamicHotspotDemo) {
       filteredHotspots.push({
         ...aDynamicHotspotDemo,
@@ -372,11 +357,7 @@ const HotspotEditorModal = ({
     onSaveCallback(updatedCardConfig);
   };
 
-  const loadDemoHotspots = async (
-    xSource,
-    ySource,
-    configToApply = { content: {} }
-  ) => {
+  const loadDemoHotspots = async (xSource, ySource, configToApply = { content: {} }) => {
     if (xSource && ySource && onFetchDynamicDemoHotspots) {
       setLoadingDynamicHotspots(true);
       setDynamicHotspots([]);
@@ -481,9 +462,7 @@ const HotspotEditorModal = ({
           <Tabs selected={0}>
             <Tab label={fixedTypeTooltipTabLabelText}>
               <HotspotEditorTooltipTab
-                showDeleteButton={
-                  !(selectedHotspot?.type === hotspotTypes.DYNAMIC)
-                }
+                showDeleteButton={!(selectedHotspot?.type === hotspotTypes.DYNAMIC)}
                 showInfoMessage={!selectedHotspot}
                 hotspotIcons={imageHotspotsIcons}
                 hotspotIconFillColors={hotspotIconFillColors}
@@ -506,9 +485,7 @@ const HotspotEditorModal = ({
                 translateWithId={translateWithId}
               />
             </Tab>
-            <Tab label={fixedTypeDataSourceTabLabelText}>
-              {renderDataSourceTab()}
-            </Tab>
+            <Tab label={fixedTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
           </Tabs>
         )}
       </>
@@ -552,9 +529,7 @@ const HotspotEditorModal = ({
             }}
           />
         </Tab>
-        <Tab label={textTypeDataSourceTabLabelText}>
-          {renderDataSourceTab()}
-        </Tab>
+        <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
       </Tabs>
     );
   };
@@ -576,7 +551,8 @@ const HotspotEditorModal = ({
         primaryButtonLabel: saveButtonLabelText,
         secondaryButtonLabel: cancelButtonLabelText,
         isPrimaryButtonDisabled: dynamicHotspotsLoading,
-      }}>
+      }}
+    >
       <withSize.SizeMe monitorHeight>
         {({ size }) => (
           <div>
@@ -604,10 +580,7 @@ const HotspotEditorModal = ({
                   });
                 }}
                 onSelectHotspot={setSelectedHotspot}
-                selectedHotspots={getSelectedHotspotsList(
-                  selectedHotspot,
-                  hotspots
-                )}
+                selectedHotspots={getSelectedHotspotsList(selectedHotspot, hotspots)}
                 src={cardConfig.content.src}
                 id={imageId}
                 width={size.width}
@@ -627,13 +600,12 @@ const HotspotEditorModal = ({
                 : hotspotTypes.FIXED
             );
           }}
-          selectedIndex={currentType === hotspotTypes.TEXT ? 1 : 0}>
+          selectedIndex={currentType === hotspotTypes.TEXT ? 1 : 0}
+        >
           <Switch key="hotspots" name="hotspots" text={hotspotsText} />
           <Switch key="labels" name="labels" text={labelsText} />
         </ContentSwitcher>
-        {currentType === hotspotTypes.TEXT
-          ? renderTextHotspotPage()
-          : renderHotspotsPage()}
+        {currentType === hotspotTypes.TEXT ? renderTextHotspotPage() : renderHotspotsPage()}
       </div>
     </ComposedModal>
   );

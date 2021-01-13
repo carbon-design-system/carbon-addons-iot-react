@@ -30,9 +30,7 @@ export const WithDefinedIconColors = () => (
     <SimpleIconDropdown
       id="mySimpleIconDropdown"
       titleText={text('titleText', 'Icon')}
-      icons={validThresholdIcons
-        .slice(5)
-        .map((icon) => ({ ...icon, color: 'red' }))}
+      icons={validThresholdIcons.slice(5).map((icon) => ({ ...icon, color: 'red' }))}
       onChange={action('onChange')}
     />
   </div>
