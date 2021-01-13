@@ -78,6 +78,17 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -88,6 +99,7 @@ const defaultProps = {
   dataItems: [],
   currentBreakpoint: 'xl',
   availableDimensions: {},
+  dataSeriesItemLinks: null,
 };
 
 const CardEditFormContent = ({
@@ -99,6 +111,9 @@ const CardEditFormContent = ({
   getValidTimeRanges,
   currentBreakpoint,
   availableDimensions,
+  dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const { type, timeRange } = cardConfig;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -139,8 +154,11 @@ const CardEditFormContent = ({
           cardConfig={cardConfig}
           i18n={mergedI18n}
           onChange={onChange}
+          dataSeriesItemLinks={dataSeriesItemLinks}
           dataItems={dataItems}
           availableDimensions={availableDimensions}
+          translateWithId={handleTranslation}
+          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
@@ -152,6 +170,7 @@ const CardEditFormContent = ({
           setSelectedDataItems={setSelectedDataItems}
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
+          dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
       ) : (
@@ -165,6 +184,7 @@ const CardEditFormContent = ({
           getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
           i18n={mergedI18n}
+          dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
         />
       )}

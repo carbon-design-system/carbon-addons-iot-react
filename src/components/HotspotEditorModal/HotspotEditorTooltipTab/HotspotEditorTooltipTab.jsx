@@ -46,6 +46,7 @@ const propTypes = {
     colorDropdownTitleText: PropTypes.string,
     infoMessageText: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
   /** Callback for when the delete button is clicked */
@@ -79,10 +80,12 @@ const defaultProps = {
     titleInputPlaceholderText: 'Enter title for the tooltip',
     descriptionTextareaLabelText: 'Description',
     descriptionTextareaPlaceholderText: 'Enter description for the tooltip',
-    iconDropdownLabelText: 'Select an Icon',
+    iconDropdownLabelText: 'Select an icon',
     iconDropdownTitleText: 'Icon',
     infoMessageText:
       'Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
+    colorDropdownLabelText: 'Select a color',
+    colorDropdownTitleText: 'Color',
   },
   overrides: undefined,
   primaryInputId: undefined,
@@ -105,6 +108,10 @@ const getSelectedIconItem = (icon, hotspotIcons) => {
     : icon;
 };
 
+/**
+ * This component renders a form for editing the tooltip settings of an existing Hotspot.
+ * The title, description, icon and color of this tooltip foor this hotspot
+ */
 const HotspotEditorTooltipTab = ({
   hotspotIcons,
   hotspotIconFillColors,
@@ -117,6 +124,7 @@ const HotspotEditorTooltipTab = ({
   showInfoMessage,
   showDeleteButton,
   testID,
+  translateWithId,
 }) => {
   const {
     deleteButtonLabelText,
@@ -158,6 +166,7 @@ const HotspotEditorTooltipTab = ({
         selectedItem={getSelectedIconItem(formValues?.icon, hotspotIcons)}
         titleText={iconDropdownTitleText}
         type="default"
+        translateWithId={translateWithId}
       />
 
       <ColorDropdown
@@ -174,6 +183,7 @@ const HotspotEditorTooltipTab = ({
           onChange({ color: selectedColorItem.color?.carbonColor });
         }}
         titleText={colorDropdownTitleText}
+        translateWithId={translateWithId}
       />
     </div>
   );

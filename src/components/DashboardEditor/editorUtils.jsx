@@ -373,14 +373,14 @@ export const handleOnClick = (onSelectCard, id) => {
  */
 export const renderBreakpointInfo = (breakpoint, i18n) => {
   switch (breakpoint) {
-    case 'xl':
-      return i18n.layoutInfoXl;
     case 'lg':
       return i18n.layoutInfoLg;
     case 'md':
       return i18n.layoutInfoMd;
+    case 'sm':
+      return i18n.layoutInfoSm;
     default:
-      return i18n.layoutInfoXl;
+      return i18n.layoutInfoLg;
   }
 };
 
@@ -532,10 +532,12 @@ export const handleDataSeriesChange = (
 };
 
 /**
- * updates the dataSection on edit of a dataItem based on card type
- * @param {object} editDataItem
- * @param {object} cardConfig
- * @param {string} title
+ * updates the dataSection on edit of a dataItem based on card type.
+ * TODO: refactor this into multiple functions
+ * @param {object} editDataItem an object with the updated form values for this data item
+ * @param {object} cardConfig the previous cardConfiguration
+ * @param {string} editDataSeries only used for bar chart card forms
+ * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
  */
 export const handleDataItemEdit = (
   editDataItem,

@@ -24,6 +24,7 @@ describe('HotspotTextStyleTab', () => {
         onChange={(change) => {
           formValues = merge({}, formValues, change);
         }}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -56,6 +57,7 @@ describe('HotspotTextStyleTab', () => {
         onChange={(change) => {
           formValues = merge({}, formValues, change);
         }}
+        translateWithId={jest.fn()}
       />
     );
 
@@ -91,6 +93,8 @@ describe('HotspotTextStyleTab', () => {
         onChange={(change) => {
           formValues = merge({}, formValues, change);
         }}
+        translateWithId={jest.fn()}
+        onDelete={jest.fn()}
       />
     );
 
@@ -125,6 +129,8 @@ describe('HotspotTextStyleTab', () => {
         borderColors={colors}
         formValues={{ fontColor: colorString }}
         onChange={() => {}}
+        translateWithId={jest.fn()}
+        onDelete={jest.fn()}
       />
     );
 

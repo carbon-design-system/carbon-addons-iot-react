@@ -8524,6 +8524,7 @@ Map {
       "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "headerBreadcrumbs": null,
@@ -8539,11 +8540,11 @@ Map {
         "headerImportButton": "Import",
         "headerLargeButton": "Large view",
         "headerMediumButton": "Medium view",
+        "headerSmallButton": "Small view",
         "headerSubmitButton": "Save and close",
-        "headerXlargeButton": "X-large view",
-        "layoutInfoLg": "Edit dashboard at large layout (672 - 1056px)",
-        "layoutInfoMd": "Edit dashboard at medium layout (480 - 672px)",
-        "layoutInfoXl": "Edit dashboard at extra large layout (1056 - 1312px)",
+        "layoutInfoLg": "Edit dashboard at large layout (1057 - 1312px)",
+        "layoutInfoMd": "Edit dashboard at medium layout (673 - 1056px)",
+        "layoutInfoSm": "Edit dashboard at small layout (481 - 672px)",
         "noDataLabel": "No data source is defined",
         "openGalleryButton": "Open gallery",
         "openJSONButton": "Open JSON editor",
@@ -8646,6 +8647,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",
@@ -9078,6 +9110,7 @@ Map {
       "cardConfig": null,
       "currentBreakpoint": "xl",
       "dataItems": Array [],
+      "dataSeriesItemLinks": null,
       "getValidDataItems": null,
       "getValidTimeRanges": null,
       "i18n": Object {
@@ -9201,6 +9234,37 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataSeriesItemLinks": Object {
+        "args": Array [
+          Object {
+            "custom": Object {
+              "type": "string",
+            },
+            "groupedBar": Object {
+              "type": "string",
+            },
+            "image": Object {
+              "type": "string",
+            },
+            "simpleBar": Object {
+              "type": "string",
+            },
+            "stackedBar": Object {
+              "type": "string",
+            },
+            "table": Object {
+              "type": "string",
+            },
+            "timeSeries": Object {
+              "type": "string",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "getValidDataItems": Object {
         "type": "func",
@@ -18632,11 +18696,13 @@ Map {
       "hotspotIconFillColors": undefined,
       "hotspotIcons": Array [],
       "i18n": Object {
+        "colorDropdownLabelText": "Select a color",
+        "colorDropdownTitleText": "Color",
         "deleteButtonIconDescriptionText": "Delete this hotspot",
         "deleteButtonLabelText": "Delete hotspot",
         "descriptionTextareaLabelText": "Description",
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
-        "iconDropdownLabelText": "Select an Icon",
+        "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
         "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
@@ -18854,6 +18920,10 @@ Map {
       "testID": Object {
         "type": "string",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "HotspotTextStyleTab" => Object {
@@ -18886,7 +18956,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty regoion to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -19006,9 +19076,6 @@ Map {
             "borderWidthInvalidText": Object {
               "type": "string",
             },
-            "borderWidthText": Object {
-              "type": "string",
-            },
             "deleteButtonIconDescription": Object {
               "type": "string",
             },
@@ -19025,9 +19092,6 @@ Map {
               "type": "string",
             },
             "fontSizeInvalidText": Object {
-              "type": "string",
-            },
-            "fontSizeText": Object {
               "type": "string",
             },
             "infoMessageText": Object {
@@ -19075,24 +19139,27 @@ Map {
       "showInfoMessage": Object {
         "type": "bool",
       },
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
+      },
     },
   },
   "DynamicHotspotSourcePicker" => Object {
     "defaultProps": Object {
-      "clearIconDescription": "Clear coordinate sources",
+      "i18n": Object {
+        "clearIconDescription": "Clear coordinate sources",
+        "xCoordinateDropdownLabelText": "Select data item",
+        "xCoordinateDropdownTitleText": "X coordinate",
+        "yCoordinateDropdownLabelText": "Select data item",
+        "yCoordinateDropdownTitleText": "Y coordinate",
+      },
       "id": "dynamic-hotspot-source-picker",
       "selectedSourceIdX": undefined,
       "selectedSourceIdY": undefined,
       "testID": "dynamic-hotspot-source-picker",
-      "xCoordinateDropdownLabelText": "Select data item",
-      "xCoordinateDropdownTitleText": "X coordinate",
-      "yCoordinateDropdownLabelText": "Select data item",
-      "yCoordinateDropdownTitleText": "Y coordinate",
     },
     "propTypes": Object {
-      "clearIconDescription": Object {
-        "type": "string",
-      },
       "dataSourceItems": Object {
         "args": Array [
           Object {
@@ -19111,6 +19178,28 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "clearIconDescription": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "xCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownLabelText": Object {
+              "type": "string",
+            },
+            "yCoordinateDropdownTitleText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "id": Object {
         "type": "string",
@@ -19136,17 +19225,9 @@ Map {
       "testID": Object {
         "type": "string",
       },
-      "xCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "xCoordinateDropdownTitleText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownLabelText": Object {
-        "type": "string",
-      },
-      "yCoordinateDropdownTitleText": Object {
-        "type": "string",
+      "translateWithId": Object {
+        "isRequired": true,
+        "type": "func",
       },
     },
   },
