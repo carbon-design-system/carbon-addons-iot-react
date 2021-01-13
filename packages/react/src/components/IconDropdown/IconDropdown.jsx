@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -70,6 +70,7 @@ const propTypes = {
    * consuming component what kind of internal state changes are occuring.
    */
   onChange: PropTypes.func,
+  translateWithId: PropTypes.func,
 
   /**
    * Provide the title text that will be read by a screen reader when
@@ -81,16 +82,6 @@ const propTypes = {
    * The dropdown type, `default` or `inline`
    */
   type: PropTypes.oneOf(['default', 'inline']),
-
-  /**
-   * Specify whether the control is currently in warning state
-   */
-  warn: PropTypes.bool,
-
-  /**
-   * Provide the text that is displayed when the control is in warning state
-   */
-  warnText: PropTypes.string,
 };
 
 const defaultPropTypes = {
@@ -106,8 +97,7 @@ const defaultPropTypes = {
   invalid: false,
   invalidText: '',
   onChange: () => {},
-  warn: false,
-  warnText: '',
+  translateWithId: undefined,
 };
 
 const defaultItemSize = 48;
@@ -122,53 +112,93 @@ const IconDropdown = ({
   disabled,
   direction,
   onChange,
+  translateWithId,
   ...other
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const [internalSelectedItem, setInternalSelectedItem] = useState(controlledSelectedItem);
+  const [internalSelectedItem, setInternalSelectedItem] = useState(
+    controlledSelectedItem
+  );
+
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(columnCount * defaultItemSize);
+
+  const [topTranslate, setTopTranslate] = useState(0);
+  const [bottomTranslate, setBottomTranslate] = useState(0);
 
   const selectedItem =
-    controlledSelectedItem !== null ? controlledSelectedItem : internalSelectedItem;
+    controlledSelectedItem !== null
+      ? controlledSelectedItem
+      : internalSelectedItem;
 
-  // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
-  const dropdown = document.getElementById(id);
-  const helperText = dropdown?.getElementsByClassName(`${prefix}--form__helper-text`)[0];
-  const validationText = dropdown?.getElementsByClassName(`${prefix}--form-requirement`)[0];
-  const menuOption = dropdown?.getElementsByClassName(`${prefix}--list-box__menu-item`)[0];
-
-  const helperTextHeight =
-    helperText !== undefined ? helperText.clientHeight + defaultHelperPadding : 0;
-  const validationTextHeight =
-    validationText !== undefined ? validationText.clientHeight + defaultHelperPadding : 0;
-
-  const widthStyle = `${columnCount * (menuOption?.clientWidth ?? defaultItemSize)}px`;
-  const heightStyle = Math.ceil(items.length / columnCount) * defaultItemSize;
+  const dropdownRef = useRef(null);
 
   const highlightedItem =
-    highlightedIndex >= 0 && highlightedIndex < items.length ? items[highlightedIndex] : null;
+    highlightedIndex >= 0 && highlightedIndex < items.length
+      ? items[highlightedIndex]
+      : null;
 
   const hasFooter = highlightedItem || selectedItem;
 
+  const handleClick = useCallback(() => {
+    // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
+    // const dropdown = document.getElementById(id);
+    const helperText = dropdownRef.current.getElementsByClassName(
+      `${prefix}--form__helper-text`
+    )[0];
+    const validationText = dropdownRef.current.getElementsByClassName(
+      `${prefix}--form-requirement`
+    )[0];
+    const menuOption = dropdownRef.current.getElementsByClassName(
+      `${prefix}--list-box__menu-item`
+    )[0];
+
+    const dropdownLabel = dropdownRef.current.getElementsByClassName(
+      `${prefix}--list-box__field`
+    )[0];
+
+    const helperTextHeight =
+      helperText !== undefined
+        ? helperText.clientHeight + defaultHelperPadding
+        : 0;
+    const validationTextHeight =
+      validationText !== undefined
+        ? validationText.clientHeight + defaultHelperPadding
+        : 0;
+
+    const labelHeight =
+      dropdownLabel !== undefined ? dropdownLabel.clientHeight : 0;
+
+    setWidth(columnCount * (menuOption?.clientWidth ?? defaultItemSize));
+    setHeight(Math.ceil(items.length / columnCount) * defaultItemSize);
+    setTopTranslate(helperTextHeight + validationTextHeight + labelHeight + 1); // Add one for the border width
+    setBottomTranslate(helperTextHeight + validationTextHeight);
+  }, [columnCount, items, dropdownRef]);
+
   const Footer = () => {
-    const selectedFooter = highlightedItem !== null ? highlightedItem : selectedItem;
+    const selectedFooter =
+      highlightedItem !== null ? highlightedItem : selectedItem;
 
-    const bottomTranslate = `translateY(-${helperTextHeight + validationTextHeight}px)`;
-    const topTranslate = `translateY(-${heightStyle + defaultHelperPadding * 2}px)`;
-
-    return selectedFooter !== undefined && selectedFooter !== null ? (
+    return (
       <div
         className={`${iotPrefix}--icon-dropdown__footer`}
         style={{
-          width: widthStyle,
-          transform: direction === 'top' ? topTranslate : bottomTranslate,
-          paddingTop: direction === 'bottom' ? `${heightStyle}px` : 0,
-          paddingBottom: direction === 'top' ? `${heightStyle}px` : 0,
-        }}
-      >
-        <div className={`${iotPrefix}--icon-dropdown__footer-content`}>{selectedFooter.footer}</div>
+          width: `${width}px`,
+          transform: `translateY(-${
+            direction === 'top' ? topTranslate : bottomTranslate
+          }px)`,
+          paddingTop: direction === 'bottom' ? `${height}px` : 0,
+          paddingBottom: direction === 'top' ? `${height}px` : 0,
+          bottom: direction === 'top' ? 0 : 'initial',
+        }}>
+        {selectedFooter && (
+          <div className={`${iotPrefix}--icon-dropdown__footer-content`}>
+            {selectedFooter.footer}
+          </div>
+        )}
       </div>
-    ) : null;
+    );
   };
 
   const itemToString = (item) => {
@@ -180,7 +210,8 @@ const IconDropdown = ({
           className={classnames(
             `${iotPrefix}--icon-dropdown__image-button`,
             {
-              [`${iotPrefix}--icon-dropdown__image-button--leading`]: index % columnCount === 0,
+              [`${iotPrefix}--icon-dropdown__image-button--leading`]:
+                index % columnCount === 0,
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--trailing`]:
@@ -188,7 +219,13 @@ const IconDropdown = ({
             },
             {
               [`${iotPrefix}--icon-dropdown__image-button--bottom`]:
-                index + columnCount >= items.length && !hasFooter,
+                index + columnCount >= items.length &&
+                !hasFooter &&
+                direction === 'bottom',
+            },
+            {
+              [`${iotPrefix}--icon-dropdown__image-button--top`]:
+                index < columnCount && hasFooter && direction === 'top',
             }
           )}
           renderIcon={item?.icon}
@@ -203,7 +240,8 @@ const IconDropdown = ({
 
         <div className={`${iotPrefix}--icon-dropdown__selected-icon-label`}>
           {React.createElement(item.icon)}
-          <div className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
+          <div
+            className={`${iotPrefix}--icon-dropdown__selected-icon-label__content`}>
             {item.text}
           </div>
         </div>
@@ -212,13 +250,13 @@ const IconDropdown = ({
   };
 
   return (
-    <div id={id}>
+    <div id={id} ref={dropdownRef}>
       {isOpen && direction === 'top' && <Footer />}
 
       <Dropdown
         id={dropdownId}
         direction={direction}
-        style={{ width: widthStyle }}
+        style={{ width: `${width}px` }}
         items={items}
         className={`${iotPrefix}--icon-dropdown__selection-buttons`}
         selectedItem={selectedItem}
@@ -227,9 +265,12 @@ const IconDropdown = ({
           setInternalSelectedItem(newSelected);
           onChange(newSelected);
         }}
+        translateWithId={translateWithId}
         downshiftProps={{
           isOpen,
           onStateChange: (change) => {
+            handleClick();
+
             if (change.isOpen !== undefined) {
               setIsOpen(change.isOpen);
             }

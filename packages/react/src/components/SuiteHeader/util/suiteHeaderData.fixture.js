@@ -338,6 +338,14 @@ const fixture = {
     url: 'https://myeam.mydomain.com',
     creationTimestamp: '2020-08-24T11:56:12-05:00',
   },
+  '/config/mroio': {
+    url: 'https://mymroio.mydomain.com',
+    creationTimestamp: '2020-08-24T11:56:12-05:00',
+  },
+  '/config/apm': {
+    dashboard: 'https://myapm.mydomain.com',
+    creationTimestamp: '2020-08-24T11:56:12-05:00',
+  },
   '/users/mas-admin/surveys/suite': {
     id: 'suite',
     delayIntervalDays: 30,

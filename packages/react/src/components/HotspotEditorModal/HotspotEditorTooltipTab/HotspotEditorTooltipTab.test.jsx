@@ -2,7 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { red50, blue50, green50 } from '@carbon/colors';
-import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+import {
+  InformationSquareFilled24,
+  InformationFilled24,
+} from '@carbon/icons-react';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 
@@ -30,10 +33,12 @@ describe('HotspotEditorTooltipTab', () => {
     const infoMessage = 'My info message';
     render(
       <HotspotEditorTooltipTab
-        infoMessage={infoMessage}
+        i18n={{ infoMessageText: infoMessage }}
+        showInfoMessage
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
+        translateWithId={() => {}}
       />
     );
 
@@ -47,19 +52,24 @@ describe('HotspotEditorTooltipTab', () => {
   it('calls onChange as title and description are typed into', () => {
     const onChange = jest.fn();
     render(
-      <HotspotEditorTooltipTab hotspotIcons={getIcons()} onChange={onChange} onDelete={() => {}} />
+      <HotspotEditorTooltipTab
+        hotspotIcons={getIcons()}
+        onChange={onChange}
+        onDelete={() => {}}
+        translateWithId={() => {}}
+      />
     );
 
     userEvent.type(screen.getByTitle('Enter title for the tooltip'), 'test');
-    expect(onChange).toHaveBeenCalledWith({ title: 't' });
-    expect(onChange).toHaveBeenCalledWith({ title: 'e' });
-    expect(onChange).toHaveBeenCalledWith({ title: 's' });
-    expect(onChange).toHaveBeenCalledWith({ title: 't' });
+    expect(onChange).toHaveBeenCalledWith({ content: { title: 't' } });
+    expect(onChange).toHaveBeenCalledWith({ content: { title: 'e' } });
+    expect(onChange).toHaveBeenCalledWith({ content: { title: 's' } });
+    expect(onChange).toHaveBeenCalledWith({ content: { title: 't' } });
     expect(onChange).toHaveBeenCalledTimes(4);
 
     userEvent.type(screen.getByLabelText('Description'), 'ok');
-    expect(onChange).toHaveBeenCalledWith({ description: 'o' });
-    expect(onChange).toHaveBeenCalledWith({ description: 'k' });
+    expect(onChange).toHaveBeenCalledWith({ content: { description: 'o' } });
+    expect(onChange).toHaveBeenCalledWith({ content: { description: 'k' } });
     expect(onChange).toHaveBeenCalledTimes(6);
   });
 
@@ -71,6 +81,7 @@ describe('HotspotEditorTooltipTab', () => {
         hotspotIcons={getIcons()}
         onChange={onChange}
         onDelete={() => {}}
+        translateWithId={() => {}}
       />
     );
 
@@ -78,15 +89,15 @@ describe('HotspotEditorTooltipTab', () => {
     const firstItem = screen.getAllByRole('option')[0];
     userEvent.click(firstItem);
     expect(onChange).toHaveBeenCalledWith({
-      color: getColors()[0],
+      color: getColors()[0].carbonColor,
     });
 
-    userEvent.click(screen.getByText('Select an Icon'));
+    userEvent.click(screen.getByText('Select an icon'));
     const firstItemIcon = screen.getAllByRole('option')[0];
     userEvent.click(firstItemIcon);
     expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        icon: expect.objectContaining({ id: getIcons()[0].id }),
+        icon: getIcons()[0].id,
       })
     );
   });
@@ -94,39 +105,84 @@ describe('HotspotEditorTooltipTab', () => {
   it('renders preset values ', () => {
     const description = 'My description';
     const title = 'My Title';
+    const colorObj = getColors()[1];
     render(
       <HotspotEditorTooltipTab
         formValues={{
-          color: getColors()[1],
-          description,
+          color: colorObj,
           icon: getIcons()[1],
-          title,
+          content: { title, description },
         }}
         hotspotIconFillColors={getColors()}
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={() => {}}
+        translateWithId={() => {}}
       />
     );
 
     expect(screen.getByText(description)).toBeVisible();
     expect(screen.getByDisplayValue(title)).toBeVisible();
-    expect(screen.getByText(getColors()[1].name)).toBeVisible();
+    expect(screen.getByText(colorObj.name)).toBeVisible();
     expect(screen.getByText(getIcons()[1].text)).toBeVisible();
+  });
+
+  it('renders preset color string & icon string value', () => {
+    const colorObj = getColors()[1];
+    const colorString = colorObj.carbonColor;
+    const iconObj = getIcons()[1];
+    const iconString = iconObj.id;
+    render(
+      <HotspotEditorTooltipTab
+        formValues={{
+          color: colorString,
+          icon: iconString,
+        }}
+        hotspotIconFillColors={getColors()}
+        hotspotIcons={getIcons()}
+        onChange={() => {}}
+        onDelete={() => {}}
+        translateWithId={() => {}}
+      />
+    );
+
+    expect(screen.getByText(colorObj.name)).toBeVisible();
+    expect(screen.getByText(iconObj.text)).toBeVisible();
   });
 
   it('calls onDelete when Delete hotspot button is clicked', () => {
     const onDelete = jest.fn();
-    render(
+    const { rerender } = render(
       <HotspotEditorTooltipTab
         hotspotIconFillColors={getColors()}
         hotspotIcons={getIcons()}
         onChange={() => {}}
         onDelete={onDelete}
+        showDeleteButton={false}
+        translateWithId={() => {}}
       />
     );
+    expect(
+      screen.queryAllByText(
+        HotspotEditorTooltipTab.defaultProps.i18n.deleteButtonLabelText
+      )
+    ).toHaveLength(0);
 
-    userEvent.click(screen.getByRole('button', { name: 'Delete hotspot' }));
+    rerender(
+      <HotspotEditorTooltipTab
+        hotspotIconFillColors={getColors()}
+        hotspotIcons={getIcons()}
+        onChange={() => {}}
+        showDeleteButton
+        onDelete={onDelete}
+        translateWithId={() => {}}
+      />
+    );
+    userEvent.click(
+      screen.getByRole('button', {
+        name: HotspotEditorTooltipTab.defaultProps.i18n.deleteButtonLabelText,
+      })
+    );
     expect(onDelete).toHaveBeenCalled();
   });
 });

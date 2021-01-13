@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/min/locales';
-import LineChart from '@carbon/charts-react/line-chart';
-import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
+import { LineChart, StackedBarChart } from '@carbon/charts-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
@@ -16,7 +15,11 @@ import {
   convertStringsToDOMElement,
   csvDownloadHandler,
 } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes, ZoomBarPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
+import {
+  CardPropTypes,
+  ZoomBarPropTypes,
+  CHART_COLORS,
+} from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -33,7 +36,11 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
-import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
+import {
+  generateSampleValues,
+  formatGraphTick,
+  findMatchingAlertRange,
+} from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
 
@@ -74,10 +81,15 @@ const TimeSeriesCardPropTypes = {
     zoomBar: ZoomBarPropTypes,
     /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
     addSpaceOnEdges: PropTypes.number,
+    /** whether or not to show a legend at the bottom of the card
+     * if not explicitly stated, the card will show based on the length of the series
+     */
+    showLegend: PropTypes.bool,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
     noData: PropTypes.string,
+    tooltipGroupLabel: PropTypes.string,
   }),
   /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(
@@ -90,24 +102,35 @@ const TimeSeriesCardPropTypes = {
     })
   ),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.number,
+      PropTypes.bool,
+    ])
   ),
   /** Interval for time series configuration used for formatting the x-axis */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+  interval: PropTypes.oneOf([
+    'minute',
+    'hour',
+    'day',
+    'week',
+    'quarter',
+    'month',
+    'year',
+  ]),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp
    */
-  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  domainRange: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.object])
+  ),
   /** Region for value and text formatting */
   locale: PropTypes.string,
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
-  /** whether or not to show a legend at the bottom of the card
-   * if not explicitly stated, the card will show based on the length of the series
-   */
-  showLegend: PropTypes.bool,
 };
 
 /**
@@ -121,7 +144,11 @@ const TimeSeriesCardPropTypes = {
  *
  * @returns {object} with a labels array and a datasets array
  */
-export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
+export const formatChartData = (
+  timeDataSourceId = 'timestamp',
+  series,
+  values
+) => {
   // Generate a set of unique timestamps for the values
   const timestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
   const data = [];
@@ -136,7 +163,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
         filteredData
           .filter((dataItem) => {
             // only allow valid timestamp matches
-            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            return (
+              !isNil(dataItem[timeDataSourceId]) &&
+              dataItem[timeDataSourceId] === timestamp
+            );
           })
           .forEach((dataItem) => {
             // Check to see if the data Item actually exists in this timestamp before adding to data (to support sparse data in the values)
@@ -179,7 +209,9 @@ export const handleTooltip = (
   const data = dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     ? dataOrHoveredElement.__data__ // eslint-disable-line no-underscore-dangle
     : dataOrHoveredElement;
-  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+  const timeStamp = Array.isArray(data)
+    ? data[0]?.date?.getTime()
+    : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
@@ -199,14 +231,20 @@ export const handleTooltip = (
     : '';
 
   // Convert strings to DOM Elements so we can easily reason about them and manipulate/replace pieces.
-  const [defaultTooltipDOM, dateLabelDOM, matchingAlertLabelsDOM] = convertStringsToDOMElement([
+  const [
+    defaultTooltipDOM,
+    dateLabelDOM,
+    matchingAlertLabelsDOM,
+  ] = convertStringsToDOMElement([
     defaultTooltip,
     dateLabel,
     matchingAlertLabels,
   ]);
 
   // The first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-  defaultTooltipDOM.querySelector('li:first-child').replaceWith(dateLabelDOM.querySelector('li'));
+  defaultTooltipDOM
+    .querySelector('li:first-child')
+    .replaceWith(dateLabelDOM.querySelector('li'));
 
   // Append all the matching alert labels
   matchingAlertLabelsDOM.querySelectorAll('li').forEach((label) => {
@@ -227,7 +265,8 @@ export const formatColors = (series) => {
   };
   if (Array.isArray(series)) {
     series.forEach((dataset, index) => {
-      colors.scale[dataset.label] = dataset.color || CHART_COLORS[index % CHART_COLORS.length];
+      colors.scale[dataset.label] =
+        dataset.color || CHART_COLORS[index % CHART_COLORS.length];
     });
   } else {
     colors.scale[series.label] = series.color || CHART_COLORS[0];
@@ -252,7 +291,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showLegend,
   ...others
 }) => {
   const {
@@ -269,6 +307,7 @@ const TimeSeriesCard = ({
       chartType,
       zoomBar,
       showTimeInGMT,
+      showLegend,
       tooltipDateFormatPattern,
       addSpaceOnEdges,
     },
@@ -291,7 +330,9 @@ const TimeSeriesCard = ({
     () =>
       values
         ? values.sort((left, right) =>
-            moment.utc(left[timeDataSourceId]).diff(moment.utc(right[timeDataSourceId]))
+            moment
+              .utc(left[timeDataSourceId])
+              .diff(moment.utc(right[timeDataSourceId]))
           )
         : [],
     [values, timeDataSourceId]
@@ -342,25 +383,58 @@ const TimeSeriesCard = ({
   // Set the colors for each dataset
   const colors = formatColors(series);
 
-  const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
+  /**
+   * Determines the dot stroke color (the border of the data point)
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalStrokeColor from carbon charts
+   * @returns {string} stroke color
+   */
+  const handleStrokeColor = (
+    datasetLabel,
+    label,
+    data,
+    originalStrokeColor
+  ) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
+      return matchingAlertRange?.length > 0
+        ? matchingAlertRange[0].color
+        : originalStrokeColor;
     }
     return originalStrokeColor;
   };
 
+  /**
+   * Determines the dot fill color based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {string} originalFillColor from carbon charts
+   * @returns {string} fill color
+   */
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
     // If it's editable don't fill the dot
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
+      return matchingAlertRange?.length > 0
+        ? matchingAlertRange[0].color
+        : defaultFillColor;
     }
 
     return defaultFillColor;
   };
 
+  /**
+   * Determines if the dot is filled based on matching alerts
+   * @param {string} datasetLabel
+   * @param {string} label
+   * @param {Object} data
+   * @param {Boolean} isFilled default setting from carbon charts
+   * @returns {Boolean}
+   */
   const handleIsFilled = (datasetLabel, label, data, isFilled) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
@@ -379,11 +453,10 @@ const TimeSeriesCard = ({
   }, [valueSort, series, timeDataSourceId]);
 
   /** This caches the chart value */
-  const chartData = useMemo(() => formatChartData(timeDataSourceId, series, valueSort), [
-    timeDataSourceId,
-    series,
-    valueSort,
-  ]);
+  const chartData = useMemo(
+    () => formatChartData(timeDataSourceId, series, valueSort),
+    [timeDataSourceId, series, valueSort]
+  );
 
   const isChartDataEmpty = isEmpty(chartData);
 
@@ -393,7 +466,9 @@ const TimeSeriesCard = ({
     const tableValues = valueSort.map((value, index) => {
       const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
       maxColumnNames =
-        currentValueColumns.length > maxColumnNames.length ? currentValueColumns : maxColumnNames;
+        currentValueColumns.length > maxColumnNames.length
+          ? currentValueColumns
+          : maxColumnNames;
       return {
         id: `dataindex-${index}`,
         values: {
@@ -426,16 +501,27 @@ const TimeSeriesCard = ({
         return {
           id: columnName,
           // use the label if one exists as it will be the user-defined, readable name
-          name: matchingDataSource ? matchingDataSource.label : columnName,
+          // UNLESS dataFilter is enabled as the matchingDataSource will only find the first match
+          name: matchingDataSource
+            ? matchingDataSource.dataFilter
+              ? matchingDataSource.dataSourceId
+              : matchingDataSource.label
+            : columnName,
           isSortable: true,
           filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
         };
       })
     );
-  }, [columnNames, i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]);
+  }, [
+    columnNames,
+    i18n.defaultFilterStringPlaceholdText,
+    series,
+    timeDataSourceId,
+  ]);
 
   // TODO: remove in next release
-  const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
+  const ChartComponent =
+    chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
@@ -451,8 +537,7 @@ const TimeSeriesCard = ({
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
       isLoading={isLoading}
-      resizeHandles={resizeHandles}
-    >
+      resizeHandles={resizeHandles}>
       {!isChartDataEmpty ? (
         <>
           <div
@@ -461,8 +546,7 @@ const TimeSeriesCard = ({
               [`${iotPrefix}--time-series-card--wrapper__lots-of-points`]:
                 valueSort && valueSort.length > 50,
               [`${iotPrefix}--time-series-card--wrapper__editable`]: isEditable,
-            })}
-          >
+            })}>
             <ChartComponent
               ref={(el) => {
                 chartRef = el;
@@ -493,7 +577,8 @@ const TimeSeriesCard = ({
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
                       : {}),
-                    stacked: chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
+                    stacked:
+                      chartType === TIME_SERIES_TYPES.BAR && series.length > 1,
                     includeZero: includeZeroOnYaxis,
                     scaleType: 'linear',
                   },
@@ -515,12 +600,14 @@ const TimeSeriesCard = ({
                       showTimeInGMT,
                       tooltipDateFormatPattern
                     ),
+                  groupLabel: i18n.tooltipGroupLabel,
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
-                ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+                ...(zoomBar?.enabled &&
+                (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                   ? {
                       zoomBar: {
                         // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
@@ -533,7 +620,9 @@ const TimeSeriesCard = ({
                     }
                   : {}),
                 timeScale: {
-                  addSpaceOnEdges: !isNil(addSpaceOnEdges) ? addSpaceOnEdges : 1,
+                  addSpaceOnEdges: !isNil(addSpaceOnEdges)
+                    ? addSpaceOnEdges
+                    : 1,
                 },
               }}
               width="100%"
@@ -553,7 +642,8 @@ const TimeSeriesCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, title),
+                  onDownloadCSV: (filteredData) =>
+                    csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{
@@ -592,17 +682,18 @@ TimeSeriesCard.defaultProps = {
   i18n: {
     alertDetected: 'Alert detected:',
     noDataLabel: 'No data is available for this time range.',
+    tooltipGroupLabel: 'Group',
   },
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
   content: {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
+    showLegend: true,
   },
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
-  showLegend: null,
 };
 
 export default TimeSeriesCard;

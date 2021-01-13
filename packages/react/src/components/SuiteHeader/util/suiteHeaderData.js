@@ -23,6 +23,8 @@ export const calcRoutes = (domain, user, workspaces, applications) => {
     requestEnhancement: 'https://ibm-watson-iot.ideas.aha.io/',
     support: 'https://www.ibm.com/mysupport',
     about: `https://home.${domain}/about`,
+    workspaceId,
+    domain,
   };
   const appOrdering = ['monitor', 'health', 'predict', 'visualinspection'];
   const workspaceApplications = user.workspaces[workspaceId].applications || {};
@@ -154,6 +156,9 @@ const getSuiteHeaderData = async ({
   const profileData = await api('GET', '/profile');
   const appsData = await api('GET', '/applications');
   const eamData = await api('GET', '/config/eam');
+  const mroioData = await api('GET', '/config/mroio');
+  const apmData = await api('GET', '/config/apm');
+  const appconnectData = await api('GET', '/config/appconnect');
   const i18nData = await api('GET', `/i18n/header/${isTest ? 'en' : lang}`);
 
   // Routes
@@ -172,6 +177,16 @@ const getSuiteHeaderData = async ({
   // i18n
   const i18n = i18nData ? calculateI18N(i18nData) : SuiteHeaderI18N.en;
 
+  // apps to open in a new window
+  const externalApps = [
+    'eam',
+    'mroio',
+    'digitaltwin',
+    'apm',
+    'visualinspection',
+    'appconnect',
+  ];
+
   return {
     username: profileData.user.username,
     userDisplayName: profileData.user.displayName,
@@ -184,12 +199,41 @@ const getSuiteHeaderData = async ({
               id: 'eam',
               name: 'Manage',
               href: eamData.url,
-              isExternal: true,
             },
           ]
         : []),
       ...applications,
-    ],
+      ...(mroioData?.url
+        ? [
+            {
+              id: 'mroio',
+              name: 'MRO Inventory Optimization',
+              href: mroioData.url,
+            },
+          ]
+        : []),
+      ...((appconnectData?.users ?? []).includes(profileData?.user?.username)
+        ? [
+            {
+              id: 'appconnect',
+              name: 'App Connect',
+              href: appconnectData?.dashboard,
+            },
+          ]
+        : []),
+      ...(apmData?.dashboard
+        ? [
+            {
+              id: 'apm',
+              name: 'APM for E&U',
+              href: apmData.dashboard,
+            },
+          ]
+        : []),
+    ].map((app) => ({
+      ...app,
+      isExternal: externalApps.includes(app.id),
+    })),
     i18n,
     showSurvey,
   };

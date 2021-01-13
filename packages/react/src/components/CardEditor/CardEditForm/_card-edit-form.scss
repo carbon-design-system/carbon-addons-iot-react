@@ -45,7 +45,11 @@
     @include type-style('productive-heading-01');
     border-top: solid 1px $ui-03;
     border-bottom: solid 1px $ui-03;
+    margin-left: -$spacing-05;
+    margin-right: -$spacing-05;
     margin-bottom: $spacing-05;
+    display: flex;
+    justify-content: space-between;
   }
 
   &--input-label {
@@ -54,6 +58,9 @@
 
   &--input {
     padding-bottom: $spacing-05;
+    .#{$prefix}--fieldset {
+      margin-bottom: unset;
+    }
 
     &--label {
       font-size: 0.75rem;
@@ -84,6 +91,71 @@
       margin-top: 0;
     }
   }
+  &--modal-wrapper {
+    .#{$prefix}--modal.is-visible .#{$prefix}--modal-container {
+      overflow: visible;
+    }
+    .#{$prefix}--modal-content {
+      overflow: visible;
+    }
+    .#{$prefix}--number,
+    input[type='number'] {
+      min-width: unset;
+    }
+    .iot--table-container .addons-iot-table-container {
+      overflow: visible;
+    }
+    .bx--data-table-content {
+      overflow: visible;
+    }
+  }
+  &--input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      max-width: 5rem;
+    }
+
+    &--span {
+      font-size: 0.75rem;
+    }
+  }
+  &--threshold-input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    &--item {
+      margin-right: 1rem;
+      width: 100%;
+    }
+    &--item-half {
+      margin-right: 1rem;
+      width: 50%;
+    }
+    &--item-end {
+      width: 100%;
+    }
+    &--item-dropdown {
+      margin-right: 1rem;
+      max-width: 5rem;
+    }
+  }
+
   &--footer {
     padding: $spacing-05;
     & > button {
@@ -92,6 +164,7 @@
   }
   .#{$prefix}--modal-container--xs {
     max-height: none;
+    min-width: 30rem;
   }
 }
 
@@ -101,15 +174,44 @@
     margin-bottom: 0;
   }
 
-  &-input {
+  &--input {
     margin-bottom: $spacing-05;
+    position: relative;
   }
 
   &-btn {
     width: 100%;
   }
+  &-clear-button {
+    position: absolute;
+    right: 0;
+    top: 1.25rem;
+    color: $ui-05;
+    background-color: $ui-02;
+    &:hover,
+    &:active {
+      color: $ui-05;
+    }
+    border: 0;
+    min-height: 2rem;
+    > svg.#{$prefix}--btn__icon {
+      margin-left: 0;
+    }
+  }
 
   .#{$prefix}--slider {
     min-width: 4.5rem;
+  }
+}
+
+div.#{$iot-prefix}--card-edit-form--data-item-list {
+  // remove the spacing
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+  width: unset;
+
+  // add more spacing to the item so that the content will still align
+  .#{$iot-prefix}--list-item {
+    padding-left: $spacing-05;
   }
 }

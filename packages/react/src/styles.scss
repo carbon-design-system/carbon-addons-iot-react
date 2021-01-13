@@ -147,18 +147,25 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/ImageCard/hotspot-content';
 @import 'components/ImageCard/image-uploader';
 @import 'components/ImageCard/hotspot';
+@import 'components/ImageGalleryModal/image-gallery-modal';
+@import 'components/ImageGalleryModal/image-tile';
+
 @import 'components/Skeleton/skeleton';
 @import 'components/InlineLoading/inline-loading';
 @import 'components/PaginationNav/pagination-nav';
 @import 'components/FlyoutMenu/flyout-menu';
 @import 'components/List/HierarchyList/hierarchy-list';
+@import 'components/EmptyState/emptystate';
 
 //-------------------------------------
 // 🔬 Experimental
 //-------------------------------------
 @import 'components/UIShell/ui-shell';
 @import 'components/ColorDropdown/color-dropdown';
+@import 'components/SimpleIconDropdown/simple-icon-dropdown';
 @import 'components/HotspotEditorModal/HotspotEditorTooltipTab/hotspot-editor-tooltip-tab';
+@import 'components/HotspotEditorModal/hotspot-editor-modal';
+@import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
@@ -224,3 +231,4 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/WizardInline/wizard-inline';
 @import 'components/WizardModal/wizard-modal';
 @import 'components/FilterTags/filter-tags';
+@import 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';

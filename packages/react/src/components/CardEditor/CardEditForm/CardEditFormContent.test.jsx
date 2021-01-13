@@ -33,7 +33,7 @@ const cardConfig = {
 };
 
 const mockOnChange = jest.fn();
-const mockGetValidTimeRanges = jest.fn();
+const mockGetValidTimeRanges = jest.fn(() => ['last2Hours']);
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -51,6 +51,24 @@ describe('CardEditFormContent', () => {
       userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'changed title');
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockGetValidTimeRanges).toHaveBeenCalled();
+      // Time range selector should start unselected
+      const timeRangeSelector = screen.getAllByLabelText('Time range');
+      expect(timeRangeSelector[0].innerHTML).not.toEqual(
+        expect.stringContaining('last2Hours')
+      );
+    });
+    it('Should select timeRange if passed', () => {
+      render(
+        <CardEditFormContent
+          cardConfig={{ ...cardConfig, timeRange: 'last2Hours' }}
+          onChange={mockOnChange}
+          getValidTimeRanges={mockGetValidTimeRanges}
+        />
+      );
+      const timeRangeSelector = screen.getAllByLabelText('Time range');
+      expect(timeRangeSelector[0].innerHTML).toEqual(
+        expect.stringContaining('last2Hours')
+      );
     });
   });
 });

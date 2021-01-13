@@ -51,7 +51,8 @@ export const ComposedModalPropTypes = {
   type: PropTypes.oneOf(['warn', 'normal']),
   /** NEW PROP: Whether this particular dialog needs to be very large */
   isLarge: PropTypes.bool,
-
+  /** NEW PROP: Whether this particular dialog needs to be full width */
+  isFullScreen: PropTypes.bool,
   /** Should the dialog be open or not */
   open: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /**   Close the dialog */
@@ -81,6 +82,7 @@ export const ComposedModalPropTypes = {
  * Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
  *  adds header.helpText prop to explain dialog
  *  adds type prop for warning and error type dialogs
+ *  adds isFullScreen prop to have the modal appear in full width using class styling
  *  adds isLarge prop for large and small class styling dialogs
  *  adds isFetchingData props for loading state
  *  adds error and dataError prop to display notification about error at bottom of dialog
@@ -101,6 +103,7 @@ class ComposedModal extends React.Component {
     onClearError: null,
     type: null,
     footer: null,
+    isFullScreen: false,
     isLarge: false,
     submitFailed: false,
     onSubmit: null,
@@ -140,6 +143,7 @@ class ComposedModal extends React.Component {
       type,
       onClose,
       isFetchingData,
+      isFullScreen,
       isLarge,
       onSubmit,
       iconDescription,
@@ -171,6 +175,7 @@ class ComposedModal extends React.Component {
           className,
           {
             [`${iotPrefix}--composed-modal--large`]: isLarge,
+            [`${iotPrefix}--composed-modal--full-screen`]: isFullScreen,
           },
           `${iotPrefix}--composed-modal`
         )}

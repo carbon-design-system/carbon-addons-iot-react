@@ -6,7 +6,12 @@ import { spacing05 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample';
+import {
+  tableColumns,
+  tableData,
+  actions1,
+  actions2,
+} from '../../utils/sample';
 
 import TableCard from './TableCard';
 
@@ -18,8 +23,12 @@ export default {
   },
 };
 
-export const TableWithMultipleActions = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithMultipleActions = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   const tableDataWithActions = tableData.map((item) => {
     return {
@@ -32,8 +41,7 @@ export const TableWithMultipleActions = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -42,21 +50,29 @@ export const TableWithMultipleActions = () => {
           columns: tableColumns,
         }}
         values={tableDataWithActions}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithMultipleActions.story = {
-  name: 'table with multiple actions',
+WithMultipleActions.story = {
+  name: 'with multiple actions',
 };
 
 export const WithLinks = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
   const cardVariables = object('Dynamic link variable', {
     assetId: '11112',
+    company: 'ibm',
   });
   const tableLinkColumns = [
     {
@@ -67,7 +83,7 @@ export const WithLinks = () => {
       dataSourceId: 'deviceId',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{assetId}'),
+        href: text('href', 'https://{company}.com/{assetId}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },
@@ -82,8 +98,7 @@ export const WithLinks = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts {assetId}')}
         id="table-list"
@@ -92,8 +107,11 @@ export const WithLinks = () => {
           columns: tableLinkColumns,
         }}
         values={tableLinkData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
         cardVariables={cardVariables}
       />
     </div>
@@ -119,7 +137,11 @@ WithLinks.story = {
 };
 
 export const WithRowSpecificLinkVariables = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const tableLinkColumns = [
     ...tableColumns,
@@ -131,7 +153,7 @@ export const WithRowSpecificLinkVariables = () => {
       dataSourceId: 'Link',
       label: 'Link',
       linkTemplate: {
-        href: text('href', 'https://ibm.com/{deviceId}'),
+        href: text('href', 'https://ibm.com/{deviceId}?time={hour}'),
         target: select('target', ['_blank', null], '_blank'),
       },
     },
@@ -176,8 +198,7 @@ export const WithRowSpecificLinkVariables = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Asset Open Alerts')}
         id="table-list"
@@ -187,8 +208,11 @@ export const WithRowSpecificLinkVariables = () => {
           thresholds,
         }}
         values={tableLinkData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -207,8 +231,12 @@ WithRowSpecificLinkVariables.story = {
   },
 };
 
-export const TableWithSingleActions = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithSingleActions = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   const tableDataWithActions = tableData.map((item) => {
     return {
@@ -221,8 +249,7 @@ export const TableWithSingleActions = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -231,19 +258,26 @@ export const TableWithSingleActions = () => {
           columns: tableColumns,
         }}
         values={tableDataWithActions}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithSingleActions.story = {
-  name: 'table with single actions',
+WithSingleActions.story = {
+  name: 'with single actions',
 };
 
-export const TableWithThresholdsPrecisionAndExpandedRows = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+export const WithThresholdsPrecisionAndExpandedRows = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const thresholds = [
     {
@@ -253,7 +287,10 @@ export const TableWithThresholdsPrecisionAndExpandedRows = () => {
       severity: 1,
       icon: 'bee',
       color: 'black',
-      label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+      label: text(
+        'Custom Pressure Severity Header',
+        'Custom Pressure Severity Header'
+      ),
       showSeverityLabel: boolean('Show Pressure Threshold Label', true),
       severityLabel: text('Custom Pressure Critical Label', ''),
     },
@@ -294,8 +331,7 @@ export const TableWithThresholdsPrecisionAndExpandedRows = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -323,8 +359,11 @@ export const TableWithThresholdsPrecisionAndExpandedRows = () => {
           ],
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
         renderIconByName={(name, props = {}) =>
           name === 'bee' ? (
             <Bee16 {...props}>
@@ -339,12 +378,16 @@ export const TableWithThresholdsPrecisionAndExpandedRows = () => {
   );
 };
 
-TableWithThresholdsPrecisionAndExpandedRows.story = {
-  name: 'table with thresholds, precision and expanded rows',
+WithThresholdsPrecisionAndExpandedRows.story = {
+  name: 'with thresholds, precision and expanded rows',
 };
 
 export const WithDynamicVariables = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
   const cardVariables = object('Dynamic link variable', {
     assetId: '11112',
     devicePressureThreshold: 1,
@@ -383,8 +426,7 @@ export const WithDynamicVariables = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Asset {assetId} Open Alerts')}
         id="table-list"
@@ -394,8 +436,11 @@ export const WithDynamicVariables = () => {
           thresholds,
         }}
         values={tableLinkData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
         cardVariables={cardVariables}
       />
     </div>
@@ -418,8 +463,12 @@ WithDynamicVariables.story = {
   },
 };
 
-export const TableWithThresholds = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+export const WithThresholds = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const thresholds = [
     // this threshold is applied to the whole row, not a particular attribute
@@ -453,7 +502,10 @@ export const TableWithThresholds = () => {
       comparison: '>=',
       value: 10,
       severity: 1,
-      label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+      label: text(
+        'Custom Pressure Severity Header',
+        'Custom Pressure Severity Header'
+      ),
       showSeverityLabel: boolean('Show Pressure Threshold Label', true),
       severityLabel: text('Custom Pressure Critical Label', ''),
     },
@@ -470,15 +522,18 @@ export const TableWithThresholds = () => {
           thresholds,
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithThresholds.story = {
-  name: 'table with thresholds',
+WithThresholds.story = {
+  name: 'with thresholds',
 
   parameters: {
     info: {
@@ -501,8 +556,12 @@ TableWithThresholds.story = {
   },
 };
 
-export const TableWithThresholdsOnlyWithIcon = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+export const WithThresholdsOnlyWithIcon = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const thresholds = [
     // this threshold is applied to the whole row, not a particular attribute
@@ -547,8 +606,7 @@ export const TableWithThresholdsOnlyWithIcon = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -558,15 +616,18 @@ export const TableWithThresholdsOnlyWithIcon = () => {
           thresholds,
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithThresholdsOnlyWithIcon.story = {
-  name: 'table with thresholds only with icon',
+WithThresholdsOnlyWithIcon.story = {
+  name: 'with thresholds only with icon',
 
   parameters: {
     info: {
@@ -578,14 +639,17 @@ TableWithThresholdsOnlyWithIcon.story = {
 };
 
 export const WithMatchingThresholds = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -614,8 +678,11 @@ export const WithMatchingThresholds = () => {
           ],
         }}
         values={tableData.map((i) => ({ id: i.id, values: i.values }))}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -625,8 +692,12 @@ WithMatchingThresholds.story = {
   name: 'with matching thresholds',
 };
 
-export const TableWithCustomColumnSort = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+export const WithCustomColumnSort = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const tableCustomColumns = tableColumns.map((item) =>
     item.dataSourceId === 'count' ? { ...item, sort: 'DESC' } : item
@@ -637,8 +708,7 @@ export const TableWithCustomColumnSort = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -647,22 +717,31 @@ export const TableWithCustomColumnSort = () => {
           columns: tableCustomColumns,
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithCustomColumnSort.story = {
-  name: 'table with custom column sort',
+WithCustomColumnSort.story = {
+  name: 'with custom column sort',
 };
 
-export const TableWithFixedColumnSize = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithFixedColumnSize = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   const tableCustomColumns = tableColumns.map((item, index) =>
-    index === 0 ? { ...item, width: 250, name: 'Alert with long string name' } : item
+    index === 0
+      ? { ...item, width: 250, name: 'Alert with long string name' }
+      : item
   );
 
   return (
@@ -670,8 +749,7 @@ export const TableWithFixedColumnSize = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -680,27 +758,33 @@ export const TableWithFixedColumnSize = () => {
           columns: tableCustomColumns,
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithFixedColumnSize.story = {
-  name: 'table with fixed column size',
+WithFixedColumnSize.story = {
+  name: 'with fixed column size',
 };
 
-export const TableWithRowExpansion = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithRowExpansion = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -719,27 +803,75 @@ export const TableWithRowExpansion = () => {
           ],
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithRowExpansion.story = {
-  name: 'table with row expansion',
+WithRowExpansion.story = {
+  name: 'with row expansion',
 };
 
-export const TableWithRowExpansionAndLinkVariables = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithRowExpansionAndTimestamp = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
+      <TableCard
+        title={text('title', 'Open Alerts')}
+        id="table-list"
+        tooltip={text('Tooltip text', "Here's a Tooltip")}
+        content={{
+          columns: tableColumns,
+          expandedRows: [
+            {
+              id: 'hour',
+              label: 'Time',
+              type: 'TIMESTAMP',
+            },
+          ],
+        }}
+        values={tableData}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
+        size={size}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  );
+};
+
+WithRowExpansionAndTimestamp.story = {
+  name: 'with row expansion and timestamp',
+};
+
+export const WithRowExpansionAndLinkVariables = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}>
       <TableCard
         title="Open Alerts"
         id="table-list"
@@ -764,15 +896,18 @@ export const TableWithRowExpansionAndLinkVariables = () => {
         cardVariables={object('Dynamic link variable', {
           variable: 'variable-value',
         })}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithRowExpansionAndLinkVariables.story = {
-  name: 'table with row expansion and link variables',
+WithRowExpansionAndLinkVariables.story = {
+  name: 'with row expansion and link variables',
 
   parameters: {
     info: {
@@ -787,16 +922,19 @@ TableWithRowExpansionAndLinkVariables.story = {
   },
 };
 
-export const TableWithRowExpansionAndRowSpecificLinkVariables = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+export const WithRowExpansionAndRowSpecificLinkVariables = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title="Open Alerts"
         id="table-list"
@@ -818,15 +956,18 @@ export const TableWithRowExpansionAndRowSpecificLinkVariables = () => {
           ],
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
 };
 
-TableWithRowExpansionAndRowSpecificLinkVariables.story = {
-  name: 'table with row expansion and row specific link variables',
+WithRowExpansionAndRowSpecificLinkVariables.story = {
+  name: 'with row expansion and row specific link variables',
 
   parameters: {
     info: {
@@ -842,15 +983,18 @@ TableWithRowExpansionAndRowSpecificLinkVariables.story = {
 };
 
 export const NoRowActions = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -859,8 +1003,11 @@ export const NoRowActions = () => {
           columns: tableColumns,
         }}
         values={tableData.map((i) => ({ id: i.id, values: i.values }))}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -871,15 +1018,18 @@ NoRowActions.story = {
 };
 
 export const EmptyTable = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -887,8 +1037,11 @@ export const EmptyTable = () => {
         content={{
           columns: tableColumns,
         }}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -899,15 +1052,18 @@ EmptyTable.story = {
 };
 
 export const Editable = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -917,8 +1073,11 @@ export const Editable = () => {
         }}
         isEditable
         availableActions={{ edit: true, clone: true, delete: true }}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -929,15 +1088,18 @@ Editable.story = {
 };
 
 export const EditableWithExpandedRows = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
 
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -948,8 +1110,11 @@ export const EditableWithExpandedRows = () => {
         }}
         isEditable
         availableActions={{ edit: true, clone: true, delete: true }}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   );
@@ -959,8 +1124,47 @@ EditableWithExpandedRows.story = {
   name: 'editable with expanded rows',
 };
 
+export const WithIsLoading = () => {
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGE
+  );
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize('lg', size).x}px`,
+        margin: spacing05 + 4,
+      }}>
+      <TableCard
+        title={text('title', 'Open Alerts')}
+        id="table-list"
+        tooltip={text('Tooltip text', "Here's a Tooltip")}
+        content={{
+          columns: tableColumns,
+        }}
+        values={tableData}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
+        size={size}
+        isLoading={boolean('isLoading', true)}
+      />
+    </div>
+  );
+};
+
+WithIsLoading.story = {
+  name: 'with isLoading',
+};
+
 export const I18N = () => {
-  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  const size = select(
+    'size',
+    [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE],
+    CARD_SIZES.LARGEWIDE
+  );
 
   const thresholds = [
     // this threshold is applied to the whole row, not a particular attribute
@@ -995,8 +1199,7 @@ export const I18N = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}
-    >
+      }}>
       <TableCard
         title={text('title', 'Open Alerts')}
         id="table-list"
@@ -1004,18 +1207,26 @@ export const I18N = () => {
         locale={select('locale', ['fr', 'en'], 'fr')}
         content={{
           columns: tableColumns.map((item) =>
-            item.dataSourceId === 'count' ? { ...item, precision: 3 } : { ...item }
+            item.dataSourceId === 'count'
+              ? { ...item, precision: 3 }
+              : { ...item }
           ),
           thresholds,
         }}
         values={tableData}
-        onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+        onCardAction={(id, type, payload) =>
+          action('onCardAction', id, type, payload)
+        }
         size={size}
+        isLoading={boolean('isLoading', false)}
         i18n={{
           criticalLabel: text('criticalLabel', 'Critical'),
           moderateLabel: text('moderateLabel', 'Moderate'),
           lowLabel: text('lowLabel', 'Low'),
-          selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
+          selectSeverityPlaceholder: text(
+            'selectSeverityPlaceholder',
+            'Select a severity'
+          ),
           severityLabel: text('severityLabel', '__Severity__'),
 
           // table i18n
@@ -1031,31 +1242,53 @@ export const I18N = () => {
           pageNumberAria: text('i18n.pageNumberAria', '__Page Number__'),
           itemsRange: (min, max) => `__${min}–${max} items__`,
           currentPage: (page) => `__page ${page}__`,
-          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+          itemsRangeWithTotal: (min, max, total) =>
+            `__${min}–${max} of ${total} items__`,
           pageRange: (current, total) => `__${current} of ${total} pages__`,
           /** table body */
-          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
-          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
+          clickToExpandAria: text(
+            'i18n.clickToExpandAria',
+            '__Click to expand content__'
+          ),
+          clickToCollapseAria: text(
+            'i18n.clickToCollapseAria',
+            '__Click to collapse content__'
+          ),
           /** toolbar */
-          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          clearAllFilters: text(
+            'i18n.clearAllFilters',
+            '__Clear all filters__'
+          ),
           clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
           filterAria: text('i18n.filterAria', '__Filter__'),
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
+          clearSelectionAria: text(
+            'i18n.clearSelectionAria',
+            '__Clear selection__'
+          ),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(
             'i18n.emptyMessageWithFilters',
             '__No results match the current filters__'
           ),
-          emptyButtonLabel: text('i18n.emptyButtonLabel', '__Create some data__'),
-          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
+          emptyButtonLabel: text(
+            'i18n.emptyButtonLabel',
+            '__Create some data__'
+          ),
+          emptyButtonLabelWithFilters: text(
+            'i18n.emptyButtonLabel',
+            '__Clear all filters__'
+          ),
           inProgressText: text('i18n.inProgressText', '__In Progress__'),
           actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
           learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
           dismissText: text('i18n.dismissText', '__Dismiss__'),
-          downloadIconDescription: text('downloadIconDescription', 'Download table content'),
+          downloadIconDescription: text(
+            'downloadIconDescription',
+            'Download table content'
+          ),
         }}
       />
     </div>

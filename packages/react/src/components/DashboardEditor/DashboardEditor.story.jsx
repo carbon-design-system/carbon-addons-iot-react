@@ -3,13 +3,47 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, object, array } from '@storybook/addon-knobs';
 
 import { Card, Link, InlineNotification } from '../../index';
+import assemblyline from '../ImageGalleryModal/images/assemblyline.jpg';
+import floow_plan from '../ImageGalleryModal/images/floow_plan.png'; // eslint-disable-line camelcase
+import manufacturing_plant from '../ImageGalleryModal/images/Manufacturing_plant.png'; // eslint-disable-line camelcase
+import extra_wide_image from '../ImageGalleryModal/images/extra-wide-image.png'; // eslint-disable-line camelcase
+import robot_arm from '../ImageGalleryModal/images/robot_arm.png'; // eslint-disable-line camelcase
+import tankmodal from '../ImageGalleryModal/images/tankmodal.png';
+import turbines from '../ImageGalleryModal/images/turbines.png';
+import large from '../ImageGalleryModal/images/large.png';
+import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
 
 import DashboardEditor from './DashboardEditor';
+
+const images = [
+  {
+    id: 'assemblyline',
+    src: assemblyline,
+    alt: 'assemblyline',
+    title: `custom title assemblyline that is very long a and must be managed. 
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+      ad minim veniam.`,
+  },
+  { id: 'floow_plan', src: floow_plan, alt: 'floow plan' },
+  {
+    id: 'manufacturing_plant',
+    src: manufacturing_plant,
+    alt: 'manufacturing plant',
+  },
+  { id: 'robot_arm', src: robot_arm, alt: 'robot arm' },
+  { id: 'tankmodal', src: tankmodal, alt: 'tankmodal' },
+  { id: 'turbines', src: turbines, alt: 'turbines' },
+  { id: 'extra-wide-image', src: extra_wide_image, alt: 'extra wide image' },
+  { id: 'large', src: large, alt: 'large image' },
+  { id: 'large_portrait', src: large_portrait, alt: 'large image portrait' },
+];
 
 const mockDataItems = [
   { dataSourceId: 'torque_max', label: 'Torque Max' },
   { dataSourceId: 'torque_min', label: 'Torque Min' },
   { dataSourceId: 'torque_mean', label: 'Torque Mean' },
+  { dataSourceId: 'torque', label: 'Torque' },
   { dataSourceId: 'temperature', label: 'Temperature' },
   { dataSourceId: 'pressure', label: 'Pressure' },
 ];
@@ -27,7 +61,12 @@ export const Default = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
       title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
       dataItems={mockDataItems}
+      availableImages={images}
+      i18n={{
+        headerEditTitleButton: 'Edit title updated',
+      }}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -35,8 +74,14 @@ export const Default = () => (
       onDelete={action('onDelete')}
       onCancel={action('onCancel')}
       onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
       onLayoutChange={action('onLayoutChange')}
-      submitDisabled={boolean('submitDisabled', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
       supportedCardTypes={array('supportedCardTypes', [
         'TIMESERIES',
         'SIMPLE_BAR',
@@ -114,7 +159,7 @@ export const WithInitialValue = () => (
           },
           {
             id: 'Timeseries',
-            title: 'Untitled',
+            title: 'Timeseries',
             size: 'MEDIUMWIDE',
             type: 'TIMESERIES',
             content: {
@@ -135,7 +180,32 @@ export const WithInitialValue = () => (
               timeDataSourceId: 'timestamp',
               addSpaceOnEdges: 1,
             },
-            interval: 'day',
+            timeRange: 'thisWeek',
+            dataSource: {
+              range: {
+                interval: 'week',
+                count: -1,
+                type: 'periodToDate',
+              },
+            },
+          },
+          {
+            id: 'Bar',
+            title: 'Bar',
+            size: 'MEDIUM',
+            type: 'BAR',
+            content: {
+              type: 'SIMPLE',
+              layout: 'VERTICAL',
+              series: [
+                {
+                  dataSourceId: 'pressure',
+                  label: 'pressure',
+                  color: '#6929c4',
+                },
+              ],
+              timeDataSourceId: 'timestamp',
+            },
           },
         ],
         layouts: {
@@ -212,13 +282,15 @@ export const WithInitialValue = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
       isLoading={boolean('isLoading', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
     />
   </div>
 );
@@ -230,6 +302,8 @@ WithInitialValue.story = {
 export const WithCustomOnCardChange = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title="Custom dashboard"
       dataItems={mockDataItems}
       initialValue={{
@@ -283,7 +357,7 @@ export const WithCustomOnCardChange = () => (
         'TABLE',
       ]}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -301,6 +375,8 @@ WithCustomOnCardChange.story = {
 export const WithNotifications = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onEditTitle={action('onEditTitle')}
       onImport={action('onImport')}
@@ -356,6 +432,8 @@ WithNotifications.story = {
 export const WithBreakpointSwitcher = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title={text('title', 'My dashboard')}
       onAddImage={action('onAddImage')}
       onEditTitle={action('onEditTitle')}
@@ -391,6 +469,8 @@ WithBreakpointSwitcher.story = {
 export const CustomCardPreviewRenderer = () => (
   <div style={{ height: 'calc(100vh - 6rem)' }}>
     <DashboardEditor
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
       title="Custom dashboard"
       initialValue={object('initialValue', {
         cards: [
@@ -442,7 +522,7 @@ export const CustomCardPreviewRenderer = () => (
         'CUSTOM',
       ])}
       i18n={{
-        cardType_CUSTOM: 'Custom',
+        CUSTOM: 'Custom',
       }}
       headerBreadcrumbs={[
         <Link href="www.ibm.com">Dashboard library</Link>,
@@ -504,4 +584,295 @@ export const isLoading = () => (
 
 isLoading.story = {
   name: 'isLoading',
+};
+
+export const I18N = () => (
+  <div style={{ height: 'calc(100vh - 6rem)' }}>
+    <DashboardEditor
+      title={text('title', 'My dashboard')}
+      getValidDataItems={() => mockDataItems}
+      dataItems={mockDataItems}
+      availableImages={images}
+      onAddImage={action('onAddImage')}
+      onEditTitle={action('onEditTitle')}
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onImageDelete={action('onImageDelete')}
+      onLayoutChange={action('onLayoutChange')}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+      availableDimensions={{
+        deviceid: ['73000', '73001', '73002'],
+        manufacturer: ['rentech', 'GHI Industries'],
+      }}
+      supportedCardTypes={array('supportedCardTypes', [
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+        'CUSTOM',
+      ])}
+      i18n={{
+        // dashboard header
+        headerEditTitleButton: 'headerEditTitleButton',
+        headerImportButton: 'headerImportButton',
+        headerExportButton: 'headerExportButton',
+        headerCancelButton: 'headerCancelButton',
+        headerSubmitButton: 'headerSubmitButton',
+        headerDeleteButton: 'headerDeleteButton',
+        headerFitToScreenButton: 'headerFitToScreenButton',
+        headerLargeButton: 'headerLargeButton',
+        headerMediumButton: 'headerMediumButton',
+        headerSmallButton: 'headerSmallButton',
+        layoutInfoLg: 'layoutInfoLg',
+        layoutInfoMd: 'layoutInfoMd',
+        layoutInfoSm: 'layoutInfoSm',
+
+        // card strings
+        noDataLabel: 'noDataLabel',
+        defaultCardTitle: 'defaultCardTitle',
+        cloneCardLabel: 'cloneCardLabel',
+        deleteCardLabel: 'deleteCardLabel',
+        titlePlaceholderText: 'titlePlaceholderText',
+        titleEditableHintText: 'titleEditableHintText',
+
+        // card gallery
+        galleryHeader: 'galleryHeader',
+        addCardButton: 'addCardButton',
+        openGalleryButton: 'openGalleryButton',
+        closeGalleryButton: 'closeGalleryButton',
+        openJSONButton: 'openJSONButton',
+        searchPlaceholderText: 'searchPlaceholderText',
+        TIMESERIES: 'TIMESERIES',
+        SIMPLE_BAR: 'SIMPLE_BAR',
+        GROUPED_BAR: 'GROUPED_BAR',
+        STACKED_BAR: 'STACKED_BAR',
+        VALUE: 'VALUE',
+        IMAGE: 'IMAGE',
+        TABLE: 'TABLE',
+        ALERT: 'ALERT',
+        LIST: 'LIST',
+
+        // card form
+        openEditorButton: 'openEditorButton',
+        contentTabLabel: 'contentTabLabel',
+        settingsTabLabel: 'settingsTabLabel',
+        cardSize_SMALL: 'cardSize_small',
+        cardSize_SMALLWIDE: 'cardSize_smallwide',
+        cardSize_MEDIUM: 'cardSize_medium',
+        cardSize_MEDIUMTHIN: 'cardSize_mediumthin',
+        cardSize_MEDIUMWIDE: 'cardSize_medium wide',
+        cardSize_LARGE: 'cardSize_large',
+        cardSize_LARGETHIN: 'cardSize_largethin',
+        cardSize_LARGEWIDE: 'cardSize_largewide',
+        chartType_BAR: 'chartType_bar',
+        chartType_LINE: 'chartType_line',
+        barChartType_SIMPLE: 'barChartType_simple',
+        barChartType_GROUPED: 'barChartType_grouped',
+        barChartType_STACKED: 'barChartType_stacked',
+        barChartLayout_HORIZONTAL: 'barChartType_horizontal',
+        barChartLayout_VERTICAL: 'barChartType_vertical',
+        errorTitle: 'errorTitle',
+        modalTitle: 'modalTitle',
+        modalLabel: 'modalLabel',
+        modalHelpText: 'modalHelpText',
+        modalIconDescription: 'modalIconDescription',
+        expandBtnLabel: 'expandBtnLabel',
+        modalPrimaryButtonLabel: 'modalPrimaryButtonLabel',
+        modalSecondaryButtonLabel: 'modalSecondaryButtonLabel',
+        cardTitle: 'cardTitle',
+        description: 'description',
+        size: 'size',
+        selectASize: 'selectASize',
+        timeRange: 'timeRange',
+        selectATimeRange: 'selectATimeRange',
+        last24HoursLabel: 'Last24hours',
+        last7DaysLabel: 'Last7days',
+        lastMonthLabel: 'Lastmonth',
+        lastQuarterLabel: 'Lastquarter',
+        lastYearLabel: 'Lastyear',
+        thisWeekLabel: 'Thisweek',
+        thisMonthLabel: 'Thismonth',
+        thisQuarterLabel: 'Thisquarter',
+        thisYearLabel: 'Thisyear',
+        dataItemEditorTitle: 'dataItemEditorTitle',
+        dataItemEditorDataItemTitle: 'dataItemEditorDataItemTitle',
+        dataItemEditorDataItemLabel: 'dataItemEditorDataItemLabel',
+        dataItemEditorLegendColor: 'dataItemEditorLegendColor',
+        dataSeriesTitle: 'dataSeriesTitle',
+        selectDataItems: 'selectDataItems',
+        selectDataItem: 'selectDataItem',
+        dataItem: 'dataItem',
+        edit: 'edit',
+        remove: 'remove',
+        customize: 'customize',
+        clearSelectionText: 'clearSelectionText',
+        clearAllText: 'clearAllText',
+        openMenuText: 'openMenuText',
+        closeMenuText: 'closeMenuText',
+
+        dataItemEditorDataSeriesTitle: 'dataItemEditorDataSeriesTitle',
+        dataItemEditorValueCardTitle: 'dataItemEditorValueCardTitle',
+        dataItemEditorDataItemCustomLabel: 'dataItemEditorDataItemCustomLabel',
+        dataItemEditorDataItemUnit: 'dataItemEditorDataItemUnit',
+        dataItemEditorDataItemFilter: 'dataItemEditorDataItemFilter',
+        dataItemEditorDataItemThresholds: 'dataItemEditorDataItemThresholds',
+        dataItemEditorDataItemAddThreshold:
+          'dataItemEditorDataItemAddThreshold',
+        dataItemEditorDataItemRemove: 'dataItemEditorDataItemRemove',
+        dataItemEditorBarColor: 'dataItemEditorBarColor',
+        dataItemEditorLineColor: 'dataItemEditorLineColor',
+        source: 'source',
+        closeButtonLabelText: 'closeButtonLabelText',
+        primaryButtonLabelText: 'primaryButtonLabelText',
+        secondaryButtonLabelText: 'secondaryButtonLabelText',
+
+        // settings for Value card
+        notSet: 'notSet',
+
+        // Settings for Data Series
+        xAxisLabel: 'xAxisLabel',
+        yAxisLabel: 'yAxisLabel',
+        unitLabel: 'unitLabel',
+        decimalPrecisionLabel: 'decimalPrecisionLabel',
+        precisionLabel: 'precisionLabel',
+        showLegendLabel: 'showLegendLabel',
+        fontSize: 'fontSize',
+
+        // Additional fields for Bar Chart
+        selectGroupBy: 'selectGroupBy',
+        selectCategory: 'selectCategory',
+        groupBy: 'groupBy',
+        subGroup: 'subGroup',
+        timeInterval: 'timeInterval',
+        decimalPlacesLabel: 'decimalPlacesLabel',
+        layoutLabel: 'layoutLabel',
+        horizontal: 'horizontal',
+        vertical: 'vertical',
+
+        // settings for Image card form
+        imageFile: 'imageFile',
+        editImage: 'editImage',
+        image: 'image',
+        close: 'close',
+
+        displayOptions: 'displayOptions',
+        colorTitleText: 'colorTitleText',
+        hideMap: 'hideMap',
+        hideZoom: 'hideZoom',
+        zoomLevel: 'zoomLevel',
+        fit: 'fit',
+        fill: 'fill',
+        stretch: 'stretch',
+        selectAColor: 'selectAColor',
+
+        // image card strings
+        dropContainerLabelText: 'dropContainerLabelText',
+        dropContainerDescText: 'dropContainerDescText',
+        uploadByURLCancel: 'uploadByURLCancel',
+        uploadByURLButton: 'uploadByURLButton',
+        browseImages: 'browseImages',
+        insertUrl: 'insertUrl',
+        urlInput: 'urlInput',
+        fileTooLarge: 'fileTooLarge',
+        wrongFileType: (accept) =>
+          `This file is not one of the accepted file types, ${accept.join(
+            ', '
+          )}`,
+        // image gallery strings
+        imageGalleryDeleteLabelText: 'imageGalleryDeleteLabelText',
+        imageGalleryDeleteModalLabelText: 'imageGalleryDeleteModalLabelText',
+        imageGalleryDeleteModalTitleText: (image) =>
+          `imageGalleryDeleteModalTitleText: ${image}?`,
+        imageGalleryGridButtonText: 'imageGalleryGridButtonText',
+        imageGalleryInstructionText: 'imageGalleryInstructionText',
+        imageGalleryListButtonText: 'imageGalleryListButtonText',
+        imageGalleryModalLabelText: 'imageGalleryModalLabelText',
+        imageGalleryModalTitleText: 'imageGalleryModalTitleText',
+        imageGalleryModalPrimaryButtonLabelText:
+          'imageGalleryModalPrimaryButtonLabelText',
+        imageGalleryModalSecondaryButtonLabelText:
+          'imageGalleryModalSecondaryButtonLabelText',
+        imageGalleryModalCloseIconDescriptionText:
+          'imageGalleryModalCloseIconDescriptionText',
+        imageGallerySearchPlaceHolderText: 'imageGallerySearchPlaceHolderText',
+
+        // table card settings
+        selectGroupByDimensions: 'selectGroupByDimensions',
+        dataItemEditorDimensionTitle: 'dataItemEditorDimensionTitle',
+        rowsPerPage: 'rowsPerPage',
+        sortBy: 'sortBy',
+        sortByTitle: 'sortByTitle',
+        ascending: 'ascending',
+        descending: 'descending',
+        showHeader: 'showHeader',
+        allowNavigation: 'allowNavigation',
+
+        // HotspotEditorModal strings
+        backgroundLabelText: 'backgroundLabelText',
+        boldLabelText: 'boldLabelText',
+        borderLabelText: 'borderLabelText',
+        borderWidthInvalidText: 'borderWidthInvalidText',
+        cancelButtonLabelText: 'cancelButtonLabelText',
+        colorDropdownLabelText: 'colorDropdownLabelText',
+        colorDropdownTitleText: 'colorDropdownTitleText',
+        deleteButtonIconDescriptionText: 'deleteButtonIconDescriptionText',
+        deleteButtonLabelText: 'deleteButtonLabelText',
+        descriptionTextareaLabelText: 'descriptionTextareaLabelText',
+        descriptionTextareaPlaceholderText:
+          'descriptionTextareaPlaceholderText',
+        fillOpacityInvalidText: 'fillOpacityInvalidText',
+        fillOpacityLabelText: 'fillOpacityLabelText',
+        fixedTypeDataSourceTabLabelText: 'fixedTypeDataSourceTabLabelText',
+        fixedTypeTooltipTabLabelText: 'fixedTypeTooltipTabLabelText',
+        fontSizeInvalidText: 'fontSizeInvalidText',
+        hotspotsText: 'hotspotsText',
+        iconDropdownLabelText: 'iconDropdownLabelText',
+        iconDropdownTitleText: 'iconDropdownTitleText',
+        italicLabelText: 'italicLabelText',
+        labelsText: 'labelsText',
+        loadingDynamicHotspotsText: 'loadingDynamicHotspotsText',
+        modalHeaderTitleText: 'modalHeaderTitleText',
+        modalIconDescriptionText: 'modalIconDescriptionText',
+        saveButtonLabelText: 'saveButtonLabelText',
+        textStyleLabelText: 'textStyleLabelText',
+        textTypeDataSourceTabLabelText: 'textTypeDataSourceTabLabelText',
+        titleInputLabelText: 'titleInputLabelText',
+        titleInputPlaceholderText: 'titleInputPlaceholderText',
+        tooManyHotspotsInfoText: 'tooManyHotspotsInfoText',
+        underlineLabelText: 'underlineLabelText',
+        fixedTypeTooltipInfoText: 'fixedTypeTooltipInfoText',
+        clearIconDescription: 'clearIconDescription',
+        xCoordinateDropdownTitleText: 'xCoordinateDropdownTitleText',
+        xCoordinateDropdownLabelText: 'xCoordinateDropdownLabelText',
+        yCoordinateDropdownTitleText: 'yCoordinateDropdownTitleText',
+        yCoordinateDropdownLabelText: 'yCoordinateDropdownLabelText',
+        selectDataItemsText: 'selectDataItemsText',
+        dataItemText: 'dataItemText',
+        editText: 'editText',
+        // Hotspot Text Style Tab fields
+        textTypeStyleInfoText: 'textTypeStyleInfoText',
+        fontColorLabelText: 'fontColorLabelText',
+        fontSizeLabelText: 'fontSizeLabelText',
+        borderWidthLabelText: 'borderWidthLabelText',
+        deleteButtonIconDescription: 'deleteButtonIconDescription',
+      }}
+      breakpointSwitcher={{ enabled: true }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+    />
+  </div>
+);
+
+I18N.story = {
+  name: 'i18n',
 };

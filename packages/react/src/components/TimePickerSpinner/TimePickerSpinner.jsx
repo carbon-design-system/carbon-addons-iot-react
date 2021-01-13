@@ -20,7 +20,10 @@ const propTypes = {
   /** a default value for the input  */
   value: PropTypes.string,
   /** a list of children to pass to the Carbon TimePicker component  */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   /** triggered on input click  */
   onClick: PropTypes.func,
   /** triggered on value change  */
@@ -31,6 +34,13 @@ const propTypes = {
   is12hour: PropTypes.bool,
   /** the default selected timegroup (hours, minutes) */
   defaultTimegroup: PropTypes.oneOf([TIMEGROUPS.HOURS, TIMEGROUPS.MINUTES]),
+  /** All the labels that need translation */
+  i18n: PropTypes.shape({
+    increment: PropTypes.string,
+    decrement: PropTypes.string,
+    hours: PropTypes.string,
+    minutes: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -42,6 +52,12 @@ const defaultProps = {
   disabled: false,
   is12hour: false,
   defaultTimegroup: TIMEGROUPS.HOURS,
+  i18n: {
+    increment: 'Increment',
+    decrement: 'Decrement',
+    hours: 'hours',
+    minutes: 'minutes',
+  },
 };
 
 const TimePickerSpinner = ({
@@ -53,6 +69,7 @@ const TimePickerSpinner = ({
   disabled,
   is12hour,
   defaultTimegroup,
+  i18n,
   ...others
 }) => {
   const [pickerValue, setPickerValue] = useState(value || '');
@@ -60,7 +77,9 @@ const TimePickerSpinner = ({
     defaultTimegroup === TIMEGROUPS.MINUTES ? 1 : 0
   );
 
-  const [isInteractingWithSpinner, setIsInteractingWithSpinner] = useState(false);
+  const [isInteractingWithSpinner, setIsInteractingWithSpinner] = useState(
+    false
+  );
   const [isSpinnerFocused, setIsSpinnerFocused] = useState(false);
   const [keyUpOrDownPosition, setKeyUpOrDownPosition] = useState(-1);
   const [focusTarget, setFocusTarget] = useState(null);
@@ -189,17 +208,18 @@ const TimePickerSpinner = ({
     }
   };
 
-  const timeGroupForLabel = currentTimeGroup === 0 ? 'hours' : 'minutes';
+  const timeGroupForLabel = currentTimeGroup === 0 ? i18n.hours : i18n.minutes;
 
   return (
     <div
       className={classnames(`${iotPrefix}--time-picker__wrapper`, {
         [`${iotPrefix}--time-picker__wrapper--with-spinner`]: spinner,
-        [`${iotPrefix}--time-picker__wrapper--updown`]: keyUpOrDownPosition > -1,
+        [`${iotPrefix}--time-picker__wrapper--updown`]:
+          keyUpOrDownPosition > -1,
         [`${iotPrefix}--time-picker__wrapper--show-underline`]: isInteractingWithSpinner,
-        [`${iotPrefix}--time-picker__wrapper--show-underline-minutes`]: currentTimeGroup === 1,
-      })}
-    >
+        [`${iotPrefix}--time-picker__wrapper--show-underline-minutes`]:
+          currentTimeGroup === 1,
+      })}>
       <TimePicker
         ref={timePickerRef}
         onClick={onInputClick}
@@ -209,8 +229,7 @@ const TimePickerSpinner = ({
         onKeyUp={onInputKeyUp}
         onBlur={onInputBlur}
         disabled={disabled}
-        {...others}
-      >
+        {...others}>
         {children}
         {spinner ? (
           <div className={`${iotPrefix}--time-picker__controls`}>
@@ -224,10 +243,9 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`Increment ${timeGroupForLabel}`}
-              aria-label={`Increment ${timeGroupForLabel}`}
-              disabled={disabled}
-            >
+              title={`${i18n.increment} ${timeGroupForLabel}`}
+              aria-label={`${i18n.increment} ${timeGroupForLabel}`}
+              disabled={disabled}>
               <CaretUpGlyph className="up-icon" />
             </button>
             <button
@@ -240,10 +258,9 @@ const TimePickerSpinner = ({
               onBlur={() => onArrowStopInteract(true)}
               aria-live="polite"
               aria-atomic="true"
-              title={`Decrement ${timeGroupForLabel}`}
-              aria-label={`Decrement ${timeGroupForLabel}`}
-              disabled={disabled}
-            >
+              title={`${i18n.decrement} ${timeGroupForLabel}`}
+              aria-label={`${i18n.decrement} ${timeGroupForLabel}`}
+              disabled={disabled}>
               <CaretDownGlyph className="down-icon" />
             </button>
           </div>

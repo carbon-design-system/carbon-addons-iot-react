@@ -170,7 +170,10 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
 
     const layoutWithResizableItems = layout.map((cardFromLayout) => {
       const matchingCard = find(cards, { id: cardFromLayout.i });
-      return { ...cardFromLayout, isResizable: matchingCard.isResizable };
+      return {
+        ...cardFromLayout,
+        isResizable: matchingCard.isResizable,
+      };
     });
 
     return {

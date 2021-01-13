@@ -123,16 +123,6 @@ const propTypes = {
    * The dropdown type, `default` or `inline`
    */
   type: PropTypes.oneOf(['default', 'inline']),
-
-  /**
-   * Specify whether the control is currently in warning state
-   */
-  warn: PropTypes.bool,
-
-  /**
-   * Provide the text that is displayed when the control is in warning state
-   */
-  warnText: PropTypes.string,
 };
 
 const defaultPropTypes = {
@@ -154,8 +144,6 @@ const defaultPropTypes = {
   titleText: '',
   helperText: '',
   direction: 'bottom',
-  warn: false,
-  warnText: '',
 };
 
 const defaultItemToString = (item) => {

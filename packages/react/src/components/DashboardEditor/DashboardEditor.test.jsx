@@ -55,7 +55,12 @@ describe('DashboardEditor', () => {
   };
 
   it('clicking card should select the card and close gallery', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -73,7 +78,12 @@ describe('DashboardEditor', () => {
   });
 
   it('enter key should select the card and close gallery', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -91,7 +101,12 @@ describe('DashboardEditor', () => {
   });
 
   it('space key should select the card and close gallery', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
     expect(galleryTitle).toBeInTheDocument();
@@ -109,11 +124,18 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting clone card should duplicate card', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getByTitle(
+      'Open and close list of options'
+    );
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -125,11 +147,18 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting remove card should remove card', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // there should only be one card with the same title to start
     expect(screen.getAllByText('value card')).toHaveLength(1);
     // first find and click the cards overflow menu
-    const cardOverflowMenu = screen.getByTitle('Open and close list of options');
+    const cardOverflowMenu = screen.getByTitle(
+      'Open and close list of options'
+    );
     expect(cardOverflowMenu).toBeInTheDocument();
     fireEvent.click(cardOverflowMenu);
     // once open, find and click the edit card option
@@ -209,20 +238,23 @@ describe('DashboardEditor', () => {
     const submitBtn = screen.getByText('Save and close');
     expect(submitBtn).toBeInTheDocument();
     fireEvent.click(submitBtn);
-    expect(mockOnSubmit).toBeCalledWith({
-      cards: [],
-      layouts: {
-        lg: [],
-        md: [],
-        xl: [],
+    expect(mockOnSubmit).toBeCalledWith(
+      {
+        cards: [],
+        layouts: {
+          lg: [],
+          md: [],
+          sm: [],
+        },
       },
-    });
+      []
+    );
   });
 
   it('selecting cancel should fire onCancel', () => {
     render(<DashboardEditor {...commonProps} />);
     // find and click submit button
-    const cancelBtn = screen.getByText('Cancel');
+    const cancelBtn = screen.getAllByText('Cancel')[0];
     expect(cancelBtn).toBeInTheDocument();
     fireEvent.click(cancelBtn);
     expect(mockOnCancel).toBeCalled();
@@ -240,7 +272,12 @@ describe('DashboardEditor', () => {
   });
 
   it('changing title in CardEditForm should change rendered card title', () => {
-    render(<DashboardEditor {...commonProps} initialValue={{ cards: [mockValueCard] }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        initialValue={{ cards: [mockValueCard] }}
+      />
+    );
     // add a card
     const valueBtn = screen.getByTitle('Value / KPI');
     expect(valueBtn).toBeInTheDocument();
@@ -255,15 +292,22 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting medium breakpoint should render breakpoint info', () => {
-    render(<DashboardEditor {...commonProps} breakpointSwitcher={{ enabled: true }} />);
+    render(
+      <DashboardEditor
+        {...commonProps}
+        breakpointSwitcher={{ enabled: true }}
+      />
+    );
     // there should be no breakpoint text on initial render
     expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
-    // find and click medium button
-    const mediumBtn = screen.getByText('Medium view');
-    expect(mediumBtn).toBeInTheDocument();
-    fireEvent.click(mediumBtn);
+    // find and click small button
+    const smallBtn = screen.getByText('Small view');
+    expect(smallBtn).toBeInTheDocument();
+    fireEvent.click(smallBtn);
     // there should now be breakpoint text
-    expect(screen.getByText('Edit dashboard at medium layout (480 - 672px)')).toBeInTheDocument();
+    expect(
+      screen.getByText('Edit dashboard at small layout (481 - 672px)')
+    ).toBeInTheDocument();
   });
 
   it('triggering an error should show error message', () => {
@@ -295,7 +339,9 @@ describe('DashboardEditor', () => {
         }}
       />
     );
-    const errMsg = screen.getAllByText('Something went wrong. Please refresh the page.');
+    const errMsg = screen.getAllByText(
+      'Something went wrong. Please refresh the page.'
+    );
 
     expect(errMsg).toHaveLength(2);
   });

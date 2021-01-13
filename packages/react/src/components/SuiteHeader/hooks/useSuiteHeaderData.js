@@ -36,6 +36,8 @@ const useSuiteHeaderData = ({
       requestEnhancement: null,
       support: null,
       gettingStarted: null,
+      workspaceId: null,
+      domain: null,
     },
     applications: [],
     showSurvey: false,

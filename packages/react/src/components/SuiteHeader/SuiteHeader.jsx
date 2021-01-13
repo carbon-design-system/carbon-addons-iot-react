@@ -9,6 +9,7 @@ import { HeaderContainer, SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
 import { ToastNotification } from '../Notification';
 import { Link } from '../Link';
+import { HeaderActionItemPropTypes } from '../Header/Header';
 import { settings } from '../../constants/Settings';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
@@ -25,6 +26,7 @@ const ROUTE_TYPES = {
   ABOUT: 'ABOUT',
   LOGOUT: 'LOGOUT',
   DOCUMENTATION: 'DOCUMENTATION',
+  SURVEY: 'SURVEY',
 };
 
 export const SuiteHeaderRoutePropTypes = PropTypes.shape({
@@ -38,6 +40,9 @@ export const SuiteHeaderRoutePropTypes = PropTypes.shape({
   requestEnhancement: PropTypes.string,
   support: PropTypes.string,
   about: PropTypes.string,
+  // properties rendered as data attributes
+  workspaceId: PropTypes.string,
+  domain: PropTypes.string,
 });
 
 export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
@@ -74,6 +79,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   gettingStarted: PropTypes.string,
   surveyTitle: PropTypes.func,
   surveyText: PropTypes.string,
+  surveyPrivacyPolicy: PropTypes.string,
 });
 
 const defaultProps = {
@@ -81,8 +87,9 @@ const defaultProps = {
   appName: null,
   isAdminView: false,
   sideNavProps: null,
+  customActionItems: [],
   surveyData: null,
-  onRouteChange: async () => true,
+  onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
 };
 
@@ -105,6 +112,10 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
+  /** Array of custom action items */
+  customActionItems: PropTypes.arrayOf(
+    PropTypes.shape(HeaderActionItemPropTypes)
+  ),
   /** If surveyData is present, show a ToastNotification */
   surveyData: SuiteHeaderSurveyDataPropTypes,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
@@ -123,6 +134,7 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
+  customActionItems,
   surveyData,
   onRouteChange,
   i18n,
@@ -130,7 +142,9 @@ const SuiteHeader = ({
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
+  const [showToast, setShowToast] = useState(
+    surveyData !== null && surveyData !== undefined
+  );
 
   // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
   // not only at mount time
@@ -149,11 +163,32 @@ const SuiteHeader = ({
           title={mergedI18N.surveyTitle(appName || suiteName)}
           subtitle={
             <>
-              <Link target="_blank" href={surveyData.surveyLink}>
+              <Link
+                href="javascript:void(0)"
+                onClick={async () => {
+                  const result = await onRouteChange(
+                    ROUTE_TYPES.SURVEY,
+                    surveyData.surveyLink
+                  );
+                  if (result) {
+                    window.open(surveyData.surveyLink, 'blank');
+                  }
+                }}>
                 {mergedI18N.surveyText}
               </Link>
-              <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
-                <Link target="_blank" href={surveyData.privacyLink}>
+              <div
+                className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
+                <Link
+                  href="javascript:void(0)"
+                  onClick={async () => {
+                    const result = await onRouteChange(
+                      ROUTE_TYPES.SURVEY,
+                      surveyData.surveyLink
+                    );
+                    if (result) {
+                      window.open(surveyData.privacyLink, 'blank');
+                    }
+                  }}>
                   {mergedI18N.surveyPrivacyPolicy}
                 </Link>
               </div>
@@ -185,6 +220,16 @@ const SuiteHeader = ({
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
+            <span
+              className={`${settings.iotPrefix}--suite-header-data`}
+              data-type="workspaceId">
+              {routes.workspaceId}
+            </span>
+            <span
+              className={`${settings.iotPrefix}--suite-header-data`}
+              data-type="domain">
+              {routes.domain}
+            </span>
             <Header
               className={[`${settings.iotPrefix}--suite-header`, className]
                 .filter((i) => i)
@@ -210,10 +255,14 @@ const SuiteHeader = ({
               appName={suiteName}
               subtitle={appName}
               actionItems={[
+                ...customActionItems,
                 routes.admin !== null
                   ? {
                       label: mergedI18N.administrationIcon,
-                      className: ['admin-icon', isAdminView ? 'admin-icon__selected' : null]
+                      className: [
+                        'admin-icon',
+                        isAdminView ? 'admin-icon__selected' : null,
+                      ]
                         .filter((i) => i)
                         .join(' '),
                       btnContent: (
@@ -230,7 +279,10 @@ const SuiteHeader = ({
                         let routeType = ROUTE_TYPES.ADMIN;
                         if (isAdminView) {
                           // Only use referrer URL if it is not the login screen.
-                          if (document.referrer !== '' && document.referrer.indexOf('auth') < 0) {
+                          if (
+                            document.referrer !== '' &&
+                            document.referrer.indexOf('auth') < 0
+                          ) {
                             href = document.referrer;
                             routeType = ROUTE_TYPES.REFERRER;
                           } else {
@@ -285,7 +337,10 @@ const SuiteHeader = ({
                         href: 'javascript:void(0)',
                         title: mergedI18N.about,
                         onClick: async () => {
-                          const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
+                          const result = await onRouteChange(
+                            ROUTE_TYPES.ABOUT,
+                            routes.about
+                          );
                           if (result) {
                             window.location.href = routes.about;
                           }
@@ -315,7 +370,10 @@ const SuiteHeader = ({
                           displayName={userDisplayName}
                           username={username}
                           onProfileClick={async () => {
-                            const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
+                            const result = await onRouteChange(
+                              ROUTE_TYPES.PROFILE,
+                              routes.profile
+                            );
                             if (result) {
                               window.location.href = routes.profile;
                             }
@@ -335,7 +393,10 @@ const SuiteHeader = ({
               {...otherHeaderProps}
             />
             {sideNavProps ? (
-              <SideNav {...sideNavProps} isSideNavExpanded={isSideNavExpanded} />
+              <SideNav
+                {...sideNavProps}
+                isSideNavExpanded={isSideNavExpanded}
+              />
             ) : null}
           </>
         )}

@@ -3,7 +3,7 @@
 
 .#{$iot-prefix}--hotspot-editor-tooltip-tab {
   background-color: $ui-01;
-  padding: $spacing-03 $spacing-05;
+  padding: $spacing-03 0;
 }
 
 .#{$iot-prefix}--hotspot-editor--tooltip-form {
@@ -11,7 +11,7 @@
 }
 
 .#{$iot-prefix}--icon-color-container {
-  $dropdown-spacer: 2rem; // TODO: use spacing var
+  $dropdown-spacer: 2rem;
 
   display: flex;
   & > * {
@@ -39,19 +39,5 @@
 }
 
 .#{$iot-prefix}--hotspot-editor--tooltip-info-message {
-  display: flex;
-  align-items: flex-start;
-  color: $text-02;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: $icon-02;
-    margin-right: $spacing-05;
-  }
-
-  p {
-    max-width: 22rem;
-    @include type-style('body-short-01');
-  }
+  @include info-message();
 }

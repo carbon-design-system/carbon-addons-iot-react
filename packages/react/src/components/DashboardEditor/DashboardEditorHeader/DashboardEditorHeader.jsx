@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   TrashCan16,
@@ -9,7 +9,11 @@ import {
   Laptop16,
   Screen16,
 } from '@carbon/icons-react';
-import { FileUploaderButton, TooltipIcon, ContentSwitcher } from 'carbon-components-react';
+import {
+  FileUploaderButton,
+  TooltipIcon,
+  ContentSwitcher,
+} from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import { Button, PageTitleBar } from '../../../index';
@@ -41,7 +45,9 @@ const propTypes = {
    */
   onSubmit: PropTypes.func,
   /** Whether to disable the submit button */
-  submitDisabled: PropTypes.bool,
+  isSubmitDisabled: PropTypes.bool,
+  /** Whether to set the loading spinner on the submit button */
+  isSubmitLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
     headerEditTitleButton: PropTypes.string,
@@ -79,7 +85,8 @@ const defaultProps = {
   onDelete: null,
   onCancel: null,
   onSubmit: null,
-  submitDisabled: false,
+  isSubmitDisabled: false,
+  isSubmitLoading: false,
   i18n: {
     headerEditTitleButton: 'Edit title',
     headerImportButton: 'Import',
@@ -88,9 +95,9 @@ const defaultProps = {
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
-    headerXlargeButton: 'X-large view',
     headerLargeButton: 'Large view',
     headerMediumButton: 'Medium view',
+    headerSmallButton: 'Small view',
   },
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
@@ -106,14 +113,15 @@ const DashboardEditorHeader = ({
   onDelete,
   onCancel,
   onSubmit,
-  submitDisabled,
+  isSubmitDisabled,
+  isSubmitLoading,
   i18n,
   dashboardJson,
   selectedBreakpointIndex,
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
@@ -123,8 +131,7 @@ const DashboardEditorHeader = ({
           <ContentSwitcher
             onChange={(e) => setSelectedBreakpointIndex(e.index)}
             selectedIndex={selectedBreakpointIndex}
-            className={`${baseClassName}--bottom__switcher`}
-          >
+            className={`${baseClassName}--bottom__switcher`}>
             <IconSwitch
               name="fit-to-screen"
               text={mergedI18n.headerFitToScreenButton}
@@ -132,20 +139,20 @@ const DashboardEditorHeader = ({
               index={0}
             />
             <IconSwitch
-              name="xlarge"
-              text={mergedI18n.headerXlargeButton}
+              name="large"
+              text={mergedI18n.headerLargeButton}
               renderIcon={Screen16}
               index={1}
             />
             <IconSwitch
-              name="large"
-              text={mergedI18n.headerLargeButton}
+              name="medium"
+              text={mergedI18n.headerMediumButton}
               renderIcon={Laptop16}
               index={2}
             />
             <IconSwitch
-              name="medium"
-              text={mergedI18n.headerMediumButton}
+              name="small"
+              text={mergedI18n.headerSmallButton}
               renderIcon={Tablet16}
               index={3}
             />
@@ -159,8 +166,7 @@ const DashboardEditorHeader = ({
               align="center"
               direction="bottom"
               tooltipText={mergedI18n.headerImportButton}
-              className={`${baseClassName}--bottom__import`}
-            >
+              className={`${baseClassName}--bottom__import`}>
               <FileUploaderButton
                 buttonKind="ghost"
                 size="field"
@@ -198,12 +204,16 @@ const DashboardEditorHeader = ({
           />
         )}
         {onCancel && (
-          <Button kind="tertiary" size="field" onClick={onCancel}>
+          <Button kind="secondary" size="field" onClick={onCancel}>
             {mergedI18n.headerCancelButton}
           </Button>
         )}
         {onSubmit && (
-          <Button size="field" disabled={submitDisabled} onClick={() => onSubmit(dashboardJson)}>
+          <Button
+            size="field"
+            disabled={isSubmitDisabled}
+            onClick={() => onSubmit(dashboardJson)}
+            loading={isSubmitLoading}>
             {mergedI18n.headerSubmitButton}
           </Button>
         )}

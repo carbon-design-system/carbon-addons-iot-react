@@ -130,6 +130,14 @@ describe('TileGallery', () => {
   it('StatefulTileGallery', () => {
     const searchValue = 'description';
 
+    const onClick = jest.fn();
+
+    // replace storyboard action with jest.fn()
+    const modifiedGalleryData = galleryData.map((gd) => ({
+      ...gd,
+      galleryItems: gd.galleryItems.map((gi) => ({ ...gi, onClick })),
+    }));
+
     const wrapper = mount(
       <StatefulTileGallery
         title="Dashboard"
@@ -137,7 +145,7 @@ describe('TileGallery', () => {
         hasSwitcher
         hasButton
         buttonText="Create"
-        galleryData={galleryData}
+        galleryData={modifiedGalleryData}
       />
     );
 
@@ -154,6 +162,10 @@ describe('TileGallery', () => {
 
     // Test default mode
     expect(wrapper.find('TileGalleryItem').first().props().mode).toEqual('grid');
+
+    // test tile onClick
+    wrapper.find('.tile-gallery-item').first().simulate('click');
+    expect(onClick).toHaveBeenCalledTimes(1);
 
     // Change Tile Item mode
     wrapper.find('button.bx--content-switcher-btn').first().simulate('click');

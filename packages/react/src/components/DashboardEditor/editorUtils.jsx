@@ -1,7 +1,60 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import {
+  purple70,
+  cyan50,
+  teal70,
+  magenta70,
+  red60,
+  red50,
+  orange40,
+  green60,
+  blue80,
+  blue60,
+  red90,
+  green50,
+  yellow30,
+  magenta50,
+  purple50,
+  teal50,
+  cyan90,
+} from '@carbon/colors';
+import {
+  Checkmark24,
+  CheckmarkFilled24,
+  CheckmarkOutline24,
+  Error24,
+  ErrorFilled24,
+  ErrorOutline24,
+  Help24,
+  HelpFilled24,
+  Information24,
+  InformationFilled24,
+  Misuse24,
+  MisuseOutline24,
+  Undefined24,
+  UndefinedFilled24,
+  Unknown24,
+  UnknownFilled24,
+  Warning24,
+  WarningAlt24,
+  WarningAltFilled24,
+  WarningAltInverted24,
+  WarningAltInvertedFilled24,
+  WarningFilled24,
+  WarningSquare24,
+  WarningSquareFilled24,
+  User24,
+  Location24,
+  Temperature24,
+  Flag24,
+  Tag24,
+  Alarm24,
+} from '@carbon/icons-react';
 
 import {
   CARD_SIZES,
@@ -10,15 +63,22 @@ import {
   BAR_CHART_LAYOUTS,
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
-import {
-  Card,
-  ValueCard,
-  TimeSeriesCard,
-  BarChartCard,
-  ImageCard,
-  TableCard,
-  ListCard,
-} from '../../index';
+
+export const validHotspotIcons = [
+  { id: 'User', icon: User24, text: 'User' },
+  { id: 'Location', icon: Location24, text: 'Location' },
+  { id: 'Temperature', icon: Temperature24, text: 'Temperature' },
+  { id: 'Flag', icon: Flag24, text: 'Flag' },
+  { id: 'Tag', icon: Tag24, text: 'Tag' },
+  { id: 'Alarm', icon: Alarm24, text: 'Alarm' },
+];
+
+export const DataItemsPropTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    dataSourceId: PropTypes.string,
+    label: PropTypes.string,
+  })
+);
 
 /**
  * Returns a duplicate card configuration
@@ -37,12 +97,12 @@ export const getDuplicateCard = (cardConfig) => ({
  */
 export const getDefaultCard = (type, i18n) => {
   const defaultSizeForType = {
-    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALLWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUMWIDE,
-    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUMWIDE,
+    [DASHBOARD_EDITOR_CARD_TYPES.VALUE]: CARD_SIZES.SMALL,
+    [DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES]: CARD_SIZES.MEDIUM,
+    [DASHBOARD_EDITOR_CARD_TYPES.IMAGE]: CARD_SIZES.MEDIUM,
     [DASHBOARD_EDITOR_CARD_TYPES.TABLE]: CARD_SIZES.LARGE,
   };
 
@@ -60,7 +120,6 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           attributes: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES:
       return {
@@ -68,14 +127,11 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          yLabel: 'Temperature',
-          unit: '˚F',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
+          showLegend: true,
         },
-        interval: 'day',
-        showLegend: true,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.SIMPLE_BAR:
       return {
@@ -84,8 +140,8 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.SIMPLE,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.GROUPED_BAR:
       return {
@@ -95,7 +151,6 @@ export const getDefaultCard = (type, i18n) => {
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.STACKED_BAR:
       return {
@@ -104,25 +159,17 @@ export const getDefaultCard = (type, i18n) => {
           type: BAR_CHART_TYPES.STACKED,
           layout: BAR_CHART_LAYOUTS.VERTICAL,
           series: [],
+          timeDataSourceId: 'timestamp',
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.TABLE:
       return {
         ...baseCardProps,
         content: {
-          columns: [
-            {
-              dataSourceId: 'undefined',
-              label: '--',
-            },
-            {
-              dataSourceId: 'undefined2',
-              label: '--',
-            },
-          ],
+          columns: [],
+          allowNavigation: true,
+          showHeader: true,
         },
-        i18n,
       };
     case DASHBOARD_EDITOR_CARD_TYPES.IMAGE:
       return {
@@ -132,18 +179,51 @@ export const getDefaultCard = (type, i18n) => {
           hideHotspots: false,
           hideZoomControls: false,
         },
-        i18n,
       };
 
     default:
-      return { ...baseCardProps, i18n };
+      return { ...baseCardProps };
   }
 };
+
+/**
+ * Color options for dataItems
+ */
+export const DATAITEM_COLORS_OPTIONS = [
+  purple70,
+  cyan50,
+  teal70,
+  magenta70,
+  red50,
+  red90,
+  green60,
+  blue80,
+  magenta50,
+  purple50,
+  teal50,
+  cyan90,
+];
 
 /**
  * maps a selected time range to what is expected in the dashboardJSON
  */
 export const timeRangeToJSON = {
+  lastHour: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -1, type: 'rolling' },
+  },
+  last2Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -2, type: 'rolling' },
+  },
+  last4Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -4, type: 'rolling' },
+  },
+  last8Hours: {
+    interval: 'hour',
+    range: { interval: 'hour', count: -8, type: 'rolling' },
+  },
   last24Hours: {
     range: { interval: 'day', count: -1, type: 'rolling' },
     interval: 'hour',
@@ -206,6 +286,44 @@ export const timeRangeToJSON = {
   },
 };
 
+export const validThresholdIcons = [
+  { carbonIcon: <Checkmark24 />, name: 'Checkmark' },
+  { carbonIcon: <CheckmarkFilled24 />, name: 'Checkmark filled' },
+  { carbonIcon: <CheckmarkOutline24 />, name: 'Checkmark outline' },
+  { carbonIcon: <Error24 />, name: 'Error' },
+  { carbonIcon: <ErrorFilled24 />, name: 'Error filled' },
+  { carbonIcon: <ErrorOutline24 />, name: 'Error outline' },
+  { carbonIcon: <Help24 />, name: 'Help' },
+  { carbonIcon: <HelpFilled24 />, name: 'Help filled' },
+  { carbonIcon: <Information24 />, name: 'Information' },
+  { carbonIcon: <InformationFilled24 />, name: 'Information filled' },
+  { carbonIcon: <Misuse24 />, name: 'Misuse' },
+  { carbonIcon: <MisuseOutline24 />, name: 'Misuse outline' },
+  { carbonIcon: <Undefined24 />, name: 'Undefined' },
+  { carbonIcon: <UndefinedFilled24 />, name: 'Undefined filled' },
+  { carbonIcon: <Unknown24 />, name: 'Unknown' },
+  { carbonIcon: <UnknownFilled24 />, name: 'Unknown filled' },
+  { carbonIcon: <Warning24 />, name: 'Warning' },
+  { carbonIcon: <WarningAlt24 />, name: 'Warning alt' },
+  { carbonIcon: <WarningAltFilled24 />, name: 'Warning alt filled' },
+  { carbonIcon: <WarningAltInverted24 />, name: 'Warning alt inverted' },
+  {
+    carbonIcon: <WarningAltInvertedFilled24 />,
+    name: 'Warning alt inverted filled',
+  },
+  { carbonIcon: <WarningFilled24 />, name: 'Warning filled' },
+  { carbonIcon: <WarningSquare24 />, name: 'Warning square' },
+  { carbonIcon: <WarningSquareFilled24 />, name: 'Warning square filled' },
+];
+
+export const validThresholdColors = [
+  { carbonColor: red60, name: 'red60' },
+  { carbonColor: green50, name: 'green50' },
+  { carbonColor: orange40, name: 'orange40' },
+  { carbonColor: yellow30, name: 'yellow30' },
+  { carbonColor: blue60, name: 'blue60' },
+];
+
 /**
  * determines if a card JSON is valid depending on its card type
  * @param {Object} cardConfig
@@ -224,101 +342,6 @@ export const isCardJsonValid = (cardConfig) => {
     default:
       return true;
   }
-};
-
-/**
- * Renders a card and lists the JSON within
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderDefaultCard = (cardConfig, commonProps) => (
-  <Card isEditable {...cardConfig} {...commonProps}>
-    <div style={{ padding: '1rem' }}>{JSON.stringify(cardConfig, null, 4)}</div>
-  </Card>
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderValueCard = (cardConfig, commonProps) => (
-  <ValueCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTimeSeriesCard = (cardConfig, commonProps) => (
-  <TimeSeriesCard
-    isEditable
-    values={[]}
-    showLegend
-    timeRange={cardConfig?.dataSource?.range}
-    {...cardConfig}
-    {...commonProps}
-  />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderBarChartCard = (cardConfig, commonProps) => (
-  <BarChartCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderTableCard = (cardConfig, commonProps) => (
-  <TableCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderImageCard = (cardConfig, commonProps) => (
-  <ImageCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderListCard = (cardConfig, commonProps) => (
-  <ListCard isEditable {...cardConfig} {...commonProps} />
-);
-
-/**
- * @param {Object} cardConfig
- * @param {Object} commonProps
- * @returns {Node}
- */
-const renderCustomCard = (cardConfig, commonProps) => {
-  return (
-    <Card
-      hideHeader={isNil(cardConfig.title)}
-      // need to omit the content because its getting passed content to be rendered, which should not
-      // get attached to the card wrapper
-      {...omit(cardConfig, 'content')}
-      {...commonProps}
-    >
-      {
-        // If content is a function, this is a react component
-        typeof cardConfig.content === 'function' ? <cardConfig.content /> : cardConfig.content
-      }
-    </Card>
-  );
 };
 
 /**
@@ -343,37 +366,6 @@ export const handleOnClick = (onSelectCard, id) => {
 };
 
 /**
- * Returns a Card component for preview in the dashboard
- * @param {Object} cardConfig, the JSON configuration of the card
- * @param {Object} commonProps basic card config props
- * @returns {Node}
- */
-export const getCardPreview = (cardConfig, commonProps) => {
-  if (!isCardJsonValid(cardConfig)) {
-    return renderDefaultCard(cardConfig, commonProps);
-  }
-
-  switch (cardConfig.type) {
-    case CARD_TYPES.VALUE:
-      return renderValueCard(cardConfig, commonProps);
-    case CARD_TYPES.TIMESERIES:
-      return renderTimeSeriesCard(cardConfig, commonProps);
-    case CARD_TYPES.BAR:
-      return renderBarChartCard(cardConfig, commonProps);
-    case CARD_TYPES.TABLE:
-      return renderTableCard(cardConfig, commonProps);
-    case CARD_TYPES.IMAGE:
-      return renderImageCard(cardConfig, commonProps);
-    case CARD_TYPES.LIST:
-      return renderListCard(cardConfig, commonProps);
-    case CARD_TYPES.CUSTOM:
-      return renderCustomCard(cardConfig, commonProps);
-    default:
-      return renderDefaultCard(cardConfig, commonProps);
-  }
-};
-
-/**
  * Returns the correct string based off the currently selected breakpoint
  * @param {string} breakpoint One of the breakpoints we support with DashboardGrid
  * @param {Object<string>} i18n internationalization strings
@@ -381,13 +373,243 @@ export const getCardPreview = (cardConfig, commonProps) => {
  */
 export const renderBreakpointInfo = (breakpoint, i18n) => {
   switch (breakpoint) {
-    case 'xl':
-      return i18n.layoutInfoXl;
     case 'lg':
       return i18n.layoutInfoLg;
     case 'md':
       return i18n.layoutInfoMd;
+    case 'sm':
+      return i18n.layoutInfoSm;
     default:
-      return i18n.layoutInfoXl;
+      return i18n.layoutInfoLg;
+  }
+};
+
+/**
+ * returns a new series array with a generated color if needed, and in the format expected by the JSON payload
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const formatSeries = (selectedItems, cardConfig) => {
+  const cardSeries = cardConfig?.content?.series;
+  const series = selectedItems.map(({ id }, i) => {
+    const currentItem = cardSeries?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
+    const color =
+      currentItem?.color ??
+      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+    return {
+      dataSourceId: id,
+      label: currentItem?.label || id,
+      color,
+    };
+  });
+  return series;
+};
+
+/**
+ * returns a new attributes array in the format expected by the JSON payload
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const formatAttributes = (selectedItems, cardConfig) => {
+  const cardAttributes = cardConfig?.content?.attributes;
+  const attributes = selectedItems.map(({ id }) => {
+    const currentItem = cardAttributes?.find(
+      (dataItem) => dataItem.dataSourceId === id
+    );
+
+    return {
+      dataSourceId: id,
+      label: currentItem?.label || id,
+      ...(!isNil(currentItem?.precision)
+        ? { precision: currentItem.precision }
+        : {}),
+      ...(currentItem?.thresholds && !isEmpty(currentItem?.thresholds)
+        ? { thresholds: currentItem.thresholds }
+        : {}),
+      ...(currentItem?.dataFilter
+        ? { dataFilter: currentItem.dataFilter }
+        : {}),
+    };
+  });
+  return attributes;
+};
+
+/**
+ * determines how to format the dataSection based on card type
+ * @param {array} selectedItems
+ * @param {object} cardConfig
+ */
+export const handleDataSeriesChange = (
+  selectedItems,
+  cardConfig,
+  setEditDataSeries,
+  hotspotIndex,
+  isDimensionUpdate
+) => {
+  const { type, content } = cardConfig;
+  let series;
+  let attributes;
+
+  switch (type) {
+    case CARD_TYPES.VALUE:
+      attributes = formatAttributes(selectedItems, cardConfig);
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, attributes },
+      };
+    case CARD_TYPES.TIMESERIES:
+    case CARD_TYPES.BAR:
+      series = formatSeries(selectedItems, cardConfig);
+      setEditDataSeries(series);
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, series },
+      };
+    case CARD_TYPES.TABLE: {
+      const existingAttributeColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => !col.type)
+        : [];
+
+      // find just the attributes to add
+      const attributeColumns = selectedItems
+        .filter((i) => !i.hasOwnProperty('type'))
+        .map((i) => ({ dataSourceId: i.id, label: i.text }));
+      // start off with a default timestamp column if we don't already have one
+      const timestampColumn =
+        Array.isArray(content?.columns) &&
+        content.columns.find((col) => col.type === 'TIMESTAMP')
+          ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
+          : {
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+              sort: 'DESC',
+            };
+      const existingDimensionColumns = Array.isArray(content?.columns)
+        ? content.columns.filter((col) => col.type === 'DIMENSION')
+        : [];
+
+      // new dimension columns should go right after the timestamp column
+      const dimensionColumns = selectedItems
+        .filter((col) => col.type === 'DIMENSION')
+        .map((i) => ({ dataSourceId: i.id, label: i.text, type: i.type }));
+
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          columns: [
+            timestampColumn,
+            ...(isDimensionUpdate
+              ? dimensionColumns
+              : existingDimensionColumns),
+            ...(!isDimensionUpdate
+              ? attributeColumns
+              : existingAttributeColumns),
+          ],
+        },
+      };
+    }
+    case CARD_TYPES.IMAGE: {
+      const dataSection = [...(cardConfig.content?.hotspots || [])];
+      dataSection[hotspotIndex].content = {
+        ...dataSection[hotspotIndex].content,
+        attributes: selectedItems,
+      };
+      return {
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          hotspots: dataSection,
+        },
+      };
+    }
+    default:
+      return cardConfig;
+  }
+};
+
+/**
+ * updates the dataSection on edit of a dataItem based on card type.
+ * TODO: refactor this into multiple functions
+ * @param {object} editDataItem an object with the updated form values for this data item
+ * @param {object} cardConfig the previous cardConfiguration
+ * @param {string} editDataSeries only used for bar chart card forms
+ * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
+ */
+export const handleDataItemEdit = (
+  editDataItem,
+  cardConfig,
+  editDataSeries,
+  hotspotIndex
+) => {
+  const { type, content } = cardConfig;
+  let dataSection;
+  let editDataItemIndex;
+
+  switch (type) {
+    case CARD_TYPES.VALUE:
+      dataSection = [...content.attributes];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...content, attributes: dataSection },
+      };
+    case CARD_TYPES.TIMESERIES:
+    case CARD_TYPES.BAR:
+      dataSection = [...editDataSeries];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...content, series: dataSection },
+      };
+    case CARD_TYPES.TABLE:
+      dataSection = [...content.columns];
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[editDataItemIndex] = editDataItem;
+      return {
+        ...cardConfig,
+        content: { ...cardConfig.content, columns: dataSection },
+      };
+    case CARD_TYPES.IMAGE:
+      dataSection = [...(content.hotspots || [])];
+
+      editDataItemIndex = dataSection[
+        hotspotIndex
+      ].content.attributes.findIndex(
+        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      );
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
+        editDataItem,
+        'thresholds'
+      );
+      if (cardConfig.thresholds || editDataItem.thresholds) {
+        return {
+          ...cardConfig,
+          content: { ...content, hotspots: dataSection },
+          thresholds: [
+            ...(cardConfig.thresholds?.filter(
+              (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
+            ) || []),
+            ...editDataItem.thresholds,
+          ].map((thresh) => omit(thresh, 'id')),
+        };
+      }
+      return {
+        ...cardConfig,
+        content: { ...content, hotspots: dataSection },
+      };
+    default:
+      return cardConfig;
   }
 };

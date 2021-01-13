@@ -2,8 +2,12 @@ import moment from 'moment';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import capitalize from 'lodash/capitalize';
+import omit from 'lodash/omit';
 
-import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
+import {
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+} from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { convertStringsToDOMElement } from '../../utils/componentUtilityFunctions';
 
@@ -18,8 +22,17 @@ export const generateSampleValues = (
   series,
   timeDataSourceId,
   timeGrain = 'day',
+  timeRange,
   categoryDataSourceId
 ) => {
+  // determine interval type
+  const timeRangeType = timeRange?.includes('this')
+    ? 'periodToDate'
+    : 'rolling';
+  // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
+  const timeRangeInterval = timeRange?.includes('Quarter')
+    ? 'quarter'
+    : timeRange;
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -32,7 +45,7 @@ export const generateSampleValues = (
       count = 4;
       break;
     case 'month':
-      count = 12;
+      count = timeRangeInterval === 'quarter' ? 3 : 12;
       break;
     case 'year':
       count = 5;
@@ -44,7 +57,10 @@ export const generateSampleValues = (
 
   if (timeDataSourceId) {
     return series.reduce((sampleData, { dataSourceId }) => {
-      const now = moment().subtract(count, timeGrain);
+      const now =
+        timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
+          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : moment().subtract(count, timeGrain);
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < count; i++) {
         const nextTimeStamp = now.add(1, timeGrain).valueOf();
@@ -83,6 +99,108 @@ export const generateSampleValues = (
 };
 
 /**
+ * Generate fake, sample values for isDashboardPreview state. This is needed to preview
+ * data grouped by the categoryDataSourceId prop
+ * @param {Array<Object>} values a list of metrics and the dimension values to group them by
+ *
+ * @returns {Array} array of value objects to show in the chart
+ *
+ * TODO: this should probably get refactored to be one generateSampleValues function
+ */
+export const generateSampleValuesForEditor = (
+  series,
+  timeDataSourceId,
+  timeGrain = 'day',
+  timeRange,
+  categoryDataSourceId,
+  availableDimensions
+) => {
+  // determine interval type
+  const timeRangeType = timeRange?.includes('this')
+    ? 'periodToDate'
+    : 'rolling';
+  // for month timeGrains, we need to determine whether to show 3 for a quarter or 12 for a year
+  const timeRangeInterval = timeRange?.includes('Quarter')
+    ? 'quarter'
+    : timeRange;
+  let count = 7;
+  switch (timeGrain) {
+    case 'hour':
+      count = 24;
+      break;
+    case 'day':
+      count = 7;
+      break;
+    case 'week':
+      count = 4;
+      break;
+    case 'month':
+      count = timeRangeInterval === 'quarter' ? 3 : 12;
+      break;
+    case 'year':
+      count = 5;
+      break;
+    default:
+      count = 7;
+      break;
+  }
+
+  // need to remove the label if it is a categorized timeseries bar chart
+  const dimensions = [];
+  if (availableDimensions && availableDimensions[categoryDataSourceId]) {
+    availableDimensions[categoryDataSourceId].forEach((value) => {
+      dimensions.push({
+        dimension: categoryDataSourceId,
+        value,
+      });
+    });
+  }
+
+  if (timeDataSourceId) {
+    const sampleData = [];
+    series.forEach(({ dataSourceId }) => {
+      const now =
+        timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
+          ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
+          : moment().subtract(count, timeGrain);
+      // create 4 random dataSets
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < count; i++) {
+        const nextTimeStamp = now.add(1, timeGrain).valueOf();
+        // include dimension category if there is one
+        if (categoryDataSourceId) {
+          dimensions.forEach((dimension) => {
+            sampleData.push({
+              [timeDataSourceId]: nextTimeStamp,
+              [dataSourceId]: Math.random() * 100,
+              [dimension.dimension]: dimension.value,
+            });
+          });
+        } else {
+          // otherwise we need explicit row
+          sampleData.push({
+            [timeDataSourceId]: nextTimeStamp,
+            [dataSourceId]: Math.random() * 100,
+          });
+        }
+      }
+    });
+    return sampleData;
+  }
+
+  // for every dimension value, create a value object that contains sample data for each metric
+  const valuesGeneratedByDimensions = dimensions.map((dimension) => {
+    const value = { [dimension.dimension]: dimension.value };
+    series.forEach((metric) => {
+      value[metric.dataSourceId] = Math.random() * 100;
+    });
+    return value;
+  });
+
+  return valuesGeneratedByDimensions;
+};
+
+/**
  * Translates our raw data into a language the carbon-charts understand
  * @param {Array<Object>} series, the definition of the plotted series
  * @param {string} series.dataSourceId, the numeric field that identifies the value to display in the main axis
@@ -94,7 +212,25 @@ export const generateSampleValues = (
  *
  * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
-export const formatChartData = (series, values, categoryDataSourceId, timeDataSourceId, type) => {
+export const formatChartData = (
+  seriesArg,
+  values,
+  categoryDataSourceId,
+  timeDataSourceId,
+  type,
+  isDashboardPreview
+) => {
+  let series = seriesArg;
+  // need to remove the label if it is a categorized timeseries bar chart in the dashboard editor
+  if (
+    type === BAR_CHART_TYPES.STACKED &&
+    timeDataSourceId &&
+    categoryDataSourceId &&
+    isDashboardPreview
+  ) {
+    series = series.map((item) => omit(item, 'label'));
+  }
+
   let data = values;
   if (!isNil(values) && !isEmpty(series)) {
     data = [];
@@ -104,12 +240,16 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
       let groupedData;
       // Get the unique values for each x-label grouping
       if (timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED) {
-        uniqueDatasetNames = [...new Set(values.map((val) => val[timeDataSourceId]))];
+        uniqueDatasetNames = [
+          ...new Set(values.map((val) => val[timeDataSourceId])),
+        ];
         groupedData = uniqueDatasetNames.map((name) =>
           values.filter((val) => val[timeDataSourceId] === name)
         );
       } else {
-        uniqueDatasetNames = [...new Set(values.map((val) => val[categoryDataSourceId]))];
+        uniqueDatasetNames = [
+          ...new Set(values.map((val) => val[categoryDataSourceId])),
+        ];
         groupedData = uniqueDatasetNames.map((group) =>
           values.filter((val) => val[categoryDataSourceId] === group)
         );
@@ -122,7 +262,9 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
             if (!isNil(value[dataset.dataSourceId])) {
               data.push({
                 // if there's a dataset label, use it
-                group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
+                group: dataset.label
+                  ? dataset.label
+                  : value[categoryDataSourceId], // bar this data belongs to
                 value: value[dataset.dataSourceId],
                 // grouped charts can't be time-based
                 ...(timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
@@ -137,8 +279,10 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
         });
       });
     } // single bars and not time-based
-    else if (categoryDataSourceId) {
-      const uniqueDatasetNames = [...new Set(values.map((val) => val[categoryDataSourceId]))];
+    else if (categoryDataSourceId && Array.isArray(values)) {
+      const uniqueDatasetNames = [
+        ...new Set(values.map((val) => val[categoryDataSourceId])),
+      ];
       const labeledData = uniqueDatasetNames.map((name) =>
         values.filter((val) => val[categoryDataSourceId] === name)
       );
@@ -155,8 +299,10 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
         });
       });
     } // single bars and time-based
-    else {
-      const uniqueDatasetNames = [...new Set(values.map((val) => val[timeDataSourceId]))];
+    else if (Array.isArray(values)) {
+      const uniqueDatasetNames = [
+        ...new Set(values.map((val) => val[timeDataSourceId])),
+      ];
       const labeledData = uniqueDatasetNames.map((name) =>
         values.filter((val) => val[timeDataSourceId] === name)
       );
@@ -177,7 +323,7 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
     }
   }
 
-  return data;
+  return isDashboardPreview && isEmpty(series) ? [] : data;
 };
 
 /**
@@ -192,7 +338,12 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
  *
  * @returns {object} { bottomAxesMapsTo: string, leftAxesMapsTo: string }
  */
-export const mapValuesToAxes = (layout, categoryDataSourceId, timeDataSourceId, type) => {
+export const mapValuesToAxes = (
+  layout,
+  categoryDataSourceId,
+  timeDataSourceId,
+  type
+) => {
   // Determine which values the axes map to
   let bottomAxesMapsTo;
   let leftAxesMapsTo;
@@ -239,9 +390,23 @@ export const mapValuesToAxes = (layout, categoryDataSourceId, timeDataSourceId, 
  *
  * @returns {Object} colors - formatted
  */
-export const formatColors = (series, datasetNames) => {
+export const formatColors = (
+  series,
+  datasetNames,
+  isDashboardPreview,
+  type
+) => {
   // first set the carbon charts config defaults
   const colors = { scale: {} };
+
+  if (isDashboardPreview && type === BAR_CHART_TYPES.SIMPLE) {
+    datasetNames.forEach((dataset) => {
+      if (series[0].color) {
+        colors.scale[dataset] = series[0].color;
+      }
+    });
+    return colors;
+  }
 
   // if color is an array, order doesn't matter so just map as many as possible
   if (series[0] && Array.isArray(series[0].color)) {
@@ -274,7 +439,6 @@ export const formatColors = (series, datasetNames) => {
 
 /**
  * Extends default tooltip with additional date information if the graph is time-based
- * and adds color of dataset if defined
  *
  * This function is a bit more hacky than TimeSeriesCard because carbon charts formats it differently
  * TODO: remove the hackiness once this issue is solved: https://github.com/carbon-design-system/carbon-charts/issues/657
@@ -317,7 +481,9 @@ export const handleTooltip = (
 
     // First remove carbon charts default Date tooltip
     // the first <li> will always be carbon chart's Dates row in this case, replace with our date format <li>
-    parsedTooltip.querySelector('li:first-child').replaceWith(parsedDateLabel.querySelector('li'));
+    parsedTooltip
+      .querySelector('li:first-child')
+      .replaceWith(parsedDateLabel.querySelector('li'));
   }
 
   return parsedTooltip.innerHTML;
@@ -394,13 +560,17 @@ export const formatTableData = (
   const tableData = [];
   if (timeDataSourceId) {
     // First get all of the unique timestamps
-    const uniqueTimestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
+    const uniqueTimestamps = [
+      ...new Set(values.map((val) => val[timeDataSourceId])),
+    ];
     // For each unique timestamp, get the unique value for each dataset group
     // Each table row will consist of 1 timestamp and the corresponding values
     // of each dataset group for that timestamp
     uniqueTimestamps.forEach((timestamp, index) => {
       const barTimeValue = {};
-      const filteredData = chartData.filter((data) => data.date?.valueOf() === timestamp);
+      const filteredData = chartData.filter(
+        (data) => data.date?.valueOf() === timestamp
+      );
       filteredData.forEach((val) => {
         barTimeValue[val.group] = val.value;
       });
@@ -431,7 +601,9 @@ export const formatTableData = (
   } // Format the tableData for grouped and stacked charts that are NOT time-based
   else {
     // First get all of the unique keys
-    const uniqueKeys = [...new Set(values.map((val) => val[categoryDataSourceId]))];
+    const uniqueKeys = [
+      ...new Set(values.map((val) => val[categoryDataSourceId])),
+    ];
     // For each unique key, get the unique value for each dataset group
     // Each table row will consist of 1 key and the corresponding values
     // of each dataset group for that key

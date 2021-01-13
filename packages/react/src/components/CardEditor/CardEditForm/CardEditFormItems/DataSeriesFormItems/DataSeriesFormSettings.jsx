@@ -27,9 +27,9 @@ const propTypes = {
       includeZeroOnXaxis: PropTypes.bool,
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
+      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -38,7 +38,6 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
-    showLegendLable: PropTypes.string,
   }),
 };
 
@@ -49,7 +48,6 @@ const defaultProps = {
     yAxisLabel: 'Y-axis label',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
-    showLegendLable: 'Show legend',
   },
 };
 

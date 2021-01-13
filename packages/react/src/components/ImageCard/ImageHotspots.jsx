@@ -3,10 +3,15 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
+import {
+  HotspotIconPropType,
+  HotspotPropTypes,
+} from '../../constants/SharedPropTypes';
 
-import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
+import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
 import HotspotContent from './HotspotContent';
 
@@ -34,15 +39,34 @@ const propTypes = {
   background: PropTypes.string,
   /** Current height in pixels */
   height: PropTypes.number.isRequired,
-  /** Callback when an editable image is clicked without drag */
+  /**
+   * Array of identifiable icons used by the hotspots. The icons here will be used to
+   * render the hotspot icons unless the renderIconByName prop us used.
+   */
+  icons: PropTypes.arrayOf(HotspotIconPropType),
+  /**
+   * Callback when an editable image is clicked without drag, used to add hotspot.
+   * Emits position obj {x, y} of hotspot to be added.
+   */
   onAddHotspotPosition: PropTypes.func,
   /** Callback when a hotspot is clicked in isEditable mode, emits position obj {x, y} */
   onSelectHotspot: PropTypes.func,
+  /**
+   * Callback when the hotspot content is changed, emits position obj {x, y}
+   * and content change obj, e.g. {title: 'new title value'}
+   * */
+  onHotspotContentChanged: PropTypes.func,
   /** Current width in pixels */
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
-  i18n: PropTypes.objectOf(PropTypes.string),
+  i18n: PropTypes.shape({
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
+    titlePlaceholderText: PropTypes.string,
+    titleEditableHintText: PropTypes.string,
+  }),
   /** locale string to pass for formatting */
   locale: PropTypes.string,
   /** The (unique) positions of the currently selected hotspots */
@@ -64,6 +88,7 @@ const defaultProps = {
   isEditable: false,
   onAddHotspotPosition: () => {},
   onSelectHotspot: () => {},
+  onHotspotContentChanged: () => {},
   background: '#eee',
   zoomMax: undefined,
   renderIconByName: null,
@@ -71,19 +96,23 @@ const defaultProps = {
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
+    titlePlaceholderText: 'Enter label',
+    titleEditableHintText: 'Click to edit label',
   },
-  locale: null,
+  // undefined instead of null allows for functions to set default values
+  locale: undefined,
   selectedHotspots: [],
+  icons: null,
 };
 
-export const prepareDrag = (event, element, cursor, setCursor) => {
-  if (element === 'image') {
-    setCursor({
-      ...cursor,
-      dragging: false,
-      dragPrepared: true,
-    });
-  }
+export const prepareDrag = (event, cursor, setCursor) => {
+  setCursor({
+    ...cursor,
+    dragging: false,
+    dragPrepared: true,
+    imageMousedown: true,
+  });
+
   event.preventDefault();
 };
 
@@ -103,7 +132,15 @@ export const startDrag = (event, element, cursor, setCursor) => {
 };
 
 /** update the image offset based on the dragged point, and the minimap on the relative opposite from the dragged point */
-export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinimap) => {
+export const whileDrag = (
+  event,
+  cursor,
+  setCursor,
+  image,
+  setImage,
+  minimap,
+  setMinimap
+) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
   const deltaX = cursorX - cursor.cursorX;
@@ -130,7 +167,7 @@ export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, se
 
 /** Make sure that the pointer hasn't left the */
 export const stopDrag = (cursor, setCursor) => {
-  setCursor({ ...cursor, dragging: false });
+  setCursor({ ...cursor, dragging: false, imageMousedown: false });
 };
 
 export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
@@ -146,7 +183,12 @@ export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
     ? container.width // landscape image and portrait container
     : container.height / ratio) * scale; // portrait image and landscape container
 
-export const calculateImageHeight = (container, orientation, ratio, scale = 1) =>
+export const calculateImageHeight = (
+  container,
+  orientation,
+  ratio,
+  scale = 1
+) =>
   (container.orientation === orientation
     ? orientation === 'landscape'
       ? ratio >= container.ratio
@@ -170,10 +212,15 @@ export const onImageLoad = (
   options,
   setOptions
 ) => {
-  const { offsetWidth: initialWidth, offsetHeight: initialHeight } = imageLoaded;
+  const {
+    offsetWidth: initialWidth,
+    offsetHeight: initialHeight,
+  } = imageLoaded;
   const orientation = initialWidth > initialHeight ? 'landscape' : 'portrait';
   const ratio =
-    orientation === 'landscape' ? initialWidth / initialHeight : initialHeight / initialWidth;
+    orientation === 'landscape'
+      ? initialWidth / initialHeight
+      : initialHeight / initialWidth;
 
   const width = calculateImageWidth(container, orientation, ratio);
   const height = calculateImageHeight(container, orientation, ratio);
@@ -195,10 +242,22 @@ export const onImageLoad = (
   });
   setMinimap({
     ...minimap,
-    width: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
-    height: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
-    guideWidth: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
-    guideHeight: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
+    width:
+      orientation === 'landscape'
+        ? minimap.initialSize
+        : minimap.initialSize / ratio,
+    height:
+      orientation === 'portrait'
+        ? minimap.initialSize
+        : minimap.initialSize / ratio,
+    guideWidth:
+      orientation === 'landscape'
+        ? minimap.initialSize
+        : minimap.initialSize / ratio,
+    guideHeight:
+      orientation === 'portrait'
+        ? minimap.initialSize
+        : minimap.initialSize / ratio,
   });
   setOptions({
     ...options,
@@ -222,8 +281,18 @@ export const zoom = (
   options,
   setOptions
 ) => {
-  const width = calculateImageWidth(container, image.orientation, image.ratio, scale);
-  const height = calculateImageHeight(container, image.orientation, image.ratio, scale);
+  const width = calculateImageWidth(
+    container,
+    image.orientation,
+    image.ratio,
+    scale
+  );
+  const height = calculateImageHeight(
+    container,
+    image.orientation,
+    image.ratio,
+    scale
+  );
 
   // Reset image position, (i.e. zoom to fit)
   if (scale === 1) {
@@ -252,9 +321,13 @@ export const zoom = (
       (image.initialWidth > width && image.initialHeight > height)
     ) {
       const guideWidth =
-        container.width >= width ? minimap.width : minimap.width / (width / container.width);
+        container.width >= width
+          ? minimap.width
+          : minimap.width / (width / container.width);
       const guideHeight =
-        container.height >= height ? minimap.height : minimap.height / (height / container.height);
+        container.height >= height
+          ? minimap.height
+          : minimap.height / (height / container.height);
 
       const deltaX = Math.round(width - image.width);
       const deltaY = Math.round(height - image.height);
@@ -332,12 +405,22 @@ const getAccumulatedOffset = (imageElement) => {
 };
 
 /** Calculates the mouse click position in percentage and returns the
- * result in a callback */
-export const onAddHotspotPosition = ({ event, image, setCursor, isEditable, callback }) => {
-  setCursor((cursor) => {
-    return { ...cursor, dragPrepared: false };
+ * result in a callback if a hotspot should be added */
+export const handleMouseUp = ({
+  event,
+  image,
+  cursor,
+  setCursor,
+  isEditable,
+  callback,
+}) => {
+  setCursor((newCursor) => {
+    return { ...newCursor, dragPrepared: false, imageMousedown: false };
   });
-  if (isEditable) {
+
+  // We only trigger the callback if the image is editable and the intitiating
+  // mouse down event was on the actual image (as oppose of outside).
+  if (isEditable && cursor?.imageMousedown) {
     const accumelatedOffset = getAccumulatedOffset(event.currentTarget);
     const relativePosition = {
       x: event.pageX - accumelatedOffset.left,
@@ -364,10 +447,12 @@ const ImageHotspots = ({
   height,
   width,
   alt,
+  icons,
   isEditable,
   isHotspotDataLoading,
-  onAddHotspotPosition: onAddHotspotPositionCallback,
+  onAddHotspotPosition,
   onSelectHotspot,
+  onHotspotContentChanged,
   zoomMax,
   renderIconByName,
   locale,
@@ -390,6 +475,8 @@ const ImageHotspots = ({
     hideHotspots: hideHotspotsProp,
     hideMinimap: hideMinimapProp,
   });
+
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   useEffect(() => {
     setOptions({
@@ -464,12 +551,34 @@ const ImageHotspots = ({
     [onSelectHotspot, isEditable]
   );
 
+  const getIconRenderFunction = useCallback(() => {
+    return (
+      renderIconByName ||
+      (Array.isArray(icons)
+        ? (name, props) => {
+            const Icon = icons.find((iconObj) => iconObj.id === name)?.icon;
+            if (!Icon) {
+              if (__DEV__) {
+                warning(
+                  false,
+                  `An arrray of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
+                );
+              }
+              return null;
+            }
+            return <Icon {...props} />;
+          }
+        : null)
+    );
+  }, [icons, renderIconByName]);
+
   // Performance improvement
   const cachedHotspots = useMemo(
     () =>
       hotspots.map((hotspot) => {
+        const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find(
-          (pos) => hotspot.x === pos.x && hotspot.y === pos.y
+          (pos) => x === pos.x && y === pos.y
         );
         return (
           <Hotspot
@@ -481,26 +590,44 @@ const ImageHotspots = ({
                 <HotspotContent
                   {...hotspot.content}
                   locale={locale}
-                  renderIconByName={renderIconByName}
+                  renderIconByName={getIconRenderFunction()}
+                  id={`hotspot-content-${x}-${y}`}
+                  isTitleEditable={
+                    (isEditable, hotspotIsSelected && hotspot.type === 'text')
+                  }
+                  onChange={onHotspotContentChanged}
+                  i18n={mergedI18n}
                 />
               )
             }
-            key={`${hotspot.x}-${hotspot.y}`}
+            key={`${x}-${y}`}
             style={hotspotsStyle}
-            renderIconByName={renderIconByName}
+            renderIconByName={getIconRenderFunction()}
             isSelected={hotspotIsSelected}
             onClick={onHotspotClicked}
           />
         );
       }),
-    [hotspots, hotspotsStyle, locale, renderIconByName, selectedHotspots, onHotspotClicked]
+    [
+      hotspots,
+      selectedHotspots,
+      locale,
+      getIconRenderFunction,
+      isEditable,
+      onHotspotContentChanged,
+      mergedI18n,
+      hotspotsStyle,
+      onHotspotClicked,
+    ]
   );
 
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
-      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
+      imageStyle.height =
+        displayOption && image.scale === 1 ? '100%' : image.height;
     } else {
-      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
+      imageStyle.width =
+        displayOption && image.scale === 1 ? '100%' : image.width;
     }
 
     if (image.orientation === 'landscape') {
@@ -526,8 +653,7 @@ const ImageHotspots = ({
           // If we leave the container, stop detecting the drag
           stopDrag(cursor, setCursor);
         }
-      }}
-    >
+      }}>
       {src && (
         <img
           id={id}
@@ -535,31 +661,54 @@ const ImageHotspots = ({
           src={src}
           alt={alt}
           onLoad={(event) =>
-            onImageLoad(event, container, image, setImage, minimap, setMinimap, options, setOptions)
+            onImageLoad(
+              event,
+              container,
+              image,
+              setImage,
+              minimap,
+              setMinimap,
+              options,
+              setOptions
+            )
           }
           style={imageStyle}
           onMouseDown={(evt) => {
             if (!hideZoomControls && draggable) {
-              prepareDrag(evt, 'image', cursor, setCursor);
+              prepareDrag(evt, cursor, setCursor);
+            } else {
+              setCursor({
+                ...cursor,
+                imageMousedown: true,
+              });
             }
           }}
           onMouseMove={(evt) => {
             if (!hideZoomControls && draggable && dragPrepared) {
               startDrag(evt, 'image', cursor, setCursor);
             } else if (!hideZoomControls && dragging) {
-              whileDrag(evt, cursor, setCursor, image, setImage, minimap, setMinimap);
+              whileDrag(
+                evt,
+                cursor,
+                setCursor,
+                image,
+                setImage,
+                minimap,
+                setMinimap
+              );
             }
           }}
           onMouseUp={(event) => {
             if (dragging) {
               stopDrag(cursor, setCursor);
             } else {
-              onAddHotspotPosition({
+              handleMouseUp({
                 event,
                 image,
+                cursor,
                 setCursor,
                 isEditable,
-                callback: onAddHotspotPositionCallback,
+                callback: onAddHotspotPosition,
               });
             }
           }}
@@ -577,13 +726,23 @@ const ImageHotspots = ({
       )}
       {!hideZoomControls && (
         <ImageControls
-          i18n={i18n}
+          i18n={mergedI18n}
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}
           hideMinimap={!dragging || hideMinimap}
           onZoomToFit={() =>
-            zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
+            zoom(
+              1,
+              zoomMax,
+              container,
+              image,
+              setImage,
+              minimap,
+              setMinimap,
+              options,
+              setOptions
+            )
           }
           onZoomIn={() =>
             zoom(

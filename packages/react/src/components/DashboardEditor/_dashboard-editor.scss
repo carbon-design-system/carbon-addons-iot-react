@@ -1,6 +1,10 @@
 .#{$iot-prefix}--dashboard-editor {
   display: flex;
   height: 100%;
+  > .#{$prefix}--skeleton__text {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
 
   &__overflow {
     overflow-x: auto; // allows a larger width
@@ -73,14 +77,15 @@
       outline-offset: -2px;
     }
 
+    // add an extra 4 pixels for the 2px border plus 1 pixel to fully detect the breakpoint
+    &__sm {
+      width: 485px;
+    }
     &__md {
-      width: 1018px;
+      width: 677px;
     }
     &__lg {
-      width: 1314px;
-    }
-    &__xl {
-      width: 1568px;
+      width: 1061px;
     }
 
     &__breakpoint-info {

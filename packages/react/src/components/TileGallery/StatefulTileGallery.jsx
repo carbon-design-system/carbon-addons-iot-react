@@ -47,6 +47,7 @@ const propTypes = {
           title: PropTypes.string.isRequired,
           description: PropTypes.string,
           moreInfoLink: PropTypes.string,
+          onClick: PropTypes.func,
           icon: PropTypes.oneOfType([
             PropTypes.shape({
               width: PropTypes.string,
@@ -167,6 +168,7 @@ const StatefulTileGallery = ({
                       mode={thumbnails ? 'grid' : 'list'}
                       title={galleryItem.title}
                       description={galleryItem.description}
+                      onClick={galleryItem.onClick}
                       moreInfoLink={galleryItem.moreInfoLink}
                       icon={galleryItem.icon}
                       afterContent={galleryItem.afterContent}

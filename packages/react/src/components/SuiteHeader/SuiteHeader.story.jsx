@@ -4,6 +4,10 @@ import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
+import NotificationOn from '@carbon/icons-react/lib/notification/24';
+import Bee from '@carbon/icons-react/lib/bee/24';
+import Car from '@carbon/icons-react/lib/car/24';
+import Chat from '@carbon/icons-react/lib/chat/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
@@ -93,6 +97,76 @@ const sideNavLinks = [
   },
 ];
 
+const customActionItems = [
+  {
+    label: 'alerts',
+    btnContent: <NotificationOn fill="white" description="Icon" />,
+  },
+  {
+    label: 'help',
+    hasHeaderPanel: true,
+    btnContent: (
+      <Bee
+        fill="white"
+        description="Icon"
+        className="bx--header__menu-item bx--header__menu-title"
+      />
+    ),
+    childContent: [
+      {
+        metaData: {
+          href: 'http://google.com',
+          title: 'this is a title',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: 'this is my message to you',
+      },
+      {
+        metaData: {
+          className: 'this',
+          element: 'button',
+        },
+        content: (
+          <span>
+            JohnDoe@ibm.com
+            <Chat fill="white" description="Icon" />
+          </span>
+        ),
+      },
+    ],
+  },
+  {
+    label: 'user',
+    btnContent: <Car fill="white" description="Icon" />,
+    childContent: [
+      {
+        metaData: {
+          href: 'http://google.com',
+          title: 'this is a title',
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          element: 'a',
+        },
+        content: 'this is my message to you',
+      },
+      {
+        metaData: {
+          className: 'this',
+          element: 'button',
+        },
+        content: (
+          <span>
+            JohnDoe@ibm.com
+            <Chat fill="white" description="Icon" />
+          </span>
+        ),
+      },
+    ],
+  },
+];
+
 export default {
   title: 'Watson IoT/SuiteHeader',
 
@@ -121,6 +195,8 @@ export const Default = () => {
         requestEnhancement: 'https://www.ibm.com',
         support: 'https://www.ibm.com',
         about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
       })}
       i18n={SuiteHeaderI18N[language]}
       applications={object('applications', [
@@ -183,6 +259,45 @@ export const HeaderWithSideNav = () => (
 
 HeaderWithSideNav.story = {
   name: 'Header with side nav',
+};
+
+export const HeaderWithCustomActionItems = () => (
+  <SuiteHeader
+    suiteName="Application Suite"
+    appName="Application Name"
+    userDisplayName="Admin User"
+    username="adminuser"
+    routes={{
+      profile: 'https://www.ibm.com',
+      navigator: 'https://www.ibm.com',
+      admin: 'https://www.ibm.com',
+      logout: 'https://www.ibm.com',
+      whatsNew: 'https://www.ibm.com',
+      gettingStarted: 'https://www.ibm.com',
+      documentation: 'https://www.ibm.com',
+      requestEnhancement: 'https://www.ibm.com',
+      support: 'https://www.ibm.com',
+      about: 'https://www.ibm.com',
+    }}
+    applications={[
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com',
+      },
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com',
+        isExternal: true,
+      },
+    ]}
+    customActionItems={customActionItems}
+  />
+);
+
+HeaderWithCustomActionItems.story = {
+  name: 'Header with custom action items',
 };
 
 export const HeaderWithSurveyNotification = () => {

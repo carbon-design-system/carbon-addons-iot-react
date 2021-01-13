@@ -26,10 +26,10 @@ import DashboardGrid, {
 describe('DashboardGrid', () => {
   describe('findLayoutOrGenerate', () => {
     const layouts = {
-      max: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      xl: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      lg: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-      md: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
+      max: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      xl: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      lg: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+      md: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
       sm: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
       xs: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
     };
@@ -91,9 +91,9 @@ describe('DashboardGrid', () => {
         ['xl', 'lg', 'md']
       );
       expect(regenerated).toEqual({
-        xl: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-        lg: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
-        md: [{ i: 'mycard', x: 0, y: 0, w: 4, h: 2 }],
+        xl: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+        lg: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+        md: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
       });
     });
   });
@@ -346,22 +346,22 @@ describe('DashboardGrid', () => {
       expect(sizeA.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeB = getMatchingCardSize({ w: 3, h: 1 }, breakpointSizes);
-      expect(sizeB.name).toEqual(CARD_SIZES.SMALLWIDE);
+      expect(sizeB.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeC = getMatchingCardSize({ w: 4, h: 1 }, breakpointSizes);
-      expect(sizeC.name).toEqual(CARD_SIZES.SMALLWIDE);
+      expect(sizeC.name).toEqual(CARD_SIZES.SMALL);
 
       const sizeD = getMatchingCardSize({ w: 4, h: 2 }, breakpointSizes);
-      expect(sizeD.name).toEqual(CARD_SIZES.MEDIUM);
+      expect(sizeD.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeE = getMatchingCardSize({ w: 3, h: 2 }, breakpointSizes);
-      expect(sizeE.name).toEqual(CARD_SIZES.MEDIUM);
+      expect(sizeE.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeF = getMatchingCardSize({ w: 2, h: 2 }, breakpointSizes);
       expect(sizeF.name).toEqual(CARD_SIZES.MEDIUMTHIN);
 
       const sizeG = getMatchingCardSize({ w: 5, h: 2 }, breakpointSizes);
-      expect(sizeG.name).toEqual(CARD_SIZES.MEDIUMWIDE);
+      expect(sizeG.name).toEqual(CARD_SIZES.MEDIUM);
 
       const sizeH = getMatchingCardSize({ w: 18, h: 5 }, breakpointSizes);
       expect(sizeH.name).toEqual(CARD_SIZES.LARGEWIDE);

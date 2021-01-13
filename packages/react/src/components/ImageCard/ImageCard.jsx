@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import pick from 'lodash/pick';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
-import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  ImageCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
-import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getResizeHandles,
+  getUpdatedCardSize,
+} from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
@@ -31,19 +38,24 @@ const propTypes = { ...CardPropTypes, ...ImageCardPropTypes };
 const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
-    dropContainerLabelText: 'Drag and drop file here or click to select file',
+    dropContainerLabelText: 'Drag file here or click to upload file',
     dropContainerDescText:
-      'Max file size is 1MB. Supported file types are: JPEG, PNG, GIF, WEBP, TIFF, JPEG2000',
+      'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
     uploadByURLCancel: 'Cancel',
     uploadByURLButton: 'OK',
-    browseImages: 'Browse images',
+    browseImages: 'Add from gallery',
     insertUrl: 'Insert from URL',
     urlInput: 'Type or insert URL',
-    errorTitle: 'Error: ',
+    errorTitle: 'Upload error: ',
+    fileTooLarge: 'Image file is too large',
+    wrongFileType: (accept) =>
+      `This file is not one of the accepted file types, ${accept.join(', ')}`,
   },
   locale: 'en',
   content: {},
+  maxFileSizeInBytes: 1048576,
   accept: null,
+  validateUploadedImage: null,
   onUpload: () => {},
   onBrowseClick: null,
 };
@@ -61,15 +73,21 @@ const ImageCard = ({
   isResizable,
   error,
   isLoading,
-  i18n: { loadingDataLabel, ...otherLabels },
+  maxFileSizeInBytes,
+  i18n,
+  i18n: { loadingDataLabel },
   renderIconByName,
   locale,
   onUpload,
+  validateUploadedImage,
   onBrowseClick,
   ...others
 }) => {
   const [imgContent, setImgContent] = useState(content);
   const hotspots = values ? values.hotspots || [] : [];
+
+  const { hasInsertFromUrl } = content || {};
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   useEffect(() => {
     setImgContent(content);
@@ -120,8 +138,7 @@ const ImageCard = ({
       resizeHandles={resizeHandles}
       {...others}
       error={error}
-      i18n={otherLabels}
-    >
+      i18n={mergedI18n}>
       {!isCardLoading
         ? (
             // Get width and height from parent card
@@ -134,7 +151,23 @@ const ImageCard = ({
                     onBrowseClick={onBrowseClick}
                     width={width}
                     height={height}
+                    maxFileSizeInBytes={maxFileSizeInBytes}
                     onUpload={handleOnUpload}
+                    i18n={pick(
+                      mergedI18n,
+                      'dropContainerLabelText',
+                      'dropContainerDescText',
+                      'uploadByURLCancel',
+                      'uploadByURLButton',
+                      'browseImages',
+                      'insertUrl',
+                      'urlInput',
+                      'fileTooLarge',
+                      'errorTitle',
+                      'wrongFileType'
+                    )}
+                    hasInsertFromUrl={hasInsertFromUrl}
+                    validateUploadedImage={validateUploadedImage}
                   />
                 ) : imgContent.src ? (
                   <ImageHotspots
@@ -147,6 +180,14 @@ const ImageCard = ({
                     loadingHotspotsLabel={loadingDataLabel}
                     renderIconByName={renderIconByName}
                     locale={locale}
+                    i18n={pick(
+                      mergedI18n,
+                      'zoomIn',
+                      'zoomOut',
+                      'zoomToFit',
+                      'titlePlaceholderText',
+                      'titleEditableHintText'
+                    )}
                   />
                 ) : (
                   <EmptyDiv>

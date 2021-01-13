@@ -138,7 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-35-65"
                   icon="arrowDown"
                   style={
@@ -397,7 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-35-65"
                   icon="arrowDown"
                   style={
@@ -444,7 +444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container"
+                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-25"
                   icon={null}
                   style={
@@ -495,7 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container"
+                  className="iot--hotspot-container iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-50"
                   icon={null}
                   style={
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="iot--hotspot-container iot--hotspot-container--has-icon"
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-45-75"
                   icon="arrowUp"
                   style={
@@ -1063,13 +1063,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 >
                   <div
                     aria-atomic="true"
-                    aria-labelledby="loading-id-5"
+                    aria-labelledby="loading-id-6"
                     aria-live="assertive"
                     className="bx--loading bx--loading--small"
                   >
                     <label
                       className="bx--visually-hidden"
-                      id="loading-id-5"
+                      id="loading-id-6"
                     >
                       Active loading indicator
                     </label>
@@ -1177,6 +1177,185 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard image upload error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1.5rem",
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        accept={null}
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="image-hotspots"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Image"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Image
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar"
+          />
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
+        >
+          <div
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 bcWqmR"
+          >
+            <div
+              className="iot--image-uploader"
+            >
+              <div
+                className="bx--file"
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDrop={[Function]}
+              >
+                <label
+                  className="bx--file-browse-btn"
+                  htmlFor="id12"
+                  onKeyDown={[Function]}
+                  size="field"
+                  tabIndex={0}
+                >
+                  <div
+                    className="bx--file__drop-container"
+                    role="button"
+                  >
+                    
+                    <input
+                      accept={Array []}
+                      className="bx--file-input"
+                      id="id12"
+                      multiple={false}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      tabIndex="-1"
+                      type="file"
+                    />
+                  </div>
+                </label>
+              </div>
+              <div
+                className="iot--image-uploader-icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={32}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={32}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19,14a3,3,0,1,0-3-3A3,3,0,0,0,19,14Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,19,10Z"
+                  />
+                  <path
+                    d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,22H6V20l5-5,5.59,5.59a2,2,0,0,0,2.82,0L21,19l5,5Zm0-4.83-3.59-3.59a2,2,0,0,0-2.82,0L18,19.17l-5.59-5.59a2,2,0,0,0-2.82,0L6,17.17V6H26Z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--image-uploader-content"
+              >
+                <h2
+                  className="iot--image-uploader-drop-label-text"
+                >
+                  Drag file here or click to upload file
+                </h2>
+                <p
+                  className="iot--image-uploader-drop-description-text"
+                >
+                  Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
+                </p>
+                <button
+                  className="iot--btn bx--btn bx--btn--tertiary"
+                  disabled={false}
+                  onClick={null}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Add from gallery
+                </button>
+                <button
+                  className="iot--btn bx--btn bx--btn--tertiary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Insert from URL
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable (experimental) 1`] = `
 <div
   className="storybook-container"
@@ -1248,7 +1427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id10"
+                  htmlFor="id11"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1261,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id10"
+                      id="id11"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}
@@ -1298,7 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 <h2
                   className="iot--image-uploader-drop-label-text"
                 >
-                  Drag and drop file here or click to select file
+                  Drag file here or click to upload file
                 </h2>
                 <p
                   className="iot--image-uploader-drop-description-text"
@@ -1306,13 +1485,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP
                 </p>
                 <button
-                  className="iot--btn bx--btn bx--btn--primary"
+                  className="iot--btn bx--btn bx--btn--tertiary"
                   disabled={false}
                   onClick={null}
                   tabIndex={0}
                   type="button"
                 >
-                  Browse images
+                  Add from gallery
                 </button>
                 <button
                   className="iot--btn bx--btn bx--btn--tertiary"

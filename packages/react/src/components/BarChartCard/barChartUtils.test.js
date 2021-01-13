@@ -115,6 +115,19 @@ describe('barChartUtils', () => {
     );
   });
 
+  it('formatChartData handles null values', () => {
+    const series = [
+      {
+        dataSourceId: 'particles',
+        label: 'Particles',
+      },
+    ];
+    // check horizontal layout
+    expect(
+      formatChartData(series, null, 'city', null, BAR_CHART_TYPES.GROUPED)
+    ).toEqual(null);
+  });
+
   it('formatChartData returns formatted data for group-based chart', () => {
     const series = [
       {

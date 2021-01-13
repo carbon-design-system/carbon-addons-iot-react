@@ -8,6 +8,8 @@ import Table from '../Table/Table';
 
 import PieChartCard, { formatColors } from './PieChartCard';
 
+jest.unmock('@carbon/charts-react');
+
 const chartDataExample = [
   {
     group: '2V2N 9KYPM',

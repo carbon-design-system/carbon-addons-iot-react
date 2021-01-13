@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { FileUploaderDropContainer, TextInput, InlineNotification } from 'carbon-components-react';
+import {
+  FileUploaderDropContainer,
+  TextInput,
+  InlineNotification,
+} from 'carbon-components-react';
 import { Image32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
@@ -11,15 +15,16 @@ import { fetchDataURL } from '../../utils/cardUtilityFunctions';
 const { iotPrefix } = settings;
 
 const i18nDefaults = {
-  dropContainerLabelText: 'Drag and drop file here or click to select file',
+  dropContainerLabelText: 'Drag file here or click to upload file',
   dropContainerDescText:
     'Max file size is 1MB. Supported file types are: APNG, AVIF, GIF, JPEG, PNG, WebP',
   uploadByURLCancel: 'Cancel',
   uploadByURLButton: 'OK',
-  browseImages: 'Browse images',
+  browseImages: 'Add from gallery',
   insertUrl: 'Insert from URL',
   urlInput: 'Type or insert URL',
-  errorTitle: 'Error: ',
+  errorTitle: 'Upload error: ',
+  fileTooLarge: 'Image file is too large',
   wrongFileType: (accept) =>
     `This file is not one of the accepted file types, ${accept.join(', ')}`,
 };
@@ -28,6 +33,11 @@ const propTypes = {
   accept: PropTypes.arrayOf(PropTypes.string),
   onBrowseClick: PropTypes.func,
   onUpload: PropTypes.func,
+  /** the maximum file size in bytes */
+  maxFileSizeInBytes: PropTypes.number,
+  hasInsertFromUrl: PropTypes.bool,
+  /** a callback invoked with the image information, if you want to fail validation return a string with the error */
+  validateUploadedImage: PropTypes.func,
   i18n: PropTypes.shape({
     dropContainerLabelText: PropTypes.string,
     dropContainerDescText: PropTypes.string,
@@ -36,17 +46,30 @@ const propTypes = {
     browseImages: PropTypes.string,
     insertUrl: PropTypes.string,
     urlInput: PropTypes.string,
+    fileTooLarge: PropTypes.string,
   }),
 };
 
 const defaultProps = {
   accept: ['APNG', 'AVIF', 'GIF', 'JPEG', 'JPG', 'PNG', 'WebP'],
+  maxFileSizeInBytes: 1048576,
+  validateUploadedImage: null,
   onBrowseClick: () => {},
   onUpload: () => {},
+  hasInsertFromUrl: false,
   i18n: i18nDefaults,
 };
 
-const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
+const ImageUploader = ({
+  hasInsertFromUrl,
+  onBrowseClick,
+  i18n,
+  onUpload,
+  accept,
+  validateUploadedImage,
+  maxFileSizeInBytes,
+  ...other
+}) => {
   const [fromURL, setFromURL] = useState(false);
   const [error, setError] = useState(null);
   const [buttonSize, setButtonSize] = useState('default');
@@ -83,9 +106,20 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
 
   const handleOnChange = (_event, files) => {
     const acceptedFiles = accept.map((i) => i.toLowerCase());
-    if (
+    if (validateUploadedImage) {
+      const validationError = validateUploadedImage(files.addedFiles[0]);
+      if (validationError) {
+        setError(validationError);
+        return;
+      }
+    }
+    if (files.addedFiles[0].size > maxFileSizeInBytes) {
+      setError(i18n.fileTooLarge);
+    } else if (
       acceptedFiles.includes(
-        files.addedFiles[0].name.match(/([^/.]*?)(?=\?|#|$)/ || [])[0].toLowerCase()
+        files.addedFiles[0].name
+          .match(/([^/.]*?)(?=\?|#|$)/ || [])[0]
+          .toLowerCase()
       )
     ) {
       const fR = new FileReader();
@@ -108,14 +142,16 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
   return (
     <div
       className={classnames(`${iotPrefix}--image-uploader`, {
-        [`${iotPrefix}--image-uploader__medium`]: other.width >= 252 && other.width <= 519,
-        [`${iotPrefix}--image-uploader__mediumwide`]: other.width >= 520 && other.height !== 576,
+        [`${iotPrefix}--image-uploader__medium`]:
+          other.width >= 252 && other.width <= 519,
+        [`${iotPrefix}--image-uploader__mediumwide`]:
+          other.width >= 520 && other.height !== 576,
         [`${iotPrefix}--image-uploader__large`]:
           other.width >= 520 && other.width <= 1055 && other.height >= 576,
-        [`${iotPrefix}--image-uploader__largewide`]: other.width >= 1056 && other.height >= 576,
+        [`${iotPrefix}--image-uploader__largewide`]:
+          other.width >= 1056 && other.height >= 576,
         [`${iotPrefix}--image-uploader__url`]: fromURL,
-      })}
-    >
+      })}>
       {error ? (
         <InlineNotification
           onCloseButtonClick={handleErrorClose}
@@ -134,13 +170,20 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
           <Button size={buttonSize} onClick={handleUploadByURL}>
             {i18n.uploadByURLButton}
           </Button>
-          <Button size={buttonSize} onClick={handleCancelFromURLClick} kind="ghost">
+          <Button
+            size={buttonSize}
+            onClick={handleCancelFromURLClick}
+            kind="ghost">
             {i18n.uploadByURLCancel}
           </Button>
         </div>
       ) : (
         <>
-          <FileUploaderDropContainer size="field" labelText="" onAddFiles={handleOnChange} />
+          <FileUploaderDropContainer
+            size="field"
+            labelText=""
+            onAddFiles={handleOnChange}
+          />
           <div className={`${iotPrefix}--image-uploader-icon`}>
             <Image32 />
           </div>
@@ -151,12 +194,17 @@ const ImageUploader = ({ onBrowseClick, i18n, onUpload, accept, ...other }) => {
             <p className={`${iotPrefix}--image-uploader-drop-description-text`}>
               {i18n.dropContainerDescText}
             </p>
-            <Button size={buttonSize} onClick={onBrowseClick} kind="primary">
+            <Button size={buttonSize} onClick={onBrowseClick} kind="tertiary">
               {i18n.browseImages}
             </Button>
-            <Button size={buttonSize} onClick={handleFromURLClick} kind="tertiary">
-              {i18n.insertUrl}
-            </Button>
+            {hasInsertFromUrl ? (
+              <Button
+                size={buttonSize}
+                onClick={handleFromURLClick}
+                kind="tertiary">
+                {i18n.insertUrl}
+              </Button>
+            ) : null}
           </div>
         </>
       )}

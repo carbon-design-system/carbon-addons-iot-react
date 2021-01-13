@@ -127,7 +127,13 @@ export const TableCardPropTypes = {
         priority: PropTypes.number,
         /** See the renderDataFunction for TablePropTypes */
         renderDataFunction: PropTypes.func,
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
         type: PropTypes.string,
+        /** optional custom link */
+        linkTemplate: PropTypes.shape({
+          href: PropTypes.string,
+          target: PropTypes.string,
+        }),
       })
     ).isRequired,
     showHeader: PropTypes.bool,
@@ -135,6 +141,13 @@ export const TableCardPropTypes = {
       PropTypes.shape({
         id: PropTypes.string,
         label: PropTypes.string,
+        /** optional custom link */
+        linkTemplate: PropTypes.shape({
+          href: PropTypes.string,
+          target: PropTypes.string,
+        }),
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
+        type: PropTypes.string,
       })
     ),
     thresholds: PropTypes.arrayOf(
@@ -322,6 +335,8 @@ export const BarChartCardPropTypes = {
   /** internationalization */
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
+    tooltipGroupLabel: PropTypes.string,
+    tooltipTotalLabel: PropTypes.string,
   }),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */
@@ -395,9 +410,13 @@ export const ImageCardPropTypes = {
   values: PropTypes.shape({
     hotspots: PropTypes.array,
   }),
+  /** the maximum supported file size in bytes */
+  maxFileSizeInBytes: PropTypes.number,
   onUpload: PropTypes.func,
   onBrowseClick: PropTypes.func,
   accept: PropTypes.arrayOf(PropTypes.string),
+  /** callback that you can use to validate the image, if you return a message we will display it as an error */
+  validateUploadedImage: PropTypes.func,
 };
 
 export const GaugeCardPropTypes = {

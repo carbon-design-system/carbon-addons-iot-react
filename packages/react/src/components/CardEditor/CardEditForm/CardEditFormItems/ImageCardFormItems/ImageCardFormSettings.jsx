@@ -24,7 +24,6 @@ const propTypes = {
       background: PropTypes.string,
     }),
     interval: PropTypes.string,
-    showLegend: PropTypes.bool,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -34,7 +33,13 @@ const propTypes = {
     hideMap: PropTypes.string,
     hideZoom: PropTypes.string,
     zoomLevel: PropTypes.string,
+    fit: PropTypes.string,
+    fill: PropTypes.string,
+    stretch: PropTypes.string,
+    selectAColor: PropTypes.string,
   }),
+  /** Callback function to call to translate common elements */
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -45,6 +50,10 @@ const defaultProps = {
     hideMap: 'Hide mini map',
     hideZoom: 'Hide zoom controls',
     zoomLevel: 'Max zoom level',
+    fit: 'Fit',
+    fill: 'Fill',
+    stretch: 'Stretch',
+    selectAColor: 'Select a color',
   },
 };
 
@@ -54,7 +63,12 @@ const colors = [
   { carbonColor: white, name: 'white' },
 ];
 
-const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
+const ImageCardFormSettings = ({
+  cardConfig,
+  onChange,
+  i18n,
+  translateWithId,
+}) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   // Hiding until the UX for this form item is figured out.
   // const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);
@@ -83,7 +97,7 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               })
             }
             orientation="vertical"
-            legend={`${mergedI18n.displayOptions}`}
+            legend={mergedI18n.displayOptions}
             labelPosition="right"
             valueSelected={cardConfig.content?.displayOption}
           >
@@ -91,19 +105,19 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
               data-testid={`${baseClassName}--input-radio1`}
               value="contain"
               id={`${baseClassName}--input-radio-1`}
-              labelText="Fit"
+              labelText={mergedI18n.fit}
             />
             <RadioButton
               data-testid={`${baseClassName}--input-radio2`}
               value="cover"
               id={`${baseClassName}--input-radio-2`}
-              labelText="Fill"
+              labelText={mergedI18n.fill}
             />
             <RadioButton
               data-testid={`${baseClassName}--input-radio3`}
               value="fill"
               id={`${baseClassName}--input-radio-3`}
-              labelText="Stretch"
+              labelText={mergedI18n.stretch}
             />
           </RadioButtonGroup>
         </FormGroup>
@@ -113,11 +127,13 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           data-testid={`${baseClassName}--input-color-dropdown`}
           titleText={mergedI18n.colorTitleText}
           light
+          label={mergedI18n.selectAColor}
           colors={colors}
           id={`${baseClassName}--input-color`}
           selectedColor={colors.find(
             (color) => color.carbonColor === cardConfig.content?.background
           )}
+          translateWithId={translateWithId}
           onChange={(evt) =>
             onChange({
               ...cardConfig,

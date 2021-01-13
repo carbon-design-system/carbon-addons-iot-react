@@ -5,92 +5,13 @@ import { render, within, screen } from '@testing-library/react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
-import TableCard, {
-  findMatchingThresholds,
+import TableCard from './TableCard';
+import {
   createColumnsWithFormattedLinks,
   handleExpandedItemLinks,
-} from './TableCard';
+} from './tableCardUtils';
 
 describe('TableCard', () => {
-  const thresholds = [
-    { comparison: '>', dataSourceId: 'airflow_mean', severity: 3, value: 2 },
-    { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
-    { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
-    { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
-    {
-      comparison: '=',
-      dataSourceId: 'airflow_status',
-      severity: 1,
-      value: 'High',
-    },
-  ];
-  it('findMatchingThresholds', () => {
-    const oneMatchingThreshold = findMatchingThresholds(
-      thresholds,
-      { airflow_mean: 4 },
-      'airflow_mean'
-    );
-    expect(oneMatchingThreshold).toHaveLength(1);
-    // The highest severity should match
-    expect(oneMatchingThreshold[0].severity).toEqual(1);
-  });
-  it('findMatchingThresholds string value', () => {
-    const oneMatchingThreshold = findMatchingThresholds(
-      thresholds,
-      { airflow_status: 'High' },
-      'airflow_status'
-    );
-    expect(oneMatchingThreshold).toHaveLength(1);
-    // The highest severity should match
-    expect(oneMatchingThreshold[0].severity).toEqual(1);
-  });
-  it('findMatchingThresholds multiple columns', () => {
-    const twoMatchingThresholds = findMatchingThresholds(thresholds, {
-      airflow_mean: 4,
-      airflow_max: 5,
-    });
-    expect(twoMatchingThresholds).toHaveLength(2);
-    // The highest severity should match
-    expect(twoMatchingThresholds[0].severity).toEqual(1);
-    expect(twoMatchingThresholds[0].dataSourceId).toEqual('airflow_mean');
-    expect(twoMatchingThresholds[1].severity).toEqual(1);
-    expect(twoMatchingThresholds[1].dataSourceId).toEqual('airflow_max');
-  });
-  it('findMatchingThresholds no column', () => {
-    const thresholds = [
-      {
-        comparison: '<',
-        dataSourceId: 'airflow_mean',
-        severity: 1,
-        value: 4.5,
-      },
-    ];
-    const oneMatchingThreshold = findMatchingThresholds(thresholds, {
-      airflow_mean: 4,
-    });
-    expect(oneMatchingThreshold).toHaveLength(1);
-    // The highest severity should match
-    expect(oneMatchingThreshold[0].severity).toEqual(1);
-
-    // shouldn't match on null values
-    const zeroMatchingThreshold = findMatchingThresholds(thresholds, {
-      airflow_mean: null,
-    });
-    expect(zeroMatchingThreshold).toHaveLength(0);
-    // shouldn't match on null values
-    const zeroMatchingThreshold2 = findMatchingThresholds(
-      [
-        {
-          comparison: '<=',
-          dataSourceId: 'airflow_mean',
-          severity: 1,
-          value: 4.5,
-        },
-      ],
-      { airflow_mean: null }
-    );
-    expect(zeroMatchingThreshold2).toHaveLength(0);
-  });
   it('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
     const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
     const columnsWithlinks = columnsWithFormattedLinks.filter(

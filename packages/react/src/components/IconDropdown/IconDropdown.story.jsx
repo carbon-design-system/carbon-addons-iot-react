@@ -73,8 +73,10 @@ const props = () => ({
   titleText: text('Title (titleText)', 'Dropdown label'),
   helperText: text('Helper text (helperText)', 'This is some helper text.'),
   invalid: boolean('Show form validation UI (invalid)', false),
-  invalidText: text('Form validation UI content (invalidText)', 'A valid value is required'),
-  hasFooter: boolean('Renders dropdown footer', false),
+  invalidText: text(
+    'Form validation UI content (invalidText)',
+    'A valid value is required'
+  ),
 });
 
 export default {
@@ -106,8 +108,7 @@ export const _Default = () => {
         style={{
           width: select('wrapper width', ['300px', '100px'], '300px'),
           transform: 'translateY(100px)',
-        }}
-      >
+        }}>
         <IconDropdown
           {...props()}
           id="unique-drop-down-id"

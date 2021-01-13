@@ -2,9 +2,14 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import {
+  CARD_TYPES,
+  BAR_CHART_TYPES,
+} from '../../../../../constants/LayoutConstants';
+
 import DataSeriesFormItem, {
-  formatSeries,
   formatDataItemsForDropdown,
+  defineCardSpecificTooltip,
 } from './DataSeriesFormContent';
 
 const cardConfig = {
@@ -33,6 +38,43 @@ const cardConfig = {
   },
   interval: 'day',
 };
+const barChartCardConfig = {
+  id: 'BarChart',
+  title: 'BarChartCard',
+  size: 'MEDIUM',
+  type: 'BAR',
+  content: {
+    type: 'STACKED',
+    series: [
+      {
+        label: 'Temperature',
+        dataSourceId: 'temperature',
+        color: 'red',
+      },
+    ],
+    xLabel: 'Time',
+    yLabel: 'Temperature (˚F)',
+    timeDataSourceId: 'timestamp',
+  },
+  interval: 'day',
+};
+const valueCardConfig = {
+  id: 'ValueCard',
+  title: 'Value Card',
+  type: 'VALUE',
+  size: 'MEDIUM',
+  content: {
+    attributes: [
+      {
+        dataSourceId: 'key2',
+        unit: 'lb',
+        label: 'Key 2',
+      },
+    ],
+    fontSize: 16,
+    precision: 5,
+  },
+};
 
 const dataItems = [
   { dataSourceId: 'temperature', label: 'Temperature' },
@@ -47,38 +89,6 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 describe('DataSeriesFormItem', () => {
-  describe('formatSeries', () => {
-    const cardConfigWithoutColorDefinition = {
-      content: {
-        series: [
-          {
-            label: 'Temperature',
-            dataSourceId: 'temperature',
-          },
-          {
-            label: 'Pressure',
-            dataSourceId: 'pressure',
-          },
-        ],
-      },
-    };
-    const selectedItems = [
-      { id: 'temperature', text: 'Temperature' },
-      { id: 'pressure', text: 'Pressure' },
-    ];
-    it('should correctly format the card series', () => {
-      expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
-      ]);
-    });
-    it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(formatSeries(selectedItems, cardConfigWithoutColorDefinition)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
-      ]);
-    });
-  });
   describe('formatDataItemsForDropdown', () => {
     it('should correctly format the items for the dropdown', () => {
       expect(formatDataItemsForDropdown(dataItems)).toEqual([
@@ -110,7 +120,211 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
-      expect(screen.getByText('Data series')).toBeInTheDocument();
+      expect(screen.getByText('Data')).toBeInTheDocument();
+    });
+    it('should remove the category if the card is a stacked timeseries bar', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={barChartCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      const dataItemDropDown = screen.getByText('Select data items');
+      expect(dataItemDropDown).toBeInTheDocument();
+      fireEvent.click(dataItemDropDown);
+
+      const pressureOption = screen.getByText('pressure');
+      expect(pressureOption).toBeInTheDocument();
+      fireEvent.click(pressureOption);
+
+      expect(mockOnChange).toHaveBeenCalledWith({
+        id: 'BarChart',
+        interval: 'day',
+        size: 'MEDIUM',
+        title: 'BarChartCard',
+        type: 'BAR',
+        content: {
+          series: [
+            {
+              color: 'red',
+              dataSourceId: 'temperature',
+              label: 'Temperature',
+            },
+            {
+              color: '#1192e8',
+              dataSourceId: 'pressure',
+              label: 'pressure',
+            },
+          ],
+          timeDataSourceId: 'timestamp',
+          type: 'STACKED',
+          xLabel: 'Time',
+          yLabel: 'Temperature (˚F)',
+        },
+      });
+    });
+    it('sets selected data items in a simple bar chart', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={{
+            ...barChartCardConfig,
+            content: { ...barChartCardConfig.content, type: 'SIMPLE' },
+          }}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      const dataItemDropDown = screen.getByText('temperature');
+      expect(dataItemDropDown).toBeInTheDocument();
+      fireEvent.click(dataItemDropDown);
+
+      const pressureOption = screen.getByText('pressure');
+      expect(pressureOption).toBeInTheDocument();
+      fireEvent.click(pressureOption);
+
+      expect(mockOnChange).toHaveBeenCalled();
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+    });
+    it('handles row actions for dataItems for complexDataSeries', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={barChartCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Remove',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+    it('handles row actions for dataItems for simpleDataSeries', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={valueCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Edit',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      const editDataItemModal = screen.getByText('Data item');
+      expect(editDataItemModal).toBeInTheDocument();
+    });
+  });
+  describe('defineCardSpecificTooltip', () => {
+    const i18n = {
+      dataItemEditorSectionSimpleBarTooltipText:
+        'Display a metric using bars. Plot over time or by a dimension from Group by.',
+      dataItemEditorSectionGroupedBarTooltipText:
+        'Group categories side by side in bars. Show groupings of related metrics or different categories of a single metric.',
+      dataItemEditorSectionStackedBarTooltipText:
+        'Stack bars by categories of a single dimension or into multiple related metrics.',
+      dataItemEditorSectionTimeSeriesTooltipText:
+        'Plot time series metrics over time.',
+      dataItemEditorSectionValueTooltipText:
+        'Display metric values, dimension values, or alert counts. Select from Data item. ',
+      dataItemEditorSectionCustomTooltipText:
+        'Show or hide alert fields. Choose dimensions to add as extra columns. ',
+    };
+    const dataSeriesItemLinks = {
+      simpleBar: 'simplebar.com',
+      groupedBar: 'groupedbar.com',
+      stackedBar: 'stackedbar.com',
+      timeSeries: 'timeseries.com',
+      value: 'value.com',
+      custom: 'custom.com',
+    };
+    it('should return simple bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.SIMPLE } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionSimpleBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.simpleBar,
+      });
+    });
+    it('should return grouped bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.GROUPED } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionGroupedBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.groupedBar,
+      });
+    });
+    it('should return stacked bar tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.BAR, content: { type: BAR_CHART_TYPES.STACKED } },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionStackedBarTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.stackedBar,
+      });
+    });
+    it('should return timeseries tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.TIMESERIES },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionTimeSeriesTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.timeSeries,
+      });
+    });
+    it('should return value tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.VALUE },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionValueTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.value,
+      });
+    });
+    it('should return custom tooltip', () => {
+      expect(
+        defineCardSpecificTooltip(
+          { type: CARD_TYPES.CUSTOM },
+          dataSeriesItemLinks,
+          i18n
+        )
+      ).toEqual({
+        tooltipText: i18n.dataItemEditorSectionCustomTooltipText,
+        linkText: i18n.dataItemEditorSectionTooltipLinkText,
+        href: dataSeriesItemLinks.custom,
+      });
     });
   });
   describe('dataItem editor', () => {
@@ -134,13 +348,14 @@ describe('DataSeriesFormItem', () => {
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockSetSelectedDataItems).toHaveBeenCalled();
       // click the edit icon on the data item
-      const editButton = screen.getAllByText('Edit');
-      expect(editButton[0]).toBeInTheDocument();
-      fireEvent.click(editButton[0]);
-      // the legend color picker is only present on the edit data item modal
-      const legendColorPicker = screen.getByText('Legend color');
-      expect(legendColorPicker).toBeInTheDocument();
-      userEvent.type(screen.getByRole('textbox', { name: 'Label' }), 'changed label');
+      const customizeButton = screen.getByText('Customize');
+      expect(customizeButton).toBeInTheDocument();
+      fireEvent.click(customizeButton);
+
+      userEvent.type(
+        screen.getByRole('cell', { name: 'Temperature' }),
+        'changed label'
+      );
       expect(mockOnChange).toHaveBeenCalled();
       // submit the changes
       const submitButton = screen.getByText('Save');

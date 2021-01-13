@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { red50, blue50, green50 } from '@carbon/colors';
 
 import { settings } from '../../constants/Settings';
+import { hexToRgb } from '../../utils/componentUtilityFunctions';
 
 import ColorDropdown from './ColorDropdown';
 
@@ -16,21 +17,20 @@ describe('ColorDropdown', () => {
     { carbonColor: blue50, name: 'blue' },
   ];
 
-  const getHexColor = (name) => getColors().find((obj) => obj.name === name).carbonColor;
+  const getHexColor = (name) =>
+    getColors().find((obj) => obj.name === name).carbonColor;
 
   const hexToRgbStyle = (hexColor) => {
-    const regexResult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColor);
-    const radix = 16;
-    const r = parseInt(regexResult[1], radix);
-    const g = parseInt(regexResult[2], radix);
-    const b = parseInt(regexResult[3], radix);
+    const { r, g, b } = hexToRgb(hexColor);
     return `rgb(${r}, ${g}, ${b})`;
   };
 
   it('renders default labels', () => {
     render(<ColorDropdown id="myColorDropdown" onChange={() => {}} />);
 
-    expect(within(screen.getByRole('button')).getByText('Select a color')).toBeTruthy();
+    expect(
+      within(screen.getByRole('button')).getByText('Select a color')
+    ).toBeTruthy();
 
     expect(screen.getByText('Color')).toBeVisible();
   });
@@ -39,7 +39,12 @@ describe('ColorDropdown', () => {
     const label = 'my label';
     const titleText = 'My title text';
     render(
-      <ColorDropdown id="myColorDropdown" label={label} titleText={titleText} onChange={() => {}} />
+      <ColorDropdown
+        id="myColorDropdown"
+        label={label}
+        titleText={titleText}
+        onChange={() => {}}
+      />
     );
 
     expect(within(screen.getByRole('button')).getByText(label)).toBeTruthy();
@@ -64,7 +69,13 @@ describe('ColorDropdown', () => {
 
   it('renders the selected value correctly', () => {
     const onChange = jest.fn();
-    render(<ColorDropdown id="myColorDropdown" colors={getColors()} onChange={onChange} />);
+    render(
+      <ColorDropdown
+        id="myColorDropdown"
+        colors={getColors()}
+        onChange={onChange}
+      />
+    );
     userEvent.click(screen.getByText('Select a color'));
 
     const firstItem = screen.getAllByRole('option')[0];
@@ -74,7 +85,9 @@ describe('ColorDropdown', () => {
     const button = screen.getByRole('button');
     expect(within(button).getByText('red')).toBeVisible();
     const colorSample = within(button).getByTitle(getHexColor('red'));
-    expect(colorSample).toHaveClass(`${iotPrefix}--color-dropdown__color-sample`);
+    expect(colorSample).toHaveClass(
+      `${iotPrefix}--color-dropdown__color-sample`
+    );
     expect(colorSample).toHaveStyle({
       backgroundColor: hexToRgbStyle(getHexColor('red')),
     });
@@ -82,21 +95,33 @@ describe('ColorDropdown', () => {
 
   it('renders the selectable items correctly', () => {
     const onChange = jest.fn();
-    render(<ColorDropdown id="myColorDropdown" colors={getColors()} onChange={onChange} />);
+    render(
+      <ColorDropdown
+        id="myColorDropdown"
+        colors={getColors()}
+        onChange={onChange}
+      />
+    );
     userEvent.click(screen.getByText('Select a color'));
 
     const firstItem = screen.getAllByRole('option')[0];
     const firstColorSample = within(firstItem).getByTitle(getHexColor('red'));
     expect(within(firstItem).getByText('red')).toBeVisible();
-    expect(firstColorSample).toHaveClass(`${iotPrefix}--color-dropdown__color-sample`);
+    expect(firstColorSample).toHaveClass(
+      `${iotPrefix}--color-dropdown__color-sample`
+    );
     expect(firstColorSample).toHaveStyle({
       backgroundColor: hexToRgbStyle(getHexColor('red')),
     });
 
     const secondItem = screen.getAllByRole('option')[1];
-    const secondColorSample = within(secondItem).getByTitle(getHexColor('green'));
+    const secondColorSample = within(secondItem).getByTitle(
+      getHexColor('green')
+    );
     expect(within(secondItem).getByText('green')).toBeVisible();
-    expect(secondColorSample).toHaveClass(`${iotPrefix}--color-dropdown__color-sample`);
+    expect(secondColorSample).toHaveClass(
+      `${iotPrefix}--color-dropdown__color-sample`
+    );
     expect(secondColorSample).toHaveStyle({
       backgroundColor: hexToRgbStyle(getHexColor('green')),
     });
@@ -104,7 +129,13 @@ describe('ColorDropdown', () => {
 
   it('calls onChange with the selected color when a color is selected', () => {
     const onChange = jest.fn();
-    render(<ColorDropdown colors={getColors()} id="myColorDropdown" onChange={onChange} />);
+    render(
+      <ColorDropdown
+        colors={getColors()}
+        id="myColorDropdown"
+        onChange={onChange}
+      />
+    );
     userEvent.click(screen.getByText('Select a color'));
     const firstItem = screen.getAllByRole('option')[0];
     userEvent.click(firstItem);
