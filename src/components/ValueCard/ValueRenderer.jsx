@@ -3,29 +3,24 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
-import { spacing02 } from '@carbon/layout';
 
-import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import {
   getUpdatedCardSize,
   formatNumberWithPrecision,
   determinePrecision,
 } from '../../utils/cardUtilityFunctions';
-import { settings } from '../../constants/Settings';
 
-const { iotPrefix } = settings;
+import { baseClassName } from './valueCardUtils';
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   unit: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
-  isSmall: PropTypes.bool,
-  isMini: PropTypes.bool,
   precision: PropTypes.number,
   /** the card size */
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
-  isVertical: PropTypes.bool,
   /** Allows the unit and threshold icons to wrap into a new line */
   allowedToWrap: PropTypes.bool.isRequired,
   /** Makes the value and the unit smaller */
@@ -36,11 +31,8 @@ const propTypes = {
 
 const defaultProps = {
   layout: CARD_LAYOUTS.HORIZONTAL,
-  isSmall: false,
-  isMini: false,
   precision: 1,
   color: null,
-  isVertical: false,
   wrapCompact: false,
   locale: 'en',
   customFormatter: null,
@@ -49,46 +41,8 @@ const defaultProps = {
 const Attribute = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
-  ${(props) =>
-    (props.unit || props.isSmall) && !props.isVertical && `max-width: 66%`};
   ${(props) => props.color && `color: ${props.color}`};
   display: flex;
-  ${(props) => props.isMini && 'align-items: center;'}
-`;
-
-/** Returns font size in rem */
-const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
-  if (typeof value === 'string') {
-    switch (size) {
-      case CARD_SIZES.SMALL:
-        return value.length > 4 ? 1 : 2;
-      case CARD_SIZES.SMALLWIDE:
-        return layout === CARD_LAYOUTS.HORIZONTAL ? 1.25 : 1;
-      default:
-    }
-  }
-  return isMini ? 1 : isSmall ? 2 : 2.5;
-};
-
-/** Renders the actual attribute value */
-const AttributeValue = styled.span`
-  line-height: ${(props) =>
-    props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem'};
-  font-size: ${(props) => `${determineFontSize(props)}rem`};
-  padding-bottom: ${spacing02};
-  font-weight: ${(props) => (props.isMini ? 'normal' : 'lighter')};
-  ${(props) => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
-  /* autoprefixer: ignore next */
-  ${(props) =>
-    props.allowedToWrap
-      ? `white-space: nowrap; text-overflow: ellipsis;`
-      : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
-  ${(props) => !props.hasWords && 'word-break: break-all;'}
-  overflow: hidden;
-`;
-
-const StyledBoolean = styled.span`
-  text-transform: capitalize;
 `;
 
 /**
@@ -102,10 +56,7 @@ const ValueRenderer = ({
   unit,
   layout,
   precision: precisionProp,
-  isSmall,
-  isMini,
   color,
-  isVertical,
   allowedToWrap,
   wrapCompact,
   locale,
@@ -118,7 +69,11 @@ const ValueRenderer = ({
   let renderValue = value;
 
   if (typeof value === 'boolean') {
-    renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
+    renderValue = (
+      <span className={`${baseClassName}__value-renderer--boolean`}>
+        {value.toString()}
+      </span>
+    );
   }
 
   if (typeof value === 'number') {
@@ -138,26 +93,21 @@ const ValueRenderer = ({
   return (
     <Attribute
       unit={unit}
-      isSmall={isSmall}
-      isMini={isMini}
       color={color}
-      isVertical={isVertical}
       allowedToWrap={allowedToWrap}
       className={classnames({
-        [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
-        [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
+        [`${baseClassName}__value-renderer--wrappable`]: allowedToWrap,
+        [`${baseClassName}__value-renderer--wrappable-compact`]: wrapCompact,
       })}>
-      <AttributeValue
-        size={newSize}
-        title={`${value} ${unit || ''}`}
-        layout={layout}
-        isSmall={isSmall}
-        isMini={isMini}
-        value={value}
-        allowedToWrap={allowedToWrap}
-        hasWords={hasWords}>
+      <span
+        className={classnames(`${baseClassName}__value-renderer--value`, {
+          [`${baseClassName}__value-renderer--value--vertical`]:
+            layout === CARD_LAYOUTS.VERTICAL,
+          [`${baseClassName}__value-renderer--value--wrappable`]: allowedToWrap,
+          [`${baseClassName}__value-renderer--value--has-words`]: hasWords,
+        })}>
         {renderValue}
-      </AttributeValue>
+      </span>
     </Attribute>
   );
 };

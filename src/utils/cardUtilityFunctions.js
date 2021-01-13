@@ -88,36 +88,6 @@ export const compareGrains = (grain1, grain2) => {
   return 1;
 };
 
-/** Determine the max value card attribute count */
-export const determineMaxValueCardAttributeCount = (
-  size,
-  currentAttributeCount
-) => {
-  let attributeCount = currentAttributeCount;
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      attributeCount = 1;
-      break;
-    case CARD_SIZES.SMALLWIDE:
-      attributeCount = 2;
-      break;
-    case CARD_SIZES.MEDIUMTHIN:
-    case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.MEDIUMWIDE:
-      attributeCount = 3;
-      break;
-    case CARD_SIZES.LARGE:
-      attributeCount = 5;
-      break;
-    case CARD_SIZES.LARGETHIN:
-    case CARD_SIZES.LARGEWIDE:
-      attributeCount = 7;
-      break;
-    default:
-  }
-  return attributeCount;
-};
-
 export const getUpdatedCardSize = (oldSize) => {
   const changedSize =
     oldSize === 'XSMALL'

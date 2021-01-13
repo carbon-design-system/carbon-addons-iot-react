@@ -11,7 +11,6 @@ const propTypes = {
   value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   unit: PropTypes.string,
   layout: PropTypes.string,
-  isMini: PropTypes.bool,
   allowedToWrap: PropTypes.bool.isRequired,
   wrapCompact: PropTypes.bool,
 };
@@ -19,22 +18,19 @@ const propTypes = {
 const defaultProps = {
   unit: '',
   layout: null,
-  isMini: false,
   wrapCompact: false,
 };
 
 /**
  * This components job is determining how to render different kinds of units
- *
  */
 const UnitRenderer = ({
   value,
   unit,
   layout,
-  isMini,
   allowedToWrap,
   wrapCompact,
-  attributeCount, // eslint-disable-line react/prop-types
+  attributeCount,
 }) => {
   const bemBase = `${iotPrefix}--value-card__attribute-unit`;
   const notAllowedToWrap =
@@ -50,13 +46,12 @@ const UnitRenderer = ({
         [`${bemBase}--wrappable`]: allowedToWrap,
         [`${bemBase}--not-wrappable`]: notAllowedToWrap,
         [`${bemBase}--wrappable-compact`]: wrapCompact,
-        [`${bemBase}--mini`]: isMini,
       })}>
       {unit}
     </span>
   );
 
-  return isMini ? <div>{unitElement}</div> : unitElement;
+  return unitElement;
 };
 
 UnitRenderer.propTypes = propTypes;

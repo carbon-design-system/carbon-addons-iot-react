@@ -697,26 +697,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+                className="iot--value-card__content-wrapper iot--value-card__content-wrapper__horizontal"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
-                  size="SMALLWIDE"
+                  className="iot--value-card__attribute-wrapper"
                 >
                   <div
-                    className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                    className="iot--value-card__attribute iot--value-card__attribute--small"
                     label={null}
                     size="SMALLWIDE"
                   >
                     <div
-                      className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
+                      className="ValueRenderer__Attribute-f4stpz-0 gLPdhK"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
-                        size="SMALLWIDE"
-                        title="88 %"
-                        value={88}
+                        className="iot--value-card__value-renderer--value"
                       >
                         88
                       </span>
@@ -733,8 +729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     </span>
                   </div>
                   <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
-                    size="SMALLWIDE"
+                    className="iot--value-card__attribute-label iot--value-card__attribute-label--not-small iot--value-card__attribute-label--wrappable"
                   />
                 </div>
               </div>

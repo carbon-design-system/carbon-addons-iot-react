@@ -302,7 +302,6 @@ export {
 
 export {
   determineCardRange,
-  determineMaxValueCardAttributeCount,
   compareGrains,
   formatNumberWithPrecision,
   getVariables,
@@ -310,6 +309,8 @@ export {
   replaceVariables,
   findMatchingThresholds,
 } from './utils/cardUtilityFunctions';
+
+export { determineMaxValueCardAttributeCount } from './components/ValueCard/valueCardUtils';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
 

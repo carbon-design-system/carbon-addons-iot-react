@@ -274,7 +274,7 @@ export const BarChartCardPropTypes = {
       props[propName] === CARD_SIZES.SMALLWIDE
     ) {
       error = new Error(
-        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. mum size is \`MEDIUM\``
       );
     }
     return error;
