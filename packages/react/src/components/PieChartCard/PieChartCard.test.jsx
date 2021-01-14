@@ -159,7 +159,7 @@ describe('PieChartCard', () => {
       .map((data) => colorsMap[data.category]);
 
     for (let index = 0; index < orderedColors.length; index += 1) {
-      expect(slices.item(index).getAttribute('fill')).toEqual(orderedColors[index]);
+      expect(getComputedStyle(slices.item(index)).fill).toEqual(orderedColors[index]);
     }
   });
 
@@ -204,8 +204,8 @@ describe('PieChartCard', () => {
     expect(screen.getByText('Sample 1')).toBeVisible();
 
     const slices = screen.getAllByRole('group')[0].getElementsByClassName('slice');
-    const firstSliceColor = slices.item(0).getAttribute('fill');
-    const secondSliceColor = slices.item(1).getAttribute('fill');
+    const firstSliceColor = getComputedStyle(slices[0]).fill;
+    const secondSliceColor = getComputedStyle(slices[1]).fill;
 
     // The sample values are random and the pie chart orders the slices after
     // the value so we don't know the order of the colors in this test.
