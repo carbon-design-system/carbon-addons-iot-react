@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
@@ -18,7 +17,7 @@ export default {
   },
 };
 
-export const SmallBasic = () => {
+export const SmallNoLabel = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -45,43 +44,8 @@ export const SmallBasic = () => {
   );
 };
 
-SmallBasic.story = {
-  name: 'small / basic',
-};
-
-export const SmallWithExpand = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}>
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        availableActions={{
-          expand: true,
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ occupancy: number('occupancy', 88) }}
-        onCardAction={action('Value Card Expand Action')}
-      />
-    </div>
-  );
-};
-
-SmallWithExpand.story = {
-  name: 'small / with expand',
+SmallNoLabel.story = {
+  name: 'small / no label',
 };
 
 export const SmallWithVariables = () => {
@@ -161,46 +125,7 @@ SmallLong.story = {
   name: 'small / long',
 };
 
-export const SmallWrapping = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div style={{ width: text('cardWidth', '120px'), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          occupancy: text(
-            'occupancy',
-            'Really really busy loong long long long'
-          ),
-        }}
-      />
-    </div>
-  );
-};
-
-SmallWrapping.story = {
-  name: 'small / wrapping',
-
-  parameters: {
-    info: {
-      text:
-        'In the case of having a long string value with units, we prioritize seeing the unit. We ellipsis the text while wrapping the unit to display under.',
-    },
-  },
-};
-
-export const SmallWrappingNoUnits = () => {
+export const SmallLongNoUnits = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -232,8 +157,8 @@ export const SmallWrappingNoUnits = () => {
   );
 };
 
-SmallWrappingNoUnits.story = {
-  name: 'small / wrapping no units',
+SmallLongNoUnits.story = {
+  name: 'small / long / no units',
 
   parameters: {
     info: {
@@ -243,7 +168,7 @@ SmallWrappingNoUnits.story = {
   },
 };
 
-export const SmallTitle = () => {
+export const SmallTrendDown = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -251,33 +176,6 @@ export const SmallTitle = () => {
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
-      <ValueCard
-        title={text('title', 'Foot Traffic')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Average',
-              dataSourceId: 'footTraffic',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ footTraffic: number('footTraffic', 13572) }}
-      />
-    </div>
-  );
-};
-
-SmallTitle.story = {
-  name: 'small / title',
-};
-
-export const SmallTrendDown = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div style={{ width: text('cardWidth', `150px`), margin: spacing05 + 4 }}>
       <ValueCard
         title={text('title', 'Foot Traffic')}
         id="facilitycard"
@@ -311,7 +209,11 @@ SmallTrendDown.story = {
 export const SmallTrendUp = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
-    <div style={{ width: text('cardWidth', `150px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
         title={text('title', 'Alert Count')}
         id="facilitycard"
@@ -344,7 +246,7 @@ export const SmallThresholdsNumberNoIcon = () => {
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
       <ValueCard
@@ -391,7 +293,7 @@ export const SmallThresholdsNumberIcon = () => {
   return (
     <div
       style={{
-        width: `${number('cardWidth', 300)}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
       <ValueCard
@@ -429,7 +331,7 @@ export const SmallThresholdsNumberCustomRenderIconByName = () => {
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
       <ValueCard
@@ -475,12 +377,46 @@ SmallThresholdsNumberCustomRenderIconByName.story = {
   name: 'small / thresholds (number, custom renderIconByName)',
 };
 
-export const SmallwideThresholdsString = () => {
+export const SmallWithCustomFormatter = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
+      <ValueCard
+        title={text('title', 'Occupancy')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              dataSourceId: 'occupancy',
+              unit: '%',
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{ occupancy: number('occupancy', 88) }}
+        customFormatter={(formattedValue) => {
+          return text('Custom Value', formattedValue);
+        }}
+      />
+    </div>
+  );
+};
+
+SmallWithCustomFormatter.story = {
+  name: 'small / with custom formatter',
+};
+
+export const SmallWideThresholdsString = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
       <ValueCard
@@ -515,16 +451,16 @@ export const SmallwideThresholdsString = () => {
   );
 };
 
-SmallwideThresholdsString.story = {
-  name: 'smallwide / thresholds (string)',
+SmallWideThresholdsString.story = {
+  name: 'small-wide / thresholds (string)',
 };
 
-export const SmallwideVertical2 = () => {
+export const SmallWide2 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
       <ValueCard
@@ -553,50 +489,11 @@ export const SmallwideVertical2 = () => {
   );
 };
 
-SmallwideVertical2.story = {
-  name: 'smallwide / vertical 2',
+SmallWide2.story = {
+  name: 'small-wide / 2',
 };
 
-export const SmallwideHorizontal2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
-  return (
-    <div
-      style={{
-        width: `${number('cardWidth', 300)}px`,
-        margin: spacing05 + 4,
-      }}>
-      <ValueCard
-        title={text('title', 'Status')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'status',
-              label: 'Status',
-            },
-            {
-              dataSourceId: 'comfortLevel',
-              label: 'Comfort level',
-              unit: 'feels',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          status: text('status', 'Problem'),
-          comfortLevel: text('comfortLevel', 'Healthy'),
-        }}
-      />
-    </div>
-  );
-};
-
-SmallwideHorizontal2.story = {
-  name: 'smallwide / horizontal 2',
-};
-
-export const MediumVerticalSingle = () => {
+export const Medium1 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div
@@ -624,11 +521,52 @@ export const MediumVerticalSingle = () => {
   );
 };
 
-MediumVerticalSingle.story = {
-  name: 'medium / vertical / single',
+Medium1.story = {
+  name: 'medium / 1',
 };
 
-export const MediumVerticalMultiple = () => {
+export const Medium2 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+              unit: '%',
+            },
+            {
+              label: 'Average Temperature',
+              dataSourceId: 'averageTemp',
+              unit: '˚F',
+              precision: 1,
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{
+          comfortLevel: number('comfortLevel', 89),
+          averageTemp: number('averageTemp', 76.7),
+        }}
+      />
+    </div>
+  );
+};
+
+Medium2.story = {
+  name: 'medium / 2',
+};
+
+export const Medium3 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div
@@ -667,55 +605,18 @@ export const MediumVerticalMultiple = () => {
   );
 };
 
-MediumVerticalMultiple.story = {
-  name: 'medium / vertical / multiple',
+Medium3.story = {
+  name: 'medium / 3',
 };
 
-export const MediumVertical2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+export const MediumThin3 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
   return (
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}>
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumVertical2.story = {
-  name: 'medium / vertical /  2',
-};
-
-export const MediumthinVertical3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
-  return (
-    <div style={{ width: text('cardWidth', `120px`), margin: spacing05 + 4 }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -794,51 +695,18 @@ export const MediumthinVertical3 = () => {
   );
 };
 
-MediumthinVertical3.story = {
-  name: 'mediumthin / vertical /  3',
+MediumThin3.story = {
+  name: 'medium-thin / 3',
 };
 
-export const MediumHorizontal2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+export const MediumWide3 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumHorizontal2.story = {
-  name: 'medium / horizontal /  2',
-};
-
-export const MediumHorizontal3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -870,14 +738,18 @@ export const MediumHorizontal3 = () => {
   );
 };
 
-MediumHorizontal3.story = {
-  name: 'medium / horizontal /  3',
+MediumWide3.story = {
+  name: 'medium-wide / 3',
 };
 
-export const LargeVertical5 = () => {
+export const Large5 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -913,14 +785,18 @@ export const LargeVertical5 = () => {
   );
 };
 
-LargeVertical5.story = {
-  name: 'large / vertical /  5',
+Large5.story = {
+  name: 'large / 5',
 };
 
-export const LargeThinVertical6 = () => {
+export const LargeThin6 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
   return (
-    <div style={{ width: text('cardWidth', `250px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -960,47 +836,8 @@ export const LargeThinVertical6 = () => {
   );
 };
 
-LargeThinVertical6.story = {
-  name: 'large-thin / vertical /  6',
-};
-
-export const MediumWideHorizontal3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-            { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-          utilization: number('utilization', 76),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumWideHorizontal3.story = {
-  name: 'medium-wide / horizontal /  3',
+LargeThin6.story = {
+  name: 'large-thin / 6',
 };
 
 export const WithBoolean = () => {
@@ -1056,10 +893,6 @@ EmptyState.story = {
 
 export const DataStateNoDataMediumScrollPage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const width = text(
-    'cardWidth',
-    `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`
-  );
 
   const myDataState = {
     type: select(
@@ -1080,9 +913,12 @@ export const DataStateNoDataMediumScrollPage = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
-        style={{ width }}
         title={text('title', 'Health score')}
         content={{
           attributes: [
@@ -1380,7 +1216,11 @@ Editable.story = {
 export const DataFilters = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
       <ValueCard
         title={text('title', 'Facility Conditions per device')}
         id="facilitycard"
@@ -1445,38 +1285,4 @@ export const Locale = () => {
 
 Locale.story = {
   name: 'locale',
-};
-
-export const SmallWithCustomFormatter = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}>
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ occupancy: number('occupancy', 88) }}
-        customFormatter={(formattedValue) => {
-          return text('Custom Value', formattedValue);
-        }}
-      />
-    </div>
-  );
-};
-
-SmallWithCustomFormatter.story = {
-  name: 'small / with custom formatter',
 };

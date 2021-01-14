@@ -4,7 +4,9 @@ import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-export const baseClassName = `${iotPrefix}--value-card`;
+
+export const BASE_CLASS_NAME = `${iotPrefix}--value-card`;
+export const PREVIEW_DATA = '--';
 
 /** Determine the max value card attribute count */
 // TODO: this is no longer valid with new design

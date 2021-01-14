@@ -61,7 +61,8 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
         <NumberInput
           id={`${id}_value-card-font-size`}
           step={1}
-          min={0}
+          min={16}
+          max={54}
           light
           label={mergedI18n.fontSize}
           value={content?.fontSize?.toString() || 16}

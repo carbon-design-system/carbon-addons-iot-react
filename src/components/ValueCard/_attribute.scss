@@ -2,22 +2,15 @@
 
 .#{$iot-prefix}--value-card__attribute {
   display: flex;
-  align-items: 'baseline';
-  order: 1;
-  width: 50% &--wrappable {
-    flex-wrap: wrap;
-  }
-
-  &--small {
-    width: 100%;
-  }
+  // need a set width to determine where to place the next attribute
+  //width: 248px;
+  // need a set height to determine truncation vs wrapping. This is the max font size allowed
+  height: 54px;
+  // line up the value and unit
+  align-items: baseline;
 
   &-icon-container {
     margin-left: auto;
-  }
-
-  &-icon-container--wrappable {
-    margin-left: 0;
   }
 
   &-threshold-icon-container {
@@ -26,11 +19,32 @@
     margin: 0 0 $spacing-03 $spacing-03;
   }
 
-  &-threshold-icon-container--wrappable {
-    margin-left: 0;
-  }
-
   &_trend-icon {
     margin-right: $spacing-02;
+  }
+
+  &-wrapper {
+    padding: 0 0 $spacing-05 $spacing-05;
+    width: 100%;
+  }
+
+  &-label {
+    @include type-style('helper-text-01');
+    text-align: left;
+    color: gray;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &--secondary-value {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    padding-left: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-value-color);
+    color: var(--secondary-value-color);
   }
 }

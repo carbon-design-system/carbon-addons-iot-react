@@ -1,38 +1,27 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--value-card__value-renderer {
-  &--wrappable {
-    margin-right: $carbon--spacing-02;
-  }
-
-  &--wrappable-compact {
-    > span {
-      line-height: $carbon--spacing-06;
-      font-size: $carbon--spacing-06;
-    }
-  }
-
   &--boolean {
     text-transform: capitalize;
   }
 
   &--value {
-    line-height: '2.5rem';
-    padding-bottom: $spacing02;
-    font-weight: 'lighter';
+    @include type-style('productive-heading-06');
+    width: 204px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--value-renderer-font-size);
 
     &--vertical {
       text-align: left;
     }
+  }
 
-    &--wrappable {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    &--has-words {
-      word-break: break-all;
-    }
+  &--wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    color: var(--value-renderer-color-option);
   }
 }

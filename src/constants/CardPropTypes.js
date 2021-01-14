@@ -121,6 +121,8 @@ export const ValueCardPropTypes = {
    * the original value and expects a value to be returned that will be rendered on the value card.
    */
   customFormatter: PropTypes.func,
+  /** optional custom font size for the displayed value */
+  fontSize: PropTypes.number,
 };
 
 export const TableCardPropTypes = {

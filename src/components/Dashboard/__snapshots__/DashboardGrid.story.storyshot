@@ -697,22 +697,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="iot--value-card__content-wrapper iot--value-card__content-wrapper__horizontal"
+                className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
               >
                 <div
                   className="iot--value-card__attribute-wrapper"
                 >
                   <div
-                    className="iot--value-card__attribute iot--value-card__attribute--small"
-                    label={null}
-                    size="SMALLWIDE"
+                    className="iot--value-card__attribute-label"
+                  />
+                  <div
+                    className="iot--value-card__attribute"
                   >
                     <div
-                      className="ValueRenderer__Attribute-f4stpz-0 gLPdhK"
-                      color={null}
+                      className="iot--value-card__value-renderer--wrapper"
+                      style={
+                        Object {
+                          "--value-renderer-color": null,
+                        }
+                      }
                     >
                       <span
                         className="iot--value-card__value-renderer--value"
+                        style={
+                          Object {
+                            "--value-renderer-font-size": "42px",
+                          }
+                        }
                       >
                         88
                       </span>
@@ -728,9 +738,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       %
                     </span>
                   </div>
-                  <div
-                    className="iot--value-card__attribute-label iot--value-card__attribute-label--not-small iot--value-card__attribute-label--wrappable"
-                  />
                 </div>
               </div>
               <span

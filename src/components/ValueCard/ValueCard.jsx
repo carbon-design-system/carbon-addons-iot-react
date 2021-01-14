@@ -1,8 +1,6 @@
 import React from 'react';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
-import find from 'lodash/find';
 import classnames from 'classnames';
 
 import {
@@ -19,10 +17,10 @@ import {
 import DataStateRenderer from '../Card/DataStateRenderer';
 
 import {
-  baseClassName,
+  BASE_CLASS_NAME,
+  PREVIEW_DATA,
   determineLayout,
   determineValue,
-  shouldLabelWrap,
 } from './valueCardUtils';
 import Attribute from './Attribute';
 
@@ -30,10 +28,7 @@ import Attribute from './Attribute';
  * This components responsibilities include:
  * Rendering the attribute groups
  * Determining the layout
- * determining the wrapping rules (should be moved to attribute)
- * determining the position of the label (should be moved to attribute)
  * determines the data to render
- * completing the card variables
  */
 const ValueCard = ({
   title: titleProp,
@@ -48,12 +43,16 @@ const ValueCard = ({
   locale,
   customFormatter,
   children,
+  fontSize,
   ...others
 }) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
   };
+
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
 
   const resizeHandles = isResizable ? getResizeHandles(children) : [];
 
@@ -64,14 +63,6 @@ const ValueCard = ({
     valuesProp,
     others
   );
-
-  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const newSize = getUpdatedCardSize(size);
-
-  const shouldDoubleWrap =
-    content.attributes.length === 1 &&
-    find(values, (value) => typeof value === 'string') &&
-    Object.keys(values).length === 1;
 
   return (
     <withSize.SizeMe>
@@ -95,85 +86,54 @@ const ValueCard = ({
             id={id}
             {...others}>
             <div
-              className={classnames(`${baseClassName}__content-wrapper`, {
-                [`${baseClassName}__content-wrapper__horizontal`]:
+              className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
+                [`${BASE_CLASS_NAME}__content-wrapper--horizontal`]:
                   layout === CARD_LAYOUTS.HORIZONTAL,
-                [`${baseClassName}__content-wrapper__vertical`]:
+                [`${BASE_CLASS_NAME}__content-wrapper--vertical`]:
                   layout === CARD_LAYOUTS.VERTICAL,
               })}>
-              {!isNil(dataState) ? (
+              {!dataState ? (
+                content.attributes.map((attribute) => (
+                  <Attribute
+                    attribute={attribute}
+                    layout={layout}
+                    locale={locale}
+                    isEditable={isEditable}
+                    title={title}
+                    renderIconByName={others.renderIconByName}
+                    size={newSize}
+                    value={
+                      // When the card is in the editable state, we will show a preview
+                      isEditable
+                        ? PREVIEW_DATA
+                        : determineValue(
+                            attribute.dataSourceId,
+                            values,
+                            attribute.dataFilter
+                          )
+                    }
+                    secondaryValue={
+                      attribute.secondaryValue && {
+                        ...attribute.secondaryValue,
+                        // When the card is in the editable state, we will show a preview
+                        value: isEditable
+                          ? PREVIEW_DATA
+                          : determineValue(
+                              attribute.secondaryValue.dataSourceId,
+                              values
+                            ),
+                      }
+                    }
+                    customFormatter={customFormatter}
+                    fontSize={fontSize}
+                  />
+                ))
+              ) : (
                 <DataStateRenderer
                   dataState={dataState}
                   size={newSize}
                   id={id}
                 />
-              ) : (
-                content.attributes.map((attribute, attrIndex) => (
-                  <React.Fragment
-                    key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
-                      attribute.dataFilter || {}
-                    )}`}>
-                    <div className={`${baseClassName}__attribute-wrapper`}>
-                      <Attribute
-                        attributeCount={content.attributes.length}
-                        layout={layout}
-                        locale={locale}
-                        isEditable={isEditable}
-                        {...attribute}
-                        renderIconByName={others.renderIconByName}
-                        size={newSize} // When the card is in the editable state, we will show a preview
-                        value={
-                          isEditable
-                            ? '--'
-                            : determineValue(
-                                attribute.dataSourceId,
-                                values,
-                                attribute.dataFilter
-                              )
-                        }
-                        secondaryValue={
-                          attribute.secondaryValue && {
-                            ...attribute.secondaryValue,
-                            value: isEditable // When the card is in the editable state, we will show a preview
-                              ? '--'
-                              : determineValue(
-                                  attribute.secondaryValue.dataSourceId,
-                                  values
-                                ),
-                          }
-                        }
-                        customFormatter={customFormatter}
-                      />
-                      <div
-                        className={classnames(
-                          `${baseClassName}__attribute-label`,
-                          {
-                            [`${baseClassName}__attribute-label--small-medium`]:
-                              size === CARD_SIZES.SMALL ||
-                              size === CARD_SIZES.MEDIUM,
-                            [`${baseClassName}__attribute-label--not-small`]:
-                              size === CARD_SIZES.SMALL ||
-                              size === CARD_SIZES.SMALLWIDE,
-                            [`${baseClassName}__attribute-label--wrappable`]: !shouldLabelWrap(
-                              title
-                            ),
-                            [`${baseClassName}__attribute-label--double-wrap`]: shouldDoubleWrap,
-                          }
-                        )}>
-                        {attribute.label}
-                      </div>
-                    </div>
-                    {attrIndex < content.attributes.length - 1 &&
-                    layout === CARD_LAYOUTS.VERTICAL &&
-                    newSize !== CARD_SIZES.SMALLWIDE ? (
-                      <div className={`${baseClassName}__attribute-wrapper`}>
-                        <hr
-                          className={`${baseClassName}__attribute-separator`}
-                        />
-                      </div>
-                    ) : null}
-                  </React.Fragment>
-                ))
               )}
             </div>
             {resizeHandles}
@@ -191,6 +151,10 @@ ValueCard.defaultProps = {
   locale: 'en',
   dataState: null,
   values: null,
+  // default productive-heading-06 font size
+  fontSize: 42,
+  cardVariables: null,
+  customFormatter: null,
 };
 
 export default ValueCard;
