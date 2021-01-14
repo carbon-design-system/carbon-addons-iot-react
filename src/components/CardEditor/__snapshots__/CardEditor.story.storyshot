@@ -3281,11 +3281,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
                           <div
+                            className="iot--card-edit-form--data-item-list--item-color-icon"
                             style={
                               Object {
-                                "backgroundColor": "#6929c4",
-                                "height": "1rem",
-                                "width": "1rem",
+                                "--icon-color-option": "#6929c4",
                               }
                             }
                           />
@@ -3385,11 +3384,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--list-item--content--icon iot--list-item--content--icon__left"
                         >
                           <div
+                            className="iot--card-edit-form--data-item-list--item-color-icon"
                             style={
                               Object {
-                                "backgroundColor": "#1192e8",
-                                "height": "1rem",
-                                "width": "1rem",
+                                "--icon-color-option": "#1192e8",
                               }
                             }
                           />

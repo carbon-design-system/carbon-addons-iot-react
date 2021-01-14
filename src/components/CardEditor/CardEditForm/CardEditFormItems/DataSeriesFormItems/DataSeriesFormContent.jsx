@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import omit from 'lodash/omit';
@@ -278,8 +278,10 @@ const DataSeriesFormItem = ({
       : cardConfig?.content?.attributes;
 
   // initialize items with a unique id if not present
-  const dataSection = data?.map((item) =>
-    !item.uuid ? { ...item, uuid: uuid.v4() } : item
+  const dataSection = useMemo(
+    () =>
+      data?.map((item) => (!item.uuid ? { ...item, uuid: uuid.v4() } : item)),
+    [data]
   );
 
   const initialSelectedItems = formatDataItemsForDropdown(dataSection);
@@ -328,6 +330,53 @@ const DataSeriesFormItem = ({
       setSelectedDataItems(selectedItems.map(({ id }) => id));
       onChange(newCard);
     }
+  };
+
+  const handleEditButton = (dataItem, i) => {
+    const dataItemWithMetaData = validDataItems?.find(
+      ({ dataSourceId }) => dataSourceId === dataItem.dataSourceId
+    );
+    setEditDataItem({
+      ...omit(dataItemWithMetaData, 'uuid'),
+      ...dataItem,
+      ...(cardConfig.type === CARD_TYPES.TIMESERIES ||
+      cardConfig.type === CARD_TYPES.BAR
+        ? {
+            color:
+              dataItem.color ||
+              DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+          }
+        : {}),
+    });
+    // need to reset the card to include the unique id's
+    onChange({
+      ...cardConfig,
+      content: {
+        ...cardConfig.content,
+        ...(cardConfig.type === CARD_TYPES.VALUE
+          ? { attributes: dataSection }
+          : { series: dataSection }),
+      },
+    });
+    setShowEditor(true);
+  };
+
+  const handleRemoveButton = (dataItem) => {
+    const filteredItems = dataSection.filter(
+      (item) => item.uuid !== dataItem.uuid
+    );
+    setSelectedDataItems(filteredItems.map((item) => item.dataSourceId));
+    setRemovedDataItems([...removedDataItems, dataItem]);
+    setEditDataSeries(filteredItems);
+    onChange({
+      ...cardConfig,
+      content: {
+        ...cardConfig.content,
+        ...(cardConfig.type === CARD_TYPES.VALUE
+          ? { attributes: filteredItems }
+          : { series: filteredItems }),
+      },
+    });
   };
 
   return (
@@ -447,97 +496,49 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem, i) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            icon:
-              cardConfig.type === CARD_TYPES.TIMESERIES ||
-              cardConfig.type === CARD_TYPES.BAR ? (
-                <div
-                  style={{
-                    width: '1rem',
-                    height: '1rem',
-                    backgroundColor:
-                      dataItem.color ||
-                      DATAITEM_COLORS_OPTIONS[
-                        i % DATAITEM_COLORS_OPTIONS.length
-                      ],
-                  }}
-                />
-              ) : null,
-            rowActions: () => [
-              !isComplexDataSeries && [
+        items={dataSection?.map((dataItem, i) => {
+          const iconColorOption =
+            dataItem.color ||
+            DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+          return {
+            id: dataItem.dataSourceId,
+            content: {
+              value: dataItem.label,
+              icon:
+                cardConfig.type === CARD_TYPES.TIMESERIES ||
+                cardConfig.type === CARD_TYPES.BAR ? (
+                  <div
+                    className={`${baseClassName}--data-item-list--item-color-icon`}
+                    style={{
+                      '--icon-color-option': iconColorOption,
+                    }}
+                  />
+                ) : null,
+              rowActions: () => [
+                !isComplexDataSeries && [
+                  <Button
+                    key={`data-item-${dataItem.dataSourceId}_edit`}
+                    renderIcon={Edit16}
+                    hasIconOnly
+                    kind="ghost"
+                    size="small"
+                    onClick={() => handleEditButton(dataItem, i)}
+                    iconDescription={mergedI18n.edit}
+                  />,
+                ],
                 <Button
-                  key={`data-item-${dataItem.dataSourceId}_edit`}
-                  renderIcon={Edit16}
+                  key={`data-item-${dataItem.dataSourceId}_remove`}
+                  renderIcon={Subtract16}
                   hasIconOnly
                   kind="ghost"
                   size="small"
-                  onClick={() => {
-                    const dataItemWithMetaData = validDataItems?.find(
-                      ({ dataSourceId }) =>
-                        dataSourceId === dataItem.dataSourceId
-                    );
-                    setEditDataItem({
-                      ...omit(dataItemWithMetaData, 'uuid'),
-                      ...dataItem,
-                      ...(cardConfig.type === CARD_TYPES.TIMESERIES ||
-                      cardConfig.type === CARD_TYPES.BAR
-                        ? {
-                            color:
-                              dataItem.color ||
-                              DATAITEM_COLORS_OPTIONS[
-                                i % DATAITEM_COLORS_OPTIONS.length
-                              ],
-                          }
-                        : {}),
-                    });
-                    // need to reset the card to include the unique id's
-                    onChange({
-                      ...cardConfig,
-                      content: {
-                        ...cardConfig.content,
-                        ...(cardConfig.type === CARD_TYPES.VALUE
-                          ? { attributes: dataSection }
-                          : { series: dataSection }),
-                      },
-                    });
-                    setShowEditor(true);
-                  }}
-                  iconDescription={mergedI18n.edit}
+                  onClick={() => handleRemoveButton(dataItem)}
+                  iconDescription={mergedI18n.remove}
                 />,
               ],
-              <Button
-                key={`data-item-${dataItem.dataSourceId}_remove`}
-                renderIcon={Subtract16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  const filteredItems = dataSection.filter(
-                    (item) => item.uuid !== dataItem.uuid
-                  );
-                  setSelectedDataItems(
-                    filteredItems.map((item) => item.dataSourceId)
-                  );
-                  setRemovedDataItems([...removedDataItems, dataItem]);
-                  setEditDataSeries(filteredItems);
-                  onChange({
-                    ...cardConfig,
-                    content: {
-                      ...cardConfig.content,
-                      ...(cardConfig.type === CARD_TYPES.VALUE
-                        ? { attributes: filteredItems }
-                        : { series: filteredItems }),
-                    },
-                  });
-                }}
-                iconDescription={mergedI18n.remove}
-              />,
-            ],
-          },
-        }))}
+            },
+          };
+        })}
       />
       {isComplexDataSeries && dataSection.length ? (
         <Button

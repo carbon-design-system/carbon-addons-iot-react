@@ -53,7 +53,7 @@
   }
 
   &--input-label {
-    font-size: 0.75rem;
+    font-size: $spacing-04;
   }
 
   &--input {
@@ -63,7 +63,7 @@
     }
 
     &--label {
-      font-size: 0.75rem;
+      font-size: $spacing-04;
     }
     &--toggle-field {
       display: flex;
@@ -113,21 +113,21 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-bottom: 1rem;
+    padding-bottom: $spacing-05;
     &--item {
       .#{$iot-prefix}--color-dropdown {
         margin-bottom: 1.25rem;
       }
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
       display: flex;
       flex-direction: column;
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 50%;
       &-label {
-        margin-bottom: 1rem;
+        margin-bottom: $spacing-05;
       }
       &-content {
         margin-bottom: 0.6rem;
@@ -137,12 +137,12 @@
       width: 100%;
     }
     &--item-dropdown {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       max-width: 5rem;
     }
 
     &--span {
-      font-size: 0.75rem;
+      font-size: $spacing-04;
     }
   }
   &--threshold-input-group {
@@ -151,18 +151,18 @@
     align-items: flex-end;
     justify-content: space-between;
     &--item {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 50%;
     }
     &--item-end {
       width: 100%;
     }
     &--item-dropdown {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       max-width: 5rem;
     }
   }
@@ -231,5 +231,10 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
   // add more spacing to the item so that the content will still align
   .#{$iot-prefix}--list-item {
     padding-left: $spacing-05;
+  }
+  &--item-color-icon {
+    width: $spacing-05;
+    height: $spacing-05;
+    background-color: var(--icon-color-option);
   }
 }
