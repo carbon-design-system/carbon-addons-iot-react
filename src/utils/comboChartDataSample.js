@@ -617,7 +617,7 @@ export const comboDataOptions = {
     position: 'top',
   },
 
-  title: 'Area (time series)',
+  title: 'Area + Line',
   axes: {
     bottom: {
       title: 'Date',

@@ -86,5 +86,5 @@ export const ComboChartCardArea = () => (
 );
 
 ComboChartCardArea.story = {
-  name: 'area',
+  name: 'Area and Line',
 };
