@@ -14,19 +14,13 @@ export default {
   parameters: {
     component: HotspotContent,
 
-    info:
-      'This Hotspot content is recommended to be used with a Carbon tooltip',
+    info: 'This Hotspot content is recommended to be used with a Carbon tooltip',
   },
 };
 
 export const Basic = () => {
   return (
-    <Tooltip
-      open
-      direction="right"
-      triggerId="tooltipTrigger"
-      id="tooltip"
-      tooltipId="tooltip">
+    <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip" tooltipId="tooltip">
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
@@ -46,12 +40,7 @@ Basic.story = {
 
 export const BasicWithUnitsAndPrecision = () => {
   return (
-    <Tooltip
-      open
-      direction="right"
-      triggerId="tooltipTrigger"
-      id="tooltip"
-      tooltipId="tooltip">
+    <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip" tooltipId="tooltip">
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
@@ -81,12 +70,7 @@ BasicWithUnitsAndPrecision.story = {
 
 export const WithThresholds = () => {
   return (
-    <Tooltip
-      open
-      direction="right"
-      triggerId="tooltipTrigger"
-      id="tooltip"
-      tooltipId="tooltip">
+    <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip" tooltipId="tooltip">
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
@@ -97,9 +81,7 @@ export const WithThresholds = () => {
             label: 'Temperature',
             precision: 3,
             unit: 'C',
-            thresholds: [
-              { comparison: '>', value: 30, icon: 'Warning', color: red60 },
-            ],
+            thresholds: [{ comparison: '>', value: 30, icon: 'Warning', color: red60 }],
           },
           {
             dataSourceId: 'humidity',
@@ -139,12 +121,7 @@ WithThresholds.story = {
 
 export const Locale = () => {
   return (
-    <Tooltip
-      open
-      direction="right"
-      triggerId="tooltipTrigger"
-      id="tooltip"
-      tooltipId="tooltip">
+    <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip" tooltipId="tooltip">
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}

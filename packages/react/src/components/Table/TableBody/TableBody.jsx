@@ -51,8 +51,7 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate'])
-    .isRequired,
+  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
@@ -148,22 +147,15 @@ const TableBody = ({
     [columns, ordering]
   );
 
-  const someRowHasSingleRowEditMode = rowActionsState.some(
-    (rowAction) => rowAction.isEditMode
-  );
+  const someRowHasSingleRowEditMode = rowActionsState.some((rowAction) => rowAction.isEditMode);
 
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
-    const myRowActionState = rowActionsState.find(
-      (rowAction) => rowAction.rowId === row.id
-    );
-    const rowHasSingleRowEditMode = !!(
-      myRowActionState && myRowActionState.isEditMode
-    );
-    const isSelectable =
-      rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
+    const myRowActionState = rowActionsState.find((rowAction) => rowAction.rowId === row.id);
+    const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
+    const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
 
     const rowElement = (
       <TableBodyRow
@@ -181,9 +173,7 @@ const TableBody = ({
             : null
         }
         rowActionsError={myRowActionState ? myRowActionState.error : null}
-        isRowActionRunning={
-          myRowActionState ? myRowActionState.isRunning : null
-        }
+        isRowActionRunning={myRowActionState ? myRowActionState.isRunning : null}
         ordering={orderingMap}
         selectRowAria={selectRowAria}
         overflowMenuAria={overflowMenuAria}
@@ -222,9 +212,7 @@ const TableBody = ({
       />
     );
     return shouldShowChildren
-      ? [rowElement].concat(
-          row.children.map((childRow) => renderRow(childRow, nestingLevel + 1))
-        )
+      ? [rowElement].concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
       : rowElement;
   };
 
@@ -236,7 +224,8 @@ const TableBody = ({
             key={`visibilitysensor-${row.id}`}
             scrollCheck
             partialVisibility
-            resizeCheck>
+            resizeCheck
+          >
             {({ isVisible }) => (isVisible ? renderRow(row) : <tr />)}
           </VisibilitySensor>
         ) : (

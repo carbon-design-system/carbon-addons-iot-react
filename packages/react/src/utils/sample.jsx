@@ -2417,10 +2417,8 @@ export const chartData = {
   },
 };
 
-const randomIntFromInterval = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const randomDecimal = (divideBy) =>
-  Math.floor(Math.random() * (1000 - 100) + 100) / divideBy;
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const randomDecimal = (divideBy) => Math.floor(Math.random() * (1000 - 100) + 100) / divideBy;
 
 /**
  * Generates random data
@@ -2465,8 +2463,7 @@ export const getIntervalChartData = (
 ) =>
   generateData(quantity, intInterval, decimals).map((i, idx) => ({
     ...i,
-    timestamp:
-      moment(startingPoint).subtract(idx, `${interval}s`).unix() * 1000,
+    timestamp: moment(startingPoint).subtract(idx, `${interval}s`).unix() * 1000,
   }));
 
 /**
@@ -2476,12 +2473,7 @@ export const getIntervalChartData = (
  * @param {Object} intInterval range of values to create
  * @param {number} decimals multiple of ten to create decimals from
  */
-export const getPeriodChartData = (
-  interval = 'day',
-  period = 'week',
-  intInterval,
-  decimals
-) => {
+export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
   const endTime = moment();
   const startTime = moment().startOf(period);
   const quantity = endTime.diff(startTime, `${interval}s`) + 1;
@@ -2506,7 +2498,8 @@ export const renderCustomCell = (
         textOverflow: 'ellipsis',
         width: '150px',
         display: 'inline-block',
-      }}>
+      }}
+    >
       {value}
     </span>
   </div>

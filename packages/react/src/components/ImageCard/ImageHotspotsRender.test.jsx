@@ -36,7 +36,8 @@ describe('render tests for the image hotspots component', () => {
           maxHeight: '50px',
           width: '50px',
           height: '50px',
-        }}>
+        }}
+      >
         <ImageHotspots
           src={Landscape}
           alt="landscape"

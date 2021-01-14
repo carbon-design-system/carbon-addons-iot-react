@@ -2,10 +2,7 @@ import React from 'react';
 import isNil from 'lodash/isNil';
 import { Link } from 'carbon-components-react';
 
-import {
-  formatNumberWithPrecision,
-  getVariables,
-} from '../../utils/cardUtilityFunctions';
+import { formatNumberWithPrecision, getVariables } from '../../utils/cardUtilityFunctions';
 
 export const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
@@ -48,16 +45,14 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
               // encode value so the URL can be valid
               const encodedValue = encodeURIComponent(variableValue);
 
-              variableLink = variableLink.replace(
-                `{${variable}}`,
-                encodedValue
-              );
+              variableLink = variableLink.replace(`{${variable}}`, encodedValue);
             });
           }
           return (
             <Link
               href={variableLink || linkTemplate.href}
-              target={linkTemplate.target ? linkTemplate.target : null}>
+              target={linkTemplate.target ? linkTemplate.target : null}
+            >
               {value}
             </Link>
           );

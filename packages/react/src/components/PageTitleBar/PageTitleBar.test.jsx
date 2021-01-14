@@ -7,10 +7,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Button from '../Button';
 
 import PageTitleBar from './PageTitleBar';
-import {
-  commonPageTitleBarProps,
-  pageTitleBarBreadcrumb,
-} from './PageTitleBar.story';
+import { commonPageTitleBarProps, pageTitleBarBreadcrumb } from './PageTitleBar.story';
 
 describe('PageTitleBar', () => {
   it('Renders common props as expected', () => {
@@ -22,10 +19,7 @@ describe('PageTitleBar', () => {
 
   it('Renders breadrumbs as expected', () => {
     const wrapper = mount(
-      <PageTitleBar
-        {...commonPageTitleBarProps}
-        breadcrumb={pageTitleBarBreadcrumb}
-      />
+      <PageTitleBar {...commonPageTitleBarProps} breadcrumb={pageTitleBarBreadcrumb} />
     );
     expect(wrapper.find('.page-title-bar-breadcrumb')).toHaveLength(1);
   });
@@ -121,9 +115,7 @@ describe('PageTitleBar', () => {
   });
 
   it('Renders loading state as expected', () => {
-    const wrapper = mount(
-      <PageTitleBar title={commonPageTitleBarProps.title} isLoading />
-    );
+    const wrapper = mount(<PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
     expect(wrapper.find(SkeletonText)).toHaveLength(1);
   });
 
@@ -135,25 +127,13 @@ describe('PageTitleBar', () => {
 
     const i18nDefault = PageTitleBar.defaultProps.i18n;
     render(
-      <PageTitleBar
-        title="testTitle"
-        i18n={i18nTest}
-        editable
-        description="test"
-        collapsed
-      />
+      <PageTitleBar title="testTitle" i18n={i18nTest} editable description="test" collapsed />
     );
 
     expect(screen.getByText(i18nTest.editIconDescription)).toBeInTheDocument();
-    expect(
-      screen.getByLabelText(i18nTest.tooltipIconDescription)
-    ).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.tooltipIconDescription)).toBeInTheDocument();
 
-    expect(
-      screen.queryByText(i18nDefault.editIconDescription)
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByLabelText(i18nDefault.tooltipIconDescription)
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.editIconDescription)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.tooltipIconDescription)).not.toBeInTheDocument();
   });
 });

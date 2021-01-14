@@ -55,10 +55,7 @@ describe('ComboBox', () => {
     render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
 
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Hello{enter}'
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
 
     expect(tags.childElementCount).toEqual(1);
     let list = await getListBox();
@@ -70,10 +67,7 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
 
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'World{enter}'
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'World{enter}');
 
     expect(tags.childElementCount).toEqual(2);
     list = await getListBox();
@@ -87,21 +81,11 @@ describe('ComboBox', () => {
   it('does not add duplicate tags or list items', async () => {
     render(<ComboBox {...defaultProps} />);
 
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Hello{enter}'
-    );
-    await waitFor(() =>
-      expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1)
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
+    await waitFor(() => expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1));
 
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Hello{enter}'
-    );
-    await waitFor(() =>
-      expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1)
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
+    await waitFor(() => expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1));
 
     userEvent.click(screen.getByTitle('Clear selected item'));
 
@@ -151,10 +135,7 @@ describe('ComboBox', () => {
     const tags = screen.getByTestId('combo-tags');
 
     await userEvent.click(screen.getByPlaceholderText('Filter...'));
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Home{enter}'
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Home{enter}');
 
     const close = await screen.findByRole('button', { name: /close/i });
     await userEvent.click(close);
@@ -170,19 +151,13 @@ describe('ComboBox', () => {
     const tags = screen.getByTestId('combo-tags');
 
     await userEvent.click(screen.getByPlaceholderText('Filter...'));
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Home{enter}'
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Home{enter}');
 
     expect(tags.childElementCount).toEqual(1);
 
     // tab over to tag and hit enter
     userEvent.tab();
-    await userEvent.type(
-      screen.getByRole('button', { name: /close/i }),
-      '{enter}'
-    );
+    await userEvent.type(screen.getByRole('button', { name: /close/i }), '{enter}');
 
     expect(tags.childElementCount).toEqual(0);
   });
@@ -200,10 +175,7 @@ describe('ComboBox', () => {
       />
     );
 
-    await userEvent.type(
-      screen.getByPlaceholderText('Filter...'),
-      'Hello {enter}'
-    );
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello {enter}');
 
     expect(screen.queryByTestId('combo-tags')).toBeNull();
 

@@ -5,10 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import pick from 'lodash/pick';
 
-import {
-  CARD_DIMENSIONS,
-  CARD_TYPES,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
@@ -165,14 +162,7 @@ export const basicCardValidation = (card) => {
  * @param {Function} onChange
  * @param {Function} setShowEditor
  */
-export const handleSubmit = (
-  card,
-  id,
-  setError,
-  onValidateCardJson,
-  onChange,
-  setShowEditor
-) => {
+export const handleSubmit = (card, id, setError, onValidateCardJson, onChange, setShowEditor) => {
   // first validate basic JSON syntax
   const basicErrors = basicCardValidation(card);
   // second validate the consumer's custom function if provided
@@ -219,14 +209,7 @@ const CardEditForm = ({
       {showEditor ? (
         <CardCodeEditor
           onSubmit={(card, setError) =>
-            handleSubmit(
-              card,
-              id,
-              setError,
-              onValidateCardJson,
-              onChange,
-              setShowEditor
-            )
+            handleSubmit(card, id, setError, onValidateCardJson, onChange, setShowEditor)
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
@@ -301,7 +284,8 @@ const CardEditForm = ({
                 )
               );
               setShowEditor(true);
-            }}>
+            }}
+          >
             {mergedI18n.openEditorButton}
           </Button>
         </div>

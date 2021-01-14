@@ -2,10 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import {
-  CARD_TYPES,
-  BAR_CHART_TYPES,
-} from '../../../../../constants/LayoutConstants';
+import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 
 import DataSeriesFormItem, {
   formatDataItemsForDropdown,
@@ -233,8 +230,7 @@ describe('DataSeriesFormItem', () => {
         'Group categories side by side in bars. Show groupings of related metrics or different categories of a single metric.',
       dataItemEditorSectionStackedBarTooltipText:
         'Stack bars by categories of a single dimension or into multiple related metrics.',
-      dataItemEditorSectionTimeSeriesTooltipText:
-        'Plot time series metrics over time.',
+      dataItemEditorSectionTimeSeriesTooltipText: 'Plot time series metrics over time.',
       dataItemEditorSectionValueTooltipText:
         'Display metric values, dimension values, or alert counts. Select from Data item. ',
       dataItemEditorSectionCustomTooltipText:
@@ -289,11 +285,7 @@ describe('DataSeriesFormItem', () => {
     });
     it('should return timeseries tooltip', () => {
       expect(
-        defineCardSpecificTooltip(
-          { type: CARD_TYPES.TIMESERIES },
-          dataSeriesItemLinks,
-          i18n
-        )
+        defineCardSpecificTooltip({ type: CARD_TYPES.TIMESERIES }, dataSeriesItemLinks, i18n)
       ).toEqual({
         tooltipText: i18n.dataItemEditorSectionTimeSeriesTooltipText,
         linkText: i18n.dataItemEditorSectionTooltipLinkText,
@@ -302,11 +294,7 @@ describe('DataSeriesFormItem', () => {
     });
     it('should return value tooltip', () => {
       expect(
-        defineCardSpecificTooltip(
-          { type: CARD_TYPES.VALUE },
-          dataSeriesItemLinks,
-          i18n
-        )
+        defineCardSpecificTooltip({ type: CARD_TYPES.VALUE }, dataSeriesItemLinks, i18n)
       ).toEqual({
         tooltipText: i18n.dataItemEditorSectionValueTooltipText,
         linkText: i18n.dataItemEditorSectionTooltipLinkText,
@@ -315,11 +303,7 @@ describe('DataSeriesFormItem', () => {
     });
     it('should return custom tooltip', () => {
       expect(
-        defineCardSpecificTooltip(
-          { type: CARD_TYPES.CUSTOM },
-          dataSeriesItemLinks,
-          i18n
-        )
+        defineCardSpecificTooltip({ type: CARD_TYPES.CUSTOM }, dataSeriesItemLinks, i18n)
       ).toEqual({
         tooltipText: i18n.dataItemEditorSectionCustomTooltipText,
         linkText: i18n.dataItemEditorSectionTooltipLinkText,
@@ -352,10 +336,7 @@ describe('DataSeriesFormItem', () => {
       expect(customizeButton).toBeInTheDocument();
       fireEvent.click(customizeButton);
 
-      userEvent.type(
-        screen.getByRole('cell', { name: 'Temperature' }),
-        'changed label'
-      );
+      userEvent.type(screen.getByRole('cell', { name: 'Temperature' }), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();
       // submit the changes
       const submitButton = screen.getByText('Save');

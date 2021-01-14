@@ -20,9 +20,7 @@ const StyledAttribute = styled.div`
   display: flex;
   align-items: ${(props) => (props.isMini ? 'center' : 'baseline')};
   ${(props) =>
-    props.isVertical && props.alignValue
-      ? `justify-content: ${props.alignValue};`
-      : ''};
+    props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : ''};
   order: 1;
   ${(props) =>
     !props.label || props.isVertical || props.size === CARD_SIZES.SMALL
@@ -70,8 +68,7 @@ const propTypes = {
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       color: PropTypes.string,
       icon: PropTypes.string,
     })
@@ -149,9 +146,7 @@ const Attribute = ({
         })
         .concat([null])[0];
   const valueColor =
-    matchingThreshold && matchingThreshold.icon === undefined
-      ? matchingThreshold.color
-      : null;
+    matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
 
   const bemBase = `${iotPrefix}--value-card__attribute`;
 
@@ -161,7 +156,8 @@ const Attribute = ({
         className={classnames(`${bemBase}-threshold-icon-container`, {
           [`${bemBase}-threshold-icon-container--mini`]: isMini,
           [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
-        })}>
+        })}
+      >
         <ThresholdIcon
           {...matchingThreshold}
           width={16}
@@ -177,8 +173,7 @@ const Attribute = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         const allowWrap = measuredSize && measuredSize.width <= 100;
-        const wrapCompact =
-          allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
+        const wrapCompact = allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
         return (
           <StyledAttribute
             size={newSize}
@@ -186,7 +181,8 @@ const Attribute = ({
             isVertical={isVertical}
             isMini={isMini}
             label={label}
-            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}>
+            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}
+          >
             <ValueRenderer
               value={value}
               unit={unit}
@@ -212,22 +208,16 @@ const Attribute = ({
               wrapCompact={wrapCompact}
               attributeCount={attributeCount}
             />
-            {!isNil(secondaryValue) &&
-            (!measuredSize || measuredSize.width > 100) ? (
+            {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue
                 color={secondaryValue.color}
                 trend={secondaryValue.trend}
-                isMini={isMini}>
+                isMini={isMini}
+              >
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <CaretUp16
-                    className={`${bemBase}_trend-icon`}
-                    aria-label="trending up"
-                  />
+                  <CaretUp16 className={`${bemBase}_trend-icon`} aria-label="trending up" />
                 ) : secondaryValue.trend === 'down' ? (
-                  <CaretDown16
-                    className={`${bemBase}_trend-icon`}
-                    aria-label="trending down"
-                  />
+                  <CaretDown16 className={`${bemBase}_trend-icon`} aria-label="trending down" />
                 ) : null}
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
@@ -236,7 +226,8 @@ const Attribute = ({
               <div
                 className={classnames(`${bemBase}-icon-container`, {
                   [`${bemBase}-icon-container--wrappable`]: allowWrap,
-                })}>
+                })}
+              >
                 {renderThresholdIcon(allowWrap)}
               </div>
             ) : null}

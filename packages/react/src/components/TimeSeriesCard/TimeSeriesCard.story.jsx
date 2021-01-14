@@ -23,17 +23,14 @@ export default {
 
 export const SinglePoint = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const interval = select(
-    'interval',
-    ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-    'hour'
-  );
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -60,10 +57,7 @@ export const SinglePoint = () => {
         size={size}
         showTimeInGMT={boolean('showTimeInGMT', false)}
         onCardAction={action('onCardAction')}
-        tooltipDateFormatPattern={text(
-          'tooltipDateFormatPattern',
-          'L HH:mm:ss'
-        )}
+        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
       />
     </div>
   );
@@ -75,17 +69,14 @@ SinglePoint.story = {
 
 export const WithVariables = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const interval = select(
-    'interval',
-    ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-    'hour'
-  );
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   return (
     <div
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature {not-working}')}
@@ -114,10 +105,7 @@ export const WithVariables = () => {
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
-        tooltipDateFormatPattern={text(
-          'tooltipDateFormatPattern',
-          'L HH:mm:ss'
-        )}
+        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
       />
     </div>
   );
@@ -145,7 +133,8 @@ export const MediumSingleLineIntervalHour = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -169,10 +158,7 @@ export const MediumSingleLineIntervalHour = () => {
         breakpoint="lg"
         size={size}
         onCardAction={action('onCardAction')}
-        tooltipDateFormatPattern={text(
-          'tooltipDateFormatPattern',
-          'L HH:mm:ss'
-        )}
+        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
       />
     </div>
   );
@@ -243,13 +229,7 @@ export const MediumSingleLineIntervalMonthYearSameYear = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
-        values={getIntervalChartData(
-          'month',
-          6,
-          { min: 10, max: 100 },
-          100,
-          1569945252000
-        )}
+        values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
         interval="month"
         breakpoint="lg"
         size={size}
@@ -298,13 +278,7 @@ export const MediumMultipleLineIntervalMonthYearSameYear = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
-        values={getIntervalChartData(
-          'month',
-          6,
-          { min: 10, max: 100 },
-          100,
-          1569945252000
-        )}
+        values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
         interval="month"
         breakpoint="lg"
         size={size}
@@ -359,17 +333,14 @@ MediumSingleLineIntervalYearTwoDataPoint.story = {
 
 export const MediumMultiLineNoXYLabel = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const interval = select(
-    'interval',
-    ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-    'hour'
-  );
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   return (
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -406,10 +377,7 @@ export const MediumMultiLineNoXYLabel = () => {
         showTimeInGMT={boolean('showTimeInGMT', false)}
         breakpoint="lg"
         size={size}
-        tooltipDateFormatPattern={text(
-          'tooltipDateFormatPattern',
-          'L HH:mm:ss'
-        )}
+        tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
       />
     </div>
   );
@@ -447,12 +415,7 @@ export const LargeSingleLineIntervalHourSameDay = () => {
           },
           addSpaceOnEdges: 1,
         })}
-        values={getIntervalChartData(
-          'minute',
-          15,
-          { min: 4700000, max: 4800000 },
-          100
-        )}
+        values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
         interval="minute"
         breakpoint="lg"
         size={size}
@@ -669,17 +632,14 @@ LargeMultiLineNoInterval.story = {
 
 export const CustomColors = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-  const interval = select(
-    'interval',
-    ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-    'hour'
-  );
+  const interval = select('interval', ['hour', 'day', 'week', 'quarter', 'month', 'year'], 'hour');
   return (
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -727,7 +687,8 @@ export const LargeUnits = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -858,7 +819,8 @@ export const Empty = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -896,7 +858,8 @@ export const HighlightAlertRanges = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -935,13 +898,7 @@ export const HighlightAlertRanges = () => {
             view: 'graph_view',
           },
         })}
-        values={getIntervalChartData(
-          'day',
-          7,
-          { min: 10, max: 100 },
-          100,
-          1572824320000
-        )}
+        values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100, 1572824320000)}
         interval="hour"
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}
@@ -963,7 +920,8 @@ export const EmptyForARange = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -1005,7 +963,8 @@ export const LotsOfDots = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -1030,13 +989,7 @@ export const LotsOfDots = () => {
             view: 'graph_view',
           },
         })}
-        values={getIntervalChartData(
-          'day',
-          2000,
-          { min: 10, max: 100 },
-          100,
-          1572824320000
-        )}
+        values={getIntervalChartData('day', 2000, { min: 10, max: 100 }, 100, 1572824320000)}
         interval="hour"
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}
@@ -1058,7 +1011,8 @@ export const IsEditable = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -1090,11 +1044,7 @@ export const IsEditable = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
-        interval={select(
-          'interval',
-          ['hour', 'day', 'week', 'month', 'year'],
-          'hour'
-        )}
+        interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
         breakpoint="lg"
         showTimeInGMT={boolean('showTimeInGMT', false)}
         size={size}
@@ -1230,7 +1180,8 @@ export const DataFilter = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Temperature')}
@@ -1265,21 +1216,19 @@ export const DataFilter = () => {
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
         })}
-        values={getIntervalChartData(
-          'day',
-          12,
-          { min: 10, max: 100 },
-          100
-        ).reduce((acc, dataPoint) => {
-          // make "two devices worth of data" so that we can filter
-          acc.push(dataPoint);
-          acc.push({
-            ...dataPoint,
-            temperature: dataPoint.temperature / 2,
-            ENTITY_ID: 'Sensor2-3',
-          });
-          return acc;
-        }, [])}
+        values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
+          (acc, dataPoint) => {
+            // make "two devices worth of data" so that we can filter
+            acc.push(dataPoint);
+            acc.push({
+              ...dataPoint,
+              temperature: dataPoint.temperature / 2,
+              ENTITY_ID: 'Sensor2-3',
+            });
+            return acc;
+          },
+          []
+        )}
         interval="day"
         showTimeInGMT={boolean('showTimeInGMT', false)}
         breakpoint="lg"
@@ -1301,7 +1250,8 @@ export const Locale = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing05 + 4,
-      }}>
+      }}
+    >
       <TimeSeriesCard
         {...commonProps}
         title={text('title', 'Pressure')}

@@ -11,12 +11,7 @@ const commonTableProps = {
 
 describe('EmptyTable', () => {
   it('custom empty state', () => {
-    render(
-      <EmptyTable
-        {...commonTableProps}
-        emptyState={<span>my custom element</span>}
-      />
-    );
+    render(<EmptyTable {...commonTableProps} emptyState={<span>my custom element</span>} />);
     expect(screen.queryAllByText('my custom element')).toHaveLength(1);
   });
   it('no empty state action does not render button', () => {

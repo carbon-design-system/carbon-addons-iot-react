@@ -11,10 +11,7 @@ import {
 import { Button, List, MultiSelect } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
-import {
-  CARD_SIZES,
-  CARD_TYPES,
-} from '../../../../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 
@@ -239,13 +236,7 @@ const TableCardFormContent = ({
           translateWithId={translateWithId}
           light
           onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(
-              selectedItems,
-              cardConfig,
-              null,
-              null,
-              false
-            );
+            const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
             setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange(newCard);
           }}

@@ -55,11 +55,7 @@ class DetailWizardSidebar extends Component {
       />
     );
     return (
-      <div
-        className={classnames(
-          className,
-          `${iotPrefix}--table-detail-wizard-sidebar--header`
-        )}>
+      <div className={classnames(className, `${iotPrefix}--table-detail-wizard-sidebar--header`)}>
         <WizardSidebar sidebar={sideBarProgressIndicator} width={250} />
       </div>
     );

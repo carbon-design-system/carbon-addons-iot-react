@@ -15,8 +15,7 @@ const SuiteHeaderI18N = {
       `You are logged in to ${solutionName} as ${userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
     switcherNavigatorLink: 'All applications',
     switcherLearnMoreLink: 'Learn more',
-    switcherRequestAccess:
-      'Contact your administrator to request application access',
+    switcherRequestAccess: 'Contact your administrator to request application access',
     whatsNew: "What's new",
     documentation: 'Documentation',
     requestEnhancement: 'Request enhancement',

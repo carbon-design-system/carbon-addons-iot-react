@@ -58,11 +58,7 @@ const preventFormSubmission = (e) => e.preventDefault();
 const TableSaveViewForm = ({
   formValues,
   disabled,
-  i18n: {
-    titleInputLabelText,
-    defaultCheckboxLabelText,
-    publicCheckboxLabelText,
-  },
+  i18n: { titleInputLabelText, defaultCheckboxLabelText, publicCheckboxLabelText },
   onChange,
   overrides,
   primaryInputId,
@@ -73,8 +69,7 @@ const TableSaveViewForm = ({
 }) => {
   const MyForm = overrides?.form?.component || 'form';
   const MyTitleTextInput = overrides?.titleTextInput?.component || TextInput;
-  const MyViewDescriptionContainer =
-    overrides?.viewDescriptionContainer?.component || 'p';
+  const MyViewDescriptionContainer = overrides?.viewDescriptionContainer?.component || 'p';
   const MyDefaultCheckbox = overrides?.defaultCheckbox?.component || Checkbox;
   const MyPublicCheckbox = overrides?.publicCheckbox?.component || Checkbox;
 
@@ -84,10 +79,7 @@ const TableSaveViewForm = ({
   const enforceControlledCheckbox = (val) => (val !== undefined ? val : false);
 
   return (
-    <MyForm
-      data-testid={testID}
-      onSubmit={preventFormSubmission}
-      {...overrides?.form?.props}>
+    <MyForm data-testid={testID} onSubmit={preventFormSubmission} {...overrides?.form?.props}>
       <MyTitleTextInput
         name="title"
         data-testid={`${testID}-title-input`}

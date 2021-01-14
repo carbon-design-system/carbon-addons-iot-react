@@ -48,111 +48,53 @@ describe('TableManageViewsModal', () => {
   });
 
   it('shows the search input', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
-    expect(
-      screen.getByPlaceholderText(i18n.searchPlaceholderText)
-    ).toBeVisible();
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
+    expect(screen.getByPlaceholderText(i18n.searchPlaceholderText)).toBeVisible();
   });
 
   it('calls the onSearchChange when search field is modified', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     const searchField = screen.getByPlaceholderText(i18n.searchPlaceholderText);
     fireEvent.change(searchField, { target: { value: 'testval1' } });
     expect(actions.onSearchChange).toHaveBeenCalledWith('testval1');
   });
 
   it('lists the views with public/private appended to the titles', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     expect(screen.getByText('myView 1 (Public)')).toBeVisible();
     expect(screen.getByText('myView 2 (Private)')).toBeVisible();
     expect(screen.getByText('myView 3 (Private)')).toBeVisible();
   });
 
   it('calls the onDisplayPublicChange when checkbox Display public views is changed', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     const checkbox = screen.getByLabelText(i18n.publicCheckboxLabelText);
     fireEvent.click(checkbox);
     expect(actions.onDisplayPublicChange).toHaveBeenCalledWith(false);
   });
 
   it('lists the views descriptions', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     expect(screen.getByText('description1')).toBeVisible();
     expect(screen.getByText('description2')).toBeVisible();
     expect(screen.getByText('description3')).toBeVisible();
   });
 
   it('lists shows the delete and edit button per view if applicable', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     expect(screen.getAllByLabelText(i18n.editIconText)).toHaveLength(2);
     expect(screen.getAllByLabelText('delete')).toHaveLength(2);
   });
 
   it('calls edit callback action when edit button is clicked', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     const editButton = screen.getAllByLabelText(i18n.editIconText)[0];
     fireEvent.click(editButton);
     expect(actions.onEdit).toHaveBeenCalledWith('view1');
   });
 
   it('gives user option to cancel when delete button is clicked', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
 
     const warningMessage = i18n.deleteWarningTextTemplate('myView 1');
 
@@ -171,14 +113,7 @@ describe('TableManageViewsModal', () => {
   });
 
   it('calls onDelete when delete button is clicked and confirmation is given', () => {
-    render(
-      <TableManageViewsModal
-        views={testViews}
-        actions={actions}
-        open
-        testID={testID}
-      />
-    );
+    render(<TableManageViewsModal views={testViews} actions={actions} open testID={testID} />);
     const warningMessage = i18n.deleteWarningTextTemplate('myView 1');
 
     expect(screen.queryByText(warningMessage)).not.toBeInTheDocument();

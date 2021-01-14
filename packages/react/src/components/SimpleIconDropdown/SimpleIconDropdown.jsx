@@ -53,12 +53,8 @@ const SimpleIconDropdown = ({
   const [selectedIcon, setSelectedIcon] = useState(selectedIconProp);
 
   const renderIconItem = (item) => (
-    <div
-      style={{ color: item.color || 'unset' }}
-      className={`${iotPrefix}--icon-dropdown__item`}>
-      <div className={`${iotPrefix}--icon-dropdown__item-border`}>
-        {item.carbonIcon}
-      </div>
+    <div style={{ color: item.color || 'unset' }} className={`${iotPrefix}--icon-dropdown__item`}>
+      <div className={`${iotPrefix}--icon-dropdown__item-border`}>{item.carbonIcon}</div>
     </div>
   );
 

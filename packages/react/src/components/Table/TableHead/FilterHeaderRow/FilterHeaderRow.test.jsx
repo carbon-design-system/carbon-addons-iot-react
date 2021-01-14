@@ -81,23 +81,16 @@ describe('FilterHeaderRow', () => {
         {...commonFilterProps}
         isDisabled="true"
         ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
-        columns={[
-          { id: 'col1' },
-          { id: 'col2', options: [{ id: 'opt1', text: 'option1' }] },
-        ]}
+        columns={[{ id: 'col1' }, { id: 'col2', options: [{ id: 'opt1', text: 'option1' }] }]}
         filters={[{ columnId: 'col1', value: 'myVal' }]}
       />
     );
 
     expect(wrapper.find(ComboBox).props().disabled).toEqual('true');
     expect(wrapper.find(TextInput).props().disabled).toEqual('true');
-    expect(
-      wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)
-    ).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)).toHaveLength(1);
 
-    wrapper
-      .find(`.${iotPrefix}--clear-filters-button--disabled`)
-      .simulate('click');
+    wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`).simulate('click');
     expect(wrapper.state().filterValues.col1).toEqual('myVal');
   });
 });

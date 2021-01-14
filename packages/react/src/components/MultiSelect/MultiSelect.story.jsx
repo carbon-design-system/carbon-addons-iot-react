@@ -9,13 +9,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import {
-  withKnobs,
-  boolean,
-  select,
-  text,
-  object,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
 import { MultiSelect } from '../../index';
@@ -41,8 +35,7 @@ const items = [
   },
   {
     id: 'downshift-1-item-4',
-    text:
-      'An example option that is really long to show what should be done to handle long text',
+    text: 'An example option that is really long to show what should be done to handle long text',
   },
 ];
 
@@ -58,20 +51,14 @@ const props = () => ({
   id: text('MultiSelect ID (id)', 'carbon-multiselect-example'),
   titleText: text('Title (titleText)', 'Multiselect title'),
   helperText: text('Helper text (helperText)', 'This is not helper text'),
-  filterable: boolean(
-    'Filterable (`<MultiSelect.Filterable>` instead of `<MultiSelect>`)',
-    false
-  ),
+  filterable: boolean('Filterable (`<MultiSelect.Filterable>` instead of `<MultiSelect>`)', false),
   disabled: boolean('Disabled (disabled)', false),
   light: boolean('Light variant (light)', false),
   useTitleInItem: boolean('Show tooltip on hover', false),
   type: select('UI type (Only for `<MultiSelect>`) (type)', types, 'default'),
   label: text('Label (label)', defaultLabel),
   invalid: boolean('Show form validation UI (invalid)', false),
-  invalidText: text(
-    'Form validation UI content (invalidText)',
-    'Invalid Selection'
-  ),
+  invalidText: text('Form validation UI content (invalidText)', 'Invalid Selection'),
   onChange: action('onChange'),
   listBoxMenuIconTranslationIds: object(
     'Listbox menu icon translation IDs (for translateWithId callback)',

@@ -18,8 +18,7 @@ const defaultProps = {
 };
 
 /** work area with transitions */
-const PageWorkArea = ({ isOpen, children }) =>
-  isOpen ? <StyledDiv>{children}</StyledDiv> : null;
+const PageWorkArea = ({ isOpen, children }) => (isOpen ? <StyledDiv>{children}</StyledDiv> : null);
 
 PageWorkArea.propTypes = propTypes;
 PageWorkArea.defaultProps = defaultProps;

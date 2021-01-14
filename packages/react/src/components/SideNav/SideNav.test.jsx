@@ -159,9 +159,9 @@ describe('SideNav', () => {
 
   it('should render an button tag for a subNav', () => {
     const wrapper = mount(<SideNav {...mockProps} />);
-    expect(
-      render(wrapper.find('ul').first().childAt(2)).children().first()[0].name
-    ).toEqual('button');
+    expect(render(wrapper.find('ul').first().childAt(2)).children().first()[0].name).toEqual(
+      'button'
+    );
   });
 
   it('should render one level of navigation links', () => {
@@ -180,9 +180,7 @@ describe('SideNav', () => {
     };
     const wrapper = mount(<SideNav {...mockProps} />);
 
-    expect(
-      render(wrapper.find('ul').first().childAt(0)).children().first()[0].name
-    ).toEqual('a');
+    expect(render(wrapper.find('ul').first().childAt(0)).children().first()[0].name).toEqual('a');
   });
 
   it('should not render a subNav or its button', () => {
@@ -191,9 +189,9 @@ describe('SideNav', () => {
       'aria-label': 'Side navigation',
     };
     const wrapper = mount(<SideNav {...mockProps} />);
-    expect(
-      render(wrapper.find('ul').first().childAt(2)).children().first()[0].name
-    ).not.toEqual('button');
+    expect(render(wrapper.find('ul').first().childAt(2)).children().first()[0].name).not.toEqual(
+      'button'
+    );
   });
 
   it('disabled item', () => {

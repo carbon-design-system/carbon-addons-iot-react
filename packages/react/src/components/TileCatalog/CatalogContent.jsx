@@ -19,16 +19,12 @@ const defaultProps = {
 /** Reusable widget to show Catalog contents in a tile catalog */
 const CatalogContent = ({ icon, title, description }) => (
   <div className={`${iotPrefix}--sample-tile`}>
-    {icon ? (
-      <div className={`${iotPrefix}--sample-tile-icon`}>{icon}</div>
-    ) : null}
+    {icon ? <div className={`${iotPrefix}--sample-tile-icon`}>{icon}</div> : null}
     <div className={`${iotPrefix}--sample-tile-contents`}>
       <div className={`${iotPrefix}--sample-tile-title`}>
         <span title={title}>{title}</span>
       </div>
-      <div className={`${iotPrefix}--sample-tile-description`}>
-        {description}
-      </div>
+      <div className={`${iotPrefix}--sample-tile-description`}>{description}</div>
     </div>
   </div>
 );

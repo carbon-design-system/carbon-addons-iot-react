@@ -160,12 +160,7 @@ const DataSeriesFormItemModal = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
+      const { clearSelectionText, openMenuText, closeMenuText, clearAllText } = mergedI18n;
       switch (idToTranslate) {
         default:
           return '';
@@ -302,9 +297,7 @@ const DataSeriesFormItemModal = ({
               items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
               light
               translateWithId={handleTranslation}
-              selectedItem={
-                editDataItem.precision?.toString() || mergedI18n.notSet
-              }
+              selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
               onChange={({ selectedItem }) => {
                 const isSet = selectedItem !== mergedI18n.notSet;
                 if (isSet) {
@@ -323,14 +316,12 @@ const DataSeriesFormItemModal = ({
       <div className={`${baseClassName}--input-group`}>
         <div
           className={classnames({
-            [`${baseClassName}--input-group--item`]: !isEmpty(
-              editDataItem.dataFilter
-            ),
+            [`${baseClassName}--input-group--item`]: !isEmpty(editDataItem.dataFilter),
             [`${baseClassName}--input-group--item-half`]:
               isEmpty(editDataItem.dataFilter) ||
-              (!isEmpty(editDataItem.dataFilter) &&
-                !availableDimensions[selectedDimensionFilter]),
-          })}>
+              (!isEmpty(editDataItem.dataFilter) && !availableDimensions[selectedDimensionFilter]),
+          })}
+        >
           <Dropdown
             id={`${id}_data-filter-key`}
             label=""
@@ -357,8 +348,7 @@ const DataSeriesFormItemModal = ({
             titleText={mergedI18n.dataItemEditorDataItemFilter}
           />
         </div>
-        {!isEmpty(editDataItem.dataFilter) &&
-        availableDimensions[selectedDimensionFilter] ? (
+        {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] ? (
           <div className={`${baseClassName}--input-group--item-end`}>
             <Dropdown
               id={`${id}_data-filter-value`}
@@ -415,7 +405,8 @@ const DataSeriesFormItemModal = ({
             value={editDataItem.label}
           />
           <p
-            className={`${baseClassName}--input-group--span`}>{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
+            className={`${baseClassName}--input-group--span`}
+          >{`${mergedI18n.source}: ${editDataItem.dataSourceId}`}</p>
         </div>
       </div>
       <ThresholdsFormItem
@@ -455,11 +446,7 @@ const DataSeriesFormItemModal = ({
               const newCard =
                 cardConfig.type === 'IMAGE'
                   ? editDataItem
-                  : handleDataItemEdit(
-                      editDataItem,
-                      cardConfig,
-                      editDataSeries
-                    );
+                  : handleDataItemEdit(editDataItem, cardConfig, editDataSeries);
               onChange(newCard);
               setShowEditor(false);
               setEditDataItem({});
@@ -468,7 +455,8 @@ const DataSeriesFormItemModal = ({
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});
-            }}>
+            }}
+          >
             {type === CARD_TYPES.TIMESERIES || type === CARD_TYPES.BAR
               ? DataSeriesEditorTable
               : type === CARD_TYPES.TABLE

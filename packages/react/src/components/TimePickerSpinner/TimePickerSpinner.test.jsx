@@ -83,18 +83,13 @@ describe('TimePickerSpinner', () => {
   });
 
   it('work with strings', () => {
-    const wrapper = mount(
-      <TimePickerSpinner {...timePickerProps} value="xyz" spinner />
-    );
+    const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
 
     wrapper.find('input').simulate('blur');
 
     expect(wrapper.find('input').props().value).toEqual('');
 
-    wrapper
-      .find('.iot--time-picker__controls--btn.down-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--time-picker__controls--btn.down-icon').first().simulate('click');
     expect(wrapper.find('input').props().value).toEqual('23:00');
   });
 
@@ -105,12 +100,8 @@ describe('TimePickerSpinner', () => {
   it('show indicator', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
 
-    const upButton = wrapper
-      .find('.iot--time-picker__controls--btn.up-icon')
-      .first();
-    const downButton = wrapper
-      .find('.iot--time-picker__controls--btn.down-icon')
-      .first();
+    const upButton = wrapper.find('.iot--time-picker__controls--btn.up-icon').first();
+    const downButton = wrapper.find('.iot--time-picker__controls--btn.down-icon').first();
 
     upButton.simulate('focus');
     upButton.simulate('click');
@@ -160,10 +151,7 @@ describe('TimePickerSpinner', () => {
     const wrapper = mount(
       <TimePickerSpinner {...timePickerProps} value="12:00" spinner is12hour />
     );
-    wrapper
-      .find('.iot--time-picker__controls--btn.up-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--time-picker__controls--btn.up-icon').first().simulate('click');
     expect(wrapper.find('input').props().value).toEqual('00:00');
   });
 
@@ -176,10 +164,7 @@ describe('TimePickerSpinner', () => {
         defaultTimegroup={TIMEGROUPS.MINUTES}
       />
     );
-    wrapper
-      .find('.iot--time-picker__controls--btn.up-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--time-picker__controls--btn.up-icon').first().simulate('click');
     expect(wrapper.find('input').props().value).toEqual('12:01');
   });
 
@@ -192,10 +177,7 @@ describe('TimePickerSpinner', () => {
         defaultTimegroup={TIMEGROUPS.MINUTES}
       />
     );
-    wrapper
-      .find('.iot--time-picker__controls--btn.down-icon')
-      .first()
-      .simulate('click');
+    wrapper.find('.iot--time-picker__controls--btn.down-icon').first().simulate('click');
     expect(wrapper.find('input').props().value).toEqual('12:59');
   });
 });

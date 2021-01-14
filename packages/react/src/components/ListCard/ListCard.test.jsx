@@ -48,13 +48,7 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard
-        title="Testing"
-        loadData={onLoadData}
-        hasMoreData
-        isLoading={false}
-        data={data}
-      />
+      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} data={data} />
     );
 
     wrapper.find('Card').prop('onScroll')(mockScrollEvent);
@@ -65,12 +59,7 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard
-        title="Testing"
-        loadData={onLoadData}
-        hasMoreData
-        isLoading={false}
-      />
+      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading={false} />
     );
 
     expect(wrapper.find('InlineLoading')).toHaveLength(0);
@@ -80,13 +69,7 @@ describe('ListCard', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
-      <ListCard
-        title="Testing"
-        loadData={onLoadData}
-        hasMoreData
-        isLoading
-        data={data}
-      />
+      <ListCard title="Testing" loadData={onLoadData} hasMoreData isLoading data={data} />
     );
 
     expect(wrapper.find('InlineLoading')).toHaveLength(1);

@@ -20,9 +20,7 @@ const propTypes = {
  * Clickable card that shows "Add" button
  */
 const AddCard = ({ onClick, title, className }) => (
-  <ClickableTile
-    className={classnames(`${iotPrefix}-add-card`, className)}
-    handleClick={onClick}>
+  <ClickableTile className={classnames(`${iotPrefix}-add-card`, className)} handleClick={onClick}>
     <p className={`${iotPrefix}-addcard-title`}>{title}</p>
     <Add20 fill={g10.icon01} description={title} />
   </ClickableTile>

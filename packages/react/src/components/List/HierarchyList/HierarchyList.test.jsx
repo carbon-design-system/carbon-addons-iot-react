@@ -5,10 +5,7 @@ import debounce from 'lodash/debounce';
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
-import HierarchyList, {
-  searchForNestedItemValues,
-  searchForNestedItemIds,
-} from './HierarchyList';
+import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
 
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
 jest.mock('lodash/debounce', () => (fn) => fn);
@@ -38,17 +35,14 @@ describe('HierarchyList', () => {
       content: {
         value: team,
       },
-      children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(
-        (player) => ({
-          id: `${team}_${player}`,
-          content: {
-            value: player,
-            secondaryValue:
-              sampleHierarchy.MLB['American League'][team][player],
-          },
-          isSelectable: true,
-        })
-      ),
+      children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+        id: `${team}_${player}`,
+        content: {
+          value: player,
+          secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+        },
+        isSelectable: true,
+      })),
     })),
     ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
       id: team,
@@ -56,17 +50,14 @@ describe('HierarchyList', () => {
       content: {
         value: team,
       },
-      children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(
-        (player) => ({
-          id: `${team}_${player}`,
-          content: {
-            value: player,
-            secondaryValue:
-              sampleHierarchy.MLB['National League'][team][player],
-          },
-          isSelectable: true,
-        })
-      ),
+      children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+        id: `${team}_${player}`,
+        content: {
+          value: player,
+          secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+        },
+        isSelectable: true,
+      })),
     })),
   ];
 
@@ -127,9 +118,7 @@ describe('HierarchyList', () => {
   });
 
   it('clicking expansion caret should expand item', () => {
-    render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
-    );
+    render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
@@ -145,9 +134,7 @@ describe('HierarchyList', () => {
   });
 
   it('clicking expansion caret should collapse expanded item', () => {
-    render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
-    );
+    render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
     // Expand
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
@@ -177,9 +164,7 @@ describe('HierarchyList', () => {
   });
 
   it('clicking nextpage should display the second page', () => {
-    render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="sm" />
-    );
+    render(<HierarchyList items={items} title="Hierarchy List" pageSize="sm" />);
     // Only 5 categories should be showing by default
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
     // All other categories should be visible still
@@ -205,14 +190,7 @@ describe('HierarchyList', () => {
   });
 
   it('found search result categories should be expanded', () => {
-    render(
-      <HierarchyList
-        items={items}
-        hasSearch
-        title="Hierarchy List"
-        pageSize="lg"
-      />
-    );
+    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'jd' },
     });
@@ -230,14 +208,7 @@ describe('HierarchyList', () => {
   });
 
   it('search should include categories', () => {
-    render(
-      <HierarchyList
-        items={items}
-        hasSearch
-        title="Hierarchy List"
-        pageSize="lg"
-      />
-    );
+    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'Chicago White Sox' },
     });
@@ -329,9 +300,9 @@ describe('HierarchyList', () => {
     expect(selectedItem).toBeInTheDocument();
 
     // Should be marked selected
-    expect(
-      selectedItem?.parentElement?.parentElement?.parentElement?.className
-    ).toContain('__selected');
+    expect(selectedItem?.parentElement?.parentElement?.parentElement?.className).toContain(
+      '__selected'
+    );
     // All other categories should be visible still
     expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
     // Yankees are unfortunately worthy too...
@@ -359,9 +330,9 @@ describe('HierarchyList', () => {
     const selectedYankee = screen.getByTitle('Gary Sanchez');
     expect(selectedYankee).toBeInTheDocument();
 
-    expect(
-      selectedYankee?.parentElement?.parentElement?.parentElement?.className
-    ).toContain('__selected');
+    expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
+      '__selected'
+    );
   });
 
   it('defaultExpandedIds should be expanded', () => {
@@ -398,12 +369,7 @@ describe('HierarchyList', () => {
   it('clicking item should fire onSelect', () => {
     const onSelect = jest.fn();
     render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        onSelect={onSelect}
-      />
+      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" onSelect={onSelect} />
     );
     // Expand the category
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
@@ -425,9 +391,7 @@ describe('HierarchyList', () => {
 
     fireEvent.click(expandIcons[1]);
 
-    const checkbox = screen.queryByTestId(
-      'New York Yankees_Gary Sanchez-checkbox'
-    );
+    const checkbox = screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox');
 
     fireEvent.click(checkbox);
 
@@ -459,12 +423,8 @@ describe('HierarchyList', () => {
 
     fireEvent.click(expandIcons[1]);
 
-    const checkbox = screen.queryByTestId(
-      'New York Yankees_Gary Sanchez-checkbox'
-    );
-    const checkbox2 = screen.queryByTestId(
-      'New York Yankees_Luke Voit-checkbox'
-    );
+    const checkbox = screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox');
+    const checkbox2 = screen.queryByTestId('New York Yankees_Luke Voit-checkbox');
 
     fireEvent.click(checkbox);
     fireEvent.click(checkbox2);
@@ -495,11 +455,7 @@ describe('HierarchyList', () => {
 
     const listItems = screen.queryAllByRole('listitem');
 
-    expect(
-      within(listItems[2]).queryAllByText('Luke Voit').length
-    ).toBeGreaterThanOrEqual(1);
-    expect(
-      within(listItems[3]).queryAllByText('Gary Sanchez').length
-    ).toBeGreaterThanOrEqual(1);
+    expect(within(listItems[2]).queryAllByText('Luke Voit').length).toBeGreaterThanOrEqual(1);
+    expect(within(listItems[3]).queryAllByText('Gary Sanchez').length).toBeGreaterThanOrEqual(1);
   });
 });

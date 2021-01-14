@@ -14,11 +14,7 @@ describe('SuiteHeaderLogoutModal', () => {
     const mockOnClose = jest.fn();
     const mockOnLogout = jest.fn();
     const wrapper = mount(
-      <SuiteHeaderLogoutModal
-        {...commonProps}
-        onClose={mockOnClose}
-        onLogout={mockOnLogout}
-      />
+      <SuiteHeaderLogoutModal {...commonProps} onClose={mockOnClose} onLogout={mockOnLogout} />
     );
 
     const modalCloseButton = wrapper.find('.bx--modal-close');

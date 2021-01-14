@@ -140,9 +140,7 @@ describe('StatefulPageWizard', () => {
 
     // check that the next step won't happen if inputs aren't filled
     fireEvent.click(screen.getByText('Second Step'));
-    expect(
-      screen.getByText('First name and Last name cannot be empty')
-    ).toBeTruthy();
+    expect(screen.getByText('First name and Last name cannot be empty')).toBeTruthy();
 
     // fill in inputs, then try to go to step 2
     fireEvent.change(screen.getByLabelText('First name'), {
@@ -152,8 +150,6 @@ describe('StatefulPageWizard', () => {
       target: { value: 'smith' },
     });
     fireEvent.click(screen.getByText('Second Step'));
-    expect(
-      screen.queryByText('First name and Last name cannot be empty')
-    ).toBeFalsy();
+    expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });

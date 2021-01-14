@@ -16,10 +16,7 @@ const AccordionItemDefer = ({ children, ...props }) => {
     setHasEverBeenOpened(true);
   };
   return (
-    <AccordionItem
-      data-testid="accordion-item-deferred"
-      {...props}
-      onHeadingClick={handleToggle}>
+    <AccordionItem data-testid="accordion-item-deferred" {...props} onHeadingClick={handleToggle}>
       {(openState && children) || (hasEverBeenOpened && children)}
     </AccordionItem>
   );

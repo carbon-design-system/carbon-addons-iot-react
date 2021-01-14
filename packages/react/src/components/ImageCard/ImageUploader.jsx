@@ -1,10 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  FileUploaderDropContainer,
-  TextInput,
-  InlineNotification,
-} from 'carbon-components-react';
+import { FileUploaderDropContainer, TextInput, InlineNotification } from 'carbon-components-react';
 import { Image32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
@@ -117,9 +113,7 @@ const ImageUploader = ({
       setError(i18n.fileTooLarge);
     } else if (
       acceptedFiles.includes(
-        files.addedFiles[0].name
-          .match(/([^/.]*?)(?=\?|#|$)/ || [])[0]
-          .toLowerCase()
+        files.addedFiles[0].name.match(/([^/.]*?)(?=\?|#|$)/ || [])[0].toLowerCase()
       )
     ) {
       const fR = new FileReader();
@@ -142,16 +136,14 @@ const ImageUploader = ({
   return (
     <div
       className={classnames(`${iotPrefix}--image-uploader`, {
-        [`${iotPrefix}--image-uploader__medium`]:
-          other.width >= 252 && other.width <= 519,
-        [`${iotPrefix}--image-uploader__mediumwide`]:
-          other.width >= 520 && other.height !== 576,
+        [`${iotPrefix}--image-uploader__medium`]: other.width >= 252 && other.width <= 519,
+        [`${iotPrefix}--image-uploader__mediumwide`]: other.width >= 520 && other.height !== 576,
         [`${iotPrefix}--image-uploader__large`]:
           other.width >= 520 && other.width <= 1055 && other.height >= 576,
-        [`${iotPrefix}--image-uploader__largewide`]:
-          other.width >= 1056 && other.height >= 576,
+        [`${iotPrefix}--image-uploader__largewide`]: other.width >= 1056 && other.height >= 576,
         [`${iotPrefix}--image-uploader__url`]: fromURL,
-      })}>
+      })}
+    >
       {error ? (
         <InlineNotification
           onCloseButtonClick={handleErrorClose}
@@ -170,20 +162,13 @@ const ImageUploader = ({
           <Button size={buttonSize} onClick={handleUploadByURL}>
             {i18n.uploadByURLButton}
           </Button>
-          <Button
-            size={buttonSize}
-            onClick={handleCancelFromURLClick}
-            kind="ghost">
+          <Button size={buttonSize} onClick={handleCancelFromURLClick} kind="ghost">
             {i18n.uploadByURLCancel}
           </Button>
         </div>
       ) : (
         <>
-          <FileUploaderDropContainer
-            size="field"
-            labelText=""
-            onAddFiles={handleOnChange}
-          />
+          <FileUploaderDropContainer size="field" labelText="" onAddFiles={handleOnChange} />
           <div className={`${iotPrefix}--image-uploader-icon`}>
             <Image32 />
           </div>
@@ -198,10 +183,7 @@ const ImageUploader = ({
               {i18n.browseImages}
             </Button>
             {hasInsertFromUrl ? (
-              <Button
-                size={buttonSize}
-                onClick={handleFromURLClick}
-                kind="tertiary">
+              <Button size={buttonSize} onClick={handleFromURLClick} kind="tertiary">
                 {i18n.insertUrl}
               </Button>
             ) : null}

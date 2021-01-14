@@ -15,19 +15,16 @@ describe('AccordionItemDefer', () => {
       </Accordion>
     );
     expect(
-      screen.getByTestId('accordion-item-deferred').lastElementChild
-        .childElementCount
+      screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(0);
     fireEvent.click(container.querySelector('.bx--accordion__heading'));
     expect(
-      screen.getByTestId('accordion-item-deferred').lastElementChild
-        .childElementCount
+      screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
     // test that content will not close accordion
     fireEvent.click(container.querySelector('.bx--accordion__content'));
     expect(
-      screen.getByTestId('accordion-item-deferred').lastElementChild
-        .childElementCount
+      screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
   });
 
@@ -40,13 +37,11 @@ describe('AccordionItemDefer', () => {
       </Accordion>
     );
     expect(
-      screen.getByTestId('accordion-item-deferred').lastElementChild
-        .childElementCount
+      screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
     fireEvent.click(container.querySelector('.bx--accordion__heading'));
     expect(
-      screen.getByTestId('accordion-item-deferred').lastElementChild
-        .childElementCount
+      screen.getByTestId('accordion-item-deferred').lastElementChild.childElementCount
     ).toEqual(1);
   });
 });

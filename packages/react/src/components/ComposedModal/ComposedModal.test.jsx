@@ -24,24 +24,14 @@ describe('ComposedModal', () => {
   it('errors should be cleared', () => {
     const onClearError = jest.fn();
     const wrapper = mount(
-      <ComposedModal
-        {...modalProps}
-        error="error"
-        onClearError={onClearError}
-      />
+      <ComposedModal {...modalProps} error="error" onClearError={onClearError} />
     );
-    wrapper
-      .find('.bx--inline-notification__close-button')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.bx--inline-notification__close-button').at(0).simulate('click');
     expect(onClearError).toHaveBeenCalledTimes(1);
   });
   it('errors should not cause error', () => {
     const wrapper = mount(<ComposedModal {...modalProps} error="error" />);
-    wrapper
-      .find('.bx--inline-notification__close-button')
-      .at(0)
-      .simulate('click');
+    wrapper.find('.bx--inline-notification__close-button').at(0).simulate('click');
     // the close button shouldn't cause exception
     expect(wrapper).toBeDefined();
   });

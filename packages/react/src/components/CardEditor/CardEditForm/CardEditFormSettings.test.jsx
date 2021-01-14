@@ -68,54 +68,25 @@ afterEach(() => {
 describe('CardEditFormSettings', () => {
   describe('Timeseries form fields', () => {
     it('should update JSON for the x axis label', () => {
-      render(
-        <CardEditFormSettings
-          cardConfig={timeseriesCardConfig}
-          onChange={mockOnChange}
-        />
-      );
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'X-axis label' }),
-        'changed label'
-      );
+      render(<CardEditFormSettings cardConfig={timeseriesCardConfig} onChange={mockOnChange} />);
+      userEvent.type(screen.getByRole('textbox', { name: 'X-axis label' }), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();
     });
     it('should update JSON for the y axis label', () => {
-      render(
-        <CardEditFormSettings
-          cardConfig={timeseriesCardConfig}
-          onChange={mockOnChange}
-        />
-      );
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'Y-axis label' }),
-        'changed label'
-      );
+      render(<CardEditFormSettings cardConfig={timeseriesCardConfig} onChange={mockOnChange} />);
+      userEvent.type(screen.getByRole('textbox', { name: 'Y-axis label' }), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();
     });
     it('should update JSON for the unit field', () => {
-      render(
-        <CardEditFormSettings
-          cardConfig={timeseriesCardConfig}
-          onChange={mockOnChange}
-        />
-      );
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'Unit' }),
-        'changed unit'
-      );
+      render(<CardEditFormSettings cardConfig={timeseriesCardConfig} onChange={mockOnChange} />);
+      userEvent.type(screen.getByRole('textbox', { name: 'Unit' }), 'changed unit');
       expect(mockOnChange).toHaveBeenCalled();
     });
   });
 
   describe('render image card', () => {
     it('should see open menu options translated correctly', () => {
-      render(
-        <CardEditFormSettings
-          cardConfig={imageCardConfig}
-          onChange={mockOnChange}
-        />
-      );
+      render(<CardEditFormSettings cardConfig={imageCardConfig} onChange={mockOnChange} />);
       expect(screen.getByText('Open menu')).toBeInTheDocument();
       userEvent.click(screen.getByText('Open menu'));
       expect(screen.getByText('Close menu')).toBeInTheDocument();

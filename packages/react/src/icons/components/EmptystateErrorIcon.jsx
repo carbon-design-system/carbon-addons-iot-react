@@ -9,7 +9,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="147.026%"
           x2="53.752%"
           y2="5.476%"
-          id="emptystate-Error-icon_svg__a">
+          id="emptystate-Error-icon_svg__a"
+        >
           <stop stopColor="#767676" offset="0%" />
           <stop stopColor="#FFF" offset="100%" />
         </linearGradient>
@@ -18,7 +19,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="97.685%"
           x2="66.603%"
           y2="-9.503%"
-          id="emptystate-Error-icon_svg__b">
+          id="emptystate-Error-icon_svg__b"
+        >
           <stop stopColor="#FFF" offset="0%" />
           <stop stopColor="#FFF" offset="100%" />
         </linearGradient>
@@ -27,7 +29,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="91.053%"
           x2="67.978%"
           y2="-16.135%"
-          id="emptystate-Error-icon_svg__c">
+          id="emptystate-Error-icon_svg__c"
+        >
           <stop stopColor="#939393" offset="0%" />
           <stop stopColor="#DCDCDC" offset="100%" />
         </linearGradient>
@@ -36,7 +39,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="92.68%"
           x2="72.326%"
           y2="51.331%"
-          id="emptystate-Error-icon_svg__d">
+          id="emptystate-Error-icon_svg__d"
+        >
           <stop stopOpacity={0.18} offset="0%" />
           <stop stopOpacity={0.05} offset="100%" />
         </linearGradient>
@@ -45,7 +49,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="-24.481%"
           x2="40.155%"
           y2="198.063%"
-          id="emptystate-Error-icon_svg__e">
+          id="emptystate-Error-icon_svg__e"
+        >
           <stop stopOpacity={0.2} offset="0%" />
           <stop stopOpacity={0.5} offset="100%" />
         </linearGradient>
@@ -54,7 +59,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="121.252%"
           x2="48.628%"
           y2="57.245%"
-          id="emptystate-Error-icon_svg__f">
+          id="emptystate-Error-icon_svg__f"
+        >
           <stop stopColor="#BEBEBE" offset="0%" />
           <stop stopColor="#D8D8D8" offset="100%" />
         </linearGradient>
@@ -63,7 +69,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="148.311%"
           x2="49.062%"
           y2="26.577%"
-          id="emptystate-Error-icon_svg__g">
+          id="emptystate-Error-icon_svg__g"
+        >
           <stop stopColor="#CCC" offset="0%" />
           <stop stopColor="#FFF" offset="100%" />
         </linearGradient>
@@ -72,7 +79,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="63.049%"
           x2="50.263%"
           y2="-84.145%"
-          id="emptystate-Error-icon_svg__h">
+          id="emptystate-Error-icon_svg__h"
+        >
           <stop stopColor="#CCC" offset="2%" />
           <stop stopColor="#EEE" offset="100%" />
         </linearGradient>
@@ -81,7 +89,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="17393.65%"
           x2="9762.569%"
           y2="17462.12%"
-          id="emptystate-Error-icon_svg__i">
+          id="emptystate-Error-icon_svg__i"
+        >
           <stop stopColor="#CCC" offset="0%" />
           <stop stopColor="#FFF" offset="100%" />
         </linearGradient>
@@ -90,7 +99,8 @@ function SvgEmptystateErrorIcon(props) {
           y1="-82.789%"
           x2="47.452%"
           y2="18.145%"
-          id="emptystate-Error-icon_svg__j">
+          id="emptystate-Error-icon_svg__j"
+        >
           <stop stopColor="#828282" offset="0%" />
           <stop stopColor="#C9C9C9" offset="100%" />
         </linearGradient>

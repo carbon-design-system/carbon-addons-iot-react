@@ -61,19 +61,11 @@ const ImageControls = ({
             <br />
           </>
         )}
-        <button
-          title={zoomIn}
-          type="button"
-          style={buttonStyle}
-          onClick={onZoomIn}>
+        <button title={zoomIn} type="button" style={buttonStyle} onClick={onZoomIn}>
           +
         </button>
         <br />
-        <button
-          title={zoomOut}
-          type="button"
-          style={buttonStyle}
-          onClick={onZoomOut}>
+        <button title={zoomOut} type="button" style={buttonStyle} onClick={onZoomOut}>
           -
         </button>
       </div>

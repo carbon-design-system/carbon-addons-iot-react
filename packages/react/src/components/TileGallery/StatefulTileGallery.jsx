@@ -98,10 +98,7 @@ const defaultProps = {
 
 const doesGalleryItemMatch = (galleryItem, searchString) => {
   const searchRegexp = new RegExp(escapeRegExp(searchString) || '', 'i');
-  return (
-    searchRegexp.test(galleryItem.title) ||
-    searchRegexp.test(galleryItem.description)
-  );
+  return searchRegexp.test(galleryItem.title) || searchRegexp.test(galleryItem.description);
 };
 
 const StatefulTileGallery = ({
@@ -149,10 +146,7 @@ const StatefulTileGallery = ({
             />
           ) : null}
           {hasButton ? (
-            <Button
-              disabled={isButtonDisabled}
-              className={buttonClassName}
-              kind={buttonKind}>
+            <Button disabled={isButtonDisabled} className={buttonClassName} kind={buttonKind}>
               {buttonText}
             </Button>
           ) : null}
@@ -165,10 +159,7 @@ const StatefulTileGallery = ({
               doesGalleryItemMatch(galleryItem, search)
             );
             return (
-              <TileGallerySection
-                key={item.id}
-                title={item.sectionTitle}
-                i18n={i18n}>
+              <TileGallerySection key={item.id} title={item.sectionTitle} i18n={i18n}>
                 {items.map((galleryItem) => {
                   return (
                     <TileGalleryItem

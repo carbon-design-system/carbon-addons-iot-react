@@ -151,28 +151,23 @@ const TableToolbar = ({
   },
   data,
 }) => (
-  <CarbonTableToolbar
-    className={classnames(`${iotPrefix}--table-toolbar`, className)}>
+  <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
     <TableBatchActions
       className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}
       shouldShowBatchActions={hasRowSelection === 'multi' && totalSelected > 0}
       totalSelected={totalSelected}
-      translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}>
+      translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+    >
       {batchActions.map(({ id, labelText, ...others }) => (
-        <TableBatchAction
-          key={id}
-          onClick={() => onApplyBatchAction(id)}
-          {...others}>
+        <TableBatchAction key={id} onClick={() => onApplyBatchAction(id)} {...others}>
           {labelText}
         </TableBatchAction>
       ))}
     </TableBatchActions>
     {secondaryTitle ? (
       // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
-        {secondaryTitle}
-      </label>
+      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
     ) : null}
     {
       // Deprecated in favor of secondaryTitle for a more general use-case
@@ -188,15 +183,14 @@ const TableToolbar = ({
         <Tooltip
           triggerId={`card-tooltip-trigger-${tableId}`}
           tooltipId={`card-tooltip-${tableId}`}
-          triggerText="">
+          triggerText=""
+        >
           {tooltip}
         </Tooltip>
       </div>
     )}
     {activeBar === 'rowEdit' ? (
-      <div className={`${iotPrefix}--table-row-edit-actions`}>
-        {rowEditBarButtons}
-      </div>
+      <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
     ) : (
       <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
         {hasSearch ? (
@@ -223,10 +217,7 @@ const TableToolbar = ({
           />
         ) : null}
         {totalFilters > 0 ? (
-          <Button
-            kind="secondary"
-            onClick={onClearAllFilters}
-            disabled={isDisabled}>
+          <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
             {i18n.clearAllFilters}
           </Button>
         ) : null}

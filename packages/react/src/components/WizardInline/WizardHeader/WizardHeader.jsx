@@ -57,10 +57,7 @@ class WizardHeader extends Component {
     } = this.props;
 
     const closeButton = (
-      <Button
-        className="bx--modal-close"
-        title={closeButtonTitle}
-        type="button">
+      <Button className="bx--modal-close" title={closeButtonTitle} type="button">
         <Close20 onClick={onClose} />
       </Button>
     );

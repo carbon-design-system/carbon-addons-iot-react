@@ -24,7 +24,8 @@ const CustomFooter = ({ setIsOpen, isOpen }) => {
         alignItems: 'center',
         height: 64,
         'justify-content': 'space-between',
-      }}>
+      }}
+    >
       I&apos;m a custom footer! &nbsp;
       <Button onClick={() => setIsOpen(!isOpen)}>Confirm</Button>
     </div>
@@ -42,7 +43,8 @@ export const DefaultExample = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-    }}>
+    }}
+  >
     <FlyoutMenu
       buttonSize={select('Button Size', buttonSizes, buttonSizes.Default)}
       renderIcon={ShareKnowledge}
@@ -57,11 +59,8 @@ export const DefaultExample = () => (
       }}
       onCancel={action('On Cancel Clicked')}
       onApply={action('On Apply Clicked')}
-      direction={select(
-        'Flyout direction',
-        FlyoutMenuDirection,
-        FlyoutMenuDirection.BottomStart
-      )}>
+      direction={select('Flyout direction', FlyoutMenuDirection, FlyoutMenuDirection.BottomStart)}
+    >
       This is some flyout content
     </FlyoutMenu>
   </div>
@@ -78,13 +77,14 @@ export const LargeFlyoutExample = () => (
       triggerId="test-trigger-id-2"
       light={boolean('Light Mode', true)}
       onCancel={action('On Cancel Clicked')}
-      onApply={action('On Apply Clicked')}>
+      onApply={action('On Apply Clicked')}
+    >
       <div>
         <h2>This is a header</h2>
 
         <p style={{ width: 300 }}>
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-          Vestibulum id ligula porta felis euismod semper.
+          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
+          felis euismod semper.
         </p>
 
         <div style={{ backgroundColor: '#333333', height: 300, width: 800 }} />
@@ -107,13 +107,14 @@ export const CustomFooterExample = () => (
       onCancel={action('On Cancel Clicked')}
       onApply={action('On Apply Clicked')}
       defaultOpen
-      direction={FlyoutMenuDirection.BottomStart}>
+      direction={FlyoutMenuDirection.BottomStart}
+    >
       <div>
         <h2>This is a header</h2>
 
         <p style={{ width: 300 }}>
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-          Vestibulum id ligula porta felis euismod semper.
+          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
+          felis euismod semper.
         </p>
       </div>
     </FlyoutMenu>

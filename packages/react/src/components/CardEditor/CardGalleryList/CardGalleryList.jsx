@@ -85,9 +85,7 @@ const CardGalleryList = ({ supportedCardTypes, onAddCard, icons, i18n }) => {
         content: {
           value: mergedI18n[cardType] || cardType,
           icon: (
-            <div className={`${iotPrefix}--card-gallery-list__icon`}>
-              {mergedIcons[cardType]}
-            </div>
+            <div className={`${iotPrefix}--card-gallery-list__icon`}>{mergedIcons[cardType]}</div>
           ),
         },
         isSelectable: true,

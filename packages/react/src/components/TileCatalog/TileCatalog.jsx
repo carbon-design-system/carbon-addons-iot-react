@@ -1,11 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  RadioTile,
-  Tile,
-  SkeletonText,
-  DataTable,
-} from 'carbon-components-react';
+import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
@@ -54,8 +49,7 @@ export const propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       /**  the values field is searched by the search widget */
-      values: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-        .isRequired,
+      values: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
       /** renderContent is called back with the full value object and id to render */
       renderContent: PropTypes.func,
       className: PropTypes.string,
@@ -95,8 +89,7 @@ const TileCatalog = ({
   const searchState = search ? search.value : '';
   const handleSearch = search && search.onSearch;
   const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
-  const totalTiles =
-    pagination && pagination.totalItems ? pagination.totalItems : 10;
+  const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
     <div className={classnames(className, `${iotPrefix}--tile-catalog`)}>
@@ -115,9 +108,7 @@ const TileCatalog = ({
       {isLoading ? ( // generate empty tiles for first page
         <TileGroup
           tiles={[...Array(pageSize)].map((val, index) => (
-            <Tile
-              className={`${iotPrefix}--tile-catalog--empty-tile`}
-              key={`emptytile-${index}`}>
+            <Tile className={`${iotPrefix}--tile-catalog--empty-tile`} key={`emptytile-${index}`}>
               <SkeletonText />
             </Tile>
           ))}
@@ -133,7 +124,8 @@ const TileCatalog = ({
               value={tile.id}
               name={id}
               checked={selectedTileId === tile.id}
-              onChange={onSelection}>
+              onChange={onSelection}
+            >
               {tile.renderContent
                 ? tile.renderContent({ values: tile.values, id: tile.id })
                 : tile.value}
@@ -145,18 +137,13 @@ const TileCatalog = ({
           {error || (
             <Fragment>
               <Bee32 />
-              <p>
-                {(search && search.noMatchesFoundText) || 'No matches found'}
-              </p>
+              <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
             </Fragment>
           )}
         </Tile>
       )}
       {!isLoading && tiles.length > 0 && !error && pagination ? (
-        <SimplePagination
-          {...pagination}
-          maxPage={Math.ceil(totalTiles / pageSize)}
-        />
+        <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
       ) : null}
     </div>
   );

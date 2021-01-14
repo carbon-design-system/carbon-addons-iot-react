@@ -18,9 +18,7 @@ const { iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
-const RouterComponent = ({ children, ...rest }) => (
-  <div {...rest}>{children}</div>
-);
+const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 const links = [
   {

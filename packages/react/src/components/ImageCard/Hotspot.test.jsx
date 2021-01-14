@@ -10,33 +10,14 @@ const { text01, ui03 } = g10;
 describe('Hotspot', () => {
   it('uses size and position', () => {
     render(
-      <Hotspot
-        content={<HotspotContent />}
-        x={10}
-        y={5}
-        height={50}
-        width={200}
-        type="fixed"
-      />
+      <Hotspot content={<HotspotContent />} x={10} y={5} height={50} width={200} type="fixed" />
     );
 
     const hotspotContainer = screen.getByTestId(/hotspot-10-5/);
-    expect(hotspotContainer).toHaveAttribute(
-      'style',
-      expect.stringContaining('--x-pos: 10')
-    );
-    expect(hotspotContainer).toHaveAttribute(
-      'style',
-      expect.stringContaining('--y-pos: 5')
-    );
-    expect(hotspotContainer).toHaveAttribute(
-      'style',
-      expect.stringContaining('--width: 200')
-    );
-    expect(hotspotContainer).toHaveAttribute(
-      'style',
-      expect.stringContaining('--height: 50')
-    );
+    expect(hotspotContainer).toHaveAttribute('style', expect.stringContaining('--x-pos: 10'));
+    expect(hotspotContainer).toHaveAttribute('style', expect.stringContaining('--y-pos: 5'));
+    expect(hotspotContainer).toHaveAttribute('style', expect.stringContaining('--width: 200'));
+    expect(hotspotContainer).toHaveAttribute('style', expect.stringContaining('--height: 50'));
   });
   describe('text type', () => {
     it('uses defult text styles', () => {
@@ -51,10 +32,7 @@ describe('Hotspot', () => {
         'style',
         expect.stringContaining(`--border-color: ${ui03}`)
       );
-      expect(textHotspot).toHaveAttribute(
-        'style',
-        expect.stringContaining('--border-width: 0')
-      );
+      expect(textHotspot).toHaveAttribute('style', expect.stringContaining('--border-width: 0'));
       expect(textHotspot).toHaveAttribute(
         'style',
         expect.stringContaining('--title-font-weight: normal')
@@ -101,10 +79,7 @@ describe('Hotspot', () => {
         'style',
         expect.stringContaining('--border-color: #006666')
       );
-      expect(textHotspot).toHaveAttribute(
-        'style',
-        expect.stringContaining('--border-width: 1')
-      );
+      expect(textHotspot).toHaveAttribute('style', expect.stringContaining('--border-width: 1'));
       expect(textHotspot).toHaveAttribute(
         'style',
         expect.stringContaining('--title-font-weight: bold')

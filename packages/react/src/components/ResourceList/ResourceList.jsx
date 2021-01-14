@@ -82,24 +82,11 @@ class ResourceList extends Component {
   }
 
   render = () => {
-    const {
-      design,
-      data,
-      customAction,
-      currentItemId,
-      onRowClick,
-      extraContent,
-    } = this.props;
+    const { design, data, customAction, currentItemId, onRowClick, extraContent } = this.props;
 
     const checkboxCell = (
-      <div
-        className="bx--structured-list-td"
-        style={{ verticalAlign: 'middle' }}>
-        <svg
-          className="bx--structured-list-svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16">
+      <div className="bx--structured-list-td" style={{ verticalAlign: 'middle' }}>
+        <svg className="bx--structured-list-svg" width="16" height="16" viewBox="0 0 16 16">
           <path
             d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.646-10.854L6.75 10.043 4.354 7.646l-.708.708 3.104 3.103 5.604-5.603-.708-.708z"
             fillRule="evenodd"
@@ -110,11 +97,13 @@ class ResourceList extends Component {
     const customActionContent = (rowId) => (
       <CustomActionDiv
         className="bx--structured-list-td bx--structured-list-content--nowrap"
-        role="presentation">
+        role="presentation"
+      >
         <Button
           kind="ghost"
           renderIcon={customAction.icon}
-          onClick={() => customAction.onClick(rowId)}>
+          onClick={() => customAction.onClick(rowId)}
+        >
           {customAction.label}
         </Button>
       </CustomActionDiv>
@@ -131,7 +120,8 @@ class ResourceList extends Component {
             activeItem ? 'bx--structured-list-row--selected' : ''
           } bx--structured-list-row`}
           tabIndex={customAction ? -1 : idx}
-          onClick={onRowClick ? () => onRowClick(id) : null}>
+          onClick={onRowClick ? () => onRowClick(id) : null}
+        >
           {extraContent ? (
             <div className="bx--structured-list-td">{extraContent[idx]}</div>
           ) : undefined}
@@ -139,9 +129,7 @@ class ResourceList extends Component {
             <Fragment>
               <div className="bx--structured-list-td">
                 <strong>{title}</strong>
-                <InlineDiv className="bx--structured-list-td">
-                  {description}
-                </InlineDiv>
+                <InlineDiv className="bx--structured-list-td">{description}</InlineDiv>
               </div>
             </Fragment>
           ) : (
@@ -178,7 +166,8 @@ class ResourceList extends Component {
           'bx--structured-list',
           'bx--structured-list--border',
           'bx--structured-list--selection',
-        ].join(' ')}>
+        ].join(' ')}
+      >
         <div className="bx--structured-list-tbody">{listContent}</div>
       </ResourceListSection>
     );

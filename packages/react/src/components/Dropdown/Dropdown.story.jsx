@@ -80,10 +80,7 @@ const props = () => ({
   titleText: text('Title (titleText)', 'Dropdown label'),
   helperText: text('Helper text (helperText)', 'This is some helper text.'),
   invalid: boolean('Show form validation UI (invalid)', false),
-  invalidText: text(
-    'Form validation UI content (invalidText)',
-    'A valid value is required'
-  ),
+  invalidText: text('Form validation UI content (invalidText)', 'A valid value is required'),
 });
 
 export default {
@@ -126,11 +123,7 @@ export const Inline = () => (
 export const Playground = () => {
   return (
     <div style={{ width: 300 }}>
-      <Dropdown
-        {...props()}
-        items={items}
-        itemToString={(item) => (item ? item.text : '')}
-      />
+      <Dropdown {...props()} items={items} itemToString={(item) => (item ? item.text : '')} />
     </div>
   );
 };
@@ -140,7 +133,8 @@ export const WithIcons = () => {
     <div
       style={{
         width: select('wrapper width', ['300px', '100px'], '300px'),
-      }}>
+      }}
+    >
       <Dropdown
         {...props()}
         id="some-dropdown-id"
