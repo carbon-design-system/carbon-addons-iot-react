@@ -1,6 +1,7 @@
 .#{$iot-prefix}--dashboard-editor {
   display: flex;
-  height: 100%;
+  // need to reserve space for the suite header
+  height: calc(100vh - 3rem);
   > .#{$prefix}--skeleton__text {
     margin-top: 1rem;
     margin-left: 1rem;

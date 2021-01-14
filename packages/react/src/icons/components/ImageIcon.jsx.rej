@@ -1,7 +1,0 @@
-diff a/packages/react/src/icons/components/ImageIcon.jsx b/packages/react/src/icons/components/ImageIcon.jsx	(rejected hunks)
-@@ -7,4 +7 @@ function SvgImageIcon(props) {
--        <path
--          stroke="#0062FF"
--          d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6"
--        />
-+        <path stroke="#0062FF" d="M1.29 21.57L13 10.477l11.2 12.347L30.5 16l8.21 9.6" />
