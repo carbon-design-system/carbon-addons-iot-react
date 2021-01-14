@@ -1,7 +1,12 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
+import {
+  ChartErrorBar16,
+  Edit16,
+  Star16,
+  StarFilled16,
+} from '@carbon/icons-react';
 
 import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
 import { Tag } from '../../Tag';
@@ -58,7 +63,7 @@ export const BasicWKnobs = () => {
           <Button
             key="list-item-edit"
             style={{ color: 'black' }}
-            renderIcon={Edit16}
+            renderIcon={ChartErrorBar16}
             hasIconOnly
             kind="ghost"
             size="small"
