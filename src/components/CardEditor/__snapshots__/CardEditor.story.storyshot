@@ -607,23 +607,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     Content
                   </a>
                 </li>
-                <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
-                >
-                  <a
-                    className="bx--tabs__nav-link"
-                    href="#"
-                    tabIndex={-1}
-                  >
-                    Settings
-                  </a>
-                </li>
               </ul>
             </div>
             <div
@@ -1124,104 +1107,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-            >
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--number bx--number--helpertext bx--number--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="calculated_value-card-font-size"
-                    >
-                      Font size
-                    </label>
-                    <div
-                      className="bx--number__input-wrapper"
-                    >
-                      <input
-                        aria-describedby={null}
-                        aria-label={null}
-                        disabled={false}
-                        id="calculated_value-card-font-size"
-                        min={0}
-                        onChange={[Function]}
-                        pattern="[0-9]*"
-                        step={1}
-                        type="number"
-                        value={16}
-                      />
-                      <div
-                        className="bx--number__controls"
-                      >
-                        <button
-                          aria-atomic="true"
-                          aria-label="Increment number"
-                          aria-live="polite"
-                          className="bx--number__control-btn up-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          title="Increment number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="up-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={4}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 8 4"
-                            width={8}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 4L4 0 8 4z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-atomic="true"
-                          aria-label="Decrement number"
-                          aria-live="polite"
-                          className="bx--number__control-btn down-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          title="Decrement number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="down-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={4}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 8 4"
-                            width={8}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 0L4 4 0 0z"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
               className="iot--card-edit-form--footer"
             >
               <button
@@ -1402,23 +1287,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     tabIndex={0}
                   >
                     Content
-                  </a>
-                </li>
-                <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
-                >
-                  <a
-                    className="bx--tabs__nav-link"
-                    href="#"
-                    tabIndex={-1}
-                  >
-                    Settings
                   </a>
                 </li>
               </ul>
@@ -1914,104 +1782,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-hidden={true}
-              className="bx--tab-content"
-              hidden={true}
-              role="tabpanel"
-              selected={false}
-            >
-              <div
-                className="iot--card-edit-form--input"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--number bx--number--helpertext bx--number--light"
-                  >
-                    <label
-                      className="bx--label"
-                      htmlFor="calculated_value-card-font-size"
-                    >
-                      Font size
-                    </label>
-                    <div
-                      className="bx--number__input-wrapper"
-                    >
-                      <input
-                        aria-describedby={null}
-                        aria-label={null}
-                        disabled={false}
-                        id="calculated_value-card-font-size"
-                        min={0}
-                        onChange={[Function]}
-                        pattern="[0-9]*"
-                        step={1}
-                        type="number"
-                        value={16}
-                      />
-                      <div
-                        className="bx--number__controls"
-                      >
-                        <button
-                          aria-atomic="true"
-                          aria-label="Increment number"
-                          aria-live="polite"
-                          className="bx--number__control-btn up-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          title="Increment number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="up-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={4}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 8 4"
-                            width={8}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0 4L4 0 8 4z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          aria-atomic="true"
-                          aria-label="Decrement number"
-                          aria-live="polite"
-                          className="bx--number__control-btn down-icon"
-                          disabled={false}
-                          onClick={[Function]}
-                          title="Decrement number"
-                          type="button"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            className="down-icon"
-                            fill="currentColor"
-                            focusable="false"
-                            height={4}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 8 4"
-                            width={8}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 0L4 4 0 0z"
-                            />
-                          </svg>
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -3944,23 +3714,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Content
                     </a>
                   </li>
-                  <li
-                    aria-controls="undefined__panel"
-                    aria-selected={false}
-                    className="bx--tabs__nav-item"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    role="tab"
-                    tabIndex={-1}
-                  >
-                    <a
-                      className="bx--tabs__nav-link"
-                      href="#"
-                      tabIndex={-1}
-                    >
-                      Settings
-                    </a>
-                  </li>
                 </ul>
               </div>
               <div
@@ -4311,104 +4064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     className="iot--list--content"
                   >
                     <div />
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="bx--tab-content"
-                hidden={true}
-                role="tabpanel"
-                selected={false}
-              >
-                <div
-                  className="iot--card-edit-form--input"
-                >
-                  <div
-                    className="bx--form-item"
-                  >
-                    <div
-                      className="bx--number bx--number--helpertext bx--number--light"
-                    >
-                      <label
-                        className="bx--label"
-                        htmlFor="card-1_value-card-font-size"
-                      >
-                        Font size
-                      </label>
-                      <div
-                        className="bx--number__input-wrapper"
-                      >
-                        <input
-                          aria-describedby={null}
-                          aria-label={null}
-                          disabled={false}
-                          id="card-1_value-card-font-size"
-                          min={0}
-                          onChange={[Function]}
-                          pattern="[0-9]*"
-                          step={1}
-                          type="number"
-                          value={16}
-                        />
-                        <div
-                          className="bx--number__controls"
-                        >
-                          <button
-                            aria-atomic="true"
-                            aria-label="Increment number"
-                            aria-live="polite"
-                            className="bx--number__control-btn up-icon"
-                            disabled={false}
-                            onClick={[Function]}
-                            title="Increment number"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              className="up-icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={4}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 8 4"
-                              width={8}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M0 4L4 0 8 4z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-atomic="true"
-                            aria-label="Decrement number"
-                            aria-live="polite"
-                            className="bx--number__control-btn down-icon"
-                            disabled={false}
-                            onClick={[Function]}
-                            title="Decrement number"
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              className="down-icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={4}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 8 4"
-                              width={8}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8 0L4 4 0 0z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
