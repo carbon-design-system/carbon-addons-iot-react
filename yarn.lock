@@ -2573,16 +2573,27 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@carbon/charts-react@^0.41.11":
-  version "0.41.11"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.11.tgz#60fa7044dfbae9c4a94679ab290aadbf34a5c069"
-  integrity sha512-WRsfO+X5NQhhKzyevY8MQAWlL+SKOlvPm+WK1vaKnD5VuFMrdnLB2OG6esJmrF7taAC5qeY5mTlAfJ0ZE97p5Q==
+  version "0.41.21"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.41.21.tgz#71a12f035b833afb5cd781893bcf9345db5ee067"
+  integrity sha512-nXW6O3L0ZfHZej/UXbEFPod5wto5LIIomdKSD5yeVrAt/KKMN3GvsIOjkCYK4Meoev4hDUhraxdps6SuoxZjzQ==
   dependencies:
-    "@carbon/charts" "^0.41.11"
+    "@carbon/charts" "^0.41.21"
 
 "@carbon/charts@^0.41.11":
   version "0.41.11"
   resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.11.tgz#9b295c891e440adef0cf38fc5202f95e0081ca54"
   integrity sha512-0V/LOcUYh9dtqu09r7I1HwDrr+2sBBAnNYABAl6HC42PUbnt3MmXpWAZi+e69YvSyw1IuH6jBWLAb1vkc27/PQ==
+  dependencies:
+    "@carbon/colors" "10.15.0"
+    "@carbon/utils-position" "1.1.1"
+    date-fns "2.8.1"
+    lodash-es "4.17.15"
+    resize-observer-polyfill "1.5.0"
+
+"@carbon/charts@^0.41.21":
+  version "0.41.21"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.41.21.tgz#2f729c2f3b88cd7f7d051439316aae1bf3feb2a9"
+  integrity sha512-vx4JeJzY4WTJfZTXZkD+BKVkZP38K+cJt+ipXIM3mWBwItdDY1EstvlaucE4veCUhT1NgFr6Wkl1N1AUS6gG7Q==
   dependencies:
     "@carbon/colors" "10.15.0"
     "@carbon/utils-position" "1.1.1"
@@ -16974,9 +16985,9 @@ qs@^6.6.0:
   integrity sha512-Cxm7/SS/y/Z3MHWSxXb8lIFqgqBowP5JMlTUFyJN88y0SGQhVmZnqFK/PeuMX9LzUyWsqqhNxIyg0jlzq946yA==
 
 qs@^6.9.4:
-  version "6.9.5"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.5.tgz#45859f731392198fbd3f91ea4290e7c4e25232fa"
-  integrity sha512-T0SnbxGiMcB09qd3bFcPt8rufxPs7T7TjePk33r1WsJNt12/rWsK/ofKqRHQ0rY/iMGE0mVdkc6Yg9CuL/ty0Q==
+  version "6.9.6"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+  integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
 
 qs@~6.5.2:
   version "6.5.2"
