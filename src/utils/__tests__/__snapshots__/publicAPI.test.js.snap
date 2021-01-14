@@ -370,6 +370,7 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "toggleAggregations": "Toggle Aggregations",
       },
       "id": null,
       "lightweight": false,
@@ -2995,6 +2996,9 @@ Map {
             "onShowRowEdit": Object {
               "type": "func",
             },
+            "onToggleAggregations": Object {
+              "type": "func",
+            },
             "onToggleColumnSelection": Object {
               "type": "func",
             },
@@ -3173,6 +3177,9 @@ Map {
             "searchPlaceholder": Object {
               "type": "string",
             },
+            "toggleAggregations": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -3180,6 +3187,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAggregations": Object {
+              "type": "bool",
+            },
             "hasColumnSelection": Object {
               "type": "bool",
             },

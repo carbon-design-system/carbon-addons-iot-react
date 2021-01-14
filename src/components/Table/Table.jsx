@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from 'react';
+import React, { useMemo, useState, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
@@ -340,6 +340,7 @@ export const defaultProps = (baseProps) => ({
     itemsSelected: 'items selected',
     itemSelected: 'item selected',
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,
+    toggleAggregations: 'Toggle Aggregations',
     /** empty state */
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
@@ -451,12 +452,19 @@ const Table = (props) => {
       ).isHidden
   );
 
-  const { hasAggregations } = options;
+  const [hasAggregations, setHasAggregations] = useState(
+    options.hasAggregations
+  );
   const aggregationsProp = view.aggregations;
   const getColumnNumbers = (tableData, columnId) =>
     tableData
       .map((row) => row.values[columnId])
       .filter((value) => Number.isFinite(value));
+
+  const onToggleAggregations = useCallback(
+    () => setHasAggregations((prev) => !prev),
+    [setHasAggregations]
+  );
 
   const aggregations = useMemo(() => {
     return hasAggregations && aggregationsProp.columns
@@ -521,6 +529,7 @@ const Table = (props) => {
       className={classnames(className, `${iotPrefix}--table-container`)}>
       {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
+        options.hasAggregations ||
         options.hasFilter ||
         options.hasSearch ||
         (hasMultiSelect && view.table.selectedIds.length > 0) ||
@@ -550,6 +559,7 @@ const Table = (props) => {
               filterDescending: i18n.filterDescending,
               downloadIconDescription: i18n.downloadIconDescription,
               rowCountInHeader: i18n.rowCountInHeader,
+              toggleAggregations: i18n.toggleAggregations,
             }}
             actions={{
               ...pick(
@@ -568,10 +578,12 @@ const Table = (props) => {
                   actions.toolbar.onApplySearch(value);
                 }
               },
+              onToggleAggregations,
             }}
             options={{
               ...pick(
                 options,
+                'hasAggregations',
                 'hasColumnSelection',
                 'hasSearch',
                 'hasRowSelection',

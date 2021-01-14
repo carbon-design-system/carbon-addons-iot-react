@@ -3781,7 +3781,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Simple Stateful Example with column overflow menu',
+    'Simple Stateful Example with column overflow menu and aggregate column values',
     () => (
       <FullWidthWrapper>
         <StatefulTable
@@ -3791,6 +3791,7 @@ storiesOf('Watson IoT/Table', module)
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
+            hasAggregations: true,
             hasRowSelection: select(
               'hasRowSelection',
               ['multi', 'single'],
@@ -3800,7 +3801,19 @@ storiesOf('Watson IoT/Table', module)
             hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
           }}
-          view={{ table: { selectedIds: array('selectedIds', []) } }}
+          view={{
+            table: {
+              selectedIds: array('selectedIds', []),
+            },
+            aggregations: {
+              label: 'Total',
+              columns: [
+                {
+                  id: 'number',
+                },
+              ],
+            },
+          }}
         />
       </FullWidthWrapper>
     ),
@@ -3812,27 +3825,4 @@ storiesOf('Watson IoT/Table', module)
         propTablesExclude: [StatefulTable],
       },
     }
-  )
-  .add('Aggregated column values', () => (
-    <FullWidthWrapper>
-      <Table
-        id="table"
-        {...initialState}
-        options={{
-          ...initialState.options,
-          hasAggregations: true,
-        }}
-        view={{
-          ...initialState.view,
-          aggregations: {
-            label: 'Total',
-            columns: [
-              {
-                id: 'number',
-              },
-            ],
-          },
-        }}
-      />
-    </FullWidthWrapper>
-  ));
+  );
