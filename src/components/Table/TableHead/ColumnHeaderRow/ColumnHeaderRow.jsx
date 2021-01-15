@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 import { DataTable, Button } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
 
@@ -137,4 +135,4 @@ class ColumnHeaderRow extends Component {
 }
 
 export { ColumnHeaderRow as UnconnectedColumnHeaderRow };
-export default DragDropContext(HTML5Backend)(ColumnHeaderRow);
+export default ColumnHeaderRow;

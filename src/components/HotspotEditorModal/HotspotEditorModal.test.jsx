@@ -15,6 +15,7 @@ import sizeMe from 'react-sizeme';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
@@ -315,21 +316,23 @@ describe('HotspotEditorModal', () => {
     };
 
     render(
-      <HotspotEditorModal
-        backgroundColors={getSelectableColors()}
-        borderColors={getSelectableColors()}
-        cardConfig={myCardConfig}
-        dataItems={[]}
-        getValidDataItems={getDataItems}
-        defaultHotspotType="fixed"
-        fontColors={getSelectableColors()}
-        hotspotIconFillColors={getSelectableColors()}
-        hotspotIcons={getSelectableIcons()}
-        label={landscape}
-        onClose={jest.fn()}
-        onFetchDynamicDemoHotspots={jest.fn()}
-        onSave={onSave}
-      />
+      <DragAndDrop>
+        <HotspotEditorModal
+          backgroundColors={getSelectableColors()}
+          borderColors={getSelectableColors()}
+          cardConfig={myCardConfig}
+          dataItems={[]}
+          getValidDataItems={getDataItems}
+          defaultHotspotType="fixed"
+          fontColors={getSelectableColors()}
+          hotspotIconFillColors={getSelectableColors()}
+          hotspotIcons={getSelectableIcons()}
+          label={landscape}
+          onClose={jest.fn()}
+          onFetchDynamicDemoHotspots={jest.fn()}
+          onSave={onSave}
+        />
+      </DragAndDrop>
     );
 
     await waitFor(() =>
@@ -481,21 +484,23 @@ describe('HotspotEditorModal', () => {
     };
 
     render(
-      <HotspotEditorModal
-        backgroundColors={getSelectableColors()}
-        borderColors={getSelectableColors()}
-        cardConfig={myCardConfig}
-        dataItems={[]}
-        getValidDataItems={getDataItems}
-        defaultHotspotType="fixed"
-        fontColors={getSelectableColors()}
-        hotspotIconFillColors={getSelectableColors()}
-        hotspotIcons={getSelectableIcons()}
-        label={landscape}
-        onClose={jest.fn()}
-        onFetchDynamicDemoHotspots={jest.fn()}
-        onSave={onSave}
-      />
+      <DragAndDrop>
+        <HotspotEditorModal
+          backgroundColors={getSelectableColors()}
+          borderColors={getSelectableColors()}
+          cardConfig={myCardConfig}
+          dataItems={[]}
+          getValidDataItems={getDataItems}
+          defaultHotspotType="fixed"
+          fontColors={getSelectableColors()}
+          hotspotIconFillColors={getSelectableColors()}
+          hotspotIcons={getSelectableIcons()}
+          label={landscape}
+          onClose={jest.fn()}
+          onFetchDynamicDemoHotspots={jest.fn()}
+          onSave={onSave}
+        />
+      </DragAndDrop>
     );
 
     await waitFor(() =>

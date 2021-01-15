@@ -1,8 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 import { Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
@@ -292,4 +290,4 @@ List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 
 export { List as UnconnectedList };
-export default DragDropContext(HTML5Backend)(List);
+export default List;

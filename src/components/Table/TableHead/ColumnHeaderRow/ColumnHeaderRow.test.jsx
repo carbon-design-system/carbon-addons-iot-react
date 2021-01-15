@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import TestBackend from 'react-dnd-test-backend';
-import { DragDropContext } from 'react-dnd';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+
+import { DragAndDrop } from '../../../../utils/DragAndDropUtils';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
@@ -21,57 +21,72 @@ const commonTableHeadProps = {
     hasRowSelection: false,
     hasRowExpansion: false,
   },
-  onChangeOrdering: jest.fn(),
-  onColumnToggle: jest.fn(),
+  onColumnToggle: () => {},
+  onChangeOrdering: () => {},
 };
 
-const wrapInTestContext = (DecoratedComponent, props) =>
-  DragDropContext(TestBackend)(() => <DecoratedComponent {...props} />);
-
-let wrapper;
-let backend;
-
 describe('TableHead', () => {
-  beforeEach(() => {
-    const Wrapped = wrapInTestContext(
-      UnconnectedColumnHeaderRow,
-      commonTableHeadProps
+  it('can reorder columns', () => {
+    const onChangeOrdering = jest.fn();
+    render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow
+          {...commonTableHeadProps}
+          onChangeOrdering={onChangeOrdering}
+        />
+      </DragAndDrop>
     );
 
-    wrapper = mount(<Wrapped />);
-    backend = wrapper.instance().getManager().getBackend();
-  });
-  it('can reorder columns', () => {
-    const dragSource = wrapper
-      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
-      .instance();
-    const dropTarget = wrapper
-      .find("DropTarget(ColumnHeaderSelect)[columnId='col2']")
-      .instance();
-    backend.simulateBeginDrag([dragSource.getHandlerId()]);
-    backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateDrop();
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
-  });
-  it('does not reorder columns when placed upon themselves', () => {
-    const dragSource = wrapper
-      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
-      .instance();
-    const dropTarget = wrapper
-      .find("DropTarget(ColumnHeaderSelect)[columnId='col1']")
-      .instance();
-    backend.simulateBeginDrag([dragSource.getHandlerId()]);
-    backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateDrop();
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalledWith([
+    const column1 = screen.getByText('Column 1');
+    const column2 = screen.getByText('Column 2');
+
+    fireEvent.dragStart(column1);
+    fireEvent.dragEnter(column2);
+    fireEvent.dragOver(column2);
+    fireEvent.drop(column2);
+
+    expect(onChangeOrdering).toHaveBeenCalledWith([
       { columnId: 'col2', isHidden: false },
       { columnId: 'col1', isHidden: false },
     ]);
   });
+  it('does not reorder columns when placed upon themselves', () => {
+    const onChangeOrdering = jest.fn();
+    render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow
+          {...commonTableHeadProps}
+          onChangeOrdering={onChangeOrdering}
+        />
+      </DragAndDrop>
+    );
+
+    const column1 = screen.getByText('Column 1');
+
+    fireEvent.dragStart(column1);
+    fireEvent.dragEnter(column1);
+    fireEvent.dragOver(column1);
+    fireEvent.drop(column1);
+
+    expect(onChangeOrdering).toHaveBeenCalledTimes(0);
+  });
   it('can click to toggle visibility', () => {
-    const headerButton = wrapper.find("ColumnHeaderSelect[columnId='col1']");
-    headerButton.simulate('click');
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
+    const onChangeOrdering = jest.fn();
+    const onColumnToggle = jest.fn();
+    render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow
+          {...commonTableHeadProps}
+          onChangeOrdering={onChangeOrdering}
+          onColumnToggle={onColumnToggle}
+        />
+      </DragAndDrop>
+    );
+
+    fireEvent.click(screen.getByText('Column 1'));
+
+    expect(onChangeOrdering).toHaveBeenCalledTimes(0);
+    expect(onColumnToggle).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -82,11 +97,11 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
-    const Wrapped = wrapInTestContext(
-      UnconnectedColumnHeaderRow,
-      tableHeadProps
+    render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow {...tableHeadProps} />
+      </DragAndDrop>
     );
-    render(<Wrapped />);
 
     expect(screen.getByText('Column 1').textContent).toContain('Column 1');
     expect(screen.getByText('Column 2').textContent).toContain('Column 2');
@@ -98,11 +113,11 @@ describe('ColumnHeaderRow', () => {
       ordering: [],
     };
 
-    const Wrapped = wrapInTestContext(
-      UnconnectedColumnHeaderRow,
-      tableHeadProps
+    const renderedElement = render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow {...tableHeadProps} />
+      </DragAndDrop>
     );
-    const renderedElement = render(<Wrapped />);
 
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
@@ -113,11 +128,11 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
-    const Wrapped = wrapInTestContext(
-      UnconnectedColumnHeaderRow,
-      tableHeadProps
+    const renderedElement = render(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow {...tableHeadProps} />
+      </DragAndDrop>
     );
-    const renderedElement = render(<Wrapped />);
 
     expect(renderedElement.container.innerHTML).toContain('Column 1');
     expect(renderedElement.container.innerHTML).toContain('Column 2');
@@ -136,11 +151,11 @@ describe('ColumnHeaderRow', () => {
       columnSelectionConfigText: 'button_text',
     };
 
-    const Wrapped = wrapInTestContext(
-      UnconnectedColumnHeaderRow,
-      tableHeadProps
+    const renderedElement = mount(
+      <DragAndDrop>
+        <UnconnectedColumnHeaderRow {...tableHeadProps} />
+      </DragAndDrop>
     );
-    const renderedElement = mount(<Wrapped />);
 
     expect(renderedElement.find('.column-header__btn').last().text()).toContain(
       'button_text'

@@ -5,6 +5,7 @@ import {
   CARD_SIZES,
   CARD_TYPES,
 } from '../../../../../constants/LayoutConstants';
+import { DragAndDrop } from '../../../../../utils/DragAndDropUtils';
 
 import TableCardFormContent from './TableCardFormContent';
 
@@ -102,27 +103,29 @@ describe('TableCardFormContent', () => {
   });
   it('edit mode with dataitems and dimension columns show work correctly', () => {
     render(
-      <TableCardFormContent
-        {...commonProps}
-        cardConfig={{
-          ...commonCardConfig,
-          content: {
-            columns: [
-              {
-                label: 'Timestamp',
-                dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
-              },
-              {
-                label: 'Manufacturer',
-                dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
-              },
-              { label: 'Temperature', dataSourceId: 'temperature' },
-            ],
-          },
-        }}
-      />
+      <DragAndDrop>
+        <TableCardFormContent
+          {...commonProps}
+          cardConfig={{
+            ...commonCardConfig,
+            content: {
+              columns: [
+                {
+                  label: 'Timestamp',
+                  dataSourceId: 'timestamp',
+                  type: 'TIMESTAMP',
+                },
+                {
+                  label: 'Manufacturer',
+                  dataSourceId: 'manufacturer',
+                  type: 'DIMENSION',
+                },
+                { label: 'Temperature', dataSourceId: 'temperature' },
+              ],
+            },
+          }}
+        />
+      </DragAndDrop>
     );
     // All of the existing columns should be rendered in the data section
     expect(screen.queryByText('Temperature')).toBeDefined();
@@ -152,11 +155,13 @@ describe('TableCardFormContent', () => {
       },
     };
     render(
-      <TableCardFormContent
-        {...commonProps}
-        onChange={mockOnChange}
-        cardConfig={mockCardConfig}
-      />
+      <DragAndDrop>
+        <TableCardFormContent
+          {...commonProps}
+          onChange={mockOnChange}
+          cardConfig={mockCardConfig}
+        />
+      </DragAndDrop>
     );
     // All of the existing columns should be rendered in the data section
     expect(screen.queryByText('Temperature')).toBeDefined();

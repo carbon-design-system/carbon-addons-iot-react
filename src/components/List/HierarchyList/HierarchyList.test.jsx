@@ -3,7 +3,7 @@ import { render, fireEvent, screen, within } from '@testing-library/react';
 import debounce from 'lodash/debounce';
 
 import { sampleHierarchy } from '../List.story';
-import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import { DragAndDrop, EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import HierarchyList, {
   searchForNestedItemValues,
@@ -128,7 +128,9 @@ describe('HierarchyList', () => {
 
   it('clicking expansion caret should expand item', () => {
     render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
+      <DragAndDrop>
+        <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
+      </DragAndDrop>
     );
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
@@ -146,7 +148,9 @@ describe('HierarchyList', () => {
 
   it('clicking expansion caret should collapse expanded item', () => {
     render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
+      <DragAndDrop>
+        <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
+      </DragAndDrop>
     );
     // Expand
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
@@ -178,7 +182,9 @@ describe('HierarchyList', () => {
 
   it('clicking nextpage should display the second page', () => {
     render(
-      <HierarchyList items={items} title="Hierarchy List" pageSize="sm" />
+      <DragAndDrop>
+        <HierarchyList items={items} title="Hierarchy List" pageSize="sm" />
+      </DragAndDrop>
     );
     // Only 5 categories should be showing by default
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
@@ -206,12 +212,14 @@ describe('HierarchyList', () => {
 
   it('found search result categories should be expanded', () => {
     render(
-      <HierarchyList
-        items={items}
-        hasSearch
-        title="Hierarchy List"
-        pageSize="lg"
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          hasSearch
+          title="Hierarchy List"
+          pageSize="lg"
+        />
+      </DragAndDrop>
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'jd' },
@@ -231,12 +239,14 @@ describe('HierarchyList', () => {
 
   it('search should include categories', () => {
     render(
-      <HierarchyList
-        items={items}
-        hasSearch
-        title="Hierarchy List"
-        pageSize="lg"
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          hasSearch
+          title="Hierarchy List"
+          pageSize="lg"
+        />
+      </DragAndDrop>
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'Chicago White Sox' },
@@ -282,7 +292,11 @@ describe('HierarchyList', () => {
   });
 
   it('all items should return if search value is empty string', () => {
-    render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
+    render(
+      <DragAndDrop>
+        <HierarchyList items={items} hasSearch title="Hierarchy List" />
+      </DragAndDrop>
+    );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'jd davis' },
     });
@@ -315,13 +329,15 @@ describe('HierarchyList', () => {
 
   it('parent items of defaultSelectedId should be expanded', () => {
     const { rerender } = render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        defaultSelectedId="New York Mets_JD Davis"
-        hasPagination={false}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultSelectedId="New York Mets_JD Davis"
+          hasPagination={false}
+        />
+      </DragAndDrop>
     );
 
     // Nested item should be visible
@@ -345,13 +361,15 @@ describe('HierarchyList', () => {
 
     // Change the defaultSelectedId property
     rerender(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        defaultSelectedId="New York Yankees_Gary Sanchez"
-        hasPagination={false}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultSelectedId="New York Yankees_Gary Sanchez"
+          hasPagination={false}
+        />
+      </DragAndDrop>
     );
 
     expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
@@ -366,13 +384,15 @@ describe('HierarchyList', () => {
 
   it('defaultExpandedIds should be expanded', () => {
     render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        defaultExpandedIds={['New York Mets', 'New York Yankees']}
-        hasPagination={false}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultExpandedIds={['New York Mets', 'New York Yankees']}
+          hasPagination={false}
+        />
+      </DragAndDrop>
     );
     // Yankees and Mets expanded by default. Players should be in document.
     const expandedMetsPlayer = screen.getByTitle('JD Davis');
@@ -398,12 +418,14 @@ describe('HierarchyList', () => {
   it('clicking item should fire onSelect', () => {
     const onSelect = jest.fn();
     render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        onSelect={onSelect}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          onSelect={onSelect}
+        />
+      </DragAndDrop>
     );
     // Expand the category
     fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
@@ -414,11 +436,13 @@ describe('HierarchyList', () => {
 
   it('shows custom header when item is selected', () => {
     render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        editingStyle={EditingStyle.MultipleNesting}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+        />
+      </DragAndDrop>
     );
 
     const expandIcons = screen.queryAllByTestId('expand-icon');
@@ -448,11 +472,13 @@ describe('HierarchyList', () => {
 
   it('shows modal when move selected', () => {
     render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        editingStyle={EditingStyle.MultipleNesting}
-      />
+      <DragAndDrop>
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          editingStyle={EditingStyle.MultipleNesting}
+        />
+      </DragAndDrop>
     );
 
     const expandIcons = screen.queryAllByTestId('expand-icon');

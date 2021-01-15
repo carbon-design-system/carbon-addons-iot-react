@@ -7,6 +7,7 @@ import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import { mockActions } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
@@ -1043,12 +1044,14 @@ describe('Table', () => {
     };
 
     const { rerender } = render(
-      <Table
-        {...initialState}
-        {...additionalProps}
-        isSortable
-        i18n={i18nTest}
-      />
+      <DragAndDrop>
+        <Table
+          {...initialState}
+          {...additionalProps}
+          isSortable
+          i18n={i18nTest}
+        />
+      </DragAndDrop>
     );
 
     expect(
@@ -1147,20 +1150,22 @@ describe('Table', () => {
     expect(screen.queryByText(i18nDefault.batchCancel)).not.toBeInTheDocument();
 
     rerender(
-      <Table
-        {...initialState}
-        options={{
-          ...initialState.options,
-          hasColumnSelectionConfig: true,
-        }}
-        i18n={i18nTest}
-        view={{
-          ...initialState.view,
-          toolbar: {
-            activeBar: 'column',
-          },
-        }}
-      />
+      <DragAndDrop>
+        <Table
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasColumnSelectionConfig: true,
+          }}
+          i18n={i18nTest}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              activeBar: 'column',
+            },
+          }}
+        />
+      </DragAndDrop>
     );
     expect(
       screen.getAllByText(i18nTest.columnSelectionConfig)[0]

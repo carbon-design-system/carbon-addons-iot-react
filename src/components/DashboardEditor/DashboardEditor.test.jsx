@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Link } from '../..';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import DashboardEditor from './DashboardEditor';
 
@@ -56,10 +57,12 @@ describe('DashboardEditor', () => {
 
   it('clicking card should select the card and close gallery', () => {
     render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
+      <DragAndDrop>
+        <DashboardEditor
+          {...commonProps}
+          initialValue={{ cards: [mockValueCard] }}
+        />
+      </DragAndDrop>
     );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
@@ -79,10 +82,12 @@ describe('DashboardEditor', () => {
 
   it('enter key should select the card and close gallery', () => {
     render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
+      <DragAndDrop>
+        <DashboardEditor
+          {...commonProps}
+          initialValue={{ cards: [mockValueCard] }}
+        />
+      </DragAndDrop>
     );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
@@ -102,10 +107,12 @@ describe('DashboardEditor', () => {
 
   it('space key should select the card and close gallery', () => {
     render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
+      <DragAndDrop>
+        <DashboardEditor
+          {...commonProps}
+          initialValue={{ cards: [mockValueCard] }}
+        />
+      </DragAndDrop>
     );
     // no card should be selected, meaning the gallery should be open
     const galleryTitle = screen.getByText('Gallery');
@@ -170,7 +177,11 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting card type in gallery should add card', () => {
-    render(<DashboardEditor {...commonProps} />);
+    render(
+      <DragAndDrop>
+        <DashboardEditor {...commonProps} />
+      </DragAndDrop>
+    );
     // first find and click Simple bar
     const simpleBarBtn = screen.getByTitle('Simple bar');
     expect(simpleBarBtn).toBeInTheDocument();
@@ -219,7 +230,11 @@ describe('DashboardEditor', () => {
   });
 
   it('selecting table card type in gallery should add card', () => {
-    render(<DashboardEditor {...commonProps} />);
+    render(
+      <DragAndDrop>
+        <DashboardEditor {...commonProps} />
+      </DragAndDrop>
+    );
     // first find and click table
     const tableBtn = screen.getByTitle('Data table');
     expect(tableBtn).toBeInTheDocument();
@@ -273,10 +288,12 @@ describe('DashboardEditor', () => {
 
   it('changing title in CardEditForm should change rendered card title', () => {
     render(
-      <DashboardEditor
-        {...commonProps}
-        initialValue={{ cards: [mockValueCard] }}
-      />
+      <DragAndDrop>
+        <DashboardEditor
+          {...commonProps}
+          initialValue={{ cards: [mockValueCard] }}
+        />
+      </DragAndDrop>
     );
     // add a card
     const valueBtn = screen.getByTitle('Value / KPI');
@@ -348,13 +365,15 @@ describe('DashboardEditor', () => {
 
   it('uses custom onCardChange callback', () => {
     render(
-      <DashboardEditor
-        {...commonProps}
-        onCardChange={(card) => {
-          mockOnCardChange();
-          return card;
-        }}
-      />
+      <DragAndDrop>
+        <DashboardEditor
+          {...commonProps}
+          onCardChange={(card) => {
+            mockOnCardChange();
+            return card;
+          }}
+        />
+      </DragAndDrop>
     );
     // add a card
     const valueBtn = screen.getByTitle('Value / KPI');
