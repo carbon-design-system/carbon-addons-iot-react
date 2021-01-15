@@ -9,7 +9,6 @@ import theme from './theme';
 initializeRTL();
 
 import Container from './Container';
-import { DragAndDrop } from '../src/utils/DragAndDropUtils';
 
 addParameters({
   options: {
@@ -30,10 +29,3 @@ addDecorator(
 addDecorator((story) => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);
-/*
-addDecorator((Story) => (
-  <DragAndDrop>
-    <Story />
-  </DragAndDrop>
-));
-*/
