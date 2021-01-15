@@ -5,7 +5,7 @@
   // need a set width to determine where to place the next attribute
   //width: 248px;
   // need a set height to determine truncation vs wrapping. This is the max font size allowed
-  height: 54px;
+  max-height: 54px;
   // line up the value and unit
   align-items: baseline;
 
