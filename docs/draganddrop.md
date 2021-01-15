@@ -1,8 +1,8 @@
 # Drag and Drop
 
-To support drag and drop functionality, this library uses `react-dnd`. We export
-some helpers to enable your application to utilize the same instance and version
-that the library uses.
+To support drag and drop functionality, this library uses `react-dnd`. There are
+some helpers exported to enable your application to utilize the same instance
+and version that the library uses.
 
 ## `<DragAndDrop/>`
 
