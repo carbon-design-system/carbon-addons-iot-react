@@ -11,6 +11,7 @@ import { SkeletonText } from '../SkeletonText';
 import {
   EditingStyle,
   editingStyleIsMultiple,
+  DragAndDrop,
 } from '../../utils/DragAndDropUtils';
 import { Checkbox } from '../..';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
@@ -243,46 +244,48 @@ const List = forwardRef((props, ref) => {
     );
 
   return (
-    <div
-      className={classnames(`${iotPrefix}--list`, className, {
-        [`${iotPrefix}--list__full-height`]: isFullHeight,
-      })}>
-      <ListHeader
-        className={classnames(
-          `${iotPrefix}--list--header`,
-          overrides?.header?.props?.className
-        )}
-        title={title}
-        buttons={buttons}
-        search={search}
-        i18n={mergedI18n}
-        isLoading={isLoading}
-        {...overrides?.header?.props}
-      />
-
+    <DragAndDrop>
       <div
-        className={classnames(
-          {
-            // If FullHeight, the content's overflow shouldn't be hidden
-            [`${iotPrefix}--list--content__full-height`]: isFullHeight,
-          },
-          `${iotPrefix}--list--content`
-        )}>
-        {!isLoading ? (
-          <>{listItems.length ? listItems : emptyContent}</>
-        ) : (
-          <SkeletonText
-            className={`${iotPrefix}--list--skeleton`}
-            width="90%"
-          />
-        )}
-      </div>
-      {pagination && !isLoading ? (
-        <div className={`${iotPrefix}--list--page`}>
-          <SimplePagination {...pagination} />
+        className={classnames(`${iotPrefix}--list`, className, {
+          [`${iotPrefix}--list__full-height`]: isFullHeight,
+        })}>
+        <ListHeader
+          className={classnames(
+            `${iotPrefix}--list--header`,
+            overrides?.header?.props?.className
+          )}
+          title={title}
+          buttons={buttons}
+          search={search}
+          i18n={mergedI18n}
+          isLoading={isLoading}
+          {...overrides?.header?.props}
+        />
+
+        <div
+          className={classnames(
+            {
+              // If FullHeight, the content's overflow shouldn't be hidden
+              [`${iotPrefix}--list--content__full-height`]: isFullHeight,
+            },
+            `${iotPrefix}--list--content`
+          )}>
+          {!isLoading ? (
+            <>{listItems.length ? listItems : emptyContent}</>
+          ) : (
+            <SkeletonText
+              className={`${iotPrefix}--list--skeleton`}
+              width="90%"
+            />
+          )}
         </div>
-      ) : null}
-    </div>
+        {pagination && !isLoading ? (
+          <div className={`${iotPrefix}--list--page`}>
+            <SimplePagination {...pagination} />
+          </div>
+        ) : null}
+      </div>
+    </DragAndDrop>
   );
 });
 

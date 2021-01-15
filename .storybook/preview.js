@@ -30,8 +30,10 @@ addDecorator(
 addDecorator((story) => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);
+/*
 addDecorator((Story) => (
   <DragAndDrop>
     <Story />
   </DragAndDrop>
 ));
+*/

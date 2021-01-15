@@ -7,6 +7,7 @@ import { settings } from '../../../../constants/Settings';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
 import { defaultI18NPropTypes } from '../../TablePropTypes';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
+import { DragAndDrop } from '../../../../utils/DragAndDropUtils';
 
 const { TableHeader, TableRow } = DataTable;
 const { iotPrefix } = settings;
@@ -86,50 +87,52 @@ class ColumnHeaderRow extends Component {
           .isHidden
     );
     return (
-      <TableRow className={`${iotPrefix}--column-header-row--table-row`}>
-        {hasRowSelection === 'multi' ? (
-          <TableHeader
-            className={`${iotPrefix}--column-header-row--table-header`}
-          />
-        ) : null}
-        {hasRowExpansion ? (
-          <TableHeader
-            className={`${iotPrefix}--column-header-row--table-header`}
-          />
-        ) : null}
-        <TableHeader
-          className={`${iotPrefix}--column-header-row--table-header`}
-          colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}
-          scope="col">
-          <div className={`${iotPrefix}--column-header-row--select-wrapper`}>
-            {ordering.map((c, idx) => (
-              <ColumnHeaderSelect
-                key={`${idx}-item`}
-                index={idx}
-                columnId={c.columnId}
-                isHidden={c.isHidden}
-                moveItem={(srcIndex, destIndex) =>
-                  this.reorderColumn(srcIndex, destIndex)
-                }
-                onClick={() => this.toggleColumn(c.columnId)}
-                isDisabled={isDisabled}>
-                {columns.find((i) => c.columnId === i.id).name}
-              </ColumnHeaderSelect>
-            ))}
-          </div>
-          {hasColumnSelectionConfig ? (
-            <Button
-              disabled={isDisabled}
-              className="column-header__btn"
-              kind="ghost"
-              size="small"
-              renderIcon={Settings16}
-              onClick={() => onColumnSelectionConfig()}>
-              {columnSelectionConfigText}
-            </Button>
+      <DragAndDrop>
+        <TableRow className={`${iotPrefix}--column-header-row--table-row`}>
+          {hasRowSelection === 'multi' ? (
+            <TableHeader
+              className={`${iotPrefix}--column-header-row--table-header`}
+            />
           ) : null}
-        </TableHeader>
-      </TableRow>
+          {hasRowExpansion ? (
+            <TableHeader
+              className={`${iotPrefix}--column-header-row--table-header`}
+            />
+          ) : null}
+          <TableHeader
+            className={`${iotPrefix}--column-header-row--table-header`}
+            colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}
+            scope="col">
+            <div className={`${iotPrefix}--column-header-row--select-wrapper`}>
+              {ordering.map((c, idx) => (
+                <ColumnHeaderSelect
+                  key={`${idx}-item`}
+                  index={idx}
+                  columnId={c.columnId}
+                  isHidden={c.isHidden}
+                  moveItem={(srcIndex, destIndex) =>
+                    this.reorderColumn(srcIndex, destIndex)
+                  }
+                  onClick={() => this.toggleColumn(c.columnId)}
+                  isDisabled={isDisabled}>
+                  {columns.find((i) => c.columnId === i.id).name}
+                </ColumnHeaderSelect>
+              ))}
+            </div>
+            {hasColumnSelectionConfig ? (
+              <Button
+                disabled={isDisabled}
+                className="column-header__btn"
+                kind="ghost"
+                size="small"
+                renderIcon={Settings16}
+                onClick={() => onColumnSelectionConfig()}>
+                {columnSelectionConfigText}
+              </Button>
+            ) : null}
+          </TableHeader>
+        </TableRow>
+      </DragAndDrop>
     );
   }
 }

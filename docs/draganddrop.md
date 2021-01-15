@@ -8,8 +8,10 @@ that the library uses.
 
 This component is exported for use and utilizes the `useDNDProviderElement` hook
 to wrap any children in a shared DndProvider context (drag and drop manager)
-using the HTML5Backend. It's recommended that this component be added at the
-root level of your applications react tree.
+using the HTML5Backend. This component be added at the root level of your
+applications react tree or in multiple places within a subtree. The hook enables
+multiple components to use the same shared drag and drop context and prevent the
+"duplicate backends" problem.
 
 This component can also be used in unit tests and component development
 environments like storybook or cosmos.
@@ -49,8 +51,14 @@ in `preview.js`. This can also be done at the
 or
 [story level](https://storybook.js.org/docs/react/writing-stories/decorators#story-decorators).
 
-For example, a global decorator is configured in
-[the `preview.js` of this project](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.storybook/preview.js).
+```js
+// preview.js
+addDecorator((Story) => (
+  <DragAndDrop>
+    <Story />
+  </DragAndDrop>
+));
+```
 
 ## `useDNDProviderElement`
 
