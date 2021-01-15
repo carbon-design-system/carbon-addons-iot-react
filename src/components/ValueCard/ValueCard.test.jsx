@@ -76,7 +76,7 @@ describe('ValueCard', () => {
     );
 
     expect(originalValue).toBe(10000);
-    expect(defaultFormattedValue).toBe('10K');
+    expect(defaultFormattedValue).toBe('10,000');
     expect(screen.queryByText(testValue)).toBeTruthy();
   });
 });

@@ -6,7 +6,6 @@ import {
   compareGrains,
   getUpdatedCardSize,
   formatNumberWithPrecision,
-  formatChartNumberWithPrecision,
   handleCardVariables,
   getVariables,
   getCardVariables,
@@ -46,17 +45,17 @@ describe('cardUtilityFunctions', () => {
     expect(getUpdatedCardSize('XLARGE')).toEqual('LARGEWIDE');
     expect(getUpdatedCardSize('MEDIUM')).toEqual('MEDIUM');
   });
-  it('formatNumberWithPrecision', () => {
-    expect(formatNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
-    expect(formatNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
-    expect(formatNumberWithPrecision(35000, 2, 'en')).toEqual('35.00K'); // K separator
-    expect(formatNumberWithPrecision(35000, null, 'en')).toEqual('35K'); // K separator
-  });
-  it('formatChartNumberWithPrecision', () => {
-    expect(formatChartNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
-    expect(formatChartNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
-    expect(formatChartNumberWithPrecision(35000, 2, 'en')).toEqual('35,000.00');
-    expect(formatChartNumberWithPrecision(35000, null, 'en')).toEqual('35,000');
+  describe('formatNumberWithPrecision', () => {
+    it('decimal separator should be comma', () => {
+      expect(formatNumberWithPrecision(3.45, 1, 'fr', false)).toEqual('3,5');
+    });
+    it('decimal separator should be period', () => {
+      expect(formatNumberWithPrecision(3.45, 2, 'en', false)).toEqual('3.45');
+    });
+    it('K separator', () => {
+      expect(formatNumberWithPrecision(35000, 2, 'en', true)).toEqual('35.00K');
+      expect(formatNumberWithPrecision(35000, null, 'en', true)).toEqual('35K');
+    });
   });
   it('handleCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {

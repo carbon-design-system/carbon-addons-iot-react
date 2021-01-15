@@ -63,6 +63,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  */
 const Attribute = ({
   attribute: { label, unit },
+  attributeCount,
   customFormatter,
   isEditable,
   layout,

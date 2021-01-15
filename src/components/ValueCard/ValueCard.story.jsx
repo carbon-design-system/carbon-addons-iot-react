@@ -39,6 +39,9 @@ export const SmallNoLabel = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: number('occupancy', 88) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -74,6 +77,9 @@ export const SmallWithVariables = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: number('occupancy', 88) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -116,6 +122,9 @@ export const SmallLong = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: text('occupancy', 'Really really busy') }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -152,6 +161,9 @@ export const SmallLongNoUnits = () => {
             'rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu'
           ),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -197,6 +209,9 @@ export const SmallTrendDown = () => {
           footTraffic: number('footTraffic', 13572),
           trend: text('trend', '22%'),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -232,6 +247,9 @@ export const SmallTrendUp = () => {
         breakpoint="lg"
         size={size}
         values={{ alerts: number('alerts', 35), trend: number('trend', 12) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -279,6 +297,9 @@ export const SmallThresholdsNumberNoIcon = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 35) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -317,6 +338,9 @@ export const SmallThresholdsNumberIcon = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 70) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -368,6 +392,9 @@ export const SmallThresholdsNumberCustomRenderIconByName = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 4) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -402,6 +429,9 @@ export const SmallWithCustomFormatter = () => {
         customFormatter={(formattedValue) => {
           return text('Custom Value', formattedValue);
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -446,6 +476,9 @@ export const SmallWideThresholdsString = () => {
         breakpoint="lg"
         size={size}
         values={{ status: text('status', 'Unhealthy') }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -494,6 +527,9 @@ export const SmallWide2 = () => {
           occupancy: text('occupancy', 'None'),
           humidity: text('humidity', 'Unbearable'),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -526,6 +562,9 @@ export const Medium1 = () => {
         breakpoint="lg"
         size={size}
         values={{ comfortLevel: number('comfortLevel', 89) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -567,6 +606,9 @@ export const Medium2 = () => {
           comfortLevel: number('comfortLevel', 89),
           averageTemp: number('averageTemp', 76.7),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -610,6 +652,9 @@ export const Medium3 = () => {
           averageTemp: number('averageTemp', 76.7),
           utilization: number('utilization', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -700,6 +745,9 @@ export const MediumThin3 = () => {
           averageTemp: number('averageTemp', 456778234234234234),
           humidity: number('humidity', 88888678234234234234),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -743,6 +791,9 @@ export const MediumWide3 = () => {
           averageTemp: number('averageTemp', 76.7),
           utilization: number('utilization', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -790,6 +841,9 @@ export const Large5 = () => {
           humidity: number('humidity', 50),
           air_flow: number('air_flow', 0.567),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -841,6 +895,9 @@ export const LargeThin6 = () => {
           location: text('location', 'Australia'),
           air_quality: number('air_quality', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -939,6 +996,7 @@ export const DataStateNoDataMediumScrollPage = () => {
         breakpoint="lg"
         size={size}
         id="myStoryId"
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
       />
 
       <div style={{ height: '150vh' }} />
@@ -1137,6 +1195,9 @@ export const LongTitlesAndValues = () => {
         values={{
           monthlySummary: number('monthlySummary', 20000000000000000),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -1177,6 +1238,9 @@ export const LongTitlesAndValuesMultiple = () => {
           monthlySummary: number('monthlySummary', 100000000),
           yearlySummary: number('yearlySummary', 40000000000000),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -1214,6 +1278,9 @@ export const Editable = () => {
         }}
         breakpoint="lg"
         size={size}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -1256,6 +1323,9 @@ export const DataFilters = () => {
           { deviceid: '73000', comfortLevel: '100', unit: '%' },
           { deviceid: '73001', comfortLevel: '50', unit: '%' },
         ])}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -1303,6 +1373,8 @@ export const WithFontSize = () => {
           yearlySummary: 14918123.123,
         }}
         fontSize={number('fontSize', 25)}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
       />
     </div>
   );
@@ -1336,6 +1408,7 @@ export const WithIsNumberValueCompact = () => {
         values={{ comfortLevel: number('comfortLevel', 864129.6123) }}
         isNumberValueCompact={boolean('isNumberValueCompact', true)}
         locale={select('locale', ['de', 'fr', 'en', 'ja'], 'fr')}
+        fontSize={number('fontSize', 25)}
       />
     </div>
   );
@@ -1366,8 +1439,10 @@ export const Locale = () => {
         }}
         breakpoint="lg"
         size={size}
-        locale={select('locale', ['de', 'fr', 'en'], 'fr')}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'fr')}
         values={{ occupancy: number('occupancy', 0.05) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );

@@ -66,6 +66,8 @@ const ValueCard = ({
 
   const layout = determineLayout(newSize);
 
+  const attributeCount = content.attributes.length;
+
   return (
     <Card
       title={title}
@@ -97,6 +99,7 @@ const ValueCard = ({
                 attribute.dataFilter || {}
               )}`}
               attribute={attribute}
+              attributeCount={attributeCount}
               layout={layout}
               locale={locale}
               isEditable={isEditable}

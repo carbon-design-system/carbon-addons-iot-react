@@ -5445,7 +5445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     className="iot--value-card__value-renderer--value"
                     style={
                       Object {
-                        "--value-renderer-font-size": "42px",
+                        "--value-renderer-font-size": "25px",
                       }
                     }
                   >

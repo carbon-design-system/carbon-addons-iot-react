@@ -271,28 +271,6 @@ export const handleCardVariables = (title, content, values, card) => {
 };
 
 /**
- * This function provides common value formatting across all chart card types
- * @param {number} value, the value the card will display
- * @param {number} precision, how many decimal values to display configured at the attribute level
- * @param {string} locale, the local browser locale because locales use different decimal separators
- */
-export const formatChartNumberWithPrecision = (
-  value,
-  precision = 0,
-  locale = 'en'
-) => {
-  return value.toLocaleString(
-    locale,
-    !isNil(precision)
-      ? {
-          minimumFractionDigits: precision,
-          maximumFractionDigits: precision,
-        }
-      : undefined
-  );
-};
-
-/**
  * Determines how many decimals to show for a value based on the value, the available size of the card
  * @param {string} size constant that describes the size of the Table card
  * @param {any} value will be checked to determine how many decimals to show
@@ -331,7 +309,7 @@ export const chartValueFormatter = (value, size, unit, locale) => {
   );
   let renderValue = value;
   if (typeof value === 'number') {
-    renderValue = formatChartNumberWithPrecision(value, precision, locale);
+    renderValue = formatNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }

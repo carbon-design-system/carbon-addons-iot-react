@@ -3,18 +3,14 @@
 .#{$iot-prefix}--value-card {
   &__horizontal {
     .#{$iot-prefix}--card--content {
-      overflow-x: scroll;
+      overflow-y: auto;
     }
   }
 
   &__vertical {
     .#{$iot-prefix}--card--content {
-      overflow-y: scroll;
+      overflow-x: auto;
     }
-  }
-
-  &__spacer {
-    flex: 1;
   }
 
   &__content-wrapper {
