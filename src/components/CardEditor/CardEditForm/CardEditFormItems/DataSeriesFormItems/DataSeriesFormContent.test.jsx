@@ -6,7 +6,6 @@ import {
   CARD_TYPES,
   BAR_CHART_TYPES,
 } from '../../../../../constants/LayoutConstants';
-import { DragAndDrop } from '../../../../../utils/DragAndDropUtils';
 
 import DataSeriesFormItem, {
   formatDataItemsForDropdown,
@@ -107,8 +106,7 @@ describe('DataSeriesFormItem', () => {
           getValidDataItems={mockGetValidDataItems}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
     });
@@ -131,8 +129,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
       const dataItemDropDown = screen.getByText('Select data items');
       expect(dataItemDropDown).toBeInTheDocument();
@@ -178,8 +175,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
       const dataItemDropDown = screen.getByText('temperature');
       expect(dataItemDropDown).toBeInTheDocument();
@@ -199,8 +195,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
 
       const dataItemRowAction = screen.getByRole('button', {
@@ -218,8 +213,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
 
       const dataItemRowAction = screen.getByRole('button', {
@@ -341,8 +335,7 @@ describe('DataSeriesFormItem', () => {
           onChange={mockOnChange}
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
-        />,
-        { wrapper: DragAndDrop }
+        />
       );
       const dataItemsDropdown = screen.getByText('Select data items');
       expect(dataItemsDropdown).toBeInTheDocument();

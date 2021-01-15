@@ -4,7 +4,6 @@ import cloneDeep from 'lodash/cloneDeep';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
-import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
@@ -103,11 +102,7 @@ describe('TableHead', () => {
       tableState: { ...commonTableHeadProps.tableState },
     };
     myProps.tableState.activeBar = 'column';
-    const wrapper = mount(
-      <DragAndDrop>
-        <TableHead {...myProps} />
-      </DragAndDrop>
-    );
+    const wrapper = mount(<TableHead {...myProps} />);
     expect(wrapper.exists('ColumnHeaderRow')).toBeTruthy();
   });
 
@@ -261,11 +256,7 @@ describe('TableHead', () => {
     it('toggle hide column correctly updates the column widths of visible columns', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const wrapper = mount(<TableHead {...myProps} />);
       const onColumnToggleFunc = wrapper
         .find('ColumnHeaderRow')
         .prop('onColumnToggle');
@@ -303,16 +294,14 @@ describe('TableHead', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
       const wrapper = mount(
-        <DragAndDrop>
-          <TableHead
-            {...myProps}
-            columns={[
-              { id: 'col1', name: 'Column 1', width: '200px' },
-              { id: 'col2', name: 'Column 2', width: '200px' },
-              { id: 'col3', name: 'Column 3', width: '200px' },
-            ]}
-          />
-        </DragAndDrop>
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '200px' },
+            { id: 'col2', name: 'Column 2', width: '200px' },
+            { id: 'col3', name: 'Column 3', width: '200px' },
+          ]}
+        />
       );
       const onColumnToggleFunc = wrapper
         .find('ColumnHeaderRow')
@@ -350,11 +339,7 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const wrapper = mount(<TableHead {...myProps} />);
       const onColumnToggleFunc = wrapper
         .find('ColumnHeaderRow')
         .prop('onColumnToggle');
@@ -396,11 +381,7 @@ describe('TableHead', () => {
 
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const wrapper = mount(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const wrapper = mount(<TableHead {...myProps} />);
       const onColumnToggleFunc = wrapper
         .find('ColumnHeaderRow')
         .prop('onColumnToggle');
@@ -435,9 +416,7 @@ describe('TableHead', () => {
       };
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
-      const wrapper = mount(<TableHead {...myProps} />, {
-        wrappingComponent: DragAndDrop,
-      });
+      const wrapper = mount(<TableHead {...myProps} />);
       const resizeHandles = wrapper.find(
         `div.${iotPrefix}--column-resize-handle`
       );
@@ -478,27 +457,21 @@ describe('TableHead', () => {
 
     it('should update the column widths when column prop changes and all column prop have widths defined', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
       });
 
       // All props have widths so the column widths are updated
       rerender(
-        <DragAndDrop>
-          <TableHead
-            {...myProps}
-            columns={[
-              { id: 'col1', name: 'Column 1', width: '250px' },
-              { id: 'col2', name: 'Column 2', width: '150px' },
-              { id: 'col3', name: 'Column 3', width: '100px' },
-            ]}
-          />
-        </DragAndDrop>
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '250px' },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3', width: '100px' },
+          ]}
+        />
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '250px',
@@ -519,23 +492,17 @@ describe('TableHead', () => {
       ];
       myProps.tableState.ordering = orderingWidthHiddenCol1;
 
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
 
       rerender(
-        <DragAndDrop>
-          <TableHead
-            {...myProps}
-            columns={[
-              { id: 'col1', name: 'Column 1' },
-              { id: 'col2', name: 'Column 2', width: '300px' },
-              { id: 'col3', name: 'Column 3', width: '400px' },
-            ]}
-          />
-        </DragAndDrop>
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1' },
+            { id: 'col2', name: 'Column 2', width: '300px' },
+            { id: 'col3', name: 'Column 3', width: '400px' },
+          ]}
+        />
       );
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
         width: '300px',
@@ -547,22 +514,16 @@ describe('TableHead', () => {
 
     it('should not update the column widths when column prop changes and visible columns are lacking width', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
       rerender(
-        <DragAndDrop>
-          <TableHead
-            {...myProps}
-            columns={[
-              { id: 'col1', name: 'Column 1', width: undefined },
-              { id: 'col2', name: 'Column 2', width: '150px' },
-              { id: 'col3', name: 'Column 3', width: '100px' },
-            ]}
-          />
-        </DragAndDrop>
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: undefined },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3', width: '100px' },
+          ]}
+        />
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -575,16 +536,14 @@ describe('TableHead', () => {
       });
 
       rerender(
-        <DragAndDrop>
-          <TableHead
-            {...myProps}
-            columns={[
-              { id: 'col1', name: 'Column 1', width: '100' },
-              { id: 'col2', name: 'Column 2', width: '150px' },
-              { id: 'col3', name: 'Column 3' },
-            ]}
-          />
-        </DragAndDrop>
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '100' },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3' },
+          ]}
+        />
       );
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -599,19 +558,11 @@ describe('TableHead', () => {
 
     it('handles removing columns by distributing the width on remaining cols', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
       myProps.tableState.ordering = myProps.tableState.ordering.slice(2);
       myProps.columns = myProps.columns.slice(2);
 
-      rerender(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({
         width: '300px',
@@ -627,19 +578,11 @@ describe('TableHead', () => {
       myProps.tableState.ordering = orderingWidthHiddenCol1;
       myProps.tableState.activeBar = 'column';
 
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
       myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
       myProps.columns = myProps.columns.slice(1);
 
-      rerender(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      rerender(<TableHead {...myProps} />);
       const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
       fireEvent.click(toggleHideCol2Button);
 
@@ -657,11 +600,7 @@ describe('TableHead', () => {
       }));
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '200px',
@@ -685,11 +624,7 @@ describe('TableHead', () => {
         { id: 'col5', name: 'Column 5', width: '150px' },
       ];
 
-      rerender(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -716,11 +651,7 @@ describe('TableHead', () => {
       }));
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
 
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '200px',
@@ -747,11 +678,7 @@ describe('TableHead', () => {
       myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
       myProps.columns = myProps.columns.slice(1);
 
-      rerender(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({
         width: '100px',
@@ -766,11 +693,7 @@ describe('TableHead', () => {
 
     it('handles adding a new hidden column', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const { rerender } = render(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      const { rerender } = render(<TableHead {...myProps} />);
 
       // Add 1 new hidden columns
       myProps.tableState.ordering = [
@@ -782,11 +705,7 @@ describe('TableHead', () => {
         { id: 'col4', name: 'Column 4', width: '100px' },
       ];
 
-      rerender(
-        <DragAndDrop>
-          <TableHead {...myProps} />
-        </DragAndDrop>
-      );
+      rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({
         width: '100px',

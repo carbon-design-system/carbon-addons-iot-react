@@ -2,8 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { DragAndDrop } from '../../../utils/DragAndDropUtils';
-
 import CardEditFormContent from './CardEditFormContent';
 
 const cardConfig = {
@@ -44,13 +42,11 @@ describe('CardEditFormContent', () => {
   describe('Form fields', () => {
     it('should update JSON for the x axis label', () => {
       render(
-        <DragAndDrop>
-          <CardEditFormContent
-            cardConfig={cardConfig}
-            onChange={mockOnChange}
-            getValidTimeRanges={mockGetValidTimeRanges}
-          />
-        </DragAndDrop>
+        <CardEditFormContent
+          cardConfig={cardConfig}
+          onChange={mockOnChange}
+          getValidTimeRanges={mockGetValidTimeRanges}
+        />
       );
       userEvent.type(
         screen.getByRole('textbox', { name: 'Card title' }),
@@ -66,13 +62,11 @@ describe('CardEditFormContent', () => {
     });
     it('Should select timeRange if passed', () => {
       render(
-        <DragAndDrop>
-          <CardEditFormContent
-            cardConfig={{ ...cardConfig, timeRange: 'last2Hours' }}
-            onChange={mockOnChange}
-            getValidTimeRanges={mockGetValidTimeRanges}
-          />
-        </DragAndDrop>
+        <CardEditFormContent
+          cardConfig={{ ...cardConfig, timeRange: 'last2Hours' }}
+          onChange={mockOnChange}
+          getValidTimeRanges={mockGetValidTimeRanges}
+        />
       );
       const timeRangeSelector = screen.getAllByLabelText('Time range');
       expect(timeRangeSelector[0].innerHTML).toEqual(

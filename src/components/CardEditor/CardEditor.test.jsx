@@ -4,8 +4,6 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import { EscalatorDown } from '@carbon/pictograms-react';
 
-import { DragAndDrop } from '../../utils/DragAndDropUtils';
-
 import CardEditor from './CardEditor';
 
 describe('CardEditor', () => {
@@ -23,14 +21,12 @@ describe('CardEditor', () => {
 
   it('fires onAddCard when user clicks on item in list', () => {
     render(
-      <DragAndDrop>
-        <CardEditor
-          supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
-          onShowGallery={actions.onShowGallery}
-          onChange={actions.onChange}
-          onAddCard={actions.onAddCard}
-        />
-      </DragAndDrop>
+      <CardEditor
+        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
+        onShowGallery={actions.onShowGallery}
+        onChange={actions.onChange}
+        onAddCard={actions.onAddCard}
+      />
     );
     const addTableCardBtn = screen.getByTitle('Data table');
     userEvent.click(addTableCardBtn);
@@ -99,11 +95,7 @@ describe('CardEditor', () => {
   });
 
   it('shows gallery when no card is defined', () => {
-    render(
-      <DragAndDrop>
-        <CardEditor />
-      </DragAndDrop>
-    );
+    render(<CardEditor />);
 
     expect(screen.getByText('Gallery')).toBeTruthy();
   });
@@ -113,22 +105,20 @@ describe('CardEditor', () => {
     const inDomText = 'In The Dom';
     const notInDomText = 'Not In The Dom';
     render(
-      <DragAndDrop>
-        <CardEditor
-          i18n={{
-            TIMESERIES: notInDomText,
-            SIMPLE_BAR: notInDomText,
-            GROUPED_BAR: notInDomText,
-            STACKED_BAR: notInDomText,
-            VALUE: inDomText,
-            COOL_NEW_CARD: inDomText,
-          }}
-          supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
-          icons={{
-            VALUE: <EscalatorDown data-testid={testId} />,
-          }}
-        />
-      </DragAndDrop>
+      <CardEditor
+        i18n={{
+          TIMESERIES: notInDomText,
+          SIMPLE_BAR: notInDomText,
+          GROUPED_BAR: notInDomText,
+          STACKED_BAR: notInDomText,
+          VALUE: inDomText,
+          COOL_NEW_CARD: inDomText,
+        }}
+        supportedCardTypes={['VALUE', 'COOL_NEW_CARD']}
+        icons={{
+          VALUE: <EscalatorDown data-testid={testId} />,
+        }}
+      />
     );
 
     expect(screen.getByText('Gallery')).toBeTruthy();

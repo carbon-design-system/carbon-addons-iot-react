@@ -2,8 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { DragAndDrop } from '../../../../utils/DragAndDropUtils';
-
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
 const commonTableHeadProps = {
@@ -29,12 +27,10 @@ describe('TableHead', () => {
   it('can reorder columns', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow
-          {...commonTableHeadProps}
-          onChangeOrdering={onChangeOrdering}
-        />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+      />
     );
 
     const column1 = screen.getByText('Column 1');
@@ -53,12 +49,10 @@ describe('TableHead', () => {
   it('does not reorder columns when placed upon themselves', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow
-          {...commonTableHeadProps}
-          onChangeOrdering={onChangeOrdering}
-        />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+      />
     );
 
     const column1 = screen.getByText('Column 1');
@@ -74,13 +68,11 @@ describe('TableHead', () => {
     const onChangeOrdering = jest.fn();
     const onColumnToggle = jest.fn();
     render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow
-          {...commonTableHeadProps}
-          onChangeOrdering={onChangeOrdering}
-          onColumnToggle={onColumnToggle}
-        />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+        onColumnToggle={onColumnToggle}
+      />
     );
 
     fireEvent.click(screen.getByText('Column 1'));
@@ -91,47 +83,39 @@ describe('TableHead', () => {
 });
 
 describe('ColumnHeaderRow', () => {
-  it('when hasRowExpansion set to true', () => {
+  it('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
-    render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow {...tableHeadProps} />
-      </DragAndDrop>
-    );
+    render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
 
     expect(screen.getByText('Column 1').textContent).toContain('Column 1');
     expect(screen.getByText('Column 2').textContent).toContain('Column 2');
   });
 
-  it('when ordering is empty, no columns are displayed', () => {
+  it('when ordering is empty, no columns are displayed', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       ordering: [],
     };
 
     const renderedElement = render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow {...tableHeadProps} />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
     );
 
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
 
-  it('when hasRowActions set to true', () => {
+  it('when hasRowActions set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
     const renderedElement = render(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow {...tableHeadProps} />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
     );
 
     expect(renderedElement.container.innerHTML).toContain('Column 1');
@@ -152,9 +136,7 @@ describe('ColumnHeaderRow', () => {
     };
 
     const renderedElement = mount(
-      <DragAndDrop>
-        <UnconnectedColumnHeaderRow {...tableHeadProps} />
-      </DragAndDrop>
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
     );
 
     expect(renderedElement.find('.column-header__btn').last().text()).toContain(

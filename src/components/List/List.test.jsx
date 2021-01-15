@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { Checkbox } from '../..';
-import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
@@ -21,8 +20,7 @@ describe('List', () => {
 
   it('List when pagination is null', () => {
     const renderedElement = render(
-      <UnconnectedList title="list" items={getListItems(5)} />,
-      { wrapper: DragAndDrop }
+      <UnconnectedList title="list" items={getListItems(5)} />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
@@ -43,8 +41,7 @@ describe('List', () => {
         title="list"
         items={getListItems(5)}
         selectedIds={['1', '2']}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
@@ -95,8 +92,7 @@ describe('List', () => {
             })
           ),
         ]}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(screen.getByTitle('Chicago White Sox')).toBeTruthy();
   });
@@ -124,8 +120,7 @@ describe('List', () => {
             })
           ),
         ]}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });

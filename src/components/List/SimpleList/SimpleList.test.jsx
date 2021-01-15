@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
-import { EditingStyle, DragAndDrop } from '../../../utils/DragAndDropUtils';
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
 
@@ -43,8 +43,7 @@ const getEmptyListItems = (num) =>
 describe('SimpleList', () => {
   it('Simple List when pageSize is set to sm', () => {
     render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />
     );
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
@@ -55,8 +54,7 @@ describe('SimpleList', () => {
 
   it('Simple List when pageSize is set to lg', () => {
     render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="lg" />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" items={getListItems(5)} pageSize="lg" />
     );
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
@@ -67,8 +65,7 @@ describe('SimpleList', () => {
 
   it('Simple List when pageSize is set to xl', () => {
     render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="xl" />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" items={getListItems(5)} pageSize="xl" />
     );
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
@@ -78,9 +75,7 @@ describe('SimpleList', () => {
   });
 
   it('the first item is selectable via keyboard', () => {
-    render(<SimpleList title="Simple list" items={getListItems(1)} />, {
-      wrapper: DragAndDrop,
-    });
+    render(<SimpleList title="Simple list" items={getListItems(1)} />);
     fireEvent.keyPress(screen.getAllByRole('button')[0], {
       key: 'Enter',
       charCode: 13,
@@ -109,8 +104,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when click on next page', () => {
     render(
-      <SimpleList items={getListItems(10)} title="Simple List" pageSize="sm" />,
-      { wrapper: DragAndDrop }
+      <SimpleList items={getListItems(10)} title="Simple List" pageSize="sm" />
     );
 
     const buttons = screen.getAllByRole('button');
@@ -124,8 +118,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when hasSearch', () => {
     render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
@@ -136,8 +129,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when hasSearch and item values are empty', () => {
     render(
-      <SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
@@ -152,8 +144,7 @@ describe('SimpleList', () => {
         hasSearch
         items={getListItems(5)}
         pageSize="sm"
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
@@ -164,12 +155,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when search large row', () => {
     render(
-      <SimpleList
-        title="Simple list"
-        hasSearch
-        items={getFatRowListItems(5)}
-      />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
@@ -179,8 +165,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when search term is empty should return all items', () => {
     render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: ' ' },
@@ -194,8 +179,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when search input is undefined should return all items', () => {
     render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />,
-      { wrapper: DragAndDrop }
+      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'));
     expect(screen.getByTitle('Item 1')).toBeTruthy();
@@ -206,9 +190,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList items should be unselectable', () => {
-    render(<SimpleList title="Simple list" items={getListItems(1)} />, {
-      wrapper: DragAndDrop,
-    });
+    render(<SimpleList title="Simple list" items={getListItems(1)} />);
 
     fireEvent.click(screen.getAllByRole('button')[0]);
     expect(screen.getAllByRole('button')[0]).toBeInTheDocument();
@@ -237,8 +219,7 @@ describe('SimpleList', () => {
         onListUpdated={(newList) => {
           newData = newList;
         }}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
 
     const listItems = screen.getAllByRole('listitem');
@@ -261,8 +242,7 @@ describe('SimpleList', () => {
         onListUpdated={(newList) => {
           newData = newList;
         }}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
 
     const targets = within(listItems[1]).getAllByTestId('list-target');

@@ -2,8 +2,6 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import { DragAndDrop } from '../../../utils/DragAndDropUtils';
-
 import TableManageViewsModal from './TableManageViewsModal';
 
 describe('TableManageViewsModal', () => {
@@ -56,8 +54,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(
       screen.getByPlaceholderText(i18n.searchPlaceholderText)
@@ -71,8 +68,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     const searchField = screen.getByPlaceholderText(i18n.searchPlaceholderText);
     fireEvent.change(searchField, { target: { value: 'testval1' } });
@@ -86,8 +82,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(screen.getByText('myView 1 (Public)')).toBeVisible();
     expect(screen.getByText('myView 2 (Private)')).toBeVisible();
@@ -101,8 +96,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     const checkbox = screen.getByLabelText(i18n.publicCheckboxLabelText);
     fireEvent.click(checkbox);
@@ -116,8 +110,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(screen.getByText('description1')).toBeVisible();
     expect(screen.getByText('description2')).toBeVisible();
@@ -131,8 +124,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     expect(screen.getAllByLabelText(i18n.editIconText)).toHaveLength(2);
     expect(screen.getAllByLabelText('delete')).toHaveLength(2);
@@ -145,8 +137,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     const editButton = screen.getAllByLabelText(i18n.editIconText)[0];
     fireEvent.click(editButton);
@@ -160,8 +151,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
 
     const warningMessage = i18n.deleteWarningTextTemplate('myView 1');
@@ -187,8 +177,7 @@ describe('TableManageViewsModal', () => {
         actions={actions}
         open
         testID={testID}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     const warningMessage = i18n.deleteWarningTextTemplate('myView 1');
 

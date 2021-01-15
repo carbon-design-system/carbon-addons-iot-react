@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
-import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 
@@ -75,8 +74,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
     const options = screen.getByTitle(/elevators/);
@@ -102,8 +100,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     userEvent.click(screen.getAllByRole('button')[0]);
     userEvent.click(screen.getAllByRole('option')[1]);
@@ -138,8 +135,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     // Card config with the elevators hotspot removed
@@ -155,8 +151,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     // edit button
     userEvent.click(screen.getAllByRole('button')[2]);
@@ -190,8 +185,7 @@ describe('HotspotEditorDataSourceTab', () => {
         cardConfig={cardConfigWithPresets}
         dataItems={dataItems}
         onChange={onChange}
-      />,
-      { wrapper: DragAndDrop }
+      />
     );
     // edit button
     userEvent.click(screen.getAllByRole('button')[2]);
