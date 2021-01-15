@@ -104,22 +104,22 @@ const BarChartCard = ({
     () =>
       isDashboardPreview
         ? generateSampleValuesForEditor(
-            valuesProp,
-            categoryDataSourceId,
+            series,
             timeDataSourceId,
-            availableDimensions,
             interval,
-            timeRange
+            timeRange,
+            categoryDataSourceId,
+            availableDimensions
           )
         : [],
     [
-      availableDimensions,
-      categoryDataSourceId,
       isDashboardPreview,
+      series,
       timeDataSourceId,
+      categoryDataSourceId,
       interval,
       timeRange,
-      valuesProp,
+      availableDimensions,
     ]
   );
 
