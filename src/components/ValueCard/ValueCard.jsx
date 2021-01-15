@@ -93,6 +93,9 @@ const ValueCard = ({
         {!dataState ? (
           content.attributes.map((attribute) => (
             <Attribute
+              key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
+                attribute.dataFilter || {}
+              )}`}
               attribute={attribute}
               layout={layout}
               locale={locale}

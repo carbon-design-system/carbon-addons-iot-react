@@ -4463,7 +4463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    --
+                    None
                   </span>
                 </div>
                 <span
@@ -4505,7 +4505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    --
+                    Unbearable
                   </span>
                 </div>
                 <span
@@ -5077,6 +5077,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   }
                 >
                   %
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Monthly summary
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "25px",
+                      }
+                    }
+                  >
+                    10,294.1
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Yearly summary
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "25px",
+                      }
+                    }
+                  >
+                    14,918,123.1
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
                 </span>
               </div>
             </div>

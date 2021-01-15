@@ -13,8 +13,6 @@ import { BASE_CLASS_NAME } from './valueCardUtils';
 
 const propTypes = {
   attribute: PropTypes.shape({
-    dataFilter: PropTypes.object,
-    dataSourceId: PropTypes.string.isRequired,
     label: PropTypes.string,
     unit: PropTypes.string,
   }).isRequired,
@@ -64,7 +62,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { dataSourceId, dataFilter, label, unit },
+  attribute: { label, unit },
   customFormatter,
   isEditable,
   layout,
@@ -105,8 +103,7 @@ const Attribute = ({
       : null;
 
   return (
-    <React.Fragment
-      key={`fragment-${dataSourceId}-${JSON.stringify(dataFilter || {})}`}>
+    <>
       <div
         className={classnames(`${BEM_BASE}-wrapper`, {
           [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
@@ -162,7 +159,7 @@ const Attribute = ({
           ) : null}
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

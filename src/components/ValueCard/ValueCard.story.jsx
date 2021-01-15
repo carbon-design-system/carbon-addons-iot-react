@@ -491,6 +491,8 @@ export const SmallWide2 = () => {
         values={{
           status: text('status', 'Good'),
           comfortLevel: text('comfortLevel', 'Healthy'),
+          occupancy: text('occupancy', 'None'),
+          humidity: text('humidity', 'Unbearable'),
         }}
       />
     </div>
@@ -1281,11 +1283,25 @@ export const WithFontSize = () => {
               dataSourceId: 'comfortLevel',
               unit: '%',
             },
+            {
+              label: 'Monthly summary',
+              dataSourceId: 'monthlySummary',
+              unit: text('unit', 'Wh'),
+            },
+            {
+              label: 'Yearly summary',
+              dataSourceId: 'yearlySummary',
+              unit: text('unit', 'Wh'),
+            },
           ]),
         }}
         breakpoint="lg"
         size={size}
-        values={{ comfortLevel: number('comfortLevel', 89) }}
+        values={{
+          comfortLevel: number('comfortLevel', 89),
+          monthlySummary: 10294.1,
+          yearlySummary: 14918123.123,
+        }}
         fontSize={number('fontSize', 25)}
       />
     </div>

@@ -14,7 +14,7 @@ export const determineMaxValueCardAttributeCount = (
   size,
   currentAttributeCount
 ) => {
-  console.warn('DEPRECATION: This function is no longer valid.');
+  // console.warn('DEPRECATION: This function is no longer valid.');
   let attributeCount = currentAttributeCount;
   switch (size) {
     case CARD_SIZES.SMALL:
