@@ -476,6 +476,14 @@ export const SmallWide2 = () => {
               dataSourceId: 'comfortLevel',
               label: 'Comfort level',
             },
+            {
+              dataSourceId: 'occupancy',
+              label: 'Occupancy',
+            },
+            {
+              dataSourceId: 'humidity',
+              label: 'Humidity',
+            },
           ]),
         }}
         breakpoint="lg"
@@ -1210,7 +1218,7 @@ export const Editable = () => {
 };
 
 Editable.story = {
-  name: 'editable',
+  name: 'with isEditable',
 };
 
 export const DataFilters = () => {
@@ -1252,7 +1260,73 @@ export const DataFilters = () => {
 };
 
 DataFilters.story = {
-  name: 'dataFilters',
+  name: 'with dataFilters',
+};
+
+export const WithFontSize = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+              unit: '%',
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{ comfortLevel: number('comfortLevel', 89) }}
+        fontSize={number('fontSize', 25)}
+      />
+    </div>
+  );
+};
+
+WithFontSize.story = {
+  name: 'with fontSize',
+};
+
+export const WithIsNumberValueCompact = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}>
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{ comfortLevel: number('comfortLevel', 864129.6123) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', true)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'fr')}
+      />
+    </div>
+  );
+};
+
+WithIsNumberValueCompact.story = {
+  name: 'with isNumberValueCompact',
 };
 
 export const Locale = () => {

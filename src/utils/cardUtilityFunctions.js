@@ -115,65 +115,23 @@ export const getUpdatedCardSize = (oldSize) => {
 };
 
 /**
- * This function provides common value formatting across all card types
+ * This function provides decimal precision and compact abbreviation formatting for number values
  * @param {number} value, the value the card will display
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
+ * @param {Boolean} isNumberValueCompact whether the number should be abbreviated (i.e. 10,000 = 10K)
  */
 export const formatNumberWithPrecision = (
   value,
   precision = 0,
-  locale = 'en'
+  locale = 'en',
+  isNumberValueCompact = false
 ) => {
-  return value > 1000000000000
-    ? `${(value / 1000000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}T`
-    : value > 1000000000
-    ? `${(value / 1000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}B`
-    : value > 1000000
-    ? `${(value / 1000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}M`
-    : value > 1000
-    ? `${(value / 1000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}K`
-    : value.toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      );
+  return new Intl.NumberFormat(locale, {
+    minimumFractionDigits: precision,
+    maximumFractionDigits: precision,
+    ...(isNumberValueCompact ? { notation: 'compact' } : {}),
+  }).format(value);
 };
 
 /**
@@ -345,7 +303,7 @@ export const determinePrecision = (size, value, precision) => {
   if (Number.isInteger(value)) {
     return 0;
   }
-  // If the card is xsmall we don't have room for decimals!
+  // If the card is small we don't have room for decimals!
   switch (size) {
     case CARD_SIZES.SMALL:
       return !isNil(precision)

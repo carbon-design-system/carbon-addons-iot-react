@@ -4,10 +4,7 @@ import isNil from 'lodash/isNil';
 import classnames from 'classnames';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
-import {
-  formatNumberWithPrecision,
-  determinePrecision,
-} from '../../utils/cardUtilityFunctions';
+import { formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
 
 import { BASE_CLASS_NAME, PREVIEW_DATA } from './valueCardUtils';
 
@@ -15,13 +12,13 @@ const propTypes = {
   value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   precision: PropTypes.number,
-  /** the card size */
-  size: PropTypes.string.isRequired,
   color: PropTypes.string,
   /** Makes the value and the unit smaller */
   locale: PropTypes.string,
   customFormatter: PropTypes.func,
   fontSize: PropTypes.number.isRequired,
+  /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
+  isNumberValueCompact: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
@@ -39,16 +36,14 @@ const defaultProps = {
  */
 const ValueRenderer = ({
   value,
-  size,
   layout,
-  precision: precisionProp,
+  precision,
   color,
   locale,
   customFormatter,
   fontSize,
+  isNumberValueCompact,
 }) => {
-  const precision = determinePrecision(size, value, precisionProp);
-
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = (
@@ -57,7 +52,12 @@ const ValueRenderer = ({
       </span>
     );
   } else if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
+    renderValue = formatNumberWithPrecision(
+      value,
+      precision,
+      locale,
+      isNumberValueCompact
+    );
   } else if (isNil(value)) {
     renderValue = PREVIEW_DATA;
   }

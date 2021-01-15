@@ -700,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
               >
                 <div
-                  className="iot--value-card__attribute-wrapper"
+                  className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                 >
                   <div
                     className="iot--value-card__attribute-label"
@@ -724,7 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           }
                         }
                       >
-                        88
+                        88.0
                       </span>
                     </div>
                     <span
@@ -737,6 +737,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     >
                       %
                     </span>
+                    <div
+                      className="iot--value-card__attribute-secondary-value"
+                      style={
+                        Object {
+                          "--secondary-value-color": "red",
+                        }
+                      }
+                    >
+                      <svg
+                        aria-label="trending down"
+                        className="iot--value-card__attribute_trend-icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24 12L16 22 8 12z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>

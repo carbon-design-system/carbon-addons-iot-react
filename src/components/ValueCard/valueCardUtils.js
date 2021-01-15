@@ -9,11 +9,12 @@ export const BASE_CLASS_NAME = `${iotPrefix}--value-card`;
 export const PREVIEW_DATA = '--';
 
 /** Determine the max value card attribute count */
-// TODO: this is no longer valid with new design
+// TODO: this is no longer valid with new design, but needs to stay because its being exported
 export const determineMaxValueCardAttributeCount = (
   size,
   currentAttributeCount
 ) => {
+  console.warn('DEPRECATION: This function is no longer valid.');
   let attributeCount = currentAttributeCount;
   switch (size) {
     case CARD_SIZES.SMALL:
@@ -57,56 +58,21 @@ export const determineValue = (dataSourceId, values, dataFilter = {}) =>
  * @param {Number} measuredWidth
  * @returns card layout - horizontal or vertical
  */
-export const determineLayout = (size, attributes, measuredWidth) => {
+export const determineLayout = (size) => {
   switch (size) {
     case CARD_SIZES.SMALL:
-      return CARD_LAYOUTS.HORIZONTAL;
-
     case CARD_SIZES.SMALLWIDE:
-      return measuredWidth && measuredWidth < 300 && attributes.length > 1
-        ? CARD_LAYOUTS.VERTICAL
-        : CARD_LAYOUTS.HORIZONTAL;
+      return CARD_LAYOUTS.HORIZONTAL;
 
     case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMTHIN:
-      return CARD_LAYOUTS.VERTICAL;
-
-    case CARD_SIZES.LARGETHIN:
     case CARD_SIZES.MEDIUMWIDE:
-      if (attributes.length > 2) {
-        return CARD_LAYOUTS.VERTICAL;
-      }
-      return CARD_LAYOUTS.HORIZONTAL;
-
+    case CARD_SIZES.LARGETHIN:
     case CARD_SIZES.LARGE:
-      if (attributes.length > 2) {
-        return CARD_LAYOUTS.VERTICAL;
-      }
-      return CARD_LAYOUTS.HORIZONTAL;
-
     case CARD_SIZES.LARGEWIDE:
-      if (attributes.length > 5) {
-        return CARD_LAYOUTS.VERTICAL;
-      }
-      return CARD_LAYOUTS.HORIZONTAL;
+      return CARD_LAYOUTS.VERTICAL;
 
     default:
       return CARD_LAYOUTS.HORIZONTAL;
   }
-};
-
-/**
- * @param {Object} props
- * @param {string} props.title
- * @returns {Boolean}
- */
-export const shouldLabelWrap = (title) => {
-  if (!title) {
-    return false;
-  }
-  const words = title.split(' ');
-  if (words.length > 1 && words.length < 3) {
-    return true;
-  }
-  return false;
 };

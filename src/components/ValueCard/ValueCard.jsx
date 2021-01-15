@@ -1,5 +1,4 @@
 import React from 'react';
-import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import classnames from 'classnames';
 
@@ -44,6 +43,7 @@ const ValueCard = ({
   customFormatter,
   children,
   fontSize,
+  isNumberValueCompact,
   ...others
 }) => {
   const availableActions = {
@@ -64,83 +64,74 @@ const ValueCard = ({
     others
   );
 
-  return (
-    <withSize.SizeMe>
-      {({ size: measuredSize }) => {
-        const layout = determineLayout(
-          newSize,
-          content && content.attributes,
-          measuredSize.width
-        );
+  const layout = determineLayout(newSize);
 
-        return (
-          <Card
-            title={title}
-            size={newSize}
-            availableActions={availableActions}
-            isEmpty={isEmpty(values) && !dataState}
-            isEditable={isEditable}
-            isResizable={isResizable}
-            resizeHandles={resizeHandles}
-            i18n={i18n}
-            id={id}
-            {...others}>
-            <div
-              className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
-                [`${BASE_CLASS_NAME}__content-wrapper--horizontal`]:
-                  layout === CARD_LAYOUTS.HORIZONTAL,
-                [`${BASE_CLASS_NAME}__content-wrapper--vertical`]:
-                  layout === CARD_LAYOUTS.VERTICAL,
-              })}>
-              {!dataState ? (
-                content.attributes.map((attribute) => (
-                  <Attribute
-                    attribute={attribute}
-                    layout={layout}
-                    locale={locale}
-                    isEditable={isEditable}
-                    title={title}
-                    renderIconByName={others.renderIconByName}
-                    size={newSize}
-                    value={
-                      // When the card is in the editable state, we will show a preview
-                      isEditable
-                        ? PREVIEW_DATA
-                        : determineValue(
-                            attribute.dataSourceId,
-                            values,
-                            attribute.dataFilter
-                          )
-                    }
-                    secondaryValue={
-                      attribute.secondaryValue && {
-                        ...attribute.secondaryValue,
-                        // When the card is in the editable state, we will show a preview
-                        value: isEditable
-                          ? PREVIEW_DATA
-                          : determineValue(
-                              attribute.secondaryValue.dataSourceId,
-                              values
-                            ),
-                      }
-                    }
-                    customFormatter={customFormatter}
-                    fontSize={fontSize}
-                  />
-                ))
-              ) : (
-                <DataStateRenderer
-                  dataState={dataState}
-                  size={newSize}
-                  id={id}
-                />
-              )}
-            </div>
-            {resizeHandles}
-          </Card>
-        );
-      }}
-    </withSize.SizeMe>
+  return (
+    <Card
+      title={title}
+      size={newSize}
+      availableActions={availableActions}
+      isEmpty={isEmpty(values) && !dataState}
+      isEditable={isEditable}
+      isResizable={isResizable}
+      resizeHandles={resizeHandles}
+      i18n={i18n}
+      id={id}
+      className={classnames({
+        // allows attribute overflow scrolling
+        [`${BASE_CLASS_NAME}__horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
+        [`${BASE_CLASS_NAME}__vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+      })}
+      {...others}>
+      <div
+        className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
+          [`${BASE_CLASS_NAME}__content-wrapper--horizontal`]:
+            layout === CARD_LAYOUTS.HORIZONTAL,
+          [`${BASE_CLASS_NAME}__content-wrapper--vertical`]:
+            layout === CARD_LAYOUTS.VERTICAL,
+        })}>
+        {!dataState ? (
+          content.attributes.map((attribute) => (
+            <Attribute
+              attribute={attribute}
+              layout={layout}
+              locale={locale}
+              isEditable={isEditable}
+              title={title}
+              renderIconByName={others.renderIconByName}
+              value={
+                // When the card is in the editable state, we will show a preview
+                isEditable
+                  ? PREVIEW_DATA
+                  : determineValue(
+                      attribute.dataSourceId,
+                      values,
+                      attribute.dataFilter
+                    )
+              }
+              secondaryValue={
+                attribute.secondaryValue && {
+                  ...attribute.secondaryValue,
+                  // When the card is in the editable state, we will show a preview
+                  value: isEditable
+                    ? PREVIEW_DATA
+                    : determineValue(
+                        attribute.secondaryValue.dataSourceId,
+                        values
+                      ),
+                }
+              }
+              customFormatter={customFormatter}
+              fontSize={fontSize}
+              isNumberValueCompact={isNumberValueCompact}
+            />
+          ))
+        ) : (
+          <DataStateRenderer dataState={dataState} size={newSize} id={id} />
+        )}
+      </div>
+      {resizeHandles}
+    </Card>
   );
 };
 
@@ -155,6 +146,7 @@ ValueCard.defaultProps = {
   fontSize: 42,
   cardVariables: null,
   customFormatter: null,
+  isNumberValueCompact: false,
 };
 
 export default ValueCard;

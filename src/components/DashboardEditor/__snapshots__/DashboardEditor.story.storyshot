@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                         >
                           <div
-                            className="iot--value-card__attribute-wrapper"
+                            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                           >
                             <div
                               className="iot--value-card__attribute-label"
@@ -798,7 +798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </div>
                           </div>
                           <div
-                            className="iot--value-card__attribute-wrapper"
+                            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                           >
                             <div
                               className="iot--value-card__attribute-label"
@@ -11587,7 +11587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                         >
                           <div
-                            className="iot--value-card__attribute-wrapper"
+                            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                           >
                             <div
                               className="iot--value-card__attribute-label"
@@ -11629,7 +11629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </div>
                           </div>
                           <div
-                            className="iot--value-card__attribute-wrapper"
+                            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                           >
                             <div
                               className="iot--value-card__attribute-label"

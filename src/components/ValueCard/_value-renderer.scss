@@ -7,7 +7,7 @@
 
   &--value {
     @include type-style('productive-heading-06');
-    width: 204px;
+    max-width: 204px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

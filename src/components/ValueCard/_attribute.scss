@@ -9,6 +9,22 @@
   // line up the value and unit
   align-items: baseline;
 
+  &-wrapper {
+    width: 100%;
+
+    &--vertical {
+      padding: 0 0 $spacing-06 $spacing-05;
+    }
+
+    &--vertical:last-of-type {
+      padding: 0 0 0 $spacing-05;
+    }
+
+    &--horizontal {
+      padding: 0 0 0 $spacing-05;
+    }
+  }
+
   &-icon-container {
     margin-left: auto;
   }
@@ -21,11 +37,6 @@
 
   &_trend-icon {
     margin-right: $spacing-02;
-  }
-
-  &-wrapper {
-    padding: 0 0 $spacing-05 $spacing-05;
-    width: 100%;
   }
 
   &-label {

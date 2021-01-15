@@ -113,7 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -139,7 +139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            89
+                            89.0
                           </span>
                         </div>
                         <span
@@ -155,7 +155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -181,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -197,7 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -374,7 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -465,7 +465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -595,7 +595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -621,7 +621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -688,7 +688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -714,7 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            35
+                            35.0
                           </span>
                         </div>
                         <span
@@ -727,6 +727,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "green",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending up"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 20L16 10 24 20z"
+                            />
+                          </svg>
+                          13
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -781,7 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -872,7 +898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -896,7 +922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            14K
+                            13,572.0
                           </span>
                         </div>
                         <span
@@ -909,6 +935,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "red",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending down"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 12L16 22 8 12z"
+                            />
+                          </svg>
+                          22%
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1114,7 +1166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2476,7 +2528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2502,7 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            89
+                            89.0
                           </span>
                         </div>
                         <span
@@ -2518,7 +2570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2544,7 +2596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -2560,7 +2612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2737,7 +2789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2828,7 +2880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2958,7 +3010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -2984,7 +3036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -3051,7 +3103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -3077,7 +3129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            35
+                            35.0
                           </span>
                         </div>
                         <span
@@ -3090,6 +3142,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "green",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending up"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 20L16 10 24 20z"
+                            />
+                          </svg>
+                          13
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3144,7 +3222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -3235,7 +3313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -3259,7 +3337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            14K
+                            13,572.0
                           </span>
                         </div>
                         <span
@@ -3272,6 +3350,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "red",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending down"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 12L16 22 8 12z"
+                            />
+                          </svg>
+                          22%
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3477,7 +3581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -4867,7 +4971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -4893,7 +4997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            89
+                            89.0
                           </span>
                         </div>
                         <span
@@ -4909,7 +5013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -4935,7 +5039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -4951,7 +5055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5128,7 +5232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5219,7 +5323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5349,7 +5453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5375,7 +5479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -5442,7 +5546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5468,7 +5572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            35
+                            35.0
                           </span>
                         </div>
                         <span
@@ -5481,6 +5585,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "green",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending up"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 20L16 10 24 20z"
+                            />
+                          </svg>
+                          13
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5535,7 +5665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5626,7 +5756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -5650,7 +5780,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            14K
+                            13,572.0
                           </span>
                         </div>
                         <span
@@ -5663,6 +5793,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "red",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending down"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 12L16 22 8 12z"
+                            />
+                          </svg>
+                          22%
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5868,7 +6024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -9835,7 +9991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -9861,7 +10017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            89
+                            89.0
                           </span>
                         </div>
                         <span
@@ -9877,7 +10033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -9903,7 +10059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -9919,7 +10075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10096,7 +10252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10187,7 +10343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10317,7 +10473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10343,7 +10499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -10410,7 +10566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10436,7 +10592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            35
+                            35.0
                           </span>
                         </div>
                         <span
@@ -10449,6 +10605,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "green",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending up"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 20L16 10 24 20z"
+                            />
+                          </svg>
+                          13
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10503,7 +10685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10594,7 +10776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -10618,7 +10800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            14K
+                            13,572.0
                           </span>
                         </div>
                         <span
@@ -10631,6 +10813,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "red",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending down"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 12L16 22 8 12z"
+                            />
+                          </svg>
+                          22%
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -10836,7 +11044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -12356,7 +12564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -12380,7 +12588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13
+                              13.0
                             </span>
                           </div>
                           <span
@@ -12442,7 +12650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -12466,7 +12674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1K
+                              1,352.0
                             </span>
                           </div>
                           <span
@@ -12530,7 +12738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -12618,7 +12826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -12642,7 +12850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              107.3K
+                              107,324.3
                             </span>
                           </div>
                           <span
@@ -12706,7 +12914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -12730,7 +12938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -12896,7 +13104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13055,7 +13263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13079,7 +13287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13
+                              13.0
                             </span>
                           </div>
                           <span
@@ -13141,7 +13349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13165,7 +13373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1K
+                              1,352.0
                             </span>
                           </div>
                           <span
@@ -13229,7 +13437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13317,7 +13525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13341,7 +13549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              107.3K
+                              107,324.3
                             </span>
                           </div>
                           <span
@@ -13405,7 +13613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13429,7 +13637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -13595,7 +13803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13754,7 +13962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13842,7 +14050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13932,7 +14140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -13969,6 +14177,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -14020,7 +14254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14059,6 +14293,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -14179,7 +14439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14267,7 +14527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14357,7 +14617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14394,6 +14654,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -14445,7 +14731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14484,6 +14770,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -14604,7 +14916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14692,7 +15004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14780,7 +15092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14868,7 +15180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -14892,7 +15204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              91
+                              91.0
                             </span>
                           </div>
                           <span
@@ -15025,7 +15337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15113,7 +15425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15201,7 +15513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15289,7 +15601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15313,7 +15625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              91
+                              91.0
                             </span>
                           </div>
                           <span
@@ -15446,7 +15758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15534,7 +15846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15622,7 +15934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15710,7 +16022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15798,7 +16110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -15955,7 +16267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16043,7 +16355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16131,7 +16443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16219,7 +16531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16307,7 +16619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16464,7 +16776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16488,7 +16800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13
+                              13.0
                             </span>
                           </div>
                           <span
@@ -16550,7 +16862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16574,7 +16886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1K
+                              1,352.0
                             </span>
                           </div>
                           <span
@@ -16638,7 +16950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16726,7 +17038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16750,7 +17062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              107.3K
+                              107,324.3
                             </span>
                           </div>
                           <span
@@ -16814,7 +17126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16838,7 +17150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -16902,7 +17214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -16992,7 +17304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17082,7 +17394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17170,7 +17482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17260,7 +17572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17297,6 +17609,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -17348,7 +17686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17387,6 +17725,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -17438,7 +17802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17526,7 +17890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17614,7 +17978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17702,7 +18066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17726,7 +18090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              91
+                              91.0
                             </span>
                           </div>
                           <span
@@ -17790,7 +18154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17878,7 +18242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -17966,7 +18330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18054,7 +18418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18142,7 +18506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18299,7 +18663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18323,7 +18687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13
+                              13.0
                             </span>
                           </div>
                           <span
@@ -18385,7 +18749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18409,7 +18773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1K
+                              1,352.0
                             </span>
                           </div>
                           <span
@@ -18473,7 +18837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18561,7 +18925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18585,7 +18949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              107.3K
+                              107,324.3
                             </span>
                           </div>
                           <span
@@ -18649,7 +19013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18673,7 +19037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -18737,7 +19101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18827,7 +19191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -18917,7 +19281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19005,7 +19369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19095,7 +19459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19132,6 +19496,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -19183,7 +19573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19222,6 +19612,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            3.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -19273,7 +19689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19361,7 +19777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19449,7 +19865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19537,7 +19953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19561,7 +19977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              91
+                              91.0
                             </span>
                           </div>
                           <span
@@ -19625,7 +20041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19713,7 +20129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19801,7 +20217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19889,7 +20305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -19977,7 +20393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20134,7 +20550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20176,7 +20592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20266,7 +20682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20308,7 +20724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20396,7 +20812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20438,7 +20854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20464,7 +20880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -20597,7 +21013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20639,7 +21055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20729,7 +21145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20771,7 +21187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20859,7 +21275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20901,7 +21317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -20927,7 +21343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -21060,7 +21476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21099,10 +21515,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             %
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            2
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21141,6 +21583,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             mb
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            215.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -21192,7 +21660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21231,10 +21699,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            4.1
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21322,7 +21816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21361,10 +21855,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21390,7 +21909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -21403,6 +21922,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             people
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            137982.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -21523,7 +22068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21562,10 +22107,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             %
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            2
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21604,6 +22175,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             mb
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            215.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -21655,7 +22252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21694,10 +22291,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            4.1
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21785,7 +22408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21824,10 +22447,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             ˚F
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -21853,7 +22501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.7M
+                              1,709,384.1
                             </span>
                           </div>
                           <span
@@ -21866,6 +22514,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             people
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            137982.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -21986,7 +22660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22028,7 +22702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22118,7 +22792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22160,7 +22834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22319,7 +22993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22361,7 +23035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22451,7 +23125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22493,7 +23167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22652,7 +23326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22678,7 +23352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13.6K
+                              13,634.6
                             </span>
                           </div>
                           <span
@@ -22694,7 +23368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22720,7 +23394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.0K
+                              1,047.2
                             </span>
                           </div>
                           <span
@@ -22733,10 +23407,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             MWh
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            209.44
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22775,6 +23475,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             MWh
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            1047.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -22826,7 +23552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22866,7 +23592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22906,7 +23632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -22994,7 +23720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23034,7 +23760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23074,7 +23800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23231,7 +23957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23257,7 +23983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              13.6K
+                              13,634.6
                             </span>
                           </div>
                           <span
@@ -23273,7 +23999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23299,7 +24025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 }
                               }
                             >
-                              1.0K
+                              1,047.2
                             </span>
                           </div>
                           <span
@@ -23312,10 +24038,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             MWh
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "green",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending up"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 20L16 10 24 20z"
+                              />
+                            </svg>
+                            209.44
+                          </div>
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23354,6 +24106,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             MWh
                           </span>
+                          <div
+                            className="iot--value-card__attribute-secondary-value"
+                            style={
+                              Object {
+                                "--secondary-value-color": "red",
+                              }
+                            }
+                          >
+                            <svg
+                              aria-label="trending down"
+                              className="iot--value-card__attribute_trend-icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 12L16 22 8 12z"
+                              />
+                            </svg>
+                            1047.2
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -23405,7 +24183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23445,7 +24223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23485,7 +24263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23573,7 +24351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                     >
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23613,7 +24391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23653,7 +24431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="iot--value-card__attribute-wrapper"
+                        className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                       >
                         <div
                           className="iot--value-card__attribute-label"
@@ -23873,7 +24651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -23899,7 +24677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            89
+                            89.0
                           </span>
                         </div>
                         <span
@@ -23915,7 +24693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -23941,7 +24719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -23957,7 +24735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       </div>
                     </div>
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24134,7 +24912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24225,7 +25003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24355,7 +25133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24381,7 +25159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            76
+                            76.0
                           </span>
                         </div>
                         <span
@@ -24448,7 +25226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24474,7 +25252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            35
+                            35.0
                           </span>
                         </div>
                         <span
@@ -24487,6 +25265,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "green",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending up"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 20L16 10 24 20z"
+                            />
+                          </svg>
+                          13
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -24541,7 +25345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24632,7 +25436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"
@@ -24656,7 +25460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               }
                             }
                           >
-                            14K
+                            13,572.0
                           </span>
                         </div>
                         <span
@@ -24669,6 +25473,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           
                         </span>
+                        <div
+                          className="iot--value-card__attribute-secondary-value"
+                          style={
+                            Object {
+                              "--secondary-value-color": "red",
+                            }
+                          }
+                        >
+                          <svg
+                            aria-label="trending down"
+                            className="iot--value-card__attribute_trend-icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 12L16 22 8 12z"
+                            />
+                          </svg>
+                          22%
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -24874,7 +25704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
                   >
                     <div
-                      className="iot--value-card__attribute-wrapper"
+                      className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
                     >
                       <div
                         className="iot--value-card__attribute-label"

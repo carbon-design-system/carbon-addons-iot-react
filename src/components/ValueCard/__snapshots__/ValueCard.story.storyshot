@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -202,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -343,7 +343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -484,7 +484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -517,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
           }
         >
           <div
-            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
+            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
               className="iot--data-state-container"
@@ -666,7 +666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -833,348 +833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard dataFilters 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1rem4",
-          "width": "520px",
-        }
-      }
-    >
-      <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="facilitycard"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "304px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Facility Conditions per device"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Facility Conditions per device
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "256px",
-            }
-          }
-        >
-          <div
-            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
-          >
-            <div
-              className="iot--value-card__attribute-wrapper"
-            >
-              <div
-                className="iot--value-card__attribute-label"
-              >
-                Device 1 Comfort
-              </div>
-              <div
-                className="iot--value-card__attribute"
-              >
-                <div
-                  className="iot--value-card__value-renderer--wrapper"
-                  style={
-                    Object {
-                      "--value-renderer-color": null,
-                    }
-                  }
-                >
-                  <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                    style={
-                      Object {
-                        "--value-renderer-font-size": "42px",
-                      }
-                    }
-                  >
-                    100
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  %
-                </span>
-              </div>
-            </div>
-            <div
-              className="iot--value-card__attribute-wrapper"
-            >
-              <div
-                className="iot--value-card__attribute-label"
-              >
-                Device 2 Comfort
-              </div>
-              <div
-                className="iot--value-card__attribute"
-              >
-                <div
-                  className="iot--value-card__value-renderer--wrapper"
-                  style={
-                    Object {
-                      "--value-renderer-color": null,
-                    }
-                  }
-                >
-                  <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                    style={
-                      Object {
-                        "--value-renderer-font-size": "42px",
-                      }
-                    }
-                  >
-                    50
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  %
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard editable 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": "1rem4",
-          "width": "520px",
-        }
-      }
-    >
-      <div
-        className="iot--card iot--card--wrapper"
-        data-testid="Card"
-        id="facilitycard"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "304px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Really really really long card title?"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Really really really long card title?
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "256px",
-            }
-          }
-        >
-          <div
-            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
-          >
-            <div
-              className="iot--value-card__attribute-wrapper"
-            >
-              <div
-                className="iot--value-card__attribute-label"
-              >
-                Monthly summary
-              </div>
-              <div
-                className="iot--value-card__attribute"
-              >
-                <div
-                  className="iot--value-card__value-renderer--wrapper"
-                  style={
-                    Object {
-                      "--value-renderer-color": null,
-                    }
-                  }
-                >
-                  <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                    style={
-                      Object {
-                        "--value-renderer-font-size": "42px",
-                      }
-                    }
-                  >
-                    --
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  Wh
-                </span>
-              </div>
-            </div>
-            <div
-              className="iot--value-card__attribute-wrapper"
-            >
-              <div
-                className="iot--value-card__attribute-label"
-              >
-                Yearly summary
-              </div>
-              <div
-                className="iot--value-card__attribute"
-              >
-                <div
-                  className="iot--value-card__value-renderer--wrapper"
-                  style={
-                    Object {
-                      "--value-renderer-color": null,
-                    }
-                  }
-                >
-                  <span
-                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
-                    style={
-                      Object {
-                        "--value-renderer-font-size": "42px",
-                      }
-                    }
-                  >
-                    --
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  Wh
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard empty state 1`] = `
 <div
   className="storybook-container"
@@ -1196,7 +854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -1289,7 +947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -1325,7 +983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1351,7 +1009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -1367,7 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1409,7 +1067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1435,7 +1093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -1451,7 +1109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1477,7 +1135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    50
+                    50.0
                   </span>
                 </div>
                 <span
@@ -1493,7 +1151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1586,7 +1244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -1622,7 +1280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1648,7 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -1664,7 +1322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1706,7 +1364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1732,7 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -1748,7 +1406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1774,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -1790,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1816,7 +1474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -1832,7 +1490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1874,7 +1532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -1900,7 +1558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -1967,7 +1625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2003,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2094,7 +1752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2130,7 +1788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2156,7 +1814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    20,000T
+                    20,000,000,000,000,000.0
                   </span>
                 </div>
                 <span
@@ -2223,7 +1881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2259,7 +1917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2285,7 +1943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    100M
+                    100,000,000.0
                   </span>
                 </div>
                 <span
@@ -2301,7 +1959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2327,7 +1985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    40T
+                    40,000,000,000,000.0
                   </span>
                 </div>
                 <span
@@ -2394,7 +2052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2430,7 +2088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2456,7 +2114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -2523,7 +2181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2559,7 +2217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2585,7 +2243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -2601,7 +2259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2694,7 +2352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2730,7 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2756,7 +2414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -2772,7 +2430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2814,7 +2472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2840,7 +2498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -2907,7 +2565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -2943,7 +2601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -2969,7 +2627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    345,678T
+                    345,678,234,234,234,240.0
                   </span>
                 </div>
                 <span
@@ -2985,7 +2643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3011,7 +2669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    456,778T
+                    456,778,234,234,234,240.0
                   </span>
                 </div>
                 <span
@@ -3027,7 +2685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3053,7 +2711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    88,888,678T
+                    88,888,678,234,234,240,000.0
                   </span>
                 </div>
                 <span
@@ -3120,7 +2778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3156,7 +2814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3182,7 +2840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    89
+                    89.0
                   </span>
                 </div>
                 <span
@@ -3198,7 +2856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3240,7 +2898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3266,7 +2924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    76
+                    76.0
                   </span>
                 </div>
                 <span
@@ -3333,7 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3369,7 +3027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3462,7 +3120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3498,7 +3156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3589,7 +3247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3625,7 +3283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3649,7 +3307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    88
+                    88.0
                   </span>
                 </div>
                 <span
@@ -3716,7 +3374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3752,7 +3410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3776,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    4
+                    4.0
                   </span>
                 </div>
                 <span
@@ -3843,7 +3501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -3879,7 +3537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -3903,7 +3561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    70
+                    70.0
                   </span>
                 </div>
                 <span
@@ -3970,7 +3628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4006,7 +3664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4030,7 +3688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    35
+                    35.0
                   </span>
                 </div>
                 <span
@@ -4097,7 +3755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4133,7 +3791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4157,7 +3815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    14K
+                    13,572.0
                   </span>
                 </div>
                 <span
@@ -4170,6 +3828,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 >
                   
                 </span>
+                <div
+                  className="iot--value-card__attribute-secondary-value"
+                  style={
+                    Object {
+                      "--secondary-value-color": "red",
+                    }
+                  }
+                >
+                  <svg
+                    aria-label="trending down"
+                    className="iot--value-card__attribute_trend-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 12L16 22 8 12z"
+                    />
+                  </svg>
+                  22%
+                </div>
               </div>
             </div>
           </div>
@@ -4224,7 +3908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4260,7 +3944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4284,7 +3968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    35
+                    35.0
                   </span>
                 </div>
                 <span
@@ -4297,6 +3981,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 >
                   
                 </span>
+                <div
+                  className="iot--value-card__attribute-secondary-value"
+                  style={
+                    Object {
+                      "--secondary-value-color": "green",
+                    }
+                  }
+                >
+                  <svg
+                    aria-label="trending up"
+                    className="iot--value-card__attribute_trend-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 20L16 10 24 20z"
+                    />
+                  </svg>
+                  12
+                </div>
               </div>
             </div>
           </div>
@@ -4351,7 +4061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4387,7 +4097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4411,7 +4121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    88
+                    88.0
                   </span>
                 </div>
                 <span
@@ -4478,7 +4188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4514,7 +4224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4540,7 +4250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    88
+                    88.0
                   </span>
                 </div>
                 <span
@@ -4607,7 +4317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4643,7 +4353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4685,7 +4395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
               </div>
             </div>
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4712,6 +4422,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     }
                   >
                     Healthy
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Occupancy
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    --
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Humidity
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    --
                   </span>
                 </div>
                 <span
@@ -4778,7 +4572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4814,7 +4608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4905,7 +4699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper"
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
         data-testid="Card"
         id="facilitycard"
         role="presentation"
@@ -4941,7 +4735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
             className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
           >
             <div
-              className="iot--value-card__attribute-wrapper"
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
             >
               <div
                 className="iot--value-card__attribute-label"
@@ -4972,6 +4766,606 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     >
                       false
                     </span>
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with dataFilters 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1rem4",
+          "width": "520px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Facility Conditions per device"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Facility Conditions per device
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
+        >
+          <div
+            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
+          >
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Device 1 Comfort
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    100
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Device 2 Comfort
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    50
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with fontSize 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1rem4",
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Facility Conditions"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Facility Conditions
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
+        >
+          <div
+            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
+          >
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Comfort Level
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "25px",
+                      }
+                    }
+                  >
+                    89.0
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with isEditable 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1rem4",
+          "width": "520px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--value-card__vertical iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Really really really long card title?"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Really really really long card title?
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
+        >
+          <div
+            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
+          >
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Monthly summary
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    --
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
+              </div>
+            </div>
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Yearly summary
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    --
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with isNumberValueCompact 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "1rem4",
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--value-card__horizontal iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Facility Conditions"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Facility Conditions
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
+        >
+          <div
+            className="iot--value-card__content-wrapper iot--value-card__content-wrapper--horizontal"
+          >
+            <div
+              className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            >
+              <div
+                className="iot--value-card__attribute-label"
+              >
+                Comfort Level
+              </div>
+              <div
+                className="iot--value-card__attribute"
+              >
+                <div
+                  className="iot--value-card__value-renderer--wrapper"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                    }
+                  }
+                >
+                  <span
+                    className="iot--value-card__value-renderer--value"
+                    style={
+                      Object {
+                        "--value-renderer-font-size": "42px",
+                      }
+                    }
+                  >
+                    864,1 k
                   </span>
                 </div>
                 <span
