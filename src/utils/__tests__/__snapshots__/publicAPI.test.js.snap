@@ -8635,7 +8635,31 @@ Map {
           Object {
             "args": Array [
               Object {
+                "aggregationMethod": Object {
+                  "type": "string",
+                },
+                "aggregationMethods": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "type": "string",
+                          },
+                          "text": Object {
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
                 "dataSourceId": Object {
+                  "type": "string",
+                },
+                "grain": Object {
                   "type": "string",
                 },
                 "label": Object {
@@ -9033,6 +9057,9 @@ Map {
             "cards": Object {
               "type": "array",
             },
+            "isSummaryDashboard": Object {
+              "type": "bool",
+            },
             "layouts": Object {
               "type": "object",
             },
@@ -9122,6 +9149,7 @@ Map {
         "searchPlaceHolderText": "Enter a search",
       },
       "icons": null,
+      "isSummaryDashboard": false,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9295,6 +9323,9 @@ Map {
           },
         ],
         "type": "objectOf",
+      },
+      "isSummaryDashboard": Object {
+        "type": "bool",
       },
       "onAddCard": Object {
         "isRequired": true,
