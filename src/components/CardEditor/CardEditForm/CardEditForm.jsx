@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Code16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import pick from 'lodash/pick';
 
 import {
   CARD_DIMENSIONS,
@@ -42,6 +43,12 @@ const propTypes = {
     barChartType_STACKED: PropTypes.string,
     barChartLayout_HORIZONTAL: PropTypes.string,
     barChartLayout_VERTICAL: PropTypes.string,
+
+    errorTitle: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalLabel: PropTypes.string,
+    modalHelpText: PropTypes.string,
+    modalIconDescription: PropTypes.string,
   }),
   /** if provided, returns an array of strings which are the dataItems to be allowed
    * on each card
@@ -67,6 +74,19 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
+  testID: PropTypes.string,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -90,7 +110,12 @@ const defaultProps = {
     barChartType_STACKED: 'Stacked',
     barChartLayout_HORIZONTAL: 'Horizontal',
     barChartLayout_VERTICAL: 'Vertical',
-    // additional card type names can be provided using the convention of `cardType_TYPE`
+    errorTitle: 'Error:',
+    modalTitle: 'Edit card JSON configuration',
+    modalLabel: 'Card editor',
+    modalHelpText:
+      'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
+    modalIconDescription: 'Close',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
@@ -98,6 +123,9 @@ const defaultProps = {
   availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
+  testID: 'card-edit-form',
+  dataSeriesItemLinks: null,
 };
 
 /**
@@ -132,6 +160,44 @@ export const basicCardValidation = (card) => {
 };
 
 /**
+ * removes properties needed for the editor that we don't want the user to be able to modify
+ * @param {Object} card JSON currently being edited
+ * @returns {Object} card with omitted attributes
+ */
+export const hideCardPropertiesForEditor = (card) => {
+  let attributes;
+  let series;
+  if (card.content?.attributes) {
+    attributes = card.content.attributes.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  if (card.content?.series) {
+    series = card.content.series.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  return omit(
+    attributes
+      ? { ...card, content: { ...card.content, attributes } }
+      : series
+      ? { ...card, content: { ...card.content, series } }
+      : card,
+    ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
+  );
+};
+
+/**
  * Checks for JSON form errors
  * @param {Object} card JSON text input
  * @param {Function} setError
@@ -142,6 +208,7 @@ export const basicCardValidation = (card) => {
 export const handleSubmit = (
   card,
   id,
+  content,
   setError,
   onValidateCardJson,
   onChange,
@@ -157,7 +224,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id });
+    onChange({ ...JSON.parse(card), id, content });
     setShowEditor(false);
     return true;
   }
@@ -168,6 +235,7 @@ export const handleSubmit = (
 
 const CardEditForm = ({
   cardConfig,
+  isSummaryDashboard,
   onChange,
   i18n,
   dataItems,
@@ -176,12 +244,16 @@ const CardEditForm = ({
   getValidTimeRanges,
   currentBreakpoint,
   availableDimensions,
+  testID,
+  dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id } = cardConfig;
+  const { id, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -192,6 +264,7 @@ const CardEditForm = ({
             handleSubmit(
               card,
               id,
+              content,
               setError,
               onValidateCardJson,
               onChange,
@@ -200,14 +273,19 @@ const CardEditForm = ({
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
-          i18n={{
-            errorTitle: 'Error:',
-            modalTitle: 'Edit card JSON configuration',
-            modalLabel: 'Card editor',
-            modalHelpText:
-              'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
-            modalIconDescription: 'Close',
-          }}
+          i18n={pick(
+            mergedI18n,
+            'errorTitle',
+            'modalTitle',
+            'modalLabel',
+            'modalHelpText',
+            'modalIconDescription',
+            'copyBtnDescription',
+            'copyBtnFeedBack',
+            'expandBtnLabel',
+            'modalPrimaryButtonLabel',
+            'modalSecondaryButtonLabel'
+          )}
         />
       ) : null}
       <div className={baseClassName}>
@@ -216,46 +294,45 @@ const CardEditForm = ({
             <CardEditFormContent
               cardConfig={cardConfig}
               onChange={onChange}
+              isSummaryDashboard={isSummaryDashboard}
               i18n={mergedI18n}
               dataItems={dataItems}
               availableDimensions={availableDimensions}
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
               currentBreakpoint={currentBreakpoint}
+              dataSeriesItemLinks={dataSeriesItemLinks}
+              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          <Tab label={mergedI18n.settingsTabLabel}>
-            <CardEditFormSettings
-              availableDimensions={availableDimensions}
-              cardConfig={
-                cardConfig.type === CARD_TYPES.CUSTOM
-                  ? { ...omit(cardConfig, 'content') }
-                  : cardConfig
-              }
-              onChange={onChange}
-              i18n={mergedI18n}
-              getValidDataItems={getValidDataItems}
-            />
-          </Tab>
+          {
+            // Hide value card form settings until font size option is functional
+            cardConfig.type !== CARD_TYPES.VALUE ? (
+              <Tab label={mergedI18n.settingsTabLabel}>
+                <CardEditFormSettings
+                  availableDimensions={availableDimensions}
+                  cardConfig={
+                    cardConfig.type === CARD_TYPES.CUSTOM
+                      ? { ...omit(cardConfig, 'content') }
+                      : cardConfig
+                  }
+                  onChange={onChange}
+                  i18n={mergedI18n}
+                  getValidDataItems={getValidDataItems}
+                />
+              </Tab>
+            ) : null
+          }
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
+            data-testid={`${testID}-open-editor-button`}
             kind="tertiary"
             size="small"
             renderIcon={Code16}
             onClick={() => {
               setModalData(
-                JSON.stringify(
-                  omit(cardConfig, [
-                    'id',
-                    'content.src',
-                    'content.imgState',
-                    'i18n',
-                    'validateUploadedImage',
-                  ]),
-                  null,
-                  4
-                )
+                JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4)
               );
               setShowEditor(true);
             }}>

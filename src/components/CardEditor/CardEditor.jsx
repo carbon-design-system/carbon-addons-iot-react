@@ -71,13 +71,52 @@ const propTypes = {
    * @returns Array<string> error strings. return empty array if there is no errors
    */
   onValidateCardJson: PropTypes.func,
+  /**
+   * An array of card types that are allowed to show up in the list. These keys will also be used in both icons and i18n
+   * ex: [ DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES, DASHBOARD_EDITOR_CARD_TYPES.ALERT, 'CUSTOM', 'ANOTHER_CUSTOM']
+   */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Dictionary of icons that corresponds to both `supportedCardTypes` and `i18n`
+   * ex:
+   * {
+   *  TIMESERIES: <EscalatorDown />,
+   *  ALERT: <Code24 />,
+   *  CUSTOM: <Basketball32 />,
+   *  ANOTHER_CUSTOM: <Automobile32 />,
+   * }
+   */
+  icons: PropTypes.objectOf(PropTypes.node),
+  /**
+   * i18n must include the label for each `supportedCardTypes`
+   * ex:
+   * [
+   *  TIMESERIES: 'ITEM 1',
+   *  ALERT: 'ITEM 8',
+   *  CUSTOM: 'ITEM 10',
+   *  COOL_NEW_CARD: 'Missing Icon',
+   * ]
+   */
   i18n: PropTypes.shape({
     galleryHeader: PropTypes.string,
     addCardButton: PropTypes.string,
-    searchPlaceholderText: PropTypes.string,
+    searchPlaceHolderText: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
+  /** Id that can be used for testing */
+  testID: PropTypes.string,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
@@ -88,21 +127,26 @@ const defaultProps = {
     addCardButton: 'Add card',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
-    searchPlaceholderText: 'Enter a search',
+    searchPlaceHolderText: 'Enter a search',
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
   dataItems: [],
   availableDimensions: {},
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
+  icons: null,
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
+  testID: 'card-editor',
+  dataSeriesItemLinks: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
 
 const CardEditor = ({
   cardConfig,
+  isSummaryDashboard,
   onShowGallery,
   onChange,
   onAddCard,
@@ -112,8 +156,13 @@ const CardEditor = ({
   onValidateCardJson,
   supportedCardTypes,
   availableDimensions,
+  icons,
   i18n,
   currentBreakpoint,
+  testID,
+  dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -121,7 +170,7 @@ const CardEditor = ({
   const showGallery = isNil(cardConfig);
 
   return (
-    <div className={baseClassName}>
+    <div className={baseClassName} data-testid={testID}>
       {!showGallery ? (
         <div className={`${baseClassName}--header`}>
           <Button
@@ -143,13 +192,16 @@ const CardEditor = ({
       <div className={`${baseClassName}--content`}>
         {showGallery ? (
           <CardGalleryList
+            icons={icons}
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
+            data-testid={`${testID}-card-gallery-list`}
           />
         ) : (
           <CardEditForm
             cardConfig={cardConfig}
+            isSummaryDashboard={isSummaryDashboard}
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}
@@ -158,6 +210,8 @@ const CardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            dataSeriesItemLinks={dataSeriesItemLinks}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         )}
       </div>

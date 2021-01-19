@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-import React, { useMemo } from 'react';
+import React from 'react';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
-import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
 import { Warning24 } from '@carbon/icons-react';
 
 import { CARD_TYPES } from '../../constants/LayoutConstants';
@@ -21,14 +19,14 @@ import {
 
 import {
   validThresholdIcons,
+  validHotspotIcons,
   timeRangeToJSON,
   isCardJsonValid,
 } from './editorUtils';
 
 /**
  * Renders a card and lists the JSON within
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderDefaultCard = (props) => (
@@ -38,8 +36,7 @@ const renderDefaultCard = (props) => (
 );
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderValueCard = (props) => (
@@ -50,15 +47,18 @@ const renderValueCard = (props) => (
         (icon) => icon.name === iconName
       )?.carbonIcon || <Warning24 />;
       // eslint-disable-next-line react/prop-types
-      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+      return (
+        <div style={{ color: iconProps.fill }}>
+          {React.cloneElement(iconToRender, iconProps)}
+        </div>
+      );
     }}
     isEditable
     {...props}
   />
 );
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderTimeSeriesCard = (props) => {
@@ -77,8 +77,7 @@ const renderTimeSeriesCard = (props) => {
 };
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const EditorBarChartCard = ({ dataItems, availableDimensions, ...props }) => {
@@ -87,19 +86,10 @@ const EditorBarChartCard = ({ dataItems, availableDimensions, ...props }) => {
     isEqual(range, props?.dataSource?.range)
   );
 
-  // Need to memoize this to stop it from rerendering
-  const values = useMemo(() => {
-    return !props.dataSource?.groupBy && isEmpty(props.content.series)
-      ? []
-      : dataItems;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.dataSource, props.content.series, dataItems.length]); // this is a little bit of a hack because I don't want to do an object compare
-
   return (
     <BarChartCard
       isEditable
       isDashboardPreview
-      values={values}
       availableDimensions={availableDimensions}
       interval={timeRangeJSON?.interval || 'day'}
       {...props}
@@ -108,8 +98,7 @@ const EditorBarChartCard = ({ dataItems, availableDimensions, ...props }) => {
 };
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderTableCard = (props) => (
@@ -122,28 +111,57 @@ const renderTableCard = (props) => (
 );
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
-const renderImageCard = (props) => <ImageCard isEditable {...props} />;
+const renderImageCard = (props) => (
+  <ImageCard
+    isEditable // render the icon in the right color in the card preview
+    renderIconByName={(iconName, iconProps) => {
+      // first search the validHotspot Icons
+      const matchingHotspotIcon = validHotspotIcons.find(
+        (icon) => icon.id === iconName
+      );
+
+      // then search the validThresholdIcons
+      const matchingThresholdIcon = validThresholdIcons.find(
+        (icon) => icon.name === iconName
+      );
+      const iconToRender = matchingHotspotIcon
+        ? React.createElement(matchingHotspotIcon.icon, {
+            ...iconProps,
+            title: matchingHotspotIcon.text,
+          })
+        : matchingThresholdIcon
+        ? React.cloneElement(matchingThresholdIcon.carbonIcon, {
+            ...iconProps,
+            title: matchingThresholdIcon.name,
+          })
+        : React.cloneElement(Warning24, {
+            ...iconProps,
+            title: 'Warning',
+          });
+      // otherwise default to Warning24
+      // eslint-disable-next-line react/prop-types
+      return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+    }}
+    {...props}
+  />
+);
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderListCard = (props) => <ListCard isEditable {...props} />;
 
 /**
- * @param {Object} cardConfig
- * @param {Object} commonProps
+ * @param {Object} props
  * @returns {Node}
  */
 const renderCustomCard = (props) => {
   return (
     <Card
-      hideHeader={isNil(props.title)}
       // need to omit the content because its getting passed content to be rendered, which should not
       // get attached to the card wrapper
       {...omit(props, 'content')}>
@@ -157,8 +175,6 @@ const renderCustomCard = (props) => {
 
 /**
  * Returns a Card component for preview in the dashboard
- * @param {Object} cardConfig, the JSON configuration of the card
- * @param {Object} commonProps basic card config props
  * @param {Array} dataItems list of dataItems available to the card
  * @param {Object} availableDimensions collection of dimensions where the key is the
  * dimension and the value is a list of values for that dimension

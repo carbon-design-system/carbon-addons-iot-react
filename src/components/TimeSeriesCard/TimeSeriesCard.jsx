@@ -89,6 +89,7 @@ const TimeSeriesCardPropTypes = {
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
     noData: PropTypes.string,
+    tooltipGroupLabel: PropTypes.string,
   }),
   /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(
@@ -500,7 +501,12 @@ const TimeSeriesCard = ({
         return {
           id: columnName,
           // use the label if one exists as it will be the user-defined, readable name
-          name: matchingDataSource ? matchingDataSource.label : columnName,
+          // UNLESS dataFilter is enabled as the matchingDataSource will only find the first match
+          name: matchingDataSource
+            ? matchingDataSource.dataFilter
+              ? matchingDataSource.dataSourceId
+              : matchingDataSource.label
+            : columnName,
           isSortable: true,
           filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
         };
@@ -594,6 +600,7 @@ const TimeSeriesCard = ({
                       showTimeInGMT,
                       tooltipDateFormatPattern
                     ),
+                  groupLabel: i18n.tooltipGroupLabel,
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
@@ -675,6 +682,7 @@ TimeSeriesCard.defaultProps = {
   i18n: {
     alertDetected: 'Alert detected:',
     noDataLabel: 'No data is available for this time range.',
+    tooltipGroupLabel: 'Group',
   },
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',

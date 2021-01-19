@@ -63,6 +63,10 @@ export const Default = () => {
           setFormValues(merge({}, formValues, change));
           action('onChange')(change);
         }}
+        onDelete={(change) => {
+          action('onDelete')(change);
+        }}
+        translateWithId={() => {}}
       />
     );
   };

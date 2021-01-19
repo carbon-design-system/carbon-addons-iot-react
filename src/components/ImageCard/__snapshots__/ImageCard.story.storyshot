@@ -1063,13 +1063,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 >
                   <div
                     aria-atomic="true"
-                    aria-labelledby="loading-id-5"
+                    aria-labelledby="loading-id-6"
                     aria-live="assertive"
                     className="bx--loading bx--loading--small"
                   >
                     <label
                       className="bx--visually-hidden"
-                      id="loading-id-5"
+                      id="loading-id-6"
                     >
                       Active loading indicator
                     </label>
@@ -1248,7 +1248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id11"
+                  htmlFor="id13"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1261,7 +1261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id11"
+                      id="id13"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}
@@ -1427,7 +1427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id10"
+                  htmlFor="id12"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1440,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id10"
+                      id="id12"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}

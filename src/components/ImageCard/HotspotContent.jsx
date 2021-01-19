@@ -7,8 +7,7 @@
  * trade secrets, irrespective of what has been deposited with the U.S. Copyright
  * Office.
  */
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useState, useMemo } from 'react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import { Edit20 } from '@carbon/icons-react';
@@ -19,59 +18,20 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import { TextInput } from '../TextInput';
+import { HotspotContentPropTypes } from '../../constants/SharedPropTypes';
 
 import CardIcon from './CardIcon';
 
 const { iotPrefix } = settings;
 
-export const HotspotContentPropTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  description: PropTypes.string,
-  values: PropTypes.objectOf(PropTypes.any),
-  attributes: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      label: PropTypes.string,
-      unit: PropTypes.string,
-      precision: PropTypes.number,
-      thresholds: PropTypes.arrayOf(
-        PropTypes.shape({
-          comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
-          value: PropTypes.any,
-          icon: PropTypes.string,
-          color: PropTypes.string,
-        })
-      ),
-    })
-  ),
-  /** overall threshold that launched the hotspot */
-  hotspotThreshold: PropTypes.shape({
-    dataSourceId: PropTypes.string,
-    comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
-    value: PropTypes.any,
-    icon: PropTypes.string,
-    color: PropTypes.string,
-  }),
-  /** the locale to use for formatting numeric values */
-  locale: PropTypes.string,
-  /** The placeholder text for editable title */
-  titlePlaceholderText: PropTypes.string,
-  /** The html title attribute text for the title label when editable */
-  titleEditableHintText: PropTypes.string,
-  /** ability to render icon by name */
-  renderIconByName: PropTypes.func,
-  /** when true the title can be edited by the user. */
-  isTitleEditable: PropTypes.bool,
-  /** the unique id of this component, used by input elements */
-  id: PropTypes.string,
-  /** For text hotspots, callback with current value for when the editable fields are blurred. */
-  onChange: PropTypes.func,
-};
+const propTypes = HotspotContentPropTypes;
 
 const defaultProps = {
   title: null,
-  titlePlaceholderText: 'Enter label',
-  titleEditableHintText: 'Click to edit label',
+  i18n: {
+    titlePlaceholderText: 'Enter label',
+    titleEditableHintText: 'Click to edit label',
+  },
   description: null,
   values: {},
   attributes: [],
@@ -83,10 +43,12 @@ const defaultProps = {
   onChange: () => {},
 };
 
+/**
+ * This component renders a form for editing Text Hotspot contents
+ */
 const HotspotContent = ({
   title,
-  titlePlaceholderText,
-  titleEditableHintText,
+  i18n,
   description,
   attributes,
   values,
@@ -107,23 +69,19 @@ const HotspotContent = ({
     titleInputFocusRef.current.focus();
   }
 
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const { titlePlaceholderText, titleEditableHintText } = mergedI18n;
   const renderTitle = () => {
-    const titleTextVersion = (
+    const titleEditableTextVersion = (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
       <h4
-        onClick={() => {
-          if (isTitleEditable) {
-            setShowTitleInput(isTitleEditable);
-          }
-        }}
-        title={isTitleEditable ? titleEditableHintText : titleValue}>
-        {titleValue !== null && titleValue !== '' ? (
-          titleValue
-        ) : isTitleEditable ? (
-          <Edit20 />
-        ) : null}
+        onClick={() => setShowTitleInput(isTitleEditable)}
+        title={titleEditableHintText}>
+        {titleValue !== null && titleValue !== '' ? titleValue : <Edit20 />}
       </h4>
     );
+
+    const titleFixedTextVersion = <h4 title={title}>{title}</h4>;
 
     const titleInputVersion = (
       <>
@@ -162,8 +120,10 @@ const HotspotContent = ({
 
     return typeof title === 'string' && showTitleInput
       ? titleInputVersion
+      : typeof title === 'string' && isTitleEditable
+      ? titleEditableTextVersion
       : typeof title === 'string'
-      ? titleTextVersion
+      ? titleFixedTextVersion
       : React.isValidElement(title)
       ? title
       : null;
@@ -274,6 +234,6 @@ const HotspotContent = ({
   );
 };
 
-HotspotContent.propTypes = HotspotContentPropTypes;
+HotspotContent.propTypes = propTypes;
 HotspotContent.defaultProps = defaultProps;
 export default HotspotContent;

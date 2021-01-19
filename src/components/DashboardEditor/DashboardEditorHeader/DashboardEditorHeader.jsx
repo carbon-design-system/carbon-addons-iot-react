@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   TrashCan16,
@@ -95,9 +95,9 @@ const defaultProps = {
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
-    headerXlargeButton: 'X-large view',
     headerLargeButton: 'Large view',
     headerMediumButton: 'Medium view',
+    headerSmallButton: 'Small view',
   },
   selectedBreakpointIndex: null,
   setSelectedBreakpointIndex: null,
@@ -121,7 +121,7 @@ const DashboardEditorHeader = ({
   setSelectedBreakpointIndex,
   breakpointSwitcher,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, i18n };
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const baseClassName = `${iotPrefix}--dashboard-editor-header`;
   const extraContent = (
     <div className={`${baseClassName}--right`}>
@@ -139,20 +139,20 @@ const DashboardEditorHeader = ({
               index={0}
             />
             <IconSwitch
-              name="xlarge"
-              text={mergedI18n.headerXlargeButton}
+              name="large"
+              text={mergedI18n.headerLargeButton}
               renderIcon={Screen16}
               index={1}
             />
             <IconSwitch
-              name="large"
-              text={mergedI18n.headerLargeButton}
+              name="medium"
+              text={mergedI18n.headerMediumButton}
               renderIcon={Laptop16}
               index={2}
             />
             <IconSwitch
-              name="medium"
-              text={mergedI18n.headerMediumButton}
+              name="small"
+              text={mergedI18n.headerSmallButton}
               renderIcon={Tablet16}
               index={3}
             />

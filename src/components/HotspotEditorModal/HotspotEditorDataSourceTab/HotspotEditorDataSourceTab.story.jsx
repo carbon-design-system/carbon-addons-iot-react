@@ -150,10 +150,10 @@ export const WithStateInStory = () => {
       <div>
         <HotspotEditorDataSourceTab
           hotspot={cardConfigState.content.hotspots[0]}
-          hotspotIndex={0}
           thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
+          translateWithId={() => {}}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({
@@ -217,10 +217,10 @@ export const WithPresetValues = () => {
       <div>
         <HotspotEditorDataSourceTab
           hotspot={cardConfigState.content.hotspots[0]}
-          hotspotIndex={0}
           thresholds={cardConfigState.thresholds}
           cardConfig={cardConfigState}
           dataItems={dataItems}
+          translateWithId={() => {}}
           onChange={(newData) => {
             if (Array.isArray(newData)) {
               setCardConfigState({

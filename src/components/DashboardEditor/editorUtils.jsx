@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import {
   purple70,
@@ -48,6 +47,12 @@ import {
   WarningFilled24,
   WarningSquare24,
   WarningSquareFilled24,
+  User24,
+  Location24,
+  Temperature24,
+  Flag24,
+  Tag24,
+  Alarm24,
 } from '@carbon/icons-react';
 
 import {
@@ -58,10 +63,25 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 
+export const validHotspotIcons = [
+  { id: 'User', icon: User24, text: 'User' },
+  { id: 'Location', icon: Location24, text: 'Location' },
+  { id: 'Temperature', icon: Temperature24, text: 'Temperature' },
+  { id: 'Flag', icon: Flag24, text: 'Flag' },
+  { id: 'Tag', icon: Tag24, text: 'Tag' },
+  { id: 'Alarm', icon: Alarm24, text: 'Alarm' },
+];
+
 export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     dataSourceId: PropTypes.string,
     label: PropTypes.string,
+    aggregationMethod: PropTypes.string,
+    aggregationMethods: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
+    ),
+    /** Grain is needed in summary dashboard editors */
+    grain: PropTypes.string,
   })
 );
 
@@ -358,14 +378,14 @@ export const handleOnClick = (onSelectCard, id) => {
  */
 export const renderBreakpointInfo = (breakpoint, i18n) => {
   switch (breakpoint) {
-    case 'xl':
-      return i18n.layoutInfoXl;
     case 'lg':
       return i18n.layoutInfoLg;
     case 'md':
       return i18n.layoutInfoMd;
+    case 'sm':
+      return i18n.layoutInfoSm;
     default:
-      return i18n.layoutInfoXl;
+      return i18n.layoutInfoLg;
   }
 };
 
@@ -376,19 +396,24 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
  */
 export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
-  const series = selectedItems.map(({ id }, i) => {
-    const currentItem = cardSeries?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
-    const color =
-      currentItem?.color ??
-      DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
-    return {
-      dataSourceId: id,
-      label: currentItem?.label || id,
-      color,
-    };
-  });
+  const series = selectedItems.map(
+    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }, i) => {
+      const currentItem = cardSeries?.find(
+        (dataItem) => dataItem.uuid === attributeId
+      );
+      const color =
+        currentItem?.color ??
+        DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+      const label = currentItem?.label || unEditedLabel || dataSourceId;
+
+      return {
+        dataSourceId,
+        uuid: attributeId,
+        label,
+        color,
+      };
+    }
+  );
   return series;
 };
 
@@ -399,25 +424,22 @@ export const formatSeries = (selectedItems, cardConfig) => {
  */
 export const formatAttributes = (selectedItems, cardConfig) => {
   const cardAttributes = cardConfig?.content?.attributes;
-  const attributes = selectedItems.map(({ id }) => {
-    const currentItem = cardAttributes?.find(
-      (dataItem) => dataItem.dataSourceId === id
-    );
+  const attributes = selectedItems.map(
+    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }) => {
+      const currentItem = cardAttributes?.find(
+        (dataItem) => dataItem.uuid === attributeId
+      );
+      // Need to default the label to reflect the default aggregator if there isn't one set
+      const label = currentItem?.label || unEditedLabel || dataSourceId;
 
-    return {
-      dataSourceId: id,
-      label: currentItem?.label || id,
-      ...(!isNil(currentItem?.precision)
-        ? { precision: currentItem.precision }
-        : {}),
-      ...(currentItem?.thresholds && !isEmpty(currentItem?.thresholds)
-        ? { thresholds: currentItem.thresholds }
-        : {}),
-      ...(currentItem?.dataFilter
-        ? { dataFilter: currentItem.dataFilter }
-        : {}),
-    };
-  });
+      return {
+        ...currentItem,
+        uuid: attributeId,
+        dataSourceId,
+        label,
+      };
+    }
+  );
   return attributes;
 };
 
@@ -517,10 +539,12 @@ export const handleDataSeriesChange = (
 };
 
 /**
- * updates the dataSection on edit of a dataItem based on card type
- * @param {object} editDataItem
- * @param {object} cardConfig
- * @param {string} title
+ * updates the dataSection on edit of a dataItem based on card type.
+ * TODO: refactor this into multiple functions
+ * @param {object} editDataItem an object with the updated form values for this data item
+ * @param {object} cardConfig the previous cardConfiguration
+ * @param {string} editDataSeries only used for bar chart card forms
+ * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
  */
 export const handleDataItemEdit = (
   editDataItem,
@@ -536,23 +560,36 @@ export const handleDataItemEdit = (
     case CARD_TYPES.VALUE:
       dataSection = [...content.attributes];
       editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+        (dataItem) => dataItem.uuid === editDataItem.uuid
       );
-      dataSection[editDataItemIndex] = editDataItem;
+      // if there isn't an item found, place it at the end
+      dataSection[
+        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+      ] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, attributes: dataSection },
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      dataSection = [...editDataSeries];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
+      dataSection =
+        type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
+      editDataItemIndex = dataSection.findIndex((dataItem) =>
+        // check for true dataSourceId in simple bar charts
+        content.type !== BAR_CHART_TYPES.SIMPLE
+          ? dataItem.uuid === editDataItem.uuid
+          : dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[editDataItemIndex] = editDataItem;
+      // if there isn't an item found, place it at the end
+      dataSection[
+        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+      ] = editDataItem;
       return {
         ...cardConfig,
-        content: { ...content, series: dataSection },
+        content: {
+          ...content,
+          series: dataSection,
+        },
       };
     case CARD_TYPES.TABLE:
       dataSection = [...content.columns];

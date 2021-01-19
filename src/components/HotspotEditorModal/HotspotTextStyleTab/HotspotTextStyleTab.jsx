@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import { NumberInput } from 'carbon-components-react';
 import {
+  TrashCan32,
+  InformationFilled24,
   TextBold16 as TextBold,
   TextItalic16 as TextItalic,
   TextUnderline16 as TextUnderline,
@@ -11,6 +13,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import IconSwitch from '../../IconSwitch/IconSwitch';
 import ColorDropdown from '../../ColorDropdown/ColorDropdown';
+import Button from '../../Button/Button';
 
 const { iotPrefix } = settings;
 
@@ -29,20 +32,24 @@ const propTypes = {
   /** set of internationalized labels */
   i18n: PropTypes.shape({
     boldLabelText: PropTypes.string,
+    infoMessageText: PropTypes.string,
     italicLabelText: PropTypes.string,
     underlineLabelText: PropTypes.string,
-    fontLabelText: PropTypes.string,
-    fontSizeText: PropTypes.string,
+    fontColorLabelText: PropTypes.string,
     fontSizeInvalidText: PropTypes.string,
     backgroundLabelText: PropTypes.string,
     fillOpacityLabelText: PropTypes.string,
     fillOpacityInvalidText: PropTypes.string,
     borderLabelText: PropTypes.string,
-    borderWidthText: PropTypes.string,
     borderWidthInvalidText: PropTypes.string,
+    deleteButtonLabelText: PropTypes.string,
+    deleteButtonIconDescription: PropTypes.string,
   }),
+  translateWithId: PropTypes.func.isRequired,
   /** Callback for when any of the form element's value changes */
   onChange: PropTypes.func.isRequired,
+  /** Callback for when the delete button is clicked */
+  onDelete: PropTypes.func.isRequired,
   /** The state values of the controlled form elements, see defaults for shape */
   formValues: PropTypes.objectOf(
     PropTypes.oneOfType([
@@ -70,6 +77,8 @@ const propTypes = {
   minBorderWidth: PropTypes.number,
   /** Maximum Border Width */
   maxBorderWidth: PropTypes.number,
+  /** Set to true to hide all form elements and show the info message */
+  showInfoMessage: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -77,9 +86,11 @@ const defaultProps = {
   light: true,
   i18n: {
     boldLabelText: 'Text Bold',
+    infoMessageText:
+      'Select an existing label on the image to edit it or click on an empty region to create one',
     italicLabelText: 'Text Italic',
     underlineLabelText: 'Text Underline',
-    fontLabelText: 'Font',
+    fontColorLabelText: 'Font color',
     fontSizeLabelText: 'Font Size',
     fontSizeInvalidText: 'Font Size is invalid',
     backgroundLabelText: 'Background',
@@ -88,6 +99,8 @@ const defaultProps = {
     borderLabelText: 'Border',
     borderWidthLabelText: 'Border Width',
     borderWidthInvalidText: 'Border Width is invalid',
+    deleteButtonLabelText: 'Delete hotspot',
+    deleteButtonIconDescription: 'Delete this hotspot',
   },
   formValues: {
     bold: false,
@@ -109,9 +122,24 @@ const defaultProps = {
   maxOpacity: undefined,
   minBorderWidth: undefined,
   maxBorderWidth: undefined,
+  showInfoMessage: false,
 };
 
-/* this component is only used internally where props are defined and set. */
+const getSelectedColorItem = (color, colorCollection) => {
+  return typeof color === 'string' && Array.isArray(colorCollection)
+    ? colorCollection.find((colorObj) => colorObj.carbonColor === color)
+    : color;
+};
+
+const getIntOrUndefined = (value) => {
+  return value === '' ? undefined : parseInt(value, 10);
+};
+
+const preventFormSubmission = (e) => e.preventDefault();
+
+/**
+ * This component renders a form that allows the user to change the style of the text type hotspots
+ */
 const HotspotTextStyleTab = ({
   className,
   fontColors,
@@ -121,18 +149,22 @@ const HotspotTextStyleTab = ({
   light,
   i18n,
   onChange,
+  onDelete,
   minFontSize,
   maxFontSize,
   minOpacity,
   maxOpacity,
   minBorderWidth,
   maxBorderWidth,
+  showInfoMessage,
+  translateWithId,
 }) => {
   const {
     boldLabelText,
+    infoMessageText,
     italicLabelText,
     underlineLabelText,
-    fontLabelText,
+    fontColorLabelText,
     fontSizeLabelText,
     fontSizeInvalidText,
     backgroundLabelText,
@@ -141,6 +173,9 @@ const HotspotTextStyleTab = ({
     borderLabelText,
     borderWidthLabelText,
     borderWidthInvalidText,
+    deleteButtonLabelText,
+    deleteButtonIconDescription,
+    selectAColor,
   } = merge({}, defaultProps.i18n, i18n);
 
   const {
@@ -155,124 +190,170 @@ const HotspotTextStyleTab = ({
     borderWidth,
   } = formValues;
 
+  const renderInfoMessage = () => (
+    <div className={`${iotPrefix}--hotspot-editor--text-info-message`}>
+      <InformationFilled24 />
+      <p>{infoMessageText}</p>
+    </div>
+  );
+
   return (
     <div className={className}>
-      <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
-        <IconSwitch
-          onClick={() => onChange({ bold: !bold })}
-          data-testid="hotspot-bold"
-          selected={bold}
-          text={boldLabelText}
-          renderIcon={TextBold}
-          index={0}
-          light={light}
-        />
-        <IconSwitch
-          name="italic"
-          onClick={() => onChange({ italic: !italic })}
-          data-testid="hotspot-italic"
-          selected={italic}
-          text={italicLabelText}
-          renderIcon={TextItalic}
-          index={1}
-          light={light}
-        />
-        <IconSwitch
-          name="underline"
-          onClick={() => onChange({ underline: !underline })}
-          data-testid="hotspot-underline"
-          selected={underline}
-          text={underlineLabelText}
-          renderIcon={TextUnderline}
-          index={2}
-          light={light}
-        />
-      </div>
+      {showInfoMessage ? (
+        renderInfoMessage()
+      ) : (
+        <>
+          <form
+            onSubmit={preventFormSubmission}
+            className={`${iotPrefix}--hotspot-text-style-tab__form`}>
+            <div className={`${iotPrefix}--hotspot-text-style-tab__text-style`}>
+              <IconSwitch
+                onClick={() => onChange({ bold: !bold })}
+                data-testid="hotspot-bold"
+                selected={bold}
+                text={boldLabelText}
+                renderIcon={TextBold}
+                index={0}
+                light={light}
+              />
+              <IconSwitch
+                name="italic"
+                onClick={() => onChange({ italic: !italic })}
+                data-testid="hotspot-italic"
+                selected={italic}
+                text={italicLabelText}
+                renderIcon={TextItalic}
+                index={1}
+                light={light}
+              />
+              <IconSwitch
+                name="underline"
+                onClick={() => onChange({ underline: !underline })}
+                data-testid="hotspot-underline"
+                selected={underline}
+                text={underlineLabelText}
+                renderIcon={TextUnderline}
+                index={2}
+                light={light}
+              />
+            </div>
 
-      <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
-        <ColorDropdown
-          id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
-          titleText={fontLabelText}
-          light={light}
-          selectedColor={fontColor}
-          colors={fontColors}
-          onChange={(selected) => {
-            onChange({ fontColor: selected.color });
-          }}
-        />
+            <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
+              <ColorDropdown
+                key={fontColor?.carbonColor ?? fontColor}
+                id={`${iotPrefix}--hotspot-text-style-tab__font-color`}
+                titleText={fontColorLabelText}
+                light={light}
+                label={selectAColor}
+                selectedColor={getSelectedColorItem(fontColor, fontColors)}
+                colors={fontColors}
+                onChange={(selected) => {
+                  onChange({ fontColor: selected.color.carbonColor });
+                }}
+                translateWithId={translateWithId}
+              />
 
-        <NumberInput
-          id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
-          min={minFontSize}
-          max={maxFontSize}
-          value={fontSize}
-          step={1}
-          light={light}
-          label={fontSizeLabelText}
-          invalidText={fontSizeInvalidText}
-          onChange={(event) => {
-            onChange({ fontSize: event.imaginaryTarget.value });
-          }}
-        />
-      </div>
+              <NumberInput
+                allowEmpty
+                id={`${iotPrefix}--hotspot-text-style-tab__font-size`}
+                min={minFontSize}
+                max={maxFontSize}
+                value={fontSize}
+                step={1}
+                light={light}
+                label={fontSizeLabelText}
+                invalidText={fontSizeInvalidText}
+                onChange={(event) => {
+                  onChange({
+                    fontSize: getIntOrUndefined(event.imaginaryTarget.value),
+                  });
+                }}
+              />
+            </div>
 
-      <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
-        <ColorDropdown
-          id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
-          titleText={backgroundLabelText}
-          light={light}
-          selectedColor={backgroundColor}
-          colors={backgroundColors}
-          onChange={(selected) => {
-            onChange({
-              backgroundColor: selected.color,
-            });
-          }}
-        />
+            <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
+              <ColorDropdown
+                key={backgroundColor?.carbonColor ?? backgroundColor}
+                id={`${iotPrefix}--hotspot-text-style-tab__background-color`}
+                titleText={backgroundLabelText}
+                light={light}
+                label={selectAColor}
+                selectedColor={getSelectedColorItem(
+                  backgroundColor,
+                  backgroundColors
+                )}
+                colors={backgroundColors}
+                onChange={(selected) => {
+                  onChange({
+                    backgroundColor: selected.color.carbonColor,
+                  });
+                }}
+                translateWithId={translateWithId}
+              />
 
-        <NumberInput
-          id={`${iotPrefix}--hotspot-text-style-tab__background`}
-          label={fillOpacityLabelText}
-          min={minOpacity}
-          max={maxOpacity}
-          value={backgroundOpacity}
-          step={1}
-          light={light}
-          invalidText={fillOpacityInvalidText}
-          onChange={(event) => {
-            onChange({
-              backgroundOpacity: event.imaginaryTarget.value,
-            });
-          }}
-        />
-      </div>
+              <NumberInput
+                id={`${iotPrefix}--hotspot-text-style-tab__background`}
+                label={fillOpacityLabelText}
+                min={minOpacity}
+                max={maxOpacity}
+                value={backgroundOpacity}
+                step={1}
+                light={light}
+                invalidText={fillOpacityInvalidText}
+                onChange={(event) => {
+                  onChange({
+                    backgroundOpacity: getIntOrUndefined(
+                      event.imaginaryTarget.value
+                    ),
+                  });
+                }}
+              />
+            </div>
 
-      <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
-        <ColorDropdown
-          id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
-          titleText={borderLabelText}
-          light={light}
-          colors={borderColors}
-          onChange={(selected) => {
-            onChange({ borderColor: selected.color });
-          }}
-          selectedColor={borderColor}
-        />
+            <div className={`${iotPrefix}--hotspot-text-style-tab__row`}>
+              <ColorDropdown
+                key={borderColor?.carbonColor ?? borderColor}
+                id={`${iotPrefix}--hotspot-text-style-tab__border-color`}
+                titleText={borderLabelText}
+                light={light}
+                label={i18n.selectAColor}
+                colors={borderColors}
+                onChange={(selected) => {
+                  onChange({ borderColor: selected.color.carbonColor });
+                }}
+                translateWithId={translateWithId}
+                selectedColor={getSelectedColorItem(borderColor, borderColors)}
+              />
 
-        <NumberInput
-          id={`${iotPrefix}--hotspot-text-style-tab__border`}
-          label={borderWidthLabelText}
-          min={minBorderWidth}
-          max={maxBorderWidth}
-          value={borderWidth}
-          step={1}
-          light={light}
-          invalidText={borderWidthInvalidText}
-          onChange={(event) => {
-            onChange({ borderWidth: event.imaginaryTarget.value });
-          }}
-        />
-      </div>
+              <NumberInput
+                id={`${iotPrefix}--hotspot-text-style-tab__border`}
+                label={borderWidthLabelText}
+                min={minBorderWidth}
+                max={maxBorderWidth}
+                value={borderWidth}
+                step={1}
+                light={light}
+                invalidText={borderWidthInvalidText}
+                onChange={(event) => {
+                  onChange({
+                    borderWidth: getIntOrUndefined(event.imaginaryTarget.value),
+                  });
+                }}
+              />
+            </div>
+          </form>
+          <div
+            className={`${iotPrefix}--hotspot-text-style-tab__delete-button-container`}>
+            <Button
+              kind="ghost"
+              renderIcon={TrashCan32}
+              iconDescription={deleteButtonIconDescription}
+              onClick={onDelete}>
+              {deleteButtonLabelText}
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

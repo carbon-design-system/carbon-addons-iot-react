@@ -11,17 +11,7 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  hotspotIndex: PropTypes.number.isRequired,
   hotspot: PropTypes.shape({}),
-  thresholds: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataSourceId: PropTypes.string,
-      comparison: PropTypes.string,
-      value: PropTypes.number,
-      color: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
     title: PropTypes.string,
@@ -41,7 +31,25 @@ const propTypes = {
       hotspots: PropTypes.arrayOf(PropTypes.object),
     }),
   }),
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    selectDataItemsText: PropTypes.string,
+    dataItemText: PropTypes.string,
+    editText: PropTypes.string,
+    // items for data item modal
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemCustomLabel: PropTypes.string,
+    dataItemEditorDataItemUnit: PropTypes.string,
+    dataItemEditorDataItemFilter: PropTypes.string,
+    dataItemEditorDataItemThresholds: PropTypes.string,
+    dataItemEditorDataItemAddThreshold: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
+  }),
+  /** callback called when hotspot data source changes, if new attributes are added it's called with an object only with attributes.
+   * If an existing data item is modified, this callback is called with the whole updated card
+   * TODO: ideally these two operations would be split into two different callbacks
+   */
+  translateWithId: PropTypes.func.isRequired,
   /* callback when image input value changes */
   onChange: PropTypes.func.isRequired,
   /** Id that can be used for testing */
@@ -64,7 +72,6 @@ const propTypes = {
 const defaultProps = {
   hotspot: {},
   cardConfig: {},
-  thresholds: [],
   i18n: {
     selectDataItemsText: 'Select data items',
     dataItemText: 'Data items',
@@ -76,6 +83,8 @@ const defaultProps = {
     dataItemEditorDataItemFilter: 'Data filter',
     dataItemEditorDataItemThresholds: 'Thresholds',
     dataItemEditorDataItemAddThreshold: 'Add threshold',
+    primaryButtonLabelText: 'Update',
+    secondaryButtonLabelText: 'Cancel',
   },
   dataItems: [],
   availableDimensions: {},
@@ -89,8 +98,6 @@ export const formatDataItemsForDropdown = (dataItems) =>
   }));
 
 const HotspotEditorDataSourceTab = ({
-  hotspotIndex,
-  thresholds,
   hotspot,
   cardConfig,
   dataItems,
@@ -98,14 +105,13 @@ const HotspotEditorDataSourceTab = ({
   onChange,
   availableDimensions,
   testID,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
-  const [selectedItemsArray, setSelectedItemsArray] = useState(
-    () => hotspot.content?.attributes || []
-  );
+  const selectedItemsArray = hotspot.content?.attributes || [];
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
@@ -126,8 +132,7 @@ const HotspotEditorDataSourceTab = ({
         newArray.push(containedDataItem);
       }
     });
-    setSelectedItemsArray(newArray);
-    onChange(newArray);
+    onChange({ attributes: newArray });
   };
 
   return (
@@ -156,6 +161,7 @@ const HotspotEditorDataSourceTab = ({
           light
           onChange={handleSelectionChange}
           titleText={mergedI18n.dataItemText}
+          translateWithId={translateWithId}
         />
       </div>
       <List
@@ -176,11 +182,6 @@ const HotspotEditorDataSourceTab = ({
                 onClick={() => {
                   setEditDataItem({
                     ...dataItem,
-                    hotspotIndex,
-                    thresholds: thresholds.filter(
-                      (threshold) =>
-                        threshold.dataSourceId === dataItem.dataSourceId
-                    ),
                   });
                   setShowEditor(true);
                 }}

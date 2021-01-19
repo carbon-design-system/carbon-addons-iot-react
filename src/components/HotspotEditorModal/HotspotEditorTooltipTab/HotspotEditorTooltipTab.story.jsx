@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { red50, green50, blue50 } from '@carbon/colors';
 import {
   InformationSquareFilled24,
@@ -39,17 +39,23 @@ export default {
 export const WithStateInStory = () => {
   const WithState = () => {
     const [formValues, setFormValues] = useState({});
+    const handleOnChange = (change) => {
+      setFormValues({
+        ...formValues,
+        ...change,
+        content: { ...formValues.content, ...change.content },
+      });
+      action('onChange')(change);
+    };
     return (
       <div>
         <HotspotEditorTooltipTab
-          infoMessage={text('infoMessage')}
+          showInfoMessage={boolean('showInfoMessage', false)}
           hotspotIcons={selectableIcons}
           formValues={formValues}
-          onChange={(change) => {
-            setFormValues({ ...formValues, ...change });
-            action('onChange')(change);
-          }}
+          onChange={handleOnChange}
           onDelete={action('onDelete')}
+          translateWithId={() => {}}
         />
       </div>
     );
@@ -69,7 +75,7 @@ WithStateInStory.story = {
         return (
           <div>
             <HotspotEditorTooltipTab
-              infoMessage={text('infoMessage')}
+              showInfoMessage={boolean('showInfoMessage', false)}
               hotspotIcons={selectableIcons}
               formValues={formValues}
               onChange={(change) => {
@@ -91,6 +97,7 @@ export const WithPresetValuesAndCustomColors = () => {
   return (
     <div>
       <HotspotEditorTooltipTab
+        showInfoMessage={boolean('showInfoMessage', false)}
         hotspotIconFillColors={colors}
         hotspotIcons={selectableIcons}
         formValues={{
@@ -101,6 +108,7 @@ export const WithPresetValuesAndCustomColors = () => {
         }}
         onChange={action('onChange')}
         onDelete={action('onDelete')}
+        translateWithId={() => {}}
       />
     </div>
   );
@@ -110,15 +118,12 @@ export const WithInfoMessage = () => {
   return (
     <div>
       <HotspotEditorTooltipTab
-        infoMessage={text(
-          'infoMessage',
-          `Select an existing hotspot on the image to edit it or insert one 
-          by selecting an option from the toolbar.`
-        )}
+        showInfoMessage={boolean('showInfoMessage', true)}
         hotspotIcons={selectableIcons}
         formValues={{}}
         onChange={action('onChange')}
         onDelete={action('onDelete')}
+        translateWithId={() => {}}
       />
     </div>
   );

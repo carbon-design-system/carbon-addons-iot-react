@@ -104,14 +104,16 @@ export const generateSampleValues = (
  * @param {Array<Object>} values a list of metrics and the dimension values to group them by
  *
  * @returns {Array} array of value objects to show in the chart
+ *
+ * TODO: this should probably get refactored to be one generateSampleValues function
  */
 export const generateSampleValuesForEditor = (
-  data,
-  categoryDataSourceId,
+  series,
   timeDataSourceId,
-  availableDimensions,
   timeGrain = 'day',
-  timeRange
+  timeRange,
+  categoryDataSourceId,
+  availableDimensions
 ) => {
   // determine interval type
   const timeRangeType = timeRange?.includes('this')
@@ -144,7 +146,6 @@ export const generateSampleValuesForEditor = (
   }
 
   // need to remove the label if it is a categorized timeseries bar chart
-  const metrics = data;
   const dimensions = [];
   if (availableDimensions && availableDimensions[categoryDataSourceId]) {
     availableDimensions[categoryDataSourceId].forEach((value) => {
@@ -157,7 +158,7 @@ export const generateSampleValuesForEditor = (
 
   if (timeDataSourceId) {
     const sampleData = [];
-    metrics.forEach(({ dataSourceId }) => {
+    series.forEach(({ dataSourceId }) => {
       const now =
         timeRangeType === 'periodToDate' // handle "this" intervals like "this week"
           ? moment().startOf(timeRangeInterval).subtract(1, timeGrain)
@@ -190,7 +191,7 @@ export const generateSampleValuesForEditor = (
   // for every dimension value, create a value object that contains sample data for each metric
   const valuesGeneratedByDimensions = dimensions.map((dimension) => {
     const value = { [dimension.dimension]: dimension.value };
-    metrics.forEach((metric) => {
+    series.forEach((metric) => {
       value[metric.dataSourceId] = Math.random() * 100;
     });
     return value;
@@ -438,7 +439,6 @@ export const formatColors = (
 
 /**
  * Extends default tooltip with additional date information if the graph is time-based
- * and adds color of dataset if defined
  *
  * This function is a bit more hacky than TimeSeriesCard because carbon charts formats it differently
  * TODO: remove the hackiness once this issue is solved: https://github.com/carbon-design-system/carbon-charts/issues/657

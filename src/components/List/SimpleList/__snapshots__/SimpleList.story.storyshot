@@ -139,14 +139,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -1369,14 +1369,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -1740,14 +1740,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -2375,14 +2375,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -3015,14 +3015,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -3427,14 +3427,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -3865,14 +3865,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -4470,14 +4470,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -5335,14 +5335,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -5945,14 +5945,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -6375,14 +6375,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -7395,14 +7395,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""
@@ -7716,14 +7716,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 htmlFor="iot--list-header--search"
                 id="iot--list-header--search-search"
               >
-                Enter a value
+                Enter a search
               </label>
               <input
                 autoComplete="off"
                 className="bx--search-input"
                 id="iot--list-header--search"
                 onChange={[Function]}
-                placeholder="Enter a value"
+                placeholder="Enter a search"
                 role="searchbox"
                 type="text"
                 value=""

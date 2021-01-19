@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, object } from '@storybook/addon-knobs';
+import { EscalatorDown } from '@carbon/pictograms-react';
+import { Basketball32, Code24 } from '@carbon/icons-react';
 
 import munichBuilding from '../ImageCard/MunichBuilding.png';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  DASHBOARD_EDITOR_CARD_TYPES,
+} from '../../constants/LayoutConstants';
 
 import CardEditor from './CardEditor';
 
@@ -159,6 +164,42 @@ export const WithNoCardDefinedGalleryView = () => (
   </div>
 );
 
+export const WithNoCardDefinedGalleryViewAndCustomCards = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      i18n={{
+        TIMESERIES: 'ITEM 1',
+        SIMPLE_BAR: 'ITEM 2',
+        GROUPED_BAR: 'ITEM 3',
+        STACKED_BAR: 'ITEM 4',
+        VALUE: 'ITEM 5',
+        IMAGE: 'ITEM 6',
+        TABLE: 'ITEM 7',
+        ALERT: 'ITEM 8',
+        LIST: 'ITEM 9',
+        CUSTOM: 'ITEM 10',
+        COOL_NEW_CARD: 'Missing Icon',
+      }}
+      supportedCardTypes={[
+        'VALUE',
+        DASHBOARD_EDITOR_CARD_TYPES.TIMESERIES,
+        DASHBOARD_EDITOR_CARD_TYPES.LIST,
+        DASHBOARD_EDITOR_CARD_TYPES.ALERT,
+        'CUSTOM',
+        'COOL_NEW_CARD',
+      ]}
+      icons={{
+        VALUE: <EscalatorDown />,
+        CUSTOM: <Code24 />,
+        ALERT: <Basketball32 />,
+      }}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
 WithNoCardDefinedGalleryView.story = {
   name: 'with no card defined (gallery view)',
 };
@@ -200,4 +241,54 @@ export const ForImage = () => (
 
 ForImage.story = {
   name: 'for Image',
+};
+
+export const WithTooltipLink = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'discharge_flow_rate',
+              label: 'Discharge flow',
+              precision: 3,
+            },
+            {
+              dataSourceId: 'discharge_perc',
+              label: 'Max Discharge %',
+              precision: 3,
+            },
+          ],
+        },
+        dataSource: {
+          attributes: [
+            {
+              aggregator: 'mean',
+              attribute: 'discharge_flow_rate',
+              id: 'discharge_flow_rate',
+            },
+            {
+              aggregator: 'max',
+              attribute: 'discharge_perc',
+              id: 'discharge_perc',
+            },
+          ],
+        },
+        id: 'calculated',
+        size: 'MEDIUMTHIN',
+        title: 'Calculated',
+        type: 'VALUE',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      onAddCard={action('onAddCard')}
+      dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+    />
+  </div>
+);
+
+Default.story = {
+  name: 'default',
 };

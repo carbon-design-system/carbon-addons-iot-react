@@ -1,3 +1,7 @@
+import React from 'react';
+
+import { useDNDProviderElement } from '../hooks/useDNDProviderElement';
+
 export const DropLocation = {
   Above: 'above',
   Below: 'below',
@@ -185,3 +189,8 @@ export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
 
   return newSelection;
 };
+
+export function DragAndDrop(props) {
+  const DNDElement = useDNDProviderElement(props);
+  return <React.Fragment>{DNDElement}</React.Fragment>;
+}

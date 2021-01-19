@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
@@ -74,7 +74,8 @@ const ImageCard = ({
   error,
   isLoading,
   maxFileSizeInBytes,
-  i18n: { loadingDataLabel, ...otherLabels },
+  i18n,
+  i18n: { loadingDataLabel },
   renderIconByName,
   locale,
   onUpload,
@@ -86,6 +87,7 @@ const ImageCard = ({
   const hotspots = values ? values.hotspots || [] : [];
 
   const { hasInsertFromUrl } = content || {};
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   useEffect(() => {
     setImgContent(content);
@@ -136,7 +138,7 @@ const ImageCard = ({
       resizeHandles={resizeHandles}
       {...others}
       error={error}
-      i18n={otherLabels}>
+      i18n={mergedI18n}>
       {!isCardLoading
         ? (
             // Get width and height from parent card
@@ -152,7 +154,7 @@ const ImageCard = ({
                     maxFileSizeInBytes={maxFileSizeInBytes}
                     onUpload={handleOnUpload}
                     i18n={pick(
-                      otherLabels,
+                      mergedI18n,
                       'dropContainerLabelText',
                       'dropContainerDescText',
                       'uploadByURLCancel',
@@ -178,6 +180,14 @@ const ImageCard = ({
                     loadingHotspotsLabel={loadingDataLabel}
                     renderIconByName={renderIconByName}
                     locale={locale}
+                    i18n={pick(
+                      mergedI18n,
+                      'zoomIn',
+                      'zoomOut',
+                      'zoomToFit',
+                      'titlePlaceholderText',
+                      'titleEditableHintText'
+                    )}
                   />
                 ) : (
                   <EmptyDiv>

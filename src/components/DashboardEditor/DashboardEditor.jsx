@@ -36,6 +36,7 @@ const propTypes = {
   initialValue: PropTypes.shape({
     cards: PropTypes.array,
     layouts: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    isSummaryDashboard: PropTypes.bool,
   }),
   /** supported card types */
   supportedCardTypes: PropTypes.arrayOf(PropTypes.string),
@@ -123,6 +124,8 @@ const propTypes = {
   isLoading: PropTypes.bool,
   /** internationalization strings */
   i18n: PropTypes.shape({
+    // header strings
+    headerEditTitleButton: PropTypes.string,
     headerImportButton: PropTypes.string,
     headerExportButton: PropTypes.string,
     headerCancelButton: PropTypes.string,
@@ -132,17 +135,35 @@ const propTypes = {
     headerXlargeButton: PropTypes.string,
     headerLargeButton: PropTypes.string,
     headerMediumButton: PropTypes.string,
-    noDataLabel: PropTypes.string,
-    defaultCardTitle: PropTypes.string,
-    headerEditTitleButton: PropTypes.string,
-    galleryHeader: PropTypes.string,
-    openGalleryButton: PropTypes.string,
-    closeGalleryButton: PropTypes.string,
-    openJSONButton: PropTypes.string,
     layoutInfoXl: PropTypes.string,
     layoutInfoLg: PropTypes.string,
     layoutInfoMd: PropTypes.string,
+
+    // card stirngs
+    noDataLabel: PropTypes.string,
+    defaultCardTitle: PropTypes.string,
+    cloneCardLabel: PropTypes.string,
+    deleteCardLabel: PropTypes.string,
+
+    // card gallery strings
+    galleryHeader: PropTypes.string,
+    addCardButton: PropTypes.string,
+    openGalleryButton: PropTypes.string,
+    closeGalleryButton: PropTypes.string,
+    openJSONButton: PropTypes.string,
     searchPlaceholderText: PropTypes.string,
+    TIMESERIES: PropTypes.string,
+    SIMPLE_BAR: PropTypes.string,
+    GROUPED_BAR: PropTypes.string,
+    STACKED_BAR: PropTypes.string,
+    VALUE: PropTypes.string,
+    IMAGE: PropTypes.string,
+    TABLE: PropTypes.string,
+    ALERT: PropTypes.string,
+    LIST: PropTypes.string,
+
+    // image gallery strings
+    searchPlaceHolderText: PropTypes.string,
     imageGalleryDeleteLabelText: PropTypes.string,
     imageGalleryDeleteModalLabelText: PropTypes.string,
     imageGalleryDeleteModalTitleText: PropTypes.func,
@@ -155,6 +176,87 @@ const propTypes = {
     imageGalleryModalSecondaryButtonLabelText: PropTypes.string,
     imageGalleryModalCloseIconDescriptionText: PropTypes.string,
     imageGallerySearchPlaceHolderText: PropTypes.string,
+
+    // card form strings
+    openEditorButton: PropTypes.string,
+    contentTabLabel: PropTypes.string,
+    settingsTabLabel: PropTypes.string,
+    cardSize_SMALL: PropTypes.string,
+    cardSize_SMALLWIDE: PropTypes.string,
+    cardSize_MEDIUM: PropTypes.string,
+    cardSize_MEDIUMTHIN: PropTypes.string,
+    cardSize_MEDIUMWIDE: PropTypes.string,
+    cardSize_LARGE: PropTypes.string,
+    cardSize_LARGETHIN: PropTypes.string,
+    cardSize_LARGEWIDE: PropTypes.string,
+    chartType_BAR: PropTypes.string,
+    chartType_LINE: PropTypes.string,
+    barChartType_SIMPLE: PropTypes.string,
+    barChartType_GROUPED: PropTypes.string,
+    barChartType_STACKED: PropTypes.string,
+    barChartLayout_HORIZONTAL: PropTypes.string,
+    barChartLayout_VERTICAL: PropTypes.string,
+
+    errorTitle: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalLabel: PropTypes.string,
+    modalHelpText: PropTypes.string,
+    modalIconDescription: PropTypes.string,
+    expandBtnLabel: PropTypes.string,
+    modalPrimaryButtonLabel: PropTypes.string,
+    modalSecondaryButtonLabel: PropTypes.string,
+    cardTitle: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.string,
+    selectASize: PropTypes.string,
+    timeRange: PropTypes.string,
+    selectATimeRange: PropTypes.string,
+    last24HoursLabel: PropTypes.string,
+    last7DaysLabel: PropTypes.string,
+    lastMonthLabel: PropTypes.string,
+    lastQuarterLabel: PropTypes.string,
+    lastYearLabel: PropTypes.string,
+    thisWeekLabel: PropTypes.string,
+    thisMonthLabel: PropTypes.string,
+    thisQuarterLabel: PropTypes.string,
+    thisYearLabel: PropTypes.string,
+
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    dataItemEditorDataItemCustomLabel: PropTypes.string,
+    dataItemEditorDataItemUnit: PropTypes.string,
+    dataItemEditorDataItemFilter: PropTypes.string,
+    dataItemEditorDataItemThresholds: PropTypes.string,
+    dataItemEditorDataItemAddThreshold: PropTypes.string,
+    source: PropTypes.string,
+    primaryButtonLabelText: PropTypes.string,
+    secondaryButtonLabelText: PropTypes.string,
+    closeButtonLabelText: PropTypes.string,
+
+    // data series form
+    xAxisLabel: PropTypes.string,
+    yAxisLabel: PropTypes.string,
+    unitLabel: PropTypes.string,
+    decimalPrecisionLabel: PropTypes.string,
+    precisionLabel: PropTypes.string,
+    showLegendLabel: PropTypes.string,
+    fontSize: PropTypes.string,
+  }),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    simpleBar: PropTypes.string,
+    groupedBar: PropTypes.string,
+    stackedBar: PropTypes.string,
+    timeSeries: PropTypes.string,
+    value: PropTypes.string,
+    custom: PropTypes.string,
+    table: PropTypes.string,
+    image: PropTypes.string,
   }),
 };
 
@@ -197,27 +299,28 @@ const defaultProps = {
     headerCancelButton: 'Cancel',
     headerSubmitButton: 'Save and close',
     headerFitToScreenButton: 'Fit to screen',
-    headerXlargeButton: 'X-large view',
     headerLargeButton: 'Large view',
     headerMediumButton: 'Medium view',
+    headerSmallButton: 'Small view',
     galleryHeader: 'Gallery',
     openGalleryButton: 'Open gallery',
     closeGalleryButton: 'Back',
     openJSONButton: 'Open JSON editor',
     noDataLabel: 'No data source is defined',
     defaultCardTitle: 'Untitled',
-    layoutInfoXl: 'Edit dashboard at extra large layout (1056 - 1312px)',
-    layoutInfoLg: 'Edit dashboard at large layout (672 - 1056px)',
-    layoutInfoMd: 'Edit dashboard at medium layout (480 - 672px)',
-    searchPlaceholderText: 'Enter a value',
+    layoutInfoLg: 'Edit dashboard at large layout (1057 - 1312px)',
+    layoutInfoMd: 'Edit dashboard at medium layout (673 - 1056px)',
+    layoutInfoSm: 'Edit dashboard at small layout (481 - 672px)',
+    searchPlaceHolderText: 'Enter a value',
   },
+  dataSeriesItemLinks: null,
 };
 
 const LAYOUTS = {
-  FIT_TO_SCREEN: { breakpoint: 'xl', index: 0 },
-  MEDIUM: { breakpoint: 'md', index: 3 },
-  LARGE: { breakpoint: 'lg', index: 2 },
-  XLARGE: { breakpoint: 'xl', index: 1 },
+  FIT_TO_SCREEN: { breakpoint: 'lg', index: 0 },
+  SMALL: { breakpoint: 'sm', index: 3 },
+  MEDIUM: { breakpoint: 'md', index: 2 },
+  LARGE: { breakpoint: 'lg', index: 1 },
 };
 export const baseClassName = `${iotPrefix}--dashboard-editor`;
 
@@ -250,6 +353,9 @@ const DashboardEditor = ({
   availableDimensions,
   isLoading,
   i18n,
+  dataSeriesItemLinks,
+  // eslint-disable-next-line react/prop-types
+  onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   // Need to keep track of whether the image gallery is open or not
@@ -387,6 +493,7 @@ const DashboardEditor = ({
     (cardConfig, isSelected) => ({
       key: cardConfig.id,
       tooltip: cardConfig.description,
+      i18n: mergedI18n,
       availableActions: { clone: true, delete: true },
       onCardAction: (id, actionId, payload) => {
         if (actionId === CARD_ACTIONS.CLONE_CARD) {
@@ -412,7 +519,13 @@ const DashboardEditor = ({
           ? onValidateUploadedImage
           : undefined,
     }),
-    [duplicateCard, handleOnCardChange, onValidateUploadedImage, removeCard]
+    [
+      duplicateCard,
+      handleOnCardChange,
+      mergedI18n,
+      onValidateUploadedImage,
+      removeCard,
+    ]
   );
 
   const cards = useMemo(
@@ -501,12 +614,12 @@ const DashboardEditor = ({
             className={classnames({
               [`${baseClassName}--preview__outline`]:
                 selectedBreakpointIndex !== LAYOUTS.FIT_TO_SCREEN.index,
+              [`${baseClassName}--preview__sm`]:
+                selectedBreakpointIndex === LAYOUTS.SMALL.index,
               [`${baseClassName}--preview__md`]:
                 selectedBreakpointIndex === LAYOUTS.MEDIUM.index,
               [`${baseClassName}--preview__lg`]:
                 selectedBreakpointIndex === LAYOUTS.LARGE.index,
-              [`${baseClassName}--preview__xl`]:
-                selectedBreakpointIndex === LAYOUTS.XLARGE.index,
             })}>
             {breakpointSwitcher?.enabled &&
               // only show breakpoint info if fit to screen is not selected
@@ -566,7 +679,7 @@ const DashboardEditor = ({
                       layouts: newLayouts,
                     });
                   }}
-                  supportedLayouts={['xl', 'lg', 'md']}>
+                  supportedLayouts={['lg', 'md', 'sm']}>
                   {cards}
                 </DashboardGrid>
               </ErrorBoundary>
@@ -588,6 +701,7 @@ const DashboardEditor = ({
             cardConfig={dashboardJson.cards.find(
               (card) => card.id === selectedCardId
             )}
+            isSummaryDashboard={dashboardJson.isSummaryDashboard}
             onShowGallery={() => setSelectedCardId(null)}
             onChange={handleOnCardChange}
             getValidDataItems={getValidDataItems}
@@ -599,6 +713,8 @@ const DashboardEditor = ({
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
             currentBreakpoint={currentBreakpoint}
+            dataSeriesItemLinks={dataSeriesItemLinks}
+            onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           />
         </ErrorBoundary>
       </div>

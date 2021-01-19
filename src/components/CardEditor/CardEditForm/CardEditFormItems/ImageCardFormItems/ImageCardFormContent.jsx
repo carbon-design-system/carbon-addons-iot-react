@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-// import { Scale32 } from '@carbon/icons-react';
-import { Close16 } from '@carbon/icons-react';
+import { Close16, Scale32 } from '@carbon/icons-react';
 import { Button } from 'carbon-components-react';
 import omit from 'lodash/omit';
 
+import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
+import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
+import ContentFormItemTitle from '../ContentFormItemTitle';
 
 const { iotPrefix, prefix } = settings;
 
@@ -23,9 +25,29 @@ const propTypes = {
     }),
     interval: PropTypes.string,
   }),
-  /* callback when image input value changes (File object) */
+  /* callback when image cardConfig needs to be updated */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    imageFile: PropTypes.string,
+    editImage: PropTypes.string,
+    image: PropTypes.string,
+    close: PropTypes.string,
+    dataItemEditorSectionImageTooltipText: PropTypes.string,
+  }),
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    image: PropTypes.string,
+  }),
+  translateWithId: PropTypes.func.isRequired,
+  /** an array of dataItems to be included on each card */
+  dataItems: DataItemsPropTypes,
+  /** an object where the keys are available dimensions and the values are the values available for those dimensions
+   *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
+   */
+  availableDimensions: PropTypes.shape({}),
+  /** call back to retrieve the dynamic demo hotspots, by default just returns one example dynamic hotspot, override to return true hotspots.
+   * See HotspotEditorModal propTypes for params and details */
+  onFetchDynamicDemoHotspots: PropTypes.func,
 };
 
 const defaultProps = {
@@ -35,18 +57,73 @@ const defaultProps = {
     editImage: 'Edit image',
     image: 'Image',
     close: 'Close',
+    dataItemEditorSectionImageTooltipText:
+      'Add tooltips to hotspots on the image. Show metric or dimension values on the tooltips.',
   },
+  dataSeriesItemLinks: null,
+  dataItems: [],
+  availableDimensions: {},
+  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50 }]),
 };
 
-const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
+const ImageCardFormItems = ({
+  cardConfig,
+  i18n,
+  onChange,
+  dataSeriesItemLinks,
+  dataItems,
+  availableDimensions,
+  translateWithId,
+  onFetchDynamicDemoHotspots,
+}) => {
+  const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${iotPrefix}--card-edit-form`;
+  const handleShowHotspotEditor = useCallback(() => {
+    // if this image card doesn't have a hotspots field, set it
+    if (!cardConfig.values) {
+      onChange({ ...cardConfig, values: { hotspots: [] } });
+    }
+    setIsHotspotModalShowing(true);
+  }, [cardConfig, onChange]);
+  const handleCloseHotspotEditor = useCallback(
+    () => setIsHotspotModalShowing(false),
+    []
+  );
+
+  const handleSaveHotspotEditor = useCallback(
+    (cardConfigWithHotspots) => {
+      handleCloseHotspotEditor();
+      onChange(cardConfigWithHotspots);
+    },
+    [handleCloseHotspotEditor, onChange]
+  );
   return (
     <>
-      <div
-        className={`${baseClassName}--form-section ${baseClassName}--form-section-image`}>
-        {mergedI18n.image}
-      </div>
+      {isHotspotModalShowing ? (
+        <HotspotEditorModal
+          cardConfig={cardConfig}
+          dataItems={dataItems}
+          availableDimensions={availableDimensions}
+          onSave={handleSaveHotspotEditor}
+          onClose={handleCloseHotspotEditor}
+          translateWithId={translateWithId}
+          i18n={mergedI18n}
+          onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+        />
+      ) : null}
+      <ContentFormItemTitle
+        title={mergedI18n.image}
+        tooltip={{
+          tooltipText: mergedI18n.dataItemEditorSectionImageTooltipText,
+          ...(dataSeriesItemLinks?.image
+            ? {
+                linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.image,
+              }
+            : {}),
+        }}
+      />
       <div className={`${baseClassName}--form-section-image--input`}>
         <label
           id={`${mergedI18n.imageFile}-label`}
@@ -81,12 +158,15 @@ const ImageCardFormItems = ({ cardConfig, i18n, onChange }) => {
             />
           ) : null}
         </label>
-        {/* TODO enable once hotspot editing is live <Button
-          className={`${baseClassName}--form-section-image-btn`}
-          size="small"
-          renderIcon={Scale32}>
-          {mergedI18n.editImage}
-        </Button> */}
+        {cardConfig.content?.id ? (
+          <Button
+            className={`${baseClassName}--form-section-image-btn`}
+            size="small"
+            renderIcon={Scale32}
+            onClick={handleShowHotspotEditor}>
+            {mergedI18n.editImage}
+          </Button>
+        ) : null}
       </div>
     </>
   );

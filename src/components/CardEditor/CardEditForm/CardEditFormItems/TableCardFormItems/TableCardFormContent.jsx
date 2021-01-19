@@ -10,6 +10,7 @@ import {
 } from '../../../../DashboardEditor/editorUtils';
 import { Button, List, MultiSelect } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
+import ContentFormItemTitle from '../ContentFormItemTitle';
 import {
   CARD_SIZES,
   CARD_TYPES,
@@ -36,7 +37,22 @@ const propTypes = {
   }),
   /* callback when any changes are made to the card config, the full updated card JSON is passed as the argument */
   onChange: PropTypes.func.isRequired,
-  i18n: PropTypes.shape({}),
+  i18n: PropTypes.shape({
+    dataItemEditorTitle: PropTypes.string,
+    dataItemEditorDataItemTitle: PropTypes.string,
+    dataItemEditorDimensionTitle: PropTypes.string,
+    dataItemEditorDataItemLabel: PropTypes.string,
+    dataItemEditorLegendColor: PropTypes.string,
+    tableColumnEditorSectionTitle: PropTypes.string,
+    dataItemEditorSectionTableTooltipText: PropTypes.string,
+    dataSeriesTitle: PropTypes.string,
+    selectDataItems: PropTypes.string,
+    selectGroupByDimensions: PropTypes.string,
+    dataItem: PropTypes.string,
+    edit: PropTypes.string,
+    remove: PropTypes.string,
+    customize: PropTypes.string,
+  }),
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -47,6 +63,11 @@ const propTypes = {
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   /** the callback is called with a list of the new data item names selected */
   setSelectedDataItems: PropTypes.func.isRequired,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    table: PropTypes.string,
+  }),
+  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -57,7 +78,9 @@ const defaultProps = {
     dataItemEditorDimensionTitle: 'Group by',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data',
+    tableColumnEditorSectionTitle: 'Columns',
+    dataItemEditorSectionTableTooltipText:
+      'Display metrics in columns. Filter the metrics by dimensions or device ID from Group by.',
     selectDataItems: 'Select data item(s)',
     selectGroupByDimensions: 'Select dimension(s)',
     dataItem: 'Data item',
@@ -68,6 +91,7 @@ const defaultProps = {
   dataItems: [],
   selectedDataItems: [],
   availableDimensions: {},
+  dataSeriesItemLinks: null,
 };
 
 const TableCardFormContent = ({
@@ -78,6 +102,8 @@ const TableCardFormContent = ({
   setSelectedDataItems,
   availableDimensions,
   i18n,
+  dataSeriesItemLinks,
+  translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
@@ -186,9 +212,18 @@ const TableCardFormContent = ({
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
       />
-      <div className={`${baseClassName}--form-section`}>
-        {mergedI18n.dataSeriesTitle}
-      </div>
+      <ContentFormItemTitle
+        title={mergedI18n.tableColumnEditorSectionTitle}
+        tooltip={{
+          tooltipText: mergedI18n.dataItemEditorSectionTableTooltipText,
+          ...(dataSeriesItemLinks?.table
+            ? {
+                linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.table,
+              }
+            : {}),
+        }}
+      />
       <div
         className={`${baseClassName}--input`} // data item selector
       >
@@ -201,6 +236,7 @@ const TableCardFormContent = ({
           itemToString={(item) => item.id}
           initialSelectedItems={initialSelectedAttributes}
           items={validDataItems}
+          translateWithId={translateWithId}
           light
           onChange={({ selectedItems }) => {
             const newCard = handleDataSeriesChange(
@@ -226,6 +262,7 @@ const TableCardFormContent = ({
             key={`data-item-select-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
+            translateWithId={translateWithId}
             direction="bottom"
             itemToString={(item) => item.id}
             initialSelectedItems={initialSelectedDimensions}
