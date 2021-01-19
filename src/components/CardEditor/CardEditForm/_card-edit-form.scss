@@ -53,7 +53,7 @@
   }
 
   &--input-label {
-    font-size: 0.75rem;
+    font-size: $spacing-04;
   }
 
   &--input {
@@ -63,7 +63,7 @@
     }
 
     &--label {
-      font-size: 0.75rem;
+      font-size: $spacing-04;
     }
     &--toggle-field {
       display: flex;
@@ -113,25 +113,36 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-bottom: 1rem;
+    padding-bottom: $spacing-05;
     &--item {
-      margin-right: 1rem;
+      .#{$iot-prefix}--color-dropdown {
+        margin-bottom: 1.25rem;
+      }
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
-      margin-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin-right: $spacing-05;
       width: 50%;
+      &-label {
+        margin-bottom: $spacing-05;
+      }
+      &-content {
+        margin-bottom: 0.6rem;
+      }
     }
     &--item-end {
       width: 100%;
     }
     &--item-dropdown {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       max-width: 5rem;
     }
 
     &--span {
-      font-size: 0.75rem;
+      font-size: $spacing-04;
     }
   }
   &--threshold-input-group {
@@ -140,18 +151,18 @@
     align-items: flex-end;
     justify-content: space-between;
     &--item {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 100%;
     }
     &--item-half {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       width: 50%;
     }
     &--item-end {
       width: 100%;
     }
     &--item-dropdown {
-      margin-right: 1rem;
+      margin-right: $spacing-05;
       max-width: 5rem;
     }
   }
@@ -165,6 +176,13 @@
   .#{$prefix}--modal-container--xs {
     max-height: none;
     min-width: 30rem;
+  }
+  .#{$iot-prefix}--combobox {
+    padding-top: 0;
+  }
+  .#{$iot-prefix}--combobox-tags {
+    // hide multi-select combobox tags in editor form
+    display: none;
   }
 }
 
@@ -213,5 +231,10 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
   // add more spacing to the item so that the content will still align
   .#{$iot-prefix}--list-item {
     padding-left: $spacing-05;
+  }
+  &--item-color-icon {
+    width: $spacing-05;
+    height: $spacing-05;
+    background-color: var(--icon-color-option);
   }
 }

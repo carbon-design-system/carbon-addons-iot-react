@@ -1,10 +1,15 @@
 /* Used dependencies */
 import React from 'react';
-import { boolean, number, select } from '@storybook/addon-knobs';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ProgressIndicatorSkeleton } from 'carbon-components-react';
+import { ProgressIndicatorSkeleton, Tooltip } from 'carbon-components-react';
+import { settings } from 'carbon-components';
 
 import ProgressIndicator from './ProgressIndicator';
+
+import { CarbonProgressIndicator, CarbonProgressStep } from '.';
+
+const { prefix } = settings;
 
 const items = [
   {
@@ -133,6 +138,74 @@ Skeleton.story = {
       text: `
               Placeholder skeleton state to use when content is loading.
           `,
+    },
+  },
+};
+
+export const CarbonDefaultProgressIndicator = () => (
+  <CarbonProgressIndicator
+    vertical={boolean('Vertical (vertical)', false)}
+    currentIndex={number('Current progress (currentIndex)', 1)}
+    spaceEqually={boolean('Space Equally (spaceEqually)', false)}>
+    <CarbonProgressStep
+      label={text('Label (label)', 'First step')}
+      description="Step 1: Getting started with Carbon Design System"
+      secondaryLabel="Optional label"
+    />
+    <CarbonProgressStep
+      label="Second step with tooltip"
+      description="Step 2: Getting started with Carbon Design System"
+      renderLabel={() => (
+        <Tooltip
+          direction="bottom"
+          showIcon={false}
+          triggerClassName={`${prefix}--progress-label`}
+          triggerText="Second step with tooltip"
+          triggerId="tooltipTrigger-0"
+          tooltipId="tooltipId-0">
+          <p>Overflow tooltip content.</p>
+        </Tooltip>
+      )}
+    />
+    <CarbonProgressStep
+      label="Third step with tooltip"
+      description="Step 3: Getting started with Carbon Design System"
+      renderLabel={() => (
+        <Tooltip
+          direction="bottom"
+          showIcon={false}
+          triggerClassName={`${prefix}--progress-label`}
+          triggerText="Third step with tooltip"
+          triggerId="tooltipTrigger-1"
+          tooltipId="tooltipId-1">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
+            consequuntur hic ratione aliquid cupiditate, nesciunt saepe iste
+            blanditiis cumque maxime tenetur veniam est illo deserunt sint quae
+            pariatur. Laboriosam, consequatur.
+          </p>
+        </Tooltip>
+      )}
+    />
+    <CarbonProgressStep
+      label="Fourth step"
+      description="Step 4: Getting started with Carbon Design System"
+      invalid
+      secondaryLabel="Example invalid step"
+    />
+    <CarbonProgressStep
+      label="Fifth step"
+      description="Step 5: Getting started with Carbon Design System"
+      disabled
+    />
+  </CarbonProgressIndicator>
+);
+
+CarbonDefaultProgressIndicator.story = {
+  name: 'carbon progress indicator',
+  parameters: {
+    info: {
+      text: `The default Carbon Progress Indicator component.`,
     },
   },
 };
