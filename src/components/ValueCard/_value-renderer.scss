@@ -1,27 +1,38 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--value-card__value-renderer {
-  &--boolean {
-    text-transform: capitalize;
+  &--wrapper {
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // display: flex;
+    //
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    white-space: normal;
   }
 
   &--value {
     @include type-style('productive-heading-06');
     max-width: 204px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
     font-size: var(--value-renderer-font-size);
+    color: var(--value-renderer-color);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &--vertical {
       text-align: left;
     }
   }
 
-  &--wrapper {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: flex;
-    color: var(--value-renderer-color-option);
+  &--boolean {
+    text-transform: capitalize;
   }
 }

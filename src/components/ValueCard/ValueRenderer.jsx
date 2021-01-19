@@ -23,7 +23,7 @@ const propTypes = {
 
 const defaultProps = {
   layout: CARD_LAYOUTS.HORIZONTAL,
-  precision: 1,
+  precision: 0,
   color: null,
   locale: 'en',
   customFormatter: null,
@@ -67,15 +67,16 @@ const ValueRenderer = ({
     : customFormatter(renderValue, value);
 
   return (
-    <div
-      className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}
-      style={{ '--value-renderer-color': color }}>
+    <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
       <span
         className={classnames(`${BASE_CLASS_NAME}__value-renderer--value`, {
           [`${BASE_CLASS_NAME}__value-renderer--value--vertical`]:
             layout === CARD_LAYOUTS.VERTICAL,
         })}
-        style={{ '--value-renderer-font-size': `${fontSize}px` }}>
+        style={{
+          '--value-renderer-font-size': `${fontSize}px`,
+          '--value-renderer-color': color,
+        }}>
         {renderValue}
       </span>
     </div>

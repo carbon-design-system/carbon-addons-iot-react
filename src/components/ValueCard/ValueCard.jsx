@@ -87,8 +87,6 @@ const ValueCard = ({
       {...others}>
       <div
         className={classnames(`${BASE_CLASS_NAME}__content-wrapper`, {
-          [`${BASE_CLASS_NAME}__content-wrapper--horizontal`]:
-            layout === CARD_LAYOUTS.HORIZONTAL,
           [`${BASE_CLASS_NAME}__content-wrapper--vertical`]:
             layout === CARD_LAYOUTS.VERTICAL,
         })}>
@@ -153,6 +151,7 @@ ValueCard.defaultProps = {
   cardVariables: null,
   customFormatter: null,
   isNumberValueCompact: false,
+  precision: 0,
 };
 
 export default ValueCard;

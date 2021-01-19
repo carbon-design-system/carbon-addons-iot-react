@@ -15,6 +15,15 @@ const propTypes = {
   attribute: PropTypes.shape({
     label: PropTypes.string,
     unit: PropTypes.string,
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+        color: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
   }).isRequired,
   customFormatter: PropTypes.func,
   isEditable: PropTypes.bool,
@@ -29,25 +38,17 @@ const propTypes = {
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.any,
   }),
-  thresholds: PropTypes.arrayOf(
-    PropTypes.shape({
-      comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-      color: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
   value: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
   fontSize: PropTypes.number.isRequired,
   /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool.isRequired,
+  /** number of attributes */
+  attributeCount: PropTypes.number.isRequired,
 };
 
 const defaultProps = {
   layout: null,
-  precision: 1,
-  thresholds: [],
+  precision: 0,
   renderIconByName: null,
   secondaryValue: null,
   locale: 'en',
@@ -62,7 +63,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit },
+  attribute: { label, unit, thresholds },
   attributeCount,
   customFormatter,
   isEditable,
@@ -72,36 +73,43 @@ const Attribute = ({
   renderIconByName,
   secondaryValue,
   value,
-  thresholds,
   fontSize,
   isNumberValueCompact,
 }) => {
   // matching threshold will be the first match in the list, or a value of null if not isEditable
-  const matchingThreshold = isEditable
-    ? thresholds[0]
-    : thresholds
-        .filter((t) => {
-          switch (t.comparison) {
-            case '<':
-              return !isNil(value) && value < t.value;
-            case '>':
-              return value > t.value;
-            case '=':
-              return value === t.value;
-            case '<=':
-              return !isNil(value) && value <= t.value;
-            case '>=':
-              return value >= t.value;
-            default:
-              return false;
-          }
-        })
-        .concat([null])[0];
+  const matchingThreshold = thresholds
+    ? isEditable
+      ? thresholds[0]
+      : thresholds
+          .filter((t) => {
+            switch (t.comparison) {
+              case '<':
+                return !isNil(value) && value < t.value;
+              case '>':
+                return value > t.value;
+              case '=':
+                return value === t.value;
+              case '<=':
+                return !isNil(value) && value <= t.value;
+              case '>=':
+                return value >= t.value;
+              default:
+                return false;
+            }
+          })
+          .concat([null])[0]
+    : null;
 
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined
       ? matchingThreshold.color
       : null;
+
+  // need to reduce the width size to fit multiple attributs when card layout is horizontal
+  const attributeWidthPercentage =
+    layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
+
+  // const shouldWrap =
 
   return (
     <>
@@ -110,7 +118,10 @@ const Attribute = ({
           [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
           [`${BEM_BASE}-wrapper--horizontal`]:
             layout === CARD_LAYOUTS.HORIZONTAL,
-        })}>
+        })}
+        style={{
+          '--value-card-attribute-width': `${attributeWidthPercentage}%`,
+        }}>
         <div className={`${BEM_BASE}-label`}>{label}</div>
         <div className={`${BEM_BASE}`}>
           <ValueRenderer
@@ -124,41 +135,40 @@ const Attribute = ({
             isNumberValueCompact={isNumberValueCompact}
           />
           <UnitRenderer unit={unit} />
-          {!isNil(secondaryValue) ? (
-            <div
-              className={`${BEM_BASE}-secondary-value`}
-              style={{
-                '--secondary-value-color': secondaryValue.color || '#777',
-              }}>
-              {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                <CaretUp16
-                  className={`${BEM_BASE}_trend-icon`}
-                  aria-label="trending up"
-                />
-              ) : secondaryValue.trend === 'down' ? (
-                <CaretDown16
-                  className={`${BEM_BASE}_trend-icon`}
-                  aria-label="trending down"
-                />
-              ) : null}
-              {secondaryValue.value}
-            </div>
-          ) : null}
-          {matchingThreshold && matchingThreshold.icon ? (
-            <div className={`${BEM_BASE}-icon-container`}>
-              <div className={`${BEM_BASE}-threshold-icon-container`}>
-                <CardIcon
-                  fill={matchingThreshold.color}
-                  color={matchingThreshold.color}
-                  width={16}
-                  height={16}
-                  title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-                  renderIconByName={renderIconByName}
-                />
-              </div>
-            </div>
-          ) : null}
         </div>
+        {!isNil(secondaryValue) ? (
+          <div
+            className={`${BEM_BASE}-secondary-value`}
+            style={{
+              '--secondary-value-color': secondaryValue.color || '#777',
+            }}>
+            {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+              <CaretUp16
+                className={`${BEM_BASE}_trend-icon`}
+                aria-label="trending up"
+              />
+            ) : secondaryValue.trend === 'down' ? (
+              <CaretDown16
+                className={`${BEM_BASE}_trend-icon`}
+                aria-label="trending down"
+              />
+            ) : null}
+            {secondaryValue.value}
+          </div>
+        ) : null}
+        {matchingThreshold?.icon ? (
+          <div>
+            <CardIcon
+              fill={matchingThreshold.color}
+              color={matchingThreshold.color}
+              width={16}
+              height={16}
+              title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+              renderIconByName={renderIconByName}
+              icon={matchingThreshold.icon}
+            />
+          </div>
+        ) : null}
       </div>
     </>
   );

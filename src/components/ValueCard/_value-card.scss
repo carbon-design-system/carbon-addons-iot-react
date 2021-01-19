@@ -1,12 +1,6 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--value-card {
-  &__horizontal {
-    .#{$iot-prefix}--card--content {
-      overflow-y: auto;
-    }
-  }
-
   &__vertical {
     .#{$iot-prefix}--card--content {
       overflow-x: auto;
@@ -16,13 +10,6 @@
   &__content-wrapper {
     display: flex;
     width: 100%;
-
-    &--horizontal {
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-around;
-      padding: 0 0 $spacing-05;
-    }
 
     &--vertical {
       flex-direction: column;
