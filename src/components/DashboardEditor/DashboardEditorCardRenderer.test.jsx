@@ -86,6 +86,36 @@ describe('DashboardEditorCardRenderer', () => {
     // Should find the correct User icon and text
     expect(screen.getByTitle('User')).toBeInTheDocument();
   });
+  it('image card renders custom default icon', () => {
+    render(
+      <DashboardEditorCardRenderer
+        title="Alert Count"
+        id="facilitycard"
+        size="LARGE"
+        type="IMAGE"
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        breakpoint="lg"
+        values={{
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              color: 'purple',
+              icon: 'Checkmark',
+            },
+          ],
+        }}
+      />
+    );
+    // Should find the correct Warning icon and text
+    expect(screen.getByTitle('Checkmark')).toBeInTheDocument();
+  });
   it('list card renders list', () => {
     const listCardData = [
       {
@@ -108,5 +138,15 @@ describe('DashboardEditorCardRenderer', () => {
       />
     );
     expect(screen.getByText(/Row content 1/)).toBeInTheDocument();
+  });
+  it('should render default', () => {
+    render(
+      <DashboardEditorCardRenderer
+        type="unsupported card type"
+        id="defaultCard"
+        size={CARD_SIZES.SMALL}
+      />
+    );
+    expect(screen.getByText(/defaultCard/)).toBeInTheDocument();
   });
 });

@@ -73,7 +73,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -96,7 +96,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -119,7 +119,7 @@ describe('DashboardEditor', () => {
 
     const addCardBtn = screen.getByText('Add card');
     expect(addCardBtn).toBeInTheDocument();
-    const cardSizeFormInput = screen.getByText('Medium (8x2)');
+    const cardSizeFormInput = screen.getByText('Medium (4x2)');
     expect(cardSizeFormInput).toBeInTheDocument();
   });
 
@@ -244,7 +244,7 @@ describe('DashboardEditor', () => {
         layouts: {
           lg: [],
           md: [],
-          xl: [],
+          sm: [],
         },
       },
       []
@@ -300,13 +300,13 @@ describe('DashboardEditor', () => {
     );
     // there should be no breakpoint text on initial render
     expect(screen.queryByText('Edit dashboard at')).not.toBeInTheDocument();
-    // find and click medium button
-    const mediumBtn = screen.getByText('Medium view');
-    expect(mediumBtn).toBeInTheDocument();
-    fireEvent.click(mediumBtn);
+    // find and click small button
+    const smallBtn = screen.getByText('Small view');
+    expect(smallBtn).toBeInTheDocument();
+    fireEvent.click(smallBtn);
     // there should now be breakpoint text
     expect(
-      screen.getByText('Edit dashboard at medium layout (480 - 672px)')
+      screen.getByText('Edit dashboard at small layout (481 - 672px)')
     ).toBeInTheDocument();
   });
 
