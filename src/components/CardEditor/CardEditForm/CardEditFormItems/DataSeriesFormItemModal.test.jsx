@@ -12,6 +12,27 @@ describe('DataSeriesFormItemModal', () => {
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
   const mockSetEditDataSeries = jest.fn();
+  const groupedBarConfig = {
+    title: 'Untitled',
+    size: 'MEDIUM',
+    type: 'BAR',
+    content: {
+      type: 'GROUPED',
+      layout: 'VERTICAL',
+      series: [
+        {
+          dataSourceId: 'temperature',
+          label: 'temperature',
+          color: '#6929c4',
+        },
+      ],
+      categoryDataSourceId: 'firmware',
+    },
+    dataSource: {
+      groupBy: ['firmware'],
+    },
+  };
+
   const timeSeriesCardConfig = {
     id: 'Timeseries',
     title: 'Untitled',
@@ -22,7 +43,7 @@ describe('DataSeriesFormItemModal', () => {
         {
           label: 'Temperature',
           dataSourceId: 'temperature',
-          color: 'red',
+          color: '#6929c4',
         },
         {
           label: 'Pressure',
@@ -61,10 +82,35 @@ describe('DataSeriesFormItemModal', () => {
     },
   };
 
+  const editGroupedBarDataItem = {
+    dataSourceId: 'temperature',
+    label: 'temperature',
+    color: '#6929c4',
+  };
+
   const editTimeseriesDataItem = {
     label: 'Temperature',
     dataSourceId: 'temperature',
     color: 'red',
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
+  };
+
+  const editTimeseriesDataItemAggregated = {
+    label: 'Temperature Max',
+    dataSourceId: 'temperature_max',
+    color: 'red',
+    aggregationMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
+    aggregationMethod: 'max',
   };
 
   const editDataSeriesTimeSeries = [
@@ -116,6 +162,7 @@ describe('DataSeriesFormItemModal', () => {
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
+        isSummaryDashboard
         cardConfig={valueCardConfig}
         editDataItem={editValueDataItem}
       />
@@ -174,7 +221,7 @@ describe('DataSeriesFormItemModal', () => {
       unit: 'PSI',
     });
   });
-  it('changes precision in a valueCard', () => {
+  it('Changes precision in a value card', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
@@ -184,27 +231,71 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const precisionInput = screen.getByText('3');
-    expect(precisionInput).toBeInTheDocument();
-    fireEvent.click(precisionInput);
+    const precisionSelector = screen.getByText('3');
+    expect(precisionSelector).toBeInTheDocument();
 
-    const precisionOption = screen.getByText('4');
-    expect(precisionOption).toBeInTheDocument();
+    fireEvent.click(precisionSelector);
 
-    fireEvent.click(precisionOption);
+    const selectorOption = screen.getByText('2');
+    expect(selectorOption).toBeInTheDocument();
 
-    expect(mockSetEditDataItem).toHaveBeenCalledWith({
-      dataSourceId: 'key1',
-      unit: '%',
-      precision: 4,
-      label: 'Key 1',
-    });
+    fireEvent.click(selectorOption);
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+  it('Removes precision in a value card', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={valueCardConfig}
+        editDataItem={{ ...editValueDataItem, precision: 3 }}
+      />
+    );
+
+    const precisionSelector = screen.getByText('3');
+    expect(precisionSelector).toBeInTheDocument();
+
+    fireEvent.click(precisionSelector);
+
+    const notSetOption = screen.getByText('Not set');
+    expect(notSetOption).toBeInTheDocument();
+
+    fireEvent.click(notSetOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+  it('Removes dataFilter in a value card', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={valueCardConfig}
+        editDataItem={{
+          ...editValueDataItem,
+          dataFilter: { manufacturer: 'Rentech' },
+        }}
+      />
+    );
+
+    const dataFilterSelector = screen.getByText('manufacturer');
+    expect(dataFilterSelector).toBeInTheDocument();
+
+    fireEvent.click(dataFilterSelector);
+
+    const noneOption = screen.getByText('None');
+    expect(noneOption).toBeInTheDocument();
+
+    fireEvent.click(noneOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
   });
   it('Changes dataFilter in a ValueCard', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
+        isSummaryDashboard
         cardConfig={valueCardConfig}
         editDataItem={editValueDataItem}
       />
@@ -235,6 +326,7 @@ describe('DataSeriesFormItemModal', () => {
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
+        isSummaryDashboard
         cardConfig={valueCardConfig}
         editDataItem={{
           dataFilter: {
@@ -285,13 +377,29 @@ describe('DataSeriesFormItemModal', () => {
     fireEvent.change(labelInput, {
       target: { value: 'newLabel' },
     });
-    expect(mockSetEditDataSeries).toHaveBeenCalledWith([
-      {
-        label: 'newLabel',
-        dataSourceId: 'temperature',
-        color: 'red',
-      },
-    ]);
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      label: 'newLabel',
+      dataSourceId: 'temperature',
+      color: 'red',
+      aggregationMethods: [
+        {
+          id: 'last',
+          text: 'Last',
+        },
+        {
+          id: 'mean',
+          text: 'Mean',
+        },
+        {
+          id: 'max',
+          text: 'Max',
+        },
+        {
+          id: 'min',
+          text: 'Min',
+        },
+      ],
+    });
   });
   it('Changes the color in a TimeseriesCard', () => {
     render(
@@ -304,7 +412,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const colorDropdown = screen.getByRole('img', { name: 'Open menu' });
+    const colorDropdown = screen.getAllByTitle('Open menu')[2];
     expect(colorDropdown).toBeInTheDocument();
 
     fireEvent.click(colorDropdown);
@@ -313,12 +421,120 @@ describe('DataSeriesFormItemModal', () => {
     expect(magentaColor).toBeInTheDocument();
 
     fireEvent.click(magentaColor);
-    expect(mockSetEditDataSeries).toHaveBeenCalledWith([
-      {
-        label: 'Temperature',
-        dataSourceId: 'temperature',
-        color: '#520408',
-      },
-    ]);
+    expect(mockSetEditDataItem).toHaveBeenCalledWith({
+      label: 'Temperature',
+      dataSourceId: 'temperature',
+      color: '#520408',
+      aggregationMethods: [
+        {
+          id: 'last',
+          text: 'Last',
+        },
+        {
+          id: 'mean',
+          text: 'Mean',
+        },
+        {
+          id: 'max',
+          text: 'Max',
+        },
+        {
+          id: 'min',
+          text: 'Min',
+        },
+      ],
+    });
+  });
+  it('Changes grain', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const grainDropdown = screen.getByText('Input');
+    expect(grainDropdown).toBeInTheDocument();
+
+    fireEvent.click(grainDropdown);
+
+    const grainOption = screen.getAllByRole('option')[2];
+    expect(grainOption).toBeInTheDocument();
+
+    fireEvent.click(grainOption);
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+  it('Renders an aggregation selector in summary dashboards and fires setEditDataItem', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const aggregationDropdown = screen.getByText('Mean');
+    expect(aggregationDropdown).toBeInTheDocument();
+
+    fireEvent.click(aggregationDropdown);
+
+    const aggregationOption = screen.getByText('Min');
+    expect(aggregationOption).toBeInTheDocument();
+
+    fireEvent.click(aggregationOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+  it('Renders a read only aggregation field in instance dashboards', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemAggregated}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+  });
+  it('Closes the editor and empties out the editDataItem', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemAggregated}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const closeButton = screen.getByRole('button', { name: 'Close' });
+    expect(closeButton).toBeInTheDocument();
+    fireEvent.click(closeButton);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+    expect(mockSetShowEditor).toHaveBeenCalled();
+  });
+  it('Renders the DataSeriesEditorTable', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={groupedBarConfig}
+        editDataItem={editGroupedBarDataItem}
+        editDataSeries={[editGroupedBarDataItem]}
+      />
+    );
+
+    const modalTitle = screen.getByText('Customize data series');
+    expect(modalTitle).toBeInTheDocument();
   });
 });

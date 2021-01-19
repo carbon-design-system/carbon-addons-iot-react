@@ -103,6 +103,7 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
   }),
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
   /** Id that can be used for testing */
   testID: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
@@ -136,6 +137,7 @@ const defaultProps = {
   icons: null,
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
   testID: 'card-editor',
   dataSeriesItemLinks: null,
 };
@@ -144,6 +146,7 @@ const baseClassName = `${iotPrefix}--card-editor`;
 
 const CardEditor = ({
   cardConfig,
+  isSummaryDashboard,
   onShowGallery,
   onChange,
   onAddCard,
@@ -198,6 +201,7 @@ const CardEditor = ({
         ) : (
           <CardEditForm
             cardConfig={cardConfig}
+            isSummaryDashboard={isSummaryDashboard}
             onChange={onChange}
             dataItems={dataItems}
             getValidDataItems={getValidDataItems}
