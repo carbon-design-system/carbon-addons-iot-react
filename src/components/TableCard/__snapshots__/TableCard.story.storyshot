@@ -92,6 +92,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -160,11 +161,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -266,7 +267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -855,6 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1027,6 +1028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1154,6 +1156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1326,6 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1498,6 +1502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1670,6 +1675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1797,6 +1803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1924,6 +1931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2051,6 +2059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2223,6 +2232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2580,6 +2590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -2648,11 +2659,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -2754,7 +2765,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -2990,6 +3000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3040,6 +3051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3090,6 +3102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3140,6 +3153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3190,6 +3204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3240,6 +3255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3290,6 +3306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3340,6 +3357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3390,6 +3408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3440,6 +3459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3797,6 +3817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -3865,11 +3886,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -3971,7 +3992,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -4649,6 +4669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -4841,6 +4862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -4988,6 +5010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5180,6 +5203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5372,6 +5396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73004?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5564,6 +5589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73001?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5711,6 +5737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5858,6 +5885,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6005,6 +6033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6197,6 +6226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73002?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6554,6 +6584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -6596,7 +6627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 >
                   <div
                     aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                    className="bx--search bx--search--sm table-toolbar-search"
+                    className="bx--search bx--search--sm bx--search--disabled table-toolbar-search"
                     role="search"
                   >
                     <svg
@@ -6622,12 +6653,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       disabled={true}
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -6637,6 +6668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     <button
                       aria-label="Clear search input"
                       className="bx--search-close bx--search-close--hidden"
+                      disabled={true}
                       onClick={[Function]}
                       type="button"
                     >
@@ -6726,7 +6758,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    tabIndex={0}
                     title="Open and close list of options"
                     type="button"
                   >
@@ -7985,6 +8016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -8027,7 +8059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 >
                   <div
                     aria-labelledby="table-for-card-table-list-toolbar-search-search"
-                    className="bx--search bx--search--sm table-toolbar-search"
+                    className="bx--search bx--search--sm bx--search--disabled table-toolbar-search"
                     role="search"
                   >
                     <svg
@@ -8053,12 +8085,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       disabled={true}
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -8068,6 +8100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     <button
                       aria-label="Clear search input"
                       className="bx--search-close bx--search-close--hidden"
+                      disabled={true}
                       onClick={[Function]}
                       type="button"
                     >
@@ -8157,7 +8190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    tabIndex={0}
                     title="Open and close list of options"
                     type="button"
                   >
@@ -9750,6 +9782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -9818,11 +9851,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -9924,7 +9957,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -10373,6 +10405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -10441,11 +10474,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -10547,7 +10580,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -13061,6 +13093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -13129,11 +13162,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -13235,7 +13268,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -14526,6 +14558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -14594,11 +14627,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -14700,7 +14733,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -16231,6 +16263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -16299,11 +16332,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -16405,7 +16438,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -17696,6 +17728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -17764,11 +17797,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -17870,7 +17903,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -18365,6 +18397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -18433,11 +18466,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -18539,7 +18572,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -20814,6 +20846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -20882,11 +20915,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -20988,7 +21021,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -21393,7 +21425,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21515,7 +21546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21637,7 +21667,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21759,7 +21788,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21881,7 +21909,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22003,7 +22030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22125,7 +22151,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22247,7 +22272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22369,7 +22393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22491,7 +22514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22874,6 +22896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -22942,11 +22965,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -23048,7 +23071,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -24673,6 +24695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -24741,11 +24764,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -24847,7 +24870,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -26472,6 +26494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -26540,11 +26563,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -26646,7 +26669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -28271,6 +28293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -28339,11 +28362,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -28445,7 +28468,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -30070,6 +30092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -30138,11 +30161,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -30244,7 +30267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -31910,6 +31932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -31978,11 +32001,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -32084,7 +32107,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -34598,6 +34620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -34666,11 +34689,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -34772,7 +34795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -36748,6 +36770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -36816,11 +36839,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -36922,7 +36945,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >

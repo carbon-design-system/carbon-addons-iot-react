@@ -117,7 +117,7 @@ describe('TileGallery', () => {
       .find('input.bx--search-input')
       .simulate('change', { target: { value: 'foo' } });
 
-    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
   });
   it('TileGalleryViewSwitcher - have default onChange', () => {
     expect(TileGalleryViewSwitcher.defaultProps.onChange).toBeDefined();

@@ -241,9 +241,6 @@ describe('HotspotEditorModal', () => {
     // The initial dynamic hotspot title is showing
     const titleInputElement = screen.getByDisplayValue('dynamic test title');
 
-    // Click anywhere to remove focus the selected hotspot
-    fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
-
     // Modify the title and verify the result
     userEvent.type(titleInputElement, ' - modified');
     fireEvent.click(screen.getByRole('button', { name: 'Save' }));
@@ -276,9 +273,6 @@ describe('HotspotEditorModal', () => {
     userEvent.click(
       within(screen.getByTestId('hotspot-10-30')).getByRole('button')
     );
-
-    // Click anywhere to remove focus the selected hotspot
-    fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
 
     const emptyTitleInputElement = screen.getByTitle(
       'Enter title for the tooltip'
@@ -344,7 +338,9 @@ describe('HotspotEditorModal', () => {
     const titleInputElement = screen.getByDisplayValue('My Device');
 
     // Click anywhere to remove focus the selected hotspot
-    fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: /focus sentinel/i })[0]
+    );
 
     // Modify the title and verify the result
     userEvent.type(titleInputElement, ' - modified');
@@ -506,9 +502,6 @@ describe('HotspotEditorModal', () => {
     userEvent.click(
       within(screen.getByTestId('hotspot-35-65')).getByRole('button')
     );
-
-    // Click anywhere to remove focus the selected hotspot
-    fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
 
     // Change to the data source tab
     fireEvent.click(screen.getByText('Data source'));

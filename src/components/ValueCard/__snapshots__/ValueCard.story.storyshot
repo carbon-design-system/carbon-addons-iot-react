@@ -79,6 +79,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__icon-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -115,6 +116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__label-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -135,6 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__description-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -260,6 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__icon-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -401,6 +405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__icon-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -542,6 +547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__icon-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -579,6 +585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__label-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -599,6 +606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__description-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -718,6 +726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__icon-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -754,6 +763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__label-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}
@@ -774,6 +784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   id="iot--data-state-grid__description-myStoryId"
                   onBlur={[Function]}
                   onClick={[Function]}
+                  onContextMenu={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onMouseOut={[Function]}

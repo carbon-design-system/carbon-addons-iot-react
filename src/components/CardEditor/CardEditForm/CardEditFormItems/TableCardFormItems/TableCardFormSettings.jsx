@@ -5,7 +5,7 @@ import update from 'immutability-helper';
 
 import { settings } from '../../../../../constants/Settings';
 import {
-  ToggleSmall,
+  Toggle,
   Dropdown,
   RadioButton,
   RadioButtonGroup,
@@ -222,7 +222,8 @@ const TableCardFormSettings = ({
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.showHeader}</span>
-          <ToggleSmall
+          <Toggle
+            size="sm"
             data-testid={`${baseClassName}--input-toggle1`}
             id={`${baseClassName}--input-toggle-1`}
             aria-label={mergedI18n.showHeader}
@@ -241,7 +242,8 @@ const TableCardFormSettings = ({
       <div className={`${baseClassName}--input`}>
         <div className={`${baseClassName}--input--toggle-field`}>
           <span>{mergedI18n.allowNavigation}</span>
-          <ToggleSmall
+          <Toggle
+            size="sm"
             data-testid={`${baseClassName}--input-toggle2`}
             id={`${baseClassName}--input-toggle-2`}
             aria-label={mergedI18n.allowNavigation}

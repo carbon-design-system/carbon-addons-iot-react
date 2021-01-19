@@ -87,6 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -137,6 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -187,6 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -238,6 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -454,7 +458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                       <div
                         className="bx--text-input__field-wrapper"
                         data-invalid={null}
-                        data-warn={null}
                       >
                         <input
                           className="bx--text-input iot--hotspot-content-title-input"
@@ -642,6 +645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -692,6 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -742,6 +747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -793,6 +799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -985,6 +992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1035,6 +1043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1085,6 +1094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1136,6 +1146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1328,6 +1339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1378,6 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1428,6 +1441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1479,6 +1493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1671,6 +1686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1721,6 +1737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1771,6 +1788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -1822,6 +1840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -2014,6 +2033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-10-20"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -2064,6 +2084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-10"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -2114,6 +2135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-30-40"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}
@@ -2165,6 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               id="hotspot-50-60"
               onBlur={[Function]}
               onClick={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onMouseOut={[Function]}

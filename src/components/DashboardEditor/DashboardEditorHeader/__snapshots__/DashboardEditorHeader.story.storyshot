@@ -43,6 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Dashboard library
                     </a>
@@ -53,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Favorites
                     </a>
@@ -302,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Dashboard library
                     </a>
@@ -312,6 +315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     <a
                       className="bx--link bx--link"
                       href="www.ibm.com"
+                      rel={null}
                     >
                       Favorites
                     </a>

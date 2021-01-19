@@ -28,7 +28,7 @@ export const AboutStorybook = () => (
       browse the component library, view the different states of each component,
       and interactively develop and test components.
     </p>
-    <p>This storybook has 3 sections:</p>
+    <p>This storybook has 2 sections:</p>
     <p>
       <strong>Watson IoT</strong> - Components that are either extensions of
       Carbon components, or totally custom components not available in Carbon.
@@ -38,10 +38,6 @@ export const AboutStorybook = () => (
       components are not yet finalized or stable. The APIs of these components
       may change rapidly and are not required to have associated tests,
       including snapshots.
-    </p>
-    <p>
-      <strong>Carbon</strong> - Components imported from Carbon and re-exported
-      with no modifications
     </p>
     <p>
       For additional guidance, see the{' '}

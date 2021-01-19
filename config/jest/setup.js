@@ -37,6 +37,9 @@ if (typeof window !== 'undefined') {
   }
 
   window.ResizeObserver = ResizeObserver;
+  // Mock the scroll function as its not implemented in jsdom
+  // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
 }
 
 // Needed so that any component that uses sizeme can be jest tested

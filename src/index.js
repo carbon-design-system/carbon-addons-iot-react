@@ -187,8 +187,6 @@ export {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
-  PageSelector,
-  Unstable_Pagination, // eslint-disable-line camelcase
   Pagination,
   PaginationNav,
   PaginationSkeleton,

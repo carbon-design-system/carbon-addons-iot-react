@@ -305,7 +305,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -599,7 +598,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1013,7 +1011,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1181,7 +1178,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >
@@ -1568,7 +1564,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                   onClose={[Function]}
                   onKeyDown={[Function]}
                   open={false}
-                  tabIndex={0}
                   title="Select time range"
                   type="button"
                 >
@@ -1717,11 +1712,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           Search
                         </label>
                         <input
-                          aria-hidden={true}
                           autoComplete="off"
                           className="bx--search-input"
                           id="BarChartCard-table-toolbar-search"
                           onChange={[Function]}
+                          onKeyDown={[Function]}
                           placeholder="Search"
                           role="searchbox"
                           tabIndex="-1"
@@ -2763,7 +2758,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 onClose={[Function]}
                 onKeyDown={[Function]}
                 open={false}
-                tabIndex={0}
                 title="Select time range"
                 type="button"
               >

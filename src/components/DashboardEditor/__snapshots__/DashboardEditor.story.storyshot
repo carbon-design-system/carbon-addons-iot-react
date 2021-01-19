@@ -42,6 +42,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -52,6 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -374,6 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="Search image by file name"
                             role="searchbox"
                             type="text"
@@ -406,7 +409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -437,7 +440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -479,7 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -575,7 +578,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -697,7 +699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -907,6 +908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"
@@ -1724,6 +1726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="bx--search-input"
                               id="iot--image-gallery-modal--search"
                               onChange={[Function]}
+                              onKeyDown={[Function]}
                               placeholder="Search image by file name"
                               role="searchbox"
                               type="text"
@@ -1756,7 +1759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             role="tablist"
                           >
                             <button
-                              className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                              className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -1787,7 +1790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
-                              className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                              className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -1829,7 +1832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="bx--modal-footer iot--composed-modal-footer"
+                      className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                     >
                       <button
                         className="iot--btn bx--btn bx--btn--secondary"
@@ -1943,6 +1946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--search-input"
                         id="iot--list-header--search"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         placeholder="Enter a value"
                         role="searchbox"
                         type="text"
@@ -2740,6 +2744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -2750,6 +2755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -3072,6 +3078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="Search image by file name"
                             role="searchbox"
                             type="text"
@@ -3104,7 +3111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -3135,7 +3142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -3236,7 +3243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="assemblyline.jpg"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3330,7 +3337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="floow_plan.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3424,7 +3431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="Manufacturing_plant.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3518,7 +3525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="robot_arm.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3612,7 +3619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="tankmodal.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3706,7 +3713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="turbines.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3800,7 +3807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="extra-wide-image.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3894,7 +3901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="large.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -3988,7 +3995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="large_portrait.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -4027,7 +4034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -4141,6 +4148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"
@@ -4857,6 +4865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -4867,6 +4876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -4934,7 +4944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     role="tablist"
                   >
                     <button
-                      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -4965,7 +4975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -4996,7 +5006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -5031,7 +5041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </svg>
                     </button>
                     <button
-                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                       disabled={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -5327,6 +5337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="imageGallerySearchPlaceHolderText"
                             role="searchbox"
                             type="text"
@@ -5359,7 +5370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -5390,7 +5401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -5491,7 +5502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="assemblyline.jpg"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -5585,7 +5596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="floow_plan.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -5679,7 +5690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="Manufacturing_plant.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -5773,7 +5784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="robot_arm.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -5867,7 +5878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="tankmodal.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -5961,7 +5972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="turbines.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -6055,7 +6066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="extra-wide-image.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -6149,7 +6160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="large.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -6243,7 +6254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 src="large_portrait.png"
                               />
                               <button
-                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                className="iot--image-tile__title__delete bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                                 disabled={false}
                                 onClick={[Function]}
                                 tabIndex={0}
@@ -6282,7 +6293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -6396,6 +6407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"
@@ -7179,6 +7191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <a
                           className="bx--link bx--link"
                           href="www.ibm.com"
+                          rel={null}
                         >
                           Dashboard library
                         </a>
@@ -7189,6 +7202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         <a
                           className="bx--link bx--link"
                           href="www.ibm.com"
+                          rel={null}
                         >
                           Favorites
                         </a>
@@ -7256,7 +7270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       role="tablist"
                     >
                       <button
-                        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -7287,7 +7301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
-                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -7318,7 +7332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
-                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -7353,7 +7367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </svg>
                       </button>
                       <button
-                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                         disabled={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -7649,6 +7663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="bx--search-input"
                               id="iot--image-gallery-modal--search"
                               onChange={[Function]}
+                              onKeyDown={[Function]}
                               placeholder="Search image by file name"
                               role="searchbox"
                               type="text"
@@ -7681,7 +7696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             role="tablist"
                           >
                             <button
-                              className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                              className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -7712,7 +7727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               </svg>
                             </button>
                             <button
-                              className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                              className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                               disabled={false}
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -7754,7 +7769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </div>
                     </div>
                     <div
-                      className="bx--modal-footer iot--composed-modal-footer"
+                      className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                     >
                       <button
                         className="iot--btn bx--btn bx--btn--secondary"
@@ -7868,6 +7883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         className="bx--search-input"
                         id="iot--list-header--search"
                         onChange={[Function]}
+                        onKeyDown={[Function]}
                         placeholder="Enter a value"
                         role="searchbox"
                         type="text"
@@ -8523,6 +8539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -8533,6 +8550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -8855,6 +8873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="Search image by file name"
                             role="searchbox"
                             type="text"
@@ -8887,7 +8906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -8918,7 +8937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -8960,7 +8979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -9057,7 +9076,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -9180,6 +9198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"
@@ -9834,6 +9853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -9844,6 +9864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -10166,6 +10187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="Search image by file name"
                             role="searchbox"
                             type="text"
@@ -10198,7 +10220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -10229,7 +10251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -10271,7 +10293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -10404,7 +10426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             >
                               <div
                                 aria-labelledby="table-for-card-Table-toolbar-search-search"
-                                className="bx--search bx--search--sm table-toolbar-search"
+                                className="bx--search bx--search--sm bx--search--disabled table-toolbar-search"
                                 role="search"
                               >
                                 <svg
@@ -10430,12 +10452,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   Search
                                 </label>
                                 <input
-                                  aria-hidden={true}
                                   autoComplete="off"
                                   className="bx--search-input"
                                   disabled={true}
                                   id="table-for-card-Table-toolbar-search"
                                   onChange={[Function]}
+                                  onKeyDown={[Function]}
                                   placeholder="Search"
                                   role="searchbox"
                                   tabIndex="-1"
@@ -10445,6 +10467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 <button
                                   aria-label="Clear search input"
                                   className="bx--search-close bx--search-close--hidden"
+                                  disabled={true}
                                   onClick={[Function]}
                                   type="button"
                                 >
@@ -10534,7 +10557,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
                                 open={false}
-                                tabIndex={0}
                                 title="Open and close list of options"
                                 type="button"
                               >
@@ -11502,7 +11524,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -11694,7 +11715,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -11799,7 +11819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           onClose={[Function]}
                           onKeyDown={[Function]}
                           open={false}
-                          tabIndex={0}
                           title="Open and close list of options"
                           type="button"
                         >
@@ -11922,6 +11941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"
@@ -12576,6 +12596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Dashboard library
                       </a>
@@ -12586,6 +12607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       <a
                         className="bx--link bx--link"
                         href="www.ibm.com"
+                        rel={null}
                       >
                         Favorites
                       </a>
@@ -12814,12 +12836,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                fill="none"
               />
               <path
-                d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                data-icon-path="inner-path"
-                fill="none"
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
               />
               <title>
                 info icon
@@ -13122,6 +13143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             className="bx--search-input"
                             id="iot--image-gallery-modal--search"
                             onChange={[Function]}
+                            onKeyDown={[Function]}
                             placeholder="Search image by file name"
                             role="searchbox"
                             type="text"
@@ -13154,7 +13176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           role="tablist"
                         >
                           <button
-                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -13185,7 +13207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </svg>
                           </button>
                           <button
-                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                            className="iot--icon-switch iot--icon-switch--large iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                             disabled={false}
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -13227,7 +13249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     </div>
                   </div>
                   <div
-                    className="bx--modal-footer iot--composed-modal-footer"
+                    className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
                   >
                     <button
                       className="iot--btn bx--btn bx--btn--secondary"
@@ -13341,6 +13363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       className="bx--search-input"
                       id="iot--list-header--search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Enter a value"
                       role="searchbox"
                       type="text"

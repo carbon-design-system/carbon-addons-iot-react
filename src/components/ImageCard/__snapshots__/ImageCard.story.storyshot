@@ -157,6 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-35-65"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -416,6 +417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-35-65"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -463,6 +465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-25"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -514,6 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-50"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -565,6 +569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     id="hotspot-45-75"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -1075,22 +1080,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     </label>
                     <svg
                       className="bx--loading__svg"
-                      viewBox="-75 -75 150 150"
+                      viewBox="0 0 100 100"
                     >
                       <title>
                         Active loading indicator
                       </title>
                       <circle
                         className="bx--loading__background"
-                        cx="0"
-                        cy="0"
-                        r="26.8125"
+                        cx="50%"
+                        cy="50%"
+                        r="42"
                       />
                       <circle
                         className="bx--loading__stroke"
-                        cx="0"
-                        cy="0"
-                        r="26.8125"
+                        cx="50%"
+                        cy="50%"
+                        r="42"
                       />
                     </svg>
                   </div>

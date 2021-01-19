@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -847,7 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -1677,12 +1677,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+          d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+          fill="none"
         />
         <path
-          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-          data-icon-path="inner-path"
-          fill="none"
+          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
         />
         <title>
           info icon
@@ -1703,6 +1702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             className="bx--link"
             href="javascript:void(0)"
             onClick={[Function]}
+            rel={null}
           >
             Click here to help us improve the product
           </a>
@@ -1713,6 +1713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               className="bx--link"
               href="javascript:void(0)"
               onClick={[Function]}
+              rel={null}
             >
               Privacy Policy
             </a>
@@ -1813,7 +1814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"
@@ -2380,7 +2381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           You are logged in to Application Suite as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
         </div>
         <div
-          className="bx--modal-footer"
+          className="bx--modal-footer bx--btn-set"
         >
           <button
             className="bx--btn bx--btn--secondary"

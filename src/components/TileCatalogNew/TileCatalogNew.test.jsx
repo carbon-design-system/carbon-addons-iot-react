@@ -62,14 +62,14 @@ describe('TileCatalogNew', () => {
         tiles={getTiles(8, 'Tile')}
         numColumns={2}
         numRows={2}
-        hasSearch="true"
+        hasSearch
         onSearch={onSearch}
       />
     );
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
-    expect(onSearch).toHaveBeenCalledTimes(1);
+    expect(onSearch).toHaveBeenCalled();
   });
 
   it('TileCatalogNew hasSort set to true', () => {
@@ -84,7 +84,7 @@ describe('TileCatalogNew', () => {
     render(
       <TileCatalogNew
         tiles={getTiles(2, 'Tile')}
-        hasSort="true"
+        hasSort
         onSort={onSort}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
@@ -94,7 +94,7 @@ describe('TileCatalogNew', () => {
     fireEvent.change(screen.getByDisplayValue('Choose from options'), {
       target: { value: 'Z-A' },
     });
-    expect(onSort).toHaveBeenCalledTimes(1);
+    expect(onSort).toHaveBeenCalled(); // https://github.com/carbon-design-system/carbon/issues/7595
   });
 
   it('TileCatalogNew pagination next button', () => {

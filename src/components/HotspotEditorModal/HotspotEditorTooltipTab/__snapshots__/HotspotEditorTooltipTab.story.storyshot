@@ -36,7 +36,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--text-input__field-wrapper"
                 data-invalid={null}
-                data-warn={null}
               >
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
@@ -394,7 +393,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               <div
                 className="bx--text-input__field-wrapper"
                 data-invalid={null}
-                data-warn={null}
               >
                 <input
                   className="bx--text-input bx--text__input bx--text-input--light"
