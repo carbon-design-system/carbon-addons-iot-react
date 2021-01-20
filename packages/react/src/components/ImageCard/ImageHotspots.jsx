@@ -6,10 +6,7 @@ import omit from 'lodash/omit';
 import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
-import {
-  HotspotIconPropType,
-  HotspotPropTypes,
-} from '../../constants/SharedPropTypes';
+import { HotspotIconPropType, HotspotPropTypes } from '../../constants/SharedPropTypes';
 
 import Hotspot from './Hotspot';
 import ImageControls from './ImageControls';
@@ -132,15 +129,7 @@ export const startDrag = (event, element, cursor, setCursor) => {
 };
 
 /** update the image offset based on the dragged point, and the minimap on the relative opposite from the dragged point */
-export const whileDrag = (
-  event,
-  cursor,
-  setCursor,
-  image,
-  setImage,
-  minimap,
-  setMinimap
-) => {
+export const whileDrag = (event, cursor, setCursor, image, setImage, minimap, setMinimap) => {
   const cursorX = event.clientX;
   const cursorY = event.clientY;
   const deltaX = cursorX - cursor.cursorX;
@@ -183,12 +172,7 @@ export const calculateImageWidth = (container, orientation, ratio, scale = 1) =>
     ? container.width // landscape image and portrait container
     : container.height / ratio) * scale; // portrait image and landscape container
 
-export const calculateImageHeight = (
-  container,
-  orientation,
-  ratio,
-  scale = 1
-) =>
+export const calculateImageHeight = (container, orientation, ratio, scale = 1) =>
   (container.orientation === orientation
     ? orientation === 'landscape'
       ? ratio >= container.ratio
@@ -212,15 +196,10 @@ export const onImageLoad = (
   options,
   setOptions
 ) => {
-  const {
-    offsetWidth: initialWidth,
-    offsetHeight: initialHeight,
-  } = imageLoaded;
+  const { offsetWidth: initialWidth, offsetHeight: initialHeight } = imageLoaded;
   const orientation = initialWidth > initialHeight ? 'landscape' : 'portrait';
   const ratio =
-    orientation === 'landscape'
-      ? initialWidth / initialHeight
-      : initialHeight / initialWidth;
+    orientation === 'landscape' ? initialWidth / initialHeight : initialHeight / initialWidth;
 
   const width = calculateImageWidth(container, orientation, ratio);
   const height = calculateImageHeight(container, orientation, ratio);
@@ -242,22 +221,10 @@ export const onImageLoad = (
   });
   setMinimap({
     ...minimap,
-    width:
-      orientation === 'landscape'
-        ? minimap.initialSize
-        : minimap.initialSize / ratio,
-    height:
-      orientation === 'portrait'
-        ? minimap.initialSize
-        : minimap.initialSize / ratio,
-    guideWidth:
-      orientation === 'landscape'
-        ? minimap.initialSize
-        : minimap.initialSize / ratio,
-    guideHeight:
-      orientation === 'portrait'
-        ? minimap.initialSize
-        : minimap.initialSize / ratio,
+    width: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
+    height: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
+    guideWidth: orientation === 'landscape' ? minimap.initialSize : minimap.initialSize / ratio,
+    guideHeight: orientation === 'portrait' ? minimap.initialSize : minimap.initialSize / ratio,
   });
   setOptions({
     ...options,
@@ -281,18 +248,8 @@ export const zoom = (
   options,
   setOptions
 ) => {
-  const width = calculateImageWidth(
-    container,
-    image.orientation,
-    image.ratio,
-    scale
-  );
-  const height = calculateImageHeight(
-    container,
-    image.orientation,
-    image.ratio,
-    scale
-  );
+  const width = calculateImageWidth(container, image.orientation, image.ratio, scale);
+  const height = calculateImageHeight(container, image.orientation, image.ratio, scale);
 
   // Reset image position, (i.e. zoom to fit)
   if (scale === 1) {
@@ -321,13 +278,9 @@ export const zoom = (
       (image.initialWidth > width && image.initialHeight > height)
     ) {
       const guideWidth =
-        container.width >= width
-          ? minimap.width
-          : minimap.width / (width / container.width);
+        container.width >= width ? minimap.width : minimap.width / (width / container.width);
       const guideHeight =
-        container.height >= height
-          ? minimap.height
-          : minimap.height / (height / container.height);
+        container.height >= height ? minimap.height : minimap.height / (height / container.height);
 
       const deltaX = Math.round(width - image.width);
       const deltaY = Math.round(height - image.height);
@@ -412,14 +365,7 @@ export const getAccumulatedOffset = (imageElement) => {
 
 /** Calculates the mouse click position in percentage and returns the
  * result in a callback if a hotspot should be added */
-export const handleMouseUp = ({
-  event,
-  image,
-  cursor,
-  setCursor,
-  isEditable,
-  callback,
-}) => {
+export const handleMouseUp = ({ event, image, cursor, setCursor, isEditable, callback }) => {
   setCursor((newCursor) => {
     return { ...newCursor, dragPrepared: false, imageMousedown: false };
   });
@@ -583,9 +529,7 @@ const ImageHotspots = ({
     () =>
       hotspots.map((hotspot) => {
         const { x, y } = hotspot;
-        const hotspotIsSelected = !!selectedHotspots.find(
-          (pos) => x === pos.x && y === pos.y
-        );
+        const hotspotIsSelected = !!selectedHotspots.find((pos) => x === pos.x && y === pos.y);
         return (
           <Hotspot
             {...omit(hotspot, 'content')}
@@ -598,9 +542,7 @@ const ImageHotspots = ({
                   locale={locale}
                   renderIconByName={getIconRenderFunction()}
                   id={`hotspot-content-${x}-${y}`}
-                  isTitleEditable={
-                    (isEditable, hotspotIsSelected && hotspot.type === 'text')
-                  }
+                  isTitleEditable={(isEditable, hotspotIsSelected && hotspot.type === 'text')}
                   onChange={onHotspotContentChanged}
                   i18n={mergedI18n}
                 />
@@ -629,11 +571,9 @@ const ImageHotspots = ({
 
   if (imageLoaded) {
     if (container.orientation === 'landscape') {
-      imageStyle.height =
-        displayOption && image.scale === 1 ? '100%' : image.height;
+      imageStyle.height = displayOption && image.scale === 1 ? '100%' : image.height;
     } else {
-      imageStyle.width =
-        displayOption && image.scale === 1 ? '100%' : image.width;
+      imageStyle.width = displayOption && image.scale === 1 ? '100%' : image.width;
     }
 
     if (image.orientation === 'landscape') {
@@ -659,7 +599,8 @@ const ImageHotspots = ({
           // If we leave the container, stop detecting the drag
           stopDrag(cursor, setCursor);
         }
-      }}>
+      }}
+    >
       {src && (
         <img
           id={id}
@@ -667,16 +608,7 @@ const ImageHotspots = ({
           src={src}
           alt={alt}
           onLoad={(event) =>
-            onImageLoad(
-              event,
-              container,
-              image,
-              setImage,
-              minimap,
-              setMinimap,
-              options,
-              setOptions
-            )
+            onImageLoad(event, container, image, setImage, minimap, setMinimap, options, setOptions)
           }
           style={imageStyle}
           onMouseDown={(evt) => {
@@ -693,15 +625,7 @@ const ImageHotspots = ({
             if (!hideZoomControls && draggable && dragPrepared) {
               startDrag(evt, 'image', cursor, setCursor);
             } else if (!hideZoomControls && dragging) {
-              whileDrag(
-                evt,
-                cursor,
-                setCursor,
-                image,
-                setImage,
-                minimap,
-                setMinimap
-              );
+              whileDrag(evt, cursor, setCursor, image, setImage, minimap, setMinimap);
             }
           }}
           onMouseUp={(event) => {
@@ -738,17 +662,7 @@ const ImageHotspots = ({
           dragging={dragging}
           hideMinimap={!dragging || hideMinimap}
           onZoomToFit={() =>
-            zoom(
-              1,
-              zoomMax,
-              container,
-              image,
-              setImage,
-              minimap,
-              setMinimap,
-              options,
-              setOptions
-            )
+            zoom(1, zoomMax, container, image, setImage, minimap, setMinimap, options, setOptions)
           }
           onZoomIn={() =>
             zoom(

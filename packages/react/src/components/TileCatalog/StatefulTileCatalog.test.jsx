@@ -55,9 +55,7 @@ describe('StatefulTileCatalog', () => {
     expect(wrapper.find('input[type="radio"]')).toHaveLength(2);
   });
   it('selectedTileId', () => {
-    const wrapper = mount(
-      <StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />
-    );
+    const wrapper = mount(<StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />);
     wrapper.update();
     const selectedTile = wrapper.find('input[checked=true]');
     expect(selectedTile).toHaveLength(1);

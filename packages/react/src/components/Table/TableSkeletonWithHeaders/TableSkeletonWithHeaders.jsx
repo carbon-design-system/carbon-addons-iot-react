@@ -12,9 +12,7 @@ const propTypes = {
   hasRowExpansion: PropTypes.bool,
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string.isRequired })
-  ),
+  columns: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired })),
 };
 
 const defaultProps = {
@@ -34,8 +32,7 @@ const TableSkeletonWithHeaders = ({
   rowCount,
 }) => (
   <TableBody>
-    <TableRow
-      className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
+    <TableRow className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
       {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
       {columns.map((column) => (
@@ -48,7 +45,8 @@ const TableSkeletonWithHeaders = ({
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
       <TableRow
         key={`skeletonRow-${index}`}
-        className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
+        className={`${iotPrefix}--table-skeleton-with-headers--table-row`}
+      >
         {hasRowSelection === 'multi' ? <TableCell /> : null}
         {hasRowExpansion ? <TableCell /> : null}
         {columns.map((column) => (

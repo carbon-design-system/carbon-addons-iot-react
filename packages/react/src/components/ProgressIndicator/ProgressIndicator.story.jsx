@@ -146,7 +146,8 @@ export const CarbonDefaultProgressIndicator = () => (
   <CarbonProgressIndicator
     vertical={boolean('Vertical (vertical)', false)}
     currentIndex={number('Current progress (currentIndex)', 1)}
-    spaceEqually={boolean('Space Equally (spaceEqually)', false)}>
+    spaceEqually={boolean('Space Equally (spaceEqually)', false)}
+  >
     <CarbonProgressStep
       label={text('Label (label)', 'First step')}
       description="Step 1: Getting started with Carbon Design System"
@@ -162,7 +163,8 @@ export const CarbonDefaultProgressIndicator = () => (
           triggerClassName={`${prefix}--progress-label`}
           triggerText="Second step with tooltip"
           triggerId="tooltipTrigger-0"
-          tooltipId="tooltipId-0">
+          tooltipId="tooltipId-0"
+        >
           <p>Overflow tooltip content.</p>
         </Tooltip>
       )}
@@ -177,12 +179,12 @@ export const CarbonDefaultProgressIndicator = () => (
           triggerClassName={`${prefix}--progress-label`}
           triggerText="Third step with tooltip"
           triggerId="tooltipTrigger-1"
-          tooltipId="tooltipId-1">
+          tooltipId="tooltipId-1"
+        >
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-            consequuntur hic ratione aliquid cupiditate, nesciunt saepe iste
-            blanditiis cumque maxime tenetur veniam est illo deserunt sint quae
-            pariatur. Laboriosam, consequatur.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi consequuntur hic ratione
+            aliquid cupiditate, nesciunt saepe iste blanditiis cumque maxime tenetur veniam est illo
+            deserunt sint quae pariatur. Laboriosam, consequatur.
           </p>
         </Tooltip>
       )}

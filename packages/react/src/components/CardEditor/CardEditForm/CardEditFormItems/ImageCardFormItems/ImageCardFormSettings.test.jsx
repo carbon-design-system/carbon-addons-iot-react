@@ -25,12 +25,7 @@ describe('ImageCardFormSettings', () => {
   };
 
   it('fires onChange when user interacts with image form inputs', () => {
-    render(
-      <ImageCardFormSettings
-        cardConfig={cardConfig}
-        onChange={actions.onChange}
-      />
-    );
+    render(<ImageCardFormSettings cardConfig={cardConfig} onChange={actions.onChange} />);
 
     userEvent.click(screen.getByTestId('iot--card-edit-form--input-radio1'));
 

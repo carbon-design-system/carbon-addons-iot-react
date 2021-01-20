@@ -116,9 +116,7 @@ const SimpleList = ({
 
   const handleSelect = (id, parentId) => {
     if (editingStyle) {
-      setEditModeSelectedIds(
-        handleEditModeSelect(items, editModeSelectedIds, id, parentId)
-      );
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
     } else {
       setSelectedIds(
         selectedIds.indexOf(id) !== -1
@@ -133,16 +131,11 @@ const SimpleList = ({
 
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  const [itemsToShow, setItemsToShow] = useState(
-    filteredItems.slice(0, rowPerPage)
-  );
+  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowPerPage));
 
   const onPage = (page) => {
     const rowUpperLimit = page * rowPerPage;
-    const currentItemsOnPage = filteredItems.slice(
-      rowUpperLimit - rowPerPage,
-      rowUpperLimit
-    );
+    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
     setCurrentPageNumber(page);
     setItemsToShow(currentItemsOnPage);
   };
@@ -161,12 +154,7 @@ const SimpleList = ({
       editModeSelectedIds.length > 0 &&
       editModeSelectedIds.find((selectionId) => selectionId === dragId)
     ) {
-      updatedList = moveItemsInList(
-        items,
-        editModeSelectedIds,
-        hoverId,
-        target
-      );
+      updatedList = moveItemsInList(items, editModeSelectedIds, hoverId, target);
     } else {
       updatedList = moveItemsInList(items, [dragId], hoverId, target);
     }
@@ -184,31 +172,21 @@ const SimpleList = ({
               value: searchValue,
               onChange: (evt) => {
                 setSearchValue(evt.target.value);
-                const searchTerm =
-                  evt.target.value === undefined ? '' : evt.target.value;
+                const searchTerm = evt.target.value === undefined ? '' : evt.target.value;
                 const searchFilteredItems = items.filter((item) => {
-                  if (
-                    item.content.value !== '' &&
-                    item.content.value !== undefined
-                  ) {
+                  if (item.content.value !== '' && item.content.value !== undefined) {
                     if (
                       item.content.secondaryValue !== '' &&
                       item.content.secondaryValue !== undefined
                     ) {
                       return (
-                        item.content.value
-                          .toLowerCase()
-                          .search(searchTerm.toLowerCase()) !== -1 ||
+                        item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
                         item.content.secondaryValue
                           .toLowerCase()
                           .search(searchTerm.toLowerCase()) !== -1
                       );
                     }
-                    return (
-                      item.content.value
-                        .toLowerCase()
-                        .search(searchTerm.toLowerCase()) !== -1
-                    );
+                    return item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
                   }
                   return false;
                 });

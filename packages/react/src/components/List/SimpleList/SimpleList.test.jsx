@@ -15,9 +15,7 @@ const getFatRowListItems = (num) =>
       id: `${idx + 1}`,
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${
-          idx + 100
-        }`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
         rowActions: [],
       },
     }));
@@ -42,9 +40,7 @@ const getEmptyListItems = (num) =>
 
 describe('SimpleList', () => {
   it('Simple List when pageSize is set to sm', () => {
-    render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />
-    );
+    render(<SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />);
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
     expect(screen.getByTitle('Item 3')).toBeTruthy();
@@ -53,9 +49,7 @@ describe('SimpleList', () => {
   });
 
   it('Simple List when pageSize is set to lg', () => {
-    render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="lg" />
-    );
+    render(<SimpleList title="Simple list" items={getListItems(5)} pageSize="lg" />);
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
     expect(screen.getByTitle('Item 3')).toBeTruthy();
@@ -64,9 +58,7 @@ describe('SimpleList', () => {
   });
 
   it('Simple List when pageSize is set to xl', () => {
-    render(
-      <SimpleList title="Simple list" items={getListItems(5)} pageSize="xl" />
-    );
+    render(<SimpleList title="Simple list" items={getListItems(5)} pageSize="xl" />);
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
     expect(screen.getByTitle('Item 3')).toBeTruthy();
@@ -83,9 +75,7 @@ describe('SimpleList', () => {
     expect(screen.getAllByRole('button')[0]).toBeInTheDocument();
     expect(screen.getAllByRole('button')[0]).toBeVisible();
     expect(
-      screen
-        .getAllByRole('button')[0]
-        .className.includes(`${iotPrefix}--list-item__selected`)
+      screen.getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
     ).toEqual(true);
   });
 
@@ -103,9 +93,7 @@ describe('SimpleList', () => {
   // });
 
   it('SimpleList when click on next page', () => {
-    render(
-      <SimpleList items={getListItems(10)} title="Simple List" pageSize="sm" />
-    );
+    render(<SimpleList items={getListItems(10)} title="Simple List" pageSize="sm" />);
 
     const buttons = screen.getAllByRole('button');
     fireEvent.click(buttons[buttons.length - 1]);
@@ -117,9 +105,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when hasSearch', () => {
-    render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
@@ -128,9 +114,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when hasSearch and item values are empty', () => {
-    render(
-      <SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
@@ -138,14 +122,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when hasSearch and pagination', () => {
-    render(
-      <SimpleList
-        title="Simple list"
-        hasSearch
-        items={getListItems(5)}
-        pageSize="sm"
-      />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
@@ -154,9 +131,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when search large row', () => {
-    render(
-      <SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: '5' },
     });
@@ -164,9 +139,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when search term is empty should return all items', () => {
-    render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: ' ' },
     });
@@ -178,9 +151,7 @@ describe('SimpleList', () => {
   });
 
   it('SimpleList when search input is undefined should return all items', () => {
-    render(
-      <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
-    );
+    render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
     fireEvent.change(screen.getByPlaceholderText('Enter a value'));
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
@@ -196,16 +167,12 @@ describe('SimpleList', () => {
     expect(screen.getAllByRole('button')[0]).toBeInTheDocument();
     expect(screen.getAllByRole('button')[0]).toBeVisible();
     expect(
-      screen
-        .getAllByRole('button')[0]
-        .className.includes(`${iotPrefix}--list-item__selected`)
+      screen.getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
     ).toEqual(true);
 
     fireEvent.click(screen.getAllByRole('button')[0]);
     expect(
-      screen
-        .getAllByRole('button')[0]
-        .className.includes(`${iotPrefix}--list-item__selected`)
+      screen.getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
     ).toEqual(false);
   });
 
@@ -264,12 +231,8 @@ describe('SimpleList', () => {
       },
     });
 
-    expect(
-      within(screen.getAllByRole('listitem')[0]).queryByTitle('Item 2')
-    ).toBeDefined();
-    expect(
-      within(screen.getAllByRole('listitem')[1]).queryByTitle('Item 1')
-    ).toBeDefined();
+    expect(within(screen.getAllByRole('listitem')[0]).queryByTitle('Item 2')).toBeDefined();
+    expect(within(screen.getAllByRole('listitem')[1]).queryByTitle('Item 1')).toBeDefined();
 
     expect(newData[0].content.value).toEqual('Item 2');
     expect(newData[1].content.value).toEqual('Item 1');

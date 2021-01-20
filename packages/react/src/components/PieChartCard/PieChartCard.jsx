@@ -4,11 +4,7 @@ import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import assign from 'lodash/assign';
 
-import {
-  PieCardPropTypes,
-  CardPropTypes,
-  CHART_COLORS,
-} from '../../constants/CardPropTypes';
+import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import {
@@ -16,10 +12,7 @@ import {
   handleCardVariables,
   increaseSmallCardSize,
 } from '../../utils/cardUtilityFunctions';
-import {
-  csvDownloadHandler,
-  getOverrides,
-} from '../../utils/componentUtilityFunctions';
+import { csvDownloadHandler, getOverrides } from '../../utils/componentUtilityFunctions';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
 
@@ -39,11 +32,7 @@ const generateSampleData = (sampleSlicesCount, groupDataSourceId) => {
   return sample;
 };
 
-const getColorsForSampleData = (
-  colorsProp,
-  sampleValues,
-  groupDataSourceId
-) => {
+const getColorsForSampleData = (colorsProp, sampleValues, groupDataSourceId) => {
   const colorValues = Object.values(colorsProp);
   const sampleColors = Object.create(null);
   sampleValues.forEach((sliceData, index) => {
@@ -55,14 +44,9 @@ const getColorsForSampleData = (
 
 const generateTableRows = (id, values, groupDataSourceId) => {
   const tableRowValues = Object.fromEntries(
-    values.map(({ value, [groupDataSourceId]: columnName }) => [
-      columnName,
-      value,
-    ])
+    values.map(({ value, [groupDataSourceId]: columnName }) => [columnName, value])
   );
-  return isEmpty(values)
-    ? []
-    : [{ id: `${id}-table-row`, values: tableRowValues }];
+  return isEmpty(values) ? [] : [{ id: `${id}-table-row`, values: tableRowValues }];
 };
 
 const generateTableColumns = (values, groupDataSourceId) => {
@@ -85,9 +69,7 @@ export const formatColors = (values, groupDataSourceId, colors) => {
   };
   if (Array.isArray(values)) {
     values.forEach((value, index) => {
-      formattedColors.scale[value[groupDataSourceId]] = colors?.[
-        value[groupDataSourceId]
-      ]
+      formattedColors.scale[value[groupDataSourceId]] = colors?.[value[groupDataSourceId]]
         ? colors[value[groupDataSourceId]] // look to find a matching color entry in our colors otherwise use defaults
         : CHART_COLORS[index % CHART_COLORS.length];
     });
@@ -135,11 +117,7 @@ const PieChartCard = ({
   testID,
   ...others
 }) => {
-  const contentWithDefaults = assign(
-    {},
-    PieChartCard.defaultProps.content,
-    content
-  );
+  const contentWithDefaults = assign({}, PieChartCard.defaultProps.content, content);
   const {
     title,
     content: {
@@ -150,18 +128,11 @@ const PieChartCard = ({
       legendPosition,
     },
     values: valuesProp,
-  } = handleCardVariables(
-    titleProp,
-    contentWithDefaults,
-    initialValuesProp,
-    others
-  );
+  } = handleCardVariables(titleProp, contentWithDefaults, initialValuesProp, others);
 
   const values = useMemo(() => {
     const sampleSlicesCount = colorsProp ? Object.keys(colorsProp).length : 4;
-    return isEditable
-      ? generateSampleData(sampleSlicesCount, groupDataSourceId)
-      : valuesProp;
+    return isEditable ? generateSampleData(sampleSlicesCount, groupDataSourceId) : valuesProp;
   }, [colorsProp, groupDataSourceId, valuesProp, isEditable]);
 
   const colors =
@@ -251,21 +222,17 @@ const PieChartCard = ({
       resizeHandles={resizeHandles}
       testID={testID}
       {...others}
-      {...overrides?.card?.props}>
+      {...overrides?.card?.props}
+    >
       {isLoading || !isAllValuesEmpty ? (
         <div
           className={classNames(`${iotPrefix}--pie-chart-container`, {
             [`${iotPrefix}--pie-chart-container__expanded`]: isExpanded,
-          })}>
-          <MyPieChart
-            {...chartProps}
-            {...getOverrides(overrides?.pieChart?.props, chartProps)}
-          />
+          })}
+        >
+          <MyPieChart {...chartProps} {...getOverrides(overrides?.pieChart?.props, chartProps)} />
           {isExpanded && !isLoading ? (
-            <MyTable
-              {...tableProps}
-              {...getOverrides(overrides?.table?.props, tableProps)}
-            />
+            <MyTable {...tableProps} {...getOverrides(overrides?.table?.props, tableProps)} />
           ) : null}
         </div>
       ) : null}

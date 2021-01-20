@@ -398,12 +398,9 @@ export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
     ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }, i) => {
-      const currentItem = cardSeries?.find(
-        (dataItem) => dataItem.uuid === attributeId
-      );
+      const currentItem = cardSeries?.find((dataItem) => dataItem.uuid === attributeId);
       const color =
-        currentItem?.color ??
-        DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+        currentItem?.color ?? DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
       const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
@@ -426,9 +423,7 @@ export const formatAttributes = (selectedItems, cardConfig) => {
   const cardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
     ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }) => {
-      const currentItem = cardAttributes?.find(
-        (dataItem) => dataItem.uuid === attributeId
-      );
+      const currentItem = cardAttributes?.find((dataItem) => dataItem.uuid === attributeId);
       // Need to default the label to reflect the default aggregator if there isn't one set
       const label = currentItem?.label || unEditedLabel || dataSourceId;
 
@@ -485,8 +480,7 @@ export const handleDataSeriesChange = (
         .map((i) => ({ dataSourceId: i.id, label: i.text }));
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
-        Array.isArray(content?.columns) &&
-        content.columns.find((col) => col.type === 'TIMESTAMP')
+        Array.isArray(content?.columns) && content.columns.find((col) => col.type === 'TIMESTAMP')
           ? content.columns.filter((col) => col.type === 'TIMESTAMP')[0]
           : {
               dataSourceId: 'timestamp',
@@ -509,12 +503,8 @@ export const handleDataSeriesChange = (
           ...cardConfig.content,
           columns: [
             timestampColumn,
-            ...(isDimensionUpdate
-              ? dimensionColumns
-              : existingDimensionColumns),
-            ...(!isDimensionUpdate
-              ? attributeColumns
-              : existingAttributeColumns),
+            ...(isDimensionUpdate ? dimensionColumns : existingDimensionColumns),
+            ...(!isDimensionUpdate ? attributeColumns : existingAttributeColumns),
           ],
         },
       };
@@ -546,12 +536,7 @@ export const handleDataSeriesChange = (
  * @param {string} editDataSeries only used for bar chart card forms
  * @param {int} hotspotIndex which of the hotspots in the content section should be updated (only used for image card updates)
  */
-export const handleDataItemEdit = (
-  editDataItem,
-  cardConfig,
-  editDataSeries,
-  hotspotIndex
-) => {
+export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hotspotIndex) => {
   const { type, content } = cardConfig;
   let dataSection;
   let editDataItemIndex;
@@ -559,21 +544,16 @@ export const handleDataItemEdit = (
   switch (type) {
     case CARD_TYPES.VALUE:
       dataSection = [...content.attributes];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) => dataItem.uuid === editDataItem.uuid
-      );
+      editDataItemIndex = dataSection.findIndex((dataItem) => dataItem.uuid === editDataItem.uuid);
       // if there isn't an item found, place it at the end
-      dataSection[
-        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
-      ] = editDataItem;
+      dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, attributes: dataSection },
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      dataSection =
-        type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
+      dataSection = type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
       editDataItemIndex = dataSection.findIndex((dataItem) =>
         // check for true dataSourceId in simple bar charts
         content.type !== BAR_CHART_TYPES.SIMPLE
@@ -581,9 +561,7 @@ export const handleDataItemEdit = (
           : dataItem.dataSourceId === editDataItem.dataSourceId
       );
       // if there isn't an item found, place it at the end
-      dataSection[
-        editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
-      ] = editDataItem;
+      dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
       return {
         ...cardConfig,
         content: {
@@ -604,9 +582,7 @@ export const handleDataItemEdit = (
     case CARD_TYPES.IMAGE:
       dataSection = [...(content.hotspots || [])];
 
-      editDataItemIndex = dataSection[
-        hotspotIndex
-      ].content.attributes.findIndex(
+      editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
       dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(

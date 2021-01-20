@@ -58,13 +58,9 @@ describe('Icon Dropdown', () => {
 
     fireEvent.click(renderedLabel);
 
-    expect(
-      screen.queryByTestId(`dropdown-button__${items[3].id}`)
-    ).toBeDefined();
+    expect(screen.queryByTestId(`dropdown-button__${items[3].id}`)).toBeDefined();
 
-    expect(
-      screen.queryByTestId(`dropdown-button__${items[5].id}`)
-    ).toBeDefined();
+    expect(screen.queryByTestId(`dropdown-button__${items[5].id}`)).toBeDefined();
   });
 
   it('icon handles callback', () => {

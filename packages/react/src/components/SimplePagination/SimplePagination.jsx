@@ -49,9 +49,7 @@ const SimplePagination = ({
 
   return (
     <div className={`${iotPrefix}-simple-pagination-container`}>
-      <span
-        className={`${iotPrefix}-simple-pagination-page-label`}
-        maxpage={maxPage}>
+      <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
       </span>
       {maxPage > 1 ? (
@@ -65,9 +63,8 @@ const SimplePagination = ({
             role="button"
             tabIndex={hasPrev ? 0 : -1}
             onClick={hasPrev ? handlePrev : undefined}
-            onKeyDown={
-              hasPrev ? (evt) => handleEnterKeyDown(evt, handlePrev) : undefined
-            }>
+            onKeyDown={hasPrev ? (evt) => handleEnterKeyDown(evt, handlePrev) : undefined}
+          >
             <CaretLeft16
               dir="ltr"
               description={prevPageText}
@@ -87,9 +84,8 @@ const SimplePagination = ({
             role="button"
             tabIndex={hasNext ? 0 : -1}
             onClick={hasNext ? handleNext : undefined}
-            onKeyDown={
-              hasNext ? (evt) => handleEnterKeyDown(evt, handleNext) : undefined
-            }>
+            onKeyDown={hasNext ? (evt) => handleEnterKeyDown(evt, handleNext) : undefined}
+          >
             <CaretRight16
               dir="ltr"
               description={nextPageText}

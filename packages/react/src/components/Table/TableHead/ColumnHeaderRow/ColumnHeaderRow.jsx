@@ -40,9 +40,7 @@ class ColumnHeaderRow extends Component {
   };
 
   static defaultProps = {
-    onColumnSelectionConfig: defaultFunction(
-      'actions.table.onColumnSelectionConfig'
-    ),
+    onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     columnSelectionConfigText: defaultI18NPropTypes.columnSelectionConfig,
     isDisabled: false,
   };
@@ -70,39 +68,29 @@ class ColumnHeaderRow extends Component {
     const {
       columns,
       ordering,
-      options: {
-        hasRowSelection,
-        hasRowExpansion,
-        hasRowActions,
-        hasColumnSelectionConfig,
-      },
+      options: { hasRowSelection, hasRowExpansion, hasRowActions, hasColumnSelectionConfig },
       onColumnSelectionConfig,
       columnSelectionConfigText,
       isDisabled,
     } = this.props;
 
     const visibleColumns = columns.filter(
-      (c) =>
-        !(ordering.find((o) => o.columnId === c.id) || { isHidden: false })
-          .isHidden
+      (c) => !(ordering.find((o) => o.columnId === c.id) || { isHidden: false }).isHidden
     );
     return (
       <DragAndDrop>
         <TableRow className={`${iotPrefix}--column-header-row--table-row`}>
           {hasRowSelection === 'multi' ? (
-            <TableHeader
-              className={`${iotPrefix}--column-header-row--table-header`}
-            />
+            <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
           ) : null}
           {hasRowExpansion ? (
-            <TableHeader
-              className={`${iotPrefix}--column-header-row--table-header`}
-            />
+            <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
           ) : null}
           <TableHeader
             className={`${iotPrefix}--column-header-row--table-header`}
             colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}
-            scope="col">
+            scope="col"
+          >
             <div className={`${iotPrefix}--column-header-row--select-wrapper`}>
               {ordering.map((c, idx) => (
                 <ColumnHeaderSelect
@@ -110,11 +98,10 @@ class ColumnHeaderRow extends Component {
                   index={idx}
                   columnId={c.columnId}
                   isHidden={c.isHidden}
-                  moveItem={(srcIndex, destIndex) =>
-                    this.reorderColumn(srcIndex, destIndex)
-                  }
+                  moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
                   onClick={() => this.toggleColumn(c.columnId)}
-                  isDisabled={isDisabled}>
+                  isDisabled={isDisabled}
+                >
                   {columns.find((i) => c.columnId === i.id).name}
                 </ColumnHeaderSelect>
               ))}
@@ -126,7 +113,8 @@ class ColumnHeaderRow extends Component {
                 kind="ghost"
                 size="small"
                 renderIcon={Settings16}
-                onClick={() => onColumnSelectionConfig()}>
+                onClick={() => onColumnSelectionConfig()}
+              >
                 {columnSelectionConfigText}
               </Button>
             ) : null}

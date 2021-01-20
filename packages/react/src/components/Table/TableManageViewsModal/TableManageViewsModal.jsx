@@ -85,8 +85,7 @@ const defaultProps = {
     closeIconDescription: 'Close',
     defaultLabelText: 'default',
     deleteIconText: 'delete',
-    deleteWarningTextTemplate: (label) =>
-      `You are about to delete view ${label}.`,
+    deleteWarningTextTemplate: (label) => `You are about to delete view ${label}.`,
     deleteWarningCancel: 'Cancel',
     deleteWarningConfirm: 'Delete',
     editIconText: 'edit',
@@ -144,8 +143,7 @@ const TableManageViewsModal = ({
   const MyMainModal = overrides?.mainModal?.component || ComposedModal;
   const MySearch = overrides?.search?.component || Search;
   const MyPublicCheckbox = overrides?.publicCheckbox?.component || Checkbox;
-  const MyTableManageViewsList =
-    overrides?.tableManageViewsList?.component || TableManageViewsList;
+  const MyTableManageViewsList = overrides?.tableManageViewsList?.component || TableManageViewsList;
   const MyWarningModal = overrides?.warningModal?.component || Modal;
 
   const [showDeleteWarning, setShowDeleteWarning] = useState(false);
@@ -176,7 +174,8 @@ const TableManageViewsModal = ({
         open={open}
         passiveModal
         selectorPrimaryFocus={`#${primaryInputId}`}
-        {...overrides?.mainModal?.props}>
+        {...overrides?.mainModal?.props}
+      >
         <div className={`${iotPrefix}--manage-views-modal__filter-container`}>
           <MySearch
             className={`${iotPrefix}--manage-views-modal__search`}

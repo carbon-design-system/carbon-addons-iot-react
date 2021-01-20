@@ -4,11 +4,7 @@ import { boolean } from '@storybook/addon-knobs';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import Card from '../Card/Card';
-import {
-  CARD_DIMENSIONS,
-  CARD_SIZES,
-  CARD_TYPES,
-} from '../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import { chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
 import ValueCard from '../ValueCard/ValueCard';
@@ -69,8 +65,7 @@ export default {
 export const DashboardDefaultLayouts = () => {
   return (
     <Fragment>
-      Resize your window to see the callback handlers get triggered in the
-      Actions tab.
+      Resize your window to see the callback handlers get triggered in the Actions tab.
       <FullWidthWrapper>
         <DashboardGrid {...commonGridProps}>{Cards}</DashboardGrid>
       </FullWidthWrapper>
@@ -94,12 +89,9 @@ DashboardDefaultLayouts.story = {
 export const DashboardIsEditable = () => {
   return (
     <Fragment>
-      You can drag and drop the cards around. Watch the handler get triggered on
-      the Actions tab.
+      You can drag and drop the cards around. Watch the handler get triggered on the Actions tab.
       <FullWidthWrapper>
-        <DashboardGrid
-          {...commonGridProps}
-          isEditable={boolean('isEditable', true)}>
+        <DashboardGrid {...commonGridProps} isEditable={boolean('isEditable', true)}>
           {Cards}
         </DashboardGrid>
       </FullWidthWrapper>
@@ -123,9 +115,9 @@ DashboardIsEditable.story = {
 export const DashboardCustomLayout = () => {
   return (
     <Fragment>
-      Passes a custom layout to the dashboard grid. Only the lg and md
-      breakpoint have a custom layout defined. Resize the screen to see the
-      cards reposition and resize themselves at different layouts.
+      Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom
+      layout defined. Resize the screen to see the cards reposition and resize themselves at
+      different layouts.
       <FullWidthWrapper>
         <DashboardGrid
           {...commonGridProps}
@@ -140,7 +132,8 @@ export const DashboardCustomLayout = () => {
               { i: 'humidity', x: 0, y: 1, w: 1, h: 1 },
               { i: 'utilization', x: 0, y: 2, w: 1, h: 1 },
             ],
-          }}>
+          }}
+        >
           {Cards}
         </DashboardGrid>
       </FullWidthWrapper>
@@ -248,8 +241,7 @@ export const DashboardAllCardSizes = () => {
   ];
   return (
     <Fragment>
-      Resize your window to see the callback handlers get triggered in the
-      Actions tab.
+      Resize your window to see the callback handlers get triggered in the Actions tab.
       <FullWidthWrapper>
         <DashboardGrid
           {...commonGridProps}
@@ -314,7 +306,8 @@ export const DashboardAllCardSizes = () => {
               { i: 'Large', x: 4, y: 0, w: 4, h: 4 },
               { i: 'Large Wide', x: 8, y: 0, w: 4, h: 4 },
             ],
-          }}>
+          }}
+        >
           {CARDS_ALL_SIZES}
         </DashboardGrid>
       </FullWidthWrapper>
@@ -350,22 +343,21 @@ export const DashboardResizableCard = () => {
 
   return (
     <Fragment>
-      The card is resizable by dragging and the card size prop is automatically
-      updated to match the new size during the drag process.
+      The card is resizable by dragging and the card size prop is automatically updated to match the
+      new size during the drag process.
       <FullWidthWrapper>
         <DashboardGrid
           {...commonGridProps}
           layouts={layouts}
           breakpoint={currentBreakpoint}
-          onBreakpointChange={(newBreakpoint) =>
-            setCurrentBreakpoint(newBreakpoint)
-          }
+          onBreakpointChange={(newBreakpoint) => setCurrentBreakpoint(newBreakpoint)}
           onCardSizeChange={(cardSizeData, gridData) => {
             const { size } = cardSizeData;
             action('onCardSizeChange')(cardSizeData, gridData);
             setCurrentSize(size);
           }}
-          onResizeStop={action('onResizeStop')}>
+          onResizeStop={action('onResizeStop')}
+        >
           {[
             <Card
               title={`Card - ${currentSize}`}
@@ -572,14 +564,7 @@ export const DashboardAllCardsAsResizable = () => {
       link: 'https://internetofthings.ibmcloud.com/',
       extraContent: (
         <svg height="10" width="30">
-          <circle
-            cx="5"
-            cy="5"
-            r="3"
-            stroke="none"
-            strokeWidth="1"
-            fill="red"
-          />
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
         </svg>
       ),
     },
@@ -612,7 +597,8 @@ export const DashboardAllCardsAsResizable = () => {
       size={currentSizes.card}
       availableActions={{
         delete: true,
-      }}>
+      }}
+    >
       <p>This is a basic card</p>
     </Card>,
     <ValueCard
@@ -831,9 +817,8 @@ export const DashboardAllCardsAsResizable = () => {
   return (
     <Fragment>
       <p>
-        All cards are resizable by dragging and the card size prop is
-        automatically updated to match the new size during the drag process.
-        Some cards have a minimal size defined.
+        All cards are resizable by dragging and the card size prop is automatically updated to match
+        the new size during the drag process. Some cards have a minimal size defined.
       </p>
       <FullWidthWrapper>
         <DashboardGrid
@@ -848,7 +833,8 @@ export const DashboardAllCardsAsResizable = () => {
             action('onCardSizeChange')({ id, size }, rest);
             setCurrentSizes((old) => ({ ...old, [id]: size }));
           }}
-          onResizeStop={action('onResizeStop')}>
+          onResizeStop={action('onResizeStop')}
+        >
           {CARDS_ALL_SIZES}
         </DashboardGrid>
       </FullWidthWrapper>

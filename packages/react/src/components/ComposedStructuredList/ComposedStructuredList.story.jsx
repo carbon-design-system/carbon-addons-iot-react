@@ -2,9 +2,7 @@ import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import DeprecationNotice, {
-  deprecatedStoryTitle,
-} from '../../internal/DeprecationNotice';
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 
 import ComposedStructuredList from './ComposedStructuredList';
 
@@ -127,9 +125,7 @@ export const CustomCellRenderer = () => (
   <ComposedStructuredList
     columns={columns.map((column) => ({
       ...column,
-      renderDataFunction: ({ value }) => (
-        <span style={{ color: 'blue' }}>{value}</span>
-      ),
+      renderDataFunction: ({ value }) => <span style={{ color: 'blue' }}>{value}</span>,
     }))}
     data={data}
     onRowClick={action('onRowClick')}

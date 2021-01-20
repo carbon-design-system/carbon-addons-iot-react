@@ -67,12 +67,7 @@ const ThresholdIcon = ({
     case 1:
       iconToRender = customIcon || (
         <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
-          <g
-            id="Artboard-Copy-2"
-            stroke="none"
-            strokeWidth="1"
-            fill="none"
-            fillRule="evenodd">
+          <g id="Artboard-Copy-2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="Group">
               <path
                 d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
@@ -98,12 +93,7 @@ const ThresholdIcon = ({
     case 2:
       iconToRender = customIcon || (
         <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
-          <g
-            id="Artboard"
-            stroke="none"
-            strokeWidth="1"
-            fill="none"
-            fillRule="evenodd">
+          <g id="Artboard" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="Group">
               <path
                 d="M15.7894601,14.2675131 C15.5195241,14.7230623 15.029513,15.0024208 14.5000526,15.0025132 L1.53339891,15.0021846 C0.996512233,15.0159597 0.493279942,14.7413061 0.202531324,14.2625132 C-0.0652585874,13.7984115 -0.0652585874,13.2266148 0.189272648,12.78623 L6.68470115,0.787539475 C6.94639352,0.302404679 7.45295465,2.66453526e-15 8.00391648,2.66453526e-15 C8.55487831,2.66453526e-15 9.06143944,0.302404679 9.3224242,0.78623001 L15.8183281,12.7858011 C16.0707419,13.2512161 16.0592142,13.8153414 15.7894601,14.2675131 Z"
@@ -129,25 +119,14 @@ const ThresholdIcon = ({
     case 3:
       iconToRender = customIcon || (
         <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
-          <g
-            id="Artboard-Copy"
-            stroke="none"
-            strokeWidth="1"
-            fill="none"
-            fillRule="evenodd">
+          <g id="Artboard-Copy" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="Group">
               <path
                 d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
                 id="outline-color"
                 fill="#FFFFFF"
               />
-              <circle
-                id="background-color"
-                fill={color || '#FDD13A'}
-                cx="8"
-                cy="8"
-                r="7"
-              />
+              <circle id="background-color" fill={color || '#FDD13A'} cx="8" cy="8" r="7" />
               <path
                 d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
                 id="symbol-color"

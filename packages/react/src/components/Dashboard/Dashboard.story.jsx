@@ -6,15 +6,9 @@ import { spacing05, spacing04, spacing09 } from '@carbon/layout';
 import { gray20, red60, green50, yellow } from '@carbon/colors';
 import { ClickableTile } from 'carbon-components-react';
 
-import DeprecationNotice, {
-  deprecatedStoryTitle,
-} from '../../internal/DeprecationNotice';
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import {
-  getIntervalChartData,
-  tableColumns,
-  tableData,
-} from '../../utils/sample';
+import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import {
   CARD_SIZES,
   CARD_TYPES,
@@ -22,11 +16,7 @@ import {
   BAR_CHART_LAYOUTS,
 } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
-import {
-  DashboardIcon,
-  DataScientistIcon,
-  ComputerChipIcon,
-} from '../../icons/components';
+import { DashboardIcon, DataScientistIcon, ComputerChipIcon } from '../../icons/components';
 
 import Dashboard from './Dashboard';
 
@@ -170,9 +160,7 @@ export const originalCards = [
       delete: true,
     },
     content: {
-      attributes: [
-        { dataSourceId: 'utilization', label: 'Average', unit: '%' },
-      ],
+      attributes: [{ dataSourceId: 'utilization', label: 'Average', unit: '%' }],
     },
     values: {
       utilization: 76,
@@ -482,9 +470,7 @@ export default {
   excludeStories: ['originalCards'],
 };
 
-export const Deprecated = () => (
-  <DeprecationNotice deprecatedComponentName="Dashboard" />
-);
+export const Deprecated = () => <DeprecationNotice deprecatedComponentName="Dashboard" />;
 Deprecated.story = {
   name: deprecatedStoryTitle,
 };
@@ -492,10 +478,7 @@ Deprecated.story = {
 export const BasicDashboard = () => {
   return (
     <FullWidthWrapper>
-      <Dashboard
-        {...commonDashboardProps}
-        isLoading={boolean('isLoading', false)}
-      />
+      <Dashboard {...commonDashboardProps} isLoading={boolean('isLoading', false)} />
     </FullWidthWrapper>
   );
 };
@@ -578,10 +561,7 @@ export const I18NLabels = () => {
         {...commonDashboardProps}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
-          noDataLabel: text(
-            'noDataLabel',
-            'No data is available for this time range.'
-          ),
+          noDataLabel: text('noDataLabel', 'No data is available for this time range.'),
           noDataShortLabel: text('noDataShortLabel', 'No data'),
           rollingPeriodLabel: text('rollingPeriodLabel', 'Rolling period'),
           last24HoursLabel: text('last24HoursLabel', 'Last 24 hrs'),
@@ -609,17 +589,11 @@ export const I18NLabels = () => {
           editCardLabel: text('editCardLabel', 'Edit card'),
           cloneCardLabel: text('cloneCardLabel', 'Clone card'),
           deleteCardLabel: text('deleteCardLabel', 'Delete card'),
-          selectTimeRangeLabel: text(
-            'selectTimeRangeLabel',
-            'Select time range'
-          ),
+          selectTimeRangeLabel: text('selectTimeRangeLabel', 'Select time range'),
           criticalLabel: text('criticalLabel', 'Critical'),
           moderateLabel: text('moderateLabel', 'Moderate'),
           lowLabel: text('lowLabel', 'Low'),
-          selectSeverityPlaceholder: text(
-            'selectSeverityPlaceholder',
-            'Select a severity'
-          ),
+          selectSeverityPlaceholder: text('selectSeverityPlaceholder', 'Select a severity'),
           severityLabel: text('selectSeverityPlaceholder', '__Severity__'),
 
           // table i18n
@@ -636,56 +610,34 @@ export const I18NLabels = () => {
           itemsPerPage: text('i18n.itemsPerPage', '__Items per page:__'),
           itemsRange: (min, max) => `__${min}–${max} items__`,
           currentPage: (page) => `__page ${page}__`,
-          itemsRangeWithTotal: (min, max, total) =>
-            `__${min}–${max} of ${total} items__`,
+          itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
           pageRange: (current, total) => `__${current} of ${total} pages__`,
           /** table body */
           overflowMenuAria: text('i18n.overflowMenuAria', '__More actions__'),
-          clickToExpandAria: text(
-            'i18n.clickToExpandAria',
-            '__Click to expand content__'
-          ),
-          clickToCollapseAria: text(
-            'i18n.clickToCollapseAria',
-            '__Click to collapse content__'
-          ),
+          clickToExpandAria: text('i18n.clickToExpandAria', '__Click to expand content__'),
+          clickToCollapseAria: text('i18n.clickToCollapseAria', '__Click to collapse content__'),
           selectAllAria: text('i18n.selectAllAria', '__Select all items__'),
           selectRowAria: text('i18n.selectRowAria', '__Select row__'),
           /** toolbar */
-          clearAllFilters: text(
-            'i18n.clearAllFilters',
-            '__Clear all filters__'
-          ),
-          columnSelectionButtonAria: text(
-            'i18n.columnSelectionButtonAria',
-            '__Column Selection__'
-          ),
+          clearAllFilters: text('i18n.clearAllFilters', '__Clear all filters__'),
+          columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', '__Column Selection__'),
           clearFilterAria: text('i18n.clearFilterAria', '__Clear filter__'),
           filterAria: text('i18n.filterAria', '__Filter__'),
           openMenuAria: text('i18n.openMenuAria', '__Open menu__'),
           closeMenuAria: text('i18n.closeMenuAria', '__Close menu__'),
-          clearSelectionAria: text(
-            'i18n.clearSelectionAria',
-            '__Clear selection__'
-          ),
+          clearSelectionAria: text('i18n.clearSelectionAria', '__Clear selection__'),
           /** empty state */
           emptyMessage: text('i18n.emptyMessage', '__There is no data__'),
           emptyMessageWithFilters: text(
             'i18n.emptyMessageWithFilters',
             '__No results match the current filters__'
           ),
-          emptyButtonLabelWithFilters: text(
-            'i18n.emptyButtonLabel',
-            '__Clear all filters__'
-          ),
+          emptyButtonLabelWithFilters: text('i18n.emptyButtonLabel', '__Clear all filters__'),
           inProgressText: text('i18n.inProgressText', '__In Progress__'),
           actionFailedText: text('i18n.actionFailedText', '__Action Failed__'),
           learnMoreText: text('i18n.learnMoreText', '__Learn More__'),
           dismissText: text('i18n.dismissText', '__Dismiss__'),
-          downloadIconDescription: text(
-            'downloadIconDescription',
-            'Download table content'
-          ),
+          downloadIconDescription: text('downloadIconDescription', 'Download table content'),
         }}
       />
     </FullWidthWrapper>
@@ -954,11 +906,7 @@ export const OnlyValueCards = () => {
                   ? { dataSourceId: 'v2', trend: 'down', color: 'red' }
                   : undefined,
               label:
-                idx === 1
-                  ? 'Weekly Avg'
-                  : idx === 3
-                  ? 'Long label that might not fit'
-                  : undefined,
+                idx === 1 ? 'Weekly Avg' : idx === 3 ? 'Long label that might not fit' : undefined,
               unit: '˚F',
             },
           ],
@@ -975,9 +923,7 @@ export const OnlyValueCards = () => {
         size: CARD_SIZES.SMALL,
         type: CARD_TYPES.VALUE,
         content: {
-          attributes: [
-            { dataSourceId: 'v', unit: '%', thresholds: numberThresholds },
-          ],
+          attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
         },
         values: { v },
       }))}
@@ -1076,9 +1022,7 @@ export const OnlyValueCards = () => {
               size: CARD_SIZES.SMALLWIDE,
               type: CARD_TYPES.VALUE,
               content: {
-                attributes: [
-                  { dataSourceId: 'v', thresholds: stringThresholds },
-                ],
+                attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
               },
               values: { v },
             }))
@@ -1088,24 +1032,8 @@ export const OnlyValueCards = () => {
       title="Multi-value / xsmallwide / units and precision"
       {...extraProps}
       cards={[
-        [
-          'values: 89.2%, 76 mb',
-          89.2,
-          '%',
-          'Comfort Level',
-          21.3,
-          'mb',
-          'Pressure',
-        ],
-        [
-          'values: 88.3˚F, Elevated',
-          88.3,
-          '˚F',
-          'Temperature',
-          'Elevated',
-          null,
-          'Danger Level',
-        ],
+        ['values: 89.2%, 76 mb', 89.2, '%', 'Comfort Level', 21.3, 'mb', 'Pressure'],
+        ['values: 88.3˚F, Elevated', 88.3, '˚F', 'Temperature', 'Elevated', null, 'Danger Level'],
         [
           'values: 88.3˚F, Elevated',
           103.7,
@@ -1315,11 +1243,7 @@ export const OnlyValueCards = () => {
               unit: v[2],
               label: v[3],
               thresholds:
-                idx === 1
-                  ? stringThresholds
-                  : idx === 2
-                  ? stringThresholdsWithIcons
-                  : undefined,
+                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
               secondaryValue:
                 v[4] !== null
                   ? {
@@ -1334,11 +1258,7 @@ export const OnlyValueCards = () => {
               unit: v[6],
               label: v[7],
               thresholds:
-                idx === 1
-                  ? stringThresholds
-                  : idx === 2
-                  ? stringThresholdsWithIcons
-                  : undefined,
+                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
               secondaryValue:
                 v[8] !== null
                   ? {
@@ -1353,11 +1273,7 @@ export const OnlyValueCards = () => {
               unit: v[10],
               label: v[11],
               thresholds:
-                idx === 1
-                  ? stringThresholds
-                  : idx === 2
-                  ? stringThresholdsWithIcons
-                  : undefined,
+                idx === 1 ? stringThresholds : idx === 2 ? stringThresholdsWithIcons : undefined,
               secondaryValue:
                 v[12] !== null
                   ? {
@@ -1385,14 +1301,16 @@ export const OnlyValueCards = () => {
       {dashboards.map((dashboard, index) => [
         <div
           style={{ width: 1056, paddingBottom: spacing09 }}
-          key={`${dashboard.props.title}-${index}-1056`}>
+          key={`${dashboard.props.title}-${index}-1056`}
+        >
           <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
           <hr />
           {dashboard}
         </div>,
         <div
           style={{ width: 1057, paddingBottom: spacing09 }}
-          key={`${dashboard.props.title}-${index}-1057`}>
+          key={`${dashboard.props.title}-${index}-1057`}
+        >
           <h1>&quot;Tightest&quot; Rendering (1057px width)</h1>
           <hr />
           {dashboard}
@@ -1416,13 +1334,12 @@ export const WithCustomCards = () => {
               content: (
                 <ClickableTile
                   href="https://internetofthings.ibmcloud.com"
-                  style={{ height: '100%', padding: '0 0 0 0' }}>
+                  style={{ height: '100%', padding: '0 0 0 0' }}
+                >
                   <div style={{ padding: spacing04 }}>
                     <h4>View Dashboards</h4>
                     <br />
-                    <p>
-                      View pinned dashboards to keep track of your world in IoT.
-                    </p>
+                    <p>View pinned dashboards to keep track of your world in IoT.</p>
                     <div
                       style={{
                         textAlign: 'right',
@@ -1430,7 +1347,8 @@ export const WithCustomCards = () => {
                         bottom: '0',
                         width: '100%',
                         padding: '0 36px 16px 0',
-                      }}>
+                      }}
+                    >
                       <DashboardIcon width="50%" />
                     </div>
                   </div>
@@ -1444,13 +1362,13 @@ export const WithCustomCards = () => {
               content: (
                 <ClickableTile
                   href="https://internetofthings.ibmcloud.com"
-                  style={{ height: '100%', padding: '0 0 0 0' }}>
+                  style={{ height: '100%', padding: '0 0 0 0' }}
+                >
                   <div style={{ padding: spacing04 }}>
                     <h4>Connect Devices</h4>
                     <br />
                     <p>
-                      Connect devices and collect data by using the Watson IoT
-                      Platform Service.
+                      Connect devices and collect data by using the Watson IoT Platform Service.
                     </p>
                     <div
                       style={{
@@ -1459,7 +1377,8 @@ export const WithCustomCards = () => {
                         bottom: '0',
                         width: '100%',
                         padding: '0 36px 16px 0',
-                      }}>
+                      }}
+                    >
                       <ComputerChipIcon width="50%" />
                     </div>
                   </div>
@@ -1482,7 +1401,8 @@ export const WithCustomCards = () => {
                       bottom: '0',
                       width: '100%',
                       padding: '0 36px 16px 0',
-                    }}>
+                    }}
+                  >
                     <DataScientistIcon width="50%" />
                   </div>
                 </div>
@@ -1503,7 +1423,8 @@ export const WithCustomCards = () => {
                       bottom: '0',
                       width: '100%',
                       padding: '0 36px 16px 0',
-                    }}>
+                    }}
+                  >
                     <Application32 aria-label="Track Usage" />
                   </div>
                 </div>
@@ -1524,7 +1445,8 @@ export const WithCustomCards = () => {
                       bottom: '0',
                       width: '100%',
                       padding: '0 36px 16px 0',
-                    }}>
+                    }}
+                  >
                     <Group32 aria-label="Track Usage" />
                   </div>
                 </div>
@@ -1543,10 +1465,9 @@ export const WithCustomCards = () => {
                       'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html',
                     extraContent: (
                       <span>
-                        View your device data in the entity view of the main
-                        Watson IoT Platform dashboard. If your plan includes
-                        Watson IoT Platform Analytics, the data is stored in the
-                        data lake for later retrieval and processing.
+                        View your device data in the entity view of the main Watson IoT Platform
+                        dashboard. If your plan includes Watson IoT Platform Analytics, the data is
+                        stored in the data lake for later retrieval and processing.
                       </span>
                     ),
                   },
@@ -1557,8 +1478,8 @@ export const WithCustomCards = () => {
                       'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html',
                     extraContent: (
                       <span>
-                        Process your entity metrics by running simple or complex
-                        calculations to create calculated metrics.
+                        Process your entity metrics by running simple or complex calculations to
+                        create calculated metrics.
                       </span>
                     ),
                   },
@@ -1569,8 +1490,8 @@ export const WithCustomCards = () => {
                       'https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html',
                     extraContent: (
                       <span>
-                        Visualize your entity metrics in monitoring dashboards
-                        to get an overview of your data.
+                        Visualize your entity metrics in monitoring dashboards to get an overview of
+                        your data.
                       </span>
                     ),
                   },
@@ -1587,14 +1508,12 @@ export const WithCustomCards = () => {
                 data: [
                   {
                     id: 'row-9',
-                    value:
-                      'Notice - IBM Watson IoT Platform support for IBM Cloud resource groups',
+                    value: 'Notice - IBM Watson IoT Platform support for IBM Cloud resource groups',
                     link: 'https://internetofthings.ibmcloud.com',
                   },
                   {
                     id: 'row-10',
-                    value:
-                      'New Connectivity Status API now available on IBM Watson IoT Platform',
+                    value: 'New Connectivity Status API now available on IBM Watson IoT Platform',
                     link: 'https://internetofthings.ibmcloud.com',
                   },
                   {
@@ -1604,8 +1523,7 @@ export const WithCustomCards = () => {
                   },
                   {
                     id: 'row-12',
-                    value:
-                      'Advanced Notice - Withdrawal of RTI features from Watson IoT Platform',
+                    value: 'Advanced Notice - Withdrawal of RTI features from Watson IoT Platform',
                     link: 'https://internetofthings.ibmcloud.com',
                   },
                 ],

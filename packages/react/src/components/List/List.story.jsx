@@ -63,8 +63,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael Conforto is a super duper long name that will get cut off':
-          'RF',
+        'Michael Conforto is a super duper long name that will get cut off': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',
@@ -87,13 +86,7 @@ export const sampleHierarchy = {
   },
 };
 
-const buildHierarchy = (
-  obj,
-  renderRowActions,
-  renderIcon,
-  prefix = '',
-  level = 0
-) => {
+const buildHierarchy = (obj, renderRowActions, renderIcon, prefix = '', level = 0) => {
   return Object.keys(obj).map((key) => ({
     id: `${prefix}${key}`,
     content: {
@@ -104,13 +97,7 @@ const buildHierarchy = (
     },
     children:
       typeof obj[key] === 'object'
-        ? buildHierarchy(
-            obj[key],
-            renderRowActions,
-            renderIcon,
-            `${prefix}${key}_`,
-            level + 1
-          )
+        ? buildHierarchy(obj[key], renderRowActions, renderIcon, `${prefix}${key}_`, level + 1)
         : null,
   }));
 };
@@ -140,12 +127,12 @@ export const BasicSingleColumn = () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key]) => ({
-        id: key,
-        content: { value: key },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: { value: key },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>
@@ -162,17 +149,14 @@ export const BasicSingleColumnWithSearch = () => {
       <div style={{ width: 400 }}>
         <List
           title={text('title', 'NY Yankees')}
-          items={Object.entries(
-            sampleHierarchy.MLB['American League']['New York Yankees']
-          )
+          items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
             .map(([key]) => ({
               id: key,
               content: { value: key },
             }))
             .filter(
               ({ id }) =>
-                searchValue === null ||
-                id.toLowerCase().includes(searchValue?.toLowerCase())
+                searchValue === null || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
           isLoading={boolean('isLoading', false)}
           search={{
@@ -194,15 +178,15 @@ export const WithSecondaryValue = () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key, value]) => ({
-        id: key,
-        content: {
-          value: key,
-          secondaryValue: value,
-        },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key, value]) => ({
+          id: key,
+          content: {
+            value: key,
+            secondaryValue: value,
+          },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>
@@ -217,16 +201,16 @@ export const WithIsLargeRowAndIcon = () => (
     <List
       title={text('title', 'NY Yankees')}
       isLargeRow
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key, value]) => ({
-        id: key,
-        content: {
-          value: key,
-          secondaryValue: value,
-          icon: <Star16 />,
-        },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key, value]) => ({
+          id: key,
+          content: {
+            value: key,
+            secondaryValue: value,
+            icon: <Star16 />,
+          },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>
@@ -240,27 +224,27 @@ export const WithRowActionsSingle = () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key, value]) => ({
-        id: key,
-        content: {
-          value: key,
-          secondaryValue: value,
-          rowActions: [
-            <Button
-              key={`${key}-list-item-button-${value}`}
-              style={{ color: 'black' }}
-              renderIcon={Edit16}
-              hasIconOnly
-              kind="ghost"
-              size="small"
-              onClick={() => action('row action clicked')}
-              iconDescription="Edit"
-            />,
-          ],
-        },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key, value]) => ({
+          id: key,
+          content: {
+            value: key,
+            secondaryValue: value,
+            rowActions: [
+              <Button
+                key={`${key}-list-item-button-${value}`}
+                style={{ color: 'black' }}
+                renderIcon={Edit16}
+                hasIconOnly
+                kind="ghost"
+                size="small"
+                onClick={() => action('row action clicked')}
+                iconDescription="Edit"
+              />,
+            ],
+          },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>
@@ -274,22 +258,22 @@ export const WithRowActionsMultiple = () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key, value]) => ({
-        id: key,
-        content: {
-          value: key,
-          secondaryValue: value,
-          rowActions: [
-            <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
-              <OverflowMenuItem itemText="Edit" />
-              <OverflowMenuItem itemText="Add" />
-              <OverflowMenuItem itemText="Delete" hasDivider isDelete />
-            </OverflowMenu>,
-          ],
-        },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key, value]) => ({
+          id: key,
+          content: {
+            value: key,
+            secondaryValue: value,
+            rowActions: [
+              <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
+                <OverflowMenuItem itemText="Edit" />
+                <OverflowMenuItem itemText="Add" />
+                <OverflowMenuItem itemText="Delete" hasDivider isDelete />
+              </OverflowMenu>,
+            ],
+          },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>
@@ -360,14 +344,11 @@ export const WithCategoriesFixedHeight = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['American League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['American League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
             },
           })),
         })),
@@ -377,14 +358,11 @@ export const WithCategoriesFixedHeight = () => (
           content: {
             value: team,
           },
-          children: Object.keys(
-            sampleHierarchy.MLB['National League'][team]
-          ).map((player) => ({
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
             id: `${team}_${player}`,
             content: {
               value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['National League'][team][player],
+              secondaryValue: sampleHierarchy.MLB['National League'][team][player],
             },
           })),
         })),
@@ -465,9 +443,7 @@ export const WithCheckboxMultiSelection = () => {
     };
 
     const checkSelectedChildren = (items, parent) =>
-      someDeep(items, (value, key) =>
-        selectedIds.some((id) => `${parent}-${key}` === id)
-      );
+      someDeep(items, (value, key) => selectedIds.some((id) => `${parent}-${key}` === id));
 
     const nestedItems = [
       ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
@@ -486,36 +462,30 @@ export const WithCheckboxMultiSelection = () => {
               indeterminate={
                 selectedIds.some((id) => team === id)
                   ? false
-                  : checkSelectedChildren(
-                      sampleHierarchy.MLB['American League'][team],
-                      team
-                    )
+                  : checkSelectedChildren(sampleHierarchy.MLB['American League'][team], team)
               }
             />
           ),
         },
-        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(
-          (player) => ({
-            id: `${team}-${player}`,
-            isSelectable: true,
-            content: {
-              value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['American League'][team][player],
-              icon: (
-                <Checkbox
-                  id={`${team}-${player}-checkbox`}
-                  name={player}
-                  labelText={`${player}`}
-                  onClick={(e) => {
-                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                  }}
-                  checked={selectedIds.some((id) => `${team}-${player}` === id)}
-                />
-              ),
-            },
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}-${player}`,
+          isSelectable: true,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+            icon: (
+              <Checkbox
+                id={`${team}-${player}-checkbox`}
+                name={player}
+                labelText={`${player}`}
+                onClick={(e) => {
+                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                }}
+                checked={selectedIds.some((id) => `${team}-${player}` === id)}
+              />
+            ),
+          },
+        })),
       })),
       ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
         id: team,
@@ -533,36 +503,30 @@ export const WithCheckboxMultiSelection = () => {
               indeterminate={
                 selectedIds.some((id) => team === id)
                   ? false
-                  : checkSelectedChildren(
-                      sampleHierarchy.MLB['National League'][team],
-                      team
-                    )
+                  : checkSelectedChildren(sampleHierarchy.MLB['National League'][team], team)
               }
             />
           ),
         },
-        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(
-          (player) => ({
-            id: `${team}-${player}`,
-            isSelectable: true,
-            content: {
-              value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['National League'][team][player],
-              icon: (
-                <Checkbox
-                  id={`${team}-${player}-checkbox`}
-                  name={player}
-                  labelText={`${player}`}
-                  onClick={(e) => {
-                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                  }}
-                  checked={selectedIds.some((id) => `${team}-${player}` === id)}
-                />
-              ),
-            },
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}-${player}`,
+          isSelectable: true,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+            icon: (
+              <Checkbox
+                id={`${team}-${player}-checkbox`}
+                name={player}
+                labelText={`${player}`}
+                onClick={(e) => {
+                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                }}
+                checked={selectedIds.some((id) => `${team}-${player}` === id)}
+              />
+            ),
+          },
+        })),
       })),
     ];
 
@@ -599,19 +563,19 @@ export const WithTags = () => (
   <div style={{ width: 400 }}>
     <List
       title={text('title', 'NY Yankees')}
-      items={Object.entries(
-        sampleHierarchy.MLB['American League']['New York Yankees']
-      ).map(([key]) => ({
-        id: key,
-        content: {
-          value: key,
-          tags: [
-            <Tag type="blue" title="descriptor" key="tag1">
-              default
-            </Tag>,
-          ],
-        },
-      }))}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: {
+            value: key,
+            tags: [
+              <Tag type="blue" title="descriptor" key="tag1">
+                default
+              </Tag>,
+            ],
+          },
+        })
+      )}
       isLoading={boolean('isLoading', false)}
     />
   </div>

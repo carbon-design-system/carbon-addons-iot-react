@@ -75,15 +75,11 @@ describe('SuiteHeader', () => {
         }}
       />
     );
-    expect(
-      screen.getByRole('banner', { name: 'main header' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
   });
   it('opens and closes logout modal', () => {
     render(<SuiteHeader {...commonProps} />);
-    expect(
-      screen.getByRole('banner', { name: 'main header' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     userEvent.click(screen.getByTestId('suite-header-profile--logout'));
     expect(screen.getByRole('presentation')).toHaveClass('is-visible');
     userEvent.click(screen.getByRole('button', { name: 'Close' }));
@@ -91,16 +87,12 @@ describe('SuiteHeader', () => {
   });
   it('clicks logout link', async () => {
     render(<SuiteHeader {...commonProps} />);
-    await userEvent.click(
-      screen.getAllByRole('button', { name: 'Log out' })[0]
-    );
+    await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
   it('clicks logout link (but no redirect)', async () => {
     render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
-    await userEvent.click(
-      screen.getAllByRole('button', { name: 'Log out' })[0]
-    );
+    await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).not.toBe(commonProps.routes.logout);
   });
   it('admin link from admin view takes you to navigator route', async () => {
@@ -109,13 +101,7 @@ describe('SuiteHeader', () => {
     expect(window.location.href).toBe(commonProps.routes.navigator);
   });
   it('admin link from admin view takes you to navigator route (but no redirect)', async () => {
-    render(
-      <SuiteHeader
-        {...commonProps}
-        onRouteChange={async () => false}
-        isAdminView
-      />
-    );
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView />);
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).not.toBe(commonProps.routes.navigator);
   });
@@ -125,23 +111,14 @@ describe('SuiteHeader', () => {
     expect(window.location.href).toBe(commonProps.routes.admin);
   });
   it('admin link from non-admin view takes you to admin route (but no redirect)', async () => {
-    render(
-      <SuiteHeader
-        {...commonProps}
-        onRouteChange={async () => false}
-        isAdminView={false}
-      />
-    );
+    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView={false} />);
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).not.toBe(commonProps.routes.admin);
   });
   it('clicks a documentation link', async () => {
     render(<SuiteHeader {...commonProps} />);
     await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
-    expect(window.open).toHaveBeenCalledWith(
-      commonProps.routes.whatsNew,
-      'blank'
-    );
+    expect(window.open).toHaveBeenCalledWith(commonProps.routes.whatsNew, 'blank');
   });
   it('clicks a documentation link (but no redirect)', async () => {
     render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
@@ -160,33 +137,17 @@ describe('SuiteHeader', () => {
   });
   it('renders all i18n', () => {
     Object.keys(SuiteHeaderI18N).forEach((language) => {
-      render(
-        <SuiteHeader
-          {...commonProps}
-          i18n={SuiteHeaderI18N[language]}
-          isAdminView
-        />
-      );
-      expect(
-        screen.getByRole('banner', { name: 'main header' })
-      ).toBeInTheDocument();
+      render(<SuiteHeader {...commonProps} i18n={SuiteHeaderI18N[language]} isAdminView />);
+      expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     });
   });
   it('user clicks survey link', async () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';
     const surveyData = { surveyLink, privacyLink };
-    render(
-      <SuiteHeader
-        {...commonProps}
-        appName={undefined}
-        surveyData={surveyData}
-      />
-    );
+    render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
-    await userEvent.click(
-      screen.getByText(SuiteHeader.defaultProps.i18n.surveyText)
-    );
+    await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
     expect(window.open).toHaveBeenCalledWith(surveyLink, 'blank');
   });
   it('user clicks survey link (but no redirect)', async () => {
@@ -202,26 +163,16 @@ describe('SuiteHeader', () => {
       />
     );
     expect(screen.getByRole('alert')).toBeInTheDocument();
-    await userEvent.click(
-      screen.getByText(SuiteHeader.defaultProps.i18n.surveyText)
-    );
+    await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
     expect(window.open).not.toHaveBeenCalled();
   });
   it('user clicks privacy policy link', async () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';
     const surveyData = { surveyLink, privacyLink };
-    render(
-      <SuiteHeader
-        {...commonProps}
-        appName={undefined}
-        surveyData={surveyData}
-      />
-    );
+    render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
-    await userEvent.click(
-      screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy)
-    );
+    await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy));
     expect(window.open).toHaveBeenCalledWith(privacyLink, 'blank');
   });
   it('user clicks privacy policy link (but no redirect)', async () => {
@@ -237,9 +188,7 @@ describe('SuiteHeader', () => {
       />
     );
     expect(screen.getByRole('alert')).toBeInTheDocument();
-    await userEvent.click(
-      screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy)
-    );
+    await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy));
     expect(window.open).not.toHaveBeenCalled();
   });
   it('user closes survey notification', () => {
@@ -252,9 +201,7 @@ describe('SuiteHeader', () => {
         }}
       />
     );
-    userEvent.click(
-      screen.getByRole('button', { name: 'closes notification' })
-    );
+    userEvent.click(screen.getByRole('button', { name: 'closes notification' }));
     expect(screen.queryByRole('alert')).toBeNull();
   });
 });

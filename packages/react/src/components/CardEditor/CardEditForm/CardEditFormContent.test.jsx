@@ -2,9 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import CardEditFormContent, {
-  handleTranslationCallback,
-} from './CardEditFormContent';
+import CardEditFormContent, { handleTranslationCallback } from './CardEditFormContent';
 
 const cardConfig = {
   id: 'Timeseries',
@@ -50,17 +48,12 @@ describe('CardEditFormContent', () => {
           getValidTimeRanges={mockGetValidTimeRanges}
         />
       );
-      userEvent.type(
-        screen.getByRole('textbox', { name: 'Card title' }),
-        'changed title'
-      );
+      userEvent.type(screen.getByRole('textbox', { name: 'Card title' }), 'changed title');
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockGetValidTimeRanges).toHaveBeenCalled();
       // Time range selector should start unselected
       const timeRangeSelector = screen.getAllByLabelText('Time range');
-      expect(timeRangeSelector[0].innerHTML).not.toEqual(
-        expect.stringContaining('last2Hours')
-      );
+      expect(timeRangeSelector[0].innerHTML).not.toEqual(expect.stringContaining('last2Hours'));
     });
     it('Should select timeRange if passed', () => {
       render(
@@ -71,9 +64,7 @@ describe('CardEditFormContent', () => {
         />
       );
       const timeRangeSelector = screen.getAllByLabelText('Time range');
-      expect(timeRangeSelector[0].innerHTML).toEqual(
-        expect.stringContaining('last2Hours')
-      );
+      expect(timeRangeSelector[0].innerHTML).toEqual(expect.stringContaining('last2Hours'));
     });
   });
   describe('handleTranslationCallback', () => {

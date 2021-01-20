@@ -59,9 +59,7 @@ const HotspotContent = ({
   id,
   onChange,
 }) => {
-  const [showTitleInput, setShowTitleInput] = useState(
-    isTitleEditable && !title
-  );
+  const [showTitleInput, setShowTitleInput] = useState(isTitleEditable && !title);
   const titleInputFocusRef = useRef(null);
   const [titleValue, setTitleValue] = useState(title);
 
@@ -74,9 +72,7 @@ const HotspotContent = ({
   const renderTitle = () => {
     const titleEditableTextVersion = (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-      <h4
-        onClick={() => setShowTitleInput(isTitleEditable)}
-        title={titleEditableHintText}>
+      <h4 onClick={() => setShowTitleInput(isTitleEditable)} title={titleEditableHintText}>
         {titleValue !== null && titleValue !== '' ? titleValue : <Edit20 />}
       </h4>
     );
@@ -85,8 +81,7 @@ const HotspotContent = ({
 
     const titleInputVersion = (
       <>
-        <div
-          className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
+        <div className={`${iotPrefix}--hotspot-content-title-wrapper--editable`}>
           <TextInput
             className={`${iotPrefix}--hotspot-content-title-input`}
             defaultValue={title}
@@ -110,10 +105,7 @@ const HotspotContent = ({
         {
           // We still render the non editable title but as visually hidden so that the width will be
           // correctly modified as we type in the TextInput.
-          <h4
-            className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>
-            {titleValue}
-          </h4>
+          <h4 className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>{titleValue}</h4>
         }
       </>
     );
@@ -132,104 +124,80 @@ const HotspotContent = ({
   return (
     <div className={`${iotPrefix}--hotspot-content`}>
       {renderTitle()}
-      {description && (
-        <p className={`${iotPrefix}--hotspot-content-description`}>
-          {description}
-        </p>
-      )}
-      {attributes.map(
-        ({ thresholds, dataSourceId, label, unit, precision }) => {
-          // look for attribute specific thresholds first
-          let attributeThresholdMatch = null;
-          if (!isEmpty(thresholds)) {
-            const matchingAttributeThresholds = findMatchingThresholds(
-              thresholds.map((threshold) => ({ ...threshold, dataSourceId })),
-              values,
-              dataSourceId
-            );
-            if (
-              matchingAttributeThresholds &&
-              !isEmpty(matchingAttributeThresholds)
-            ) {
-              [attributeThresholdMatch] = matchingAttributeThresholds;
-            }
-          }
-          const thresholdMatch =
-            attributeThresholdMatch ||
-            (hotspotThreshold && hotspotThreshold.dataSourceId === dataSourceId // then see if the parent threshold might match this attribute
-              ? hotspotThreshold
-              : null);
-          const value = isNil(values[dataSourceId])
-            ? '--'
-            : values[dataSourceId];
-          const thresholdIcon =
-            thresholdMatch &&
-            thresholdMatch.dataSourceId === dataSourceId &&
-            thresholdMatch.icon ? (
-              <CardIcon
-                icon={thresholdMatch.icon}
-                color={thresholdMatch.color}
-                title={`${thresholdMatch.dataSourceId} ${
-                  thresholdMatch.comparison
-                } ${
-                  typeof thresholdMatch.value === 'number'
-                    ? formatNumberWithPrecision(
-                        thresholdMatch.value,
-                        null,
-                        locale
-                      )
-                    : thresholdMatch.value
-                }`}
-                width={16}
-                height={16}
-                renderIconByName={renderIconByName}
-              />
-            ) : null;
-          return (
-            <div
-              key={`attribute-${dataSourceId}`}
-              className={`${iotPrefix}--hotspot-content-attribute`}>
-              <div className={`${iotPrefix}--hotspot-content-label-section`}>
-                <span className={`${iotPrefix}--hotspot-content-label`}>
-                  {label}:
-                </span>
-              </div>
-              <div
-                className={`${iotPrefix}--hotspot-content-threshold-section`}>
-                {thresholdIcon}
-                <span
-                  style={{
-                    '--threshold-color':
-                      !thresholdIcon && thresholdMatch
-                        ? thresholdMatch.color
-                        : 'inherit ',
-                    '--threshold-padding': thresholdIcon ? '0.25rem' : '0rem',
-                  }}
-                  className={`${iotPrefix}--hotspot-content-threshold`}>
-                  {typeof value === 'number'
-                    ? formatNumberWithPrecision(
-                        value,
-                        !isNil(precision)
-                          ? precision
-                          : Math.abs(value) < 1
-                          ? value === 0
-                            ? 0
-                            : 3 // for small decimals give 3 spots
-                          : 1, // otherwise 1 spot if precision isn't set
-                        locale
-                      )
-                    : value}
-                  {unit && value !== '--' && (
-                    <span className={`${iotPrefix}--hotspot-content-unit`}>
-                      {unit}
-                    </span>
-                  )}
-                </span>
-              </div>
-            </div>
+      {description && <p className={`${iotPrefix}--hotspot-content-description`}>{description}</p>}
+      {attributes.map(({ thresholds, dataSourceId, label, unit, precision }) => {
+        // look for attribute specific thresholds first
+        let attributeThresholdMatch = null;
+        if (!isEmpty(thresholds)) {
+          const matchingAttributeThresholds = findMatchingThresholds(
+            thresholds.map((threshold) => ({ ...threshold, dataSourceId })),
+            values,
+            dataSourceId
           );
+          if (matchingAttributeThresholds && !isEmpty(matchingAttributeThresholds)) {
+            [attributeThresholdMatch] = matchingAttributeThresholds;
+          }
         }
-      )}
+        const thresholdMatch =
+          attributeThresholdMatch ||
+          (hotspotThreshold && hotspotThreshold.dataSourceId === dataSourceId // then see if the parent threshold might match this attribute
+            ? hotspotThreshold
+            : null);
+        const value = isNil(values[dataSourceId]) ? '--' : values[dataSourceId];
+        const thresholdIcon =
+          thresholdMatch && thresholdMatch.dataSourceId === dataSourceId && thresholdMatch.icon ? (
+            <CardIcon
+              icon={thresholdMatch.icon}
+              color={thresholdMatch.color}
+              title={`${thresholdMatch.dataSourceId} ${thresholdMatch.comparison} ${
+                typeof thresholdMatch.value === 'number'
+                  ? formatNumberWithPrecision(thresholdMatch.value, null, locale)
+                  : thresholdMatch.value
+              }`}
+              width={16}
+              height={16}
+              renderIconByName={renderIconByName}
+            />
+          ) : null;
+        return (
+          <div
+            key={`attribute-${dataSourceId}`}
+            className={`${iotPrefix}--hotspot-content-attribute`}
+          >
+            <div className={`${iotPrefix}--hotspot-content-label-section`}>
+              <span className={`${iotPrefix}--hotspot-content-label`}>{label}:</span>
+            </div>
+            <div className={`${iotPrefix}--hotspot-content-threshold-section`}>
+              {thresholdIcon}
+              <span
+                style={{
+                  '--threshold-color':
+                    !thresholdIcon && thresholdMatch ? thresholdMatch.color : 'inherit ',
+                  '--threshold-padding': thresholdIcon ? '0.25rem' : '0rem',
+                }}
+                className={`${iotPrefix}--hotspot-content-threshold`}
+              >
+                {typeof value === 'number'
+                  ? formatNumberWithPrecision(
+                      value,
+                      !isNil(precision)
+                        ? precision
+                        : Math.abs(value) < 1
+                        ? value === 0
+                          ? 0
+                          : 3 // for small decimals give 3 spots
+                        : 1, // otherwise 1 spot if precision isn't set
+                      locale
+                    )
+                  : value}
+                {unit && value !== '--' && (
+                  <span className={`${iotPrefix}--hotspot-content-unit`}>{unit}</span>
+                )}
+              </span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

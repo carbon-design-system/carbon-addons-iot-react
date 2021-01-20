@@ -59,8 +59,7 @@ const propTypes = {
   /** href optional url to file if you click on title */
   url: PropTypes.string,
   /** Object of action items */
-  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes))
-    .isRequired,
+  actionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)).isRequired,
   /** Bit to flip that tells header to render the nav toggle button */
   hasSideNav: PropTypes.bool,
   onClickSideNavExpand: PropTypes.func,
@@ -140,16 +139,11 @@ const Header = ({
     <CarbonHeader className={className} aria-label={mergedI18n.mainHeader}>
       <SkipToContent href={skipto} />
       {hasSideNav && (
-        <HeaderMenuButton
-          aria-label={mergedI18n.openMenu}
-          onClick={onClickSideNavExpand}
-        />
+        <HeaderMenuButton aria-label={mergedI18n.openMenu} onClick={onClickSideNavExpand} />
       )}
       <HeaderName href={url} prefix={prefix}>
         {appName}
-        {subtitle ? (
-          <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div>
-        ) : null}
+        {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
       <HeaderActionGroup actionItems={actionItems} />
     </CarbonHeader>

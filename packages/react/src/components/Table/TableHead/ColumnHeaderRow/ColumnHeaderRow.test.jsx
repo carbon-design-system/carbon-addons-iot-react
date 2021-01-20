@@ -27,10 +27,7 @@ describe('TableHead', () => {
   it('can reorder columns', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <UnconnectedColumnHeaderRow
-        {...commonTableHeadProps}
-        onChangeOrdering={onChangeOrdering}
-      />
+      <UnconnectedColumnHeaderRow {...commonTableHeadProps} onChangeOrdering={onChangeOrdering} />
     );
 
     const column1 = screen.getByText('Column 1');
@@ -49,10 +46,7 @@ describe('TableHead', () => {
   it('does not reorder columns when placed upon themselves', () => {
     const onChangeOrdering = jest.fn();
     render(
-      <UnconnectedColumnHeaderRow
-        {...commonTableHeadProps}
-        onChangeOrdering={onChangeOrdering}
-      />
+      <UnconnectedColumnHeaderRow {...commonTableHeadProps} onChangeOrdering={onChangeOrdering} />
     );
 
     const column1 = screen.getByText('Column 1');
@@ -101,9 +95,7 @@ describe('ColumnHeaderRow', () => {
       ordering: [],
     };
 
-    const renderedElement = render(
-      <UnconnectedColumnHeaderRow {...tableHeadProps} />
-    );
+    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
 
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
@@ -114,9 +106,7 @@ describe('ColumnHeaderRow', () => {
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
-    const renderedElement = render(
-      <UnconnectedColumnHeaderRow {...tableHeadProps} />
-    );
+    const renderedElement = render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
 
     expect(renderedElement.container.innerHTML).toContain('Column 1');
     expect(renderedElement.container.innerHTML).toContain('Column 2');
@@ -135,13 +125,9 @@ describe('ColumnHeaderRow', () => {
       columnSelectionConfigText: 'button_text',
     };
 
-    const renderedElement = mount(
-      <UnconnectedColumnHeaderRow {...tableHeadProps} />
-    );
+    const renderedElement = mount(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
 
-    expect(renderedElement.find('.column-header__btn').last().text()).toContain(
-      'button_text'
-    );
+    expect(renderedElement.find('.column-header__btn').last().text()).toContain('button_text');
 
     renderedElement.find('.column-header__btn').last().simulate('click');
 

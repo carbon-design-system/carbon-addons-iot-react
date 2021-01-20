@@ -103,13 +103,7 @@ const EditPage = ({
     <StyledEditPage className={className}>
       {isLoading ? (
         <Fragment>
-          <Hero
-            {...others}
-            description={blurb}
-            onClose={onClose}
-            i18n={i18n}
-            isLoading
-          />
+          <Hero {...others} description={blurb} onClose={onClose} i18n={i18n} isLoading />
           <StyledPageContent>
             <SkeletonText width="30%" />
           </StyledPageContent>

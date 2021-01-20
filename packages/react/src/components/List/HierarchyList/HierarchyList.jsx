@@ -138,10 +138,7 @@ export const searchForNestedItemValues = (items, value) => {
     } // if the item matches, add it to the filterItems array
     else if (
       !isNil(item.content.secondaryValue) &&
-      caseInsensitiveSearch(
-        [item.content.value, item.content.secondaryValue],
-        value
-      )
+      caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)
     ) {
       filteredItems.push(item);
     } else if (caseInsensitiveSearch([item.content.value], value)) {
@@ -222,9 +219,7 @@ const HierarchyList = ({
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(
-        handleEditModeSelect(items, editModeSelectedIds, id, parentId)
-      );
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
     } else if (selectedIds.includes(id)) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
     } else if (hasMultiSelect) {
@@ -252,10 +247,7 @@ const HierarchyList = ({
     () => {
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(
-          items,
-          defaultSelectedId
-        );
+        const tempFilteredItems = searchForNestedItemIds(items, defaultSelectedId);
         const tempExpandedIds = [...expandedIds];
         // Expand the categories that have found results
         tempFilteredItems.forEach((categoryItem) => {
@@ -289,9 +281,7 @@ const HierarchyList = ({
       rowsPerPage = numberOfItems;
   }
 
-  const [itemsToShow, setItemsToShow] = useState(
-    filteredItems.slice(0, rowsPerPage)
-  );
+  const [itemsToShow, setItemsToShow] = useState(filteredItems.slice(0, rowsPerPage));
 
   // Needed for updates to the filteredItems state on pageSize change
   useEffect(() => {
@@ -300,10 +290,7 @@ const HierarchyList = ({
 
   const onPage = (page) => {
     const rowUpperLimit = page * rowsPerPage;
-    const currentItemsOnPage = filteredItems.slice(
-      rowUpperLimit - rowsPerPage,
-      rowUpperLimit
-    );
+    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
     setCurrentPageNumber(page);
     setItemsToShow(currentItemsOnPage);
   };
@@ -411,8 +398,7 @@ const HierarchyList = ({
         overrides={{
           header: {
             component:
-              editingStyle === EditingStyle.MultipleNesting &&
-              editModeSelectedIds.length > 0
+              editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0
                 ? BulkActionHeader
                 : null,
             props: {

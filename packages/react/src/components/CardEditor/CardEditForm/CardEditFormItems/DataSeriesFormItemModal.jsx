@@ -24,16 +24,10 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../../constants/Settings';
 import { ComposedModal, TextInput, Dropdown } from '../../../../index';
-import {
-  handleDataItemEdit,
-  DataItemsPropTypes,
-} from '../../../DashboardEditor/editorUtils';
+import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import Table from '../../../Table/Table';
-import {
-  BAR_CHART_TYPES,
-  CARD_TYPES,
-} from '../../../../constants/LayoutConstants';
+import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -190,12 +184,7 @@ const DataSeriesFormItemModal = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const {
-        clearSelectionText,
-        openMenuText,
-        closeMenuText,
-        clearAllText,
-      } = mergedI18n;
+      const { clearSelectionText, openMenuText, closeMenuText, clearAllText } = mergedI18n;
       switch (idToTranslate) {
         default:
           return '';
@@ -322,16 +311,10 @@ const DataSeriesFormItemModal = ({
                 ) ||
                 (!isTimeBasedCard
                   ? // need to search by id to preserve translations
-                    editDataItem.aggregationMethods?.find(
-                      (method) => method.id === 'last'
-                    )
+                    editDataItem.aggregationMethods?.find((method) => method.id === 'last')
                   : isSummaryDashboard
-                  ? editDataItem.aggregationMethods?.find(
-                      (method) => method.id === 'mean'
-                    )
-                  : editDataItem.aggregationMethods?.find(
-                      (method) => method.id === 'none'
-                    ))
+                  ? editDataItem.aggregationMethods?.find((method) => method.id === 'mean')
+                  : editDataItem.aggregationMethods?.find((method) => method.id === 'none'))
               }
               titleText={mergedI18n.aggregationMethod}
               light
@@ -345,12 +328,10 @@ const DataSeriesFormItemModal = ({
           </div>
         ) : (
           <div className={`${baseClassName}--input-group--item-half`}>
-            <FormLabel
-              className={`${baseClassName}--input-group--item-half-label`}>
+            <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
               {mergedI18n.aggregationMethod}
             </FormLabel>
-            <span
-              className={`${baseClassName}--input-group--item-half-content`}>
+            <span className={`${baseClassName}--input-group--item-half-content`}>
               {`${
                 editDataItem.aggregationMethod
                   ? editDataItem.aggregationMethod[0].toUpperCase()
@@ -370,16 +351,13 @@ const DataSeriesFormItemModal = ({
               items={
                 isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
                   ? availableGrains.slice(
-                      availableGrains.findIndex(
-                        (grain) => grain.id === initialGrain
-                      )
+                      availableGrains.findIndex((grain) => grain.id === initialGrain)
                     )
                   : availableGrains
               }
               selectedItem={
-                availableGrains.find(
-                  (grain) => grain.id === editDataItem.grain
-                ) || availableGrains.find((grain) => grain.id === 'input')
+                availableGrains.find((grain) => grain.id === editDataItem.grain) ||
+                availableGrains.find((grain) => grain.id === 'input')
               }
               titleText={mergedI18n.grain}
               light
@@ -465,9 +443,7 @@ const DataSeriesFormItemModal = ({
                 label=""
                 items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
                 light
-                selectedItem={
-                  editDataItem.precision?.toString() || mergedI18n.notSet
-                }
+                selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
                 onChange={({ selectedItem }) => {
                   const isSet = selectedItem !== mergedI18n.notSet;
                   if (isSet) {
@@ -489,14 +465,13 @@ const DataSeriesFormItemModal = ({
         <div className={`${baseClassName}--input-group`}>
           <div
             className={classnames({
-              [`${baseClassName}--input-group--item`]: !isEmpty(
-                editDataItem.dataFilter
-              ),
+              [`${baseClassName}--input-group--item`]: !isEmpty(editDataItem.dataFilter),
               [`${baseClassName}--input-group--item-half`]:
                 isEmpty(editDataItem.dataFilter) ||
                 (!isEmpty(editDataItem.dataFilter) &&
                   !availableDimensions[selectedDimensionFilter]),
-            })}>
+            })}
+          >
             <Dropdown
               id={`${id}_data-filter-key`}
               label=""
@@ -523,8 +498,7 @@ const DataSeriesFormItemModal = ({
               titleText={mergedI18n.dataItemEditorDataItemFilter}
             />
           </div>
-          {!isEmpty(editDataItem.dataFilter) &&
-          availableDimensions[selectedDimensionFilter] ? (
+          {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] ? (
             <div className={`${baseClassName}--input-group--item-end`}>
               <Dropdown
                 id={`${id}_data-filter-value`}
@@ -624,11 +598,7 @@ const DataSeriesFormItemModal = ({
               const newCard =
                 cardConfig.type === CARD_TYPES.IMAGE
                   ? editDataItem
-                  : handleDataItemEdit(
-                      editDataItem,
-                      cardConfig,
-                      editDataSeries
-                    );
+                  : handleDataItemEdit(editDataItem, cardConfig, editDataSeries);
               onChange(newCard);
               setShowEditor(false);
               setEditDataItem({});
@@ -637,7 +607,8 @@ const DataSeriesFormItemModal = ({
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});
-            }}>
+            }}
+          >
             {type === CARD_TYPES.BAR && content.type === BAR_CHART_TYPES.GROUPED
               ? DataSeriesEditorTable
               : type === CARD_TYPES.TABLE

@@ -2,11 +2,7 @@ import React from 'react';
 import { Add16, Maximize16 } from '@carbon/icons-react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import {
-  CARD_SIZES,
-  CARD_TYPES,
-  COLORS,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
 import imageFile from '../ImageCard/landscape.jpg';
 
@@ -31,8 +27,7 @@ const cardValues = [
   },
   {
     title: 'Alerts (Section 2)',
-    tooltip:
-      'This view showcases the variety of alert severities present in your context.',
+    tooltip: 'This view showcases the variety of alert severities present in your context.',
     id: 'facilitycard-pie',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.PIE,

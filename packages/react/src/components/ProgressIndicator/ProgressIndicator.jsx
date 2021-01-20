@@ -122,9 +122,7 @@ const ProgressStep = ({
 
   const StepSecondaryLabel = () => {
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={`${iotPrefix}--progress-text-label--optional`}>
-        {secondaryLabel}
-      </p>
+      <p className={`${iotPrefix}--progress-text-label--optional`}>{secondaryLabel}</p>
     ) : null;
   };
 
@@ -155,7 +153,8 @@ const ProgressStep = ({
           onClick={accessible ? handleClick : null}
           onKeyDown={accessible ? handleKeyDown : null}
           data-testid={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
-          tabIndex={current || disabled ? -1 : 0}>
+          tabIndex={current || disabled ? -1 : 0}
+        >
           <StepLine />
           <StepIcon />
           <div className={textClasses}>
@@ -170,10 +169,8 @@ const ProgressStep = ({
   const classes = classnames({
     [`${iotPrefix}--progress-step`]: true,
     [`${iotPrefix}--progress-step--current`]: current && !disabled,
-    [`${iotPrefix}--progress-step--complete`]:
-      complete && !disabled && !invalid,
-    [`${iotPrefix}--progress-step--incomplete`]:
-      incomplete && !current && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--complete`]: complete && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
     [`${iotPrefix}--progress-step--disabled`]: disabled,
     [`${iotPrefix}--progress-step--invalid`]: invalid,
   });
@@ -294,21 +291,10 @@ const ProgressIndicator = ({
   });
 
   return newItems.length > 1 ? (
-    <ul
-      className={classes}
-      data-testid={`${iotPrefix}--progress-indicator-testid`}>
+    <ul className={classes} data-testid={`${iotPrefix}--progress-indicator-testid`}>
       {newItems.map(
         (
-          {
-            id,
-            label,
-            secondaryLabel,
-            description,
-            disabled,
-            invalid,
-            stepNumber,
-            level,
-          },
+          { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
           index
         ) => (
           <ProgressStep

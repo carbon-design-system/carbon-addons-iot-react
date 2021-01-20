@@ -60,7 +60,8 @@ const SuiteHeaderAppSwitcher = ({
             if (result) {
               window.location.href = allApplicationsLink;
             }
-          }}>
+          }}
+        >
           <ArrowLeft16 />
           {mergedI18n.allApplicationsLink}
         </a>
@@ -71,13 +72,9 @@ const SuiteHeaderAppSwitcher = ({
             href="javascript:void(0)"
             data-testid={`suite-header-app-switcher--${id}`}
             onClick={async () => {
-              const result = await onRouteChange(
-                SuiteHeader.ROUTE_TYPES.APPLICATION,
-                href,
-                {
-                  appId: id,
-                }
-              );
+              const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+                appId: id,
+              });
               if (result) {
                 if (isExternal) {
                   window.open(href, 'blank');
@@ -85,7 +82,8 @@ const SuiteHeaderAppSwitcher = ({
                   window.location.href = href;
                 }
               }
-            }}>
+            }}
+          >
             {name}
           </a>
         </li>
@@ -108,7 +106,8 @@ const SuiteHeaderAppSwitcher = ({
               if (result) {
                 window.location.href = noAccessLink;
               }
-            }}>
+            }}
+          >
             {mergedI18n.learnMoreLink}
           </a>
         </div>

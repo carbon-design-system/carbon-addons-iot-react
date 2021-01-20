@@ -11,18 +11,9 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import {
-  Button,
-  List,
-  MultiSelect,
-  ComboBox,
-  Dropdown,
-} from '../../../../../index';
+import { Button, List, MultiSelect, ComboBox, Dropdown } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
-import {
-  CARD_TYPES,
-  BAR_CHART_TYPES,
-} from '../../../../../constants/LayoutConstants';
+import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
@@ -125,8 +116,7 @@ const defaultProps = {
       'Group categories side by side in bars. Show groupings of related metrics or different categories of a single metric.',
     dataItemEditorSectionStackedBarTooltipText:
       'Stack bars by categories of a single dimension or into multiple related metrics.',
-    dataItemEditorSectionTimeSeriesTooltipText:
-      'Plot time series metrics over time.',
+    dataItemEditorSectionTimeSeriesTooltipText: 'Plot time series metrics over time.',
     dataItemEditorSectionValueTooltipText:
       'Display metric values, dimension values, or alert counts. Select from Data item. ',
     dataItemEditorSectionCustomTooltipText:
@@ -163,11 +153,7 @@ export const formatDataItemsForDropdown = (dataItems) =>
  * @param {Object} cardConfig
  * @returns {Object} tooltip definition
  */
-export const defineCardSpecificTooltip = (
-  cardConfig,
-  dataSeriesItemLinks,
-  i18n
-) => {
+export const defineCardSpecificTooltip = (cardConfig, dataSeriesItemLinks, i18n) => {
   switch (cardConfig.type) {
     case CARD_TYPES.BAR:
       if (cardConfig.content.type === BAR_CHART_TYPES.SIMPLE) {
@@ -257,30 +243,24 @@ const DataSeriesFormItem = ({
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});
-  const [editDataSeries, setEditDataSeries] = useState(
-    cardConfig.content?.series || []
-  );
+  const [editDataSeries, setEditDataSeries] = useState(cardConfig.content?.series || []);
   const [removedDataItems, setRemovedDataItems] = useState([]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
-  const isComplexDataSeries =
-    cardConfig.content?.type === BAR_CHART_TYPES.GROUPED;
+  const isComplexDataSeries = cardConfig.content?.type === BAR_CHART_TYPES.GROUPED;
 
-  const canMultiSelectDataItems =
-    cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
+  const canMultiSelectDataItems = cardConfig.content?.type !== BAR_CHART_TYPES.SIMPLE;
 
   // determine which content section to look at
   const data =
-    cardConfig.type === CARD_TYPES.TIMESERIES ||
-    cardConfig.type === CARD_TYPES.BAR
+    cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
       ? cardConfig?.content?.series
       : cardConfig?.content?.attributes;
 
   // initialize items with a unique id if not present
   const dataSection = useMemo(
-    () =>
-      data?.map((item) => (!item.uuid ? { ...item, uuid: uuid.v4() } : item)),
+    () => data?.map((item) => (!item.uuid ? { ...item, uuid: uuid.v4() } : item)),
     [data]
   );
 
@@ -322,11 +302,7 @@ const DataSeriesFormItem = ({
         selectedItems.length > 1
           ? omit(cardConfig, 'content.categoryDataSourceId')
           : cardConfig;
-      const newCard = handleDataSeriesChange(
-        selectedItems,
-        card,
-        setEditDataSeries
-      );
+      const newCard = handleDataSeriesChange(selectedItems, card, setEditDataSeries);
       setSelectedDataItems(selectedItems.map(({ id }) => id));
       onChange(newCard);
     }
@@ -339,12 +315,9 @@ const DataSeriesFormItem = ({
     setEditDataItem({
       ...omit(dataItemWithMetaData, 'uuid'),
       ...dataItem,
-      ...(cardConfig.type === CARD_TYPES.TIMESERIES ||
-      cardConfig.type === CARD_TYPES.BAR
+      ...(cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR
         ? {
-            color:
-              dataItem.color ||
-              DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
+            color: dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length],
           }
         : {}),
     });
@@ -362,9 +335,7 @@ const DataSeriesFormItem = ({
   };
 
   const handleRemoveButton = (dataItem) => {
-    const filteredItems = dataSection.filter(
-      (item) => item.uuid !== dataItem.uuid
-    );
+    const filteredItems = dataSection.filter((item) => item.uuid !== dataItem.uuid);
     setSelectedDataItems(filteredItems.map((item) => item.dataSourceId));
     setRemovedDataItems([...removedDataItems, dataItem]);
     setEditDataSeries(filteredItems);
@@ -498,15 +469,13 @@ const DataSeriesFormItem = ({
         title=""
         items={dataSection?.map((dataItem, i) => {
           const iconColorOption =
-            dataItem.color ||
-            DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+            dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
           return {
             id: dataItem.dataSourceId,
             content: {
               value: dataItem.label,
               icon:
-                cardConfig.type === CARD_TYPES.TIMESERIES ||
-                cardConfig.type === CARD_TYPES.BAR ? (
+                cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
                   <div
                     className={`${baseClassName}--data-item-list--item-color-icon`}
                     style={{
@@ -548,7 +517,8 @@ const DataSeriesFormItem = ({
           onClick={() => {
             setShowEditor(true);
           }}
-          iconDescription={mergedI18n.customize}>
+          iconDescription={mergedI18n.customize}
+        >
           {mergedI18n.customize}
         </Button>
       ) : null}

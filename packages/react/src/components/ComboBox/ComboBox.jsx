@@ -130,12 +130,9 @@ const ComboBox = ({
 
     const currentValue = itemToString(newItem);
     // Check that there is no existing tag
-    const hasNoExistingTag =
-      tagItems.filter((x) => itemToString(x) === currentValue).length < 1;
+    const hasNoExistingTag = tagItems.filter((x) => itemToString(x) === currentValue).length < 1;
     // Check if value is part of items array
-    const isInList = listItems.filter(
-      (x) => itemToString(x).trim() === currentValue
-    )[0];
+    const isInList = listItems.filter((x) => itemToString(x).trim() === currentValue)[0];
 
     if (hasMultiValue) {
       // If tags array does not contain new value
@@ -168,9 +165,7 @@ const ComboBox = ({
     const currentValue = comboRef.current.textInput.current.value.trim();
     if (evt.key === 'Enter' && currentValue) {
       const newItem = {
-        id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${
-          currentValue.length
-        }`,
+        id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
       };
       handleOnChange({ selectedItem: newItem });
@@ -179,12 +174,7 @@ const ComboBox = ({
 
   const handleInputChange = (e) => {
     const matchedItem = listItems.filter((x) => itemToString(x) === e)[0];
-    if (
-      (onBlur || addToList || hasMultiValue) &&
-      e &&
-      e !== '' &&
-      !matchedItem
-    ) {
+    if ((onBlur || addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -198,10 +188,10 @@ const ComboBox = ({
     }
   };
 
-  const combinedItems = useMemo(
-    () => (inputValue ? [inputValue, ...listItems] : listItems),
-    [inputValue, listItems]
-  );
+  const combinedItems = useMemo(() => (inputValue ? [inputValue, ...listItems] : listItems), [
+    inputValue,
+    listItems,
+  ]);
 
   const shouldFilterItemForTags = ({
     item,
@@ -222,7 +212,8 @@ const ComboBox = ({
       onKeyDown={handleOnKeypress}
       onBlur={handleOnBlur}
       data-testid="combo-wrapper"
-      data-edit-option-text={editOptionText}>
+      data-edit-option-text={editOptionText}
+    >
       <CarbonComboBox
         data-testid="combo-box"
         id={id}
@@ -236,11 +227,7 @@ const ComboBox = ({
         className={classnames(className, `${iotPrefix}--combobox-input`)}
         disabled={disabled || (loading !== undefined && loading !== false)}
         helperText={helperText}
-        shouldFilterItem={
-          hasMultiValue || addToList
-            ? shouldFilterItemForTags
-            : shouldFilterItem
-        }
+        shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
         {...rest}
       />
       {hasMultiValue ? (
@@ -251,7 +238,8 @@ const ComboBox = ({
                 key={`tag-${item?.id}-${idx}`}
                 filter
                 onClose={(e) => handleOnClose(e)}
-                title={closeButtonText}>
+                title={closeButtonText}
+              >
                 {itemToString(item)}
               </Tag>
             </li>

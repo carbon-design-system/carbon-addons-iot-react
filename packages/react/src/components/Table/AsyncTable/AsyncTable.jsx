@@ -56,15 +56,9 @@ const AsyncTable = ({ fetchData, id }) => {
       let firstNameFilterValue;
       let lastNameFilterValue;
       if (state.view.filters) {
-        const firstNameFilter = state.view.filters.find(
-          (f) => f.columnId === 'firstName'
-        );
-        firstNameFilterValue = firstNameFilter
-          ? firstNameFilter.value
-          : undefined;
-        const lastNameFilter = state.view.filters.find(
-          (f) => f.columnId === 'lastName'
-        );
+        const firstNameFilter = state.view.filters.find((f) => f.columnId === 'firstName');
+        firstNameFilterValue = firstNameFilter ? firstNameFilter.value : undefined;
+        const lastNameFilter = state.view.filters.find((f) => f.columnId === 'lastName');
         lastNameFilterValue = lastNameFilter ? lastNameFilter.value : undefined;
       }
 
@@ -95,9 +89,7 @@ const AsyncTable = ({ fetchData, id }) => {
       // NOTE: (unless this is the first fetch, in which case we don't have totalItems
       // and definitely need to load some results)
       const requestedUpToCapped =
-        totalItems === undefined
-          ? requestedUpTo
-          : Math.min(requestedUpTo, totalItems);
+        totalItems === undefined ? requestedUpTo : Math.min(requestedUpTo, totalItems);
 
       // We have already loaded results in to memory up to this index
       const loadedUpTo = state.data.length;

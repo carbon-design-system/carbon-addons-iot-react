@@ -7,15 +7,8 @@ import filter from 'lodash/filter';
 import find from 'lodash/find';
 import { spacing02, spacing03, spacing05 } from '@carbon/layout';
 
-import {
-  ValueCardPropTypes,
-  CardPropTypes,
-} from '../../constants/CardPropTypes';
-import {
-  CARD_LAYOUTS,
-  CARD_SIZES,
-  CARD_CONTENT_PADDING,
-} from '../../constants/LayoutConstants';
+import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 import {
@@ -52,9 +45,7 @@ const ContentWrapper = styled.div`
 `;
 
 const determineAttributeWidth = ({ attributeCount, layout }) => {
-  return layout === CARD_LAYOUTS.HORIZONTAL
-    ? `${Math.floor(100 / attributeCount)}%`
-    : '100%';
+  return layout === CARD_LAYOUTS.HORIZONTAL ? `${Math.floor(100 / attributeCount)}%` : '100%';
 };
 
 /**
@@ -92,12 +83,7 @@ const Spacer = styled.div`
  * Returns the font size in rems for a label
  * @param {*} param0
  */
-const determineLabelFontSize = ({
-  size,
-  layout,
-  attributeCount,
-  isVertical,
-}) => {
+const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) => {
   if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.MEDIUMWIDE) {
     return 1.25;
   }
@@ -146,19 +132,13 @@ const shouldLabelWrap = ({ title, isVertical }) => {
 const AttributeLabel = styled.div`
   ${(props) => `line-height: ${determineLabelFontSize(props)}rem;`}
   ${(props) => `font-size: ${determineLabelFontSize(props)}rem;`};
-  text-align: ${(props) =>
-    props.shouldDoubleWrap ? 'left' : getLabelAlignment(props)};
+  text-align: ${(props) => (props.shouldDoubleWrap ? 'left' : getLabelAlignment(props))};
   ${(props) =>
-    (props.isVertical ||
-      props.size === CARD_SIZES.SMALL ||
-      props.size === CARD_SIZES.MEDIUM) &&
+    (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
     `padding-top: ${spacing02};`};
   ${(props) =>
-    !(
-      props.isVertical ||
-      props.size === CARD_SIZES.SMALL ||
-      props.size === CARD_SIZES.SMALLWIDE
-    ) && `padding-left: ${spacing03}`};
+    !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
+    `padding-left: ${spacing03}`};
   order: ${(props) => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
@@ -212,35 +192,23 @@ const determineLayout = (size, attributes, measuredWidth) => {
 /** Support either an array of values or an object of values */
 export const determineValue = (dataSourceId, values, dataFilter = {}) =>
   Array.isArray(values)
-    ? filter(values, dataFilter)[0] &&
-      filter(values, dataFilter)[0][dataSourceId]
+    ? filter(values, dataFilter)[0] && filter(values, dataFilter)[0][dataSourceId]
     : values && values[dataSourceId];
 
 const determineAttributes = (size, attributes) => {
   if (!attributes || !Array.isArray(attributes)) {
     return attributes;
   }
-  const attributeCount = determineMaxValueCardAttributeCount(
-    size,
-    attributes.length
-  );
+  const attributeCount = determineMaxValueCardAttributeCount(size, attributes.length);
   return attributes.slice(0, attributeCount);
 };
 
-const isLabelAboveValue = (
-  size,
-  layout,
-  attributes,
-  measuredSize,
-  shouldDoubleWrap
-) => {
+const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleWrap) => {
   switch (size) {
     case CARD_SIZES.SMALLWIDE:
       return layout === CARD_LAYOUTS.HORIZONTAL;
     case CARD_SIZES.MEDIUM:
-      return (
-        attributes.length === 1 || !measuredSize || measuredSize.width < 300
-      );
+      return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
       return shouldDoubleWrap || !measuredSize || measuredSize.width < 300;
   }
@@ -296,15 +264,8 @@ const ValueCard = ({
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
-        const layout = determineLayout(
-          newSize,
-          content && content.attributes,
-          measuredSize.width
-        );
-        const attributes = determineAttributes(
-          newSize,
-          content && content.attributes
-        );
+        const layout = determineLayout(newSize, content && content.attributes, measuredSize.width);
+        const attributes = determineAttributes(newSize, content && content.attributes);
 
         // Measure the size to determine whether to render the attribute label above the value
         const isVertical = isLabelAboveValue(
@@ -316,8 +277,7 @@ const ValueCard = ({
         );
 
         // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
-        const isMini =
-          newSize === CARD_SIZES.SMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
+        const isMini = newSize === CARD_SIZES.SMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
 
         return (
           <Card
@@ -330,27 +290,26 @@ const ValueCard = ({
             resizeHandles={resizeHandles}
             i18n={i18n}
             id={id}
-            {...others}>
+            {...others}
+          >
             <ContentWrapper layout={layout}>
               {!isNil(dataState) ? (
-                <DataStateRenderer
-                  dataState={dataState}
-                  size={newSize}
-                  id={id}
-                />
+                <DataStateRenderer dataState={dataState} size={newSize} id={id} />
               ) : (
                 attributes.map((attribute, i) => (
                   <React.Fragment
                     key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
                       attribute.dataFilter || {}
-                    )}`}>
+                    )}`}
+                  >
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
                       size={newSize}
-                      attributeCount={attributes.length}>
+                      attributeCount={attributes.length}
+                    >
                       <Attribute
                         attributeCount={attributes.length}
                         isVertical={isVertical}
@@ -360,13 +319,11 @@ const ValueCard = ({
                           (newSize === CARD_SIZES.SMALL ||
                             newSize === CARD_SIZES.SMALLWIDE ||
                             newSize === CARD_SIZES.MEDIUMTHIN) &&
-                          (attribute.secondaryValue !== undefined ||
-                            attribute.label !== undefined)
+                          (attribute.secondaryValue !== undefined || attribute.label !== undefined)
                         }
                         isMini={isMini}
                         alignValue={
-                          newSize === CARD_SIZES.MEDIUMTHIN &&
-                          attributes.length === 1
+                          newSize === CARD_SIZES.MEDIUMTHIN && attributes.length === 1
                             ? 'center'
                             : undefined
                         }
@@ -377,21 +334,14 @@ const ValueCard = ({
                         value={
                           isEditable
                             ? '--'
-                            : determineValue(
-                                attribute.dataSourceId,
-                                values,
-                                attribute.dataFilter
-                              )
+                            : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
                         }
                         secondaryValue={
                           attribute.secondaryValue && {
                             ...attribute.secondaryValue,
                             value: isEditable // When the card is in the editable state, we will show a preview
                               ? '--'
-                              : determineValue(
-                                  attribute.secondaryValue.dataSourceId,
-                                  values
-                                ),
+                              : determineValue(attribute.secondaryValue.dataSourceId, values),
                           }
                         }
                         customFormatter={customFormatter}
@@ -404,7 +354,8 @@ const ValueCard = ({
                         isMini={isMini}
                         attributeCount={attributes.length}
                         size={newSize}
-                        shouldDoubleWrap={shouldDoubleWrap}>
+                        shouldDoubleWrap={shouldDoubleWrap}
+                      >
                         {attribute.label}
                       </AttributeLabel>
                     </AttributeWrapper>
@@ -416,7 +367,8 @@ const ValueCard = ({
                         isVertical={isVertical}
                         isSmall={attribute.secondaryValue !== undefined}
                         isMini={isMini}
-                        size={newSize}>
+                        size={newSize}
+                      >
                         <AttributeSeparator />
                       </AttributeWrapper>
                     ) : null}

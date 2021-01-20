@@ -92,9 +92,7 @@ html[dir='rtl'] {
   }
 }
 
-.#{$prefix}--toolbar-search-container-active
-  .#{$prefix}--search
-  .#{$prefix}--search-input {
+.#{$prefix}--toolbar-search-container-active .#{$prefix}--search .#{$prefix}--search-input {
   padding-right: $spacing-09;
 }
 
@@ -118,8 +116,7 @@ section.#{$prefix}--table-toolbar {
 tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected td,
 tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected:not(.#{$prefix}--expandable-row):hover
   td,
-tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
-  td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row td,
 tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
   td:first-of-type {
   border-bottom-color: $active-ui;

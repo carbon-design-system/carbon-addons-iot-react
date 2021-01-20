@@ -58,11 +58,7 @@ export const Basic = () => {
         onClose={action('onClose')}
         onDelete={action('onDelete')}
         content={editableContent}
-        searchProperty={select(
-          'searchProperty',
-          ['id', 'src', 'alt', 'title'],
-          'src'
-        )}
+        searchProperty={select('searchProperty', ['id', 'src', 'alt', 'title'], 'src')}
         defaultView={defaultView}
       />
     </div>
@@ -88,22 +84,10 @@ export const WithI18n = () => {
         listButtonText={text('listButtonText', 'List')}
         modalLabelText={text('modalLabelText', 'New image card')}
         modalTitleText={text('modalTitleText', 'Image gallery')}
-        modalPrimaryButtonLabelText={text(
-          'modalPrimaryButtonLabelText',
-          'Select'
-        )}
-        modalSecondaryButtonLabelText={text(
-          'modalSecondaryButtonLabelText',
-          'Cancel'
-        )}
-        modalCloseIconDescriptionText={text(
-          'modalCloseIconDescriptionText',
-          'Close'
-        )}
-        searchPlaceHolderText={text(
-          'searchPlaceHolderText',
-          'Search image by file name'
-        )}
+        modalPrimaryButtonLabelText={text('modalPrimaryButtonLabelText', 'Select')}
+        modalSecondaryButtonLabelText={text('modalSecondaryButtonLabelText', 'Cancel')}
+        modalCloseIconDescriptionText={text('modalCloseIconDescriptionText', 'Close')}
+        searchPlaceHolderText={text('searchPlaceHolderText', 'Search image by file name')}
       />
     </div>
   );

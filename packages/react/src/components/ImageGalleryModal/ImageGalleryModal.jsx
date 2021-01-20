@@ -90,8 +90,7 @@ const defaultProps = {
   modalPrimaryButtonLabelText: 'Select',
   deleteLabelText: 'Delete',
   deleteModalLabelText: 'Delete image',
-  deleteModalTitleText: (image) =>
-    `Are you sure you want to delete the image: ${image}?`,
+  deleteModalTitleText: (image) => `Are you sure you want to delete the image: ${image}?`,
   modalSecondaryButtonLabelText: 'Cancel',
   modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
@@ -122,9 +121,7 @@ const ImageGalleryModal = ({
 }) => {
   const [activeView, setActiveView] = useState(defaultView);
   const [selectedImage, setSelectedImage] = useState();
-  const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(
-    false
-  );
+  const [isDeleteWarningModalOpen, setIsDeleteWarningModalOpen] = useState(false);
   const [filteredContent, setFilteredContent] = useState(content);
 
   // Need to support lazy loaded content
@@ -188,7 +185,8 @@ const ImageGalleryModal = ({
           // title only makes sense in the modal selector, not in the image card
           onSubmit(omit(selectedImage, 'title'));
         }}
-        {...composedModalProps}>
+        {...composedModalProps}
+      >
         <div className={`${baseClass}__top-section`}>
           <p className={`${baseClass}__instruction-text`} alt={instructionText}>
             {instructionText}
@@ -206,7 +204,8 @@ const ImageGalleryModal = ({
               onChange={(selected) => {
                 setActiveView(selected.name);
               }}
-              selectedIndex={activeView === GRID ? 0 : 1}>
+              selectedIndex={activeView === GRID ? 0 : 1}
+            >
               <IconSwitch
                 name={GRID}
                 size="large"
@@ -229,7 +228,8 @@ const ImageGalleryModal = ({
             className={classnames(`${baseClass}__scroll-panel`, {
               [`${baseClass}__scroll-panel--grid`]: activeView === GRID,
               [`${baseClass}__scroll-panel--list`]: activeView === LIST,
-            })}>
+            })}
+          >
             {filteredContent.map((imageProps) => (
               <ImageTile
                 isWide={activeView === LIST}

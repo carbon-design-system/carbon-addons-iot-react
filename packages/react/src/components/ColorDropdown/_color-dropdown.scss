@@ -40,8 +40,7 @@
   }
 
   // The new borders must be hidded for the topmost item
-  .#{$prefix}--list-box__menu-item:first-of-type
-    .#{$iot-prefix}--color-dropdown__item-border {
+  .#{$prefix}--list-box__menu-item:first-of-type .#{$iot-prefix}--color-dropdown__item-border {
     border-color: transparent;
   }
 

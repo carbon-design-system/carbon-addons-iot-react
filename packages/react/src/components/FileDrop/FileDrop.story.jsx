@@ -33,20 +33,14 @@ export const Browse = () => (
 );
 
 export const BrowseOnlyOne = () => (
-  <FileDrop
-    {...FileDropProps}
-    description="Only one file can be uploaded"
-    multiple={false}
-  />
+  <FileDrop {...FileDropProps} description="Only one file can be uploaded" multiple={false} />
 );
 
 BrowseOnlyOne.story = {
   name: 'Browse only one',
 };
 
-export const DragAndDrop = () => (
-  <FileDrop {...FileDropProps} kind="drag-and-drop" />
-);
+export const DragAndDrop = () => <FileDrop {...FileDropProps} kind="drag-and-drop" />;
 
 DragAndDrop.story = {
   name: 'Drag and drop',

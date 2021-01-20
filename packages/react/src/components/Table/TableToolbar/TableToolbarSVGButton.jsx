@@ -26,14 +26,7 @@ const defaultProps = {
 /**
  * Toolbar button that renders an icon only button
  */
-const TableToolbarSVGButton = ({
-  onClick,
-  testId,
-  className,
-  description,
-  isActive,
-  ...rest
-}) => {
+const TableToolbarSVGButton = ({ onClick, testId, className, description, isActive, ...rest }) => {
   return (
     <Button
       {...rest}

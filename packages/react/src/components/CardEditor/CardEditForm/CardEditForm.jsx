@@ -5,10 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import pick from 'lodash/pick';
 
-import {
-  CARD_DIMENSIONS,
-  CARD_TYPES,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab, Button } from '../../../index';
 import CardCodeEditor from '../../CardCodeEditor/CardCodeEditor';
@@ -169,22 +166,12 @@ export const hideCardPropertiesForEditor = (card) => {
   let series;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
-      omit(attribute, [
-        'aggregationMethods',
-        'aggregationMethod',
-        'grain',
-        'uuid',
-      ])
+      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
     );
   }
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
-      omit(attribute, [
-        'aggregationMethods',
-        'aggregationMethod',
-        'grain',
-        'uuid',
-      ])
+      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
     );
   }
   return omit(
@@ -261,15 +248,7 @@ const CardEditForm = ({
       {showEditor ? (
         <CardCodeEditor
           onSubmit={(card, setError) =>
-            handleSubmit(
-              card,
-              id,
-              content,
-              setError,
-              onValidateCardJson,
-              onChange,
-              setShowEditor
-            )
+            handleSubmit(card, id, content, setError, onValidateCardJson, onChange, setShowEditor)
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
@@ -331,11 +310,10 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(
-                JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4)
-              );
+              setModalData(JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4));
               setShowEditor(true);
-            }}>
+            }}
+          >
             {mergedI18n.openEditorButton}
           </Button>
         </div>

@@ -14,11 +14,7 @@ describe('PageWizard', () => {
       onClearError: jest.fn(),
     };
     render(
-      <PageWizard
-        error="My Custom Error"
-        currentStepId="step1"
-        {...mocks}
-        i18n={i18n}>
+      <PageWizard error="My Custom Error" currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
@@ -32,9 +28,7 @@ describe('PageWizard', () => {
   });
 
   it('currentStepId prop', () => {
-    const wrapper = shallow(
-      <PageWizard currentStepId="step1">{content}</PageWizard>
-    );
+    const wrapper = shallow(<PageWizard currentStepId="step1">{content}</PageWizard>);
     expect(wrapper.find('PageWizardStep').prop('id')).toEqual('step1');
   });
 
@@ -109,11 +103,7 @@ describe('PageWizard', () => {
       cancel: 'Cancel',
     };
     render(
-      <PageWizard
-        currentStepId="step1"
-        {...mocks}
-        i18n={i18n}
-        isProgressIndicatorVertical={false}>
+      <PageWizard currentStepId="step1" {...mocks} i18n={i18n} isProgressIndicatorVertical={false}>
         <StepValidation id="step1" label="Step with validation" />
         {content[1]}
         {content[2]}
@@ -135,12 +125,8 @@ describe('PageWizard', () => {
   });
 
   it('progress indicator should not render if there is only 1 step', () => {
-    const wrapper = shallow(
-      <PageWizard currentStepId="step1">{content[0]}</PageWizard>
-    );
-    expect(
-      wrapper.find('[data-testid="iot--progress-indicator-testid"]')
-    ).toHaveLength(0);
+    const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
+    expect(wrapper.find('[data-testid="iot--progress-indicator-testid"]')).toHaveLength(0);
   });
 
   it('i18n string tests', () => {

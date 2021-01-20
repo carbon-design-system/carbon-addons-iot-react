@@ -17,10 +17,7 @@ export const Basic = () => {
     <div style={{ minWidth: '1000px' }}>
       <DashboardHeader
         title={text('title', 'Monthly Building: Munich')}
-        description={text(
-          'description',
-          'Shows an overview of monthly data for a building'
-        )}
+        description={text('description', 'Shows an overview of monthly data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
       />
     </div>
@@ -36,16 +33,10 @@ export const WithFilter = () => {
     <div style={{ width: '1000px' }}>
       <DashboardHeader
         title={text('title', 'Monthly Building: Munich')}
-        description={text(
-          'description',
-          'Shows an overview of daily data for a building'
-        )}
+        description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         filter={
-          <DatePicker
-            id="date-picker"
-            onChange={action('onChangeDate')}
-            datePickerType="single">
+          <DatePicker id="date-picker" onChange={action('onChangeDate')} datePickerType="single">
             <DatePickerInput
               id="date-picker-input-id"
               className="some-class"
@@ -73,10 +64,7 @@ export const WithCustomActions = () => {
     <div style={{ width: '1000px' }}>
       <DashboardHeader
         title={text('title', 'Monthly Building: Munich')}
-        description={text(
-          'description',
-          'Shows an overview of daily data for a building'
-        )}
+        description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         actions={[
           { id: 'edit', labelText: 'Edit', icon: <Edit /> },
@@ -97,16 +85,10 @@ export const WithFilterAndCustomActions = () => {
     <div style={{ width: '1000px' }}>
       <DashboardHeader
         title={text('title', 'Monthly Building: Munich')}
-        description={text(
-          'description',
-          'Shows an overview of daily data for a building'
-        )}
+        description={text('description', 'Shows an overview of daily data for a building')}
         lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
         filter={
-          <DatePicker
-            id="date-picker"
-            onChange={action('onChangeDate')}
-            datePickerType="single">
+          <DatePicker id="date-picker" onChange={action('onChangeDate')} datePickerType="single">
             <DatePickerInput
               id="date-picker-input-id"
               className="some-class"
@@ -140,18 +122,13 @@ export const WithCustomActionsComponent = () => {
   return (
     <DashboardHeader
       title={text('title', 'Monthly Building: Munich')}
-      description={text(
-        'description',
-        'Shows an overview of daily data for a building'
-      )}
+      description={text('description', 'Shows an overview of daily data for a building')}
       lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
       actions={[
         {
           id: 'edit',
           customActionComponent: (
-            <div key="my custom component">
-              we can now send custom components
-            </div>
+            <div key="my custom component">we can now send custom components</div>
           ),
         },
       ]}

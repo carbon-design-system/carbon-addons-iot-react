@@ -3,10 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { green50 } from '@carbon/colors';
 import { Help24 } from '@carbon/icons-react';
 
-import {
-  validThresholdIcons,
-  validThresholdColors,
-} from '../../../DashboardEditor/editorUtils';
+import { validThresholdIcons, validThresholdColors } from '../../../DashboardEditor/editorUtils';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 

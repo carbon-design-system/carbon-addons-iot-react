@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import classnames from 'classnames';
-import {
-  HeaderGlobalAction,
-  HeaderPanel,
-} from 'carbon-components-react/es/components/UIShell';
+import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
 
 import { APP_SWITCHER } from '../Header';
 
@@ -21,10 +18,7 @@ const propTypes = {
     PropTypes.func,
     // Or the instance of a DOM native element (see the note about SSR)
     PropTypes.shape({
-      current:
-        typeof Element === 'undefined'
-          ? PropTypes.any
-          : PropTypes.instanceOf(Element),
+      current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
     }),
   ]).isRequired,
 };
@@ -39,13 +33,7 @@ const defaultProps = {
  * It has no local state.
  * It calls the onToggleExpansion when it should be opened or closed
  */
-const HeaderActionPanel = ({
-  item,
-  index,
-  onToggleExpansion,
-  isExpanded,
-  focusRef,
-}) => {
+const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRef }) => {
   return (
     <>
       <HeaderGlobalAction
@@ -56,7 +44,8 @@ const HeaderActionPanel = ({
         aria-haspopup="menu"
         aria-expanded={isExpanded}
         onClick={() => onToggleExpansion()}
-        ref={focusRef}>
+        ref={focusRef}
+      >
         {item.btnContent}
       </HeaderGlobalAction>
       <HeaderPanel
@@ -70,21 +59,20 @@ const HeaderActionPanel = ({
                 'action-btn__headerpanel--closed': !isExpanded,
               })
             : classnames(`${carbonPrefix}--app-switcher`, {
-                [item.childContent[0].className]:
-                  item.childContent[0].className,
+                [item.childContent[0].className]: item.childContent[0].className,
               })
         }
-        expanded={isExpanded}>
+        expanded={isExpanded}
+      >
         <ul aria-label={item.label}>
           {item.childContent.map((childItem, k) => {
             const ChildElement = childItem?.metaData?.element || 'a';
             return (
-              <li
-                key={`listitem-${item.label}-${k}`}
-                className="action-btn__headerpanel-li">
+              <li key={`listitem-${item.label}-${k}`} className="action-btn__headerpanel-li">
                 <ChildElement
                   key={`headerpanelmenu-item-${item.label}-${index}-child-${k}`}
-                  {...childItem.metaData}>
+                  {...childItem.metaData}
+                >
                   {childItem.content}
                 </ChildElement>
               </li>

@@ -6,8 +6,7 @@ import { Checkmark24, MisuseOutline24 } from '@carbon/icons-react';
 import ThresholdsFormItem from './ThresholdsFormItem';
 
 export default {
-  title:
-    'Watson IoT Experimental/CardEditor/CardEditFormItems/ThresholdFormItem',
+  title: 'Watson IoT Experimental/CardEditor/CardEditFormItems/ThresholdFormItem',
   decorators: [withKnobs],
   parameters: {
     component: ThresholdsFormItem,

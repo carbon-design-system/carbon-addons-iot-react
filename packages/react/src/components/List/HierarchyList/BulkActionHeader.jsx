@@ -20,14 +20,14 @@ const BulkActionHeader = ({
         ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
         : i18n.itemSelected}
     </div>
-    <div
-      className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
+    <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
       <Button
         className={`${iotPrefix}--hierarchy-list-bulk-header--button`}
         renderIcon={Move16}
         onClick={() => {
           setShowModal(true);
-        }}>
+        }}
+      >
         {i18n.move}
       </Button>
 
@@ -35,7 +35,8 @@ const BulkActionHeader = ({
 
       <Button
         className={`${iotPrefix}--hierarchy-list-bulk-header--button-no-icon`}
-        onClick={cancelMoveClicked}>
+        onClick={cancelMoveClicked}
+      >
         {i18n.cancel}
       </Button>
     </div>

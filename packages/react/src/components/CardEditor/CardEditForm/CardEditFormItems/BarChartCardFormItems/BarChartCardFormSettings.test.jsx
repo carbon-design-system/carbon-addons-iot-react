@@ -30,24 +30,14 @@ afterEach(() => {
 });
 describe('BarChartCardFormSettings', () => {
   it('handles radio button onChange', () => {
-    render(
-      <BarChartCardFormSettings
-        cardConfig={barChartConfig}
-        onChange={mockOnChange}
-      />
-    );
+    render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
     const buttons = screen.getByRole('radio', { name: 'Horizontal' });
     expect(buttons).toBeInTheDocument();
 
     expect(true).toEqual(true);
   });
   it('handles Y axis onChange', () => {
-    render(
-      <BarChartCardFormSettings
-        cardConfig={barChartConfig}
-        onChange={mockOnChange}
-      />
-    );
+    render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
     const yAxisLabelInput = screen.getByRole('textbox', {
       name: 'Y-axis label',
     });
@@ -57,12 +47,7 @@ describe('BarChartCardFormSettings', () => {
     expect(mockOnChange).toHaveBeenCalled();
   });
   it('handles X axis onChange', () => {
-    render(
-      <BarChartCardFormSettings
-        cardConfig={barChartConfig}
-        onChange={mockOnChange}
-      />
-    );
+    render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
     const xAxisLabelInput = screen.getByRole('textbox', {
       name: 'X-axis label',
     });
@@ -72,12 +57,7 @@ describe('BarChartCardFormSettings', () => {
     expect(mockOnChange).toHaveBeenCalled();
   });
   it('handles decimal precision onChange', () => {
-    render(
-      <BarChartCardFormSettings
-        cardConfig={barChartConfig}
-        onChange={mockOnChange}
-      />
-    );
+    render(<BarChartCardFormSettings cardConfig={barChartConfig} onChange={mockOnChange} />);
     const decimalPrecisionInput = screen.getByRole('textbox', {
       name: 'Decimal places',
     });

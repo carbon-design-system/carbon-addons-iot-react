@@ -10,9 +10,5 @@ export function useDNDProviderElement(props) {
 
   if (!children) return null;
 
-  return (
-    <DndProvider manager={manager.current.dragDropManager}>
-      {children}
-    </DndProvider>
-  );
+  return <DndProvider manager={manager.current.dragDropManager}>{children}</DndProvider>;
 }

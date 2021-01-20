@@ -1,13 +1,6 @@
-import {
-  CARD_DIMENSIONS,
-  CARD_SIZES,
-} from '../../../constants/LayoutConstants';
+import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
 
-import {
-  getCardSizeText,
-  handleSubmit,
-  hideCardPropertiesForEditor,
-} from './CardEditForm';
+import { getCardSizeText, handleSubmit, hideCardPropertiesForEditor } from './CardEditForm';
 
 const mockSetError = jest.fn();
 const mockOnChange = jest.fn();
