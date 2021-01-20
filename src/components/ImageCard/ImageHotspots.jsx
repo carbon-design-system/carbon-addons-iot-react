@@ -387,7 +387,13 @@ export const zoom = (
   }
 };
 
-const getAccumulatedOffset = (imageElement) => {
+/**
+ * Since the imageElement is not at the borders of the screen, we need to calculate the X and Y offsets of the Image from the parents
+ * @param {*} imageElement
+ * @return {object} top, left pixels that indicate where the image is placed on the page
+ */
+export const getAccumulatedOffset = (imageElement) => {
+  // TODO: replace with simpler approach and share as utility function: https://stackoverflow.com/questions/5601659/how-do-you-calculate-the-page-position-of-a-dom-element-when-the-body-can-be-rel
   const offset = {
     top: imageElement.offsetTop,
     left: imageElement.offsetLeft,
