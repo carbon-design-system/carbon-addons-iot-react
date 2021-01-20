@@ -7,6 +7,7 @@ const { iotPrefix } = settings;
 
 export const BASE_CLASS_NAME = `${iotPrefix}--value-card`;
 export const PREVIEW_DATA = '--';
+export const DEFAULT_FONT_SIZE = 42;
 
 /**
  * Support either an array of values or an object of values

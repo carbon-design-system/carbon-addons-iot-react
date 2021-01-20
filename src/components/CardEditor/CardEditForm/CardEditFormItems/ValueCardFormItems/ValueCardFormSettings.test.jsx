@@ -98,4 +98,40 @@ describe('Value form fields', () => {
     const fontSizeInput = screen.getByText('Font size');
     expect(fontSizeInput).toBeInTheDocument();
   });
+
+  it('should update JSON for the isNumberCompact', () => {
+    const { container } = render(
+      <ValueCardFormSettings
+        cardConfig={valueCardConfig}
+        onChange={mockOnChange}
+      />
+    );
+
+    const numberCompactInput = container.querySelector("input[type='checkbox'");
+    expect(numberCompactInput).toBeInTheDocument();
+
+    fireEvent.click(numberCompactInput);
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        attributes: [
+          {
+            dataSourceId: 'key1',
+            label: 'Key 1',
+            unit: '%',
+          },
+          {
+            dataSourceId: 'key2',
+            label: 'Key 2',
+            unit: 'lb',
+          },
+        ],
+      },
+      fontSize: 16,
+      isNumberValueCompact: true,
+      id: 'Standard',
+      size: 'MEDIUM',
+      title: 'value card',
+      type: 'VALUE',
+    });
+  });
 });

@@ -1159,7 +1159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         pattern="[0-9]*"
                         step={1}
                         type="number"
-                        value={16}
+                        value={42}
                       />
                       <div
                         className="bx--number__controls"
@@ -1218,6 +1218,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="iot--card-edit-form--input--toggle-field"
+                >
+                  <span>
+                    Abbreviate numbers
+                  </span>
+                  <div
+                    className="bx--tooltip__label"
+                    id="calculated-abbreviate-numbers-tooltip"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        description={null}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role={null}
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                        />
+                        <path
+                          d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    className="bx--form-item"
+                  >
+                    <input
+                      aria-label={null}
+                      checked={false}
+                      className="bx--toggle-input bx--toggle-input--small"
+                      id="calculated_value-card-number-compact"
+                      onChange={[Function]}
+                      onKeyUp={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      aria-label="Abbreviate number"
+                      className="bx--toggle-input__label"
+                      htmlFor="calculated_value-card-number-compact"
+                    >
+                      <span
+                        className="bx--toggle__switch"
+                      >
+                        <svg
+                          className="bx--toggle__check"
+                          height="5px"
+                          viewBox="0 0 6 5"
+                          width="6px"
+                        >
+                          <path
+                            d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                          />
+                        </svg>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--off"
+                        >
+                          
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--on"
+                        >
+                          
+                        </span>
+                      </span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -1957,7 +2050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         pattern="[0-9]*"
                         step={1}
                         type="number"
-                        value={16}
+                        value={42}
                       />
                       <div
                         className="bx--number__controls"
@@ -2016,6 +2109,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="iot--card-edit-form--input--toggle-field"
+                >
+                  <span>
+                    Abbreviate numbers
+                  </span>
+                  <div
+                    className="bx--tooltip__label"
+                    id="calculated-abbreviate-numbers-tooltip"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        description={null}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role={null}
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                        />
+                        <path
+                          d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    className="bx--form-item"
+                  >
+                    <input
+                      aria-label={null}
+                      checked={false}
+                      className="bx--toggle-input bx--toggle-input--small"
+                      id="calculated_value-card-number-compact"
+                      onChange={[Function]}
+                      onKeyUp={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      aria-label="Abbreviate number"
+                      className="bx--toggle-input__label"
+                      htmlFor="calculated_value-card-number-compact"
+                    >
+                      <span
+                        className="bx--toggle__switch"
+                      >
+                        <svg
+                          className="bx--toggle__check"
+                          height="5px"
+                          viewBox="0 0 6 5"
+                          width="6px"
+                        >
+                          <path
+                            d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                          />
+                        </svg>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--off"
+                        >
+                          
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="bx--toggle__text--on"
+                        >
+                          
+                        </span>
+                      </span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -4352,7 +4538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           pattern="[0-9]*"
                           step={1}
                           type="number"
-                          value={16}
+                          value={42}
                         />
                         <div
                           className="bx--number__controls"
@@ -4411,6 +4597,99 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                           </button>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--card-edit-form--input"
+                >
+                  <div
+                    className="iot--card-edit-form--input--toggle-field"
+                  >
+                    <span>
+                      Abbreviate numbers
+                    </span>
+                    <div
+                      className="bx--tooltip__label"
+                      id="card-1-abbreviate-numbers-tooltip"
+                    >
+                      <div
+                        aria-describedby={null}
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                          />
+                          <path
+                            d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      className="bx--form-item"
+                    >
+                      <input
+                        aria-label={null}
+                        checked={false}
+                        className="bx--toggle-input bx--toggle-input--small"
+                        id="card-1_value-card-number-compact"
+                        onChange={[Function]}
+                        onKeyUp={[Function]}
+                        type="checkbox"
+                      />
+                      <label
+                        aria-label="Abbreviate number"
+                        className="bx--toggle-input__label"
+                        htmlFor="card-1_value-card-number-compact"
+                      >
+                        <span
+                          className="bx--toggle__switch"
+                        >
+                          <svg
+                            className="bx--toggle__check"
+                            height="5px"
+                            viewBox="0 0 6 5"
+                            width="6px"
+                          >
+                            <path
+                              d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                            />
+                          </svg>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--off"
+                          >
+                            
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="bx--toggle__text--on"
+                          >
+                            
+                          </span>
+                        </span>
+                      </label>
                     </div>
                   </div>
                 </div>

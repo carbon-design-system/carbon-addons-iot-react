@@ -18,6 +18,7 @@ import DataStateRenderer from '../Card/DataStateRenderer';
 import {
   BASE_CLASS_NAME,
   PREVIEW_DATA,
+  DEFAULT_FONT_SIZE,
   determineLayout,
   determineValue,
 } from './valueCardUtils';
@@ -147,7 +148,7 @@ ValueCard.defaultProps = {
   dataState: null,
   values: null,
   // default productive-heading-06 font size
-  fontSize: 42,
+  fontSize: DEFAULT_FONT_SIZE,
   cardVariables: null,
   customFormatter: null,
   isNumberValueCompact: false,

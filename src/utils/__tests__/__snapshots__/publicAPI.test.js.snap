@@ -8723,6 +8723,12 @@ Map {
             "VALUE": Object {
               "type": "string",
             },
+            "abbreviateNumbers": Object {
+              "type": "string",
+            },
+            "abbreviateNumbersTooltip": Object {
+              "type": "string",
+            },
             "addCardButton": Object {
               "type": "string",
             },
