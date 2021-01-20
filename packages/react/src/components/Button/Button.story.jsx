@@ -48,7 +48,10 @@ const props = {
       disabled: boolean('Disabled (disabled)', false),
       size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
-      iconDescription: text('Icon description (iconDescription)', 'Button icon'),
+      iconDescription: text(
+        'Icon description (iconDescription)',
+        'Button icon'
+      ),
       onClick: action('onClick'),
       onFocus: action('onFocus'),
     };
@@ -70,7 +73,10 @@ const props = {
       disabled: boolean('Disabled (disabled)', false),
       size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
-      iconDescription: text('Icon description (iconDescription)', 'Button icon'),
+      iconDescription: text(
+        'Icon description (iconDescription)',
+        'Button icon'
+      ),
       tooltipPosition: select(
         'Tooltip position (tooltipPosition)',
         ['top', 'right', 'bottom', 'left'],
@@ -92,7 +98,10 @@ const props = {
       disabled: boolean('Disabled (disabled)', false),
       size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
-      iconDescription: text('Icon description (iconDescription)', 'Button icon'),
+      iconDescription: text(
+        'Icon description (iconDescription)',
+        'Button icon'
+      ),
       onClick: action('onClick'),
       onFocus: action('onFocus'),
     };
@@ -107,7 +116,10 @@ const props = {
       disabled: boolean('Disabled (disabled)', false),
       size: select('Button size (size)', sizes, 'default'),
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
-      iconDescription: text('Icon description (iconDescription)', 'Button icon'),
+      iconDescription: text(
+        'Icon description (iconDescription)',
+        'Button icon'
+      ),
       tooltipPosition: select(
         'Tooltip position (tooltipPosition)',
         ['top', 'right', 'bottom', 'left'],
@@ -172,8 +184,7 @@ export const _Default = () => {
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
-      }}
-    >
+      }}>
       <Button {...regularProps} className="some-class">
         Button
       </Button>

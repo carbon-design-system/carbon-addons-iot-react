@@ -1,7 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
-import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import {
+  ToolbarItem,
+  OverflowMenu,
+  OverflowMenuItem,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 
@@ -52,19 +56,22 @@ const CardRangePicker = ({
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
         {cardWidth > 400 ? (
-          <div id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
+          <div
+            id="timeRange"
+            className={`${iotPrefix}--card--toolbar-timerange-label`}>
             {timeRangeOptions[timeRange] || i18n.defaultLabel}
           </div>
         ) : null}
 
         <OverflowMenu
-          className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}
+          className={classnames(
+            `${iotPrefix}--card--toolbar-date-range-action`
+          )}
           flipped
           title={i18n.selectTimeRangeLabel}
           iconDescription={i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
-          renderIcon={EventSchedule16}
-        >
+          renderIcon={EventSchedule16}>
           <OverflowMenuItem
             key="default"
             onClick={() => handleTimeRange('default')}
@@ -83,7 +90,8 @@ const CardRangePicker = ({
                 onClick={() => handleTimeRange(i)}
                 itemText={timeRangeOptions[i]}
                 className={classnames({
-                  [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
+                  [`${iotPrefix}--card--overflow-menuitem-active`]:
+                    timeRange === i,
                 })}
               />
             ))}
@@ -96,7 +104,8 @@ const CardRangePicker = ({
                 onClick={() => handleTimeRange(i)}
                 itemText={timeRangeOptions[i]}
                 className={classnames({
-                  [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
+                  [`${iotPrefix}--card--overflow-menuitem-active`]:
+                    timeRange === i,
                 })}
               />
             ))}

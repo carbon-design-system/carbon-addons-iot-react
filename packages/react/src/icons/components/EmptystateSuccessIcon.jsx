@@ -4,7 +4,12 @@ function SvgEmptystateSuccessIcon(props) {
   return (
     <svg width={80} height={80} {...props}>
       <defs>
-        <linearGradient x1="0%" y1="50%" x2="99.938%" y2="50%" id="emptystate-Success-icon_svg__a">
+        <linearGradient
+          x1="0%"
+          y1="50%"
+          x2="99.938%"
+          y2="50%"
+          id="emptystate-Success-icon_svg__a">
           <stop stopColor="#F6F6F6" offset="0%" />
           <stop stopColor="#A9A9A9" offset="56.682%" />
           <stop stopColor="#999" offset="68.111%" />
@@ -15,8 +20,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="572.588%"
           x2="200.857%"
           y2="162.5%"
-          id="emptystate-Success-icon_svg__b"
-        >
+          id="emptystate-Success-icon_svg__b">
           <stop stopColor="#7D7D7D" offset="0%" />
           <stop stopColor="#2B2B2B" offset="100%" />
         </linearGradient>
@@ -25,8 +29,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="62.295%"
           x2="60.758%"
           y2="17.126%"
-          id="emptystate-Success-icon_svg__c"
-        >
+          id="emptystate-Success-icon_svg__c">
           <stop stopColor="#969696" offset=".392%" />
           <stop stopColor="#484848" offset="100%" />
         </linearGradient>
@@ -35,8 +38,7 @@ function SvgEmptystateSuccessIcon(props) {
           y1="33.147%"
           x2="33.188%"
           y2="66.447%"
-          id="emptystate-Success-icon_svg__d"
-        >
+          id="emptystate-Success-icon_svg__d">
           <stop stopColor="#5B5B5B" offset="0%" />
           <stop stopColor="#8B8B8B" offset="100%" />
         </linearGradient>
@@ -71,7 +73,10 @@ function SvgEmptystateSuccessIcon(props) {
           d="M37.127 15.939L34.63 14.87l-7.494 11.664c-.021.061-.052.102-.093.122-.041.02-.072.02-.092 0l-3.701-1.526-2.499 3.939 6.292 2.626 10.085-15.756M40.86 2.168l-.34.214-22.791 13.16-1.203.672 1.203-3.481h-.308v-.153l-6.354 3.664v28.183l.309-.183V16.397l5.983-3.42-1.203 3.481h-.062v28.245h.031l.062-.123.216-.153V16.611L40.859 2.504v-.336M43.172.244c-.288-.183-.658-.264-1.11-.244-.412 0-.771.092-1.08.275-.288.183-.442.397-.462.641 0 .061.01.112.03.153.062.203.206.376.432.519.309.183.668.264 1.08.244.452 0 .822-.092 1.11-.275.247-.142.39-.305.432-.488V.916c.02-.265-.124-.489-.432-.672z"
           fill="#FFF"
         />
-        <path fill="#6F6F6F" d="M41.167 25.893V2.321l-.246.152v28.153l.246-.153z" />
+        <path
+          fill="#6F6F6F"
+          d="M41.167 25.893V2.321l-.246.152v28.153l.246-.153z"
+        />
       </g>
     </svg>
   );

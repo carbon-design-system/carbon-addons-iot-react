@@ -114,7 +114,8 @@ const BarChartDataSeriesContent = ({
             cardConfig.content?.timeDataSourceId
               ? mergedI18n.timeInterval
               : cardConfig.content.type !== BAR_CHART_TYPES.GROUPED
-              ? cardConfig.content?.categoryDataSourceId || mergedI18n.timeInterval
+              ? cardConfig.content?.categoryDataSourceId ||
+                mergedI18n.timeInterval
               : cardConfig.content?.categoryDataSourceId
           }
           onChange={({ selectedItem }) => {

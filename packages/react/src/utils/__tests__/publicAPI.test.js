@@ -44,7 +44,15 @@ beforeEach(() => {
       'any',
     ];
 
-    const complex = ['arrayOf', 'instanceOf', 'objectOf', 'oneOf', 'oneOfType', 'shape', 'exact'];
+    const complex = [
+      'arrayOf',
+      'instanceOf',
+      'objectOf',
+      'oneOf',
+      'oneOfType',
+      'shape',
+      'exact',
+    ];
 
     // We want to remap primitive prop types like PropTypes.string with a getter
     // function. This getter function should return the type of the prop type

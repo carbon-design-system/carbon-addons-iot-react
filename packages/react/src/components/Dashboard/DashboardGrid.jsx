@@ -24,7 +24,8 @@ const StyledGridLayout = styled(GridLayout)`
   &&& {
     position: relative;
     .react-grid-item.cssTransforms {
-      transition-property: ${(props) => (props.shouldAnimate ? 'transform' : 'none')};
+      transition-property: ${(props) =>
+        props.shouldAnimate ? 'transform' : 'none'};
     }
 
     .react-resizable-hide .react-resizable-handle {
@@ -58,7 +59,9 @@ export const DashboardGridPropTypes = {
     xs: PropTypes.arrayOf(DashboardLayoutPropTypes),
   }),
   /** Array of layouts that are supported by this component. Defaults to all layouts */
-  supportedLayouts: PropTypes.arrayOf(PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])),
+  supportedLayouts: PropTypes.arrayOf(
+    PropTypes.oneOf(['max', 'xl', 'lg', 'md', 'sm', 'xs'])
+  ),
   /**
    * Optionally listen to layout changes to update a dashboard template
    * Calls back with (currentLayout: Layout, allLayouts: {[key: $Keys<breakpoints>]: Layout}) => void,
@@ -88,14 +91,20 @@ const getClosestMatchingSizes = ({ sortedSizes, value, dimension }) => {
   const closestDimensionValue = closestLargerSize
     ? closestLargerSize[dimension]
     : sortedSizes[sortedSizes.length - 1][dimension];
-  return sortedSizes.filter((size) => size[dimension] === closestDimensionValue);
+  return sortedSizes.filter(
+    (size) => size[dimension] === closestDimensionValue
+  );
 };
 
 const getMatchingCardSizesByDimension = ({ breakpointSizes, ...rest }) => {
   const { value, dimension } = rest;
-  const sortedSizes = breakpointSizes.sort((a, b) => a[dimension] - b[dimension]);
+  const sortedSizes = breakpointSizes.sort(
+    (a, b) => a[dimension] - b[dimension]
+  );
   const matchingSizes = sortedSizes.filter((size) => size[dimension] === value);
-  return matchingSizes.length ? matchingSizes : getClosestMatchingSizes({ sortedSizes, ...rest });
+  return matchingSizes.length
+    ? matchingSizes
+    : getClosestMatchingSizes({ sortedSizes, ...rest });
 };
 
 /**
@@ -150,7 +159,12 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
     if (layout) {
       // If you find a card that's missing from the current layout, you need to regenerate the layout
       if (cards.some((card) => !some(layouts[layoutName], { i: card.id }))) {
-        layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
+        layout = getLayout(
+          layoutName,
+          cards,
+          DASHBOARD_COLUMNS,
+          CARD_DIMENSIONS
+        );
       } else {
         // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
         layout = layout.reduce((updatedLayout, cardFromLayout) => {
@@ -221,9 +235,10 @@ const DashboardGrid = ({
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
-  const childrenArray = useMemo(() => (Array.isArray(children) ? children : [children]), [
-    children,
-  ]);
+  const childrenArray = useMemo(
+    () => (Array.isArray(children) ? children : [children]),
+    [children]
+  );
   const generatedLayouts = useMemo(
     () =>
       findLayoutOrGenerate(
@@ -236,7 +251,8 @@ const DashboardGrid = ({
   const cachedMargin = useMemo(() => [GUTTER, GUTTER], []);
 
   const handleLayoutChange = useCallback(
-    (layout, allLayouts) => onLayoutChange && onLayoutChange(layout, allLayouts),
+    (layout, allLayouts) =>
+      onLayoutChange && onLayoutChange(layout, allLayouts),
     [onLayoutChange]
   );
 
@@ -276,9 +292,14 @@ const DashboardGrid = ({
       w: layoutItem.w + colsJumped,
     };
 
-    const matchedSize = getMatchingCardSize(jumpAdjustedlayoutItem, breakpointSizes);
+    const matchedSize = getMatchingCardSize(
+      jumpAdjustedlayoutItem,
+      breakpointSizes
+    );
 
-    const renderedCardSizeName = cards.find((card) => card.props.id === layoutItem.i).props.size;
+    const renderedCardSizeName = cards.find(
+      (card) => card.props.id === layoutItem.i
+    ).props.size;
     placeholder.h = matchedSize.h;
     placeholder.w = matchedSize.w;
     layoutItem.h = matchedSize.h;
@@ -334,8 +355,7 @@ const DashboardGrid = ({
         onResizeStop={onResizeStop}
         isResizable={false}
         isDraggable={isEditable}
-        {...others}
-      >
+        {...others}>
         {cards}
       </StyledGridLayout>
     </div>

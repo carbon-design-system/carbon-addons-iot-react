@@ -175,7 +175,8 @@ describe('WizardModal', () => {
   it('clicking on previous button or previous step will call onBack', () => {
     const callBack = jest.fn();
 
-    const getStep = (step) => screen.getByTestId(`iot--progress-step-button-main-${step}`);
+    const getStep = (step) =>
+      screen.getByTestId(`iot--progress-step-button-main-${step}`);
 
     render(
       <WizardModal

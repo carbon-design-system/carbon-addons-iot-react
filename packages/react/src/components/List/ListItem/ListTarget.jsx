@@ -17,7 +17,11 @@ const ListTargetPropTypes = {
   connectDropTarget: PropTypes.func.isRequired,
   isOver: PropTypes.bool,
   targetPosition: PropTypes.string.isRequired,
-  targetSize: PropTypes.oneOf([TargetSize.Third, TargetSize.Half, TargetSize.Full]),
+  targetSize: PropTypes.oneOf([
+    TargetSize.Third,
+    TargetSize.Half,
+    TargetSize.Full,
+  ]),
   // eslint-disable-next-line react/no-unused-prop-types
   targetOverride: PropTypes.string, // eslint flags this as unused though it is used in react-dnd's drop effect
 };
@@ -28,7 +32,12 @@ const ListTargetDefaultProps = {
   targetOverride: null,
 };
 
-const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) => {
+const ListTarget = ({
+  connectDropTarget,
+  targetPosition,
+  targetSize,
+  isOver,
+}) => {
   let height = 33; // defaults to TargetSize.Third
 
   if (targetSize === TargetSize.Full) {
@@ -40,9 +49,12 @@ const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) =
   return (
     <div
       data-testid="list-target"
-      className={classnames(`${iotPrefix}--list-item-editable--drop-target-${targetPosition}`, {
-        [`${iotPrefix}--list-item-editable--drop-target-${targetPosition}__over`]: isOver,
-      })}
+      className={classnames(
+        `${iotPrefix}--list-item-editable--drop-target-${targetPosition}`,
+        {
+          [`${iotPrefix}--list-item-editable--drop-target-${targetPosition}__over`]: isOver,
+        }
+      )}
       style={{
         height: `${height}%`,
       }}

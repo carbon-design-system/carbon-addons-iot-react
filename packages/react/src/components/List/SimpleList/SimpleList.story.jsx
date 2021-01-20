@@ -3,7 +3,11 @@ import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing03 } from '@carbon/layout';
-import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import {
+  Button,
+  OverflowMenu,
+  OverflowMenuItem,
+} from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
 
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
@@ -69,7 +73,9 @@ const getFatRowListItems = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${
+          idx + 100
+        }`,
         rowActions: [],
       },
     }));
@@ -81,7 +87,9 @@ const getFatRowListItemsWithActions = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${
+          idx + 100
+        }`,
         rowActions,
       },
     }));
@@ -93,7 +101,9 @@ const getFatRowListItemsWithOverflowMenu = (num) =>
       id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
-        secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
+        secondaryValue: `This is a description or some secondary bit of data for Item ${
+          idx + 100
+        }`,
         rowActions: rowActionsOverFlowMenu,
       },
     }));
@@ -155,8 +165,7 @@ export const TallListIsFullHeightTrue = withReadme(SimpleListREADME, () => (
       height: 500,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -183,8 +192,7 @@ export const TallListIsFullHeightFalse = withReadme(SimpleListREADME, () => (
       height: 500,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -210,8 +218,7 @@ export const ListWithOverflowGrow = withReadme(SimpleListREADME, () => (
       height: 500,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -238,8 +245,7 @@ export const ListWithPageSize = withReadme(SimpleListREADME, () => (
       height: 500,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -266,8 +272,7 @@ export const ListWithEmptyRow = withReadme(SimpleListREADME, () => (
       height: 500,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -293,8 +298,7 @@ export const ListWithLargeRow = withReadme(SimpleListREADME, () => (
       height: 600,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -322,8 +326,7 @@ export const ListWithMultipleActions = withReadme(SimpleListREADME, () => (
       height: 600,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -350,8 +353,7 @@ export const ListWithOverflowMenu = withReadme(SimpleListREADME, () => (
       height: 600,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch
@@ -371,30 +373,32 @@ ListWithOverflowMenu.story = {
   name: 'list with overflow menu',
 };
 
-export const LargeRowListWithMultipleActions = withReadme(SimpleListREADME, () => (
-  <div
-    style={{
-      width: 500,
-      height: 600,
-      background: '#fee',
-      padding: spacing03,
-    }}
-  >
-    <SimpleList
-      title={text('Text', 'Simple List')}
-      hasSearch
-      i18n={{
-        searchPlaceHolderText: 'Enter a search',
-        pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
-      }}
-      buttons={buttonsToRender}
-      items={getFatRowListItemsWithActions(5)}
-      pageSize="sm"
-      isLargeRow
-      isLoading={boolean('isLoading', false)}
-    />
-  </div>
-));
+export const LargeRowListWithMultipleActions = withReadme(
+  SimpleListREADME,
+  () => (
+    <div
+      style={{
+        width: 500,
+        height: 600,
+        background: '#fee',
+        padding: spacing03,
+      }}>
+      <SimpleList
+        title={text('Text', 'Simple List')}
+        hasSearch
+        i18n={{
+          searchPlaceHolderText: 'Enter a search',
+          pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+        }}
+        buttons={buttonsToRender}
+        items={getFatRowListItemsWithActions(5)}
+        pageSize="sm"
+        isLargeRow
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  )
+);
 
 LargeRowListWithMultipleActions.story = {
   name: 'large row list with multiple actions',
@@ -407,8 +411,7 @@ export const LargeRowListWithOverflowMenu = withReadme(SimpleListREADME, () => (
       height: 600,
       background: '#fee',
       padding: spacing03,
-    }}
-  >
+    }}>
     <SimpleList
       title={text('Text', 'Simple List')}
       hasSearch

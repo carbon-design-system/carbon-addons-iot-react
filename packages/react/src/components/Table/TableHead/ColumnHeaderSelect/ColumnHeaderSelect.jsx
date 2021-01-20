@@ -43,8 +43,7 @@ const ColumnHeaderSelect = ({
           connectDragSource(instance);
           connectDropTarget(instance);
         }
-      }}
-    >
+      }}>
       {children}
     </Button>
   );

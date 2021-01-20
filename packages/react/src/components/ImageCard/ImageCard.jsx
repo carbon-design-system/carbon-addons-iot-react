@@ -5,10 +5,16 @@ import pick from 'lodash/pick';
 import { Image32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
-import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  ImageCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
-import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getResizeHandles,
+  getUpdatedCardSize,
+} from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
@@ -132,8 +138,7 @@ const ImageCard = ({
       resizeHandles={resizeHandles}
       {...others}
       error={error}
-      i18n={mergedI18n}
-    >
+      i18n={mergedI18n}>
       {!isCardLoading
         ? (
             // Get width and height from parent card

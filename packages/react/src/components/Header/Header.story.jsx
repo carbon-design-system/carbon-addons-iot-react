@@ -18,7 +18,8 @@ const StyledHeader = styled(Header)`
       justify-content: space-between;
     }
 
-    .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+    .bx--header__menu-title[role='menuitem'][aria-expanded='true']
+      + .bx--header__menu {
       z-index: 6001;
     }
   }

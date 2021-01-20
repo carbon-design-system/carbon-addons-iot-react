@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import TestBackend from 'react-dnd-test-backend';
-import { DragDropContext } from 'react-dnd';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
@@ -21,87 +19,104 @@ const commonTableHeadProps = {
     hasRowSelection: false,
     hasRowExpansion: false,
   },
-  onChangeOrdering: jest.fn(),
-  onColumnToggle: jest.fn(),
+  onColumnToggle: () => {},
+  onChangeOrdering: () => {},
 };
 
-const wrapInTestContext = (DecoratedComponent, props) =>
-  DragDropContext(TestBackend)(() => <DecoratedComponent {...props} />);
-
-let wrapper;
-let backend;
-
 describe('TableHead', () => {
-  beforeEach(() => {
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, commonTableHeadProps);
-
-    wrapper = mount(<Wrapped />);
-    backend = wrapper.instance().getManager().getBackend();
-  });
   it('can reorder columns', () => {
-    const dragSource = wrapper
-      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
-      .instance();
-    const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col2']").instance();
-    backend.simulateBeginDrag([dragSource.getHandlerId()]);
-    backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateDrop();
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
-  });
-  it('does not reorder columns when placed upon themselves', () => {
-    const dragSource = wrapper
-      .find("DragSource(DropTarget(ColumnHeaderSelect))[columnId='col1']")
-      .instance();
-    const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col1']").instance();
-    backend.simulateBeginDrag([dragSource.getHandlerId()]);
-    backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateDrop();
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalledWith([
+    const onChangeOrdering = jest.fn();
+    render(
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+      />
+    );
+
+    const column1 = screen.getByText('Column 1');
+    const column2 = screen.getByText('Column 2');
+
+    fireEvent.dragStart(column1);
+    fireEvent.dragEnter(column2);
+    fireEvent.dragOver(column2);
+    fireEvent.drop(column2);
+
+    expect(onChangeOrdering).toHaveBeenCalledWith([
       { columnId: 'col2', isHidden: false },
       { columnId: 'col1', isHidden: false },
     ]);
   });
+  it('does not reorder columns when placed upon themselves', () => {
+    const onChangeOrdering = jest.fn();
+    render(
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+      />
+    );
+
+    const column1 = screen.getByText('Column 1');
+
+    fireEvent.dragStart(column1);
+    fireEvent.dragEnter(column1);
+    fireEvent.dragOver(column1);
+    fireEvent.drop(column1);
+
+    expect(onChangeOrdering).toHaveBeenCalledTimes(0);
+  });
   it('can click to toggle visibility', () => {
-    const headerButton = wrapper.find("ColumnHeaderSelect[columnId='col1']");
-    headerButton.simulate('click');
-    expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
+    const onChangeOrdering = jest.fn();
+    const onColumnToggle = jest.fn();
+    render(
+      <UnconnectedColumnHeaderRow
+        {...commonTableHeadProps}
+        onChangeOrdering={onChangeOrdering}
+        onColumnToggle={onColumnToggle}
+      />
+    );
+
+    fireEvent.click(screen.getByText('Column 1'));
+
+    expect(onChangeOrdering).toHaveBeenCalledTimes(0);
+    expect(onColumnToggle).toHaveBeenCalledTimes(1);
   });
 });
 
 describe('ColumnHeaderRow', () => {
-  it('when hasRowExpansion set to true', () => {
+  it('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
-    render(<Wrapped />);
+    render(<UnconnectedColumnHeaderRow {...tableHeadProps} />);
 
     expect(screen.getByText('Column 1').textContent).toContain('Column 1');
     expect(screen.getByText('Column 2').textContent).toContain('Column 2');
   });
 
-  it('when ordering is empty, no columns are displayed', () => {
+  it('when ordering is empty, no columns are displayed', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       ordering: [],
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
-    const renderedElement = render(<Wrapped />);
+    const renderedElement = render(
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
+    );
 
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
 
-  it('when hasRowActions set to true', () => {
+  it('when hasRowActions set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowActions: true },
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
-    const renderedElement = render(<Wrapped />);
+    const renderedElement = render(
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
+    );
 
     expect(renderedElement.container.innerHTML).toContain('Column 1');
     expect(renderedElement.container.innerHTML).toContain('Column 2');
@@ -120,10 +135,13 @@ describe('ColumnHeaderRow', () => {
       columnSelectionConfigText: 'button_text',
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
-    const renderedElement = mount(<Wrapped />);
+    const renderedElement = mount(
+      <UnconnectedColumnHeaderRow {...tableHeadProps} />
+    );
 
-    expect(renderedElement.find('.column-header__btn').last().text()).toContain('button_text');
+    expect(renderedElement.find('.column-header__btn').last().text()).toContain(
+      'button_text'
+    );
 
     renderedElement.find('.column-header__btn').last().simulate('click');
 

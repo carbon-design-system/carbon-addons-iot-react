@@ -83,7 +83,12 @@ const propTypes = {
      * never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.
      * alwaysTruncate - Always truncate if needed for all table column configurations
      */
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    wrapCellText: PropTypes.oneOf([
+      'always',
+      'never',
+      'auto',
+      'alwaysTruncate',
+    ]),
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -245,7 +250,8 @@ export const defaultProps = (baseProps) => ({
       selectedIds: [],
       rowActions: [],
       sort: {},
-      ordering: baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
+      ordering:
+        baseProps.columns && baseProps.columns.map((i) => ({ columnId: i.id })),
       loadingState: {
         rowCount: 5,
       },
@@ -259,9 +265,13 @@ export const defaultProps = (baseProps) => ({
     toolbar: {
       onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
       onShowRowEdit: defaultFunction('actions.toolbar.onShowRowEdit'),
-      onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
+      onToggleColumnSelection: defaultFunction(
+        'actions.toolbar.onToggleColumnSelection'
+      ),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
-      onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
+      onCancelBatchAction: defaultFunction(
+        'actions.toolbar.onCancelBatchAction'
+      ),
     },
     table: {
       onChangeSort: defaultFunction('actions.table.onChangeSort'),
@@ -270,9 +280,13 @@ export const defaultProps = (baseProps) => ({
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
       onEmptyStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
-      onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
+      onColumnSelectionConfig: defaultFunction(
+        'actions.table.onColumnSelectionConfig'
+      ),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
-      onOverflowItemClicked: defaultFunction('actions.table.onOverflowItemClicked'),
+      onOverflowItemClicked: defaultFunction(
+        'actions.table.onOverflowItemClicked'
+      ),
     },
     onUserViewModified: null,
   },
@@ -358,7 +372,8 @@ const Table = (props) => {
           view,
           columns,
           state: {
-            currentSearchValue: searchValue.current === undefined ? '' : searchValue.current,
+            currentSearchValue:
+              searchValue.current === undefined ? '' : searchValue.current,
           },
         });
       } else {
@@ -465,13 +480,19 @@ const Table = (props) => {
       view.toolbar.search.value !== '');
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
-  const singleRowEditMode = !!view.table.rowActions.find((action) => action.isEditMode);
+  const singleRowEditMode = !!view.table.rowActions.find(
+    (action) => action.isEditMode
+  );
 
-  const allRowsAreSelected = view.table.selectedIds.length === visibleData.length;
-  const someRowsAreSelected = view.table.selectedIds.length > 0 && !allRowsAreSelected;
+  const allRowsAreSelected =
+    view.table.selectedIds.length === visibleData.length;
+  const someRowsAreSelected =
+    view.table.selectedIds.length > 0 && !allRowsAreSelected;
 
   const noSelectAllProp = view.table.isSelectAllSelected === undefined;
-  const isSelectAllSelected = noSelectAllProp ? allRowsAreSelected : view.table.isSelectAllSelected;
+  const isSelectAllSelected = noSelectAllProp
+    ? allRowsAreSelected
+    : view.table.isSelectAllSelected;
 
   const noIndeterminateProp = view.table.isSelectAllIndeterminate === undefined;
   const isSelectAllIndeterminate =
@@ -482,8 +503,7 @@ const Table = (props) => {
   return (
     <TableContainer
       style={style}
-      className={classnames(className, `${iotPrefix}--table-container`)}
-    >
+      className={classnames(className, `${iotPrefix}--table-container`)}>
       {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
         options.hasFilter ||
@@ -572,8 +592,7 @@ const Table = (props) => {
               options.hasResize && !options.useAutoTableLayoutForResize,
             [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
-          {...others}
-        >
+          {...others}>
           <TableHead
             {...others}
             i18n={i18n}
@@ -626,7 +645,12 @@ const Table = (props) => {
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
               columns={visibleColumns}
-              {...pick(options, 'hasRowSelection', 'hasRowExpansion', 'hasRowActions')}
+              {...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions'
+              )}
               rowCount={view.table.loadingState.rowCount}
             />
           ) : visibleData && visibleData.length ? (

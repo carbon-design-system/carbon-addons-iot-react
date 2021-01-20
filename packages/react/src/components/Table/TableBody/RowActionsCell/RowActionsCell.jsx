@@ -11,7 +11,10 @@ import classnames from 'classnames';
 import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
-import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
+import {
+  RowActionPropTypes,
+  RowActionErrorPropTypes,
+} from '../../TablePropTypes';
 import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
@@ -114,29 +117,33 @@ class RowActionsCell extends React.Component {
       langDir,
     } = this.props;
     const { isOpen } = this.state;
-    const overflowActions = actions ? actions.filter((action) => action.isOverflow) : [];
+    const overflowActions = actions
+      ? actions.filter((action) => action.isOverflow)
+      : [];
     const hasOverflow = overflowActions.length > 0;
-    const firstSelectableItemIndex = overflowActions.findIndex((action) => !action.disabled);
+    const firstSelectableItemIndex = overflowActions.findIndex(
+      (action) => !action.disabled
+    );
 
     return showSingleRowEditButtons ? (
       <TableCell
         key={`${id}-single-row-edit-buttons`}
-        className={`${iotPrefix}--row-actions-cell--table-cell`}
-      >
+        className={`${iotPrefix}--row-actions-cell--table-cell`}>
         {singleRowEditButtons}
       </TableCell>
     ) : actions ? (
       <TableCell
         key={`${id}-row-actions-cell`}
-        className={`${iotPrefix}--row-actions-cell--table-cell`}
-      >
+        className={`${iotPrefix}--row-actions-cell--table-cell`}>
         <div className={`${iotPrefix}--row-actions-container`}>
           <div
             data-testid="row-action-container-background"
-            className={classnames(`${iotPrefix}--row-actions-container__background`, {
-              [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
-            })}
-          >
+            className={classnames(
+              `${iotPrefix}--row-actions-container__background`,
+              {
+                [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
+              }
+            )}>
             {rowActionsError ? (
               <RowActionsError
                 actionFailedText={actionFailedText}
@@ -154,22 +161,30 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter((action) => !action.isOverflow)
-                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
-                    <Button
-                      {...omit(others, ['isOverflow'])}
-                      iconDescription={labelText || iconDescription}
-                      key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
-                      kind="ghost"
-                      hasIconOnly={!labelText}
-                      tooltipPosition="left"
-                      tooltipAlignment="end"
-                      size="small"
-                      onClick={(e) => onClick(e, id, actionId, onApplyRowAction)}
-                    >
-                      {labelText}
-                    </Button>
-                  ))}
+                  .map(
+                    ({
+                      id: actionId,
+                      labelText,
+                      iconDescription,
+                      ...others
+                    }) => (
+                      <Button
+                        {...omit(others, ['isOverflow'])}
+                        iconDescription={labelText || iconDescription}
+                        key={`${tableId}-${id}-row-actions-button-${actionId}`}
+                        data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
+                        kind="ghost"
+                        hasIconOnly={!labelText}
+                        tooltipPosition="left"
+                        tooltipAlignment="end"
+                        size="small"
+                        onClick={(e) =>
+                          onClick(e, id, actionId, onApplyRowAction)
+                        }>
+                        {labelText}
+                      </Button>
+                    )
+                  )}
                 {hasOverflow ? (
                   <OverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
@@ -181,16 +196,20 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
-                    selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
-                  >
+                    selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}>
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem
-                        className={classnames(`${iotPrefix}--action-overflow-item`, {
-                          [`${iotPrefix}--action-overflow-item--initialFocus`]:
-                            actionIndex === firstSelectableItemIndex,
-                        })}
+                        className={classnames(
+                          `${iotPrefix}--action-overflow-item`,
+                          {
+                            [`${iotPrefix}--action-overflow-item--initialFocus`]:
+                              actionIndex === firstSelectableItemIndex,
+                          }
+                        )}
                         key={`${id}-row-actions-button-${action.id}`}
-                        onClick={(e) => onClick(e, id, action.id, onApplyRowAction)}
+                        onClick={(e) =>
+                          onClick(e, id, action.id, onApplyRowAction)
+                        }
                         requireTitle={!action.renderIcon}
                         hasDivider={action.hasDivider}
                         isDelete={action.isDelete}
@@ -198,14 +217,15 @@ class RowActionsCell extends React.Component {
                           action.renderIcon ? (
                             <div
                               className={`${iotPrefix}--row-actions-cell--overflow-menu-content`}
-                              title={action.labelText}
-                            >
+                              title={action.labelText}>
                               {typeof action.renderIcon === 'string' ? (
                                 React.createElement(icons[action.renderIcon], {
                                   'aria-label': action.labelText,
                                 })
                               ) : (
-                                <action.renderIcon description={action.labelText} />
+                                <action.renderIcon
+                                  description={action.labelText}
+                                />
                               )}
                               {action.labelText}
                             </div>

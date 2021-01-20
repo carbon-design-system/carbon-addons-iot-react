@@ -49,7 +49,11 @@ unique value.
 
 ```jsx
 function InternalTableCell({ tableId, columnId, rowId }) {
-  return <td data-testid={`InternalTableCell-${tableId}-${columnId}-${rowId}`}>Example</td>;
+  return (
+    <td data-testid={`InternalTableCell-${tableId}-${columnId}-${rowId}`}>
+      Example
+    </td>
+  );
 }
 ```
 

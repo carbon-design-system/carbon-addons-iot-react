@@ -60,8 +60,7 @@ const TileGalleryItem = ({
             evt.preventDefault();
             evt.stopPropagation();
           }}
-          role="presentation"
-        >
+          role="presentation">
           {afterContent}
         </div>
       )}
@@ -74,7 +73,11 @@ const TileGalleryItem = ({
         <div className="top-section">
           <div className="thumbnail">{thumbnail}</div>
           <div className="description-card">
-            {!React.isValidElement(description) ? <span>{description}</span> : description}
+            {!React.isValidElement(description) ? (
+              <span>{description}</span>
+            ) : (
+              description
+            )}
           </div>
         </div>
         {content}
@@ -84,7 +87,11 @@ const TileGalleryItem = ({
         <Fragment>
           {content}
           <div className="description-card">
-            {!React.isValidElement(description) ? <span>{description}</span> : description}
+            {!React.isValidElement(description) ? (
+              <span>{description}</span>
+            ) : (
+              description
+            )}
           </div>
         </Fragment>
       </div>
@@ -97,8 +104,7 @@ const TileGalleryItem = ({
           mode === 'grid' ? 'card' : 'list'
         }-title`}
         key={`${title}-card-link`}
-        handleClick={onClick}
-      >
+        handleClick={onClick}>
         {tile}
       </ClickableTile>
     </Fragment>

@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
+import {
+  ComboBox,
+  DataTable,
+  FormItem,
+  TextInput,
+  MultiSelect,
+} from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
 
-import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
+import {
+  defaultFunction,
+  handleEnterKeyDown,
+} from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
@@ -25,8 +34,11 @@ class FilterHeaderRow extends Component {
         /** if options is empty array, assume text input for filter */
         options: PropTypes.arrayOf(
           PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
-              .isRequired,
+            id: PropTypes.oneOfType([
+              PropTypes.string,
+              PropTypes.number,
+              PropTypes.bool,
+            ]).isRequired,
             text: PropTypes.string.isRequired,
           })
         ),
@@ -111,7 +123,9 @@ class FilterHeaderRow extends Component {
       const newFilters = props.columns.reduce(
         (acc, curr) => ({
           ...acc,
-          [curr.id]: (props.filters.find((i) => i.columnId === curr.id) || { value: '' }).value,
+          [curr.id]: (
+            props.filters.find((i) => i.columnId === curr.id) || { value: '' }
+          ).value,
         }),
         {}
       );
@@ -216,7 +230,9 @@ class FilterHeaderRow extends Component {
                     initialSelectedItems={
                       Array.isArray(columnStateValue)
                         ? columnStateValue.map((value) =>
-                            typeof value !== 'object' ? { id: value, text: value } : value
+                            typeof value !== 'object'
+                              ? { id: value, text: value }
+                              : value
                           )
                         : columnStateValue
                         ? [{ id: columnStateValue, text: columnStateValue }]
@@ -227,7 +243,9 @@ class FilterHeaderRow extends Component {
                         (state) => ({
                           filterValues: {
                             ...state.filterValues,
-                            [column.id]: evt.selectedItems.map((item) => item.text),
+                            [column.id]: evt.selectedItems.map(
+                              (item) => item.text
+                            ),
                           },
                         }),
                         this.handleApplyFilter
@@ -248,7 +266,9 @@ class FilterHeaderRow extends Component {
                     initialSelectedItem={{
                       id: columnStateValue,
                       text: (
-                        column.options.find((option) => option.id === columnStateValue) || {
+                        column.options.find(
+                          (option) => option.id === columnStateValue
+                        ) || {
                           text: '',
                         }
                       ).text, // eslint-disable-line react/destructuring-assignment
@@ -259,7 +279,10 @@ class FilterHeaderRow extends Component {
                         (state) => ({
                           filterValues: {
                             ...state.filterValues,
-                            [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                            [column.id]:
+                              evt.selectedItem === null
+                                ? ''
+                                : evt.selectedItem.id,
                           },
                         }),
                         this.handleApplyFilter
@@ -270,13 +293,16 @@ class FilterHeaderRow extends Component {
                   />
                 )
               ) : (
-                <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
+                <FormItem
+                  className={`${iotPrefix}--filter-header-row--form-item`}>
                   <TextInput
                     id={column.id}
                     labelText={column.id}
                     hideLabel
                     light={lightweight}
-                    placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                    placeholder={
+                      column.placeholderText || 'Type and hit enter to apply'
+                    }
                     title={filterValues[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
                     onChange={(event) => {
                       event.persist();
@@ -287,12 +313,15 @@ class FilterHeaderRow extends Component {
                             [column.id]: event.target.value,
                           },
                         }),
-                        hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
+                        hasFastFilter
+                          ? debounce(this.handleApplyFilter, 150)
+                          : null // only apply the filter at debounced interval
                       );
                     }}
                     onKeyDown={
                       !hasFastFilter
-                        ? (event) => handleEnterKeyDown(event, this.handleApplyFilter)
+                        ? (event) =>
+                            handleEnterKeyDown(event, this.handleApplyFilter)
                         : null
                     } // if fast filter off, then filter on key press
                     onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
@@ -318,8 +347,7 @@ class FilterHeaderRow extends Component {
                           }
                         })
                       }
-                      title={clearFilterText}
-                    >
+                      title={clearFilterText}>
                       <Close16 description={clearFilterText} />
                     </div>
                   ) : null}
@@ -332,7 +360,8 @@ class FilterHeaderRow extends Component {
                   `${iotPrefix}--tableheader-filter`,
                   `${iotPrefix}--filter-header-row--header`,
                   {
-                    [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
+                    [`${iotPrefix}--filter-header-row--header-width`]:
+                      column.width === undefined,
                   }
                 )}
                 data-column={column.id}
@@ -340,9 +369,10 @@ class FilterHeaderRow extends Component {
                 width={column.width}
                 style={{
                   '--table-header-width': classnames(column.width),
-                  '--table-header-is-select-column': column.options ? 'hidden' : 'inherit',
-                }}
-              >
+                  '--table-header-is-select-column': column.options
+                    ? 'hidden'
+                    : 'inherit',
+                }}>
                 {headerContent}
               </TableHeader>
             );

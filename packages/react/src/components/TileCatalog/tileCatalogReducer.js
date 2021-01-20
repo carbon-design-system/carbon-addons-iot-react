@@ -33,7 +33,9 @@ export const determineInitialState = ({
   let selectedStartingIndex;
   // If a selected tile id is passed, we should page to it
   if (selectedTileId) {
-    const selectedTileIndex = filteredTiles.findIndex((tile) => tile.id === selectedTileId);
+    const selectedTileIndex = filteredTiles.findIndex(
+      (tile) => tile.id === selectedTileId
+    );
     selectedPage = Math.floor(selectedTileIndex / pageSize) + 1;
     selectedStartingIndex = pagination ? (selectedPage - 1) * pageSize : 0;
   }
@@ -98,7 +100,9 @@ export const tileCatalogReducer = (state = {}, action) => {
     }
     case TILE_ACTIONS.SELECT: {
       const { filteredTiles, pageSize } = state;
-      const tileIndex = filteredTiles.findIndex((tile) => tile.id === action.payload);
+      const tileIndex = filteredTiles.findIndex(
+        (tile) => tile.id === action.payload
+      );
       const page = Math.floor(tileIndex / pageSize) + 1;
       return {
         ...state,

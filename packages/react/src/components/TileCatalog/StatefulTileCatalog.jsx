@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 
-import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
+import {
+  tileCatalogReducer,
+  determineInitialState,
+  TILE_ACTIONS,
+} from './tileCatalogReducer';
 import TileCatalog, { propTypes } from './TileCatalog';
 
 /**
@@ -46,7 +50,12 @@ const StatefulTileCatalog = ({
       },
     });
     // If we totally change the tiles data, we should generate a selection event for the initial default selection
-    if (isSelectedByDefault && onSelection && tilesProp.length > 0 && !selectedTileIdProp) {
+    if (
+      isSelectedByDefault &&
+      onSelection &&
+      tilesProp.length > 0 &&
+      !selectedTileIdProp
+    ) {
       onSelection(tilesProp[0].id);
     }
   }, [tilesProp.map((tile) => omit(tile, 'renderContent'))]);
@@ -106,7 +115,11 @@ const StatefulTileCatalog = ({
         ...pagination,
         page,
         onPage: handlePage,
-        totalItems: isFiltered ? filteredTiles.length : tiles ? tiles.length : 0,
+        totalItems: isFiltered
+          ? filteredTiles.length
+          : tiles
+          ? tiles.length
+          : 0,
       }}
       onSelection={handleSelection}
     />

@@ -59,7 +59,8 @@ $small-screen-breakpoint: 65.99em;
     font-weight: 400;
   }
 
-  .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon .#{$prefix}--side-nav__link {
+  .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon
+    .#{$prefix}--side-nav__link {
     padding-left: mini-units(9);
   }
 
@@ -102,7 +103,8 @@ $small-screen-breakpoint: 65.99em;
     @include focus-outline('outline');
 
     // Windows, Firefox HCM Fix
-    @media screen and (-ms-high-contrast: active), screen and (prefers-contrast) {
+    @media screen and (-ms-high-contrast: active),
+      screen and (prefers-contrast) {
       outline: 3px solid transparent;
       outline-offset: -3px;
     }
@@ -114,7 +116,8 @@ $small-screen-breakpoint: 65.99em;
     background-color: $shell-side-nav-bg-04;
   }
 
-  .#{$prefix}--side-nav__link[aria-current='page'] .#{$prefix}--side-nav__link-text,
+  .#{$prefix}--side-nav__link[aria-current='page']
+    .#{$prefix}--side-nav__link-text,
   .#{$prefix}--side-nav__link--current .#{$prefix}--side-nav__link-text {
     color: $ibm-color__gray-100;
   }

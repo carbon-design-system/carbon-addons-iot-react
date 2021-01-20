@@ -67,8 +67,7 @@ const StatefulFilterTags = ({ tags }) => {
             type={tag.type}
             title="Clear Filter"
             style={{ marginRight: '1rem' }}
-            onClose={() => handleOnClose(tag.id)}
-          >
+            onClose={() => handleOnClose(tag.id)}>
             {tag.text}
           </Tag>
         ))}
@@ -106,8 +105,7 @@ export const WithHasOverflowSetToFalse = () => (
         filter
         type={tag.type}
         title="Clear Filter"
-        style={{ marginRight: '1rem' }}
-      >
+        style={{ marginRight: '1rem' }}>
         {tag.text}
       </Tag>
     ))}
@@ -133,8 +131,7 @@ export const WithTagContainerProp = () => (
         filter
         type={tag.type}
         title="Clear Filter"
-        style={{ marginRight: '1rem' }}
-      >
+        style={{ marginRight: '1rem' }}>
         {tag.text}
       </Tag>
     ))}

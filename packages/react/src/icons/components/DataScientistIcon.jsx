@@ -11,8 +11,7 @@ function SvgDataScientistIcon(props) {
           y1={4805.53}
           y2={4805.53}
           gradientTransform="matrix(-9.62 0 0 -9.62 -1273.97 46261.1)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#fff" />
           <stop offset={0.99} />
           <stop offset={1} />
@@ -42,8 +41,7 @@ function SvgDataScientistIcon(props) {
           y1={42.02}
           y2={47.52}
           gradientTransform="translate(-12645.2)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#171717" />
           <stop offset={0.73} stopColor="#171717" stopOpacity={0} />
         </linearGradient>
@@ -54,8 +52,7 @@ function SvgDataScientistIcon(props) {
           y1={1608.24}
           y2={1609.45}
           gradientTransform="matrix(-.5 .87 -.87 -.5 -139.51 3689.13)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#f3f3f3" />
           <stop offset={0.05} stopColor="#ebeced" stopOpacity={0.87} />
           <stop offset={0.15} stopColor="#e0e2e4" stopOpacity={0.67} />
@@ -73,8 +70,7 @@ function SvgDataScientistIcon(props) {
           x2={85.42}
           y1={139.12}
           y2={71.07}
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#0062ff" />
           <stop offset={1} stopColor="#bb8eff" />
         </linearGradient>
@@ -103,8 +99,7 @@ function SvgDataScientistIcon(props) {
           y1={37.47}
           y2={37.47}
           gradientTransform="translate(-12645.2)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#0530ad" />
           <stop offset={0.04} stopColor="#0530ad" stopOpacity={0.87} />
           <stop offset={0.12} stopColor="#0530ad" stopOpacity={0.64} />
@@ -122,8 +117,7 @@ function SvgDataScientistIcon(props) {
           y1={5933.84}
           y2={5933.44}
           gradientTransform="matrix(0 -9.62 9.62 0 -56968.54 10565.32)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#418cff" />
           <stop offset={0.07} stopColor="#3887ff" stopOpacity={0.83} />
           <stop offset={0.16} stopColor="#2f81ff" stopOpacity={0.64} />
@@ -142,8 +136,7 @@ function SvgDataScientistIcon(props) {
           y1={74.55}
           y2={76.73}
           gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#b9bfc7" />
           <stop offset={0.67} stopColor="#b9bfc7" stopOpacity={0.32} />
           <stop offset={1} stopColor="#b9bfc7" stopOpacity={0} />
@@ -155,8 +148,7 @@ function SvgDataScientistIcon(props) {
           y1={49.06}
           y2={48.41}
           gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0.2} stopColor="#97c1ff" stopOpacity={0} />
           <stop offset={0.29} stopColor="#7ea9f1" stopOpacity={0.17} />
           <stop offset={0.46} stopColor="#537ed9" stopOpacity={0.46} />
@@ -172,8 +164,7 @@ function SvgDataScientistIcon(props) {
           y1={47.76}
           y2={49.51}
           gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0.2} stopColor="#0530ad" stopOpacity={0} />
           <stop offset={0.29} stopColor="#0530ad" stopOpacity={0.17} />
           <stop offset={0.46} stopColor="#0530ad" stopOpacity={0.46} />
@@ -188,8 +179,7 @@ function SvgDataScientistIcon(props) {
           cy={53.56}
           r={6.74}
           gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0.19} stopColor="#f3f3f3" />
           <stop offset={0.39} stopColor="#ebeced" />
           <stop offset={0.69} stopColor="#d6d9dd" />
@@ -201,8 +191,7 @@ function SvgDataScientistIcon(props) {
           cy={70.73}
           r={20.6}
           gradientTransform="matrix(-1 0 0 1 -2545.13 0)"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop offset={0} stopColor="#f3f3f3" />
           <stop offset={0.23} stopColor="#f3f3f3" />
           <stop offset={1} stopColor="#b9bfc7" />
@@ -222,7 +211,10 @@ function SvgDataScientistIcon(props) {
           xlinkHref="#data-scientist-icon_svg__d"
         />
         <clipPath id="data-scientist-icon_svg__i">
-          <path fill="none" d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z" />
+          <path
+            fill="none"
+            d="M107.14 46.8l1.55.92v-6.13l-1.57 3.79.02 1.42z"
+          />
         </clipPath>
         <clipPath id="data-scientist-icon_svg__j">
           <path
@@ -243,8 +235,7 @@ function SvgDataScientistIcon(props) {
           height={6.35}
           x={103.38}
           y={41.28}
-          maskUnits="userSpaceOnUse"
-        >
+          maskUnits="userSpaceOnUse">
           <path
             fill="url(#data-scientist-icon_svg__a)"
             transform="rotate(-47.95 106.56 44.465)"
@@ -257,8 +248,7 @@ function SvgDataScientistIcon(props) {
           height={10.77}
           x={84.58}
           y={46.78}
-          maskUnits="userSpaceOnUse"
-        >
+          maskUnits="userSpaceOnUse">
           <path
             fill="url(#data-scientist-icon_svg__c)"
             transform="rotate(-47.95 89.952 52.163)"
@@ -271,8 +261,7 @@ function SvgDataScientistIcon(props) {
           height={9.63}
           x={94.09}
           y={32.83}
-          maskUnits="userSpaceOnUse"
-        >
+          maskUnits="userSpaceOnUse">
           <path
             fill="url(#data-scientist-icon_svg__f)"
             transform="rotate(-17.95 98.86 37.646)"
@@ -283,14 +272,19 @@ function SvgDataScientistIcon(props) {
       <g
         style={{
           isolation: 'isolate',
-        }}
-      >
+        }}>
         <path
           fill="url(#data-scientist-icon_svg__g)"
           d="M85.15 41.78l-84.73 49 85.28 49 84.73-49-85.28-49z"
         />
-        <path fill="#054ada" d="M85.48 139.64l-.06 6.14 84.95-48.85.06-6.15-84.95 48.86z" />
-        <path fill="#051b75" d="M85.42 139.64L.48 90.78l-.06 6.15 84.95 48.85.05-6.14z" />
+        <path
+          fill="#054ada"
+          d="M85.48 139.64l-.06 6.14 84.95-48.85.06-6.15-84.95 48.86z"
+        />
+        <path
+          fill="#051b75"
+          d="M85.42 139.64L.48 90.78l-.06 6.15 84.95 48.85.05-6.14z"
+        />
         <path
           fill="#b9bfc7"
           d="M38.18 38a9.14 9.14 0 014.15-7.2L95.89 1.3c2.3-1.32 4.18-.25 4.19 2.39l.12 42a9.2 9.2 0 01-4.2 7.24L42.48 84.08c-2.3 1.33-4.18.26-4.18-2.38L38.18 38"
@@ -327,7 +321,10 @@ function SvgDataScientistIcon(props) {
           strokeMiterlimit={10}
           d="M101.07 53c.47-1.1 5.24-5.73 7.1-7.32 1.45-1.52 4.4-1.74 6.61-1.23h.79c1.64.14 3.55-.1 4.06.42l.06.13c.13.32.26.65.37 1 1 3.05.33 5.71-.8 8.75a37.28 37.28 0 00-1.26 5.4c-.12 1.19-.61 3.51-.63 4.76 0 0 5.22 21.28 5.46 26.26.17 3.44-14.36 6.08-14.36 6.08s-8.88-1.15-9.64-3.33 3.31-26.52 3.31-26.52l-1-14.52"
         />
-        <path fill="#f3f3f3" d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z" />
+        <path
+          fill="#f3f3f3"
+          d="M113.1 37.81v9.07c0 1.11-1.34 2-3 2s-3-.9-3-2v-9.07z"
+        />
         <g clipPath="url(#data-scientist-icon_svg__i)">
           <path
             fill="url(#data-scientist-icon_svg__b)"
@@ -386,7 +383,9 @@ function SvgDataScientistIcon(props) {
           opacity={0.7}
           d="M97.01 62.16l1.41 3.21 1.99-10.03-1.02-2.06-2.38 8.88z"
         />
-        <g mask="url(#data-scientist-icon_svg__r)" clipPath="url(#data-scientist-icon_svg__q)">
+        <g
+          mask="url(#data-scientist-icon_svg__r)"
+          clipPath="url(#data-scientist-icon_svg__q)">
           <path
             fill="url(#data-scientist-icon_svg__s)"
             transform="rotate(-18.2 98.109 37.727)"

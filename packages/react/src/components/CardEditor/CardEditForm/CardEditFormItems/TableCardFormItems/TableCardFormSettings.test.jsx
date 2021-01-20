@@ -1,9 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  CARD_TYPES,
+} from '../../../../../constants/LayoutConstants';
 
-import TableCardFormSettings, { updateColumnSort } from './TableCardFormSettings';
+import TableCardFormSettings, {
+  updateColumnSort,
+} from './TableCardFormSettings';
 
 const commonCardConfig = {
   id: 'id',
@@ -46,7 +51,10 @@ describe('TableCardFormSettings', () => {
     ]);
   });
   it('updateColumnSort with no previous column sort', () => {
-    const mockColumns = [{ dataSourceId: 'timestamp' }, { dataSourceId: 'manufacturer' }];
+    const mockColumns = [
+      { dataSourceId: 'timestamp' },
+      { dataSourceId: 'manufacturer' },
+    ];
     expect(updateColumnSort(mockColumns, 'manufacturer', 'ASC')).toEqual([
       { dataSourceId: 'timestamp' },
       { dataSourceId: 'manufacturer', sort: 'ASC' },

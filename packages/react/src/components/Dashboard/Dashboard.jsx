@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import React, {
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import warning from 'warning';
@@ -199,7 +205,8 @@ const defaultProps = {
     pageNumberAria: 'Page Number',
     itemsPerPage: 'Items per page:',
     currentPage: (page) => `__page ${page}__`,
-    itemsRangeWithTotal: (min, max, total) => `__${min}–${max} of ${total} items__`,
+    itemsRangeWithTotal: (min, max, total) =>
+      `__${min}–${max} of ${total} items__`,
     pageRange: (current, total) => `__${current} of ${total} pages__`,
     /** table body */
     overflowMenuAria: 'More actions',
@@ -310,7 +317,10 @@ const Dashboard = ({
   const handleOnFetchData = useCallback(
     (card, ...args) => {
       return onFetchData(card, ...args).finally(() => {
-        if (cardsLoadingRef.current && !cardsLoadingRef.current.includes(card.id)) {
+        if (
+          cardsLoadingRef.current &&
+          !cardsLoadingRef.current.includes(card.id)
+        ) {
           cardsLoadingRef.current.push(card.id);
           // If the card array count matches the card count, we call setIsLoading to false, and clear the array
           if (
@@ -363,7 +373,15 @@ const Dashboard = ({
           timeGrain={timeGrain}
         />
       )), // eslint-disable-next-line react-hooks/exhaustive-deps
-    [breakpoint, i18n, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
+    [
+      breakpoint,
+      i18n,
+      cards,
+      isEditable,
+      isLoading,
+      handleOnFetchData,
+      timeGrain,
+    ]
   );
 
   return (
@@ -386,8 +404,7 @@ const Dashboard = ({
           onLayoutChange={onLayoutChange}
           isEditable={isEditable}
           breakpoint={breakpoint}
-          onBreakpointChange={cachedOnBreakpointChange}
-        >
+          onBreakpointChange={cachedOnBreakpointChange}>
           {gridContents}
         </DashboardGrid>
       </div>

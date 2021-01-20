@@ -11,7 +11,10 @@ const getTiles = (num) => {
     .fill(0)
     .map((i, idx) => {
       tiles[idx] = (
-        <SampleTile title={`Tile ${idx + 1}`} description="This is a sample product tile" />
+        <SampleTile
+          title={`Tile ${idx + 1}`}
+          description="This is a sample product tile"
+        />
       );
       return tiles[idx];
     });
@@ -163,7 +166,11 @@ describe('TileCatalogNew', () => {
 
   it('TileCatalogNew pagination does not render with minTileWidth', () => {
     render(
-      <TileCatalogNew title="Test Tile Catalog" tiles={getTiles(4, 'Tile')} minTileWidth="20rem" />
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(4, 'Tile')}
+        minTileWidth="20rem"
+      />
     );
 
     expect(screen.queryByText('Next page')).toBeNull();
@@ -187,9 +194,13 @@ describe('TileCatalogNew', () => {
 
   it('TileCatalogNew renders error state', () => {
     // trigger an error by not giving the catalog tiles
-    render(<TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />);
+    render(
+      <TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />
+    );
     expect(
-      screen.getByText('An error has occurred. Please make sure your catalog has content.')
+      screen.getByText(
+        'An error has occurred. Please make sure your catalog has content.'
+      )
     ).toBeTruthy();
   });
 

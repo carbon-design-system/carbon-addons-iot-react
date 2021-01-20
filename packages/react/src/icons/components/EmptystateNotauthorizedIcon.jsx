@@ -11,8 +11,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           fy="50%"
           r="41.461%"
           gradientTransform="matrix(-.0463 .9968 -1.09141 -.1512 1.04 .104)"
-          id="emptystate-Notauthorized-icon_svg__d"
-        >
+          id="emptystate-Notauthorized-icon_svg__d">
           <stop stopOpacity={0.27} offset="0%" />
           <stop stopOpacity={0} offset="100%" />
         </radialGradient>
@@ -23,8 +22,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           fy="74.913%"
           r="110.292%"
           gradientTransform="matrix(0 -.65458 .5345 0 .223 1.157)"
-          id="emptystate-Notauthorized-icon_svg__f"
-        >
+          id="emptystate-Notauthorized-icon_svg__f">
           <stop stopColor="#949494" offset="0%" />
           <stop stopColor="#E3E3E3" offset="85%" />
           <stop stopColor="#FAFAFA" offset="100%" />
@@ -36,8 +34,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           fy="28.869%"
           r="131.419%"
           gradientTransform="matrix(-.13119 -.62193 1.72688 -.14336 .138 .68)"
-          id="emptystate-Notauthorized-icon_svg__g"
-        >
+          id="emptystate-Notauthorized-icon_svg__g">
           <stop stopColor="#FAFAFA" offset="0%" />
           <stop stopColor="#E3E3E3" offset="38.095%" />
           <stop stopColor="#949494" offset="100%" />
@@ -49,8 +46,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           fy="-82.736%"
           r="561.611%"
           gradientTransform="matrix(-.09668 -.24728 .99532 -.02402 6.566 .448)"
-          id="emptystate-Notauthorized-icon_svg__h"
-        >
+          id="emptystate-Notauthorized-icon_svg__h">
           <stop stopColor="#818181" offset="47%" />
           <stop stopColor="#E4E4E4" offset="100%" />
         </radialGradient>
@@ -61,8 +57,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           fy="-185.698%"
           r="137.673%"
           gradientTransform="matrix(.20443 -.545 .97888 .11382 1.625 -1.778)"
-          id="emptystate-Notauthorized-icon_svg__i"
-        >
+          id="emptystate-Notauthorized-icon_svg__i">
           <stop stopColor="#474747" offset="0%" />
           <stop stopColor="#191919" offset="82%" />
         </radialGradient>
@@ -71,8 +66,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           y1="48.935%"
           x2="75.212%"
           y2="76.522%"
-          id="emptystate-Notauthorized-icon_svg__a"
-        >
+          id="emptystate-Notauthorized-icon_svg__a">
           <stop stopOpacity={0.07} offset="0%" />
           <stop stopOpacity={0.28} offset="100%" />
         </linearGradient>
@@ -81,8 +75,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           y1="52.053%"
           x2="99.908%"
           y2="52.053%"
-          id="emptystate-Notauthorized-icon_svg__b"
-        >
+          id="emptystate-Notauthorized-icon_svg__b">
           <stop stopColor="#DCDCDC" offset="0%" />
           <stop stopColor="#C1C1C1" offset="7%" />
           <stop stopColor="#B5B5B5" offset="16.827%" />
@@ -96,8 +89,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           y1="48.963%"
           x2="74.662%"
           y2="75.917%"
-          id="emptystate-Notauthorized-icon_svg__c"
-        >
+          id="emptystate-Notauthorized-icon_svg__c">
           <stop stopColor="#F2F2F2" offset="0%" />
           <stop stopColor="#949494" offset="100%" />
         </linearGradient>
@@ -106,8 +98,7 @@ function SvgEmptystateNotauthorizedIcon(props) {
           y1="43.68%"
           x2="78.067%"
           y2="81.753%"
-          id="emptystate-Notauthorized-icon_svg__e"
-        >
+          id="emptystate-Notauthorized-icon_svg__e">
           <stop stopOpacity={0.12} offset="0%" />
           <stop stopOpacity={0.1} offset="100%" />
         </linearGradient>
@@ -140,7 +131,9 @@ function SvgEmptystateNotauthorizedIcon(props) {
           d="M50.147 3.39c.11.061.216.13.318.203-1.25-1-2.612-1.85-4.059-2.535-2.16-1.112-4.86-.73-8.097 1.145l-.379.217c-3.243 1.876-6.01 4.814-8.3 8.814a24.036 24.036 0 00-3.423 10.46v15.092c.01.26.087.512.223.733.02.022.036.047.047.074.241.321.548.587.9.78.713.404 1.51.636 2.327.678V24.875a19.187 19.187 0 01.244-3.18 25.533 25.533 0 013.186-8.475c2.295-3.986 5.064-6.924 8.307-8.813l.372-.217c3.247-1.89 6.025-2.156 8.334-.8z"
           fill="#FFF"
         />
-        <g transform="translate(23.088 21.695)" fill="url(#emptystate-Notauthorized-icon_svg__d)">
+        <g
+          transform="translate(23.088 21.695)"
+          fill="url(#emptystate-Notauthorized-icon_svg__d)">
           <path d="M18.941 4.656c0 1.284.79 2.38 2.368 3.288A11.06 11.06 0 0026.978 9.3a11.122 11.122 0 005.689-1.356c1.57-.904 2.352-2 2.347-3.288 0-1.288-.771-2.38-2.34-3.295a11.169 11.169 0 00-5.69-1.356 11.128 11.128 0 00-5.668 1.356c-1.577.909-2.361 2.007-2.375 3.295zM0 15.504c0 1.283.79 2.38 2.368 3.288a11.06 11.06 0 005.668 1.356 11.122 11.122 0 005.69-1.356c1.569-.904 2.351-2 2.347-3.288 0-1.288-.771-2.38-2.34-3.295a11.169 11.169 0 00-5.69-1.356 11.128 11.128 0 00-5.669 1.356C.798 13.117.014 14.216 0 15.504z" />
         </g>
         <path

@@ -3,14 +3,24 @@ import { mount } from 'enzyme';
 import { render, within, screen } from '@testing-library/react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
+import {
+  tableColumns,
+  tableData,
+  actions2,
+  tableColumnsWithLinks,
+} from '../../utils/sample';
 
 import TableCard from './TableCard';
-import { createColumnsWithFormattedLinks, handleExpandedItemLinks } from './tableCardUtils';
+import {
+  createColumnsWithFormattedLinks,
+  handleExpandedItemLinks,
+} from './tableCardUtils';
 
 describe('TableCard', () => {
   it('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
-    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
+    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(
+      tableColumnsWithLinks
+    );
     const columnsWithlinks = columnsWithFormattedLinks.filter(
       (column) => column.renderDataFunction
     );
@@ -49,7 +59,10 @@ describe('TableCard', () => {
     };
 
     // with row specific variables
-    const updatedRowSpecificExpandedItems = handleExpandedItemLinks(row, expandedRow);
+    const updatedRowSpecificExpandedItems = handleExpandedItemLinks(
+      row,
+      expandedRow
+    );
     expect(updatedRowSpecificExpandedItems).toEqual([
       {
         id: 'count',
@@ -71,7 +84,11 @@ describe('TableCard', () => {
       },
     ]);
     // if cardVariables are given, then this function should return its original data
-    const updatedExpandedItems = handleExpandedItemLinks(row, expandedRow, cardVariables);
+    const updatedExpandedItems = handleExpandedItemLinks(
+      row,
+      expandedRow,
+      cardVariables
+    );
     expect(updatedExpandedItems).toEqual(expandedRow);
   });
   it('Row specific link variables populate correctly', () => {
@@ -143,7 +160,9 @@ describe('TableCard', () => {
       />
     );
     expect(screen.getAllByText('Link').length).toEqual(11);
-    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73003');
+    expect(document.querySelector('a').getAttribute('href')).toEqual(
+      'https://ibm.com/73003'
+    );
   });
   it('Clicked row actions', () => {
     const onCardAction = jest.fn();
@@ -195,7 +214,9 @@ describe('TableCard', () => {
       />
     );
 
-    const totalColumns = tableColumns.filter((item) => item.priority === 1 || item.priority === 2);
+    const totalColumns = tableColumns.filter(
+      (item) => item.priority === 1 || item.priority === 2
+    );
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
   });
   it('Columns displayed Large with actions', () => {
@@ -217,7 +238,9 @@ describe('TableCard', () => {
       />
     );
 
-    const totalColumns = tableColumns.filter((item) => item.priority === 1 || item.priority === 2);
+    const totalColumns = tableColumns.filter(
+      (item) => item.priority === 1 || item.priority === 2
+    );
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length + 1); // +1 for action column
   });
   it('Columns should use custom render fuction when present', () => {

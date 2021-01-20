@@ -42,7 +42,9 @@ test('simulate onClick on isClickable', () => {
   screen.getByTestId('iot--progress-step-button-main-second-step').click();
   // const afterClick = screen.getByTitle('First Step').children[0];
   // screen.debug(afterClick);
-  expect(screen.getByTitle('First Step').children[0]).not.toContain(beforeClick);
+  expect(screen.getByTitle('First Step').children[0]).not.toContain(
+    beforeClick
+  );
 });
 
 test('check last number of step', () => {
@@ -53,7 +55,13 @@ test('check last number of step', () => {
 
 test('handleChange', () => {
   const mockOnClickItem = jest.fn();
-  render(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} isClickable />);
+  render(
+    <ProgressIndicator
+      items={mockItems}
+      onClickItem={mockOnClickItem}
+      isClickable
+    />
+  );
   screen.getByTestId('iot--progress-step-button-main-second-step').click();
   expect(mockOnClickItem).toHaveBeenCalledWith('step2');
 });

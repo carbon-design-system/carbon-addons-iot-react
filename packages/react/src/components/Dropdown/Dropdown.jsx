@@ -49,7 +49,10 @@ const propTypes = {
    * Allow users to pass in an arbitrary item or a string (in case their items are an array of strings)
    * from their collection that are pre-selected
    */
-  initialSelectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  initialSelectedItem: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
 
   /**
    * Specify if the currently selected value is invalid.
@@ -156,7 +159,9 @@ const defaultItemToString = (item) => {
       <div className={`${iotPrefix}--dropdown__item`} title={item.text}>
         <div className={`${iotPrefix}--dropdown__label`}>
           {React.createElement(item?.icon)}
-          <div className={`${iotPrefix}--dropdown__label__content`}>{item.text}</div>
+          <div className={`${iotPrefix}--dropdown__label__content`}>
+            {item.text}
+          </div>
         </div>
       </div>
     );

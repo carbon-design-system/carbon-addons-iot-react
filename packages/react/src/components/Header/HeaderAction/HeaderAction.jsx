@@ -84,8 +84,7 @@ const HeaderAction = ({ item, index, testID }) => {
         key={`submenu-${index}`}
         onBlur={(e) => handleHeaderClose(e)}
         onKeyDown={handleHeaderKeyDown}
-        ref={parentContainerRef}
-      >
+        ref={parentContainerRef}>
         {item.hasOwnProperty('hasHeaderPanel') ? (
           // Render a subpanel type action
           <HeaderActionPanel
@@ -119,12 +118,14 @@ const HeaderAction = ({ item, index, testID }) => {
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
-      className={classnames(`${carbonPrefix}--header-action-btn`, item.className)}
+      className={classnames(
+        `${carbonPrefix}--header-action-btn`,
+        item.className
+      )}
       key={`menu-item-${item.label}-global-${index}`}
       data-testid={`menu-item-${item.label}-global`}
       aria-label={item.label}
-      onClick={item.onClick || (() => {})}
-    >
+      onClick={item.onClick || (() => {})}>
       {item.btnContent}
     </HeaderGlobalAction>
   );

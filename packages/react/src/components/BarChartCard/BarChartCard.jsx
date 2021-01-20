@@ -1,9 +1,16 @@
 import React, { useMemo } from 'react';
-import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts-react';
+import {
+  SimpleBarChart,
+  StackedBarChart,
+  GroupedBarChart,
+} from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
-import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import {
+  BarChartCardPropTypes,
+  CardPropTypes,
+} from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   BAR_CHART_TYPES,
@@ -81,7 +88,13 @@ const BarChartCard = ({
   const memoizedGenerateSampleValues = useMemo(
     () =>
       isEditable
-        ? generateSampleValues(series, timeDataSourceId, interval, timeRange, categoryDataSourceId)
+        ? generateSampleValues(
+            series,
+            timeDataSourceId,
+            interval,
+            timeRange,
+            categoryDataSourceId
+          )
         : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [series, interval, timeRange, isEditable]
@@ -138,7 +151,12 @@ const BarChartCard = ({
 
   const scaleType = timeDataSourceId ? 'time' : 'labels';
 
-  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
+  const axes = mapValuesToAxes(
+    layout,
+    categoryDataSourceId,
+    timeDataSourceId,
+    type
+  );
 
   // Set the colors for each dataset
   const uniqueDatasets = !isAllValuesEmpty
@@ -163,7 +181,13 @@ const BarChartCard = ({
     );
 
     tableData = tableData.concat(
-      formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
+      formatTableData(
+        timeDataSourceId,
+        categoryDataSourceId,
+        type,
+        values,
+        chartData
+      )
     );
   }
 
@@ -181,15 +205,13 @@ const BarChartCard = ({
       isResizable={isResizable}
       resizeHandles={resizeHandles}
       timeRange={timeRange}
-      {...others}
-    >
+      {...others}>
       {!isAllValuesEmpty ? (
         <div
           className={classnames(`${iotPrefix}--bar-chart-container`, {
             [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
             [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
-          })}
-        >
+          })}>
           <ChartComponent
             // When showing the dashboard editor preview, we need to recalculate the chart scale
             // because the data is added and removed dynamically
@@ -205,9 +227,14 @@ const BarChartCard = ({
               axes: {
                 bottom: {
                   title: `${xLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED &&
                     layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
@@ -219,13 +246,21 @@ const BarChartCard = ({
                 },
                 left: {
                   title: `${yLabel || ''} ${
-                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+                    layout === BAR_CHART_LAYOUTS.VERTICAL
+                      ? unit
+                        ? `(${unit})`
+                        : ''
+                      : ''
                   }`,
-                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+                  scaleType:
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+                    type === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
-                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+                  ...(domainRange &&
+                  layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+                  timeDataSourceId
                     ? { domain: domainRange }
                     : {}),
                 },
@@ -241,7 +276,12 @@ const BarChartCard = ({
                 valueFormatter: (tooltipValue) =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) =>
-                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
+                  handleTooltip(
+                    ...args,
+                    timeDataSourceId,
+                    showTimeInGMT,
+                    tooltipDateFormatPattern
+                  ),
                 groupLabel: i18n.tooltipGroupLabel,
                 totalLabel: i18n.tooltipTotalLabel,
               },
@@ -277,7 +317,8 @@ const BarChartCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, title),
+                  onDownloadCSV: (filteredData) =>
+                    csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{

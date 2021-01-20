@@ -6,7 +6,9 @@ $hoverBgColor: #3d3d3d;
   /////////////////////////////////////////
   // Support for mult-level (3) side nav items
   ////////////////////////////////////////
-  .#{$prefix}--side-nav__menu-item + .#{$prefix}--side-nav__item > .#{$prefix}--side-nav__submenu {
+  .#{$prefix}--side-nav__menu-item
+    + .#{$prefix}--side-nav__item
+    > .#{$prefix}--side-nav__submenu {
     font-weight: 400;
     padding-left: mini-units(9);
 
@@ -29,7 +31,9 @@ $hoverBgColor: #3d3d3d;
     .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__submenu:hover,
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__item:hover,
-  .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__submenu:hover + .#{$prefix}--side-nav__menu {
+  .#{$prefix}--side-nav__menu
+    .#{$prefix}--side-nav__submenu:hover
+    + .#{$prefix}--side-nav__menu {
     background-color: $selectedBgColor;
   }
 

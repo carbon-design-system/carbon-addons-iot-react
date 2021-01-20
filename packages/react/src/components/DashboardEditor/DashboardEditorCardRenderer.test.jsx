@@ -11,7 +11,9 @@ describe('DashboardEditorCardRenderer', () => {
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('timeseries card just renders id', () => {
-    render(<DashboardEditorCardRenderer type={CARD_TYPES.TIMESERIES} id="myid" />);
+    render(
+      <DashboardEditorCardRenderer type={CARD_TYPES.TIMESERIES} id="myid" />
+    );
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('value card renders threshold icon', () => {

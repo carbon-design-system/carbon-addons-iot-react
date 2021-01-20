@@ -60,8 +60,7 @@ const ImageTile = ({
       id={id}
       selected={isSelected}
       onChange={toggleImageSelection}
-      light
-    >
+      light>
       <div className={`${iotPrefix}--image-tile__title`}>
         <span>{title ?? extractFileName(src) ?? src}</span>
       </div>

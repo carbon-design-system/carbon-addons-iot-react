@@ -162,7 +162,15 @@ export const Playground = () => (
   <EmptyState
     icon={select(
       'image',
-      ['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', null],
+      [
+        'error',
+        'error404',
+        'empty',
+        'not-authorized',
+        'no-result',
+        'success',
+        null,
+      ],
       'empty'
     )}
     title={text('title', 'This is an empty state you can configure via knobs')}

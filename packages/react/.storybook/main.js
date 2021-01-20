@@ -18,11 +18,16 @@ module.exports = {
 
     // High quality 'original source' sourcemaps are slow to generate on initial builds and rebuilds.
     // Using cheap-module-eval-source-map speeds up builds and rebuilds in development while not sacrificing too much source map quality.
-    config.devtool = configType === 'DEVELOPMENT' ? 'cheap-module-eval-source-map' : 'source-map';
+    config.devtool =
+      configType === 'DEVELOPMENT'
+        ? 'cheap-module-eval-source-map'
+        : 'source-map';
 
     // Moment.js is quite large, the locales that they bundle in the core as of v2.18 are ignored to keep our bundle size down.
     // https://webpack.js.org/plugins/ignore-plugin/#example-of-ignoring-moment-locales
-    config.plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment\/min$/));
+    config.plugins.push(
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment\/min$/)
+    );
 
     config.module.rules.push({
       test: /\.(js|jsx)$/,
@@ -47,7 +52,9 @@ module.exports = {
 
     // Remove the existing css rule
     // https://github.com/storybookjs/storybook/issues/6319#issuecomment-477852640
-    config.module.rules = config.module.rules.filter((f) => f.test.toString() !== '/\\.css$/');
+    config.module.rules = config.module.rules.filter(
+      (f) => f.test.toString() !== '/\\.css$/'
+    );
 
     // Define our desired scss/css rule
     config.module.rules.push({

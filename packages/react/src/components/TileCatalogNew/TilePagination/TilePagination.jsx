@@ -38,9 +38,10 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         [`${prefix}--pagination-nav__page--disabled`]: page === pageNumber,
       })}
       aria-current={i18n.ariaLabelPage}
-      aria-disabled={page === pageNumber}
-    >
-      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
+      aria-disabled={page === pageNumber}>
+      <span className="bx--pagination-nav__accessibility-label">
+        {i18n.ariaLabelPage}
+      </span>
       {pageNumber}
     </button>
   );
@@ -56,15 +57,13 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           onChange={(evt) => {
             onChange(Number(evt.target.value));
             setSelectedValue('default');
-          }}
-        >
+          }}>
           <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
             <option
               key={`TilePagination-option-${i + accumulator}`}
               value={i + accumulator}
-              data-page={i + accumulator}
-            >
+              data-page={i + accumulator}>
               {i + accumulator}
             </option>
           ))}
@@ -78,8 +77,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
             width="16"
             height="16"
             viewBox="0 0 32 32"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             <circle cx="8" cy="16" r="2" />
             <circle cx="16" cy="16" r="2" />
             <circle cx="24" cy="16" r="2" />
@@ -100,7 +98,8 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   // if page number in first 4 numbers, do not show front overflow menu
   const showFrontOverFlowMenu = isLargeNumberOfButtons && page > frontThreshold;
   // if page number in last 4 numbers, do not show back overflow menu
-  const showBackOverFlowMenu = isLargeNumberOfButtons && page < numPages - backThreshold + 1;
+  const showBackOverFlowMenu =
+    isLargeNumberOfButtons && page < numPages - backThreshold + 1;
 
   const getPageNumberButtons = () => {
     let buttons = [];
@@ -108,8 +107,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       buttons = Array.from({ length: numPages - 2 }, (v, i) => (
         <li
           key={`TilePagination-page-number-button-${i + 2}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(i + 2)}
         </li>
       ));
@@ -118,8 +116,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       buttons = Array.from({ length: 4 }, (v, i) => (
         <li
           key={`TilePagination-page-number-button-${i + 2}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(i + 2)}
         </li>
       ));
@@ -128,20 +125,17 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       buttons = [
         <li
           key={`TilePagination-page-number-button-${page - 1}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(page - 1)}
         </li>,
         <li
           key={`TilePagination-page-number-button-${page}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(page)}
         </li>,
         <li
           key={`TilePagination-page-number-button-${page + 1}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(page + 1)}
         </li>,
       ];
@@ -150,26 +144,22 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       buttons = [
         <li
           key={`TilePagination-page-number-button-${numPages - 4}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(numPages - 4)}
         </li>,
         <li
           key={`TilePagination-page-number-button-${numPages - 3}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(numPages - 3)}
         </li>,
         <li
           key={`TilePagination-page-number-button-${numPages - 2}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(numPages - 2)}
         </li>,
         <li
           key={`TilePagination-page-number-button-${numPages - 1}`}
-          className={`${prefix}--pagination-nav__list-item`}
-        >
+          className={`${prefix}--pagination-nav__list-item`}>
           {getPageButton(numPages - 1)}
         </li>,
       ];
@@ -179,7 +169,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   };
 
   const getFrontOverFlowMenu = () => {
-    return showBackOverFlowMenu ? getPageSelect(page - 3, 2) : getPageSelect(numPages - 6, 2);
+    return showBackOverFlowMenu
+      ? getPageSelect(page - 3, 2)
+      : getPageSelect(numPages - 6, 2);
   };
 
   const getBackOverFlowMenu = () => {
@@ -189,7 +181,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   };
 
   return (
-    <nav className={`${prefix}--pagination-nav`} aria-label={i18n.ariaLabelPagination}>
+    <nav
+      className={`${prefix}--pagination-nav`}
+      aria-label={i18n.ariaLabelPagination}>
       <ul className={`${prefix}--pagination-nav__list`}>
         <li className={`${prefix}--pagination-nav__list-item`}>
           <button
@@ -202,8 +196,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
                 [`${prefix}--pagination-nav__page--disabled`]: page === 1,
               }
             )}
-            aria-disabled="true"
-          >
+            aria-disabled="true">
             <span className={`${prefix}--pagination-nav__accessibility-label`}>
               {i18n.ariaLabelPreviousPage}
             </span>
@@ -216,13 +209,14 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
               width="5"
               height="8"
               viewBox="0 0 5 8"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <path d="M5 8L0 4 5 0z" />
             </svg>
           </button>
         </li>
-        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(1)}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>
+          {getPageButton(1)}
+        </li>
 
         {showFrontOverFlowMenu ? getFrontOverFlowMenu() : null}
 
@@ -231,7 +225,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         {showBackOverFlowMenu ? getBackOverFlowMenu() : null}
 
         {numPages > 1 ? (
-          <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages)}</li>
+          <li className={`${prefix}--pagination-nav__list-item`}>
+            {getPageButton(numPages)}
+          </li>
         ) : null}
         <li className={`${prefix}--pagination-nav__list-item`}>
           <button
@@ -241,10 +237,10 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
               `${prefix}--pagination-nav__page`,
               `${prefix}--pagination-nav__page--direction`,
               {
-                [`${prefix}--pagination-nav__page--disabled`]: page === numPages,
+                [`${prefix}--pagination-nav__page--disabled`]:
+                  page === numPages,
               }
-            )}
-          >
+            )}>
             <span className={`${prefix}--pagination-nav__accessibility-label`}>
               {i18n.ariaLabelNextPage}
             </span>
@@ -257,8 +253,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
               width="5"
               height="8"
               viewBox="0 0 5 8"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <path d="M0 0L5 4 0 8z" />
             </svg>
           </button>

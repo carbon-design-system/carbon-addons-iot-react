@@ -119,8 +119,7 @@ const CardCodeEditor = ({
         primaryButtonLabel: i18n.modalPrimaryButtonLabel,
         secondaryButtonLabel: i18n.modalSecondaryButtonLabel,
       }}
-      {...composedModalProps}
-    >
+      {...composedModalProps}>
       <Button
         className={`${iotPrefix}--editor-expand`}
         hasIconOnly

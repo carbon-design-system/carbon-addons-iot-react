@@ -11,7 +11,9 @@ import CatalogContent from './CatalogContent';
 const longDescription =
   'Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile';
 
-const tileRenderFunction = ({ values }) => <CatalogContent {...values} icon={<Add />} />;
+const tileRenderFunction = ({ values }) => (
+  <CatalogContent {...values} icon={<Add />} />
+);
 
 export const commonTileCatalogProps = {
   title: 'My Tile Catalog',
@@ -111,7 +113,9 @@ WithPages.story = {
   name: 'with pages',
 };
 
-export const Loading = () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />;
+export const Loading = () => (
+  <StatefulTileCatalog {...commonTileCatalogProps} isLoading />
+);
 
 Loading.story = {
   name: 'loading',
@@ -119,7 +123,11 @@ Loading.story = {
 
 export const Error = () => (
   <FullWidthWrapper>
-    <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      tiles={[]}
+      error="In error state"
+    />
   </FullWidthWrapper>
 );
 
@@ -138,7 +146,11 @@ export const AsyncLoadedWaitOneSecond = () => {
       }, 1000);
     }, []);
     return (
-      <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
+      <StatefulTileCatalog
+        {...commonTileCatalogProps}
+        isLoading={isLoading}
+        tiles={tilesProp}
+      />
     );
   };
   return <Container />;
@@ -149,7 +161,10 @@ AsyncLoadedWaitOneSecond.story = {
 };
 
 export const IsSelectedByDefaultFalse = () => (
-  <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
+  <StatefulTileCatalog
+    {...commonTileCatalogProps}
+    isSelectedByDefault={false}
+  />
 );
 
 IsSelectedByDefaultFalse.story = {

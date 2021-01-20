@@ -62,13 +62,15 @@ const Button = (props) => {
         [`${iotPrefix}--btn-icon-selection`]: kind === 'icon-selection',
         [`${iotPrefix}--btn-icon-selection--recommended`]:
           kind === 'icon-selection' && !disabled && recommended,
-        [`${iotPrefix}--btn-icon-selection--selected`]: kind === 'icon-selection' && selected,
+        [`${iotPrefix}--btn-icon-selection--selected`]:
+          kind === 'icon-selection' && selected,
       })}
-      disabled={disabled || (loading !== undefined && loading !== false)}
-    >
+      disabled={disabled || (loading !== undefined && loading !== false)}>
       {loading ? <Loading small withOverlay={false} /> : null}
       {kind === 'icon-selection' && !disabled && recommended ? (
-        <div className={`${iotPrefix}--btn-icon-selection--recommended_marker`} />
+        <div
+          className={`${iotPrefix}--btn-icon-selection--recommended_marker`}
+        />
       ) : null}
 
       {children}

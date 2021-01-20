@@ -2,7 +2,11 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 
-import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+} from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { barChartData } from '../../utils/barChartDataSample';
 

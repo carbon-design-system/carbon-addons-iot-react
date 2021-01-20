@@ -94,7 +94,12 @@ const defaultProps = {
 };
 
 const TableSaveViewModal = ({
-  actions: { onSave: onSaveCallback, onClose, onClearError, onChange: onChangeCallback },
+  actions: {
+    onSave: onSaveCallback,
+    onClose,
+    onClearError,
+    onChange: onChangeCallback,
+  },
   error,
   i18n,
   initialFormValues,
@@ -119,7 +124,8 @@ const TableSaveViewModal = ({
     cancelButtonLabelText,
   } = merge({}, defaultProps.i18n, i18n);
 
-  const onSave = () => onSaveCallback({ ...formValues, description: viewDescription });
+  const onSave = () =>
+    onSaveCallback({ ...formValues, description: viewDescription });
 
   const onChange = (modifiedFormValue) => {
     setFormValues((currentValues) => ({
@@ -136,7 +142,8 @@ const TableSaveViewModal = ({
   };
 
   const MyComposedModal = overrides?.composedModal?.component || ComposedModal;
-  const MyTableSaveViewForm = overrides?.tableSaveViewForm?.component || TableSaveViewForm;
+  const MyTableSaveViewForm =
+    overrides?.tableSaveViewForm?.component || TableSaveViewForm;
 
   return (
     <MyComposedModal
@@ -156,9 +163,10 @@ const TableSaveViewModal = ({
       open={open}
       sendingData={sendingData}
       selectorPrimaryFocus={`#${primaryInputId}`}
-      {...overrides?.composedModal?.props}
-    >
-      <p className={`${iotPrefix}--save-view-modal__body-text`}>{modalBodyText}</p>
+      {...overrides?.composedModal?.props}>
+      <p className={`${iotPrefix}--save-view-modal__body-text`}>
+        {modalBodyText}
+      </p>
       <MyTableSaveViewForm
         viewDescription={viewDescription}
         titleInputInvalid={titleInputInvalid}

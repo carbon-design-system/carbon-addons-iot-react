@@ -69,7 +69,10 @@ describe('TableBodyRow', () => {
       values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
-      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithUndefined} />
+      <TableBodyRow
+        tableActions={mockActions}
+        {...tableRowPropsWithUndefined}
+      />
     );
     expect(wrapper).toBeDefined();
   });
@@ -121,7 +124,10 @@ describe('TableBodyRow', () => {
       values: { col1: 'value1', col2: undefined },
     };
     const wrapper = mount(
-      <TableBodyRow tableActions={mockActions} {...tableRowPropsWithSelection} />
+      <TableBodyRow
+        tableActions={mockActions}
+        {...tableRowPropsWithSelection}
+      />
     );
     wrapper.find('input').simulate('change', { stopPropagation: () => true });
     expect(mockRowSelection).toHaveBeenCalled();

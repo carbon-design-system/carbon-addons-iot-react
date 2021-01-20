@@ -52,11 +52,13 @@ describe('editorUtils', () => {
           dataSourceId: 'key1',
           unit: '%',
           label: 'Key 1',
+          uuid: 'uniqueID',
         },
         {
           dataSourceId: 'key2',
           unit: 'lb',
           label: 'Key 2',
+          uuid: 'uniqueID2',
         },
       ],
     },
@@ -71,10 +73,12 @@ describe('editorUtils', () => {
         {
           dataSourceId: 'airflow',
           label: 'Airflow',
+          uuid: 'uniqueID',
         },
         {
           dataSourceId: 'torque',
           label: 'Torque',
+          uuid: 'uniqueID2',
         },
       ],
     },
@@ -151,22 +155,32 @@ describe('editorUtils', () => {
   describe('isCardJsonValid', () => {
     it('ValueCard', () => {
       expect(isCardJsonValid(mockValueCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockValueCard, content: null })).toEqual(
+        false
+      );
     });
     it('TimeSeriesCard', () => {
       expect(isCardJsonValid(mockTimeSeriesCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockTimeSeriesCard, content: null })).toEqual(
+        false
+      );
     });
     it('BarChartCard', () => {
       expect(isCardJsonValid(mockBarChartCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockBarChartCard, content: null })).toEqual(
+        false
+      );
     });
     it('TableCard', () => {
       expect(isCardJsonValid(mockTableCard)).toEqual(true);
-      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(false);
+      expect(isCardJsonValid({ ...mockTableCard, content: null })).toEqual(
+        false
+      );
     });
     it('CustomCard', () => {
-      expect(isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })).toEqual(true);
+      expect(
+        isCardJsonValid({ ...mockTableCard, type: CARD_TYPES.CUSTOM })
+      ).toEqual(true);
     });
   });
 
@@ -202,19 +216,51 @@ describe('editorUtils', () => {
       },
     };
     const selectedItems = [
-      { id: 'temperature', text: 'Temperature' },
-      { id: 'pressure', text: 'Pressure' },
+      {
+        id: 'temperature',
+        text: 'Temperature',
+        uuid: 'uniqueID',
+        label: 'Temperature',
+      },
+      {
+        id: 'pressure',
+        text: 'Pressure',
+        uuid: 'uniqueID2',
+        label: 'Pressure',
+      },
     ];
     it('should correctly format the card series', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: 'red' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
+        {
+          dataSourceId: 'temperature',
+          label: 'Temperature',
+          color: '#6929c4',
+          uuid: 'uniqueID',
+        },
+        {
+          dataSourceId: 'pressure',
+          label: 'Pressure',
+          color: '#1192e8',
+          uuid: 'uniqueID2',
+        },
       ]);
     });
     it('should correctly generate colors for dataItems with no color defined', () => {
-      expect(formatSeries(selectedItems, cardConfigWithoutColorDefinition)).toEqual([
-        { dataSourceId: 'temperature', label: 'Temperature', color: '#6929c4' },
-        { dataSourceId: 'pressure', label: 'Pressure', color: '#1192e8' },
+      expect(
+        formatSeries(selectedItems, cardConfigWithoutColorDefinition)
+      ).toEqual([
+        {
+          dataSourceId: 'temperature',
+          label: 'Temperature',
+          color: '#6929c4',
+          uuid: 'uniqueID',
+        },
+        {
+          dataSourceId: 'pressure',
+          label: 'Pressure',
+          color: '#1192e8',
+          uuid: 'uniqueID2',
+        },
       ]);
     });
   });
@@ -233,33 +279,41 @@ describe('editorUtils', () => {
               precision: 2,
               thresholds: [],
               dataFilter: { deviceid: '73000' },
+              uuid: 'uniqueID',
             },
             {
               dataSourceId: 'key2',
               unit: 'lb',
               label: 'Key 2',
+              uuid: 'uniqueID2',
             },
           ],
         },
       };
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        { id: 'key1', text: 'Key 1', uuid: 'uniqueID' },
+        { id: 'key2', text: 'Key 2', uuid: 'uniqueID2' },
       ];
       expect(formatAttributes(selectedItems, mockValueCard2)).toEqual([
         {
           dataSourceId: 'key1',
           label: 'key1',
           precision: 2,
+          thresholds: [],
+          unit: '%',
+          uuid: 'uniqueID',
           dataFilter: { deviceid: '73000' },
         },
-        { dataSourceId: 'key2', label: 'Key 2' },
+        { dataSourceId: 'key2', label: 'Key 2', unit: 'lb', uuid: 'uniqueID2' },
       ]);
     });
   });
   describe('handleDataSeriesChange', () => {
     it('should just return cardConfig if there is no Type', () => {
-      const newCard = handleDataSeriesChange([], omit(mockTimeSeriesCard, 'type'));
+      const newCard = handleDataSeriesChange(
+        [],
+        omit(mockTimeSeriesCard, 'type')
+      );
       expect(newCard).toEqual(omit(mockTimeSeriesCard, 'type'));
     });
     // base table card
@@ -275,7 +329,11 @@ describe('editorUtils', () => {
         { id: 'key1', text: 'Key 1' },
         { id: 'key2', text: 'Key 2' },
       ];
-      const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {});
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockTableCard,
+        () => {}
+      );
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
@@ -357,8 +415,16 @@ describe('editorUtils', () => {
       });
     });
     it('handleDataSeriesChange should correctly format the columns for new table card dimensions', () => {
-      const selectedItems = [{ id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' }];
-      const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
+      const selectedItems = [
+        { id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' },
+      ];
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockTableCard,
+        () => {},
+        null,
+        true
+      );
       expect(newCard).toEqual({
         ...mockTableCard,
         content: {
@@ -442,7 +508,11 @@ describe('editorUtils', () => {
         { id: 'key1', text: 'Key 1' },
         { id: 'key2', text: 'Key 2' },
       ];
-      const newCard = handleDataSeriesChange(selectedItems, mockTimeSeriesCard, () => {});
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockTimeSeriesCard,
+        () => {}
+      );
       expect(newCard).toEqual({
         content: {
           series: [
@@ -466,8 +536,8 @@ describe('editorUtils', () => {
     });
     it('should correctly format the data in Value', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        { id: 'key1', text: 'Key 1', uuid: 'uniqueID' },
+        { id: 'key2', text: 'Key 2', uuid: 'uniqueID2' },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockValueCard);
       expect(newCard).toEqual({
@@ -476,10 +546,14 @@ describe('editorUtils', () => {
             {
               dataSourceId: 'key1',
               label: 'Key 1',
+              unit: '%',
+              uuid: 'uniqueID',
             },
             {
               dataSourceId: 'key2',
               label: 'Key 2',
+              unit: 'lb',
+              uuid: 'uniqueID2',
             },
           ],
         },
@@ -529,7 +603,12 @@ describe('editorUtils', () => {
         { dataSourceId: 'elevators', label: 'Elevators', unit: '°' },
         { dataSourceId: 'pressure', label: 'Pressure', unit: 'psi' },
       ];
-      const newCard = handleDataSeriesChange(selectedItems, mockImageCard, null, 0);
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockImageCard,
+        null,
+        0
+      );
 
       expect(newCard).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -652,7 +731,12 @@ describe('editorUtils', () => {
       });
 
       const withoutThresholds = omit(mockImageCard, 'thresholds');
-      newCard = handleDataSeriesChange(editDataItem, withoutThresholds, null, 0);
+      newCard = handleDataSeriesChange(
+        editDataItem,
+        withoutThresholds,
+        null,
+        0
+      );
 
       expect(newCard).toEqual(withoutThresholds);
     });
@@ -737,8 +821,11 @@ describe('editorUtils', () => {
         xLabel: 'X axis',
         yLabel: 'Y axis',
         unit: 'PSI',
+        uuid: 'uniqueID2',
       };
-      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [editDataItem]);
+      const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [
+        editDataItem,
+      ]);
       expect(newCard).toEqual({
         id: 'Standard',
         title: 'timeseries card',
@@ -746,12 +833,14 @@ describe('editorUtils', () => {
         size: 'MEDIUM',
         content: {
           series: [
+            { dataSourceId: 'airflow', label: 'Airflow', uuid: 'uniqueID' },
             {
               dataSourceId: 'torque',
               label: 'Torque',
               xLabel: 'X axis',
               yLabel: 'Y axis',
               unit: 'PSI',
+              uuid: 'uniqueID2',
             },
           ],
         },
@@ -762,6 +851,7 @@ describe('editorUtils', () => {
         dataSourceId: 'key2',
         unit: 'F',
         label: 'Updated Key 2',
+        uuid: 'uniqueID2',
       };
       const newCard = handleDataItemEdit(editDataItem, mockValueCard);
       expect(newCard).toEqual({
@@ -775,11 +865,13 @@ describe('editorUtils', () => {
               dataSourceId: 'key1',
               unit: '%',
               label: 'Key 1',
+              uuid: 'uniqueID',
             },
             {
               dataSourceId: 'key2',
               unit: 'F',
               label: 'Updated Key 2',
+              uuid: 'uniqueID2',
             },
           ],
         },

@@ -3,7 +3,11 @@ import { render, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { sampleHierarchy } from '../List.story';
-import { DropLocation, EditingStyle, moveItemsInList } from '../../../utils/DragAndDropUtils';
+import {
+  DropLocation,
+  EditingStyle,
+  moveItemsInList,
+} from '../../../utils/DragAndDropUtils';
 
 import HierarchyListReorderModal from './HierarchyListReorderModal/HierarchyListReorderModal';
 
@@ -15,14 +19,17 @@ describe('HierarchyListReorderModal', () => {
       content: {
         value: team,
       },
-      children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
-        id: `${team}_${player}`,
-        content: {
-          value: player,
-          secondaryValue: sampleHierarchy.MLB['American League'][team][player],
-        },
-        isSelectable: true,
-      })),
+      children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(
+        (player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue:
+              sampleHierarchy.MLB['American League'][team][player],
+          },
+          isSelectable: true,
+        })
+      ),
     })),
     ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
       id: team,
@@ -30,14 +37,17 @@ describe('HierarchyListReorderModal', () => {
       content: {
         value: team,
       },
-      children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
-        id: `${team}_${player}`,
-        content: {
-          value: player,
-          secondaryValue: sampleHierarchy.MLB['National League'][team][player],
-        },
-        isSelectable: true,
-      })),
+      children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(
+        (player) => ({
+          id: `${team}_${player}`,
+          content: {
+            value: player,
+            secondaryValue:
+              sampleHierarchy.MLB['National League'][team][player],
+          },
+          isSelectable: true,
+        })
+      ),
     })),
   ];
 
@@ -85,7 +95,9 @@ describe('HierarchyListReorderModal', () => {
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(items[1].content.value)
+    ).toBeDefined();
   });
 
   it('clicking current breadcrumb does not update the view', () => {
@@ -108,7 +120,9 @@ describe('HierarchyListReorderModal', () => {
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(items[1].content.value)
+    ).toBeDefined();
 
     // Selects the current breadcrumb
     const thirdBreadCrumb = screen.queryAllByRole('button')[3];
@@ -116,11 +130,18 @@ describe('HierarchyListReorderModal', () => {
 
     const updatedBreadCrumbs = screen.queryByTestId('modal-breadcrumb');
     expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(updatedBreadCrumbs).queryByText(items[1].content.value)).toBeDefined();
+    expect(
+      within(updatedBreadCrumbs).queryByText(items[1].content.value)
+    ).toBeDefined();
   });
 
   it('clicking parent breadcrumb updates the view', () => {
-    const newList = moveItemsInList(items, [items[1].id], items[0].id, DropLocation.Nested);
+    const newList = moveItemsInList(
+      items,
+      [items[1].id],
+      items[0].id,
+      DropLocation.Nested
+    );
 
     const selectedIds = [newList[1].id];
 
@@ -145,16 +166,26 @@ describe('HierarchyListReorderModal', () => {
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbs).queryByText(newList[0].content.value)).toBeDefined();
-    expect(within(breadcrumbs).queryByText(newList[0].children[0].content.value)).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(newList[0].content.value)
+    ).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(newList[0].children[0].content.value)
+    ).toBeDefined();
 
     fireEvent.click(within(breadcrumbs).queryAllByRole('button')[1]);
 
     const updatedBreadCrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(updatedBreadCrumbs).queryByText(newList[0].content.value)).toBeDefined();
-    expect(within(updatedBreadCrumbs).queryByText(newList[0].children[0].content.value)).toBeNull();
+    expect(
+      within(updatedBreadCrumbs).queryByText(newList[0].content.value)
+    ).toBeDefined();
+    expect(
+      within(updatedBreadCrumbs).queryByText(
+        newList[0].children[0].content.value
+      )
+    ).toBeNull();
   });
 
   it('clicking all rows updates resets view', () => {
@@ -177,7 +208,9 @@ describe('HierarchyListReorderModal', () => {
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(items[1].content.value)
+    ).toBeDefined();
 
     const allItemsButton = screen.queryAllByRole('button')[1];
 
@@ -185,7 +218,9 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbsRerender = screen.queryByTestId('modal-breadcrumb');
     expect(within(breadcrumbsRerender).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbsRerender).queryByText(items[1].content.value)).toBeNull();
+    expect(
+      within(breadcrumbsRerender).queryByText(items[1].content.value)
+    ).toBeNull();
   });
 
   it('clicking radio button returns correct drop id', () => {
@@ -247,7 +282,9 @@ describe('HierarchyListReorderModal', () => {
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
     expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
+    expect(
+      within(breadcrumbs).queryByText(items[1].content.value)
+    ).toBeDefined();
     expect(within(breadcrumbs).queryByText(items[2].content.value)).toBeNull();
 
     fireEvent.click(saveButton);

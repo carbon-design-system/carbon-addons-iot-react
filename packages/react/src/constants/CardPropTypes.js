@@ -58,7 +58,8 @@ export const AttributePropTypes = PropTypes.shape({
   thresholds: PropTypes.arrayOf(
     PropTypes.shape({
       comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
       color: PropTypes.string,
       icon: PropTypes.string,
     })
@@ -92,10 +93,14 @@ export const ValueCardPropTypes = {
     attributes: PropTypes.arrayOf(AttributePropTypes).isRequired,
   }),
   /** Value card expects its values passed as an object with key value pairs */
-  values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
+  values: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
   /** DataState will override the cards default empty state and error string */
   dataState: PropTypes.shape({
-    type: PropTypes.oneOf([CARD_DATA_STATE.NO_DATA, CARD_DATA_STATE.ERROR]).isRequired,
+    type: PropTypes.oneOf([CARD_DATA_STATE.NO_DATA, CARD_DATA_STATE.ERROR])
+      .isRequired,
     icon: PropTypes.element,
     label: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -104,7 +109,12 @@ export const ValueCardPropTypes = {
     tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.number,
+      PropTypes.bool,
+    ])
   ),
   /**
    * Value Card's formatting can be updated at runtime, customFormatter is provided the default formatted value and
@@ -154,7 +164,8 @@ export const TableCardPropTypes = {
       PropTypes.shape({
         dataSourceId: PropTypes.string.isRequired,
         comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
         severity: PropTypes.oneOf([1, 2, 3]),
         /** optional overrides for color and icon */
         color: PropTypes.string,
@@ -205,7 +216,12 @@ export const TableCardPropTypes = {
     downloadIconDescription: PropTypes.string,
   }),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.number,
+      PropTypes.bool,
+    ])
   ),
 };
 
@@ -217,7 +233,9 @@ export const ZoomBarPropTypes = PropTypes.shape({
   /** Determines whether the zoomBar is enabled */
   enabled: PropTypes.bool,
   /** Optional domain to zoom to by default. Can be a timestamp or date string */
-  initialZoomDomain: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  initialZoomDomain: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  ),
   /** How the zoomBar will display. Graph view shows a graphical interpretation of the chart data.
    * Slider view is a simple slider with no graphical interpretation */
   view: PropTypes.oneOf(['graph_view', 'slider_view']),
@@ -245,13 +263,16 @@ export const BarChartCardPropTypes = {
     let error;
     if (!Object.keys(CARD_SIZES).includes(props[propName])) {
       error = new Error(
-        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
-          ','
-        )}.`
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(
+          CARD_SIZES
+        ).join(',')}.`
       );
     }
     // If the size
-    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE
+    ) {
       error = new Error(
         `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
       );
@@ -270,7 +291,10 @@ export const BarChartCardPropTypes = {
           `\`${componentName}\` prop \`${propName}\` must be \`SIMPLE\`, \`GROUPED\`, or \`STACKED\`.`
         );
       } // GROUPED charts can't have timeDataSourceId
-      else if (props[propName] === BAR_CHART_TYPES.GROUPED && props.timeDataSourceId) {
+      else if (
+        props[propName] === BAR_CHART_TYPES.GROUPED &&
+        props.timeDataSourceId
+      ) {
         error = new Error(
           `\`BarChartCard\` of type \`GROUPED\` cannot use \`timeDataSourceId\` at this time.`
         );
@@ -299,11 +323,16 @@ export const BarChartCardPropTypes = {
     /** y-axis display name */
     yLabel: PropTypes.string,
     /** defined dataset attributes */
-    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
+    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType))
+      .isRequired,
     /** for category type bar charts this is the x-axis value */
     categoryDataSourceId: (props, propName, componentName) => {
       let error;
-      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.timeDataSourceId) {
+      if (
+        props[propName] &&
+        props.type === BAR_CHART_TYPES.SIMPLE &&
+        props.timeDataSourceId
+      ) {
         error = new Error(
           `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`timeDataSourceId\`.`
         );
@@ -318,7 +347,11 @@ export const BarChartCardPropTypes = {
     /** for time based bar charts this is the x-axis value */
     timeDataSourceId: (props, propName, componentName) => {
       let error;
-      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.categoryDataSourceId) {
+      if (
+        props[propName] &&
+        props.type === BAR_CHART_TYPES.SIMPLE &&
+        props.categoryDataSourceId
+      ) {
         error = new Error(
           `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`categoryDataSourceId\`.`
         );
@@ -340,7 +373,9 @@ export const BarChartCardPropTypes = {
   }),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */
-  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  domainRange: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.object])
+  ),
   /** Show timestamp in browser local time or GMT */
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the moment formatting patterns */
@@ -493,7 +528,9 @@ export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
     // only validate the options if they are populated
     if (timeRangeKeys.length > 0) {
       // throw error if timeRangeOptions does not include 'this' or 'last'
-      const isError = timeRangeKeys.some((key) => !key.includes('this') && !key.includes('last'));
+      const isError = timeRangeKeys.some(
+        (key) => !key.includes('this') && !key.includes('last')
+      );
 
       if (isError) {
         error = new Error(

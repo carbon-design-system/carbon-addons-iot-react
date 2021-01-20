@@ -31,7 +31,10 @@ class HeaderActionMenu extends React.Component {
       PropTypes.func,
       // Or the instance of a DOM native element (see the note about SSR)
       PropTypes.shape({
-        current: typeof Element === 'undefined' ? PropTypes.any : PropTypes.instanceOf(Element),
+        current:
+          typeof Element === 'undefined'
+            ? PropTypes.any
+            : PropTypes.instanceOf(Element),
       }),
     ]).isRequired,
     /** Optionally provide a tabIndex for the underlying menu button */
@@ -45,7 +48,8 @@ class HeaderActionMenu extends React.Component {
     /** Unique name used by handleExpandedState */
     label: PropTypes.string.isRequired,
     /** MenuItem's to be rendered as children */
-    childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)).isRequired,
+    childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes))
+      .isRequired,
   };
 
   static defaultProps = {
@@ -96,7 +100,10 @@ class HeaderActionMenu extends React.Component {
         <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={isExpanded}
-          className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
+          className={classnames(
+            `${prefix}--header__menu-item`,
+            `${prefix}--header__menu-title`
+          )}
           href=""
           onKeyDown={this.handleOnKeyDown}
           onClick={handleDefaultClick}
@@ -104,13 +111,17 @@ class HeaderActionMenu extends React.Component {
           data-testid="menuitem"
           tabIndex={0}
           aria-label={ariaLabel}
-          role="menuitem"
-        >
+          role="menuitem">
           <MenuContent ariaLabel={ariaLabel} />
         </a>
-        <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
+        <ul
+          {...accessibilityLabel}
+          className={`${prefix}--header__menu`}
+          role="menu">
           {childContent.map((childItem, index) => (
-            <HeaderMenuItem key={`menu-item-${label + index}-child`} {...childItem.metaData}>
+            <HeaderMenuItem
+              key={`menu-item-${label + index}-child`}
+              {...childItem.metaData}>
               {childItem.content}
             </HeaderMenuItem>
           ))}

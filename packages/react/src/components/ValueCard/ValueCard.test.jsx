@@ -2,7 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { screen, render } from '@testing-library/react';
 
-import { CARD_LAYOUTS, CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
+import {
+  CARD_LAYOUTS,
+  CARD_DATA_STATE,
+  CARD_SIZES,
+} from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 
 import Attribute from './Attribute';
@@ -19,7 +23,9 @@ describe('ValueCard', () => {
         size={CARD_SIZES.LARGE}
       />
     );
-    expect(wrapper.find(Attribute).prop('layout')).toEqual(CARD_LAYOUTS.HORIZONTAL);
+    expect(wrapper.find(Attribute).prop('layout')).toEqual(
+      CARD_LAYOUTS.HORIZONTAL
+    );
 
     const wrapper2 = mount(
       <ValueCard
@@ -36,7 +42,9 @@ describe('ValueCard', () => {
         values={{ v: 'value' }}
       />
     );
-    expect(wrapper2.find(Attribute).first().prop('layout')).toEqual(CARD_LAYOUTS.VERTICAL);
+    expect(wrapper2.find(Attribute).first().prop('layout')).toEqual(
+      CARD_LAYOUTS.VERTICAL
+    );
   });
 
   it('DataState prop shows DataState elements instead of content', () => {
@@ -48,7 +56,9 @@ describe('ValueCard', () => {
         values={{ v: 'value' }}
       />
     );
-    expect(wrapperWithoutDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(0);
+    expect(
+      wrapperWithoutDataState.find(`.${iotPrefix}--data-state-container`)
+    ).toHaveLength(0);
 
     const wrapperWithDataState = mount(
       <ValueCard
@@ -63,7 +73,9 @@ describe('ValueCard', () => {
         values={{ v: 'value' }}
       />
     );
-    expect(wrapperWithDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(1);
+    expect(
+      wrapperWithDataState.find(`.${iotPrefix}--data-state-container`)
+    ).toHaveLength(1);
   });
 
   it('Id is passed down to the card', () => {

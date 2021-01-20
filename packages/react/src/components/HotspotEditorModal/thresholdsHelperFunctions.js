@@ -64,7 +64,8 @@ export const moveThresholdsToCardconfigRoot = (hotspots, cardConfig) => {
     Array.isArray(hotspot.content.attributes)
       ? update(hotspot, {
           content: {
-            attributes: (arr) => arr.map(({ thresholds, ...restAttr }) => restAttr),
+            attributes: (arr) =>
+              arr.map(({ thresholds, ...restAttr }) => restAttr),
           },
         })
       : hotspot

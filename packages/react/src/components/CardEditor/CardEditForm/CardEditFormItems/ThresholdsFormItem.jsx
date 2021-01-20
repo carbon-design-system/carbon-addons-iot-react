@@ -8,7 +8,10 @@ import { red60 } from '@carbon/colors';
 
 import { settings } from '../../../../constants/Settings';
 import { Button, NumberInput, Dropdown } from '../../../../index';
-import { validThresholdIcons, validThresholdColors } from '../../../DashboardEditor/editorUtils';
+import {
+  validThresholdIcons,
+  validThresholdColors,
+} from '../../../DashboardEditor/editorUtils';
 import SimpleIconDropdown from '../../../SimpleIconDropdown/SimpleIconDropdown';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 
@@ -141,12 +144,15 @@ const ThresholdsFormItem = ({
         };
 
         // get threshold color to initialize color dropdown
-        const thresholdColor = colors.find((color) => color.carbonColor === threshold.color);
+        const thresholdColor = colors.find(
+          (color) => color.carbonColor === threshold.color
+        );
 
         return (
           <div key={`${threshold.id}_${i}`}>
             <div className={`${baseClassName}--threshold-input-group`}>
-              <div className={`${baseClassName}--threshold-input-group--item-dropdown`}>
+              <div
+                className={`${baseClassName}--threshold-input-group--item-dropdown`}>
                 <SimpleIconDropdown
                   // need to regen if a threshold is added or color is changed
                   key={`${thresholds.length}_${threshold.color}`}
@@ -165,7 +171,8 @@ const ThresholdsFormItem = ({
                   translateWithId={translateWithId}
                 />
               </div>
-              <div className={`${baseClassName}--threshold-input-group--item-dropdown`}>
+              <div
+                className={`${baseClassName}--threshold-input-group--item-dropdown`}>
                 <ColorDropdown
                   // need to regen if a threshold is added
                   key={`${thresholds.length}`}
@@ -187,7 +194,8 @@ const ThresholdsFormItem = ({
                   translateWithId={translateWithId}
                 />
               </div>
-              <div className={`${baseClassName}--threshold-input-group--item-dropdown`}>
+              <div
+                className={`${baseClassName}--threshold-input-group--item-dropdown`}>
                 <Dropdown
                   // need to regen if a threshold is added
                   key={`${thresholds.length}`}
@@ -208,7 +216,8 @@ const ThresholdsFormItem = ({
                   }}
                 />
               </div>
-              <div className={`${baseClassName}--threshold-input-group--item-end`}>
+              <div
+                className={`${baseClassName}--threshold-input-group--item-end`}>
                 <NumberInput
                   id={`${cardConfig.id}_value-card-threshold-value_${i}`}
                   step={1}
@@ -219,7 +228,8 @@ const ThresholdsFormItem = ({
                     const updatedThresholds = [...thresholds];
                     updatedThresholds[i] = {
                       ...updatedThresholds[i],
-                      value: Number(imaginaryTarget.value) || imaginaryTarget.value,
+                      value:
+                        Number(imaginaryTarget.value) || imaginaryTarget.value,
                     };
                     onChange(updatedThresholds.map((item) => omit(item, 'id')));
                     setThresholds(updatedThresholds);
@@ -231,7 +241,9 @@ const ThresholdsFormItem = ({
                 renderIcon={TrashCan32}
                 kind="ghost"
                 onClick={() => {
-                  const thresholdIndex = thresholds.findIndex((item) => item.id === threshold.id);
+                  const thresholdIndex = thresholds.findIndex(
+                    (item) => item.id === threshold.id
+                  );
                   const filteredThresholds = thresholds.filter(
                     (item, index) => index !== thresholdIndex
                   );
@@ -266,8 +278,7 @@ const ThresholdsFormItem = ({
             },
           ]);
           onChange([...thresholds, newThreshold]);
-        }}
-      >
+        }}>
         {mergedI18n.dataItemEditorDataItemAddThreshold}
       </Button>
     </>

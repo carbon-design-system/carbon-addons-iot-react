@@ -20,7 +20,10 @@ const propTypes = {
   /** a default value for the input  */
   value: PropTypes.string,
   /** a list of children to pass to the Carbon TimePicker component  */
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   /** triggered on input click  */
   onClick: PropTypes.func,
   /** triggered on value change  */
@@ -74,7 +77,9 @@ const TimePickerSpinner = ({
     defaultTimegroup === TIMEGROUPS.MINUTES ? 1 : 0
   );
 
-  const [isInteractingWithSpinner, setIsInteractingWithSpinner] = useState(false);
+  const [isInteractingWithSpinner, setIsInteractingWithSpinner] = useState(
+    false
+  );
   const [isSpinnerFocused, setIsSpinnerFocused] = useState(false);
   const [keyUpOrDownPosition, setKeyUpOrDownPosition] = useState(-1);
   const [focusTarget, setFocusTarget] = useState(null);
@@ -209,11 +214,12 @@ const TimePickerSpinner = ({
     <div
       className={classnames(`${iotPrefix}--time-picker__wrapper`, {
         [`${iotPrefix}--time-picker__wrapper--with-spinner`]: spinner,
-        [`${iotPrefix}--time-picker__wrapper--updown`]: keyUpOrDownPosition > -1,
+        [`${iotPrefix}--time-picker__wrapper--updown`]:
+          keyUpOrDownPosition > -1,
         [`${iotPrefix}--time-picker__wrapper--show-underline`]: isInteractingWithSpinner,
-        [`${iotPrefix}--time-picker__wrapper--show-underline-minutes`]: currentTimeGroup === 1,
-      })}
-    >
+        [`${iotPrefix}--time-picker__wrapper--show-underline-minutes`]:
+          currentTimeGroup === 1,
+      })}>
       <TimePicker
         ref={timePickerRef}
         onClick={onInputClick}
@@ -223,8 +229,7 @@ const TimePickerSpinner = ({
         onKeyUp={onInputKeyUp}
         onBlur={onInputBlur}
         disabled={disabled}
-        {...others}
-      >
+        {...others}>
         {children}
         {spinner ? (
           <div className={`${iotPrefix}--time-picker__controls`}>
@@ -240,8 +245,7 @@ const TimePickerSpinner = ({
               aria-atomic="true"
               title={`${i18n.increment} ${timeGroupForLabel}`}
               aria-label={`${i18n.increment} ${timeGroupForLabel}`}
-              disabled={disabled}
-            >
+              disabled={disabled}>
               <CaretUpGlyph className="up-icon" />
             </button>
             <button
@@ -256,8 +260,7 @@ const TimePickerSpinner = ({
               aria-atomic="true"
               title={`${i18n.decrement} ${timeGroupForLabel}`}
               aria-label={`${i18n.decrement} ${timeGroupForLabel}`}
-              disabled={disabled}
-            >
+              disabled={disabled}>
               <CaretDownGlyph className="down-icon" />
             </button>
           </div>

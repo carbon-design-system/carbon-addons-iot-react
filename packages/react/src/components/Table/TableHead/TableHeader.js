@@ -10,7 +10,10 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { settings } from 'carbon-components';
-import { ArrowUp20 as Arrow, ArrowsVertical20 as Arrows } from '@carbon/icons-react';
+import {
+  ArrowUp20 as Arrow,
+  ArrowsVertical20 as Arrows,
+} from '@carbon/icons-react';
 
 const sortStates = {
   NONE: 'NONE',
@@ -76,8 +79,7 @@ const TableHeader = React.forwardRef(function TableHeader(
         className={headerClassName}
         scope={scope}
         ref={ref}
-        style={thStyle}
-      >
+        style={thStyle}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
       </th>
     );
@@ -85,8 +87,10 @@ const TableHeader = React.forwardRef(function TableHeader(
 
   const className = classnames(headerClassName, {
     [`${prefix}--table-sort`]: true,
-    [`${prefix}--table-sort--active`]: isSortHeader && sortDirection !== sortStates.NONE,
-    [`${prefix}--table-sort--ascending`]: isSortHeader && sortDirection === sortStates.DESC,
+    [`${prefix}--table-sort--active`]:
+      isSortHeader && sortDirection !== sortStates.NONE,
+    [`${prefix}--table-sort--ascending`]:
+      isSortHeader && sortDirection === sortStates.DESC,
   });
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
 
@@ -97,8 +101,7 @@ const TableHeader = React.forwardRef(function TableHeader(
       className={headerClassName}
       aria-sort={ariaSort}
       ref={ref}
-      style={thStyle}
-    >
+      style={thStyle}>
       <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
         <Arrow

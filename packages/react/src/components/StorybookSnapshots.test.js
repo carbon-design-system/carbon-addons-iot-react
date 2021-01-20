@@ -1,4 +1,6 @@
-import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, {
+  multiSnapshotWithOptions,
+} from '@storybook/addon-storyshots';
 import ReactDOM from 'react-dom';
 
 const realFindDOMNode = ReactDOM.findDOMNode;
@@ -25,7 +27,9 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           'The pseudo class ":first-child" is potentially unsafe when doing server-side rendering. Try changing it to ":first-of-type".'
         ) &&
-        !e.includes('Warning: Received `true` for a non-boolean attribute `loading`.') &&
+        !e.includes(
+          'Warning: Received `true` for a non-boolean attribute `loading`.'
+        ) &&
         // deprecation warning for our WizardInline component. Can remove once it is removed from package
         !e.includes(
           'Warning: \nThe prop `blurb` for WizardInline has been deprecated in favor of `description`'

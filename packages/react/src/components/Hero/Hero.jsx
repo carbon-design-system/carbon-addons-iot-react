@@ -5,7 +5,12 @@ import { Information20 } from '@carbon/icons-react';
 import { spacing06, spacing03, spacing07 } from '@carbon/layout';
 import { gray100 } from '@carbon/colors';
 import warning from 'warning';
-import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Tooltip,
+  SkeletonText,
+} from 'carbon-components-react';
 
 export const HeroPropTypes = {
   /** Title of the page  */
@@ -115,7 +120,9 @@ const Hero = ({
             <StyledBreadcrumbDiv>
               <StyledBreadcrumb>
                 {breadcrumb.map((crumb, index) => (
-                  <BreadcrumbItem key={`breadcrumb-${index}`}>{crumb}</BreadcrumbItem>
+                  <BreadcrumbItem key={`breadcrumb-${index}`}>
+                    {crumb}
+                  </BreadcrumbItem>
                 ))}
               </StyledBreadcrumb>
               <StyledRightContent>{rightContentBreadcrumb}</StyledRightContent>
@@ -134,8 +141,7 @@ const Hero = ({
                   triggerId="hero-tooltip-trigger"
                   renderIcon={React.forwardRef((props, ref) => (
                     <Information20 ref={ref} />
-                  ))}
-                >
+                  ))}>
                   <p>{tooltip.message}</p>
                   {tooltip.href && tooltip.linkLabel ? (
                     <div className="bx--tooltip__footer">
@@ -147,22 +153,22 @@ const Hero = ({
                 </Tooltip>
               ) : null}
             </StyledTitle>
-            {rightContent ? <StyledRightContent>{rightContent}</StyledRightContent> : null}
+            {rightContent ? (
+              <StyledRightContent>{rightContent}</StyledRightContent>
+            ) : null}
             {onClose ? (
               <button
                 className="bx--modal-close"
                 type="button"
                 data-modal-close
                 aria-label={closeLabel}
-                onClick={onClose}
-              >
+                onClick={onClose}>
                 <svg
                   className="bx--modal-close__icon"
                   width="10"
                   height="10"
                   viewBox="0 0 10 10"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <title>{closeLabel}</title>
                   <path
                     d="M6.32 5L10 8.68 8.68 10 5 6.32 1.32 10 0 8.68 3.68 5 0 1.32 1.32 0 5 3.68 8.68 0 10 1.32 6.32 5z"
@@ -172,7 +178,9 @@ const Hero = ({
               </button>
             ) : null}
           </StyledTitleSection>
-          {description ? <StyledPageDescription>{description}</StyledPageDescription> : null}
+          {description ? (
+            <StyledPageDescription>{description}</StyledPageDescription>
+          ) : null}
         </Fragment>
       )}
     </StyledHero>

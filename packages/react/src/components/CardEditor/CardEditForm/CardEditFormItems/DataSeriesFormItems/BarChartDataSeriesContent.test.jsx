@@ -52,7 +52,12 @@ afterEach(() => {
 });
 describe('BarChartDataSeriesContent', () => {
   it('Defaults the groupBy to "timestamp" when no category is defined in a non-grouped chart', () => {
-    render(<BarChartDataSeriesContent cardConfig={barChartConfig} onChange={mockOnChange} />);
+    render(
+      <BarChartDataSeriesContent
+        cardConfig={barChartConfig}
+        onChange={mockOnChange}
+      />
+    );
     const defaultedGroupBy = screen.getByText('Time interval');
     expect(defaultedGroupBy).toBeInTheDocument();
   });
