@@ -3,8 +3,10 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
+import isEmpty from 'lodash/isEmpty';
 import warning from 'warning';
 
+import { findMatchingThresholds } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import {
   HotspotIconPropType,
@@ -561,7 +563,7 @@ const ImageHotspots = ({
               if (__DEV__) {
                 warning(
                   false,
-                  `An arrray of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
+                  `An array of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
                 );
               }
               return null;
@@ -580,6 +582,20 @@ const ImageHotspots = ({
         const hotspotIsSelected = !!selectedHotspots.find(
           (pos) => x === pos.x && y === pos.y
         );
+        // Determine whether the icon needs to be dynamically overridden by a threshold
+        const matchingAttributeThresholds = [];
+        if (hotspot.content?.attributes) {
+          hotspot.content.attributes.forEach(({ thresholds, dataSourceId }) => {
+            if (!isEmpty(thresholds) && !isEmpty(hotspot.content?.values)) {
+              const attributeThresholds = findMatchingThresholds(
+                thresholds.map((threshold) => ({ ...threshold, dataSourceId })),
+                hotspot.content?.values,
+                dataSourceId
+              );
+              matchingAttributeThresholds.push(...attributeThresholds);
+            }
+          });
+        }
         return (
           <Hotspot
             {...omit(hotspot, 'content')}
@@ -599,6 +615,16 @@ const ImageHotspots = ({
                   i18n={mergedI18n}
                 />
               )
+            }
+            icon={
+              !isEmpty(matchingAttributeThresholds)
+                ? matchingAttributeThresholds[0].icon
+                : hotspot.icon
+            }
+            color={
+              !isEmpty(matchingAttributeThresholds)
+                ? matchingAttributeThresholds[0].color
+                : hotspot.color
             }
             key={`${x}-${y}`}
             style={hotspotsStyle}
