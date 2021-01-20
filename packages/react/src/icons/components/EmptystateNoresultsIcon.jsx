@@ -9,7 +9,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="40.646%"
           x2="63.844%"
           y2="82.272%"
-          id="emptystate-Noresults-icon_svg__a">
+          id="emptystate-Noresults-icon_svg__a"
+        >
           <stop stopOpacity={0.12} offset="0%" />
           <stop stopOpacity={0.29} offset="99%" />
         </linearGradient>
@@ -18,7 +19,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.937%"
           x2="-5.873%"
           y2="49.937%"
-          id="emptystate-Noresults-icon_svg__b">
+          id="emptystate-Noresults-icon_svg__b"
+        >
           <stop stopColor="#C9C9C9" offset="0%" />
           <stop stopColor="#666" offset="73%" />
         </linearGradient>
@@ -27,7 +29,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="60.026%"
           x2="57.71%"
           y2="37.165%"
-          id="emptystate-Noresults-icon_svg__d">
+          id="emptystate-Noresults-icon_svg__d"
+        >
           <stop stopColor="#666" offset="0%" />
           <stop stopColor="#C2C2C2" offset="68%" />
         </linearGradient>
@@ -36,7 +39,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.899%"
           x2="100%"
           y2="49.899%"
-          id="emptystate-Noresults-icon_svg__f">
+          id="emptystate-Noresults-icon_svg__f"
+        >
           <stop stopColor="#FFF" offset="1%" />
           <stop stopColor="#292929" offset="99%" />
         </linearGradient>
@@ -45,7 +49,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="49.986%"
           x2="100%"
           y2="49.986%"
-          id="emptystate-Noresults-icon_svg__g">
+          id="emptystate-Noresults-icon_svg__g"
+        >
           <stop stopColor="#E2E2E2" offset="0%" />
           <stop stopColor="#959595" offset="17%" />
           <stop stopColor="#6A6A6A" offset="55%" />
@@ -57,7 +62,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="103.108%"
           x2="60.593%"
           y2="-.766%"
-          id="emptystate-Noresults-icon_svg__h">
+          id="emptystate-Noresults-icon_svg__h"
+        >
           <stop stopColor="#343434" offset="0%" />
           <stop stopColor="#6E6E6E" offset="97%" />
         </linearGradient>
@@ -66,7 +72,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="83.201%"
           x2="67.107%"
           y2="4.635%"
-          id="emptystate-Noresults-icon_svg__i">
+          id="emptystate-Noresults-icon_svg__i"
+        >
           <stop stopColor="#C8C8C8" offset="0%" />
           <stop stopColor="#F3F3F3" offset="98%" />
         </linearGradient>
@@ -75,7 +82,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="40.812%"
           x2="106.485%"
           y2="107.052%"
-          id="emptystate-Noresults-icon_svg__j">
+          id="emptystate-Noresults-icon_svg__j"
+        >
           <stop stopColor="#FFF" offset="0%" />
           <stop stopColor="#A5A5A5" offset="88%" />
         </linearGradient>
@@ -84,7 +92,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="-65.714%"
           x2="55.132%"
           y2="109.429%"
-          id="emptystate-Noresults-icon_svg__k">
+          id="emptystate-Noresults-icon_svg__k"
+        >
           <stop stopOpacity={0.09} offset="0%" />
           <stop stopOpacity={0.39} offset="100%" />
         </linearGradient>
@@ -93,7 +102,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="57.007%"
           x2="36.716%"
           y2="44.266%"
-          id="emptystate-Noresults-icon_svg__l">
+          id="emptystate-Noresults-icon_svg__l"
+        >
           <stop stopColor="#FFF" stopOpacity={0.84} offset="11%" />
           <stop stopColor="#FFF" stopOpacity={0} offset="100%" />
         </linearGradient>
@@ -102,7 +112,8 @@ function SvgEmptystateNoresultsIcon(props) {
           y1="89.438%"
           x2="64.466%"
           y2="-1.425%"
-          id="emptystate-Noresults-icon_svg__m">
+          id="emptystate-Noresults-icon_svg__m"
+        >
           <stop stopColor="#2B2B2B" offset="0%" />
           <stop stopColor="#9F9F9F" offset="100%" />
         </linearGradient>
@@ -113,7 +124,8 @@ function SvgEmptystateNoresultsIcon(props) {
           fy="107.842%"
           r="139.225%"
           gradientTransform="matrix(.25825 -.49848 .1485 .8669 .25 .42)"
-          id="emptystate-Noresults-icon_svg__c">
+          id="emptystate-Noresults-icon_svg__c"
+        >
           <stop stopColor="#FFF" stopOpacity={0} offset="12%" />
           <stop stopColor="#FFF" stopOpacity={0.38} offset="100%" />
         </radialGradient>
@@ -124,7 +136,8 @@ function SvgEmptystateNoresultsIcon(props) {
           fy="55.57%"
           r="71.75%"
           gradientTransform="scale(.5781 1) rotate(-29.9 .757 -.202)"
-          id="emptystate-Noresults-icon_svg__e">
+          id="emptystate-Noresults-icon_svg__e"
+        >
           <stop stopColor="#FFF" stopOpacity={0} offset="12%" />
           <stop stopColor="#FFF" stopOpacity={0.17} offset="100%" />
         </radialGradient>
