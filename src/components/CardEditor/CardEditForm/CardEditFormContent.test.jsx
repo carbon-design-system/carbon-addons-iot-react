@@ -2,7 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import CardEditFormContent from './CardEditFormContent';
+import CardEditFormContent, {
+  handleTranslationCallback,
+} from './CardEditFormContent';
 
 const cardConfig = {
   id: 'Timeseries',
@@ -72,6 +74,26 @@ describe('CardEditFormContent', () => {
       expect(timeRangeSelector[0].innerHTML).toEqual(
         expect.stringContaining('last2Hours')
       );
+    });
+  });
+  describe('handleTranslationCallback', () => {
+    it('should return the proper translations', () => {
+      const i18n = {
+        openMenuText: 'Open menu',
+        closeMenuText: 'Close menu',
+        clearAllText: 'Clear all',
+      };
+      const bogusTranslation = handleTranslationCallback('bogus', i18n);
+      expect(bogusTranslation).toEqual('');
+
+      const clearTranslation = handleTranslationCallback('clear.all', i18n);
+      expect(clearTranslation).toEqual('Clear all');
+
+      const openTranslation = handleTranslationCallback('open.menu', i18n);
+      expect(openTranslation).toEqual('Open menu');
+
+      const closeTranslation = handleTranslationCallback('close.menu', i18n);
+      expect(closeTranslation).toEqual('Close menu');
     });
   });
 });

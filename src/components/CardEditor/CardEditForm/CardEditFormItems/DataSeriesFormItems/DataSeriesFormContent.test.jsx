@@ -58,6 +58,25 @@ const barChartCardConfig = {
   },
   interval: 'day',
 };
+const groupedBarCardConfig = {
+  title: 'GroupedBarChart',
+  size: 'MEDIUM',
+  type: 'BAR',
+  content: {
+    type: 'GROUPED',
+    layout: 'VERTICAL',
+    series: [
+      {
+        dataSourceId: 'temperature',
+        label: 'temperature',
+      },
+    ],
+    categoryDataSourceId: 'firmware',
+  },
+  dataSource: {
+    groupBy: ['firmware'],
+  },
+};
 const valueCardConfig = {
   id: 'ValueCard',
   title: 'Value Card',
@@ -131,7 +150,7 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
-      const dataItemDropDown = screen.getByText('Select data items');
+      const dataItemDropDown = screen.getAllByRole('img')[2];
       expect(dataItemDropDown).toBeInTheDocument();
       fireEvent.click(dataItemDropDown);
 
@@ -148,14 +167,16 @@ describe('DataSeriesFormItem', () => {
         content: {
           series: [
             {
-              color: 'red',
+              color: '#6929c4',
               dataSourceId: 'temperature',
               label: 'Temperature',
+              uuid: expect.anything(),
             },
             {
               color: '#1192e8',
               dataSourceId: 'pressure',
-              label: 'pressure',
+              label: 'Pressure',
+              uuid: expect.anything(),
             },
           ],
           timeDataSourceId: 'timestamp',
@@ -206,6 +227,66 @@ describe('DataSeriesFormItem', () => {
       expect(mockSetSelectedDataItems).toHaveBeenCalled();
       expect(mockOnChange).toHaveBeenCalled();
     });
+    it('handles remove row action for ValueCards', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={valueCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Remove',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      expect(mockSetSelectedDataItems).toHaveBeenCalled();
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+    it('fires onChange for GroupedBar charts', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={{
+            ...groupedBarCardConfig,
+            content: { ...groupedBarCardConfig.content, series: [] },
+          }}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemsDropdown = screen.getAllByRole('img')[1];
+      expect(dataItemsDropdown).toBeInTheDocument();
+
+      fireEvent.click(dataItemsDropdown);
+
+      const pressureOption = screen.getByText('pressure');
+      expect(pressureOption).toBeInTheDocument();
+
+      fireEvent.click(pressureOption);
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+    it('Opens the editor modal', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={groupedBarCardConfig}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const customizeButton = screen.getByText('Customize');
+      expect(customizeButton).toBeInTheDocument();
+
+      fireEvent.click(customizeButton);
+
+      const modalTitle = screen.getByText('Customize data series');
+      expect(modalTitle).toBeInTheDocument();
+    });
     it('handles row actions for dataItems for simpleDataSeries', () => {
       render(
         <DataSeriesFormItem
@@ -222,6 +303,30 @@ describe('DataSeriesFormItem', () => {
       fireEvent.click(dataItemRowAction);
 
       const editDataItemModal = screen.getByText('Data item');
+      expect(editDataItemModal).toBeInTheDocument();
+    });
+    it('handles row actions for dataItems for timeSeries', () => {
+      render(
+        <DataSeriesFormItem
+          cardConfig={{
+            ...cardConfig,
+            content: {
+              ...cardConfig.content,
+              series: [cardConfig.content.series[1]],
+            },
+          }}
+          onChange={mockOnChange}
+          dataItems={dataItems}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+
+      const dataItemRowAction = screen.getByRole('button', {
+        name: 'Edit',
+      });
+      fireEvent.click(dataItemRowAction);
+
+      const editDataItemModal = screen.getByText('Customize data series');
       expect(editDataItemModal).toBeInTheDocument();
     });
   });
@@ -337,7 +442,7 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
         />
       );
-      const dataItemsDropdown = screen.getByText('Select data items');
+      const dataItemsDropdown = screen.getByRole('img');
       expect(dataItemsDropdown).toBeInTheDocument();
       fireEvent.click(dataItemsDropdown);
       // click on a data item
@@ -348,14 +453,11 @@ describe('DataSeriesFormItem', () => {
       expect(mockOnChange).toHaveBeenCalled();
       expect(mockSetSelectedDataItems).toHaveBeenCalled();
       // click the edit icon on the data item
-      const customizeButton = screen.getByText('Customize');
-      expect(customizeButton).toBeInTheDocument();
-      fireEvent.click(customizeButton);
+      const editButton = screen.getAllByRole('button', { name: 'Edit' })[0];
+      expect(editButton).toBeInTheDocument();
+      fireEvent.click(editButton);
 
-      userEvent.type(
-        screen.getByRole('cell', { name: 'Temperature' }),
-        'changed label'
-      );
+      userEvent.type(screen.getByDisplayValue('Temperature'), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();
       // submit the changes
       const submitButton = screen.getByText('Save');

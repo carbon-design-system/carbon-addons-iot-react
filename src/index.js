@@ -85,6 +85,7 @@ export {
   TIME_SERIES_TYPES,
   BAR_CHART_TYPES,
 } from './constants/LayoutConstants';
+export { DragAndDrop } from './utils/DragAndDropUtils';
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
@@ -114,6 +115,9 @@ export ColorDropdown from './components/ColorDropdown/ColorDropdown';
 export HotspotEditorTooltipTab from './components/HotspotEditorModal/HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 export HotspotTextStyleTab from './components/HotspotEditorModal/HotspotTextStyleTab/HotspotTextStyleTab';
 export DynamicHotspotSourcePicker from './components/HotspotEditorModal/DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
+
+// Hooks
+export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 
 // Carbon proxy
 export {

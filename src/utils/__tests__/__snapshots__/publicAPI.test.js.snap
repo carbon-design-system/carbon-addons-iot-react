@@ -8635,7 +8635,31 @@ Map {
           Object {
             "args": Array [
               Object {
+                "aggregationMethod": Object {
+                  "type": "string",
+                },
+                "aggregationMethods": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "id": Object {
+                            "type": "string",
+                          },
+                          "text": Object {
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
                 "dataSourceId": Object {
+                  "type": "string",
+                },
+                "grain": Object {
                   "type": "string",
                 },
                 "label": Object {
@@ -9039,6 +9063,9 @@ Map {
             "cards": Object {
               "type": "array",
             },
+            "isSummaryDashboard": Object {
+              "type": "bool",
+            },
             "layouts": Object {
               "type": "object",
             },
@@ -9128,6 +9155,7 @@ Map {
         "searchPlaceHolderText": "Enter a search",
       },
       "icons": null,
+      "isSummaryDashboard": false,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9301,6 +9329,9 @@ Map {
           },
         ],
         "type": "objectOf",
+      },
+      "isSummaryDashboard": Object {
+        "type": "bool",
       },
       "onAddCard": Object {
         "isRequired": true,
@@ -15851,6 +15882,7 @@ Map {
     "SIMPLE": "SIMPLE",
     "STACKED": "STACKED",
   },
+  "DragAndDrop" => Object {},
   "ListCard" => Object {
     "defaultProps": Object {
       "data": Array [],
@@ -17394,614 +17426,257 @@ Map {
     },
   },
   "List" => Object {
-    "DecoratedComponent": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "__docgenInfo": Object {
-        "description": "",
-        "methods": Array [],
-        "props": Object {
-          "buttons": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "[]",
-            },
-            "description": "action buttons on right side of list title",
-            "required": false,
-            "type": Object {
-              "name": "arrayOf",
-              "value": Object {
-                "name": "node",
-              },
-            },
-          },
-          "className": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "Specify an optional className to be applied to the container",
-            "required": false,
-            "type": Object {
-              "name": "string",
-            },
-          },
-          "editingStyle": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "list editing style",
-            "required": false,
-            "type": Object {
-              "name": "enum",
-              "value": Array [
-                Object {
-                  "computed": true,
-                  "value": "EditingStyle.Single",
-                },
-                Object {
-                  "computed": true,
-                  "value": "EditingStyle.Multiple",
-                },
-                Object {
-                  "computed": true,
-                  "value": "EditingStyle.SingleNesting",
-                },
-                Object {
-                  "computed": true,
-                  "value": "EditingStyle.MultipleNesting",
-                },
-              ],
-            },
-          },
-          "emptyState": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "'No list items to show'",
-            },
-            "description": "content shown if list is empty",
-            "required": false,
-            "type": Object {
-              "name": "union",
-              "value": Array [
-                Object {
-                  "name": "node",
-                },
-                Object {
-                  "name": "string",
-                },
-              ],
-            },
-          },
-          "expandedIds": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "[]",
-            },
-            "description": "ids of row expanded",
-            "required": false,
-            "type": Object {
-              "name": "arrayOf",
-              "value": Object {
-                "name": "string",
-              },
-            },
-          },
-          "handleSelect": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "() => {}",
-            },
-            "description": "call back function of select",
-            "required": false,
-            "type": Object {
-              "name": "func",
-            },
-          },
-          "i18n": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "{
-  searchPlaceHolderText: 'Enter a value',
-  expand: 'Expand',
-  close: 'Close',
-}",
-            },
-            "description": "i18n strings",
-            "required": false,
-            "type": Object {
-              "name": "shape",
-              "value": Object {
-                "close": Object {
-                  "name": "string",
-                  "required": false,
-                },
-                "expand": Object {
-                  "name": "string",
-                  "required": false,
-                },
-                "searchPlaceHolderText": Object {
-                  "name": "string",
-                  "required": false,
-                },
-              },
-            },
-          },
-          "iconPosition": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "'left'",
-            },
-            "description": "icon can be left or right side of list row primary value",
-            "required": false,
-            "type": Object {
-              "name": "enum",
-              "value": Array [
-                Object {
-                  "computed": false,
-                  "value": "'left'",
-                },
-                Object {
-                  "computed": false,
-                  "value": "'right'",
-                },
-              ],
-            },
-          },
-          "isFullHeight": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "false",
-            },
-            "description": "use full height in list",
-            "required": false,
-            "type": Object {
-              "name": "bool",
-            },
-          },
-          "isLargeRow": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "false",
-            },
-            "description": "use large/fat row in list",
-            "required": false,
-            "type": Object {
-              "name": "bool",
-            },
-          },
-          "isLoading": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "false",
-            },
-            "description": "optional skeleton to be rendered while loading data",
-            "required": false,
-            "type": Object {
-              "name": "bool",
-            },
-          },
-          "itemWillMove": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "() => {
-  return true;
-}",
-            },
-            "description": "callback function when reorder will occur - can cancel the move by returning false",
-            "required": false,
-            "type": Object {
-              "name": "func",
-            },
-          },
-          "items": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "[]",
-            },
-            "description": "data source of list items",
-            "required": false,
-            "type": Object {
-              "name": "arrayOf",
-              "value": Object {
-                "name": "shape",
-                "value": Object {
-                  "children": Object {
-                    "name": "arrayOf",
-                    "required": false,
-                    "value": Object {
-                      "name": "object",
-                    },
-                  },
-                  "content": Object {
-                    "name": "shape",
-                    "required": false,
-                    "value": Object {
-                      "icon": Object {
-                        "name": "node",
-                        "required": false,
-                      },
-                      "tags": Object {
-                        "description": "The nodes should be Carbon Tags components",
-                        "name": "arrayOf",
-                        "required": false,
-                        "value": Object {
-                          "name": "node",
-                        },
-                      },
-                      "value": Object {
-                        "name": "string",
-                        "required": false,
-                      },
-                    },
-                  },
-                  "id": Object {
-                    "name": "string",
-                    "required": false,
-                  },
-                  "isSelectable": Object {
-                    "name": "bool",
-                    "required": false,
-                  },
-                },
-              },
-            },
-          },
-          "onItemMoved": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "() => {}",
-            },
-            "description": "callback function for reorder",
-            "required": false,
-            "type": Object {
-              "name": "func",
-            },
-          },
-          "overrides": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "Node to override the default header",
-            "required": false,
-            "type": Object {
-              "name": "shape",
-              "value": Object {
-                "header": Object {
-                  "name": "custom",
-                  "raw": "OverridePropTypes",
-                  "required": false,
-                },
-              },
-            },
-          },
-          "pagination": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "pagination at the bottom of list",
-            "required": false,
-            "type": Object {
-              "computed": true,
-              "name": "shape",
-              "value": "import SimplePagination, {
-  SimplePaginationPropTypes,
-} from '../SimplePagination/SimplePagination';",
-            },
-          },
-          "search": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "search bar call back function and search value",
-            "required": false,
-            "type": Object {
-              "name": "shape",
-              "value": Object {
-                "onChange": Object {
-                  "name": "func",
-                  "required": false,
-                },
-                "value": Object {
-                  "name": "string",
-                  "required": false,
-                },
-              },
-            },
-          },
-          "selectedIds": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "[]",
-            },
-            "description": "Multiple currently selected items",
-            "required": false,
-            "type": Object {
-              "name": "arrayOf",
-              "value": Object {
-                "name": "string",
-              },
-            },
-          },
-          "title": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "list title",
-            "required": false,
-            "type": Object {
-              "name": "string",
-            },
-          },
-          "toggleExpansion": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "() => {}",
-            },
-            "description": "call back function of expansion",
-            "required": false,
-            "type": Object {
-              "name": "func",
-            },
-          },
-        },
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "buttons": Array [],
+      "className": null,
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleSelect": [Function],
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "searchPlaceHolderText": "Enter a value",
       },
-      "defaultProps": Object {
-        "buttons": Array [],
-        "className": null,
-        "editingStyle": null,
-        "emptyState": "No list items to show",
-        "expandedIds": Array [],
-        "handleSelect": [Function],
-        "i18n": Object {
-          "close": "Close",
-          "expand": "Expand",
-          "searchPlaceHolderText": "Enter a value",
-        },
-        "iconPosition": "left",
-        "isFullHeight": false,
-        "isLargeRow": false,
-        "isLoading": false,
-        "itemWillMove": [Function],
-        "items": Array [],
-        "onItemMoved": [Function],
-        "overrides": null,
-        "pagination": null,
-        "search": null,
-        "selectedIds": Array [],
-        "title": null,
-        "toggleExpansion": [Function],
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "onItemMoved": [Function],
+      "overrides": null,
+      "pagination": null,
+      "search": null,
+      "selectedIds": Array [],
+      "title": null,
+      "toggleExpansion": [Function],
+    },
+    "propTypes": Object {
+      "buttons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
       },
-      "propTypes": Object {
-        "buttons": Object {
-          "args": Array [
+      "className": Object {
+        "type": "string",
+      },
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
             Object {
               "type": "node",
             },
-          ],
-          "type": "arrayOf",
-        },
-        "className": Object {
-          "type": "string",
-        },
-        "editingStyle": Object {
-          "args": Array [
-            Array [
-              "single",
-              "multiple",
-              "single-nesting",
-              "multiple-nesting",
-            ],
-          ],
-          "type": "oneOf",
-        },
-        "emptyState": Object {
-          "args": Array [
-            Array [
-              Object {
-                "type": "node",
-              },
-              Object {
-                "type": "string",
-              },
-            ],
-          ],
-          "type": "oneOfType",
-        },
-        "expandedIds": Object {
-          "args": Array [
             Object {
               "type": "string",
             },
           ],
-          "type": "arrayOf",
-        },
-        "handleSelect": Object {
-          "type": "func",
-        },
-        "i18n": Object {
-          "args": Array [
-            Object {
-              "close": Object {
-                "type": "string",
-              },
-              "expand": Object {
-                "type": "string",
-              },
-              "searchPlaceHolderText": Object {
-                "type": "string",
-              },
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
             },
+            "expand": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
           ],
-          "type": "shape",
-        },
-        "iconPosition": Object {
-          "args": Array [
-            Array [
-              "left",
-              "right",
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Object {
+                      "type": "object",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "content": Object {
+                  "args": Array [
+                    Object {
+                      "icon": Object {
+                        "type": "node",
+                      },
+                      "tags": Object {
+                        "args": Array [
+                          Object {
+                            "type": "node",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "value": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+              },
             ],
-          ],
-          "type": "oneOf",
-        },
-        "isFullHeight": Object {
-          "type": "bool",
-        },
-        "isLargeRow": Object {
-          "type": "bool",
-        },
-        "isLoading": Object {
-          "type": "bool",
-        },
-        "itemWillMove": Object {
-          "type": "func",
-        },
-        "items": Object {
-          "args": Array [
-            Object {
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "header": Object {
               "args": Array [
                 Object {
-                  "children": Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
                     "args": Array [
-                      Object {
-                        "type": "object",
-                      },
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
                     ],
-                    "type": "arrayOf",
-                  },
-                  "content": Object {
-                    "args": Array [
-                      Object {
-                        "icon": Object {
-                          "type": "node",
-                        },
-                        "tags": Object {
-                          "args": Array [
-                            Object {
-                              "type": "node",
-                            },
-                          ],
-                          "type": "arrayOf",
-                        },
-                        "value": Object {
-                          "type": "string",
-                        },
-                      },
-                    ],
-                    "type": "shape",
-                  },
-                  "id": Object {
-                    "type": "string",
-                  },
-                  "isSelectable": Object {
-                    "type": "bool",
+                    "type": "oneOfType",
                   },
                 },
               ],
               "type": "shape",
             },
-          ],
-          "type": "arrayOf",
-        },
-        "onItemMoved": Object {
-          "type": "func",
-        },
-        "overrides": Object {
-          "args": Array [
-            Object {
-              "header": Object {
-                "args": Array [
-                  Object {
-                    "component": Object {
-                      "type": "elementType",
-                    },
-                    "props": Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "type": "object",
-                          },
-                          Object {
-                            "type": "func",
-                          },
-                        ],
-                      ],
-                      "type": "oneOfType",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
+          },
+        ],
+        "type": "shape",
+      },
+      "pagination": Object {
+        "args": Array [
+          Object {
+            "maxPage": Object {
+              "isRequired": true,
+              "type": "number",
             },
-          ],
-          "type": "shape",
-        },
-        "pagination": Object {
-          "args": Array [
-            Object {
-              "maxPage": Object {
-                "isRequired": true,
-                "type": "number",
-              },
-              "nextPageText": Object {
-                "type": "string",
-              },
-              "onPage": Object {
-                "isRequired": true,
-                "type": "func",
-              },
-              "page": Object {
-                "isRequired": true,
-                "type": "number",
-              },
-              "pageOfPagesText": Object {
-                "type": "func",
-              },
-              "pageText": Object {
-                "type": "string",
-              },
-              "prevPageText": Object {
-                "type": "string",
-              },
-            },
-          ],
-          "type": "shape",
-        },
-        "search": Object {
-          "args": Array [
-            Object {
-              "onChange": Object {
-                "type": "func",
-              },
-              "value": Object {
-                "type": "string",
-              },
-            },
-          ],
-          "type": "shape",
-        },
-        "selectedIds": Object {
-          "args": Array [
-            Object {
+            "nextPageText": Object {
               "type": "string",
             },
-          ],
-          "type": "arrayOf",
-        },
-        "title": Object {
-          "type": "string",
-        },
-        "toggleExpansion": Object {
-          "type": "func",
-        },
+            "onPage": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+            "page": Object {
+              "isRequired": true,
+              "type": "number",
+            },
+            "pageOfPagesText": Object {
+              "type": "func",
+            },
+            "pageText": Object {
+              "type": "string",
+            },
+            "prevPageText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
-      "render": [Function],
+      "search": Object {
+        "args": Array [
+          Object {
+            "onChange": Object {
+              "type": "func",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
     },
-    "displayName": "DragDropContext(Component)",
+    "render": [Function],
   },
   "SimpleList" => Object {
     "defaultProps": Object {
@@ -19248,6 +18923,7 @@ Map {
       },
     },
   },
+  "useDNDProviderElement" => Object {},
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
