@@ -88,3 +88,13 @@ html[dir='rtl'] {
     }
   }
 }
+
+.#{$iot-prefix}--table-toolbar-aggregations__overflow-menu {
+  min-height: $spacing-09;
+  width: $spacing-09;
+}
+
+.#{$iot-prefix}--table-toolbar-aggregations__overflow-icon {
+  height: initial;
+  width: initial;
+}

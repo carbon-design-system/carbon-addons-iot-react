@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Column20, Filter20, Download20, Edit20 } from '@carbon/icons-react';
+import {
+  Column20,
+  Filter20,
+  Download20,
+  Edit20,
+  OverflowMenuVertical20,
+} from '@carbon/icons-react';
 import {
   DataTable,
   Button,
@@ -285,11 +291,13 @@ const TableToolbar = ({
         ) : null}
         {hasAggregations ? (
           <OverflowMenu
-            className={`${iotPrefix}--table-toolbar-aggregations--overflow`}
+            className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
             direction="bottom"
             flipped
             data-testid="table-head--overflow"
-            onClick={(e) => e.stopPropagation()}>
+            onClick={(e) => e.stopPropagation()}
+            renderIcon={OverflowMenuVertical20}
+            iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}>
             <OverflowMenuItem
               itemText={i18n.toggleAggregations}
               key="table-aggregations-overflow-item"
