@@ -152,7 +152,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    AspectRatio
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -206,7 +208,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    ButtonSet
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2580,7 +2584,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    unstable_PageSelector
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2592,7 +2598,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    unstable_Pagination
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2604,7 +2612,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    unstable_TreeView
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -2616,7 +2626,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   </div>
                   <div
                     className="bx--structured-list-td"
-                  />
+                  >
+                    unstable_TreeNode
+                  </div>
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -3648,30 +3660,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     useDNDProviderElement
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageSelector
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    Unstable_Pagination
                   </div>
                 </div>
                 <div

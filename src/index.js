@@ -123,13 +123,13 @@ export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
   Accordion,
   AccordionItem,
-  // TODO: 7.27 AspectRatio,
+  AspectRatio,
   // TODO: unify breadcrumb
   // Breadcrumb,
   // BreadcrumbItem
   // TODO: unify button
   // Button,
-  // TODO: 7.27 ButtonSet,
+  ButtonSet,
   Checkbox,
   CodeSnippet,
   // TODO: unify combobox
@@ -313,16 +313,13 @@ export {
   // Experimental components from Carbon
 
   // eslint-disable-next-line camelcase
-  // TODO: 7.2.7 unstable_Pagination,
+  unstable_Pagination,
   // eslint-disable-next-line camelcase
-  // TODO: 7.2.7 unstable_PageSelector,
+  unstable_PageSelector,
   // eslint-disable-next-line camelcase
-  // TODO: 7.2.7 unstable_TreeNode,
+  unstable_TreeNode,
   // eslint-disable-next-line camelcase
-  // TODO: 7.2.7 unstable_TreeView,
-  PageSelector,
-  // eslint-disable-next-line camelcase
-  Unstable_Pagination,
+  unstable_TreeView,
 } from 'carbon-components-react';
 
 export {
