@@ -74,6 +74,7 @@ const propTypes = {
    */
   onValidateCardJson: PropTypes.func,
   currentBreakpoint: PropTypes.string,
+  isSummaryDashboard: PropTypes.bool,
   testID: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -122,6 +123,7 @@ const defaultProps = {
   availableDimensions: {},
   onValidateCardJson: null,
   currentBreakpoint: 'xl',
+  isSummaryDashboard: false,
   testID: 'card-edit-form',
   dataSeriesItemLinks: null,
 };
@@ -158,6 +160,44 @@ export const basicCardValidation = (card) => {
 };
 
 /**
+ * removes properties needed for the editor that we don't want the user to be able to modify
+ * @param {Object} card JSON currently being edited
+ * @returns {Object} card with omitted attributes
+ */
+export const hideCardPropertiesForEditor = (card) => {
+  let attributes;
+  let series;
+  if (card.content?.attributes) {
+    attributes = card.content.attributes.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  if (card.content?.series) {
+    series = card.content.series.map((attribute) =>
+      omit(attribute, [
+        'aggregationMethods',
+        'aggregationMethod',
+        'grain',
+        'uuid',
+      ])
+    );
+  }
+  return omit(
+    attributes
+      ? { ...card, content: { ...card.content, attributes } }
+      : series
+      ? { ...card, content: { ...card.content, series } }
+      : card,
+    ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
+  );
+};
+
+/**
  * Checks for JSON form errors
  * @param {Object} card JSON text input
  * @param {Function} setError
@@ -168,6 +208,7 @@ export const basicCardValidation = (card) => {
 export const handleSubmit = (
   card,
   id,
+  content,
   setError,
   onValidateCardJson,
   onChange,
@@ -183,7 +224,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id });
+    onChange({ ...JSON.parse(card), id, content });
     setShowEditor(false);
     return true;
   }
@@ -194,6 +235,7 @@ export const handleSubmit = (
 
 const CardEditForm = ({
   cardConfig,
+  isSummaryDashboard,
   onChange,
   i18n,
   dataItems,
@@ -211,7 +253,7 @@ const CardEditForm = ({
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id } = cardConfig;
+  const { id, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -222,6 +264,7 @@ const CardEditForm = ({
             handleSubmit(
               card,
               id,
+              content,
               setError,
               onValidateCardJson,
               onChange,
@@ -251,6 +294,7 @@ const CardEditForm = ({
             <CardEditFormContent
               cardConfig={cardConfig}
               onChange={onChange}
+              isSummaryDashboard={isSummaryDashboard}
               i18n={mergedI18n}
               dataItems={dataItems}
               availableDimensions={availableDimensions}
@@ -288,17 +332,7 @@ const CardEditForm = ({
             renderIcon={Code16}
             onClick={() => {
               setModalData(
-                JSON.stringify(
-                  omit(cardConfig, [
-                    'id',
-                    'content.src',
-                    'content.imgState',
-                    'i18n',
-                    'validateUploadedImage',
-                  ]),
-                  null,
-                  4
-                )
+                JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4)
               );
               setShowEditor(true);
             }}>

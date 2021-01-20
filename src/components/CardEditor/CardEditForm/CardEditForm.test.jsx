@@ -3,7 +3,11 @@ import {
   CARD_SIZES,
 } from '../../../constants/LayoutConstants';
 
-import { getCardSizeText, handleSubmit } from './CardEditForm';
+import {
+  getCardSizeText,
+  handleSubmit,
+  hideCardPropertiesForEditor,
+} from './CardEditForm';
 
 const mockSetError = jest.fn();
 const mockOnChange = jest.fn();
@@ -59,6 +63,7 @@ describe('CardEditForm', () => {
       handleSubmit(
         '',
         '',
+        '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
@@ -69,6 +74,7 @@ describe('CardEditForm', () => {
     it('should call onChange and setShowEditor if JSON is valid', () => {
       handleSubmit(
         '{}',
+        '',
         '',
         mockSetError,
         mockOnValidateCardJson,
@@ -82,12 +88,67 @@ describe('CardEditForm', () => {
       handleSubmit(
         '1234',
         '',
+        '',
         mockSetError,
         mockOnValidateCardJson,
         mockOnChange,
         mockSetShowEditor
       );
       expect(mockSetError).toBeCalledWith('1234 is not valid JSON');
+    });
+  });
+  describe('hideCardPropertiesForEditor', () => {
+    it('should hide properties in the attributes section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        content: {
+          attributes: [
+            {
+              aggregationMethods: [],
+              aggregationMethod: '',
+              grain: '',
+              uuid: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        content: {
+          attributes: [
+            {
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+    });
+    it('should hide properties in the series section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        content: {
+          series: [
+            {
+              aggregationMethods: [],
+              aggregationMethod: '',
+              grain: '',
+              uuid: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        content: {
+          series: [
+            {
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
     });
   });
 });

@@ -78,6 +78,7 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  isSummaryDashboard: PropTypes.bool,
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
     simpleBar: PropTypes.string,
@@ -99,11 +100,27 @@ const defaultProps = {
   dataItems: [],
   currentBreakpoint: 'xl',
   availableDimensions: {},
+  isSummaryDashboard: false,
   dataSeriesItemLinks: null,
+};
+
+export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
+  const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
+  switch (idToTranslate) {
+    case 'clear.all':
+      return clearAllText || 'Clear all';
+    case 'open.menu':
+      return openMenuText || 'Open menu';
+    case 'close.menu':
+      return closeMenuText || 'Close menu';
+    default:
+      return '';
+  }
 };
 
 const CardEditFormContent = ({
   cardConfig,
+  isSummaryDashboard,
   onChange,
   i18n,
   dataItems,
@@ -122,17 +139,7 @@ const CardEditFormContent = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const { openMenuText, closeMenuText, clearAllText } = mergedI18n;
-      switch (idToTranslate) {
-        default:
-          return '';
-        case 'clear.all':
-          return clearAllText || 'Clear all';
-        case 'open.menu':
-          return openMenuText || 'Open menu';
-        case 'close.menu':
-          return closeMenuText || 'Close menu';
-      }
+      handleTranslationCallback(idToTranslate, mergedI18n);
     },
     [mergedI18n]
   );
@@ -176,6 +183,7 @@ const CardEditFormContent = ({
       ) : (
         <DataSeriesFormContent
           cardConfig={cardConfig}
+          isSummaryDashboard={isSummaryDashboard}
           onChange={onChange}
           dataItems={dataItems}
           selectedDataItems={selectedDataItems}

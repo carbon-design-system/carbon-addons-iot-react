@@ -18,4 +18,9 @@
   .#{$iot-prefix}--list-item--content--values--value__with-actions {
     width: inherit;
   }
+
+  // Fix for https://github.com/carbon-design-system/carbon-addons-iot-react/pull/1941#issuecomment-762870482
+  .#{$iot-prefix}--list-item--content--row-actions {
+    position: relative;
+  }
 }

@@ -1,15 +1,11 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
-import TestBackend from 'react-dnd-test-backend';
-import { DragDropContext } from 'react-dnd';
 
+import { DragAndDrop } from '../../../utils/DragAndDropUtils';
 import { Tag } from '../../Tag';
 
 import { UnconnectedListItem } from './ListItem';
-
-const wrapInTestContext = (DecoratedComponent, props) =>
-  DragDropContext(TestBackend)(() => <DecoratedComponent {...props} />);
 
 describe('ListItem', () => {
   it('test ListItem gets rendered', () => {
@@ -52,7 +48,13 @@ describe('ListItem', () => {
   it('ListItem when isSelectable is set to true and onClick will trigger onSelect', () => {
     const onSelect = jest.fn();
     render(
-      <UnconnectedListItem id="1" value="" isSelectable onSelect={onSelect} />
+      <UnconnectedListItem
+        id="1"
+        value=""
+        isSelectable
+        onSelect={onSelect}
+        index={0}
+      />
     );
     fireEvent.click(screen.getAllByRole('button')[0]);
     expect(onSelect).toHaveBeenCalledTimes(1);
@@ -211,12 +213,15 @@ describe('ListItem', () => {
       id: '1',
       value: 'test',
       editingStyle: 'single-nesting',
+      index: 0,
       renderDropTargets: true,
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedListItem, listItemProps);
-
-    render(<Wrapped />);
+    render(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} />
+      </DragAndDrop>
+    );
 
     const targets = screen.getAllByTestId('list-target');
 
@@ -228,13 +233,15 @@ describe('ListItem', () => {
       id: '1',
       value: 'test',
       editingStyle: 'single',
-      index: '0',
+      index: 0,
       renderDropTargets: true,
     };
 
-    const Wrapped = wrapInTestContext(UnconnectedListItem, listItemProps);
-
-    render(<Wrapped />);
+    render(
+      <DragAndDrop>
+        <UnconnectedListItem {...listItemProps} />
+      </DragAndDrop>
+    );
 
     const targets = screen.getAllByTestId('list-target');
 

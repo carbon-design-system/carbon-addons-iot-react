@@ -1253,7 +1253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id12"
+                  htmlFor="id13"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1266,7 +1266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id12"
+                      id="id13"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}
@@ -1432,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
               >
                 <label
                   className="bx--file-browse-btn"
-                  htmlFor="id11"
+                  htmlFor="id12"
                   onKeyDown={[Function]}
                   size="field"
                   tabIndex={0}
@@ -1445,7 +1445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     <input
                       accept={Array []}
                       className="bx--file-input"
-                      id="id11"
+                      id="id12"
                       multiple={false}
                       onChange={[Function]}
                       onClick={[Function]}

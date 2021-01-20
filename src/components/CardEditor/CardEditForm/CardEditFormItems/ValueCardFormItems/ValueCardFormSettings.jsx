@@ -44,8 +44,6 @@ const defaultProps = {
   cardConfig: {},
   i18n: {
     fontSize: 'Font size',
-    precisionLabel: 'Precision',
-    notSet: 'Not set',
   },
 };
 
