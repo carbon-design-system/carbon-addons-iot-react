@@ -137,6 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -180,6 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -223,6 +225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -399,6 +402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -491,6 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -624,6 +629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -718,6 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -836,6 +843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -946,6 +954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -1215,6 +1224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -2603,6 +2613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -2646,6 +2657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -2689,6 +2701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -2865,6 +2878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -2957,6 +2971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -3090,6 +3105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -3184,6 +3200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -3302,6 +3319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -3412,6 +3430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -3681,6 +3700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5097,6 +5117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5140,6 +5161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5183,6 +5205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5359,6 +5382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5451,6 +5475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5584,6 +5609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5678,6 +5704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5796,6 +5823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -5906,6 +5934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -6175,6 +6204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10168,6 +10198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10211,6 +10242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10254,6 +10286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10430,6 +10463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10522,6 +10556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10655,6 +10690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10749,6 +10785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10867,6 +10904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -10977,6 +11015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -11246,6 +11285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -12790,6 +12830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -12877,6 +12918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -12966,6 +13008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13055,6 +13098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13144,6 +13188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13335,6 +13380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13495,6 +13541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13582,6 +13629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13671,6 +13719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13760,6 +13809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -13849,6 +13899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14040,6 +14091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14200,6 +14252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14291,6 +14344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14380,6 +14434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14497,6 +14552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14681,6 +14737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14772,6 +14829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14861,6 +14919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -14978,6 +15037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15162,6 +15222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15269,6 +15330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15381,6 +15443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15493,6 +15556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15669,6 +15733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15776,6 +15841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -15888,6 +15954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16000,6 +16067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16176,6 +16244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16265,6 +16334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "blue",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16354,6 +16424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "gold",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16443,6 +16514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16532,6 +16604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16690,6 +16763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16779,6 +16853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "blue",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16868,6 +16943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "gold",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -16957,6 +17033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17046,6 +17123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17204,6 +17282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17291,6 +17370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17380,6 +17460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17469,6 +17550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17558,6 +17640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17647,6 +17730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17738,6 +17822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17829,6 +17914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -17920,6 +18006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18009,6 +18096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18126,6 +18214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18241,6 +18330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18348,6 +18438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18460,6 +18551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18572,6 +18664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18679,6 +18772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18768,6 +18862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "blue",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18857,6 +18952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "gold",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -18946,6 +19042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19035,6 +19132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19193,6 +19291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19280,6 +19379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19369,6 +19469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19458,6 +19559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19547,6 +19649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19636,6 +19739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19727,6 +19831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19818,6 +19923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19909,6 +20015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -19998,6 +20105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20115,6 +20223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20230,6 +20339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20337,6 +20447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20449,6 +20560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20561,6 +20673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20668,6 +20781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20757,6 +20871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "blue",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20846,6 +20961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "gold",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -20935,6 +21051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21024,6 +21141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21184,6 +21302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21227,6 +21346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21318,6 +21438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21361,6 +21482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21450,6 +21572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21493,6 +21616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21653,6 +21777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21696,6 +21821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21787,6 +21913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21830,6 +21957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21919,6 +22047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -21962,6 +22091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22122,6 +22252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22191,6 +22322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22308,6 +22440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22377,6 +22510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22466,6 +22600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22534,6 +22669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22720,6 +22856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22789,6 +22926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22906,6 +23044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -22975,6 +23114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23064,6 +23204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23132,6 +23273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23318,6 +23460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23379,6 +23522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23493,6 +23637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23559,6 +23704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23737,6 +23883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23798,6 +23945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23912,6 +24060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -23978,6 +24127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24156,6 +24306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24199,6 +24350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24268,6 +24420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24385,6 +24538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24426,6 +24580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24467,6 +24622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24556,6 +24712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24620,6 +24777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24679,6 +24837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24860,6 +25019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24903,6 +25063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -24972,6 +25133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25089,6 +25251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "red",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25130,6 +25293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "green",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25171,6 +25335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": "orange",
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25260,6 +25425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25324,6 +25490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25383,6 +25550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 Object {
                                   "--value-renderer-color": null,
                                   "--value-renderer-font-size": "42px",
+                                  "--value-renderer-max-lines": 1,
                                 }
                               }
                             >
@@ -25627,6 +25795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -25670,6 +25839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -25713,6 +25883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -25889,6 +26060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -25981,6 +26153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": "green",
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -26114,6 +26287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -26208,6 +26382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -26326,6 +26501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -26436,6 +26612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >
@@ -26705,6 +26882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Object {
                                 "--value-renderer-color": null,
                                 "--value-renderer-font-size": "42px",
+                                "--value-renderer-max-lines": 1,
                               }
                             }
                           >

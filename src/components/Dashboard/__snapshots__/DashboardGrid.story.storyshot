@@ -722,6 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           Object {
                             "--value-renderer-color": null,
                             "--value-renderer-font-size": "42px",
+                            "--value-renderer-max-lines": 1,
                           }
                         }
                       >

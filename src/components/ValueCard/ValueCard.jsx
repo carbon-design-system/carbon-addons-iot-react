@@ -152,7 +152,7 @@ ValueCard.defaultProps = {
   cardVariables: null,
   customFormatter: null,
   isNumberValueCompact: false,
-  precision: 0,
+  precision: null,
 };
 
 export default ValueCard;

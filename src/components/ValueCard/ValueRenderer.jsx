@@ -76,6 +76,7 @@ const ValueRenderer = ({
         style={{
           '--value-renderer-font-size': `${fontSize}px`,
           '--value-renderer-color': color,
+          '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
         }}>
         {renderValue}
       </span>

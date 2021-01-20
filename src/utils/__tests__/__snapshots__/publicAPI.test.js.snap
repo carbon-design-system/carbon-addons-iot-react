@@ -11374,7 +11374,7 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
-      "precision": 0,
+      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },

@@ -17,18 +17,15 @@
     @include type-style('productive-heading-06');
     max-width: 204px;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
     font-size: var(--value-renderer-font-size);
     color: var(--value-renderer-color);
-    // display: -webkit-box;
-    // -webkit-box-orient: vertical;
-    // -webkit-line-clamp: 2;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    $max-lines: 2;
-    $line-height: 1rem;
+    $line-height: calc(var(--value-renderer-font-size) * 1.2);
+    $max-lines: var(--value-renderer-max-lines);
+    line-height: $line-height;
     @include multiline-text-overflow($max-lines, $line-height);
+    word-break: break-all;
+
     &--vertical {
       text-align: left;
     }
