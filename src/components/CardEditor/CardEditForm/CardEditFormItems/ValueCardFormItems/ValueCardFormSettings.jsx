@@ -21,15 +21,10 @@ const propTypes = {
           color: PropTypes.string,
         })
       ),
-      xLabel: PropTypes.string,
-      yLabel: PropTypes.string,
       unit: PropTypes.string,
-      includeZeroOnXaxis: PropTypes.bool,
-      includeZeroOnYaxis: PropTypes.bool,
-      timeDataSourceId: PropTypes.string,
-      showLegend: PropTypes.bool,
     }),
     interval: PropTypes.string,
+    fontSize: PropTypes.number,
   }),
   /** Callback function when form data changes */
   onChange: PropTypes.func.isRequired,
@@ -51,7 +46,7 @@ const defaultProps = {
 
 const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const { content, id } = cardConfig;
+  const { id, fontSize } = cardConfig;
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -65,15 +60,11 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
           max={54}
           light
           label={mergedI18n.fontSize}
-          value={content?.fontSize?.toString() || 16}
+          value={fontSize?.toString() || 16}
           onChange={({ imaginaryTarget }) =>
             onChange({
               ...cardConfig,
-              content: {
-                ...content,
-                fontSize:
-                  Number(imaginaryTarget.value) || imaginaryTarget.value,
-              },
+              fontSize: Number(imaginaryTarget.value) || imaginaryTarget.value,
             })
           }
         />

@@ -21,8 +21,8 @@ const valueCardConfig = {
         label: 'Key 2',
       },
     ],
-    fontSize: 16,
   },
+  fontSize: 16,
 };
 
 const mockOnChange = jest.fn();
@@ -58,8 +58,8 @@ describe('Value form fields', () => {
             unit: 'lb',
           },
         ],
-        fontSize: 30,
       },
+      fontSize: 30,
       id: 'Standard',
       size: 'MEDIUM',
       title: 'value card',

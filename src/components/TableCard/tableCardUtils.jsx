@@ -11,7 +11,7 @@ export const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
 
   if (typeof value === 'number') {
-    return formatNumberWithPrecision(value, precisionDefined, locale);
+    return formatNumberWithPrecision(value, precisionDefined, locale, false);
   }
   if (isNil(value)) {
     return '--';

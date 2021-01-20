@@ -123,13 +123,17 @@ export const getUpdatedCardSize = (oldSize) => {
  */
 export const formatNumberWithPrecision = (
   value,
-  precision = 0,
+  precision,
   locale = 'en',
   isNumberValueCompact = false
 ) => {
   return new Intl.NumberFormat(locale, {
-    minimumFractionDigits: precision,
-    maximumFractionDigits: precision,
+    ...(precision
+      ? {
+          minimumFractionDigits: precision,
+          maximumFractionDigits: precision,
+        }
+      : {}),
     ...(isNumberValueCompact ? { notation: 'compact' } : {}),
   }).format(value);
 };

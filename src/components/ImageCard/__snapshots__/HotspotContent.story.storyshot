@@ -543,7 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
                   tabIndex="0"
-                  title="temperature > 31"
+                  title="temperature > 30,5"
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
@@ -555,7 +555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
                     d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
                   />
                   <title>
-                    temperature &gt; 31
+                    temperature &gt; 30,5
                   </title>
                 </svg>
                 <span

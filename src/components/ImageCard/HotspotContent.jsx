@@ -176,7 +176,8 @@ const HotspotContent = ({
                     ? formatNumberWithPrecision(
                         thresholdMatch.value,
                         null,
-                        locale
+                        locale,
+                        false
                       )
                     : thresholdMatch.value
                 }`}
@@ -216,7 +217,8 @@ const HotspotContent = ({
                             ? 0
                             : 3 // for small decimals give 3 spots
                           : 1, // otherwise 1 spot if precision isn't set
-                        locale
+                        locale,
+                        false
                       )
                     : value}
                   {unit && value !== '--' && (

@@ -1053,7 +1053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    77
+                    76.7
                   </span>
                 </div>
                 <span
@@ -1182,7 +1182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    1
+                    0.567
                   </span>
                 </div>
                 <span
@@ -1355,7 +1355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    77
+                    76.7
                   </span>
                 </div>
                 <span
@@ -1698,7 +1698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    0
+                    0,05
                   </span>
                 </div>
                 <span
@@ -2001,7 +2001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    77
+                    76.7
                   </span>
                 </div>
                 <span
@@ -2174,7 +2174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    77
+                    76.7
                   </span>
                 </div>
                 <span
@@ -2675,7 +2675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    77
+                    76.7
                   </span>
                 </div>
                 <span
@@ -4983,7 +4983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    10,294
+                    10,294.1
                   </span>
                 </div>
                 <span
@@ -5026,7 +5026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    14,918,123
+                    14,918,123.123
                   </span>
                 </div>
                 <span
