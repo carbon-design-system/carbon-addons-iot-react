@@ -22061,13 +22061,6 @@ Map {
     },
     "render": [Function],
   },
-  "PaginationSkeleton" => Object {
-    "propTypes": Object {
-      "className": Object {
-        "type": "string",
-      },
-    },
-  },
   "PrimaryButton" => Object {},
   "ProgressStep" => Object {
     "defaultProps": Object {
@@ -24168,6 +24161,13 @@ Map {
       },
     },
   },
+  "PaginationSkeleton" => Object {
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+    },
+  },
   "ProgressIndicatorSkeleton" => Object {
     "propTypes": Object {
       "className": Object {
@@ -24766,6 +24766,8 @@ Map {
     },
     "render": [Function],
   },
+  "PageSelector" => Object {},
+  "Unstable_Pagination" => Object {},
   "determineCardRange" => Object {},
   "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},

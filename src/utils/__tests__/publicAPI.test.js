@@ -1,4 +1,5 @@
 const { isValidElementType } = require('react-is');
+const isNil = require('lodash/isNil');
 
 /**
  * In our Public API test, we try to identify each component and its
@@ -119,39 +120,40 @@ test('Public API should only change with a semver change', () => {
   function mapComponentToAPI(Component) {
     const api = {};
 
-    Object.keys(Component).forEach((key) => {
-      // There are a couple of properties on components that we don't believe
-      // are part of our API, such `_` prefixed variables, or capture details
-      // that are internal to a library-specific piece of functionality. For
-      // example, React's context functionality.
-      if (key[0] === '_') {
-        return;
-      }
+    if (!isNil(Component)) {
+      Object.keys(Component).forEach((key) => {
+        // There are a couple of properties on components that we don't believe
+        // are part of our API, such `_` prefixed variables, or capture details
+        // that are internal to a library-specific piece of functionality. For
+        // example, React's context functionality.
+        if (key[0] === '_') {
+          return;
+        }
 
-      if (key === 'Consumer') {
-        api[key] = 'React.Consumer';
-        return;
-      }
+        if (key === 'Consumer') {
+          api[key] = 'React.Consumer';
+          return;
+        }
 
-      if (key === 'Provider') {
-        api[key] = 'React.Provider';
-        return;
-      }
+        if (key === 'Provider') {
+          api[key] = 'React.Provider';
+          return;
+        }
 
-      // Handle components defined as fields on a component, for example
-      // `MultiSelect.Filterable`
-      if (
-        typeof Component[key] === 'function' &&
-        key !== 'render' &&
-        isValidElementType(Component[key])
-      ) {
-        api[key] = mapComponentToAPI(Component[key]);
-        return;
-      }
+        // Handle components defined as fields on a component, for example
+        // `MultiSelect.Filterable`
+        if (
+          typeof Component[key] === 'function' &&
+          key !== 'render' &&
+          isValidElementType(Component[key])
+        ) {
+          api[key] = mapComponentToAPI(Component[key]);
+          return;
+        }
 
-      api[key] = Component[key];
-    });
-
+        api[key] = Component[key];
+      });
+    }
     return api;
   }
 

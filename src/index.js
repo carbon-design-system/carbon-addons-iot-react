@@ -123,8 +123,16 @@ export { useDNDProviderElement } from './hooks/useDNDProviderElement';
 export {
   Accordion,
   AccordionItem,
+  // TODO: 7.27 AspectRatio,
+  // TODO: unify breadcrumb
+  // Breadcrumb,
+  // BreadcrumbItem
+  // TODO: unify button
+  // Button,
+  // TODO: 7.27 ButtonSet,
   Checkbox,
   CodeSnippet,
+  // TODO: unify combobox
   // ComboBox,
   ModalHeader,
   ModalBody,
@@ -193,7 +201,6 @@ export {
   OverflowMenuItem,
   Pagination,
   PaginationNav,
-  PaginationSkeleton,
   PrimaryButton,
   // TODO Consolidate ProgressIndicator export from Carbon below with our ProgressIndicator export
   // ProgressIndicator,
@@ -247,12 +254,15 @@ export {
   SkeletonPlaceholder,
   DataTableSkeleton,
   AccordionSkeleton,
+  // TODO unify breadcrumb skeleton
+  // BreadcrumbSkeleton,
   ButtonSkeleton,
   CheckboxSkeleton,
   CodeSnippetSkeleton,
   DropdownSkeleton,
   FileUploaderSkeleton,
   NumberInputSkeleton,
+  PaginationSkeleton,
   ProgressIndicatorSkeleton,
   RadioButtonSkeleton,
   SearchSkeleton,
@@ -300,6 +310,19 @@ export {
   SideNavMenu,
   SideNavMenuItem,
   SideNavSwitcher,
+  // Experimental components from Carbon
+
+  // eslint-disable-next-line camelcase
+  // TODO: 7.2.7 unstable_Pagination,
+  // eslint-disable-next-line camelcase
+  // TODO: 7.2.7 unstable_PageSelector,
+  // eslint-disable-next-line camelcase
+  // TODO: 7.2.7 unstable_TreeNode,
+  // eslint-disable-next-line camelcase
+  // TODO: 7.2.7 unstable_TreeView,
+  PageSelector,
+  // eslint-disable-next-line camelcase
+  Unstable_Pagination,
 } from 'carbon-components-react';
 
 export {
