@@ -480,7 +480,8 @@ export const WithCheckboxMultiSelection = () => {
             <Checkbox
               id={`${team}-checkbox`}
               name={team}
-              labelText={`${team}`}
+              labelText={team}
+              hideLabel
               onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
               checked={selectedIds.some((id) => team === id)}
               indeterminate={
@@ -506,7 +507,8 @@ export const WithCheckboxMultiSelection = () => {
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
                   name={player}
-                  labelText={`${player}`}
+                  labelText={team}
+                  hideLabel
                   onClick={(e) => {
                     handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                   }}
@@ -527,7 +529,8 @@ export const WithCheckboxMultiSelection = () => {
             <Checkbox
               id={`${team}-checkbox`}
               name={team}
-              labelText={`${team}`}
+              labelText={team}
+              hideLabel
               onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
               checked={selectedIds.some((id) => team === id)}
               indeterminate={
@@ -553,7 +556,8 @@ export const WithCheckboxMultiSelection = () => {
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
                   name={player}
-                  labelText={`${player}`}
+                  labelText={team}
+                  hideLabel
                   onClick={(e) => {
                     handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                   }}
