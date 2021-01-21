@@ -24778,6 +24778,7 @@ Map {
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
   "findMatchingThresholds" => Object {},
+  "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

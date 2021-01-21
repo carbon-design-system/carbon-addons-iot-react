@@ -314,6 +314,8 @@ export {
   findMatchingThresholds,
 } from './utils/cardUtilityFunctions';
 
+export { determineMaxValueCardAttributeCount } from './components/ValueCard/valueCardUtils';
+
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
 
 export * from './icons/components';

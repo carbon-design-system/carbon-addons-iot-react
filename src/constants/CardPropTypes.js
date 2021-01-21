@@ -124,7 +124,7 @@ export const ValueCardPropTypes = {
   customFormatter: PropTypes.func,
   /** optional custom font size for the displayed value */
   fontSize: PropTypes.number,
-  /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
+  /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
   isNumberValueCompact: PropTypes.bool,
 };
 

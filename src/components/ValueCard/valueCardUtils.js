@@ -1,4 +1,5 @@
 import filter from 'lodash/filter';
+import warning from 'warning';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -44,4 +45,42 @@ export const determineLayout = (size) => {
     default:
       return CARD_LAYOUTS.HORIZONTAL;
   }
+};
+
+/** Determine the max value card attribute count
+ * TODO: remove in next release
+ */
+export const determineMaxValueCardAttributeCount = (
+  size,
+  currentAttributeCount
+) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'Deprecation warning: There is no longer a max number of attributes allowed in ValueCards. This function will me removed in the next release.'
+    );
+  }
+  let attributeCount = currentAttributeCount;
+  switch (size) {
+    case CARD_SIZES.SMALL:
+      attributeCount = 1;
+      break;
+    case CARD_SIZES.SMALLWIDE:
+      attributeCount = 2;
+      break;
+    case CARD_SIZES.MEDIUMTHIN:
+    case CARD_SIZES.MEDIUM:
+    case CARD_SIZES.MEDIUMWIDE:
+      attributeCount = 3;
+      break;
+    case CARD_SIZES.LARGE:
+      attributeCount = 5;
+      break;
+    case CARD_SIZES.LARGETHIN:
+    case CARD_SIZES.LARGEWIDE:
+      attributeCount = 7;
+      break;
+    default:
+  }
+  return attributeCount;
 };

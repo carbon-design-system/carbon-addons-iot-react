@@ -13,7 +13,6 @@ const propTypes = {
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   precision: PropTypes.number,
   color: PropTypes.string,
-  /** Makes the value and the unit smaller */
   locale: PropTypes.string,
   customFormatter: PropTypes.func,
   fontSize: PropTypes.number.isRequired,
@@ -76,6 +75,8 @@ const ValueRenderer = ({
         style={{
           '--value-renderer-font-size': `${fontSize}px`,
           '--value-renderer-color': color,
+          // if the font size is small enough to fit in the boundary box, wrap to 2 lines
+          // otherwise, trucate the first line
           '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
         }}>
         {renderValue}
