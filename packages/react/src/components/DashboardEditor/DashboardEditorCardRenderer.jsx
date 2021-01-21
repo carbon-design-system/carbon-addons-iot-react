@@ -182,16 +182,14 @@ const DashboardEditorCardRenderer = ({ dataItems, availableDimensions, ...others
     );
     // if we have dynamic hotspots and a way to fetch them, fetch them
     if (originalDynamicHotspot && others.onFetchDynamicDemoHotspots) {
-      others
-        .onFetchDynamicDemoHotspots()
-        .then((hotspots) =>
-          setDynamicHotspots(
-            hotspots.map((hotspot) => ({
-              ...hotspot,
-              ...omit(originalDynamicHotspot, 'type', 'x', 'y'),
-            }))
-          )
-        );
+      others.onFetchDynamicDemoHotspots().then((hotspots) =>
+        setDynamicHotspots(
+          hotspots.map((hotspot) => ({
+            ...hotspot,
+            ...omit(originalDynamicHotspot, 'type', 'x', 'y'),
+          }))
+        )
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [others.values?.hotspots?.length, others.onFetchDynamicDemoHotspots]);
