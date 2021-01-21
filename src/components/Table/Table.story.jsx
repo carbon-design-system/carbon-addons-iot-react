@@ -3791,6 +3791,7 @@ storiesOf('Watson IoT/Table', module)
           actions={actions}
           lightweight={boolean('lightweight', false)}
           options={{
+            hasPagination: boolean('hasPagination', true),
             hasAggregations: true,
             hasRowSelection: select(
               'hasRowSelection',
