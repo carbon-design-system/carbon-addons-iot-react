@@ -14,6 +14,7 @@
     & > *:last-child {
       margin-right: $layout-03;
       min-width: $right-side-width;
+      overflow-y: auto;
     }
 
     .#{$prefix}--tabs {
