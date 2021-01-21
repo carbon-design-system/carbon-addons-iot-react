@@ -524,14 +524,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    className="react-grid-layout iot--dashboard-grid"
                     onDragEnter={[Function]}
                     onDragLeave={[Function]}
                     onDragOver={[Function]}
                     onDrop={[Function]}
                     style={
                       Object {
-                        "height": "1264px",
+                        "height": "1104px",
                       }
                     }
                   >
@@ -1930,11 +1930,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       style={
                         Object {
                           "--card-default-height": "304px",
-                          "height": "304px",
+                          "height": "144px",
                           "left": "0%",
                           "position": "absolute",
                           "top": "960px",
-                          "width": "49.375%",
+                          "width": "5.078125%",
                         }
                       }
                       tabIndex={0}
@@ -3218,7 +3218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}
@@ -4568,7 +4568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    className="react-grid-layout iot--dashboard-grid"
                     onDragEnter={[Function]}
                     onDragLeave={[Function]}
                     onDragOver={[Function]}
@@ -6766,7 +6766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}
@@ -9021,7 +9021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}
@@ -10493,7 +10493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   }
                 >
                   <div
-                    className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                    className="react-grid-layout iot--dashboard-grid"
                     onDragEnter={[Function]}
                     onDragLeave={[Function]}
                     onDragOver={[Function]}
@@ -11699,7 +11699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}
@@ -13010,14 +13010,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}
                   onDrop={[Function]}
                   style={
                     Object {
-                      "height": "1264px",
+                      "height": "1104px",
                     }
                   }
                 >
@@ -14465,11 +14465,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     style={
                       Object {
                         "--card-default-height": "304px",
-                        "height": "304px",
+                        "height": "144px",
                         "left": "0%",
                         "position": "absolute",
                         "top": "960px",
-                        "width": "49.375%",
+                        "width": "5.078125%",
                       }
                     }
                     tabIndex={0}
@@ -15966,7 +15966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 }
               >
                 <div
-                  className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+                  className="react-grid-layout iot--dashboard-grid"
                   onDragEnter={[Function]}
                   onDragLeave={[Function]}
                   onDragOver={[Function]}

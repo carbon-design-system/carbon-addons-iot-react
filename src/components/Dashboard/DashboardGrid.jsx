@@ -1,11 +1,11 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import styled from 'styled-components';
-import some from 'lodash/some';
 import find from 'lodash/find';
 import pick from 'lodash/pick';
+import classnames from 'classnames';
 
+import { settings } from '../../constants/Settings';
 import { getLayout } from '../../utils/componentUtilityFunctions';
 import {
   GUTTER,
@@ -18,22 +18,9 @@ import {
 } from '../../constants/LayoutConstants';
 import { DashboardLayoutPropTypes } from '../../constants/CardPropTypes';
 
+const { iotPrefix } = settings;
+
 const GridLayout = WidthProvider(Responsive);
-
-const StyledGridLayout = styled(GridLayout)`
-  &&& {
-    position: relative;
-    .react-grid-item.cssTransforms {
-      transition-property: ${(props) =>
-        props.shouldAnimate ? 'transform' : 'none'};
-    }
-
-    .react-resizable-hide .react-resizable-handle {
-      /* workaround to hide the resize handles in react-grid-layout */
-      display: none;
-    }
-  }
-`;
 
 export const DashboardGridPropTypes = {
   /** Array of elements to render in the grid (recommended that you use our Card component) */
@@ -155,28 +142,17 @@ export const findLayoutOrGenerate = (layouts, cards, supportedLayouts) => {
   // iterate through each breakpoint
   return supportedLayouts.reduce((acc, layoutName) => {
     let layout = layouts && layouts[layoutName];
-    // If layout exists for this breakpoint, make sure it contains all the cards
     if (layout) {
-      // If you find a card that's missing from the current layout, you need to regenerate the layout
-      if (cards.some((card) => !some(layouts[layoutName], { i: card.id }))) {
-        layout = getLayout(
-          layoutName,
-          cards,
-          DASHBOARD_COLUMNS,
-          CARD_DIMENSIONS
-        );
-      } else {
-        // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
-        layout = layout.reduce((updatedLayout, cardFromLayout) => {
-          const matchingCard = find(cards, { id: cardFromLayout.i });
-          if (matchingCard)
-            updatedLayout.push({
-              ...cardFromLayout,
-              ...CARD_DIMENSIONS[matchingCard.size][layoutName],
-            });
-          return updatedLayout;
-        }, []);
-      }
+      // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
+      layout = layout.reduce((updatedLayout, cardFromLayout) => {
+        const matchingCard = find(cards, { id: cardFromLayout.i });
+        if (matchingCard)
+          updatedLayout.push({
+            ...cardFromLayout,
+            ...CARD_DIMENSIONS[matchingCard.size][layoutName],
+          });
+        return updatedLayout;
+      }, []);
     } else {
       // generate the layout if we're not passed from the parent
       layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
@@ -235,10 +211,7 @@ const DashboardGrid = ({
   ...others
 }) => {
   // Unfortunately can't use React.Children.map because it breaks the original key which breaks react-grid-layout
-  const childrenArray = useMemo(
-    () => (Array.isArray(children) ? children : [children]),
-    [children]
-  );
+  const childrenArray = useMemo(() => children, [children]);
   const generatedLayouts = useMemo(
     () =>
       findLayoutOrGenerate(
@@ -269,10 +242,10 @@ const DashboardGrid = ({
     );
   }, [childrenArray]);
 
-  const [animationState, setAnimationState] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
   useEffect(() => {
     requestAnimationFrame(() => {
-      setAnimationState(isEditable);
+      setShouldAnimate(isEditable);
     });
   }, [isEditable]);
 
@@ -338,17 +311,17 @@ const DashboardGrid = ({
 
   return (
     <div style={{ flex: 1 }}>
-      <StyledGridLayout
+      <GridLayout
+        className={classnames(`${iotPrefix}--dashboard-grid`, {
+          // Stop the initial animation unless we need to support editing drag-and-drop
+          [`${iotPrefix}--dashboard-grid__animate`]: shouldAnimate,
+        })}
         layouts={generatedLayouts}
-        compactType="vertical"
         cols={DASHBOARD_COLUMNS}
         breakpoints={pick(DASHBOARD_BREAKPOINTS, supportedLayouts)}
         margin={cachedMargin}
         containerPadding={DASHBOARD_CONTAINER_PADDING}
         rowHeight={ROW_HEIGHT[breakpoint]}
-        preventCollision={false}
-        // Stop the initial animation unless we need to support editing drag-and-drop
-        shouldAnimate={animationState}
         onLayoutChange={handleLayoutChange}
         onBreakpointChange={onBreakpointChange}
         onResize={onCardResize}
@@ -357,7 +330,7 @@ const DashboardGrid = ({
         isDraggable={isEditable}
         {...others}>
         {cards}
-      </StyledGridLayout>
+      </GridLayout>
     </div>
   );
 };

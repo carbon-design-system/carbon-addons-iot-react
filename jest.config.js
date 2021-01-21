@@ -21,9 +21,9 @@ module.exports = {
       lines: 80,
     },
     './src/components/Dashboard/DashboardGrid.jsx': {
-      statements: 73,
-      branches: 61,
-      lines: 73,
+      statements: 72,
+      branches: 60,
+      lines: 71,
     },
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 61 },
     './src/components/BarChartCard/BarChartCard.jsx': {
