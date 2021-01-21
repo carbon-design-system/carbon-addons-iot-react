@@ -8563,6 +8563,7 @@ Map {
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
+      "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
@@ -9092,6 +9093,9 @@ Map {
         "type": "func",
       },
       "onExport": Object {
+        "type": "func",
+      },
+      "onFetchDynamicDemoHotspots": Object {
         "type": "func",
       },
       "onImageDelete": Object {
