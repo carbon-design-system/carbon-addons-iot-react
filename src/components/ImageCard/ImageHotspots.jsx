@@ -746,7 +746,7 @@ const ImageHotspots = ({
                 cursor,
                 setCursor,
                 isEditable,
-                callback: isCtrlPressed ? onAddHotspotPosition : undefined,
+                callback: event.ctrlKey ? onAddHotspotPosition : undefined,
               });
             }
           }}

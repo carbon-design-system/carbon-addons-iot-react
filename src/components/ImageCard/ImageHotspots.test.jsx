@@ -343,8 +343,9 @@ describe('ImageHotspots', () => {
           selectedHotspots={[]}
         />
       );
-
-      userEvent.click(screen.getByAltText(testImageText));
+      userEvent.click(screen.getByAltText(testImageText), {
+        ctrlKey: true,
+      });
       expect(onAddHotspotPosition).not.toHaveBeenCalled();
 
       rerender(
@@ -361,7 +362,9 @@ describe('ImageHotspots', () => {
         />
       );
 
-      userEvent.click(screen.getByAltText(testImageText));
+      userEvent.click(screen.getByAltText(testImageText), {
+        ctrlKey: true,
+      });
       // We aren't more specific about the callback param here due to
       // difficulties setting the event.pageX & event.pageY in the test,
       // which are needed for getting the position of the click correct.
