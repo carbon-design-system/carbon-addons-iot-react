@@ -368,6 +368,8 @@ export const BarChartCardPropTypes = {
   /** internationalization */
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
+    tooltipGroupLabel: PropTypes.string,
+    tooltipTotalLabel: PropTypes.string,
   }),
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */

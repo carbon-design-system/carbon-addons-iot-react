@@ -60,7 +60,13 @@ const propTypes = {
   width: PropTypes.number.isRequired,
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
-  i18n: PropTypes.objectOf(PropTypes.string),
+  i18n: PropTypes.shape({
+    zoomIn: PropTypes.string,
+    zoomOut: PropTypes.string,
+    zoomToFit: PropTypes.string,
+    titlePlaceholderText: PropTypes.string,
+    titleEditableHintText: PropTypes.string,
+  }),
   /** locale string to pass for formatting */
   locale: PropTypes.string,
   /** The (unique) positions of the currently selected hotspots */
@@ -90,6 +96,8 @@ const defaultProps = {
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
+    titlePlaceholderText: 'Enter label',
+    titleEditableHintText: 'Click to edit label',
   },
   // undefined instead of null allows for functions to set default values
   locale: undefined,
@@ -379,7 +387,13 @@ export const zoom = (
   }
 };
 
-const getAccumulatedOffset = (imageElement) => {
+/**
+ * Since the imageElement is not at the borders of the screen, we need to calculate the X and Y offsets of the Image from the parents
+ * @param {*} imageElement
+ * @return {object} top, left pixels that indicate where the image is placed on the page
+ */
+export const getAccumulatedOffset = (imageElement) => {
+  // TODO: replace with simpler approach and share as utility function: https://stackoverflow.com/questions/5601659/how-do-you-calculate-the-page-position-of-a-dom-element-when-the-body-can-be-rel
   const offset = {
     top: imageElement.offsetTop,
     left: imageElement.offsetLeft,
@@ -467,6 +481,8 @@ const ImageHotspots = ({
     hideHotspots: hideHotspotsProp,
     hideMinimap: hideMinimapProp,
   });
+
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   useEffect(() => {
     setOptions({
@@ -586,6 +602,7 @@ const ImageHotspots = ({
                     (isEditable, hotspotIsSelected && hotspot.type === 'text')
                   }
                   onChange={onHotspotContentChanged}
+                  i18n={mergedI18n}
                 />
               )
             }
@@ -599,13 +616,14 @@ const ImageHotspots = ({
       }),
     [
       hotspots,
-      hotspotsStyle,
-      getIconRenderFunction,
-      locale,
       selectedHotspots,
-      onHotspotClicked,
+      locale,
+      getIconRenderFunction,
       isEditable,
       onHotspotContentChanged,
+      mergedI18n,
+      hotspotsStyle,
+      onHotspotClicked,
     ]
   );
 
@@ -714,7 +732,7 @@ const ImageHotspots = ({
       )}
       {!hideZoomControls && (
         <ImageControls
-          i18n={i18n}
+          i18n={mergedI18n}
           minimap={{ ...minimap, src }}
           draggable={draggable}
           dragging={dragging}

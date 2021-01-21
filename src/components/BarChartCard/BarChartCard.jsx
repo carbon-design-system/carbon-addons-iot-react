@@ -104,22 +104,22 @@ const BarChartCard = ({
     () =>
       isDashboardPreview
         ? generateSampleValuesForEditor(
-            valuesProp,
-            categoryDataSourceId,
+            series,
             timeDataSourceId,
-            availableDimensions,
             interval,
-            timeRange
+            timeRange,
+            categoryDataSourceId,
+            availableDimensions
           )
         : [],
     [
-      availableDimensions,
-      categoryDataSourceId,
       isDashboardPreview,
+      series,
       timeDataSourceId,
+      categoryDataSourceId,
       interval,
       timeRange,
-      valuesProp,
+      availableDimensions,
     ]
   );
 
@@ -282,6 +282,8 @@ const BarChartCard = ({
                     showTimeInGMT,
                     tooltipDateFormatPattern
                   ),
+                groupLabel: i18n.tooltipGroupLabel,
+                totalLabel: i18n.tooltipTotalLabel,
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -353,6 +355,8 @@ BarChartCard.defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
   i18n: {
     noDataLabel: 'No data',
+    tooltipGroupLabel: 'Group',
+    tooltipTotalLabel: 'Total',
   },
   domainRange: null,
   content: {

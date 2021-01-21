@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
 
 import { settings } from '../../../../../constants/Settings';
-import { NumberInput, Dropdown } from '../../../../../index';
+import { NumberInput } from '../../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -39,25 +38,16 @@ const propTypes = {
     precisionLabel: PropTypes.string,
     notSet: PropTypes.string,
   }),
-  /** Callback function to translate common ids */
-  translateWithId: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   cardConfig: {},
   i18n: {
     fontSize: 'Font size',
-    precisionLabel: 'Precision',
-    notSet: 'Not set',
   },
 };
 
-const ValueCardFormSettings = ({
-  cardConfig,
-  onChange,
-  i18n,
-  translateWithId,
-}) => {
+const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { content, id } = cardConfig;
 
@@ -83,37 +73,6 @@ const ValueCardFormSettings = ({
               },
             })
           }
-        />
-      </div>
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          id={`${id}_value-card-decimal-place`}
-          titleText={mergedI18n.precisionLabel}
-          direction="bottom"
-          label=""
-          items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
-          light
-          translateWithId={translateWithId}
-          selectedItem={content?.precision?.toString() || mergedI18n.notSet}
-          onChange={({ selectedItem }) => {
-            const isSet = selectedItem !== mergedI18n.notSet;
-            if (isSet) {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...content,
-                  precision: Number(selectedItem),
-                },
-              });
-            } else {
-              onChange({
-                ...cardConfig,
-                content: {
-                  ...omit(content, 'precision'),
-                },
-              });
-            }
-          }}
         />
       </div>
     </>

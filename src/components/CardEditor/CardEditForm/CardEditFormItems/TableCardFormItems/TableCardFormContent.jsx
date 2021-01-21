@@ -10,6 +10,7 @@ import {
 } from '../../../../DashboardEditor/editorUtils';
 import { Button, List, MultiSelect } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
+import ContentFormItemTitle from '../ContentFormItemTitle';
 import {
   CARD_SIZES,
   CARD_TYPES,
@@ -42,6 +43,8 @@ const propTypes = {
     dataItemEditorDimensionTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
     dataItemEditorLegendColor: PropTypes.string,
+    tableColumnEditorSectionTitle: PropTypes.string,
+    dataItemEditorSectionTableTooltipText: PropTypes.string,
     dataSeriesTitle: PropTypes.string,
     selectDataItems: PropTypes.string,
     selectGroupByDimensions: PropTypes.string,
@@ -60,6 +63,10 @@ const propTypes = {
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   /** the callback is called with a list of the new data item names selected */
   setSelectedDataItems: PropTypes.func.isRequired,
+  /** optional link href's for each card type that will appear in a tooltip */
+  dataSeriesItemLinks: PropTypes.shape({
+    table: PropTypes.string,
+  }),
   translateWithId: PropTypes.func.isRequired,
 };
 
@@ -71,7 +78,9 @@ const defaultProps = {
     dataItemEditorDimensionTitle: 'Group by',
     dataItemEditorDataItemLabel: 'Label',
     dataItemEditorLegendColor: 'Legend color',
-    dataSeriesTitle: 'Data',
+    tableColumnEditorSectionTitle: 'Columns',
+    dataItemEditorSectionTableTooltipText:
+      'Display metrics in columns. Filter the metrics by dimensions or device ID from Group by.',
     selectDataItems: 'Select data item(s)',
     selectGroupByDimensions: 'Select dimension(s)',
     dataItem: 'Data item',
@@ -82,6 +91,7 @@ const defaultProps = {
   dataItems: [],
   selectedDataItems: [],
   availableDimensions: {},
+  dataSeriesItemLinks: null,
 };
 
 const TableCardFormContent = ({
@@ -92,6 +102,7 @@ const TableCardFormContent = ({
   setSelectedDataItems,
   availableDimensions,
   i18n,
+  dataSeriesItemLinks,
   translateWithId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -201,9 +212,18 @@ const TableCardFormContent = ({
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
       />
-      <div className={`${baseClassName}--form-section`}>
-        {mergedI18n.dataSeriesTitle}
-      </div>
+      <ContentFormItemTitle
+        title={mergedI18n.tableColumnEditorSectionTitle}
+        tooltip={{
+          tooltipText: mergedI18n.dataItemEditorSectionTableTooltipText,
+          ...(dataSeriesItemLinks?.table
+            ? {
+                linkText: mergedI18n.dataItemEditorSectionTooltipLinkText,
+                href: dataSeriesItemLinks.table,
+              }
+            : {}),
+        }}
+      />
       <div
         className={`${baseClassName}--input`} // data item selector
       >
