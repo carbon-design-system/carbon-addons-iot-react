@@ -87,7 +87,7 @@ const defaultProps = {
   i18n: {
     boldLabelText: 'Text Bold',
     infoMessageText:
-      'Select an existing label on the image to edit it or click on an empty region to create one',
+      'Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one',
     italicLabelText: 'Text Italic',
     underlineLabelText: 'Text Underline',
     fontColorLabelText: 'Font color',

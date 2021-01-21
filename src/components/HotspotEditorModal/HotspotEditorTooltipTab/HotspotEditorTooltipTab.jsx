@@ -83,7 +83,7 @@ const defaultProps = {
     iconDropdownLabelText: 'Select an icon',
     iconDropdownTitleText: 'Icon',
     infoMessageText:
-      'Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
+      'Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.',
     colorDropdownLabelText: 'Select a color',
     colorDropdownTitleText: 'Color',
   },

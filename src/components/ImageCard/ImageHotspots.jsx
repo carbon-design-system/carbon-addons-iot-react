@@ -465,6 +465,8 @@ const ImageHotspots = ({
   selectedHotspots,
   displayOption,
 }) => {
+  // Need to keep track of whether the Ctrl key is currently pressed because we want to only add hotspots in that case
+  const [isCtrlPressed, setIsCtrlPressed] = useState();
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
   // Minimap needs to be stored in state because we're dragging it around when zoomed in
@@ -483,6 +485,28 @@ const ImageHotspots = ({
   });
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const handleCtrlKeyUp = useCallback((event) => {
+    // Was the control key unpressed
+    if (event.keyCode === 17) {
+      setIsCtrlPressed(false);
+    }
+  }, []);
+  const handleCtrlKeyDown = useCallback((event) => {
+    if (event.ctrlKey) {
+      setIsCtrlPressed(true);
+    }
+  }, []);
+
+  // Listen to the control key to add hotspots
+  useEffect(() => {
+    window.addEventListener('keydown', handleCtrlKeyDown);
+    window.addEventListener('keyup', handleCtrlKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleCtrlKeyDown);
+      window.removeEventListener('keyup', handleCtrlKeyUp);
+    };
+  }, [handleCtrlKeyDown, handleCtrlKeyUp]);
 
   useEffect(() => {
     setOptions({
@@ -526,7 +550,7 @@ const ImageHotspots = ({
   };
 
   const imageStyle = {
-    cursor: isEditable && !dragging ? 'crosshair' : 'auto',
+    cursor: isEditable && !dragging && isCtrlPressed ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
     top: image.offsetY,
@@ -647,6 +671,14 @@ const ImageHotspots = ({
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
     <div
+      onContextMenu={
+        isEditable
+          ? (event) => {
+              // if we're in edit mode, prevent the CTRL-click context menu from popping
+              event.preventDefault();
+            }
+          : undefined
+      }
       style={containerStyle}
       onMouseOut={() => {
         if (dragging) {
@@ -714,7 +746,7 @@ const ImageHotspots = ({
                 cursor,
                 setCursor,
                 isEditable,
-                callback: onAddHotspotPosition,
+                callback: isCtrlPressed ? onAddHotspotPosition : undefined,
               });
             }
           }}
