@@ -61,3 +61,15 @@ $hoverBgColor: #2c2c2c;
     color: $textColor;
   }
 }
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--side-nav {
+    left: unset;
+    right: 0;
+  }
+
+  .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
+    margin-left: mini-units(3);
+    margin-right: unset;
+  }
+}
