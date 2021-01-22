@@ -18,8 +18,7 @@ export const DEFAULT_FONT_SIZE = 42;
  */
 export const determineValue = (dataSourceId, values, dataFilter = {}) =>
   Array.isArray(values)
-    ? filter(values, dataFilter)[0] &&
-      filter(values, dataFilter)[0][dataSourceId]
+    ? filter(values, dataFilter)[0] && filter(values, dataFilter)[0][dataSourceId]
     : values && values[dataSourceId];
 
 /**
@@ -50,10 +49,7 @@ export const determineLayout = (size) => {
 /** Determine the max value card attribute count
  * TODO: remove in next release
  */
-export const determineMaxValueCardAttributeCount = (
-  size,
-  currentAttributeCount
-) => {
+export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
   if (__DEV__) {
     warning(
       false,
