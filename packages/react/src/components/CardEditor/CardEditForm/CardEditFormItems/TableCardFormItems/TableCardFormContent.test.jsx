@@ -24,6 +24,7 @@ const commonProps = {
   },
   onChange: jest.fn(),
   setSelectedDataItems: jest.fn(),
+  translateWithId: jest.fn(),
 };
 
 describe('TableCardFormContent', () => {

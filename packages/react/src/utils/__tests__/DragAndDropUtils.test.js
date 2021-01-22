@@ -76,7 +76,6 @@ describe('componentUtilityFunctions', () => {
       simpleListItems[0].id,
       DropLocation.Above
     );
-    console.log({ newList, itemsToMove });
 
     expect(newList[0].id).toEqual(itemsToMove[0]);
     expect(newList[1].id).toEqual(itemsToMove[1]);

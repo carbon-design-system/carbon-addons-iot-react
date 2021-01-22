@@ -527,6 +527,7 @@ const HotspotEditorModal = ({
               deleteButtonIconDescription,
               selectAColor,
             }}
+            translateWithId={translateWithId}
           />
         </Tab>
         <Tab label={textTypeDataSourceTabLabelText}>{renderDataSourceTab()}</Tab>
