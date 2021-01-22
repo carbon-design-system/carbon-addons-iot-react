@@ -6,6 +6,9 @@ set -e # exit with nonzero exit code if anything fails
 git config user.name "cal-smith"
 git config user.email "callums@ca.ibm.com"
 
+# authenticate with the npm registry
+npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
+
 if [[ $GITHUB_REF =~ "master" ]]; then
   # graduate the relase with --conventional-graduate
   lerna version --conventional-commits --conventional-graduate --create-release github --yes
