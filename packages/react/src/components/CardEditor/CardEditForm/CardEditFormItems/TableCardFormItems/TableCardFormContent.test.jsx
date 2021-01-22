@@ -28,6 +28,9 @@ const commonProps = {
 };
 
 describe('TableCardFormContent', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
   it('should render dataitems and dimensions', () => {
     render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
