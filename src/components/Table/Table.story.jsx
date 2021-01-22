@@ -3781,7 +3781,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Simple Stateful Example with column overflow menu and aggregate column values',
+    'with column overflow menu and aggregate column values',
     () => (
       <FullWidthWrapper>
         <StatefulTable
