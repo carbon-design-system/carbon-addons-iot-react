@@ -3,8 +3,8 @@
 set -e # exit with nonzero exit code if anything fails
 
 # set username and email so git knows who we are
-git config user.name "ai-apps-pal-bot"
-git config user.email "carbon@us.ibm.com"
+git config user.name "cal-smith"
+git config user.email "callums@ca.ibm.com"
 
 if [[ $GITHUB_REF =~ "master" ]]; then
   # graduate the relase with --conventional-graduate
