@@ -1766,47 +1766,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         }
                       >
                         <div
-                          className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                          className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                         >
                           <div
-                            className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
-                            size="MEDIUM"
+                            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+                            style={
+                              Object {
+                                "--value-card-attribute-width": "100%",
+                              }
+                            }
                           >
                             <div
-                              className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
-                              label="Torque Min"
-                              size="MEDIUM"
+                              className="iot--value-card__attribute-label"
+                            >
+                              Torque Min
+                            </div>
+                            <div
+                              className="iot--value-card__attribute"
                             >
                               <div
-                                className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                                color={null}
+                                className="iot--value-card__value-renderer--wrapper"
                               >
                                 <span
-                                  className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                                  size="MEDIUM"
-                                  title="-- "
-                                  value="--"
+                                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                  style={
+                                    Object {
+                                      "--value-renderer-color": null,
+                                      "--value-renderer-font-size": "42px",
+                                      "--value-renderer-max-lines": 1,
+                                    }
+                                  }
                                 >
                                   --
                                 </span>
                               </div>
                               <span
-                                className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                                className="iot--value-card__attribute-unit"
                                 style={
                                   Object {
-                                    "--default-font-size": "1.5rem",
+                                    "--default-font-size": "1.25rem",
                                   }
                                 }
                               >
                                 
                               </span>
-                            </div>
-                            <div
-                              className="ValueCard__AttributeLabel-hyxf2q-4 cAyPcU"
-                              size="MEDIUM"
-                              title="Torque Min"
-                            >
-                              Torque Min
                             </div>
                           </div>
                         </div>
@@ -3447,26 +3450,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       }
                     >
                       <div
-                        className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                        className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                       >
                         <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
+                          className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+                          style={
+                            Object {
+                              "--value-card-attribute-width": "100%",
+                            }
+                          }
                         >
                           <div
-                            className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 1"
-                            size="MEDIUM"
+                            className="iot--value-card__attribute-label"
+                          >
+                            Key 1
+                          </div>
+                          <div
+                            className="iot--value-card__attribute"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                              color={null}
+                              className="iot--value-card__value-renderer--wrapper"
                             >
                               <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                                size="MEDIUM"
-                                title="-- %"
-                                value="--"
+                                className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                style={
+                                  Object {
+                                    "--value-renderer-color": null,
+                                    "--value-renderer-font-size": "42px",
+                                    "--value-renderer-max-lines": 1,
+                                  }
+                                }
                               >
                                 --
                               </span>
@@ -3475,47 +3488,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--value-card__attribute-unit"
                               style={
                                 Object {
-                                  "--default-font-size": "1.5rem",
+                                  "--default-font-size": "1.25rem",
                                 }
                               }
                             >
                               %
                             </span>
                           </div>
+                        </div>
+                        <div
+                          className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+                          style={
+                            Object {
+                              "--value-card-attribute-width": "100%",
+                            }
+                          }
+                        >
                           <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUM"
-                            title="Key 1"
+                            className="iot--value-card__attribute-label"
                           >
-                            Key 1
+                            Key 2
                           </div>
-                        </div>
-                        <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
-                        >
-                          <hr
-                            className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                          />
-                        </div>
-                        <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
-                        >
                           <div
-                            className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 2"
-                            size="MEDIUM"
+                            className="iot--value-card__attribute"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                              color={null}
+                              className="iot--value-card__value-renderer--wrapper"
                             >
                               <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                                size="MEDIUM"
-                                title="-- lb"
-                                value="--"
+                                className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                style={
+                                  Object {
+                                    "--value-renderer-color": null,
+                                    "--value-renderer-font-size": "42px",
+                                    "--value-renderer-max-lines": 1,
+                                  }
+                                }
                               >
                                 --
                               </span>
@@ -3524,19 +3532,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--value-card__attribute-unit"
                               style={
                                 Object {
-                                  "--default-font-size": "1.5rem",
+                                  "--default-font-size": "1.25rem",
                                 }
                               }
                             >
                               lb
                             </span>
-                          </div>
-                          <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUM"
-                            title="Key 2"
-                          >
-                            Key 2
                           </div>
                         </div>
                       </div>
@@ -14252,26 +14253,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       }
                     >
                       <div
-                        className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                        className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
                       >
                         <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
+                          className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+                          style={
+                            Object {
+                              "--value-card-attribute-width": "100%",
+                            }
+                          }
                         >
                           <div
-                            className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 1"
-                            size="MEDIUM"
+                            className="iot--value-card__attribute-label"
+                          >
+                            Key 1
+                          </div>
+                          <div
+                            className="iot--value-card__attribute"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                              color={null}
+                              className="iot--value-card__value-renderer--wrapper"
                             >
                               <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                                size="MEDIUM"
-                                title="-- %"
-                                value="--"
+                                className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                style={
+                                  Object {
+                                    "--value-renderer-color": null,
+                                    "--value-renderer-font-size": "42px",
+                                    "--value-renderer-max-lines": 1,
+                                  }
+                                }
                               >
                                 --
                               </span>
@@ -14280,47 +14291,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--value-card__attribute-unit"
                               style={
                                 Object {
-                                  "--default-font-size": "1.5rem",
+                                  "--default-font-size": "1.25rem",
                                 }
                               }
                             >
                               %
                             </span>
                           </div>
+                        </div>
+                        <div
+                          className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+                          style={
+                            Object {
+                              "--value-card-attribute-width": "100%",
+                            }
+                          }
+                        >
                           <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUM"
-                            title="Key 1"
+                            className="iot--value-card__attribute-label"
                           >
-                            Key 1
+                            Key 2
                           </div>
-                        </div>
-                        <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
-                        >
-                          <hr
-                            className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                          />
-                        </div>
-                        <div
-                          className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUM"
-                        >
                           <div
-                            className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 2"
-                            size="MEDIUM"
+                            className="iot--value-card__attribute"
                           >
                             <div
-                              className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                              color={null}
+                              className="iot--value-card__value-renderer--wrapper"
                             >
                               <span
-                                className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
-                                size="MEDIUM"
-                                title="-- lb"
-                                value="--"
+                                className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical"
+                                style={
+                                  Object {
+                                    "--value-renderer-color": null,
+                                    "--value-renderer-font-size": "42px",
+                                    "--value-renderer-max-lines": 1,
+                                  }
+                                }
                               >
                                 --
                               </span>
@@ -14329,19 +14335,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               className="iot--value-card__attribute-unit"
                               style={
                                 Object {
-                                  "--default-font-size": "1.5rem",
+                                  "--default-font-size": "1.25rem",
                                 }
                               }
                             >
                               lb
                             </span>
-                          </div>
-                          <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUM"
-                            title="Key 2"
-                          >
-                            Key 2
                           </div>
                         </div>
                       </div>
