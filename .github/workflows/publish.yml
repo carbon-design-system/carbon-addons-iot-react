@@ -33,12 +33,15 @@ jobs:
         run: yarn lint
 
       - name: Test, collect coverage
-        run: yarn test --maxWorkers=2 --ci --logHeapUsage --coverage
+        # we need the "-- --" to pass the options through yarn and lerna and back to yarn
+        run: yarn test -- -- --maxWorkers=2 --ci --logHeapUsage --coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: "./packages/react/coverage/lcov.info"
+          base-path: "packages/react"
 
       - name: Build
         run: yarn build
