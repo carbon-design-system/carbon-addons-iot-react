@@ -18,6 +18,20 @@ but some popular options are [VSCode](https://code.visualstudio.com/),
 
 With that all in place, you're ready to start contributing!
 
+### Working with the monorepo
+
+The PAL is structured as a set of packages versioned and deployed together - `carbon-addons-iot-react`, `@ai-apps/angular`, and `@ai-apps/components`. Each one of these packages live in the `packages` directory, for example, `carbon-addons-iot-react` lives in the `packages/react` directory.
+
+To work on a package you must make sure to change into the correct directory - `cd packages/react` - otherwise package specific commands, or packages added via `yarn add`, will be run and added to the global scope and may conflict with other packages.
+
+Each package should be capable of producing an independent build and storybook environment, however it may be necessary to build and link _all_ packages contained within the monorepo. In that case running `yarn build` from the root will build every package and it's local dependents in order. Other global scripts include:
+
+- `build`: Builds and links every package
+- `lint`: Lints every package
+- `test`: Runs the test suite of every package
+- `build:storybook`: Builds the storybook for every package (where applicable)
+- `clean`: Cleans built files for the entire monorepo
+
 ### Developing on Windows 10
 
 To get a Windows environment set up for contributing to this codebase, you'll
