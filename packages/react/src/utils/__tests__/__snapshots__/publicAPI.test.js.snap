@@ -8656,6 +8656,9 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "dataItemId": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "type": "string",
                 },

@@ -819,9 +819,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                       <button
                                         align="start"
                                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                                        data-column="undefined"
+                                        data-column="temperature"
                                         data-floating-menu-container={true}
-                                        id="column-undefined"
+                                        id="column-temperature"
                                         onClick={[Function]}
                                         style={
                                           Object {
@@ -835,9 +835,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         >
                                           <span
                                             className=""
-                                            title="--"
+                                            title="Temperature"
                                           >
-                                            --
+                                            Temperature
                                           </span>
                                         </span>
                                         <svg
@@ -888,9 +888,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                       <button
                                         align="start"
                                         className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                                        data-column="undefined2"
+                                        data-column="pressure"
                                         data-floating-menu-container={true}
-                                        id="column-undefined2"
+                                        id="column-pressure"
                                         onClick={[Function]}
                                         style={
                                           Object {
@@ -904,9 +904,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                         >
                                           <span
                                             className=""
-                                            title="--"
+                                            title="Pressure"
                                           >
-                                            --
+                                            Pressure
                                           </span>
                                         </span>
                                         <svg
@@ -955,9 +955,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-0-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-0-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -975,54 +975,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-0-undefined2"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr
-                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                    onClick={[Function]}
-                                  >
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-1-undefined"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined2"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-1-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-0-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -1045,9 +1000,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-2-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-1-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -1065,54 +1020,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-2-undefined2"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr
-                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                    onClick={[Function]}
-                                  >
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-3-undefined"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined2"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-3-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-1-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -1135,9 +1045,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-4-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-2-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -1155,54 +1065,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-4-undefined2"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr
-                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                    onClick={[Function]}
-                                  >
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-5-undefined"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined2"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-5-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-2-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -1225,9 +1090,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-6-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-3-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -1245,54 +1110,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-6-undefined2"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  <tr
-                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                    onClick={[Function]}
-                                  >
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-7-undefined"
-                                      offset={0}
-                                      width=""
-                                    >
-                                      <span
-                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                      >
-                                        <span
-                                          className=""
-                                          title="--"
-                                        >
-                                          --
-                                        </span>
-                                      </span>
-                                    </td>
-                                    <td
-                                      align="start"
-                                      className="data-table-start"
-                                      data-column="undefined2"
-                                      data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-7-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-3-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -1315,9 +1135,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-8-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-4-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -1335,9 +1155,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-8-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-4-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -1360,9 +1180,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-9-undefined"
+                                      id="cell-table-for-card-Table-sample-values-Table-5-temperature"
                                       offset={0}
                                       width=""
                                     >
@@ -1380,9 +1200,189 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <td
                                       align="start"
                                       className="data-table-start"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-offset={0}
-                                      id="cell-table-for-card-Table-sample-values-Table-9-undefined2"
+                                      id="cell-table-for-card-Table-sample-values-Table-5-pressure"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr
+                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                    onClick={[Function]}
+                                  >
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="temperature"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-6-temperature"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="pressure"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-6-pressure"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr
+                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                    onClick={[Function]}
+                                  >
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="temperature"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-7-temperature"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="pressure"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-7-pressure"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr
+                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                    onClick={[Function]}
+                                  >
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="temperature"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-8-temperature"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="pressure"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-8-pressure"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr
+                                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                    onClick={[Function]}
+                                  >
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="temperature"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-9-temperature"
+                                      offset={0}
+                                      width=""
+                                    >
+                                      <span
+                                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                      >
+                                        <span
+                                          className=""
+                                          title="--"
+                                        >
+                                          --
+                                        </span>
+                                      </span>
+                                    </td>
+                                    <td
+                                      align="start"
+                                      className="data-table-start"
+                                      data-column="pressure"
+                                      data-offset={0}
+                                      id="cell-table-for-card-Table-sample-values-Table-9-pressure"
                                       offset={0}
                                       width=""
                                     >
@@ -13305,9 +13305,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <button
                                       align="start"
                                       className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                                      data-column="undefined"
+                                      data-column="temperature"
                                       data-floating-menu-container={true}
-                                      id="column-undefined"
+                                      id="column-temperature"
                                       onClick={[Function]}
                                       style={
                                         Object {
@@ -13321,9 +13321,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                       >
                                         <span
                                           className=""
-                                          title="--"
+                                          title="Temperature"
                                         >
-                                          --
+                                          Temperature
                                         </span>
                                       </span>
                                       <svg
@@ -13374,9 +13374,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                     <button
                                       align="start"
                                       className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                                      data-column="undefined2"
+                                      data-column="pressure"
                                       data-floating-menu-container={true}
-                                      id="column-undefined2"
+                                      id="column-pressure"
                                       onClick={[Function]}
                                       style={
                                         Object {
@@ -13390,9 +13390,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                       >
                                         <span
                                           className=""
-                                          title="--"
+                                          title="Pressure"
                                         >
-                                          --
+                                          Pressure
                                         </span>
                                       </span>
                                       <svg
@@ -13441,9 +13441,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-0-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-0-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13461,54 +13461,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-0-undefined2"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr
-                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                  onClick={[Function]}
-                                >
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-1-undefined"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined2"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-1-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-0-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -13531,9 +13486,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-2-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-1-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13551,54 +13506,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-2-undefined2"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr
-                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                  onClick={[Function]}
-                                >
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-3-undefined"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined2"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-3-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-1-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -13621,9 +13531,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-4-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-2-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13641,54 +13551,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-4-undefined2"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr
-                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                  onClick={[Function]}
-                                >
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-5-undefined"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined2"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-5-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-2-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -13711,9 +13576,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-6-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-3-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13731,54 +13596,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-6-undefined2"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr
-                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
-                                  onClick={[Function]}
-                                >
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-7-undefined"
-                                    offset={0}
-                                    width=""
-                                  >
-                                    <span
-                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                                    >
-                                      <span
-                                        className=""
-                                        title="--"
-                                      >
-                                        --
-                                      </span>
-                                    </span>
-                                  </td>
-                                  <td
-                                    align="start"
-                                    className="data-table-start"
-                                    data-column="undefined2"
-                                    data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-7-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-3-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -13801,9 +13621,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-8-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-4-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13821,9 +13641,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-8-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-4-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -13846,9 +13666,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined"
+                                    data-column="temperature"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-9-undefined"
+                                    id="cell-table-for-card-Table-sample-values-Table-5-temperature"
                                     offset={0}
                                     width=""
                                   >
@@ -13866,9 +13686,189 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                                   <td
                                     align="start"
                                     className="data-table-start"
-                                    data-column="undefined2"
+                                    data-column="pressure"
                                     data-offset={0}
-                                    id="cell-table-for-card-Table-sample-values-Table-9-undefined2"
+                                    id="cell-table-for-card-Table-sample-values-Table-5-pressure"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr
+                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                  onClick={[Function]}
+                                >
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="temperature"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-6-temperature"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="pressure"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-6-pressure"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr
+                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                  onClick={[Function]}
+                                >
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="temperature"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-7-temperature"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="pressure"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-7-pressure"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr
+                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                  onClick={[Function]}
+                                >
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="temperature"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-8-temperature"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="pressure"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-8-pressure"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr
+                                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
+                                  onClick={[Function]}
+                                >
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="temperature"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-9-temperature"
+                                    offset={0}
+                                    width=""
+                                  >
+                                    <span
+                                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                    >
+                                      <span
+                                        className=""
+                                        title="--"
+                                      >
+                                        --
+                                      </span>
+                                    </span>
+                                  </td>
+                                  <td
+                                    align="start"
+                                    className="data-table-start"
+                                    data-column="pressure"
+                                    data-offset={0}
+                                    id="cell-table-for-card-Table-sample-values-Table-9-pressure"
                                     offset={0}
                                     width=""
                                   >
@@ -14260,7 +14260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 1"
+                            label="Torque"
                             size="MEDIUM"
                           >
                             <div
@@ -14288,11 +14288,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </span>
                           </div>
                           <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                            className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
                             size="MEDIUM"
-                            title="Key 1"
+                            title="Torque"
                           >
-                            Key 1
+                            Torque
                           </div>
                         </div>
                         <div
@@ -14309,7 +14309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                            label="Key 2"
+                            label="Pressure"
                             size="MEDIUM"
                           >
                             <div
@@ -14337,11 +14337,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                             </span>
                           </div>
                           <div
-                            className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                            className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
                             size="MEDIUM"
-                            title="Key 2"
+                            title="Pressure"
                           >
-                            Key 2
+                            Pressure
                           </div>
                         </div>
                       </div>

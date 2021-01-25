@@ -308,13 +308,7 @@ const DataSeriesFormItemModal = ({
               selectedItem={
                 editDataItem.aggregationMethods?.find(
                   (method) => method.id === editDataItem.aggregationMethod
-                ) ||
-                (!isTimeBasedCard
-                  ? // need to search by id to preserve translations
-                    editDataItem.aggregationMethods?.find((method) => method.id === 'last')
-                  : isSummaryDashboard
-                  ? editDataItem.aggregationMethods?.find((method) => method.id === 'mean')
-                  : editDataItem.aggregationMethods?.find((method) => method.id === 'none'))
+                ) || { id: 'none', text: mergedI18n.none }
               }
               titleText={mergedI18n.aggregationMethod}
               light
