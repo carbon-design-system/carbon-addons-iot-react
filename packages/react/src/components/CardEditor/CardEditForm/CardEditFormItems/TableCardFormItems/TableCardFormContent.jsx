@@ -94,7 +94,9 @@ const defaultProps = {
 const TableCardFormContent = ({
   cardConfig,
   dataItems,
+  getValidDataItems,
   onChange,
+  selectedTimeRange,
   selectedDataItems,
   setSelectedDataItems,
   availableDimensions,
@@ -156,10 +158,14 @@ const TableCardFormContent = ({
     [dataSection]
   );
 
-  const validDataItems = useMemo(
+  const validDataItems = getValidDataItems
+    ? getValidDataItems(cardConfig, selectedTimeRange)
+    : dataItems;
+
+  const validDataItemsForDropdown = useMemo(
     () =>
-      dataItems?.map(({ dataSourceId }) => ({
-        id: dataSourceId,
+      dataItems?.map(({ dataSourceId, dataItemId }) => ({
+        id: dataItemId,
         text: dataSourceId,
       })),
     [dataItems]
@@ -230,13 +236,25 @@ const TableCardFormContent = ({
           id={`${cardConfig.id}_dataSourceIds`}
           label={mergedI18n.selectDataItems}
           direction="bottom"
-          itemToString={(item) => item.id}
+          itemToString={(item) => item.text}
           initialSelectedItems={initialSelectedAttributes}
-          items={validDataItems}
+          items={validDataItemsForDropdown}
           translateWithId={translateWithId}
           light
           onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
+            const selectedItemsWithMetaData = selectedItems.map(
+              (selectedItem) =>
+                validDataItems?.find(
+                  (validDataItem) => validDataItem.dataItemId === selectedItem.id
+                ) || selectedItem
+            );
+            const newCard = handleDataSeriesChange(
+              selectedItemsWithMetaData,
+              cardConfig,
+              null,
+              null,
+              false
+            );
             setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange(newCard);
           }}
@@ -294,7 +312,22 @@ const TableCardFormContent = ({
                 kind="ghost"
                 size="small"
                 onClick={() => {
-                  setEditDataItem(dataItem);
+                  const dataItemWithMetaData = validDataItems.find(
+                    ({ dataItemId }) => dataItemId === dataItem.dataItemId
+                  );
+                  console.log('dataItem: ', dataItem);
+                  console.log('validDataItems: ', validDataItems);
+                  // need to reset the card to include the latest dataSection
+                  // onChange({
+                  //   ...cardConfig,
+                  //   content: {
+                  //     ...cardConfig.content,
+                  //     ...(cardConfig.type === CARD_TYPES.VALUE
+                  //       ? { attributes: dataSection }
+                  //       : { series: dataSection }),
+                  //   },
+                  // });
+                  setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
                   setShowEditor(true);
                 }}
                 iconDescription={mergedI18n.edit}
