@@ -296,7 +296,7 @@ const DataSeriesFormItemModal = ({
 
   const DataEditorContent = (
     <>
-      {editDataItem.type !== 'DIMENSION' && ( // don't allow aggregation for dimensions (needed for table)
+      {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' ? (
         <div className={`${baseClassName}--input-group`}>
           {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
             <div className={`${baseClassName}--input-group--item-half`}>
@@ -370,7 +370,7 @@ const DataSeriesFormItemModal = ({
             </div>
           )}
         </div>
-      )}
+      ) : null}
 
       <div className={`${baseClassName}--input-group`}>
         <div className={`${baseClassName}--input-group--item`}>

@@ -165,6 +165,7 @@ export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
   let hotspotAttributes;
+  let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
@@ -186,6 +187,9 @@ export const hideCardPropertiesForEditor = (card) => {
       },
     }));
   }
+  if (card.content?.columns) {
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
+  }
   return omit(
     attributes
       ? { ...card, content: { ...card.content, attributes } }
@@ -193,6 +197,8 @@ export const hideCardPropertiesForEditor = (card) => {
       ? { ...card, content: { ...card.content, series } }
       : hotspotAttributes
       ? { ...card, values: { ...card.values, hotspots: hotspotAttributes } }
+      : columns
+      ? { ...card, content: { ...card.content, columns } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
