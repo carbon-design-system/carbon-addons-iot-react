@@ -315,18 +315,6 @@ const TableCardFormContent = ({
                   const dataItemWithMetaData = validDataItems.find(
                     ({ dataItemId }) => dataItemId === dataItem.dataItemId
                   );
-                  console.log('dataItem: ', dataItem);
-                  console.log('validDataItems: ', validDataItems);
-                  // need to reset the card to include the latest dataSection
-                  // onChange({
-                  //   ...cardConfig,
-                  //   content: {
-                  //     ...cardConfig.content,
-                  //     ...(cardConfig.type === CARD_TYPES.VALUE
-                  //       ? { attributes: dataSection }
-                  //       : { series: dataSection }),
-                  //   },
-                  // });
                   setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
                   setShowEditor(true);
                 }}
