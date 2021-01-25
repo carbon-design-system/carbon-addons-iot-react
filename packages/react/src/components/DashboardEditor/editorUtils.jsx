@@ -483,7 +483,6 @@ export const handleDataSeriesChange = (
         : [];
 
       // find just the attributes to add
-      console.log('selectedItems: ', selectedItems);
       const attributeColumns = selectedItems.filter((i) => !i.hasOwnProperty('type'));
 
       // start off with a default timestamp column if we don't already have one

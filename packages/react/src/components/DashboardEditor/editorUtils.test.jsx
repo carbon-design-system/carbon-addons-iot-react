@@ -335,8 +335,22 @@ describe('editorUtils', () => {
     };
     it('handleDataSeriesChange should correctly format the columns for new table card attributes', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {});
       expect(newCard).toEqual({
@@ -350,10 +364,18 @@ describe('editorUtils', () => {
               sort: 'DESC',
             },
             {
+              id: 'key1',
+              text: 'Key 1',
+              dataItemId: 'key1',
+              aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
             },
             {
+              id: 'key2',
+              text: 'Key 2',
+              dataItemId: 'key2',
+              aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
             },
@@ -363,8 +385,22 @@ describe('editorUtils', () => {
     });
     it('handleDataSeriesChange existing card should correctly add the columns for new table card attributes', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       const newCard = handleDataSeriesChange(
         selectedItems,
@@ -408,10 +444,18 @@ describe('editorUtils', () => {
               type: 'DIMENSION',
             },
             {
+              id: 'key1',
+              text: 'Key 1',
+              dataItemId: 'key1',
+              aggregationMethod: 'last',
               dataSourceId: 'key1',
               label: 'Key 1',
             },
             {
+              id: 'key2',
+              text: 'Key 2',
+              dataItemId: 'key2',
+              aggregationMethod: 'last',
               dataSourceId: 'key2',
               label: 'Key 2',
             },
