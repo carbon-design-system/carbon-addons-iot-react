@@ -269,8 +269,6 @@ const DataSeriesFormItem = ({
     [data]
   );
 
-  const initialSelectedItems = formatDataItemsForDropdown(dataSection);
-
   const validDataItems = getValidDataItems
     ? getValidDataItems(cardConfig, selectedTimeRange)
     : dataItems;
@@ -392,12 +390,21 @@ const DataSeriesFormItem = ({
               label={mergedI18n.selectDataItems}
               direction="bottom"
               itemToString={(item) => item.text}
-              initialSelectedItems={initialSelectedItems}
+              initialSelectedItems={dataSection.map(({ dataItemId }) => ({
+                id: dataItemId,
+                text: dataItemId,
+              }))}
               items={formatDataItemsForDropdown(validDataItems)}
               light
               onChange={({ selectedItems }) => {
+                const selectedItemsWithMetaData = selectedItems.map(
+                  (selectedItem) =>
+                    validDataItems?.find(
+                      (validDataItem) => validDataItem.dataItemId === selectedItem.id
+                    ) || selectedItem
+                );
                 const newCard = handleDataSeriesChange(
-                  selectedItems,
+                  selectedItemsWithMetaData,
                   cardConfig,
                   setEditDataSeries
                 );

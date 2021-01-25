@@ -565,14 +565,27 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      dataSection = type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
-      editDataItemIndex = dataSection.findIndex(
-        (dataItem) =>
-          dataItem.dataSourceId === editDataItem.dataSourceId ||
-          (dataItem.dataItemId === editDataItem.dataItemId && dataItem.label === editDataItem.label)
-      );
-      // if there isn't an item found, place it at the end
-      dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
+      dataSection = [...content.series];
+      // TODO: not needed after Grouped charts gets updated
+      if (content.type === BAR_CHART_TYPES.GROUPED) {
+        // Grouped bars can make batch edits, so we need to search through the who dataSection
+        dataSection = dataSection.map(
+          (item) =>
+            editDataSeries.find((editedItem) => editedItem.dataSourceId === item.dataSourceId) ||
+            item
+        );
+      } else {
+        editDataItemIndex = dataSection.findIndex(
+          (dataItem) =>
+            dataItem.dataSourceId === editDataItem.dataSourceId ||
+            (dataItem.dataItemId === editDataItem.dataItemId &&
+              dataItem.label === editDataItem.label)
+        );
+        // if there isn't an item found, place it at the end
+        dataSection[
+          editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+        ] = editDataItem;
+      }
       return {
         ...cardConfig,
         content: {
