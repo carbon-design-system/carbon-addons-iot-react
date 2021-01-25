@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
 
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 
@@ -141,6 +141,11 @@ const SuiteHeader = ({
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
+  const translate = useCallback(
+    (string, substitutions) =>
+      substitutions.reduce((acc, [key, val]) => acc.replace(key, val), string),
+    []
+  );
 
   // Make sure that the survey toast notification is displayed if surveyData is passed in future rerenders
   // not only at mount time
@@ -156,7 +161,11 @@ const SuiteHeader = ({
         <ToastNotification
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
           kind="info"
-          title={mergedI18N.surveyTitle(appName || suiteName)}
+          title={
+            typeof mergedI18N.surveyTitle === 'function'
+              ? mergedI18N.surveyTitle(appName || suiteName)
+              : translate(mergedI18N.surveyTitle, [['{solutionName}', appName || suiteName]])
+          }
           subtitle={
             <>
               <Link
@@ -191,8 +200,6 @@ const SuiteHeader = ({
         />
       ) : null}
       <SuiteHeaderLogoutModal
-        suiteName={suiteName}
-        displayName={userDisplayName}
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
         onLogout={async () => {
@@ -205,7 +212,13 @@ const SuiteHeader = ({
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
           secondaryButton: mergedI18N.profileLogoutModalSecondaryButton,
-          body: mergedI18N.profileLogoutModalBody,
+          body:
+            typeof mergedI18N.profileLogoutModalBody === 'function'
+              ? mergedI18N.profileLogoutModalBody(appName || suiteName, userDisplayName)
+              : translate(mergedI18N.profileLogoutModalBody, [
+                  ['{solutionName}', appName || suiteName],
+                  ['{userName}', userDisplayName],
+                ]),
         }}
       />
       <HeaderContainer
