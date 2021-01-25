@@ -131,10 +131,6 @@ $selected-border: solid $selected-border-width $interactive-04;
   .#{$iot-prefix}--hotspot-content-title-wrapper--editable {
     $negative-margin-to-overide-parent-padding: calc(-1 * (#{$padding}));
     margin: $negative-margin-to-overide-parent-padding;
-<<<<<<< HEAD:src/components/ImageCard/_hotspot.scss
-=======
-    width: calc((var(--width) * 1px) - $selected-border-width - (var(--border-width) * 1px));
->>>>>>> e2aa668b718271cde10a19f315639722ab08ecfa:packages/react/src/components/ImageCard/_hotspot.scss
 
     .#{$iot-prefix}--hotspot-content-title-input {
       padding: 0 calc(#{$padding} + #{$selected-border-width});
