@@ -262,7 +262,7 @@ const DataSeriesFormItem = ({
   const dataSection = useMemo(
     () =>
       data?.map((item) =>
-        item.dataSourceId?.length > 36 // TODO: check if there is uuid present in the dataSourceId string
+        item.dataSourceId !== item.dataItemId
           ? item
           : { ...item, dataSourceId: `${item.dataSourceId}_${uuid.v4()}` }
       ),

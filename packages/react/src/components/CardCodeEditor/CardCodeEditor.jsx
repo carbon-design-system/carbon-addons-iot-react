@@ -160,7 +160,7 @@ const CardCodeEditor = ({
               enabled: false,
             },
             autoIndent: true,
-            wordWrap: isExpanded ? 'off' : 'bounded',
+            wordWrap: 'off',
           }}
         />
       </div>
