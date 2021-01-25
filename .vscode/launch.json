@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Debug Story Book",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/lib/index.js"
+    },
+    {
       "type": "node",
       "runtimeVersion": "12.17.0",
       "request": "launch",
@@ -17,7 +24,10 @@
       "request": "launch",
       "name": "Jest All",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "env": { "NODE_ICU_DATA": "node_modules/full-icu", "TZ": "America/Chicago" },
+      "env": {
+        "NODE_ICU_DATA": "node_modules/full-icu",
+        "TZ": "America/Chicago"
+      },
       "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
@@ -33,7 +43,10 @@
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": ["${relativeFile}", "--config", "jest.config.js"],
-      "env": { "NODE_ICU_DATA": "node_modules/full-icu", "TZ": "America/Chicago" },
+      "env": {
+        "NODE_ICU_DATA": "node_modules/full-icu",
+        "TZ": "America/Chicago"
+      },
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
