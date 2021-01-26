@@ -256,6 +256,8 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  /** return demo hotspots while we're editing image cards */
+  onFetchDynamicDemoHotspots: PropTypes.func,
 };
 
 const defaultProps = {
@@ -312,6 +314,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
   },
   dataSeriesItemLinks: null,
+  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
 };
 
 const LAYOUTS = {
@@ -534,6 +537,7 @@ const DashboardEditor = ({
               {...cardProps}
               dataItems={dataItemsForCard}
               availableDimensions={availableDimensions}
+              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           )
         );
@@ -545,6 +549,7 @@ const DashboardEditor = ({
       dataItems,
       duplicateCard,
       getValidDataItems,
+      onFetchDynamicDemoHotspots,
       removeCard,
       renderCardPreview,
       selectedCardId,

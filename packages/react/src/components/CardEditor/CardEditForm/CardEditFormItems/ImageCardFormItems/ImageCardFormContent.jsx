@@ -63,7 +63,7 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   dataItems: [],
   availableDimensions: {},
-  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50 }]),
+  onFetchDynamicDemoHotspots: null,
 };
 
 const ImageCardFormItems = ({
