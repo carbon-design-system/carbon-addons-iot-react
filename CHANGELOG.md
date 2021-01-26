@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.17...v2.143.0-next.18) (2021-01-26)
+
+
+### Bug Fixes
+
+* **cardeditform:** enable value card font size setting ([3e47fb4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e47fb4575d3277cf01fedc4680925e50d7e2df1))
+* **valuecard:** re-add determinemaxvaluecardattribute function ([d7de744](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7de744a6c3b453f575b48be340cd9c7f642916d))
+
+
+### Features
+
+* **cardeditform:** add compact number toggle for valuecard ([82aa0cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82aa0cd66c83def342ba4b762762a68966610741))
+
+
+
+
+
 # [2.143.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.16...v2.143.0-next.17) (2021-01-26)
 
 
