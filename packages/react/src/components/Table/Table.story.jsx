@@ -3658,18 +3658,30 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => (
       actions={actions}
       lightweight={boolean('lightweight', false)}
       options={{
+        hasAggregations: true,
+        hasPagination: boolean('hasPagination', true),
         hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
         hasRowExpansion: false,
         hasResize: true,
         wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
       }}
-      view={{ table: { selectedIds: array('selectedIds', []) } }}
+      view={{
+        aggregations: {
+          label: 'Total',
+          columns: [
+            {
+              id: 'number',
+            },
+          ],
+        },
+        table: { selectedIds: array('selectedIds', []) },
+      }}
     />
   </FullWidthWrapper>
 );
 
 SimpleStatefulExampleWithColumnOverflowMenu.story = {
-  name: 'Simple Stateful Example with column overflow menu',
+  name: 'with column overflow menu and aggregate column values',
 
   parameters: {
     info: {

@@ -374,11 +374,13 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "toggleAggregations": "Toggle Aggregations",
       },
       "id": null,
       "lightweight": false,
       "locale": null,
       "options": Object {
+        "hasAggregations": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
         "hasFilter": false,
@@ -401,6 +403,9 @@ Map {
       "tooltip": null,
       "useZebraStyles": false,
       "view": Object {
+        "aggregations": Object {
+          "columns": Array [],
+        },
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
@@ -932,6 +937,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAggregations": Object {
+              "type": "bool",
+            },
             "hasColumnSelection": Object {
               "type": "bool",
             },
@@ -1047,6 +1055,45 @@ Map {
       "view": Object {
         "args": Array [
           Object {
+            "aggregations": Object {
+              "args": Array [
+                Object {
+                  "columns": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "value": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "type": "func",
+                                  },
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "label": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "filters": Object {
               "args": Array [
                 Object {
@@ -2953,6 +3000,9 @@ Map {
             "onShowRowEdit": Object {
               "type": "func",
             },
+            "onToggleAggregations": Object {
+              "type": "func",
+            },
             "onToggleColumnSelection": Object {
               "type": "func",
             },
@@ -3131,6 +3181,9 @@ Map {
             "searchPlaceholder": Object {
               "type": "string",
             },
+            "toggleAggregations": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -3138,6 +3191,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAggregations": Object {
+              "type": "bool",
+            },
             "hasColumnSelection": Object {
               "type": "bool",
             },

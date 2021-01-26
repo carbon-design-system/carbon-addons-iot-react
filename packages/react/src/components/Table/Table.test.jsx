@@ -8,7 +8,7 @@ import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { Modal } from '../Modal';
 
-import { mockActions } from './Table.test.helpers';
+import { getTableColumns, mockActions } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
@@ -32,34 +32,7 @@ const selectData = [
     text: 'option-C',
   },
 ];
-const tableColumns = [
-  {
-    id: 'string',
-    name: 'String',
-    filter: { placeholderText: 'pick a string' },
-    isSortable: true,
-  },
-  {
-    id: 'node',
-    name: 'React node',
-    isSortable: true,
-  },
-  {
-    id: 'date',
-    name: 'Date',
-    filter: { placeholderText: 'pick a date' },
-  },
-  {
-    id: 'select',
-    name: 'Select',
-    filter: { placeholderText: 'pick an option', options: selectData },
-  },
-  {
-    id: 'number',
-    name: 'Number',
-    filter: { placeholderText: 'pick a number' },
-  },
-];
+const tableColumns = getTableColumns(selectData);
 
 const words = [
   'toyota',
@@ -1319,5 +1292,58 @@ describe('Table', () => {
       />
     );
     expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', false);
+  });
+  describe('Foot', () => {
+    const tableTestId = 'test';
+    const tableFootTestId = 'table-foot-aggregation';
+    const columnId = 'number';
+
+    it('shows aggregation for specified columns with sum as default', () => {
+      render(
+        <Table
+          id={tableTestId}
+          columns={tableColumns}
+          data={tableData}
+          options={{ hasAggregations: true }}
+          view={{
+            aggregations: { columns: [{ id: columnId }] },
+          }}
+        />
+      );
+
+      expect(
+        screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
+      ).toEqual('2470');
+    });
+    it('shows aggregation for specified columns using custom aggregation function', () => {
+      const sumFunction = jest.fn((values) => {
+        const sum = values.reduce((total, num) => total + num, 0);
+        return `${sum + 1}`;
+      });
+
+      render(
+        <Table
+          id="test"
+          columns={tableColumns}
+          data={tableData}
+          options={{ hasAggregations: true }}
+          view={{
+            aggregations: {
+              columns: [
+                {
+                  id: columnId,
+                  value: sumFunction,
+                },
+              ],
+            },
+          }}
+        />
+      );
+
+      expect(
+        screen.getByTestId(`${tableTestId}-${tableFootTestId}-${columnId}`).textContent
+      ).toEqual('2471');
+      expect(sumFunction).toHaveBeenCalled();
+    });
   });
 });
