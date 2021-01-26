@@ -243,7 +243,11 @@ const propTypes = {
     decimalPrecisionLabel: PropTypes.string,
     precisionLabel: PropTypes.string,
     showLegendLabel: PropTypes.string,
+
+    // value card form settings
     fontSize: PropTypes.string,
+    abbreviateNumbers: PropTypes.string,
+    abbreviateNumbersTooltip: PropTypes.string,
   }),
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
