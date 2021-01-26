@@ -1,9 +1,11 @@
 {
   "name": "ibm-ai-applications",
   "engines": {
-    "node": ">= 10"
+    "node": "12.x || 14.x"
   },
-  "workspaces": ["packages/react"],
+  "workspaces": [
+    "packages/react"
+  ],
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
