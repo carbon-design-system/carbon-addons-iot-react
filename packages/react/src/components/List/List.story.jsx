@@ -463,37 +463,31 @@ export const WithCheckboxMultiSelection = () => {
               indeterminate={
                 selectedIds.some((id) => team === id)
                   ? false
-                  : checkSelectedChildren(
-                      sampleHierarchy.MLB['American League'][team],
-                      team
-                    )
+                  : checkSelectedChildren(sampleHierarchy.MLB['American League'][team], team)
               }
             />
           ),
         },
-        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(
-          (player) => ({
-            id: `${team}-${player}`,
-            isSelectable: true,
-            content: {
-              value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['American League'][team][player],
-              icon: (
-                <Checkbox
-                  id={`${team}-${player}-checkbox`}
-                  name={player}
-                  labelText={team}
-                  hideLabel
-                  onClick={(e) => {
-                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                  }}
-                  checked={selectedIds.some((id) => `${team}-${player}` === id)}
-                />
-              ),
-            },
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+          id: `${team}-${player}`,
+          isSelectable: true,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+            icon: (
+              <Checkbox
+                id={`${team}-${player}-checkbox`}
+                name={player}
+                labelText={team}
+                hideLabel
+                onClick={(e) => {
+                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                }}
+                checked={selectedIds.some((id) => `${team}-${player}` === id)}
+              />
+            ),
+          },
+        })),
       })),
       ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
         id: team,
@@ -512,39 +506,33 @@ export const WithCheckboxMultiSelection = () => {
               indeterminate={
                 selectedIds.some((id) => team === id)
                   ? false
-                  : checkSelectedChildren(
-                      sampleHierarchy.MLB['National League'][team],
-                      team
-                    )
+                  : checkSelectedChildren(sampleHierarchy.MLB['National League'][team], team)
               }
             />
           ),
         },
-        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(
-          (player) => ({
-            id: `${team}-${player}`,
-            isSelectable: true,
-            content: {
-              value: player,
-              secondaryValue:
-                sampleHierarchy.MLB['National League'][team][player],
-              icon: (
-                <Checkbox
-                  id={`${team}-${player}-checkbox`}
-                  name={player}
-                  labelText={team}
-                  hideLabel
-                  onClick={(e) => {
-                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
-                  }}
-                  checked={selectedIds.some((id) => `${team}-${player}` === id)}
-                />
-              ),
-            },
-          })
-        ),
+        children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+          id: `${team}-${player}`,
+          isSelectable: true,
+          content: {
+            value: player,
+            secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+            icon: (
+              <Checkbox
+                id={`${team}-${player}-checkbox`}
+                name={player}
+                labelText={team}
+                hideLabel
+                onClick={(e) => {
+                  handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                }}
+                checked={selectedIds.some((id) => `${team}-${player}` === id)}
+              />
+            ),
+          },
+        })),
       })),
-    ];  
+    ];
 
     return (
       <div style={{ width: 400 }}>
