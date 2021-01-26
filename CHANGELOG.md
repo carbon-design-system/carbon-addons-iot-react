@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.15...v2.143.0-next.16) (2021-01-26)
+
+
+### Bug Fixes
+
+* **dashboardgrid:** don't regenerate layout if one already exists ([2025d94](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2025d94b58969b7b5b94f5c9d7e40de5df726862))
+
+
+
+
+
 # [2.143.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.14...v2.143.0-next.15) (2021-01-26)
 
 
