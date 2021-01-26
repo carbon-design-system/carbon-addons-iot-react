@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.14...v2.143.0-next.15) (2021-01-26)
+
+
+### Bug Fixes
+
+* remove unused and invalid scss style ([251aa9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/251aa9bb77a369373d7327e0a0780296d1a11738))
+
+
+
+
+
 # [2.143.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.13...v2.143.0-next.14) (2021-01-25)
 
 
