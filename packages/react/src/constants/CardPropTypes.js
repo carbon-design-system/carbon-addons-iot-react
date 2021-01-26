@@ -109,8 +109,13 @@ export const ValueCardPropTypes = {
   /**
    * Value Card's formatting can be updated at runtime, customFormatter is provided the default formatted value and
    * the original value and expects a value to be returned that will be rendered on the value card.
+   * customerFormatter(defaultFormattedValue, originalValue)
    */
   customFormatter: PropTypes.func,
+  /** optional custom font size for the displayed value */
+  fontSize: PropTypes.number,
+  /** option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
+  isNumberValueCompact: PropTypes.bool,
 };
 
 export const TableCardPropTypes = {

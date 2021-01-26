@@ -70,13 +70,6 @@ module.exports = {
       lines: 51,
       functions: 66,
     },
-    './src/components/ValueCard/Attribute.jsx': { branches: 64, functions: 66 },
-    './src/components/ValueCard/UnitRenderer.jsx': {
-      statements: 70,
-      branches: 8,
-      lines: 70,
-      functions: 25,
-    },
     './src/components/ImageCard/ImageHotspots.jsx': {
       statements: 54,
       branches: 61,

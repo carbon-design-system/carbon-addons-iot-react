@@ -1,96 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
-import withSize from 'react-sizeme';
 import classnames from 'classnames';
 
-import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
-import { settings } from '../../constants/Settings';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
-
-const { iotPrefix } = settings;
-
-const StyledAttribute = styled.div`
-  display: flex;
-  align-items: ${(props) => (props.isMini ? 'center' : 'baseline')};
-  ${(props) =>
-    props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : ''};
-  order: 1;
-  ${(props) =>
-    !props.label || props.isVertical || props.size === CARD_SIZES.SMALL
-      ? 'width: 100%'
-      : 'width: 50%'};
-`;
-
-const ThresholdIcon = styled(CardIcon)`
-  ${(props) =>
-    props.color &&
-    `
-    color: ${props.color};
-    fill: ${props.color};
-  `}
-`;
-
-const AttributeSecondaryValue = styled.div`
-  height: 24px;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.color || '#777'};
-  fill: ${(props) => props.color || '#777'};
-  font-size: 0.875rem;
-  padding-left: ${(props) => (props.isMini ? '0.5rem' : '0.25rem')};
-  margin-bottom: ${(props) => (props.isMini ? '0' : '0.25rem')};
-`;
+import { BASE_CLASS_NAME } from './valueCardUtils';
 
 const propTypes = {
-  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
-  unit: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
-  /** css rule */
-  alignValue: PropTypes.oneOf(['flex-end', 'center']),
+  attribute: PropTypes.shape({
+    label: PropTypes.string,
+    unit: PropTypes.string,
+    thresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        color: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+  customFormatter: PropTypes.func,
+  isEditable: PropTypes.bool,
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
+  locale: PropTypes.string,
+  // decimal precision
+  precision: PropTypes.number,
+  renderIconByName: PropTypes.func,
   /** Optional trend information */
   secondaryValue: PropTypes.shape({
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.any,
   }),
-  /** need to render smaller attribute */
-  isSmall: PropTypes.bool,
-  isMini: PropTypes.bool,
-  label: PropTypes.string,
-  isVertical: PropTypes.bool, // are the attributes and labels in a column?
-  thresholds: PropTypes.arrayOf(
-    PropTypes.shape({
-      comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      color: PropTypes.string,
-      icon: PropTypes.string,
-    })
-  ),
-  renderIconByName: PropTypes.func,
-  precision: PropTypes.number,
-  /** Number of attributes that the parent ValueCard is trying to display */
+  value: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  fontSize: PropTypes.number.isRequired,
+  /** optional option to determine whether the number should be abbreviated (i.e. 10,000 = 10K) */
+  isNumberValueCompact: PropTypes.bool.isRequired,
+  /** number of attributes */
   attributeCount: PropTypes.number.isRequired,
-  locale: PropTypes.string,
-  customFormatter: PropTypes.func,
-  isEditable: PropTypes.bool,
 };
 
 const defaultProps = {
   layout: null,
-  precision: 1,
-  thresholds: [],
-  isVertical: false,
-  alignValue: null,
-  isSmall: false,
-  isMini: false,
-  label: null,
+  precision: 0,
   renderIconByName: null,
   secondaryValue: null,
   locale: 'en',
@@ -98,143 +55,113 @@ const defaultProps = {
   isEditable: false,
 };
 
+const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
+
 /**
  * An attribute has a Value, Units and maybe a Threshold or Trend.
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
+  attribute: { label, unit, thresholds },
   attributeCount,
-  value,
-  unit,
-  layout,
-  secondaryValue,
-  thresholds,
-  precision,
-  isVertical,
-  alignValue,
-  isSmall,
-  isMini,
-  label,
-  renderIconByName,
-  size, // eslint-disable-line react/prop-types
-  locale,
   customFormatter,
   isEditable,
+  layout,
+  locale,
+  precision,
+  renderIconByName,
+  secondaryValue,
+  value,
+  fontSize,
+  isNumberValueCompact,
 }) => {
-  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const newSize = getUpdatedCardSize(size);
-
   // matching threshold will be the first match in the list, or a value of null if not isEditable
-  const matchingThreshold = isEditable
-    ? thresholds[0]
-    : thresholds
-        .filter((t) => {
-          switch (t.comparison) {
-            case '<':
-              return !isNil(value) && value < t.value;
-            case '>':
-              return value > t.value;
-            case '=':
-              return value === t.value;
-            case '<=':
-              return !isNil(value) && value <= t.value;
-            case '>=':
-              return value >= t.value;
-            default:
-              return false;
-          }
-        })
-        .concat([null])[0];
+  const matchingThreshold = thresholds
+    ? isEditable
+      ? thresholds[0]
+      : thresholds
+          .filter((t) => {
+            switch (t.comparison) {
+              case '<':
+                return !isNil(value) && value < t.value;
+              case '>':
+                return value > t.value;
+              case '=':
+                return value === t.value;
+              case '<=':
+                return !isNil(value) && value <= t.value;
+              case '>=':
+                return value >= t.value;
+              default:
+                return false;
+            }
+          })
+          .concat([null])[0]
+    : null;
+
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
 
-  const bemBase = `${iotPrefix}--value-card__attribute`;
+  // need to reduce the width size to fit multiple attributs when card layout is horizontal
+  const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
 
-  const renderThresholdIcon = (allowedToWrap) => {
-    return (
-      <div
-        className={classnames(`${bemBase}-threshold-icon-container`, {
-          [`${bemBase}-threshold-icon-container--mini`]: isMini,
-          [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
-        })}
-      >
-        <ThresholdIcon
-          {...matchingThreshold}
-          width={16}
-          height={16}
-          title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-          renderIconByName={renderIconByName}
-        />
-      </div>
-    );
-  };
+  // const shouldWrap =
 
   return (
-    <withSize.SizeMe>
-      {({ size: measuredSize }) => {
-        const allowWrap = measuredSize && measuredSize.width <= 100;
-        const wrapCompact = allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
-        return (
-          <StyledAttribute
-            size={newSize}
-            alignValue={alignValue}
-            isVertical={isVertical}
-            isMini={isMini}
-            label={label}
-            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}
+    <>
+      <div
+        className={classnames(`${BEM_BASE}-wrapper`, {
+          [`${BEM_BASE}-wrapper--vertical`]: layout === CARD_LAYOUTS.VERTICAL,
+          [`${BEM_BASE}-wrapper--horizontal`]: layout === CARD_LAYOUTS.HORIZONTAL,
+        })}
+        style={{
+          '--value-card-attribute-width': `${attributeWidthPercentage}%`,
+        }}
+      >
+        <div className={`${BEM_BASE}-label`}>{label}</div>
+        <div className={`${BEM_BASE}`}>
+          <ValueRenderer
+            value={value}
+            layout={layout}
+            precision={precision}
+            color={valueColor}
+            locale={locale}
+            customFormatter={customFormatter}
+            fontSize={fontSize}
+            isNumberValueCompact={isNumberValueCompact}
+          />
+          <UnitRenderer unit={unit} />
+        </div>
+        {!isNil(secondaryValue) ? (
+          <div
+            className={`${BEM_BASE}-secondary-value`}
+            style={{
+              '--secondary-value-color': secondaryValue.color || '#777',
+            }}
           >
-            <ValueRenderer
-              value={value}
-              unit={unit}
-              layout={layout}
-              isSmall={isSmall}
-              isMini={isMini}
-              size={newSize}
-              thresholds={thresholds}
-              precision={precision}
-              isVertical={isVertical}
-              color={valueColor}
-              allowedToWrap={allowWrap}
-              wrapCompact={wrapCompact}
-              locale={locale}
-              customFormatter={customFormatter}
-            />
-            <UnitRenderer
-              value={value}
-              unit={unit}
-              layout={layout}
-              isMini={isMini}
-              allowedToWrap={allowWrap}
-              wrapCompact={wrapCompact}
-              attributeCount={attributeCount}
-            />
-            {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
-              <AttributeSecondaryValue
-                color={secondaryValue.color}
-                trend={secondaryValue.trend}
-                isMini={isMini}
-              >
-                {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <CaretUp16 className={`${bemBase}_trend-icon`} aria-label="trending up" />
-                ) : secondaryValue.trend === 'down' ? (
-                  <CaretDown16 className={`${bemBase}_trend-icon`} aria-label="trending down" />
-                ) : null}
-                {!isMini && secondaryValue.value}
-              </AttributeSecondaryValue>
+            {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+              <CaretUp16 className={`${BEM_BASE}_trend-icon`} aria-label="trending up" />
+            ) : secondaryValue.trend === 'down' ? (
+              <CaretDown16 className={`${BEM_BASE}_trend-icon`} aria-label="trending down" />
             ) : null}
-            {matchingThreshold && matchingThreshold.icon ? (
-              <div
-                className={classnames(`${bemBase}-icon-container`, {
-                  [`${bemBase}-icon-container--wrappable`]: allowWrap,
-                })}
-              >
-                {renderThresholdIcon(allowWrap)}
-              </div>
-            ) : null}
-          </StyledAttribute>
-        );
-      }}
-    </withSize.SizeMe>
+            {secondaryValue.value}
+          </div>
+        ) : null}
+        {matchingThreshold?.icon ? (
+          <div>
+            <CardIcon
+              fill={matchingThreshold.color}
+              color={matchingThreshold.color}
+              width={16}
+              height={16}
+              title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+              renderIconByName={renderIconByName}
+              icon={matchingThreshold.icon}
+            />
+          </div>
+        ) : null}
+      </div>
+    </>
   );
 };
 

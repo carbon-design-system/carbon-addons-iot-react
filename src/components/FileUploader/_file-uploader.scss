@@ -1,8 +1,0 @@
-@import '~carbon-components/scss/components/file-uploader/file-uploader';
-.#{$prefix}--form-requirement {
-  display: block;
-}
-
-.#{$prefix}--file__selected-file--invalid .#{$prefix}--form-requirement__title {
-  color: $text-error;
-}
