@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from 'carbon-components-react';
 import pick from 'lodash/pick';
+import sortBy from 'lodash/sortBy';
 import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
@@ -252,7 +253,11 @@ const HotspotEditorModal = ({
   translateWithId,
 }) => {
   const initialHotspots = cardConfig.values?.hotspots || [];
-  const myDataItems = getValidDataItems ? getValidDataItems(cardConfig) : dataItems;
+  const myDataItems = useMemo(
+    () => sortBy(getValidDataItems ? getValidDataItems(cardConfig) : dataItems, 'label'),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [getValidDataItems, dataItems] // watching the card config for changes will simply load this too many times
+  );
   const {
     currentType,
     hotspots,
@@ -368,6 +373,7 @@ const HotspotEditorModal = ({
           type: hotspotTypes.DYNAMIC,
         }))
       );
+      setSelectedHotspot(demoHotspots?.[0]);
       setLoadingDynamicHotspots(false);
     }
   };

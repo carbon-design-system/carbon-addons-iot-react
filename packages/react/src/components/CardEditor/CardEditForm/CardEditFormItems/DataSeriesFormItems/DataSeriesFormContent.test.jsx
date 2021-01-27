@@ -87,9 +87,9 @@ const valueCardConfig = {
         label: 'Key 2',
       },
     ],
-    fontSize: 16,
     precision: 5,
   },
+  fontSize: 16,
 };
 
 const dataItems = [

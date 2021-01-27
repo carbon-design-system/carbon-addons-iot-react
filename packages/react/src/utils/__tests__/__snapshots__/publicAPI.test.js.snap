@@ -8619,6 +8619,7 @@ Map {
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
+      "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
@@ -8801,6 +8802,12 @@ Map {
               "type": "string",
             },
             "VALUE": Object {
+              "type": "string",
+            },
+            "abbreviateNumbers": Object {
+              "type": "string",
+            },
+            "abbreviateNumbersTooltip": Object {
               "type": "string",
             },
             "addCardButton": Object {
@@ -9148,6 +9155,9 @@ Map {
         "type": "func",
       },
       "onExport": Object {
+        "type": "func",
+      },
+      "onFetchDynamicDemoHotspots": Object {
         "type": "func",
       },
       "onImageDelete": Object {
@@ -11418,8 +11428,13 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "cardVariables": null,
+      "customFormatter": null,
       "dataState": null,
+      "fontSize": 42,
+      "isNumberValueCompact": false,
       "locale": "en",
+      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12095,6 +12110,9 @@ Map {
         ],
         "type": "shape",
       },
+      "fontSize": Object {
+        "type": "number",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12202,6 +12220,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isNumberValueCompact": Object {
         "type": "bool",
       },
       "isResizable": Object {
@@ -24812,13 +24833,13 @@ Map {
     "render": [Function],
   },
   "determineCardRange" => Object {},
-  "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
   "formatNumberWithPrecision" => Object {},
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
   "findMatchingThresholds" => Object {},
+  "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
