@@ -28,7 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -571,7 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -697,26 +697,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+                className="iot--value-card__content-wrapper"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
-                  size="SMALLWIDE"
+                  className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+                  style={
+                    Object {
+                      "--value-card-attribute-width": "100%",
+                    }
+                  }
                 >
                   <div
-                    className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
-                    label={null}
-                    size="SMALLWIDE"
+                    className="iot--value-card__attribute-label"
+                  />
+                  <div
+                    className="iot--value-card__attribute"
                   >
                     <div
-                      className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
-                      color={null}
+                      className="iot--value-card__value-renderer--wrapper"
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
-                        size="SMALLWIDE"
-                        title="88 %"
-                        value={88}
+                        className="iot--value-card__value-renderer--value"
+                        style={
+                          Object {
+                            "--value-renderer-color": null,
+                            "--value-renderer-font-size": "42px",
+                            "--value-renderer-max-lines": 1,
+                          }
+                        }
                       >
                         88
                       </span>
@@ -733,9 +741,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     </span>
                   </div>
                   <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
-                    size="SMALLWIDE"
-                  />
+                    className="iot--value-card__attribute-secondary-value"
+                    style={
+                      Object {
+                        "--secondary-value-color": "red",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-label="trending down"
+                      className="iot--value-card__attribute_trend-icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24 12L16 22 8 12z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <span
@@ -3051,7 +3080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -3300,7 +3329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -3549,7 +3578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -3798,7 +3827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+          className="react-grid-layout iot--dashboard-grid"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
