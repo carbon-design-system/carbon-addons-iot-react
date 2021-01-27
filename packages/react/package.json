@@ -3,8 +3,8 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "main": "lib/src/index.js",
-  "module": "es/src/index.js",
+  "main": "lib/packages/react/src/index.js",
+  "module": "es/packages/react/src/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
   "repository": {
     "type": "git",
