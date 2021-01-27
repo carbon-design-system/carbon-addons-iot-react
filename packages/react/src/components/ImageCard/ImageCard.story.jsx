@@ -74,7 +74,7 @@ export const Basic = () => {
             {
               x: 35,
               y: 65,
-              icon: 'arrowDown',
+              icon: 'User',
               color: 'purple',
               content: {
                 title: 'My Device',
@@ -85,6 +85,32 @@ export const Basic = () => {
                     dataSourceId: 'temperature',
                     label: 'Temp',
                     precision: 2,
+                  },
+                ],
+              },
+            },
+            {
+              x: 45,
+              y: 75,
+              icon: 'Location',
+              color: 'purple',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                values: { deviceid: '73000', temperature: 35.05 },
+                attributes: [
+                  {
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                    thresholds: [
+                      {
+                        comparison: '>',
+                        value: 0,
+                        icon: 'Warning alt',
+                        color: 'red',
+                      },
+                    ],
                   },
                 ],
               },

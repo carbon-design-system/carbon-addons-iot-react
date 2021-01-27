@@ -557,18 +557,23 @@ describe('editorUtils', () => {
             },
           ],
         },
-        thresholds: [
-          {
-            dataSourceId: 'temp_last',
-            comparison: '>=',
-            color: '#da1e28',
-            icon: 'Checkmark',
-            value: 98,
-          },
-        ],
       };
       const selectedItems = [
-        { dataSourceId: 'temp_last', label: '{high} temp', unit: '{unitVar}' },
+        {
+          dataSourceId: 'temp_last',
+          label: '{high} temp',
+          unit: '{unitVar}',
+          // Adding thresholds through the editorUtils
+          thresholds: [
+            {
+              dataSourceId: 'temp_last',
+              comparison: '>=',
+              color: '#da1e28',
+              icon: 'Checkmark',
+              value: 98,
+            },
+          ],
+        },
         { dataSourceId: 'elevators', label: 'Elevators', unit: '°' },
         { dataSourceId: 'pressure', label: 'Pressure', unit: 'psi' },
       ];
@@ -586,6 +591,15 @@ describe('editorUtils', () => {
                     dataSourceId: 'temp_last',
                     label: '{high} temp',
                     unit: '{unitVar}',
+                    thresholds: [
+                      {
+                        dataSourceId: 'temp_last',
+                        comparison: '>=',
+                        color: '#da1e28',
+                        icon: 'Checkmark',
+                        value: 98,
+                      },
+                    ],
                   },
                   {
                     dataSourceId: 'elevators',
@@ -602,15 +616,6 @@ describe('editorUtils', () => {
             },
           ],
         },
-        thresholds: [
-          {
-            dataSourceId: 'temp_last',
-            comparison: '>=',
-            color: '#da1e28',
-            icon: 'Checkmark',
-            value: 98,
-          },
-        ],
       });
     });
   });
@@ -640,6 +645,7 @@ describe('editorUtils', () => {
         label: '{high} temps', // update the label
         unit: 'degrees', // update the unit
         thresholds: [
+          // adding two thresholds
           {
             dataSourceId: 'temp_last',
             comparison: '>',
@@ -656,7 +662,7 @@ describe('editorUtils', () => {
           },
         ],
       };
-      let newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
+      const newCard = handleDataItemEdit(editDataItem, mockImageCard, null, 0);
 
       expect(newCard).toEqual({
         type: CARD_TYPES.IMAGE,
@@ -670,34 +676,29 @@ describe('editorUtils', () => {
                     dataSourceId: 'temp_last',
                     label: '{high} temps',
                     unit: 'degrees',
+                    thresholds: [
+                      {
+                        dataSourceId: 'temp_last',
+                        comparison: '>',
+                        color: '#da1e28',
+                        icon: 'Checkmark',
+                        value: 98,
+                      },
+                      {
+                        dataSourceId: 'temp_last',
+                        comparison: '=',
+                        color: '#ffffff',
+                        icon: 'Checkmark',
+                        value: 100,
+                      },
+                    ],
                   },
                 ],
               },
             },
           ],
         },
-        thresholds: [
-          {
-            dataSourceId: 'temp_last',
-            comparison: '>',
-            color: '#da1e28',
-            icon: 'Checkmark',
-            value: 98,
-          },
-          {
-            dataSourceId: 'temp_last',
-            comparison: '=',
-            color: '#ffffff',
-            icon: 'Checkmark',
-            value: 100,
-          },
-        ],
       });
-
-      const withoutThresholds = omit(mockImageCard, 'thresholds');
-      newCard = handleDataSeriesChange(editDataItem, withoutThresholds, null, 0);
-
-      expect(newCard).toEqual(withoutThresholds);
     });
 
     it('handleDataItemEdit for Image Card updates the correct hotspot', () => {

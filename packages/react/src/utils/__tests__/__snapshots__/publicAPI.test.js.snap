@@ -13280,6 +13280,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "renderIconByName": [Function],
       "validateUploadedImage": null,
     },
     "propTypes": Object {

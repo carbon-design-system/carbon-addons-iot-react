@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import omit from 'lodash/omit';
 import {
   purple70,
   cyan50,
@@ -585,22 +584,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
-        editDataItem,
-        'thresholds'
-      );
-      if (cardConfig.thresholds || editDataItem.thresholds) {
-        return {
-          ...cardConfig,
-          content: { ...content, hotspots: dataSection },
-          thresholds: [
-            ...(cardConfig.thresholds?.filter(
-              (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
-            ) || []),
-            ...editDataItem.thresholds,
-          ].map((thresh) => omit(thresh, 'id')),
-        };
-      }
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, hotspots: dataSection },
