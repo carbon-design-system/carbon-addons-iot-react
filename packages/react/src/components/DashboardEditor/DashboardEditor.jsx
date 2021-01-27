@@ -81,7 +81,8 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
-  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+  /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
+   * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
    */
   onCardChange: PropTypes.func,
@@ -397,7 +398,9 @@ const DashboardEditor = ({
    */
   const addCard = useCallback(
     (type) => {
-      const cardConfig = getDefaultCard(type, mergedI18n);
+      // notify consumers that the card has been aadded
+      const cardConfig = onCardChange(getDefaultCard(type, mergedI18n));
+
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
         ...dashboardJson,
@@ -405,7 +408,7 @@ const DashboardEditor = ({
       }));
       setSelectedCardId(cardConfig.id);
     },
-    [mergedI18n]
+    [mergedI18n, onCardChange]
   );
 
   /**

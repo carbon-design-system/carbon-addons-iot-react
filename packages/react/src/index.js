@@ -81,6 +81,7 @@ export {
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
   BAR_CHART_TYPES,
+  DASHBOARD_EDITOR_CARD_TYPES,
 } from './constants/LayoutConstants';
 export { DragAndDrop } from './utils/DragAndDropUtils';
 
