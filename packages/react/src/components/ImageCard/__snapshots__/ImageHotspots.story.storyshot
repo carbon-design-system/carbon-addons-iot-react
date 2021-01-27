@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     >
       <div
         onBlur={[Function]}
+        onContextMenu={[Function]}
         onMouseOut={[Function]}
         style={
           Object {
@@ -45,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           src="landscape.jpg"
           style={
             Object {
-              "cursor": "crosshair",
+              "cursor": "auto",
               "height": "auto",
               "left": undefined,
               "objectFit": null,
