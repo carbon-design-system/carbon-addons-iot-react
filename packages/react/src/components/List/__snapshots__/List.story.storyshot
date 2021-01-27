@@ -2064,7 +2064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Chicago White Sox
                       </span>
@@ -2148,7 +2148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         New York Yankees
                       </span>
@@ -2232,7 +2232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Houston Astros
                       </span>
@@ -2316,7 +2316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Atlanta Braves
                       </span>
@@ -2400,7 +2400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         New York Mets
                       </span>
@@ -2484,7 +2484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Washington Nationals
                       </span>

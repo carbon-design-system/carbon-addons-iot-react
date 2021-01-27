@@ -42,14 +42,6 @@ describe('DashboardGrid', () => {
 
       expect(generated).toEqual(layouts);
     });
-    it('if layout is missing card it should be regenerated', () => {
-      const regenerated = findLayoutOrGenerate(
-        { max: [], xl: [], lg: [], md: [], sm: [], xs: [] },
-        [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
-        Object.keys(DASHBOARD_BREAKPOINTS)
-      );
-      expect(regenerated).toEqual(layouts);
-    });
     it('if every layout already exists, the card should have dimensions added', () => {
       const addedDimensions = findLayoutOrGenerate(
         {
@@ -90,10 +82,11 @@ describe('DashboardGrid', () => {
         [{ id: 'mycard', size: CARD_SIZES.MEDIUM }],
         ['xl', 'lg', 'md']
       );
+      // will be generated automatically with coordinates after first render
       expect(regenerated).toEqual({
-        xl: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
-        lg: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
-        md: [{ i: 'mycard', x: 0, y: 0, w: 8, h: 2 }],
+        xl: [],
+        lg: [],
+        md: [],
       });
     });
   });

@@ -25,9 +25,9 @@ module.exports = {
       branches: 70,
     },
     './src/components/Dashboard/DashboardGrid.jsx': {
-      statements: 73,
-      branches: 61,
-      lines: 73,
+      statements: 72,
+      branches: 60,
+      lines: 71,
     },
     './src/components/DashboardEditor/DashboardEditor.jsx': { branches: 61 },
     './src/components/BarChartCard/BarChartCard.jsx': {
@@ -73,13 +73,6 @@ module.exports = {
       branches: 38,
       lines: 51,
       functions: 66,
-    },
-    './src/components/ValueCard/Attribute.jsx': { branches: 64, functions: 66 },
-    './src/components/ValueCard/UnitRenderer.jsx': {
-      statements: 70,
-      branches: 8,
-      lines: 70,
-      functions: 25,
     },
     './src/components/ImageCard/ImageHotspots.jsx': {
       statements: 54,
