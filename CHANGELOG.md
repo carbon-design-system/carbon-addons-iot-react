@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.18...v2.143.0-next.19) (2021-01-27)
+
+
+### Bug Fixes
+
+* **imagehotspots:** support testcases by watching mouseevent for ctrl ([1d35edc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d35edcb0490d5c93779662919f23ab5542c3a5e))
+
+
+### Features
+
+* **imagehotspots:** only add the hotspot if you hold CTRL button ([04a88b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/04a88b0fb5262fa2845ba0a4983821beeda24d8c))
+
+
+
+
+
 # [2.143.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.17...v2.143.0-next.18) (2021-01-26)
 
 
