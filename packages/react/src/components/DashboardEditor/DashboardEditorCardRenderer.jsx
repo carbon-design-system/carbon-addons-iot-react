@@ -158,10 +158,7 @@ const renderCustomCard = (props) => {
       // get attached to the card wrapper
       {...omit(props, 'content')}
     >
-      {
-        // If content is a function, this is a react component
-        typeof props.content === 'function' ? <props.content /> : props.content
-      }
+      {props.content}
     </Card>
   );
 };

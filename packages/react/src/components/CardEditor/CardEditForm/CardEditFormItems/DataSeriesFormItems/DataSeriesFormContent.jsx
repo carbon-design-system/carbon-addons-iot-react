@@ -350,7 +350,7 @@ const DataSeriesFormItem = ({
     });
   };
 
-  return (
+  return !isEmpty(validDataItems) ? (
     <>
       <DataSeriesFormItemModal
         cardConfig={cardConfig}
@@ -523,7 +523,7 @@ const DataSeriesFormItem = ({
         </Button>
       ) : null}
     </>
-  );
+  ) : null;
 };
 DataSeriesFormItem.defaultProps = defaultProps;
 DataSeriesFormItem.propTypes = propTypes;

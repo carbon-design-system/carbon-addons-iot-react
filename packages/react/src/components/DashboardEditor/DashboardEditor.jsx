@@ -398,8 +398,10 @@ const DashboardEditor = ({
    */
   const addCard = useCallback(
     (type) => {
-      // notify consumers that the card has been aadded
-      const cardConfig = onCardChange(getDefaultCard(type, mergedI18n));
+      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults)
+      const cardConfig = onCardChange
+        ? onCardChange(getDefaultCard(type, mergedI18n), dashboardJson)
+        : getDefaultCard(type, mergedI18n);
 
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
@@ -408,7 +410,7 @@ const DashboardEditor = ({
       }));
       setSelectedCardId(cardConfig.id);
     },
-    [mergedI18n, onCardChange]
+    [dashboardJson, mergedI18n, onCardChange]
   );
 
   /**

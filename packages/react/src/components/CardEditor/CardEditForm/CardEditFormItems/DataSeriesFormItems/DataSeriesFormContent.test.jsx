@@ -98,7 +98,7 @@ const dataItems = [
 ];
 
 const mockOnChange = jest.fn();
-const mockGetValidDataItems = jest.fn();
+const mockGetValidDataItems = jest.fn(() => dataItems);
 const mockSetSelectedDataItems = jest.fn();
 
 afterEach(() => {
@@ -137,6 +137,17 @@ describe('DataSeriesFormItem', () => {
         />
       );
       expect(screen.getByText('Data')).toBeInTheDocument();
+    });
+    it('does not render the Data section if no data items are passed', () => {
+      render(
+        <DataSeriesFormItem
+          cardJson={{ ...cardConfig, content: {} }}
+          onChange={mockOnChange}
+          dataItems={[]}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      expect(screen.queryByText('Data')).toBeNull();
     });
     it('should remove the category if the card is a stacked timeseries bar', () => {
       render(
