@@ -400,7 +400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     />
                   </svg>
                   <p>
-                    Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
                   </p>
                 </div>
               </div>
@@ -872,7 +872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     />
                   </svg>
                   <p>
-                    Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
                   </p>
                 </div>
               </div>
@@ -1808,7 +1808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     />
                   </svg>
                   <p>
-                    Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
                   </p>
                 </div>
               </div>
@@ -2280,7 +2280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     />
                   </svg>
                   <p>
-                    Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
+                    Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.
                   </p>
                 </div>
               </div>
