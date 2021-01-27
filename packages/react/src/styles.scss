@@ -196,8 +196,10 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Dashboard/dashboard';
 @import 'components/DashboardEditor/dashboard-editor';
 @import 'components/DateTimePicker/date-time-picker';
+@import 'components/FilterTags/filter-tags';
 @import 'components/GaugeCard/gauge-card';
 @import 'components/Header/header';
+@import 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';
 @import 'components/IconDropdown/icon-dropdown';
 @import 'components/IconSwitch/icon-switch';
 @import 'components/ListCard/listCard';
@@ -208,6 +210,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/PageWizard/page-wizard';
 @import 'components/PieChartCard/pie-chart-card';
 @import 'components/ProgressIndicator/progress-indicator';
+@import 'components/RuleBuilder/rulebuilder';
 @import 'components/SideNav/side-nav';
 @import 'components/SimplePagination/simple-pagination';
 @import 'components/SuiteHeader/suite-header';
@@ -228,8 +231,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/TileGallery/tile-gallery';
 @import 'components/TimePickerSpinner/time-picker-spinner';
 @import 'components/TimeSeriesCard/time-series-card';
+@import 'components/ValueCard/value-card';
+@import 'components/ValueCard/attribute';
+@import 'components/ValueCard/unit-renderer';
+@import 'components/ValueCard/value-renderer';
 @import 'components/WizardInline/wizard-inline';
 @import 'components/WizardModal/wizard-modal';
-@import 'components/FilterTags/filter-tags';
-@import 'components/HotspotEditorModal/HotspotTextStyleTab/hotspot-text-style-tab';
-@import 'components/RuleBuilder/rulebuilder';
