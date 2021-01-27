@@ -95,6 +95,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
+    storyNameRegex: /^((?!.*?DontTest).)*$/,
     test: multiSnapshotWithOptions((story) => ({
       createNodeMock: (element) => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs

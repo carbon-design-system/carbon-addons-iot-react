@@ -19,7 +19,7 @@ const acceptableSizes = Object.keys(CARD_SIZES).filter(
 );
 
 export default {
-  title: 'Watson IoT/ComboChartCard',
+  title: 'Watson IoT/ComboChartCard (DontTest)',
   decorators: [withKnobs],
 
   parameters: {
@@ -42,7 +42,7 @@ export const ComboChartCardEmpty = () => (
 );
 
 ComboChartCardEmpty.story = {
-  name: 'empty',
+  name: 'empty (DontTest)',
 };
 
 export const ComboChartCardLoading = () => {
@@ -62,7 +62,7 @@ export const ComboChartCardLoading = () => {
 };
 
 ComboChartCardLoading.story = {
-  name: 'loading',
+  name: 'loading (DontTest)',
 };
 
 export const ComboChartCardArea = () => (
@@ -80,5 +80,5 @@ export const ComboChartCardArea = () => (
 );
 
 ComboChartCardArea.story = {
-  name: 'Area and Line',
+  name: 'Area and Line (DontTest)',
 };

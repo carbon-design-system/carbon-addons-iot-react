@@ -1,6 +1,8 @@
+/* istanbul ignore file */
+// Ignoring until we resolve the issue with importing this component in jest
 import React from 'react';
 import PropTypes from 'prop-types';
-import ComboChart from '@carbon/charts-react/combo-chart';
+import { ComboChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
