@@ -584,9 +584,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[hotspotIndex].content.attributes[
-        editDataItemIndex
-      ] = editDataItem;
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, hotspots: dataSection },

@@ -275,9 +275,7 @@ const HotspotEditorModal = ({
     updateDynamicHotspotSourceY,
   } = useHotspotEditorState({
     initialState: {
-      hotspots: initialHotspots.filter(
-        (hotspot) => hotspot.type !== hotspotTypes.DYNAMIC
-      ),
+      hotspots: initialHotspots.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
       currentType: defaultHotspotType,
     },
   });
