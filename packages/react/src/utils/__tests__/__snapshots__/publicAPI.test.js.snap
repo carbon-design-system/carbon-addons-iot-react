@@ -374,11 +374,13 @@ Map {
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
+        "toggleAggregations": "Toggle Aggregations",
       },
       "id": null,
       "lightweight": false,
       "locale": null,
       "options": Object {
+        "hasAggregations": false,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
         "hasFilter": false,
@@ -401,6 +403,9 @@ Map {
       "tooltip": null,
       "useZebraStyles": false,
       "view": Object {
+        "aggregations": Object {
+          "columns": Array [],
+        },
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
@@ -932,6 +937,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAggregations": Object {
+              "type": "bool",
+            },
             "hasColumnSelection": Object {
               "type": "bool",
             },
@@ -1047,6 +1055,45 @@ Map {
       "view": Object {
         "args": Array [
           Object {
+            "aggregations": Object {
+              "args": Array [
+                Object {
+                  "columns": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "value": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "type": "func",
+                                  },
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "label": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
             "filters": Object {
               "args": Array [
                 Object {
@@ -2953,6 +3000,9 @@ Map {
             "onShowRowEdit": Object {
               "type": "func",
             },
+            "onToggleAggregations": Object {
+              "type": "func",
+            },
             "onToggleColumnSelection": Object {
               "type": "func",
             },
@@ -3131,6 +3181,9 @@ Map {
             "searchPlaceholder": Object {
               "type": "string",
             },
+            "toggleAggregations": Object {
+              "type": "string",
+            },
           },
         ],
         "type": "shape",
@@ -3138,6 +3191,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasAggregations": Object {
+              "type": "bool",
+            },
             "hasColumnSelection": Object {
               "type": "bool",
             },
@@ -8563,6 +8619,7 @@ Map {
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
+      "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
@@ -8745,6 +8802,12 @@ Map {
               "type": "string",
             },
             "VALUE": Object {
+              "type": "string",
+            },
+            "abbreviateNumbers": Object {
+              "type": "string",
+            },
+            "abbreviateNumbersTooltip": Object {
               "type": "string",
             },
             "addCardButton": Object {
@@ -9092,6 +9155,9 @@ Map {
         "type": "func",
       },
       "onExport": Object {
+        "type": "func",
+      },
+      "onFetchDynamicDemoHotspots": Object {
         "type": "func",
       },
       "onImageDelete": Object {
@@ -11362,8 +11428,13 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "cardVariables": null,
+      "customFormatter": null,
       "dataState": null,
+      "fontSize": 42,
+      "isNumberValueCompact": false,
       "locale": "en",
+      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12039,6 +12110,9 @@ Map {
         ],
         "type": "shape",
       },
+      "fontSize": Object {
+        "type": "number",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12146,6 +12220,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isNumberValueCompact": Object {
         "type": "bool",
       },
       "isResizable": Object {
@@ -24755,13 +24832,13 @@ Map {
     "render": [Function],
   },
   "determineCardRange" => Object {},
-  "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
   "formatNumberWithPrecision" => Object {},
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
   "findMatchingThresholds" => Object {},
+  "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

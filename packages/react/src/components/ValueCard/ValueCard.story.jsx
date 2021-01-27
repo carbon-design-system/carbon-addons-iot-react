@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
@@ -18,7 +17,7 @@ export default {
   },
 };
 
-export const SmallBasic = () => {
+export const SmallNoLabel = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -41,49 +40,16 @@ export const SmallBasic = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: number('occupancy', 88) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-SmallBasic.story = {
-  name: 'small / basic',
-};
-
-export const SmallWithExpand = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}
-    >
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        availableActions={{
-          expand: true,
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ occupancy: number('occupancy', 88) }}
-        onCardAction={action('Value Card Expand Action')}
-      />
-    </div>
-  );
-};
-
-SmallWithExpand.story = {
-  name: 'small / with expand',
+SmallNoLabel.story = {
+  name: 'small / no label',
 };
 
 export const SmallWithVariables = () => {
@@ -113,6 +79,9 @@ export const SmallWithVariables = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: number('occupancy', 88) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -156,6 +125,9 @@ export const SmallLong = () => {
         breakpoint="lg"
         size={size}
         values={{ occupancy: text('occupancy', 'Really really busy') }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -165,43 +137,7 @@ SmallLong.story = {
   name: 'small / long',
 };
 
-export const SmallWrapping = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div style={{ width: text('cardWidth', '120px'), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          occupancy: text('occupancy', 'Really really busy loong long long long'),
-        }}
-      />
-    </div>
-  );
-};
-
-SmallWrapping.story = {
-  name: 'small / wrapping',
-
-  parameters: {
-    info: {
-      text:
-        'In the case of having a long string value with units, we prioritize seeing the unit. We ellipsis the text while wrapping the unit to display under.',
-    },
-  },
-};
-
-export const SmallWrappingNoUnits = () => {
+export const SmallLongNoUnits = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -229,13 +165,16 @@ export const SmallWrappingNoUnits = () => {
             'rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu'
           ),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-SmallWrappingNoUnits.story = {
-  name: 'small / wrapping no units',
+SmallLongNoUnits.story = {
+  name: 'small / long / no units',
 
   parameters: {
     info: {
@@ -245,7 +184,7 @@ SmallWrappingNoUnits.story = {
   },
 };
 
-export const SmallTitle = () => {
+export const SmallTrendDown = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
     <div
@@ -254,33 +193,6 @@ export const SmallTitle = () => {
         margin: spacing05 + 4,
       }}
     >
-      <ValueCard
-        title={text('title', 'Foot Traffic')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Average',
-              dataSourceId: 'footTraffic',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ footTraffic: number('footTraffic', 13572) }}
-      />
-    </div>
-  );
-};
-
-SmallTitle.story = {
-  name: 'small / title',
-};
-
-export const SmallTrendDown = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div style={{ width: text('cardWidth', `150px`), margin: spacing05 + 4 }}>
       <ValueCard
         title={text('title', 'Foot Traffic')}
         id="facilitycard"
@@ -302,6 +214,9 @@ export const SmallTrendDown = () => {
           footTraffic: number('footTraffic', 13572),
           trend: text('trend', '22%'),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -314,7 +229,12 @@ SmallTrendDown.story = {
 export const SmallTrendUp = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   return (
-    <div style={{ width: text('cardWidth', `150px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
         title={text('title', 'Alert Count')}
         id="facilitycard"
@@ -333,6 +253,9 @@ export const SmallTrendUp = () => {
         breakpoint="lg"
         size={size}
         values={{ alerts: number('alerts', 35), trend: number('trend', 12) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -347,7 +270,7 @@ export const SmallThresholdsNumberNoIcon = () => {
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -381,6 +304,9 @@ export const SmallThresholdsNumberNoIcon = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 35) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -395,7 +321,7 @@ export const SmallThresholdsNumberIcon = () => {
   return (
     <div
       style={{
-        width: `${number('cardWidth', 300)}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -420,6 +346,9 @@ export const SmallThresholdsNumberIcon = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 70) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -434,7 +363,7 @@ export const SmallThresholdsNumberCustomRenderIconByName = () => {
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -472,6 +401,9 @@ export const SmallThresholdsNumberCustomRenderIconByName = () => {
         breakpoint="lg"
         size={size}
         values={{ alertCount: number('alertCount', 4) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -481,12 +413,50 @@ SmallThresholdsNumberCustomRenderIconByName.story = {
   name: 'small / thresholds (number, custom renderIconByName)',
 };
 
-export const SmallwideThresholdsString = () => {
+export const SmallWithCustomFormatter = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Occupancy')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              dataSourceId: 'occupancy',
+              unit: '%',
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{ occupancy: number('occupancy', 88) }}
+        customFormatter={(formattedValue) => {
+          return text('Custom Value', formattedValue);
+        }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
+      />
+    </div>
+  );
+};
+
+SmallWithCustomFormatter.story = {
+  name: 'small / with custom formatter',
+};
+
+export const SmallWideThresholdsString = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -517,21 +487,24 @@ export const SmallwideThresholdsString = () => {
         breakpoint="lg"
         size={size}
         values={{ status: text('status', 'Unhealthy') }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-SmallwideThresholdsString.story = {
-  name: 'smallwide / thresholds (string)',
+SmallWideThresholdsString.story = {
+  name: 'small-wide / thresholds (string)',
 };
 
-export const SmallwideVertical2 = () => {
+export const SmallWide2 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   return (
     <div
       style={{
-        width: `${getCardMinSize('lg', size).x}px`,
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
         margin: spacing05 + 4,
       }}
     >
@@ -547,6 +520,14 @@ export const SmallwideVertical2 = () => {
             {
               dataSourceId: 'comfortLevel',
               label: 'Comfort level',
+            },
+            {
+              dataSourceId: 'occupancy',
+              label: 'Occupancy',
+            },
+            {
+              dataSourceId: 'humidity',
+              label: 'Humidity',
             },
           ]),
         }}
@@ -555,57 +536,22 @@ export const SmallwideVertical2 = () => {
         values={{
           status: text('status', 'Good'),
           comfortLevel: text('comfortLevel', 'Healthy'),
+          occupancy: text('occupancy', 'None'),
+          humidity: text('humidity', 'Unbearable'),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-SmallwideVertical2.story = {
-  name: 'smallwide / vertical 2',
+SmallWide2.story = {
+  name: 'small-wide / 2',
 };
 
-export const SmallwideHorizontal2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
-  return (
-    <div
-      style={{
-        width: `${number('cardWidth', 300)}px`,
-        margin: spacing05 + 4,
-      }}
-    >
-      <ValueCard
-        title={text('title', 'Status')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'status',
-              label: 'Status',
-            },
-            {
-              dataSourceId: 'comfortLevel',
-              label: 'Comfort level',
-              unit: 'feels',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          status: text('status', 'Problem'),
-          comfortLevel: text('comfortLevel', 'Healthy'),
-        }}
-      />
-    </div>
-  );
-};
-
-SmallwideHorizontal2.story = {
-  name: 'smallwide / horizontal 2',
-};
-
-export const MediumVerticalSingle = () => {
+export const Medium1 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div
@@ -629,16 +575,64 @@ export const MediumVerticalSingle = () => {
         breakpoint="lg"
         size={size}
         values={{ comfortLevel: number('comfortLevel', 89) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-MediumVerticalSingle.story = {
-  name: 'medium / vertical / single',
+Medium1.story = {
+  name: 'medium / 1',
 };
 
-export const MediumVerticalMultiple = () => {
+export const Medium2 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+              unit: '%',
+            },
+            {
+              label: 'Average Temperature',
+              dataSourceId: 'averageTemp',
+              unit: '˚F',
+              precision: 1,
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{
+          comfortLevel: number('comfortLevel', 89),
+          averageTemp: number('averageTemp', 76.7),
+        }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
+      />
+    </div>
+  );
+};
+
+Medium2.story = {
+  name: 'medium / 2',
+};
+
+export const Medium3 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
     <div
@@ -673,17 +667,20 @@ export const MediumVerticalMultiple = () => {
           averageTemp: number('averageTemp', 76.7),
           utilization: number('utilization', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-MediumVerticalMultiple.story = {
-  name: 'medium / vertical / multiple',
+Medium3.story = {
+  name: 'medium / 3',
 };
 
-export const MediumVertical2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+export const MediumThin3 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
   return (
     <div
       style={{
@@ -691,43 +688,6 @@ export const MediumVertical2 = () => {
         margin: spacing05 + 4,
       }}
     >
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumVertical2.story = {
-  name: 'medium / vertical /  2',
-};
-
-export const MediumthinVertical3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
-  return (
-    <div style={{ width: text('cardWidth', `120px`), margin: spacing05 + 4 }}>
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -801,56 +761,27 @@ export const MediumthinVertical3 = () => {
           averageTemp: number('averageTemp', 456778234234234234),
           humidity: number('humidity', 88888678234234234234),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-MediumthinVertical3.story = {
-  name: 'mediumthin / vertical /  3',
+MediumThin3.story = {
+  name: 'medium-thin / 3',
 };
 
-export const MediumHorizontal2 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+export const MediumWide3 = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumHorizontal2.story = {
-  name: 'medium / horizontal /  2',
-};
-
-export const MediumHorizontal3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -877,19 +808,27 @@ export const MediumHorizontal3 = () => {
           averageTemp: number('averageTemp', 76.7),
           utilization: number('utilization', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-MediumHorizontal3.story = {
-  name: 'medium / horizontal /  3',
+MediumWide3.story = {
+  name: 'medium-wide / 3',
 };
 
-export const LargeVertical5 = () => {
+export const Large5 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -920,19 +859,27 @@ export const LargeVertical5 = () => {
           humidity: number('humidity', 50),
           air_flow: number('air_flow', 0.567),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-LargeVertical5.story = {
-  name: 'large / vertical /  5',
+Large5.story = {
+  name: 'large / 5',
 };
 
-export const LargeThinVertical6 = () => {
+export const LargeThin6 = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
   return (
-    <div style={{ width: text('cardWidth', `250px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
         title={text('title', 'Facility Conditions')}
         id="facilitycard"
@@ -967,52 +914,16 @@ export const LargeThinVertical6 = () => {
           location: text('location', 'Australia'),
           air_quality: number('air_quality', 76),
         }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
-LargeThinVertical6.story = {
-  name: 'large-thin / vertical /  6',
-};
-
-export const MediumWideHorizontal3 = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-  return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
-      <ValueCard
-        title={text('title', 'Facility Conditions')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              label: 'Comfort Level',
-              dataSourceId: 'comfortLevel',
-              unit: '%',
-            },
-            {
-              label: 'Average Temperature',
-              dataSourceId: 'averageTemp',
-              unit: '˚F',
-              precision: 1,
-            },
-            { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          comfortLevel: number('comfortLevel', 89),
-          averageTemp: number('averageTemp', 76.7),
-          utilization: number('utilization', 76),
-        }}
-      />
-    </div>
-  );
-};
-
-MediumWideHorizontal3.story = {
-  name: 'medium-wide / horizontal /  3',
+LargeThin6.story = {
+  name: 'large-thin / 6',
 };
 
 export const WithBoolean = () => {
@@ -1068,7 +979,6 @@ EmptyState.story = {
 
 export const DataStateNoDataMediumScrollPage = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  const width = text('cardWidth', `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`);
 
   const myDataState = {
     type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
@@ -1086,9 +996,13 @@ export const DataStateNoDataMediumScrollPage = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
-        style={{ width }}
         title={text('title', 'Health score')}
         content={{
           attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }],
@@ -1097,6 +1011,7 @@ export const DataStateNoDataMediumScrollPage = () => {
         breakpoint="lg"
         size={size}
         id="myStoryId"
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
       />
 
       <div style={{ height: '150vh' }} />
@@ -1258,82 +1173,6 @@ DataStateErrorSmallTooltipDirectionRight.story = {
   name: 'data state - error - small - tooltip direction right',
 };
 
-export const LongTitlesAndValues = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}
-    >
-      <ValueCard
-        title={text('title', 'Really long card title?')}
-        id="facilitycard"
-        content={{
-          attributes: [
-            {
-              label: 'Monthly summary',
-              dataSourceId: 'monthlySummary',
-              unit: text('unit', ''),
-            },
-          ],
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          monthlySummary: number('monthlySummary', 20000000000000000),
-        }}
-      />
-    </div>
-  );
-};
-
-LongTitlesAndValues.story = {
-  name: 'long titles and values',
-};
-
-export const LongTitlesAndValuesMultiple = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}
-    >
-      <ValueCard
-        title={text('title', 'Really really really long card title?')}
-        id="facilitycard"
-        content={{
-          attributes: [
-            {
-              label: 'Monthly summary',
-              dataSourceId: 'monthlySummary',
-              unit: text('unit', 'Wh'),
-            },
-            {
-              label: 'Yearly summary',
-              dataSourceId: 'yearlySummary',
-              unit: text('unit', 'Wh'),
-            },
-          ],
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{
-          monthlySummary: number('monthlySummary', 100000000),
-          yearlySummary: number('yearlySummary', 40000000000000),
-        }}
-      />
-    </div>
-  );
-};
-
-LongTitlesAndValuesMultiple.story = {
-  name: 'long titles and values/multiple',
-};
-
 export const Editable = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
@@ -1363,19 +1202,27 @@ export const Editable = () => {
         }}
         breakpoint="lg"
         size={size}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
 Editable.story = {
-  name: 'editable',
+  name: 'with isEditable',
 };
 
 export const DataFilters = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   return (
-    <div style={{ width: text('cardWidth', `300px`), margin: spacing05 + 4 }}>
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
       <ValueCard
         title={text('title', 'Facility Conditions per device')}
         id="facilitycard"
@@ -1401,13 +1248,101 @@ export const DataFilters = () => {
           { deviceid: '73000', comfortLevel: '100', unit: '%' },
           { deviceid: '73001', comfortLevel: '50', unit: '%' },
         ])}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
 };
 
 DataFilters.story = {
-  name: 'dataFilters',
+  name: 'with dataFilters',
+};
+
+export const WithFontSize = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+              unit: '%',
+            },
+            {
+              label: 'Monthly summary',
+              dataSourceId: 'monthlySummary',
+              unit: text('unit', 'Wh'),
+            },
+            {
+              label: 'Yearly summary',
+              dataSourceId: 'yearlySummary',
+              unit: text('unit', 'Wh'),
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{
+          comfortLevel: number('comfortLevel', 89),
+          monthlySummary: 10294.1,
+          yearlySummary: 14918123.123,
+        }}
+        fontSize={number('fontSize', 25)}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+      />
+    </div>
+  );
+};
+
+WithFontSize.story = {
+  name: 'with fontSize',
+};
+
+export const WithIsNumberValueCompact = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+        margin: spacing05 + 4,
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Facility Conditions')}
+        id="facilitycard"
+        content={{
+          attributes: object('attributes', [
+            {
+              label: 'Comfort Level',
+              dataSourceId: 'comfortLevel',
+            },
+          ]),
+        }}
+        breakpoint="lg"
+        size={size}
+        values={{ comfortLevel: number('comfortLevel', 864129.6123) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', true)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'fr')}
+        fontSize={number('fontSize', 25)}
+      />
+    </div>
+  );
+};
+
+WithIsNumberValueCompact.story = {
+  name: 'with isNumberValueCompact',
 };
 
 export const Locale = () => {
@@ -1432,8 +1367,10 @@ export const Locale = () => {
         }}
         breakpoint="lg"
         size={size}
-        locale={select('locale', ['de', 'fr', 'en'], 'fr')}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'fr')}
         values={{ occupancy: number('occupancy', 0.05) }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        fontSize={number('fontSize', 42)}
       />
     </div>
   );
@@ -1441,39 +1378,4 @@ export const Locale = () => {
 
 Locale.story = {
   name: 'locale',
-};
-
-export const SmallWithCustomFormatter = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-  return (
-    <div
-      style={{
-        width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
-        margin: spacing05 + 4,
-      }}
-    >
-      <ValueCard
-        title={text('title', 'Occupancy')}
-        id="facilitycard"
-        content={{
-          attributes: object('attributes', [
-            {
-              dataSourceId: 'occupancy',
-              unit: '%',
-            },
-          ]),
-        }}
-        breakpoint="lg"
-        size={size}
-        values={{ occupancy: number('occupancy', 88) }}
-        customFormatter={(formattedValue) => {
-          return text('Custom Value', formattedValue);
-        }}
-      />
-    </div>
-  );
-};
-
-SmallWithCustomFormatter.story = {
-  name: 'small / with custom formatter',
 };

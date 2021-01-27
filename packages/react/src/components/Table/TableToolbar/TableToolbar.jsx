@@ -1,7 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Column20, Filter20, Download20, Edit20 } from '@carbon/icons-react';
-import { DataTable, Button, Tooltip } from 'carbon-components-react';
+import {
+  Column20,
+  Filter20,
+  Download20,
+  Edit20,
+  OverflowMenuVertical20,
+} from '@carbon/icons-react';
+import {
+  DataTable,
+  Button,
+  Tooltip,
+  OverflowMenu,
+  OverflowMenuItem,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 
 import deprecate from '../../../internal/deprecate';
@@ -33,6 +45,7 @@ const propTypes = {
   tooltip: PropTypes.node,
   /** global table options */
   options: PropTypes.shape({
+    hasAggregations: PropTypes.bool,
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
@@ -61,6 +74,7 @@ const propTypes = {
     filterNone: PropTypes.string,
     filterAscending: PropTypes.string,
     filterDescending: PropTypes.string,
+    toggleAggregations: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -69,6 +83,7 @@ const propTypes = {
     onCancelBatchAction: PropTypes.func,
     onApplyBatchAction: PropTypes.func,
     onClearAllFilters: PropTypes.func,
+    onToggleAggregations: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
     onShowRowEdit: PropTypes.func,
@@ -120,6 +135,7 @@ const TableToolbar = ({
   secondaryTitle,
   tooltip,
   options: {
+    hasAggregations,
     hasColumnSelection,
     hasFilter,
     hasSearch,
@@ -132,6 +148,7 @@ const TableToolbar = ({
     onCancelBatchAction,
     onApplyBatchAction,
     onClearAllFilters,
+    onToggleAggregations,
     onToggleColumnSelection,
     onToggleFilter,
     onShowRowEdit,
@@ -263,7 +280,23 @@ const TableToolbar = ({
             disabled={isDisabled}
           />
         ) : null}
-
+        {hasAggregations ? (
+          <OverflowMenu
+            className={`${iotPrefix}--table-toolbar-aggregations__overflow-menu`}
+            direction="bottom"
+            flipped
+            data-testid="table-head--overflow"
+            onClick={(e) => e.stopPropagation()}
+            renderIcon={OverflowMenuVertical20}
+            iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
+          >
+            <OverflowMenuItem
+              itemText={i18n.toggleAggregations}
+              key="table-aggregations-overflow-item"
+              onClick={onToggleAggregations}
+            />
+          </OverflowMenu>
+        ) : null}
         {
           // Default card header actions should be to the right of the table-specific actions
           customToolbarContent || null

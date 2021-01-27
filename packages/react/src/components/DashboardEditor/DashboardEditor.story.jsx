@@ -973,7 +973,9 @@ export const I18N = () => (
       secondaryButtonLabelText: 'secondaryButtonLabelText',
 
       // settings for Value card
-      notSet: 'notSet',
+      abbreviateNumbers: 'abbreviateNumbers',
+      abbreviateNumbersTooltip: 'abbreviateNumbersTooltip',
+      fontSize: 'fontSize',
 
       // Settings for Data Series
       xAxisLabel: 'xAxisLabel',
@@ -982,7 +984,6 @@ export const I18N = () => (
       decimalPrecisionLabel: 'decimalPrecisionLabel',
       precisionLabel: 'precisionLabel',
       showLegendLabel: 'showLegendLabel',
-      fontSize: 'fontSize',
 
       // Additional fields for Bar Chart
       selectGroupBy: 'selectGroupBy',
