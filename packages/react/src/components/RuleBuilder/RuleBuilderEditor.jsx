@@ -15,7 +15,10 @@ import {
 } from './utils';
 
 const propTypes = {
+  // the rules passed into the component. The RuleBuilder is a controlled component, so
+  // this works the same as passing defaultValue to a controlled input component.
   defaultRules: RuleGroupPropType,
+  // the columns of the table to be used in the column dropdown.
   columns: TableColumnsPropTypes.isRequired,
   onChange: PropTypes.func,
   i18n: PropTypes.shape({

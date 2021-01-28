@@ -15,6 +15,7 @@ const defaultProps = {
     addRule: 'Add rule',
     addGroup: 'Add group',
   },
+  // the default logic for the primary rule builder group. Can be ALL or ANY
   groupLogic: 'ALL',
   testID: 'rule-builder-header',
 };
@@ -45,7 +46,7 @@ const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID }
       onChange(
         {
           id,
-          groupLogic: selectedItem.name,
+          groupLogic: selectedItem.id,
         },
         true
       );
