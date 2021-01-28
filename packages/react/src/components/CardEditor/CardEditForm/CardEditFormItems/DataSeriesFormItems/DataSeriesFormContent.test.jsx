@@ -44,6 +44,7 @@ const barChartCardConfig = {
     type: 'STACKED',
     series: [
       {
+        dataItemId: 'temperature',
         label: 'Temperature',
         dataSourceId: 'temperature',
         color: 'red',
@@ -93,8 +94,8 @@ const valueCardConfig = {
 };
 
 const dataItems = [
-  { dataSourceId: 'temperature', label: 'Temperature' },
-  { dataSourceId: 'pressure', label: 'Pressure' },
+  { dataSourceId: 'temperature', label: 'Temperature', dataItemId: 'temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure', dataItemId: 'pressure' },
 ];
 
 const mockOnChange = jest.fn();
@@ -175,16 +176,18 @@ describe('DataSeriesFormItem', () => {
         content: {
           series: [
             {
+              dataItemId: 'temperature',
+              aggregationMethod: undefined,
               color: '#6929c4',
-              dataSourceId: 'temperature',
+              dataSourceId: expect.anything(), // this is the dataSourceId followed by a uuid
               label: 'Temperature',
-              uuid: expect.anything(),
             },
             {
+              dataItemId: 'pressure',
+              aggregationMethod: undefined,
               color: '#1192e8',
-              dataSourceId: 'pressure',
+              dataSourceId: expect.anything(),
               label: 'Pressure',
-              uuid: expect.anything(),
             },
           ],
           timeDataSourceId: 'timestamp',

@@ -308,13 +308,7 @@ const DataSeriesFormItemModal = ({
               selectedItem={
                 editDataItem.aggregationMethods?.find(
                   (method) => method.id === editDataItem.aggregationMethod
-                ) ||
-                (!isTimeBasedCard
-                  ? // need to search by id to preserve translations
-                    editDataItem.aggregationMethods?.find((method) => method.id === 'last')
-                  : isSummaryDashboard
-                  ? editDataItem.aggregationMethods?.find((method) => method.id === 'mean')
-                  : editDataItem.aggregationMethods?.find((method) => method.id === 'none'))
+                ) || { id: 'none', text: mergedI18n.none }
               }
               titleText={mergedI18n.aggregationMethod}
               light
@@ -415,9 +409,26 @@ const DataSeriesFormItemModal = ({
             />
           </div>
         )}
+        {type === CARD_TYPES.IMAGE && (
+          <div className={`${baseClassName}--input-group--item-half-no-helper-text`}>
+            <TextInput
+              id={`${id}_attribute-unit`}
+              labelText={mergedI18n.dataItemEditorDataItemUnit}
+              light
+              placeholder={`${mergedI18n.example}: %`}
+              onChange={(evt) =>
+                setEditDataItem({
+                  ...editDataItem,
+                  unit: evt.target.value,
+                })
+              }
+              value={editDataItem.unit}
+            />
+          </div>
+        )}
       </div>
 
-      {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE) && (
+      {type === CARD_TYPES.VALUE && (
         <div className={`${baseClassName}--input-group`}>
           <div className={`${baseClassName}--input-group--item`}>
             <TextInput
@@ -434,30 +445,28 @@ const DataSeriesFormItemModal = ({
               value={editDataItem.unit}
             />
           </div>
-          {type === CARD_TYPES.VALUE && (
-            <div className={`${baseClassName}--input-group--item-end`}>
-              <Dropdown
-                id={`${id}_value-card-decimal-place`}
-                titleText="Decimal places"
-                direction="bottom"
-                label=""
-                items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
-                light
-                selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
-                onChange={({ selectedItem }) => {
-                  const isSet = selectedItem !== mergedI18n.notSet;
-                  if (isSet) {
-                    setEditDataItem({
-                      ...editDataItem,
-                      precision: Number(selectedItem),
-                    });
-                  } else {
-                    setEditDataItem(omit(editDataItem, 'precision'));
-                  }
-                }}
-              />
-            </div>
-          )}
+          <div className={`${baseClassName}--input-group--item-end`}>
+            <Dropdown
+              id={`${id}_value-card-decimal-place`}
+              titleText="Decimal places"
+              direction="bottom"
+              label=""
+              items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
+              light
+              selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
+              onChange={({ selectedItem }) => {
+                const isSet = selectedItem !== mergedI18n.notSet;
+                if (isSet) {
+                  setEditDataItem({
+                    ...editDataItem,
+                    precision: Number(selectedItem),
+                  });
+                } else {
+                  setEditDataItem(omit(editDataItem, 'precision'));
+                }
+              }}
+            />
+          </div>
         </div>
       )}
 
