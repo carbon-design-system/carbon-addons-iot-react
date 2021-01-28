@@ -69,7 +69,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   profileLogoutModalHeading: PropTypes.string,
   profileLogoutModalSecondaryButton: PropTypes.string,
   profileLogoutModalPrimaryButton: PropTypes.string,
-  profileLogoutModalBody: PropTypes.func,
+  profileLogoutModalBody: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   switcherNavigatorLink: PropTypes.string,
   whatsNew: PropTypes.string,
   documentation: PropTypes.string,
@@ -77,7 +77,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   about: PropTypes.string,
   support: PropTypes.string,
   gettingStarted: PropTypes.string,
-  surveyTitle: PropTypes.func,
+  surveyTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   surveyText: PropTypes.string,
   surveyPrivacyPolicy: PropTypes.string,
 });
