@@ -163,6 +163,7 @@ const CardEditFormContent = ({
           onChange={onChange}
           dataSeriesItemLinks={dataSeriesItemLinks}
           dataItems={dataItems}
+          getValidDataItems={getValidDataItems}
           availableDimensions={availableDimensions}
           translateWithId={handleTranslation}
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}

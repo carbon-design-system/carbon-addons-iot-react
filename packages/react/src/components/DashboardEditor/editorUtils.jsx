@@ -568,7 +568,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       dataSection = [...content.series];
       // TODO: not needed after Grouped charts gets updated
       if (content.type === BAR_CHART_TYPES.GROUPED) {
-        // Grouped bars can make batch edits, so we need to search through the who dataSection
+        // Grouped bars can make batch edits, so we need to search through the whole dataSection
         dataSection = dataSection.map(
           (item) =>
             editDataSeries.find((editedItem) => editedItem.dataSourceId === item.dataSourceId) ||
