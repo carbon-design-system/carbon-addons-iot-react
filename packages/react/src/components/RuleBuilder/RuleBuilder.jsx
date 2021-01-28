@@ -1,8 +1,6 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
-import { Star16, Share16, TrashCan16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import uniqueId from 'lodash/uniqueId'
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
@@ -19,27 +17,26 @@ const propTypes = {
   /** Unique id for particular filter */
   id: PropTypes.string,
   /**
-   * Buttons at top of page and callback to handle actions
+   * Optional action buttons at top of page and callbacks to handle actions
    */
-  favoriteId: PropTypes.string,
-  favoriteLabel: PropTypes.string,
-  shareId: PropTypes.string,
-  shareLabel: PropTypes.string,
-  deleteId: PropTypes.string,
-  deleteLabel: PropTypes.string,
-  saveId: PropTypes.string,
+  actionBar: PropTypes.arrayOf(PropTypes.shape({
+    actionId: PropTypes.string.isRequired,
+    actionLabel: PropTypes.string.isRequired,
+    actionIcon: PropTypes.elementType.isRequired,
+    actionCallback: PropTypes.func.isRequired,
+  })),
   saveLabel: PropTypes.string,
+  handleOnSave: PropTypes.func.isRequired,
+  cancelLabel: PropTypes.string,
+  handleOnCancel: PropTypes.func.isRequired,
   /**
-  * callback that is called with the action type and filter id
-  * handleAction(SHARE, id);
-  */
-  handleAction: PropTypes.func,
-  cancelText: PropTypes.string,
-  handleOnCancel: PropTypes.func,
-  previewText: PropTypes.string,
-  handleOnPreview: PropTypes.func,
-  applyText: PropTypes.string,
-  handleOnApply: PropTypes.func,
+   * Optional footer buttons and callbacks to handle actions
+   */
+  footerButtons: PropTypes.arrayOf(PropTypes.shape({
+    buttonId: PropTypes.string.isRequired,
+    buttonLabel: PropTypes.string.isRequired,
+    buttonCallback: PropTypes.func.isRequired,
+  })),
   // filterTabText: PropTypes.string,
   // sharingTabText: PropTypes.string,
   // onChange: PropTypes.func,
@@ -49,22 +46,11 @@ const defaultProps = {
   className: null,
   titleText: 'Undefined',
   metaText: null,
-  id: uniqueId('rule-builder-'),
-  favoriteId: null,
-  favoriteLabel: 'Favorite',
-  shareId: null,
-  shareLabel: 'Share',
-  deleteId: null,
-  deleteLabel: 'Delete',
-  saveId: null,
+  id: null,
   saveLabel: 'Save',
-  handleAction: () => {},
-  cancelText: 'Cancel',
-  handleOnCancel: () => {},
-  previewText: 'Preview results',
-  handleOnPreview: () => {},
-  applyText: 'Apply filter',
-  handleOnApply: () => {},
+  cancelLabel: 'Cancel',
+  actionBar: null,
+  footerButtons: null,
   // filterTabText: 'Filter builder',
   // sharingTabText: 'Sharing and preferences',
   // onChange: () => {},
@@ -84,67 +70,49 @@ const RuleBuilder = ({
   titleText,
   metaText,
   id,
-  favoriteId,
-  favoriteLabel,
-  shareId,
-  shareLabel,
-  deleteId,
-  deleteLabel,
-  saveId,
   saveLabel,
-  handleAction,
-  cancelText,
+  handleOnSave,
+  cancelLabel,
   handleOnCancel,
-  previewText,
-  handleOnPreview,
-  applyText,
-  handleOnApply,
-  // footer,
+  actionBar,
+  footerButtons,
   // filterTabText,
   // sharingTabText,
   // onChange,
   // children,
 }) => {
+  const actions = useMemo(() => actionBar?.map((i)=> (
+    <ToolbarSVGWrapper
+      key={i.actionId}
+      data-testid={i.actionId}
+      title={i.actionLabel}
+      onClick={i.actionCallback}
+      iconDescription={i.actionLabel}
+      renderIcon={i.actionIcon}
+    />
+  )), [actionBar])
+  const footer = useMemo(() => footerButtons?.map((i) => (
+    <Button data-testid={i.buttonId} key={i.buttonId} kind="secondary" className={`${baseClass}--footer-actions-preview`} onClick={i.buttonCallback} >{i.buttonLabel}</Button>
+  )), [footerButtons]);
 
   return (
-    <section className={classnames(baseClass, className)} id={id} data-testid='rule-builder'>
+    <section className={classnames(baseClass, className)} id={id} data-testid={id || 'rule-builder'}>
       <header className={`${baseClass}--header`}>
         <div>
           <h1 className={`${baseClass}--header-title`}>{titleText}</h1>
           {metaText && (<p className={`${baseClass}--header-metatext`}>{metaText}</p>)}
         </div>
         <div className={`${baseClass}--header-actions`}>
-          <ToolbarSVGWrapper
-            id={favoriteId}
-            title={favoriteLabel}
-            onClick={() => handleAction(ACTIONTYPES.FAVORITE)}
-            iconDescription={favoriteLabel}
-            renderIcon={Star16}
-          />
-          <ToolbarSVGWrapper
-            id={shareId}
-            title={shareLabel}
-            onClick={() => handleAction(ACTIONTYPES.SHARE)}
-            iconDescription={shareLabel}
-            renderIcon={Share16}
-          />
-          <ToolbarSVGWrapper
-            id={deleteId}
-            title={deleteLabel}
-            onClick={() => handleAction(ACTIONTYPES.DELETE)}
-            iconDescription={deleteLabel}
-            renderIcon={TrashCan16}
-          />
-          <Button className={`${baseClass}--header-actions-save`} id={saveId} onClick={() => handleAction(ACTIONTYPES.SAVE)} size="small">{saveLabel}</Button>
+          {actions}
+          <Button className={`${baseClass}--header-actions-save`} data-testid="rule-builder-save" onClick={handleOnSave} size="small">{saveLabel}</Button>
         </div>
       </header>
       <div className={`${baseClass}--body`}>
         Hello
       </div>
       <footer className={`${baseClass}--footer`}>
-        <Button kind="secondary" className={`${baseClass}--footer-actions-cancel`} onClick={handleOnCancel} >{cancelText}</Button>
-        <Button kind="secondary" className={`${baseClass}--footer-actions-preview`} onClick={handleOnPreview} >{previewText}</Button>
-        <Button kind="secondary" className={`${baseClass}--footer-actions-apply`} onClick={handleOnApply} >{applyText}</Button>
+        <Button kind="secondary" className={`${baseClass}--footer-actions-cancel`} data-testid="rule-builder-cancel" onClick={handleOnCancel} >{cancelLabel}</Button>
+        {footer}
       </footer>
     </section>
   )
