@@ -2910,6 +2910,30 @@ WithLoadingState.story = {
   name: 'with loading state',
 };
 
+export const WithCustomTooltip = () => (
+  <Table
+    id="table"
+    columns={tableColumns}
+    data={tableData}
+    secondaryTitle="My title"
+    tooltip={<div>Table tooltip content</div>}
+    actions={actions}
+    view={{
+      table: {
+        ordering: defaultOrdering,
+        loadingState: {
+          isLoading: false,
+          rowCount: 7,
+        },
+      },
+    }}
+  />
+);
+
+WithCustomTooltip.story = {
+  name: 'with custom tooltip',
+};
+
 export const WithZebraStriping = () => (
   <Table id="table" useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
 );
