@@ -8,26 +8,31 @@ import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 
 const dataItems = [
   {
+    dataItemId: 'temp_last',
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
+    dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
+    dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
   },
   {
+    dataItemId: 'elevators',
     dataSourceId: 'elevators',
     label: 'Elevators',
     unit: 'floor',
   },
   {
+    dataItemId: 'other_metric',
     dataSourceId: 'other_metric',
     label: 'Other metric',
     unit: 'lbs',
@@ -47,11 +52,13 @@ describe('HotspotEditorDataSourceTab', () => {
             content: {
               attributes: [
                 {
+                  dataItemId: 'temp_last',
                   dataSourceId: 'temp_last',
                   label: '{high} temp',
                   unit: '{unitVar}',
                 },
                 {
+                  dataItemId: 'elevators',
                   dataSourceId: 'elevators',
                   label: 'Elevators',
                   unit: 'floor',
@@ -83,6 +90,7 @@ describe('HotspotEditorDataSourceTab', () => {
     expect(onChange).toHaveBeenCalledWith({
       attributes: [
         {
+          dataItemId: 'temp_last',
           dataSourceId: 'temp_last',
           label: '{high} temp',
           unit: '{unitVar}',
@@ -108,16 +116,19 @@ describe('HotspotEditorDataSourceTab', () => {
     expect(onChange).toHaveBeenCalledWith({
       attributes: [
         {
+          dataItemId: 'temp_last',
           dataSourceId: 'temp_last',
           label: '{high} temp',
           unit: '{unitVar}',
         },
         {
+          dataItemId: 'elevators',
           dataSourceId: 'elevators',
           label: 'Elevators',
           unit: 'floor',
         },
         {
+          dataItemId: 'other_metric',
           dataSourceId: 'other_metric',
           label: 'Other metric',
           unit: 'lbs',
@@ -161,6 +172,7 @@ describe('HotspotEditorDataSourceTab', () => {
     userEvent.click(screen.getAllByRole('button')[10]);
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
+      dataItemId: 'temp_last',
       dataSourceId: 'temp_last',
       label: '{high} temp',
       unit: '{unitVar}',
@@ -197,6 +209,7 @@ describe('HotspotEditorDataSourceTab', () => {
     userEvent.click(screen.getAllByRole('button')[10]);
     // Card config with the elevators hotspot removed
     expect(onChange).toHaveBeenCalledWith({
+      dataItemId: 'temp_last',
       dataSourceId: 'temp_last',
       label: '{high} temp',
       unit: '{unitVar}',

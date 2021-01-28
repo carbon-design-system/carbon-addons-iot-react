@@ -99,6 +99,8 @@ function hotspotEditorReducer(state, { type, payload }) {
           attributes: {
             [attributeIndex]: {
               $merge: {
+                dataItemId: payload.dataItemId,
+                aggregationMethod: payload.aggregationMethod,
                 label: payload.label,
                 unit: payload.unit,
                 dataFilter: payload.dataFilter,

@@ -73,6 +73,9 @@ export const validHotspotIcons = [
 
 export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
+    /** This is needed to keep track of the original dataItem name
+     * because the dataSourceId is subject to change */
+    dataItemId: PropTypes.string,
     dataSourceId: PropTypes.string,
     label: PropTypes.string,
     aggregationMethod: PropTypes.string,
@@ -396,16 +399,18 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
 export const formatSeries = (selectedItems, cardConfig) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
-    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }, i) => {
-      const currentItem = cardSeries?.find((dataItem) => dataItem.uuid === attributeId);
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }, i) => {
+      const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === dataSourceId);
       const color =
         currentItem?.color ?? DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
       const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
+        ...currentItem,
+        dataItemId,
         dataSourceId,
-        uuid: attributeId,
         label,
+        aggregationMethod,
         color,
       };
     }
@@ -419,18 +424,21 @@ export const formatSeries = (selectedItems, cardConfig) => {
  * @param {object} cardConfig
  */
 export const formatAttributes = (selectedItems, cardConfig) => {
-  const cardAttributes = cardConfig?.content?.attributes;
+  const currentCardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({ id: dataSourceId, label: unEditedLabel, uuid: attributeId }) => {
-      const currentItem = cardAttributes?.find((dataItem) => dataItem.uuid === attributeId);
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }) => {
+      const currentItem = currentCardAttributes?.find(
+        (dataItem) => dataItem.dataSourceId === dataSourceId
+      );
       // Need to default the label to reflect the default aggregator if there isn't one set
       const label = currentItem?.label || unEditedLabel || dataSourceId;
 
       return {
         ...currentItem,
-        uuid: attributeId,
+        dataItemId,
         dataSourceId,
         label,
+        aggregationMethod,
       };
     }
   );
@@ -543,7 +551,11 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
   switch (type) {
     case CARD_TYPES.VALUE:
       dataSection = [...content.attributes];
-      editDataItemIndex = dataSection.findIndex((dataItem) => dataItem.uuid === editDataItem.uuid);
+      editDataItemIndex = dataSection.findIndex(
+        (dataItem) =>
+          dataItem.dataSourceId === editDataItem.dataSourceId ||
+          (dataItem.dataItemId === editDataItem.dataItemId && dataItem.label === editDataItem.label)
+      );
       // if there isn't an item found, place it at the end
       dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
       return {
@@ -552,15 +564,27 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       };
     case CARD_TYPES.TIMESERIES:
     case CARD_TYPES.BAR:
-      dataSection = type === CARD_TYPES.BAR ? [...editDataSeries] : [...content.series];
-      editDataItemIndex = dataSection.findIndex((dataItem) =>
-        // check for true dataSourceId in simple bar charts
-        content.type !== BAR_CHART_TYPES.SIMPLE
-          ? dataItem.uuid === editDataItem.uuid
-          : dataItem.dataSourceId === editDataItem.dataSourceId
-      );
-      // if there isn't an item found, place it at the end
-      dataSection[editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length] = editDataItem;
+      dataSection = [...content.series];
+      // TODO: not needed after Grouped charts gets updated
+      if (content.type === BAR_CHART_TYPES.GROUPED) {
+        // Grouped bars can make batch edits, so we need to search through the whole dataSection
+        dataSection = dataSection.map(
+          (item) =>
+            editDataSeries.find((editedItem) => editedItem.dataSourceId === item.dataSourceId) ||
+            item
+        );
+      } else {
+        editDataItemIndex = dataSection.findIndex(
+          (dataItem) =>
+            dataItem.dataSourceId === editDataItem.dataSourceId ||
+            (dataItem.dataItemId === editDataItem.dataItemId &&
+              dataItem.label === editDataItem.label)
+        );
+        // if there isn't an item found, place it at the end
+        dataSection[
+          editDataItemIndex !== -1 ? editDataItemIndex : dataSection.length
+        ] = editDataItem;
+      }
       return {
         ...cardConfig,
         content: {

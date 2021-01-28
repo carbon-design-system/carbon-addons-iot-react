@@ -49,16 +49,15 @@ describe('editorUtils', () => {
     content: {
       attributes: [
         {
+          dataItemId: 'key1',
           dataSourceId: 'key1',
           unit: '%',
           label: 'Key 1',
-          uuid: 'uniqueID',
         },
         {
           dataSourceId: 'key2',
           unit: 'lb',
           label: 'Key 2',
-          uuid: 'uniqueID2',
         },
       ],
     },
@@ -73,12 +72,10 @@ describe('editorUtils', () => {
         {
           dataSourceId: 'airflow',
           label: 'Airflow',
-          uuid: 'uniqueID',
         },
         {
           dataSourceId: 'torque',
           label: 'Torque',
-          uuid: 'uniqueID2',
         },
       ],
     },
@@ -207,15 +204,19 @@ describe('editorUtils', () => {
     };
     const selectedItems = [
       {
+        dataSourceId: 'temperature',
+        dataItemId: 'temperature',
+        aggregationMethod: 'last',
         id: 'temperature',
         text: 'Temperature',
-        uuid: 'uniqueID',
         label: 'Temperature',
       },
       {
+        dataSourceId: 'pressure',
+        dataItemId: 'pressure',
+        aggregationMethod: 'last',
         id: 'pressure',
         text: 'Pressure',
-        uuid: 'uniqueID2',
         label: 'Pressure',
       },
     ];
@@ -223,15 +224,17 @@ describe('editorUtils', () => {
       expect(formatSeries(selectedItems, cardConfig)).toEqual([
         {
           dataSourceId: 'temperature',
+          dataItemId: 'temperature',
+          aggregationMethod: 'last',
           label: 'Temperature',
-          color: '#6929c4',
-          uuid: 'uniqueID',
+          color: 'red',
         },
         {
           dataSourceId: 'pressure',
+          dataItemId: 'pressure',
+          aggregationMethod: 'last',
           label: 'Pressure',
           color: '#1192e8',
-          uuid: 'uniqueID2',
         },
       ]);
     });
@@ -239,15 +242,17 @@ describe('editorUtils', () => {
       expect(formatSeries(selectedItems, cardConfigWithoutColorDefinition)).toEqual([
         {
           dataSourceId: 'temperature',
+          dataItemId: 'temperature',
+          aggregationMethod: 'last',
           label: 'Temperature',
           color: '#6929c4',
-          uuid: 'uniqueID',
         },
         {
           dataSourceId: 'pressure',
+          dataItemId: 'pressure',
+          aggregationMethod: 'last',
           label: 'Pressure',
           color: '#1192e8',
-          uuid: 'uniqueID2',
         },
       ]);
     });
@@ -267,32 +272,51 @@ describe('editorUtils', () => {
               precision: 2,
               thresholds: [],
               dataFilter: { deviceid: '73000' },
-              uuid: 'uniqueID',
             },
             {
               dataSourceId: 'key2',
               unit: 'lb',
               label: 'Key 2',
-              uuid: 'uniqueID2',
             },
           ],
         },
       };
       const selectedItems = [
-        { id: 'key1', text: 'Key 1', uuid: 'uniqueID' },
-        { id: 'key2', text: 'Key 2', uuid: 'uniqueID2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       expect(formatAttributes(selectedItems, mockValueCard2)).toEqual([
         {
           dataSourceId: 'key1',
-          label: 'key1',
+          dataItemId: 'key1',
+          label: 'Key 1',
           precision: 2,
+          aggregationMethod: 'last',
           thresholds: [],
           unit: '%',
-          uuid: 'uniqueID',
           dataFilter: { deviceid: '73000' },
         },
-        { dataSourceId: 'key2', label: 'Key 2', unit: 'lb', uuid: 'uniqueID2' },
+        {
+          dataSourceId: 'key2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          unit: 'lb',
+        },
       ]);
     });
   });
@@ -478,22 +502,40 @@ describe('editorUtils', () => {
     });
     it('should correctly format the data in Timeseries', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1' },
-        { id: 'key2', text: 'Key 2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockTimeSeriesCard, () => {});
       expect(newCard).toEqual({
         content: {
           series: [
             {
+              aggregationMethod: 'last',
               color: '#6929c4',
               dataSourceId: 'key1',
-              label: 'key1',
+              dataItemId: 'key1',
+              label: 'Key 1',
             },
             {
+              aggregationMethod: 'last',
               color: '#1192e8',
               dataSourceId: 'key2',
-              label: 'key2',
+              dataItemId: 'key2',
+              label: 'Key 2',
             },
           ],
         },
@@ -505,24 +547,40 @@ describe('editorUtils', () => {
     });
     it('should correctly format the data in Value', () => {
       const selectedItems = [
-        { id: 'key1', text: 'Key 1', uuid: 'uniqueID' },
-        { id: 'key2', text: 'Key 2', uuid: 'uniqueID2' },
+        {
+          id: 'key1',
+          text: 'Key 1',
+          dataItemId: 'key1',
+          aggregationMethod: 'last',
+          label: 'Key 1',
+          dataSourceId: 'key1',
+        },
+        {
+          id: 'key2',
+          text: 'Key 2',
+          dataItemId: 'key2',
+          aggregationMethod: 'last',
+          label: 'Key 2',
+          dataSourceId: 'key2',
+        },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockValueCard);
       expect(newCard).toEqual({
         content: {
           attributes: [
             {
+              aggregationMethod: 'last',
               dataSourceId: 'key1',
+              dataItemId: 'key1',
               label: 'Key 1',
               unit: '%',
-              uuid: 'uniqueID',
             },
             {
+              aggregationMethod: 'last',
               dataSourceId: 'key2',
+              dataItemId: 'key2',
               label: 'Key 2',
               unit: 'lb',
-              uuid: 'uniqueID2',
             },
           ],
         },
@@ -781,7 +839,6 @@ describe('editorUtils', () => {
         xLabel: 'X axis',
         yLabel: 'Y axis',
         unit: 'PSI',
-        uuid: 'uniqueID2',
       };
       const newCard = handleDataItemEdit(editDataItem, mockTimeSeriesCard, [editDataItem]);
       expect(newCard).toEqual({
@@ -791,14 +848,13 @@ describe('editorUtils', () => {
         size: 'MEDIUM',
         content: {
           series: [
-            { dataSourceId: 'airflow', label: 'Airflow', uuid: 'uniqueID' },
+            { dataSourceId: 'airflow', label: 'Airflow' },
             {
               dataSourceId: 'torque',
               label: 'Torque',
               xLabel: 'X axis',
               yLabel: 'Y axis',
               unit: 'PSI',
-              uuid: 'uniqueID2',
             },
           ],
         },
@@ -806,10 +862,10 @@ describe('editorUtils', () => {
     });
     it('should correctly format the data in Value', () => {
       const editDataItem = {
+        dataItemId: 'key2',
         dataSourceId: 'key2',
         unit: 'F',
         label: 'Updated Key 2',
-        uuid: 'uniqueID2',
       };
       const newCard = handleDataItemEdit(editDataItem, mockValueCard);
       expect(newCard).toEqual({
@@ -820,16 +876,16 @@ describe('editorUtils', () => {
         content: {
           attributes: [
             {
+              dataItemId: 'key1',
               dataSourceId: 'key1',
               unit: '%',
               label: 'Key 1',
-              uuid: 'uniqueID',
             },
             {
+              dataItemId: 'key2',
               dataSourceId: 'key2',
               unit: 'F',
               label: 'Updated Key 2',
-              uuid: 'uniqueID2',
             },
           ],
         },

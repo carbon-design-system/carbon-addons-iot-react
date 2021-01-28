@@ -33,6 +33,7 @@ const getHotspots = () => [
       description: 'Description',
       attributes: [
         {
+          dataItemId: 'temperature',
           dataSourceId: 'temperature',
           label: 'Temp',
           precision: 2,
@@ -87,16 +88,19 @@ const getSelectableIcons = () => [
 
 const getDataItems = () => [
   {
+    dataItemId: 'temp_last',
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
+    dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
+    dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
@@ -360,8 +364,14 @@ describe('HotspotEditorModal', () => {
             expect.objectContaining({
               content: expect.objectContaining({
                 attributes: expect.arrayContaining([
-                  { dataSourceId: 'temperature', label: 'Temp', precision: 2 },
                   {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                  {
+                    dataItemId: 'pressure',
                     dataSourceId: 'pressure',
                     label: 'Pressure',
                     unit: 'psi',
