@@ -148,6 +148,7 @@ const CardEditFormContent = ({
     <>
       <CommonCardEditFormFields
         cardConfig={cardConfig}
+        key={`${cardConfig.id}-common`} // fix because I need to regenerate the form state when switching between cards
         onChange={onChange}
         i18n={mergedI18n}
         getValidTimeRanges={getValidTimeRanges}
@@ -159,6 +160,7 @@ const CardEditFormContent = ({
       {type === CARD_TYPES.IMAGE ? (
         <ImageCardFormContent
           cardConfig={cardConfig}
+          key={`${cardConfig.id}-image`} // fix because I need to regenerate the form state when switching between cards
           i18n={mergedI18n}
           onChange={onChange}
           dataSeriesItemLinks={dataSeriesItemLinks}
@@ -171,6 +173,7 @@ const CardEditFormContent = ({
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
           cardConfig={cardConfig}
+          key={`${cardConfig.id}-table`} // fix because I need to regenerate the form state when switching between cards
           i18n={mergedI18n}
           onChange={onChange}
           dataItems={dataItems}
@@ -185,6 +188,7 @@ const CardEditFormContent = ({
         <DataSeriesFormContent
           cardConfig={cardConfig}
           isSummaryDashboard={isSummaryDashboard}
+          key={`${cardConfig.id}-data`} // fix because I need to regenerate the form state when switching between cards
           onChange={onChange}
           dataItems={dataItems}
           selectedDataItems={selectedDataItems}
