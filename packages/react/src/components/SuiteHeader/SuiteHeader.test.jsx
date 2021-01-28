@@ -141,6 +141,23 @@ describe('SuiteHeader', () => {
       expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     });
   });
+  it('renders all i18n, including props that were functions (backwards compatibility)', () => {
+    Object.keys(SuiteHeaderI18N).forEach((language) => {
+      render(
+        <SuiteHeader
+          {...commonProps}
+          i18n={{
+            ...SuiteHeaderI18N[language],
+            surveyTitle: (solutionName) => `Enjoying ${solutionName}?`,
+            profileLogoutModalBody: (solutionName, userName) =>
+              `You are logged in to ${solutionName} as ${userName}. Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
+          }}
+          isAdminView
+        />
+      );
+      expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
+    });
+  });
   it('user clicks survey link', async () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';
