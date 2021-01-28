@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.20...v2.143.0-next.21) (2021-01-27)
+
+
+### Bug Fixes
+
+* **format:** prettier formatting errors ([d8ce89f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d8ce89fdb4c119ad47b2deed2c88ff57f5f4d02e))
+
+
+### Features
+
+* **imagecard:** by default any thresholds should override the icon ([733d947](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/733d947cb5a32abb9bd8382f643e1c5c91d86002))
+
+
+
+
+
 # [2.143.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.19...v2.143.0-next.20) (2021-01-27)
 
 

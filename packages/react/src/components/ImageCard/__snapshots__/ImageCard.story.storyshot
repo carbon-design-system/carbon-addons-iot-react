@@ -140,7 +140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 <div
                   className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
                   data-testid="hotspot-35-65"
-                  icon="arrowDown"
+                  icon="User"
                   style={
                     Object {
                       "--height": 25,
@@ -164,22 +164,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                     role="button"
                     tabIndex={0}
                   >
-                    <svg
-                      aria-hidden={true}
-                      aria-label=""
-                      fill="purple"
-                      focusable="false"
-                      height={25}
-                      preserveAspectRatio="xMidYMid meet"
-                      title=""
-                      viewBox="0 0 16 16"
-                      width={25}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      style={
+                        Object {
+                          "color": "purple",
+                        }
+                      }
                     >
-                      <path
-                        d="M12.3 9.3L8.5 13.1 8.5 1 7.5 1 7.5 13.1 3.7 9.3 3 10 8 15 13 10z"
-                      />
-                    </svg>
+                      <svg
+                        fill="purple"
+                        focusable="true"
+                        height={25}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        tabIndex="0"
+                        title="User"
+                        viewBox="0 0 32 32"
+                        width={25}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7A7 7 0 0016 2zM26 30H24V25a5 5 0 00-5-5H13a5 5 0 00-5 5v5H6V25a7 7 0 017-7h6a7 7 0 017 7z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--hotspot-container iot--hotspot-container--has-icon iot--hotspot-container--is-fixed"
+                  data-testid="hotspot-45-75"
+                  icon="Warning alt"
+                  style={
+                    Object {
+                      "--height": 25,
+                      "--width": 25,
+                      "--x-pos": 45,
+                      "--y-pos": 75,
+                    }
+                  }
+                >
+                  <div
+                    aria-describedby={null}
+                    aria-labelledby="hotspot-45-75"
+                    className="bx--tooltip__label"
+                    id="hotspot-45-75"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "color": "red",
+                        }
+                      }
+                    >
+                      <svg
+                        fill="red"
+                        focusable="true"
+                        height={25}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        tabIndex="0"
+                        title="Warning alt"
+                        viewBox="0 0 32 32"
+                        width={25}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22zM15 11H17V20H15z"
+                        />
+                        <path
+                          d="M29,29H3a1,1,0,0,1-.89-1.46l13-25a1,1,0,0,1,1.78,0l13,25A1,1,0,0,1,29,29ZM4.65,27h22.7L16,5.17Z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
