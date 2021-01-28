@@ -11,6 +11,10 @@ fi
 git config user.name "cal-smith"
 git config user.email "callums@ca.ibm.com"
 
+# Add github token to git credentials
+git config credential.helper "store --file=.git/credentials"
+echo "https://${ADMIN_TOKEN}:@github.com" > .git/credentials 2>/dev/null
+
 # authenticate with the npm registry
 npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
 
