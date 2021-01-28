@@ -89,6 +89,10 @@ const propTypes = {
    * onLayoutChange(newLayout, newLayouts)
    */
   onLayoutChange: PropTypes.func,
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -285,6 +289,7 @@ const defaultProps = {
   onCardChange: null,
   onImageDelete: null,
   onLayoutChange: null,
+  onCardJsonPreview: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -345,6 +350,7 @@ const DashboardEditor = ({
   notification,
   onCardChange,
   onLayoutChange,
+  onCardJsonPreview,
   onEditTitle,
   onImport,
   onExport,
@@ -692,6 +698,7 @@ const DashboardEditor = ({
             dataItems={dataItems}
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
+            onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}
