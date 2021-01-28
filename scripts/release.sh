@@ -2,6 +2,11 @@
 
 set -e # exit with nonzero exit code if anything fails
 
+if [[ $GITHUB_ACTOR == "cal-smith" ]]; then
+  # exit early, since we don't want to try publishing _again_
+  exit 0;
+fi
+
 # set username and email so git knows who we are
 git config user.name "cal-smith"
 git config user.email "callums@ca.ibm.com"
