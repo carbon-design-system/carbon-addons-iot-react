@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.21...v2.143.0-next.22) (2021-01-28)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** small changes needed to make alert card editable ([a86563f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a86563fbbb4babd5b24f7bbd5bbdb15762ae92ed))
+* **dashboardeditor:** small changes to make alert card work correctly when added ([bb7b89e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb7b89e8640f52467614e73714e56de43d709188))
+
+
+
+
+
 # [2.143.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.20...v2.143.0-next.21) (2021-01-27)
 
 
