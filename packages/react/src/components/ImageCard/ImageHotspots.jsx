@@ -3,8 +3,10 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
 import omit from 'lodash/omit';
+import isEmpty from 'lodash/isEmpty';
 import warning from 'warning';
 
+import { findMatchingThresholds } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import { HotspotIconPropType, HotspotPropTypes } from '../../constants/SharedPropTypes';
 
@@ -411,6 +413,8 @@ const ImageHotspots = ({
   selectedHotspots,
   displayOption,
 }) => {
+  // Need to keep track of whether the Ctrl key is currently pressed because we want to only add hotspots in that case
+  const [isCtrlPressed, setIsCtrlPressed] = useState();
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
   // Minimap needs to be stored in state because we're dragging it around when zoomed in
@@ -429,6 +433,28 @@ const ImageHotspots = ({
   });
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+
+  const handleCtrlKeyUp = useCallback((event) => {
+    // Was the control key unpressed
+    if (event.keyCode === 17) {
+      setIsCtrlPressed(false);
+    }
+  }, []);
+  const handleCtrlKeyDown = useCallback((event) => {
+    if (event.ctrlKey) {
+      setIsCtrlPressed(true);
+    }
+  }, []);
+
+  // Listen to the control key to add hotspots
+  useEffect(() => {
+    window.addEventListener('keydown', handleCtrlKeyDown);
+    window.addEventListener('keyup', handleCtrlKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleCtrlKeyDown);
+      window.removeEventListener('keyup', handleCtrlKeyUp);
+    };
+  }, [handleCtrlKeyDown, handleCtrlKeyUp]);
 
   useEffect(() => {
     setOptions({
@@ -472,7 +498,7 @@ const ImageHotspots = ({
   };
 
   const imageStyle = {
-    cursor: isEditable && !dragging ? 'crosshair' : 'auto',
+    cursor: isEditable && !dragging && isCtrlPressed ? 'crosshair' : 'auto',
     position: 'relative',
     left: image.offsetX,
     top: image.offsetY,
@@ -513,7 +539,7 @@ const ImageHotspots = ({
               if (__DEV__) {
                 warning(
                   false,
-                  `An arrray of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
+                  `An array of available icons was provided to the ImageHotspots but a hotspot was trying to use an icon with name '${name}' that was not found in that array.`
                 );
               }
               return null;
@@ -530,6 +556,20 @@ const ImageHotspots = ({
       hotspots.map((hotspot) => {
         const { x, y } = hotspot;
         const hotspotIsSelected = !!selectedHotspots.find((pos) => x === pos.x && y === pos.y);
+        // Determine whether the icon needs to be dynamically overridden by a threshold
+        const matchingAttributeThresholds = [];
+        if (hotspot.content?.attributes) {
+          hotspot.content.attributes.forEach(({ thresholds, dataSourceId }) => {
+            if (!isEmpty(thresholds) && !isEmpty(hotspot.content?.values)) {
+              const attributeThresholds = findMatchingThresholds(
+                thresholds.map((threshold) => ({ ...threshold, dataSourceId })),
+                hotspot.content?.values,
+                dataSourceId
+              );
+              matchingAttributeThresholds.push(...attributeThresholds);
+            }
+          });
+        }
         return (
           <Hotspot
             {...omit(hotspot, 'content')}
@@ -547,6 +587,16 @@ const ImageHotspots = ({
                   i18n={mergedI18n}
                 />
               )
+            }
+            icon={
+              !isEmpty(matchingAttributeThresholds)
+                ? matchingAttributeThresholds[0].icon
+                : hotspot.icon
+            }
+            color={
+              !isEmpty(matchingAttributeThresholds)
+                ? matchingAttributeThresholds[0].color
+                : hotspot.color
             }
             key={`${x}-${y}`}
             style={hotspotsStyle}
@@ -587,6 +637,14 @@ const ImageHotspots = ({
   /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
     <div
+      onContextMenu={
+        isEditable
+          ? (event) => {
+              // if we're in edit mode, prevent the CTRL-click context menu from popping
+              event.preventDefault();
+            }
+          : undefined
+      }
       style={containerStyle}
       onMouseOut={() => {
         if (dragging) {
@@ -638,7 +696,7 @@ const ImageHotspots = ({
                 cursor,
                 setCursor,
                 isEditable,
-                callback: onAddHotspotPosition,
+                callback: event.ctrlKey ? onAddHotspotPosition : undefined,
               });
             }
           }}

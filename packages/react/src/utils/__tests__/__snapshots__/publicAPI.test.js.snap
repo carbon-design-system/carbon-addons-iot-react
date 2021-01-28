@@ -8619,6 +8619,7 @@ Map {
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
+      "onFetchDynamicDemoHotspots": [Function],
       "onImageDelete": null,
       "onImport": null,
       "onLayoutChange": null,
@@ -8801,6 +8802,12 @@ Map {
               "type": "string",
             },
             "VALUE": Object {
+              "type": "string",
+            },
+            "abbreviateNumbers": Object {
+              "type": "string",
+            },
+            "abbreviateNumbersTooltip": Object {
               "type": "string",
             },
             "addCardButton": Object {
@@ -9148,6 +9155,9 @@ Map {
         "type": "func",
       },
       "onExport": Object {
+        "type": "func",
+      },
+      "onFetchDynamicDemoHotspots": Object {
         "type": "func",
       },
       "onImageDelete": Object {
@@ -11418,8 +11428,13 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "cardVariables": null,
+      "customFormatter": null,
       "dataState": null,
+      "fontSize": 42,
+      "isNumberValueCompact": false,
       "locale": "en",
+      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12095,6 +12110,9 @@ Map {
         ],
         "type": "shape",
       },
+      "fontSize": Object {
+        "type": "number",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12202,6 +12220,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isNumberValueCompact": Object {
         "type": "bool",
       },
       "isResizable": Object {
@@ -13259,6 +13280,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "renderIconByName": [Function],
       "validateUploadedImage": null,
     },
     "propTypes": Object {
@@ -18435,7 +18457,7 @@ Map {
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
         "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
-        "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
+        "infoMessageText": "Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
@@ -18687,7 +18709,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -24811,13 +24833,13 @@ Map {
     "render": [Function],
   },
   "determineCardRange" => Object {},
-  "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
   "formatNumberWithPrecision" => Object {},
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
   "findMatchingThresholds" => Object {},
+  "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
