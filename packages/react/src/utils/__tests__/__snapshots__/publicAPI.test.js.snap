@@ -8725,6 +8725,9 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "dataItemId": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "type": "string",
                 },
@@ -15954,6 +15957,17 @@ Map {
     "GROUPED": "GROUPED",
     "SIMPLE": "SIMPLE",
     "STACKED": "STACKED",
+  },
+  "DASHBOARD_EDITOR_CARD_TYPES" => Object {
+    "ALERT": "ALERT",
+    "GROUPED_BAR": "GROUPED_BAR",
+    "IMAGE": "IMAGE",
+    "LIST": "LIST",
+    "SIMPLE_BAR": "SIMPLE_BAR",
+    "STACKED_BAR": "STACKED_BAR",
+    "TABLE": "TABLE",
+    "TIMESERIES": "TIMESERIES",
+    "VALUE": "VALUE",
   },
   "DragAndDrop" => Object {},
   "ListCard" => Object {
