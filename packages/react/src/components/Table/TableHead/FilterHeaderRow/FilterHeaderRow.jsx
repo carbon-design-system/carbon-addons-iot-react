@@ -204,11 +204,12 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 column.isMultiselect ? (
-                  <MultiSelect
+                  <MultiSelect.Filterable
                     key={columnStateValue}
                     className={`${iotPrefix}--filterheader-multiselect`}
                     id={`column-${i}`}
                     aria-label={filterText}
+                    placeholder={column.placeholderText || 'Choose an option'}
                     translateWithId={this.handleTranslation}
                     items={memoizeColumnOptions(column.options)}
                     label={column.placeholderText || 'Choose an option'}
