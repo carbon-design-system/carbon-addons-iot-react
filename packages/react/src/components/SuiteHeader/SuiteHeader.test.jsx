@@ -148,9 +148,12 @@ describe('SuiteHeader', () => {
           {...commonProps}
           i18n={{
             ...SuiteHeaderI18N[language],
-            surveyTitle: (solutionName) => `Enjoying ${solutionName}?`,
+            surveyTitle: (solutionName) =>
+              SuiteHeaderI18N[language].surveyTitle.replace('{solutionName}', solutionName),
             profileLogoutModalBody: (solutionName, userName) =>
-              `You are logged in to ${solutionName} as ${userName}. Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
+              SuiteHeaderI18N[language].profileLogoutModalBody
+                .replace('{solutionName}', solutionName)
+                .replace('{userName}', userName),
           }}
           isAdminView
         />
