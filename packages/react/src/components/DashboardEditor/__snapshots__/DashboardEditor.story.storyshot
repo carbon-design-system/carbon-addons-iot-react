@@ -1658,7 +1658,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         </span>
                         <div
                           className="iot--card--toolbar"
-                        />
+                        >
+                          <button
+                            aria-expanded={false}
+                            aria-haspopup={true}
+                            aria-label="Menu"
+                            className="bx--overflow-menu"
+                            onClick={[Function]}
+                            onClose={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            tabIndex={0}
+                            title="Open and close list of options"
+                            type="button"
+                          >
+                            <svg
+                              aria-label="open and close list of options"
+                              className="bx--overflow-menu__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="8"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="16"
+                                r="2"
+                              />
+                              <circle
+                                cx="16"
+                                cy="24"
+                                r="2"
+                              />
+                              <title>
+                                open and close list of options
+                              </title>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                       <div
                         className="iot--card--content"
@@ -14145,7 +14193,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       </span>
                       <div
                         className="iot--card--toolbar"
-                      />
+                      >
+                        <button
+                          aria-expanded={false}
+                          aria-haspopup={true}
+                          aria-label="Menu"
+                          className="bx--overflow-menu"
+                          onClick={[Function]}
+                          onClose={[Function]}
+                          onKeyDown={[Function]}
+                          open={false}
+                          tabIndex={0}
+                          title="Open and close list of options"
+                          type="button"
+                        >
+                          <svg
+                            aria-label="open and close list of options"
+                            className="bx--overflow-menu__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="16"
+                              cy="8"
+                              r="2"
+                            />
+                            <circle
+                              cx="16"
+                              cy="16"
+                              r="2"
+                            />
+                            <circle
+                              cx="16"
+                              cy="24"
+                              r="2"
+                            />
+                            <title>
+                              open and close list of options
+                            </title>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <div
                       className="iot--card--content"
