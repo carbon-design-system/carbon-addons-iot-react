@@ -164,7 +164,6 @@ export const basicCardValidation = (card) => {
 export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
-  let hotspotAttributes;
   let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
@@ -176,17 +175,6 @@ export const hideCardPropertiesForEditor = (card) => {
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
-  if (card.values?.hotspots) {
-    hotspotAttributes = card.values.hotspots.map((hotspot) => ({
-      ...hotspot,
-      content: {
-        ...hotspot.content,
-        attributes: hotspot.content.attributes?.map((attribute) =>
-          omit(attribute, ['aggregationMethods', 'grain'])
-        ),
-      },
-    }));
-  }
   if (card.content?.columns) {
     columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
@@ -195,8 +183,22 @@ export const hideCardPropertiesForEditor = (card) => {
       ? { ...card, content: { ...card.content, attributes } }
       : series
       ? { ...card, content: { ...card.content, series } }
-      : hotspotAttributes
-      ? { ...card, values: { ...card.values, hotspots: hotspotAttributes } }
+      : card.values?.hotspots
+      ? {
+          ...card,
+          values: {
+            ...card.values,
+            hotspots: card.values?.hotspots?.map((hotspot) => ({
+              ...hotspot,
+              content: {
+                ...hotspot.content,
+                attributes: hotspot.content?.attributes?.map((attribute) =>
+                  omit(attribute, ['aggregationMethods', 'grain'])
+                ),
+              },
+            })),
+          },
+        }
       : columns
       ? { ...card, content: { ...card.content, columns } }
       : card,

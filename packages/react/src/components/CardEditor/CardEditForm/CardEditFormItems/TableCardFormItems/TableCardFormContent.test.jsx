@@ -12,17 +12,18 @@ const commonCardConfig = {
   type: CARD_TYPES.TABLE,
   content: {},
 };
+const mockOnChange = jest.fn();
 const commonProps = {
   cardConfig: commonCardConfig,
   dataItems: [
-    { dataSourceId: 'temperature', label: 'Temperature' },
-    { dataSourceId: 'pressure', label: 'Pressure' },
+    { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+    { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
   ],
   availableDimensions: {
     manufacturer: ['Rentech', 'GHI'],
     deviceid: ['73000', '73001'],
   },
-  onChange: jest.fn(),
+  onChange: mockOnChange,
   setSelectedDataItems: jest.fn(),
 };
 
@@ -41,6 +42,56 @@ describe('TableCardFormContent', () => {
     fireEvent.click(screen.getByLabelText(/Select dim/));
     expect(screen.queryByText('manufacturer')).toBeDefined();
     expect(screen.queryByText('deviceid')).toBeDefined();
+  });
+  it('fires onChange when dataItem is selected', () => {
+    render(<TableCardFormContent {...commonProps} />);
+    // check for the temperature and pressure to be shown under data items
+    const dataItemComboBox = screen.getByTestId('combo-box');
+    expect(dataItemComboBox).toBeInTheDocument();
+    fireEvent.click(dataItemComboBox);
+    expect(screen.queryByText('temperature')).toBeDefined();
+    expect(screen.queryByText('pressure')).toBeDefined();
+
+    fireEvent.click(screen.queryByText('temperature'));
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            sort: 'DESC',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Temperature',
+            // dataSourceId is generated with a uuid to stay unique
+            dataSourceId: expect.stringContaining('temperature'),
+            dataItemId: 'temperature',
+          },
+        ],
+      },
+    });
+  });
+  it('prioritizes getValidDataItems for the dropdown', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        dataItems={[
+          { dataItemId: 'inValidDataItem', dataSourceId: 'inValidDataItem', label: 'Data Item' },
+        ]}
+        getValidDataItems={() => [
+          { dataItemId: 'validDataItem', dataSourceId: 'validDataItem', label: 'Data Item' },
+        ]}
+      />
+    );
+    // check for the temperature and pressure to be shown under data items
+    const dataItemComboBox = screen.getByTestId('combo-box');
+    expect(dataItemComboBox).toBeInTheDocument();
+    fireEvent.click(dataItemComboBox);
+    expect(screen.queryByText('validDataItem')).toBeDefined();
+    expect(screen.queryByText('inValidDataItem')).toBeNull();
   });
   it('selecting dimensions shows clear button', () => {
     const mockOnChange = jest.fn();
@@ -103,6 +154,54 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
     // The dimension select should show dimension selections
     expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+  });
+  it('remove button should remove items from the data items list', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+        }}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const removeManufacturerButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(removeManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    });
   });
   it('edit mode with dataitems adds threshold correctly', () => {
     const mockOnChange = jest.fn();

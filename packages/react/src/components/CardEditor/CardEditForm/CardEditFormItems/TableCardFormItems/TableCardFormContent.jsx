@@ -162,11 +162,11 @@ const TableCardFormContent = ({
 
   const validDataItemsForDropdown = useMemo(
     () =>
-      dataItems?.map(({ dataSourceId, dataItemId }) => ({
+      validDataItems?.map(({ dataSourceId, dataItemId }) => ({
         id: dataItemId,
         text: dataSourceId,
       })),
-    [dataItems]
+    [validDataItems]
   );
 
   const handleOnDataSeriesChange = (selectedItem) => {
@@ -175,7 +175,6 @@ const TableCardFormContent = ({
       const itemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === selectedItem.id
       );
-
       const selectedItems = [
         ...dataSection,
         {
@@ -184,7 +183,6 @@ const TableCardFormContent = ({
           dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
         },
       ];
-
       const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
       setSelectedDataItems(selectedItems.map(({ text }) => text));
       onChange(newCard);
