@@ -30,7 +30,9 @@ describe('TableCardFormContent', () => {
   it('should render dataitems and dimensions', () => {
     render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
-    fireEvent.click(screen.getByLabelText(/Select data/));
+    const dataItemComboBox = screen.getByTestId('combo-box');
+    expect(dataItemComboBox).toBeInTheDocument();
+    fireEvent.click(dataItemComboBox);
     expect(screen.queryByText('temperature')).toBeDefined();
     expect(screen.queryByText('pressure')).toBeDefined();
     expect(screen.queryByText('manufacturer')).toBeNull();
@@ -39,32 +41,6 @@ describe('TableCardFormContent', () => {
     fireEvent.click(screen.getByLabelText(/Select dim/));
     expect(screen.queryByText('manufacturer')).toBeDefined();
     expect(screen.queryByText('deviceid')).toBeDefined();
-  });
-  it('selecting data attributes shows clear button', () => {
-    const mockOnChange = jest.fn();
-    render(<TableCardFormContent {...commonProps} onChange={mockOnChange} />);
-    expect(mockOnChange).not.toHaveBeenCalled();
-    // check for the temperature and pressure to be shown under data items
-    fireEvent.click(screen.getByLabelText(/Select data/));
-    expect(screen.queryByText('temperature')).toBeDefined();
-    fireEvent.click(screen.queryByText('temperature'));
-    // the selection state of the box should be updated
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
-    // the callback for onChange should be called
-    expect(mockOnChange).toHaveBeenCalledWith({
-      ...commonCardConfig,
-      content: {
-        columns: [
-          {
-            dataSourceId: 'timestamp',
-            label: 'Timestamp',
-            type: 'TIMESTAMP',
-            sort: 'DESC',
-          },
-          { dataSourceId: 'temperature', label: 'temperature' },
-        ],
-      },
-    });
   });
   it('selecting dimensions shows clear button', () => {
     const mockOnChange = jest.fn();
@@ -125,8 +101,8 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Temperature')).toBeDefined();
     expect(screen.queryByText('Timestamp')).toBeDefined();
     expect(screen.queryByText('Manufacturer')).toBeDefined();
-    // both the dimension and attribute show show selections
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(2);
+    // The dimension select should show dimension selections
+    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
   });
   it('edit mode with dataitems adds threshold correctly', () => {
     const mockOnChange = jest.fn();
