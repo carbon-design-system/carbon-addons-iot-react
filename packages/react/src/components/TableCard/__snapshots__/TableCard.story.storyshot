@@ -8430,7 +8430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -8528,7 +8528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -8626,7 +8626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -8724,7 +8724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -8822,7 +8822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -8920,7 +8920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -9018,7 +9018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -9116,7 +9116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -9214,7 +9214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -9312,7 +9312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -18905,7 +18905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19067,7 +19067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19227,7 +19227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19389,7 +19389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19551,7 +19551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19711,7 +19711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -19871,7 +19871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -20031,7 +20031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -20191,7 +20191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -20306,7 +20306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23345,7 +23345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23443,7 +23443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23541,7 +23541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23639,7 +23639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23737,7 +23737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23835,7 +23835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -23933,7 +23933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -24031,7 +24031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -24129,7 +24129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -24227,7 +24227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25144,7 +25144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25242,7 +25242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25340,7 +25340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25438,7 +25438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25536,7 +25536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25634,7 +25634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25732,7 +25732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25830,7 +25830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -25928,7 +25928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -26026,7 +26026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -26943,7 +26943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27041,7 +27041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27139,7 +27139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27237,7 +27237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27335,7 +27335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27433,7 +27433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27531,7 +27531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27629,7 +27629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27727,7 +27727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -27825,7 +27825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -28742,7 +28742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -28840,7 +28840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -28938,7 +28938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29036,7 +29036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29134,7 +29134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29232,7 +29232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29330,7 +29330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29428,7 +29428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29526,7 +29526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -29624,7 +29624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -37397,7 +37397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-live="polite"
                   >
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -37549,7 +37549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -37701,7 +37701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -37853,7 +37853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38005,7 +38005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38232,7 +38232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38414,7 +38414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38566,7 +38566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38763,7 +38763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
@@ -38915,7 +38915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       </td>
                     </tr>
                     <tr
-                      className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn iot--expanded-tablerow"
+                      className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
                       data-child-count={0}
                       data-nesting-offset={0}
                       data-parent-row={true}
