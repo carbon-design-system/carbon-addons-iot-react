@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
 import isEqual from 'lodash/isEqual';
@@ -108,7 +108,12 @@ const renderTableCard = (props) => (
  */
 const renderImageCard = (props) => (
   <ImageCard
+    {...props}
     isEditable // render the icon in the right color in the card preview
+    values={{
+      ...props.values,
+      hotspots: props.values?.hotspots?.filter((hotspot) => hotspot.type !== 'dynamic') || [],
+    }}
     renderIconByName={(iconName, iconProps) => {
       // first search the validHotspot Icons
       const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
@@ -133,7 +138,6 @@ const renderImageCard = (props) => (
       // eslint-disable-next-line react/prop-types
       return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
     }}
-    {...props}
   />
 );
 
@@ -154,10 +158,7 @@ const renderCustomCard = (props) => {
       // get attached to the card wrapper
       {...omit(props, 'content')}
     >
-      {
-        // If content is a function, this is a react component
-        typeof props.content === 'function' ? <props.content /> : props.content
-      }
+      {props.content}
     </Card>
   );
 };
@@ -170,6 +171,26 @@ const renderCustomCard = (props) => {
  * @returns {Node}
  */
 const DashboardEditorCardRenderer = ({ dataItems, availableDimensions, ...others }) => {
+  const [dynamicHotspots, setDynamicHotspots] = useState([]);
+
+  useEffect(() => {
+    const originalDynamicHotspot = others.values?.hotspots?.find(
+      (hotspot) => hotspot.type === 'dynamic'
+    );
+    // if we have dynamic hotspots and a way to fetch them, fetch them
+    if (originalDynamicHotspot && others.onFetchDynamicDemoHotspots) {
+      others.onFetchDynamicDemoHotspots().then((hotspots) =>
+        setDynamicHotspots(
+          hotspots.map((hotspot) => ({
+            ...hotspot,
+            ...omit(originalDynamicHotspot, 'type', 'x', 'y'),
+          }))
+        )
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [others.values?.hotspots?.length, others.onFetchDynamicDemoHotspots]);
+
   if (!isCardJsonValid(others)) {
     return renderDefaultCard(others);
   }
@@ -190,7 +211,10 @@ const DashboardEditorCardRenderer = ({ dataItems, availableDimensions, ...others
     case CARD_TYPES.TABLE:
       return renderTableCard(others);
     case CARD_TYPES.IMAGE:
-      return renderImageCard(others);
+      return renderImageCard({
+        ...others,
+        values: { ...others.values, hotspots: others.values?.hotspots?.concat(dynamicHotspots) },
+      });
     case CARD_TYPES.LIST:
       return renderListCard(others);
     case CARD_TYPES.CUSTOM:

@@ -41,6 +41,11 @@ const propTypes = {
   translateWithId: PropTypes.func.isRequired,
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -62,8 +67,9 @@ const defaultProps = {
   },
   dataSeriesItemLinks: null,
   dataItems: [],
+  getValidDataItems: null,
   availableDimensions: {},
-  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50 }]),
+  onFetchDynamicDemoHotspots: null,
 };
 
 const ImageCardFormItems = ({
@@ -72,6 +78,7 @@ const ImageCardFormItems = ({
   onChange,
   dataSeriesItemLinks,
   dataItems,
+  getValidDataItems,
   availableDimensions,
   translateWithId,
   onFetchDynamicDemoHotspots,
@@ -100,6 +107,7 @@ const ImageCardFormItems = ({
       {isHotspotModalShowing ? (
         <HotspotEditorModal
           cardConfig={cardConfig}
+          getValidDataItems={getValidDataItems}
           dataItems={dataItems}
           availableDimensions={availableDimensions}
           onSave={handleSaveHotspotEditor}

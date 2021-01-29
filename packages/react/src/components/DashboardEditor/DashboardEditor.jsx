@@ -81,7 +81,8 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
-  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+  /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
+   * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
    */
   onCardChange: PropTypes.func,
@@ -243,7 +244,11 @@ const propTypes = {
     decimalPrecisionLabel: PropTypes.string,
     precisionLabel: PropTypes.string,
     showLegendLabel: PropTypes.string,
+
+    // value card form settings
     fontSize: PropTypes.string,
+    abbreviateNumbers: PropTypes.string,
+    abbreviateNumbersTooltip: PropTypes.string,
   }),
   /** optional link href's for each card type that will appear in a tooltip */
   dataSeriesItemLinks: PropTypes.shape({
@@ -256,6 +261,8 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  /** return demo hotspots while we're editing image cards */
+  onFetchDynamicDemoHotspots: PropTypes.func,
 };
 
 const defaultProps = {
@@ -312,6 +319,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
   },
   dataSeriesItemLinks: null,
+  onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
 };
 
 const LAYOUTS = {
@@ -390,7 +398,11 @@ const DashboardEditor = ({
    */
   const addCard = useCallback(
     (type) => {
-      const cardConfig = getDefaultCard(type, mergedI18n);
+      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults)
+      const cardConfig = onCardChange
+        ? onCardChange(getDefaultCard(type, mergedI18n), dashboardJson)
+        : getDefaultCard(type, mergedI18n);
+
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
         ...dashboardJson,
@@ -398,7 +410,7 @@ const DashboardEditor = ({
       }));
       setSelectedCardId(cardConfig.id);
     },
-    [mergedI18n]
+    [dashboardJson, mergedI18n, onCardChange]
   );
 
   /**
@@ -534,6 +546,7 @@ const DashboardEditor = ({
               {...cardProps}
               dataItems={dataItemsForCard}
               availableDimensions={availableDimensions}
+              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           )
         );
@@ -545,6 +558,7 @@ const DashboardEditor = ({
       dataItems,
       duplicateCard,
       getValidDataItems,
+      onFetchDynamicDemoHotspots,
       removeCard,
       renderCardPreview,
       selectedCardId,

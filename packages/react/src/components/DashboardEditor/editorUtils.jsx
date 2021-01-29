@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import isNil from 'lodash/isNil';
-import omit from 'lodash/omit';
 import {
   purple70,
   cyan50,
@@ -567,7 +566,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       dataSection = [...content.series];
       // TODO: not needed after Grouped charts gets updated
       if (content.type === BAR_CHART_TYPES.GROUPED) {
-        // Grouped bars can make batch edits, so we need to search through the who dataSection
+        // Grouped bars can make batch edits, so we need to search through the whole dataSection
         dataSection = dataSection.map(
           (item) =>
             editDataSeries.find((editedItem) => editedItem.dataSourceId === item.dataSourceId) ||
@@ -608,22 +607,7 @@ export const handleDataItemEdit = (editDataItem, cardConfig, editDataSeries, hot
       editDataItemIndex = dataSection[hotspotIndex].content.attributes.findIndex(
         (dataItem) => dataItem.dataSourceId === editDataItem.dataSourceId
       );
-      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = omit(
-        editDataItem,
-        'thresholds'
-      );
-      if (cardConfig.thresholds || editDataItem.thresholds) {
-        return {
-          ...cardConfig,
-          content: { ...content, hotspots: dataSection },
-          thresholds: [
-            ...(cardConfig.thresholds?.filter(
-              (thresh) => thresh.dataSourceId !== editDataItem.dataSourceId
-            ) || []),
-            ...editDataItem.thresholds,
-          ].map((thresh) => omit(thresh, 'id')),
-        };
-      }
+      dataSection[hotspotIndex].content.attributes[editDataItemIndex] = editDataItem;
       return {
         ...cardConfig,
         content: { ...content, hotspots: dataSection },
