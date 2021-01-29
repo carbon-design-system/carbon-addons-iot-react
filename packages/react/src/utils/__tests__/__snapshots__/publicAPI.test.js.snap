@@ -8713,6 +8713,9 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "dataItemId": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "type": "string",
                 },
@@ -13280,6 +13283,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "renderIconByName": [Function],
       "validateUploadedImage": null,
     },
     "propTypes": Object {

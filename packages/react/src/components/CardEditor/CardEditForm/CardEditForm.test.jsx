@@ -99,7 +99,6 @@ describe('CardEditForm', () => {
               aggregationMethods: [],
               aggregationMethod: '',
               grain: '',
-              uuid: '',
               dataSourceId: 'torque',
               label: 'Torque',
             },
@@ -110,6 +109,7 @@ describe('CardEditForm', () => {
         content: {
           attributes: [
             {
+              aggregationMethod: '',
               dataSourceId: 'torque',
               label: 'Torque',
             },
@@ -125,7 +125,6 @@ describe('CardEditForm', () => {
               aggregationMethods: [],
               aggregationMethod: '',
               grain: '',
-              uuid: '',
               dataSourceId: 'torque',
               label: 'Torque',
             },
@@ -136,6 +135,7 @@ describe('CardEditForm', () => {
         content: {
           series: [
             {
+              aggregationMethod: '',
               dataSourceId: 'torque',
               label: 'Torque',
             },
