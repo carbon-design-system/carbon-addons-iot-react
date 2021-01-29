@@ -33,6 +33,7 @@ const getHotspots = () => [
       description: 'Description',
       attributes: [
         {
+          dataItemId: 'temperature',
           dataSourceId: 'temperature',
           label: 'Temp',
           precision: 2,
@@ -87,16 +88,19 @@ const getSelectableIcons = () => [
 
 const getDataItems = () => [
   {
+    dataItemId: 'temp_last',
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
   },
   {
+    dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     unit: '°',
   },
   {
+    dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     unit: 'psi',
@@ -360,8 +364,14 @@ describe('HotspotEditorModal', () => {
             expect.objectContaining({
               content: expect.objectContaining({
                 attributes: expect.arrayContaining([
-                  { dataSourceId: 'temperature', label: 'Temp', precision: 2 },
                   {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                  {
+                    dataItemId: 'pressure',
                     dataSourceId: 'pressure',
                     label: 'Pressure',
                     unit: 'psi',
@@ -429,101 +439,6 @@ describe('HotspotEditorModal', () => {
             }),
           ]),
         }),
-      })
-    );
-  });
-
-  it('exports thresholds in cardConfig.thresholds if prop is present', async () => {
-    const onSave = jest.fn();
-    const myCardConfig = {
-      ...getCardConfig(),
-      values: {
-        hotspots: getHotspots().filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
-      },
-      thresholds: [
-        {
-          color: '#da1e28',
-          comparison: '>',
-          dataSourceId: 'temperature',
-          icon: 'Warning alt',
-          value: 0,
-        },
-      ],
-    };
-
-    render(
-      <HotspotEditorModal
-        backgroundColors={getSelectableColors()}
-        borderColors={getSelectableColors()}
-        cardConfig={myCardConfig}
-        dataItems={[]}
-        getValidDataItems={getDataItems}
-        defaultHotspotType="fixed"
-        fontColors={getSelectableColors()}
-        hotspotIconFillColors={getSelectableColors()}
-        hotspotIcons={getSelectableIcons()}
-        label={landscape}
-        onClose={jest.fn()}
-        onFetchDynamicDemoHotspots={jest.fn()}
-        onSave={onSave}
-      />
-    );
-
-    await waitFor(() => expect(screen.getByTestId('hotspot-35-65')).toBeTruthy());
-
-    // Select one of the fixed demo hotspots
-    userEvent.click(within(screen.getByTestId('hotspot-35-65')).getByRole('button'));
-
-    // Click anywhere to remove focus the selected hotspot
-    fireEvent.click(screen.getAllByRole('link', { name: /tooltip/i })[0]);
-
-    // Change to the data source tab
-    fireEvent.click(screen.getByText('Data source'));
-
-    // Add the data item alternative 'pressure'
-    fireEvent.click(screen.getByText('Select data items'));
-    fireEvent.click(screen.getByText('pressure'));
-
-    fireEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
-    fireEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Update' }));
-
-    fireEvent.click(screen.getByRole('button', { name: 'Save' }));
-
-    expect(onSave).toHaveBeenCalledWith(
-      expect.objectContaining({
-        values: expect.objectContaining({
-          hotspots: expect.arrayContaining([
-            expect.objectContaining({
-              content: expect.objectContaining({
-                attributes: expect.arrayContaining([
-                  { dataSourceId: 'temperature', label: 'Temp', precision: 2 },
-                  {
-                    dataSourceId: 'pressure',
-                    label: 'Pressure',
-                    unit: 'psi',
-                  },
-                ]),
-              }),
-            }),
-          ]),
-        }),
-        thresholds: [
-          {
-            color: '#da1e28',
-            comparison: '>',
-            dataSourceId: 'temperature',
-            icon: 'Warning alt',
-            value: 0,
-          },
-          {
-            color: '#da1e28',
-            comparison: '>',
-            dataSourceId: 'pressure',
-            icon: 'Warning alt',
-            value: 0,
-          },
-        ],
       })
     );
   });

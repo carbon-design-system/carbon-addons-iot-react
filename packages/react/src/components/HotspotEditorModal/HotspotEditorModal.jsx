@@ -23,10 +23,6 @@ import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab/HotspotEditorDataSourceTab';
 import { hotspotTypes, useHotspotEditorState } from './hooks/hotspotStateHook';
 import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHotspotSourcePicker';
-import {
-  addThresholdsToHotspot,
-  moveThresholdsToCardconfigRoot,
-} from './thresholdsHelperFunctions';
 
 const { iotPrefix } = settings;
 
@@ -284,9 +280,7 @@ const HotspotEditorModal = ({
     updateDynamicHotspotSourceY,
   } = useHotspotEditorState({
     initialState: {
-      hotspots: initialHotspots
-        .filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC)
-        .map((hotspot) => addThresholdsToHotspot(cardConfig, hotspot)),
+      hotspots: initialHotspots.filter((hotspot) => hotspot.type !== hotspotTypes.DYNAMIC),
       currentType: defaultHotspotType,
     },
   });
@@ -349,15 +343,13 @@ const HotspotEditorModal = ({
       update(hotspot, { content: { $unset: ['values'] } })
     );
 
-    const updatedCardConfig = cardConfig.thresholds
-      ? moveThresholdsToCardconfigRoot(hotspotsWithoutExampleValues, cardConfig)
-      : update(cardConfig, {
-          values: {
-            hotspots: {
-              $set: hotspotsWithoutExampleValues,
-            },
-          },
-        });
+    const updatedCardConfig = update(cardConfig, {
+      values: {
+        hotspots: {
+          $set: hotspotsWithoutExampleValues,
+        },
+      },
+    });
 
     onSaveCallback(updatedCardConfig);
   };

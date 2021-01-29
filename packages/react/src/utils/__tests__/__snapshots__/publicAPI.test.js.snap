@@ -8713,6 +8713,9 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "dataItemId": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "type": "string",
                 },
@@ -13280,6 +13283,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "renderIconByName": [Function],
       "validateUploadedImage": null,
     },
     "propTypes": Object {
@@ -15942,6 +15946,17 @@ Map {
     "SIMPLE": "SIMPLE",
     "STACKED": "STACKED",
   },
+  "DASHBOARD_EDITOR_CARD_TYPES" => Object {
+    "ALERT": "ALERT",
+    "GROUPED_BAR": "GROUPED_BAR",
+    "IMAGE": "IMAGE",
+    "LIST": "LIST",
+    "SIMPLE_BAR": "SIMPLE_BAR",
+    "STACKED_BAR": "STACKED_BAR",
+    "TABLE": "TABLE",
+    "TIMESERIES": "TIMESERIES",
+    "VALUE": "VALUE",
+  },
   "DragAndDrop" => Object {},
   "ListCard" => Object {
     "defaultProps": Object {
@@ -18456,7 +18471,7 @@ Map {
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
         "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
-        "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
+        "infoMessageText": "Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
@@ -18708,7 +18723,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },

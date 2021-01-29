@@ -164,21 +164,35 @@ export const basicCardValidation = (card) => {
 export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
+  let hotspotAttributes;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
+  }
+  if (card.values?.hotspots) {
+    hotspotAttributes = card.values.hotspots.map((hotspot) => ({
+      ...hotspot,
+      content: {
+        ...hotspot.content,
+        attributes: hotspot.content.attributes?.map((attribute) =>
+          omit(attribute, ['aggregationMethods', 'grain'])
+        ),
+      },
+    }));
   }
   return omit(
     attributes
       ? { ...card, content: { ...card.content, attributes } }
       : series
       ? { ...card, content: { ...card.content, series } }
+      : hotspotAttributes
+      ? { ...card, values: { ...card.values, hotspots: hotspotAttributes } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
