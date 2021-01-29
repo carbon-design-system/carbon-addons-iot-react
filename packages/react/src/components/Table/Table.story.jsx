@@ -53,6 +53,18 @@ const selectData = [
     id: 'option-C',
     text: 'option-C',
   },
+  {
+    id: 'option-D',
+    text: 'option-D',
+  },
+  {
+    id: 'option-E',
+    text: 'option-E',
+  },
+  {
+    id: 'option-F',
+    text: 'option-F',
+  },
 ];
 
 const STATUS = {
