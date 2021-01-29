@@ -538,7 +538,7 @@ const DataSeriesFormItemModal = ({
           id={`${id}_thresholds`}
           i18n={mergedI18n}
           cardConfig={cardConfig}
-          dataSourceId={type === CARD_TYPES.TABLE ? editDataItem.dataSourceId : null}
+          dataSourceId={type !== CARD_TYPES.VALUE ? editDataItem.dataSourceId : null}
           thresholds={editDataItem.thresholds}
           translateWithId={handleTranslation}
           selectedIcon={{ carbonIcon: <WarningAlt32 />, name: 'Warning alt' }}
