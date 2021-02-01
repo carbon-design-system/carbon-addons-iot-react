@@ -165,16 +165,19 @@ export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
   let columns;
+  // VALUE CARD
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
+  // TIMESERIES AND BAR CHART CARDS
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
+  // TABLE CARD
   if (card.content?.columns) {
     columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
@@ -183,7 +186,8 @@ export const hideCardPropertiesForEditor = (card) => {
       ? { ...card, content: { ...card.content, attributes } }
       : series
       ? { ...card, content: { ...card.content, series } }
-      : card.values?.hotspots
+      : // IMAGE CARD
+      card.values?.hotspots
       ? {
           ...card,
           values: {
