@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.23...v2.143.0-next.24) (2021-01-29)
+
+
+### Bug Fixes
+
+* **cardeditform:** for custom cards we should not show the settings tab ([efef078](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/efef078ab4f1446cd85d0e13609484c581ab7e93))
+* **table:** allow the multiselect filter to go the whole necessary height within the table scroll ([0dbd09c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dbd09ccd8d2557a1105d062ff6824625b4bfe30))
+
+
+### Features
+
+* **table:** use MultiSelect.Filterable for the multiselect columns ([2850091](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/285009159f75fccbc36e095b3cf111713bd4e8bc))
+
+
+
+
+
 # [2.143.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.22...v2.143.0-next.23) (2021-01-28)
 
 

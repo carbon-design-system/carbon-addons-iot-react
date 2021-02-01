@@ -306,19 +306,17 @@ const CardEditForm = ({
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          <Tab label={mergedI18n.settingsTabLabel}>
-            <CardEditFormSettings
-              availableDimensions={availableDimensions}
-              cardConfig={
-                cardConfig.type === CARD_TYPES.CUSTOM
-                  ? { ...omit(cardConfig, 'content') }
-                  : cardConfig
-              }
-              onChange={onChange}
-              i18n={mergedI18n}
-              getValidDataItems={getValidDataItems}
-            />
-          </Tab>
+          {cardConfig.type !== CARD_TYPES.CUSTOM ? ( // we don't yet support settings for custom cards
+            <Tab label={mergedI18n.settingsTabLabel}>
+              <CardEditFormSettings
+                availableDimensions={availableDimensions}
+                cardConfig={cardConfig}
+                onChange={onChange}
+                i18n={mergedI18n}
+                getValidDataItems={getValidDataItems}
+              />
+            </Tab>
+          ) : null}
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
