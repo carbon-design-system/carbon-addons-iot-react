@@ -66,7 +66,6 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
-  /* callback when image input value changes (File object) */
   onChange: PropTypes.func.isRequired,
   setEditDataSeries: PropTypes.func,
   editDataSeries: PropTypes.arrayOf(
@@ -218,67 +217,69 @@ const DataSeriesFormItemModal = ({
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.grain;
 
+  const dataSeriesTableColumns = [
+    { id: 'dataSourceId', name: mergedI18n.dataItem },
+    {
+      id: 'label',
+      name: mergedI18n.dataItemEditorDataItemCustomLabel,
+      // eslint-disable-next-line react/prop-types
+      renderDataFunction: ({ row }) => {
+        const seriesIndex = editDataSeries.findIndex(
+          (series) => series.dataSourceId === row.dataSourceId
+        );
+        return (
+          <TextInput
+            id={`${row.dataSourceId}_label-input`}
+            light
+            titleText=""
+            onChange={(evt) => {
+              const updatedSeries = cloneDeep(editDataSeries);
+              updatedSeries[seriesIndex].label = evt.target.value;
+              setEditDataSeries(updatedSeries);
+            }}
+            value={editDataSeries[seriesIndex].label}
+          />
+        );
+      },
+    },
+    {
+      id: 'color',
+      name:
+        type === CARD_TYPES.TIMESERIES
+          ? mergedI18n.dataItemEditorLineColor
+          : type === CARD_TYPES.BAR
+          ? mergedI18n.dataItemEditorBarColor
+          : '',
+      // eslint-disable-next-line react/prop-types
+      renderDataFunction: ({ row }) => {
+        const seriesIndex = editDataSeries.findIndex(
+          (series) => series.dataSourceId === row.dataSourceId
+        );
+        const selectedColor = DATAITEM_COLORS_OPTIONS.find(
+          ({ carbonColor }) => carbonColor === row.color
+        );
+        return (
+          <ColorDropdown
+            id={`${id}_color-dropdown`}
+            label=""
+            titleText=""
+            selectedColor={selectedColor}
+            translateWithId={handleTranslation}
+            onChange={({ color }) => {
+              const updatedSeries = cloneDeep(editDataSeries);
+              updatedSeries[seriesIndex].color = color.carbonColor;
+              setEditDataSeries(updatedSeries);
+            }}
+          />
+        );
+      },
+    },
+  ];
+
   const DataSeriesEditorTable = (
     <Table
       id={`${id}_data_items_table`}
-      columns={[
-        { id: 'dataSourceId', name: mergedI18n.dataItem },
-        {
-          id: 'label',
-          name: mergedI18n.dataItemEditorDataItemCustomLabel,
-          // eslint-disable-next-line react/prop-types
-          renderDataFunction: ({ row }) => {
-            const seriesIndex = editDataSeries.findIndex(
-              (series) => series.dataSourceId === row.dataSourceId
-            );
-            return (
-              <TextInput
-                id={`${row.dataSourceId}_label-input`}
-                light
-                titleText=""
-                onChange={(evt) => {
-                  const updatedSeries = cloneDeep(editDataSeries);
-                  updatedSeries[seriesIndex].label = evt.target.value;
-                  setEditDataSeries(updatedSeries);
-                }}
-                value={editDataSeries[seriesIndex].label}
-              />
-            );
-          },
-        },
-        {
-          id: 'color',
-          name:
-            type === CARD_TYPES.TIMESERIES
-              ? mergedI18n.dataItemEditorLineColor
-              : type === CARD_TYPES.BAR
-              ? mergedI18n.dataItemEditorBarColor
-              : '',
-          // eslint-disable-next-line react/prop-types
-          renderDataFunction: ({ row }) => {
-            const seriesIndex = editDataSeries.findIndex(
-              (series) => series.dataSourceId === row.dataSourceId
-            );
-            const selectedColor = DATAITEM_COLORS_OPTIONS.find(
-              ({ carbonColor }) => carbonColor === row.color
-            );
-            return (
-              <ColorDropdown
-                id={`${id}_color-dropdown`}
-                label=""
-                titleText=""
-                selectedColor={selectedColor}
-                translateWithId={handleTranslation}
-                onChange={({ color }) => {
-                  const updatedSeries = cloneDeep(editDataSeries);
-                  updatedSeries[seriesIndex].color = color.carbonColor;
-                  setEditDataSeries(updatedSeries);
-                }}
-              />
-            );
-          },
-        },
-      ]}
+      columns={dataSeriesTableColumns}
       data={editDataSeries.map(({ dataSourceId, color, label }) => ({
         id: dataSourceId,
         values: {
@@ -383,7 +384,7 @@ const DataSeriesFormItemModal = ({
               })
             }
             value={editDataItem.label}
-            helperText={`${mergedI18n.dataItemSource}: ${editDataItem.dataSourceId}`}
+            helperText={`${mergedI18n.dataItemSource}: ${editDataItem.dataItemId}`}
           />
         </div>
 
@@ -592,7 +593,7 @@ const DataSeriesFormItemModal = ({
         <div className={`${baseClassName}--modal-wrapper`}>
           <ComposedModal
             header={{
-              label: editDataItem.dataSourceId,
+              label: editDataItem.dataItemId,
               title:
                 type === CARD_TYPES.VALUE
                   ? mergedI18n.dataItemEditorValueCardTitle

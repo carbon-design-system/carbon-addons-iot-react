@@ -349,6 +349,48 @@ const DataSeriesFormItem = ({
     });
   };
 
+  const dataItemListItems = dataSection?.map((dataItem, i) => {
+    const iconColorOption =
+      dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
+    return {
+      id: dataItem.dataSourceId,
+      content: {
+        value: dataItem.label || dataItem.dataSourceId,
+        icon:
+          cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
+            <div
+              className={`${baseClassName}--data-item-list--item-color-icon`}
+              style={{
+                '--icon-color-option': iconColorOption,
+              }}
+            />
+          ) : null,
+        rowActions: () => [
+          !isComplexDataSeries && [
+            <Button
+              key={`data-item-${dataItem.dataSourceId}_edit`}
+              renderIcon={Edit16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => handleEditButton(dataItem, i)}
+              iconDescription={mergedI18n.edit}
+            />,
+          ],
+          <Button
+            key={`data-item-${dataItem.dataSourceId}_remove`}
+            renderIcon={Subtract16}
+            hasIconOnly
+            kind="ghost"
+            size="small"
+            onClick={() => handleRemoveButton(dataItem)}
+            iconDescription={mergedI18n.remove}
+          />,
+        ],
+      },
+    };
+  });
+
   return !isEmpty(validDataItems) ? (
     <>
       <DataSeriesFormItemModal
@@ -473,47 +515,7 @@ const DataSeriesFormItem = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem, i) => {
-          const iconColorOption =
-            dataItem.color || DATAITEM_COLORS_OPTIONS[i % DATAITEM_COLORS_OPTIONS.length];
-          return {
-            id: dataItem.dataSourceId,
-            content: {
-              value: dataItem.label,
-              icon:
-                cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
-                  <div
-                    className={`${baseClassName}--data-item-list--item-color-icon`}
-                    style={{
-                      '--icon-color-option': iconColorOption,
-                    }}
-                  />
-                ) : null,
-              rowActions: () => [
-                !isComplexDataSeries && [
-                  <Button
-                    key={`data-item-${dataItem.dataSourceId}_edit`}
-                    renderIcon={Edit16}
-                    hasIconOnly
-                    kind="ghost"
-                    size="small"
-                    onClick={() => handleEditButton(dataItem, i)}
-                    iconDescription={mergedI18n.edit}
-                  />,
-                ],
-                <Button
-                  key={`data-item-${dataItem.dataSourceId}_remove`}
-                  renderIcon={Subtract16}
-                  hasIconOnly
-                  kind="ghost"
-                  size="small"
-                  onClick={() => handleRemoveButton(dataItem)}
-                  iconDescription={mergedI18n.remove}
-                />,
-              ],
-            },
-          };
-        })}
+        items={dataItemListItems}
       />
       {isComplexDataSeries && dataSection.length ? (
         <Button
