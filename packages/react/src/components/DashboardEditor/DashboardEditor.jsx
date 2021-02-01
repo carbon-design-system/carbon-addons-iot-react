@@ -118,6 +118,10 @@ const propTypes = {
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
+  /** Callback called when a card determines what icon render based on a named string in card config
+   *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
+   */
+  renderIconByName: PropTypes.func,
   onValidateCardJson: PropTypes.func,
   /** callback function to validate the uploaded image */
   onValidateUploadedImage: PropTypes.func,
@@ -277,6 +281,7 @@ const defaultProps = {
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
+  renderIconByName: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
@@ -342,6 +347,7 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
+  renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
   dataItems,
@@ -513,6 +519,7 @@ const DashboardEditor = ({
           handleOnCardChange(update(cardConfig, payload));
         }
       },
+      renderIconByName,
       tabIndex: 0,
       onKeyDown: (e) => handleKeyDown(e, setSelectedCardId, cardConfig.id),
       onClick: () => handleOnClick(setSelectedCardId, cardConfig.id),
@@ -526,7 +533,14 @@ const DashboardEditor = ({
       validateUploadedImage:
         cardConfig.type === CARD_TYPES.IMAGE ? onValidateUploadedImage : undefined,
     }),
-    [duplicateCard, handleOnCardChange, mergedI18n, onValidateUploadedImage, removeCard]
+    [
+      duplicateCard,
+      handleOnCardChange,
+      mergedI18n,
+      onValidateUploadedImage,
+      removeCard,
+      renderIconByName,
+    ]
   );
 
   const cards = useMemo(

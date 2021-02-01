@@ -8629,6 +8629,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
+      "renderIconByName": null,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -9189,6 +9190,9 @@ Map {
         "type": "func",
       },
       "renderHeader": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
         "type": "func",
       },
       "supportedCardTypes": Object {
