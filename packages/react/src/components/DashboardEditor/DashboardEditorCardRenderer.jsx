@@ -154,6 +154,7 @@ const renderListCard = (props) => <ListCard isEditable {...props} />;
 const renderCustomCard = (props) => {
   return (
     <Card
+      isEditable
       // need to omit the content because its getting passed content to be rendered, which should not
       // get attached to the card wrapper
       {...omit(props, 'content')}
