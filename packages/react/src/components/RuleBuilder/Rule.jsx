@@ -4,9 +4,9 @@ import { Add32, Subtract32, TextNewLine32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
-import { TableColumnsPropTypes } from '../Table/TablePropTypes';
 
 import GroupLogic from './GroupLogic';
+import { RuleBuilderColumnsPropType } from './RuleBuilderPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -16,19 +16,20 @@ const defaultProps = {
     any: 'ANY',
     lessThan: 'Less than',
     lessThanOrEqual: 'Less than or equal to',
+    notEqual: 'Not equal',
     equals: 'Equals',
     greaterThanOrEqual: 'Greater than or equal to',
     greaterThan: 'Greater than',
+    selectAColumn: 'Select a column',
   },
 };
 
 export const GroupLogicPropType = PropTypes.oneOf(['ALL', 'ANY']);
-export const LogicPropType = PropTypes.oneOf(['LT', 'LTOET', 'EQ', 'GTOET', 'GT']);
 export const RulesPropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  column: PropTypes.string.isRequired,
+  columnId: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  logic: LogicPropType.isRequired,
+  operand: PropTypes.string.isRequired,
 });
 
 export const RuleGroupPropType = PropTypes.shape({
@@ -40,7 +41,7 @@ RuleGroupPropType.rules = PropTypes.arrayOf(PropTypes.oneOf([RulesPropType, Rule
 
 const propTypes = {
   rule: PropTypes.oneOfType([RulesPropType, RuleGroupPropType]).isRequired,
-  columns: TableColumnsPropTypes.isRequired,
+  columns: RuleBuilderColumnsPropType.isRequired,
   onAddRule: PropTypes.func.isRequired,
   onRemoveRule: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -49,14 +50,23 @@ const propTypes = {
     any: PropTypes.string,
     lessThan: PropTypes.string,
     lessThanOrEqual: PropTypes.string,
+    notEqual: PropTypes.string,
     equals: PropTypes.string,
     greaterThanOrEqual: PropTypes.string,
     greaterThan: PropTypes.string,
+    selectAColumn: PropTypes.string,
   }),
 };
 
 const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
-  const { id, value, logic, column, groupLogic, rules } = rule;
+  const { id: ruleId, value, operand, columnId, groupLogic, rules } = rule;
+  const getColumnById = React.useMemo(
+    () => (id) => {
+      return columns.find(({ id: colId }) => id === colId);
+    },
+    [columns]
+  );
+
   const mergedI18n = React.useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -65,8 +75,12 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     [i18n]
   );
 
-  const logicRules = React.useMemo(
+  const defaultOperands = React.useMemo(
     () => [
+      {
+        id: 'NEQ',
+        name: mergedI18n.notEqual,
+      },
       {
         id: 'LT',
         name: mergedI18n.lessThan,
@@ -91,65 +105,99 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     [mergedI18n]
   );
 
+  const getOperandByColumnId = React.useMemo(
+    () => (id) => {
+      const col = getColumnById(id);
+      const operands = (col && col.operands) || defaultOperands;
+
+      const foundOp = operands.find((op) => op.id === operand);
+
+      if (foundOp) {
+        return foundOp.id;
+      }
+
+      return operands[0].id;
+    },
+    [defaultOperands, getColumnById, operand]
+  );
+
   const handleChangeLogic = React.useCallback(
     ({ selectedItem }) => {
       onChange({
-        id,
-        logic: selectedItem.id,
+        id: ruleId,
+        operand: selectedItem.id,
       });
     },
-    [id, onChange]
+    [ruleId, onChange]
   );
 
   const handleChangeColumn = React.useCallback(
     ({ selectedItem }) => {
       onChange({
-        id,
-        column: selectedItem.id,
+        id: ruleId,
+        columnId: selectedItem.id,
+        operand: getOperandByColumnId(selectedItem.id),
       });
     },
-    [id, onChange]
+    [getOperandByColumnId, onChange, ruleId]
   );
 
   const handleChangeValue = React.useCallback(
-    (e) => {
+    (newValue) => {
       onChange({
-        id,
-        value: e.target.value,
+        id: ruleId,
+        value: newValue,
       });
     },
-    [id, onChange]
+    [ruleId, onChange]
   );
 
   const handleChangeGroupLogic = React.useCallback(
     ({ selectedItem }) => {
       onChange({
-        id,
+        id: ruleId,
         groupLogic: selectedItem.id,
       });
     },
-    [id, onChange]
+    [ruleId, onChange]
   );
 
-  const initialSelectedColumn = React.useMemo(() => {
-    const found = columns.find(({ id: columnId }) => columnId === column);
+  const selectedColumn = React.useMemo(() => {
+    return getColumnById(columnId);
+  }, [columnId, getColumnById]);
+
+  const columnLogic = React.useMemo(() => {
+    if (selectedColumn && selectedColumn.operands) {
+      return selectedColumn.operands;
+    }
+
+    return defaultOperands;
+  }, [defaultOperands, selectedColumn]);
+
+  const initialSelectedLogic = React.useMemo(() => {
+    const found = columnLogic.find(({ id }) => id === operand);
+
     if (found) {
       return found;
     }
 
-    return columns && columns[0];
-  }, [column, columns]);
+    return columnLogic && columnLogic[0];
+  }, [columnLogic, operand]);
 
-  const initialSelectedLogic = React.useMemo(
-    () => logicRules.find(({ id: logicId }) => logicId === logic),
-    [logic, logicRules]
+  const handleDefaultChangeValue = React.useCallback(
+    (e) => {
+      if (e && e.target && e.target.value) {
+        handleChangeValue(e.target.value);
+      }
+    },
+    [handleChangeValue]
   );
 
   if (groupLogic && Array.isArray(rules)) {
     return (
       <div className={`${iotPrefix}--rule-builder-rule--group`}>
         <GroupLogic
-          id={id}
+          id={ruleId}
           selected={groupLogic}
           onChange={handleChangeGroupLogic}
           i18n={mergedI18n}
@@ -169,32 +217,38 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
   }
 
   return (
-    <div data-testid={`${id}-rule`} className={`${iotPrefix}--rule-builder-rule`}>
+    <div data-testid={`${ruleId}-rule`} className={`${iotPrefix}--rule-builder-rule`}>
       <Dropdown
-        id={`${id}-column-dropdown`}
+        id={`${ruleId}-column-dropdown`}
         items={columns}
-        label={initialSelectedColumn.name}
+        label={(selectedColumn && selectedColumn.name) || mergedI18n.selectAColumn}
         itemToString={(item) => item.name}
-        initialSelectedItem={initialSelectedColumn}
+        selectedItem={selectedColumn || undefined}
+        initialSelectedItem={selectedColumn || undefined}
         onChange={handleChangeColumn}
-        data-testid={`${id}-column-dropdown`}
+        data-testid={`${ruleId}-column-dropdown`}
       />
       <Dropdown
-        id={`${id}-logic-dropdown`}
-        items={logicRules}
+        id={`${ruleId}-logic-dropdown`}
+        items={columnLogic}
         itemToString={(item) => item.name}
-        initialSelectedItem={initialSelectedLogic}
         label={initialSelectedLogic.name}
+        selectedItem={initialSelectedLogic}
         onChange={handleChangeLogic}
-        data-testid={`${id}-logic-dropdown`}
+        data-testid={`${ruleId}-logic-dropdown`}
       />
-      <TextInput
-        id={`${id}-value`}
-        labelText=""
-        defaultValue={value}
-        onChange={handleChangeValue}
-        data-testid={`${id}-value`}
-      />
+      {selectedColumn && selectedColumn.renderField ? (
+        selectedColumn.renderField({ value, onChange: handleChangeValue })
+      ) : (
+        <TextInput
+          id={`${ruleId}-value`}
+          labelText=""
+          defaultValue={value}
+          onChange={handleDefaultChangeValue}
+          data-testid={`${ruleId}-value`}
+        />
+      )}
+
       <div className={`${iotPrefix}--rule-builder-rule__actions`}>
         <Button
           hasIconOnly
@@ -202,8 +256,8 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           kind="ghost"
           tooltipPosition="top"
           iconDescription="Remove rule"
-          onClick={onRemoveRule(id)}
-          data-testid={`${id}-remove-rule-button`}
+          onClick={onRemoveRule(ruleId)}
+          data-testid={`${ruleId}-remove-rule-button`}
         />
         <Button
           hasIconOnly
@@ -211,8 +265,8 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           kind="ghost"
           tooltipPosition="top"
           iconDescription="Add new rule"
-          onClick={onAddRule(id)}
-          data-testid={`${id}-add-rule-button`}
+          onClick={onAddRule(ruleId)}
+          data-testid={`${ruleId}-add-rule-button`}
         />
         <Button
           hasIconOnly
@@ -220,8 +274,8 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
           kind="ghost"
           tooltipPosition="top"
           iconDescription="Add new rule group"
-          onClick={onAddRule(id, true)}
-          data-testid={`${id}-add-group-button`}
+          onClick={onAddRule(ruleId, true)}
+          data-testid={`${ruleId}-add-group-button`}
         />
       </div>
     </div>

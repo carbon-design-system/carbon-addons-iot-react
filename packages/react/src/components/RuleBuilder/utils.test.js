@@ -9,6 +9,13 @@ import {
 
 let tree;
 
+const NEW_RULE_MATCH = expect.objectContaining({
+  id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+  columnId: '',
+  value: '',
+  operand: 'EQ',
+});
+
 describe('rule builder utils', () => {
   beforeEach(() => {
     tree = {
@@ -17,14 +24,14 @@ describe('rule builder utils', () => {
       rules: [
         {
           id: 'rsiru4rjba',
-          column: 'column1',
-          logic: 'EQ',
+          columnId: 'column1',
+          operand: 'EQ',
           value: '45',
         },
         {
           id: '34bvyub9jq',
-          column: 'column2',
-          logic: 'LT',
+          columnId: 'column2',
+          operand: 'LT',
           value: '14',
         },
         {
@@ -33,14 +40,14 @@ describe('rule builder utils', () => {
           rules: [
             {
               id: 'ewc2z5kyfu',
-              column: 'column2',
-              logic: 'GTOET',
+              columnId: 'column2',
+              operand: 'GTOET',
               value: '46',
             },
             {
               id: 'hks7h2zin4',
-              column: 'column1',
-              logic: 'LT',
+              columnId: 'column1',
+              operand: 'LT',
               value: '45',
             },
             {
@@ -49,8 +56,8 @@ describe('rule builder utils', () => {
               rules: [
                 {
                   id: 'wg9hlv197c',
-                  column: '',
-                  logic: 'EQ',
+                  columnId: '',
+                  operand: 'EQ',
                   value: '',
                 },
                 {
@@ -59,14 +66,14 @@ describe('rule builder utils', () => {
                   rules: [
                     {
                       id: '7kadk2wfv8',
-                      column: 'column1',
-                      logic: 'EQ',
+                      columnId: 'column1',
+                      operand: 'EQ',
                       value: '44',
                     },
                     {
                       id: '49mf09vjhn',
-                      column: 'column2',
-                      logic: 'EQ',
+                      columnId: 'column2',
+                      operand: 'EQ',
                       value: '46',
                     },
                   ],
@@ -151,8 +158,8 @@ describe('rule builder utils', () => {
   it('updateRuleAtPath should update the rule at the given path', () => {
     const shallowUpdatedRule = {
       id: 'rsiru4rjba',
-      column: 'column1',
-      logic: 'LT',
+      columnId: 'column1',
+      operand: 'LT',
       value: '45',
     };
     expect(updateRuleAtPath(tree.rules, shallowUpdatedRule, [0])).toContainEqual(
@@ -161,8 +168,8 @@ describe('rule builder utils', () => {
 
     const deepUpdatedRule = {
       id: '49mf09vjhn',
-      column: 'column2',
-      logic: 'EQ',
+      columnId: 'column2',
+      operand: 'EQ',
       value: '47',
     };
     const deepUpdate = updateRuleAtPath(tree.rules, deepUpdatedRule, [2, 2, 1, 1]);
@@ -183,14 +190,7 @@ describe('rule builder utils', () => {
 
   it('addRule adds a new rule (or group) after the given id', () => {
     const addShallowRule = addRule(tree.rules, 'rsiru4rjba');
-    expect(addShallowRule).toContainEqual(
-      expect.objectContaining({
-        id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
-        column: '',
-        logic: 'EQ',
-        value: '',
-      })
-    );
+    expect(addShallowRule).toContainEqual(NEW_RULE_MATCH);
     expect(addShallowRule.length).toEqual(4);
 
     const addShallowGroup = addRule(tree.rules, undefined, true);
@@ -198,27 +198,13 @@ describe('rule builder utils', () => {
       expect.objectContaining({
         id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
         groupLogic: 'ALL',
-        rules: expect.arrayContaining([
-          expect.objectContaining({
-            id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
-            column: '',
-            logic: 'EQ',
-            value: '',
-          }),
-        ]),
+        rules: expect.arrayContaining([NEW_RULE_MATCH]),
       })
     );
     expect(addShallowGroup.length).toEqual(4);
 
     const addDeepRule = addRule(tree.rules, '49mf09vjhn', false);
-    expect(addDeepRule[2].rules[2].rules[1].rules).toContainEqual(
-      expect.objectContaining({
-        id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
-        column: '',
-        logic: 'EQ',
-        value: '',
-      })
-    );
+    expect(addDeepRule[2].rules[2].rules[1].rules).toContainEqual(NEW_RULE_MATCH);
 
     expect(addDeepRule[2].rules[2].rules[1].rules.length).toEqual(3);
   });

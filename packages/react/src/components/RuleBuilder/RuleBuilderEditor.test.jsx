@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
@@ -25,24 +25,25 @@ const columns = [
 
 const NEW_RULE_MATCH = expect.objectContaining({
   id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
-  column: '',
+  columnId: '',
   value: '',
-  logic: 'EQ',
+  operand: 'EQ',
 });
+
 const TEST_TREE_DATA = {
   id: '14p5ho3pcu',
   groupLogic: 'ALL',
   rules: [
     {
       id: 'rsiru4rjba',
-      column: 'column1',
-      logic: 'EQ',
+      columnId: 'column1',
+      operand: 'EQ',
       value: '45',
     },
     {
       id: '34bvyub9jq',
-      column: 'column2',
-      logic: 'LT',
+      columnId: 'column2',
+      operand: 'LT',
       value: '14',
     },
     {
@@ -51,14 +52,14 @@ const TEST_TREE_DATA = {
       rules: [
         {
           id: 'ewc2z5kyfu',
-          column: 'column2',
-          logic: 'GTOET',
+          columnId: 'column2',
+          operand: 'GTOET',
           value: '46',
         },
         {
           id: 'hks7h2zin4',
-          column: 'column1',
-          logic: 'LT',
+          columnId: 'column1',
+          operand: 'LT',
           value: '45',
         },
         {
@@ -67,8 +68,8 @@ const TEST_TREE_DATA = {
           rules: [
             {
               id: 'wg9hlv197c',
-              column: '',
-              logic: 'EQ',
+              columnId: '',
+              operand: 'EQ',
               value: '',
             },
             {
@@ -77,14 +78,14 @@ const TEST_TREE_DATA = {
               rules: [
                 {
                   id: '7kadk2wfv8',
-                  column: 'column1',
-                  logic: 'EQ',
+                  columnId: 'column1',
+                  operand: 'EQ',
                   value: '44',
                 },
                 {
                   id: '49mf09vjhn',
-                  column: 'column2',
-                  logic: 'EQ',
+                  columnId: 'column2',
+                  operand: 'EQ',
                   value: '46',
                 },
               ],
@@ -95,7 +96,7 @@ const TEST_TREE_DATA = {
     },
   ],
 };
-describe('RuleBuilderHeader', () => {
+describe('RuleBuilderEditor', () => {
   it('should render with a single group with one empty rule', () => {
     const onChange = jest.fn();
     const { container } = render(<RuleBuilderEditor columns={columns} onChange={onChange} />);
@@ -213,7 +214,7 @@ describe('RuleBuilderHeader', () => {
     expect((await screen.findAllByText('Add rule')).length).toEqual(1);
     userEvent.type(screen.getByTestId('wg9hlv197c-value'), '100');
     expect(onChange).toBeCalled();
-    userEvent.click(screen.getAllByText('Column 1')[2]);
+    userEvent.click(screen.getAllByText('Select a column')[0]);
     userEvent.click(screen.getAllByText('Column 2')[2]);
     userEvent.click(screen.getAllByText('Equals')[1]);
     userEvent.click(screen.getAllByText('Greater than')[0]);
@@ -223,10 +224,118 @@ describe('RuleBuilderHeader', () => {
     const rule = getRuleByPath(tree.rules, findRulePathById(tree.rules, 'wg9hlv197c'));
 
     expect(rule.value).toEqual('100');
-    expect(rule.logic).toEqual('GT');
-    expect(rule.column).toEqual('column2');
+    expect(rule.operand).toEqual('GT');
+    expect(rule.columnId).toEqual('column2');
 
     const group = getRuleByPath(tree.rules, findRulePathById(tree.rules, 'qzn8477mbg'));
     expect(group.groupLogic).toEqual('ANY');
+  });
+
+  it('rendered custom fields and operands', async () => {
+    const onChange = jest.fn();
+    render(
+      <RuleBuilderEditor
+        defaultRules={{
+          id: '14p5ho3pcu',
+          groupLogic: 'ALL',
+          rules: [
+            {
+              id: 'rsiru4rjba',
+              columnId: 'column2',
+              operand: 'EQ',
+              value: '45',
+            },
+          ],
+        }}
+        columns={[
+          {
+            id: 'column1',
+            name: 'Date',
+            operands: [
+              { id: 'before', name: 'Before' },
+              { id: 'after', name: 'After' },
+            ],
+            renderField: ({ value, onChange }) => (
+              <input
+                data-testid="column1-date-input"
+                type="date"
+                defaultValue={value}
+                onChange={(e) => onChange(e.target.value)}
+              />
+            ),
+          },
+          {
+            id: 'column2',
+            name: 'Integer',
+            renderField: ({ value, onChange }) => (
+              <input
+                data-testid="column2-number-input"
+                type="number"
+                defaultValue={value}
+                onChange={(e) => onChange(e.target.value)}
+              />
+            ),
+          },
+          {
+            id: 'column3',
+            name: 'HTML Input',
+            operands: [{ id: 'includes', name: 'Includes' }],
+            renderField: ({ value, onChange }) => (
+              <input
+                data-testid="column3-text-input"
+                type="text"
+                defaultValue={value}
+                onChange={(e) => onChange(e.target.value)}
+              />
+            ),
+          },
+        ]}
+        onChange={onChange}
+      />
+    );
+    expect((await screen.findAllByText('Add rule')).length).toEqual(1);
+    const columnTwoInput = screen.getByTestId('column2-number-input');
+    expect(columnTwoInput).toHaveAttribute('type', 'number');
+    expect(columnTwoInput).toHaveValue(45);
+    userEvent.click(screen.getByText('Add rule'));
+    userEvent.click(screen.getAllByText(/select a column/i)[0]);
+    userEvent.click(screen.getAllByText('HTML Input')[0]);
+    const columnThreeInput = screen.getByTestId('column3-text-input');
+    userEvent.type(columnThreeInput, 'asdf');
+    expect(columnThreeInput).toHaveAttribute('type', 'text');
+    expect(columnThreeInput).toHaveValue('asdf');
+    userEvent.click(screen.getByText('Add rule'));
+    userEvent.click(screen.getAllByText(/select a column/i)[0]);
+    userEvent.click(screen.getAllByText('Date')[0]);
+    const columnOneInput = screen.getByTestId('column1-date-input');
+    fireEvent.focus(columnOneInput);
+    fireEvent.change(columnOneInput, { target: { value: '2021-01-01' } });
+    expect(columnOneInput).toHaveAttribute('type', 'date');
+    expect(columnOneInput).toHaveValue('2021-01-01');
+    expect(onChange).toBeCalled();
+    expect(onChange.mock.calls.pop().pop()).toEqual({
+      id: '14p5ho3pcu',
+      groupLogic: 'ALL',
+      rules: [
+        {
+          id: 'rsiru4rjba',
+          columnId: 'column2',
+          operand: 'EQ',
+          value: '45',
+        },
+        {
+          id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+          columnId: 'column3',
+          operand: 'includes',
+          value: 'asdf',
+        },
+        {
+          id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+          columnId: 'column1',
+          operand: 'before',
+          value: '2021-01-01',
+        },
+      ],
+    });
   });
 });
