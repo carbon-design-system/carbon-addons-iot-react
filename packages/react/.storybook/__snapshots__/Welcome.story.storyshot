@@ -2613,6 +2613,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    List
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    SimpleList
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     TableSaveViewModal
                   </div>
                 </div>
@@ -2962,6 +2986,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     EditPage
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStep
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepContent
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepDescription
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepExtraContent
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    PageWizardStepTitle
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    StatefulPageWizard
                   </div>
                 </div>
                 <div
@@ -3333,90 +3441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
-                    PageWizard
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageWizardStep
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageWizardStepContent
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageWizardStepDescription
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageWizardStepExtraContent
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PageWizardStepTitle
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    StatefulPageWizard
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
                     TileGallery
                   </div>
                 </div>
@@ -3478,30 +3502,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     StatefulTileGallery
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    List
-                  </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  />
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    SimpleList
                   </div>
                 </div>
                 <div

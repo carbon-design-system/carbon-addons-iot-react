@@ -132,7 +132,7 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
 const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
 export default {
-  title: 'Watson IoT Experimental/ComboBox',
+  title: 'Watson IoT/ComboBox',
   decorators: [withKnobs],
 
   parameters: {
