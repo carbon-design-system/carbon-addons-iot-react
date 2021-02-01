@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.25...v2.143.0-next.26) (2021-02-01)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** support passing custom icon callback ([bb2c5a5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb2c5a5838bc0fac3f639df777514392bf7aec36))
+
+
+
+
+
 # [2.143.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.24...v2.143.0-next.25) (2021-02-01)
 
 
