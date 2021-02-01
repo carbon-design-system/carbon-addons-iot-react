@@ -355,7 +355,7 @@ const DataSeriesFormItem = ({
     return {
       id: dataItem.dataSourceId,
       content: {
-        value: dataItem.label || dataItem.dataSourceId,
+        value: dataItem.label || dataItem.dataItemId,
         icon:
           cardConfig.type === CARD_TYPES.TIMESERIES || cardConfig.type === CARD_TYPES.BAR ? (
             <div

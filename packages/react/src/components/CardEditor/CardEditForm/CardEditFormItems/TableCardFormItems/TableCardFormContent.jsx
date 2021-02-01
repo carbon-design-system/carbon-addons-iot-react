@@ -196,6 +196,28 @@ const TableCardFormContent = ({
     [onChange]
   );
 
+  const dataListItems = dataSection?.map((dataItem) => ({
+    id: dataItem.dataSourceId,
+    content: {
+      value: dataItem.label || dataItem.dataItemId,
+      icon: null,
+      rowActions: () => [
+        <Button
+          key={`data-item-${dataItem.dataSourceId}`}
+          renderIcon={Edit16}
+          hasIconOnly
+          kind="ghost"
+          size="small"
+          onClick={() => {
+            setEditDataItem(dataItem);
+            setShowEditor(true);
+          }}
+          iconDescription={mergedI18n.edit}
+        />,
+      ],
+    },
+  }));
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -281,27 +303,7 @@ const TableCardFormContent = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            icon: null,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditDataItem(dataItem);
-                  setShowEditor(true);
-                }}
-                iconDescription={mergedI18n.edit}
-              />,
-            ],
-          },
-        }))}
+        items={dataListItems}
       />
     </>
   );
