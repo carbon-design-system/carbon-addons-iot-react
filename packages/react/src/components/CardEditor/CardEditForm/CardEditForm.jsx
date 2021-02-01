@@ -165,29 +165,25 @@ export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
   let columns;
-  // VALUE CARD
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
-  // TIMESERIES AND BAR CHART CARDS
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
-  // TABLE CARD
   if (card.content?.columns) {
     columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
   return omit(
-    attributes
+    attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
-      : series
+      : series // TIMESERIES AND BAR CHART CARDS
       ? { ...card, content: { ...card.content, series } }
-      : // IMAGE CARD
-      card.values?.hotspots
+      : card.values?.hotspots // IMAGE CARD
       ? {
           ...card,
           values: {
@@ -203,7 +199,7 @@ export const hideCardPropertiesForEditor = (card) => {
             })),
           },
         }
-      : columns
+      : columns // TABLE CARD
       ? { ...card, content: { ...card.content, columns } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
