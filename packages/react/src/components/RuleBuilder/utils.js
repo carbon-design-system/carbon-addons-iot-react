@@ -134,7 +134,7 @@ export const generateRule = () => {
   return {
     id: Math.random().toString(36).substring(2, 12),
     columnId: '',
-    operand: 'EQ',
+    operand: '',
     value: '',
   };
 };

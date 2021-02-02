@@ -50,7 +50,7 @@ const TEST_TREE_DATA = {
             {
               id: 'wg9hlv197c',
               columnId: '',
-              operand: 'EQ',
+              operand: '',
               value: '',
             },
             {
@@ -87,7 +87,7 @@ export const EmptyRuleBuilderStory = () => (
         {
           id: 'rsiru4rjba',
           columnId: '',
-          operand: 'EQ',
+          operand: '',
           value: '',
         },
       ],
@@ -122,7 +122,7 @@ export const RuleBuilderCustomOperandsAndFieldRenderer = () => (
         {
           id: 'rsiru4rjba',
           columnId: '',
-          operand: 'EQ',
+          operand: '',
           value: '',
         },
       ],

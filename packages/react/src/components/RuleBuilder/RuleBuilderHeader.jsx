@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { settings } from '../../constants/Settings';
 
 import GroupLogic from './GroupLogic';
-import { GroupLogicPropType } from './Rule';
+import { GroupLogicPropType } from './RuleBuilderPropTypes';
 
 const { iotPrefix } = settings;
 

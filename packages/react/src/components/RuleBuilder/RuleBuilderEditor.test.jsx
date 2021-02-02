@@ -27,7 +27,7 @@ const NEW_RULE_MATCH = expect.objectContaining({
   id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
   columnId: '',
   value: '',
-  operand: 'EQ',
+  operand: '',
 });
 
 const TEST_TREE_DATA = {
@@ -69,7 +69,7 @@ const TEST_TREE_DATA = {
             {
               id: 'wg9hlv197c',
               columnId: '',
-              operand: 'EQ',
+              operand: '',
               value: '',
             },
             {
@@ -216,7 +216,7 @@ describe('RuleBuilderEditor', () => {
     expect(onChange).toBeCalled();
     userEvent.click(screen.getAllByText('Select a column')[0]);
     userEvent.click(screen.getAllByText('Column 2')[2]);
-    userEvent.click(screen.getAllByText('Equals')[1]);
+    userEvent.click(screen.getAllByText('Not equal')[0]);
     userEvent.click(screen.getAllByText('Greater than')[0]);
     userEvent.click(screen.getAllByText('ALL')[1]);
     userEvent.click(screen.getAllByText('ANY')[1]);
@@ -233,6 +233,7 @@ describe('RuleBuilderEditor', () => {
 
   it('rendered custom fields and operands', async () => {
     const onChange = jest.fn();
+    const range = [];
     render(
       <RuleBuilderEditor
         defaultRules={{
@@ -254,15 +255,35 @@ describe('RuleBuilderEditor', () => {
             operands: [
               { id: 'before', name: 'Before' },
               { id: 'after', name: 'After' },
+              {
+                id: 'between',
+                name: 'Between',
+                renderField: ({ value, onChange }) => {
+                  return (
+                    <>
+                      <input
+                        data-testid="column1-date-input-1"
+                        type="date"
+                        defaultValue={value}
+                        onChange={(e) => {
+                          range[0] = e.target.value;
+                          onChange(range);
+                        }}
+                      />
+                      <input
+                        data-testid="column1-date-input-2"
+                        type="date"
+                        defaultValue={value}
+                        onChange={(e) => {
+                          range[1] = e.target.value;
+                          onChange(range);
+                        }}
+                      />
+                    </>
+                  );
+                },
+              },
             ],
-            renderField: ({ value, onChange }) => (
-              <input
-                data-testid="column1-date-input"
-                type="date"
-                defaultValue={value}
-                onChange={(e) => onChange(e.target.value)}
-              />
-            ),
           },
           {
             id: 'column2',
@@ -307,11 +328,18 @@ describe('RuleBuilderEditor', () => {
     userEvent.click(screen.getByText('Add rule'));
     userEvent.click(screen.getAllByText(/select a column/i)[0]);
     userEvent.click(screen.getAllByText('Date')[0]);
-    const columnOneInput = screen.getByTestId('column1-date-input');
-    fireEvent.focus(columnOneInput);
-    fireEvent.change(columnOneInput, { target: { value: '2021-01-01' } });
-    expect(columnOneInput).toHaveAttribute('type', 'date');
-    expect(columnOneInput).toHaveValue('2021-01-01');
+    userEvent.click(screen.getAllByText(/before/i)[0]);
+    userEvent.click(screen.getAllByText(/between/i)[0]);
+    const columnOneInputOne = screen.getByTestId('column1-date-input-1');
+    fireEvent.focus(columnOneInputOne);
+    fireEvent.change(columnOneInputOne, { target: { value: '2021-01-01' } });
+    expect(columnOneInputOne).toHaveAttribute('type', 'date');
+    expect(columnOneInputOne).toHaveValue('2021-01-01');
+    const columnOneInputTwo = screen.getByTestId('column1-date-input-2');
+    fireEvent.focus(columnOneInputTwo);
+    fireEvent.change(columnOneInputTwo, { target: { value: '2021-02-01' } });
+    expect(columnOneInputTwo).toHaveAttribute('type', 'date');
+    expect(columnOneInputTwo).toHaveValue('2021-02-01');
     expect(onChange).toBeCalled();
     expect(onChange.mock.calls.pop().pop()).toEqual({
       id: '14p5ho3pcu',
@@ -332,8 +360,8 @@ describe('RuleBuilderEditor', () => {
         {
           id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
           columnId: 'column1',
-          operand: 'before',
-          value: '2021-01-01',
+          operand: 'between',
+          value: expect.arrayContaining(['2021-01-01', '2021-02-01']),
         },
       ],
     });

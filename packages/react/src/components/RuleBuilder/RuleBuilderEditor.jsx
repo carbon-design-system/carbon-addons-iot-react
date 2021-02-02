@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import Rule, { RuleGroupPropType } from './Rule';
+import Rule from './Rule';
 import RuleBuilderHeader from './RuleBuilderHeader';
 import {
   addRule,
@@ -11,14 +11,53 @@ import {
   getRuleByPath,
   updateRuleAtPath,
 } from './utils';
-import { RuleBuilderColumnsPropType } from './RuleBuilderPropTypes';
+import { RuleBuilderColumnsPropType, RuleGroupPropType } from './RuleBuilderPropTypes';
 
 const propTypes = {
-  // the rules passed into the component. The RuleBuilder is a controlled component, so
-  // this works the same as passing defaultValue to a controlled input component.
+  /**
+   * the rules passed into the component. The RuleBuilder is a controlled component, so
+   * this works the same as passing defaultValue to a controlled input component.
+   */
   defaultRules: RuleGroupPropType,
-  // the columns of the table to be used in the column dropdown.
+
+  /**
+   * An array of columns of the table to be used in the column dropdown.
+   * The id and name are required, but each column can also include an optional array
+   * of operands (ie. `[{id: 'LT', name: 'Less than'}]`) or a renderField function to change
+   * the input for that column. ie. `({value, onChange}) => <input type="date" defaultValue={value} onChange={(e) => onChange(e.target.value)} />`
+   * the onChange event expects only one argument. The new value to be assigned to this rule's value property.
+   */
   columns: RuleBuilderColumnsPropType.isRequired,
+
+  /**
+   * The onChange callback called on any updates to the RuleBuilder tree structure.
+   * Example Structure:
+   * {
+   *   id: '14p5ho3pcu',
+   *   groupLogic: 'ALL',
+   *   rules: [
+   *     {
+   *       id: 'rsiru4rjba',
+   *       columnId: 'column2',
+   *       operand: 'EQ',
+   *       value: '45',
+   *     },
+   *     {
+   *       id: 'i34imt0geh',
+   *       groupLogic: 'ANY',
+   *       rules: [
+   *         {
+   *           id: 'ewc2z5kyfu',
+   *           columnId: 'column2',
+   *           operand: 'GTOET',
+   *           value: '46',
+   *         },
+   *       ],
+   *     }
+   *   ]
+   * }
+   * @param {object} tree RuleBuilder Tree object
+   */
   onChange: PropTypes.func,
   i18n: PropTypes.shape({
     addRule: PropTypes.string,

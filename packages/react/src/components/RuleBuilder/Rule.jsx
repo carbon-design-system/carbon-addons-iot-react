@@ -1,12 +1,17 @@
 import * as React from 'react';
-import { Button, Dropdown, TextInput } from 'carbon-components-react';
+import { Button, Dropdown } from 'carbon-components-react';
 import { Add32, Subtract32, TextNewLine32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
 
 import GroupLogic from './GroupLogic';
-import { RuleBuilderColumnsPropType } from './RuleBuilderPropTypes';
+import {
+  RuleBuilderColumnsPropType,
+  RuleGroupPropType,
+  RulesPropType,
+} from './RuleBuilderPropTypes';
+import RuleValueField from './RuleValueField';
 
 const { iotPrefix } = settings;
 
@@ -21,29 +26,46 @@ const defaultProps = {
     greaterThanOrEqual: 'Greater than or equal to',
     greaterThan: 'Greater than',
     selectAColumn: 'Select a column',
+    selectAnOperand: 'Select an operand',
   },
 };
 
-export const GroupLogicPropType = PropTypes.oneOf(['ALL', 'ANY']);
-export const RulesPropType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  columnId: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  operand: PropTypes.string.isRequired,
-});
-
-export const RuleGroupPropType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  groupLogic: GroupLogicPropType.isRequired,
-});
-
-RuleGroupPropType.rules = PropTypes.arrayOf(PropTypes.oneOf([RulesPropType, RuleGroupPropType]));
-
 const propTypes = {
   rule: PropTypes.oneOfType([RulesPropType, RuleGroupPropType]).isRequired,
+  // see RuleBuilderEditor proptypes for details.
   columns: RuleBuilderColumnsPropType.isRequired,
+
+  /**
+   * Function passed from RuleBuilderEditor that takes two optional parameters. The id is
+   * used to find this rule in the tree and insert the new rule (or group) after it.
+   *
+   * @param {string} id the Id of the rule where the add button was clicked.
+   * @param {boolean} isGroup A boolean indicating if the new rule to be added is a rule group
+   */
   onAddRule: PropTypes.func.isRequired,
+
+  /**
+   * Factory function passed from RuleBuilderEditor that takes one parameter. The id is
+   * used to find this rule in the tree and remove it.
+   *
+   * @param {string} id the Id of the rule where the remove button was clicked.
+   */
   onRemoveRule: PropTypes.func.isRequired,
+
+  /**
+   * The onChange callback called on any updates to this rule.
+   * For example, if the value field of a rule were changed the callback would contain two parameters the changed object:
+   * { id: 'ruleid-1', value: 'new-value' } and a boolean of false indicating it was a nested rule that was changed.
+   *
+   * However, if the root groupLogic were changed from ALL to ANY. The callback would contain:
+   * { id: 'groupid-x', groupLogic: 'ANY' }, and a boolean of true indicating the root tree was changed.
+   *
+   * Finally, if any other properties of the rule were changes (column or operand) the onChange callback would contain:
+   * { id: 'ruleid-y', columnId: 'new-column-id' } or { id: 'ruleid-', operand: 'new-operand-id' }
+   *
+   * @param {object} changed On object containing the rule id, and the parameters that have been updated.
+   * @param {boolean} isRoot Did this change happen to the root object of the tree or nested down.
+   */
   onChange: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
     all: PropTypes.string,
@@ -55,17 +77,12 @@ const propTypes = {
     greaterThanOrEqual: PropTypes.string,
     greaterThan: PropTypes.string,
     selectAColumn: PropTypes.string,
+    selectAnOperand: PropTypes.string,
   }),
 };
 
 const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
-  const { id: ruleId, value, operand, columnId, groupLogic, rules } = rule;
-  const getColumnById = React.useMemo(
-    () => (id) => {
-      return columns.find(({ id: colId }) => id === colId);
-    },
-    [columns]
-  );
+  const { id: ruleId, operand, columnId, groupLogic, rules } = rule;
 
   const mergedI18n = React.useMemo(
     () => ({
@@ -105,6 +122,32 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     [mergedI18n]
   );
 
+  const getColumnById = React.useMemo(
+    () => (id) => {
+      return columns.find(({ id: colId }) => id === colId);
+    },
+    [columns]
+  );
+
+  const selectedColumn = React.useMemo(() => {
+    return getColumnById(columnId);
+  }, [columnId, getColumnById]);
+
+  const columnOperands = React.useMemo(() => {
+    if (selectedColumn && selectedColumn.operands) {
+      return selectedColumn.operands;
+    }
+
+    return defaultOperands;
+  }, [defaultOperands, selectedColumn]);
+
+  const getOperandById = React.useMemo(
+    () => (opId) => {
+      return columnOperands.find(({ id }) => id === opId);
+    },
+    [columnOperands]
+  );
+
   const getOperandByColumnId = React.useMemo(
     () => (id) => {
       const col = getColumnById(id);
@@ -121,7 +164,7 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     [defaultOperands, getColumnById, operand]
   );
 
-  const handleChangeLogic = React.useCallback(
+  const handleChangeOperand = React.useCallback(
     ({ selectedItem }) => {
       onChange({
         id: ruleId,
@@ -162,36 +205,9 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
     [ruleId, onChange]
   );
 
-  const selectedColumn = React.useMemo(() => {
-    return getColumnById(columnId);
-  }, [columnId, getColumnById]);
-
-  const columnLogic = React.useMemo(() => {
-    if (selectedColumn && selectedColumn.operands) {
-      return selectedColumn.operands;
-    }
-
-    return defaultOperands;
-  }, [defaultOperands, selectedColumn]);
-
-  const initialSelectedLogic = React.useMemo(() => {
-    const found = columnLogic.find(({ id }) => id === operand);
-
-    if (found) {
-      return found;
-    }
-
-    return columnLogic && columnLogic[0];
-  }, [columnLogic, operand]);
-
-  const handleDefaultChangeValue = React.useCallback(
-    (e) => {
-      if (e && e.target && e.target.value) {
-        handleChangeValue(e.target.value);
-      }
-    },
-    [handleChangeValue]
-  );
+  const selectedOperand = React.useMemo(() => {
+    return getOperandById(operand);
+  }, [getOperandById, operand]);
 
   if (groupLogic && Array.isArray(rules)) {
     return (
@@ -223,32 +239,27 @@ const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
         items={columns}
         label={(selectedColumn && selectedColumn.name) || mergedI18n.selectAColumn}
         itemToString={(item) => item.name}
-        selectedItem={selectedColumn || undefined}
-        initialSelectedItem={selectedColumn || undefined}
+        selectedItem={selectedColumn}
+        initialSelectedItem={selectedColumn}
         onChange={handleChangeColumn}
         data-testid={`${ruleId}-column-dropdown`}
       />
       <Dropdown
-        id={`${ruleId}-logic-dropdown`}
-        items={columnLogic}
+        id={`${ruleId}-operand-dropdown`}
+        items={columnOperands}
         itemToString={(item) => item.name}
-        label={initialSelectedLogic.name}
-        selectedItem={initialSelectedLogic}
-        onChange={handleChangeLogic}
-        data-testid={`${ruleId}-logic-dropdown`}
+        label={(selectedOperand && selectedOperand.name) || mergedI18n.selectAnOperand}
+        selectedItem={selectedOperand}
+        initialSelectedItem={selectedOperand}
+        onChange={handleChangeOperand}
+        data-testid={`${ruleId}-operand-dropdown`}
       />
-      {selectedColumn && selectedColumn.renderField ? (
-        selectedColumn.renderField({ value, onChange: handleChangeValue })
-      ) : (
-        <TextInput
-          id={`${ruleId}-value`}
-          labelText=""
-          defaultValue={value}
-          onChange={handleDefaultChangeValue}
-          data-testid={`${ruleId}-value`}
-        />
-      )}
-
+      <RuleValueField
+        rule={rule}
+        onChange={handleChangeValue}
+        renderColumnField={selectedColumn?.renderField}
+        renderOperandField={selectedOperand?.renderField}
+      />
       <div className={`${iotPrefix}--rule-builder-rule__actions`}>
         <Button
           hasIconOnly
