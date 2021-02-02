@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts-react';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {
@@ -69,6 +70,7 @@ const BarChartCard = ({
       type = BAR_CHART_TYPES.SIMPLE,
       zoomBar,
       showTimeInGMT,
+      decimalPrecision,
       tooltipDateFormatPattern,
     },
     values: valuesProp,
@@ -152,15 +154,25 @@ const BarChartCard = ({
   let tableData = [];
 
   if (!isAllValuesEmpty) {
-    tableColumns = tableColumns.concat(
-      generateTableColumns(
-        timeDataSourceId,
-        categoryDataSourceId,
-        type,
-        uniqueDatasets,
-        i18n.defaultFilterStringPlaceholdText
+    tableColumns = tableColumns
+      .concat(
+        generateTableColumns(
+          timeDataSourceId,
+          categoryDataSourceId,
+          type,
+          uniqueDatasets,
+          i18n.defaultFilterStringPlaceholdText
+        )
       )
-    );
+      .map((column) => ({
+        ...column,
+        renderDataFunction: ({ value }) => {
+          if (typeof value === 'number' && !isNil(decimalPrecision)) {
+            return chartValueFormatter(value, size, unit, locale, decimalPrecision);
+          }
+          return value;
+        },
+      }));
 
     tableData = tableData.concat(
       formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
@@ -216,11 +228,27 @@ const BarChartCard = ({
                   ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL
                     ? { domain: domainRange }
                     : {}),
+                  ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
+                    ? {
+                        ticks: {
+                          formatter: (axisValue) =>
+                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                        },
+                      }
+                    : {}),
                 },
                 left: {
                   title: `${yLabel || ''} ${
                     layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
                   }`,
+                  ...(layout === BAR_CHART_LAYOUTS.VERTICAL && !isNil(decimalPrecision)
+                    ? {
+                        ticks: {
+                          formatter: (axisValue) =>
+                            chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
+                        },
+                      }
+                    : {}),
                   scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
@@ -239,7 +267,7 @@ const BarChartCard = ({
               color: colors,
               tooltip: {
                 valueFormatter: (tooltipValue) =>
-                  chartValueFormatter(tooltipValue, size, unit, locale),
+                  chartValueFormatter(tooltipValue, size, unit, locale, decimalPrecision),
                 customHTML: (...args) =>
                   handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
                 groupLabel: i18n.tooltipGroupLabel,
