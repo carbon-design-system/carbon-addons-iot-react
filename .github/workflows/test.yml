@@ -14,15 +14,18 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
 
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
       - name: Run tests, collect coverage
-        run: yarn test --maxWorkers=2 --ci --logHeapUsage --coverage
+        # we need the "-- --" to pass the options through yarn and lerna and back to yarn
+        run: yarn test -- -- --maxWorkers=2 --ci --logHeapUsage --coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: "./packages/react/coverage/lcov.info"
+          base-path: "packages/react"
