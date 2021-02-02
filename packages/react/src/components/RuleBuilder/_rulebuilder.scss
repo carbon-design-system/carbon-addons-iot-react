@@ -56,6 +56,16 @@
     left: 0;
     transform: translateY(-50%);
   }
+
+  html[dir='rtl'] & {
+    margin-right: $spacing-04;
+    padding: $spacing-04 $spacing-06 0 0;
+
+    &:before,
+    &:after {
+      right: 0;
+    }
+  }
 }
 
 .#{$iot-prefix}--rule-builder-rule--group {
