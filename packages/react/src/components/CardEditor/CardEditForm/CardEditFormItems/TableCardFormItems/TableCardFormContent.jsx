@@ -262,6 +262,7 @@ const TableCardFormContent = ({
             setSelectedDataItems(selectedItems.map(({ id }) => id));
             onChange(newCard);
           }}
+          title
           titleText={mergedI18n.dataItem}
         />
       </div>
