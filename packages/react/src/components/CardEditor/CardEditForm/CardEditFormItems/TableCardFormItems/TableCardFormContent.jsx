@@ -1,14 +1,15 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Edit16 } from '@carbon/icons-react';
+import { Edit16, Subtract16 } from '@carbon/icons-react';
 import isEmpty from 'lodash/isEmpty';
+import uuid from 'uuid';
 
 import { settings } from '../../../../../constants/Settings';
 import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, MultiSelect } from '../../../../../index';
+import { Button, List, MultiSelect, ComboBox } from '../../../../../index';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
@@ -52,10 +53,16 @@ const propTypes = {
   }),
   /** an array of dataItems to be included on each card */
   dataItems: DataItemsPropTypes,
+  /** if provided, returns an array of strings which are the dataItems to be allowed
+   * on each card
+   * getValidDataItems(card, selectedTimeRange)
+   */
+  getValidDataItems: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
+  selectedTimeRange: PropTypes.string.isRequired,
   /** list of dataItem names that have been selected to display on the card */
   selectedDataItems: PropTypes.arrayOf(PropTypes.string),
   /** the callback is called with a list of the new data item names selected */
@@ -83,9 +90,11 @@ const defaultProps = {
     dataItem: 'Data item',
     edit: 'Edit',
     remove: 'Remove',
+    filter: 'Filter',
     customize: 'Customize',
   },
   dataItems: [],
+  getValidDataItems: null,
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
@@ -94,7 +103,9 @@ const defaultProps = {
 const TableCardFormContent = ({
   cardConfig,
   dataItems,
+  getValidDataItems,
   onChange,
+  selectedTimeRange,
   selectedDataItems,
   setSelectedDataItems,
   availableDimensions,
@@ -110,6 +121,7 @@ const TableCardFormContent = ({
   const [showEditor, setShowEditor] = useState(false);
   // Need to keep track of the data item that's currently being edited so the detailed modal knows which one to show
   const [editDataItem, setEditDataItem] = useState({});
+  const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
   const dataSection = useMemo(
@@ -126,18 +138,6 @@ const TableCardFormContent = ({
   );
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
-
-  // This is used in the edit case where some of these data items have been selected before
-  const initialSelectedAttributes = useMemo(
-    () =>
-      dataSection
-        .filter((col) => !col.type)
-        .map(({ dataSourceId }) => ({
-          id: dataSourceId,
-          text: dataSourceId,
-        })),
-    [dataSection]
-  );
 
   // find valid dimension data item names
   const validDimensions = useMemo(
@@ -156,14 +156,38 @@ const TableCardFormContent = ({
     [dataSection]
   );
 
-  const validDataItems = useMemo(
+  const validDataItems = getValidDataItems
+    ? getValidDataItems(cardConfig, selectedTimeRange)
+    : dataItems;
+
+  const validDataItemsForDropdown = useMemo(
     () =>
-      dataItems?.map(({ dataSourceId }) => ({
-        id: dataSourceId,
+      validDataItems?.map(({ dataSourceId, dataItemId }) => ({
+        id: dataItemId,
         text: dataSourceId,
       })),
-    [dataItems]
+    [validDataItems]
   );
+
+  const handleOnDataSeriesChange = (selectedItem) => {
+    // ignore the extra value added by the "enter" keypress
+    if (selectedItem && !selectedItem.id.includes('iot-input')) {
+      const itemWithMetaData = validDataItems?.find(
+        ({ dataItemId }) => dataItemId === selectedItem.id
+      );
+      const selectedItems = [
+        ...dataSection,
+        {
+          ...(itemWithMetaData && { ...itemWithMetaData }),
+          // create a unique dataSourceId
+          dataSourceId: `${selectedItem.id}_${uuid.v4()}`,
+        },
+      ];
+      const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
+      setSelectedDataItems(selectedItems.map(({ text }) => text));
+      onChange(newCard);
+    }
+  };
 
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
@@ -196,6 +220,62 @@ const TableCardFormContent = ({
     [onChange]
   );
 
+  const handleRemoveButton = useCallback(
+    (dataItem) => {
+      const filteredColumns = dataSection.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
+      setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
+      setRemovedDataItems([...removedDataItems, dataItem]);
+      onChange({
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          columns: filteredColumns,
+        },
+      });
+    },
+    [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
+  );
+
+  const dataListItems = useMemo(
+    () =>
+      dataSection?.map((dataItem) => ({
+        id: dataItem.dataSourceId,
+        content: {
+          value: dataItem.label || dataItem.dataItemId,
+          icon: null,
+          rowActions: () => [
+            <Button
+              key={`data-item-${dataItem.dataSourceId}`}
+              renderIcon={Edit16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => {
+                const dataItemWithMetaData = validDataItems.find(
+                  ({ dataItemId }) => dataItemId === dataItem.dataItemId
+                );
+                setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
+                setShowEditor(true);
+              }}
+              iconDescription={mergedI18n.edit}
+            />,
+            <Button
+              key={`data-item-${dataItem.dataSourceId}_remove`}
+              renderIcon={Subtract16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => handleRemoveButton(dataItem)}
+              iconDescription={mergedI18n.remove}
+            />,
+          ],
+        },
+      })),
+    [dataSection, handleRemoveButton, mergedI18n.edit, mergedI18n.remove, validDataItems]
+  );
+
   return (
     <>
       <DataSeriesFormItemModal
@@ -224,24 +304,20 @@ const TableCardFormContent = ({
       <div
         className={`${baseClassName}--input`} // data item selector
       >
-        <MultiSelect
+        <ComboBox
           // need to re-gen if selected card changes or if a dataItem is removed from the list
-          key={`data-item-select-selected_card-id-${cardConfig.id}`}
-          id={`${cardConfig.id}_dataSourceIds`}
-          label={mergedI18n.selectDataItems}
-          direction="bottom"
-          itemToString={(item) => item.id}
-          initialSelectedItems={initialSelectedAttributes}
-          items={validDataItems}
-          translateWithId={translateWithId}
-          light
-          onChange={({ selectedItems }) => {
-            const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null, false);
-            setSelectedDataItems(selectedItems.map(({ id }) => id));
-            onChange(newCard);
-          }}
-          title
+          key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
+          id={`${cardConfig.id}_dataSourceIds-combobox`}
+          items={validDataItemsForDropdown}
+          itemToString={(item) => item.text}
           titleText={mergedI18n.dataItem}
+          addToList={false}
+          placeholder={mergedI18n.filter}
+          translateWithId={translateWithId}
+          // clears out the input field after each selection
+          selectedItem={{ id: '', text: '' }}
+          onChange={handleOnDataSeriesChange}
+          light
         />
       </div>
 
@@ -251,7 +327,7 @@ const TableCardFormContent = ({
         >
           <MultiSelect
             // need to re-gen if selected card changes or if a dataItem is removed from the list
-            key={`data-item-select-selected_card-id-${cardConfig.id}`}
+            key={`data-item-select-${removedDataItems.length}-selected_card-id-${cardConfig.id}`}
             id={`${cardConfig.id}_dataSourceIds`}
             label={mergedI18n.selectGroupByDimensions}
             translateWithId={translateWithId}
@@ -282,27 +358,7 @@ const TableCardFormContent = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            icon: null,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  setEditDataItem(dataItem);
-                  setShowEditor(true);
-                }}
-                iconDescription={mergedI18n.edit}
-              />,
-            ],
-          },
-        }))}
+        items={dataListItems}
       />
     </>
   );
