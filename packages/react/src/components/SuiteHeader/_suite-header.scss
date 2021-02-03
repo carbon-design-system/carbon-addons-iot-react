@@ -44,6 +44,10 @@
     }
   }
 
+  &--loading {
+    padding-bottom: $spacing-08;
+  }
+
   &--logout {
     margin: -$spacing-05;
 
@@ -77,6 +81,17 @@
 
   li {
     width: 100%;
+    button {
+      margin: $spacing-05;
+    }
+    p {
+      @include type-style('productive-heading-01');
+      display: flex;
+      align-items: center;
+      padding: $spacing-05 $spacing-05 0;
+      text-decoration: none;
+      color: $text-02;
+    }
   }
 
   a {
@@ -111,6 +126,16 @@
       &:hover {
         background-color: $hover-ui;
       }
+    }
+  }
+
+  &--app-skeleton {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+    p {
+      margin-bottom: $spacing-05;
     }
   }
 

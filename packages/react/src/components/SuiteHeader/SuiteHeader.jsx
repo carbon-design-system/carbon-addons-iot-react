@@ -11,6 +11,7 @@ import { ToastNotification } from '../Notification';
 import { Link } from '../Link';
 import { HeaderActionItemPropTypes } from '../Header/Header';
 import { settings } from '../../constants/Settings';
+import { SkeletonText } from '../SkeletonText';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
@@ -70,6 +71,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   profileLogoutModalSecondaryButton: PropTypes.string,
   profileLogoutModalPrimaryButton: PropTypes.string,
   profileLogoutModalBody: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  switcherMyApplications: PropTypes.string,
   switcherNavigatorLink: PropTypes.string,
   whatsNew: PropTypes.string,
   documentation: PropTypes.string,
@@ -85,7 +87,11 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
 const defaultProps = {
   className: null,
   appName: null,
+  userDisplayName: null,
+  username: null,
   isAdminView: false,
+  routes: null,
+  applications: null,
   sideNavProps: null,
   customActionItems: [],
   surveyData: null,
@@ -101,15 +107,15 @@ const propTypes = {
   /** Application name in suite (maps to subtitle in Header) */
   appName: PropTypes.string,
   /** Display name of current user */
-  userDisplayName: PropTypes.string.isRequired,
+  userDisplayName: PropTypes.string,
   /** Username of current user */
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string,
   /** If true, renders the admin button in Header as selected */
   isAdminView: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
-  routes: SuiteHeaderRoutePropTypes.isRequired,
+  routes: SuiteHeaderRoutePropTypes,
   /** Applications to render in AppSwitcher */
-  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
+  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** Array of custom action items */
@@ -154,6 +160,8 @@ const SuiteHeader = ({
       setShowToast(true);
     }
   }, [surveyData]);
+
+  const navigatorRoute = routes?.navigator || 'javascript:void(0)';
 
   return (
     <>
@@ -224,27 +232,35 @@ const SuiteHeader = ({
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
-            <span className={`${settings.iotPrefix}--suite-header-data`} data-type="workspaceId">
-              {routes.workspaceId}
-            </span>
-            <span className={`${settings.iotPrefix}--suite-header-data`} data-type="domain">
-              {routes.domain}
-            </span>
+            {routes && (
+              <>
+                <span
+                  className={`${settings.iotPrefix}--suite-header-data`}
+                  data-type="workspaceId"
+                >
+                  {routes.workspaceId}
+                </span>
+                <span className={`${settings.iotPrefix}--suite-header-data`} data-type="domain">
+                  {routes.domain}
+                </span>
+              </>
+            )}
             <Header
               className={[`${settings.iotPrefix}--suite-header`, className]
                 .filter((i) => i)
                 .join(' ')}
-              url={routes.navigator}
+              url={navigatorRoute}
               hasSideNav={sideNavProps !== null}
               onClickSideNavExpand={onClickSideNavExpand}
               headerPanel={{
                 content: React.forwardRef(() => (
                   <SuiteHeaderAppSwitcher
                     applications={applications}
-                    allApplicationsLink={routes.navigator}
-                    noAccessLink={routes.gettingStarted}
+                    allApplicationsLink={navigatorRoute}
+                    noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
                     onRouteChange={onRouteChange}
                     i18n={{
+                      myApplications: mergedI18N.switcherMyApplications,
                       allApplicationsLink: mergedI18N.switcherNavigatorLink,
                       requestAccess: mergedI18N.switcherRequestAccess,
                       learnMoreLink: mergedI18N.switcherLearnMoreLink,
@@ -256,7 +272,7 @@ const SuiteHeader = ({
               subtitle={appName}
               actionItems={[
                 ...customActionItems,
-                routes.admin !== null
+                routes?.admin
                   ? {
                       label: mergedI18N.administrationIcon,
                       className: ['admin-icon', isAdminView ? 'admin-icon__selected' : null]
@@ -280,7 +296,7 @@ const SuiteHeader = ({
                             href = document.referrer;
                             routeType = ROUTE_TYPES.REFERRER;
                           } else {
-                            href = routes.navigator;
+                            href = navigatorRoute;
                             routeType = ROUTE_TYPES.NAVIGATOR;
                           }
                         }
@@ -299,46 +315,50 @@ const SuiteHeader = ({
                       <Help20 fill="white" description={mergedI18N.help} />
                     </Fragment>
                   ),
-                  childContent: [
-                    'whatsNew',
-                    'gettingStarted',
-                    'documentation',
-                    'requestEnhancement',
-                    'support',
-                  ]
-                    .map((item) => ({
-                      metaData: {
-                        element: 'a',
-                        'data-testid': `suite-header-help--${item}`,
-                        href: 'javascript:void(0)',
-                        title: mergedI18N[item],
-                        onClick: async () => {
-                          const result = await onRouteChange(
-                            ROUTE_TYPES.DOCUMENTATION,
-                            routes[item]
-                          );
-                          if (result) {
-                            window.open(routes[item], 'blank');
-                          }
-                        },
-                      },
-                      content: mergedI18N[item],
-                    }))
-                    .concat({
-                      metaData: {
-                        element: 'a',
-                        'data-testid': `suite-header-help--about`,
-                        href: 'javascript:void(0)',
-                        title: mergedI18N.about,
-                        onClick: async () => {
-                          const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
-                          if (result) {
-                            window.location.href = routes.about;
-                          }
-                        },
-                      },
-                      content: mergedI18N.about,
-                    }),
+                  childContent: routes
+                    ? [
+                        'whatsNew',
+                        'gettingStarted',
+                        'documentation',
+                        'requestEnhancement',
+                        'support',
+                      ]
+                        .map((item) => ({
+                          metaData: {
+                            element: 'a',
+                            'data-testid': `suite-header-help--${item}`,
+                            href: 'javascript:void(0)',
+                            title: mergedI18N[item],
+                            onClick: async () => {
+                              const result = await onRouteChange(
+                                ROUTE_TYPES.DOCUMENTATION,
+                                routes[item]
+                              );
+                              if (result) {
+                                window.open(routes[item], 'blank');
+                              }
+                            },
+                          },
+                          content: mergedI18N[item],
+                        }))
+                        .concat({
+                          metaData: {
+                            element: 'a',
+                            'data-testid': `suite-header-help--about`,
+                            href: 'javascript:void(0)',
+                            title: mergedI18N.about,
+                            onClick: async () => {
+                              const result = await onRouteChange(ROUTE_TYPES.ABOUT, routes.about);
+                              if (result) {
+                                window.location.href = routes.about;
+                              }
+                            },
+                          },
+                          content: mergedI18N.about,
+                        })
+                    : Array.from({ length: 6 }, (x, i) => ({
+                        content: <SkeletonText key={`$help-skeleton-${i}`} />,
+                      })),
                 },
                 {
                   label: 'user',

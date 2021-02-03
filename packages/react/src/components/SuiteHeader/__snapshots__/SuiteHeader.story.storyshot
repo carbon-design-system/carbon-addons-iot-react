@@ -692,13 +692,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
                     >
-                      <a
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        href="javascript:void(0)"
+                        disabled={false}
                         onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
+                        All applications
                         <svg
                           aria-hidden={true}
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -708,11 +716,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                        All applications
-                      </a>
+                      </button>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
@@ -1281,13 +1288,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
                     >
-                      <a
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        href="javascript:void(0)"
+                        disabled={false}
                         onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
+                        All applications
                         <svg
                           aria-hidden={true}
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1297,11 +1312,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                        All applications
-                      </a>
+                      </button>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
@@ -2225,13 +2239,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
                     >
-                      <a
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        href="javascript:void(0)"
+                        disabled={false}
                         onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
+                        All applications
                         <svg
                           aria-hidden={true}
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -2241,11 +2263,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                        All applications
-                      </a>
+                      </button>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
@@ -2269,6 +2290,557 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         Health
                       </a>
                     </li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Loading state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal bx--modal-tall"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        aria-label="Do you wish to log out?"
+        aria-modal="true"
+        className="bx--modal-container"
+        role="dialog"
+        tabIndex="-1"
+      >
+        <div
+          className="bx--modal-header"
+        >
+          
+          <h3
+            className="bx--modal-header__heading"
+            id="bx--modal-header__heading--modal-5"
+          >
+            Do you wish to log out?
+          </h3>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-label="Close"
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          aria-labelledby="bx--modal-header__heading--modal-5"
+          className="bx--modal-content"
+          id="bx--modal-body--modal-5"
+        >
+          You are logged in to Application Name as null.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
+        </div>
+        <div
+          className="bx--modal-footer"
+        >
+          <button
+            className="bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+    <header
+      aria-label="main header"
+      className="bx--header iot--suite-header"
+    >
+      <a
+        className="bx--skip-to-content"
+        href="#main-content"
+        tabIndex="0"
+      >
+        Skip to main content
+      </a>
+      <a
+        className="bx--header__name"
+        href="javascript:void(0)"
+      >
+        <span
+          className="bx--header__name--prefix"
+        >
+          IBM
+        </span>
+         
+        Application Suite
+        <div
+          className="iot--header__subtitle"
+        >
+          Application Name
+        </div>
+      </a>
+      <div
+        className="bx--header__global"
+      >
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="Help"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href=""
+              onClick={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                description="Help"
+                fill="white"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
+                <circle
+                  cx="16"
+                  cy="23.5"
+                  r="1.5"
+                />
+                <path
+                  d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"
+                />
+              </svg>
+            </a>
+            <ul
+              aria-label="Help"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <p
+                      className="bx--skeleton__text"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="user"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href=""
+              onClick={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                data-testid="user-icon"
+                description="User"
+                fill="white"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
+                />
+                <path
+                  d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
+                />
+              </svg>
+            </a>
+            <ul
+              aria-label="user"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <div
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <div
+                      className="iot--suite-header-profile"
+                    >
+                      <h5>
+                        Profile
+                      </h5>
+                      <div
+                        className="iot--suite-header-profile--loading"
+                        data-testid="suite-header-profile--loading"
+                      >
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "100%",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "100%",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "100%",
+                            }
+                          }
+                        />
+                      </div>
+                      <div
+                        className="iot--suite-header-profile--logout"
+                      >
+                        <div
+                          className="bx--skeleton bx--btn"
+                        />
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup="menu"
+            aria-label="AppSwitcher"
+            className="bx--header-action-btn action-btn__trigger bx--header__action"
+            onClick={[Function]}
+            title="AppSwitcher"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--header__menu-item bx--header__menu-title"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="Header Panel"
+            className="bx--header-panel bx--app-switcher"
+            data-testid="action-btn__panel"
+            tabIndex="-1"
+          >
+            <ul
+              aria-label="AppSwitcher"
+            >
+              <li
+                className="action-btn__headerpanel-li"
+              >
+                <a
+                  className="bx--app-switcher undefined"
+                  element="a"
+                >
+                  <ul
+                    className="iot--suite-header-app-switcher"
+                  >
+                    <li
+                      className="iot--suite-header-app-switcher--nav-link"
+                    >
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        All applications
+                        <svg
+                          aria-hidden={true}
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <div
+                      className="iot--suite-header-app-switcher--app-skeleton"
+                      data-testid="suite-header-app-switcher--loading"
+                    >
+                      <p
+                        className="bx--skeleton__text"
+                        style={
+                          Object {
+                            "width": "100%",
+                          }
+                        }
+                      />
+                      <p
+                        className="bx--skeleton__text"
+                        style={
+                          Object {
+                            "width": "100%",
+                          }
+                        }
+                      />
+                      <p
+                        className="bx--skeleton__text"
+                        style={
+                          Object {
+                            "width": "100%",
+                          }
+                        }
+                      />
+                    </div>
                   </ul>
                 </a>
               </li>
@@ -2796,13 +3368,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
                     >
-                      <a
+                      <p>
+                        My applications
+                      </p>
+                      <button
+                        className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        href="javascript:void(0)"
+                        disabled={false}
                         onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
+                        All applications
                         <svg
                           aria-hidden={true}
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -2812,11 +3392,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z"
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                        All applications
-                      </a>
+                      </button>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"

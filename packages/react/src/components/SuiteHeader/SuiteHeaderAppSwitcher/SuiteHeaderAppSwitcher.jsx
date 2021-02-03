@@ -3,15 +3,18 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ArrowLeft16, Bee32 } from '@carbon/icons-react';
+import { ArrowLeft16, ArrowRight16, Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
+import Button from '../../Button';
+import { SkeletonText } from '../../SkeletonText';
 import SuiteHeader from '../SuiteHeader';
 
 const defaultProps = {
-  applications: [],
+  applications: null,
   onRouteChange: async () => true,
   i18n: {
+    myApplications: 'My applications',
     allApplicationsLink: 'All applications',
     requestAccess: 'Contact your administrator to request application access.',
     learnMoreLink: 'Learn more',
@@ -49,8 +52,9 @@ const SuiteHeaderAppSwitcher = ({
   return (
     <ul className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
-        <a
-          href="javascript:void(0)"
+        <p>{mergedI18n.myApplications}</p>
+        <Button
+          kind="tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           onClick={async () => {
             const result = await onRouteChange(
@@ -61,34 +65,45 @@ const SuiteHeaderAppSwitcher = ({
               window.location.href = allApplicationsLink;
             }
           }}
+          renderIcon={ArrowRight16}
         >
-          <ArrowLeft16 />
           {mergedI18n.allApplicationsLink}
-        </a>
+        </Button>
       </li>
-      {applications.map(({ id, name, href, isExternal = false }) => (
-        <li key={`key-${id}`} className={`${baseClassName}--app-link`}>
-          <a
-            href="javascript:void(0)"
-            data-testid={`suite-header-app-switcher--${id}`}
-            onClick={async () => {
-              const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
-                appId: id,
-              });
-              if (result) {
-                if (isExternal) {
-                  window.open(href, 'blank');
-                } else {
-                  window.location.href = href;
+      {applications === null ? (
+        <div
+          className={`${baseClassName}--app-skeleton`}
+          data-testid="suite-header-app-switcher--loading"
+        >
+          {Array.from({ length: 3 }, (x, i) => (
+            <SkeletonText key={`$app-switcher-skeleton-${i}`} />
+          ))}
+        </div>
+      ) : (
+        applications.map(({ id, name, href, isExternal = false }) => (
+          <li key={`key-${id}`} className={`${baseClassName}--app-link`}>
+            <a
+              href="javascript:void(0)"
+              data-testid={`suite-header-app-switcher--${id}`}
+              onClick={async () => {
+                const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+                  appId: id,
+                });
+                if (result) {
+                  if (isExternal) {
+                    window.open(href, 'blank');
+                  } else {
+                    window.location.href = href;
+                  }
                 }
-              }
-            }}
-          >
-            {name}
-          </a>
-        </li>
-      ))}
-      {applications.length === 0 ? (
+              }}
+            >
+              {name}
+            </a>
+          </li>
+        ))
+      )}
+      {applications?.length === 0 ? (
         <div className={`${baseClassName}--no-app`}>
           <div className="bee-icon-container">
             <Bee32 />

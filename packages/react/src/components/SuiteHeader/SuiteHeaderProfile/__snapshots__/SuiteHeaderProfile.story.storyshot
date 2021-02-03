@@ -1,5 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderProfile Loading state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "15rem",
+        }
+      }
+    >
+      <div
+        className="iot--suite-header-profile"
+      >
+        <h5>
+          Profile
+        </h5>
+        <div
+          className="iot--suite-header-profile--loading"
+          data-testid="suite-header-profile--loading"
+        >
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          />
+          <p
+            className="bx--skeleton__text"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="iot--suite-header-profile--logout"
+        >
+          <div
+            className="bx--skeleton bx--btn"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader/SuiteHeaderProfile default 1`] = `
 <div
   className="storybook-container"

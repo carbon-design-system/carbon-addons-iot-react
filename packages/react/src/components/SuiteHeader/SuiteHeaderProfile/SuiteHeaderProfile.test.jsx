@@ -35,4 +35,18 @@ describe('SuiteHeaderProfile', () => {
     profileButton.simulate('click');
     expect(mockOnProfileClick).toHaveBeenCalled();
   });
+  it('renders in loading state', () => {
+    const mockOnRequestLogout = jest.fn();
+    const wrapper = mount(
+      <SuiteHeaderProfile
+        {...commonProps}
+        username={undefined}
+        displayName={undefined}
+        onRequestLogout={mockOnRequestLogout}
+      />
+    );
+    // Expect skeletons and no logout button
+    expect(wrapper.find('[data-testid="suite-header-profile--loading"]')).toHaveLength(1);
+    expect(wrapper.find('[data-testid="suite-header-profile--logout"]')).toHaveLength(0);
+  });
 });

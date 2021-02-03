@@ -351,6 +351,14 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
+export const LoadingStates = () => {
+  return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
+};
+
+LoadingStates.story = {
+  name: 'Loading state',
+};
+
 /* Sample of SuiteHeader usage with data hook
 export const HeaderWithHook = () => {
   const StatefulExample = () => {

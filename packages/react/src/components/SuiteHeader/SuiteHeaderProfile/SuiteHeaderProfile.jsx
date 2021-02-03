@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Button } from '../../../index';
 import { settings } from '../../../constants/Settings';
+import { ButtonSkeleton, SkeletonText } from 'carbon-components-react';
 
 const defaultProps = {
+  username: '',
   displayName: '',
   i18n: {
     profileTitle: 'Profile',
@@ -15,7 +17,7 @@ const defaultProps = {
 
 const propTypes = {
   displayName: PropTypes.string,
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string,
   onProfileClick: PropTypes.func.isRequired,
   onRequestLogout: PropTypes.func.isRequired,
   i18n: PropTypes.shape({
@@ -35,34 +37,49 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
   return (
     <div className={baseClassName}>
       <h5>{mergedI18N.profileTitle}</h5>
-      <div className={`${baseClassName}--user`}>
-        <div className={`${baseClassName}--user--chip`}>{chipText}</div>
-        <div className={`${baseClassName}--user--detail`}>
-          <div>
-            <strong>{displayName}</strong>
+      {username ? (
+        <>
+          <div className={`${baseClassName}--user`}>
+            <div className={`${baseClassName}--user--chip`}>{chipText}</div>
+            <div className={`${baseClassName}--user--detail`}>
+              <div>
+                <strong>{displayName}</strong>
+              </div>
+              <div>{username}</div>
+            </div>
           </div>
-          <div>{username}</div>
-        </div>
-      </div>
-      <div className={`${baseClassName}--manage-button`}>
-        <Button
-          kind="secondary"
-          size="small"
-          data-testid="suite-header-profile--profile"
-          onClick={onProfileClick}
-        >
-          {mergedI18N.profileButton}
-        </Button>
-      </div>
-      <div className={`${baseClassName}--logout`}>
-        <Button
-          kind="secondary"
-          data-testid="suite-header-profile--logout"
-          onClick={onRequestLogout}
-        >
-          {mergedI18N.logoutButton}
-        </Button>
-      </div>
+          <div className={`${baseClassName}--manage-button`}>
+            <Button
+              kind="secondary"
+              size="small"
+              data-testid="suite-header-profile--profile"
+              onClick={onProfileClick}
+            >
+              {mergedI18N.profileButton}
+            </Button>
+          </div>
+          <div className={`${baseClassName}--logout`}>
+            <Button
+              kind="secondary"
+              data-testid="suite-header-profile--logout"
+              onClick={onRequestLogout}
+            >
+              {mergedI18N.logoutButton}
+            </Button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={`${baseClassName}--loading`} data-testid="suite-header-profile--loading">
+            {Array.from({ length: 3 }, (x, i) => (
+              <SkeletonText key={`$profile-skeleton-${i}`} />
+            ))}
+          </div>
+          <div className={`${baseClassName}--logout`}>
+            <ButtonSkeleton />
+          </div>
+        </>
+      )}
     </div>
   );
 };

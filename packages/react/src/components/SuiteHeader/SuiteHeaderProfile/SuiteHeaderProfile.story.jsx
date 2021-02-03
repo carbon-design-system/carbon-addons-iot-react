@@ -28,3 +28,18 @@ export const Default = () => (
 Default.story = {
   name: 'default',
 };
+
+export const LoadingState = () => (
+  <div style={{ width: '15rem' }}>
+    <SuiteHeaderProfile
+      onProfileClick={() => {
+        window.location.href = 'https://www.ibm.com';
+      }}
+      onRequestLogout={() => {}}
+    />
+  </div>
+);
+
+LoadingState.story = {
+  name: 'Loading state',
+};

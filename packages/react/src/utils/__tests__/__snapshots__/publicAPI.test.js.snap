@@ -7051,6 +7051,7 @@ Map {
     },
     "defaultProps": Object {
       "appName": null,
+      "applications": null,
       "className": null,
       "customActionItems": Array [],
       "i18n": Object {
@@ -7074,6 +7075,7 @@ Map {
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": "Enjoying {solutionName}?",
         "switcherLearnMoreLink": "Learn more",
+        "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
         "userIcon": "User",
@@ -7081,8 +7083,11 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
+      "routes": null,
       "sideNavProps": null,
       "surveyData": null,
+      "userDisplayName": null,
+      "username": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -7113,7 +7118,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "className": Object {
@@ -7253,6 +7257,9 @@ Map {
               ],
               "type": "oneOfType",
             },
+            "switcherMyApplications": Object {
+              "type": "string",
+            },
             "switcherNavigatorLink": Object {
               "type": "string",
             },
@@ -7313,7 +7320,6 @@ Map {
             },
           },
         ],
-        "isRequired": true,
         "type": "shape",
       },
       "sideNavProps": Object {
@@ -7410,11 +7416,9 @@ Map {
         "type": "shape",
       },
       "userDisplayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "username": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -7427,6 +7431,7 @@ Map {
         "profileButton": "Manage profile",
         "profileTitle": "Profile",
       },
+      "username": "",
     },
     "propTypes": Object {
       "displayName": Object {
@@ -7457,17 +7462,17 @@ Map {
         "type": "func",
       },
       "username": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
   },
   "SuiteHeaderAppSwitcher" => Object {
     "defaultProps": Object {
-      "applications": Array [],
+      "applications": null,
       "i18n": Object {
         "allApplicationsLink": "All applications",
         "learnMoreLink": "Learn more",
+        "myApplications": "My applications",
         "requestAccess": "Contact your administrator to request application access.",
       },
       "onRouteChange": [Function],
@@ -7594,6 +7599,7 @@ Map {
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": "Enjoying {solutionName}?",
       "switcherLearnMoreLink": "Learn more",
+      "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
       "userIcon": "User",
