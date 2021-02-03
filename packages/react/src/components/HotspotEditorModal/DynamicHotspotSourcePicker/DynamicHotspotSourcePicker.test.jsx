@@ -150,7 +150,7 @@ describe('DynamicHotspotSourcePicker', () => {
   it('calls onXValueChange & onYValueChange callback when values change', () => {
     const xSourceItem = getDataItems()[0];
     const ySourceItem = getDataItems()[1];
-    const { onXValueChange, onYValueChange, onClear } = getCallbacks();
+    const { onXValueChange, onYValueChange, onClear, ...callbacks } = getCallbacks();
 
     render(
       <DynamicHotspotSourcePicker
@@ -163,6 +163,7 @@ describe('DynamicHotspotSourcePicker', () => {
         onXValueChange={onXValueChange}
         onYValueChange={onYValueChange}
         onClear={onClear}
+        {...callbacks}
       />
     );
 
