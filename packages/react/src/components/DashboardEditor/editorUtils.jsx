@@ -134,8 +134,8 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          includeZeroOnXaxis: false,
+          includeZeroOnYaxis: false,
           timeDataSourceId: 'timestamp',
           showLegend: true,
         },

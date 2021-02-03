@@ -111,7 +111,7 @@ describe('RuleBuilderEditor', () => {
     expect(onChange).toBeCalledTimes(1);
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
-        id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+        id: expect.stringMatching(/[a-zA-Z0-9]{9,10}/),
         groupLogic: 'ANY',
         rules: expect.arrayContaining([NEW_RULE_MATCH]),
       })

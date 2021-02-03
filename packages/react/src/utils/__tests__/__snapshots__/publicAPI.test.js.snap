@@ -5035,6 +5035,9 @@ Map {
         "args": Array [
           Object {
             "categoryDataSourceId": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -12895,6 +12898,9 @@ Map {
               "type": "number",
             },
             "chartType": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
