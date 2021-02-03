@@ -25,6 +25,7 @@ const commonProps = {
   },
   onChange: mockOnChange,
   setSelectedDataItems: jest.fn(),
+  translateWithId: jest.fn(),
 };
 
 describe('TableCardFormContent', () => {
@@ -53,7 +54,6 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('pressure')).toBeDefined();
 
     fireEvent.click(screen.queryByText('temperature'));
-
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
       content: {
@@ -102,7 +102,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('manufacturer')).toBeDefined();
     fireEvent.click(screen.queryByText('manufacturer'));
     // the selection state of the box should be updated
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+    expect(document.querySelector('[aria-label="Clear Selection"]')).toBeTruthy();
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
