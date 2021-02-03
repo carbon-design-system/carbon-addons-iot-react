@@ -652,7 +652,7 @@ const TableCard = ({
             tooltip={tooltip}
             options={{
               hasPagination: true,
-              hasSearch: true,
+              hasSearch: !isEditable, // Remove search bar on preview mode. https://github.ibm.com/wiotp/monitoring-dashboard/issues/1749
               hasFilter,
               hasRowExpansion,
             }}

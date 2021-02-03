@@ -482,9 +482,8 @@ export const handleDataSeriesChange = (
         : [];
 
       // find just the attributes to add
-      const attributeColumns = selectedItems
-        .filter((i) => !i.hasOwnProperty('type'))
-        .map((i) => ({ dataSourceId: i.id, label: i.text }));
+      const attributeColumns = selectedItems.filter((i) => !i.hasOwnProperty('type'));
+
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
         Array.isArray(content?.columns) && content.columns.find((col) => col.type === 'TIMESTAMP')
