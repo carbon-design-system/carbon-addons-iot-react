@@ -141,6 +141,26 @@ describe('SuiteHeader', () => {
       expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     });
   });
+  it('renders all i18n, including props that were functions (backwards compatibility)', () => {
+    Object.keys(SuiteHeaderI18N).forEach((language) => {
+      render(
+        <SuiteHeader
+          {...commonProps}
+          i18n={{
+            ...SuiteHeaderI18N[language],
+            surveyTitle: (solutionName) =>
+              SuiteHeaderI18N[language].surveyTitle.replace('{solutionName}', solutionName),
+            profileLogoutModalBody: (solutionName, userName) =>
+              SuiteHeaderI18N[language].profileLogoutModalBody
+                .replace('{solutionName}', solutionName)
+                .replace('{userName}', userName),
+          }}
+          isAdminView
+        />
+      );
+      expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
+    });
+  });
   it('user clicks survey link', async () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';

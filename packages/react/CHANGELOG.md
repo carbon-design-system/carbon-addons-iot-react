@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.29...v2.143.0-next.30) (2021-02-03)
+
+
+### Features
+
+* **suiteheader:** Adding support for some i18n prop changes where `surveyTitle` and `profileLogoutModalBody` can now be plain trings with varaibles enclosed by `{}` instead of functions. However, the component is still backwards compatible to consider the old usage where these strings were functions. ([7853a48](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7853a48cc91fc9463aa11c7f8a14eccada4df9ff))
+
+
+
+
+
+# [2.143.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.28...v2.143.0-next.29) (2021-02-03)
+
+
+### Bug Fixes
+
+* **editor:** change table card to combobox ([b53738b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b53738b99e26c0dc97c4dcbf68da0ce1ebd3e3d2))
+* **editor:** inital table card work ([2af169e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2af169e812235a1143343adffd6152a53288beb8))
+* **thresholds:** fix datasourceid passthrough ([32a6616](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/32a66163d959b906d8af58f78cf148d98e4093db))
+
+
+### Features
+
+* **editor:** add table aggregation support ([30d681e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/30d681ed524e50f18fe2b333b6a8876e93984034))
+* **editor:** add table aggregation support ([fd2bc6e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fd2bc6e870e59e8cd7fa5d3e072b2d0159fe30f5))
+
+
+
+
+
 # [2.143.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.27...v2.143.0-next.28) (2021-02-03)
 
 

@@ -321,7 +321,15 @@ export const HeaderWithSurveyNotification = () => {
         support: 'https://www.ibm.com',
         about: 'https://www.ibm.com',
       })}
-      i18n={SuiteHeaderI18N[language]}
+      i18n={{
+        ...SuiteHeaderI18N[language],
+        surveyTitle: (solutionName) =>
+          SuiteHeaderI18N[language].surveyTitle.replace('{solutionName}', solutionName),
+        profileLogoutModalBody: (solutionName, userName) =>
+          SuiteHeaderI18N[language].profileLogoutModalBody
+            .replace('{solutionName}', solutionName)
+            .replace('{userName}', userName),
+      }}
       applications={object('applications', [
         {
           id: 'monitor',
