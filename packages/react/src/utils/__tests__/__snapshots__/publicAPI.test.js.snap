@@ -8728,9 +8728,11 @@ Map {
                   "type": "arrayOf",
                 },
                 "dataItemId": Object {
+                  "isRequired": true,
                   "type": "string",
                 },
                 "dataSourceId": Object {
+                  "isRequired": true,
                   "type": "string",
                 },
                 "grain": Object {
