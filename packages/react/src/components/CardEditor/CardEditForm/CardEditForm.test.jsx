@@ -143,5 +143,83 @@ describe('CardEditForm', () => {
         },
       });
     });
+    it('should hide properties in the columns section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        content: {
+          columns: [
+            {
+              aggregationMethods: [],
+              aggregationMethod: '',
+              grain: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        content: {
+          columns: [
+            {
+              aggregationMethod: '',
+              dataSourceId: 'torque',
+              label: 'Torque',
+            },
+          ],
+        },
+      });
+    });
+    it('should hide properties in the hotspots section of a card', () => {
+      const sanitizedCard = hideCardPropertiesForEditor({
+        values: {
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'InformationFilled24',
+              color: 'green',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                attributes: [
+                  {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    grain: '',
+                    aggregationMethods: [],
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      });
+      expect(sanitizedCard).toEqual({
+        values: {
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              icon: 'InformationFilled24',
+              color: 'green',
+              content: {
+                title: 'My Device',
+                description: 'Description',
+                attributes: [
+                  {
+                    dataItemId: 'temperature',
+                    dataSourceId: 'temperature',
+                    label: 'Temp',
+                    precision: 2,
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      });
+    });
   });
 });
