@@ -1,15 +1,55 @@
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import { CARD_DIMENSIONS, CARD_SIZES } from '../../../constants/LayoutConstants';
 
-import { getCardSizeText, handleSubmit, hideCardPropertiesForEditor } from './CardEditForm';
+import CardEditForm, {
+  getCardSizeText,
+  handleSubmit,
+  hideCardPropertiesForEditor,
+} from './CardEditForm';
 
 const mockSetError = jest.fn();
 const mockOnChange = jest.fn();
+const mockOnCardJsonPreview = jest.fn();
 const mockSetShowEditor = jest.fn();
 const mockOnValidateCardJson = jest.fn().mockImplementation(() => []);
+
+const cardConfig = {
+  title: 'timeSeries',
+  size: 'MEDIUM',
+  content: {
+    series: [
+      {
+        dataItemId: 'torque',
+        dataSourceId: 'torque_id',
+        label: 'Torque',
+      },
+    ],
+  },
+};
+
 afterEach(() => {
   jest.clearAllMocks();
 });
 describe('CardEditForm', () => {
+  describe('CardEditForm', () => {
+    it('should fire onCardJsonPreview when opening the json modal', () => {
+      render(
+        <CardEditForm
+          cardConfig={cardConfig}
+          onChange={mockOnChange}
+          onCardJsonPreview={mockOnCardJsonPreview}
+        />
+      );
+      const openJsonBtn = screen.getByText('Open JSON editor');
+      expect(openJsonBtn).toBeInTheDocument();
+
+      fireEvent.click(openJsonBtn);
+
+      expect(mockOnCardJsonPreview).toHaveBeenCalledWith(cardConfig);
+    });
+  });
   describe('getCardSizeText', () => {
     const i18n = {
       cardSize_SMALL: 'Small',
