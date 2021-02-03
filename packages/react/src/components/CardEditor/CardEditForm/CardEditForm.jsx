@@ -169,7 +169,7 @@ export const basicCardValidation = (card) => {
 export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
-  let hotspotAttributes;
+  let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
       omit(attribute, ['aggregationMethods', 'grain'])
@@ -180,24 +180,32 @@ export const hideCardPropertiesForEditor = (card) => {
       omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
-  if (card.values?.hotspots) {
-    hotspotAttributes = card.values.hotspots.map((hotspot) => ({
-      ...hotspot,
-      content: {
-        ...hotspot.content,
-        attributes: hotspot.content.attributes?.map((attribute) =>
-          omit(attribute, ['aggregationMethods', 'grain'])
-        ),
-      },
-    }));
+  if (card.content?.columns) {
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
   return omit(
-    attributes
+    attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
-      : series
+      : series // TIMESERIES AND BAR CHART CARDS
       ? { ...card, content: { ...card.content, series } }
-      : hotspotAttributes
-      ? { ...card, values: { ...card.values, hotspots: hotspotAttributes } }
+      : card.values?.hotspots // IMAGE CARD
+      ? {
+          ...card,
+          values: {
+            ...card.values,
+            hotspots: card.values?.hotspots?.map((hotspot) => ({
+              ...hotspot,
+              content: {
+                ...hotspot.content,
+                attributes: hotspot.content?.attributes?.map((attribute) =>
+                  omit(attribute, ['aggregationMethods', 'grain'])
+                ),
+              },
+            })),
+          },
+        }
+      : columns // TABLE CARD
+      ? { ...card, content: { ...card.content, columns } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
