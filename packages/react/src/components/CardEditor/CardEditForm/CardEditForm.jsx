@@ -61,6 +61,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -116,6 +120,7 @@ const defaultProps = {
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
+  onCardJsonPreview: null,
   dataItems: [],
   availableDimensions: {},
   onValidateCardJson: null,
@@ -249,6 +254,7 @@ const CardEditForm = ({
   i18n,
   dataItems,
   onValidateCardJson,
+  onCardJsonPreview,
   getValidDataItems,
   getValidTimeRanges,
   currentBreakpoint,
@@ -325,7 +331,10 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4));
+              const cardConfigForModal = onCardJsonPreview
+                ? onCardJsonPreview(hideCardPropertiesForEditor(cardConfig))
+                : hideCardPropertiesForEditor(cardConfig);
+              setModalData(JSON.stringify(cardConfigForModal, null, 4));
               setShowEditor(true);
             }}
           >
