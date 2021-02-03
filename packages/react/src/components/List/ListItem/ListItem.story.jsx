@@ -24,7 +24,7 @@ const dndProps = {
 };
 
 export default {
-  title: 'Watson IoT/ListItem',
+  title: 'Watson IoT Experimental/ListItem',
 
   parameters: {
     component: ListItem,
