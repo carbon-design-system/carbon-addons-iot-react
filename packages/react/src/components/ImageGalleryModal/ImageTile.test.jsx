@@ -4,12 +4,19 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import ImageTile from './ImageTile';
 
 describe('ImageTile', () => {
+  const mockDelete = jest.fn();
+  const mockToggle = jest.fn();
+
   it('delete button', () => {
-    render(<ImageTile id="my image" src=" src: 'path/to/image-a.jpg'" />);
+    render(
+      <ImageTile
+        id="my image"
+        src=" src: 'path/to/image-a.jpg'"
+        toggleImageSelection={mockToggle}
+      />
+    );
     expect(screen.queryByText('Delete')).toBeNull();
 
-    const mockDelete = jest.fn();
-    const mockToggle = jest.fn();
     render(
       <ImageTile
         id="my image"
