@@ -12,6 +12,7 @@ const colors = [
 ];
 
 describe('HotspotTextStyleTab', () => {
+  const mockOnDelete = jest.fn();
   it('handles text styling', () => {
     let formValues = {};
 
@@ -25,6 +26,7 @@ describe('HotspotTextStyleTab', () => {
           formValues = merge({}, formValues, change);
         }}
         translateWithId={jest.fn()}
+        onDelete={mockOnDelete}
       />
     );
 
@@ -58,6 +60,7 @@ describe('HotspotTextStyleTab', () => {
           formValues = merge({}, formValues, change);
         }}
         translateWithId={jest.fn()}
+        onDelete={mockOnDelete}
       />
     );
 
@@ -94,7 +97,7 @@ describe('HotspotTextStyleTab', () => {
           formValues = merge({}, formValues, change);
         }}
         translateWithId={jest.fn()}
-        onDelete={jest.fn()}
+        onDelete={mockOnDelete}
       />
     );
 
@@ -130,7 +133,7 @@ describe('HotspotTextStyleTab', () => {
         formValues={{ fontColor: colorString }}
         onChange={() => {}}
         translateWithId={jest.fn()}
-        onDelete={jest.fn()}
+        onDelete={mockOnDelete}
       />
     );
 

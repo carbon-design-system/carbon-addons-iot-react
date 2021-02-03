@@ -157,14 +157,14 @@ describe('TableCellRenderer', () => {
 
   it('locale formats numbers', () => {
     const wrapper = mount(
-      <TableCellRenderer locale="fr" truncateCellText>
+      <TableCellRenderer locale="fr" truncateCellText wrapText="never">
         {35.6}
       </TableCellRenderer>
     );
     expect(wrapper.text()).toContain('35,6'); // french locale should have commas for decimals
 
     const wrapper2 = mount(
-      <TableCellRenderer locale="en" truncateCellText>
+      <TableCellRenderer locale="en" truncateCellText wrapText="never">
         {35.1234567}
       </TableCellRenderer>
     );

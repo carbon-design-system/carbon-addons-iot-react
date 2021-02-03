@@ -24,6 +24,7 @@ const commonProps = {
   },
   onChange: jest.fn(),
   setSelectedDataItems: jest.fn(),
+  translateWithId: jest.fn(),
 };
 
 describe('TableCardFormContent', () => {
@@ -49,7 +50,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('temperature')).toBeDefined();
     fireEvent.click(screen.queryByText('temperature'));
     // the selection state of the box should be updated
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+    expect(document.querySelector('[aria-label="Clear Selection"]')).toBeTruthy();
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
@@ -75,7 +76,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('manufacturer')).toBeDefined();
     fireEvent.click(screen.queryByText('manufacturer'));
     // the selection state of the box should be updated
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
+    expect(document.querySelector('[aria-label="Clear Selection"]')).toBeTruthy();
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
@@ -126,7 +127,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Timestamp')).toBeDefined();
     expect(screen.queryByText('Manufacturer')).toBeDefined();
     // both the dimension and attribute show show selections
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(2);
+    expect(document.querySelector('[aria-label="Clear Selection"]')).toBeTruthy();
   });
   it('edit mode with dataitems adds threshold correctly', () => {
     const mockOnChange = jest.fn();
