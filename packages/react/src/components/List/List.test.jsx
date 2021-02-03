@@ -23,11 +23,13 @@ describe('List', () => {
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
+  // TODO: write tests that actually test selection
   it('List to have default handleSelect', () => {
     expect(UnconnectedList.defaultProps.handleSelect).toBeDefined();
     UnconnectedList.defaultProps.handleSelect();
   });
 
+  // TODO: write tests that actually test selection
   it('List to have default toggleExpansion', () => {
     expect(UnconnectedList.defaultProps.toggleExpansion).toBeDefined();
     UnconnectedList.defaultProps.toggleExpansion();
