@@ -46,6 +46,19 @@
     padding: $spacing-05;
   }
 
+  &--tabs {
+    border-bottom: 2px solid #e0e0e0;
+    width: 100%;
+
+    .#{$iot-prefix}--rule-builder--tab {
+      width: auto;
+      &:not(.#{$prefix}--tabs__nav-item--selected),
+      &:not(:hover) {
+        border-bottom: none;
+      }
+    }
+  }
+
   &--footer {
     border-top: 1px solid $ui-03;
     display: flex;

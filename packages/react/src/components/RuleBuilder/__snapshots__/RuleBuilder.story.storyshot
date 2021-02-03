@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder Rule Builder 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 100px)",
+          "width": "100%",
+        }
+      }
+    >
+      <section
+        className="iot--rule-builder"
+        data-testid="rule-builder"
+        id={null}
+      >
+        <header
+          className="iot--rule-builder--header"
+        >
+          <div>
+            <h1
+              className="iot--rule-builder--header-title"
+            >
+              Undefined
+            </h1>
+            <p
+              className="iot--rule-builder--header-metatext"
+            >
+              last updated: Sunday, October 28, 2018
+            </p>
+          </div>
+          <div
+            className="iot--rule-builder--header-actions"
+          >
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="favorite"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Favorite"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Favorite"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,3.3l1.4,2.8l0.2,0.5l0.5,0.1l3.1,0.4L11,9.2l-0.4,0.4l0.1,0.5l0.5,3.1l-2.8-1.4L8,11.5l-0.5,0.2l-2.8,1.4l0.5-3.1	l0.1-0.5L5,9.2L2.8,7l3.1-0.4l0.5-0.1L6.6,6L8,3.3 M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7	L8,1z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="share"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Share"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Share"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23,20a5,5,0,0,0-3.89,1.89L11.8,17.32a4.46,4.46,0,0,0,0-2.64l7.31-4.57A5,5,0,1,0,18,7a4.79,4.79,0,0,0,.2,1.32l-7.31,4.57a5,5,0,1,0,0,6.22l7.31,4.57A4.79,4.79,0,0,0,18,25a5,5,0,1,0,5-5ZM23,4a3,3,0,1,1-3,3A3,3,0,0,1,23,4ZM7,19a3,3,0,1,1,3-3A3,3,0,0,1,7,19Zm16,9a3,3,0,1,1,3-3A3,3,0,0,1,23,28Z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="delete"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Delete"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Delete"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12H14V24H12zM18 12H20V24H18z"
+                />
+                <path
+                  d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--rule-builder--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
+              data-testid="rule-builder-save"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </header>
+        <div
+          className="iot--rule-builder--body"
+        >
+          Hello
+        </div>
+        <footer
+          className="iot--rule-builder--footer"
+        >
+          <button
+            className="iot--rule-builder--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
+            data-testid="rule-builder-cancel"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--rule-builder--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
+            data-testid="apply"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Apply
+          </button>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Accordion, AccordionItem, Form, TextInput, Tab, Tabs } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
@@ -11,11 +12,11 @@ const { iotPrefix } = settings;
 const propTypes = {
   className: PropTypes.string,
   /** Text for main tilte of page */
-  titleText: PropTypes.string,
+  // titleText: PropTypes.string,
   /** Text for metadata for the filter */
-  metaText: PropTypes.string,
+  // metaText: PropTypes.string,
   /** Unique id for particular filter */
-  id: PropTypes.string,
+  // id: PropTypes.string,
   /**
    * Optional action buttons at top of page and callbacks to handle actions
    */
@@ -29,6 +30,32 @@ const propTypes = {
   handleOnSave: PropTypes.func.isRequired,
   cancelLabel: PropTypes.string,
   handleOnCancel: PropTypes.func.isRequired,
+  /** filter object of the current selected filter */
+  filter: PropTypes.shape({
+    /** Unique id for particular filter */
+    filterId: PropTypes.string,
+    /** Text for main tilte of page */
+    filterTitleText: PropTypes.string,
+    /** Text for metadata for the filter */
+    filterMetaText: PropTypes.string,
+    /** tags associated with particular filter */
+    filterTags: PropTypes.array,
+    /** users that have access to particular filter */
+    filterAccess: PropTypes.arrayOf(PropTypes.shape({
+      userName: PropTypes.string,
+      email: PropTypes.string,
+      name: PropTypes.string,
+      /** access types */
+      access: PropTypes.oneOf(['edit', 'read']),
+    })),
+    /** All possible uers that can be granted access */
+    filterUsers: PropTypes.arrayOf(PropTypes.shape({
+      userName: PropTypes.string,
+      email: PropTypes.string,
+      name: PropTypes.string,
+    })),
+
+  }),
   /**
    * Optional footer buttons and callbacks to handle actions
    */
@@ -37,50 +64,46 @@ const propTypes = {
     buttonLabel: PropTypes.string.isRequired,
     buttonCallback: PropTypes.func.isRequired,
   })),
-  // filterTabText: PropTypes.string,
-  // sharingTabText: PropTypes.string,
+  filterTabText: PropTypes.string,
+  sharingTabText: PropTypes.string,
   // onChange: PropTypes.func,
 }
 
 const defaultProps = {
+  filter: null,
   className: null,
-  titleText: 'Undefined',
-  metaText: null,
-  id: null,
+  // titleText: 'Undefined',
+  // metaText: null,
+  // id: null,
   saveLabel: 'Save',
   cancelLabel: 'Cancel',
   actionBar: null,
   footerButtons: null,
-  // filterTabText: 'Filter builder',
-  // sharingTabText: 'Sharing and preferences',
+  filterTabText: 'Filter builder',
+  sharingTabText: 'Sharing and preferences',
   // onChange: () => {},
 };
 
 const baseClass = `${iotPrefix}--rule-builder`;
 
-export const ACTIONTYPES = {
-  FAVORITE: 'FAVORITE',
-  SHARE: 'SHARE',
-  DELTE: 'DELETE',
-  SAVE: 'SAVE',
-}
-
 const RuleBuilder = ({
   className,
-  titleText,
-  metaText,
-  id,
+  // titleText,
+  // metaText,
+  // id,
   saveLabel,
   handleOnSave,
   cancelLabel,
   handleOnCancel,
   actionBar,
   footerButtons,
-  // filterTabText,
-  // sharingTabText,
+  filterTabText,
+  sharingTabText,
+  filter,
   // onChange,
-  // children,
+  children,
 }) => {
+  const [currentFilter, setCurrentFilter] = React.useState(filter)
   const actions = useMemo(() => actionBar?.map((i)=> (
     <ToolbarSVGWrapper
       key={i.actionId}
@@ -95,12 +118,17 @@ const RuleBuilder = ({
     <Button data-testid={i.buttonId} key={i.buttonId} kind="secondary" className={`${baseClass}--footer-actions-preview`} onClick={i.buttonCallback} >{i.buttonLabel}</Button>
   )), [footerButtons]);
 
+  const handleOnChange = (updatedFilter) => {
+    setCurrentFilter(updatedFilter);
+    onchange(updatedFilter);
+  }
+
   return (
-    <section className={classnames(baseClass, className)} id={id} data-testid={id || 'rule-builder'}>
+    <section className={classnames(baseClass, className)} id={currentFilter?.id} data-testid={currentFilter?.id || 'rule-builder'}>
       <header className={`${baseClass}--header`}>
         <div>
-          <h1 className={`${baseClass}--header-title`}>{titleText}</h1>
-          {metaText && (<p className={`${baseClass}--header-metatext`}>{metaText}</p>)}
+          <h1 className={`${baseClass}--header-title`}>{currentFilter?.titleText}</h1>
+          {currentFilter?.metaText && (<p className={`${baseClass}--header-metatext`}>{currentFilter?.metaText}</p>)}
         </div>
         <div className={`${baseClass}--header-actions`}>
           {actions}
@@ -108,7 +136,31 @@ const RuleBuilder = ({
         </div>
       </header>
       <div className={`${baseClass}--body`}>
-        Hello
+        <Tabs className={`${baseClass}--tabs`}>
+          <Tab className={`${baseClass}--tab`} label={filterTabText}>
+            {children}
+          </Tab>
+          <Tab className={`${baseClass}--tab`} label={sharingTabText}>
+          <Accordion>
+            <AccordionItem title="Section 1 title">
+              <Form>
+                <TextInput
+                  type="text"
+
+                />
+              </Form>
+            </AccordionItem>
+            <AccordionItem title="Section 2 title">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </AccordionItem>
+          </Accordion>
+            <div>TODO: Build sharing and preferences</div>
+          </Tab>
+        </Tabs>
       </div>
       <footer className={`${baseClass}--footer`}>
         <Button kind="secondary" className={`${baseClass}--footer-actions-cancel`} data-testid="rule-builder-cancel" onClick={handleOnCancel} >{cancelLabel}</Button>
