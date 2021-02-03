@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-script-url */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -11,6 +13,8 @@ import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs
 
 import { TileGroup } from '../TileGroup';
 import { RadioTile } from '../RadioTile';
+
+import mdx from './Tile.mdx';
 
 import {
   Tile,
@@ -28,12 +32,11 @@ const radioValues = {
   selected: 'selected',
 };
 
-const storyProps = {
+const props = {
   regular: () => ({
     light: boolean('Light variant (light)', false),
   }),
   clickable: () => ({
-    // eslint-disable-next-line no-script-url
     href: text('Href for clickable UI (href)', 'javascript:void(0)'),
     light: boolean('Light variant (light)', false),
   }),
@@ -79,7 +82,9 @@ export default {
 
   parameters: {
     component: Tile,
-
+    docs: {
+      page: mdx,
+    },
     subcomponents: {
       ClickableTile,
       SelectableTile,
@@ -93,7 +98,7 @@ export default {
 };
 
 export const Default = () => {
-  const regularProps = storyProps.regular();
+  const regularProps = props.regular();
   return <Tile {...regularProps}>Default tile</Tile>;
 };
 
@@ -106,7 +111,7 @@ Default.parameters = {
 };
 
 export const Clickable = () => {
-  const clickableProps = storyProps.clickable();
+  const clickableProps = props.clickable();
   return <ClickableTile {...clickableProps}>Clickable Tile</ClickableTile>;
 };
 
@@ -119,7 +124,7 @@ Clickable.parameters = {
 };
 
 export const MultiSelect = () => {
-  const selectableProps = storyProps.selectable();
+  const selectableProps = props.selectable();
   return (
     <div role="group" aria-label="selectable tiles">
       <SelectableTile id="tile-1" name="tiles" {...selectableProps}>
@@ -141,15 +146,16 @@ MultiSelect.parameters = {
   info: {
     text: `
         Selectable tile
+
         Use this to select multiple tiles.
       `,
   },
 };
 
 export const Radio = () => {
-  const radioProps = storyProps.radio();
+  const radioProps = props.radio();
   return (
-    <TileGroup defaultSelected="default-selected" legend="Radio Tile Group" {...storyProps.group()}>
+    <TileGroup defaultSelected="default-selected" legend="Radio Tile Group" {...props.group()}>
       <RadioTile value="standard" {...radioProps}>
         Radio Tile
       </RadioTile>
@@ -170,15 +176,17 @@ Radio.parameters = {
          Although you can set the checked prop on the Tile, when using the RadioTile component
          as a child of the Tile Group, either set the defaultSelected or valueSelected which will
          automatically set the selected prop on the corresponding RadioTile component.
+
          Use defaultSelected when you want a tile to be selected initially, but don't need to set it
          at a later time. If you do need to set it dynamically at a later time, then use the valueSelected property instead.
+
          Use this to select one tile at a time.
       `,
   },
 };
 
 export const Expandable = () => (
-  <ExpandableTile {...storyProps.expandable()}>
+  <ExpandableTile {...props.expandable()}>
     <TileAboveTheFoldContent>
       <div style={{ height: '200px' }}>Above the fold content here</div>
     </TileAboveTheFoldContent>

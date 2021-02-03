@@ -183,6 +183,7 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-docs": "5.3.17",
     "@storybook/addon-info": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",

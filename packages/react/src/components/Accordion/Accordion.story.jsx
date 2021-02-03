@@ -5,102 +5,135 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* eslint-disable no-console */
+
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { settings } from 'carbon-components';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 
-import { Checkbox, CheckboxSkeleton } from '../Checkbox';
+import Button from '../Button/Button';
 
-const { prefix } = settings;
+import mdx from './Accordion.mdx';
 
-const props = () => ({
-  className: 'some-class',
-  labelText: text('Label text (labelText)', 'Checkbox label'),
-  indeterminate: boolean('Intermediate (indeterminate)', false),
-  disabled: boolean('Disabled (disabled)', false),
-  hideLabel: boolean('No label (hideLabel)', false),
-  wrapperClassName: text('Wrapper CSS class name (wrapperClassName)', ''),
-  onChange: action('onChange'),
-});
+import { Accordion, AccordionItem, AccordionSkeleton } from '.';
 
 export default {
-  title: 'Checkbox',
+  title: 'Accordion',
+  component: Accordion,
+  subcomponents: {
+    AccordionItem,
+    AccordionSkeleton,
+  },
   decorators: [withKnobs],
-
   parameters: {
-    component: Checkbox,
-
-    subcomponents: {
-      CheckboxSkeleton,
+    docs: {
+      page: mdx,
     },
   },
 };
 
-export const Checked = () => {
-  const checkboxProps = props();
-  return (
-    <fieldset className={`${prefix}--fieldset`}>
-      <legend className={`${prefix}--label`}>Checkbox heading</legend>
-      <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-1" />
-      <Checkbox defaultChecked {...checkboxProps} id="checkbox-label-2" />
-    </fieldset>
-  );
-};
-
-Checked.storyName = 'checked';
-
-Checked.parameters = {
-  info: {
-    text: `
-    Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-    The example below shows how the Checkbox component can be used as an uncontrolled component that is initially checked
-    by setting the defaultChecked property to true. To use the component in a controlled way, you should set the
-    checked property instead.
-  `,
-  },
-};
-
-export const Unchecked = () => {
-  const checkboxProps = props();
-  return (
-    <fieldset className={`${prefix}--fieldset`}>
-      <legend className={`${prefix}--label`}>Checkbox heading</legend>
-      <Checkbox {...checkboxProps} id="checkbox-label-1" />
-      <Checkbox {...checkboxProps} id="checkbox-label-2" />
-    </fieldset>
-  );
-};
-
-Unchecked.storyName = 'unchecked';
-
-Unchecked.parameters = {
-  info: {
-    text: `
-      Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
-      The example below shows how the Checkbox component can be used as an uncontrolled component that is initially
-      unchecked. To use the component in a controlled way, you should set the checked property instead.
-    `,
-  },
-};
-
-export const Skeleton = () => (
-  <div
-    aria-label="loading checkbox"
-    aria-live="assertive"
-    role="status"
-    tabIndex="0" // eslint-disable-line jsx-a11y/no-noninteractive-tabindex
-  >
-    <CheckboxSkeleton />
-  </div>
+export const accordion = () => (
+  <Accordion>
+    <AccordionItem title="Section 1 title">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+    <AccordionItem title="Section 2 title">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+    <AccordionItem title="Section 3 title">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+    <AccordionItem title="Section 4 title">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+  </Accordion>
 );
 
-Skeleton.storyName = 'skeleton';
+export const skeleton = () => <AccordionSkeleton open count={4} />;
 
-Skeleton.parameters = {
-  info: {
-    text: `
-      Placeholder skeleton state to use when content is loading.
-    `,
-  },
+skeleton.decorators = [(story) => <div style={{ width: '500px' }}>{story()}</div>];
+
+const props = {
+  onClick: action('onClick'),
+  onHeadingClick: action('onHeadingClick'),
 };
+
+const sizes = {
+  'Extra large size (xl)': 'xl',
+  'Default size': undefined,
+  'Small size (sm)': 'sm',
+};
+
+export const playground = () => (
+  <Accordion
+    disabled={boolean('Disable entire Accordion (disabled)', false)}
+    size={select('Accordion heading size (size)', sizes, undefined) || undefined}
+    align={select('Accordion heading alignment (align)', ['start', 'end'], 'end')}
+  >
+    <AccordionItem
+      title={text('The title (title)', 'Section 1 title')}
+      open={boolean('Open the section (open)', false)}
+      {...props}
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+    <AccordionItem title="Section 2 title" {...props}>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+    <AccordionItem
+      title="Section 3 title"
+      {...props}
+      disabled={boolean('Disable Section 3 (disabled)', true)}
+    >
+      <Button>This is a button.</Button>
+    </AccordionItem>
+    <AccordionItem
+      title={
+        <span>
+          Section 4 title (<em>the title can be a node</em>)
+        </span>
+      }
+      {...props}
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </AccordionItem>
+  </Accordion>
+);
+
+export const skeletonPlayground = () => (
+  <div style={{ width: '500px' }}>
+    <AccordionSkeleton
+      align={select('Accordion heading alignment (align)', ['start', 'end'], 'end')}
+      open={boolean('Show first item opened (open)', true)}
+      count={number('Set number of items (count)', 4)}
+    />
+  </div>
+);

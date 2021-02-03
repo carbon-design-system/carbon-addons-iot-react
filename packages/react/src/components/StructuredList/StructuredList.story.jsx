@@ -1,3 +1,4 @@
+/* eslint-disable prefer-spread */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -8,6 +9,8 @@
 import React from 'react';
 import { CheckmarkFilled16 } from '@carbon/icons-react';
 import { settings } from 'carbon-components';
+
+import mdx from './StructuredList.mdx';
 
 import {
   StructuredListWrapper,
@@ -26,7 +29,9 @@ export default {
 
   parameters: {
     component: StructuredListWrapper,
-
+    docs: {
+      page: mdx,
+    },
     subcomponents: {
       StructuredListHead,
       StructuredListBody,
@@ -79,7 +84,6 @@ Simple.parameters = {
 
 export const Selection = () => {
   const structuredListBodyRowGenerator = (numRows) => {
-    // eslint-disable-next-line prefer-spread
     return Array.apply(null, Array(numRows)).map((n, i) => (
       <StructuredListRow label key={`row-${i}`}>
         <StructuredListCell>Row {i}</StructuredListCell>

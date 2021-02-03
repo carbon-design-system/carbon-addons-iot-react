@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -11,6 +12,8 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import { RadioButton } from '../RadioButton';
 import { FormGroup } from '../FormGroup';
+
+import mdx from './RadioButtonGroup.mdx';
 
 import { RadioButtonGroup } from '.';
 
@@ -30,7 +33,7 @@ const labelPositions = {
   'Right (right)': 'right',
 };
 
-const storyProps = {
+const props = {
   group: () => ({
     name: text('The form control name (name in <RadioButtonGroup>)', 'radio-button-group'),
     valueSelected: select(
@@ -55,6 +58,9 @@ export default {
 
   parameters: {
     component: RadioButtonGroup,
+    docs: {
+      page: mdx,
+    },
 
     subcomponents: {
       RadioButton,
@@ -63,14 +69,10 @@ export default {
 };
 
 export const Default = () => {
-  const radioProps = storyProps.radio();
+  const radioProps = props.radio();
   return (
     <FormGroup legendText="Radio Button heading">
-      <RadioButtonGroup
-        defaultSelected="default-selected"
-        legend="Group Legend"
-        {...storyProps.group()}
-      >
+      <RadioButtonGroup defaultSelected="default-selected" legend="Group Legend" {...props.group()}>
         <RadioButton value="standard" id="radio-1" {...radioProps} />
         <RadioButton value="default-selected" id="radio-2" {...radioProps} />
         <RadioButton value="disabled" id="radio-3" {...radioProps} />
@@ -86,6 +88,7 @@ Default.parameters = {
         Although you can set the checked prop on the Radio Button, when using the Radio Button component
         as a child of the Radio Button Group, either set the defaultSelected or valueSelected which will
         automatically set the selected prop on the corresponding Radio Button component.
+
         Use defaultSelected when you want a radio button to be selected initially, but don't need to set it
         at a later time. If you do need to set it dynamically at a later time, then use the valueSelected property instead.
       `,

@@ -1,37 +1,83 @@
+/* eslint-disable no-use-before-define */
+/**
+ * Copyright IBM Corp. 2016, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+
+import mdx from './CodeSnippet.mdx';
 
 import { CodeSnippet, CodeSnippetSkeleton } from '.';
 
-const storyProps = {
-  inline: () => ({
-    light: boolean('Light variant (light)', false),
-    feedback: text('Feedback text (feedback)', 'Copied to clipboard'),
-    onClick: action('onClick'),
-    copyLabel: text('ARIA label for the snippet/copy button (copyLabel)', 'copyable code snippet'),
-    hideCopyButton: boolean('Hide copy button (hideCopyButton)', false),
-  }),
-  single: () => ({
-    light: boolean('Light variant (light)', false),
-    feedback: text('Feedback text (feedback)', 'Copied to clipboard'),
-    copyButtonDescription: text(
-      'Copy icon description (copyButtonDescription)',
-      'copyable code snippet'
-    ),
-    ariaLabel: text('ARIA label of the container (ariaLabel)', 'Container label'),
-    hideCopyButton: boolean('Hide copy button (hideCopyButton)', false),
-    onClick: action('onClick'),
-  }),
-  multiline: () => ({
-    light: boolean('Light variant (light)', false),
-    feedback: text('Feedback text (feedback)', 'Copied to clipboard'),
-    showMoreText: text('Text for "show more" button (showMoreText)', 'Show more'),
-    showLessText: text('Text for "show less" button (showLessText)', 'Show less'),
-    hideCopyButton: boolean('Hide copy button (hideCopyButton)', false),
-    onClick: action('onClick'),
-  }),
+export default {
+  title: 'CodeSnippet',
+  component: CodeSnippet,
+  decorators: [withKnobs],
+  parameters: {
+    docs: {
+      page: mdx,
+    },
+  },
 };
+
+export const inline = () => (
+  <CodeSnippet type="inline" feedback="Copied to clipboard">
+    {'node -v'}
+  </CodeSnippet>
+);
+
+export const multiline = () => (
+  <CodeSnippet {...props()} type="multi" feedback="Copied to clipboard">
+    {`  "scripts": {
+    "build": "lerna run build --stream --prefix --npm-client yarn",
+    "ci-check": "carbon-cli ci-check",
+    "clean": "lerna run clean && lerna clean --yes && rimraf node_modules",
+    "doctoc": "doctoc --title '## Table of Contents'",
+    "format": "prettier --write '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd}/**'",
+    "format:diff": "prettier --list-different '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd}/**' '!packages/components/**'",
+    "lint": "eslint actions config codemods packages",
+    "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables",
+    "sync": "carbon-cli sync",
+    "test": "cross-env BABEL_ENV=test jest",
+    "test:e2e": "cross-env BABEL_ENV=test jest --testPathPattern=e2e --testPathIgnorePatterns='examples,/packages/components/,/packages/react/'"
+  },
+  "resolutions": {
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-is": "~16.9.0",
+    "react-test-renderer": "~16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.10.0",
+    "@babel/preset-env": "^7.10.0",
+    "@babel/preset-react": "^7.10.0",
+    "@babel/runtime": "^7.10.0",
+    "@commitlint/cli": "^8.3.5",`}
+  </CodeSnippet>
+);
+
+export const singleline = () => (
+  <CodeSnippet type="single" feedback="Copied to clipboard">
+    yarn add carbon-components@latest carbon-components-react@latest @carbon/icons-react@latest
+    carbon-icons@latest
+  </CodeSnippet>
+);
+
+export const skeleton = () => (
+  <div>
+    <CodeSnippetSkeleton type="single" style={{ marginBottom: 8 }} />
+    <CodeSnippetSkeleton type="multi" />
+  </div>
+);
 
 const lightPropMessage = (
   <small style={{ display: 'block', paddingBottom: '1rem' }}>
@@ -53,126 +99,38 @@ const lightPropMessage = (
   </small>
 );
 
-export default {
-  title: 'CodeSnippet',
-  decorators: [withKnobs],
-
-  parameters: {
-    component: CodeSnippet,
-
-    subcomponents: {
-      CodeSnippetSkeleton,
+const props = () => ({
+  type: select(
+    'Type',
+    {
+      inline: 'inline',
+      'single line': 'single',
+      'multiple line': 'multi',
     },
-  },
-};
+    'inline'
+  ),
+  light: boolean('Light variant', false),
+  feedback: text('Feedback text', 'Copied to clipboard'),
+  showMoreText: text('Text for "show more" button', 'Show more'),
+  showLessText: text('Text for "show less" button', 'Show less'),
+  hideCopyButton: boolean('Hide copy button', false),
+  onClick: action('onClick'),
+  copyButtonDescription: text('Copy button title', 'Copy code snippet'),
+  ariaLabel: text('ARIA label', 'Container label'),
+  wrapText: boolean('Wrap text', true),
+});
 
-export const Inline = () => (
-  <div className={storyProps.inline().light ? 'bx--tile' : ''}>
-    {storyProps.inline().light && lightPropMessage}
-    <CodeSnippet type="inline" {...storyProps.inline()}>
-      {'node -v'}
+export const playground = () => (
+  <div className={props().light ? 'bx--tile' : ''}>
+    {props().light && lightPropMessage}
+    <CodeSnippet {...props()}>
+      {props().type === 'multi'
+        ? `@mixin grid-container {
+  width: 100%;
+  padding-right: padding(mobile);
+  padding-left: padding(mobile);
+}`
+        : 'node -v'}
     </CodeSnippet>
   </div>
 );
-
-Inline.storyName = 'inline';
-
-Inline.parameters = {
-  info: {
-    text: `
-    Code snippets are small blocks of reusable code that can be inserted in a code file.
-    The Inline style is for code used within a block of text.
-  `,
-  },
-};
-
-export const SingleLine = () => (
-  <div className={storyProps.single().light ? 'bx--tile' : ''}>
-    {storyProps.single().light && lightPropMessage}
-    <CodeSnippet type="single" {...storyProps.single()}>
-      {
-        'node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!'
-      }
-    </CodeSnippet>
-  </div>
-);
-
-SingleLine.storyName = 'single line';
-
-SingleLine.parameters = {
-  info: {
-    text: `
-      Code snippets are small blocks of reusable code that can be inserted in a code file.
-      The Code style is for larger, multi-line code snippets.
-    `,
-  },
-};
-
-export const MultiLine = () => {
-  const multilineProps = storyProps.multiline();
-  return (
-    <div className={multilineProps.light ? 'bx--tile' : ''} style={{ width: '800px' }}>
-      {multilineProps.light && lightPropMessage}
-      <CodeSnippet type="multi" {...multilineProps}>
-        {`@mixin grid-container {
-width: 100%;
-padding-right: padding(mobile);
-padding-left: padding(mobile);
-@include breakpoint(bp--xs--major) {
-padding-right: padding(xs);
-padding-left: padding(xs);
-}
-}
-$z-indexes: (
-modal : 9000,
-overlay : 8000,
-dropdown : 7000,
-header : 6000,
-footer : 5000,
-hidden : - 1,
-overflowHidden: - 1,
-floating: 10000
-);`}
-      </CodeSnippet>
-      <br />
-      <CodeSnippet type="multi" {...multilineProps}>
-        {`@mixin grid-container {
-width: 100%;
-padding-right: padding(mobile);
-padding-left: padding(mobile);
-@include breakpoint(bp--xs--major) {
-padding-right: padding(xs);
-}
-}`}
-      </CodeSnippet>
-    </div>
-  );
-};
-
-MultiLine.storyName = 'multi line';
-
-MultiLine.parameters = {
-  info: {
-    text: `
-      Code snippets are small blocks of reusable code that can be inserted in a code file.
-      The Terminal style is for single-line .
-    `,
-  },
-};
-
-export const Skeleton = () => (
-  <div style={{ width: '800px' }}>
-    <CodeSnippetSkeleton type="single" style={{ marginBottom: 8 }} />
-    <CodeSnippetSkeleton type="multi" />
-  </div>
-);
-
-Skeleton.storyName = 'skeleton';
-
-Skeleton.parameters = {
-  info: {
-    text: `
-      Placeholder skeleton state to use when content is loading.
-    `,
-  },
-};

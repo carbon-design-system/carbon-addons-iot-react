@@ -11,7 +11,9 @@ import { withKnobs, number, select, text } from '@storybook/addon-knobs';
 
 import Button from '../Button';
 
-import InlineLoading from '.';
+import mdx from './InlineLoading.mdx';
+
+import { InlineLoading } from '.';
 
 const props = () => ({
   status: select('Loading status (status)', ['inactive', 'active', 'finished', 'error'], 'active'),
@@ -30,6 +32,9 @@ export default {
 
   parameters: {
     component: InlineLoading,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
@@ -117,6 +122,7 @@ UxExample.parameters = {
   info: {
     text: `
         This is a full example of how to levarage the <InlineLoading /> component to create a nice user experience when submitting a form.
+
         For the full source code of this example, check out the 'story' panel below.
       `,
   },

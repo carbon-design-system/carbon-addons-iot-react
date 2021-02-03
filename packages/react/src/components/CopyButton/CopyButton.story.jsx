@@ -1,8 +1,17 @@
+/**
+ * Copyright IBM Corp. 2016, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
-import CopyButton from '.';
+import mdx from './CopyButton.mdx';
+
+import { CopyButton } from '.';
 
 const props = () => ({
   feedback: text('The text shown upon clicking (feedback)', 'Copied!'),
@@ -17,6 +26,9 @@ export default {
 
   parameters: {
     component: CopyButton,
+    docs: {
+      page: mdx,
+    },
   },
 };
 

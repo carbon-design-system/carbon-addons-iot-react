@@ -23,7 +23,9 @@ import { TextArea } from '../TextArea';
 import { TextInput } from '../TextInput';
 import { Toggle } from '../Toggle';
 
-import Form from '.';
+import mdx from './Form.mdx';
+
+import { Form } from '.';
 
 const additionalProps = {
   className: 'some-class',
@@ -140,6 +142,9 @@ export default {
 
   parameters: {
     component: Form,
+    docs: {
+      page: mdx,
+    },
 
     subcomponents: {
       FormGroup,
@@ -234,8 +239,10 @@ Default.parameters = {
   info: {
     text: `
         Forms are widely used to collect user input.
+
         Form can have any number of react components enclosed within FormGroup component. FormGroup component
         is a wrapper for legend and fieldset component.
+
       `,
   },
 };

@@ -8,7 +8,9 @@
 import React from 'react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 
-import TooltipDefinition from '.';
+import mdx from './TooltipDefinition.mdx';
+
+import { TooltipDefinition } from '.';
 
 const directions = {
   'Bottom (bottom)': 'bottom',
@@ -37,6 +39,9 @@ export default {
 
   parameters: {
     component: TooltipDefinition,
+    docs: {
+      page: mdx,
+    },
   },
 };
 

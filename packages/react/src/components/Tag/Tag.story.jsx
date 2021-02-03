@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -8,11 +9,13 @@
 import React from 'react';
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions/dist/preview';
-import { types as typesList } from 'carbon-components-react/lib/components/Tag/Tag';
+import { types as typesList } from 'carbon-components-react/lib/components/Tag';
+
+import mdx from './Tag.mdx';
 
 import { Tag, TagSkeleton } from '.';
 
-const storyProps = {
+const props = {
   regular: () => ({
     type: select(
       'Tag type (type)',
@@ -44,7 +47,9 @@ export default {
 
   parameters: {
     component: Tag,
-
+    docs: {
+      page: mdx,
+    },
     subcomponents: {
       TagSkeleton,
     },
@@ -52,7 +57,7 @@ export default {
 };
 
 export const _Default = () => (
-  <Tag className="some-class" {...storyProps.regular()}>
+  <Tag className="some-class" {...props.regular()}>
     {text('Content (children)', 'This is a tag')}
   </Tag>
 );
@@ -68,7 +73,7 @@ _Default.parameters = {
 };
 
 export const Filter = () => (
-  <Tag className="some-class" {...storyProps.filter()} filter>
+  <Tag className="some-class" {...props.filter()} filter>
     {text('Content (children)', 'This is a tag')}
   </Tag>
 );

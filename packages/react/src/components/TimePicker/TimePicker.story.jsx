@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -7,14 +8,22 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 
-import { TimePickerSelect } from '../TimePickerSelect';
 import { SelectItem } from '../SelectItem';
+import { TimePickerSelect } from '../TimePickerSelect';
+
+import mdx from './TimePicker.mdx';
 
 import { TimePicker } from '.';
 
-const storyProps = {
+const sizes = {
+  'Extra large size (xl)': 'xl',
+  'Default size': undefined,
+  'Small size (sm)': 'sm',
+};
+
+const props = {
   timepicker: () => ({
     pattern: text(
       'Regular expression for the value (pattern in <TimePicker>)',
@@ -30,6 +39,7 @@ const storyProps = {
       'A valid value is required'
     ),
     maxLength: number('Maximum length (maxLength in <TimePicker>)', 5),
+    size: select('Field size (size)', sizes, undefined) || undefined,
     onClick: action('onClick'),
     onChange: action('onChange'),
     onBlur: action('onBlur'),
@@ -47,10 +57,11 @@ const storyProps = {
 export default {
   title: 'TimePicker',
   decorators: [withKnobs],
-
   parameters: {
     component: TimePicker,
-
+    docs: {
+      page: mdx,
+    },
     subcomponents: {
       TimePickerSelect,
       SelectItem,
@@ -59,9 +70,9 @@ export default {
 };
 
 export const Default = () => {
-  const selectProps = storyProps.select();
+  const selectProps = props.select();
   return (
-    <TimePicker id="time-picker" {...storyProps.timepicker()}>
+    <TimePicker id="time-picker" {...props.timepicker()}>
       <TimePickerSelect id="time-picker-select-1" {...selectProps}>
         <SelectItem value="AM" text="AM" />
         <SelectItem value="PM" text="PM" />

@@ -12,13 +12,13 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
 
-import TextInput from '../TextInput';
-import Select from '../Select';
-import SelectItem from '../SelectItem';
-import RadioButtonGroup from '../RadioButtonGroup';
-import RadioButton from '../RadioButton';
+import { TextInput } from '../TextInput';
+import { Select } from '../Select';
+import { SelectItem } from '../SelectItem';
+import { RadioButtonGroup } from '../RadioButtonGroup';
+import { RadioButton } from '../RadioButton';
 
-import ModalWrapper from '.';
+import { ModalWrapper } from '.';
 
 const { prefix } = settings;
 

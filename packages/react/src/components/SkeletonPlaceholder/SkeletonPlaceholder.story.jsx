@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -9,6 +10,8 @@
 
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
+
+import mdx from './SkeletonPlaceholder.mdx';
 
 import { SkeletonPlaceholder } from '.';
 
@@ -28,23 +31,27 @@ export default {
 
   parameters: {
     component: SkeletonPlaceholder,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
 export const Default = () => (
   <div style={{ height: '250px', width: '250px' }}>
     <style
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: `
       .my--skeleton__placeholder--small {
         height: 100px;
         width: 100px;
       }
+
       .my--skeleton__placeholder--medium {
         height: 150px;
         width: 150px;
       }
+
       .my--skeleton__placeholder--large {
         height: 250px;
         width: 250px;
@@ -60,7 +67,9 @@ Default.parameters = {
   info: {
     text: `
     Skeleton states are used as a progressive loading state while the user waits for content to load.
+
     By taking a height and/or width property, this component can be used when you know the exact dimensions of the incoming content, such as an image.
+
     However, for performance reasons, it's recommended to create a class in your stylesheet to set the dimensions.
   `,
   },

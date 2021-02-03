@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -7,10 +8,12 @@
 
 import React, { useState } from 'react';
 import { settings } from 'carbon-components';
-import { withKnobs, select, text, number } from '@storybook/addon-knobs';
+import { withKnobs, select, text, number, boolean } from '@storybook/addon-knobs';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 
 import Button from '../Button';
+
+import mdx from './Tooltip.mdx';
 
 import { Tooltip } from '.';
 
@@ -21,8 +24,15 @@ const directions = {
   'Top (top)': 'top',
   'Right (right)': 'right',
 };
-const storyProps = {
+const alignments = {
+  'Start (start)': 'start',
+  'Center (center)': 'center',
+  'End (end)': 'end',
+};
+
+const props = {
   withIcon: () => ({
+    align: select('Tooltip alignment (align)', alignments, 'center'),
     direction: select('Tooltip direction (direction)', directions, 'bottom'),
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
@@ -30,6 +40,7 @@ const storyProps = {
   }),
   withoutIcon: () => ({
     showIcon: false,
+    align: select('Tooltip alignment (align)', alignments, 'center'),
     direction: select('Tooltip direction (direction)', directions, 'bottom'),
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
@@ -37,23 +48,23 @@ const storyProps = {
   }),
   customIcon: () => ({
     showIcon: true,
+    align: select('Tooltip alignment (align)', alignments, 'center'),
     direction: select('Tooltip direction (direction)', directions, 'bottom'),
     triggerText: text('Trigger text (triggerText)', 'Tooltip label'),
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
     selectorPrimaryFocus: text('Primary focus element selector (selectorPrimaryFocus)', ''),
     // eslint-disable-next-line react/display-name
-    renderIcon: React.forwardRef((props, ref) => (
-      <div ref={ref}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
-          <path d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z" />
-          <path d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
-          <path fill="none" d="M0 0h16v16H0z" />
-        </svg>
-      </div>
-    )),
+    renderIcon: () => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+        <path d="M8.5 11V6.5h-2v1h1V11H6v1h4v-1zM8 3.5c-.4 0-.8.3-.8.8s.4.7.8.7.8-.3.8-.8-.4-.7-.8-.7z" />
+        <path d="M8 15c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zM8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
+        <path fill="none" d="M0 0h16v16H0z" />
+      </svg>
+    ),
   }),
   customIconOnly: () => ({
     showIcon: true,
+    align: select('Tooltip alignment (align)', alignments, 'center'),
     direction: select('Tooltip direction (direction)', directions, 'bottom'),
     iconDescription: 'Helpful Information',
     tabIndex: number('Tab index (tabIndex in <Tooltip>)', 0),
@@ -83,11 +94,23 @@ function UncontrolledTooltipExample() {
       </Button>
       <div style={{ padding: '15px', margin: '4px 20px' }}>
         <Tooltip
+          {...{
+            ...props.withoutIcon(),
+            focusTrap: boolean('Focus trap (focusTrap)', true),
+          }}
           triggerText={<div>My text wrapped with tooltip</div>}
           open={value}
-          showIcon={false}
         >
-          Some text
+          <p id="tooltip-body">
+            This is some tooltip text. This box shows the maximum amount of text that should appear
+            inside. If more room is needed please use a modal instead.
+          </p>
+          <div className={`${prefix}--tooltip__footer`}>
+            <a href="/" className={`${prefix}--link`}>
+              Learn More
+            </a>
+            <Button size="small">Create</Button>
+          </div>
         </Tooltip>
       </div>
     </>
@@ -96,16 +119,19 @@ function UncontrolledTooltipExample() {
 
 export default {
   title: 'Tooltip',
+  component: Tooltip,
   decorators: [withKnobs],
 
   parameters: {
-    component: Tooltip,
+    docs: {
+      page: mdx,
+    },
   },
 };
 
 export const DefaultBottom = () => (
   <div style={containerStyles}>
-    <Tooltip {...storyProps.withIcon()} tooltipBodyId="tooltip-body">
+    <Tooltip {...props.withIcon()} tooltipBodyId="tooltip-body">
       <p id="tooltip-body">
         This is some tooltip text. This box shows the maximum amount of text that should appear
         inside. If more room is needed please use a modal instead.
@@ -134,7 +160,7 @@ DefaultBottom.parameters = {
 
 export const NoIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...storyProps.withoutIcon()}>
+    <Tooltip {...props.withoutIcon()}>
       <p>
         This is some tooltip text. This box shows the maximum amount of text that should appear
         inside. If more room is needed please use a modal instead.
@@ -163,7 +189,7 @@ NoIcon.parameters = {
 
 export const RenderCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...storyProps.customIcon()}>
+    <Tooltip {...props.customIcon()}>
       <p>
         This is some tooltip text. This box shows the maximum amount of text that should appear
         inside. If more room is needed please use a modal instead.
@@ -192,7 +218,7 @@ RenderCustomIcon.parameters = {
 
 export const OnlyCustomIcon = () => (
   <div style={containerStyles}>
-    <Tooltip {...storyProps.customIconOnly()}>
+    <Tooltip {...props.customIconOnly()}>
       <p>
         This is some tooltip text. This box shows the maximum amount of text that should appear
         inside. If more room is needed please use a modal instead.

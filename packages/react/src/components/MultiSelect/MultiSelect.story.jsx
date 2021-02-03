@@ -5,12 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs';
 import { withReadme } from 'storybook-readme';
 
+import { Checkbox } from '../Checkbox';
+
 import readme from './README.md';
+import mdx from './MultiSelect.mdx';
 
 import { MultiSelect } from '.';
 
@@ -73,7 +76,13 @@ const props = () => ({
   label: text('Label (label)', defaultLabel),
   invalid: boolean('Show form validation UI (invalid)', false),
   invalidText: text('Form validation UI content (invalidText)', 'Invalid Selection'),
+  warn: boolean('Show warning state (warn)', false),
+  warnText: text(
+    'Warning state text (warnText)',
+    'Selecting more items may increase processing time'
+  ),
   onChange: action('onChange'),
+  onMenuChange: action('onMenuChange'),
   listBoxMenuIconTranslationIds: object(
     'Listbox menu icon translation IDs (for translateWithId callback)',
     {
@@ -96,7 +105,9 @@ export default {
 
   parameters: {
     component: MultiSelect,
-
+    docs: {
+      page: mdx,
+    },
     subcomponents: {
       'MultiSelect.Filterable': MultiSelect.Filterable,
     },
@@ -167,6 +178,9 @@ export const _Filterable = withReadme(readme, () => {
         placeholder={defaultPlaceholder}
         translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
         selectionFeedback={selectionFeedback}
+        onMenuChange={(e) => {
+          multiSelectProps.onMenuChange(e);
+        }}
       />
     </div>
   );
@@ -181,3 +195,43 @@ _Filterable.parameters = {
       `,
   },
 };
+
+export const WithChangeOnClose = withReadme(readme, () => {
+  const { listBoxMenuIconTranslationIds, selectionFeedback, ...multiSelectProps } = props();
+
+  const [hasFocus, setHasFocus] = useState(false);
+  const [active, setActive] = useState(false);
+  const [selItems, setSelItems] = useState([items[0]]);
+  if (!hasFocus && active && selItems.length === 0) setActive(false);
+
+  return (
+    <div style={{ width: 300 }}>
+      <Checkbox
+        id="active"
+        checked={active}
+        onChange={(a) => {
+          setActive(a);
+          if (a) setSelItems([items[0]]);
+        }}
+        labelText="Active"
+      />
+      <MultiSelect
+        {...multiSelectProps}
+        items={items}
+        itemToString={(item) => (item ? item.text : '')}
+        translateWithId={(id) => listBoxMenuIconTranslationIds[id]}
+        selectionFeedback={selectionFeedback}
+        key={active}
+        disabled={!active}
+        initialSelectedItems={selItems}
+        onMenuChange={(e) => {
+          multiSelectProps.onMenuChange(e);
+          setHasFocus(e);
+        }}
+        onChange={(e) => {
+          setSelItems(e.selectedItems);
+        }}
+      />
+    </div>
+  );
+});

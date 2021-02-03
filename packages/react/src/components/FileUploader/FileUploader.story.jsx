@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable react/destructuring-assignment */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -12,13 +14,16 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, array, boolean, number, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
 
+import mdx from './FileUploader.mdx';
+
 import {
   FileUploader,
+  FileUploaderButton,
+  FileUploaderSkeleton,
   FileUploaderItem,
   FileUploaderDropContainer,
-  FileUploaderSkeleton,
-  FileUploaderButton,
 } from '.';
+import './FileUploader-story.scss';
 
 const { prefix } = settings;
 const buttonKinds = {
@@ -40,7 +45,7 @@ const filenameStatuses = {
   'Uploading (uploading)': 'uploading',
 };
 
-const storyProps = {
+const props = {
   fileUploaderButton: () => {
     const buttonKind = select('Button kind (buttonKind)', buttonKinds, '');
     return {
@@ -70,12 +75,12 @@ const storyProps = {
       ''
     );
     return {
-      labelTitle: text('The label title (labelTitle)', 'Upload'),
+      labelTitle: text('The label title (labelTitle)', 'Upload files'),
       labelDescription: text(
         'The label description (labelDescription)',
-        'only .jpg files at 500mb or less'
+        'Max file size is 500mb. Only .jpg files are supported.'
       ),
-      buttonLabel: text('The button label (buttonLabel)', 'Add files'),
+      buttonLabel: text('The button label (buttonLabel)', 'Add file'),
       buttonKind: buttonKind || 'primary',
       size: select('Button size (size)', sizes, 'default'),
       filenameStatus: select('Status for file name (filenameStatus)', filenameStatuses, 'edit'),
@@ -124,6 +129,9 @@ export default {
 
   parameters: {
     component: FileUploader,
+    docs: {
+      page: mdx,
+    },
 
     subcomponents: {
       FileUploaderButton,
@@ -134,24 +142,10 @@ export default {
   },
 };
 
-export const _FileUploaderButton = () => (
-  <FileUploaderButton {...storyProps.fileUploaderButton()} />
-);
-
-_FileUploaderButton.storyName = 'FileUploaderButton';
-
-_FileUploaderButton.parameters = {
-  info: {
-    text: `
-        The FileUploaderButton can be used as a standalone component if you do not need the extra UI that comes with FileUploader. The FileUploaderButton is used in FileUploader.
-      `,
-  },
-};
-
 export const _FileUploader = () => {
   return (
     <div className={`${prefix}--file__container`}>
-      <FileUploader {...storyProps.fileUploader()} />
+      <FileUploader {...props.fileUploader()} />
     </div>
   );
 };
@@ -166,7 +160,7 @@ _FileUploader.parameters = {
   },
 };
 
-export const _FileUploaderItem = () => <FileUploaderItem {...storyProps.fileUploaderItem()} />;
+export const _FileUploaderItem = () => <FileUploaderItem {...props.fileUploaderItem()} />;
 
 _FileUploaderItem.storyName = 'FileUploaderItem';
 
@@ -179,7 +173,7 @@ _FileUploaderItem.parameters = {
 };
 
 export const _FileUploaderDropContainer = () => (
-  <FileUploaderDropContainer {...storyProps.fileUploaderDropContainer()} />
+  <FileUploaderDropContainer {...props.fileUploaderDropContainer()} />
 );
 
 _FileUploaderDropContainer.storyName = 'FileUploaderDropContainer';
@@ -192,10 +186,7 @@ _FileUploaderDropContainer.parameters = {
 };
 
 export const DragAndDropUploadContainerExampleApplication = () =>
-  // eslint-disable-next-line global-require
-  require('carbon-components-react/lib/components/FileUploader/stories/drop-container').default(
-    storyProps.fileUploaderDropContainer()
-  );
+  require('./stories/drop-container').default(props.fileUploaderDropContainer());
 
 DragAndDropUploadContainerExampleApplication.storyName =
   'Drag and drop upload container example application';

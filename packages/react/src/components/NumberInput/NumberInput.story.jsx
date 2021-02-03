@@ -9,6 +9,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs';
 
+import mdx from './NumberInput.mdx';
+
 import { NumberInput, NumberInputSkeleton } from '.';
 
 const sizes = {
@@ -32,6 +34,8 @@ const props = () => ({
   invalid: boolean('Show form validation UI (invalid)', false),
   isMobile: boolean('Mobile variant', false),
   invalidText: text('Form validation UI content (invalidText)', 'Number is not valid'),
+  warn: boolean('Show warning state (warn)', false),
+  warnText: text('Warning state text (warnText)', 'A high threshold may impact performance'),
   helperText: text('Helper text (helperText)', 'Optional helper text.'),
   light: boolean('Light variant (light)', false),
   onChange: action('onChange'),
@@ -48,10 +52,13 @@ const props = () => ({
 
 export default {
   title: 'NumberInput',
+  component: NumberInput,
   decorators: [withKnobs],
 
   parameters: {
-    component: NumberInput,
+    docs: {
+      page: mdx,
+    },
 
     subcomponents: {
       NumberInputSkeleton,
@@ -62,15 +69,6 @@ export default {
 export const Default = () => {
   const { numberInputArrowTranslationIds, ...rest } = props();
   return <NumberInput translateWithId={(id) => numberInputArrowTranslationIds[id]} {...rest} />;
-};
-
-Default.parameters = {
-  info: {
-    text: `
-        Number inputs are similar to text fields, but contain controls used to increase or decrease an incremental value.
-        The Number Input component can be passed a starting value, a min, a max, and the step.
-      `,
-  },
 };
 
 export const Skeleton = () => (
