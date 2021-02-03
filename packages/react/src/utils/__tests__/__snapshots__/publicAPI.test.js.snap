@@ -8628,6 +8628,7 @@ Map {
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
+      "onCardJsonPreview": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
@@ -9166,6 +9167,9 @@ Map {
       "onCardChange": Object {
         "type": "func",
       },
+      "onCardJsonPreview": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -9237,6 +9241,7 @@ Map {
       },
       "icons": null,
       "isSummaryDashboard": false,
+      "onCardJsonPreview": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9416,6 +9421,9 @@ Map {
       },
       "onAddCard": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onCardJsonPreview": Object {
         "type": "func",
       },
       "onChange": Object {
