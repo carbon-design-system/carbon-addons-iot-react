@@ -59,7 +59,7 @@ describe('TileCatalogNew', () => {
         tiles={getTiles(8, 'Tile')}
         numColumns={2}
         numRows={2}
-        hasSearch="true"
+        hasSearch
         onSearch={onSearch}
       />
     );
@@ -81,11 +81,11 @@ describe('TileCatalogNew', () => {
     render(
       <TileCatalogNew
         tiles={getTiles(2, 'Tile')}
-        hasSort="true"
+        hasSort
         onSort={onSort}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
-        hasSearch="true"
+        hasSearch
       />
     );
     fireEvent.change(screen.getByDisplayValue('Choose from options'), {

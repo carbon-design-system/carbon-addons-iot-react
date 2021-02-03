@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
+import '@testing-library/jest-dom/extend-expect';
 import ListHeader from './ListHeader';
 
 describe('ListHeader', () => {
@@ -10,6 +10,7 @@ describe('ListHeader', () => {
     expect(screen.getByText('List Header')).toBeTruthy();
   });
 
+  // TODO: write a test that actually tests the search
   it('ListHeader with defaultProps onChange function', () => {
     expect(ListHeader.defaultProps.search.onChange).toBeDefined();
     ListHeader.defaultProps.search.onChange();

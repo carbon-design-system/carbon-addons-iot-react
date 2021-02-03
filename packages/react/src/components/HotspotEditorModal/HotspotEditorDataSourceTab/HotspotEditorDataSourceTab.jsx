@@ -92,8 +92,8 @@ const defaultProps = {
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
-  dataItems?.map(({ dataSourceId }) => ({
-    id: dataSourceId,
+  dataItems?.map(({ dataSourceId, dataItemId }) => ({
+    id: dataItemId,
     text: dataSourceId,
   }));
 
@@ -121,10 +121,10 @@ const HotspotEditorDataSourceTab = ({
     // loop through  selected Items and find their selectedItemsArray object or the dataItem object with same id
     selectedItems.forEach((item) => {
       const containedItem = selectedItemsArray.find(
-        (selectedItem) => selectedItem.dataSourceId === item.id
+        (selectedItem) => selectedItem.dataItemId === item.id
       );
       const containedDataItem = dataItems.find(
-        (selectedItem) => selectedItem.dataSourceId === item.id
+        (selectedItem) => selectedItem.dataItemId === item.id
       );
       if (containedItem) {
         newArray.push(containedItem);

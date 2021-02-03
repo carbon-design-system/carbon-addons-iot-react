@@ -160,7 +160,7 @@ describe('stateful table with real reducer', () => {
 
     // next add an additional filter with option-A
     // open the multiselect
-    userEvent.click(screen.getByText('pick an option'));
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
     userEvent.click(screen.getByRole('option', { name: 'option-A' })); // fire click on option-A in our multiselect
 
     const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
@@ -174,7 +174,7 @@ describe('stateful table with real reducer', () => {
 
     // next remove filter for option-B
     // open the multiselect
-    userEvent.click(screen.getByText('pick an option'));
+    userEvent.click(screen.getAllByPlaceholderText('pick an option')[0]);
     userEvent.click(screen.getByRole('option', { name: 'option-B' })); // fire click on option-B in our multiselect
 
     const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
@@ -253,7 +253,7 @@ describe('stateful table with real reducer', () => {
 
     // next add an a filter with option-A
     // open the multiselect
-    userEvent.click(screen.getByText('pick an option'));
+    userEvent.click(screen.getAllByPlaceholderText('pick an option')[0]);
     userEvent.click(screen.getByRole('option', { name: 'option-A' })); // fire click on option-A in our multiselect
 
     const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
