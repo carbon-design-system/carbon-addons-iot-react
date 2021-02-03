@@ -128,6 +128,195 @@ Map {
       },
     },
   },
+  "ComboBox" => Object {
+    "defaultProps": Object {
+      "addToList": false,
+      "ariaLabel": "Choose an item",
+      "closeButtonText": "Close",
+      "direction": "bottom",
+      "disabled": false,
+      "editOptionText": "Create",
+      "hasMultiValue": false,
+      "itemToElement": null,
+      "itemToString": [Function],
+      "items": Array [],
+      "light": false,
+      "loading": false,
+      "onBlur": null,
+      "onInputChange": null,
+      "shouldFilterItem": [Function],
+      "type": "default",
+      "wrapperClassName": null,
+    },
+    "propTypes": Object {
+      "addToList": Object {
+        "type": "bool",
+      },
+      "ariaLabel": Object {
+        "type": "string",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeButtonText": Object {
+        "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "downshiftProps": Object {
+        "args": Array [
+          Object {
+            "children": [Function],
+            "defaultHighlightedIndex": [Function],
+            "defaultIsOpen": [Function],
+            "environment": [Function],
+            "getA11yStatusMessage": [Function],
+            "getItemId": [Function],
+            "highlightedIndex": [Function],
+            "id": [Function],
+            "initialHighlightedIndex": [Function],
+            "initialInputValue": [Function],
+            "initialIsOpen": [Function],
+            "initialSelectedItem": [Function],
+            "inputId": [Function],
+            "inputValue": [Function],
+            "isOpen": [Function],
+            "itemCount": [Function],
+            "itemToString": [Function],
+            "labelId": [Function],
+            "menuId": [Function],
+            "onChange": [Function],
+            "onInputValueChange": [Function],
+            "onOuterClick": [Function],
+            "onSelect": [Function],
+            "onStateChange": [Function],
+            "onUserAction": [Function],
+            "scrollIntoView": [Function],
+            "selectedItem": [Function],
+            "selectedItemChanged": [Function],
+            "stateReducer": [Function],
+            "suppressRefError": [Function],
+          },
+        ],
+        "type": "shape",
+      },
+      "editOptionText": Object {
+        "type": "string",
+      },
+      "hasMultiValue": Object {
+        "type": "bool",
+      },
+      "helperText": Object {
+        "type": "string",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "initialSelectedItem": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "invalidText": Object {
+        "type": "string",
+      },
+      "itemToElement": Object {
+        "type": "func",
+      },
+      "itemToString": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "isRequired": true,
+        "type": "array",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "loading": Object {
+        "type": "bool",
+      },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onInputChange": Object {
+        "type": "func",
+      },
+      "placeholder": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "selectedItem": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "shouldFilterItem": Object {
+        "type": "func",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "titleText": Object {
+        "type": "string",
+      },
+      "translateWithId": Object {
+        "type": "func",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "default",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "wrapperClassName": Object {
+        "type": "string",
+      },
+    },
+  },
   "ComposedModal" => Object {
     "defaultProps": Object {
       "children": null,
@@ -308,6 +497,386 @@ Map {
       "totalColumns": Object {
         "isRequired": true,
         "type": "number",
+      },
+    },
+  },
+  "List" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "buttons": Array [],
+      "className": null,
+      "editingStyle": null,
+      "emptyState": "No list items to show",
+      "expandedIds": Array [],
+      "handleSelect": [Function],
+      "i18n": Object {
+        "close": "Close",
+        "expand": "Expand",
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "iconPosition": "left",
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "itemWillMove": [Function],
+      "items": Array [],
+      "onItemMoved": [Function],
+      "overrides": null,
+      "pagination": null,
+      "search": null,
+      "selectedIds": Array [],
+      "title": null,
+      "toggleExpansion": [Function],
+    },
+    "propTypes": Object {
+      "buttons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "emptyState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "expandedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "handleSelect": Object {
+        "type": "func",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconPosition": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "itemWillMove": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Object {
+                      "type": "object",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "content": Object {
+                  "args": Array [
+                    Object {
+                      "icon": Object {
+                        "type": "node",
+                      },
+                      "tags": Object {
+                        "args": Array [
+                          Object {
+                            "type": "node",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "value": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onItemMoved": Object {
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "header": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "pagination": Object {
+        "args": Array [
+          Object {
+            "maxPage": Object {
+              "isRequired": true,
+              "type": "number",
+            },
+            "nextPageText": Object {
+              "type": "string",
+            },
+            "onPage": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+            "page": Object {
+              "isRequired": true,
+              "type": "number",
+            },
+            "pageOfPagesText": Object {
+              "type": "func",
+            },
+            "pageText": Object {
+              "type": "string",
+            },
+            "prevPageText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "search": Object {
+        "args": Array [
+          Object {
+            "onChange": Object {
+              "type": "func",
+            },
+            "value": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "selectedIds": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "toggleExpansion": Object {
+        "type": "func",
+      },
+    },
+    "render": [Function],
+  },
+  "SimpleList" => Object {
+    "defaultProps": Object {
+      "buttons": Array [],
+      "editingStyle": null,
+      "hasPagination": true,
+      "hasSearch": false,
+      "i18n": Object {
+        "items": "%d items",
+        "pageOfPagesText": [Function],
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "isFullHeight": false,
+      "isLargeRow": false,
+      "isLoading": false,
+      "onListUpdated": [Function],
+      "onSelect": null,
+      "pageSize": null,
+    },
+    "propTypes": Object {
+      "buttons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "editingStyle": Object {
+        "args": Array [
+          Array [
+            "single",
+            "multiple",
+            "single-nesting",
+            "multiple-nesting",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "hasPagination": Object {
+        "type": "bool",
+      },
+      "hasSearch": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "close": Object {
+              "type": "string",
+            },
+            "expand": Object {
+              "type": "string",
+            },
+            "pageOfPagesText": Object {
+              "type": "func",
+            },
+            "searchPlaceHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "items": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Object {
+                      "type": "any",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "content": Object {
+                  "args": Array [
+                    Object {
+                      "icon": Object {
+                        "type": "node",
+                      },
+                      "value": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "onListUpdated": Object {
+        "type": "func",
+      },
+      "onSelect": Object {
+        "type": "func",
+      },
+      "pageSize": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "isRequired": true,
+        "type": "string",
       },
     },
   },
@@ -6756,6 +7325,430 @@ Map {
           },
         ],
         "type": "shape",
+      },
+    },
+  },
+  "PageWizard" => Object {
+    "defaultProps": Object {
+      "afterFooterContent": null,
+      "beforeFooterContent": null,
+      "children": Array [],
+      "currentStepId": null,
+      "error": null,
+      "hasStickyFooter": false,
+      "i18n": Object {
+        "back": "Back",
+        "cancel": "Cancel",
+        "close": "Close",
+        "next": "Next",
+        "submit": "Submit",
+      },
+      "isClickable": false,
+      "isProgressIndicatorVertical": true,
+      "nextDisabled": false,
+      "onBack": null,
+      "onNext": null,
+      "sendingData": false,
+      "setStep": null,
+    },
+    "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
+      "beforeFooterContent": Object {
+        "type": "node",
+      },
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "currentStepId": Object {
+        "type": "string",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "hasStickyFooter": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "back": Object {
+              "type": "string",
+            },
+            "cancel": Object {
+              "type": "string",
+            },
+            "close": Object {
+              "type": "string",
+            },
+            "next": Object {
+              "type": "string",
+            },
+            "submit": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isClickable": Object {
+        "type": "bool",
+      },
+      "isProgressIndicatorVertical": Object {
+        "type": "bool",
+      },
+      "nextDisabled": Object {
+        "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
+      },
+      "onClearError": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onNext": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "sendingData": Object {
+        "type": "bool",
+      },
+      "setStep": Object {
+        "type": "func",
+      },
+    },
+  },
+  "PageWizardStep" => Object {
+    "defaultProps": Object {
+      "afterFooterContent": null,
+      "beforeFooterContent": null,
+      "children": Array [],
+      "error": null,
+      "hasNext": false,
+      "hasPrev": false,
+      "hasStickyFooter": false,
+      "i18n": Object {
+        "back": "Back",
+        "cancel": "Cancel",
+        "close": "Close",
+        "next": "Next",
+        "submit": "Submit",
+      },
+      "nextDisabled": false,
+      "onBack": null,
+      "onClearError": null,
+      "onClose": null,
+      "onNext": null,
+      "onSubmit": null,
+      "onValidate": [Function],
+      "sendingData": false,
+    },
+    "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
+      "beforeFooterContent": Object {
+        "type": "node",
+      },
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "error": Object {
+        "type": "node",
+      },
+      "hasNext": Object {
+        "type": "bool",
+      },
+      "hasPrev": Object {
+        "type": "bool",
+      },
+      "hasStickyFooter": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "nextDisabled": Object {
+        "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
+      },
+      "onClearError": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "onNext": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "type": "func",
+      },
+      "onValidate": Object {
+        "type": "func",
+      },
+      "sendingData": Object {
+        "type": "bool",
+      },
+    },
+  },
+  "PageWizardStepContent" => Object {
+    "defaultProps": Object {
+      "children": Array [],
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+    },
+  },
+  "PageWizardStepDescription" => Object {
+    "defaultProps": Object {
+      "children": Array [],
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+    },
+  },
+  "PageWizardStepExtraContent" => Object {
+    "defaultProps": Object {
+      "children": Array [],
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+    },
+  },
+  "PageWizardStepTitle" => Object {
+    "defaultProps": Object {
+      "children": Array [],
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+    },
+  },
+  "StatefulPageWizard" => Object {
+    "defaultProps": Object {
+      "afterFooterContent": null,
+      "beforeFooterContent": null,
+      "children": Array [],
+      "currentStepId": null,
+      "error": null,
+      "hasStickyFooter": false,
+      "i18n": Object {
+        "back": "Back",
+        "cancel": "Cancel",
+        "close": "Close",
+        "next": "Next",
+        "submit": "Submit",
+      },
+      "isProgressIndicatorVertical": true,
+      "nextDisabled": false,
+      "onBack": null,
+      "onNext": null,
+      "sendingData": false,
+      "setStep": null,
+    },
+    "propTypes": Object {
+      "afterFooterContent": Object {
+        "type": "node",
+      },
+      "beforeFooterContent": Object {
+        "type": "node",
+      },
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "currentStepId": Object {
+        "type": "string",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "hasStickyFooter": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "back": Object {
+              "type": "string",
+            },
+            "cancel": Object {
+              "type": "string",
+            },
+            "close": Object {
+              "type": "string",
+            },
+            "next": Object {
+              "type": "string",
+            },
+            "submit": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isProgressIndicatorVertical": Object {
+        "type": "bool",
+      },
+      "nextDisabled": Object {
+        "type": "bool",
+      },
+      "onBack": Object {
+        "type": "func",
+      },
+      "onClearError": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onClose": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onNext": Object {
+        "type": "func",
+      },
+      "onSubmit": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "sendingData": Object {
+        "type": "bool",
+      },
+      "setStep": Object {
+        "type": "func",
       },
     },
   },
@@ -16728,430 +17721,6 @@ Map {
       },
     },
   },
-  "PageWizard" => Object {
-    "defaultProps": Object {
-      "afterFooterContent": null,
-      "beforeFooterContent": null,
-      "children": Array [],
-      "currentStepId": null,
-      "error": null,
-      "hasStickyFooter": false,
-      "i18n": Object {
-        "back": "Back",
-        "cancel": "Cancel",
-        "close": "Close",
-        "next": "Next",
-        "submit": "Submit",
-      },
-      "isClickable": false,
-      "isProgressIndicatorVertical": true,
-      "nextDisabled": false,
-      "onBack": null,
-      "onNext": null,
-      "sendingData": false,
-      "setStep": null,
-    },
-    "propTypes": Object {
-      "afterFooterContent": Object {
-        "type": "node",
-      },
-      "beforeFooterContent": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "currentStepId": Object {
-        "type": "string",
-      },
-      "error": Object {
-        "type": "string",
-      },
-      "hasStickyFooter": Object {
-        "type": "bool",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "back": Object {
-              "type": "string",
-            },
-            "cancel": Object {
-              "type": "string",
-            },
-            "close": Object {
-              "type": "string",
-            },
-            "next": Object {
-              "type": "string",
-            },
-            "submit": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "isClickable": Object {
-        "type": "bool",
-      },
-      "isProgressIndicatorVertical": Object {
-        "type": "bool",
-      },
-      "nextDisabled": Object {
-        "type": "bool",
-      },
-      "onBack": Object {
-        "type": "func",
-      },
-      "onClearError": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onClose": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onNext": Object {
-        "type": "func",
-      },
-      "onSubmit": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "sendingData": Object {
-        "type": "bool",
-      },
-      "setStep": Object {
-        "type": "func",
-      },
-    },
-  },
-  "PageWizardStep" => Object {
-    "defaultProps": Object {
-      "afterFooterContent": null,
-      "beforeFooterContent": null,
-      "children": Array [],
-      "error": null,
-      "hasNext": false,
-      "hasPrev": false,
-      "hasStickyFooter": false,
-      "i18n": Object {
-        "back": "Back",
-        "cancel": "Cancel",
-        "close": "Close",
-        "next": "Next",
-        "submit": "Submit",
-      },
-      "nextDisabled": false,
-      "onBack": null,
-      "onClearError": null,
-      "onClose": null,
-      "onNext": null,
-      "onSubmit": null,
-      "onValidate": [Function],
-      "sendingData": false,
-    },
-    "propTypes": Object {
-      "afterFooterContent": Object {
-        "type": "node",
-      },
-      "beforeFooterContent": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "error": Object {
-        "type": "node",
-      },
-      "hasNext": Object {
-        "type": "bool",
-      },
-      "hasPrev": Object {
-        "type": "bool",
-      },
-      "hasStickyFooter": Object {
-        "type": "bool",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "nextDisabled": Object {
-        "type": "bool",
-      },
-      "onBack": Object {
-        "type": "func",
-      },
-      "onClearError": Object {
-        "type": "func",
-      },
-      "onClose": Object {
-        "type": "func",
-      },
-      "onNext": Object {
-        "type": "func",
-      },
-      "onSubmit": Object {
-        "type": "func",
-      },
-      "onValidate": Object {
-        "type": "func",
-      },
-      "sendingData": Object {
-        "type": "bool",
-      },
-    },
-  },
-  "PageWizardStepContent" => Object {
-    "defaultProps": Object {
-      "children": Array [],
-    },
-    "propTypes": Object {
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-    },
-  },
-  "PageWizardStepDescription" => Object {
-    "defaultProps": Object {
-      "children": Array [],
-    },
-    "propTypes": Object {
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-    },
-  },
-  "PageWizardStepExtraContent" => Object {
-    "defaultProps": Object {
-      "children": Array [],
-    },
-    "propTypes": Object {
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-    },
-  },
-  "PageWizardStepTitle" => Object {
-    "defaultProps": Object {
-      "children": Array [],
-    },
-    "propTypes": Object {
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-    },
-  },
-  "StatefulPageWizard" => Object {
-    "defaultProps": Object {
-      "afterFooterContent": null,
-      "beforeFooterContent": null,
-      "children": Array [],
-      "currentStepId": null,
-      "error": null,
-      "hasStickyFooter": false,
-      "i18n": Object {
-        "back": "Back",
-        "cancel": "Cancel",
-        "close": "Close",
-        "next": "Next",
-        "submit": "Submit",
-      },
-      "isProgressIndicatorVertical": true,
-      "nextDisabled": false,
-      "onBack": null,
-      "onNext": null,
-      "sendingData": false,
-      "setStep": null,
-    },
-    "propTypes": Object {
-      "afterFooterContent": Object {
-        "type": "node",
-      },
-      "beforeFooterContent": Object {
-        "type": "node",
-      },
-      "children": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "type": "node",
-                },
-              ],
-              "type": "arrayOf",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "currentStepId": Object {
-        "type": "string",
-      },
-      "error": Object {
-        "type": "string",
-      },
-      "hasStickyFooter": Object {
-        "type": "bool",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "back": Object {
-              "type": "string",
-            },
-            "cancel": Object {
-              "type": "string",
-            },
-            "close": Object {
-              "type": "string",
-            },
-            "next": Object {
-              "type": "string",
-            },
-            "submit": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "isProgressIndicatorVertical": Object {
-        "type": "bool",
-      },
-      "nextDisabled": Object {
-        "type": "bool",
-      },
-      "onBack": Object {
-        "type": "func",
-      },
-      "onClearError": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onClose": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onNext": Object {
-        "type": "func",
-      },
-      "onSubmit": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "sendingData": Object {
-        "type": "bool",
-      },
-      "setStep": Object {
-        "type": "func",
-      },
-    },
-  },
   "TileGallery" => Object {
     "defaultProps": Object {},
     "propTypes": Object {
@@ -17516,386 +18085,6 @@ Map {
       },
     },
   },
-  "List" => Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "buttons": Array [],
-      "className": null,
-      "editingStyle": null,
-      "emptyState": "No list items to show",
-      "expandedIds": Array [],
-      "handleSelect": [Function],
-      "i18n": Object {
-        "close": "Close",
-        "expand": "Expand",
-        "searchPlaceHolderText": "Enter a value",
-      },
-      "iconPosition": "left",
-      "isFullHeight": false,
-      "isLargeRow": false,
-      "isLoading": false,
-      "itemWillMove": [Function],
-      "items": Array [],
-      "onItemMoved": [Function],
-      "overrides": null,
-      "pagination": null,
-      "search": null,
-      "selectedIds": Array [],
-      "title": null,
-      "toggleExpansion": [Function],
-    },
-    "propTypes": Object {
-      "buttons": Object {
-        "args": Array [
-          Object {
-            "type": "node",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "editingStyle": Object {
-        "args": Array [
-          Array [
-            "single",
-            "multiple",
-            "single-nesting",
-            "multiple-nesting",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "emptyState": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "node",
-            },
-            Object {
-              "type": "string",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "expandedIds": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "handleSelect": Object {
-        "type": "func",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "close": Object {
-              "type": "string",
-            },
-            "expand": Object {
-              "type": "string",
-            },
-            "searchPlaceHolderText": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "iconPosition": Object {
-        "args": Array [
-          Array [
-            "left",
-            "right",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "isFullHeight": Object {
-        "type": "bool",
-      },
-      "isLargeRow": Object {
-        "type": "bool",
-      },
-      "isLoading": Object {
-        "type": "bool",
-      },
-      "itemWillMove": Object {
-        "type": "func",
-      },
-      "items": Object {
-        "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "children": Object {
-                  "args": Array [
-                    Object {
-                      "type": "object",
-                    },
-                  ],
-                  "type": "arrayOf",
-                },
-                "content": Object {
-                  "args": Array [
-                    Object {
-                      "icon": Object {
-                        "type": "node",
-                      },
-                      "tags": Object {
-                        "args": Array [
-                          Object {
-                            "type": "node",
-                          },
-                        ],
-                        "type": "arrayOf",
-                      },
-                      "value": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
-                "id": Object {
-                  "type": "string",
-                },
-                "isSelectable": Object {
-                  "type": "bool",
-                },
-              },
-            ],
-            "type": "shape",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "onItemMoved": Object {
-        "type": "func",
-      },
-      "overrides": Object {
-        "args": Array [
-          Object {
-            "header": Object {
-              "args": Array [
-                Object {
-                  "component": Object {
-                    "type": "elementType",
-                  },
-                  "props": Object {
-                    "args": Array [
-                      Array [
-                        Object {
-                          "type": "object",
-                        },
-                        Object {
-                          "type": "func",
-                        },
-                      ],
-                    ],
-                    "type": "oneOfType",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "pagination": Object {
-        "args": Array [
-          Object {
-            "maxPage": Object {
-              "isRequired": true,
-              "type": "number",
-            },
-            "nextPageText": Object {
-              "type": "string",
-            },
-            "onPage": Object {
-              "isRequired": true,
-              "type": "func",
-            },
-            "page": Object {
-              "isRequired": true,
-              "type": "number",
-            },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
-            "pageText": Object {
-              "type": "string",
-            },
-            "prevPageText": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "search": Object {
-        "args": Array [
-          Object {
-            "onChange": Object {
-              "type": "func",
-            },
-            "value": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "selectedIds": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "title": Object {
-        "type": "string",
-      },
-      "toggleExpansion": Object {
-        "type": "func",
-      },
-    },
-    "render": [Function],
-  },
-  "SimpleList" => Object {
-    "defaultProps": Object {
-      "buttons": Array [],
-      "editingStyle": null,
-      "hasPagination": true,
-      "hasSearch": false,
-      "i18n": Object {
-        "items": "%d items",
-        "pageOfPagesText": [Function],
-        "searchPlaceHolderText": "Enter a value",
-      },
-      "isFullHeight": false,
-      "isLargeRow": false,
-      "isLoading": false,
-      "onListUpdated": [Function],
-      "onSelect": null,
-      "pageSize": null,
-    },
-    "propTypes": Object {
-      "buttons": Object {
-        "args": Array [
-          Object {
-            "type": "node",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "editingStyle": Object {
-        "args": Array [
-          Array [
-            "single",
-            "multiple",
-            "single-nesting",
-            "multiple-nesting",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "hasPagination": Object {
-        "type": "bool",
-      },
-      "hasSearch": Object {
-        "type": "bool",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "close": Object {
-              "type": "string",
-            },
-            "expand": Object {
-              "type": "string",
-            },
-            "pageOfPagesText": Object {
-              "type": "func",
-            },
-            "searchPlaceHolderText": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "isFullHeight": Object {
-        "type": "bool",
-      },
-      "isLargeRow": Object {
-        "type": "bool",
-      },
-      "isLoading": Object {
-        "type": "bool",
-      },
-      "items": Object {
-        "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "children": Object {
-                  "args": Array [
-                    Object {
-                      "type": "any",
-                    },
-                  ],
-                  "type": "arrayOf",
-                },
-                "content": Object {
-                  "args": Array [
-                    Object {
-                      "icon": Object {
-                        "type": "node",
-                      },
-                      "value": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
-                },
-                "id": Object {
-                  "type": "string",
-                },
-                "isSelectable": Object {
-                  "type": "bool",
-                },
-              },
-            ],
-            "type": "shape",
-          },
-        ],
-        "isRequired": true,
-        "type": "arrayOf",
-      },
-      "onListUpdated": Object {
-        "type": "func",
-      },
-      "onSelect": Object {
-        "type": "func",
-      },
-      "pageSize": Object {
-        "type": "string",
-      },
-      "title": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-    },
-  },
   "IconSwitch" => Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
@@ -18000,191 +18189,6 @@ Map {
       },
       "title": Object {
         "type": "node",
-      },
-    },
-  },
-  "ComboBox" => Object {
-    "defaultProps": Object {
-      "addToList": false,
-      "ariaLabel": "Choose an item",
-      "closeButtonText": "Close",
-      "direction": "bottom",
-      "disabled": false,
-      "editOptionText": "Create",
-      "hasMultiValue": false,
-      "itemToElement": null,
-      "itemToString": [Function],
-      "items": Array [],
-      "light": false,
-      "loading": false,
-      "onBlur": null,
-      "onInputChange": null,
-      "shouldFilterItem": [Function],
-      "type": "default",
-      "wrapperClassName": null,
-    },
-    "propTypes": Object {
-      "addToList": [Function],
-      "ariaLabel": Object {
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "closeButtonText": Object {
-        "type": "string",
-      },
-      "direction": Object {
-        "args": Array [
-          Array [
-            "top",
-            "bottom",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "disabled": Object {
-        "type": "bool",
-      },
-      "downshiftProps": Object {
-        "args": Array [
-          Object {
-            "children": [Function],
-            "defaultHighlightedIndex": [Function],
-            "defaultIsOpen": [Function],
-            "environment": [Function],
-            "getA11yStatusMessage": [Function],
-            "getItemId": [Function],
-            "highlightedIndex": [Function],
-            "id": [Function],
-            "initialHighlightedIndex": [Function],
-            "initialInputValue": [Function],
-            "initialIsOpen": [Function],
-            "initialSelectedItem": [Function],
-            "inputId": [Function],
-            "inputValue": [Function],
-            "isOpen": [Function],
-            "itemCount": [Function],
-            "itemToString": [Function],
-            "labelId": [Function],
-            "menuId": [Function],
-            "onChange": [Function],
-            "onInputValueChange": [Function],
-            "onOuterClick": [Function],
-            "onSelect": [Function],
-            "onStateChange": [Function],
-            "onUserAction": [Function],
-            "scrollIntoView": [Function],
-            "selectedItem": [Function],
-            "selectedItemChanged": [Function],
-            "stateReducer": [Function],
-            "suppressRefError": [Function],
-          },
-        ],
-        "type": "shape",
-      },
-      "editOptionText": Object {
-        "type": "string",
-      },
-      "hasMultiValue": [Function],
-      "helperText": Object {
-        "type": "string",
-      },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "initialSelectedItem": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "object",
-            },
-            Object {
-              "type": "string",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "invalid": Object {
-        "type": "bool",
-      },
-      "invalidText": Object {
-        "type": "string",
-      },
-      "itemToElement": Object {
-        "type": "func",
-      },
-      "itemToString": Object {
-        "type": "func",
-      },
-      "items": Object {
-        "isRequired": true,
-        "type": "array",
-      },
-      "light": Object {
-        "type": "bool",
-      },
-      "loading": Object {
-        "type": "bool",
-      },
-      "onBlur": Object {
-        "type": "func",
-      },
-      "onChange": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onInputChange": Object {
-        "type": "func",
-      },
-      "placeholder": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "selectedItem": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "object",
-            },
-            Object {
-              "type": "string",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "shouldFilterItem": Object {
-        "type": "func",
-      },
-      "size": Object {
-        "args": Array [
-          Array [
-            "sm",
-            "xl",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "titleText": Object {
-        "type": "string",
-      },
-      "translateWithId": Object {
-        "type": "func",
-      },
-      "type": Object {
-        "args": Array [
-          Array [
-            "default",
-            "inline",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "wrapperClassName": Object {
-        "type": "string",
       },
     },
   },
