@@ -367,3 +367,27 @@ export const hexToRgb = (hexColor) => {
   }
   return rgbColors ?? { r: 200, g: 200, b: 200 };
 };
+
+/**
+ * If min and max are provided, this function checks to see if the integer value is within the range
+ * @param {Number} value integer value
+ * @param {Number} min optional
+ * @param {Number} max optional
+ */
+export const isNumberValidForMinMax = (value, min, max) => {
+  let valid = false;
+  if (Number.isInteger(value)) {
+    valid = true;
+    if (min) {
+      if (value < min) {
+        valid = false;
+      }
+    }
+    if (max) {
+      if (value > max) {
+        valid = false;
+      }
+    }
+  }
+  return valid;
+};
