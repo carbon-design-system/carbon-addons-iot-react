@@ -152,8 +152,6 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Temperature')).toBeDefined();
     expect(screen.queryByText('Timestamp')).toBeDefined();
     expect(screen.queryByText('Manufacturer')).toBeDefined();
-    // The dimension select should show dimension selections
-    expect(screen.queryAllByTitle('Clear all selected items')).toHaveLength(1);
   });
   it('remove button should remove items from the data items list', () => {
     render(
