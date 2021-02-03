@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
   stories: ['./Welcome.story.jsx', '../**/*.story.jsx', '../**/*.story.mdx'],
@@ -11,7 +10,7 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
     'storybook-readme',
-    '@storybook/addon-docs/register',
+    '@storybook/addon-docs',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -82,32 +81,6 @@ module.exports = {
           },
         },
       ],
-    });
-
-    config.module.rules.push({
-      test: /\.mdx$/,
-      use: [
-        {
-          loader: 'babel-loader',
-          // // may or may not need this line depending on your app's setup
-          // options: {
-          //   plugins: ['@babel/plugin-transform-react-jsx'],
-          // },
-        },
-        {
-          loader: '@mdx-js/loader',
-          options: {
-            compilers: [createCompiler({})],
-          },
-        },
-      ],
-    });
-
-    config.module.rules.push({
-      test: /\.story\.jsx?$/,
-      loader: require.resolve('@storybook/source-loader'),
-      exclude: [/node_modules/],
-      enforce: 'pre',
     });
 
     // Return the altered config

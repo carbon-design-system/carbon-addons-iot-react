@@ -3,9 +3,14 @@
   "engines": {
     "node": "12.x || 14.x"
   },
-  "workspaces": [
-    "packages/react"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/react"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
   "unpkg": "umd/carbon-addons-iot-react.js",
