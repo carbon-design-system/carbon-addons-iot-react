@@ -29,7 +29,7 @@ afterEach(() => {
 describe('DataSeriesFormSettings', () => {
   it('handles onChange function for including zeros on Xaxis', () => {
     render(<DataSeriesFormSettings cardConfig={timeSeriesConfig} onChange={mockOnChange} />);
-    const includeZeroOnXaxisField = screen.getByTestId('includeZeroOnXaxis toggle');
+    const includeZeroOnXaxisField = screen.getByTestId('includeZeroOnXaxis-toggle');
     expect(includeZeroOnXaxisField).toBeInTheDocument();
     fireEvent.click(includeZeroOnXaxisField);
 
@@ -38,7 +38,7 @@ describe('DataSeriesFormSettings', () => {
       content: { ...timeSeriesConfig.content, includeZeroOnXaxis: true },
     });
 
-    const includeZeroOnYaxisField = screen.getByTestId('includeZeroOnYaxis toggle');
+    const includeZeroOnYaxisField = screen.getByTestId('includeZeroOnYaxis-toggle');
     expect(includeZeroOnYaxisField).toBeInTheDocument();
     fireEvent.click(includeZeroOnYaxisField);
 

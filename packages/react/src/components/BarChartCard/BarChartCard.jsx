@@ -150,34 +150,41 @@ const BarChartCard = ({
     ? formatColors(series, uniqueDatasets, isDashboardPreview, type)
     : null;
 
-  let tableColumns = [];
-  let tableData = [];
-
-  if (!isAllValuesEmpty) {
-    tableColumns = tableColumns
-      .concat(
-        generateTableColumns(
+  const tableColumns = useMemo(() => {
+    return isAllValuesEmpty
+      ? []
+      : generateTableColumns(
           timeDataSourceId,
           categoryDataSourceId,
           type,
           uniqueDatasets,
           i18n.defaultFilterStringPlaceholdText
-        )
-      )
-      .map((column) => ({
-        ...column,
-        renderDataFunction: ({ value }) => {
-          if (typeof value === 'number' && !isNil(decimalPrecision)) {
-            return chartValueFormatter(value, size, unit, locale, decimalPrecision);
-          }
-          return value;
-        },
-      }));
+        ).map((column) => ({
+          ...column,
+          renderDataFunction: ({ value }) => {
+            if (typeof value === 'number' && !isNil(decimalPrecision)) {
+              return chartValueFormatter(value, size, unit, locale, decimalPrecision);
+            }
+            return value;
+          },
+        }));
+  }, [
+    categoryDataSourceId,
+    decimalPrecision,
+    i18n.defaultFilterStringPlaceholdText,
+    isAllValuesEmpty,
+    locale,
+    size,
+    timeDataSourceId,
+    type,
+    uniqueDatasets,
+    unit,
+  ]);
 
-    tableData = tableData.concat(
-      formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
-    );
-  }
+  const tableData = useMemo(
+    () => formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData),
+    [categoryDataSourceId, chartData, timeDataSourceId, type, values]
+  );
 
   return (
     <Card

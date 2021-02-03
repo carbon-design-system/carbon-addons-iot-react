@@ -3385,8 +3385,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-label={null}
                     checked={true}
                     className="bx--toggle-input bx--toggle-input--small"
-                    data-testid="includeZeroOnXaxis toggle"
-                    id="includeZeroOnXaxis toggle"
+                    data-testid="includeZeroOnXaxis-toggle"
+                    id="includeZeroOnXaxis-toggle"
                     onChange={[Function]}
                     onKeyUp={[Function]}
                     type="checkbox"
@@ -3394,7 +3394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <label
                     aria-label="Include zero on x-axis"
                     className="bx--toggle-input__label"
-                    htmlFor="includeZeroOnXaxis toggle"
+                    htmlFor="includeZeroOnXaxis-toggle"
                   >
                     <span
                       className="bx--toggle__switch"
@@ -3438,8 +3438,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     aria-label={null}
                     checked={true}
                     className="bx--toggle-input bx--toggle-input--small"
-                    data-testid="includeZeroOnYaxis toggle"
-                    id="includeZeroOnYaxis toggle"
+                    data-testid="includeZeroOnYaxis-toggle"
+                    id="includeZeroOnYaxis-toggle"
                     onChange={[Function]}
                     onKeyUp={[Function]}
                     type="checkbox"
@@ -3447,7 +3447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   <label
                     aria-label="Include zero on y-axis"
                     className="bx--toggle-input__label"
-                    htmlFor="includeZeroOnYaxis toggle"
+                    htmlFor="includeZeroOnYaxis-toggle"
                   >
                     <span
                       className="bx--toggle__switch"
