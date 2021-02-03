@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.27...v2.143.0-next.28) (2021-02-03)
+
+
+### Bug Fixes
+
+* check min and max before applying the number input value ([f3474ca](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3474ca769f2b7b1e81c75d29a87b11e5996dfea))
+
+
+
+
+
 # [2.143.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.26...v2.143.0-next.27) (2021-02-03)
 
 **Note:** Version bump only for package ibm-ai-applications
