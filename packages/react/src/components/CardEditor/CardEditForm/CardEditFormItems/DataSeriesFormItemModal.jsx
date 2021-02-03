@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   purple70,
@@ -217,64 +217,77 @@ const DataSeriesFormItemModal = ({
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.grain;
 
-  const dataSeriesTableColumns = [
-    { id: 'dataSourceId', name: mergedI18n.dataItem },
-    {
-      id: 'label',
-      name: mergedI18n.dataItemEditorDataItemCustomLabel,
-      // eslint-disable-next-line react/prop-types
-      renderDataFunction: ({ row }) => {
-        const seriesIndex = editDataSeries.findIndex(
-          (series) => series.dataSourceId === row.dataSourceId
-        );
-        return (
-          <TextInput
-            id={`${row.dataSourceId}_label-input`}
-            light
-            titleText=""
-            onChange={(evt) => {
-              const updatedSeries = cloneDeep(editDataSeries);
-              updatedSeries[seriesIndex].label = evt.target.value;
-              setEditDataSeries(updatedSeries);
-            }}
-            value={editDataSeries[seriesIndex].label}
-          />
-        );
+  const dataSeriesTableColumns = useMemo(
+    () => [
+      { id: 'dataSourceId', name: mergedI18n.dataItem },
+      {
+        id: 'label',
+        name: mergedI18n.dataItemEditorDataItemCustomLabel,
+        // eslint-disable-next-line react/prop-types
+        renderDataFunction: ({ row }) => {
+          const seriesIndex = editDataSeries.findIndex(
+            (series) => series.dataSourceId === row.dataSourceId
+          );
+          return (
+            <TextInput
+              id={`${row.dataSourceId}_label-input`}
+              light
+              titleText=""
+              onChange={(evt) => {
+                const updatedSeries = cloneDeep(editDataSeries);
+                updatedSeries[seriesIndex].label = evt.target.value;
+                setEditDataSeries(updatedSeries);
+              }}
+              value={editDataSeries[seriesIndex].label}
+            />
+          );
+        },
       },
-    },
-    {
-      id: 'color',
-      name:
-        type === CARD_TYPES.TIMESERIES
-          ? mergedI18n.dataItemEditorLineColor
-          : type === CARD_TYPES.BAR
-          ? mergedI18n.dataItemEditorBarColor
-          : '',
-      // eslint-disable-next-line react/prop-types
-      renderDataFunction: ({ row }) => {
-        const seriesIndex = editDataSeries.findIndex(
-          (series) => series.dataSourceId === row.dataSourceId
-        );
-        const selectedColor = DATAITEM_COLORS_OPTIONS.find(
-          ({ carbonColor }) => carbonColor === row.color
-        );
-        return (
-          <ColorDropdown
-            id={`${id}_color-dropdown`}
-            label=""
-            titleText=""
-            selectedColor={selectedColor}
-            translateWithId={handleTranslation}
-            onChange={({ color }) => {
-              const updatedSeries = cloneDeep(editDataSeries);
-              updatedSeries[seriesIndex].color = color.carbonColor;
-              setEditDataSeries(updatedSeries);
-            }}
-          />
-        );
+      {
+        id: 'color',
+        name:
+          type === CARD_TYPES.TIMESERIES
+            ? mergedI18n.dataItemEditorLineColor
+            : type === CARD_TYPES.BAR
+            ? mergedI18n.dataItemEditorBarColor
+            : '',
+        // eslint-disable-next-line react/prop-types
+        renderDataFunction: ({ row }) => {
+          const seriesIndex = editDataSeries.findIndex(
+            (series) => series.dataSourceId === row.dataSourceId
+          );
+          const selectedColor = DATAITEM_COLORS_OPTIONS.find(
+            ({ carbonColor }) => carbonColor === row.color
+          );
+          return (
+            <ColorDropdown
+              id={`${id}_color-dropdown`}
+              label=""
+              titleText=""
+              selectedColor={selectedColor}
+              translateWithId={handleTranslation}
+              onChange={({ color }) => {
+                const updatedSeries = cloneDeep(editDataSeries);
+                updatedSeries[seriesIndex].color = color.carbonColor;
+                setEditDataSeries(updatedSeries);
+              }}
+            />
+          );
+        },
       },
-    },
-  ];
+    ],
+    [
+      editDataSeries,
+      handleTranslation,
+      id,
+      mergedI18n.dataItem,
+      mergedI18n.dataItemEditorBarColor,
+      mergedI18n.dataItemEditorDataItemCustomLabel,
+      mergedI18n.dataItemEditorLineColor,
+      setEditDataSeries,
+      type,
+    ]
+  );
 
   const DataSeriesEditorTable = (
     <Table
