@@ -167,7 +167,7 @@ export const StatefulExample = () => (
     currentItemId="step1"
     items={itemsAndComponents}
     title={text('title', 'I am a title')}
-    blurb={text('blurb', 'My long blurb to explain what is going on')}
+    description={text('description', 'My long description to explain what is going on')}
     showLabels={boolean('showLabels', true)}
     stepWidth={number('stepWidth', 9)}
     sidebar={sidebarComponent}

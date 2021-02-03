@@ -11,8 +11,10 @@ const SuiteHeaderI18N = {
     profileLogoutModalHeading: 'Do you wish to log out?',
     profileLogoutModalSecondaryButton: 'Cancel',
     profileLogoutModalPrimaryButton: 'Log out',
-    profileLogoutModalBody: (solutionName, userName) =>
-      `You are logged in to ${solutionName} as ${userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
+    profileLogoutModalBody:
+      'You are logged in to {solutionName} as {userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
+    // profileLogoutModalBody: (solutionName, userName) =>
+    //   `You are logged in to ${solutionName} as ${userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
     switcherNavigatorLink: 'All applications',
     switcherLearnMoreLink: 'Learn more',
     switcherRequestAccess: 'Contact your administrator to request application access',
@@ -22,7 +24,8 @@ const SuiteHeaderI18N = {
     about: 'About',
     support: 'Support',
     gettingStarted: 'Getting started',
-    surveyTitle: (solutionName) => `Enjoying ${solutionName}?`,
+    surveyTitle: 'Enjoying {solutionName}?',
+    // surveyTitle: (solutionName) => `Enjoying ${solutionName}?`,
     surveyText: 'Click here to help us improve the product',
     surveyPrivacyPolicy: 'Privacy Policy',
   },
