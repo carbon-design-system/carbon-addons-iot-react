@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.29...v2.143.0-next.30) (2021-02-03)
+
+
+### Features
+
+* **suiteheader:** Adding support for some i18n prop changes where `surveyTitle` and `profileLogoutModalBody` can now be plain trings with varaibles enclosed by `{}` instead of functions. However, the component is still backwards compatible to consider the old usage where these strings were functions. ([7853a48](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7853a48cc91fc9463aa11c7f8a14eccada4df9ff))
+
+
+
+
+
 # [2.143.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.28...v2.143.0-next.29) (2021-02-03)
 
 
