@@ -42,7 +42,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <p
                 className="page-title-bar-description"
               >
-                My long blurb to explain what is going on
+                My long description to explain what is going on
               </p>
             </div>
             <div
