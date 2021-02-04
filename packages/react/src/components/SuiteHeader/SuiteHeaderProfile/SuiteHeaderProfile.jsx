@@ -71,11 +71,9 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
       ) : (
         <>
           <div className={`${baseClassName}--loading`} data-testid="suite-header-profile--loading">
-            {Array.from({ length: 3 }, (x, i) => (
-              <SkeletonText key={`$profile-skeleton-${i}`} />
-            ))}
+            <SkeletonText paragraph lineCount={3} width="80%" />
           </div>
-          <div className={`${baseClassName}--logout`}>
+          <div className={`${baseClassName}--logout ${baseClassName}--logout--loading`}>
             <ButtonSkeleton />
           </div>
         </>

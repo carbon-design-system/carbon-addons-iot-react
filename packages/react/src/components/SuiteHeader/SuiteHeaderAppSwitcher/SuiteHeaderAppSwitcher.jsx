@@ -72,12 +72,10 @@ const SuiteHeaderAppSwitcher = ({
       </li>
       {applications === null ? (
         <div
-          className={`${baseClassName}--app-skeleton`}
+          className={`${baseClassName}--loading`}
           data-testid="suite-header-app-switcher--loading"
         >
-          {Array.from({ length: 3 }, (x, i) => (
-            <SkeletonText key={`$app-switcher-skeleton-${i}`} />
-          ))}
+          <SkeletonText paragraph lineCount={3} />
         </div>
       ) : (
         applications.map(({ id, name, href, isExternal = false }) => (

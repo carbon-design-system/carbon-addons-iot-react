@@ -46,6 +46,11 @@
 
   &--loading {
     padding-bottom: $spacing-08;
+    p {
+      background-color: $inverse-hover-ui;
+      height: $spacing-04;
+      margin-bottom: $spacing-02;
+    }
   }
 
   &--logout {
@@ -53,6 +58,11 @@
 
     .#{$prefix}--btn {
       width: 100%;
+    }
+    &--loading {
+      div {
+        background-color: $inverse-hover-ui !important;
+      }
     }
   }
 }
@@ -83,6 +93,8 @@
     width: 100%;
     button {
       margin: $spacing-05;
+      width: calc(100% - 32px);
+      min-height: 40px;
     }
     p {
       @include type-style('productive-heading-01');
@@ -129,10 +141,9 @@
     }
   }
 
-  &--app-skeleton {
+  &--loading {
     display: flex;
-    align-items: center;
-    padding: 1rem;
+    padding: $spacing-05;
     flex-direction: column;
     p {
       margin-bottom: $spacing-05;
@@ -224,5 +235,16 @@
   .#{$prefix}--header__menu-title[role='menuitem'][aria-expanded='true']
     + .#{$prefix}--header__menu {
     width: 16rem;
+  }
+
+  .#{$iot-prefix}--suite-header-help--loading {
+    background-color: $ui-05;
+    color: $inverse-01;
+    width: 100%;
+    padding: $spacing-05;
+    p {
+      background-color: $inverse-hover-ui;
+      margin-bottom: $spacing-06;
+    }
   }
 }

@@ -29,33 +29,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
           className="iot--suite-header-profile--loading"
           data-testid="suite-header-profile--loading"
         >
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
+          <div>
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "calc(80% - 73px)",
+                }
               }
-            }
-          />
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
+            />
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "calc(80% - 11px)",
+                }
               }
-            }
-          />
-          <p
-            className="bx--skeleton__text"
-            style={
-              Object {
-                "width": "100%",
+            />
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "calc(80% - 43px)",
+                }
               }
-            }
-          />
+            />
+          </div>
         </div>
         <div
-          className="iot--suite-header-profile--logout"
+          className="iot--suite-header-profile--logout iot--suite-header-profile--logout--loading"
         >
           <div
             className="bx--skeleton bx--btn"

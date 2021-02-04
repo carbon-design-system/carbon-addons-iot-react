@@ -356,9 +356,21 @@ const SuiteHeader = ({
                           },
                           content: mergedI18N.about,
                         })
-                    : Array.from({ length: 6 }, (x, i) => ({
-                        content: <SkeletonText key={`$help-skeleton-${i}`} />,
-                      })),
+                    : [
+                        {
+                          metaData: {
+                            element: 'div',
+                          },
+                          content: (
+                            <div
+                              className={`${settings.iotPrefix}--suite-header-help--loading`}
+                              data-testid="suite-header-help--loading"
+                            >
+                              <SkeletonText paragraph lineCount={6} />
+                            </div>
+                          ),
+                        },
+                      ],
                 },
                 {
                   label: 'user',

@@ -2512,118 +2512,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               role="menu"
             >
               <li>
-                <a
+                <div
                   className="bx--header__menu-item"
                   tabIndex={0}
                 >
                   <span
                     className="bx--text-truncate--end"
                   >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
+                    <div
+                      className="iot--suite-header-help--loading"
+                      data-testid="suite-header-help--loading"
+                    >
+                      <div>
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 73px)",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 11px)",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 43px)",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 73px)",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 11px)",
+                            }
+                          }
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 43px)",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
                   </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bx--header__menu-item"
-                  tabIndex={0}
-                >
-                  <span
-                    className="bx--text-truncate--end"
-                  >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bx--header__menu-item"
-                  tabIndex={0}
-                >
-                  <span
-                    className="bx--text-truncate--end"
-                  >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bx--header__menu-item"
-                  tabIndex={0}
-                >
-                  <span
-                    className="bx--text-truncate--end"
-                  >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bx--header__menu-item"
-                  tabIndex={0}
-                >
-                  <span
-                    className="bx--text-truncate--end"
-                  >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bx--header__menu-item"
-                  tabIndex={0}
-                >
-                  <span
-                    className="bx--text-truncate--end"
-                  >
-                    <p
-                      className="bx--skeleton__text"
-                      style={
-                        Object {
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </span>
-                </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -2691,33 +2643,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         className="iot--suite-header-profile--loading"
                         data-testid="suite-header-profile--loading"
                       >
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "100%",
+                        <div>
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(80% - 73px)",
+                              }
                             }
-                          }
-                        />
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "100%",
+                          />
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(80% - 11px)",
+                              }
                             }
-                          }
-                        />
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "100%",
+                          />
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(80% - 43px)",
+                              }
                             }
-                          }
-                        />
+                          />
+                        </div>
                       </div>
                       <div
-                        className="iot--suite-header-profile--logout"
+                        className="iot--suite-header-profile--logout iot--suite-header-profile--logout--loading"
                       >
                         <div
                           className="bx--skeleton bx--btn"
@@ -2813,33 +2767,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       </button>
                     </li>
                     <div
-                      className="iot--suite-header-app-switcher--app-skeleton"
+                      className="iot--suite-header-app-switcher--loading"
                       data-testid="suite-header-app-switcher--loading"
                     >
-                      <p
-                        className="bx--skeleton__text"
-                        style={
-                          Object {
-                            "width": "100%",
+                      <div>
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 73px)",
+                            }
                           }
-                        }
-                      />
-                      <p
-                        className="bx--skeleton__text"
-                        style={
-                          Object {
-                            "width": "100%",
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 11px)",
+                            }
                           }
-                        }
-                      />
-                      <p
-                        className="bx--skeleton__text"
-                        style={
-                          Object {
-                            "width": "100%",
+                        />
+                        <p
+                          className="bx--skeleton__text"
+                          style={
+                            Object {
+                              "width": "calc(100% - 43px)",
+                            }
                           }
-                        }
-                      />
+                        />
+                      </div>
                     </div>
                   </ul>
                 </a>
