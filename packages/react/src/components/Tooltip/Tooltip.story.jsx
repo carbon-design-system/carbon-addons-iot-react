@@ -13,8 +13,6 @@ import { OverflowMenuVertical16 } from '@carbon/icons-react';
 
 import Button from '../Button';
 
-import mdx from './Tooltip.mdx';
-
 import { Tooltip } from '.';
 
 const { prefix } = settings;
@@ -121,12 +119,6 @@ export default {
   title: 'Tooltip',
   component: Tooltip,
   decorators: [withKnobs],
-
-  parameters: {
-    docs: {
-      page: mdx,
-    },
-  },
 };
 
 export const DefaultBottom = () => (

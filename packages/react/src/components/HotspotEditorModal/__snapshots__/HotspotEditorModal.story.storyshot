@@ -295,6 +295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 aria-hidden="true"
+                aria-label="Scroll left"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -329,10 +330,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-11__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-11"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -347,10 +349,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-12__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-12"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -361,6 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </ul>
               <button
                 aria-hidden="true"
+                aria-label="Scroll right"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -781,6 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 aria-hidden="true"
+                aria-label="Scroll left"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -815,10 +820,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-13__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-13"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -833,10 +839,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-14__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-14"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -847,6 +854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </ul>
               <button
                 aria-hidden="true"
+                aria-label="Scroll right"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1730,6 +1738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             >
               <button
                 aria-hidden="true"
+                aria-label="Scroll left"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1764,10 +1773,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-15__panel"
                     aria-selected={true}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-15"
                     role="tab"
                     tabIndex={0}
                     type="button"
@@ -1782,10 +1792,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   role="presentation"
                 >
                   <button
-                    aria-controls="undefined__panel"
+                    aria-controls="tab-16__panel"
                     aria-selected={false}
                     className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-16"
                     role="tab"
                     tabIndex={-1}
                     type="button"
@@ -1796,6 +1807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </ul>
               <button
                 aria-hidden="true"
+                aria-label="Scroll right"
                 className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
                 onMouseDown={[Function]}

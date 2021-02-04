@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  stories: ['./Welcome.story.jsx', '../**/*.story.jsx', '../**/*.story.mdx'],
+  stories: ['./Welcome.story.jsx', '../**/*.story.jsx'],
   addons: [
     '@storybook/addon-knobs',
     '@storybook/addon-actions',
@@ -10,7 +10,6 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
     'storybook-readme',
-    '@storybook/addon-docs',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

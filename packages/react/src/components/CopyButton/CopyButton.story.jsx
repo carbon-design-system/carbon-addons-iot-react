@@ -9,8 +9,6 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
-import mdx from './CopyButton.mdx';
-
 import { CopyButton } from '.';
 
 const props = () => ({
@@ -26,9 +24,6 @@ export default {
 
   parameters: {
     component: CopyButton,
-    docs: {
-      page: mdx,
-    },
   },
 };
 

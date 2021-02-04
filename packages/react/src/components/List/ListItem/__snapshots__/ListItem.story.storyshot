@@ -399,18 +399,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 List Item
               </div>
               <div>
-                <span
+                <div
                   className="bx--tag bx--tag--blue"
-                  title="default"
+                  id="tag-23"
                 >
-                  default
-                </span>
-                <span
+                  
+                  <span
+                    title="default"
+                  >
+                    default
+                  </span>
+                </div>
+                <div
                   className="bx--tag bx--tag--disabled bx--tag--red"
-                  title="disabled tag"
+                  id="tag-24"
                 >
-                  disabled tag
-                </span>
+                  
+                  <span
+                    title="disabled tag"
+                  >
+                    disabled tag
+                  </span>
+                </div>
               </div>
             </div>
           </div>

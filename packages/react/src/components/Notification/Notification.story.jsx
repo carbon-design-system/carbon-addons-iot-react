@@ -9,8 +9,6 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
-import mdx from './Notification.mdx';
-
 import { ToastNotification, InlineNotification, NotificationActionButton } from '.';
 
 const kinds = {
@@ -41,9 +39,6 @@ export default {
   decorators: [withKnobs],
 
   parameters: {
-    docs: {
-      page: mdx,
-    },
     subcomponents: {
       ToastNotification,
       InlineNotification,

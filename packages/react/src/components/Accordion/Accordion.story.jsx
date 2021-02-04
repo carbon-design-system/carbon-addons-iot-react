@@ -11,9 +11,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 
-import Button from '../Button/Button';
-
-import mdx from './Accordion.mdx';
+import Button from '../Button';
 
 import { Accordion, AccordionItem, AccordionSkeleton } from '.';
 
@@ -25,11 +23,6 @@ export default {
     AccordionSkeleton,
   },
   decorators: [withKnobs],
-  parameters: {
-    docs: {
-      page: mdx,
-    },
-  },
 };
 
 export const accordion = () => (

@@ -91,6 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               disabled={false}
               id="flyout-tooltip"
               onBlur={[Function]}
+              onChange={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
               onMouseOut={[Function]}

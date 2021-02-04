@@ -11,8 +11,6 @@ import { withKnobs, number, select, text } from '@storybook/addon-knobs';
 
 import Button from '../Button';
 
-import mdx from './InlineLoading.mdx';
-
 import { InlineLoading } from '.';
 
 const props = () => ({
@@ -32,9 +30,6 @@ export default {
 
   parameters: {
     component: InlineLoading,
-    docs: {
-      page: mdx,
-    },
   },
 };
 

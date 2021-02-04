@@ -10,8 +10,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 import { sliderValuePropSync } from 'carbon-components-react/lib/components/Slider';
 
-import mdx from './Slider.mdx';
-
 import { Slider, SliderSkeleton } from '.';
 
 const props = () => ({
@@ -39,9 +37,7 @@ export default {
 
   parameters: {
     component: Slider,
-    docs: {
-      page: mdx,
-    },
+
     subcomponents: {
       SliderSkeleton,
     },

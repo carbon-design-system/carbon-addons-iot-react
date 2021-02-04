@@ -13,8 +13,6 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { SelectItem } from '../SelectItem';
 import { SelectItemGroup } from '../SelectItemGroup';
 
-import mdx from './Select.mdx';
-
 import { Select, SelectSkeleton } from '.';
 
 const sizes = {
@@ -51,9 +49,6 @@ export default {
 
   parameters: {
     component: Select,
-    docs: {
-      page: mdx,
-    },
 
     subcomponents: {
       SelectItem,

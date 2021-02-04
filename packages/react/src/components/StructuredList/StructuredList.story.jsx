@@ -10,8 +10,6 @@ import React from 'react';
 import { CheckmarkFilled16 } from '@carbon/icons-react';
 import { settings } from 'carbon-components';
 
-import mdx from './StructuredList.mdx';
-
 import {
   StructuredListWrapper,
   StructuredListHead,
@@ -29,9 +27,7 @@ export default {
 
   parameters: {
     component: StructuredListWrapper,
-    docs: {
-      page: mdx,
-    },
+
     subcomponents: {
       StructuredListHead,
       StructuredListBody,

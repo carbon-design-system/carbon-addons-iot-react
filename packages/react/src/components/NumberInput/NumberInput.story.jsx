@@ -9,8 +9,6 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs';
 
-import mdx from './NumberInput.mdx';
-
 import { NumberInput, NumberInputSkeleton } from '.';
 
 const sizes = {
@@ -56,10 +54,6 @@ export default {
   decorators: [withKnobs],
 
   parameters: {
-    docs: {
-      page: mdx,
-    },
-
     subcomponents: {
       NumberInputSkeleton,
     },

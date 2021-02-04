@@ -9,8 +9,6 @@ import React from 'react';
 
 import { ListItem } from '../ListItem';
 
-import mdx from './UnorderedList.mdx';
-
 import { UnorderedList } from '.';
 
 export default {
@@ -18,9 +16,7 @@ export default {
 
   parameters: {
     component: UnorderedList,
-    docs: {
-      page: mdx,
-    },
+
     subcomponents: {
       ListItem,
     },

@@ -2,8 +2,6 @@ import React from 'react';
 
 import { ListItem } from '../ListItem';
 
-import mdx from './OrderedList.mdx';
-
 import { OrderedList } from '.';
 
 export default {
@@ -11,9 +9,6 @@ export default {
 
   parameters: {
     component: OrderedList,
-    docs: {
-      page: mdx,
-    },
 
     subcomponents: {
       ListItem,

@@ -13,8 +13,6 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { RadioButton } from '../RadioButton';
 import { FormGroup } from '../FormGroup';
 
-import mdx from './RadioButtonGroup.mdx';
-
 import { RadioButtonGroup } from '.';
 
 const values = {
@@ -58,9 +56,6 @@ export default {
 
   parameters: {
     component: RadioButtonGroup,
-    docs: {
-      page: mdx,
-    },
 
     subcomponents: {
       RadioButton,

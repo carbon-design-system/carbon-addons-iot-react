@@ -6986,12 +6986,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       DJ LeMahieu
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-13"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7021,12 +7026,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Luke Voit
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-14"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7056,12 +7066,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gary Sanchez
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-15"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7091,12 +7106,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Kendrys Morales
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-16"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7126,12 +7146,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gleyber Torres
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-17"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7161,12 +7186,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Clint Frazier
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-18"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7196,12 +7226,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Brett Gardner
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-19"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7231,12 +7266,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Gio Urshela
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-20"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7266,12 +7306,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Cameron Maybin
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-21"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -7301,12 +7346,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       Robinson Cano
                     </div>
                     <div>
-                      <span
+                      <div
                         className="bx--tag bx--tag--blue"
-                        title="default"
+                        id="tag-22"
                       >
-                        default
-                      </span>
+                        
+                        <span
+                          title="default"
+                        >
+                          default
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

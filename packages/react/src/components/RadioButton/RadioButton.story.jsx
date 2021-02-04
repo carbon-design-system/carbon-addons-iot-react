@@ -9,8 +9,6 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
-import mdx from './RadioButton.mdx';
-
 import { RadioButton, RadioButtonSkeleton } from '.';
 
 const labelPositions = {
@@ -34,12 +32,6 @@ export default {
   component: RadioButton,
   subcomponents: {
     RadioButtonSkeleton,
-  },
-
-  parameters: {
-    docs: {
-      page: mdx,
-    },
   },
 };
 

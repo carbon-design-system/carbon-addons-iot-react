@@ -14,8 +14,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, array, boolean, number, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
 
-import mdx from './FileUploader.mdx';
-
 import {
   FileUploader,
   FileUploaderButton,
@@ -129,9 +127,6 @@ export default {
 
   parameters: {
     component: FileUploader,
-    docs: {
-      page: mdx,
-    },
 
     subcomponents: {
       FileUploaderButton,

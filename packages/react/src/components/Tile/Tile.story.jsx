@@ -14,8 +14,6 @@ import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs
 import { TileGroup } from '../TileGroup';
 import { RadioTile } from '../RadioTile';
 
-import mdx from './Tile.mdx';
-
 import {
   Tile,
   ClickableTile,
@@ -71,6 +69,8 @@ const props = {
       'Collapsed icon text (tileExpandedIconText)',
       'Interact to Collapse tile'
     ),
+    tileCollapsedLabel: text('Collapsed icon text (tileCollapsedLabel)'),
+    tileExpandedLabel: text('Collapsed icon text (tileExpandedLabel)'),
     handleClick: action('handleClick'),
     light: boolean('Light variant (light)', false),
   }),
@@ -82,9 +82,7 @@ export default {
 
   parameters: {
     component: Tile,
-    docs: {
-      page: mdx,
-    },
+
     subcomponents: {
       ClickableTile,
       SelectableTile,

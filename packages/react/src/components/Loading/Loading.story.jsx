@@ -8,8 +8,6 @@
 import React from 'react';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
-import mdx from './Loading.mdx';
-
 import { Loading } from '.';
 
 const props = () => ({
@@ -25,9 +23,6 @@ export default {
 
   parameters: {
     component: Loading,
-    docs: {
-      page: mdx,
-    },
   },
 };
 

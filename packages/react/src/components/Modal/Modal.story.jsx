@@ -14,8 +14,6 @@ import { settings } from 'carbon-components';
 import Button from '../Button';
 import { TextInput } from '../TextInput';
 
-import mdx from './Modal.mdx';
-
 import { Modal } from '.';
 
 const { prefix } = settings;
@@ -140,9 +138,6 @@ export default {
   decorators: [withKnobs],
   parameters: {
     component: Modal,
-    docs: {
-      page: mdx,
-    },
   },
 };
 

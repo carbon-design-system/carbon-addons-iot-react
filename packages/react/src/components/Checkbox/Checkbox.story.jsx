@@ -11,8 +11,6 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
 
-import mdx from './Checkbox.mdx';
-
 import { Checkbox, CheckboxSkeleton } from '.';
 
 const { prefix } = settings;
@@ -24,11 +22,7 @@ export default {
     CheckboxSkeleton,
   },
   decorators: [withKnobs],
-  parameters: {
-    docs: {
-      page: mdx,
-    },
-  },
+  parameters: {},
 };
 
 export const checkbox = () => {

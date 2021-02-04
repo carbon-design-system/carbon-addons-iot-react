@@ -14,8 +14,6 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { SearchFilterButton } from '../SearchFilterButton';
 import { SearchLayoutButton } from '../SearchLayoutButton';
 
-import mdx from './Search.mdx';
-
 import { Search, SearchSkeleton } from '.';
 
 const sizes = {
@@ -47,9 +45,6 @@ export default {
 
   parameters: {
     component: Search,
-    docs: {
-      page: mdx,
-    },
 
     subcomponents: {
       SearchSkeleton,

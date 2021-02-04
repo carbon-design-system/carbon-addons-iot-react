@@ -372,6 +372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           >
             <button
               aria-hidden="true"
+              aria-label="Scroll left"
               className="bx--tab--overflow-nav-button--hidden"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -406,10 +407,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-27__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-27"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -424,10 +426,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-28__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-28"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -442,10 +445,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-29__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-29"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -456,6 +460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             </ul>
             <button
               aria-hidden="true"
+              aria-label="Scroll right"
               className="bx--tab--overflow-nav-button--hidden"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -977,6 +982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
           >
             <button
               aria-hidden="true"
+              aria-label="Scroll left"
               className="bx--tab--overflow-nav-button--hidden"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1011,10 +1017,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-30__panel"
                   aria-selected={true}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-30"
                   role="tab"
                   tabIndex={0}
                   type="button"
@@ -1029,10 +1036,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-31__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-31"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -1047,10 +1055,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 role="presentation"
               >
                 <button
-                  aria-controls="undefined__panel"
+                  aria-controls="tab-32__panel"
                   aria-selected={false}
                   className="bx--tabs--scrollable__nav-link"
                   href="#"
+                  id="tab-32"
                   role="tab"
                   tabIndex={-1}
                   type="button"
@@ -1061,6 +1070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             </ul>
             <button
               aria-hidden="true"
+              aria-label="Scroll right"
               className="bx--tab--overflow-nav-button--hidden"
               onClick={[Function]}
               onMouseDown={[Function]}

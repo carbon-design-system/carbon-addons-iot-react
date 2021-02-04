@@ -11,8 +11,6 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import { DatePickerInput } from '../DatePickerInput';
 
-import mdx from './DatePicker.mdx';
-
 import { DatePicker, DatePickerSkeleton } from '.';
 
 const patterns = {
@@ -73,9 +71,6 @@ export default {
     subcomponents: {
       DatePickerInput,
       DatePickerSkeleton,
-    },
-    docs: {
-      page: mdx,
     },
   },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -13,7 +14,6 @@ import { withReadme } from 'storybook-readme';
 import { Checkbox } from '../Checkbox';
 
 import readme from './README.md';
-import mdx from './MultiSelect.mdx';
 
 import { MultiSelect } from '.';
 
@@ -105,9 +105,6 @@ export default {
 
   parameters: {
     component: MultiSelect,
-    docs: {
-      page: mdx,
-    },
     subcomponents: {
       'MultiSelect.Filterable': MultiSelect.Filterable,
     },
@@ -202,7 +199,7 @@ export const WithChangeOnClose = withReadme(readme, () => {
   const [hasFocus, setHasFocus] = useState(false);
   const [active, setActive] = useState(false);
   const [selItems, setSelItems] = useState([items[0]]);
-  if (!hasFocus && active && selItems.length === 0) setActive(false);
+  if (!hasFocus && active && selItems.length == 0) setActive(false);
 
   return (
     <div style={{ width: 300 }}>

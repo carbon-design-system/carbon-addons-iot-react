@@ -127,7 +127,6 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.s?css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
-    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: ['/node_modules/(?!(@carbon/charts)).+(.jsx?)', '/__mocks__/.+(.jsx?)'],
