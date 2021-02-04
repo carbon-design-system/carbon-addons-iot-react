@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { settings } from '../../../../../constants/Settings';
 import { NumberInput, Toggle, Tooltip } from '../../../../../index';
 import { DEFAULT_FONT_SIZE } from '../../../../ValueCard/valueCardUtils';
+import { isNumberValidForMinMax } from '../../../../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -47,6 +48,9 @@ const defaultProps = {
   },
 };
 
+const MIN_FONT_SIZE = 16;
+const MAX_FONT_SIZE = 54;
+
 const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, fontSize, isNumberValueCompact } = cardConfig;
@@ -59,17 +63,20 @@ const ValueCardFormSettings = ({ cardConfig, onChange, i18n }) => {
         <NumberInput
           id={`${id}_value-card-font-size`}
           step={1}
-          min={16}
-          max={54}
+          min={MIN_FONT_SIZE}
+          max={MAX_FONT_SIZE}
           light
           label={mergedI18n.fontSize}
           value={fontSize || DEFAULT_FONT_SIZE}
-          onChange={({ imaginaryTarget }) =>
-            onChange({
-              ...cardConfig,
-              fontSize: Number(imaginaryTarget.value) || imaginaryTarget.value,
-            })
-          }
+          onChange={(event) => {
+            const parsedValue = Number(event.imaginaryTarget.value);
+            if (isNumberValidForMinMax(parsedValue, MIN_FONT_SIZE, MAX_FONT_SIZE)) {
+              onChange({
+                ...cardConfig,
+                fontSize: parsedValue,
+              });
+            }
+          }}
         />
       </div>
       <div className={`${baseClassName}--input`}>

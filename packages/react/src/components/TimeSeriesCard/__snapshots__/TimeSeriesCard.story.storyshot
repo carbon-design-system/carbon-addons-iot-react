@@ -1984,9 +1984,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={20}
+                              title="20.00"
                             >
-                              20
+                              20.00
                             </span>
                           </span>
                         </td>
@@ -2003,7 +2003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={5.51}
+                              title="5.51"
                             >
                               5.51
                             </span>
@@ -2022,9 +2022,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={6}
+                              title="6.00"
                             >
-                              6
+                              6.00
                             </span>
                           </span>
                         </td>
@@ -2060,9 +2060,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={7.4}
+                              title="7.40"
                             >
-                              7.4
+                              7.40
                             </span>
                           </span>
                         </td>
@@ -2079,10 +2079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>
@@ -2141,9 +2138,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={19}
+                              title="19.00"
                             >
-                              19
+                              19.00
                             </span>
                           </span>
                         </td>
@@ -2160,7 +2157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={7.36}
+                              title="7.36"
                             >
                               7.36
                             </span>
@@ -2179,9 +2176,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={58}
+                              title="58.00"
                             >
-                              58
+                              58.00
                             </span>
                           </span>
                         </td>
@@ -2217,7 +2214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={9.21}
+                              title="9.21"
                             >
                               9.21
                             </span>
@@ -2236,10 +2233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>
@@ -2298,9 +2292,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={29}
+                              title="29.00"
                             >
-                              29
+                              29.00
                             </span>
                           </span>
                         </td>
@@ -2317,7 +2311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={3.32}
+                              title="3.32"
                             >
                               3.32
                             </span>
@@ -2336,9 +2330,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={32}
+                              title="32.00"
                             >
-                              32
+                              32.00
                             </span>
                           </span>
                         </td>
@@ -2374,7 +2368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={9.58}
+                              title="9.58"
                             >
                               9.58
                             </span>
@@ -2393,10 +2387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>
@@ -2455,9 +2446,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={86}
+                              title="86.00"
                             >
-                              86
+                              86.00
                             </span>
                           </span>
                         </td>
@@ -2474,7 +2465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={2.98}
+                              title="2.98"
                             >
                               2.98
                             </span>
@@ -2493,9 +2484,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={45}
+                              title="45.00"
                             >
-                              45
+                              45.00
                             </span>
                           </span>
                         </td>
@@ -2531,7 +2522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={8.72}
+                              title="8.72"
                             >
                               8.72
                             </span>
@@ -2550,10 +2541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>
@@ -2612,9 +2600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={11}
+                              title="11.00"
                             >
-                              11
+                              11.00
                             </span>
                           </span>
                         </td>
@@ -2631,7 +2619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={9.25}
+                              title="9.25"
                             >
                               9.25
                             </span>
@@ -2650,9 +2638,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={38}
+                              title="38.00"
                             >
-                              38
+                              38.00
                             </span>
                           </span>
                         </td>
@@ -2688,7 +2676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={9.57}
+                              title="9.57"
                             >
                               9.57
                             </span>
@@ -2707,10 +2695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>
@@ -2769,9 +2754,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={35}
+                              title="35.00"
                             >
-                              35
+                              35.00
                             </span>
                           </span>
                         </td>
@@ -2788,7 +2773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={8.15}
+                              title="8.15"
                             >
                               8.15
                             </span>
@@ -2807,9 +2792,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={18}
+                              title="18.00"
                             >
-                              18
+                              18.00
                             </span>
                           </span>
                         </td>
@@ -2845,9 +2830,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title={8.3}
+                              title="8.30"
                             >
-                              8.3
+                              8.30
                             </span>
                           </span>
                         </td>
@@ -2864,10 +2849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           >
                             <span
                               className=""
-                              title="true"
-                            >
-                              true
-                            </span>
+                            />
                           </span>
                         </td>
                       </tr>

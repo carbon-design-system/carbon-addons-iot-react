@@ -3397,6 +3397,88 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </div>
                 </div>
               </div>
+              <div
+                className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
+              >
+                <span>
+                  Include zero on x-axis
+                </span>
+                <div
+                  className="bx--form-item"
+                >
+                  <input
+                    aria-label={null}
+                    checked={true}
+                    className="bx--toggle-input bx--toggle-input--small"
+                    data-testid="includeZeroOnXaxis-toggle"
+                    id="includeZeroOnXaxis-toggle"
+                    onChange={[Function]}
+                    onKeyUp={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    aria-label="Include zero on x-axis"
+                    className="bx--toggle-input__label"
+                    htmlFor="includeZeroOnXaxis-toggle"
+                  >
+                    <span
+                      className="bx--toggle__switch"
+                    >
+                      <svg
+                        className="bx--toggle__check"
+                        height="5px"
+                        viewBox="0 0 6 5"
+                        width="6px"
+                      >
+                        <path
+                          d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                        />
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input--toggle-field iot--card-edit-form--input"
+              >
+                <span>
+                  Include zero on y-axis
+                </span>
+                <div
+                  className="bx--form-item"
+                >
+                  <input
+                    aria-label={null}
+                    checked={true}
+                    className="bx--toggle-input bx--toggle-input--small"
+                    data-testid="includeZeroOnYaxis-toggle"
+                    id="includeZeroOnYaxis-toggle"
+                    onChange={[Function]}
+                    onKeyUp={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    aria-label="Include zero on y-axis"
+                    className="bx--toggle-input__label"
+                    htmlFor="includeZeroOnYaxis-toggle"
+                  >
+                    <span
+                      className="bx--toggle__switch"
+                    >
+                      <svg
+                        className="bx--toggle__check"
+                        height="5px"
+                        viewBox="0 0 6 5"
+                        width="6px"
+                      >
+                        <path
+                          d="M2.2 2.7L5 0 6 1 2.2 5 0 2.7 1 1.5z"
+                        />
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+              </div>
             </div>
             <div
               className="iot--card-edit-form--footer"

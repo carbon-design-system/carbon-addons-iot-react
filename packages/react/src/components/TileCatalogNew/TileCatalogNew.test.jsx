@@ -85,7 +85,7 @@ describe('TileCatalogNew', () => {
         onSort={onSort}
         sortOptions={sortOptions}
         selectedSortOption={selectedSortOption}
-        hasSearch="true"
+        hasSearch
       />
     );
     fireEvent.change(screen.getByDisplayValue('Choose from options'), {
