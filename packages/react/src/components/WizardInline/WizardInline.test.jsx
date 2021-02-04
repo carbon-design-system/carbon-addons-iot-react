@@ -1,55 +1,10 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import faker from 'faker';
+import { mount } from 'enzyme';
 
 import WizardInline from './WizardInline';
 import { itemsAndComponents } from './WizardInline.story';
 
-const fakeBlurb = faker.lorem.sentence();
-
 describe('WizardInline', () => {
-  it('blurb prop', () => {
-    let wrapper = shallow(
-      <WizardInline
-        title="Wizard Title"
-        items={itemsAndComponents}
-        currentItemId="step1"
-        onClose={() => {}}
-      />
-    );
-    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(null);
-    wrapper = shallow(
-      <WizardInline
-        title="Wizard Title"
-        items={itemsAndComponents}
-        blurb={fakeBlurb}
-        currentItemId="step1"
-        onClose={() => {}}
-      />
-    );
-    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
-    wrapper = shallow(
-      <WizardInline
-        title="Wizard Title"
-        items={itemsAndComponents}
-        blurb={fakeBlurb}
-        currentItemId=""
-        onClose={() => {}}
-      />
-    );
-    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
-    wrapper = shallow(
-      <WizardInline
-        title="Wizard Title"
-        items={itemsAndComponents}
-        blurb={fakeBlurb}
-        currentItemId=""
-        onClose={() => {}}
-        showCloseButton={false}
-      />
-    );
-    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
-  });
   it('deprecation notice', () => {
     // globally this is false, but we need it true so the warning pops
     global.__DEV__ = true;

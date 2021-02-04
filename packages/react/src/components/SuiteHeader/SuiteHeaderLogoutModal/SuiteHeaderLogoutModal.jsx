@@ -9,14 +9,12 @@ const defaultProps = {
     heading: 'Do you wish to log out?',
     secondaryButton: 'Cancel',
     primaryButton: 'Log out',
-    body: (suiteName, userName) =>
-      `You are logged in to ${suiteName} as ${userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
+    body:
+      'Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
   },
 };
 
 const propTypes = {
-  suiteName: PropTypes.string.isRequired,
-  displayName: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
@@ -24,11 +22,11 @@ const propTypes = {
     heading: PropTypes.string,
     primaryButton: PropTypes.string,
     secondaryButton: PropTypes.string,
-    body: PropTypes.func,
+    body: PropTypes.string,
   }),
 };
 
-const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLogout, i18n }) => {
+const SuiteHeaderLogoutModal = ({ isOpen, onClose, onLogout, i18n }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   return (
     <Modal
@@ -40,7 +38,7 @@ const SuiteHeaderLogoutModal = ({ suiteName, displayName, isOpen, onClose, onLog
       onRequestSubmit={onLogout}
       onRequestClose={onClose}
     >
-      {mergedI18N.body(suiteName, displayName)}
+      {mergedI18N.body}
     </Modal>
   );
 };

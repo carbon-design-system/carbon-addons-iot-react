@@ -240,4 +240,9 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
     height: $spacing-05;
     background-color: var(--icon-color-option);
   }
+
+  .#{$iot-prefix}--list-item--content--values--value__with-actions {
+    // need to make room for 2 actions
+    padding-right: $layout-05;
+  }
 }
