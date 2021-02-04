@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.32...v2.143.0-next.33) (2021-02-04)
+
+
+### Bug Fixes
+
+* **barchart:** memoize column and data for table ([8acf513](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8acf513701a4f0cc713200bc84f0d151cc5d1ebf))
+* **cardeditform:** use scss token ([53474a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53474a34d46821e48edeab68233a801022020ebb))
+* **cardeditor:** make dataItemId and dataSourceId required props ([b2d26b2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b2d26b249dd4a4cbdffe17de8f5eaee516414f1d))
+* **dashboardeditor:** memoize values and functions ([2cf1197](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2cf1197df0286f80bc7cf4ed4df67d6831205694))
+* **dataseriesform:** use dataItemId visually ([1d37f83](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d37f835afec620754a97be93beb9ee2422b4c71))
+* **rulebuilder:** add comments on props, clean up story ([7fac216](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7fac2163ca2b15cd1f458bea17bc99cc15e2e011))
+* **rulebuilder:** rtl style fixes ([092ed69](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/092ed696004bcad64ed0e568bd3cd0ce266e489f))
+* **rulebuilder:** update story snapshot ([28360a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28360a33df2817a016547f02a1dfe2c8dc2ee9c7))
+* **timeseriescard:** support precision values ([f5c0242](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5c02428490ae7ca2f709c6b7d00322d97eb3343))
+
+
+### Features
+
+* **editor:** add on-card-json-preview callback ([2ee9737](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2ee97379b03f90ad6c4818030bad183306201be5))
+* **repo:** had to do a manual bump as version got out of whack ([675cd9e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/675cd9e859f836bb0c657574f8c222e22ccd357a))
+* **rulebuilder:** comments, cleanup, and custom operand field renderer ([2899f10](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2899f100ef2f9ec5cc58f2c197b255d0f9fdfc3c))
+* **rulebuilder:** custom column operands and renderers ([171df85](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/171df851ba65273b4c63596d14513ba4dd79ef15))
+* **rulebuilder:** intial addition of rule builder ([ac7ad76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac7ad7622378f8be5f101e42e9a9659bbf794063))
+
+
+
+
+
 # [2.143.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.30...v2.143.0-next.31) (2021-02-03)
 
 **Note:** Version bump only for package ibm-ai-applications
