@@ -4,7 +4,7 @@
     "node": "12.x || 14.x"
   },
   "workspaces": [
-    "packages/react"
+    "packages/*"
   ],
   "main": "lib/src/index.js",
   "module": "es/src/index.js",

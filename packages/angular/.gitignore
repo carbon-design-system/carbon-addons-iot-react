@@ -1,0 +1,16 @@
+.DS_Store
+*.log*
+*.swp
+bower_components
+node_modules
+dist
+dist-pkg
+demo/bundle
+.idea
+.vscode
+.cache
+.cache/
+doc/
+documentation/
+dist/
+a11y/results*

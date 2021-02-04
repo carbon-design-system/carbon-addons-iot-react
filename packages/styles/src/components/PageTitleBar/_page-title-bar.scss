@@ -1,0 +1,68 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '~carbon-components/scss/globals/scss/typography';
+
+.page-title-bar {
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--text {
+      align-items: center;
+      display: flex;
+
+      h2 {
+        @include type-style('productive-heading-04');
+        // need to match the 40x40px icons that could render in
+        height: $spacing-08;
+      }
+
+      & #tooltip {
+        fill: $icon-01;
+      }
+    }
+
+    &--edit {
+      margin-left: $spacing-05;
+    }
+  }
+  .#{$prefix}--tab-content {
+    padding: unset;
+    padding-top: $spacing-05;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: $spacing-05 $spacing-07 $spacing-06 $spacing-07;
+
+    &-left {
+      margin-right: $spacing-05;
+    }
+    &-right {
+      margin-left: $spacing-05;
+    }
+  }
+
+  &-description {
+    @include type-style('body-short-01');
+    margin-top: $spacing-05;
+    max-width: 40rem;
+  }
+
+  &-breadcrumb {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-loading {
+    height: carbon--rem(20px);
+    margin: $spacing-05 0 0 $spacing-07;
+  }
+
+  &-content {
+    padding: 0 $spacing-07;
+  }
+}

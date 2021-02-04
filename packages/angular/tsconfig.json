@@ -1,0 +1,43 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"downlevelIteration": true,
+		"esModuleInterop": true,
+		"importHelpers": true,
+		"lib": [
+			"es2016",
+			"dom"
+		],
+		"sourceMap": true,
+		"inlineSources": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"outDir": "./dist-pkg",
+		"rootDir": ".",
+		"target": "es2015",
+		"skipLibCheck": true,
+		"typeRoots": [
+			"./node_modules/@types"
+		],
+		"paths": {
+			"@ai-apps/pal/*": [
+				"./src/*/index"
+			]
+		}
+	},
+	"exclude": [
+		"**/*.stories.ts",
+		"**/stories/**",
+		"**/*.spec.ts",
+		"**/node_modules/**",
+		"**/dist/**"
+	],
+	"angularCompilerOptions": {
+		"skipTemplateCodegen": true,
+		"strictMetadataEmit": false,
+		"fullTemplateTypeCheck": false
+	}
+}

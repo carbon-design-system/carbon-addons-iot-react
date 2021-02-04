@@ -1,0 +1,17 @@
+{
+  "name": "@ai-apps/styles",
+  "version": "0.0.0",
+  "description": "Styles for the AI Applications PAL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "scss/**/*"
+  ],
+  "devDependencies": {
+    "sass": "^1.26.10"
+  },
+  "author": "IBM",
+  "license": "Apache-2.0"
+}

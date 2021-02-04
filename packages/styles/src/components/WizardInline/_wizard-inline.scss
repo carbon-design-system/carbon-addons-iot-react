@@ -1,0 +1,14 @@
+@import '~carbon-components/scss/globals/scss/vars';
+
+.wizard-inline {
+  &-header {
+    @include carbon--type-style('productive-heading-03');
+    margin-bottom: $spacing-06;
+    padding: $spacing-05 $spacing-05 0 $spacing-05;
+  }
+
+  &-progress-indicator {
+    padding-bottom: $spacing-06;
+    padding-left: $spacing-05;
+  }
+}
