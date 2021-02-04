@@ -112,7 +112,9 @@ describe('ListItem', () => {
     expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
 
-    rerender(<UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
+    rerender(
+      <UnconnectedListItem i18n={i18nTest} id="1" value="" isExpandable expanded index={0} />
+    );
     expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
   });
@@ -130,7 +132,7 @@ describe('ListItem', () => {
     expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
     expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();
 
-    rerender(<UnconnectedListItem id="1" value="test" tags={tags} />);
+    rerender(<UnconnectedListItem id="1" value="test" tags={tags} index={0} />);
     expect(screen.getByText('my tag 1')).toBeVisible();
     expect(screen.getByText('my tag 2')).toBeVisible();
   });

@@ -19,6 +19,7 @@ const commonProps = {
     manufacturer: ['Rentech', 'GHI'],
     deviceid: ['73000', '73001'],
   },
+  translateWithId: jest.fn(),
 };
 describe('TableCardFormSettings', () => {
   it('updateColumnSort where a column is already sorted', () => {

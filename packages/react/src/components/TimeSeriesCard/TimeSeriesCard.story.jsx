@@ -49,6 +49,7 @@ export const SinglePoint = () => {
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
           addSpaceOnEdges: 1,
+          decimalPrecision: 1,
           showLegend: true,
         })}
         values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
@@ -1153,6 +1154,7 @@ export const IsExpanded = () => {
           yLabel: 'Temperature (˚F)',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
+          decimalPrecision: 2,
           timeDataSourceId: 'timestamp',
           zoomBar: {
             enabled: true,

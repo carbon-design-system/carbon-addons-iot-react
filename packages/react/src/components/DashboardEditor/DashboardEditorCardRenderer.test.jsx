@@ -15,10 +15,12 @@ describe('DashboardEditorCardRenderer', () => {
     expect(screen.getByText(/myid/)).toBeInTheDocument();
   });
   it('value card renders threshold icon', () => {
+    const mockRenderIconByName = jest.fn(() => <div />);
     render(
       <DashboardEditorCardRenderer
         title="Alert Count"
         id="facilitycard"
+        renderIconByName={mockRenderIconByName}
         content={{
           attributes: [
             {
@@ -28,7 +30,7 @@ describe('DashboardEditorCardRenderer', () => {
                   comparison: '>=',
                   value: 30,
                   color: 'red',
-                  icon: 'Warning alt',
+                  icon: 'Warning filled',
                 },
                 {
                   comparison: '<=',
@@ -52,7 +54,10 @@ describe('DashboardEditorCardRenderer', () => {
         values={{ alertCount: 35 }}
       />
     );
-    expect(screen.getByTitle('>= 30')).toBeInTheDocument();
+    expect(mockRenderIconByName).toHaveBeenCalledWith(
+      'Warning filled',
+      expect.objectContaining({ title: '>= 30', fill: 'red' })
+    );
   });
   it('image card renders custom hotspot icon', () => {
     render(
@@ -76,6 +81,9 @@ describe('DashboardEditorCardRenderer', () => {
               y: 65,
               icon: 'User',
               color: 'purple',
+              content: {
+                attributes: [{ dataItemId: 'mydataitem', dataSourceId: 'myDataSource' }],
+              },
             },
           ],
         }}
@@ -113,6 +121,38 @@ describe('DashboardEditorCardRenderer', () => {
     );
     // Should find the correct Warning icon and text
     expect(screen.getByTitle('Checkmark')).toBeInTheDocument();
+  });
+  it('image card uses renderIconByName', () => {
+    const mockRenderIconByName = jest.fn(() => <div />);
+    render(
+      <DashboardEditorCardRenderer
+        title="Alert Count"
+        id="facilitycard"
+        size="LARGE"
+        type="IMAGE"
+        renderIconByName={mockRenderIconByName}
+        content={{
+          src: 'landscape',
+          image: 'landscape',
+          alt: 'Sample image',
+          zoomMax: 10,
+          hasInsertFromUrl: true,
+        }}
+        breakpoint="lg"
+        values={{
+          hotspots: [
+            {
+              x: 35,
+              y: 65,
+              color: 'purple',
+              icon: 'Checkmark',
+            },
+          ],
+        }}
+      />
+    );
+    // Should find the correct Warning icon and text
+    expect(mockRenderIconByName).toHaveBeenCalledWith('Checkmark', expect.anything());
   });
   it('list card renders list', () => {
     const listCardData = [
