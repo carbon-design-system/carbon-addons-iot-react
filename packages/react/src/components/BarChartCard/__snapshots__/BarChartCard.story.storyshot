@@ -2198,7 +2198,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2210,7 +2214,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2222,7 +2230,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2234,7 +2246,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                         </tr>
                         <tr
@@ -2270,7 +2286,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2282,7 +2302,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2294,7 +2318,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2306,7 +2334,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                         </tr>
                         <tr
@@ -2342,7 +2374,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2354,7 +2390,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2366,7 +2406,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2378,7 +2422,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                         </tr>
                         <tr
@@ -2414,7 +2462,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2426,7 +2478,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2438,7 +2494,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                           <td
                             align="start"
@@ -2450,7 +2510,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                            />
+                            >
+                              <span
+                                className=""
+                              />
+                            </span>
                           </td>
                         </tr>
                       </tbody>

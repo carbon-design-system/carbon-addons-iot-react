@@ -220,20 +220,61 @@ const TableCardFormContent = ({
     [onChange]
   );
 
-  const handleRemoveButton = (dataItem) => {
-    const filteredColumns = dataSection.filter(
-      (item) => item.dataSourceId !== dataItem.dataSourceId
-    );
-    setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
-    setRemovedDataItems([...removedDataItems, dataItem]);
-    onChange({
-      ...cardConfig,
-      content: {
-        ...cardConfig.content,
-        columns: filteredColumns,
-      },
-    });
-  };
+  const handleRemoveButton = useCallback(
+    (dataItem) => {
+      const filteredColumns = dataSection.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
+      setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
+      setRemovedDataItems([...removedDataItems, dataItem]);
+      onChange({
+        ...cardConfig,
+        content: {
+          ...cardConfig.content,
+          columns: filteredColumns,
+        },
+      });
+    },
+    [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
+  );
+
+  const dataListItems = useMemo(
+    () =>
+      dataSection?.map((dataItem) => ({
+        id: dataItem.dataSourceId,
+        content: {
+          value: dataItem.label || dataItem.dataItemId,
+          icon: null,
+          rowActions: () => [
+            <Button
+              key={`data-item-${dataItem.dataSourceId}`}
+              renderIcon={Edit16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => {
+                const dataItemWithMetaData = validDataItems.find(
+                  ({ dataItemId }) => dataItemId === dataItem.dataItemId
+                );
+                setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
+                setShowEditor(true);
+              }}
+              iconDescription={mergedI18n.edit}
+            />,
+            <Button
+              key={`data-item-${dataItem.dataSourceId}_remove`}
+              renderIcon={Subtract16}
+              hasIconOnly
+              kind="ghost"
+              size="small"
+              onClick={() => handleRemoveButton(dataItem)}
+              iconDescription={mergedI18n.remove}
+            />,
+          ],
+        },
+      })),
+    [dataSection, handleRemoveButton, mergedI18n.edit, mergedI18n.remove, validDataItems]
+  );
 
   return (
     <>
@@ -317,39 +358,7 @@ const TableCardFormContent = ({
         // need to force an empty "empty state"
         emptyState={<div />}
         title=""
-        items={dataSection?.map((dataItem) => ({
-          id: dataItem.dataSourceId,
-          content: {
-            value: dataItem.label,
-            icon: null,
-            rowActions: () => [
-              <Button
-                key={`data-item-${dataItem.dataSourceId}`}
-                renderIcon={Edit16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => {
-                  const dataItemWithMetaData = validDataItems.find(
-                    ({ dataItemId }) => dataItemId === dataItem.dataItemId
-                  );
-                  setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
-                  setShowEditor(true);
-                }}
-                iconDescription={mergedI18n.edit}
-              />,
-              <Button
-                key={`data-item-${dataItem.dataSourceId}_remove`}
-                renderIcon={Subtract16}
-                hasIconOnly
-                kind="ghost"
-                size="small"
-                onClick={() => handleRemoveButton(dataItem)}
-                iconDescription={mergedI18n.remove}
-              />,
-            ],
-          },
-        }))}
+        items={dataListItems}
       />
     </>
   );

@@ -5035,6 +5035,9 @@ Map {
         "args": Array [
           Object {
             "categoryDataSourceId": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -8634,6 +8637,7 @@ Map {
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
+      "onCardJsonPreview": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
@@ -8733,9 +8737,11 @@ Map {
                   "type": "arrayOf",
                 },
                 "dataItemId": Object {
+                  "isRequired": true,
                   "type": "string",
                 },
                 "dataSourceId": Object {
+                  "isRequired": true,
                   "type": "string",
                 },
                 "grain": Object {
@@ -9170,6 +9176,9 @@ Map {
       "onCardChange": Object {
         "type": "func",
       },
+      "onCardJsonPreview": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -9241,6 +9250,7 @@ Map {
       },
       "icons": null,
       "isSummaryDashboard": false,
+      "onCardJsonPreview": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9420,6 +9430,9 @@ Map {
       },
       "onAddCard": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onCardJsonPreview": Object {
         "type": "func",
       },
       "onChange": Object {
@@ -12891,6 +12904,9 @@ Map {
               "type": "number",
             },
             "chartType": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },

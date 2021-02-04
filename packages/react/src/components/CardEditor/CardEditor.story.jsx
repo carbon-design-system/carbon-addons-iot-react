@@ -137,11 +137,11 @@ export const ForTimeSeries = () => (
       onShowGallery={action('onShowGallery')}
       onChange={action('onChange')}
       dataItems={[
-        { dataSourceId: 'torque_max', label: 'Torque Max' },
-        { dataSourceId: 'torque_min', label: 'Torque Min' },
-        { dataSourceId: 'torque_mean', label: 'Torque Mean' },
-        { dataSourceId: 'temperature', label: 'Temperature' },
-        { dataSourceId: 'pressure', label: 'Pressure' },
+        { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+        { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
       ]}
       onAddCard={action('onAddCard')}
     />
@@ -226,11 +226,11 @@ export const ForImage = () => (
       onShowGallery={action('onShowGallery')}
       onChange={action('onChange')}
       dataItems={[
-        { dataSourceId: 'torque_max', label: 'Torque Max' },
-        { dataSourceId: 'torque_min', label: 'Torque Min' },
-        { dataSourceId: 'torque_mean', label: 'Torque Mean' },
-        { dataSourceId: 'temperature', label: 'Temperature' },
-        { dataSourceId: 'pressure', label: 'Pressure' },
+        { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+        { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
       ]}
       onAddCard={action('onAddCard')}
     />

@@ -75,8 +75,8 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** This is needed to keep track of the original dataItem name
      * because the dataSourceId is subject to change */
-    dataItemId: PropTypes.string,
-    dataSourceId: PropTypes.string,
+    dataItemId: PropTypes.string.isRequired,
+    dataSourceId: PropTypes.string.isRequired,
     label: PropTypes.string,
     aggregationMethod: PropTypes.string,
     aggregationMethods: PropTypes.arrayOf(
@@ -134,8 +134,8 @@ export const getDefaultCard = (type, i18n) => {
         content: {
           series: [],
           xLabel: 'Time',
-          includeZeroOnXaxis: true,
-          includeZeroOnYaxis: true,
+          includeZeroOnXaxis: false,
+          includeZeroOnYaxis: false,
           timeDataSourceId: 'timestamp',
           showLegend: true,
         },
