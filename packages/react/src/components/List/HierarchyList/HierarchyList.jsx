@@ -258,6 +258,10 @@ const HierarchyList = ({
         if (!isEqual(selectedIds, [defaultSelectedId])) {
           // If the defaultSelectedId prop is updated from the outside, we need to use it
           setSelected(defaultSelectedId);
+
+          if (onSelect) {
+            onSelect(defaultSelectedId);
+          }
         }
       }
     },

@@ -284,55 +284,73 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
   });
 
-  it('parent items of defaultSelectedId should be expanded', () => {
-    const { rerender } = render(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        defaultSelectedId="New York Mets_JD Davis"
-        hasPagination={false}
-      />
-    );
+  describe('defaultSelectedId', () => {
+    it('parent items of defaultSelectedId should be expanded', () => {
+      const { rerender } = render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultSelectedId="New York Mets_JD Davis"
+          hasPagination={false}
+        />
+      );
 
-    // Nested item should be visible
-    const selectedItem = screen.getByTitle('JD Davis');
-    expect(selectedItem).toBeInTheDocument();
+      // Nested item should be visible
+      const selectedItem = screen.getByTitle('JD Davis');
+      expect(selectedItem).toBeInTheDocument();
 
-    // Should be marked selected
-    expect(selectedItem?.parentElement?.parentElement?.parentElement?.className).toContain(
-      '__selected'
-    );
-    // All other categories should be visible still
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are unfortunately worthy too...
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
-    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
-    // But no Yankees players should be visible
-    expect(screen.queryByTitle('Gary Sanchez')).not.toBeInTheDocument();
+      // Should be marked selected
+      expect(selectedItem?.parentElement?.parentElement?.parentElement?.className).toContain(
+        '__selected'
+      );
+      // All other categories should be visible still
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are unfortunately worthy too...
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+      expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+      // But no Yankees players should be visible
+      expect(screen.queryByTitle('Gary Sanchez')).not.toBeInTheDocument();
 
-    // Change the defaultSelectedId property
-    rerender(
-      <HierarchyList
-        items={items}
-        title="Hierarchy List"
-        pageSize="xl"
-        defaultSelectedId="New York Yankees_Gary Sanchez"
-        hasPagination={false}
-      />
-    );
+      // Change the defaultSelectedId property
+      rerender(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultSelectedId="New York Yankees_Gary Sanchez"
+          hasPagination={false}
+        />
+      );
 
-    expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
+      expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
 
-    const selectedYankee = screen.getByTitle('Gary Sanchez');
-    expect(selectedYankee).toBeInTheDocument();
+      const selectedYankee = screen.getByTitle('Gary Sanchez');
+      expect(selectedYankee).toBeInTheDocument();
 
-    expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
-      '__selected'
-    );
+      expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
+        '__selected'
+      );
+    });
+
+    it('defaultSelectedItem should fire onSelect on initial render', () => {
+      const mockOnSelect = jest.fn();
+      render(
+        <HierarchyList
+          items={items}
+          title="Hierarchy List"
+          pageSize="xl"
+          defaultSelectedId="New York Mets_JD Davis"
+          hasPagination={false}
+          onSelect={mockOnSelect}
+        />
+      );
+
+      expect(mockOnSelect).toBeCalledWith('New York Mets_JD Davis');
+    });
   });
 
   it('defaultExpandedIds should be expanded', () => {
