@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ButtonSkeleton, SkeletonText } from 'carbon-components-react';
 
 import { Button } from '../../../index';
 import { settings } from '../../../constants/Settings';
-import { ButtonSkeleton, SkeletonText } from 'carbon-components-react';
 
 const defaultProps = {
   username: '',

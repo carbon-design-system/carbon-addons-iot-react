@@ -3,7 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ArrowLeft16, ArrowRight16, Bee32 } from '@carbon/icons-react';
+import { ArrowRight16, Bee32 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
