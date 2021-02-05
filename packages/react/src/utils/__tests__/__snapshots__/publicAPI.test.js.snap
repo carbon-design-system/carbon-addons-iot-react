@@ -7057,6 +7057,9 @@ Map {
       "applications": null,
       "className": null,
       "customActionItems": Array [],
+      "customApplications": Array [],
+      "customHelpLinks": Array [],
+      "customProfileLinks": Array [],
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7172,6 +7175,81 @@ Map {
                 },
                 "onClick": Object {
                   "type": "func",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "content": Object {
+                  "type": "node",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customHelpLinks": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "content": Object {
+                  "type": "node",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customProfileLinks": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "content": Object {
+                  "type": "node",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               },
             ],
@@ -7434,6 +7512,7 @@ Map {
         "profileButton": "Manage profile",
         "profileTitle": "Profile",
       },
+      "onRequestLogout": null,
       "username": "",
     },
     "propTypes": Object {
@@ -7461,7 +7540,6 @@ Map {
         "type": "func",
       },
       "onRequestLogout": Object {
-        "isRequired": true,
         "type": "func",
       },
       "username": Object {
@@ -7471,7 +7549,9 @@ Map {
   },
   "SuiteHeaderAppSwitcher" => Object {
     "defaultProps": Object {
+      "allApplicationsLink": null,
       "applications": null,
+      "customApplications": Array [],
       "i18n": Object {
         "allApplicationsLink": "All applications",
         "learnMoreLink": "Learn more",
@@ -7482,10 +7562,36 @@ Map {
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
-        "isRequired": true,
         "type": "string",
       },
       "applications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customApplications": Object {
         "args": Array [
           Object {
             "args": Array [

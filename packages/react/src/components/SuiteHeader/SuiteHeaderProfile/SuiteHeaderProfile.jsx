@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonSkeleton, SkeletonText } from 'carbon-components-react';
+import { ButtonSkeleton } from 'carbon-components-react';
 
 import { Button } from '../../../index';
+import { SkeletonText } from '../../SkeletonText';
 import { settings } from '../../../constants/Settings';
 
 const defaultProps = {
   username: '',
   displayName: '',
+  onRequestLogout: null,
   i18n: {
     profileTitle: 'Profile',
     profileButton: 'Manage profile',
@@ -19,7 +21,7 @@ const propTypes = {
   displayName: PropTypes.string,
   username: PropTypes.string,
   onProfileClick: PropTypes.func.isRequired,
-  onRequestLogout: PropTypes.func.isRequired,
+  onRequestLogout: PropTypes.func,
   i18n: PropTypes.shape({
     profileTitle: PropTypes.string,
     profileButton: PropTypes.string,
@@ -48,7 +50,11 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
               <div>{username}</div>
             </div>
           </div>
-          <div className={`${baseClassName}--manage-button`}>
+          <div
+            className={`${baseClassName}--manage-button${
+              onRequestLogout ? '' : ` ${baseClassName}--manage-button--no-logout`
+            }`}
+          >
             <Button
               kind="secondary"
               size="small"
@@ -58,24 +64,33 @@ const SuiteHeaderProfile = ({ displayName, username, onProfileClick, onRequestLo
               {mergedI18N.profileButton}
             </Button>
           </div>
-          <div className={`${baseClassName}--logout`}>
-            <Button
-              kind="secondary"
-              data-testid="suite-header-profile--logout"
-              onClick={onRequestLogout}
-            >
-              {mergedI18N.logoutButton}
-            </Button>
-          </div>
+          {onRequestLogout && (
+            <div className={`${baseClassName}--logout`}>
+              <Button
+                kind="secondary"
+                data-testid="suite-header-profile--logout"
+                onClick={onRequestLogout}
+              >
+                {mergedI18N.logoutButton}
+              </Button>
+            </div>
+          )}
         </>
       ) : (
         <>
-          <div className={`${baseClassName}--loading`} data-testid="suite-header-profile--loading">
+          <div
+            className={`${baseClassName}--loading${
+              onRequestLogout ? '' : ` ${baseClassName}--loading--no-logout`
+            }`}
+            data-testid="suite-header-profile--loading"
+          >
             <SkeletonText paragraph lineCount={3} width="80%" />
           </div>
-          <div className={`${baseClassName}--logout ${baseClassName}--logout--loading`}>
-            <ButtonSkeleton />
-          </div>
+          {onRequestLogout && (
+            <div className={`${baseClassName}--logout ${baseClassName}--logout--loading`}>
+              <ButtonSkeleton />
+            </div>
+          )}
         </>
       )}
     </div>

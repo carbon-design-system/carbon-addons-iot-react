@@ -49,4 +49,8 @@ describe('SuiteHeaderProfile', () => {
     expect(wrapper.find('[data-testid="suite-header-profile--loading"]')).toHaveLength(1);
     expect(wrapper.find('[data-testid="suite-header-profile--logout"]')).toHaveLength(0);
   });
+  it('renders with no logout button', () => {
+    const wrapper = mount(<SuiteHeaderProfile {...commonProps} onRequestLogout={undefined} />);
+    expect(wrapper.find('[data-testid="suite-header-profile--logout"]')).toHaveLength(0);
+  });
 });

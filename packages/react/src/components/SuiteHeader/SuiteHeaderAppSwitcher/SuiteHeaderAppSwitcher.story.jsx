@@ -51,7 +51,7 @@ NoApplications.story = {
   name: 'No applications',
 };
 
-export const Loading = () => (
+export const LoadingState = () => (
   <div style={{ width: '15rem', background: 'white' }}>
     <SuiteHeaderAppSwitcher
       allApplicationsLink="https://www.ibm.com"
@@ -60,6 +60,6 @@ export const Loading = () => (
   </div>
 );
 
-Loading.story = {
-  name: 'Loading',
+LoadingState.story = {
+  name: 'Loading state',
 };

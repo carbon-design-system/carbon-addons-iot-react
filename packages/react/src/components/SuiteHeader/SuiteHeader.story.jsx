@@ -1,3 +1,6 @@
+/* eslint-disable no-script-url */
+/* eslint-disable-next-line no-alert */
+
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
@@ -11,8 +14,6 @@ import Chat from '@carbon/icons-react/lib/chat/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
-// import getSuiteHeaderData from './util/suiteHeaderData';
-// import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -167,6 +168,78 @@ const customActionItems = [
   },
 ];
 
+const customHelpLinks = [
+  {
+    metaData: {
+      href: 'http://www.ibm.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: '{A custom help link}',
+  },
+  {
+    metaData: {
+      href: 'http://google.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: '{Another custom help link}',
+  },
+  {
+    metaData: {
+      element: 'a',
+      href: 'javascript:void(0)',
+      onClick: () => alert('custom help menu action'),
+    },
+    content: '{Yet another custom help link}',
+  },
+];
+
+const customProfileLinks = [
+  {
+    metaData: {
+      href: 'http://www.ibm.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: '{A custom profile link}',
+  },
+  {
+    metaData: {
+      href: 'http://google.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: '{Another custom profile link}',
+  },
+  {
+    metaData: {
+      element: 'a',
+      href: 'javascript:void(0)',
+      onClick: () => alert('custom profile menu action'),
+    },
+    content: '{Yet another custom profile link}',
+  },
+];
+
+const customApplications = [
+  {
+    id: 'customapp1',
+    name: 'Custom Application',
+    href: 'https://www.ibm.com',
+  },
+  {
+    id: 'customapp2',
+    name: 'Another Custom Application',
+    href: 'https://google.com',
+    isExternal: true,
+  },
+];
+
 export default {
   title: 'Watson IoT/SuiteHeader',
 
@@ -288,16 +361,19 @@ export const HeaderWithCustomActionItems = () => (
       {
         id: 'health',
         name: 'Health',
-        href: 'https://www.ibm.com',
+        href: 'https://google.com',
         isExternal: true,
       },
     ]}
     customActionItems={customActionItems}
+    customHelpLinks={customHelpLinks}
+    customProfileLinks={customProfileLinks}
+    customApplications={customApplications}
   />
 );
 
 HeaderWithCustomActionItems.story = {
-  name: 'Header with custom action items',
+  name: 'Header with custom action items and child content',
 };
 
 export const HeaderWithSurveyNotification = () => {
@@ -351,53 +427,15 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
-export const LoadingStates = () => {
+export const LoadingState = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-LoadingStates.story = {
+LoadingState.story = {
   name: 'Loading state',
 };
 
-/* Sample of SuiteHeader usage with data hook
-export const HeaderWithHook = () => {
-  const StatefulExample = () => {
-    const [data] = useSuiteHeaderData({
-      // baseApiUrl: 'http://localhost:3001/internal',
-      domain: 'mydomain.com',
-      isTest: true,
-      surveyConfig: {
-        id: 'suite',
-        delayIntervalDays: 30,
-        frequencyDays: 90,
-      },
-      lang: 'en',
-    });
-    const surveyData = data.showSurvey
-      ? {
-          surveyLink: 'https://www.ibm.com',
-          privacyLink: 'https://www.ibm.com',
-        }
-      : null;
-    return data.username ? (
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName={data.userDisplayName}
-        username={data.username}
-        routes={data.routes}
-        applications={data.applications}
-        i18n={data.i18n}
-        surveyData={surveyData}
-      />
-    ) : null;
-  };
-  return <StatefulExample />;
-};
-
-HeaderWithHook.story = {
-  name: 'Header with hook',
-};
+/* Sample of SuiteHeader usage with data fetching
 
 export const HeaderWithDataFetching = () => {
   const StatefulExample = () => {
@@ -405,42 +443,27 @@ export const HeaderWithDataFetching = () => {
       username: null,
       userDisplayName: null,
       email: null,
-      routes: {
-        profile: null,
-        navigator: null,
-        admin: null,
-        logout: null,
-        about: null,
-        documentation: null,
-        whatsNew: null,
-        requestEnhancement: null,
-        support: null,
-        gettingStarted: null,
-      },
-      applications: [],
+      routes: null,
+      applications: null,
       showSurvey: false,
     });
     useEffect(() => {
-      getSuiteHeaderData({
-        // baseApiUrl: 'http://localhost:3001/internal',
-        domain: 'mydomain.com',
-        isTest: true,
-        surveyConfig: {
-          id: 'suite',
-          delayIntervalDays: 30,
-          frequencyDays: 90,
+      fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        lang: 'en',
-      }).then((suiteHeaderData) => setData(suiteHeaderData));
+      })
+        .then((res) => res.json())
+        .then((resJson) => {
+          if (resJson.error || resJson.exception) {
+            return null;
+          }
+          return setData(resJson);
+        });
     }, []);
 
-    const surveyData = data.showSurvey
-      ? {
-          surveyLink: 'https://www.ibm.com',
-          privacyLink: 'https://www.ibm.com',
-        }
-      : null;
-    return data.username ? (
+    return (
       <SuiteHeader
         suiteName="Application Suite"
         appName="Application Name"
@@ -449,9 +472,9 @@ export const HeaderWithDataFetching = () => {
         routes={data.routes}
         applications={data.applications}
         i18n={data.i18n}
-        surveyData={surveyData}
+        surveyData={data.surveyData}
       />
-    ) : null;
+    );
   };
   return <StatefulExample />;
 };

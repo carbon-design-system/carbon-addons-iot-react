@@ -4,12 +4,13 @@
 import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
+import { ButtonSkeleton } from 'carbon-components-react';
 
 import { HeaderContainer, SideNav, Header } from '../../index';
 import { SideNavPropTypes } from '../SideNav/SideNav';
 import { ToastNotification } from '../Notification';
 import { Link } from '../Link';
-import { HeaderActionItemPropTypes } from '../Header/Header';
+import { HeaderActionItemPropTypes, ChildContentPropTypes } from '../Header/Header';
 import { settings } from '../../constants/Settings';
 import { SkeletonText } from '../SkeletonText';
 
@@ -93,10 +94,13 @@ const defaultProps = {
   routes: null,
   applications: null,
   sideNavProps: null,
-  customActionItems: [],
   surveyData: null,
   onRouteChange: async () => Promise.resolve(true),
   i18n: SuiteHeaderI18N.en,
+  customActionItems: [],
+  customHelpLinks: [],
+  customProfileLinks: [],
+  customApplications: [],
 };
 
 const propTypes = {
@@ -118,14 +122,20 @@ const propTypes = {
   applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
-  /** Array of custom action items */
-  customActionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)),
   /** If surveyData is present, show a ToastNotification */
   surveyData: SuiteHeaderSurveyDataPropTypes,
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
   onRouteChange: PropTypes.func,
   /** I18N strings */
   i18n: SuiteHeaderI18NPropTypes,
+  /** Array of custom header action items */
+  customActionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)),
+  /** Array of custom help menu links */
+  customHelpLinks: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
+  /** Array of custom profile menu links */
+  customProfileLinks: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
+  /** Array of custom applications */
+  customApplications: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
 };
 
 const SuiteHeader = ({
@@ -138,10 +148,13 @@ const SuiteHeader = ({
   routes,
   applications,
   sideNavProps,
-  customActionItems,
   surveyData,
   onRouteChange,
   i18n,
+  customActionItems,
+  customHelpLinks,
+  customProfileLinks,
+  customApplications,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -162,6 +175,21 @@ const SuiteHeader = ({
   }, [surveyData]);
 
   const navigatorRoute = routes?.navigator || 'javascript:void(0)';
+
+  // If there are custom help links, include an extra child content entry for the separator
+  const mergedCustomHelpLinks =
+    customHelpLinks.length > 0
+      ? [
+          ...customHelpLinks,
+          {
+            metaData: {
+              className: `${settings.iotPrefix}--suite-header-help--separator`,
+              element: 'div',
+            },
+            content: '',
+          },
+        ]
+      : [];
 
   return (
     <>
@@ -256,7 +284,8 @@ const SuiteHeader = ({
                 content: React.forwardRef(() => (
                   <SuiteHeaderAppSwitcher
                     applications={applications}
-                    allApplicationsLink={navigatorRoute}
+                    customApplications={customApplications}
+                    allApplicationsLink={routes?.navigator}
                     noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
                     onRouteChange={onRouteChange}
                     i18n={{
@@ -317,13 +346,14 @@ const SuiteHeader = ({
                   ),
                   childContent: routes
                     ? [
-                        'whatsNew',
-                        'gettingStarted',
-                        'documentation',
-                        'requestEnhancement',
-                        'support',
-                      ]
-                        .map((item) => ({
+                        ...mergedCustomHelpLinks,
+                        ...[
+                          'whatsNew',
+                          'gettingStarted',
+                          'documentation',
+                          'requestEnhancement',
+                          'support',
+                        ].map((item) => ({
                           metaData: {
                             element: 'a',
                             'data-testid': `suite-header-help--${item}`,
@@ -340,11 +370,11 @@ const SuiteHeader = ({
                             },
                           },
                           content: mergedI18N[item],
-                        }))
-                        .concat({
+                        })),
+                        {
                           metaData: {
                             element: 'a',
-                            'data-testid': `suite-header-help--about`,
+                            'data-testid': 'suite-header-help--about',
                             href: 'javascript:void(0)',
                             title: mergedI18N.about,
                             onClick: async () => {
@@ -355,7 +385,8 @@ const SuiteHeader = ({
                             },
                           },
                           content: mergedI18N.about,
-                        })
+                        },
+                      ]
                     : [
                         {
                           metaData: {
@@ -398,15 +429,39 @@ const SuiteHeader = ({
                               window.location.href = routes.profile;
                             }
                           }}
-                          onRequestLogout={() => setShowLogoutModal(true)}
                           i18n={{
                             profileTitle: mergedI18N.profileTitle,
                             profileButton: mergedI18N.profileManageButton,
-                            logoutButton: mergedI18N.profileLogoutButton,
                           }}
                         />
                       ),
                     },
+                    ...customProfileLinks,
+                    username
+                      ? {
+                          metaData: {
+                            className: `${settings.iotPrefix}--suite-header--logout`,
+                            element: 'a',
+                            'data-testid': 'suite-header-profile--logout',
+                            href: 'javascript:void(0)',
+                            title: mergedI18N.logout,
+                            onClick: () => setShowLogoutModal(true),
+                          },
+                          content: mergedI18N.logout,
+                        }
+                      : {
+                          metaData: {
+                            element: 'div',
+                          },
+                          content: (
+                            <div
+                              className={`${settings.iotPrefix}--suite-header--logout--loading`}
+                              data-testid="suite-header--logout--loading"
+                            >
+                              <ButtonSkeleton />
+                            </div>
+                          ),
+                        },
                   ],
                 },
               ].filter((i) => i)}

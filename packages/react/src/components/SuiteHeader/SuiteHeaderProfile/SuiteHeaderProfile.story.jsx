@@ -43,3 +43,33 @@ export const LoadingState = () => (
 LoadingState.story = {
   name: 'Loading state',
 };
+
+export const NoLogoutButton = () => (
+  <div style={{ width: '15rem' }}>
+    <SuiteHeaderProfile
+      displayName={text('displayName', 'Test User')}
+      username={text('username', 'myuser')}
+      onProfileClick={() => {
+        window.location.href = 'https://www.ibm.com';
+      }}
+    />
+  </div>
+);
+
+NoLogoutButton.story = {
+  name: 'No log out button',
+};
+
+export const NoLogoutButtonLoadingState = () => (
+  <div style={{ width: '15rem' }}>
+    <SuiteHeaderProfile
+      onProfileClick={() => {
+        window.location.href = 'https://www.ibm.com';
+      }}
+    />
+  </div>
+);
+
+NoLogoutButtonLoadingState.story = {
+  name: 'Loading state (no log out button)',
+};

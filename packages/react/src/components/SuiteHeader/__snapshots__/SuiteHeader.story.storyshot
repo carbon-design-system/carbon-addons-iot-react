@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SuiteHeader Header with custom action items and child content 1`] = `
 <div
   className="storybook-container"
 >
@@ -428,6 +428,64 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
               <li>
                 <a
                   className="bx--header__menu-item"
+                  href="http://www.ibm.com"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  target="_blank"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {A custom help link}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  href="http://google.com"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  target="_blank"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {Another custom help link}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {Yet another custom help link}
+                  </span>
+                </a>
+              </li>
+              <li
+                className="iot--suite-header-help--separator"
+              >
+                <div
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    
+                  </span>
+                </div>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
                   href="javascript:void(0)"
                   onClick={[Function]}
@@ -605,7 +663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </div>
                       </div>
                       <div
-                        className="iot--suite-header-profile--manage-button"
+                        className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
@@ -618,23 +676,71 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           Manage profile
                         </button>
                       </div>
-                      <div
-                        className="iot--suite-header-profile--logout"
-                      >
-                        <button
-                          className="iot--btn bx--btn bx--btn--secondary"
-                          data-testid="suite-header-profile--logout"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
-                        >
-                          Log out
-                        </button>
-                      </div>
                     </div>
                   </span>
                 </div>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  href="http://www.ibm.com"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  target="_blank"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {A custom profile link}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  href="http://google.com"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  target="_blank"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {Another custom profile link}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    {Yet another custom profile link}
+                  </span>
+                </a>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    Logout
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -720,6 +826,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           />
                         </svg>
                       </button>
+                    </li>
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                    >
+                      <a
+                        data-testid="suite-header-app-switcher--customapp1"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
+                      >
+                        Custom Application
+                      </a>
+                    </li>
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                    >
+                      <a
+                        data-testid="suite-header-app-switcher--customapp2"
+                        href="javascript:void(0)"
+                        onClick={[Function]}
+                      >
+                        Another Custom Application
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
@@ -1201,7 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </div>
                       </div>
                       <div
-                        className="iot--suite-header-profile--manage-button"
+                        className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
@@ -1214,23 +1342,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           Manage profile
                         </button>
                       </div>
-                      <div
-                        className="iot--suite-header-profile--logout"
-                      >
-                        <button
-                          className="iot--btn bx--btn bx--btn--secondary"
-                          data-testid="suite-header-profile--logout"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
-                        >
-                          Log out
-                        </button>
-                      </div>
                     </div>
                   </span>
                 </div>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    Logout
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -2152,7 +2284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </div>
                       </div>
                       <div
-                        className="iot--suite-header-profile--manage-button"
+                        className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
@@ -2165,23 +2297,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           Manage profile
                         </button>
                       </div>
-                      <div
-                        className="iot--suite-header-profile--logout"
-                      >
-                        <button
-                          className="iot--btn bx--btn bx--btn--secondary"
-                          data-testid="suite-header-profile--logout"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
-                        >
-                          Log out
-                        </button>
-                      </div>
                     </div>
                   </span>
                 </div>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    Logout
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -2640,7 +2776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         Profile
                       </h5>
                       <div
-                        className="iot--suite-header-profile--loading"
+                        className="iot--suite-header-profile--loading iot--suite-header-profile--loading--no-logout"
                         data-testid="suite-header-profile--loading"
                       >
                         <div>
@@ -2670,13 +2806,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           />
                         </div>
                       </div>
+                    </div>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="bx--header__menu-item"
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <div
+                      className="iot--suite-header--logout--loading"
+                      data-testid="suite-header--logout--loading"
+                    >
                       <div
-                        className="iot--suite-header-profile--logout iot--suite-header-profile--logout--loading"
-                      >
-                        <div
-                          className="bx--skeleton bx--btn"
-                        />
-                      </div>
+                        className="bx--skeleton bx--btn"
+                      />
                     </div>
                   </span>
                 </div>
@@ -2740,63 +2888,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                       <p>
                         My applications
                       </p>
-                      <button
-                        className="iot--btn bx--btn bx--btn--tertiary"
-                        data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <div
+                        className="iot--suite-header-app-switcher--nav-link--button--loading"
                       >
-                        All applications
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
-                          />
-                        </svg>
-                      </button>
-                    </li>
-                    <div
-                      className="iot--suite-header-app-switcher--loading"
-                      data-testid="suite-header-app-switcher--loading"
-                    >
-                      <div>
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "calc(100% - 73px)",
-                            }
-                          }
-                        />
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "calc(100% - 11px)",
-                            }
-                          }
-                        />
-                        <p
-                          className="bx--skeleton__text"
-                          style={
-                            Object {
-                              "width": "calc(100% - 43px)",
-                            }
-                          }
+                        <div
+                          className="bx--skeleton bx--btn"
                         />
                       </div>
-                    </div>
+                    </li>
+                    <li>
+                      <div
+                        className="iot--suite-header-app-switcher--nav-link--loading"
+                        data-testid="suite-header-app-switcher--loading"
+                      >
+                        <div>
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(100% - 73px)",
+                              }
+                            }
+                          />
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(100% - 11px)",
+                              }
+                            }
+                          />
+                          <p
+                            className="bx--skeleton__text"
+                            style={
+                              Object {
+                                "width": "calc(100% - 43px)",
+                              }
+                            }
+                          />
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                 </a>
               </li>
@@ -3237,7 +3369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </div>
                       </div>
                       <div
-                        className="iot--suite-header-profile--manage-button"
+                        className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                       >
                         <button
                           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
@@ -3250,23 +3382,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                           Manage profile
                         </button>
                       </div>
-                      <div
-                        className="iot--suite-header-profile--logout"
-                      >
-                        <button
-                          className="iot--btn bx--btn bx--btn--secondary"
-                          data-testid="suite-header-profile--logout"
-                          disabled={false}
-                          onClick={[Function]}
-                          tabIndex={0}
-                          type="button"
-                        >
-                          Log out
-                        </button>
-                      </div>
                     </div>
                   </span>
                 </div>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="javascript:void(0)"
+                  onClick={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    Logout
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
