@@ -4427,6 +4427,7 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "isFullHeight": false,
+      "isLargeRow": false,
       "isLoading": false,
       "itemWillMove": [Function],
       "onListUpdated": [Function],
@@ -4513,6 +4514,9 @@ Map {
         "type": "shape",
       },
       "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
         "type": "bool",
       },
       "isLoading": Object {

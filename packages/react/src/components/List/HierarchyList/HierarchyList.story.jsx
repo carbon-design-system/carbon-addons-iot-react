@@ -22,7 +22,7 @@ const addButton = (
 );
 
 export default {
-  title: 'Watson IoT Experimental/HierarchyList',
+  title: 'Watson IoT/HierarchyList',
 
   parameters: {
     component: HierarchyList,
@@ -70,6 +70,7 @@ export const StatefulListWithNestedSearching = () => (
       hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
     />
   </div>
@@ -117,6 +118,7 @@ export const WithDefaultSelectedId = () => (
       hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
     />
   </div>
@@ -185,6 +187,7 @@ export const WithOverflowMenu = () => (
       hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
     />
   </div>
@@ -242,6 +245,7 @@ export const WithNestedReorder = () => {
           )}
           pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
           isLoading={boolean('isLoading', false)}
+          isLargeRow={boolean('isLargeRow', false)}
           onListUpdated={(updatedItems) => {
             setItems(updatedItems);
           }}
@@ -295,6 +299,7 @@ export const WithDefaultExpandedIds = () => (
       hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
       onSelect={action('onSelect')}
     />
@@ -375,6 +380,7 @@ export const WithMixedHierarchies = () => (
       hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       onSelect={action('onSelect')}
     />
   </div>

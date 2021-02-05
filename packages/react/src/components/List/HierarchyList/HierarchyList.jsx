@@ -58,6 +58,8 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** optionally makings each list item a large / fat row */
+  isLargeRow: PropTypes.bool,
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
@@ -98,6 +100,7 @@ const defaultProps = {
   },
   isFullHeight: false,
   isLoading: false,
+  isLargeRow: false,
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -187,6 +190,7 @@ const HierarchyList = ({
   i18n,
   isFullHeight,
   isLoading,
+  isLargeRow,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -418,6 +422,7 @@ const HierarchyList = ({
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
+        isLargeRow={isLargeRow}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         handleSelect={handleSelect}
