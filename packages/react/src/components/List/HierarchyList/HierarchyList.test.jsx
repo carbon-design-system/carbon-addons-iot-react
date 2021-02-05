@@ -336,7 +336,7 @@ describe('HierarchyList', () => {
       );
     });
 
-    it('defaultSelectedItem should fire onSelect on initial render', () => {
+    it('defaultSelectedItem should not fire onSelect', () => {
       const mockOnSelect = jest.fn();
       render(
         <HierarchyList
@@ -349,7 +349,7 @@ describe('HierarchyList', () => {
         />
       );
 
-      expect(mockOnSelect).toBeCalledWith('New York Mets_JD Davis');
+      expect(mockOnSelect).not.toHaveBeenCalled();
     });
   });
 
