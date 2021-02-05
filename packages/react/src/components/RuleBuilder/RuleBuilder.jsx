@@ -12,7 +12,7 @@ const { iotPrefix } = settings;
 const propTypes = {
   className: PropTypes.string,
   /** Text for main tilte of page */
-  // titleText: PropTypes.string,
+  defaultTitleText: PropTypes.string,
   /** Text for metadata for the filter */
   // metaText: PropTypes.string,
   /** Unique id for particular filter */
@@ -72,7 +72,7 @@ const propTypes = {
 const defaultProps = {
   filter: null,
   className: null,
-  // titleText: 'Undefined',
+  defaultTitleText: 'Undefined',
   // metaText: null,
   // id: null,
   saveLabel: 'Save',
@@ -88,7 +88,7 @@ const baseClass = `${iotPrefix}--rule-builder`;
 
 const RuleBuilder = ({
   className,
-  // titleText,
+  defaultTitleText,
   // metaText,
   // id,
   saveLabel,
@@ -127,7 +127,7 @@ const RuleBuilder = ({
     <section className={classnames(baseClass, className)} id={currentFilter?.id} data-testid={currentFilter?.id || 'rule-builder'}>
       <header className={`${baseClass}--header`}>
         <div>
-          <h1 className={`${baseClass}--header-title`}>{currentFilter?.titleText}</h1>
+          <h1 className={`${baseClass}--header-title`}>{currentFilter?.titleText || defaultTitleText}</h1>
           {currentFilter?.metaText && (<p className={`${baseClass}--header-metatext`}>{currentFilter?.metaText}</p>)}
         </div>
         <div className={`${baseClass}--header-actions`}>
