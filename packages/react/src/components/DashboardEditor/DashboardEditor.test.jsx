@@ -317,12 +317,15 @@ describe('DashboardEditor', () => {
     const valueBtn = screen.getByTitle('Value / KPI');
     expect(valueBtn).toBeInTheDocument();
     fireEvent.click(valueBtn);
+    // mock on card change should be called first just when the card is added
+    expect(mockOnCardChange).toHaveBeenCalled();
     // card edit form should be open
     const cardSizeFormInput = screen.getByDisplayValue('Untitled');
     expect(cardSizeFormInput).toBeInTheDocument();
     fireEvent.change(cardSizeFormInput, {
       target: { value: 'My new card title' },
     });
-    expect(mockOnCardChange).toHaveBeenCalled();
+    // mock on card change should be called again when the card is edited
+    expect(mockOnCardChange).toHaveBeenCalledTimes(2);
   });
 });

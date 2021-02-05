@@ -14,6 +14,7 @@ import { settings } from '../../../constants/Settings';
 import IconSwitch from '../../IconSwitch/IconSwitch';
 import ColorDropdown from '../../ColorDropdown/ColorDropdown';
 import Button from '../../Button/Button';
+import { isNumberValidForMinMax } from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -124,10 +125,6 @@ const getSelectedColorItem = (color, colorCollection) => {
   return typeof color === 'string' && Array.isArray(colorCollection)
     ? colorCollection.find((colorObj) => colorObj.carbonColor === color)
     : color;
-};
-
-const getIntOrUndefined = (value) => {
-  return value === '' ? undefined : parseInt(value, 10);
 };
 
 const preventFormSubmission = (e) => e.preventDefault();
@@ -260,9 +257,12 @@ const HotspotTextStyleTab = ({
                 label={fontSizeLabelText}
                 invalidText={fontSizeInvalidText}
                 onChange={(event) => {
-                  onChange({
-                    fontSize: getIntOrUndefined(event.imaginaryTarget.value),
-                  });
+                  const parsedValue = Number(event.imaginaryTarget.value);
+                  if (isNumberValidForMinMax(parsedValue, minFontSize, maxFontSize)) {
+                    onChange({
+                      fontSize: parsedValue,
+                    });
+                  }
                 }}
               />
             </div>
@@ -294,9 +294,12 @@ const HotspotTextStyleTab = ({
                 light={light}
                 invalidText={fillOpacityInvalidText}
                 onChange={(event) => {
-                  onChange({
-                    backgroundOpacity: getIntOrUndefined(event.imaginaryTarget.value),
-                  });
+                  const parsedValue = Number(event.imaginaryTarget.value);
+                  if (isNumberValidForMinMax(parsedValue, minOpacity, maxOpacity)) {
+                    onChange({
+                      backgroundOpacity: parsedValue,
+                    });
+                  }
                 }}
               />
             </div>
@@ -326,9 +329,12 @@ const HotspotTextStyleTab = ({
                 light={light}
                 invalidText={borderWidthInvalidText}
                 onChange={(event) => {
-                  onChange({
-                    borderWidth: getIntOrUndefined(event.imaginaryTarget.value),
-                  });
+                  const parsedValue = Number(event.imaginaryTarget.value);
+                  if (isNumberValidForMinMax(parsedValue, minBorderWidth, maxBorderWidth)) {
+                    onChange({
+                      borderWidth: parsedValue,
+                    });
+                  }
                 }}
               />
             </div>

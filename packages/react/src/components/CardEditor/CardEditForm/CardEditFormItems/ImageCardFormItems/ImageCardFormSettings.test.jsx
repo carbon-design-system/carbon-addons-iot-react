@@ -24,8 +24,16 @@ describe('ImageCardFormSettings', () => {
     onChange: jest.fn(),
   };
 
+  const mockTranslateWithId = jest.fn().mockImplementation((id) => id);
+
   it('fires onChange when user interacts with image form inputs', () => {
-    render(<ImageCardFormSettings cardConfig={cardConfig} onChange={actions.onChange} />);
+    render(
+      <ImageCardFormSettings
+        cardConfig={cardConfig}
+        onChange={actions.onChange}
+        translateWithId={mockTranslateWithId}
+      />
+    );
 
     userEvent.click(screen.getByTestId('iot--card-edit-form--input-radio1'));
 

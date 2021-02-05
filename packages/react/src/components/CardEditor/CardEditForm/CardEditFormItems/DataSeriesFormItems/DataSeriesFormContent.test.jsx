@@ -44,6 +44,7 @@ const barChartCardConfig = {
     type: 'STACKED',
     series: [
       {
+        dataItemId: 'temperature',
         label: 'Temperature',
         dataSourceId: 'temperature',
         color: 'red',
@@ -93,12 +94,12 @@ const valueCardConfig = {
 };
 
 const dataItems = [
-  { dataSourceId: 'temperature', label: 'Temperature' },
-  { dataSourceId: 'pressure', label: 'Pressure' },
+  { dataSourceId: 'temperature', label: 'Temperature', dataItemId: 'temperature' },
+  { dataSourceId: 'pressure', label: 'Pressure', dataItemId: 'pressure' },
 ];
 
 const mockOnChange = jest.fn();
-const mockGetValidDataItems = jest.fn();
+const mockGetValidDataItems = jest.fn(() => dataItems);
 const mockSetSelectedDataItems = jest.fn();
 
 afterEach(() => {
@@ -138,6 +139,17 @@ describe('DataSeriesFormItem', () => {
       );
       expect(screen.getByText('Data')).toBeInTheDocument();
     });
+    it('does not render the Data section if no data items are passed', () => {
+      render(
+        <DataSeriesFormItem
+          cardJson={{ ...cardConfig, content: {} }}
+          onChange={mockOnChange}
+          dataItems={[]}
+          setSelectedDataItems={mockSetSelectedDataItems}
+        />
+      );
+      expect(screen.queryByText('Data')).toBeNull();
+    });
     it('should remove the category if the card is a stacked timeseries bar', () => {
       render(
         <DataSeriesFormItem
@@ -164,16 +176,18 @@ describe('DataSeriesFormItem', () => {
         content: {
           series: [
             {
+              dataItemId: 'temperature',
+              aggregationMethod: undefined,
               color: '#6929c4',
-              dataSourceId: 'temperature',
+              dataSourceId: expect.anything(), // this is the dataSourceId followed by a uuid
               label: 'Temperature',
-              uuid: expect.anything(),
             },
             {
+              dataItemId: 'pressure',
+              aggregationMethod: undefined,
               color: '#1192e8',
-              dataSourceId: 'pressure',
+              dataSourceId: expect.anything(),
               label: 'Pressure',
-              uuid: expect.anything(),
             },
           ],
           timeDataSourceId: 'timestamp',

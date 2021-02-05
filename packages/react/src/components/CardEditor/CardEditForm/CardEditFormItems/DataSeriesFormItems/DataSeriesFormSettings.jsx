@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../../../constants/Settings';
-import { TextInput } from '../../../../../index';
+import { TextInput, ToggleSmall } from '../../../../../index';
 
 const { iotPrefix } = settings;
 
@@ -46,6 +46,8 @@ const defaultProps = {
   i18n: {
     xAxisLabel: 'X-axis label',
     yAxisLabel: 'Y-axis label',
+    includeZeroOnXaxis: 'Include zero on x-axis',
+    includeZeroOnYaxis: 'Include zero on y-axis',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
   },
@@ -116,6 +118,40 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
             })
           }
           value={content?.decimalPrecision}
+        />
+      </div>
+      <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
+        <span>{mergedI18n.includeZeroOnXaxis}</span>
+        <ToggleSmall
+          data-testid="includeZeroOnXaxis-toggle"
+          id="includeZeroOnXaxis-toggle"
+          aria-label={mergedI18n.includeZeroOnXaxis}
+          labelA=""
+          labelB=""
+          toggled={cardConfig.content?.includeZeroOnXaxis}
+          onToggle={(bool) =>
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, includeZeroOnXaxis: bool },
+            })
+          }
+        />
+      </div>
+      <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
+        <span>{mergedI18n.includeZeroOnYaxis}</span>
+        <ToggleSmall
+          data-testid="includeZeroOnYaxis-toggle"
+          id="includeZeroOnYaxis-toggle"
+          aria-label={mergedI18n.includeZeroOnYaxis}
+          labelA=""
+          labelB=""
+          toggled={cardConfig.content?.includeZeroOnYaxis}
+          onToggle={(bool) =>
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, includeZeroOnYaxis: bool },
+            })
+          }
         />
       </div>
     </>

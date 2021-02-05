@@ -81,7 +81,8 @@ const propTypes = {
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
   availableDimensions: PropTypes.shape({}),
-  /** if provided, will update the dashboard json according to its own logic. Can return a valid card to be rendered
+  /** if provided, will update the dashboard json according to its own logic. Is called if a card is edited, or added.
+   * Should return an updated card to be rendered
    * onCardChange(updatedCard, template): Card
    */
   onCardChange: PropTypes.func,
@@ -89,6 +90,10 @@ const propTypes = {
    * onLayoutChange(newLayout, newLayouts)
    */
   onLayoutChange: PropTypes.func,
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** if provided, renders import button linked to this callback
    * onImport(data, setNotification?)
    */
@@ -113,6 +118,10 @@ const propTypes = {
    * onValidateCardJson(cardConfig)
    * @returns Array<string> error strings. return empty array if there is no errors
    */
+  /** Callback called when a card determines what icon render based on a named string in card config
+   *    example usage: renderIconByName(name = 'my--checkmark--icon', props = { title: 'A checkmark', etc. })
+   */
+  renderIconByName: PropTypes.func,
   onValidateCardJson: PropTypes.func,
   /** callback function to validate the uploaded image */
   onValidateUploadedImage: PropTypes.func,
@@ -272,6 +281,7 @@ const defaultProps = {
   breakpointSwitcher: null,
   supportedCardTypes: Object.keys(DASHBOARD_EDITOR_CARD_TYPES),
   renderHeader: null,
+  renderIconByName: null,
   renderCardPreview: () => null,
   headerBreadcrumbs: null,
   notification: null,
@@ -285,6 +295,7 @@ const defaultProps = {
   onCardChange: null,
   onImageDelete: null,
   onLayoutChange: null,
+  onCardJsonPreview: null,
   onDelete: null,
   onImport: null,
   onExport: null,
@@ -336,6 +347,7 @@ const DashboardEditor = ({
   breakpointSwitcher,
   renderHeader,
   renderCardPreview,
+  renderIconByName,
   getValidDataItems,
   getValidTimeRanges,
   dataItems,
@@ -345,6 +357,7 @@ const DashboardEditor = ({
   notification,
   onCardChange,
   onLayoutChange,
+  onCardJsonPreview,
   onEditTitle,
   onImport,
   onExport,
@@ -397,7 +410,11 @@ const DashboardEditor = ({
    */
   const addCard = useCallback(
     (type) => {
-      const cardConfig = getDefaultCard(type, mergedI18n);
+      // notify consumers that the card has been added if they're listening (they might want to tweak the card defaults)
+      const cardConfig = onCardChange
+        ? onCardChange(getDefaultCard(type, mergedI18n), dashboardJson)
+        : getDefaultCard(type, mergedI18n);
+
       // eslint-disable-next-line no-shadow
       setDashboardJson((dashboardJson) => ({
         ...dashboardJson,
@@ -405,7 +422,7 @@ const DashboardEditor = ({
       }));
       setSelectedCardId(cardConfig.id);
     },
-    [mergedI18n]
+    [dashboardJson, mergedI18n, onCardChange]
   );
 
   /**
@@ -502,6 +519,7 @@ const DashboardEditor = ({
           handleOnCardChange(update(cardConfig, payload));
         }
       },
+      renderIconByName,
       tabIndex: 0,
       onKeyDown: (e) => handleKeyDown(e, setSelectedCardId, cardConfig.id),
       onClick: () => handleOnClick(setSelectedCardId, cardConfig.id),
@@ -515,7 +533,14 @@ const DashboardEditor = ({
       validateUploadedImage:
         cardConfig.type === CARD_TYPES.IMAGE ? onValidateUploadedImage : undefined,
     }),
-    [duplicateCard, handleOnCardChange, mergedI18n, onValidateUploadedImage, removeCard]
+    [
+      duplicateCard,
+      handleOnCardChange,
+      mergedI18n,
+      onValidateUploadedImage,
+      removeCard,
+      renderIconByName,
+    ]
   );
 
   const cards = useMemo(
@@ -692,6 +717,7 @@ const DashboardEditor = ({
             dataItems={dataItems}
             onAddCard={addCard}
             onValidateCardJson={onValidateCardJson}
+            onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}
             availableDimensions={availableDimensions}
             i18n={mergedI18n}

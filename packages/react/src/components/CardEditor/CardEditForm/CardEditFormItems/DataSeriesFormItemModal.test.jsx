@@ -283,7 +283,7 @@ describe('DataSeriesFormItemModal', () => {
 
     fireEvent.click(dataFilterSelector);
 
-    const noneOption = screen.getByText('None');
+    const noneOption = screen.getAllByText('None')[1];
     expect(noneOption).toBeInTheDocument();
 
     fireEvent.click(noneOption);
@@ -301,7 +301,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const dataFilterDimensionInput = screen.getByText('None');
+    const dataFilterDimensionInput = screen.getAllByText('None')[1];
     expect(dataFilterDimensionInput).toBeInTheDocument();
 
     fireEvent.click(dataFilterDimensionInput);
@@ -479,7 +479,7 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const aggregationDropdown = screen.getByText('Mean');
+    const aggregationDropdown = screen.getAllByText('None')[0];
     expect(aggregationDropdown).toBeInTheDocument();
 
     fireEvent.click(aggregationDropdown);

@@ -23,7 +23,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       <section
         className="iot--rule-builder"
         data-testid="rule-builder"
-        id={null}
       >
         <header
           className="iot--rule-builder--header"
@@ -31,14 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           <div>
             <h1
               className="iot--rule-builder--header-title"
-            >
-              Undefined
-            </h1>
-            <p
-              className="iot--rule-builder--header-metatext"
-            >
-              last updated: Sunday, October 28, 2018
-            </p>
+            />
           </div>
           <div
             className="iot--rule-builder--header-actions"
@@ -142,7 +134,215 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="iot--rule-builder--body"
         >
-          Hello
+          <div
+            className="bx--tabs iot--rule-builder--tabs"
+            role="navigation"
+            selected={0}
+          >
+            <div
+              aria-label="listbox"
+              className="bx--tabs-trigger"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="listbox"
+              tabIndex={0}
+            >
+              <a
+                className="bx--tabs-trigger-text"
+                href="#"
+                onClick={[Function]}
+                tabIndex={-1}
+              >
+                Filter builder
+              </a>
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  show menu options
+                </title>
+              </svg>
+            </div>
+            <ul
+              className="bx--tabs__nav bx--tabs__nav--hidden"
+              role="tablist"
+            >
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={true}
+                className="iot--rule-builder--tab bx--tabs__nav-item bx--tabs__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={0}
+                >
+                  Filter builder
+                </a>
+              </li>
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
+                className="iot--rule-builder--tab bx--tabs__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={-1}
+                >
+                  Sharing and preferences
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            aria-hidden={false}
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          />
+          <div
+            aria-hidden={true}
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <ul
+              className="bx--accordion bx--accordion--end"
+            >
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-4"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 1 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-4"
+                >
+                  <form
+                    className="bx--form"
+                  >
+                     
+                    <div
+                      className="bx--form-item bx--text-input-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                          data-warn={null}
+                        >
+                          <input
+                            className="bx--text-input bx--text__input"
+                            disabled={false}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                     
+                  </form>
+                </div>
+              </li>
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-5"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 2 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-5"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <div>
+              TODO: Build sharing and preferences
+            </div>
+          </div>
         </div>
         <footer
           className="iot--rule-builder--footer"
