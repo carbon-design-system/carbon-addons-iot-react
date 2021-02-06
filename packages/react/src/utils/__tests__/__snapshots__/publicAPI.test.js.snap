@@ -7570,23 +7570,7 @@ Map {
         "args": Array [
           Object {
             "args": Array [
-              Object {
-                "href": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "id": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "isExternal": Object {
-                  "type": "bool",
-                },
-                "name": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-              },
+              undefined,
             ],
             "type": "shape",
           },
@@ -7597,23 +7581,7 @@ Map {
         "args": Array [
           Object {
             "args": Array [
-              Object {
-                "href": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "id": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "isExternal": Object {
-                  "type": "bool",
-                },
-                "name": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-              },
+              undefined,
             ],
             "type": "shape",
           },

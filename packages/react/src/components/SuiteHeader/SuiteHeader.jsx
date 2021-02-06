@@ -31,7 +31,7 @@ const ROUTE_TYPES = {
   SURVEY: 'SURVEY',
 };
 
-export const SuiteHeaderRoutePropTypes = PropTypes.shape({
+export const SuiteHeaderRoutePropTypes = {
   profile: PropTypes.string,
   navigator: PropTypes.string,
   admin: PropTypes.string,
@@ -45,21 +45,21 @@ export const SuiteHeaderRoutePropTypes = PropTypes.shape({
   // properties rendered as data attributes
   workspaceId: PropTypes.string,
   domain: PropTypes.string,
-});
+};
 
-export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
+export const SuiteHeaderApplicationPropTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   isExternal: PropTypes.bool,
-});
+};
 
-export const SuiteHeaderSurveyDataPropTypes = PropTypes.shape({
+export const SuiteHeaderSurveyDataPropTypes = {
   surveyLink: PropTypes.string.isRequired,
   privacyLink: PropTypes.string.isRequired,
-});
+};
 
-export const SuiteHeaderI18NPropTypes = PropTypes.shape({
+export const SuiteHeaderI18NPropTypes = {
   help: PropTypes.string,
   profileTitle: PropTypes.string,
   profileManageButton: PropTypes.string,
@@ -83,7 +83,7 @@ export const SuiteHeaderI18NPropTypes = PropTypes.shape({
   surveyTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   surveyText: PropTypes.string,
   surveyPrivacyPolicy: PropTypes.string,
-});
+};
 
 const defaultProps = {
   className: null,
@@ -117,17 +117,17 @@ const propTypes = {
   /** If true, renders the admin button in Header as selected */
   isAdminView: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
-  routes: SuiteHeaderRoutePropTypes,
+  routes: PropTypes.shape(SuiteHeaderRoutePropTypes),
   /** Applications to render in AppSwitcher */
-  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
+  applications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
-  surveyData: SuiteHeaderSurveyDataPropTypes,
+  surveyData: PropTypes.shape(SuiteHeaderSurveyDataPropTypes),
   /** Function called before any route change. Returns a Promise<Boolean>. False means the redirect will not happen. This function should never throw an error. */
   onRouteChange: PropTypes.func,
   /** I18N strings */
-  i18n: SuiteHeaderI18NPropTypes,
+  i18n: PropTypes.shape(SuiteHeaderI18NPropTypes),
   /** Array of custom header action items */
   customActionItems: PropTypes.arrayOf(PropTypes.shape(HeaderActionItemPropTypes)),
   /** Array of custom help menu links */
@@ -135,7 +135,7 @@ const propTypes = {
   /** Array of custom profile menu links */
   customProfileLinks: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   /** Array of custom applications */
-  customApplications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
+  customApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
 };
 
 const SuiteHeader = ({
