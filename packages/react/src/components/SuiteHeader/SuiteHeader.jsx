@@ -135,7 +135,7 @@ const propTypes = {
   /** Array of custom profile menu links */
   customProfileLinks: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
   /** Array of custom applications */
-  customApplications: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)),
+  customApplications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
 };
 
 const SuiteHeader = ({

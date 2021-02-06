@@ -7188,18 +7188,20 @@ Map {
           Object {
             "args": Array [
               Object {
-                "content": Object {
-                  "type": "node",
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
                 },
-                "metaData": Object {
-                  "args": Array [
-                    Object {
-                      "element": Object {
-                        "type": "string",
-                      },
-                    },
-                  ],
-                  "type": "shape",
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
                 },
               },
             ],

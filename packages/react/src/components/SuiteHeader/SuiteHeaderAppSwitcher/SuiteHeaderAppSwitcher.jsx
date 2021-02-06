@@ -9,7 +9,19 @@ import { ButtonSkeleton } from 'carbon-components-react';
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
-import SuiteHeader from '../SuiteHeader';
+
+// For some reason ROUTE_TYPES imported from SuiteHeader does not work, probably because of cyclic dependency
+const ROUTE_TYPES = {
+  ADMIN: 'ADMIN',
+  NAVIGATOR: 'NAVIGATOR',
+  REFERRER: 'REFERRER',
+  APPLICATION: 'APPLICATION',
+  PROFILE: 'PROFILE',
+  ABOUT: 'ABOUT',
+  LOGOUT: 'LOGOUT',
+  DOCUMENTATION: 'DOCUMENTATION',
+  SURVEY: 'SURVEY',
+};
 
 const defaultProps = {
   applications: null,
@@ -24,7 +36,7 @@ const defaultProps = {
   },
 };
 
-const applicationPropTypes = PropTypes.shape({
+export const SuiteHeaderApplicationPropTypes = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
@@ -32,8 +44,8 @@ const applicationPropTypes = PropTypes.shape({
 });
 
 const propTypes = {
-  applications: PropTypes.arrayOf(applicationPropTypes),
-  customApplications: PropTypes.arrayOf(applicationPropTypes),
+  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
+  customApplications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes),
   allApplicationsLink: PropTypes.string,
   noAccessLink: PropTypes.string.isRequired,
   onRouteChange: PropTypes.func,
@@ -72,10 +84,7 @@ const SuiteHeaderAppSwitcher = ({
             kind="tertiary"
             data-testid="suite-header-app-switcher--all-applications"
             onClick={async () => {
-              const result = await onRouteChange(
-                SuiteHeader.ROUTE_TYPES.NAVIGATOR,
-                allApplicationsLink
-              );
+              const result = await onRouteChange(ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
               if (result) {
                 window.location.href = allApplicationsLink;
               }
@@ -102,7 +111,7 @@ const SuiteHeaderAppSwitcher = ({
               href="javascript:void(0)"
               data-testid={`suite-header-app-switcher--${id}`}
               onClick={async () => {
-                const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+                const result = await onRouteChange(ROUTE_TYPES.APPLICATION, href, {
                   appId: id,
                 });
                 if (result) {
@@ -130,10 +139,7 @@ const SuiteHeaderAppSwitcher = ({
             href="javascript:void(0)"
             data-testid="suite-header-app-switcher--no-access"
             onClick={async () => {
-              const result = await onRouteChange(
-                SuiteHeader.ROUTE_TYPES.DOCUMENTATION,
-                noAccessLink
-              );
+              const result = await onRouteChange(ROUTE_TYPES.DOCUMENTATION, noAccessLink);
               if (result) {
                 window.location.href = noAccessLink;
               }
