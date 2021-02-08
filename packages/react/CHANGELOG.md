@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.34...v2.143.0-next.35) (2021-02-08)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.143.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.33...v2.143.0-next.34) (2021-02-08)
+
+
+### Bug Fixes
+
+* **hierarchylist:** add isLargeRow prop ([21487c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/21487c3d87cdf07a3484cf2b028d5d81159ed26c))
+* **hierarchylist:** fire onSelect for defaultSelectedId ([521d822](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/521d822ca57f60fcb77f64579076eba6fe63b6b8))
+* **hierarchylist:** pass classname and only render modal if editing is enabled ([665a8d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/665a8d6824ae7f3203e5ff706a9f697c42aaf261))
+
+
+
+
+
 # [2.143.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.32...v2.143.0-next.33) (2021-02-04)
 
 
