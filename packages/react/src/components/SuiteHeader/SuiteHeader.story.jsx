@@ -373,7 +373,7 @@ export const HeaderWithCustomActionItems = () => (
 );
 
 HeaderWithCustomActionItems.story = {
-  name: 'Header with custom action items and child content',
+  name: 'Header with custom action items',
 };
 
 export const HeaderWithSurveyNotification = () => {
