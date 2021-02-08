@@ -135,7 +135,7 @@ const ListItem = ({
       <div
         className={`${iotPrefix}--list-item--nesting-offset`}
         style={{
-          width: `${nestingLevel * 30}px`,
+          width: `${nestingLevel * 30 - 30}px`,
         }}
       />
     ) : null;
@@ -147,6 +147,7 @@ const ListItem = ({
         role="button"
         tabIndex={0}
         className={`${iotPrefix}--list-item--expand-icon`}
+        aria-label={expanded ? 'Collapse' : 'Expand'}
         onClick={handleExpansionClick}
         data-testid="expand-icon"
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
