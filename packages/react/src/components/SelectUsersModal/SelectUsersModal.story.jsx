@@ -244,7 +244,7 @@ InitialSelectionModal.story = {
   name: 'initial selected modal',
 };
 
-export const FlatList = () => {
+export const FlatListModal = () => {
   const userList = generateUserList()[0].users;
 
   return (
@@ -258,8 +258,8 @@ export const FlatList = () => {
   );
 };
 
-FlatList.story = {
-  name: 'flat list',
+FlatListModal.story = {
+  name: 'flat list of users',
 };
 
 export const GroupListModal = () => {
@@ -296,13 +296,7 @@ export const GroupListModal = () => {
 
   return (
     <SelectUsersModal
-      users={[
-        {
-          id: 'roles',
-          name: 'Roles',
-          groups: testRoles,
-        },
-      ]}
+      users={testRoles}
       initialSelectedUsers={[testRoles[0].users[0]]}
       onSubmit={action('submit', { depth: 3 })}
       onClose={action('close', { depth: 3 })}
@@ -312,5 +306,5 @@ export const GroupListModal = () => {
 };
 
 GroupListModal.story = {
-  name: 'group-list-modal',
+  name: 'group list',
 };
