@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, object, text } from '@storybook/addon-knobs';
-import { floor } from 'lodash';
+import { boolean } from '@storybook/addon-knobs';
+import floor from 'lodash/floor';
 
 import SelectUsersModal from './SelectUsersModal';
 
@@ -115,6 +115,7 @@ const generateUserList = () => {
     const email = `${user.substr(0, space)}@sample.com`;
 
     return {
+      id: `${user[0]}${user.substr(space + 1)}`,
       name: user,
       username: username.toLowerCase().substr(0, 7),
       email: email.toLowerCase(),
@@ -162,7 +163,6 @@ const generateUserList = () => {
   });
 
   const teamSize = floor(userList.length / 3);
-
   const teamOne = {
     id: 'teamOne',
     name: 'Team One',
@@ -181,14 +181,7 @@ const generateUserList = () => {
     users: userList.slice(teamSize * 2),
   };
 
-  // const test = {
-  //   id: "id",
-  //   name: "test",
-  //   groups: "test2",
-  //   users: "test3",
-  // }
-
-  return [
+  const categories = [
     {
       id: 'recents',
       name: 'Recent',
@@ -205,6 +198,8 @@ const generateUserList = () => {
       groups: [teamOne, teamTwo, teamThree],
     },
   ];
+
+  return categories;
 };
 
 export default {
@@ -212,23 +207,110 @@ export default {
 
   parameters: {
     component: SelectUsersModal,
-
-    info: `TODO`,
   },
 };
 
 export const DefaultModal = () => {
-
   return (
     <SelectUsersModal
       users={generateUserList()}
       initialSelectedUsers={[]}
-      onClose={() => {}}
-      open
+      onSubmit={action('submit', { depth: 3 })}
+      onClose={action('close', { depth: 3 })}
+      open={boolean('open', true)}
     />
   );
 };
 
 DefaultModal.story = {
   name: 'default modal',
+};
+
+export const InitialSelectionModal = () => {
+  const userList = generateUserList();
+
+  return (
+    <SelectUsersModal
+      users={userList}
+      initialSelectedUsers={[userList[0].users[0], userList[0].users[2]]}
+      onSubmit={action('submit', { depth: 3 })}
+      onClose={action('close', { depth: 3 })}
+      open={boolean('open', true)}
+    />
+  );
+};
+
+InitialSelectionModal.story = {
+  name: 'initial selected modal',
+};
+
+export const FlatList = () => {
+  const userList = generateUserList()[0].users;
+
+  return (
+    <SelectUsersModal
+      users={userList}
+      initialSelectedUsers={[]}
+      onSubmit={action('submit', { depth: 3 })}
+      onClose={action('close', { depth: 3 })}
+      open={boolean('open', true)}
+    />
+  );
+};
+
+FlatList.story = {
+  name: 'flat list',
+};
+
+export const GroupListModal = () => {
+  const testUsers = [
+    {
+      name: 'Onita Nieves',
+      username: '@onita',
+      email: 'onita.nieves@example.com',
+    },
+    {
+      name: 'Latonya Densmore',
+      username: '@latonya',
+      email: 'latonya.densmore@example.com',
+    },
+    {
+      name: 'Katelin Ngo',
+      username: '@katelin',
+      email: 'katelin.ngo@example.com',
+    },
+  ];
+
+  const testRoles = [
+    {
+      id: 'role-1',
+      name: 'Role One',
+      users: testUsers,
+    },
+    {
+      id: 'role-2',
+      name: 'Role Two',
+      users: testUsers,
+    },
+  ];
+
+  return (
+    <SelectUsersModal
+      users={[
+        {
+          id: 'roles',
+          name: 'Roles',
+          groups: testRoles,
+        },
+      ]}
+      initialSelectedUsers={[testRoles[0].users[0]]}
+      onSubmit={action('submit', { depth: 3 })}
+      onClose={action('close', { depth: 3 })}
+      open={boolean('open', true)}
+    />
+  );
+};
+
+GroupListModal.story = {
+  name: 'group-list-modal',
 };
