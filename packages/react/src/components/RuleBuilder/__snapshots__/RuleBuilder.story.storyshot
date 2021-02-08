@@ -396,3 +396,3353 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
   </button>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder new filter 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 100px)",
+          "width": "100%",
+        }
+      }
+    >
+      <section
+        className="iot--rule-builder-wrap"
+        data-testid="rule-builder"
+      >
+        <header
+          className="iot--rule-builder-wrap--header"
+        >
+          <div>
+            <h1
+              className="iot--rule-builder-wrap--header-title"
+            >
+              Undefined
+            </h1>
+          </div>
+          <div
+            className="iot--rule-builder-wrap--header-actions"
+          >
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="favorite"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Favorite"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Favorite"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,3.3l1.4,2.8l0.2,0.5l0.5,0.1l3.1,0.4L11,9.2l-0.4,0.4l0.1,0.5l0.5,3.1l-2.8-1.4L8,11.5l-0.5,0.2l-2.8,1.4l0.5-3.1	l0.1-0.5L5,9.2L2.8,7l3.1-0.4l0.5-0.1L6.6,6L8,3.3 M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7	L8,1z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="share"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Share"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Share"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23,20a5,5,0,0,0-3.89,1.89L11.8,17.32a4.46,4.46,0,0,0,0-2.64l7.31-4.57A5,5,0,1,0,18,7a4.79,4.79,0,0,0,.2,1.32l-7.31,4.57a5,5,0,1,0,0,6.22l7.31,4.57A4.79,4.79,0,0,0,18,25a5,5,0,1,0,5-5ZM23,4a3,3,0,1,1-3,3A3,3,0,0,1,23,4ZM7,19a3,3,0,1,1,3-3A3,3,0,0,1,7,19Zm16,9a3,3,0,1,1,3-3A3,3,0,0,1,23,28Z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="delete"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Delete"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Delete"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12H14V24H12zM18 12H20V24H18z"
+                />
+                <path
+                  d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
+              data-testid="rule-builder-save"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </header>
+        <div
+          className="iot--rule-builder-wrap--body"
+        >
+          <div
+            className="bx--tabs iot--rule-builder-wrap--tabs"
+            role="navigation"
+            selected={0}
+          >
+            <div
+              aria-label="listbox"
+              className="bx--tabs-trigger"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="listbox"
+              tabIndex={0}
+            >
+              <a
+                className="bx--tabs-trigger-text"
+                href="#"
+                onClick={[Function]}
+                tabIndex={-1}
+              >
+                Filter builder
+              </a>
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  show menu options
+                </title>
+              </svg>
+            </div>
+            <ul
+              className="bx--tabs__nav bx--tabs__nav--hidden"
+              role="tablist"
+            >
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={true}
+                className="iot--rule-builder-wrap--tab bx--tabs__nav-item bx--tabs__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={0}
+                >
+                  Filter builder
+                </a>
+              </li>
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
+                className="iot--rule-builder-wrap--tab bx--tabs__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={-1}
+                >
+                  Sharing and preferences
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            aria-hidden={false}
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div
+              data-testid="rule-builder-editor"
+            >
+              <div
+                className="iot--rule-builder-header"
+                data-testid="rule-builder-header"
+              >
+                <div>
+                  <div
+                    className="iot--rule-builder-header__dropdown"
+                  >
+                    <div
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
+                      data-testid="6h98pjzhqc-group-logic-dropdown"
+                    >
+                      
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="6h98pjzhqc"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-0-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
+                        >
+                          <span
+                            className="bx--list-box__label"
+                          >
+                            ALL
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-0-label"
+                          className="bx--list-box__menu"
+                          id="downshift-0-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <span>
+                     of the following are true
+                  </span>
+                </div>
+                <div
+                  className="iot--rule-builder-header__buttons"
+                >
+                  <button
+                    className="bx--btn bx--btn--ghost"
+                    data-testid="rule-builder-header-add-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Add rule
+                    <svg
+                      aria-hidden={true}
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost"
+                    data-testid="rule-builder-header-add-group-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Add group
+                    <svg
+                      aria-hidden={true}
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="iot--rule-builder-rule"
+                data-testid="9yqbiuyg7e-rule"
+              >
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="9yqbiuyg7e-column-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="9yqbiuyg7e-column-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-1-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Select a column
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-1-label"
+                      className="bx--list-box__menu"
+                      id="downshift-1-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="9yqbiuyg7e-operand-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="9yqbiuyg7e-operand-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-2-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Select an operand
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-2-label"
+                      className="bx--list-box__menu"
+                      id="downshift-2-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        data-testid="9yqbiuyg7e-value"
+                        defaultValue=""
+                        disabled={false}
+                        id="9yqbiuyg7e-value"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--rule-builder-rule__actions"
+                >
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="9yqbiuyg7e-remove-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Remove rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Remove rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="9yqbiuyg7e-add-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="9yqbiuyg7e-add-group-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule group
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule group"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <ul
+              className="bx--accordion bx--accordion--end"
+            >
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-4"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 1 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-4"
+                >
+                  <form
+                    className="bx--form"
+                  >
+                     
+                    <div
+                      className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                    >
+                      <label
+                        className="bx--label"
+                      >
+                        Title Input
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                          data-warn={null}
+                        >
+                          <input
+                            className="bx--text-input bx--text__input bx--text-input--light"
+                            disabled={false}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                     
+                  </form>
+                </div>
+              </li>
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-5"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 2 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-5"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <div>
+              TODO: Build sharing and preferences
+            </div>
+          </div>
+        </div>
+        <footer
+          className="iot--rule-builder-wrap--footer"
+        >
+          <button
+            className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
+            data-testid="rule-builder-cancel"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
+            data-testid="apply"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Apply
+          </button>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/RuleBuilder with existing filter rules 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "calc(100vh - 100px)",
+          "width": "100%",
+        }
+      }
+    >
+      <section
+        className="iot--rule-builder-wrap"
+        data-testid="rule-builder"
+      >
+        <header
+          className="iot--rule-builder-wrap--header"
+        >
+          <div>
+            <h1
+              className="iot--rule-builder-wrap--header-title"
+            >
+              My Filter
+            </h1>
+            <p
+              className="iot--rule-builder-wrap--header-metatext"
+            >
+              last updated: Monday, February 8, 2021
+            </p>
+          </div>
+          <div
+            className="iot--rule-builder-wrap--header-actions"
+          >
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="favorite"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Favorite"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Favorite"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,3.3l1.4,2.8l0.2,0.5l0.5,0.1l3.1,0.4L11,9.2l-0.4,0.4l0.1,0.5l0.5,3.1l-2.8-1.4L8,11.5l-0.5,0.2l-2.8,1.4l0.5-3.1	l0.1-0.5L5,9.2L2.8,7l3.1-0.4l0.5-0.1L6.6,6L8,3.3 M8,1L5.7,5.6L0.6,6.3l3.7,3.6L3.5,15L8,12.6l4.6,2.4l-0.9-5.1l3.7-3.6l-5.1-0.7	L8,1z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="share"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Share"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Share"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23,20a5,5,0,0,0-3.89,1.89L11.8,17.32a4.46,4.46,0,0,0,0-2.64l7.31-4.57A5,5,0,1,0,18,7a4.79,4.79,0,0,0,.2,1.32l-7.31,4.57a5,5,0,1,0,0,6.22l7.31,4.57A4.79,4.79,0,0,0,18,25a5,5,0,1,0,5-5ZM23,4a3,3,0,1,1-3,3A3,3,0,0,1,23,4ZM7,19a3,3,0,1,1,3-3A3,3,0,0,1,7,19Zm16,9a3,3,0,1,1,3-3A3,3,0,0,1,23,28Z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+              data-testid="delete"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              title="Delete"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="Delete"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12H14V24H12zM18 12H20V24H18z"
+                />
+                <path
+                  d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                />
+              </svg>
+            </button>
+            <button
+              className="iot--rule-builder-wrap--header-actions-save iot--btn bx--btn bx--btn--sm bx--btn--primary"
+              data-testid="rule-builder-save"
+              disabled={false}
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </header>
+        <div
+          className="iot--rule-builder-wrap--body"
+        >
+          <div
+            className="bx--tabs iot--rule-builder-wrap--tabs"
+            role="navigation"
+            selected={0}
+          >
+            <div
+              aria-label="listbox"
+              className="bx--tabs-trigger"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="listbox"
+              tabIndex={0}
+            >
+              <a
+                className="bx--tabs-trigger-text"
+                href="#"
+                onClick={[Function]}
+                tabIndex={-1}
+              >
+                Filter builder
+              </a>
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  show menu options
+                </title>
+              </svg>
+            </div>
+            <ul
+              className="bx--tabs__nav bx--tabs__nav--hidden"
+              role="tablist"
+            >
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={true}
+                className="iot--rule-builder-wrap--tab bx--tabs__nav-item bx--tabs__nav-item--selected"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={0}
+                >
+                  Filter builder
+                </a>
+              </li>
+              <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
+                className="iot--rule-builder-wrap--tab bx--tabs__nav-item"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="tab"
+                tabIndex={-1}
+              >
+                <a
+                  className="bx--tabs__nav-link"
+                  href="#"
+                  tabIndex={-1}
+                >
+                  Sharing and preferences
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            aria-hidden={false}
+            className="bx--tab-content"
+            hidden={false}
+            role="tabpanel"
+            selected={true}
+          >
+            <div
+              data-testid="rule-builder-editor"
+            >
+              <div
+                className="iot--rule-builder-header"
+                data-testid="rule-builder-header"
+              >
+                <div>
+                  <div
+                    className="iot--rule-builder-header__dropdown"
+                  >
+                    <div
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
+                      data-testid="14p5ho3pcu-group-logic-dropdown"
+                    >
+                      
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="14p5ho3pcu"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-0-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
+                        >
+                          <span
+                            className="bx--list-box__label"
+                          >
+                            ALL
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-0-label"
+                          className="bx--list-box__menu"
+                          id="downshift-0-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <span>
+                     of the following are true
+                  </span>
+                </div>
+                <div
+                  className="iot--rule-builder-header__buttons"
+                >
+                  <button
+                    className="bx--btn bx--btn--ghost"
+                    data-testid="rule-builder-header-add-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Add rule
+                    <svg
+                      aria-hidden={true}
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost"
+                    data-testid="rule-builder-header-add-group-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Add group
+                    <svg
+                      aria-hidden={true}
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="iot--rule-builder-rule"
+                data-testid="rsiru4rjba-rule"
+              >
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="rsiru4rjba-column-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="rsiru4rjba-column-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-1-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Column 1
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-1-label"
+                      className="bx--list-box__menu"
+                      id="downshift-1-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="rsiru4rjba-operand-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="rsiru4rjba-operand-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-2-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Equals
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-2-label"
+                      className="bx--list-box__menu"
+                      id="downshift-2-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        data-testid="rsiru4rjba-value"
+                        defaultValue="45"
+                        disabled={false}
+                        id="rsiru4rjba-value"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--rule-builder-rule__actions"
+                >
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="rsiru4rjba-remove-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Remove rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Remove rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="rsiru4rjba-add-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="rsiru4rjba-add-group-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule group
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule group"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="iot--rule-builder-rule"
+                data-testid="34bvyub9jq-rule"
+              >
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="34bvyub9jq-column-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="34bvyub9jq-column-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-3-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Column 2
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-3-label"
+                      className="bx--list-box__menu"
+                      id="downshift-3-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--dropdown__wrapper bx--list-box__wrapper"
+                  data-testid="34bvyub9jq-operand-dropdown"
+                >
+                  
+                  <div
+                    className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                    id="34bvyub9jq-operand-dropdown"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <button
+                      aria-disabled={false}
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-4-label downshift-4-toggle-button"
+                      className="bx--list-box__field"
+                      disabled={false}
+                      id="downshift-4-toggle-button"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
+                    >
+                      <span
+                        className="bx--list-box__label"
+                      >
+                        Less than
+                      </span>
+                      <div
+                        className="bx--list-box__menu-icon"
+                      >
+                        <svg
+                          aria-label="Open menu"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          name="chevron--down"
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                          />
+                          <title>
+                            Open menu
+                          </title>
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="downshift-4-label"
+                      className="bx--list-box__menu"
+                      id="downshift-4-menu"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseLeave={[Function]}
+                      role="listbox"
+                      tabIndex={-1}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                >
+                  <div
+                    className="bx--text-input__field-outer-wrapper"
+                  >
+                    <div
+                      className="bx--text-input__field-wrapper"
+                      data-invalid={null}
+                      data-warn={null}
+                    >
+                      <input
+                        className="bx--text-input bx--text__input bx--text-input--light"
+                        data-testid="34bvyub9jq-value"
+                        defaultValue="14"
+                        disabled={false}
+                        id="34bvyub9jq-value"
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="iot--rule-builder-rule__actions"
+                >
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="34bvyub9jq-remove-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Remove rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Remove rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 15H24V17H8z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="34bvyub9jq-add-rule-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                    data-testid="34bvyub9jq-add-group-button"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add new rule group
+                    </span>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add new rule group"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="iot--rule-builder-rule--group"
+              >
+                <div>
+                  <div
+                    className="iot--rule-builder-header__dropdown"
+                  >
+                    <div
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
+                      data-testid="i34imt0geh-group-logic-dropdown"
+                    >
+                      
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="i34imt0geh"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-5-label downshift-5-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-5-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
+                        >
+                          <span
+                            className="bx--list-box__label"
+                          >
+                            ANY
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-5-label"
+                          className="bx--list-box__menu"
+                          id="downshift-5-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <span>
+                     of the following are true
+                  </span>
+                </div>
+                <div
+                  className="iot--rule-builder-rule"
+                  data-testid="ewc2z5kyfu-rule"
+                >
+                  <div
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    data-testid="ewc2z5kyfu-column-dropdown"
+                  >
+                    
+                    <div
+                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="ewc2z5kyfu-column-dropdown"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-6-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="bx--list-box__label"
+                        >
+                          Column 2
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-6-label"
+                        className="bx--list-box__menu"
+                        id="downshift-6-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    data-testid="ewc2z5kyfu-operand-dropdown"
+                  >
+                    
+                    <div
+                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="ewc2z5kyfu-operand-dropdown"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-7-label downshift-7-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-7-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="bx--list-box__label"
+                        >
+                          Greater than or equal to
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-7-label"
+                        className="bx--list-box__menu"
+                        id="downshift-7-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  >
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          data-testid="ewc2z5kyfu-value"
+                          defaultValue="46"
+                          disabled={false}
+                          id="ewc2z5kyfu-value"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--rule-builder-rule__actions"
+                  >
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="ewc2z5kyfu-remove-rule-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Remove rule
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Remove rule"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 15H24V17H8z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="ewc2z5kyfu-add-rule-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Add new rule
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Add new rule"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="ewc2z5kyfu-add-group-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Add new rule group
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Add new rule group"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--rule-builder-rule"
+                  data-testid="hks7h2zin4-rule"
+                >
+                  <div
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    data-testid="hks7h2zin4-column-dropdown"
+                  >
+                    
+                    <div
+                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="hks7h2zin4-column-dropdown"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-8-label downshift-8-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-8-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="bx--list-box__label"
+                        >
+                          Column 1
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-8-label"
+                        className="bx--list-box__menu"
+                        id="downshift-8-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="bx--dropdown__wrapper bx--list-box__wrapper"
+                    data-testid="hks7h2zin4-operand-dropdown"
+                  >
+                    
+                    <div
+                      className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                      id="hks7h2zin4-operand-dropdown"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <button
+                        aria-disabled={false}
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-9-label downshift-9-toggle-button"
+                        className="bx--list-box__field"
+                        disabled={false}
+                        id="downshift-9-toggle-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="bx--list-box__label"
+                        >
+                          Less than
+                        </span>
+                        <div
+                          className="bx--list-box__menu-icon"
+                        >
+                          <svg
+                            aria-label="Open menu"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            name="chevron--down"
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                            <title>
+                              Open menu
+                            </title>
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        aria-labelledby="downshift-9-label"
+                        className="bx--list-box__menu"
+                        id="downshift-9-menu"
+                        onBlur={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseLeave={[Function]}
+                        role="listbox"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                  >
+                    <div
+                      className="bx--text-input__field-outer-wrapper"
+                    >
+                      <div
+                        className="bx--text-input__field-wrapper"
+                        data-invalid={null}
+                        data-warn={null}
+                      >
+                        <input
+                          className="bx--text-input bx--text__input bx--text-input--light"
+                          data-testid="hks7h2zin4-value"
+                          defaultValue="45"
+                          disabled={false}
+                          id="hks7h2zin4-value"
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--rule-builder-rule__actions"
+                  >
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="hks7h2zin4-remove-rule-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Remove rule
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Remove rule"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 15H24V17H8z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="hks7h2zin4-add-rule-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Add new rule
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Add new rule"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                      data-testid="hks7h2zin4-add-group-button"
+                      disabled={false}
+                      onClick={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--assistive-text"
+                      >
+                        Add new rule group
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Add new rule group"
+                        className="bx--btn__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={32}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--rule-builder-rule--group"
+                >
+                  <div>
+                    <div
+                      className="iot--rule-builder-header__dropdown"
+                    >
+                      <div
+                        className="bx--dropdown__wrapper bx--list-box__wrapper"
+                        data-testid="qzn8477mbg-group-logic-dropdown"
+                      >
+                        
+                        <div
+                          className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                          id="qzn8477mbg"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-10-label downshift-10-toggle-button"
+                            className="bx--list-box__field"
+                            disabled={false}
+                            id="downshift-10-toggle-button"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="bx--list-box__label"
+                            >
+                              ALL
+                            </span>
+                            <div
+                              className="bx--list-box__menu-icon"
+                            >
+                              <svg
+                                aria-label="Open menu"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                name="chevron--down"
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                                <title>
+                                  Open menu
+                                </title>
+                              </svg>
+                            </div>
+                          </button>
+                          <div
+                            aria-labelledby="downshift-10-label"
+                            className="bx--list-box__menu"
+                            id="downshift-10-menu"
+                            onBlur={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseLeave={[Function]}
+                            role="listbox"
+                            tabIndex={-1}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <span>
+                       of the following are true
+                    </span>
+                  </div>
+                  <div
+                    className="iot--rule-builder-rule"
+                    data-testid="wg9hlv197c-rule"
+                  >
+                    <div
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
+                      data-testid="wg9hlv197c-column-dropdown"
+                    >
+                      
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="wg9hlv197c-column-dropdown"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-11-label downshift-11-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-11-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
+                        >
+                          <span
+                            className="bx--list-box__label"
+                          >
+                            Select a column
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-11-label"
+                          className="bx--list-box__menu"
+                          id="downshift-11-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="bx--dropdown__wrapper bx--list-box__wrapper"
+                      data-testid="wg9hlv197c-operand-dropdown"
+                    >
+                      
+                      <div
+                        className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                        id="wg9hlv197c-operand-dropdown"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <button
+                          aria-disabled={false}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-12-label downshift-12-toggle-button"
+                          className="bx--list-box__field"
+                          disabled={false}
+                          id="downshift-12-toggle-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          type="button"
+                        >
+                          <span
+                            className="bx--list-box__label"
+                          >
+                            Select an operand
+                          </span>
+                          <div
+                            className="bx--list-box__menu-icon"
+                          >
+                            <svg
+                              aria-label="Open menu"
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              name="chevron--down"
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                              <title>
+                                Open menu
+                              </title>
+                            </svg>
+                          </div>
+                        </button>
+                        <div
+                          aria-labelledby="downshift-12-label"
+                          className="bx--list-box__menu"
+                          id="downshift-12-menu"
+                          onBlur={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseLeave={[Function]}
+                          role="listbox"
+                          tabIndex={-1}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                    >
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                          data-warn={null}
+                        >
+                          <input
+                            className="bx--text-input bx--text__input bx--text-input--light"
+                            data-testid="wg9hlv197c-value"
+                            defaultValue=""
+                            disabled={false}
+                            id="wg9hlv197c-value"
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="iot--rule-builder-rule__actions"
+                    >
+                      <button
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        data-testid="wg9hlv197c-remove-rule-button"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Remove rule
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Remove rule"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={32}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={32}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 15H24V17H8z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        data-testid="wg9hlv197c-add-rule-button"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Add new rule
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Add new rule"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={32}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={32}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                        data-testid="wg9hlv197c-add-group-button"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="bx--assistive-text"
+                        >
+                          Add new rule group
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          aria-label="Add new rule group"
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={32}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={32}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--rule-builder-rule--group"
+                  >
+                    <div>
+                      <div
+                        className="iot--rule-builder-header__dropdown"
+                      >
+                        <div
+                          className="bx--dropdown__wrapper bx--list-box__wrapper"
+                          data-testid="eobo3s5tie-group-logic-dropdown"
+                        >
+                          
+                          <div
+                            className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                            id="eobo3s5tie"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                          >
+                            <button
+                              aria-disabled={false}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-labelledby="downshift-13-label downshift-13-toggle-button"
+                              className="bx--list-box__field"
+                              disabled={false}
+                              id="downshift-13-toggle-button"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="bx--list-box__label"
+                              >
+                                ALL
+                              </span>
+                              <div
+                                className="bx--list-box__menu-icon"
+                              >
+                                <svg
+                                  aria-label="Open menu"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  name="chevron--down"
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                  />
+                                  <title>
+                                    Open menu
+                                  </title>
+                                </svg>
+                              </div>
+                            </button>
+                            <div
+                              aria-labelledby="downshift-13-label"
+                              className="bx--list-box__menu"
+                              id="downshift-13-menu"
+                              onBlur={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseLeave={[Function]}
+                              role="listbox"
+                              tabIndex={-1}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <span>
+                         of the following are true
+                      </span>
+                    </div>
+                    <div
+                      className="iot--rule-builder-rule"
+                      data-testid="7kadk2wfv8-rule"
+                    >
+                      <div
+                        className="bx--dropdown__wrapper bx--list-box__wrapper"
+                        data-testid="7kadk2wfv8-column-dropdown"
+                      >
+                        
+                        <div
+                          className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                          id="7kadk2wfv8-column-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-14-label downshift-14-toggle-button"
+                            className="bx--list-box__field"
+                            disabled={false}
+                            id="downshift-14-toggle-button"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="bx--list-box__label"
+                            >
+                              Column 1
+                            </span>
+                            <div
+                              className="bx--list-box__menu-icon"
+                            >
+                              <svg
+                                aria-label="Open menu"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                name="chevron--down"
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                                <title>
+                                  Open menu
+                                </title>
+                              </svg>
+                            </div>
+                          </button>
+                          <div
+                            aria-labelledby="downshift-14-label"
+                            className="bx--list-box__menu"
+                            id="downshift-14-menu"
+                            onBlur={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseLeave={[Function]}
+                            role="listbox"
+                            tabIndex={-1}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="bx--dropdown__wrapper bx--list-box__wrapper"
+                        data-testid="7kadk2wfv8-operand-dropdown"
+                      >
+                        
+                        <div
+                          className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                          id="7kadk2wfv8-operand-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-15-label downshift-15-toggle-button"
+                            className="bx--list-box__field"
+                            disabled={false}
+                            id="downshift-15-toggle-button"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="bx--list-box__label"
+                            >
+                              Equals
+                            </span>
+                            <div
+                              className="bx--list-box__menu-icon"
+                            >
+                              <svg
+                                aria-label="Open menu"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                name="chevron--down"
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                                <title>
+                                  Open menu
+                                </title>
+                              </svg>
+                            </div>
+                          </button>
+                          <div
+                            aria-labelledby="downshift-15-label"
+                            className="bx--list-box__menu"
+                            id="downshift-15-menu"
+                            onBlur={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseLeave={[Function]}
+                            role="listbox"
+                            tabIndex={-1}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                      >
+                        <div
+                          className="bx--text-input__field-outer-wrapper"
+                        >
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                            data-warn={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text__input bx--text-input--light"
+                              data-testid="7kadk2wfv8-value"
+                              defaultValue="44"
+                              disabled={false}
+                              id="7kadk2wfv8-value"
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--rule-builder-rule__actions"
+                      >
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="7kadk2wfv8-remove-rule-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Remove rule
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Remove rule"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 15H24V17H8z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="7kadk2wfv8-add-rule-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Add new rule
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Add new rule"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="7kadk2wfv8-add-group-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Add new rule group
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Add new rule group"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      className="iot--rule-builder-rule"
+                      data-testid="49mf09vjhn-rule"
+                    >
+                      <div
+                        className="bx--dropdown__wrapper bx--list-box__wrapper"
+                        data-testid="49mf09vjhn-column-dropdown"
+                      >
+                        
+                        <div
+                          className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                          id="49mf09vjhn-column-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-16-label downshift-16-toggle-button"
+                            className="bx--list-box__field"
+                            disabled={false}
+                            id="downshift-16-toggle-button"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="bx--list-box__label"
+                            >
+                              Column 2
+                            </span>
+                            <div
+                              className="bx--list-box__menu-icon"
+                            >
+                              <svg
+                                aria-label="Open menu"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                name="chevron--down"
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                                <title>
+                                  Open menu
+                                </title>
+                              </svg>
+                            </div>
+                          </button>
+                          <div
+                            aria-labelledby="downshift-16-label"
+                            className="bx--list-box__menu"
+                            id="downshift-16-menu"
+                            onBlur={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseLeave={[Function]}
+                            role="listbox"
+                            tabIndex={-1}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="bx--dropdown__wrapper bx--list-box__wrapper"
+                        data-testid="49mf09vjhn-operand-dropdown"
+                      >
+                        
+                        <div
+                          className="bx--dropdown bx--dropdown--light bx--list-box bx--list-box--light"
+                          id="49mf09vjhn-operand-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-17-label downshift-17-toggle-button"
+                            className="bx--list-box__field"
+                            disabled={false}
+                            id="downshift-17-toggle-button"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="bx--list-box__label"
+                            >
+                              Equals
+                            </span>
+                            <div
+                              className="bx--list-box__menu-icon"
+                            >
+                              <svg
+                                aria-label="Open menu"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                name="chevron--down"
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                                <title>
+                                  Open menu
+                                </title>
+                              </svg>
+                            </div>
+                          </button>
+                          <div
+                            aria-labelledby="downshift-17-label"
+                            className="bx--list-box__menu"
+                            id="downshift-17-menu"
+                            onBlur={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseLeave={[Function]}
+                            role="listbox"
+                            tabIndex={-1}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                      >
+                        <div
+                          className="bx--text-input__field-outer-wrapper"
+                        >
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                            data-warn={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text__input bx--text-input--light"
+                              data-testid="49mf09vjhn-value"
+                              defaultValue="46"
+                              disabled={false}
+                              id="49mf09vjhn-value"
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--rule-builder-rule__actions"
+                      >
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="49mf09vjhn-remove-rule-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Remove rule
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Remove rule"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 15H24V17H8z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="49mf09vjhn-add-rule-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Add new rule
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Add new rule"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+                          data-testid="49mf09vjhn-add-group-button"
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Add new rule group
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="Add new rule group"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M20.5859,14.4141,24.1719,18H6V8H4V18a2.0024,2.0024,0,0,0,2,2H24.1719L20.586,23.5859,22,25l6-6-6-6Z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="bx--tab-content"
+            hidden={true}
+            role="tabpanel"
+            selected={false}
+          >
+            <ul
+              className="bx--accordion bx--accordion--end"
+            >
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-6"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 1 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-6"
+                >
+                  <form
+                    className="bx--form"
+                  >
+                     
+                    <div
+                      className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
+                    >
+                      <label
+                        className="bx--label"
+                      >
+                        Title Input
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                          data-warn={null}
+                        >
+                          <input
+                            className="bx--text-input bx--text__input bx--text-input--light"
+                            disabled={false}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                     
+                  </form>
+                </div>
+              </li>
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-7"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    Section 2 title
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-7"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <div>
+              TODO: Build sharing and preferences
+            </div>
+          </div>
+        </div>
+        <footer
+          className="iot--rule-builder-wrap--footer"
+        >
+          <button
+            className="iot--rule-builder-wrap--footer-actions-cancel iot--btn bx--btn bx--btn--secondary"
+            data-testid="rule-builder-cancel"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--rule-builder-wrap--footer-actions-preview iot--btn bx--btn bx--btn--secondary"
+            data-testid="apply"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Apply
+          </button>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
