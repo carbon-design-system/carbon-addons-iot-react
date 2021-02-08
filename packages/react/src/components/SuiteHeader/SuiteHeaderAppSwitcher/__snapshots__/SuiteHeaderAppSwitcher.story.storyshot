@@ -302,6 +302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         />
         <li
           className="iot--suite-header-app-switcher--app-link"
+          id="suite-header-application-monitor"
         >
           <a
             data-testid="suite-header-app-switcher--monitor"
@@ -313,6 +314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
         </li>
         <li
           className="iot--suite-header-app-switcher--app-link"
+          id="suite-header-application-health"
         >
           <a
             data-testid="suite-header-app-switcher--health"

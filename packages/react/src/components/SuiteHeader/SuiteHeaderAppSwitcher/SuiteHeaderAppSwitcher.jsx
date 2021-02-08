@@ -91,7 +91,11 @@ const SuiteHeaderAppSwitcher = ({
         </li>
       ) : (
         mergedApplications.map(({ id, name, href, isExternal = false }) => (
-          <li key={`key-${id}`} className={`${baseClassName}--app-link`}>
+          <li
+            id={`suite-header-application-${id}`}
+            key={`key-${id}`}
+            className={`${baseClassName}--app-link`}
+          >
             <a
               href="javascript:void(0)"
               data-testid={`suite-header-app-switcher--${id}`}

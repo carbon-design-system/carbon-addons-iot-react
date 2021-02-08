@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
 
-import React, { Fragment, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { UserAvatar20, Settings20, Help20 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
@@ -308,13 +308,13 @@ const SuiteHeader = ({
                         .filter((i) => i)
                         .join(' '),
                       btnContent: (
-                        <>
+                        <span id="suite-header-action-item-admin">
                           <Settings20
                             fill="white"
                             data-testid="admin-icon"
                             description={mergedI18N.settingsIcon}
                           />
-                        </>
+                        </span>
                       ),
                       onClick: async () => {
                         let href = routes.admin;
@@ -340,9 +340,9 @@ const SuiteHeader = ({
                   label: mergedI18N.help,
                   onClick: () => {},
                   btnContent: (
-                    <Fragment>
+                    <span id="suite-header-action-item-help">
                       <Help20 fill="white" description={mergedI18N.help} />
-                    </Fragment>
+                    </span>
                   ),
                   childContent: routes
                     ? [
@@ -369,7 +369,9 @@ const SuiteHeader = ({
                               }
                             },
                           },
-                          content: mergedI18N[item],
+                          content: (
+                            <span id={`suite-header-help-menu-${item}`}>{mergedI18N[item]}</span>
+                          ),
                         })),
                         {
                           metaData: {
@@ -384,7 +386,9 @@ const SuiteHeader = ({
                               }
                             },
                           },
-                          content: mergedI18N.about,
+                          content: (
+                            <span id="suite-header-help-menu-about">{mergedI18N.about}</span>
+                          ),
                         },
                       ]
                     : [
@@ -406,13 +410,13 @@ const SuiteHeader = ({
                 {
                   label: 'user',
                   btnContent: (
-                    <Fragment>
+                    <span id="suite-header-action-item-profile">
                       <UserAvatar20
                         data-testid="user-icon"
                         fill="white"
                         description={mergedI18N.userIcon}
                       />
-                    </Fragment>
+                    </span>
                   ),
                   childContent: [
                     {
@@ -420,20 +424,25 @@ const SuiteHeader = ({
                         element: 'div',
                       },
                       content: (
-                        <SuiteHeaderProfile
-                          displayName={userDisplayName}
-                          username={username}
-                          onProfileClick={async () => {
-                            const result = await onRouteChange(ROUTE_TYPES.PROFILE, routes.profile);
-                            if (result) {
-                              window.location.href = routes.profile;
-                            }
-                          }}
-                          i18n={{
-                            profileTitle: mergedI18N.profileTitle,
-                            profileButton: mergedI18N.profileManageButton,
-                          }}
-                        />
+                        <span id="suite-header-profile-menu-profile" style={{ width: '100%' }}>
+                          <SuiteHeaderProfile
+                            displayName={userDisplayName}
+                            username={username}
+                            onProfileClick={async () => {
+                              const result = await onRouteChange(
+                                ROUTE_TYPES.PROFILE,
+                                routes.profile
+                              );
+                              if (result) {
+                                window.location.href = routes.profile;
+                              }
+                            }}
+                            i18n={{
+                              profileTitle: mergedI18N.profileTitle,
+                              profileButton: mergedI18N.profileManageButton,
+                            }}
+                          />
+                        </span>
                       ),
                     },
                     ...customProfileLinks,
@@ -447,7 +456,9 @@ const SuiteHeader = ({
                             title: mergedI18N.logout,
                             onClick: () => setShowLogoutModal(true),
                           },
-                          content: mergedI18N.logout,
+                          content: (
+                            <span id="suite-header-profile-menu-logout">{mergedI18N.logout}</span>
+                          ),
                         }
                       : {
                           metaData: {

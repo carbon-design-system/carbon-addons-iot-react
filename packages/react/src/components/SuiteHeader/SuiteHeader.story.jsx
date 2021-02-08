@@ -100,18 +100,24 @@ const sideNavLinks = [
 
 const customActionItems = [
   {
-    label: 'alerts',
-    btnContent: <NotificationOn fill="white" description="Icon" />,
+    label: 'bell',
+    btnContent: (
+      <span id="bell-icon">
+        <NotificationOn id="notification-button" fill="white" description="Icon" />
+      </span>
+    ),
   },
   {
-    label: 'help',
+    label: 'bee',
     hasHeaderPanel: true,
     btnContent: (
-      <Bee
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
+      <span id="bee-icon">
+        <Bee
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      </span>
     ),
     childContent: [
       {
@@ -122,15 +128,14 @@ const customActionItems = [
           rel: 'noopener noreferrer',
           element: 'a',
         },
-        content: 'this is my message to you',
+        content: <span id="a-message">this is my message to you</span>,
       },
       {
         metaData: {
-          className: 'this',
           element: 'button',
         },
         content: (
-          <span>
+          <span id="an-email">
             JohnDoe@ibm.com
             <Chat fill="white" description="Icon" />
           </span>
@@ -139,8 +144,12 @@ const customActionItems = [
     ],
   },
   {
-    label: 'user',
-    btnContent: <Car fill="white" description="Icon" />,
+    label: 'car',
+    btnContent: (
+      <span id="car-icon">
+        <Car fill="white" description="Icon" />
+      </span>
+    ),
     childContent: [
       {
         metaData: {
@@ -150,15 +159,14 @@ const customActionItems = [
           rel: 'noopener noreferrer',
           element: 'a',
         },
-        content: 'this is my message to you',
+        content: <span id="another-message">this is my message to you</span>,
       },
       {
         metaData: {
-          className: 'this',
           element: 'button',
         },
         content: (
-          <span>
+          <span id="another-email">
             JohnDoe@ibm.com
             <Chat fill="white" description="Icon" />
           </span>
@@ -176,7 +184,7 @@ const customHelpLinks = [
       rel: 'noopener noreferrer',
       element: 'a',
     },
-    content: '{A custom help link}',
+    content: <span id="custom-help-link">{'{A custom help link}'}</span>,
   },
   {
     metaData: {
@@ -185,7 +193,7 @@ const customHelpLinks = [
       rel: 'noopener noreferrer',
       element: 'a',
     },
-    content: '{Another custom help link}',
+    content: <span id="another-custom-help-link">{'{Another custom help link}'}</span>,
   },
   {
     metaData: {
@@ -193,7 +201,7 @@ const customHelpLinks = [
       href: 'javascript:void(0)',
       onClick: () => alert('custom help menu action'),
     },
-    content: '{Yet another custom help link}',
+    content: <span id="yet-another-custom-help-link">{'{Yet another custom help link}'}</span>,
   },
 ];
 
@@ -205,7 +213,7 @@ const customProfileLinks = [
       rel: 'noopener noreferrer',
       element: 'a',
     },
-    content: '{A custom profile link}',
+    content: <span id="custom-profile-link">{'{A custom profile link}'}</span>,
   },
   {
     metaData: {
@@ -214,7 +222,7 @@ const customProfileLinks = [
       rel: 'noopener noreferrer',
       element: 'a',
     },
-    content: '{Another custom profile link}',
+    content: <span id="another-custom-profile-link">{'{Another custom profile link}'}</span>,
   },
   {
     metaData: {
@@ -222,7 +230,9 @@ const customProfileLinks = [
       href: 'javascript:void(0)',
       onClick: () => alert('custom profile menu action'),
     },
-    content: '{Yet another custom profile link}',
+    content: (
+      <span id="yet-another-custom-profile-link">{'{Yet another custom profile link}'}</span>
+    ),
   },
 ];
 
