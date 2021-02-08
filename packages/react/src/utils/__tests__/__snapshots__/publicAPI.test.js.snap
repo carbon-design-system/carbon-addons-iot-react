@@ -4407,6 +4407,7 @@ Map {
     "defaultProps": Object {
       "buttons": null,
       "cancelMoveClicked": [Function],
+      "className": null,
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
@@ -4427,6 +4428,7 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "isFullHeight": false,
+      "isLargeRow": false,
       "isLoading": false,
       "itemWillMove": [Function],
       "onListUpdated": [Function],
@@ -4446,6 +4448,9 @@ Map {
       },
       "cancelMoveClicked": Object {
         "type": "func",
+      },
+      "className": Object {
+        "type": "string",
       },
       "defaultExpandedIds": Object {
         "args": Array [
@@ -4513,6 +4518,9 @@ Map {
         "type": "shape",
       },
       "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLargeRow": Object {
         "type": "bool",
       },
       "isLoading": Object {
