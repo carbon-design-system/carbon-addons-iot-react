@@ -12,7 +12,7 @@ initializeRTL();
 import Container from './Container';
 
 configureActions({
-  depth: 3
+  depth: 3,
 });
 
 addParameters({
