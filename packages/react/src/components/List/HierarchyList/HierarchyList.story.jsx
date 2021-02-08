@@ -17,12 +17,12 @@ const addButton = (
     size="small"
     iconDescription="Add"
     key="hierarchy-list-button-add"
-    onClick={() => action('header button clicked')}
+    onClick={() => action('header button onClick')}
   />
 );
 
 export default {
-  title: 'Watson IoT Experimental/HierarchyList',
+  title: 'Watson IoT/HierarchyList',
 
   parameters: {
     component: HierarchyList,
@@ -34,7 +34,7 @@ export const StatefulListWithNestedSearching = () => (
     <HierarchyList
       title={text('Title', 'MLB Expanded List')}
       buttons={[addButton]}
-      isFullHeight
+      isFullHeight={boolean('isFullHeight', true)}
       items={[
         ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
           id: team,
@@ -67,9 +67,11 @@ export const StatefulListWithNestedSearching = () => (
           })),
         })),
       ]}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
     />
   </div>
 );
@@ -113,9 +115,11 @@ export const WithDefaultSelectedId = () => (
           })),
         })),
       ]}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
     />
   </div>
 );
@@ -180,9 +184,11 @@ export const WithOverflowMenu = () => (
           })),
         })),
       ]}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
     />
   </div>
 );
@@ -239,12 +245,15 @@ export const WithNestedReorder = () => {
           )}
           pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
           isLoading={boolean('isLoading', false)}
+          isLargeRow={boolean('isLargeRow', false)}
           onListUpdated={(updatedItems) => {
             setItems(updatedItems);
           }}
           itemWillMove={() => {
             return allowsEdit;
           }}
+          hasSearch={boolean('hasSearch', true)}
+          onSelect={action('onSelect')}
         />
       </div>
     );
@@ -287,10 +296,12 @@ export const WithDefaultExpandedIds = () => (
           })),
         })),
       ]}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
       defaultExpandedIds={['Chicago White Sox', 'New York Yankees']}
+      onSelect={action('onSelect')}
     />
   </div>
 );
@@ -366,9 +377,11 @@ export const WithMixedHierarchies = () => (
           ],
         },
       ]}
-      hasSearch
+      hasSearch={boolean('hasSearch', true)}
       pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'xl')}
       isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
     />
   </div>
 );

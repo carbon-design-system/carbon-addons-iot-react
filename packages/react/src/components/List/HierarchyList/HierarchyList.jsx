@@ -58,6 +58,8 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** optional skeleton to be rendered while loading data */
   isLoading: PropTypes.bool,
+  /** optionally makings each list item a large / fat row */
+  isLargeRow: PropTypes.bool,
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
@@ -74,6 +76,8 @@ const propTypes = {
   cancelMoveClicked: PropTypes.func,
   /**  Is data currently being sent to the backend */
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  /** optional classname to be passed to the dom element */
+  className: PropTypes.string,
 };
 
 const defaultProps = {
@@ -98,6 +102,7 @@ const defaultProps = {
   },
   isFullHeight: false,
   isLoading: false,
+  isLargeRow: false,
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
@@ -108,6 +113,7 @@ const defaultProps = {
   itemWillMove: () => {
     return true;
   },
+  className: null,
 };
 
 /**
@@ -187,6 +193,7 @@ const HierarchyList = ({
   i18n,
   isFullHeight,
   isLoading,
+  isLargeRow,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
@@ -195,6 +202,7 @@ const HierarchyList = ({
   itemWillMove,
   cancelMoveClicked,
   sendingData,
+  className,
 }) => {
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
@@ -353,23 +361,25 @@ const HierarchyList = ({
 
   return (
     <>
-      <HierarchyListReorderModal
-        open={showModal}
-        items={items}
-        selectedIds={editModeSelectedIds}
-        i18n={i18n}
-        onClose={() => {
-          setShowModal(false);
-        }}
-        onSubmit={(dropId) => {
-          if (dropId !== null) {
-            handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
-          }
+      {editingStyle ? (
+        <HierarchyListReorderModal
+          open={showModal}
+          items={items}
+          selectedIds={editModeSelectedIds}
+          i18n={i18n}
+          onClose={() => {
+            setShowModal(false);
+          }}
+          onSubmit={(dropId) => {
+            if (dropId !== null) {
+              handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
+            }
 
-          setShowModal(false);
-        }}
-        sendingData={sendingData}
-      />
+            setShowModal(false);
+          }}
+          sendingData={sendingData}
+        />
+      ) : null}
       <List
         title={title}
         buttons={buttons}
@@ -414,11 +424,13 @@ const HierarchyList = ({
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
+        isLargeRow={isLargeRow}
         itemWillMove={itemWillMove}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}
+        className={className}
       />
     </>
   );
