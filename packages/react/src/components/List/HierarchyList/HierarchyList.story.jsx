@@ -4,7 +4,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button } from '../../..';
+import { Button, InlineLoading } from '../../..';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -20,6 +20,8 @@ const addButton = (
     onClick={() => action('header button onClick')}
   />
 );
+
+const inlineLoading = <InlineLoading description="Loading data.." status="active" />;
 
 export default {
   title: 'Watson IoT/HierarchyList',
@@ -326,6 +328,7 @@ export const WithMixedHierarchies = () => (
               id: 'Task 1',
               content: {
                 value: 'Task 1',
+                secondaryValue: inlineLoading,
               },
               isSelectable: true,
             },

@@ -5,9 +5,10 @@ import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import isEqual from 'lodash/isEqual';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List from '../List';
+import List, { ListItemPropTypes } from '../List';
 import {
   EditingStyle,
   handleEditModeSelect,
@@ -40,7 +41,7 @@ const propTypes = {
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
   /** Internationalization text */
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
@@ -114,6 +115,7 @@ const defaultProps = {
     return true;
   },
   className: null,
+  items: [],
 };
 
 /**
@@ -216,14 +218,15 @@ const HierarchyList = ({
     setFilteredItems(items);
   }, [items]);
 
-  const selectedItemRef = useCallback(
-    (node) => {
-      // eslint-disable-next-line no-unused-expressions
-      node?.parentNode?.scrollIntoView();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId]
-  );
+  const selectedItemRef = useCallback((node) => {
+    if (node && node.parentNode) {
+      scrollIntoView(node.parentNode, {
+        scrollMode: 'if-needed',
+        block: 'nearest',
+        inline: 'nearest',
+      });
+    }
+  }, []);
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {

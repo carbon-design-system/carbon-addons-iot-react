@@ -15,7 +15,7 @@ import DefaultListHeader from './ListHeader/ListHeader';
 
 const { iotPrefix } = settings;
 
-export const itemPropTypes = {
+export const ListItemPropTypes = {
   id: PropTypes.string,
   content: PropTypes.shape({
     value: PropTypes.string,
@@ -44,7 +44,7 @@ const propTypes = {
     header: OverridePropTypes,
   }),
   /** data source of list items */
-  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)),
+  items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
   /** list editing style */
   editingStyle: PropTypes.oneOf([
     EditingStyle.Single,

@@ -32,7 +32,7 @@ const ListItemPropTypes = {
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
-  secondaryValue: PropTypes.string,
+  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** either a callback render function or a node */
   rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
   icon: PropTypes.node,
@@ -257,7 +257,11 @@ const ListItem = ({
               </div>
               {secondaryValue ? (
                 <div
-                  title={secondaryValue}
+                  title={
+                    typeof secondaryValue === 'function'
+                      ? `${value}--secondary-value`
+                      : secondaryValue
+                  }
                   className={classnames(
                     `${iotPrefix}--list-item--content--values--value`,
                     `${iotPrefix}--list-item--content--values--value__large`,
@@ -267,7 +271,7 @@ const ListItem = ({
                     }
                   )}
                 >
-                  {secondaryValue}
+                  {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
                 </div>
               ) : null}
             </>
@@ -286,13 +290,17 @@ const ListItem = ({
                 </div>
                 {secondaryValue ? (
                   <div
-                    title={secondaryValue}
+                    title={
+                      typeof secondaryValue === 'function'
+                        ? `${value}--secondary-value`
+                        : secondaryValue
+                    }
                     className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                       [`${iotPrefix}--list-item--content--values--value__with-actions`]: hasRowActions,
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >
-                    {secondaryValue}
+                    {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
                   </div>
                 ) : null}
                 {renderTags()}
