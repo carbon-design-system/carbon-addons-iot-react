@@ -76,6 +76,8 @@ const propTypes = {
   cancelMoveClicked: PropTypes.func,
   /**  Is data currently being sent to the backend */
   sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  /** optional classname to be passed to the dom element */
+  className: PropTypes.string,
 };
 
 const defaultProps = {
@@ -111,6 +113,7 @@ const defaultProps = {
   itemWillMove: () => {
     return true;
   },
+  className: null,
 };
 
 /**
@@ -199,6 +202,7 @@ const HierarchyList = ({
   itemWillMove,
   cancelMoveClicked,
   sendingData,
+  className,
 }) => {
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
@@ -357,23 +361,25 @@ const HierarchyList = ({
 
   return (
     <>
-      <HierarchyListReorderModal
-        open={showModal}
-        items={items}
-        selectedIds={editModeSelectedIds}
-        i18n={i18n}
-        onClose={() => {
-          setShowModal(false);
-        }}
-        onSubmit={(dropId) => {
-          if (dropId !== null) {
-            handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
-          }
+      {editingStyle ? (
+        <HierarchyListReorderModal
+          open={showModal}
+          items={items}
+          selectedIds={editModeSelectedIds}
+          i18n={i18n}
+          onClose={() => {
+            setShowModal(false);
+          }}
+          onSubmit={(dropId) => {
+            if (dropId !== null) {
+              handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
+            }
 
-          setShowModal(false);
-        }}
-        sendingData={sendingData}
-      />
+            setShowModal(false);
+          }}
+          sendingData={sendingData}
+        />
+      ) : null}
       <List
         title={title}
         buttons={buttons}
@@ -424,6 +430,7 @@ const HierarchyList = ({
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}
+        className={className}
       />
     </>
   );
