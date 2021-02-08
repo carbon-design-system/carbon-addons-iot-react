@@ -55,6 +55,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             </svg>
           </button>
         </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
         <li>
           <div
             className="iot--suite-header-app-switcher--nav-link--loading"
@@ -172,6 +175,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             </svg>
           </button>
         </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
         <div
           className="iot--suite-header-app-switcher--no-app"
         >
@@ -291,6 +297,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
             </svg>
           </button>
         </li>
+        <div
+          className="iot--suite-header-app-switcher--nav-link--separator"
+        />
         <li
           className="iot--suite-header-app-switcher--app-link"
         >

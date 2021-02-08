@@ -827,6 +827,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </svg>
                       </button>
                     </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                     >
@@ -1449,6 +1452,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </svg>
                       </button>
                     </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                     >
@@ -2404,6 +2410,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </svg>
                       </button>
                     </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                     >
@@ -2896,6 +2905,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         />
                       </div>
                     </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
                     <li>
                       <div
                         className="iot--suite-header-app-switcher--nav-link--loading"
@@ -3489,6 +3501,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Suite
                         </svg>
                       </button>
                     </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                     >

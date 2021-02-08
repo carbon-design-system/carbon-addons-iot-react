@@ -79,6 +79,7 @@ const SuiteHeaderAppSwitcher = ({
           </Button>
         )}
       </li>
+      <div className={`${baseClassName}--nav-link--separator`} />
       {mergedApplications === null ? (
         <li>
           <div

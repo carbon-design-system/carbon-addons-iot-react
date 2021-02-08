@@ -119,8 +119,6 @@
   }
 
   &--nav-link {
-    border-bottom: solid 1px $ui-03;
-
     a {
       text-decoration: none;
       color: $text-02;
@@ -147,6 +145,12 @@
         min-height: 40px;
         width: 100% !important;
       }
+    }
+    &--separator {
+      padding: 0;
+      height: 0;
+      border-bottom: 1px solid $ui-03;
+      margin: 0 $spacing-05 0 $spacing-05;
     }
   }
 
@@ -262,7 +266,7 @@
   .#{$iot-prefix}--suite-header-help--separator {
     padding: 0;
     height: 0;
-    border-bottom: 0.5px solid $hover-secondary;
+    border-bottom: 1px solid $hover-secondary;
     margin: 0 $spacing-05 0 $spacing-05;
   }
 
