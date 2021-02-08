@@ -5035,6 +5035,9 @@ Map {
         "args": Array [
           Object {
             "categoryDataSourceId": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -7061,7 +7064,7 @@ Map {
         "help": "Help",
         "logout": "Logout",
         "profileLogoutButton": "Log out",
-        "profileLogoutModalBody": [Function],
+        "profileLogoutModalBody": "You are logged in to {solutionName} as {userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.",
         "profileLogoutModalHeading": "Do you wish to log out?",
         "profileLogoutModalPrimaryButton": "Log out",
         "profileLogoutModalSecondaryButton": "Cancel",
@@ -7072,7 +7075,7 @@ Map {
         "support": "Support",
         "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
-        "surveyTitle": [Function],
+        "surveyTitle": "Enjoying {solutionName}?",
         "switcherLearnMoreLink": "Learn more",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
@@ -7198,7 +7201,17 @@ Map {
               "type": "string",
             },
             "profileLogoutModalBody": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "profileLogoutModalHeading": Object {
               "type": "string",
@@ -7231,7 +7244,17 @@ Map {
               "type": "string",
             },
             "surveyTitle": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "switcherNavigatorLink": Object {
               "type": "string",
@@ -7512,7 +7535,7 @@ Map {
   "SuiteHeaderLogoutModal" => Object {
     "defaultProps": Object {
       "i18n": Object {
-        "body": [Function],
+        "body": "Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.",
         "heading": "Do you wish to log out?",
         "primaryButton": "Log out",
         "secondaryButton": "Cancel",
@@ -7520,15 +7543,11 @@ Map {
       "isOpen": false,
     },
     "propTypes": Object {
-      "displayName": Object {
-        "isRequired": true,
-        "type": "string",
-      },
       "i18n": Object {
         "args": Array [
           Object {
             "body": Object {
-              "type": "func",
+              "type": "string",
             },
             "heading": Object {
               "type": "string",
@@ -7554,10 +7573,6 @@ Map {
         "isRequired": true,
         "type": "func",
       },
-      "suiteName": Object {
-        "isRequired": true,
-        "type": "string",
-      },
     },
   },
   "SuiteHeaderI18N" => Object {
@@ -7569,7 +7584,7 @@ Map {
       "help": "Help",
       "logout": "Logout",
       "profileLogoutButton": "Log out",
-      "profileLogoutModalBody": [Function],
+      "profileLogoutModalBody": "You are logged in to {solutionName} as {userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.",
       "profileLogoutModalHeading": "Do you wish to log out?",
       "profileLogoutModalPrimaryButton": "Log out",
       "profileLogoutModalSecondaryButton": "Cancel",
@@ -7580,7 +7595,7 @@ Map {
       "support": "Support",
       "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
-      "surveyTitle": [Function],
+      "surveyTitle": "Enjoying {solutionName}?",
       "switcherLearnMoreLink": "Learn more",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
@@ -8616,6 +8631,7 @@ Map {
       "notification": null,
       "onCancel": null,
       "onCardChange": null,
+      "onCardJsonPreview": null,
       "onDelete": null,
       "onEditTitle": null,
       "onExport": null,
@@ -8628,6 +8644,7 @@ Map {
       "onValidateUploadedImage": null,
       "renderCardPreview": [Function],
       "renderHeader": null,
+      "renderIconByName": null,
       "supportedCardTypes": Array [
         "VALUE",
         "TIMESERIES",
@@ -8713,7 +8730,12 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
+                "dataItemId": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
                 "dataSourceId": Object {
+                  "isRequired": true,
                   "type": "string",
                 },
                 "grain": Object {
@@ -8802,6 +8824,12 @@ Map {
               "type": "string",
             },
             "VALUE": Object {
+              "type": "string",
+            },
+            "abbreviateNumbers": Object {
+              "type": "string",
+            },
+            "abbreviateNumbersTooltip": Object {
               "type": "string",
             },
             "addCardButton": Object {
@@ -9142,6 +9170,9 @@ Map {
       "onCardChange": Object {
         "type": "func",
       },
+      "onCardJsonPreview": Object {
+        "type": "func",
+      },
       "onDelete": Object {
         "type": "func",
       },
@@ -9178,6 +9209,9 @@ Map {
       "renderHeader": Object {
         "type": "func",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "supportedCardTypes": Object {
         "args": Array [
           Object {
@@ -9210,6 +9244,7 @@ Map {
       },
       "icons": null,
       "isSummaryDashboard": false,
+      "onCardJsonPreview": null,
       "onValidateCardJson": null,
       "supportedCardTypes": Array [
         "VALUE",
@@ -9389,6 +9424,9 @@ Map {
       },
       "onAddCard": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onCardJsonPreview": Object {
         "type": "func",
       },
       "onChange": Object {
@@ -11422,8 +11460,13 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "cardVariables": null,
+      "customFormatter": null,
       "dataState": null,
+      "fontSize": 42,
+      "isNumberValueCompact": false,
       "locale": "en",
+      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12099,6 +12142,9 @@ Map {
         ],
         "type": "shape",
       },
+      "fontSize": Object {
+        "type": "number",
+      },
       "hideHeader": Object {
         "type": "bool",
       },
@@ -12206,6 +12252,9 @@ Map {
         "type": "bool",
       },
       "isLoading": Object {
+        "type": "bool",
+      },
+      "isNumberValueCompact": Object {
         "type": "bool",
       },
       "isResizable": Object {
@@ -12849,6 +12898,9 @@ Map {
               "type": "number",
             },
             "chartType": [Function],
+            "decimalPrecision": Object {
+              "type": "number",
+            },
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -13263,6 +13315,7 @@ Map {
       "maxFileSizeInBytes": 1048576,
       "onBrowseClick": null,
       "onUpload": [Function],
+      "renderIconByName": [Function],
       "validateUploadedImage": null,
     },
     "propTypes": Object {
@@ -15925,6 +15978,17 @@ Map {
     "SIMPLE": "SIMPLE",
     "STACKED": "STACKED",
   },
+  "DASHBOARD_EDITOR_CARD_TYPES" => Object {
+    "ALERT": "ALERT",
+    "GROUPED_BAR": "GROUPED_BAR",
+    "IMAGE": "IMAGE",
+    "LIST": "LIST",
+    "SIMPLE_BAR": "SIMPLE_BAR",
+    "STACKED_BAR": "STACKED_BAR",
+    "TABLE": "TABLE",
+    "TIMESERIES": "TIMESERIES",
+    "VALUE": "VALUE",
+  },
   "DragAndDrop" => Object {},
   "ListCard" => Object {
     "defaultProps": Object {
@@ -18439,7 +18503,7 @@ Map {
         "descriptionTextareaPlaceholderText": "Enter description for the tooltip",
         "iconDropdownLabelText": "Select an icon",
         "iconDropdownTitleText": "Icon",
-        "infoMessageText": "Click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
+        "infoMessageText": "Hold the CTRL key and click a position on the image to add a hotspot, or set the X and Y coordinates using dataitems and create hotspots at those positions.",
         "titleInputLabelText": "Title",
         "titleInputPlaceholderText": "Enter title for the tooltip",
       },
@@ -18691,7 +18755,7 @@ Map {
         "fontColorLabelText": "Font color",
         "fontSizeInvalidText": "Font Size is invalid",
         "fontSizeLabelText": "Font Size",
-        "infoMessageText": "Select an existing label on the image to edit it or click on an empty region to create one",
+        "infoMessageText": "Select an existing label on the image to edit it or hold the CTRL key and click on an empty region to create one",
         "italicLabelText": "Text Italic",
         "underlineLabelText": "Text Underline",
       },
@@ -25542,13 +25606,13 @@ Map {
     "render": [Function],
   },
   "determineCardRange" => Object {},
-  "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
   "formatNumberWithPrecision" => Object {},
   "getVariables" => Object {},
   "getCardVariables" => Object {},
   "replaceVariables" => Object {},
   "findMatchingThresholds" => Object {},
+  "determineMaxValueCardAttributeCount" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

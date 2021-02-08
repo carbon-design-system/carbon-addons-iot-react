@@ -61,6 +61,10 @@ const propTypes = {
    * this prop will be ignored if getValidDataItems is defined
    */
   dataItems: DataItemsPropTypes,
+  /** if provided, allows the consumer to make changes to the cardConfig for preview in the JSON editor modal.
+   * onCardJsonPreview(card)
+   */
+  onCardJsonPreview: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] }
    */
@@ -116,6 +120,7 @@ const defaultProps = {
   },
   getValidDataItems: null,
   getValidTimeRanges: null,
+  onCardJsonPreview: null,
   dataItems: [],
   availableDimensions: {},
   onValidateCardJson: null,
@@ -164,21 +169,43 @@ export const basicCardValidation = (card) => {
 export const hideCardPropertiesForEditor = (card) => {
   let attributes;
   let series;
+  let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'aggregationMethod', 'grain', 'uuid'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
+  if (card.content?.columns) {
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
+  }
   return omit(
-    attributes
+    attributes // VALUE CARD
       ? { ...card, content: { ...card.content, attributes } }
-      : series
+      : series // TIMESERIES AND BAR CHART CARDS
       ? { ...card, content: { ...card.content, series } }
+      : card.values?.hotspots // IMAGE CARD
+      ? {
+          ...card,
+          values: {
+            ...card.values,
+            hotspots: card.values?.hotspots?.map((hotspot) => ({
+              ...hotspot,
+              content: {
+                ...hotspot.content,
+                attributes: hotspot.content?.attributes?.map((attribute) =>
+                  omit(attribute, ['aggregationMethods', 'grain'])
+                ),
+              },
+            })),
+          },
+        }
+      : columns // TABLE CARD
+      ? { ...card, content: { ...card.content, columns } }
       : card,
     ['id', 'content.src', 'content.imgState', 'i18n', 'validateUploadedImage']
   );
@@ -227,6 +254,7 @@ const CardEditForm = ({
   i18n,
   dataItems,
   onValidateCardJson,
+  onCardJsonPreview,
   getValidDataItems,
   getValidTimeRanges,
   currentBreakpoint,
@@ -284,24 +312,17 @@ const CardEditForm = ({
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             />
           </Tab>
-          {
-            // Hide value card form settings until font size option is functional
-            cardConfig.type !== CARD_TYPES.VALUE ? (
-              <Tab label={mergedI18n.settingsTabLabel}>
-                <CardEditFormSettings
-                  availableDimensions={availableDimensions}
-                  cardConfig={
-                    cardConfig.type === CARD_TYPES.CUSTOM
-                      ? { ...omit(cardConfig, 'content') }
-                      : cardConfig
-                  }
-                  onChange={onChange}
-                  i18n={mergedI18n}
-                  getValidDataItems={getValidDataItems}
-                />
-              </Tab>
-            ) : null
-          }
+          {cardConfig.type !== CARD_TYPES.CUSTOM ? ( // we don't yet support settings for custom cards
+            <Tab label={mergedI18n.settingsTabLabel}>
+              <CardEditFormSettings
+                availableDimensions={availableDimensions}
+                cardConfig={cardConfig}
+                onChange={onChange}
+                i18n={mergedI18n}
+                getValidDataItems={getValidDataItems}
+              />
+            </Tab>
+          ) : null}
         </Tabs>
         <div className={`${baseClassName}--footer`}>
           <Button
@@ -310,7 +331,10 @@ const CardEditForm = ({
             size="small"
             renderIcon={Code16}
             onClick={() => {
-              setModalData(JSON.stringify(hideCardPropertiesForEditor(cardConfig), null, 4));
+              const cardConfigForModal = onCardJsonPreview
+                ? onCardJsonPreview(hideCardPropertiesForEditor(cardConfig))
+                : hideCardPropertiesForEditor(cardConfig);
+              setModalData(JSON.stringify(cardConfigForModal, null, 4));
               setShowEditor(true);
             }}
           >

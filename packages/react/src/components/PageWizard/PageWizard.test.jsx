@@ -6,13 +6,25 @@ import PageWizard, { defaultProps } from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
 describe('PageWizard', () => {
+  const i18n = {
+    close: 'Close',
+    next: 'Next',
+    cancel: 'Cancel',
+    back: 'Back',
+    submit: 'Submit',
+  };
+  const mocks = {
+    onClearError: jest.fn(),
+    onSubmit: jest.fn(),
+    onClose: jest.fn(),
+    onNext: jest.fn(),
+    onBack: jest.fn(),
+  };
+
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
   it('error states', () => {
-    const i18n = {
-      close: 'Close',
-    };
-    const mocks = {
-      onClearError: jest.fn(),
-    };
     render(
       <PageWizard error="My Custom Error" currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
@@ -28,19 +40,15 @@ describe('PageWizard', () => {
   });
 
   it('currentStepId prop', () => {
-    const wrapper = shallow(<PageWizard currentStepId="step1">{content}</PageWizard>);
+    const wrapper = shallow(
+      <PageWizard currentStepId="step1" {...mocks}>
+        {content}
+      </PageWizard>
+    );
     expect(wrapper.find('PageWizardStep').prop('id')).toEqual('step1');
   });
 
   it('button events during first step (no validation)', () => {
-    const mocks = {
-      onNext: jest.fn(),
-      onClose: jest.fn(),
-    };
-    const i18n = {
-      next: 'Next',
-      cancel: 'Cancel',
-    };
     render(
       <PageWizard currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
@@ -53,14 +61,6 @@ describe('PageWizard', () => {
   });
 
   it('button events during middle step (no validation)', () => {
-    const mocks = {
-      onBack: jest.fn(),
-      onNext: jest.fn(),
-    };
-    const i18n = {
-      back: 'Back',
-      next: 'Next',
-    };
     render(
       <PageWizard currentStepId="step2" {...mocks} i18n={i18n}>
         {content}
@@ -73,14 +73,6 @@ describe('PageWizard', () => {
   });
 
   it('button events during final step (no validation)', () => {
-    const mocks = {
-      onBack: jest.fn(),
-      onSubmit: jest.fn(),
-    };
-    const i18n = {
-      back: 'Back',
-      submit: 'Submit',
-    };
     render(
       <PageWizard currentStepId="step5" {...mocks} i18n={i18n}>
         {content}
@@ -93,15 +85,6 @@ describe('PageWizard', () => {
   });
 
   it('validation in first step', () => {
-    const mocks = {
-      onNext: jest.fn(),
-    };
-    const i18n = {
-      back: 'Back',
-      submit: 'Submit',
-      next: 'Next',
-      cancel: 'Cancel',
-    };
     render(
       <PageWizard currentStepId="step1" {...mocks} i18n={i18n} isProgressIndicatorVertical={false}>
         <StepValidation id="step1" label="Step with validation" />
@@ -125,7 +108,11 @@ describe('PageWizard', () => {
   });
 
   it('progress indicator should not render if there is only 1 step', () => {
-    const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
+    const wrapper = shallow(
+      <PageWizard currentStepId="step1" {...mocks}>
+        {content[0]}
+      </PageWizard>
+    );
     expect(wrapper.find('[data-testid="iot--progress-indicator-testid"]')).toHaveLength(0);
   });
 
@@ -140,7 +127,7 @@ describe('PageWizard', () => {
 
     const i18nDefault = defaultProps.i18n;
     const { rerender } = render(
-      <PageWizard i18n={i18nTest} currentStepId="step1" error="error">
+      <PageWizard i18n={i18nTest} currentStepId="step1" error="error" {...mocks}>
         {content}
       </PageWizard>
     );
@@ -153,7 +140,7 @@ describe('PageWizard', () => {
     expect(screen.queryByLabelText(i18nDefault.close)).not.toBeInTheDocument();
 
     rerender(
-      <PageWizard currentStepId="step5" i18n={i18nTest}>
+      <PageWizard currentStepId="step5" i18n={i18nTest} {...mocks}>
         {content}
       </PageWizard>
     );

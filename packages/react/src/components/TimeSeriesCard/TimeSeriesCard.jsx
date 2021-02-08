@@ -56,6 +56,8 @@ const TimeSeriesCardPropTypes = {
     xLabel: PropTypes.string,
     /** Custom Y-axis label */
     yLabel: PropTypes.string,
+    /** the number of decimals to show in the legend and on the y-axis */
+    decimalPrecision: PropTypes.number,
     /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
     includeZeroOnXaxis: PropTypes.bool,
     /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
@@ -264,6 +266,7 @@ const TimeSeriesCard = ({
       yLabel,
       includeZeroOnXaxis,
       includeZeroOnYaxis,
+      decimalPrecision,
       unit,
       chartType,
       zoomBar,
@@ -458,10 +461,25 @@ const TimeSeriesCard = ({
             : columnName,
           isSortable: true,
           filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+          renderDataFunction: ({ value }) => {
+            if (typeof value === 'number' && !isNil(decimalPrecision)) {
+              return chartValueFormatter(value, size, unit, locale, decimalPrecision);
+            }
+            return value;
+          },
         };
       })
     );
-  }, [columnNames, i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]);
+  }, [
+    columnNames,
+    decimalPrecision,
+    i18n.defaultFilterStringPlaceholdText,
+    locale,
+    series,
+    size,
+    timeDataSourceId,
+    unit,
+  ]);
 
   // TODO: remove in next release
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
@@ -517,7 +535,7 @@ const TimeSeriesCard = ({
                     mapsTo: 'value',
                     ticks: {
                       formatter: (axisValue) =>
-                        chartValueFormatter(axisValue, newSize, null, locale),
+                        chartValueFormatter(axisValue, newSize, null, locale, decimalPrecision),
                     },
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: (yMaxValue) => yMaxValue * 1.3 }
@@ -535,7 +553,7 @@ const TimeSeriesCard = ({
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: (tooltipValue) =>
-                    chartValueFormatter(tooltipValue, newSize, unit, locale),
+                    chartValueFormatter(tooltipValue, newSize, unit, locale, decimalPrecision),
                   customHTML: (...args) =>
                     handleTooltip(
                       ...args,
@@ -624,6 +642,7 @@ TimeSeriesCard.defaultProps = {
     noDataLabel: 'No data is available for this time range.',
     tooltipGroupLabel: 'Group',
   },
+
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
   content: {

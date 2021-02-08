@@ -456,7 +456,8 @@ export const WithCheckboxMultiSelection = () => {
             <Checkbox
               id={`${team}-checkbox`}
               name={team}
-              labelText={`${team}`}
+              labelText={team}
+              hideLabel
               onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
               checked={selectedIds.some((id) => team === id)}
               indeterminate={
@@ -477,7 +478,8 @@ export const WithCheckboxMultiSelection = () => {
               <Checkbox
                 id={`${team}-${player}-checkbox`}
                 name={player}
-                labelText={`${player}`}
+                labelText={team}
+                hideLabel
                 onClick={(e) => {
                   handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                 }}
@@ -497,7 +499,8 @@ export const WithCheckboxMultiSelection = () => {
             <Checkbox
               id={`${team}-checkbox`}
               name={team}
-              labelText={`${team}`}
+              labelText={team}
+              hideLabel
               onClick={(e) => handleCheckboxChange(e, nestedItems, team)}
               checked={selectedIds.some((id) => team === id)}
               indeterminate={
@@ -518,7 +521,8 @@ export const WithCheckboxMultiSelection = () => {
               <Checkbox
                 id={`${team}-${player}-checkbox`}
                 name={player}
-                labelText={`${player}`}
+                labelText={team}
+                hideLabel
                 onClick={(e) => {
                   handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                 }}
@@ -583,4 +587,30 @@ export const WithTags = () => (
 
 WithTags.story = {
   name: 'with tags',
+};
+
+export const IsLoading = () => (
+  <div style={{ width: 400 }}>
+    <List
+      title={text('title', 'NY Yankees')}
+      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+        ([key]) => ({
+          id: key,
+          content: {
+            value: key,
+            tags: [
+              <Tag type="blue" title="descriptor" key="tag1">
+                default
+              </Tag>,
+            ],
+          },
+        })
+      )}
+      isLoading={boolean('isLoading', true)}
+    />
+  </div>
+);
+
+IsLoading.story = {
+  name: 'with isLoading',
 };

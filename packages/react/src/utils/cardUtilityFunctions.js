@@ -88,33 +88,6 @@ export const compareGrains = (grain1, grain2) => {
   return 1;
 };
 
-/** Determine the max value card attribute count */
-export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
-  let attributeCount = currentAttributeCount;
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      attributeCount = 1;
-      break;
-    case CARD_SIZES.SMALLWIDE:
-      attributeCount = 2;
-      break;
-    case CARD_SIZES.MEDIUMTHIN:
-    case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.MEDIUMWIDE:
-      attributeCount = 3;
-      break;
-    case CARD_SIZES.LARGE:
-      attributeCount = 5;
-      break;
-    case CARD_SIZES.LARGETHIN:
-    case CARD_SIZES.LARGEWIDE:
-      attributeCount = 7;
-      break;
-    default:
-  }
-  return attributeCount;
-};
-
 export const getUpdatedCardSize = (oldSize) => {
   const changedSize =
     oldSize === 'XSMALL'
@@ -142,61 +115,27 @@ export const getUpdatedCardSize = (oldSize) => {
 };
 
 /**
- * This function provides common value formatting across all card types
+ * This function provides decimal precision and compact abbreviation formatting for number values
  * @param {number} value, the value the card will display
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
+ * @param {Boolean} isNumberValueCompact whether the number should be abbreviated (i.e. 10,000 = 10K)
  */
-export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') => {
-  return value > 1000000000000
-    ? `${(value / 1000000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}T`
-    : value > 1000000000
-    ? `${(value / 1000000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}B`
-    : value > 1000000
-    ? `${(value / 1000000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}M`
-    : value > 1000
-    ? `${(value / 1000).toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      )}K`
-    : value.toLocaleString(
-        locale,
-        !isNil(precision)
-          ? {
-              minimumFractionDigits: precision,
-              maximumFractionDigits: precision,
-            }
-          : undefined
-      );
+export const formatNumberWithPrecision = (
+  value,
+  precision,
+  locale = 'en',
+  isNumberValueCompact = false
+) => {
+  return new Intl.NumberFormat(locale, {
+    ...(precision
+      ? {
+          minimumFractionDigits: precision,
+          maximumFractionDigits: precision,
+        }
+      : {}),
+    ...(isNumberValueCompact ? { notation: 'compact' } : {}),
+  }).format(value);
 };
 
 /**
@@ -315,24 +254,6 @@ export const handleCardVariables = (title, content, values, card) => {
 };
 
 /**
- * This function provides common value formatting across all chart card types
- * @param {number} value, the value the card will display
- * @param {number} precision, how many decimal values to display configured at the attribute level
- * @param {string} locale, the local browser locale because locales use different decimal separators
- */
-export const formatChartNumberWithPrecision = (value, precision = 0, locale = 'en') => {
-  return value.toLocaleString(
-    locale,
-    !isNil(precision)
-      ? {
-          minimumFractionDigits: precision,
-          maximumFractionDigits: precision,
-        }
-      : undefined
-  );
-};
-
-/**
  * Determines how many decimals to show for a value based on the value, the available size of the card
  * @param {string} size constant that describes the size of the Table card
  * @param {any} value will be checked to determine how many decimals to show
@@ -343,7 +264,7 @@ export const determinePrecision = (size, value, precision) => {
   if (Number.isInteger(value)) {
     return 0;
   }
-  // If the card is xsmall we don't have room for decimals!
+  // If the card is small we don't have room for decimals!
   switch (size) {
     case CARD_SIZES.SMALL:
       return !isNil(precision) ? precision : Math.abs(value) > 9 ? 0 : undefined;
@@ -358,12 +279,14 @@ export const determinePrecision = (size, value, precision) => {
  * @param {any} value any value possible, but will only special format if a number
  * @param {string} size card size
  * @param {string} unit any optional units to show
+ * @param {number} the selected precision value
  */
-export const chartValueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
+export const chartValueFormatter = (value, size, unit, locale, precision) => {
+  const precisionToFormat =
+    precision || determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
-    renderValue = formatChartNumberWithPrecision(value, precision, locale);
+    renderValue = formatNumberWithPrecision(value, precisionToFormat, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }

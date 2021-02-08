@@ -13,7 +13,6 @@ import StatefulTable from '../Table/StatefulTable';
 
 const { iotPrefix } = settings;
 
-
 const defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
   locale: 'en',
@@ -23,13 +22,7 @@ const defaultProps = {
   },
 };
 
-const ComboChartCard = ({
-  className,
-  title,
-  values,
-  options,
-  ...others
-}) => {
+const ComboChartCard = ({ className, title, values, options, ...others }) => {
   const { title: chartTitle, ...otherOptions } = options;
 
   return (
@@ -42,43 +35,43 @@ const ComboChartCard = ({
       <div className={`${iotPrefix}--combo-chart-card__container`}>
         <ComboChart key="combo-chart" data={values} {...others} options={otherOptions} />
         {isExpanded ? (
-            <StatefulTable
-              id="BarChartCard-table"
-              className={`${iotPrefix}--bar-chart-card--stateful-table`}
-              columns={tableColumns}
-              data={tableData}
-              options={{
-                hasPagination: true,
-                hasSearch: true,
-                hasFilter: true,
-              }}
-              actions={{
-                toolbar: {
-                  onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, title),
+          <StatefulTable
+            id="BarChartCard-table"
+            className={`${iotPrefix}--bar-chart-card--stateful-table`}
+            columns={tableColumns}
+            data={tableData}
+            options={{
+              hasPagination: true,
+              hasSearch: true,
+              hasFilter: true,
+            }}
+            actions={{
+              toolbar: {
+                onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, title),
+              },
+            }}
+            view={{
+              pagination: {
+                pageSize: 10,
+                pageSizes: [10, 20, 30],
+              },
+              toolbar: {
+                activeBar: null,
+              },
+              filters: [],
+              table: {
+                sort: {
+                  columnId: timeDataSourceId,
+                  direction: 'DESC',
                 },
-              }}
-              view={{
-                pagination: {
-                  pageSize: 10,
-                  pageSizes: [10, 20, 30],
+                emptyState: {
+                  message: noDataLabel,
                 },
-                toolbar: {
-                  activeBar: null,
-                },
-                filters: [],
-                table: {
-                  sort: {
-                    columnId: timeDataSourceId,
-                    direction: 'DESC',
-                  },
-                  emptyState: {
-                    message: noDataLabel,
-                  },
-                },
-              }}
-              i18n={i18n}
-            />
-          ) : null}
+              },
+            }}
+            i18n={i18n}
+          />
+        ) : null}
       </div>
     </Card>
   );

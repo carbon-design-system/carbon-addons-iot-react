@@ -2064,7 +2064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Chicago White Sox
                       </span>
@@ -2148,7 +2148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         New York Yankees
                       </span>
@@ -2232,7 +2232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Houston Astros
                       </span>
@@ -2316,7 +2316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Atlanta Braves
                       </span>
@@ -2400,7 +2400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         New York Mets
                       </span>
@@ -2484,7 +2484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title={null}
                     >
                       <span
-                        className="bx--checkbox-label-text"
+                        className="bx--checkbox-label-text bx--visually-hidden"
                       >
                         Washington Nationals
                       </span>
@@ -4814,6 +4814,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/List with isLoading 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              NY Yankees
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            />
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <p
+            className="bx--skeleton__text iot--list--skeleton"
+            style={
+              Object {
+                "width": "90%",
+              }
+            }
+          />
         </div>
       </div>
     </div>

@@ -41,10 +41,12 @@ const images = [
 
 const mockDataItems = [
   {
+    dataItemId: 'torque_max',
     dataSourceId: 'torque_max',
     label: 'Torque Max',
     aggregationMethod: 'max',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -52,10 +54,12 @@ const mockDataItems = [
     ],
   },
   {
+    dataItemId: 'torque_min',
     dataSourceId: 'torque_min',
     label: 'Torque Min',
     aggregationMethod: 'min',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -63,10 +67,12 @@ const mockDataItems = [
     ],
   },
   {
+    dataItemId: 'torque_mean',
     dataSourceId: 'torque_mean',
     label: 'Torque Mean',
     aggregationMethod: 'mean',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -74,9 +80,11 @@ const mockDataItems = [
     ],
   },
   {
+    dataItemId: 'torque',
     dataSourceId: 'torque',
     label: 'Torque',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -84,9 +92,11 @@ const mockDataItems = [
     ],
   },
   {
+    dataItemId: 'temperature',
     dataSourceId: 'temperature',
     label: 'Temperature',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -94,9 +104,11 @@ const mockDataItems = [
     ],
   },
   {
+    dataItemId: 'pressure',
     dataSourceId: 'pressure',
     label: 'Pressure',
     aggregationMethods: [
+      { id: 'none', text: 'None' },
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -174,12 +186,14 @@ export const WithInitialValue = () => (
           content: {
             columns: [
               {
-                dataSourceId: 'undefined',
-                label: '--',
+                dataItemId: 'temperature',
+                dataSourceId: 'temperature',
+                label: 'Temperature',
               },
               {
-                dataSourceId: 'undefined2',
-                label: '--',
+                dataItemId: 'pressure',
+                dataSourceId: 'pressure',
+                label: 'Pressure',
               },
             ],
           },
@@ -199,14 +213,16 @@ export const WithInitialValue = () => (
           content: {
             attributes: [
               {
-                dataSourceId: 'key1',
+                dataItemId: 'torque',
+                dataSourceId: 'torque',
                 unit: '%',
-                label: 'Key 1',
+                label: 'Torque',
               },
               {
-                dataSourceId: 'key2',
+                dataItemId: 'pressure',
+                dataSourceId: 'pressure',
                 unit: 'lb',
-                label: 'Key 2',
+                label: 'Pressure',
               },
             ],
           },
@@ -219,10 +235,12 @@ export const WithInitialValue = () => (
           content: {
             series: [
               {
+                dataItemId: 'temperature',
                 label: 'Temperature',
                 dataSourceId: 'temperature',
               },
               {
+                dataItemId: 'pressure',
                 label: 'Pressure',
                 dataSourceId: 'pressure',
               },
@@ -253,8 +271,9 @@ export const WithInitialValue = () => (
             layout: 'VERTICAL',
             series: [
               {
+                dataItemId: 'pressure',
                 dataSourceId: 'pressure',
-                label: 'pressure',
+                label: 'Pressure',
                 color: '#6929c4',
               },
             ],
@@ -372,12 +391,14 @@ export const SummaryDashboardWithInitialValue = () => (
             content: {
               columns: [
                 {
-                  dataSourceId: 'undefined',
-                  label: '--',
+                  dataItemId: 'temperature',
+                  dataSourceId: 'temperature',
+                  label: 'Temperature',
                 },
                 {
-                  dataSourceId: 'undefined2',
-                  label: '--',
+                  dataItemId: 'pressure',
+                  dataSourceId: 'pressure',
+                  label: 'Pressure',
                 },
               ],
             },
@@ -397,9 +418,9 @@ export const SummaryDashboardWithInitialValue = () => (
             content: {
               attributes: [
                 {
+                  dataItemId: 'torque_min',
                   dataSourceId: 'torque_min',
                   label: 'Torque Min',
-                  aggregationMethod: 'min',
                 },
               ],
             },
@@ -412,10 +433,12 @@ export const SummaryDashboardWithInitialValue = () => (
             content: {
               series: [
                 {
+                  dataItemId: 'temperature',
                   label: 'Temperature',
                   dataSourceId: 'temperature',
                 },
                 {
+                  dataItemId: 'pressure',
                   label: 'Pressure',
                   dataSourceId: 'pressure',
                 },
@@ -446,6 +469,7 @@ export const SummaryDashboardWithInitialValue = () => (
               layout: 'VERTICAL',
               series: [
                 {
+                  dataItemId: 'pressure',
                   dataSourceId: 'pressure',
                   label: 'Pressure',
                   color: '#6929c4',
@@ -973,7 +997,9 @@ export const I18N = () => (
       secondaryButtonLabelText: 'secondaryButtonLabelText',
 
       // settings for Value card
-      notSet: 'notSet',
+      abbreviateNumbers: 'abbreviateNumbers',
+      abbreviateNumbersTooltip: 'abbreviateNumbersTooltip',
+      fontSize: 'fontSize',
 
       // Settings for Data Series
       xAxisLabel: 'xAxisLabel',
@@ -982,7 +1008,6 @@ export const I18N = () => (
       decimalPrecisionLabel: 'decimalPrecisionLabel',
       precisionLabel: 'precisionLabel',
       showLegendLabel: 'showLegendLabel',
-      fontSize: 'fontSize',
 
       // Additional fields for Bar Chart
       selectGroupBy: 'selectGroupBy',

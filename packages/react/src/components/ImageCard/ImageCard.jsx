@@ -2,13 +2,14 @@ import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import pick from 'lodash/pick';
-import { Image32 } from '@carbon/icons-react';
+import { Image32, Warning24 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getResizeHandles, getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { validThresholdIcons, validHotspotIcons } from '../DashboardEditor/editorUtils';
 
 import ImageHotspots from './ImageHotspots';
 import ImageUploader from './ImageUploader';
@@ -52,6 +53,30 @@ const defaultProps = {
   validateUploadedImage: null,
   onUpload: () => {},
   onBrowseClick: null,
+  renderIconByName: (iconName, iconProps) => {
+    // first search the validHotspot Icons
+    const matchingHotspotIcon = validHotspotIcons.find((icon) => icon.id === iconName);
+
+    // then search the validThresholdIcons
+    const matchingThresholdIcon = validThresholdIcons.find((icon) => icon.name === iconName);
+    const iconToRender = matchingHotspotIcon
+      ? React.createElement(matchingHotspotIcon.icon, {
+          ...iconProps,
+          title: matchingHotspotIcon.text,
+        })
+      : matchingThresholdIcon
+      ? React.cloneElement(matchingThresholdIcon.carbonIcon, {
+          ...iconProps,
+          title: matchingThresholdIcon.name,
+        })
+      : React.createElement(Warning24, {
+          ...iconProps,
+          title: 'Warning',
+        });
+    // otherwise default to Warning24
+    // eslint-disable-next-line react/prop-types
+    return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
+  },
 };
 
 const ImageCard = ({
