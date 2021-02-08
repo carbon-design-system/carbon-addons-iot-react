@@ -28,6 +28,7 @@ const RuleValueField = ({ rule, onChange, renderColumnField, renderOperandField 
   return (
     <TextInput
       id={`${rule.id}-value`}
+      light
       labelText=""
       defaultValue={rule.value}
       onChange={(e) => onChange(e.target.value)}

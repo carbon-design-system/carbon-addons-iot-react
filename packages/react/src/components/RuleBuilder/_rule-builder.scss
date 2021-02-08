@@ -1,4 +1,4 @@
-.#{$iot-prefix}--rule-builder {
+.#{$iot-prefix}--rule-builder-wrap {
   background: $ui-01;
   border: 1px solid $ui-03;
   display: flex;
@@ -43,7 +43,16 @@
   }
 
   &--body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
     padding: $spacing-05;
+
+    .#{$prefix}--tab-content {
+      flex: 1;
+      overflow: auto;
+    }
   }
 
   &--tabs {
@@ -56,6 +65,10 @@
       &:not(:hover) {
         border-bottom: none;
       }
+    }
+
+    & + .#{$prefix}--tab-content {
+      padding-right: 3rem;
     }
   }
 
