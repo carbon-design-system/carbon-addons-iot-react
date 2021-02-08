@@ -208,7 +208,7 @@ const HierarchyList = ({
 }) => {
   const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
   const [searchValue, setSearchValue] = useState('');
-  const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
+  const [filteredItems, setFilteredItems] = useState(() => cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
@@ -272,7 +272,6 @@ const HierarchyList = ({
         }
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId, items]
   );
 
