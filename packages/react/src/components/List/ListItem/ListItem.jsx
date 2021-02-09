@@ -32,7 +32,8 @@ const ListItemPropTypes = {
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
-  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** string value or callback render function */
+  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   /** either a callback render function or a node */
   rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
   icon: PropTypes.node,
