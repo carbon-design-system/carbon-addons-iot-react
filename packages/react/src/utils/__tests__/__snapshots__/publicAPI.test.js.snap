@@ -4431,6 +4431,7 @@ Map {
       "isLargeRow": false,
       "isLoading": false,
       "itemWillMove": [Function],
+      "items": Array [],
       "onListUpdated": [Function],
       "onSelect": null,
       "pageSize": null,
@@ -4532,10 +4533,48 @@ Map {
       "items": Object {
         "args": Array [
           Object {
-            "type": "any",
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Object {
+                      "type": "object",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "content": Object {
+                  "args": Array [
+                    Object {
+                      "icon": Object {
+                        "type": "node",
+                      },
+                      "tags": Object {
+                        "args": Array [
+                          Object {
+                            "type": "node",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "value": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                "id": Object {
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "onListUpdated": Object {

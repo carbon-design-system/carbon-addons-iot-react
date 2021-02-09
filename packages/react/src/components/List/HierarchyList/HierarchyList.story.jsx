@@ -4,7 +4,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
-import { Button } from '../../..';
+import { Button, InlineLoading } from '../../..';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
@@ -326,6 +326,9 @@ export const WithMixedHierarchies = () => (
               id: 'Task 1',
               content: {
                 value: 'Task 1',
+                secondaryValue: () => (
+                  <InlineLoading description="Loading data.." status="active" />
+                ),
               },
               isSelectable: true,
             },
@@ -335,6 +338,7 @@ export const WithMixedHierarchies = () => (
           id: 'My Reports',
           content: {
             value: 'My Reports',
+            secondaryValue: () => <InlineLoading description="Loading data.." status="active" />,
           },
           isSelectable: true,
         },

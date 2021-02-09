@@ -4707,6 +4707,58 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hiera
                     >
                       My Reports
                     </div>
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="My Reports--secondary-value"
+                    >
+                      <div
+                        aria-live="assertive"
+                        className="bx--inline-loading"
+                      >
+                        <div
+                          className="bx--inline-loading__animation"
+                        >
+                          <div
+                            aria-atomic="true"
+                            aria-labelledby="loading-id-8"
+                            aria-live="assertive"
+                            className="bx--loading bx--loading--small"
+                          >
+                            <label
+                              className="bx--visually-hidden"
+                              id="loading-id-8"
+                            >
+                              Active loading indicator
+                            </label>
+                            <svg
+                              className="bx--loading__svg"
+                              viewBox="-75 -75 150 150"
+                            >
+                              <title>
+                                Active loading indicator
+                              </title>
+                              <circle
+                                className="bx--loading__background"
+                                cx="0"
+                                cy="0"
+                                r="26.8125"
+                              />
+                              <circle
+                                className="bx--loading__stroke"
+                                cx="0"
+                                cy="0"
+                                r="26.8125"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          className="bx--inline-loading__text"
+                        >
+                          Loading data..
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
