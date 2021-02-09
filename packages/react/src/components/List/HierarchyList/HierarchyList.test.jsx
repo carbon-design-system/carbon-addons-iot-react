@@ -4,6 +4,7 @@ import debounce from 'lodash/debounce';
 
 import { sampleHierarchy } from '../List.story';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
+import { InlineLoading } from '../../..';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
 
@@ -61,106 +62,112 @@ describe('HierarchyList', () => {
     })),
   ];
 
-  it('searchForNestedItemValues should return results for single nested list', () => {
-    const foundValue = searchForNestedItemValues(items, 'jd');
-    expect(foundValue).toEqual([
-      {
-        children: [
-          {
-            content: {
-              secondaryValue: 'LF',
-              value: 'JD Davis',
+  describe('searchForNestedItemValues', () => {
+    it('should return results for single nested list', () => {
+      const foundValue = searchForNestedItemValues(items, 'jd');
+      expect(foundValue).toEqual([
+        {
+          children: [
+            {
+              content: {
+                secondaryValue: 'LF',
+                value: 'JD Davis',
+              },
+              id: 'New York Mets_JD Davis',
+              isSelectable: true,
             },
-            id: 'New York Mets_JD Davis',
-            isSelectable: true,
+          ],
+          content: {
+            value: 'New York Mets',
           },
-        ],
-        content: {
-          value: 'New York Mets',
+          id: 'New York Mets',
+          isCategory: true,
         },
-        id: 'New York Mets',
-        isCategory: true,
-      },
-    ]);
+      ]);
+    });
+
+    it('should not return results for single nested list', () => {
+      const foundValue = searchForNestedItemValues(items, 'abcdefg');
+      expect(foundValue).toEqual([]);
+    });
   });
 
-  it('searchForNestedItemValues should not return results for single nested list', () => {
-    const foundValue = searchForNestedItemValues(items, 'abcdefg');
-    expect(foundValue).toEqual([]);
-  });
-
-  it('searchForNestedItemIds should return results for single nested list', () => {
-    const foundValue = searchForNestedItemIds(items, 'New York Mets_JD Davis');
-    expect(foundValue).toEqual([
-      {
-        children: [
-          {
-            content: {
-              secondaryValue: 'LF',
-              value: 'JD Davis',
+  describe('searchForNestedItemIds', () => {
+    it('should return results for single nested list', () => {
+      const foundValue = searchForNestedItemIds(items, 'New York Mets_JD Davis');
+      expect(foundValue).toEqual([
+        {
+          children: [
+            {
+              content: {
+                secondaryValue: 'LF',
+                value: 'JD Davis',
+              },
+              id: 'New York Mets_JD Davis',
+              isSelectable: true,
             },
-            id: 'New York Mets_JD Davis',
-            isSelectable: true,
+          ],
+          content: {
+            value: 'New York Mets',
           },
-        ],
-        content: {
-          value: 'New York Mets',
+          id: 'New York Mets',
+          isCategory: true,
         },
-        id: 'New York Mets',
-        isCategory: true,
-      },
-    ]);
+      ]);
+    });
+
+    it('should not return results for single nested list', () => {
+      const foundValue = searchForNestedItemIds(items, 'abcdefg');
+      expect(foundValue).toEqual([]);
+    });
   });
 
-  it('searchNestedItems should not return results for single nested list', () => {
-    const foundValue = searchForNestedItemIds(items, 'abcdefg');
-    expect(foundValue).toEqual([]);
-  });
+  describe('expansion', () => {
+    it('clicking expansion caret should expand item', () => {
+      render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
+      fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+      // Category item should be expanded
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      // Nested item should be visible
+      expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+      // All other categories should be visible still
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are unfortunately worthy too...
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+      expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+      expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+    });
 
-  it('clicking expansion caret should expand item', () => {
-    render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
-    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
-    // Category item should be expanded
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    // Nested item should be visible
-    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
-    // All other categories should be visible still
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are unfortunately worthy too...
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
-    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
-    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
-  });
-
-  it('clicking expansion caret should collapse expanded item', () => {
-    render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
-    // Expand
-    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
-    // Category item should be expanded
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    // Nested item should be visible
-    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
-    // All other categories should be visible still
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are unfortunately worthy too...
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
-    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
-    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
-    // Collapse
-    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
-    // Category item should be expanded
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    // Nested item should be visible
-    expect(screen.queryByTitle('Leury Garcia')).not.toBeInTheDocument();
-    // All other categories should be visible still
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are unfortunately worthy too...
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
-    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
-    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+    it('clicking expansion caret should collapse expanded item', () => {
+      render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
+      // Expand
+      fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+      // Category item should be expanded
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      // Nested item should be visible
+      expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+      // All other categories should be visible still
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are unfortunately worthy too...
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+      expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+      expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+      // Collapse
+      fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
+      // Category item should be expanded
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      // Nested item should be visible
+      expect(screen.queryByTitle('Leury Garcia')).not.toBeInTheDocument();
+      // All other categories should be visible still
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are unfortunately worthy too...
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+      expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+      expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+    });
   });
 
   it('clicking nextpage should display the second page', () => {
@@ -189,99 +196,189 @@ describe('HierarchyList', () => {
     expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
   });
 
-  it('found search result categories should be expanded', () => {
-    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: 'jd' },
+  describe('search', () => {
+    it('found search result categories should be expanded', () => {
+      render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'jd' },
+      });
+
+      // Category containing value should appear
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are not worthy
+      expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+      // Found item should appear
+      expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
     });
 
-    // Category containing value should appear
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are not worthy
-    expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
-    // Found item should appear
-    expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
-  });
+    it('search should include categories', () => {
+      render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'Chicago White Sox' },
+      });
 
-  it('search should include categories', () => {
-    render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: 'Chicago White Sox' },
+      // Matched Category should appear
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      // All items in Category should appear
+      expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+      expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+
+      expect(screen.queryByTitle('New York Mets')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'Ch' },
+      });
+
+      // Matched Category should appear
+      expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
+      // All child items in Category should appear, including items that do not match
+      expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
+      expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
+      expect(screen.getByTitle('Gary Sanchez')).toBeInTheDocument();
+
+      // // Category with matching child items should appear
+      expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.getByTitle('Michael Brantley')).toBeInTheDocument();
+      expect(screen.getByTitle('Robinson Chirinos')).toBeInTheDocument();
+
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      expect(screen.getByTitle(/Michael Conforto/i)).toBeInTheDocument();
+
+      expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
+      expect(screen.getByTitle('Max Scherzer')).toBeInTheDocument();
+
+      expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
     });
 
-    // Matched Category should appear
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    // All items in Category should appear
-    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
-    expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+    it('all items should return if search value is empty string', () => {
+      render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'jd davis' },
+      });
 
-    expect(screen.queryByTitle('New York Mets')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+      // Category containing value should appear
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      // Yankees are not worthy
+      expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
+      expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+      // Found item should appear
+      expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
 
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: 'Ch' },
+      // Change search to empty string
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: '' },
+      });
+
+      // All categories should appear
+      expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
+      expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
+      expect(screen.queryByTitle('Chicago White Sox')).toBeInTheDocument();
+      expect(screen.queryByTitle('Houston Astros')).toBeInTheDocument();
+      expect(screen.queryByTitle('Washington Nationals')).toBeInTheDocument();
+      // Yankees are ... unfortunately worthy as well
+      expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
     });
 
-    // Matched Category should appear
-    expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
-    // All child items in Category should appear, including items that do not match
-    expect(screen.getByTitle('Leury Garcia')).toBeInTheDocument();
-    expect(screen.getByTitle('Dylan Covey')).toBeInTheDocument();
+    it('should still return results when secondaryValue is a custom node', () => {
+      const itemsWithCustomSecondaryValues = [
+        {
+          id: 'Tasks',
+          isCategory: true,
+          content: {
+            value: 'Tasks',
+          },
+          children: [
+            {
+              id: 'Task 1',
+              content: {
+                value: 'Task 1',
+                secondaryValue: () => (
+                  <InlineLoading description="Loading data.." status="active" />
+                ),
+              },
+              isSelectable: true,
+            },
+          ],
+        },
+        {
+          id: 'My Reports',
+          content: {
+            value: 'My Reports',
+            secondaryValue: () => <InlineLoading description="Loading data.." status="active" />,
+          },
+          isSelectable: true,
+        },
+        {
+          id: 'Requests',
+          isCategory: true,
+          content: {
+            value: 'Requests',
+          },
+          children: [
+            {
+              id: 'Request 1',
+              content: {
+                value: 'Request 1',
+              },
+              isSelectable: true,
+            },
+            {
+              id: 'Request 2',
+              isCategory: true,
+              content: {
+                value: 'Request 2',
+              },
+              children: [
+                {
+                  id: 'Request 2 details',
+                  content: {
+                    value: 'Request 2 details',
+                  },
+                },
+              ],
+            },
+            {
+              id: 'Request 3',
+              content: {
+                value: 'Request 3',
+              },
+              isSelectable: true,
+            },
+          ],
+        },
+      ];
 
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
-    expect(screen.getByTitle('Gary Sanchez')).toBeInTheDocument();
+      render(
+        <HierarchyList items={itemsWithCustomSecondaryValues} hasSearch title="Hierarchy List" />
+      );
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'my reports' },
+      });
 
-    // // Category with matching child items should appear
-    expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.getByTitle('Michael Brantley')).toBeInTheDocument();
-    expect(screen.getByTitle('Robinson Chirinos')).toBeInTheDocument();
+      // Found item should appear
+      expect(screen.getByTitle('My Reports')).toBeInTheDocument();
 
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    expect(screen.getByTitle(/Michael Conforto/i)).toBeInTheDocument();
+      // Change search to check for a nested value
+      fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
+        target: { value: 'task 1' },
+      });
 
-    expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
-    expect(screen.getByTitle('Max Scherzer')).toBeInTheDocument();
-
-    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-  });
-
-  it('all items should return if search value is empty string', () => {
-    render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: 'jd davis' },
+      // Found item should appear
+      expect(screen.getByTitle('Task 1')).toBeInTheDocument();
     });
-
-    // Category containing value should appear
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    // Yankees are not worthy
-    expect(screen.queryByTitle('New York Yankees')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Houston Astros')).not.toBeInTheDocument();
-    expect(screen.queryByTitle('Washington Nationals')).not.toBeInTheDocument();
-    // Found item should appear
-    expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
-
-    // Change search to empty string
-    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
-      target: { value: '' },
-    });
-
-    // All categories should appear
-    expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
-    expect(screen.getByTitle('Atlanta Braves')).toBeInTheDocument();
-    expect(screen.queryByTitle('Chicago White Sox')).toBeInTheDocument();
-    expect(screen.queryByTitle('Houston Astros')).toBeInTheDocument();
-    expect(screen.queryByTitle('Washington Nationals')).toBeInTheDocument();
-    // Yankees are ... unfortunately worthy as well
-    expect(screen.getByTitle('New York Yankees')).toBeInTheDocument();
   });
 
   describe('defaultSelectedId', () => {

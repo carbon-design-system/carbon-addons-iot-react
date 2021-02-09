@@ -21,8 +21,6 @@ const addButton = (
   />
 );
 
-const inlineLoading = <InlineLoading description="Loading data.." status="active" />;
-
 export default {
   title: 'Watson IoT/HierarchyList',
 
@@ -328,7 +326,9 @@ export const WithMixedHierarchies = () => (
               id: 'Task 1',
               content: {
                 value: 'Task 1',
-                secondaryValue: inlineLoading,
+                secondaryValue: () => (
+                  <InlineLoading description="Loading data.." status="active" />
+                ),
               },
               isSelectable: true,
             },
@@ -338,6 +338,7 @@ export const WithMixedHierarchies = () => (
           id: 'My Reports',
           content: {
             value: 'My Reports',
+            secondaryValue: () => <InlineLoading description="Loading data.." status="active" />,
           },
           isSelectable: true,
         },

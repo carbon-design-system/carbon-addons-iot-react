@@ -145,7 +145,8 @@ export const searchForNestedItemValues = (items, value) => {
       }
     } // if the item matches, add it to the filterItems array
     else if (
-      !isNil(item.content.secondaryValue && typeof item.content.secondaryValue === 'string') &&
+      !isNil(item.content.secondaryValue) &&
+      typeof item.content.secondaryValue === 'string' &&
       caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)
     ) {
       filteredItems.push(item);
