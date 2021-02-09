@@ -352,13 +352,13 @@ describe('RuleBuilderEditor', () => {
           value: '45',
         },
         {
-          id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+          id: expect.stringMatching(/[a-zA-Z0-9]{9}|[a-zA-Z0-9]{10}/),
           columnId: 'column3',
           operand: 'includes',
           value: 'asdf',
         },
         {
-          id: expect.stringMatching(/[a-zA-Z0-9]{10}/),
+          id: expect.stringMatching(/[a-zA-Z0-9]{9}|[a-zA-Z0-9]{10}/),
           columnId: 'column1',
           operand: 'between',
           value: expect.arrayContaining(['2021-01-01', '2021-02-01']),
