@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.35...v2.143.0-next.36) (2021-02-09)
+
+
+### Bug Fixes
+
+* **hierarchylist:** lazy initialize the clonedeep items for performance ([a152466](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a1524669dc5f8bfce15475332d059df1dc0c4ecb))
+* **hierarchylist:** remove initial clonedeep state ([a63856d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a63856d85e4e98c52da98b720f8a0c918872d7eb))
+* **hierarchylist:** scroll if needed, allow secondary nodes ([9194c34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9194c34b16494887ff2c7ed55da29c1e08b02f64))
+* **list:** type check before searching ([640439b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/640439befd7c7a9d0b2824199c562e69bbe0c5de))
+* **repo:** update yarn lock ([850542b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/850542b479585ff4791981ee042f15b4aec77085))
+
+
+
+
+
 # [2.143.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.34...v2.143.0-next.35) (2021-02-08)
 
 **Note:** Version bump only for package ibm-ai-applications
