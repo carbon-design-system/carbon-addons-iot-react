@@ -11595,7 +11595,6 @@ Map {
       "fontSize": 42,
       "isNumberValueCompact": false,
       "locale": "en",
-      "precision": null,
       "size": "MEDIUM",
       "values": null,
     },
@@ -12101,6 +12100,9 @@ Map {
                       },
                       "label": Object {
                         "type": "string",
+                      },
+                      "precision": Object {
+                        "type": "number",
                       },
                       "secondaryValue": Object {
                         "args": Array [
