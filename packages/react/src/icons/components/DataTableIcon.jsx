@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgDataTableIcon(props) {
   return (
-    <svg width={40} height={32} {...props}>
+    <svg width={40} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="none" fillRule="evenodd">
         <path fill="#0058FF" d="M0 0h40v2.759H0z" />
         <path stroke="#005BFF" d="M.5 3.259h39V31.5H.5z" />

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgComputerChipIcon(props) {
   return (
-    <svg viewBox="0 0 170.76 146.75" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.76 146.75" {...props}>
       <defs>
         <linearGradient
           id="computer-chip-icon_svg__a"

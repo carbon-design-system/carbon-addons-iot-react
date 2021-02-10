@@ -103,22 +103,20 @@ const DynamicHotspotSourcePicker = ({
           onYValueChange(change.selectedItem.dataSourceId);
         }}
       />
-      {
-        <Button
-          data-testid={`${testID}-clear-dropdown`}
-          className={classnames(`${classname}__clear-button`, {
-            [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
-          })}
-          kind="ghost"
-          size="small"
-          renderIcon={Erase32}
-          iconDescription={clearIconDescription}
-          tooltipPosition="top"
-          tooltipAlignment="end"
-          onClick={onClear}
-          hasIconOnly
-        />
-      }
+      <Button
+        data-testid={`${testID}-clear-dropdown`}
+        className={classnames(`${classname}__clear-button`, {
+          [`${classname}__clear-button--invisible`]: !selectedSourceIdX || !selectedSourceIdY,
+        })}
+        kind="ghost"
+        size="small"
+        renderIcon={Erase32}
+        iconDescription={clearIconDescription}
+        tooltipPosition="top"
+        tooltipAlignment="end"
+        onClick={onClear}
+        hasIconOnly
+      />
     </div>
   );
 };

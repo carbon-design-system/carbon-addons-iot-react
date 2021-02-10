@@ -314,7 +314,7 @@ const Card = (props) => {
     } else {
       setHasTitleTooltip(false);
     }
-  });
+  }, [titleRef]);
 
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,

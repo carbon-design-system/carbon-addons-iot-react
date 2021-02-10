@@ -102,11 +102,7 @@ const HotspotContent = ({
             placeholder={titlePlaceholderText}
           />
         </div>
-        {
-          // We still render the non editable title but as visually hidden so that the width will be
-          // correctly modified as we type in the TextInput.
-          <h4 className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>{titleValue}</h4>
-        }
+        <h4 className={`${iotPrefix}--hotspot-content-title__visually-hidden`}>{titleValue}</h4>
       </>
     );
 

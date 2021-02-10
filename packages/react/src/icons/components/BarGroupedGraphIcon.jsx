@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgBarGroupedGraphIcon(props) {
   return (
-    <svg width={40} height={32} {...props}>
+    <svg width={40} height={32} xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="none">
         <path fill="#97C1FF" d="M38.926 7.822H40V32h-1.074z" />
         <path fill="#0062FF" d="M37.584 17.422h1.074V32h-1.074z" />

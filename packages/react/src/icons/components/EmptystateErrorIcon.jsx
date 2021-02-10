@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgEmptystateErrorIcon(props) {
   return (
-    <svg width={80} height={80} {...props}>
+    <svg width={80} height={80} xmlns="http://www.w3.org/2000/svg" {...props}>
       <defs>
         <linearGradient
           x1="40.83%"

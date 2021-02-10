@@ -196,42 +196,40 @@ const FlyoutMenu = ({
           setIsOpen(!isOpen);
         }}
       />
-      {
-        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`}>
-          <Tooltip
-            disabled={disabled}
-            className={classnames(
-              tooltipClassName,
-              `${iotPrefix}--flyout-menu--body`,
-              `${iotPrefix}--flyout-menu--body__${direction}`,
-              {
-                [`${iotPrefix}--flyout-menu--body__light`]: light,
-                [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
-                [`${iotPrefix}--flyout-menu--body__${buttonSize}`]: buttonSize !== 'default',
-              }
-            )}
-            iconDescription={iconDescription}
-            data-testid={testId}
-            showIcon={false}
-            open={isOpen}
-            direction={tooltipDirection}
-            menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
-            tooltipId={tooltipId}
-            id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
-            triggerId={triggerId}
-            tabIndex={tabIndex}
-          >
-            <div ref={tooltipContentRef}>
-              <div style={{ overflow: 'scroll' }} tabIndex={-1} />
-              {children}
+      <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`}>
+        <Tooltip
+          disabled={disabled}
+          className={classnames(
+            tooltipClassName,
+            `${iotPrefix}--flyout-menu--body`,
+            `${iotPrefix}--flyout-menu--body__${direction}`,
+            {
+              [`${iotPrefix}--flyout-menu--body__light`]: light,
+              [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
+              [`${iotPrefix}--flyout-menu--body__${buttonSize}`]: buttonSize !== 'default',
+            }
+          )}
+          iconDescription={iconDescription}
+          data-testid={testId}
+          showIcon={false}
+          open={isOpen}
+          direction={tooltipDirection}
+          menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
+          tooltipId={tooltipId}
+          id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
+          triggerId={triggerId}
+          tabIndex={tabIndex}
+        >
+          <div ref={tooltipContentRef}>
+            <div style={{ overflow: 'scroll' }} tabIndex={-1} />
+            {children}
 
-              {!passive && (
-                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
-              )}
-            </div>
-          </Tooltip>
-        </div>
-      }
+            {!passive && (
+              <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
+            )}
+          </div>
+        </Tooltip>
+      </div>
     </div>
   );
 };
