@@ -219,15 +219,7 @@ export const hideCardPropertiesForEditor = (card) => {
  * @param {Function} onChange
  * @param {Function} setShowEditor
  */
-export const handleSubmit = (
-  card,
-  id,
-  content,
-  setError,
-  onValidateCardJson,
-  onChange,
-  setShowEditor
-) => {
+export const handleSubmit = (card, id, setError, onValidateCardJson, onChange, setShowEditor) => {
   // first validate basic JSON syntax
   const basicErrors = basicCardValidation(card);
   // second validate the consumer's custom function if provided
@@ -238,7 +230,7 @@ export const handleSubmit = (
   const allErrors = basicErrors.concat(customValidationErrors);
   // then submit
   if (isEmpty(allErrors)) {
-    onChange({ ...JSON.parse(card), id, content });
+    onChange({ ...JSON.parse(card), id });
     setShowEditor(false);
     return true;
   }
@@ -268,7 +260,7 @@ const CardEditForm = ({
   const [showEditor, setShowEditor] = useState(false);
   const [modalData, setModalData] = useState();
 
-  const { id, content } = cardConfig;
+  const { id } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
   return (
@@ -276,7 +268,7 @@ const CardEditForm = ({
       {showEditor ? (
         <CardCodeEditor
           onSubmit={(card, setError) =>
-            handleSubmit(card, id, content, setError, onValidateCardJson, onChange, setShowEditor)
+            handleSubmit(card, id, setError, onValidateCardJson, onChange, setShowEditor)
           }
           onClose={() => setShowEditor(false)}
           initialValue={modalData}
