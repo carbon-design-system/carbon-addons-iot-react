@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -13,7 +16,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "./src/tsconfig.lib.json",
-            "project": "./src/ng-package.json"
+            "project": "./src/ng-package.json",
           },
           "configurations": {
             "production": {
@@ -26,7 +29,7 @@
           "options": {
             "main": "src/test.ts",
             "karmaConfig": "./karma.conf.js",
-            "tsConfig": "./tsconfig.spec.json"
+            "tsConfig": "./tsconfig.spec.json",
           }
         },
         "lint": {
@@ -52,7 +55,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "@ai-apps/angular:serve"
+            "devServerTarget": "@ai-apps/angular:serve",
           }
         },
         "lint": {

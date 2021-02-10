@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/components/multi-select/multi-select';
+@import '../../vendor/carbon-components/scss/components/multi-select/multi-select';
 
 html[dir='rtl'] .#{$prefix}--multi-select__wrapper {
   .#{$prefix}--tag--filter {

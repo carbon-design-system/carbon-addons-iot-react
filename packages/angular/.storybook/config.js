@@ -1,15 +1,12 @@
 import "./polyfills.js";
 
-import { configure, addDecorator } from "@storybook/angular";
-import { withOptions } from "@storybook/addon-options";
+import { configure } from "@storybook/angular";
 import { setConfig } from "@storybook/addons";
 import { CarbonG100 } from "./theme";
 
-addDecorator(
-	withOptions({
-		theme: CarbonG100
-	})
-);
+setConfig({
+	theme: CarbonG100
+})
 
 // load global styles
 require("!style-loader!css-loader!postcss-loader!sass-loader!./preview.scss");

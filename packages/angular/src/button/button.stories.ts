@@ -2,19 +2,13 @@ import { storiesOf, moduleMetadata } from "@storybook/angular";
 import { withKnobs, select } from "@storybook/addon-knobs/angular";
 
 import { ButtonModule } from "../";
-import { DocumentationModule } from "../documentation-component/documentation.module";
-
-import { AddModule, CopyModule } from "@carbon/icons-angular";
 
 
 storiesOf("Components|Button", module)
 	.addDecorator(
 		moduleMetadata({
 			imports: [
-				AddModule,
-				ButtonModule,
-				CopyModule,
-				DocumentationModule
+				ButtonModule
 			]
 		})
 	)
@@ -59,10 +53,5 @@ storiesOf("Components|Button", module)
 			<button ibmButton skeleton="true"></button>
 			&nbsp;
 			<button ibmButton skeleton="true" size="sm"></button>
-		`
-	}))
-	.add("Documentation", () => ({
-		template: `
-			<ibm-documentation src="documentation/classes/src_button.button.html"></ibm-documentation>
 		`
 	}));

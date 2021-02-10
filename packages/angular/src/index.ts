@@ -1,2 +1,1 @@
-export * from "carbon-components-angular/button";
-
+export * from "@ai-apps/pal/button";
