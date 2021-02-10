@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.36...v2.143.0-next.37) (2021-02-09)
+
+
+### Bug Fixes
+
+* **hierarchylist:** update incorrect syntax ([78be603](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/78be6036e98794495415968348d316b3915bd6e0))
+
+
+
+
+
 # [2.143.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.35...v2.143.0-next.36) (2021-02-09)
 
 
