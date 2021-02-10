@@ -101,6 +101,7 @@ const footerButtons = [
 export const ruleBuilder = () => (
   <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
     <RuleBuilder
+      onChange={action('onChange')}
       actionBar={actions}
       handleOnSave={action('onSave')}
       handleOnCancel={action('onCancel')}

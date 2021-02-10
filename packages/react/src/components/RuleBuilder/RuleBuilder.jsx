@@ -6,6 +6,7 @@ import { Accordion, AccordionItem, Form, TextInput, Tab, Tabs } from 'carbon-com
 import { settings } from '../../constants/Settings';
 import { ToolbarSVGWrapper } from '../Card/CardToolbar';
 import Button from '../Button';
+import FilterTags from '../FilterTags/FilterTags';
 
 import RuleBuilderEditor from './RuleBuilderEditor';
 import { RuleBuilderColumnsPropType, RuleGroupPropType } from './RuleBuilderPropTypes';
@@ -112,6 +113,20 @@ const defaultProps = {
 
 const baseClass = `${iotPrefix}--rule-builder-wrap`;
 
+const RuleBuilderTags =  React.forwardRef(({ children, ...props }, ref) => {
+  return (
+    <div {...props} ref={ref}>
+      {children}
+      <TextInput
+        type="text"
+        id="rule-builder-tags-input"
+        labelText="Tags (optional)"
+        onChange={(e) => props.onChange(e.target.value, 'TITLE')}
+      />
+    </div>
+  );
+});
+
 const RuleBuilder = ({
   className,
   defaultTitleText,
@@ -167,9 +182,6 @@ const RuleBuilder = ({
       case 'TITLE':
         updatedFilter = { filterTitleText: update };
         break;
-      case 'META':
-        updatedFilter = { filterMetaText: update };
-        break;
       case 'TAGS':
         updatedFilter = { filterTags: update };
         break;
@@ -179,7 +191,7 @@ const RuleBuilder = ({
     setCurrentFilter((current) => ({ ...current, ...updatedFilter }));
     onChange(updatedFilter);
   };
-
+  console.log({currentFilter})
   return (
     <section
       className={classnames(baseClass, className)}
@@ -200,7 +212,7 @@ const RuleBuilder = ({
           <Button
             className={`${baseClass}--header-actions-save`}
             data-testid="rule-builder-save"
-            onClick={handleOnSave}
+            onClick={() => handleOnSave(currentFilter)}
             size="small"
           >
             {saveLabel}
@@ -219,14 +231,28 @@ const RuleBuilder = ({
           <Tab className={`${baseClass}--tab`} label={sharingTabText}>
             <Accordion>
               <AccordionItem title="Section 1 title">
-                <Form>
                   <TextInput
                     type="text"
+                    id="rule-builder-title-input"
                     labelText="Title Input"
                     light
+                    value={currentFilter.filterTitleText}
                     onChange={(e) => handleOnChange(e.target.value, 'TITLE')}
                   />
-                </Form>
+                  <FilterTags hasOverflow tagContainer={RuleBuilderTags} onChange={handleOnChange}>
+                  {currentFilter?.filterTags?.map((tag) => (
+                    <Tag
+                      key={`tag-${tag.id}`}
+                      filter
+                      type={tag.type}
+                      title="Clear Filter"
+                      style={{ marginRight: '1rem' }}
+                      onClose={() => handleOnClose(tag.id)}
+                    >
+                      {tag.text}
+                    </Tag>
+                  )) || []}
+                  </FilterTags>
               </AccordionItem>
               <AccordionItem title="Section 2 title">
                 <p>
