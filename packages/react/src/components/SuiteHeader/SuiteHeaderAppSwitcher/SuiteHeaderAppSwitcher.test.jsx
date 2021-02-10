@@ -1,4 +1,5 @@
 import React from 'react';
+import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -94,5 +95,17 @@ describe('SuiteHeaderAppSwitcher', () => {
     );
     await userEvent.click(screen.getByTestId('suite-header-app-switcher--no-access'));
     expect(window.location.href).not.toBe(commonProps.noAccessLink);
+  });
+  it('shows loading state', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    const wrapper = mount(
+      <SuiteHeaderAppSwitcher
+        allApplicationsLink="https://www.ibm.com"
+        noAccessLink="https://www.ibm.com"
+      />
+    );
+    // Expect skeletons
+    expect(wrapper.find('[data-testid="suite-header-app-switcher--loading"]')).toHaveLength(1);
   });
 });

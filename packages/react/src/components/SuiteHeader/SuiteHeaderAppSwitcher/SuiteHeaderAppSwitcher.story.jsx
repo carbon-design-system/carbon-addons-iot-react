@@ -50,3 +50,16 @@ export const NoApplications = () => (
 NoApplications.story = {
   name: 'No applications',
 };
+
+export const LoadingState = () => (
+  <div style={{ width: '15rem', background: 'white' }}>
+    <SuiteHeaderAppSwitcher
+      allApplicationsLink="https://www.ibm.com"
+      noAccessLink="https://www.ibm.com"
+    />
+  </div>
+);
+
+LoadingState.story = {
+  name: 'Loading state',
+};
