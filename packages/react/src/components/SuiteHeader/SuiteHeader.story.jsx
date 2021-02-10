@@ -1,3 +1,6 @@
+/* eslint-disable no-script-url */
+/* eslint-disable-next-line no-alert */
+
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { Switcher24 } from '@carbon/icons-react';
@@ -11,8 +14,6 @@ import Chat from '@carbon/icons-react/lib/chat/24';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
-// import getSuiteHeaderData from './util/suiteHeaderData';
-// import useSuiteHeaderData from './hooks/useSuiteHeaderData';
 
 const sideNavLinks = [
   {
@@ -99,18 +100,24 @@ const sideNavLinks = [
 
 const customActionItems = [
   {
-    label: 'alerts',
-    btnContent: <NotificationOn fill="white" description="Icon" />,
+    label: 'bell',
+    btnContent: (
+      <span id="bell-icon">
+        <NotificationOn id="notification-button" fill="white" description="Icon" />
+      </span>
+    ),
   },
   {
-    label: 'help',
+    label: 'bee',
     hasHeaderPanel: true,
     btnContent: (
-      <Bee
-        fill="white"
-        description="Icon"
-        className="bx--header__menu-item bx--header__menu-title"
-      />
+      <span id="bee-icon">
+        <Bee
+          fill="white"
+          description="Icon"
+          className="bx--header__menu-item bx--header__menu-title"
+        />
+      </span>
     ),
     childContent: [
       {
@@ -121,15 +128,14 @@ const customActionItems = [
           rel: 'noopener noreferrer',
           element: 'a',
         },
-        content: 'this is my message to you',
+        content: <span id="a-message">this is my message to you</span>,
       },
       {
         metaData: {
-          className: 'this',
           element: 'button',
         },
         content: (
-          <span>
+          <span id="an-email">
             JohnDoe@ibm.com
             <Chat fill="white" description="Icon" />
           </span>
@@ -138,8 +144,12 @@ const customActionItems = [
     ],
   },
   {
-    label: 'user',
-    btnContent: <Car fill="white" description="Icon" />,
+    label: 'car',
+    btnContent: (
+      <span id="car-icon">
+        <Car fill="white" description="Icon" />
+      </span>
+    ),
     childContent: [
       {
         metaData: {
@@ -149,21 +159,94 @@ const customActionItems = [
           rel: 'noopener noreferrer',
           element: 'a',
         },
-        content: 'this is my message to you',
+        content: <span id="another-message">this is my message to you</span>,
       },
       {
         metaData: {
-          className: 'this',
           element: 'button',
         },
         content: (
-          <span>
+          <span id="another-email">
             JohnDoe@ibm.com
             <Chat fill="white" description="Icon" />
           </span>
         ),
       },
     ],
+  },
+];
+
+const customHelpLinks = [
+  {
+    metaData: {
+      href: 'http://www.ibm.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: <span id="custom-help-link">{'{A custom help link}'}</span>,
+  },
+  {
+    metaData: {
+      href: 'http://google.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: <span id="another-custom-help-link">{'{Another custom help link}'}</span>,
+  },
+  {
+    metaData: {
+      element: 'a',
+      href: 'javascript:void(0)',
+      onClick: () => alert('custom help menu action'),
+    },
+    content: <span id="yet-another-custom-help-link">{'{Yet another custom help link}'}</span>,
+  },
+];
+
+const customProfileLinks = [
+  {
+    metaData: {
+      href: 'http://www.ibm.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: <span id="custom-profile-link">{'{A custom profile link}'}</span>,
+  },
+  {
+    metaData: {
+      href: 'http://google.com',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      element: 'a',
+    },
+    content: <span id="another-custom-profile-link">{'{Another custom profile link}'}</span>,
+  },
+  {
+    metaData: {
+      element: 'a',
+      href: 'javascript:void(0)',
+      onClick: () => alert('custom profile menu action'),
+    },
+    content: (
+      <span id="yet-another-custom-profile-link">{'{Yet another custom profile link}'}</span>
+    ),
+  },
+];
+
+const customApplications = [
+  {
+    id: 'customapp1',
+    name: 'Custom Application',
+    href: 'https://www.ibm.com',
+  },
+  {
+    id: 'customapp2',
+    name: 'Another Custom Application',
+    href: 'https://google.com',
+    isExternal: true,
   },
 ];
 
@@ -288,11 +371,14 @@ export const HeaderWithCustomActionItems = () => (
       {
         id: 'health',
         name: 'Health',
-        href: 'https://www.ibm.com',
+        href: 'https://google.com',
         isExternal: true,
       },
     ]}
     customActionItems={customActionItems}
+    customHelpLinks={customHelpLinks}
+    customProfileLinks={customProfileLinks}
+    customApplications={customApplications}
   />
 );
 
@@ -351,45 +437,15 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
-/* Sample of SuiteHeader usage with data hook
-export const HeaderWithHook = () => {
-  const StatefulExample = () => {
-    const [data] = useSuiteHeaderData({
-      // baseApiUrl: 'http://localhost:3001/internal',
-      domain: 'mydomain.com',
-      isTest: true,
-      surveyConfig: {
-        id: 'suite',
-        delayIntervalDays: 30,
-        frequencyDays: 90,
-      },
-      lang: 'en',
-    });
-    const surveyData = data.showSurvey
-      ? {
-          surveyLink: 'https://www.ibm.com',
-          privacyLink: 'https://www.ibm.com',
-        }
-      : null;
-    return data.username ? (
-      <SuiteHeader
-        suiteName="Application Suite"
-        appName="Application Name"
-        userDisplayName={data.userDisplayName}
-        username={data.username}
-        routes={data.routes}
-        applications={data.applications}
-        i18n={data.i18n}
-        surveyData={surveyData}
-      />
-    ) : null;
-  };
-  return <StatefulExample />;
+export const LoadingState = () => {
+  return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-HeaderWithHook.story = {
-  name: 'Header with hook',
+LoadingState.story = {
+  name: 'Loading state',
 };
+
+/* Sample of SuiteHeader usage with data fetching
 
 export const HeaderWithDataFetching = () => {
   const StatefulExample = () => {
@@ -397,42 +453,27 @@ export const HeaderWithDataFetching = () => {
       username: null,
       userDisplayName: null,
       email: null,
-      routes: {
-        profile: null,
-        navigator: null,
-        admin: null,
-        logout: null,
-        about: null,
-        documentation: null,
-        whatsNew: null,
-        requestEnhancement: null,
-        support: null,
-        gettingStarted: null,
-      },
-      applications: [],
+      routes: null,
+      applications: null,
       showSurvey: false,
     });
     useEffect(() => {
-      getSuiteHeaderData({
-        // baseApiUrl: 'http://localhost:3001/internal',
-        domain: 'mydomain.com',
-        isTest: true,
-        surveyConfig: {
-          id: 'suite',
-          delayIntervalDays: 30,
-          frequencyDays: 90,
+      fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        lang: 'en',
-      }).then((suiteHeaderData) => setData(suiteHeaderData));
+      })
+        .then((res) => res.json())
+        .then((resJson) => {
+          if (resJson.error || resJson.exception) {
+            return null;
+          }
+          return setData(resJson);
+        });
     }, []);
 
-    const surveyData = data.showSurvey
-      ? {
-          surveyLink: 'https://www.ibm.com',
-          privacyLink: 'https://www.ibm.com',
-        }
-      : null;
-    return data.username ? (
+    return (
       <SuiteHeader
         suiteName="Application Suite"
         appName="Application Name"
@@ -441,9 +482,9 @@ export const HeaderWithDataFetching = () => {
         routes={data.routes}
         applications={data.applications}
         i18n={data.i18n}
-        surveyData={surveyData}
+        surveyData={data.surveyData}
       />
-    ) : null;
+    );
   };
   return <StatefulExample />;
 };
