@@ -7101,8 +7101,12 @@ Map {
     },
     "defaultProps": Object {
       "appName": null,
+      "applications": null,
       "className": null,
       "customActionItems": Array [],
+      "customApplications": Array [],
+      "customHelpLinks": Array [],
+      "customProfileLinks": Array [],
       "i18n": Object {
         "about": "About",
         "administrationIcon": "Administration",
@@ -7124,6 +7128,7 @@ Map {
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": "Enjoying {solutionName}?",
         "switcherLearnMoreLink": "Learn more",
+        "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
         "userIcon": "User",
@@ -7131,8 +7136,11 @@ Map {
       },
       "isAdminView": false,
       "onRouteChange": [Function],
+      "routes": null,
       "sideNavProps": null,
       "surveyData": null,
+      "userDisplayName": null,
+      "username": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -7163,7 +7171,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "className": Object {
@@ -7215,6 +7222,83 @@ Map {
                 },
                 "onClick": Object {
                   "type": "func",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customHelpLinks": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "content": Object {
+                  "type": "node",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customProfileLinks": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "content": Object {
+                  "type": "node",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               },
             ],
@@ -7303,6 +7387,9 @@ Map {
               ],
               "type": "oneOfType",
             },
+            "switcherMyApplications": Object {
+              "type": "string",
+            },
             "switcherNavigatorLink": Object {
               "type": "string",
             },
@@ -7363,7 +7450,6 @@ Map {
             },
           },
         ],
-        "isRequired": true,
         "type": "shape",
       },
       "sideNavProps": Object {
@@ -7460,11 +7546,9 @@ Map {
         "type": "shape",
       },
       "userDisplayName": Object {
-        "isRequired": true,
         "type": "string",
       },
       "username": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -7477,6 +7561,8 @@ Map {
         "profileButton": "Manage profile",
         "profileTitle": "Profile",
       },
+      "onRequestLogout": null,
+      "username": "",
     },
     "propTypes": Object {
       "displayName": Object {
@@ -7503,51 +7589,46 @@ Map {
         "type": "func",
       },
       "onRequestLogout": Object {
-        "isRequired": true,
         "type": "func",
       },
       "username": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
   },
   "SuiteHeaderAppSwitcher" => Object {
     "defaultProps": Object {
-      "applications": Array [],
+      "allApplicationsLink": null,
+      "applications": null,
+      "customApplications": Array [],
       "i18n": Object {
         "allApplicationsLink": "All applications",
         "learnMoreLink": "Learn more",
+        "myApplications": "My applications",
         "requestAccess": "Contact your administrator to request application access.",
       },
       "onRouteChange": [Function],
     },
     "propTypes": Object {
       "allApplicationsLink": Object {
-        "isRequired": true,
         "type": "string",
       },
       "applications": Object {
         "args": Array [
           Object {
             "args": Array [
-              Object {
-                "href": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "id": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-                "isExternal": Object {
-                  "type": "bool",
-                },
-                "name": Object {
-                  "isRequired": true,
-                  "type": "string",
-                },
-              },
+              undefined,
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "customApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              undefined,
             ],
             "type": "shape",
           },
@@ -7644,6 +7725,7 @@ Map {
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": "Enjoying {solutionName}?",
       "switcherLearnMoreLink": "Learn more",
+      "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
       "userIcon": "User",
