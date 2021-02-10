@@ -4,7 +4,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { configureActions } from '@storybook/addon-actions';
-
 import { initializeRTL } from 'storybook-addon-rtl';
 import theme from './theme';
 
