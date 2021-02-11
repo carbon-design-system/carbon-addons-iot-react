@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.40...v2.143.0-next.41) (2021-02-11)
+
+
+### Bug Fixes
+
+* **barchardutils:** need to null check the values ([9aa743b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9aa743b0900af2e886122c6a3db24b0d9a26032f))
+* **barchart:** need to null check the values before formatting ([c63cfb3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c63cfb3f94d5c9a5b2572d8f0d624f5fbea250fa))
+* **barChartUtils:** stop another null ([dbba02a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dbba02aa4cf566344eaa99e6b155d4a7916676a3))
+* **dataitemmodal:** need to hide the grain if no aggregator is selected ([f5efdef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5efdefcf3879191b7d8895d17b7c1cb54226aae))
+* **tablecard:** in the editor I need to be allowed to add timestamp columns ([8aa8166](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8aa816603bf227b27e1b38f9f1af79a17c17a70d))
+
+
+
+
+
 # [2.143.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.39...v2.143.0-next.40) (2021-02-11)
 
 
