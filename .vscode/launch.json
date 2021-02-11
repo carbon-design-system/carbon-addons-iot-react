@@ -43,6 +43,7 @@
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": ["${relativeFile}", "--config", "jest.config.js"],
+      "cwd": "${workspaceFolder}/packages/react",
       "env": {
         "NODE_ICU_DATA": "node_modules/full-icu",
         "TZ": "America/Chicago"
