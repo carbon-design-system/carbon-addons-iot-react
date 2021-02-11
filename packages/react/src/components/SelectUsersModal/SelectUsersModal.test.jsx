@@ -110,7 +110,7 @@ describe('SelectUsersModal', () => {
       />
     );
 
-    var buttons = screen.getAllByRole('img', { label: 'Expand' });
+    let buttons = screen.getAllByRole('img', { label: 'Expand' });
     fireEvent.click(buttons[0]); // expand category
 
     buttons = screen.getAllByRole('img', { label: 'Expand' });
