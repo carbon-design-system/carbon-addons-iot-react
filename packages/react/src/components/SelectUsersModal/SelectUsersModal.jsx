@@ -114,7 +114,7 @@ const mapUsers = (
         tertiaryValue: email,
         rowActions: renderRowActions({ user, parents, selected: selectedUsers, depth }),
       },
-      isCategory: depth == 0 && !isEmpty(children),
+      isCategory: depth === 0 && !isEmpty(children),
       disabled: renderDisabledState({ user, parents, selected: selectedUsers, depth }),
       children,
     };

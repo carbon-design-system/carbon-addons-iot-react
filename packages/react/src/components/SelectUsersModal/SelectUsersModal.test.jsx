@@ -1,8 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 
-import { settings } from '../../constants/Settings';
-
 import SelectUsersModal from './SelectUsersModal';
 
 const users = [
