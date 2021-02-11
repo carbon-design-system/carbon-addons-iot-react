@@ -525,7 +525,7 @@ export const formatTableData = (
   chartData
 ) => {
   const tableData = [];
-  if (timeDataSourceId) {
+  if (timeDataSourceId && !isNil(values)) {
     // First get all of the unique timestamps
     const uniqueTimestamps = [...new Set(values.map((val) => val[timeDataSourceId]))];
     // For each unique timestamp, get the unique value for each dataset group
