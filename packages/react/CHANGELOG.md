@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.143.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.39...v2.143.0-next.40) (2021-02-11)
+
+
+### Bug Fixes
+
+* **repo:** adding a 'browser' field to avoid webpack default config issue ([8858150](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8858150a17897da49ef3a1b7f30122e909365ba1))
+
+
+
+
+
 # [2.143.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.143.0-next.38...v2.143.0-next.39) (2021-02-11)
 
 
