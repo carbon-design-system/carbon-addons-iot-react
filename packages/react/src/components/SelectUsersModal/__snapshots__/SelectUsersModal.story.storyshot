@@ -82,264 +82,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
             >
               <div
                 className="iot--select-users-modal-content__all-users"
+                data-testid="select-users__all"
               >
-                <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id47"
-                              name="recents"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Recent (10)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id47"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Recent (10)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Recent (10)
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id48"
-                              name="roles"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Roles (5)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id48"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Roles (5)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Roles (5)
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id49"
-                              name="teams"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Teams (3)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id49"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Teams (3)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Teams (3)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
                 <div
                   className="iot--list"
                 >
@@ -433,14 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
+                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -474,7 +211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Recent (10)"
                               >
                                 Recent (10)
@@ -492,14 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
+                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -533,7 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Roles (5)"
                               >
                                 Roles (5)
@@ -551,14 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
+                          aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
                           onClick={[Function]}
@@ -592,7 +315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Teams (3)"
                               >
                                 Teams (3)
@@ -607,131 +330,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
               </div>
               <div
                 className="iot--select-users-modal-content__selected-users"
+                data-testid="select-users__selected"
               >
-                <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      />
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
                 <div
                   className="iot--list"
                 >
@@ -986,571 +586,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 className="iot--select-users-modal-content__all-users"
                 data-testid="select-users__all"
               >
-                <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id55"
-                              name="ONieves"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Onita Nieves"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id55"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Onita Nieves
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Onita Nieves
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id56"
-                              name="LDensmore"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Latonya Densmore"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id56"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Latonya Densmore
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Latonya Densmore
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id57"
-                              name="KNgo"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Katelin Ngo"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id57"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Katelin Ngo
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Katelin Ngo
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id58"
-                              name="CWaiters"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Corrina Waiters"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id58"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Corrina Waiters
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Corrina Waiters
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id59"
-                              name="DBangert"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Don Bangert"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id59"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Don Bangert
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Don Bangert
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id60"
-                              name="BKong"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Bryanna Kong"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id60"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Bryanna Kong
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Bryanna Kong
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id61"
-                              name="AHillen"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Anika Hillen"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id61"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Anika Hillen
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Anika Hillen
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id62"
-                              name="MRandles"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Makeda Randles"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id62"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Makeda Randles
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Makeda Randles
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id63"
-                              name="CMaurer"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Chi Maurer"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id63"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Chi Maurer
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Chi Maurer
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id64"
-                              name="SAscencio"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Sharita Ascencio"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id64"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Sharita Ascencio
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Sharita Ascencio
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
                 <div
                   className="iot--list"
                 >
@@ -2384,130 +1419,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 data-testid="select-users__selected"
               >
                 <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      />
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
-                <div
                   className="iot--list"
                 >
                   <div
@@ -2762,219 +1673,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 data-testid="select-users__all"
               >
                 <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id65"
-                              name="role-1"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Role One (3)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id65"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Role One (3)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Role One (3)
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id66"
-                              name="role-2"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Role Two (3)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id66"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Role Two (3)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Role Two (3)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
-                <div
                   className="iot--list"
                 >
                   <div
@@ -2986,7 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                       <div
                         className="iot--list-header--title"
                       >
-                        Users (6 Available)
+                        Users (7 Available)
                       </div>
                       <div
                         className="iot--list-header--btn-container"
@@ -3067,14 +1765,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
                           aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
@@ -3109,7 +1799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Role One (3)"
                               >
                                 Role One (3)
@@ -3127,14 +1817,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
                           aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
@@ -3169,10 +1851,92 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Role Two (3)"
                               >
                                 Role Two (3)
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="iot--list-item-parent"
+                      data-floating-menu-container={true}
+                    >
+                      <div
+                        className="iot--list-item"
+                      >
+                        <div
+                          className="iot--list-item--nesting-offset"
+                          style={
+                            Object {
+                              "width": "30px",
+                            }
+                          }
+                        />
+                        <div
+                          className="iot--list-item--content"
+                        >
+                          <div
+                            className="iot--list-item--content--values"
+                          >
+                            <div
+                              className="iot--list-item--content--values--main"
+                            >
+                              <div
+                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                title="Katelin Ngo"
+                              >
+                                Katelin Ngo
+                              </div>
+                              <div
+                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                title="@katelin"
+                              >
+                                @katelin
+                              </div>
+                              <div
+                                className="iot--list-item--content--row-actions"
+                              >
+                                <button
+                                  aria-label="Add"
+                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  role="button"
+                                  style={
+                                    Object {
+                                      "color": "black",
+                                    }
+                                  }
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <span
+                                    className="bx--assistive-text"
+                                  >
+                                    Add
+                                  </span>
+                                  <svg
+                                    aria-hidden="true"
+                                    aria-label="Add"
+                                    className="bx--btn__icon"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    role="img"
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
+                                    />
+                                  </svg>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -3186,175 +1950,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 className="iot--select-users-modal-content__selected-users"
                 data-testid="select-users__selected"
               >
-                <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id67"
-                              name="onita.nieves@example.com"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Onita Nieves"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id67"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Onita Nieves
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Onita Nieves
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
                 <div
                   className="iot--list"
                 >
@@ -3662,263 +2257,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 data-testid="select-users__all"
               >
                 <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id50"
-                              name="recents"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Recent (10)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id50"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Recent (10)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Recent (10)
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id51"
-                              name="roles"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Roles (5)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id51"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Roles (5)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Roles (5)
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id52"
-                              name="teams"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Teams (3)"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id52"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Teams (3)
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Teams (3)
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
-                <div
                   className="iot--list"
                 >
                   <div
@@ -4011,14 +2349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
                           aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
@@ -4053,7 +2383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Recent (10)"
                               >
                                 Recent (10)
@@ -4071,14 +2401,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
                           aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
@@ -4113,7 +2435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Roles (5)"
                               >
                                 Roles (5)
@@ -4131,14 +2453,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                         className="iot--list-item"
                       >
                         <div
-                          className="iot--list-item--nesting-offset"
-                          style={
-                            Object {
-                              "width": "0px",
-                            }
-                          }
-                        />
-                        <div
                           aria-label="Expand"
                           className="iot--list-item--expand-icon"
                           data-testid="expand-icon"
@@ -4173,7 +2487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value"
+                                className="iot--list-item--content--values--value iot--list-item--category"
                                 title="Teams (3)"
                               >
                                 Teams (3)
@@ -4190,219 +2504,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Selec
                 className="iot--select-users-modal-content__selected-users"
                 data-testid="select-users__selected"
               >
-                <div
-                  className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-                  data-floating-menu-container={true}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  role="presentation"
-                >
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                  <div
-                    className="bx--modal-container"
-                    role="dialog"
-                  >
-                    <div
-                      className="bx--modal-header"
-                    >
-                      <p
-                        className="bx--modal-header__heading bx--type-beta"
-                      >
-                        Move 1 item underneath
-                      </p>
-                      <button
-                        aria-label="Close"
-                        className="bx--modal-close"
-                        onClick={[Function]}
-                        title="Close"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          className="bx--modal-close__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div
-                      className="bx--modal-content"
-                    >
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--title"
-                      >
-                        Select a destination
-                      </div>
-                      <div
-                        className="breadcrumb--container"
-                        data-testid="overflow"
-                      >
-                        <nav
-                          aria-label="Breadcrumb"
-                          className={null}
-                          data-testid="modal-breadcrumb"
-                        >
-                          <ol
-                            className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-                          >
-                            <li
-                              className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                              title="All rows"
-                            >
-                              <button
-                                className="bx--link"
-                                kind="ghost"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                All rows
-                              </button>
-                            </li>
-                          </ol>
-                        </nav>
-                      </div>
-                      <div
-                        className="iot--hierarchy-list-bulk-modal--list"
-                      >
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id53"
-                              name="ONieves"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Onita Nieves"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id53"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Onita Nieves
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Onita Nieves
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--hierarchy-list-bulk-modal--list-item"
-                        >
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-                          >
-                            <input
-                              checked={false}
-                              className="bx--radio-button"
-                              id="id54"
-                              name="KNgo"
-                              onChange={[Function]}
-                              tabIndex={0}
-                              type="radio"
-                              value="Katelin Ngo"
-                            />
-                            <label
-                              className="bx--radio-button__label"
-                              htmlFor="id54"
-                            >
-                              <span
-                                className="bx--radio-button__appearance"
-                              />
-                              <span
-                                className="bx--visually-hidden"
-                              >
-                                Katelin Ngo
-                              </span>
-                            </label>
-                          </div>
-                          <div
-                            className="iot--hierarchy-list-bulk-modal--list-item-button"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                            role="button"
-                            tabIndex={0}
-                          >
-                            <div
-                              className="iot--hierarchy-list-bulk-modal--list-item-value"
-                            >
-                              Katelin Ngo
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="bx--modal-footer iot--composed-modal-footer"
-                    >
-                      <button
-                        className="iot--btn bx--btn bx--btn--secondary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="iot--btn bx--btn bx--btn--primary"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
-                  <span
-                    className="bx--visually-hidden"
-                    role="link"
-                    tabIndex="0"
-                  >
-                    Focus sentinel
-                  </span>
-                </div>
                 <div
                   className="iot--list"
                 >
