@@ -289,26 +289,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -320,55 +314,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-11__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-11"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-12__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-12"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -391,12 +411,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -406,7 +425,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -415,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -761,26 +779,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -792,55 +804,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-13__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-13"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-14__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-14"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -863,12 +901,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -878,7 +915,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -887,7 +923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1252,12 +1288,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                    d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                    fill="none"
                   />
                   <path
-                    d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                    data-icon-path="inner-path"
-                    fill="none"
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                   />
                   <title>
                     info icon
@@ -1322,22 +1357,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   </label>
                   <svg
                     className="bx--loading__svg"
-                    viewBox="-75 -75 150 150"
+                    viewBox="0 0 100 100"
                   >
                     <title>
                       Active loading indicator
                     </title>
                     <circle
                       className="bx--loading__background"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
                     />
                     <circle
                       className="bx--loading__stroke"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
+                      cx="50%"
+                      cy="50%"
+                      r="42"
                     />
                   </svg>
                 </div>
@@ -1351,7 +1386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1697,26 +1732,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </button>
             </div>
             <div
-              className="bx--tabs"
-              role="navigation"
+              className="bx--tabs--scrollable"
+              onScroll={[Function]}
               selected={0}
             >
-              <div
-                aria-label="listbox"
-                className="bx--tabs-trigger"
+              <button
+                aria-hidden="true"
+                aria-label="Scroll left"
+                className="bx--tab--overflow-nav-button--hidden"
                 onClick={[Function]}
-                onKeyPress={[Function]}
-                role="listbox"
-                tabIndex={0}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
               >
-                <a
-                  className="bx--tabs-trigger-text"
-                  href="#"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                >
-                  Tooltip
-                </a>
                 <svg
                   aria-hidden={true}
                   fill="currentColor"
@@ -1728,55 +1757,81 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
                   />
-                  <title>
-                    show menu options
-                  </title>
                 </svg>
-              </div>
+              </button>
               <ul
-                className="bx--tabs__nav bx--tabs__nav--hidden"
+                className="bx--tabs--scrollable__nav"
                 role="tablist"
+                tabIndex={-1}
               >
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={true}
-                  className="bx--tabs__nav-item bx--tabs__nav-item--selected"
+                  className="bx--tabs--scrollable__nav-item bx--tabs__nav-item--selected bx--tabs--scrollable__nav-item--selected"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-15__panel"
+                    aria-selected={true}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-15"
+                    role="tab"
                     tabIndex={0}
+                    type="button"
                   >
                     Tooltip
-                  </a>
+                  </button>
                 </li>
                 <li
-                  aria-controls="undefined__panel"
-                  aria-selected={false}
-                  className="bx--tabs__nav-item"
+                  className="bx--tabs--scrollable__nav-item"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="tab"
-                  tabIndex={-1}
+                  role="presentation"
                 >
-                  <a
-                    className="bx--tabs__nav-link"
+                  <button
+                    aria-controls="tab-16__panel"
+                    aria-selected={false}
+                    className="bx--tabs--scrollable__nav-link"
                     href="#"
+                    id="tab-16"
+                    role="tab"
                     tabIndex={-1}
+                    type="button"
                   >
                     Data source
-                  </a>
+                  </button>
                 </li>
               </ul>
+              <button
+                aria-hidden="true"
+                aria-label="Scroll right"
+                className="bx--tab--overflow-nav-button--hidden"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
             </div>
             <div
-              aria-hidden={false}
               className="bx--tab-content"
               hidden={false}
               role="tabpanel"
@@ -1799,12 +1854,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                      d="M16,8a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,13.875H17.125v-8H13v2.25h1.875v5.75H12v2.25h8Z"
+                      fill="none"
                     />
                     <path
-                      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
-                      data-icon-path="inner-path"
-                      fill="none"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,6a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,8Zm4,16.125H12v-2.25h2.875v-5.75H13v-2.25h4.125v8H20Z"
                     />
                   </svg>
                   <p>
@@ -1814,7 +1868,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               </div>
             </div>
             <div
-              aria-hidden={true}
               className="bx--tab-content"
               hidden={true}
               role="tabpanel"
@@ -1823,7 +1876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

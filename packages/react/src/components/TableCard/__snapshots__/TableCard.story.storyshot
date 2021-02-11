@@ -92,6 +92,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -160,11 +161,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -217,10 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -266,7 +264,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -365,7 +362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -434,7 +431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -503,7 +500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -572,7 +569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -641,7 +638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -710,7 +707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -855,6 +852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1027,6 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1154,6 +1153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1326,6 +1326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1498,6 +1499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1670,6 +1672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1797,6 +1800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -1924,6 +1928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2051,6 +2056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2223,6 +2229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -2580,6 +2587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -2648,11 +2656,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -2705,10 +2713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -2754,7 +2759,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -2853,7 +2857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -2922,7 +2926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -2990,6 +2994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3040,6 +3045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3090,6 +3096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3140,6 +3147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3190,6 +3198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3240,6 +3249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3290,6 +3300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3340,6 +3351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3390,6 +3402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3440,6 +3453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/11112"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -3797,6 +3811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -3865,11 +3880,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -3922,10 +3937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -3971,7 +3983,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -4070,7 +4081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4139,7 +4150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4208,7 +4219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4277,7 +4288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4346,7 +4357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4415,7 +4426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4484,7 +4495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -4649,6 +4660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -4841,6 +4853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -4988,6 +5001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5180,6 +5194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5372,6 +5387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73004?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5564,6 +5580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73001?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5711,6 +5728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73000?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -5858,6 +5876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73003?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6005,6 +6024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73005?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6197,6 +6217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             <a
                               className="bx--link"
                               href="https://ibm.com/73002?time=10%2F28%2F2018%2007%3A34"
+                              rel="noopener"
                               target="_blank"
                             >
                               Link
@@ -6554,6 +6575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -6609,10 +6631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -6655,7 +6674,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    tabIndex={0}
                     title="Open and close list of options"
                     type="button"
                   >
@@ -6759,7 +6777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -6828,7 +6846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -6897,7 +6915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -7914,6 +7932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -7969,10 +7988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -8015,7 +8031,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     onClose={[Function]}
                     onKeyDown={[Function]}
                     open={false}
-                    tabIndex={0}
                     title="Open and close list of options"
                     type="button"
                   >
@@ -8123,7 +8138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -8192,7 +8207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -8261,7 +8276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -9608,6 +9623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -9676,11 +9692,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -9733,10 +9749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -9782,7 +9795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -9910,7 +9922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -9979,7 +9991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10048,7 +10060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10231,6 +10243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -10299,11 +10312,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -10356,10 +10369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -10405,7 +10415,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -10504,7 +10513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10573,7 +10582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10642,7 +10651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10711,7 +10720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10780,7 +10789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -10849,7 +10858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -12919,6 +12928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -12987,11 +12997,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -13044,10 +13054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -13093,7 +13100,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -13221,7 +13227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -13290,7 +13296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -13359,7 +13365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -14384,6 +14390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -14452,11 +14459,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -14509,10 +14516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -14558,7 +14562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -14657,7 +14660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -14726,7 +14729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -14795,7 +14798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -14864,7 +14867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -16089,6 +16092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -16157,11 +16161,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -16214,10 +16218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -16263,7 +16264,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -16391,7 +16391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -16460,7 +16460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -16529,7 +16529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -17554,6 +17554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -17622,11 +17623,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -17679,10 +17680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -17728,7 +17726,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -17856,7 +17853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -17925,7 +17922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -17994,7 +17991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -18223,6 +18220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -18291,11 +18289,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -18348,10 +18346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -18397,7 +18392,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -18529,7 +18523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -18598,7 +18592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -18667,7 +18661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -18736,7 +18730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -20672,6 +20666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -20740,11 +20735,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -20797,10 +20792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -20846,7 +20838,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -20974,7 +20965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -21043,7 +21034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -21112,7 +21103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -21251,7 +21242,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21373,7 +21363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21495,7 +21484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21617,7 +21605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21739,7 +21726,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21861,7 +21847,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -21983,7 +21968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22105,7 +22089,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22227,7 +22210,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22349,7 +22331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                               onClose={[Function]}
                               onKeyDown={[Function]}
                               open={false}
-                              tabIndex={0}
                               type="button"
                             >
                               <svg
@@ -22732,6 +22713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -22800,11 +22782,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -22857,10 +22839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -22906,7 +22885,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -23038,7 +23016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -23107,7 +23085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -23176,7 +23154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -24531,6 +24509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -24599,11 +24578,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -24656,10 +24635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -24705,7 +24681,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -24837,7 +24812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -24906,7 +24881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -24975,7 +24950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -26330,6 +26305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -26398,11 +26374,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -26455,10 +26431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -26504,7 +26477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -26636,7 +26608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -26705,7 +26677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -26774,7 +26746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -28129,6 +28101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -28197,11 +28170,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -28254,10 +28227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -28303,7 +28273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -28435,7 +28404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -28504,7 +28473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -28573,7 +28542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -29928,6 +29897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -29996,11 +29966,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -30053,10 +30023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -30102,7 +30069,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -30230,7 +30196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -30299,7 +30265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -30368,7 +30334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -31768,6 +31734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -31836,11 +31803,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -31893,10 +31860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -31942,7 +31906,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -32041,7 +32004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -32110,7 +32073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -32179,7 +32142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -32248,7 +32211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -32317,7 +32280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -32386,7 +32349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -34456,6 +34419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -34524,11 +34488,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -34581,10 +34545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -34630,7 +34591,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -34729,7 +34689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -34798,7 +34758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -34867,7 +34827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -34936,7 +34896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -36606,6 +36566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
+                    onContextMenu={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     onMouseOut={[Function]}
@@ -36674,11 +36635,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       Search
                     </label>
                     <input
-                      aria-hidden={true}
                       autoComplete="off"
                       className="bx--search-input"
                       id="table-for-card-table-list-toolbar-search"
                       onChange={[Function]}
+                      onKeyDown={[Function]}
                       placeholder="Search"
                       role="searchbox"
                       tabIndex="-1"
@@ -36731,10 +36692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26 15L24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15z"
-                    />
-                    <path
-                      d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
+                      d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
                     />
                   </svg>
                 </button>
@@ -36780,7 +36738,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onClose={[Function]}
                       onKeyDown={[Function]}
                       open={false}
-                      tabIndex={0}
                       title="Select time range"
                       type="button"
                     >
@@ -36883,7 +36840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -36952,7 +36909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -37021,7 +36978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -37090,7 +37047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -37159,7 +37116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
@@ -37228,7 +37185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
                             />
                           </svg>
                           <svg
