@@ -2434,7 +2434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    456,778,234,234,234,240
+                    456,778,234,234,234,240.0
                   </span>
                 </div>
                 <span
@@ -2501,7 +2501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       }
                     }
                   >
-                    88,888,678,234,234,240,000
+                    88,888,678,234,234,240,000.0
                   </span>
                 </div>
                 <span
