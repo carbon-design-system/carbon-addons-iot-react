@@ -147,7 +147,6 @@ const ListItem = ({
         role="button"
         tabIndex={0}
         className={`${iotPrefix}--list-item--expand-icon`}
-        aria-label={expanded ? 'Collapse' : 'Expand'}
         onClick={handleExpansionClick}
         data-testid="expand-icon"
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
